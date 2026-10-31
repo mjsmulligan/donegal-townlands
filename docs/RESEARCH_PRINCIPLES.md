@@ -28,6 +28,18 @@ Preserve original recorded details. Do not silently replace them with normalised
 
 The presentation should make the direct evidence accessible before presenting interpretations or conclusions.
 
+## Relationship with Grá and the role of ingestion
+
+Grá (GRA) and Donegal Townlands have related but distinct purposes. Grá was originally designed as a person-centred research engine: it ingests records from primary sources and can apply genealogical rules and probabilistic methods to assess whether records relate to the same person. Donegal Townlands uses the ingestion and source-description capabilities of Grá, but does not adopt person matching as its organising method or depend on Grá's probabilistic matching engine.
+
+For the exchange between the two projects, the historical source record is the fundamental unit, not a matched person. Grá should provide the ingested record and the information needed to understand and trace it to its source. Donegal Townlands then organises, compares and interprets records in the context of a townland. Decisions that records relate to the same person, household or family are primarily matters for human research and review in Donegal Townlands. Any proposed relationship must remain distinguishable from what the source itself records.
+
+Grá's value to Donegal Townlands extends beyond the sources for which ingestion has already been implemented. Its source catalogue and original specifications describe additional sources, repositories, record structures and URL patterns, including sources such as Catholic parish registers and the Dúchas Schools Collection. These definitions are an existing design resource and should be leveraged rather than recreated in Donegal Townlands. However, a source being described in the catalogue or specification does not mean that its ingestion pipeline has been implemented or tested. Assistants must distinguish clearly between specified capability, implemented capability and data actually ingested.
+
+Grá remains the owner of source acquisition and ingestion definitions. Donegal Townlands must not independently duplicate those mechanisms or introduce a competing source framework. The precise data exchanged between the projects belongs in the agreed export contract; changes to that contract must be designed and approved before implementation.
+
+In short: **Grá tells us what the sources contain. Donegal Townlands investigates what those records tell us about the history of a place.**
+
 ## Link readers to original sources
 
 Wherever possible, significant factual claims in a townland history should link to the original historical or archival source, not only to a project transcription, dataset or summary.
@@ -49,3 +61,4 @@ The narrative is the project's considered interpretation of the evidence. Editor
 7. Report exactly which files were changed and summarise the changes.
 
 Do not undertake an unrelated redesign or alter existing research findings as part of this task.
+
