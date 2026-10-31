@@ -1,0 +1,9 @@
+{
+  "1926": [
+    {
+      "match": {"fo": "0016"},
+      "set": {"h": "0017"},
+      "reason": "The 1926 form 0016 (Philip Bradley, aged 3) names Patrick Bradley as head, so it is counted in Patrick's household, form 0017."
+    }
+  ]
+}
