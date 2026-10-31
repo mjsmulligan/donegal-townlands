@@ -27,9 +27,15 @@ The townland is the primary unit of research and presentation. Family histories 
 
 ## Sister repo
 
-`mjsmulligan/irish-genealogy-research` (GRA) is the research engine: source fetching, record linkage, Irish genealogical rules (`src/genealogy/`), source and licence list (`docs/repositories.md`). This repo is the publishing layer. GRA does not depend on this repo, but Donegal Townlands is an important downstream use case that can inform GRA priorities and identify research or export gaps. Preserve the one-way architecture: GRA supplies agreed research exports; this repo does not reimplement GRA's fetching or record-linkage logic. Rules:
+`mjsmulligan/irish-genealogy-research` (GRA) is the research and ingestion engine. It owns source acquisition, ingestion, source definitions and URL patterns, evidence processing, Irish genealogical rules (`src/genealogy/`), person-centred record linkage, and the source and licence catalogue (`docs/repositories.md`). GRA was originally designed around ingesting primary-source records and using rules and probabilistic methods to assess whether records relate to the same person.
+
+Donegal Townlands is the downstream, townland-centred historical research and publishing project. It uses GRA's ingestion capabilities and source architecture, but does not depend on GRA's person-matching engine. The source record, with its provenance and source-link information, is the fundamental unit of exchange. Relationships between records, people, households and families in Townlands are primarily established through human research and review.
+
+GRA's source catalogue and specifications cover more than the sources for which ingestion has so far been implemented. They include source definitions, record structures and URL patterns for additional collections, including parish registers and Dúchas. Reuse this existing architecture rather than building a competing source framework here. Always distinguish a source that is specified in GRA from one whose ingestion is implemented and one for which records have actually been ingested.
+
+GRA does not depend on this repo, but Donegal Townlands is an important downstream use case that can inform GRA priorities and identify research or export gaps. Preserve the one-way architecture: GRA supplies agreed record-level research exports; this repo organises and interprets those records in a townland context. Rules:
 - Check `docs/repositories.md` in GRA for a source's licence before committing anything from it. Never commit Historic Graves data.
-- Do not re-implement fetching or linking here. Data flows GRA to here through the export contract in `docs/EXPORT_CONTRACT.md`.
+- Do not re-implement source acquisition or ingestion here. Data flows GRA to here through the export contract in `docs/EXPORT_CONTRACT.md`. Do not treat GRA's probabilistic person matches as confirmed Townlands identities.
 - GRA's own rules require design agreement before changes to its schema or scoring.
 - Known gap: GRA's `data/Clogher_1926.csv` lacks about 500 researcher-filled relationship values present in `data/census/1926_Clogher.csv` here. Local copies are the verified source until GRA is updated.
 
@@ -60,3 +66,4 @@ Family stories, the Griffith's transcription and plate copy live in `townlands/<
 ## Standing rules for images
 
 Originals stay outside the repo. Commit web-sized copies (about 1600 px). Each image needs a caption record: source, reference, date, people shown, family.
+
