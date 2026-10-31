@@ -10,13 +10,16 @@ This protocol governs collaboration between AI assistants working with Mike acro
 - Git repositories are the durable shared workspace. Chat histories, assistant memories, and private notes are not shared project state.
 - Before work, read the current repository's `AGENTS.md` and this protocol.
 - Then read relevant status and decision documents. In Grá, check `ROADMAP.md` before starting. In Donegal Townlands, check the relevant townland `STATUS.md` and `DECISIONS.md`.
+- For any work in Donegal Townlands, read and follow [`docs/RESEARCH_PRINCIPLES.md`](RESEARCH_PRINCIPLES.md) before research, analysis, data design, writing, or presentation work.
 - Follow deeper documentation only where the task requires it. Do not assume a previous assistant's summary is current.
 - If repository state is unavailable or stale, say so. Never imply that a snapshot is the live repository.
 
 ## 2. Project boundaries and relationship
 
 - **Grá is the research engine.** It owns source acquisition, evidence processing, record linkage, Irish genealogical rules, and the distinction between evidence and conclusions.
-- **Donegal Townlands is a downstream publishing project.** It presents family-centred townland studies and must not independently reimplement Grá's fetching or record-linkage logic.
+- **Donegal Townlands is a downstream publishing project.** It presents townland-centred studies in which family histories provide the human narrative. Its organising framework is the townland, not the individual or family.
+- For Donegal Townlands, Griffith's Valuation is foundational because it records land and occupation within townland boundaries. Census records, maps, church and civil records, and other historical sources add further dimensions to the history of the place.
+- For Donegal Townlands, present direct documentary evidence distinctly from analysis and interpretation, and distinguish both from conclusions. Preserve original recorded details, source provenance, uncertainty, and contradictory evidence. Identity matching can support family histories but must not become the primary purpose or organising structure of the project.
 - Donegal Townlands is an important real-world use case that can inform Grá's research priorities and expose gaps. This does not make Grá dependent on the publishing repository or authorise automatic schema, scoring, or architecture changes.
 - Data flows from Grá to Donegal Townlands through an explicitly agreed export contract. Changes to that contract require design discussion and Mike's approval before implementation.
 - Preserve the evidence/conclusion boundary and all project-specific architecture rules. A presentation need must not weaken research integrity.

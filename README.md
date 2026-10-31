@@ -1,8 +1,5 @@
-# Donegal townlands
+# Donegal Townlands
 
-Family-centred studies of townlands in the Barnesmore area, County Donegal, from Griffith's Valuation to the 1926 census.
+Donegal Townlands documents the history of individual townlands through the surviving historical evidence. The townland provides the geographical and historical framework; the histories of its families provide the human narrative. Direct evidence is distinguished from interpretation and conclusions.
 
-- Cullionboy: `docs/cullionboy/index.html` (built page)
-- Instructions for contributors and assistants: `CLAUDE.md`
-
-Build a page: `python tools/build.py cullionboy`. Check before committing: `python tools/validate.py`.
+See [Research Principles](docs/RESEARCH_PRINCIPLES.md) for the project's foundational research and presentation approach.
