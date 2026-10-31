@@ -2,6 +2,8 @@ import csv,json
 import sys,pathlib
 ROOT=pathlib.Path(__file__).resolve().parent.parent
 D=str(ROOT/'data'/'census')+'/'
+# Source files are in data/census/. Note: the sister repo (irish-genealogy-research, data/Clogher_*.csv) holds an older
+# 1926 file that lacks about 500 researcher-filled relationship values, so these local copies are the verified source for now.
 # usage: python tools/extract_census.py   (writes townlands/cullionboy/records/census.json)
 def L(f): return list(csv.DictReader(open(D+f,encoding='utf-8')))
 def num(v):

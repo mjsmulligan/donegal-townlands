@@ -8,3 +8,4 @@
 - Dimon is treated as Dunnion as a working hypothesis (Cullionboy).
 - Griffith's map is not part of the standard townland process (no high resolution images online).
 - Tithe Applotment Books to be added as a source when available (sits before Griffith's).
+- 2026-10-31 Two repos: GRA (research engine) and this one (publishing layer). One-way export contract in docs/EXPORT_CONTRACT.md. Local 1926 census copy kept as source because GRA's lacks about 500 researcher-filled relationship values.

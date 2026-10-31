@@ -13,9 +13,16 @@ This repo holds family-centred townland studies for the Drumholm area of Donegal
 - Donegal only. Place model: townland, civil parish, barony, DED, county.
 - Study order: Cullionboy (first), Clogher next, then townlands in Drumholm and neighbouring Drumhome.
 
+## Sister repo
+`mjsmulligan/irish-genealogy-research` (GRA) is the research engine: source fetching, record linkage, Irish genealogical rules (`src/genealogy/`), source and licence list (`docs/repositories.md`). This repo is the publishing layer. GRA never knows about this repo. Rules:
+- Check `docs/repositories.md` in GRA for a source's licence before committing anything from it. Never commit Historic Graves data.
+- Do not re-implement fetching or linking here. Data flows GRA to here through the export contract in `docs/EXPORT_CONTRACT.md`.
+- GRA's own rules require design agreement before changes to its schema or scoring.
+- Known gap: GRA's `data/Clogher_1926.csv` lacks about 500 researcher-filled relationship values present in `data/census/1926_Clogher.csv` here. Local copies are the verified source until GRA is updated.
+
 ## Method
 - Baseline source is Griffith's Valuation (mid 1850s). Tithe Applotment before it, then revision books, civil BMD (1864 on), parish records, censuses 1901, 1911, 1926.
-- Group surname variants (Gildea/Guildea, Colhoun/Coulhoun, Sweeny/Sweeney/McSwyne, Dunleavy/Dunlevy). Dimon to Dunnion is a working hypothesis, Hallaghy possibly Gallagher.
+- Surname and name variant rules live in GRA `src/genealogy/names.py`. Working groups so far (Gildea/Guildea, Colhoun/Coulhoun, Sweeny/Sweeney/McSwyne, Dunleavy/Dunlevy). Dimon to Dunnion is a working hypothesis, Hallaghy possibly Gallagher.
 - Tolerate age drift between censuses. Hold discrepancies open and record them in the townland STATUS.md. Never resolve a conflict silently.
 - Separate documents from oral tradition and say which is which.
 - Report numbers that do not add up (for example the Griffith's area sum one acre over the printed total in Cullionboy) and keep them open.
