@@ -1,0 +1,882 @@
+{
+ "groups": {
+  "colours": {
+   "Flanagan": "#4C8DB8",
+   "Gallagher": "#EA7F90",
+   "Hone": "#D9534F",
+   "Cassidy": "#8A7FD1",
+   "Pearson": "#3FA796",
+   "McGettigan": "#5560C8",
+   "Gildea": "#C07BC4",
+   "Breslin": "#EE8F6A",
+   "Moss": "#A3C34A",
+   "Doherty": "#F2A24E",
+   "Roper": "#45B1C9",
+   "Other": "#A9B7B3"
+  },
+  "territory": [
+   "Flanagan",
+   "Gallagher",
+   "Hone",
+   "Cassidy",
+   "Pearson",
+   "McGettigan",
+   "Gildea",
+   "Breslin",
+   "Moss",
+   "Doherty",
+   "Roper",
+   "Other"
+  ],
+  "map": {
+   "flanagan": "Flanagan",
+   "flanigan": "Flanagan",
+   "gallagher": "Gallagher",
+   "hone": "Hone",
+   "cassidy": "Cassidy",
+   "pearson": "Pearson",
+   "mcgettigan": "McGettigan",
+   "mgettigan": "McGettigan",
+   "gildea": "Gildea",
+   "guildea": "Gildea",
+   "breslin": "Breslin",
+   "moss": "Moss",
+   "doherty": "Doherty",
+   "roper": "Roper"
+  }
+ },
+ "griffiths": {
+  "rows": [
+   {
+    "lot": "1 to 5",
+    "hd": "1 to 5",
+    "names": "Robert Pearson",
+    "occ": "Robert Pearson",
+    "les": "Same",
+    "desc": "House, offices and land (5 lots)",
+    "area": "24 2 23",
+    "ac": 24.64375,
+    "land": "",
+    "bld": "",
+    "tot": "6 0 0"
+   },
+   {
+    "lot": "6",
+    "hd": "6",
+    "names": "John Cassidy",
+    "occ": "John Cassidy",
+    "les": "Same",
+    "desc": "House, office and land",
+    "area": "14 2 35",
+    "ac": 14.71875,
+    "land": "",
+    "bld": "",
+    "tot": "4 0 0"
+   },
+   {
+    "lot": "7, 8",
+    "hd": "7, 8",
+    "names": "James Flanagan",
+    "occ": "James Flanagan",
+    "les": "Same",
+    "desc": "House and land (2 lots)",
+    "area": "17 2 15",
+    "ac": 17.59375,
+    "land": "",
+    "bld": "",
+    "tot": "4 5 0"
+   },
+   {
+    "lot": "9 to 11",
+    "hd": "9 to 11",
+    "names": "Bryan Moss",
+    "occ": "Bryan Moss",
+    "les": "Same",
+    "desc": "House, office and land (3 lots)",
+    "area": "25 1 10",
+    "ac": 25.3125,
+    "land": "",
+    "bld": "",
+    "tot": "6 0 0"
+   },
+   {
+    "lot": "12",
+    "hd": "12",
+    "names": "Bryan Moss and John Cassidy",
+    "occ": "Bryan Moss",
+    "les": "Same",
+    "desc": "Land",
+    "area": "2 2 15 (shared)",
+    "ac": 2.59375,
+    "land": "",
+    "bld": "",
+    "tot": "0 13 0"
+   },
+   {
+    "lot": "12",
+    "hd": "12",
+    "occ": "John Cassidy",
+    "les": "Same",
+    "desc": "Land",
+    "area": "shared",
+    "land": "",
+    "bld": "",
+    "tot": "0 13 0"
+   },
+   {
+    "lot": "13a",
+    "hd": "13a",
+    "names": "Edward Pearson",
+    "occ": "Edward Pearson",
+    "les": "Same",
+    "desc": "House, office and land",
+    "area": "33 2 20",
+    "ac": 33.625,
+    "land": "",
+    "bld": "",
+    "tot": "5 15 0"
+   },
+   {
+    "lot": "13b",
+    "hd": "13b",
+    "names": "Edward Pearson",
+    "occ": "Edward Pearson",
+    "les": "Bryan Moss",
+    "desc": "Gardens",
+    "area": "0 0 35",
+    "ac": 0.21875,
+    "land": "",
+    "bld": "",
+    "tot": "0 3 0"
+   },
+   {
+    "lot": "14 to 16",
+    "hd": "14 to 16",
+    "names": "Sarah M'Gettigan",
+    "occ": "Sarah M'Gettigan",
+    "les": "Same",
+    "desc": "House, offices and land (3 lots)",
+    "area": "11 1 15",
+    "ac": 11.34375,
+    "land": "",
+    "bld": "",
+    "tot": "4 15 0"
+   },
+   {
+    "lot": "17",
+    "hd": "17",
+    "names": "Catherine Browne",
+    "occ": "Catherine Browne",
+    "les": "Same",
+    "desc": "House, office and land",
+    "area": "11 2 25",
+    "ac": 11.65625,
+    "land": "",
+    "bld": "",
+    "tot": "4 15 0"
+   },
+   {
+    "lot": "18A, 18B",
+    "hd": "18A, 18B",
+    "names": "Edward M'Gettigan",
+    "occ": "Edward M'Gettigan",
+    "les": "Same",
+    "desc": "House, offices and land (2 lots)",
+    "area": "11 3 10",
+    "ac": 11.8125,
+    "land": "",
+    "bld": "",
+    "tot": "4 15 0"
+   },
+   {
+    "lot": "19 to 23",
+    "hd": "19 to 23",
+    "names": "Patrick Flanagan",
+    "occ": "Patrick Flanagan",
+    "les": "Same",
+    "desc": "House, office and land (5 lots)",
+    "area": "8 3 5",
+    "ac": 8.78125,
+    "land": "",
+    "bld": "",
+    "tot": "3 10 0"
+   },
+   {
+    "lot": "24 to 26",
+    "hd": "24 to 26",
+    "names": "Mary Flanagan",
+    "occ": "Mary Flanagan",
+    "les": "Same",
+    "desc": "House, office and land (3 lots)",
+    "area": "6 1 10",
+    "ac": 6.3125,
+    "land": "",
+    "bld": "",
+    "tot": "2 15 0"
+   },
+   {
+    "lot": "27a",
+    "hd": "27a",
+    "names": "Mary Flanagan and John Flanagan",
+    "occ": "Mary Flanagan",
+    "les": "Same",
+    "desc": "House, offices and land",
+    "area": "14 2 25 (shared)",
+    "ac": 14.65625,
+    "land": "",
+    "bld": "",
+    "tot": "2 10 0"
+   },
+   {
+    "lot": "27a",
+    "hd": "27a",
+    "occ": "John Flanagan",
+    "les": "Same",
+    "desc": "House, offices and land",
+    "area": "shared",
+    "land": "",
+    "bld": "",
+    "tot": "1 5 0"
+   },
+   {
+    "lot": "28",
+    "hd": "28",
+    "names": "Widow Flanagan",
+    "occ": "Widow Flanagan",
+    "les": "Same",
+    "desc": "Land",
+    "area": "3 0 30",
+    "ac": 3.1875,
+    "land": "",
+    "bld": "",
+    "tot": "1 10 0"
+   },
+   {
+    "lot": "29A, 29B",
+    "hd": "29A, 29B",
+    "names": "Phelim Gildea and Widow M'Ginty",
+    "occ": "Phelim Gildea",
+    "les": "Same",
+    "desc": "House and land",
+    "area": "14 0 20 (shared)",
+    "ac": 14.125,
+    "land": "",
+    "bld": "",
+    "tot": "1 15 0"
+   },
+   {
+    "lot": "29A, 29B",
+    "hd": "29A, 29B",
+    "occ": "Widow M'Ginty",
+    "les": "Same",
+    "desc": "House and land",
+    "area": "shared",
+    "land": "",
+    "bld": "",
+    "tot": "1 15 0"
+   },
+   {
+    "lot": "30",
+    "hd": "30",
+    "names": "Patrick M'Quaid",
+    "occ": "Patrick M'Quaid",
+    "les": "Same",
+    "desc": "Land",
+    "area": "1 1 15",
+    "ac": 1.34375,
+    "land": "",
+    "bld": "",
+    "tot": "0 15 0"
+   },
+   {
+    "lot": "31",
+    "hd": "31",
+    "names": "Michael Flanagan",
+    "occ": "Michael Flanagan",
+    "les": "Same",
+    "desc": "House, office and land",
+    "area": "3 2 25",
+    "ac": 3.65625,
+    "land": "",
+    "bld": "",
+    "tot": "2 10 0"
+   },
+   {
+    "lot": "32",
+    "hd": "32",
+    "names": "Edward Flanagan",
+    "occ": "Edward Flanagan",
+    "les": "Mary Flanagan",
+    "desc": "House and land",
+    "area": "1 3 20",
+    "ac": 1.875,
+    "land": "",
+    "bld": "",
+    "tot": "1 5 0"
+   },
+   {
+    "lot": "33",
+    "hd": "33",
+    "names": "Patrick M'Quaid and Charles M'Nulty",
+    "occ": "Patrick M'Quaid",
+    "les": "Same",
+    "desc": "House, office and land",
+    "area": "15 2 5 (shared)",
+    "ac": 15.53125,
+    "land": "",
+    "bld": "",
+    "tot": "2 15 0"
+   },
+   {
+    "lot": "33",
+    "hd": "33",
+    "occ": "Charles M'Nulty",
+    "les": "Same",
+    "desc": "House, office and land",
+    "area": "shared",
+    "land": "",
+    "bld": "",
+    "tot": "3 0 0"
+   },
+   {
+    "lot": "34",
+    "hd": "34",
+    "names": "Michael Flanagan and Margaret Flanagan",
+    "occ": "Michael Flanagan",
+    "les": "Same",
+    "desc": "Land; house, office and land",
+    "area": "12 1 0 (shared)",
+    "ac": 12.25,
+    "land": "",
+    "bld": "",
+    "tot": "1 10 0"
+   },
+   {
+    "lot": "34",
+    "hd": "34",
+    "occ": "Margaret Flanagan",
+    "les": "Same",
+    "desc": "Land; house, office and land",
+    "area": "shared",
+    "land": "",
+    "bld": "",
+    "tot": "2 0 0"
+   },
+   {
+    "lot": "35 to 38",
+    "hd": "35 to 38",
+    "names": "Mary Breen",
+    "occ": "Mary Breen",
+    "les": "Same",
+    "desc": "House, office and land; land; mountain (2 lots)",
+    "area": "357 3 11",
+    "ac": 357.81875,
+    "land": "",
+    "bld": "",
+    "tot": "7 5 0"
+   },
+   {
+    "lot": "39 to 42",
+    "hd": "39 to 42",
+    "names": "Francis Hone",
+    "occ": "Francis Hone",
+    "les": "Same",
+    "desc": "House, office and land; land (2 lots); mountain",
+    "area": "18 2 25",
+    "ac": 18.65625,
+    "land": "",
+    "bld": "",
+    "tot": "2 15 0"
+   },
+   {
+    "lot": "43a, 43b, 44",
+    "hd": "43a, 43b, 44",
+    "names": "Patrick Hone and John Hone",
+    "occ": "Patrick Hone",
+    "les": "Same",
+    "desc": "House, office and land",
+    "area": "424 2 6 (shared)",
+    "ac": 424.5375,
+    "land": "",
+    "bld": "",
+    "tot": "4 0 0"
+   },
+   {
+    "lot": "43a, 43b, 44",
+    "hd": "43a, 43b, 44",
+    "occ": "John Hone",
+    "les": "Same",
+    "desc": "House, office and land",
+    "area": "shared",
+    "land": "",
+    "bld": "",
+    "tot": "4 0 0"
+   },
+   {
+    "lot": "45a",
+    "hd": "45a",
+    "names": "Patrick Breslin, Widow Flanagan and Mary Gillespie",
+    "occ": "Patrick Breslin",
+    "les": "Same",
+    "desc": "House, office and land",
+    "area": "27 2 35 (shared)",
+    "ac": 27.71875,
+    "land": "",
+    "bld": "",
+    "tot": "4 10 0"
+   },
+   {
+    "lot": "45a",
+    "hd": "45a",
+    "occ": "Widow Flanagan",
+    "les": "Same",
+    "desc": "House, office and land",
+    "area": "shared",
+    "land": "",
+    "bld": "",
+    "tot": "2 10 0"
+   },
+   {
+    "lot": "45a",
+    "hd": "45a",
+    "occ": "Mary Gillespie",
+    "les": "Same",
+    "desc": "House, office and land",
+    "area": "shared",
+    "land": "",
+    "bld": "",
+    "tot": "2 10 0"
+   },
+   {
+    "lot": "46",
+    "hd": "46",
+    "names": "Patrick Breslin",
+    "occ": "Patrick Breslin",
+    "les": "Same",
+    "desc": "Mountain",
+    "area": "21 2 5",
+    "ac": 21.53125,
+    "land": "",
+    "bld": "",
+    "tot": "1 0 0"
+   },
+   {
+    "lot": "47",
+    "hd": "47",
+    "names": "Widow Flanagan",
+    "occ": "Widow Flanagan",
+    "les": "Same",
+    "desc": "Mountain",
+    "area": "17 0 0",
+    "ac": 17.0,
+    "land": "",
+    "bld": "",
+    "tot": "0 15 0"
+   },
+   {
+    "lot": "48",
+    "hd": "48",
+    "names": "Mary Gillespie",
+    "occ": "Mary Gillespie",
+    "les": "Same",
+    "desc": "Mountain",
+    "area": "11 3 20",
+    "ac": 11.875,
+    "land": "",
+    "bld": "",
+    "tot": "0 10 0"
+   },
+   {
+    "lot": "49",
+    "hd": "49",
+    "names": "John Gallagher",
+    "occ": "John Gallagher",
+    "les": "Same",
+    "desc": "House, offices and land",
+    "area": "20 2 10",
+    "ac": 20.5625,
+    "land": "",
+    "bld": "",
+    "tot": "3 0 0"
+   },
+   {
+    "lot": "50",
+    "hd": "50",
+    "names": "Patrick Monaghan",
+    "occ": "Patrick Monaghan",
+    "les": "Same",
+    "desc": "House, offices and land",
+    "area": "21 3 30",
+    "ac": 21.9375,
+    "land": "",
+    "bld": "",
+    "tot": "3 5 0"
+   },
+   {
+    "lot": "51",
+    "hd": "51",
+    "names": "Patrick Monaghan and John Gallagher",
+    "occ": "Patrick Monaghan",
+    "les": "Same",
+    "desc": "Mountain",
+    "area": "29 3 5 (shared)",
+    "ac": 29.78125,
+    "land": "",
+    "bld": "",
+    "tot": "0 5 0"
+   },
+   {
+    "lot": "51",
+    "hd": "51",
+    "occ": "John Gallagher",
+    "les": "Same",
+    "desc": "Mountain",
+    "area": "shared",
+    "land": "",
+    "bld": "",
+    "tot": "0 5 0"
+   },
+   {
+    "lot": "52",
+    "hd": "52",
+    "names": "Edward Gallagher",
+    "occ": "Edward Gallagher",
+    "les": "Same",
+    "desc": "House, office and land",
+    "area": "36 0 10",
+    "ac": 36.0625,
+    "land": "",
+    "bld": "",
+    "tot": "3 10 0"
+   },
+   {
+    "lot": "53",
+    "hd": "53",
+    "names": "Mary Flanagan",
+    "occ": "Mary Flanagan",
+    "les": "Same",
+    "desc": "Mountain",
+    "area": "23 1 20",
+    "ac": 23.375,
+    "land": "",
+    "bld": "",
+    "tot": "0 5 0"
+   },
+   {
+    "lot": "54",
+    "hd": "54",
+    "names": "Charles Meehan",
+    "occ": "Charles Meehan",
+    "les": "Same",
+    "desc": "Land",
+    "area": "29 2 25",
+    "ac": 29.65625,
+    "land": "",
+    "bld": "",
+    "tot": "2 0 0"
+   }
+  ],
+  "water_acres": 5.96875,
+  "sheet": {
+   "heading": "CLOGHER",
+   "sub": "Parish of Donegal, p. 96. Ord. S. 94 and 95. Areas in acres, roods and perches. Valuations in pounds, shillings and pence.",
+   "printed_total": [
+    "",
+    "Printed total",
+    "",
+    "",
+    "1281 2 35",
+    "98 18 0",
+    "13 16 0",
+    "112 14 0"
+   ],
+   "foot": "The valuations add up exactly to the printed total. The areas, with the water entry (lot 55, 5a 3r 35p, no occupier named and no valuation), add up exactly to the printed total, but only if lot 20 reads 0a 1r 20p and lot 3 reads 1a 2r 5p, so those two are the least certain readings. The transcription holds each entry's total valuation only, so the land and buildings columns are blank until the page image is read again. Where several occupiers share a lot, its area is shown once and each occupier's own valuation is listed. Mary Flanagan and Widow Flanagan each appear in three entries and may not be the same person each time. Spellings are as printed."
+  }
+ },
+ "families": [
+  {
+   "keys": [
+    "Flanagan"
+   ],
+   "name": "The Flanagans",
+   "tab": "Flanagan",
+   "medium": "Griffith's Valuation and three census returns",
+   "story": "The Flanagans were the largest family at Griffith's, with 8 occupiers holding 24 per cent of the townland's valuation, and by 1926 one household remained.",
+   "paras": [
+    "Seven of the eight Griffith's occupiers held directly from the Earl of Arran. Edward Flanagan held a house and land from Mary Flanagan. Mary and the Widow Flanagan each appear in three entries and Michael in two, so several holdings were already split among people of one name.",
+    "In 1901 the Flanagans were the second largest family, behind the Gallaghers by one person, and John Flanigan, 92, was the oldest head in the townland. By 1911 three households remained, headed by men aged 76, 78 and 84. Michael Flanagan, 74 in 1901 and 84 in 1911, is probably the same man. Two more Flanagans lived in other families' houses in 1911: Sarah, 80, an aunt in Patrick Doherty's household (she was 60 and an aunt there in 1901), and Anne, 51, a lodger with Connell O'Donnell.",
+    "In 1926 Thomas Flanagan, 60 and single, lives alone. He is the only Flanagan man traced through all three censuses, at 35, 48 and 60. Three Flanagan women, aged 82, 62 and 54, live in the household of John Lynch (form 11). Unity Flanagan, 36 in 1901 and 46 in 1911, is probably the 62-year-old, and Margaret may be the Maggie, 28 and 39, of the earlier censuses."
+   ]
+  },
+  {
+   "keys": [
+    "Gallagher"
+   ],
+   "name": "The Gallaghers",
+   "tab": "Gallagher",
+   "medium": "Griffith's Valuation and three census returns",
+   "story": "The Gallaghers went from 2 occupiers at Griffith's to the largest family in 1901 and 1911, and still numbered 16 in three households in 1926.",
+   "paras": [
+    "At Griffith's John Gallagher held a house, offices and land of 20a 2r 10p (£3 0s 0d) and shared a mountain lot with Patrick Monaghan. Edward Gallagher held 36a 0r 10p of house, office and land (£3 10s 0d). Together they paid 6 per cent of the townland's valuation.",
+    "The family is the best traced in the townland. Edward Gallagher is 57 in 1901, 71 in 1911 and 84 in 1926, and Hugh is 34, 44 and 55. Nine of the 21 Gallaghers of 1911 can be matched in 1926, more than for any other family. A James Gallagher heads a household at 34 in 1901 and at 57 in 1911, but those ages do not fit one man, so there may be two Jameses or an age error.",
+    "In 1901 Ellen Gallagher, 26, and her children John (3), Bridget (2) and Edward (under 1) are in the household of Margaret Roper, recorded as her daughter and grandchildren. In 1911 an Ellen, 38, is the wife of Hugh Gallagher, with John 13, Bridget 11, Edward 9 and Hugh 5. Ellen was probably Hugh's wife and was with her mother in 1901. This ties the Gallaghers to the Ropers."
+   ]
+  },
+  {
+   "keys": [
+    "Hone"
+   ],
+   "name": "The Hones",
+   "tab": "Hone",
+   "medium": "Griffith's Valuation and three census returns",
+   "story": "The Hones went from 3 occupiers at Griffith's to 3 households in 1926, when at least 17 people made them the largest family in the townland.",
+   "paras": [
+    "At Griffith's Francis Hone held 18a 2r 25p of house, office, land and mountain (£2 15s 0d). Patrick Hone and John Hone shared a lot of 423a 2r 36p and 3 roods of land beside it, valued at £4 0s 0d each. Theirs is the largest single lot on the page.",
+    "In 1901 the Hones were three households. Patrick Hone, 60, had 9 people with him. Bridget Hone, 60, a widow, and Bridget Hone, 30, who was single and alone, were both recorded as \"Farmer and Seamstress\". By 1911 there were two households, Patrick, then 69, and Michael, 40.",
+    "The three heads of 1926 trace back by name and age. Michael is 26 in 1901, 40 in 1911 and 55 in 1926. His namesake Michael is 9, 18 and 33. Joseph is 23 in 1911 and 40 in 1926. A 15-year-old recorded as Henry Kone in Michael Hone's household in 1926 is probably a Hone, which would make the family 18."
+   ]
+  },
+  {
+   "keys": [
+    "Cassidy"
+   ],
+   "name": "The Cassidys",
+   "tab": "Cassidy",
+   "medium": "Griffith's Valuation and three census returns",
+   "story": "The Cassidys had one occupier at Griffith's, John Cassidy, and two households headed by a Hugh Cassidy in every census from 1901 to 1926.",
+   "paras": [
+    "John Cassidy held 14a 2r 35p of house, office and land (£4 0s 0d) and shared a 2a 2r 15p lot of land with Bryan Moss, valued at £0 13s 0d each. That makes the Cassidys and Mosses co-tenants of one lot in the 1850s.",
+    "The two Hughs are traced across all three censuses, aged 45, 54 and 69 and 38, 48 and 66. The family peaked at 15 people in 1911 and then halved. Five Cassidy children traced from 1901 to 1911 (Charles, Anna Maria, Mary, Bella and Bridget) are not found under the same name in 1926, though the daughters may have married.",
+    "Other surnames turn up in Cassidy households. In 1901 Robert Pearson, 86, and Mary Pearson, 60, are boarders with the younger Hugh (house 27). In 1911 James McGrath, 79, and Mary McGrath, 80, are the father-in-law and mother-in-law of the Hugh in house 4, and a James McGrath had headed his own household in 1901. In 1926 John Kelly, 37, is in the household of the Hugh in form 13."
+   ]
+  },
+  {
+   "keys": [
+    "Pearson"
+   ],
+   "name": "The Pearsons",
+   "tab": "Pearson",
+   "medium": "Griffith's Valuation and three census returns",
+   "story": "The Pearsons were the only Methodist family in Clogher, with 2 occupiers at Griffith's worth £11 18s 0d, and they shrank from 6 people in 1901 to 3 in 1926.",
+   "paras": [
+    "Robert Pearson held five lots of house, offices and land, 24a 2r 23p in all (£6 0s 0d). Edward Pearson held 33a 2r 20p (£5 15s 0d) and rented gardens of 35 perches from Bryan Moss (£0 3s 0d). Their combined valuation was second only to the Flanagans', and every Methodist in the three censuses is a Pearson.",
+    "In 1901 Edward Pearson, 74, headed a household of four, with Elizabeth (38), Thomas (35) and Adam (28). Robert Pearson, 86, and Mary Pearson, 60, were boarders in Hugh Cassidy's household. In 1911 Adam, 45, headed five people, among them Maggie Jane (30), Edward Thomas (3), Elizabeth (58) and Thomas (54).",
+    "In 1926 Margaret Pearson, 46, a widow, heads three people with Edward J (18) and Elizabeth (72). Elizabeth is traced from 1911. Margaret and Edward J are probably Adam's widow Maggie Jane and their son Edward Thomas, but the 1926 record does not say so."
+   ]
+  },
+  {
+   "keys": [
+    "McGettigan"
+   ],
+   "name": "The M'Gettigans",
+   "tab": "McGettigan",
+   "medium": "Griffith's Valuation and three census returns",
+   "story": "The M'Gettigans had 2 occupiers at Griffith's, Sarah and Edward, valued at £4 15s 0d each, and a single household headed by an Edward in 1926.",
+   "paras": [
+    "Sarah M'Gettigan held three lots of house, offices and land, 11a 1r 15p in all. Edward M'Gettigan held two lots, 11a 3r 10p. Each was valued at £4 15s 0d, and together they paid 8 per cent of the townland's valuation.",
+    "In 1901 Patrick McGettigan, 60, \"Wool Waver and Farmer\", lived in house 23 with his wife Cassie (50), son Edward (12) and sister Catherine (55, a seamstress). In house 24 Denis McGettigan, 75, and his wife Katie had a grandson, Barney McGinty, 9. By 1911 neither Patrick nor Denis is recorded. Catherine McGettigan, 77 and single, heads three people, with her sister-in-law Catherine, 62, a widow and sprigger, and her nephew Edward, 23. The widow is probably Cassie of 1901, and the head probably the Catherine of 55, though her age has jumped by 22 years.",
+    "Edward McGettigan is traced through all three censuses, at 12, 23 and 37. In 1926 he is married and heads four people with his wife Mary Anne (28) and children Kathleen (5) and James (2)."
+   ]
+  },
+  {
+   "keys": [
+    "Gildea"
+   ],
+   "name": "The Gildeas",
+   "tab": "Gildea",
+   "medium": "Griffith's Valuation and three census returns",
+   "story": "The Gildeas had one occupier at Griffith's, Phelim Gildea, and a household of ten in 1901 that was two brothers by 1926.",
+   "paras": [
+    "Phelim Gildea shared a lot of house and land, 14a 0r 20p, with Widow M'Ginty, and each was valued at £1 15s 0d.",
+    "In 1901 Patrick Gildea, 40, headed ten people: his wife Mary Anne, 39, and eight children from Bridget Maria (18) to Neil, under 1. By 1911 there were eight, with a son Alphonsus, 8, newly recorded and the older children Bridget Maria, Patrick and Edward James gone from the household.",
+    "In 1926 the household is Francis Guildea, 34, single, and John Guildea, 26. They match Francis Joseph (9 in 1901, 19 in 1911) and John (2 and 13), both recorded as sons of Patrick Gildea in the earlier censuses. Patrick, Mary Anne and the other children are not found in Clogher in 1926. The spelling has changed from Gildea to Guildea."
+   ]
+  },
+  {
+   "keys": [
+    "Breslin"
+   ],
+   "name": "The Breslins",
+   "tab": "Breslin",
+   "medium": "Griffith's Valuation and three census returns",
+   "story": "The Breslins held steady at 6 or 7 people from 1901 to 1926, moving from one household headed by a married man to two households, one of single siblings and one of a married couple.",
+   "paras": [
+    "At Griffith's Patrick Breslin shared a lot of 27a 2r 35p with Widow Flanagan and Mary Gillespie, for which he was valued at £4 10s 0d against £2 10s 0d for each of them, and held a 21a 2r 5p mountain lot (£1 0s 0d).",
+    "In 1901 Patrick Breslin, 61, headed seven people: his wife Catherine (58), sons Michael (29) and Patrick (26, a widower) and daughters Ellen F, Mary A and Sarah J. By 1911 Michael, 43 and single, is head, with his widowed mother Catherine (71), his brother Patrick (41, a widower) and sisters Hannagh (44), Mary Agnes (27) and Sarah (26).",
+    "In 1926 Michael Breslin, 45, single, heads four people with Hanna (47), Mary (32) and Rigana (29), all single. Michael's age is only 2 years above his 1911 age, so one of the two returns is wrong, but the names fit the 1911 siblings. A separate household of two is headed by a married Patrick Breslin, with no age recorded, and his wife Mary, 46. He is probably the widowed brother Patrick of 1911, remarried."
+   ]
+  },
+  {
+   "keys": [
+    "Moss"
+   ],
+   "name": "The Mosses",
+   "tab": "Moss",
+   "medium": "Griffith's Valuation and two census returns",
+   "story": "The Mosses had one occupier at Griffith's, Bryan Moss, valued at £6 13s 0d, and no Moss is recorded in Clogher by 1926.",
+   "paras": [
+    "Bryan Moss held three lots of house, office and land, 25a 1r 10p in all (£6 0s 0d), shared a 2a 2r 15p land lot with John Cassidy (£0 13s 0d each) and let gardens of 35 perches to Edward Pearson. This is one of only two sub-lettings on the page.",
+    "In 1901 Anne Moss, 60, a widow, headed eight people, her seven children being Mich (22), Mary Anne (20), Edward (19), Andrew (17), Bernard (15), Patrick (13) and Maggie (11). By 1911 only Anne, 65, and her daughter Maggie, 20, remain. The other six children are not recorded under the Moss name in Clogher in 1911, and neither Anne nor Maggie is found in 1926."
+   ]
+  },
+  {
+   "keys": [
+    "Doherty"
+   ],
+   "name": "The Dohertys",
+   "tab": "Doherty",
+   "medium": "Three census returns. Not on Griffith's page",
+   "story": "The Dohertys are not among Griffith's occupiers but head a household in all three censuses, ending with a widow, Ellen Doherty, and five single adult children in 1926.",
+   "paras": [
+    "In 1901 Patrick Doherty, 43, headed ten people: his wife Ellen (40), seven children from Bridget (19) to Mary A and Sarah A (both 4), and Sarah Flanigan, 60, recorded as his aunt. In 1911 he was 56, with Ellen (53), five children and the aunt, now Sarah Flanagan, 80. Bridget (19 in 1901) and John (16) are not in the 1911 household.",
+    "In 1926 Ellen Doherty, 69, a widow, heads Patrick (38), Maggie (35), Henry (31), Sarah (29) and Mary (29), all single. Their names and ages fit the five children of 1911 (Patrick 23, Maggie Ellen 20, Henry Joseph 16, Sarah Anne 14 and Mary Agnes 14) fifteen years on. Patrick Doherty the father is not recorded in 1926."
+   ]
+  },
+  {
+   "keys": [
+    "Roper"
+   ],
+   "name": "The Ropers",
+   "tab": "Roper",
+   "medium": "Three census returns. Not on Griffith's page",
+   "story": "The Ropers are not among Griffith's occupiers but grew from 2 people in 1901 to 9 in 1926, when Denis Roper's household of nine was the joint largest in the townland.",
+   "paras": [
+    "In 1901 Margaret Roper, 60, a widow, headed six people. Two were Ropers, herself and Denis (28), and four were her daughter Ellen Gallagher and Ellen's three children, the link to the Gallaghers described above. By 1911 Denis, 40, is head of a household of five.",
+    "In 1926 Denis Roper, 60, is married and heads nine people: his wife Katie (44) and seven children aged 2 to 18, John F, Edward F, Patrick, Maggie, Bridget, Jerry and Mary K. Denis is traced at 28, 40 and 60. The Hugh Gallagher household of the same year also has nine people, and these two are the largest households in Clogher in 1926."
+   ]
+  },
+  {
+   "keys": [
+    "Other"
+   ],
+   "name": "The smaller families",
+   "tab": "Other",
+   "medium": "Griffith's Valuation and three census returns, for surnames that appear less often",
+   "story": "Fifteen further surnames appear in Griffith's or the censuses, and 10 of them are gone by 1926. Only Browne, O'Gara, Lynch, Duggan and Kelly are recorded then.",
+   "paras": [
+    "M'Ginty. Griffith's occupiers: 1 (Widow, £1 15s 0d). People in 1901, 1911 and 1926: 3, 2 and 0. The Widow shared a house and land lot with Phelim Gildea. Patrick McGinty headed house 15 (71 in 1901, 76 and single in 1911). Barney McGinty, 9, a grandson, was in Denis McGettigan's household in 1901.",
+    "M'Nulty. Griffith's occupiers: 1 (Charles, £3 0s 0d). People in 1901, 1911 and 1926: 1, 1 and 0. Hannah McNulty, single, lived alone in house 3 in 1901 (55). In 1911 she is 75 and her sister Mary Breen, 73, is with her.",
+    "Breen. Griffith's occupiers: 1 (Mary, £7 5s 0d). People in 1901, 1911 and 1926: 0, 1 and 0. Mary Breen held the highest valuation on the page, with 357a 3r 11p. A Mary Breen, 73, is Hannah McNulty's sister in 1911.",
+    "M'Quaid (McQuade). Griffith's occupiers: 1 (Patrick, £3 10s 0d). People in 1901, 1911 and 1926: 1, 1 and 0. Sarah McQuaid, single, 46, headed house 5 in 1901 with a servant, Michael Brown, 21. In 1911 Sarah McQuade is 64, with Michael Browne, 30, as a boarder.",
+    "Browne. Griffith's occupiers: 1 (Catherine, £4 15s 0d). People in 1901, 1911 and 1926: 1, 1 and 5. Michael Brown, a servant in 1901 and boarder in 1911, is Michael Browne, 45, a widower heading five people in 1926.",
+    "Doogan. Griffith's occupiers: 0. People in 1901, 1911 and 1926: 3, 5 and 0. Unity Doogan headed house 6 in 1901 (60, widow, farmer and seamstress) and house 18 in 1911 (75). In 1911 Cassie Doogan and John Patk Doogan, 10, live with Connell O'Donnell as his daughter and grandson.",
+    "McGrath. Griffith's occupiers: 0. People in 1901, 1911 and 1926: 4, 2 and 0. James McGrath headed house 16 with 4 people in 1901. In 1911 James (79) and Mary (80) live with their son-in-law Hugh Cassidy.",
+    "O'Donnell. Griffith's occupiers: 0. People in 1901, 1911 and 1926: 3, 2 and 0. Condy O'Donnell, 62, headed house 11 in 1901. Connell ODonnell, 76, a widower, headed house 16 in 1911 with five people, among them a Doogan daughter and grandson and a Flanagan lodger.",
+    "O'Gara (Gara). Griffith's occupiers: 0. People in 1901, 1911 and 1926: 0, 4 and 2. James Gara, 50, headed house 19 in 1911 with four people. James O'Gara, 70, married, heads a household of two in 1926 (form 5).",
+    "Gillespie. Griffith's occupiers: 1 (Mary, £3 0s 0d). People in 1901, 1911 and 1926: 0, 0 and 0. Mary Gillespie shared the 27a 2r 35p lot with Patrick Breslin and Widow Flanagan and held 11a 3r 20p of mountain.",
+    "Monaghan. Griffith's occupiers: 1 (Patrick, £3 10s 0d). People in 1901, 1911 and 1926: 0, 0 and 0. Patrick Monaghan held a house and land lot of 21a 3r 30p and shared a mountain lot with John Gallagher.",
+    "Meehan. Griffith's occupiers: 1 (Charles, £2 0s 0d). People in 1901, 1911 and 1926: 0, 0 and 0. Charles Meehan held 29a 2r 25p of land.",
+    "Lynch. Griffith's occupiers: 0. People in 1901, 1911 and 1926: 0, 0 and 5. John Lynch, 56, heads eight people in 1926 (form 11), including three Flanagan women.",
+    "Duggan. Griffith's occupiers: 0. People in 1901, 1911 and 1926: 0, 0 and 1. James Duggan, 60, a widower, lives alone in 1926 (form 18).",
+    "Kelly. Griffith's occupiers: 0. People in 1901, 1911 and 1926: 0, 0 and 1. John Kelly, 37, lives in Hugh Cassidy's household in 1926 (form 13)."
+   ]
+  }
+ ],
+ "questions": [
+  "Valuation revision books: follow each Griffith's holding forward to see when Doherty, Doogan, O'Donnell, McGrath and Roper first appear as occupiers.",
+  "Civil births, marriages and deaths from 1864: collect entries giving Clogher as the residence.",
+  "Tawnawilly registers: add the Clogher entries from the transcribed baptism and marriage files.",
+  "Griffith's: confirm lot 3 and lot 20 areas, the publication year and the union on a higher-resolution image, and complete the citation.",
+  "1926 census images: check the \"English Only\" entries for everyone, the four missing ages, the three women in Hone households with no age, and \"Kone\".",
+  "1911 census images: find house numbers 12 and 15, which have no Clogher rows.",
+  "The 1926 return lists two Flanagan women both named Unity, aged 82 and 62, in John Lynch's household (form 11). Check the 1926 image for the 82-year-old's first name.",
+  "Link each significant claim to the original record, not only to this transcription. The census page URLs and the Griffith's page link are still to be supplied.",
+  "Split each Griffith's valuation into land and buildings. The transcription holds only each entry's total, so those two columns are blank until the page image is re-read."
+ ],
+ "plates": {
+  "title": {
+   "title": "An Clochar",
+   "irish": "An Clochar",
+   "heading": "Clogher",
+   "medium": "A townland in Clogher electoral division, Donegal civil parish, Tirhugh barony",
+   "story": [
+    "An Clochar, in Irish. Clogher lies beside Cullionboy, Meenabrock, Druminnin and Birchhill, among others, and covers 1,277.67 acres (517 ha). Clogher is also the name of the electoral division.",
+    "Every scene here is drawn from the records. Cottages stand for households and are not placed on a map."
+   ]
+  },
+  "griffiths": {
+   "title": "Twenty-nine names",
+   "medium": "Griffith's Valuation, mid 1850s. Printed page, transcribed from an image",
+   "story": [
+    "One printed page names everyone who held land here. Every holding is let by the Earl of Arran except two sub-lettings: Edward Pearson holds gardens from Bryan Moss, and Edward Flanagan holds a house and land from Mary Flanagan.",
+    "The page carries no date. Mid 1850s is the date supplied for this study."
+   ]
+  },
+  "treemap": {
+   "title": "Thirty-three holdings, drawn by size",
+   "medium": "Griffith's Valuation, mid 1850s. Colour is the holder's family",
+   "story": [
+    "The whole townland laid out by area, each block coloured by the family of its first-named holder. The Hones' shared holding of 424 acres is the largest block, then Mary Breen's 358 acres, mostly mountain. Every other holding is under 37 acres.",
+    "The smallest block, in one corner, is Edward Pearson's gardens of 35 perches, let by Bryan Moss."
+   ],
+   "water_name": "Water",
+   "water_tip": "Lot 55, 5a 3r 35p, no occupier named"
+  },
+  "not_yet_hung": {
+   "title": "Not yet hung",
+   "medium": "Six frames for six kinds of record. Two are filled",
+   "story": [
+    "The earliest layer is empty. The Tithe Applotment Books, from the 1820s and 1830s, would sit before Griffith's, and for now they are offline.",
+    "Revision books, civil records from 1864 and parish registers would let each census link below be proved, or dropped. A page index of the Tawnawilly registers is held, but it has no names."
+   ],
+   "frames": [
+    [
+     "Tithe Applotment Books",
+     "1820s and 1830s",
+     "Missing. Currently offline.",
+     false
+    ],
+    [
+     "Griffith's Valuation",
+     "Mid 1850s",
+     "Held. One page, from an image.",
+     true
+    ],
+    [
+     "Valuation revision books",
+     "After the 1850s",
+     "Missing.",
+     false
+    ],
+    [
+     "Civil births, marriages and deaths",
+     "From 1864",
+     "Missing.",
+     false
+    ],
+    [
+     "Parish records",
+     "Mostly 1870s and 1880s",
+     "Page index only, no names.",
+     false
+    ],
+    [
+     "Census returns",
+     "1901, 1911 and 1926",
+     "Held. Clogher electoral division.",
+     true
+    ]
+   ]
+  },
+  "method": {
+   "paras": [
+    "Griffith's Valuation, Parish of Donegal, page 96, was transcribed from an image supplied for this study and checked against the printed totals. The page carries no date. Mid 1850s is the date supplied for this study.",
+    "The census tables are the Clogher rows of three files for Clogher electoral division, which also holds many other townlands. A person counts as living in Clogher when the townland field reads Clogher. House numbers in 1901 and 1911 and form numbers in 1926 define a household. Names, ages and occupations are shown as written in the census transcription.",
+    "Households are matched across censuses by surname group, first name and age. First-name equivalents such as Maggie and Margaret were allowed, with an age tolerance of several years. Spelling stays as written in each source. Flanagan and Flanigan, Gildea and Guildea, M'Quaid and McQuade, and Browne and Brown are grouped for matching only, and every link is a proposed match until a civil or parish record confirms it. A shared surname is not proof of kinship. A 1926 entry written Kone, in a Hone household, is probably a Hone but is left as written. On the family plates, a family's people are everyone in a household headed by that surname, so the count can differ from everyone carrying the surname: three Flanagan women in John Lynch's household in 1926 appear under Lynch.",
+    {
+     "before": "Area, neighbours and names come from ",
+     "link": {
+      "href": "https://www.townlands.ie/donegal/tirhugh/donegal/clogher/clogher/",
+      "text": "townlands.ie"
+     },
+     "after": ": An Clochar, 1,277.67 acres (517.06 ha), with Barnesyneilly, Croaghnakern, Cullionboy, Meenabrock and Straness to the east and Birchhill, Druminnin, Finnabanes, Finnadoos and Leghawny to the west."
+    },
+    "The Tawnawilly parish register file supplied is only a page index of National Library of Ireland microfilm 04599/04, with no names, so no Clogher baptisms or marriages are included. A blank in the 1901 and 1911 language column is not necessarily English only, so the Irish counts are a minimum. Ages in 1901 are heaped at 60. The 1926 file has no occupation column, records every person as English only, and is missing four ages and two sexes."
+   ],
+   "numbers_intro": "Population fell from {n1901} to {n1911} between 1901 and 1911, then to {n1926} by 1926. Everyone with a religion recorded is Roman Catholic except the Pearsons, who are Methodist. Nine surname groups appear in all three censuses."
+  },
+  "records": {
+   "placeholder": "for example Gallagher"
+  }
+ }
+}
