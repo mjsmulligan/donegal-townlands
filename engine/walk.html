@@ -1,0 +1,707 @@
+<title>Cullionboy Townland Study</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&display=swap">
+<style>
+:root{
+  /* Layout concept: a gallery walk. One painted scene per plate, full width, with a museum caption beneath.
+     The sky moves from dawn (1850s) through day and late afternoon to dusk (1926) as the plates go on.
+     Cottages stand for households. Tables and checklists wait in the archive at the end. */
+  --wall:#F3F6F4; --paper:#FBFCFA; --ink:#1D2F33; --ink2:#53686D; --rule:#D3DDD9;
+  --hill:#7FAEA5; --hill-d:#4F8A86; --gorse:#EBC94B; --gorse-soft:#F5E8AC; --lough:#C4DAE5;
+  --display:'Newsreader', Georgia, 'Times New Roman', serif;
+  --body:'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  color-scheme: light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-snap-type:y proximity}
+body{margin:0;background:var(--wall);color:var(--ink);font:400 17px/1.6 var(--body);-webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums}
+a{color:var(--ink);text-decoration-color:var(--hill);text-underline-offset:3px}
+:focus-visible{outline:3px solid var(--ink);outline-offset:2px;border-radius:3px}
+.wrap,.sheet,.plate>*{min-width:0}
+.wrap{max-width:1240px;margin-inline:auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);font-weight:300;margin:0;text-wrap:balance;line-height:1.04;letter-spacing:-.012em}
+p{margin:0}
+.small{font-size:14px;color:var(--ink2);line-height:1.5}
+
+/* header and hud */
+.top{position:fixed;inset:0 0 auto;z-index:40;padding-top:env(safe-area-inset-top,0px);background:linear-gradient(180deg,rgba(243,246,244,.92),rgba(243,246,244,0));pointer-events:none}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:56px;gap:16px}
+.top .brand{font:italic 400 21px var(--display);pointer-events:auto;text-decoration:none}
+.top .right{display:flex;align-items:center;gap:14px;pointer-events:auto;min-width:0}
+.room-now{font:italic 400 17px var(--display);color:var(--ink2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.btn{appearance:none;border:1px solid var(--ink);background:rgba(251,252,250,.85);color:var(--ink);font:500 14px var(--body);padding:7px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.btn:hover{background:var(--ink);color:#fff}
+.hud{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:40;display:flex;align-items:center;gap:4px;background:rgba(251,252,250,.92);border:1px solid var(--rule);border-radius:999px;padding:4px;box-shadow:0 10px 30px rgba(29,47,51,.14);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.hud button{appearance:none;border:0;background:transparent;width:40px;height:40px;border-radius:50%;cursor:pointer;color:var(--ink);font-size:20px;line-height:1;display:grid;place-items:center}
+.hud button:hover{background:var(--gorse-soft)}
+.hud button[disabled]{opacity:.3;cursor:default;background:transparent}
+.count{font:500 15px var(--body);min-width:5.4em;text-align:center}
+.count i{font-style:normal;color:var(--ink2)}
+
+/* contents drawer */
+.drawer{position:fixed;inset:0;z-index:60;background:rgba(29,47,51,.35);display:none}
+.drawer.open{display:block}
+.drawer-in{position:absolute;right:0;top:0;bottom:0;width:min(440px,100%);background:var(--paper);padding:calc(20px + env(safe-area-inset-top,0px)) max(22px,env(safe-area-inset-right,0px)) 40px 28px;overflow:auto}
+.drawer h2{font-size:34px;margin-bottom:6px}
+.drawer h3{font:italic 400 20px var(--display);color:var(--ink2);margin:26px 0 6px}
+.drawer ol{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.drawer li a{display:grid;grid-template-columns:2.4em 1fr;gap:6px;padding:7px 4px;text-decoration:none;border-radius:6px;font-size:16px}
+.drawer li a:hover{background:var(--gorse-soft)}
+.drawer li a b{font-weight:500;color:var(--ink2)}
+.drawer .close{float:right}
+
+/* plates */
+.plate{position:relative;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;scroll-snap-align:start;background:var(--wall)}
+.art{position:relative;flex:1 1 auto;min-height:clamp(360px,64svh,820px);overflow:hidden}
+.art canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.roomtag{position:absolute;left:0;right:0;top:78px;pointer-events:none}
+.roomtag p{font:italic 300 clamp(20px,2.6vw,30px) var(--display);color:var(--ink2)}
+.roomtag b{font:500 14px var(--body);font-style:normal;color:var(--ink2);margin-right:10px}
+.bigtitle{position:absolute;left:0;right:0;top:clamp(120px,22vh,200px);pointer-events:none}
+.bigtitle h1{font-size:clamp(76px,17vw,230px);line-height:.88;letter-spacing:-.03em;font-weight:300}
+.bigtitle .irish{font:italic 300 clamp(22px,3vw,34px) var(--display);color:var(--hill-d);margin-bottom:10px}
+.walkhint{position:absolute;left:0;right:0;bottom:18px;pointer-events:none}
+.walkhint p{font-size:14px;color:var(--ink2)}
+.label{position:relative;background:var(--paper);border-top:1px solid var(--rule);padding-block:26px 96px}
+.lab-grid{display:grid;grid-template-columns:1fr;gap:18px 40px;align-items:start}
+.pn{display:block;font:500 14px var(--body);color:var(--ink2);margin-bottom:8px}
+.label h2{font-size:clamp(34px,4.4vw,58px)}
+.medium{font-size:14px;color:var(--ink2);margin-top:10px;line-height:1.45;max-width:38ch}
+.story{font:300 clamp(21px,2.1vw,26px)/1.38 var(--display);max-width:40ch}
+.story + .story{margin-top:12px}
+.yrs{display:flex;gap:6px;flex-wrap:wrap}
+.yr{appearance:none;border:1px solid var(--rule);background:var(--wall);font:500 14px var(--body);color:var(--ink);padding:7px 14px;border-radius:999px;cursor:pointer}
+.yr:hover{border-color:var(--ink)}
+.yr[aria-selected="true"]{background:var(--gorse-soft);border-color:var(--gorse)}
+.yr[disabled]{opacity:.4;cursor:default}
+.cnt{font-size:14px;color:var(--ink2);margin-top:10px}
+@media (min-width:900px){.lab-grid{grid-template-columns:minmax(220px,1fr) minmax(0,1.5fr) minmax(190px,.8fr)}}
+details.rec{margin-top:22px;border-top:1px solid var(--rule);padding-top:14px}
+details.rec summary{cursor:pointer;font-weight:500;font-size:15px;list-style:none;display:inline-flex;gap:10px;align-items:center}
+details.rec summary::-webkit-details-marker{display:none}
+details.rec summary::before{content:"+";display:inline-grid;place-items:center;width:22px;height:22px;border:1px solid var(--ink);border-radius:50%;font-size:15px;line-height:1}
+details.rec[open] summary::before{content:"\2212"}
+.rec-in{display:grid;gap:26px;grid-template-columns:minmax(0,1fr);margin-top:16px}
+@media (min-width:900px){.rec-in{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr)}}
+.rec-txt{display:flex;flex-direction:column;gap:13px;max-width:62ch;font-size:16.5px}
+.tbl{overflow-x:auto;border:1px solid var(--rule);border-radius:8px;background:var(--paper);max-width:100%}
+table{border-collapse:collapse;width:100%;font-size:13.5px;min-width:560px}
+th,td{text-align:left;padding:6px 10px;border-bottom:1px solid var(--rule);vertical-align:top}
+th{font-weight:600;background:#E6EDE9;position:sticky;top:0}
+td.n,th.n{text-align:right;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+
+/* paper sheet (Griffith's) */
+.sheetart{display:grid;grid-template-columns:minmax(0,1fr);justify-items:center;padding-inline:14px;padding-block:96px 56px}
+.sheet{position:relative;width:min(100%,1040px);background:var(--paper);border:1px solid var(--rule);border-radius:3px;box-shadow:0 30px 70px rgba(29,47,51,.16);padding:clamp(18px,3vw,38px);font-family:var(--display)}
+.sheet h3{font:400 clamp(26px,3vw,36px) var(--display);text-align:center;letter-spacing:.01em}
+.sheet .sub{text-align:center;font:italic 300 17px var(--display);color:var(--ink2);margin:4px 0 18px}
+.sheet .tbl{border:0;border-radius:0;background:transparent}
+.sheet table{font:400 15px var(--display);min-width:700px}
+.sheet th{background:transparent;font:500 13px var(--body);color:var(--ink2);position:static;border-bottom:1.5px solid var(--ink)}
+.sheet td{border-bottom:1px dotted var(--rule)}
+.sheet tr.tot td{border-top:1.5px solid var(--ink);border-bottom:0;font-weight:500}
+.sheet .foot{margin-top:14px;font:400 14px var(--body);color:var(--ink2);max-width:80ch}
+
+/* treemap */
+.treeart{padding-block:92px 40px;display:grid;place-items:center}
+.tree{position:relative;width:min(100%,1160px);height:clamp(380px,60svh,640px);margin-inline:auto}
+.tile{position:absolute;overflow:hidden;padding:8px 10px;font:italic 400 15px/1.15 var(--display);color:var(--ink);border-radius:3px;display:flex;flex-direction:column;gap:3px}
+.tile span{font:500 12px var(--body);font-style:normal;color:rgba(29,47,51,.75)}
+.tile:hover{filter:brightness(1.05);outline:2px solid var(--ink);z-index:2}
+.treenote{margin-top:12px;font-size:14px;color:var(--ink2)}
+
+/* empty frames */
+.frames{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:22px;width:min(100%,1160px);margin-inline:auto;padding-block:100px 56px}
+.frame{aspect-ratio:4/5;border:2px dashed var(--hill-d);border-radius:3px;padding:12px;display:flex;flex-direction:column;justify-content:flex-end;background:rgba(251,252,250,.55);gap:4px}
+.frame.held{border:2px solid var(--gorse);background:rgba(251,252,250,.85)}
+.frame b{font:italic 400 18px/1.15 var(--display)}
+.frame span{font-size:13px;color:var(--ink2);line-height:1.35}
+.frame em{font-style:normal;font-weight:500;font-size:12px;color:var(--ink)}
+
+/* archive */
+.archive{background:var(--paper);border-top:1px solid var(--rule);scroll-snap-align:start;min-height:auto;display:block}
+.archive .wrap{padding-block:clamp(64px,9vw,110px) 32px}
+.archive h2{font-size:clamp(38px,5vw,64px);margin-bottom:6px}
+.archive .pn{margin-bottom:10px}
+.archive .intro{max-width:62ch;color:var(--ink2);margin:14px 0 30px}
+.q{list-style:none;margin:0;padding:0;display:grid;gap:4px;max-width:72ch}
+.q label{display:grid;grid-template-columns:24px 1fr;gap:12px;padding:10px 12px;border-radius:10px;cursor:pointer;align-items:start}
+.q label:hover{background:var(--wall)}
+.q input{width:20px;height:20px;margin:2px 0 0;accent-color:var(--hill-d)}
+.q input:checked+span{color:var(--ink2);text-decoration:line-through;text-decoration-color:var(--hill)}
+.cols{display:grid;gap:40px;grid-template-columns:minmax(0,1fr)}
+@media (min-width:900px){.cols{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+.prose{display:flex;flex-direction:column;gap:13px;max-width:62ch}
+.rtabs{display:flex;flex-wrap:wrap;gap:6px;margin-block:18px 12px}
+.rtab{appearance:none;border:1px solid var(--rule);background:var(--wall);font:500 14px var(--body);padding:7px 14px;border-radius:999px;cursor:pointer;color:var(--ink)}
+.rtab[aria-selected="true"]{background:var(--gorse-soft);border-color:var(--gorse)}
+.rfilter{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:8px}
+.rfilter input{font:inherit;font-size:15px;padding:8px 12px;border:1px solid var(--rule);border-radius:8px;background:var(--wall);color:var(--ink);min-width:0;width:min(100%,280px)}
+.rscroll{max-height:70vh;overflow:auto}
+.end{text-align:center;padding-block:46px 130px;font:italic 300 22px var(--display);color:var(--ink2);background:var(--paper)}
+.tip{position:fixed;pointer-events:none;background:var(--ink);color:#fff;font-size:13px;line-height:1.35;padding:6px 10px;border-radius:6px;max-width:260px;z-index:70;transform:translate(-50%,-130%)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;scroll-snap-type:none}}
+</style>
+
+<header class="top"><div class="wrap">
+  <a class="brand" href="#p01">Cullionboy</a>
+  <div class="right"><span class="room-now" id="roomNow"></span><button class="btn" id="openC" aria-haspopup="dialog">Contents</button></div>
+</div></header>
+
+<main id="walk"></main>
+
+<div class="hud" role="group" aria-label="Walk the townland">
+  <button id="prev" aria-label="Previous plate">&#8592;</button>
+  <span class="count" id="count" aria-live="polite"></span>
+  <button id="next" aria-label="Next plate">&#8594;</button>
+</div>
+
+<div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Contents">
+  <div class="drawer-in" id="drawerIn"></div>
+</div>
+<div class="tip" id="tip" hidden></div>
+
+<script>
+(function(){
+'use strict';
+var DATA = __DATA__;
+var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var $ = function(s,el){return (el||document).querySelector(s)};
+function h(tag,props){
+  var e=document.createElement(tag), kids=Array.prototype.slice.call(arguments,2);
+  if(props) for(var k in props){
+    var v=props[k];
+    if(k==='class') e.className=v;
+    else if(k==='text') e.textContent=v;
+    else if(k==='style') Object.assign(e.style,v);
+    else if(k.indexOf('on')===0) e.addEventListener(k.slice(2),v);
+    else e.setAttribute(k,v);
+  }
+  (function add(list){list.forEach(function(c){
+    if(c==null||c===false) return;
+    if(Array.isArray(c)) add(c);
+    else e.append(c.nodeType?c:document.createTextNode(String(c)));
+  })})(kids);
+  return e;
+}
+
+/* ================= data: families, Griffith's, census ================= */
+var COL={Gillespie:'#4C8DB8',Dunnion:'#3FA796',Cassidy:'#8A7FD1',Kelly:'#EA7F90',Bradley:'#5DAA6B',Gildea:'#C07BC4',Colhoun:'#EE8F6A',Harvey:'#86BCE0',McMullen:'#A3C34A',McCool:'#6B8DE6',Doherty:'#F2A24E',Sweeney:'#45B1C9',Dunlevy:'#78C2A4',Hone:'#D9534F',McGettigan:'#5560C8',McCadden:'#1D2F33',Other:'#A9B7B3'};
+var TERR=['Gillespie','Dunnion','Cassidy','Bradley','Kelly','McCool','Gildea','Colhoun','Doherty','Sweeney','Dunlevy','Harvey','McMullen','Hone','McGettigan','Other'];
+var GMAP={dunleavy:'Dunlevy',dunlevy:'Dunlevy',gildea:'Gildea',guildea:'Gildea',colhoun:'Colhoun',coulhoun:'Colhoun',sweeny:'Sweeney',sweeney:'Sweeney',mcswyne:'Sweeney',dimon:'Dunnion',dunnion:'Dunnion',gillespie:'Gillespie',cassidy:'Cassidy',kelly:'Kelly',bradley:'Bradley',harvey:'Harvey',mcmullen:'McMullen',mccool:'McCool',doherty:'Doherty',hone:'Hone',mcgettigan:'McGettigan',mccadden:'McCadden'};
+function G(s){return GMAP[String(s).toLowerCase().replace(/[^a-z]/g,'')]||'Other'}
+function T(g){return TERR.indexOf(g)>=0?g:'Other'}
+function A(a,r,p){return a+r/4+p/160}
+function surOf(name){var w=name.replace(/\(.*\)/,'').trim().split(/\s+/);return w[w.length-1]}
+
+var GR=[
+ {lot:'1a',hd:'1a',names:'Paul Dunleavy',occ:'Paul Dunleavy',les:'Earl of Arran',desc:'House, office, and land',area:'59 3 28',ac:A(59,3,28),land:'9 10 0',bld:'1 5 0',tot:'10 15 0'},
+ {lot:'1b',hd:'1b',names:'Michael Mulrenin',occ:'Michael Mulrenin',les:'Paul Dunleavy',desc:'House and garden',area:'0 0 12',ac:A(0,0,12),land:'0 2 0',bld:'0 3 0',tot:'0 5 0'},
+ {lot:'2',hd:'2',names:'Hugh McGinty',occ:'Hugh McGinty',les:'Earl of Arran',desc:'House and land',area:'50 0 20',ac:A(50,0,20),land:'1 5 0',bld:'0 5 0',tot:'1 10 0'},
+ {lot:'3',hd:'3',names:'Jeremiah and Patrick Gildea',occ:'Jeremiah Gildea',les:'Same',desc:'House, office, & land',area:'27 2 26 (shared)',ac:A(27,2,26),land:'2 8 0',bld:'0 7 0',tot:'2 15 0'},
+ {lot:'3',hd:'3',occ:'Patrick Gildea',les:'Same',desc:'House, office, & land',area:'shared',land:'2 8 0',bld:'0 12 0',tot:'3 0 0'},
+ {lot:'4',hd:'4',names:'Mary Doherty',occ:'Mary Doherty',les:'Same',desc:'House, office, and land',area:'23 1 35',ac:A(23,1,35),land:'3 0 0',bld:'0 5 0',tot:'3 5 0'},
+ {lot:'5',hd:'5',names:'Mary Kelly',occ:'Mary Kelly',les:'Same',desc:'House, office, and land',area:'22 2 20',ac:A(22,2,20),land:'2 18 0',bld:'0 7 0',tot:'3 5 0'},
+ {lot:'6',hd:'6',names:'George Dimon',occ:'George Dimon',les:'Same',desc:'House, office, and land',area:'25 3 35',ac:A(25,3,35),land:'2 18 0',bld:'0 7 0',tot:'3 5 0'},
+ {lot:'7',hd:'7',names:'Myles McSwyne',occ:'Myles McSwyne',les:'Same',desc:'House, office, and land',area:'28 2 35',ac:A(28,2,35),land:'2 3 0',bld:'0 7 0',tot:'2 10 0'},
+ {lot:'8',hd:'8',names:'Lewis and Widow Dunleavy',occ:'Lewis Dunleavy',les:'Same',desc:'House, office, & land',area:'35 0 20 (shared)',ac:A(35,0,20),land:'1 10 0',bld:'0 5 0',tot:'1 15 0'},
+ {lot:'8',hd:'8',occ:'Widow Dunleavy',les:'Same',desc:'House, office, & land',area:'shared',land:'1 10 0',bld:'0 5 0',tot:'1 15 0'},
+ {lot:'9',hd:'9',names:'James McSwyne',occ:'James McSwyne',les:'Same',desc:'Land',area:'36 2 20',ac:A(36,2,20),land:'3 0 0',bld:'none',tot:'3 0 0'},
+ {lot:'10',hd:'10',names:'John Doherty',occ:'John Doherty',les:'Same',desc:'House and land',area:'35 2 0',ac:A(35,2,0),land:'2 3 0',bld:'0 2 0',tot:'2 5 0'},
+ {lot:'11',hd:'11',names:'Bryan Hallaghy',occ:'Bryan Hallaghy',les:'Same',desc:'House, office, and land',area:'6 2 35',ac:A(6,2,35),land:'3 7 0',bld:'0 8 0',tot:'3 15 0'},
+ {lot:'12, 13',hd:'12',names:'Michael McCool',occ:'Michael McCool',les:'Same',desc:'House, offices, & land',area:'14 0 0 and 60 0 0',ac:A(14,0,0)+A(60,0,0),land:'6 0 0 and 4 5 0',bld:'0 10 0',tot:'10 15 0'},
+ {lot:'12a',hd:'12',occ:'Patrick McCool',les:'Michael McCool',desc:'House and office',area:'none',land:'none',bld:'0 10 0',tot:'0 10 0'},
+ {lot:'14',hd:'14',names:'Edward McCool (Lough Cull)',occ:'Edw. McCool (Lough Cull)',les:'Earl of Arran',desc:'House, office, and land',area:'7 0 30',ac:A(7,0,30),land:'2 15 0',bld:'0 10 0',tot:'3 5 0'},
+ {lot:'15a',hd:'15',names:'Unity and Robert Gillespie',occ:'Unity Gillespie',les:'Same',desc:'House, offices, & land',area:'125 2 5 (shared)',ac:A(125,2,5),land:'8 0 0',bld:'1 5 0',tot:'9 5 0'},
+ {lot:'15b',hd:'15',occ:'Robert Gillespie',les:'Same',desc:'House, offices, & land',area:'shared',land:'4 0 0',bld:'0 15 0',tot:'4 15 0'},
+ {lot:'16',hd:'16',names:'Edward McCool (Wee)',occ:'Edward McCool (Wee)',les:'Same',desc:'House, office, and land',area:'32 1 10',ac:A(32,1,10),land:'3 15 0',bld:'0 5 0',tot:'4 0 0'},
+ {lot:'17',hd:'17',names:'Edward McCool (Long)',occ:'Edward McCool (Long)',les:'Same',desc:'House, office, and land',area:'50 3 30',ac:A(50,3,30),land:'3 15 0',bld:'0 10 0',tot:'4 5 0'},
+ {lot:'18',hd:'18',names:'John and Francis Hone',occ:'John Hone',les:'Edwd. McCool (Long)',desc:'House and land',area:'3 0 10 (shared)',ac:A(3,0,10),land:'0 7 0',bld:'0 8 0',tot:'0 15 0'},
+ {lot:'18',hd:'18',occ:'Francis Hone',les:'Edwd. McCool (Long)',desc:'Land',area:'shared',land:'0 7 0',bld:'none',tot:'0 7 0'},
+ {lot:'19',hd:'19',names:'James Gillespie',occ:'James Gillespie',les:'Earl of Arran',desc:'House, office, and land',area:'50 1 0',ac:A(50,1,0),land:'2 7 0',bld:'0 8 0',tot:'2 15 0'},
+ {lot:'20',hd:'20',names:'Phideas Bradley',occ:'Phideas Bradley',les:'Same',desc:'House, office, and land',area:'102 0 18',ac:A(102,0,18),land:'3 10 0',bld:'0 10 0',tot:'4 0 0'}
+];
+var MOUNTAIN=A(74,2,5)+A(740,0,14), WATER=A(42,0,32);
+
+function censusHH(y){
+  var rows=DATA.census[y], map={}, order=[];
+  rows.forEach(function(r){var k=String(r.h); if(!map[k]){map[k]=[];order.push(k)} map[k].push(r)});
+  return order.map(function(k){
+    var m=map[k], head;
+    if(y==='1926') head=m.find(function(r){return r.r==='Head'})||m.find(function(r){return r.r===(r.f+' '+r.s)})||m[0];
+    else head=m.find(function(r){return /^Head/.test(r.r)})||m[0];
+    var rest=m.filter(function(r){return r!==head}).sort(function(a,b){return (b.a==null?-1:b.a)-(a.a==null?-1:a.a)});
+    return {key:k,year:y,head:head,hname:head.f+' '+head.s,grp:T(G(head.s)),members:[head].concat(rest)};
+  });
+}
+function griffHH(){
+  var map={}, order=[];
+  GR.forEach(function(r){if(!map[r.hd]){map[r.hd]=[];order.push(r.hd)} map[r.hd].push(r)});
+  return order.map(function(k){
+    var m=map[k], first=m[0];
+    return {key:k,year:'1850s',head:{f:'',s:surOf(first.occ)},hname:first.names||first.occ,grp:T(G(surOf(first.occ))),lot:first.lot,members:m};
+  });
+}
+var SN={'1850s':griffHH(),'1901':censusHH('1901'),'1911':censusHH('1911'),'1926':censusHH('1926')};
+var YEARS=['1850s','1901','1911','1926'], PHASE={'1850s':0,'1901':1,'1911':2,'1926':3};
+function hhFor(year,keys){return SN[year].filter(function(x){return keys.indexOf(x.grp)>=0})}
+function peopleOf(list){return list.reduce(function(n,x){return n+x.members.length},0)}
+
+/* ================= colour and scene engine ================= */
+function hex(h){return [parseInt(h.substr(1,2),16),parseInt(h.substr(3,2),16),parseInt(h.substr(5,2),16)]}
+function toHex(a){return '#'+a.map(function(v){v=Math.max(0,Math.min(255,Math.round(v)));return (v<16?'0':'')+v.toString(16)}).join('')}
+function mixh(a,b,f){var x=hex(a),y=hex(b);return toHex([x[0]+(y[0]-x[0])*f,x[1]+(y[1]-x[1])*f,x[2]+(y[2]-x[2])*f])}
+function lerp(a,b,f){return a+(b-a)*f}
+var PH=[
+ {sky:['#F7EEF2','#E9EFF4','#DDEBEE'],far:'#E4E4EE',near:'#A8C3C5',disc:'#F8DACA',ground:'#B7CEC6',house:'#35545C',glow:'#F6E2A0',ga:.55,dx:.2,dy:.6,dr:.055},
+ {sky:['#F2F8F9','#E1EDF2','#D3E7EA'],far:'#DAE7EE',near:'#9CC1BB',disc:'#F6E9AE',ground:'#B1CEC3',house:'#35545C',glow:'#F6E2A0',ga:.3,dx:.34,dy:.3,dr:.05},
+ {sky:['#F8F3DD','#EEF0DA','#DCEBE3'],far:'#ECE8D3',near:'#AFC9A8',disc:'#F5DF98',ground:'#BBD1A8',house:'#35545C',glow:'#F6E2A0',ga:.45,dx:.74,dy:.4,dr:.065},
+ {sky:['#EFEAF5','#E1E1F0','#D2DCE9'],far:'#D9DAEA',near:'#9BB0C5',disc:'#F6F3FC',ground:'#A8BCC6',house:'#2F4A57',glow:'#F8E8A8',ga:.95,dx:.8,dy:.22,dr:.04}
+];
+function mixPh(p){
+  p=Math.max(0,Math.min(3,p)); var i=Math.min(2,Math.floor(p)), f=p-i, a=PH[i], b=PH[i+1], o={};
+  o.sky=[0,1,2].map(function(k){return mixh(a.sky[k],b.sky[k],f)});
+  ['far','near','disc','ground','house','glow'].forEach(function(k){o[k]=mixh(a[k],b[k],f)});
+  ['ga','dx','dy','dr'].forEach(function(k){o[k]=lerp(a[k],b[k],f)});
+  return o;
+}
+function rnd(seed){return function(){seed|=0;seed=seed+0x6D2B79F5|0;var q=Math.imul(seed^seed>>>15,1|seed);q=q+Math.imul(q^q>>>7,61|q)^q;return((q^q>>>14)>>>0)/4294967296}}
+
+var scenes=[], tipEl=$('#tip');
+function makeScene(art,opts){
+  var cv=h('canvas',{'aria-hidden':'true'}); art.prepend(cv);
+  var r=rnd(opts.seed||3), lay=[], kind=opts.kind||'hills';
+  var bases=kind==='mountain'?[.20,.32,.44,.57,.70]:(kind==='mist'?[.38,.46,.54,.62,.72]:[.34,.44,.54,.63,.72]);
+  var amps=kind==='mountain'?[96,78,60,42,16]:[40,36,31,26,13];
+  for(var i=0;i<5;i++) lay.push({base:bases[i],amp:amps[i],f:[.0036+r()*.002+i*.0006,.0098+r()*.003,.0215+r()*.006],ph:[r()*6,r()*6,r()*6]});
+  var specks=[]; for(i=0;i<(opts.gorse===false?0:130);i++) specks.push({u:r(),v:.1+r()*.8,s:1.1+r()*1.8});
+  var sc={cv:cv,ctx:cv.getContext('2d'),W:0,H:0,ph:opts.ph||0,phT:opts.ph||0,kind:kind,lay:lay,specks:specks,houses:opts.houses||[],names:!!opts.names,hits:[],vis:false,dirty:true,fadeT:performance.now(),mist:opts.mist!==false};
+  sc.setHouses=function(list,ph){sc.houses=list;if(ph!=null)sc.phT=ph;sc.fadeT=performance.now();sc.dirty=true;if(reduce)sc.ph=sc.phT};
+  function size(){var d=Math.min(2,window.devicePixelRatio||1),b=art.getBoundingClientRect();sc.W=b.width;sc.H=b.height;cv.width=Math.round(sc.W*d);cv.height=Math.round(sc.H*d);sc.ctx.setTransform(d,0,0,d,0,0);sc.dirty=true}
+  if('ResizeObserver' in window) new ResizeObserver(size).observe(art); else window.addEventListener('resize',size);
+  size();
+  if('IntersectionObserver' in window) new IntersectionObserver(function(e){sc.vis=e[0].isIntersecting;if(sc.vis)sc.dirty=true},{rootMargin:'120px'}).observe(art); else sc.vis=true;
+  cv.addEventListener('pointermove',function(e){hover(sc,e)});
+  cv.addEventListener('pointerdown',function(e){hover(sc,e,true)});
+  cv.addEventListener('pointerleave',function(){tipEl.hidden=true});
+  scenes.push(sc); return sc;
+}
+function hover(sc,e,sticky){
+  var b=sc.cv.getBoundingClientRect(), x=e.clientX-b.left, y=e.clientY-b.top, best=null;
+  sc.hits.forEach(function(p){if(x>=p.x0&&x<=p.x1&&y>=p.y0&&y<=p.y1) best=p});
+  if(best){tipEl.hidden=false;tipEl.textContent=best.t;tipEl.style.left=e.clientX+'px';tipEl.style.top=(e.clientY-6)+'px';sc.cv.style.cursor='help';if(sticky){clearTimeout(hover.t);hover.t=setTimeout(function(){tipEl.hidden=true},2600)}}
+  else{tipEl.hidden=true;sc.cv.style.cursor=''}
+}
+function ridgeY(sc,L,i,x,t){var d=t*.04*(1+i*.35),H=sc.H,peaky=sc.kind==='mountain'&&i<3;
+  var a=Math.sin(x*L.f[0]+L.ph[0]+d), b=Math.sin(x*L.f[1]+L.ph[1]-d*.7), c=Math.sin(x*L.f[2]+L.ph[2]+d*1.3);
+  if(peaky){a=1-2*Math.abs(a)*Math.abs(a)}
+  return H*L.base+L.amp*(.55*a+.3*b+.15*c)}
+function placeHouses(list,opts){
+  opts=opts||{}; var n=list.length, rows=n>12?3:(n>6?2:1), per=Math.ceil(n/rows), out=[], r=rnd(11+n);
+  var order=list.slice().sort(function(a,b){return TERR.indexOf(a.grp)-TERR.indexOf(b.grp)||(a.key>b.key?1:-1)});
+  order.forEach(function(hh,i){
+    var row=Math.floor(i/per), idx=i%per, cnt=Math.min(per,n-row*per);
+    var spread=Math.min(.84,.2*cnt+.14), off=rows>1&&row%2?.5/cnt*spread:0;
+    var fx=.5+((idx+.5)/cnt-.5)*spread+off*.4+(r()-.5)*.03/Math.max(1,rows-1);
+    var ys=rows===3?[.76,.83,.905]:(rows===2?[.775,.875]:[.81]), ss=rows===3?[.76,.94,1.12]:(rows===2?[.88,1.1]:[1.2]);
+    var np=hh.members.length;
+    out.push({fx:fx,fy:ys[row]+(r()-.5)*.012,s:ss[row],w:24+6.5*Math.sqrt(np),lit:Math.min(3,1+Math.floor(np/5)),color:COL[hh.grp]||COL.Other,name:opts.names?(hh.members[0].f?hh.members[0].f+' '+hh.members[0].s:hh.hname):'',
+      text:hh.year==='1850s'?(hh.hname+', lot '+hh.lot):(hh.hname+', '+np+(np===1?' person':' people'))});
+  });
+  return out;
+}
+function drawScene(sc,t){
+  var c=sc.ctx,W=sc.W,H=sc.H; if(!W||!H) return;
+  var P=mixPh(sc.ph), unit=Math.max(.62,Math.min(1.22,W/1200));
+  var g=c.createLinearGradient(0,0,0,H*.8); g.addColorStop(0,P.sky[0]);g.addColorStop(.55,P.sky[1]);g.addColorStop(1,P.sky[2]);
+  c.fillStyle=g;c.fillRect(0,0,W,H);
+  var dx=P.dx*W, dy=P.dy*H*(sc.kind==='mountain'?.7:1), dr=P.dr*Math.min(W,1400)+10;
+  var hg=c.createRadialGradient(dx,dy,dr*.4,dx,dy,dr*3.4); hg.addColorStop(0,'rgba(255,255,255,.55)');hg.addColorStop(1,'rgba(255,255,255,0)');
+  c.fillStyle=hg;c.fillRect(0,0,W,H);
+  c.beginPath();c.arc(dx,dy,dr,0,7);c.fillStyle=P.disc;c.fill();
+  var i,x;
+  for(i=0;i<5;i++){
+    var L=sc.lay[i], col=mixh(P.far,P.near,i/4);
+    if(i===4) col=P.ground;
+    c.beginPath();c.moveTo(0,H);
+    for(x=0;x<=W+8;x+=8)c.lineTo(x,ridgeY(sc,L,i,x,t));
+    c.lineTo(W,H);c.closePath();c.fillStyle=col;c.fill();
+    c.lineWidth=1;
+    for(var j=0;j<3;j++){c.beginPath();for(x=0;x<=W+8;x+=8){var yy=ridgeY(sc,L,i,x,t)+5+j*9;x?c.lineTo(x,yy):c.moveTo(x,yy)}c.strokeStyle='rgba(60,110,110,'+(.26-j*.07)+')';c.stroke()}
+    if(sc.mist&&(i===1||i===3)){
+      for(var m=0;m<3;m++){var mx=((m*.37+t*.004*(i===1?1:-1))%1.3-.15)*W,my=H*(L.base+.05+m*.02),mr=W*.28;
+        c.save();c.translate(mx,my);c.scale(1,.12);var mg=c.createRadialGradient(0,0,0,0,0,mr);mg.addColorStop(0,'rgba(255,255,255,.55)');mg.addColorStop(1,'rgba(255,255,255,0)');c.fillStyle=mg;c.beginPath();c.arc(0,0,mr,0,7);c.fill();c.restore()}
+    }
+    if(i===3&&sc.specks.length){
+      var ga=sc.ph>2.4?.55:.95;
+      sc.specks.forEach(function(s){var px=s.u*W,y1=ridgeY(sc,sc.lay[3],3,px,t),y2=ridgeY(sc,sc.lay[4],4,px,t);if(y2-y1<10)return;c.beginPath();c.arc(px,y1+(y2-y1)*s.v,s.s*unit,0,7);c.fillStyle='rgba(235,201,75,'+ga+')';c.fill()});
+    }
+  }
+  var fg=c.createLinearGradient(0,H*.78,0,H);fg.addColorStop(0,'rgba(255,255,255,0)');fg.addColorStop(1,'rgba(79,138,134,.16)');c.fillStyle=fg;c.fillRect(0,H*.78,W,H*.22);
+  sc.hits=[];
+  var fa=Math.min(1,(performance.now()-sc.fadeT)/520); if(fa<1) sc.dirty=true;
+  c.globalAlpha=fa;
+  sc.houses.slice().sort(function(a,b){return a.fy-b.fy}).forEach(function(hs){
+    var s=hs.s*unit, w=hs.w*s, bh=w*.56, rh=w*.34, x0=hs.fx*W, y0=hs.fy*H;
+    var roof=mixh(P.house,hs.color,.5);
+    if(P.ga>.6){var gl=c.createRadialGradient(x0,y0-bh*.5,2,x0,y0-bh*.5,w*1.4);gl.addColorStop(0,'rgba(248,232,168,.28)');gl.addColorStop(1,'rgba(248,232,168,0)');c.fillStyle=gl;c.fillRect(x0-w*1.5,y0-w*1.6,w*3,w*2)}
+    c.fillStyle='rgba(40,70,70,.16)';c.beginPath();c.ellipse(x0+w*.1,y0+1,w*.62,w*.09,0,0,7);c.fill();
+    c.fillStyle=P.house;c.fillRect(x0-w/2,y0-bh,w,bh);
+    c.fillStyle=roof;c.beginPath();c.moveTo(x0-w/2-w*.07,y0-bh);c.lineTo(x0,y0-bh-rh);c.lineTo(x0+w/2+w*.07,y0-bh);c.closePath();c.fill();
+    c.fillStyle=P.house;c.fillRect(x0+w*.2,y0-bh-rh*.8,w*.1,rh*.7);
+    var ww=w*.15,wh=bh*.3;
+    for(var k=0;k<hs.lit;k++){var wx=x0-w*.36+k*(w*.3);
+      var wg=c.createRadialGradient(wx+ww/2,y0-bh*.62,1,wx+ww/2,y0-bh*.62,ww*2.2);wg.addColorStop(0,'rgba(246,226,160,'+(.55*P.ga+.15)+')');wg.addColorStop(1,'rgba(246,226,160,0)');
+      c.fillStyle=wg;c.fillRect(wx-ww*2,y0-bh*.62-ww*2.4,ww*5,ww*5);
+      c.fillStyle=P.glow;c.fillRect(wx,y0-bh*.78,ww,wh)}
+    c.fillStyle='rgba(20,40,45,.55)';c.fillRect(x0+w*.28,y0-bh*.5,w*.14,bh*.5);
+    for(var q=0;q<3;q++){var ph=((t*.12+q/3+hs.fx*3)%1),sx=x0+w*.25+Math.sin(ph*6+q)*w*.1*(ph+.3),sy=y0-bh-rh-ph*w*1.1;c.beginPath();c.arc(sx,sy,w*(.05+ph*.1),0,7);c.fillStyle='rgba(255,255,255,'+(.5*(1-ph))+')';c.fill()}
+    if(sc.names&&hs.name){c.font='italic 400 '+Math.round(13*unit+1)+'px Newsreader, Georgia, serif';c.textAlign='center';c.fillStyle='rgba(29,47,51,.9)';c.fillText(hs.name,x0,y0+17*unit)}
+    sc.hits.push({x0:x0-w*.6,x1:x0+w*.6,y0:y0-bh-rh-8,y1:y0+(sc.names?22:6),t:hs.text});
+  });
+  c.globalAlpha=1;
+}
+var lastT=0;
+function loop(ts){
+  requestAnimationFrame(loop);
+  if(ts-lastT<38) return; lastT=ts;
+  scenes.forEach(function(sc){
+    if(!sc.vis) return;
+    if(Math.abs(sc.ph-sc.phT)>.003){sc.ph+=(sc.phT-sc.ph)*.09;sc.dirty=true}
+    if(!reduce||sc.dirty){drawScene(sc,reduce?0:ts/1000);sc.dirty=false}
+  });
+}
+
+/* ================= copy ================= */
+var FAM=[
+ {keys:['Gillespie'],name:'The Gillespies',tab:'Gillespie',medium:'Griffith\'s Valuation and three census returns',story:"The biggest name in the townland. Unity and Robert Gillespie held the largest holding on Griffith's page, and by 1901 there were three Gillespie households under three roofs. Thomas Gillespie married a Doherty, and by 1926 there were four.",paras:[
+  "Griffith's: Unity Gillespie (lot 15a) and Robert Gillespie (15b) held 125a 2r 5p together under the Earl of Arran, valued at £9 5s and £4 15s, the largest holding on the page. James Gillespie (lot 19) held 50a 1r 0p, valued at £2 15s. Unity and Robert are also first names in the 1901 Gillespie households, which fits kinship but does not prove it.",
+  "In 1901 Ellen Gillespie (45, farmer and seamstress) headed the household of seven children, Patrick (78) and Katie (76) headed another with son Owen (37) and daughter Unity (42), and Anne (72, widow, wool spinner) headed a third.",
+  "Thomas Gillespie, Ellen's son aged 20 in 1901, appears at 30 in 1911 as son-in-law in John Doherty's house, married to Maggie Doherty (15 in 1901). He is the likely Thomas of 44 in 1926, with wife Margaret (Maggie) and seven children. A second Thomas (52 in 1911, with wife Ellen and sons John, Peter and James) reappears at 69 in 1926 with son James (14 in 1911, 29 in 1926), James's wife Bella and two small children. He is not in the 1901 household, where Ellen is recorded as married and heading it, so he was probably away that night.",
+  "Owen is 37 in 1901 and 56 in 1911, an age gap that does not fit, but his place beside his sister Unity (42, then 60) makes the match secure. In 1926 Owen heads a household that includes Patrick McCadden (22). Edward Gillespie, 32 and single and alone in 1926, does not match cleanly to Ellen's son Edward (15 in 1901)."]},
+ {keys:['Dunnion'],name:'The Dunnions',tab:'Dunnion',medium:'Griffith\'s Valuation (as Dimon) and three census returns',story:"One house, fourteen people. In 1901 Michael and Catherine Dunnion kept eight children, his mother, his sister, a nephew and a farm servant under one roof. By 1926 four of those children appear to be still at home, all of them around thirty or older.",paras:[
+  "Griffith's: George Dimon, lot 6, 25a 3r 35p, valued at £3 5s, under the Earl of Arran. The spelling differs, but George recurs in the 1901 household, so the match is a working hypothesis.",
+  "In 1901 Michael Dunnion (48) and Catherine (45) lived with his mother Letitia (70), sister Rose (50), eight children aged 1 to 10, a nephew George (20, shepherd) and a farm servant. By 1911 Letitia was 84 and the household held 14 Dunnions plus a servant, among them George (32), a clerk of Donegal Union, who is the 1901 nephew now recorded as grandson.",
+  "In 1926 Michael (71) and Catherine (60) remain with four adult children: Marianne (34), George (31), Michael S (30) and Andrew E. These are the 1901 children Mary A, George, Michael S and Andrew E, so four of the eight 1901 children are still at home 25 years on."]},
+ {keys:['Cassidy'],name:'The Cassidys',tab:'Cassidy',medium:'Three census returns. Not on Griffith\'s page',story:"No Cassidy appears on Griffith's page. By 1926 two widows, Bella and Bridget, each run a house of their own, with five children apiece.",paras:[
+  "Griffith's: no Cassidy appears on the page.",
+  "Two households in 1901 and 1911 can be told apart by the John Cassidy in each. In 1901 John Cassidy (40) headed house 12, and a second John Cassidy (36, agricultural labourer) lived in James Sweeny's house with wife Isabella and three small children. In 1911 John Cassidy (49) heads house 12 with wife Bella (Isabella), and his daughters Ellen T (3 in 1901, 14 in 1911) and Bridget (2, then 12), so the 1901 labourer son-in-law has taken over house 12. The first John Cassidy's family (Ellen, Hugh, Mary A, Francis, John) is not in Cullionboy in 1911.",
+  "Hugh Cassidy (62), wife Bridget and widowed son Patrick (32) appear as a separate household in 1911 with no 1901 match. In 1926 there are two Cassidy households: Bella (58, widow, the 1911 wife) with five children, and Bridget (51, widow) with five children, a Bridget Cassidy (83, widow) and Joseph Hannigan (33). Whether Bridget (51) is Patrick's wife or widow is not shown by the records, and both households contain a John of 15, so the family links need a civil or parish record."]},
+ {keys:['Kelly'],name:'The Kellys',tab:'Kelly',medium:'Griffith\'s Valuation and three census returns',story:"Mary Kelly held lot 5 in the 1850s, and the name never leaves. In 1926 Bella Kelly runs the house with four children, and the form records that their father is dead.",paras:[
+  "Griffith's: Mary Kelly, lot 5, 22a 2r 20p, valued at £3 5s, under the Earl of Arran. She is the only Kelly on the page.",
+  "Thomas Kelly (60) and Margaret headed the household in 1901 with four adult sons: Thomas, Joseph, John and James. By 1911 Thomas and Marget are 74, Joseph (35) is married to Bella (32) and John Patrick (30) is single. By 1926 Bella (45) heads the house with Mary Katie (13), Rose Anne (12), Thomas Joseph (9) and Hugh Patrick (7), and the form notes that the father is dead. The four children were all born after 1911, so Joseph and Bella had no children in the 1911 return."]},
+ {keys:['Bradley'],name:'The Bradleys',tab:'Bradley',medium:'Griffith\'s Valuation and three census returns',story:"Phideas Bradley held 102 acres in the 1850s, the biggest holding of any single tenant. By 1926 Patrick Bradley heads a household of ten, with his mother Ellen, aged 81, still at the table.",paras:[
+  "Griffith's: Phideas Bradley, lot 20, 102a 0r 18p, valued at £4, the largest holding of any single tenant on the page. Phideas does not recur in the censuses, so the link to Dan Bradley (60 in 1901) is unproven.",
+  "Dan Bradley (60), Ellen (54) and three adult children made five people in 1901. By 1911 Dan had died and Ellen (69, widow) headed the house with sons Patrick (36, married) and James (34), Patrick's wife Rose (28) and two grandchildren, Mary Ellen (4) and Daniel (2). Patrick has no 1901 entry in Cullionboy. In 1926 Patrick (56) heads ten people, including Ellen (81), Rose, James (54) and six children, and Philip (3) appears on a separate form with Patrick named as head. Mary (18) and Daniel (16) are the 1911 grandchildren."]},
+ {keys:['Gildea'],name:'The Gildeas',tab:'Gildea',medium:'Griffith\'s Valuation and three census returns',story:"Siblings who stayed. In 1901 and 1911 the Gildeas are brothers and sisters keeping house together, and in 1926 Patrick, Ellen and Mary Guildea share one household, aged 75, 72 and 76.",paras:[
+  "Griffith's: Jeremiah and Patrick Gildea shared lot 3 (27a 2r 26p, valued at £2 15s and £3), under the Earl of Arran. Patrick is also a first name in the 1911 and 1926 Gildea households.",
+  "Siblings dominate. In 1901 Edward (78) and Bridget (74) lived with daughter Mary (28, seamstress), and James (40), Ellen (44) and Mary (42) lived in a second house. By 1911 Edward and Bridget are gone, Mary (40, sprigger) heads house 17 with a visitor Maggie (19), and James (52) heads house 18 with sisters Ellen and Mary and a widowed brother, Patrick (60), not in the 1901 return. In 1926 Patrick (75), Ellen (72) and Mary (76) are the household, with Patrick O'Sullivan (13, relationship not stated). James is absent. Two Marys in 1901 make the 1926 Mary ambiguous."]},
+ {keys:['Colhoun'],name:'The Colhouns',tab:'Colhoun',medium:'Three census returns. Not on Griffith\'s page',story:"Mary Colhoun, a widow and sprigger, had three daughters at home in 1901. Her likely son Patrick is head of the house by 1926 with seven children, and a grandson named Patrick McCadden appears in 1911.",paras:[
+  "Griffith's: no Colhoun appears on the page.",
+  "Mary Colhoun (40, widow, sprigger) headed house 9 in 1901 with daughters Maggie (16), Marrie (13) and Lizzie (10). Her likely son Patrick Colhoun (10) is recorded that night as a grandson in Patrick Gillespie's house, and is Patrick (20) in his mother's house in 1911 and Patrick (36), head, in 1926 with wife Teresa and seven children. Mary reappears as Margaret (75, widow) in 1926, a name change to hold open.",
+  "A grandson, Patrick McCadden (6), is in Mary's house in 1911. In 1926 Patrick McCadden (22) lives with Owen Gillespie. The McCadden surname is the same as the McCadden line elsewhere in this project, so this is worth checking against the tree. A shared surname is not proof of kinship."]},
+ {keys:['Harvey'],name:'The Harveys',tab:'Harvey',medium:'Three census returns. Not on Griffith\'s page',story:"Francis Harvey in 1901, Edward Harvey from 1911. The link between them is still open.",paras:["No Harvey appears on the Griffith's page. Francis Harvey (60), wife Mary and two children were in house 13 in 1901. In 1911 Edward Harvey (35) heads the house with wife Ellen and his mother Mary (74, widow), and he and Ellen (50 and 56) are still there in 1926. Edward does not appear in 1901, and Mary's age jumps from 50 to 74, so the link to Francis's household is open."]},
+ {keys:['McMullen'],name:'The McMullens',tab:'McMullen',medium:'Three census returns. Not on Griffith\'s page',story:"Bridget McMullen, her son and her daughter in 1901. By 1926 Anne McMullen, aged 66, is alone in her house.",paras:["No McMullen appears on the Griffith's page. Bridget McMullen (62, widow, farmer) lived with her son Michael (40) and daughter Anne (37) in 1901. By 1911 only Bridget (75) and Anne (47) remain, and in 1926 Anne (66) is alone."]},
+ {keys:['McCool'],name:'The McCools',tab:'McCool',medium:'Griffith\'s Valuation and three census returns',story:"Five McCool tenants held lots on Griffith's page, three of them called Edward and told apart as Lough Cull, Wee and Long. By 1926 only Charles McCool remains, living in another family's house.",paras:["Griffith's has five McCool occupiers across lots 12 to 17: Michael (lots 12 and 13), Patrick (12a, his subtenant), and Edward McCool three times, as Lough Cull (14), Wee (16) and Long (17). Edward McCool (80) with wife Margaret, son Charles (35) and grandson Edward (15) lived in one house in 1901, and John McCool (54) with his mother Hannah (92) in another. Edward (91) and Charles (50) are the only McCools in 1911. In 1926 Charles (68, widower) lives in Edward McGettigan's household, with no McCool household of his own."]},
+ {keys:['Doherty'],name:'The Dohertys',tab:'Doherty',medium:'Griffith\'s Valuation and two census returns',story:"Mary and John Doherty held lots 4 and 10 in the 1850s. In 1911 John's daughter Maggie lives in his house with her husband Thomas Gillespie, and by 1926 the name has gone.",paras:["Griffith's has Mary Doherty (lot 4) and John Doherty (lot 10), under the Earl of Arran. John Doherty (52) and Mary had four daughters in 1901. Maggie, the eldest, married Thomas Gillespie, and by 1911 the house held John and Mary, Annie (13) and the Gillespie family. No Doherty household remains in 1926."]},
+ {keys:['Sweeney'],name:'The Sweeneys',tab:'Sweeney',medium:'Griffith\'s Valuation (as McSwyne) and two census returns',story:"McSwyne on Griffith's page, Sweeney in the censuses. By 1926 the name has left the townland.",paras:["Griffith's has Myles McSwyne (lot 7) and James McSwyne (lot 9). James Sweeny (82, widower) lived with his daughter Isabella and son-in-law John Cassidy in 1901, and Denis Sweeney (54) with wife Mary and niece Mary Dorah in another house. In 1911 Denis (70, widower) lives with his niece Mary Doran (45). No Sweeney appears in 1926."]},
+ {keys:['Dunlevy'],name:'The Dunlevys',tab:'Dunlevy',medium:'Griffith\'s Valuation (as Dunleavy) and one census return',story:"Paul, Lewis and the Widow Dunleavy held land in the 1850s, the biggest of it nearly 60 acres. One Dunlevy household is left in 1901, and none after.",paras:["Griffith's has Paul Dunleavy (lot 1a, 59a 3r 28p, with Michael Mulrenin as his subtenant), Lewis Dunleavy and Widow Dunleavy (lot 8). Patrick Dunlevy (34), wife Sarah and infant Maggie appear only in 1901. Other 1901 names with no later trace are Ward (farm servant, with a Michael Ward of 40 in 1911 in the same role) and the Gallagher widow Bridget (34) with daughter Ellen in James Sweeny's house."]},
+ {keys:['Hone','McGettigan'],name:'The Hones and McGettigans',tab:'Hone',medium:'Griffith\'s Valuation (Hone) and the 1926 return',story:"John and Francis Hone held lot 18 in the 1850s. No Hone household is in the 1901 or 1911 returns, and one appears in 1926 beside a McGettigan household that has no earlier trace.",paras:["Michael Hone (age blank), wife Mary (30) and two children, and Edward McGettigan (age blank), wife Agnes (26) and two children, appear in 1926. Neither surname is in the 1901 or 1911 returns for Cullionboy. John and Francis Hone held lot 18 in Griffith's, so the 1926 Hones may be a return or a namesake. McGettigan appears nowhere earlier. Joseph Hannigan (33) in Bridget Cassidy's house in 1926 and Patrick O'Sullivan (13) with the Guildeas are also new names."]}
+];
+
+/* ================= plate builders ================= */
+var plates=[], ROOMS=[['I','The land'],['II','The households'],['III','Not yet hung'],['IV','The archive']];
+function pad(n){return (n<10?'0':'')+n}
+function plate(room,title,build){plates.push({room:room,title:title,build:build})}
+function labelBlock(num,title,medium,story,extra){
+  return h('div',{class:'label'},h('div',{class:'wrap lab-grid'},
+    h('div',null,h('span',{class:'pn',text:'Plate '+num}),h('h2',{text:title}),medium?h('p',{class:'medium',text:medium}):null),
+    h('div',null,(Array.isArray(story)?story:[story]).map(function(s){return h('p',{class:'story',text:s})})),
+    h('div',null,extra)));
+}
+function roomTag(art,room){
+  art.append(h('div',{class:'roomtag'},h('div',{class:'wrap'},h('p',null,h('b',{text:'Room '+ROOMS[room][0]}),ROOMS[room][1]))));
+}
+function famRows(keys){
+  var out=[];
+  YEARS.forEach(function(y,si){
+    hhFor(y,keys).forEach(function(hh){
+      hh.members.forEach(function(r){
+        if(si===0) out.push(['1850s','lot '+r.lot,r.occ,'','Occupier',r.area==='shared'?'shared area':r.area,'£'+r.tot]);
+        else out.push([y,y==='1926'?r.fo:String(r.h),r.f+' '+r.s,r.a==null?'':String(r.a),y==='1926'?(r===hh.head?'Head':'in the household of '+hh.hname):r.r,(r.m||'')+(r.o?'; '+r.o:''),'']);
+      });
+    });
+  });
+  return out;
+}
+function table(head,rows,numCol){
+  return h('div',{class:'tbl'},h('table',null,h('thead',null,h('tr',null,head.map(function(c,i){return h('th',{class:i===numCol?'n':'',text:c})}))),
+    h('tbody',null,rows.map(function(r){return h('tr',null,r.map(function(c,i){return h('td',{class:i===numCol?'n':'',text:c==null?'':String(c)})}))}))));
+}
+function yearTabs(avail,cur,onPick){
+  var box=h('div',{class:'yrs',role:'tablist','aria-label':'Choose a date'});
+  YEARS.forEach(function(y){
+    var b=h('button',{class:'yr',role:'tab','aria-selected':y===cur?'true':'false',onclick:function(){onPick(y)}},y);
+    if(!avail[y]) b.setAttribute('data-empty','1');
+    box.append(b);
+  });
+  return box;
+}
+function setSel(box,y){Array.prototype.forEach.call(box.children,function(b){b.setAttribute('aria-selected',b.textContent===y?'true':'false')})}
+function countText(y,list,keys){
+  var n=peopleOf(list);
+  if(y==='1850s') return list.length? (list.length+(list.length===1?' holding':' holdings')+' on the page, '+n+(n===1?' occupier.':' occupiers.')) : 'No holding of this name on the page.';
+  return list.length? (y+', census return: '+list.length+(list.length===1?' household, ':' households, ')+n+(n===1?' person.':' people.')) : y+', census return: no household of this name.';
+}
+function sceneHouses(y,list,names){return placeHouses(list,{names:names})}
+
+/* Plate 1: title */
+plate(0,'Cuilleann Buí',function(num){
+  var art=h('div',{class:'art'}); var sc=makeScene(art,{seed:5,ph:0,kind:'hills'});
+  roomTag(art,0);
+  art.append(h('div',{class:'bigtitle'},h('div',{class:'wrap'},h('p',{class:'irish',text:'Cuilleann Buí'}),h('h1',{text:'Cullionboy'}))),
+    h('div',{class:'walkhint'},h('div',{class:'wrap'},h('p',{text:'Scroll down to walk the townland, or use the arrows. It runs from the 1850s to 1926.'}))));
+  var sec=h('section',{class:'plate',id:'p'+pad(num)},art,labelBlock(pad(num),'Cullionboy','A townland in Clogher electoral division, Donegal civil parish, Tirhugh barony',
+    ['The yellow hollow, in Irish. Cullionboy lies beside Clogher, Druminnin, Keadew Upper and Meenabrock, and covers 1,658 acres (671 ha).',
+     'Every scene here is drawn from the records. Cottages stand for households and are not placed on a map.'],null));
+  return sec;
+});
+
+/* Plate 2: mountain */
+plate(0,'The mountain',function(num){
+  var art=h('div',{class:'art'}); makeScene(art,{seed:9,ph:0,kind:'mountain',gorse:false});
+  var sec=h('section',{class:'plate',id:'p'+pad(num)},art,labelBlock(pad(num),'The mountain',"Griffith's Valuation, mid 1850s. Two lots in the Earl of Arran's name",
+    ["Nearly half of Cullionboy was mountain. Griffith's gives 815 acres to the Earl of Arran, held in fee, valued together at £5 15s. No tenant is named.",
+     "The rest of the townland, about 798 acres, is let to 25 people."],null));
+  return sec;
+});
+
+/* Plate 3: the page */
+plate(0,'Twenty-five names',function(num){
+  var art=h('div',{class:'art sheetart'}); makeScene(art,{seed:2,ph:0,kind:'mist',gorse:false});
+  var rows=GR.map(function(r){return [r.lot,r.occ,r.les,r.desc,r.area,r.land,r.bld,r.tot]});
+  rows.push(['','Printed total','','','1653 3 0','82 18 0','10 9 0','93 7 0']);
+  var t=table(['Lot','Occupier','Immediate lessor','Description','Area (A R P)','Land','Buildings','Total'],rows,-1);
+  Array.prototype.forEach.call(t.querySelectorAll('tbody tr'),function(tr,i){if(i===rows.length-1) tr.className='tot'; Array.prototype.forEach.call(tr.children,function(td,j){if(j>=4)td.className='n'}); });
+  Array.prototype.forEach.call(t.querySelectorAll('thead th'),function(th,j){if(j>=4)th.className='n'});
+  var sheet=h('div',{class:'sheet'},h('h3',{text:'CULLIONBOY'}),h('p',{class:'sub',text:'Ord. S. 91 and 95. Areas in acres, roods and perches. Valuations in pounds, shillings and pence.'}),t,
+    h('p',{class:'foot',text:"The valuation columns add up exactly. The areas add up to 1,654a 3r 0p against a printed 1,653a 3r 0p, so either a digit is misread in the screen grabs or the page is out by an acre. The least certain readings are the area of lot 1b, the land valuations of Michael McCool's two lots, the names Dimon, Hallaghy, Mulrenin and Phideas, and the a and b marks beside bracketed tenants."}));
+  art.append(h('div',{class:'wrap',style:{position:'relative',width:'100%'}},sheet));
+  return h('section',{class:'plate',id:'p'+pad(num)},art,labelBlock(pad(num),'Twenty-five names',"Griffith's Valuation, mid 1850s. Printed page, transcribed from screen grabs",
+    ['One printed page names everyone who held land here. Almost all of them hold from the Earl of Arran. Three hold from other tenants: Michael Mulrenin, Patrick McCool and the Hones.',
+     'The page carries no date. Mid 1850s is the date supplied for this study.'],null));
+});
+
+/* Plate 4: treemap */
+function squarify(data,x,y,w,hh){
+  var res=[], items=data.slice().sort(function(a,b){return b.v-a.v}), total=items.reduce(function(s,d){return s+d.v},0), area=w*hh, row=[];
+  items=items.map(function(d){return {d:d,a:d.v/total*area}});
+  function worst(r,side){var s=r.reduce(function(t,q){return t+q.a},0),mx=Math.max.apply(null,r.map(function(q){return q.a})),mn=Math.min.apply(null,r.map(function(q){return q.a}));return Math.max(side*side*mx/(s*s),s*s/(side*side*mn))}
+  function lay(r){var s=r.reduce(function(t,q){return t+q.a},0);
+    if(w>=hh){var rw=s/hh,yy=y;r.forEach(function(q){var rh=q.a/rw;res.push({d:q.d,x:x,y:yy,w:rw,h:rh});yy+=rh});x+=rw;w-=rw}
+    else{var rh=s/w,xx=x;r.forEach(function(q){var rw=q.a/rh;res.push({d:q.d,x:xx,y:y,w:rw,h:rh});xx+=rw});y+=rh;hh-=rh}}
+  while(items.length){var side=Math.min(w,hh),it=items[0];
+    if(!row.length||worst(row.concat([it]),side)<=worst(row,side)){row.push(it);items.shift()}else{lay(row);row=[]}}
+  if(row.length) lay(row);
+  return res;
+}
+plate(0,'Twenty holdings, drawn by size',function(num){
+  var art=h('div',{class:'art treeart'}); makeScene(art,{seed:4,ph:0,kind:'mist',gorse:false});
+  var box=h('div',{class:'tree'}); var wrapEl=h('div',{class:'wrap',style:{position:'relative',width:'100%'}},box,h('p',{class:'treenote',text:'Areas are to scale. Positions are not. Hover or tap a block for the printed area and valuation.'}));
+  art.append(wrapEl);
+  var data=GR.filter(function(r){return r.ac}).map(function(r){return {v:r.ac,name:r.names,col:COL[G(surOf(r.occ))]||COL.Other,tip:'Lot '+r.lot+', '+r.area+', valued at £'+r.tot}});
+  data.push({v:MOUNTAIN,name:"Mountain, Earl of Arran in fee",col:'#BDD6CF',tip:'Lots 21 and 22, 814.6 acres, valued at £5 15s'});
+  data.push({v:WATER,name:'Water',col:'#C4DAE5',tip:'Lot 23, 42.2 acres'});
+  function layout(){
+    box.replaceChildren(); var W=box.clientWidth,H=box.clientHeight; if(!W||!H) return;
+    squarify(data,0,0,W,H).forEach(function(r){
+      var big=r.w>86&&r.h>46;
+      box.append(h('div',{class:'tile',title:r.d.name+'. '+r.d.tip,style:{left:r.x+1.5+'px',top:r.y+1.5+'px',width:Math.max(0,r.w-3)+'px',height:Math.max(0,r.h-3)+'px',background:r.d.col+(r.d.col.length===7?'D9':'')}},
+        big?[r.d.name,h('span',{text:r.d.v.toFixed(1)+' acres'})]:null));
+    });
+  }
+  if('ResizeObserver' in window) new ResizeObserver(layout).observe(box); else window.addEventListener('resize',layout);
+  layout();
+  return h('section',{class:'plate',id:'p'+pad(num)},art,labelBlock(pad(num),'Twenty holdings, drawn by size',"Griffith's Valuation, mid 1850s. Colour is the holder's family",
+    ["The whole townland laid out by area. The mountain is the great pale block. The Gillespies' shared holding of 125 acres is the largest let to tenants, and Phideas Bradley's 102 acres the largest held by one man.",
+     'Tiny Michael Mulrenin, in one corner, holds a house and garden of twelve perches under Paul Dunleavy.'],null));
+});
+
+/* Plate 5: three censuses overview */
+plate(1,'Three censuses',function(num){
+  var art=h('div',{class:'art'}), sc=makeScene(art,{seed:6,ph:1,kind:'hills'}); roomTag(art,1);
+  var cnt=h('p',{class:'cnt'}), box;
+  var all=TERR.slice();
+  function pick(y){var list=SN[y].filter(function(x){return true}); sc.setHouses(placeHouses(list,{names:false}),PHASE[y]); setSel(box,y); var n=peopleOf(list);
+    cnt.textContent=y+', census return: '+list.length+' households, '+n+' people.'}
+  box=h('div',{class:'yrs',role:'tablist','aria-label':'Choose a census'},['1901','1911','1926'].map(function(y){return h('button',{class:'yr',role:'tab','aria-selected':y==='1901'?'true':'false',onclick:function(){pick(y)}},y)}));
+  var sec=h('section',{class:'plate',id:'p'+pad(num)},art,labelBlock(pad(num),'Three censuses','Census returns of 1901, 1911 and 1926. Hover or tap a cottage',
+    ['From here the page is about households. Each cottage is one house in the census, lit by the people inside it, and cottages keep the same neighbourhood from year to year.',
+     'Pick a year and the light changes with it.'],[box,cnt]));
+  pick('1901');
+  return sec;
+});
+
+/* Plates 6 to 19: families */
+function famPlate(f){
+  plate(1,f.name,function(num){
+    var art=h('div',{class:'art'}); var avail={}; YEARS.forEach(function(y){avail[y]=hhFor(y,f.keys).length>0});
+    var cur=avail['1901']?'1901':(avail['1926']?'1926':'1850s');
+    var sc=makeScene(art,{seed:20+num,ph:PHASE[cur],kind:'hills'});
+    var cnt=h('p',{class:'cnt'}), tabs=yearTabs(avail,cur,function(y){pick(y)});
+    function pick(y){var list=hhFor(y,f.keys); sc.names=true; sc.setHouses(placeHouses(list,{names:true}),PHASE[y]); setSel(tabs,y); cnt.textContent=countText(y,list,f.keys)}
+    var rows=famRows(f.keys);
+    var rec=h('details',{class:'rec'},h('summary',{text:'Read the record'}),h('div',{class:'rec-in'},
+      h('div',{class:'rec-txt'},f.paras.map(function(p){return h('p',{text:p})})),
+      h('div',null,h('p',{class:'small',style:{marginBottom:'8px'},text:rows.length+' rows behind this family'}),table(['Year','House or lot','Name','Age','Relation or role','Marital or note','Valuation'],rows,3))));
+    var lab=labelBlock(pad(num),f.name,f.medium,f.story,[tabs,cnt]);
+    lab.append(h('div',{class:'wrap'},rec));
+    var sec=h('section',{class:'plate',id:'p'+pad(num)},art,lab);
+    pick(cur);
+    return sec;
+  });
+}
+FAM.forEach(famPlate);
+
+/* Room III: not yet hung */
+plate(2,'Not yet hung',function(num){
+  var art=h('div',{class:'art'}); makeScene(art,{seed:30,ph:3,kind:'mist',gorse:false}); roomTag(art,2);
+  var fr=[
+   ["Tithe Applotment Books",'1820s and 1830s','Missing. Currently offline.',false],
+   ["Griffith's Valuation",'Mid 1850s','Held. One page, from screen grabs.',true],
+   ['Valuation revision books','After the 1850s','Missing.',false],
+   ['Civil births, marriages and deaths','From 1864','Missing.',false],
+   ['Parish records','Mostly 1870s and 1880s','Missing.',false],
+   ['Census returns','1901, 1911 and 1926','Held. Clogher electoral division.',true]
+  ];
+  art.append(h('div',{class:'wrap',style:{position:'relative'}},h('div',{class:'frames'},fr.map(function(f){
+    return h('div',{class:'frame'+(f[3]?' held':'')},h('b',{text:f[0]}),h('span',{text:f[1]}),h('em',{text:f[2]}))}))));
+  return h('section',{class:'plate',id:'p'+pad(num)},art,labelBlock(pad(num),'Not yet hung','Six frames for six kinds of record. Two are filled',
+    ['The earliest layer is empty. The Tithe Applotment Books, from the 1820s and 1830s, would sit before Griffith\'s, and for now they are offline.',
+     'Revision books, civil records from 1864 and parish registers would let each census link below be proved, or dropped.'],null));
+});
+
+/* Plate: open questions */
+var QS=[
+ "Resolve the one-acre excess in the Griffith's area column against the page image, and the further 4a 1r 2p separating the printed total from the townlands.ie area.",
+ "Check the least certain Griffith's readings: lot 1b area, Michael McCool's land valuations, and the names Dimon, Hallaghy, Mulrenin and Phideas.",
+ "Find a Tithe Applotment extract for Cullionboy, if the books come online.",
+ "Was Thomas Gillespie (52 in 1911) away in 1901, and is Ellen of 1901 his wife?",
+ "Owen Gillespie is 37 in 1901 and 56 in 1911. Which is right?",
+ "Where did John Cassidy (40, 1901 house 12) and his family go?",
+ "How are Bridget Cassidy (51) and Bridget Cassidy (83) of 1926 related to Hugh and Patrick Cassidy of 1911?",
+ "Is Patrick Colhoun (10 in 1901) Mary Colhoun's son, and how does Patrick McCadden connect to the McCadden line in the wider project?",
+ "Is the 1926 Hone household a return of the Hones on Griffith's page? Who are Hannigan, O'Sullivan and McGettigan, and what is Agnes McGettigan's link to Charles McCool?",
+ "Is Edward Harvey (35 in 1911) a son of Francis Harvey of 1901?",
+ "Are Michael Ward of 1911 and John Ward of 1901 the same farm servant?",
+ "Find civil records from 1864 and parish registers to confirm every proposed census link."
+];
+plate(2,'What is still open',function(num){
+  var saved={}; try{saved=JSON.parse(localStorage.getItem('cullionboy-q')||'{}')||{}}catch(e){saved={}}
+  var ul=h('ul',{class:'q'});
+  QS.forEach(function(q,i){
+    var cb=h('input',{type:'checkbox',id:'q'+i}); cb.checked=!!saved[i];
+    cb.addEventListener('change',function(){saved[i]=cb.checked;try{localStorage.setItem('cullionboy-q',JSON.stringify(saved))}catch(e){}});
+    ul.append(h('li',null,h('label',{for:'q'+i},cb,h('span',{text:q}))));
+  });
+  return h('section',{class:'plate archive',id:'p'+pad(num)},h('div',{class:'wrap'},h('span',{class:'pn',text:'Plate '+pad(num)}),h('h2',{text:'What is still open'}),
+    h('p',{class:'intro',text:'Tick items off as they close. Ticks stay in this browser only.'}),ul));
+});
+
+/* Plate: method and numbers */
+plate(3,'Method, sources and numbers',function(num){
+  var ys=['1901','1911','1926'], D=ys.map(function(y){
+    var r=DATA.census[y], hh=SN[y].length, ages=r.filter(function(x){return x.a!=null});
+    return {y:y,n:r.length,hh:hh,f:r.filter(function(x){return x.x==='F'}).length,m:r.filter(function(x){return x.x==='M'}).length,u15:ages.filter(function(x){return x.a<15}).length,o65:ages.filter(function(x){return x.a>=65}).length,na:ages.length,irish:r.filter(function(x){return x.i}).length};
+  });
+  var tb=h('tbody');
+  function row(l,fn){tb.append(h('tr',null,h('td',{text:l}),D.map(function(d){return h('td',{class:'n',text:fn(d)})})))}
+  row('People',function(d){return d.n}); row('Households',function(d){return d.hh}); row('People per household',function(d){return (d.n/d.hh).toFixed(1)});
+  row('Women and men',function(d){return d.f+' and '+d.m});
+  row('Aged under 15',function(d){return d.u15+(d.na<d.n?' (of '+d.na+' with ages)':'')});
+  row('Aged 65 and over',function(d){return d.o65+(d.na<d.n?' (of '+d.na+' with ages)':'')});
+  row('Recorded with Irish',function(d){return d.irish});
+  var tbl=h('div',{class:'tbl'},h('table',null,h('thead',null,h('tr',null,[h('th',{text:'Measure'}),h('th',{class:'n',text:'1901'}),h('th',{class:'n',text:'1911'}),h('th',{class:'n',text:'1926'})])),tb));
+  return h('section',{class:'plate archive',id:'p'+pad(num)},h('div',{class:'wrap'},h('span',{class:'pn',text:'Plate '+pad(num)}),h('h2',{text:'Method, sources and numbers'}),
+    h('div',{class:'cols',style:{marginTop:'26px'}},
+      h('div',{class:'prose'},
+        h('p',{text:"Griffith's Valuation was transcribed from three screen grabs of the page scan on askaboutireland.ie. The page carries no date. Mid 1850s is the date supplied for this study."}),
+        h('p',{text:'The census tables are the Cullionboy rows of three files for Clogher electoral division. The townland is Cullionboy in 1901 and 1911 and Collinboy in 1926. House numbers in 1901 and 1911 and form numbers in 1926 define a household. The 1926 form for Philip Bradley, aged 3, names Patrick Bradley as head, so he is counted in that household.'}),
+        h('p',{text:'Households are matched across censuses by surname group, first name and age. First-name equivalents such as Maggie and Margaret, Bella and Isabella were allowed, with an age tolerance of several years. Spelling stays as written in each source. Gildea and Guildea, Colhoun and Coulhoun, Sweeny and Sweeney are grouped for matching only, and every link is a proposed match until a civil or parish record confirms it. A shared surname is not proof of kinship.'}),
+        h('p',null,'Area, neighbours and names come from ',h('a',{href:'https://www.townlands.ie/donegal/tirhugh/donegal/clogher/cullionboy/',target:'_blank',rel:'noopener',text:'townlands.ie'}),': 1,658.02 acres (670.98 ha), with Clogher to the south, Druminnin to the west, Keadew Upper to the north and Meenabrock to the east. Croaghloughslug is listed as a subtownland.'),
+        h('p',{text:'A blank in the 1901 and 1911 language column is not necessarily English only, so the Irish counts are a minimum. Women\'s work in 1901 and 1911 is mostly sprigging, seamstress or dressmaking, alongside farming. The 1926 file has no occupation column.'})),
+      h('div',null,h('h3',{style:{fontSize:'30px',marginBottom:'14px'},text:'The townland in numbers'}),
+        h('p',{class:'small',style:{marginBottom:'12px'},text:'Population fell from '+D[0].n+' to '+D[1].n+' between 1901 and 1911, then recovered to '+D[2].n+' by 1926. Everyone is recorded as Roman Catholic each time. Nine surname groups appear in all three censuses.'}),tbl))));
+});
+
+/* Plate: records */
+plate(3,'The records',function(num){
+  var tabs=h('div',{class:'rtabs',role:'tablist'}), thead=h('thead'), tbody=h('tbody'), inp=h('input',{id:'recFilter',type:'search',placeholder:'for example Gillespie',autocomplete:'off'}), cnt=h('span',{class:'small'}), act=0;
+  var NAMES=["Griffith's, mid 1850s",'Census 1901','Census 1911','Census 1926 (Collinboy)'];
+  function render(){
+    var q=inp.value.trim().toLowerCase(), n=0; thead.replaceChildren(); tbody.replaceChildren();
+    if(act===0){
+      thead.append(h('tr',null,['Lot','Occupier','Immediate lessor','Description','Area (A R P)','Land','Buildings','Total'].map(function(c,i){return h('th',{class:i>=4?'n':'',text:c})})));
+      GR.forEach(function(r){if(q&&(r.occ+' '+r.lot).toLowerCase().indexOf(q)<0) return; n++;
+        tbody.append(h('tr',null,[r.lot,r.occ,r.les,r.desc,r.area,r.land,r.bld,r.tot].map(function(c,i){return h('td',{class:i>=4?'n':'',text:c})})))});
+      cnt.textContent=n+' of '+GR.length+' rows.';
+    }else{
+      var y=['1901','1911','1926'][act-1], rows=DATA.census[y];
+      thead.append(h('tr',null,[y==='1926'?'Form':'House','Surname','First name','Age','Sex','Relation','Marital or note','Occupation'].map(function(c,i){return h('th',{class:i===3?'n':'',text:c})})));
+      rows.forEach(function(r){if(q&&(r.s+' '+r.f).toLowerCase().indexOf(q)<0) return; n++;
+        tbody.append(h('tr',null,[y==='1926'?r.fo:r.h,r.s,r.f,r.a==null?'':r.a,r.x,r.r,r.m,r.o].map(function(c,i){return h('td',{class:i===3?'n':'',text:c==null?'':String(c)})})))});
+      cnt.textContent=n+' of '+rows.length+' rows. Spelling as recorded.';
+    }
+  }
+  NAMES.forEach(function(nm,i){tabs.append(h('button',{class:'rtab',role:'tab','aria-selected':i===0?'true':'false',onclick:function(){act=i;Array.prototype.forEach.call(tabs.children,function(b,j){b.setAttribute('aria-selected',j===i?'true':'false')});render()}},nm))});
+  inp.addEventListener('input',render); render();
+  return h('section',{class:'plate archive',id:'p'+pad(num)},h('div',{class:'wrap'},h('span',{class:'pn',text:'Plate '+pad(num)}),h('h2',{text:'The records'}),
+    h('p',{class:'intro',text:'Every row behind the plates above. Choose a source, then filter by any part of a name.'}),tabs,
+    h('div',{class:'rfilter'},h('label',{for:'recFilter',class:'small',text:'Filter by name'}),inp,cnt),
+    h('div',{class:'tbl rscroll'},h('table',null,thead,tbody))));
+});
+
+/* ================= assemble ================= */
+var walk=$('#walk'), els=[];
+plates.forEach(function(p,i){
+  var el=p.build(i+1); el.setAttribute('data-room',p.room); walk.append(el); els.push(el);
+});
+walk.append(h('div',{class:'end',text:'End of the walk. '+plates.length+' plates.'}));
+
+/* contents */
+var drawer=$('#drawer'), din=$('#drawerIn');
+(function(){
+  din.append(h('button',{class:'btn close',onclick:function(){drawer.classList.remove('open')}},'Close'),h('h2',{text:'Contents'}),h('p',{class:'small',text:'Cullionboy, from the 1850s to 1926.'}));
+  ROOMS.forEach(function(r,ri){
+    var ol=h('ol'); plates.forEach(function(p,i){if(p.room!==ri) return;
+      ol.append(h('li',null,h('a',{href:'#p'+pad(i+1),onclick:function(e){e.preventDefault();drawer.classList.remove('open');els[i].scrollIntoView({behavior:reduce?'auto':'smooth'})}},h('b',{text:pad(i+1)}),h('span',{text:p.title}))))});
+    din.append(h('h3',{text:'Room '+r[0]+'. '+r[1]}),ol);
+  });
+})();
+$('#openC').addEventListener('click',function(){drawer.classList.add('open')});
+drawer.addEventListener('click',function(e){if(e.target===drawer) drawer.classList.remove('open')});
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape') drawer.classList.remove('open');
+  var tg=e.target&&e.target.tagName; if(tg==='INPUT'||tg==='TEXTAREA'||tg==='SELECT'||e.metaKey||e.ctrlKey||e.altKey) return;
+  if(e.key==='ArrowRight') go(1); if(e.key==='ArrowLeft') go(-1);
+});
+
+/* hud */
+var cur=0;
+function setCur(i){cur=i;$('#count').replaceChildren(document.createTextNode(pad(i+1)+' '),h('i',{text:'/ '+pad(plates.length)}));$('#roomNow').textContent='Room '+ROOMS[plates[i].room][0]+'. '+ROOMS[plates[i].room][1];$('#prev').disabled=i===0;$('#next').disabled=i===plates.length-1}
+function go(d){var i=Math.max(0,Math.min(plates.length-1,cur+d)); els[i].scrollIntoView({behavior:reduce?'auto':'smooth'})}
+$('#prev').addEventListener('click',function(){go(-1)});
+$('#next').addEventListener('click',function(){go(1)});
+if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting) setCur(els.indexOf(e.target))})},{rootMargin:'-45% 0px -50% 0px'});
+  els.forEach(function(e){io.observe(e)});
+}
+setCur(0);
+if(location.hash&&/^#p\d\d$/.test(location.hash)){var t=document.getElementById(location.hash.slice(1)); if(t) setTimeout(function(){t.scrollIntoView()},50)}
+requestAnimationFrame(loop);
+if(document.fonts&&document.fonts.ready) document.fonts.ready.then(function(){scenes.forEach(function(s){s.dirty=true})});
+})();
+</script>
