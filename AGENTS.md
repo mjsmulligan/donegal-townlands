@@ -1,6 +1,6 @@
 # Donegal townlands: instructions for any assistant
 
-This repo holds townland-centred studies for the Drumholm area of Donegal, with family histories providing the human narrative. Several assistants work on it across sessions. Do not rely on chat history or project memory. This file, STATUS.md files and DECISIONS.md are the shared context. Update them as you work.
+This repo holds townland-centred studies for the Barnesmore area of Donegal, with family histories providing the human narrative. Several assistants work on it across sessions. Do not rely on chat history or project memory. This file, STATUS.md files and DECISIONS.md are the shared context. Update them as you work.
 
 ## Working with other assistants
 
