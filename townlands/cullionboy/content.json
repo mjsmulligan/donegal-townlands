@@ -1,0 +1,261 @@
+{
+ "groups": {
+  "colours": {
+   "Gillespie": "#4C8DB8",
+   "Dunnion": "#3FA796",
+   "Cassidy": "#8A7FD1",
+   "Kelly": "#EA7F90",
+   "Bradley": "#5DAA6B",
+   "Gildea": "#C07BC4",
+   "Colhoun": "#EE8F6A",
+   "Harvey": "#86BCE0",
+   "McMullen": "#A3C34A",
+   "McCool": "#6B8DE6",
+   "Doherty": "#F2A24E",
+   "Sweeney": "#45B1C9",
+   "Dunlevy": "#78C2A4",
+   "Hone": "#D9534F",
+   "McGettigan": "#5560C8",
+   "McCadden": "#1D2F33",
+   "Other": "#A9B7B3"
+  },
+  "territory": ["Gillespie", "Dunnion", "Cassidy", "Bradley", "Kelly", "McCool", "Gildea", "Colhoun", "Doherty", "Sweeney", "Dunlevy", "Harvey", "McMullen", "Hone", "McGettigan", "Other"],
+  "map": {
+   "dunleavy": "Dunlevy",
+   "dunlevy": "Dunlevy",
+   "gildea": "Gildea",
+   "guildea": "Gildea",
+   "colhoun": "Colhoun",
+   "coulhoun": "Colhoun",
+   "sweeny": "Sweeney",
+   "sweeney": "Sweeney",
+   "mcswyne": "Sweeney",
+   "dimon": "Dunnion",
+   "dunnion": "Dunnion",
+   "gillespie": "Gillespie",
+   "cassidy": "Cassidy",
+   "kelly": "Kelly",
+   "bradley": "Bradley",
+   "harvey": "Harvey",
+   "mcmullen": "McMullen",
+   "mccool": "McCool",
+   "doherty": "Doherty",
+   "hone": "Hone",
+   "mcgettigan": "McGettigan",
+   "mccadden": "McCadden"
+  }
+ },
+ "griffiths": {
+  "rows": [
+   {"lot":"1a","hd":"1a","names":"Paul Dunleavy","occ":"Paul Dunleavy","les":"Earl of Arran","desc":"House, office, and land","area":"59 3 28","ac":59.925,"land":"9 10 0","bld":"1 5 0","tot":"10 15 0"},
+   {"lot":"1b","hd":"1b","names":"Michael Mulrenin","occ":"Michael Mulrenin","les":"Paul Dunleavy","desc":"House and garden","area":"0 0 12","ac":0.075,"land":"0 2 0","bld":"0 3 0","tot":"0 5 0"},
+   {"lot":"2","hd":"2","names":"Hugh McGinty","occ":"Hugh McGinty","les":"Earl of Arran","desc":"House and land","area":"50 0 20","ac":50.125,"land":"1 5 0","bld":"0 5 0","tot":"1 10 0"},
+   {"lot":"3","hd":"3","names":"Jeremiah and Patrick Gildea","occ":"Jeremiah Gildea","les":"Same","desc":"House, office, & land","area":"27 2 26 (shared)","ac":27.6625,"land":"2 8 0","bld":"0 7 0","tot":"2 15 0"},
+   {"lot":"3","hd":"3","occ":"Patrick Gildea","les":"Same","desc":"House, office, & land","area":"shared","land":"2 8 0","bld":"0 12 0","tot":"3 0 0"},
+   {"lot":"4","hd":"4","names":"Mary Doherty","occ":"Mary Doherty","les":"Same","desc":"House, office, and land","area":"23 1 35","ac":23.46875,"land":"3 0 0","bld":"0 5 0","tot":"3 5 0"},
+   {"lot":"5","hd":"5","names":"Mary Kelly","occ":"Mary Kelly","les":"Same","desc":"House, office, and land","area":"22 2 20","ac":22.625,"land":"2 18 0","bld":"0 7 0","tot":"3 5 0"},
+   {"lot":"6","hd":"6","names":"George Dimon","occ":"George Dimon","les":"Same","desc":"House, office, and land","area":"25 3 35","ac":25.96875,"land":"2 18 0","bld":"0 7 0","tot":"3 5 0"},
+   {"lot":"7","hd":"7","names":"Myles McSwyne","occ":"Myles McSwyne","les":"Same","desc":"House, office, and land","area":"28 2 35","ac":28.71875,"land":"2 3 0","bld":"0 7 0","tot":"2 10 0"},
+   {"lot":"8","hd":"8","names":"Lewis and Widow Dunleavy","occ":"Lewis Dunleavy","les":"Same","desc":"House, office, & land","area":"35 0 20 (shared)","ac":35.125,"land":"1 10 0","bld":"0 5 0","tot":"1 15 0"},
+   {"lot":"8","hd":"8","occ":"Widow Dunleavy","les":"Same","desc":"House, office, & land","area":"shared","land":"1 10 0","bld":"0 5 0","tot":"1 15 0"},
+   {"lot":"9","hd":"9","names":"James McSwyne","occ":"James McSwyne","les":"Same","desc":"Land","area":"36 2 20","ac":36.625,"land":"3 0 0","bld":"none","tot":"3 0 0"},
+   {"lot":"10","hd":"10","names":"John Doherty","occ":"John Doherty","les":"Same","desc":"House and land","area":"35 2 0","ac":35.5,"land":"2 3 0","bld":"0 2 0","tot":"2 5 0"},
+   {"lot":"11","hd":"11","names":"Bryan Hallaghy","occ":"Bryan Hallaghy","les":"Same","desc":"House, office, and land","area":"6 2 35","ac":6.71875,"land":"3 7 0","bld":"0 8 0","tot":"3 15 0"},
+   {"lot":"12, 13","hd":"12","names":"Michael McCool","occ":"Michael McCool","les":"Same","desc":"House, offices, & land","area":"14 0 0 and 60 0 0","ac":74,"land":"6 0 0 and 4 5 0","bld":"0 10 0","tot":"10 15 0"},
+   {"lot":"12a","hd":"12","occ":"Patrick McCool","les":"Michael McCool","desc":"House and office","area":"none","land":"none","bld":"0 10 0","tot":"0 10 0"},
+   {"lot":"14","hd":"14","names":"Edward McCool (Lough Cull)","occ":"Edw. McCool (Lough Cull)","les":"Earl of Arran","desc":"House, office, and land","area":"7 0 30","ac":7.1875,"land":"2 15 0","bld":"0 10 0","tot":"3 5 0"},
+   {"lot":"15a","hd":"15","names":"Unity and Robert Gillespie","occ":"Unity Gillespie","les":"Same","desc":"House, offices, & land","area":"125 2 5 (shared)","ac":125.53125,"land":"8 0 0","bld":"1 5 0","tot":"9 5 0"},
+   {"lot":"15b","hd":"15","occ":"Robert Gillespie","les":"Same","desc":"House, offices, & land","area":"shared","land":"4 0 0","bld":"0 15 0","tot":"4 15 0"},
+   {"lot":"16","hd":"16","names":"Edward McCool (Wee)","occ":"Edward McCool (Wee)","les":"Same","desc":"House, office, and land","area":"32 1 10","ac":32.3125,"land":"3 15 0","bld":"0 5 0","tot":"4 0 0"},
+   {"lot":"17","hd":"17","names":"Edward McCool (Long)","occ":"Edward McCool (Long)","les":"Same","desc":"House, office, and land","area":"50 3 30","ac":50.9375,"land":"3 15 0","bld":"0 10 0","tot":"4 5 0"},
+   {"lot":"18","hd":"18","names":"John and Francis Hone","occ":"John Hone","les":"Edwd. McCool (Long)","desc":"House and land","area":"3 0 10 (shared)","ac":3.0625,"land":"0 7 0","bld":"0 8 0","tot":"0 15 0"},
+   {"lot":"18","hd":"18","occ":"Francis Hone","les":"Edwd. McCool (Long)","desc":"Land","area":"shared","land":"0 7 0","bld":"none","tot":"0 7 0"},
+   {"lot":"19","hd":"19","names":"James Gillespie","occ":"James Gillespie","les":"Earl of Arran","desc":"House, office, and land","area":"50 1 0","ac":50.25,"land":"2 7 0","bld":"0 8 0","tot":"2 15 0"},
+   {"lot":"20","hd":"20","names":"Phideas Bradley","occ":"Phideas Bradley","les":"Same","desc":"House, office, and land","area":"102 0 18","ac":102.1125,"land":"3 10 0","bld":"0 10 0","tot":"4 0 0"}
+  ],
+  "mountain_acres": 814.61875,
+  "water_acres": 42.2,
+  "sheet": {
+   "heading": "CULLIONBOY",
+   "sub": "Ord. S. 91 and 95. Areas in acres, roods and perches. Valuations in pounds, shillings and pence.",
+   "printed_total": ["", "Printed total", "", "", "1653 3 0", "82 18 0", "10 9 0", "93 7 0"],
+   "foot": "The valuation columns add up exactly. The areas add up to 1,654a 3r 0p against a printed 1,653a 3r 0p, so either a digit is misread in the screen grabs or the page is out by an acre. The least certain readings are the area of lot 1b, the land valuations of Michael McCool's two lots, the names Dimon, Hallaghy, Mulrenin and Phideas, and the a and b marks beside bracketed tenants."
+  }
+ },
+ "families": [
+  {
+   "keys": ["Gillespie"],
+   "name": "The Gillespies",
+   "tab": "Gillespie",
+   "medium": "Griffith's Valuation and three census returns",
+   "story": "The biggest name in the townland. Unity and Robert Gillespie held the largest holding on Griffith's page, and by 1901 there were three Gillespie households under three roofs. Thomas Gillespie married a Doherty, and by 1926 there were four.",
+   "paras": ["Griffith's: Unity Gillespie (lot 15a) and Robert Gillespie (15b) held 125a 2r 5p together under the Earl of Arran, valued at £9 5s and £4 15s, the largest holding on the page. James Gillespie (lot 19) held 50a 1r 0p, valued at £2 15s. Unity and Robert are also first names in the 1901 Gillespie households, which fits kinship but does not prove it.", "In 1901 Ellen Gillespie (45, farmer and seamstress) headed the household of seven children, Patrick (78) and Katie (76) headed another with son Owen (37) and daughter Unity (42), and Anne (72, widow, wool spinner) headed a third.", "Thomas Gillespie, Ellen's son aged 20 in 1901, appears at 30 in 1911 as son-in-law in John Doherty's house, married to Maggie Doherty (15 in 1901). He is the likely Thomas of 44 in 1926, with wife Margaret (Maggie) and seven children. A second Thomas (52 in 1911, with wife Ellen and sons John, Peter and James) reappears at 69 in 1926 with son James (14 in 1911, 29 in 1926), James's wife Bella and two small children. He is not in the 1901 household, where Ellen is recorded as married and heading it, so he was probably away that night.", "Owen is 37 in 1901 and 56 in 1911, an age gap that does not fit, but his place beside his sister Unity (42, then 60) makes the match secure. In 1926 Owen heads a household that includes Patrick McCadden (22). Edward Gillespie, 32 and single and alone in 1926, does not match cleanly to Ellen's son Edward (15 in 1901)."]
+  },
+  {
+   "keys": ["Dunnion"],
+   "name": "The Dunnions",
+   "tab": "Dunnion",
+   "medium": "Griffith's Valuation (as Dimon) and three census returns",
+   "story": "One house, fourteen people. In 1901 Michael and Catherine Dunnion kept eight children, his mother, his sister, a nephew and a farm servant under one roof. By 1926 four of those children appear to be still at home, all of them around thirty or older.",
+   "paras": ["Griffith's: George Dimon, lot 6, 25a 3r 35p, valued at £3 5s, under the Earl of Arran. The spelling differs, but George recurs in the 1901 household, so the match is a working hypothesis.", "In 1901 Michael Dunnion (48) and Catherine (45) lived with his mother Letitia (70), sister Rose (50), eight children aged 1 to 10, a nephew George (20, shepherd) and a farm servant. By 1911 Letitia was 84 and the household held 14 Dunnions plus a servant, among them George (32), a clerk of Donegal Union, who is the 1901 nephew now recorded as grandson.", "In 1926 Michael (71) and Catherine (60) remain with four adult children: Marianne (34), George (31), Michael S (30) and Andrew E. These are the 1901 children Mary A, George, Michael S and Andrew E, so four of the eight 1901 children are still at home 25 years on."]
+  },
+  {
+   "keys": ["Cassidy"],
+   "name": "The Cassidys",
+   "tab": "Cassidy",
+   "medium": "Three census returns. Not on Griffith's page",
+   "story": "No Cassidy appears on Griffith's page. By 1926 two widows, Bella and Bridget, each run a house of their own, with five children apiece.",
+   "paras": ["Griffith's: no Cassidy appears on the page.", "Two households in 1901 and 1911 can be told apart by the John Cassidy in each. In 1901 John Cassidy (40) headed house 12, and a second John Cassidy (36, agricultural labourer) lived in James Sweeny's house with wife Isabella and three small children. In 1911 John Cassidy (49) heads house 12 with wife Bella (Isabella), and his daughters Ellen T (3 in 1901, 14 in 1911) and Bridget (2, then 12), so the 1901 labourer son-in-law has taken over house 12. The first John Cassidy's family (Ellen, Hugh, Mary A, Francis, John) is not in Cullionboy in 1911.", "Hugh Cassidy (62), wife Bridget and widowed son Patrick (32) appear as a separate household in 1911 with no 1901 match. In 1926 there are two Cassidy households: Bella (58, widow, the 1911 wife) with five children, and Bridget (51, widow) with five children, a Bridget Cassidy (83, widow) and Joseph Hannigan (33). Whether Bridget (51) is Patrick's wife or widow is not shown by the records, and both households contain a John of 15, so the family links need a civil or parish record."]
+  },
+  {
+   "keys": ["Kelly"],
+   "name": "The Kellys",
+   "tab": "Kelly",
+   "medium": "Griffith's Valuation and three census returns",
+   "story": "Mary Kelly held lot 5 in the 1850s, and the name never leaves. In 1926 Bella Kelly runs the house with four children, and the form records that their father is dead.",
+   "paras": ["Griffith's: Mary Kelly, lot 5, 22a 2r 20p, valued at £3 5s, under the Earl of Arran. She is the only Kelly on the page.", "Thomas Kelly (60) and Margaret headed the household in 1901 with four adult sons: Thomas, Joseph, John and James. By 1911 Thomas and Marget are 74, Joseph (35) is married to Bella (32) and John Patrick (30) is single. By 1926 Bella (45) heads the house with Mary Katie (13), Rose Anne (12), Thomas Joseph (9) and Hugh Patrick (7), and the form notes that the father is dead. The four children were all born after 1911, so Joseph and Bella had no children in the 1911 return."]
+  },
+  {
+   "keys": ["Bradley"],
+   "name": "The Bradleys",
+   "tab": "Bradley",
+   "medium": "Griffith's Valuation and three census returns",
+   "story": "Phideas Bradley held 102 acres in the 1850s, the biggest holding of any single tenant. By 1926 Patrick Bradley heads a household of ten, with his mother Ellen, aged 81, still at the table.",
+   "paras": ["Griffith's: Phideas Bradley, lot 20, 102a 0r 18p, valued at £4, the largest holding of any single tenant on the page. Phideas does not recur in the censuses, so the link to Dan Bradley (60 in 1901) is unproven.", "Dan Bradley (60), Ellen (54) and three adult children made five people in 1901. By 1911 Dan had died and Ellen (69, widow) headed the house with sons Patrick (36, married) and James (34), Patrick's wife Rose (28) and two grandchildren, Mary Ellen (4) and Daniel (2). Patrick has no 1901 entry in Cullionboy. In 1926 Patrick (56) heads ten people, including Ellen (81), Rose, James (54) and six children, and Philip (3) appears on a separate form with Patrick named as head. Mary (18) and Daniel (16) are the 1911 grandchildren."]
+  },
+  {
+   "keys": ["Gildea"],
+   "name": "The Gildeas",
+   "tab": "Gildea",
+   "medium": "Griffith's Valuation and three census returns",
+   "story": "Siblings who stayed. In 1901 and 1911 the Gildeas are brothers and sisters keeping house together, and in 1926 Patrick, Ellen and Mary Guildea share one household, aged 75, 72 and 76.",
+   "paras": ["Griffith's: Jeremiah and Patrick Gildea shared lot 3 (27a 2r 26p, valued at £2 15s and £3), under the Earl of Arran. Patrick is also a first name in the 1911 and 1926 Gildea households.", "Siblings dominate. In 1901 Edward (78) and Bridget (74) lived with daughter Mary (28, seamstress), and James (40), Ellen (44) and Mary (42) lived in a second house. By 1911 Edward and Bridget are gone, Mary (40, sprigger) heads house 17 with a visitor Maggie (19), and James (52) heads house 18 with sisters Ellen and Mary and a widowed brother, Patrick (60), not in the 1901 return. In 1926 Patrick (75), Ellen (72) and Mary (76) are the household, with Patrick O'Sullivan (13, relationship not stated). James is absent. Two Marys in 1901 make the 1926 Mary ambiguous."]
+  },
+  {
+   "keys": ["Colhoun"],
+   "name": "The Colhouns",
+   "tab": "Colhoun",
+   "medium": "Three census returns. Not on Griffith's page",
+   "story": "Mary Colhoun, a widow and sprigger, had three daughters at home in 1901. Her likely son Patrick is head of the house by 1926 with seven children, and a grandson named Patrick McCadden appears in 1911.",
+   "paras": ["Griffith's: no Colhoun appears on the page.", "Mary Colhoun (40, widow, sprigger) headed house 9 in 1901 with daughters Maggie (16), Marrie (13) and Lizzie (10). Her likely son Patrick Colhoun (10) is recorded that night as a grandson in Patrick Gillespie's house, and is Patrick (20) in his mother's house in 1911 and Patrick (36), head, in 1926 with wife Teresa and seven children. Mary reappears as Margaret (75, widow) in 1926, a name change to hold open.", "A grandson, Patrick McCadden (6), is in Mary's house in 1911. In 1926 Patrick McCadden (22) lives with Owen Gillespie. The McCadden surname is the same as the McCadden line elsewhere in this project, so this is worth checking against the tree. A shared surname is not proof of kinship."]
+  },
+  {
+   "keys": ["Harvey"],
+   "name": "The Harveys",
+   "tab": "Harvey",
+   "medium": "Three census returns. Not on Griffith's page",
+   "story": "Francis Harvey in 1901, Edward Harvey from 1911. The link between them is still open.",
+   "paras": ["No Harvey appears on the Griffith's page. Francis Harvey (60), wife Mary and two children were in house 13 in 1901. In 1911 Edward Harvey (35) heads the house with wife Ellen and his mother Mary (74, widow), and he and Ellen (50 and 56) are still there in 1926. Edward does not appear in 1901, and Mary's age jumps from 50 to 74, so the link to Francis's household is open."]
+  },
+  {
+   "keys": ["McMullen"],
+   "name": "The McMullens",
+   "tab": "McMullen",
+   "medium": "Three census returns. Not on Griffith's page",
+   "story": "Bridget McMullen, her son and her daughter in 1901. By 1926 Anne McMullen, aged 66, is alone in her house.",
+   "paras": ["No McMullen appears on the Griffith's page. Bridget McMullen (62, widow, farmer) lived with her son Michael (40) and daughter Anne (37) in 1901. By 1911 only Bridget (75) and Anne (47) remain, and in 1926 Anne (66) is alone."]
+  },
+  {
+   "keys": ["McCool"],
+   "name": "The McCools",
+   "tab": "McCool",
+   "medium": "Griffith's Valuation and three census returns",
+   "story": "Five McCool tenants held lots on Griffith's page, three of them called Edward and told apart as Lough Cull, Wee and Long. By 1926 only Charles McCool remains, living in another family's house.",
+   "paras": ["Griffith's has five McCool occupiers across lots 12 to 17: Michael (lots 12 and 13), Patrick (12a, his subtenant), and Edward McCool three times, as Lough Cull (14), Wee (16) and Long (17). Edward McCool (80) with wife Margaret, son Charles (35) and grandson Edward (15) lived in one house in 1901, and John McCool (54) with his mother Hannah (92) in another. Edward (91) and Charles (50) are the only McCools in 1911. In 1926 Charles (68, widower) lives in Edward McGettigan's household, with no McCool household of his own."]
+  },
+  {
+   "keys": ["Doherty"],
+   "name": "The Dohertys",
+   "tab": "Doherty",
+   "medium": "Griffith's Valuation and two census returns",
+   "story": "Mary and John Doherty held lots 4 and 10 in the 1850s. In 1911 John's daughter Maggie lives in his house with her husband Thomas Gillespie, and by 1926 the name has gone.",
+   "paras": ["Griffith's has Mary Doherty (lot 4) and John Doherty (lot 10), under the Earl of Arran. John Doherty (52) and Mary had four daughters in 1901. Maggie, the eldest, married Thomas Gillespie, and by 1911 the house held John and Mary, Annie (13) and the Gillespie family. No Doherty household remains in 1926."]
+  },
+  {
+   "keys": ["Sweeney"],
+   "name": "The Sweeneys",
+   "tab": "Sweeney",
+   "medium": "Griffith's Valuation (as McSwyne) and two census returns",
+   "story": "McSwyne on Griffith's page, Sweeney in the censuses. By 1926 the name has left the townland.",
+   "paras": ["Griffith's has Myles McSwyne (lot 7) and James McSwyne (lot 9). James Sweeny (82, widower) lived with his daughter Isabella and son-in-law John Cassidy in 1901, and Denis Sweeney (54) with wife Mary and niece Mary Dorah in another house. In 1911 Denis (70, widower) lives with his niece Mary Doran (45). No Sweeney appears in 1926."]
+  },
+  {
+   "keys": ["Dunlevy"],
+   "name": "The Dunlevys",
+   "tab": "Dunlevy",
+   "medium": "Griffith's Valuation (as Dunleavy) and one census return",
+   "story": "Paul, Lewis and the Widow Dunleavy held land in the 1850s, the biggest of it nearly 60 acres. One Dunlevy household is left in 1901, and none after.",
+   "paras": ["Griffith's has Paul Dunleavy (lot 1a, 59a 3r 28p, with Michael Mulrenin as his subtenant), Lewis Dunleavy and Widow Dunleavy (lot 8). Patrick Dunlevy (34), wife Sarah and infant Maggie appear only in 1901. Other 1901 names with no later trace are Ward (farm servant, with a Michael Ward of 40 in 1911 in the same role) and the Gallagher widow Bridget (34) with daughter Ellen in James Sweeny's house."]
+  },
+  {
+   "keys": ["Hone", "McGettigan"],
+   "name": "The Hones and McGettigans",
+   "tab": "Hone",
+   "medium": "Griffith's Valuation (Hone) and the 1926 return",
+   "story": "John and Francis Hone held lot 18 in the 1850s. No Hone household is in the 1901 or 1911 returns, and one appears in 1926 beside a McGettigan household that has no earlier trace.",
+   "paras": ["Michael Hone (age blank), wife Mary (30) and two children, and Edward McGettigan (age blank), wife Agnes (26) and two children, appear in 1926. Neither surname is in the 1901 or 1911 returns for Cullionboy. John and Francis Hone held lot 18 in Griffith's, so the 1926 Hones may be a return or a namesake. McGettigan appears nowhere earlier. Joseph Hannigan (33) in Bridget Cassidy's house in 1926 and Patrick O'Sullivan (13) with the Guildeas are also new names."]
+  }
+ ],
+ "questions": ["Resolve the one-acre excess in the Griffith's area column against the page image, and the further 4a 1r 2p separating the printed total from the townlands.ie area.", "Check the least certain Griffith's readings: lot 1b area, Michael McCool's land valuations, and the names Dimon, Hallaghy, Mulrenin and Phideas.", "Find a Tithe Applotment extract for Cullionboy, if the books come online.", "Was Thomas Gillespie (52 in 1911) away in 1901, and is Ellen of 1901 his wife?", "Owen Gillespie is 37 in 1901 and 56 in 1911. Which is right?", "Where did John Cassidy (40, 1901 house 12) and his family go?", "How are Bridget Cassidy (51) and Bridget Cassidy (83) of 1926 related to Hugh and Patrick Cassidy of 1911?", "Is Patrick Colhoun (10 in 1901) Mary Colhoun's son, and how does Patrick McCadden connect to the McCadden line in the wider project?", "Is the 1926 Hone household a return of the Hones on Griffith's page? Who are Hannigan, O'Sullivan and McGettigan, and what is Agnes McGettigan's link to Charles McCool?", "Is Edward Harvey (35 in 1911) a son of Francis Harvey of 1901?", "Are Michael Ward of 1911 and John Ward of 1901 the same farm servant?", "Find civil records from 1864 and parish registers to confirm every proposed census link."],
+ "plates": {
+  "title": {
+   "title": "Cuilleann Buí",
+   "irish": "Cuilleann Buí",
+   "heading": "Cullionboy",
+   "medium": "A townland in Clogher electoral division, Donegal civil parish, Tirhugh barony",
+   "story": ["The yellow hollow, in Irish. Cullionboy lies beside Clogher, Druminnin, Keadew Upper and Meenabrock, and covers 1,658 acres (671 ha).", "Every scene here is drawn from the records. Cottages stand for households and are not placed on a map."]
+  },
+  "mountain": {
+   "title": "The mountain",
+   "medium": "Griffith's Valuation, mid 1850s. Two lots in the Earl of Arran's name",
+   "story": ["Nearly half of Cullionboy was mountain. Griffith's gives 815 acres to the Earl of Arran, held in fee, valued together at £5 15s. No tenant is named.", "The rest of the townland, about 798 acres, is let to 25 people."]
+  },
+  "griffiths": {
+   "title": "Twenty-five names",
+   "medium": "Griffith's Valuation, mid 1850s. Printed page, transcribed from screen grabs",
+   "story": ["One printed page names everyone who held land here. Almost all of them hold from the Earl of Arran. Three hold from other tenants: Michael Mulrenin, Patrick McCool and the Hones.", "The page carries no date. Mid 1850s is the date supplied for this study."]
+  },
+  "treemap": {
+   "title": "Twenty holdings, drawn by size",
+   "medium": "Griffith's Valuation, mid 1850s. Colour is the holder's family",
+   "story": ["The whole townland laid out by area. The mountain is the great pale block. The Gillespies' shared holding of 125 acres is the largest let to tenants, and Phideas Bradley's 102 acres the largest held by one man.", "Tiny Michael Mulrenin, in one corner, holds a house and garden of twelve perches under Paul Dunleavy."],
+   "mountain_name": "Mountain, Earl of Arran in fee",
+   "mountain_tip": "Lots 21 and 22, 814.6 acres, valued at £5 15s",
+   "water_name": "Water",
+   "water_tip": "Lot 23, 42.2 acres"
+  },
+  "not_yet_hung": {
+   "title": "Not yet hung",
+   "medium": "Six frames for six kinds of record. Two are filled",
+   "story": ["The earliest layer is empty. The Tithe Applotment Books, from the 1820s and 1830s, would sit before Griffith's, and for now they are offline.", "Revision books, civil records from 1864 and parish registers would let each census link below be proved, or dropped."],
+   "frames": [
+    ["Tithe Applotment Books", "1820s and 1830s", "Missing. Currently offline.", false],
+    ["Griffith's Valuation", "Mid 1850s", "Held. One page, from screen grabs.", true],
+    ["Valuation revision books", "After the 1850s", "Missing.", false],
+    ["Civil births, marriages and deaths", "From 1864", "Missing.", false],
+    ["Parish records", "Mostly 1870s and 1880s", "Missing.", false],
+    ["Census returns", "1901, 1911 and 1926", "Held. Clogher electoral division.", true]
+   ]
+  },
+  "method": {
+   "paras": [
+    "Griffith's Valuation was transcribed from three screen grabs of the page scan on askaboutireland.ie. The page carries no date. Mid 1850s is the date supplied for this study.",
+    "The census tables are the Cullionboy rows of three files for Clogher electoral division. The townland is Cullionboy in 1901 and 1911 and Collinboy in 1926. House numbers in 1901 and 1911 and form numbers in 1926 define a household. The 1926 form for Philip Bradley, aged 3, names Patrick Bradley as head, so he is counted in that household.",
+    "Households are matched across censuses by surname group, first name and age. First-name equivalents such as Maggie and Margaret, Bella and Isabella were allowed, with an age tolerance of several years. Spelling stays as written in each source. Gildea and Guildea, Colhoun and Coulhoun, Sweeny and Sweeney are grouped for matching only, and every link is a proposed match until a civil or parish record confirms it. A shared surname is not proof of kinship.",
+    {
+     "before": "Area, neighbours and names come from ",
+     "link": {
+      "href": "https://www.townlands.ie/donegal/tirhugh/donegal/clogher/cullionboy/",
+      "text": "townlands.ie"
+     },
+     "after": ": 1,658.02 acres (670.98 ha), with Clogher to the south, Druminnin to the west, Keadew Upper to the north and Meenabrock to the east. Croaghloughslug is listed as a subtownland."
+    },
+    "A blank in the 1901 and 1911 language column is not necessarily English only, so the Irish counts are a minimum. Women's work in 1901 and 1911 is mostly sprigging, seamstress or dressmaking, alongside farming. The 1926 file has no occupation column."
+   ],
+   "numbers_intro": "Population fell from {n1901} to {n1911} between 1901 and 1911, then recovered to {n1926} by 1926. Everyone is recorded as Roman Catholic each time. Nine surname groups appear in all three censuses."
+  },
+  "records": {
+   "placeholder": "for example Gillespie"
+  }
+ }
+}
