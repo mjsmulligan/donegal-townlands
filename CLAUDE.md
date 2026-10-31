@@ -2,6 +2,10 @@
 
 This repo holds family-centred townland studies for the Drumholm area of Donegal, published as immersive "gallery walk" web pages. Several assistants work on it across sessions. Do not rely on chat history or project memory. This file, STATUS.md files and DECISIONS.md are the shared context. Update them as you work.
 
+## Working with other assistants
+
+Read [`docs/SHARED_ASSISTANT_PROTOCOL.md`](docs/SHARED_ASSISTANT_PROTOCOL.md) as well as these project-specific instructions. The shared protocol governs cross-assistant collaboration; this file remains authoritative for Donegal-specific research, publishing, privacy, and validation rules.
+
 ## Owner and working style
 - Owner: Mike (genealogist, limited Python, relies on you for implementation).
 - No em dashes anywhere, in any file. `tools/validate.py` fails the commit if it finds one.
@@ -14,7 +18,7 @@ This repo holds family-centred townland studies for the Drumholm area of Donegal
 - Study order: Cullionboy (first), Clogher next, then townlands in Drumholm and neighbouring Drumhome.
 
 ## Sister repo
-`mjsmulligan/irish-genealogy-research` (GRA) is the research engine: source fetching, record linkage, Irish genealogical rules (`src/genealogy/`), source and licence list (`docs/repositories.md`). This repo is the publishing layer. GRA never knows about this repo. Rules:
+`mjsmulligan/irish-genealogy-research` (GRA) is the research engine: source fetching, record linkage, Irish genealogical rules (`src/genealogy/`), source and licence list (`docs/repositories.md`). This repo is the publishing layer. GRA does not depend on this repo, but Donegal Townlands is an important downstream use case that can inform GRA priorities and identify research or export gaps. Preserve the one-way architecture: GRA supplies agreed research exports; this repo does not reimplement GRA's fetching or record-linkage logic. Rules:
 - Check `docs/repositories.md` in GRA for a source's licence before committing anything from it. Never commit Historic Graves data.
 - Do not re-implement fetching or linking here. Data flows GRA to here through the export contract in `docs/EXPORT_CONTRACT.md`.
 - GRA's own rules require design agreement before changes to its schema or scoring.
