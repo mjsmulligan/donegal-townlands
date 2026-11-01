@@ -1,4 +1,6 @@
-# Export contract: GRA to donegal-townlands (draft for review)
+# Export contract: GRA to donegal-townlands (SUPERSEDED)
+
+Status: superseded on 2026-11-01. Donegal Townlands is independent of GRA and there is no export contract between the projects (see `DECISIONS.md` and `docs/DATA_ARCHITECTURE.md`). This file is kept unchanged below as a historical record of the earlier proposal. Do not implement it.
 
 Status: proposal. Nothing in GRA has been changed. GRA requires a design agreed before work, so this is that design.
 

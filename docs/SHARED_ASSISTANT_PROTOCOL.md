@@ -15,15 +15,15 @@ This protocol governs collaboration between AI assistants working with Mike acro
 
 ## 2. Project boundaries and relationship
 
-- **Grá is the research and ingestion engine.** It owns source acquisition, ingestion, source definitions, record structures, URL patterns, evidence processing, and its person-centred record-linkage capabilities and Irish genealogical rules. Grá was originally designed around identifying records that may relate to the same person, using rules and probabilistic methods.
-- **Donegal Townlands is a downstream, townland-centred historical research and publishing project.** It uses Grá's ingestion capabilities and source architecture, but does not adopt Grá's person-matching engine as a dependency or organising method. Its organising framework is the townland, not the individual or family.
-- The fundamental unit of exchange from Grá to Donegal Townlands is the source record, with its provenance and the information needed to trace it to the original source. It is not a person identity inferred by Grá.
+- **Grá is a person-centred research and ingestion engine.** It owns its own source acquisition, ingestion, source definitions, record structures, URL patterns, evidence processing, and its person-centred record-linkage capabilities and Irish genealogical rules. Grá was originally designed around identifying records that may relate to the same person, using rules and probabilistic methods.
+- **Donegal Townlands is an independent, townland-centred historical research and publishing project.** It owns its data, identifiers, source acquisition and processing, and may acquire and process sources directly. It does not adopt Grá's person-matching engine, record identifiers or pipelines as a dependency or organising method. Its organising framework is the townland, not the individual or family.
+- In Donegal Townlands the fundamental unit of evidence is the source record, with its provenance and the information needed to trace it to the original source. It is not a person identity inferred by any pipeline.
 - In Donegal Townlands, relationships between records and people, households or families are primarily established through human research and review. A proposed relationship must remain distinguishable from what a source directly records. Probabilistic matches from Grá may be useful as leads where available, but are not authoritative conclusions for Townlands.
-- Grá's source catalogue and specifications are valuable beyond the sources for which ingestion has already been implemented. They describe additional sources, repositories, record structures and URL patterns, including Catholic parish registers and the Dúchas Schools Collection. Reuse these definitions rather than creating a competing source framework in Townlands. Do not, however, describe a source as implemented or ingested merely because it is specified in the catalogue. Distinguish specified, implemented and actually ingested capability.
+- Grá's source catalogue, provenance architecture and specifications are a design resource that may be reused where useful, and Grá may help with ETL for particular source data files. They describe additional sources, repositories, record structures and URL patterns, including Catholic parish registers and the Dúchas Schools Collection. Reuse is chosen case by case and is not an obligation. Do not describe a source as implemented or ingested merely because it is specified in a catalogue. Distinguish specified, implemented and actually ingested capability.
 - For Donegal Townlands, Griffith's Valuation is foundational because it records land and occupation within townland boundaries. Census records, maps, church and civil records, and other historical sources add further dimensions to the history of the place.
 - For Donegal Townlands, present direct documentary evidence distinctly from analysis and interpretation, and distinguish both from conclusions. Preserve original recorded details, source provenance, uncertainty, and contradictory evidence. Identity matching can support family histories but must not become the primary purpose or organising structure of the project.
-- Donegal Townlands is an important real-world use case that can inform Grá's research priorities and expose gaps. This does not make Grá dependent on the publishing repository or authorise automatic schema, scoring, or architecture changes.
-- Data flows from Grá to Donegal Townlands through an explicitly agreed export contract. Changes to that contract require design discussion and Mike's approval before implementation.
+- Donegal Townlands may inform Grá's research priorities and expose gaps. Neither repository depends on the other, and nothing here authorises automatic schema, scoring, or architecture changes in Grá.
+- There is no export contract between the repositories and no required data flow. Any code, data or design taken from one repository into the other is copied or referenced explicitly, with provenance and licence checked. Any future interface between the two needs design discussion and Mike's approval before implementation.
 - Preserve the evidence/conclusion boundary and all project-specific architecture rules. A presentation need must not weaken research integrity.
 
 ## 3. Start every task deliberately
@@ -33,7 +33,7 @@ Before editing:
 2. Read applicable instructions, status, decisions, and (for Grá) the roadmap.
 3. Search for existing implementations, open work, and prior decisions.
 4. State the proposed scope, files likely to change, and validation approach.
-5. If the task touches a protected boundary, schema, scoring, matching behaviour, export contract, privacy, licensing, or a material architectural decision, stop for design agreement rather than quietly implementing it.
+5. If the task touches a protected boundary, schema, scoring, matching behaviour, a data interface between repositories, privacy, licensing, or a material architectural decision, stop for design agreement rather than quietly implementing it.
 
 Do not broaden a task because adjacent improvements seem attractive. Record follow-on ideas separately.
 

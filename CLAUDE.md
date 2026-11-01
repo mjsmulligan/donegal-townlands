@@ -25,18 +25,27 @@ The townland is the primary unit of research and presentation. Family histories 
 - Donegal only. Place model: townland, civil parish, barony, DED, county.
 - Study order: Cullionboy (first), Clogher next, then townlands in Drumholm and neighbouring Drumhome.
 
-## Sister repo
+## Data architecture
 
-`mjsmulligan/irish-genealogy-research` (GRA) is the research engine: source fetching, record linkage, Irish genealogical rules (`src/genealogy/`), source and licence list (`docs/repositories.md`). This repo is the publishing layer. GRA does not depend on this repo, but Donegal Townlands is an important downstream use case that can inform GRA priorities and identify research or export gaps. Preserve the one-way architecture: GRA supplies agreed research exports; this repo does not reimplement GRA's fetching or record-linkage logic. Rules:
+The central working specification is [`docs/DATA_ARCHITECTURE.md`](docs/DATA_ARCHITECTURE.md). The place authority is specified in [`docs/GAZETTEER_SPEC.md`](docs/GAZETTEER_SPEC.md). Read both before data design, ETL, identifier or GEDCOM work. In short: original sources are preserved unchanged; each source gets its own ETL and import specification; source observations, place associations, established research entities and assertions are kept distinct; one master GEDCOM serves the whole project; identity and association decisions are made by human review. Both documents are drafts and record their open decisions explicitly.
+
+## Relationship with GRA
+
+`mjsmulligan/irish-genealogy-research` (GRA) is a separate project with a different organising purpose. GRA is person-centred: its pipelines are built around linking records into persons. Donegal Townlands is townland-centred and must stay independent of that approach.
+
+- Donegal Townlands owns its own data, identifiers, source acquisition and processing. It does not depend on GRA, GRA record IDs or GRA's person-matching engine.
+- There is no export contract and no required data flow between the repositories. `docs/EXPORT_CONTRACT.md` is superseded and kept only as a historical record.
+- Elements of GRA's design may be reused where useful, for example its source catalogue, provenance architecture, source definitions and URL patterns, and ETL for particular source data files. Reuse is a deliberate choice made case by case, not an obligation, and not a gateway every source must pass through.
+- Always distinguish a source that is specified in a catalogue from one whose ingestion is implemented and one for which records have actually been ingested.
 - Check `docs/repositories.md` in GRA for a source's licence before committing anything from it. Never commit Historic Graves data.
-- Do not re-implement fetching or linking here. Data flows GRA to here through the export contract in `docs/EXPORT_CONTRACT.md`.
-- GRA's own rules require design agreement before changes to its schema or scoring.
-- Known gap: GRA's `data/Clogher_1926.csv` lacks about 500 researcher-filled relationship values present in `data/census/1926_Clogher.csv` here. Local copies are the verified source until GRA is updated.
+- Do not treat any GRA person match as a confirmed Townlands identity.
+- Any code, data or design taken from GRA is copied or referenced explicitly, with provenance and licence checked. Any future interface between the two projects needs design discussion and Mike's approval.
+- The local copy `data/census/1926_Clogher.csv` is the verified source. GRA's `data/Clogher_1926.csv` lacks about 500 researcher-filled relationship values.
 
 ## Method
 
 - Baseline source is Griffith's Valuation (mid 1850s). Tithe Applotment before it, then revision books, civil BMD (1864 on), parish records, censuses 1901, 1911, 1926.
-- Surname and name variant rules live in GRA `src/genealogy/names.py`. Working groups so far (Gildea/Guildea, Colhoun/Coulhoun, Sweeny/Sweeney/McSwyne, Dunleavy/Dunlevy). Dimon to Dunnion is a working hypothesis, Hallaghy possibly Gallagher.
+- GRA `src/genealogy/names.py` is a reference for surname and name variant rules, not a dependency. Working groups so far (Gildea/Guildea, Colhoun/Coulhoun, Sweeny/Sweeney/McSwyne, Dunleavy/Dunlevy). Dimon to Dunnion is a working hypothesis, Hallaghy possibly Gallagher.
 - Tolerate age drift between censuses. Hold discrepancies open and record them in the townland STATUS.md. Never resolve a conflict silently.
 - Separate documents from oral tradition and say which is which.
 - Report numbers that do not add up (for example the Griffith's area sum one acre over the printed total in Cullionboy) and keep them open.
@@ -60,3 +69,4 @@ Family stories, the Griffith's transcription and plate copy live in `townlands/<
 ## Standing rules for images
 
 Originals stay outside the repo. Commit web-sized copies (about 1600 px). Each image needs a caption record: source, reference, date, people shown, family.
+
