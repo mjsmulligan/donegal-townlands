@@ -9,7 +9,7 @@ Each package ends with a handover and a `DECISIONS.md` update (GOV-05).
 
 ## 1. Approach
 
-Build one thin path end to end first: the 1926 Clogher census through preservation, ETL, observation IDs, gazetteer, association, review and the evidence build. Then widen to other years and DEDs, then to other sources. The existing Cullionboy and Clogher pages keep working throughout and are switched over only when the new path reproduces them.
+Build one thin path end to end first: the 1926 Clogher census through preservation, ETL, observation IDs, place layer, association, review and the evidence build. Then widen to other years and DEDs, then to other sources. The existing Cullionboy and Clogher pages keep working throughout and are switched over only when the new path reproduces them.
 
 GRA's source ingest and its already fetched census files are the starting point. Its person-linking pipelines are not used.
 
@@ -19,7 +19,7 @@ GRA's source ingest and its already fetched census files are the starting point.
 |---|---|---|
 | `data/*.csv`: 15 census files (Clogher, Magheraclogher, Donegal, Laghy, Tawnawully, Tullynaught; 1901, 1911, 1926), first committed to GRA on 2026-07-10 | WP1 | Copied unchanged into the source layer with a manifest entry |
 | `src/ingest/fetch_census.py` | WP11 | Adapted into a database-free fetcher that saves the response unchanged |
-| `src/ingest/fetch_places.py` | WP3 | Adapted to seed the gazetteer from Logainm |
+| `src/ingest/fetch_places.py` | WP3 | Adapted to fetch and snapshot Logainm places, hierarchy and coordinates. GRA's flat place table shape is reused. |
 | `src/evidence/census.py` helpers (`images` field, ages, roles) | WP4 | Small functions adapted with tests |
 | `src/evidence/place_resolution.py` normalisation | WP6 | Ideas only: doubled consonants, "X or Y" names, suffix stripping |
 | `docs/repositories.md` source catalogue | WP7, WP13 | Link templates and licence notes |
@@ -40,7 +40,7 @@ GRA's source ingest and its already fetched census files are the starting point.
 |---|---|---|---|---|
 | 1 | Foundations and source preservation | none | M | A |
 | 2 | Identifier registry | 1 | S | A |
-| 3 | Gazetteer seed from Logainm | 1, 2 | M | A |
+| 3 | Place layer from Logainm | 1, 2 | S | A |
 | 4 | 1926 census ETL and observation IDs | 1 | M | A |
 | 5 | Corrections overlays | 4 | S | A |
 | 6 | Association and review workflow | 3, 4 | M | A |
@@ -71,13 +71,13 @@ Phase A completes the thin path. WP1 and WP2 can start now. WP3 needs a Logainm 
 - **Requirements:** ID-01 to ID-04.
 - **Acceptance:** the tests in the requirements pass, including rejection of a rewritten line.
 
-### WP3 Gazetteer seed from Logainm
-- **Goal:** place records, variants and hierarchy for every DED held, seeded from Logainm.
+### WP3 Place layer from Logainm
+- **Goal:** a Logainm snapshot and a derived place table for every DED held, plus a home for manual places and name variants. Logainm is the authority, so there is no full gazetteer to build.
 - **Inputs:** an adapted `fetch_places.py`, the Logainm IDs for the six DEDs, an API key, the project dictionary as a cross-check.
-- **Outputs:** place, variant and hierarchy CSVs; a list of dictionary townlands missing from Logainm and the reverse; registry entries for every place.
-- **Requirements:** PLC-01 to PLC-06.
-- **Acceptance:** every townland string in the 15 census files is either matched, proposed or listed as unresolved. Keadew Lower is a separate place.
-- **Risk:** Logainm historical spellings and town parts may not cover every string. Unresolved strings feed WP6.
+- **Outputs:** the snapshot in the source layer with manifest entries; the derived place table; a list of dictionary townlands missing from Logainm and the reverse; an empty manual places table with its registry hook; the name variants table, loaded from the 15 census files as proposed.
+- **Requirements:** PLC-01 to PLC-07.
+- **Acceptance:** every townland string in the 15 census files is either matched, proposed or listed as unresolved. Keadew Lower is a separate place, either from Logainm or as a manual place. Regenerating the place table gives identical output.
+- **Risk:** Logainm may not cover historical spellings, town parts or every townland. Gaps become manual places and unresolved strings feed WP6.
 
 ### WP4 1926 census ETL and observation IDs
 - **Goal:** the first import specification and a deterministic ETL for the 1926 files.
@@ -96,7 +96,7 @@ Phase A completes the thin path. WP1 and WP2 can start now. WP3 needs a Logainm 
 - **Goal:** proposed associations, a review CSV and a script that applies decisions.
 - **Outputs:** matcher (exact, variant, phonetic, fuzzy, with ambiguity rule); association file; review list; apply script; audit log; report.
 - **Requirements:** ASC-01 to ASC-06, ASC-03.
-- **Acceptance:** the Clogher 1926 test from the gazetteer spec, now against real place IDs. Nothing is accepted without a reviewer.
+- **Acceptance:** the Clogher 1926 test from the gazetteer spec, now against real Logainm IDs. Nothing is accepted without a reviewer.
 
 ### WP7 Evidence build v1
 - **Goal:** generate the per-townland evidence bundle for Clogher DED 1926.

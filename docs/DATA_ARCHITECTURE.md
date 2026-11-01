@@ -1,6 +1,6 @@
 # Donegal Townlands: Data Architecture
 
-Status: Working specification, draft 3
+Status: Working specification, draft 4
 Date: 2026-11-01
 Location in repository: `docs/DATA_ARCHITECTURE.md`
 
@@ -59,7 +59,8 @@ A Donegal Townlands identifier is generated when a research entity is formally e
 |---|---|---|
 | Original source locator | Archive reference, NLI image number, census row | As given by the source |
 | Observation ID | `census1926:clogher:<a_id>` | Deterministic (see 5.2) |
-| Research entity ID | Person, property, place | UUID (proposed) |
+| Research entity ID | Person, property | UUID (proposed) |
+| Place key | Place | The Logainm ID. A `dt-place:<uuid>` ID only for places Logainm does not hold. |
 | GEDCOM pointer | `@I123@` | Internal to one GEDCOM file only. Never a permanent identifier. |
 
 ### 5.2 Deterministic observation IDs (agreed)
@@ -93,7 +94,7 @@ Rules:
 
 ## 6. Places and associations
 
-### 6.1 Place authority (gazetteer): new, proposed as first decision
+### 6.1 Place authority: Logainm
 
 "Townland" cannot be treated as a plain string. The current files already show why:
 
@@ -101,14 +102,15 @@ Rules:
 - Spelling varies between sources and over time (for example Drumenny and Drummenny, Tawnawully and Tawnawilly).
 - Different sources use different administrative units (townland, DED, parish, barony, civil parish).
 
-The gazetteer provides:
+Logainm (logainm.ie) is the place authority. It is a recognised authority with stable IDs for townlands, civil parishes, DEDs, baronies and counties, and it supplies names, place types and the hierarchy. The project does not build its own gazetteer. The Logainm ID is the place key. A snapshot of the Logainm responses is kept in the source layer.
 
-- A stable place ID for every place.
-- Alternate names, each with source and date range.
-- A parent hierarchy (townland, DED, civil parish, barony, county) with time validity where boundaries or names changed.
-- A place type, so that a townland and a DED of the same name are distinct places.
+The project adds only what Logainm does not provide:
 
-Place associations point to place IDs, never to name strings.
+- A table mapping each census spelling to a place key (name variants), reviewed by a human.
+- Manual places, with `dt-place:<uuid>` keys, for places Logainm does not hold, such as town parts and church parishes.
+- Place associations.
+
+Place associations point to place keys, never to name strings. The details are in `docs/GAZETTEER_SPEC.md`.
 
 ### 6.2 Associations are entities, not fields
 
@@ -119,7 +121,7 @@ Each association records:
 | Field | Examples |
 |---|---|
 | observation ID | Stable, deterministic |
-| place ID | From the gazetteer |
+| place key | A Logainm ID, or a `dt-place` key for a manual place |
 | association type | residence, birthplace, event location, property location |
 | method | exact name match, variant match, phonetic match, fuzzy match, manual |
 | confidence | high, medium, low, with a note |
@@ -234,7 +236,7 @@ Donegal Townlands may reuse GRA's source catalogue, provenance architecture and 
 
 | Order | Source | What it tests |
 |---|---|---|
-| 1 | 1926 Census (existing Clogher file) | Acquisition, preservation, source-specific ETL, deterministic observation IDs from `a_id`, gazetteer-based place association, traceability |
+| 1 | 1926 Census (existing Clogher file) | Acquisition, preservation, source-specific ETL, deterministic observation IDs from `a_id`, place association against Logainm, traceability |
 | 2 | Parish registers | Image-based records, transcription, citations, links to NLI images |
 | 3 | Valuation records | Property and land model, occupier and valuation changes over time |
 
@@ -265,7 +267,7 @@ Use these to test and refine the architecture before adding complexity.
 
 | Item | Notes |
 |---|---|
-| Place gazetteer | Proposed as the first decision. Everything else depends on it. |
+| Place layer | Logainm is the authority (agreed). Open: Logainm API key, licence and coverage, the `dt-place` namespace for manual places. |
 | Assertions store | Structure in section 9 is a first draft. |
 | GEDCOM 7 as target | Needs compatibility and round-trip testing. |
 | UUID format and version | Which UUID version, and how generated and checked. |
@@ -283,7 +285,7 @@ The requirements are in `docs/REQUIREMENTS.md` and the work packages in `docs/WO
 - Processed layers are CSV and JSON files in git. The single master GEDCOM is the exception for people and relationships, and it is generated from accepted decision files.
 - Accept and reject decisions are made in a review CSV and applied by script.
 - Code from GRA is copied and adapted, with a provenance header, not imported. Person-linking pipelines are not reused.
-- The gazetteer is seeded from Logainm. The project dictionary is a cross-check (proposed, replacing the earlier plan).
+- Logainm is the place authority and its ID is the place key. The project builds no full gazetteer, only name variants, manual places and associations. The project dictionary is a cross-check.
 - Researcher-filled values are kept in overlay files so source files stay unchanged (proposed).
 - Open: whether the public repository may hold processed research layers and the GEDCOM, whether the GEDCOM is ever edited in genealogy software, which genealogy software is used, and a Logainm API key.
 

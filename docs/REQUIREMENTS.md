@@ -15,7 +15,7 @@ Every requirement has an acceptance test. A work package is finished when the te
 | D1 | The build pipeline is Python. The browser only displays static JSON produced by the build. No matching, filtering or identifier work happens in the page. | Agreed 2026-11-01 |
 | D2 | Logic from GRA is reused by copy and adapt, with a provenance header, not by import. GRA's person-linking pipelines are not reused. | Agreed in principle 2026-11-01 |
 | D3 | GRA's source ingest and its already fetched census files are the starting point for the source layer. | Agreed 2026-11-01 |
-| D4 | The gazetteer is seeded from Logainm (via an adapted GRA fetcher), not from the project townland dictionary. The dictionary becomes a cross-check. | Proposed, replaces the earlier plan in the gazetteer spec |
+| D4 | Logainm is the place authority and the Logainm ID is the place key. The project builds no full gazetteer. It keeps a Logainm snapshot, name variants, manual places and associations. The dictionary is a cross-check. | Agreed 2026-11-01 (replaces the earlier gazetteer plan). The `dt-place:<uuid>` key for manual places is proposed. |
 | D5 | Researcher-filled values are kept as overlay files, so source files stay unchanged. | Proposed |
 | D6 | Processed layers are CSV and JSON files in git. The single master GEDCOM is the exception for people and relationships. | Agreed 2026-11-01 |
 | D7 | Accept and reject decisions are made in a review CSV edited in a spreadsheet and applied by script. | Agreed 2026-11-01 |
@@ -49,12 +49,13 @@ Every requirement has an acceptance test. A work package is finished when the te
 
 | ID | Requirement | Pri | Test |
 |---|---|---|---|
-| PLC-01 | A gazetteer holds places, name variants, hierarchy and time validity as specified in `GAZETTEER_SPEC.md`. | M | The validation rules in the spec pass. |
-| PLC-02 | The gazetteer is seeded from Logainm using a fetcher adapted from GRA. It stores the logainm ID, the hierarchy (DED, barony, civil parish, county) and coordinates as external references. The project dictionary is used as a cross-check. A Logainm API key is needed. | M | Every townland in the six held DEDs has a place record or is listed as missing. |
-| PLC-03 | The gazetteer covers every DED held in the source layer. | M | No census townland string falls in a DED with no gazetteer coverage. |
+| PLC-01 | The place layer holds a Logainm snapshot, a derived place table, manual places, name variants and associations as specified in `GAZETTEER_SPEC.md`. | M | The validation rules in the spec pass. |
+| PLC-02 | Logainm responses are fetched by a fetcher adapted from GRA and stored unchanged in the source layer, with a manifest entry (query, Logainm ID, retrieval date). The place table is derived from the snapshot by script and holds the Logainm ID, names, type, parent IDs and coordinates. The project dictionary is a cross-check. An API key is needed and is never committed. | M | Every townland in the six held DEDs has a Logainm record in the snapshot or is listed as missing. Regenerating the place table gives identical output. |
+| PLC-03 | The place layer covers every DED held in the source layer. | M | No census townland string falls in a DED with no place coverage. |
 | PLC-04 | Place types include townland, DED, civil parish, barony, county, town and town part (a street or "part of" subdivision, as in the Donegal DED files). | M | The Donegal DED files resolve street strings to town parts. |
 | PLC-05 | Compound names such as "Tullyleague or Tullybrook" are stored as aliases of one place and flagged. | S | Both parts match the same place. |
-| PLC-06 | Every place has a stable UUID, recorded in the identifier registry. | M | The registry validation passes. |
+| PLC-06 | A place Logainm does not hold gets a `dt-place:<uuid>` key, recorded in the identifier registry with a source and reason. A place with a Logainm ID never gets a project ID. | M | The registry check passes. No place has both keys. |
+| PLC-07 | If Logainm merges or retires an ID, the change is recorded in the registry and associations are migrated by a documented decision. | S | A test migration moves associations and keeps the audit trail. |
 | ASC-01 | Associations are entities with observation ID, place ID, type, method, confidence, status, reviewer and date. | M | A schema check on the association file passes. |
 | ASC-02 | Matching proposes only. Nothing is accepted automatically. | M | No accepted association lacks a reviewer and a date. |
 | ASC-03 | Matching runs on the original place string. Cleaned columns are a cross-check only. | M | A test shows Keadew Lower is not matched to Keadew Upper. |
@@ -127,5 +128,6 @@ Every requirement has an acceptance test. A work package is finished when the te
 | GEDCOM edited in genealogy software or read-only output | Decides whether the GEDCOM 7 test is round trip or import only. |
 | Genealogy software in use | Needed for GED-04 and GED-05. |
 | Logainm API key | Needed for PLC-02. |
+| Logainm licence and coverage | Check the terms before committing raw responses. Coverage of town parts, historical spellings and places such as Keadew Lower is unknown until fetched. |
 | Overlay format for researcher-filled values | Proposed: one CSV per source, keyed by the locator. Needs agreement. |
 | Source folder layout | To be settled in work package 1. |
