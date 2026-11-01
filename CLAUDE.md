@@ -34,7 +34,7 @@ The central working specification is [`docs/DATA_ARCHITECTURE.md`](docs/DATA_ARC
 `mjsmulligan/irish-genealogy-research` (GRA) is a separate project with a different organising purpose. GRA is person-centred: its pipelines are built around linking records into persons. Donegal Townlands is townland-centred and must stay independent of that approach.
 
 - Donegal Townlands owns its own data, identifiers, source acquisition and processing. It does not depend on GRA, GRA record IDs or GRA's person-matching engine.
-- There is no export contract and no required data flow between the repositories. `docs/EXPORT_CONTRACT.md` is superseded and kept only as a historical record.
+- There is no export contract and no required data flow between the repositories. The earlier export contract proposal was removed from `docs/` on 2026-11-01 and survives only in git history.
 - Elements of GRA's design may be reused where useful, for example its source catalogue, provenance architecture, source definitions and URL patterns, and ETL for particular source data files. Reuse is a deliberate choice made case by case, not an obligation, and not a gateway every source must pass through.
 - Always distinguish a source that is specified in a catalogue from one whose ingestion is implemented and one for which records have actually been ingested.
 - Check `docs/repositories.md` in GRA for a source's licence before committing anything from it. Never commit Historic Graves data.
