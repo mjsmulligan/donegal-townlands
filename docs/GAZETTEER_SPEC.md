@@ -1,11 +1,12 @@
 # Donegal Townlands: Place Layer Specification (Logainm)
 
-Status: Draft 4, open for review
+Status: Draft 5, open for review
 Date: 2026-11-01
 Location in repository: `docs/GAZETTEER_SPEC.md` (file name kept so existing links still work)
 Parent document: `docs/DATA_ARCHITECTURE.md` (section 6.1)
 
-Draft 4 replaces the earlier plan for a full project gazetteer. Logainm is the place authority. This layer adds only what Logainm does not provide. Draft history: draft 3 proposed a Logainm seed, draft 2 added the 1926 matching test, draft 1 proposed a full gazetteer.
+Draft 5 retains the Logainm-based place layer and adds the place-first, evidence-incremental principle for townland research cases. Logainm remains the place authority. This layer adds only what Logainm does
+not provide. Draft history: draft 4 replaced the earlier plan for a full project gazetteer; draft 3 proposed a Logainm seed, draft 2 added the 1926 matching test, draft 1 proposed a full gazetteer.
 
 ## 1. Purpose and principle
 
@@ -14,6 +15,20 @@ Every place association in the project points to a stable place key, never to a 
 Logainm (logainm.ie) is a recognised place authority with stable IDs for townlands, civil parishes, DEDs, baronies and counties. The project uses it rather than building its own. The Logainm ID is the place key.
 
 GRA reached the same conclusion when it built its place authority, and kept a flat table with the hierarchy held as columns on each place. The same shape is used here.
+
+### Place-first, evidence-incremental principle
+
+Every Logainm-recognised townland in the project's place register is eligible for a research case, whether or not historical sources have yet been acquired or processed for it.
+
+The case exists because the project recognises the place, not because a historical record has been found. Historical records and research progressively enrich the case. They do not determine whether it can
+exist.
+
+A case is a research workspace associated with an existing place key.
+It does not create a second place identity or replace the Logainm ID.
+
+An empty case is valid. It must not contain invented people, events,properties, historical relationships or narrative. Its existence does not imply that the place has been historically researched or is ready for public presentation.
+
+Case creation and subsequent updates must be repeatable. They must not create duplicate cases, overwrite researcher-authored material or silently discard cases when a place is absent from a later snapshot.
 
 ## 2. Scope
 
@@ -82,6 +97,43 @@ Rules:
 
 As specified in `DATA_ARCHITECTURE.md` section 6.2, pointing to place keys. Methods are exact, variant, phonetic, fuzzy and manual.
 
+### 3.6 Townland research cases
+
+Townland research cases are created from the derived place table,
+`data/processed/places/places.csv`.
+
+Each row whose `place_type` is `townland` is eligible for a case.
+Rows for DEDs, civil parishes, baronies, counties and other place
+types do not create townland cases.
+
+The Logainm ID is the identity key for a case. The case's directory
+name or display name is an implementation detail and is not an
+identity key.
+
+Case creation is separate from the creation of manual places.
+Manual places continue to use `dt-place:<uuid>` keys and the
+identifier registry. They are not automatically included in the
+Logainm townland case-generation process.
+
+A case can initially contain only the place information available
+from the derived place table. It does not require census records,
+valuation records, parish registers or any other historical source.
+
+Case generation must:
+
+- Create a case for each eligible Logainm townland.
+- Recognise an existing case by Logainm ID, not by its current name.
+- Reuse an existing case when the Logainm name changes.
+- Avoid creating duplicate cases when run repeatedly.
+- Preserve researcher-authored files and content.
+- Avoid silently deleting a case when its townland is absent from a
+  later place snapshot.
+- Make newly appearing townlands eligible for new cases.
+
+A generated case index records the relationship between Logainm IDs and their case locations. It is a processing output, not a replacement for the place table or the Logainm source snapshot.
+
+The case records the project's intention to research a place. It does not assert that a particular historical source mentions that place.
+
 ## 4. Matching procedure for source records
 
 For each observation carrying a place string:
@@ -103,10 +155,12 @@ Matching always runs on the original `townland` value, which is preserved. The c
 
 1. Fetch the six DEDs and their child townlands from Logainm into the snapshot.
 2. Build the place table.
-3. Cross-check against the project townland dictionary and townlands.ie. List places missing from either side.
-4. Add manual places for gaps, each with a source and reason.
-5. Load variants from each census source as it is processed, always as `proposed` first.
-6. Keep a change log: what changed, when, why, who accepted it.
+3. Generate or update townland research cases from the derived place table. Case generation is independent of historical source availability and must preserve existing research.
+4. Cross-check against the project townland dictionary and townlands.ie. List places missing from either side.
+5. Add manual places for gaps, each with a source and reason.
+6. Load variants from each census source as it is processed, always as `proposed` first.
+7. Keep a change log: what changed, when, why, who accepted it.
+
 
 ## 6. Validation
 
@@ -116,6 +170,15 @@ Matching always runs on the original `townland` value, which is preserved. The c
 - Every accepted variant cites a source.
 - Every snapshot file has a manifest entry and a matching checksum.
 - Report: unresolved strings, ambiguous strings and fuzzy matches awaiting review, per source.
+- Every Logainm townland in the derived place table has a corresponding research case.
+- Every generated case resolves to exactly one Logainm ID.
+- Repeated case generation does not create duplicate cases.
+- Updating the place table does not overwrite researcher-authored
+  case content.
+- A townland absent from a later snapshot is not silently deleted
+  from the research system.
+- DED and other non-townland rows do not generate townland cases.
+- A case can pass validation without any historical source records.
 
 ## 7. Open decisions
 
