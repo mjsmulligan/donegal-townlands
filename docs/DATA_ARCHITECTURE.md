@@ -1,6 +1,6 @@
 # Donegal Townlands: Data Architecture
 
-Status: Working specification, draft 4
+Status: Working specification, draft 5
 Date: 2026-11-01
 Location in repository: `docs/DATA_ARCHITECTURE.md`
 
@@ -13,6 +13,37 @@ This is the central working specification for the Donegal Townlands data archite
 - The townland is the primary unit of research and presentation.
 - Family histories provide the human narrative within that place-based framework.
 - Donegal Townlands is not a downstream publishing layer for GRA. It can acquire, process and research sources independently where that is simplest and most reliable.
+
+### Place-first, evidence-incremental principle
+
+Every recognised townland can have a research case from the moment it
+is entered in the project's place register. The existence of a case
+does not depend on the availability of historical records.
+
+A townland case is the project's research workspace for an identified
+place. It is distinct from the place identity itself and does not create
+a second place identifier.
+
+The case is progressively enriched as sources are acquired, processed,
+associated with the place and reviewed by researchers. Historical
+evidence determines what can be said about a place, but it does not
+determine whether the place can have a case.
+
+Consequences:
+
+- Every Logainm townland in the place register is eligible for a case.
+- A case may initially contain place identity and administrative
+  information only, with no historical evidence.
+- No people, events, properties, historical relationships or narrative
+  may be invented to fill an empty case.
+- The absence of a source is not evidence that a place or its history
+  did not exist.
+- Adding evidence must enrich the existing case, not create a new
+  identity for the same place.
+- Repeated generation must not create duplicate cases or overwrite
+  researcher-authored material.
+- A case can exist internally before it is sufficiently researched
+  for public presentation.
 
 ## 2. Layers
 
@@ -129,6 +160,52 @@ Each association records:
 | reviewer and date | For accepted or rejected |
 
 Because associations key to deterministic observation IDs, they survive reprocessing.
+
+### 6.3 Townland cases
+
+The place register is the starting point for townland research cases.
+
+Every row in `data/processed/places/places.csv` whose `place_type` is
+`townland` represents a recognised townland eligible for a case.
+Rows representing DEDs, parishes, baronies or counties are not
+townland cases.
+
+The case is keyed to the Logainm ID. The Logainm ID remains the place
+key; the case folder name is an implementation detail and must not be
+treated as an identifier.
+
+Case creation is a processing operation, not a historical research
+conclusion. It establishes that the project recognises and is prepared
+to research the place. It does not assert that any particular
+historical source mentions the place.
+
+A newly created case must be valid without census records, valuation
+records, parish registers or any other historical source. Its initial
+contents may consist only of the place identity and the information
+available from the place register.
+
+Case generation must be repeatable and safe:
+
+- Reprocessing the same place register must not create duplicate cases.
+- The Logainm ID, rather than the current English spelling, determines
+  whether a case already exists.
+- A change in a place name must not silently create a second case.
+- Existing researcher-authored content must not be overwritten by
+  generated place data.
+- A townland absent from a later snapshot must not be silently deleted
+  from the research system.
+- New townlands in a later place register must be eligible for new
+  cases.
+- Place identity and historical name variants must remain distinct.
+  A spelling variant is not, by itself, a new place.
+
+The generated case index is a processing output linking place-register
+entries to their case locations. It does not replace the place register
+or the source snapshot.
+
+An empty case is a valid research case, but is not automatically a
+complete or publishable historical study. Publication remains subject
+to the presentation and research requirements.
 
 ## 7. Genealogical research model: one master GEDCOM
 
@@ -288,6 +365,9 @@ The requirements are in `docs/REQUIREMENTS.md` and the work packages in `docs/WO
 - Logainm is the place authority and its ID is the place key. The project builds no full gazetteer, only name variants, manual places and associations. The project dictionary is a cross-check.
 - Researcher-filled values are kept in overlay files so source files stay unchanged (proposed).
 - Open: whether the public repository may hold processed research layers and the GEDCOM, whether the GEDCOM is ever edited in genealogy software, which genealogy software is used, and a Logainm API key.
+- Townland cases are generated from the Logainm place register, independently
+  of historical source availability. Case generation is repeatable and
+  preserves researcher-authored material. See section 6.3.
 
 ## 18. Repository follow-up
 
