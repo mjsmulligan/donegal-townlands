@@ -1,6 +1,6 @@
 # Donegal Townlands: Data Architecture
 
-Status: Working specification, draft 2
+Status: Working specification, draft 3
 Date: 2026-11-01
 Location in repository: `docs/DATA_ARCHITECTURE.md`
 
@@ -45,7 +45,7 @@ Every piece of data belongs to exactly one of these. They are stored and identif
 
 Consequences:
 
-- Acquisition is not limited to townlands under investigation. Original datasets stay complete.
+- Acquisition is not limited to townlands under investigation. Original datasets stay complete. A query can return more than was intended: the NAI search for the Clogher DED also returned the Magheraclogher DED. The source file keeps the complete response and selection happens in processing.
 - ETL is as simple as possible and specific to the source. A census CSV, a parish register image, a valuation book and a Duchas entry are not forced through one universal importer.
 - A shared framework sets common principles. Each source type has its own import specification (section 12).
 
@@ -228,6 +228,7 @@ Donegal Townlands may reuse GRA's source catalogue, provenance architecture and 
 - The project owns its data and identifiers and does not require GRA record IDs.
 - There is no assumed universal GRA-to-Townlands export contract.
 - Sources are tracked in three states: specified in a catalogue, implemented, and actually ingested.
+- GRA's source ingest, its source catalogue and its already fetched census files are its strongest parts and are the starting point for the source layer. They are adopted by copy and adapt, with provenance recorded, not by dependency.
 
 ## 15. Implementation test cases
 
@@ -274,6 +275,18 @@ Use these to test and refine the architecture before adding complexity.
 | Intermediate processing formats | Per source. |
 | Folder structure and implementation | After the above. |
 
-## 17. Repository follow-up
+## 17. Implementation approach
+
+The requirements are in `docs/REQUIREMENTS.md` and the work packages in `docs/WORK_PACKAGES.md`. The decisions they rest on:
+
+- The build pipeline is Python. The browser displays static JSON produced by the build and does no matching, filtering or identifier work.
+- Processed layers are CSV and JSON files in git. The single master GEDCOM is the exception for people and relationships, and it is generated from accepted decision files.
+- Accept and reject decisions are made in a review CSV and applied by script.
+- Code from GRA is copied and adapted, with a provenance header, not imported. Person-linking pipelines are not reused.
+- The gazetteer is seeded from Logainm. The project dictionary is a cross-check (proposed, replacing the earlier plan).
+- Researcher-filled values are kept in overlay files so source files stay unchanged (proposed).
+- Open: whether the public repository may hold processed research layers and the GEDCOM, whether the GEDCOM is ever edited in genealogy software, which genealogy software is used, and a Logainm API key.
+
+## 18. Repository follow-up
 
 Reflect this specification consistently in `AGENTS.md` and the shared assistant protocol. Reconcile any existing guidance that describes Townlands as merely downstream of GRA, or assumes a universal export contract.

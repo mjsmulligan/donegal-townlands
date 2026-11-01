@@ -1,6 +1,6 @@
 # Donegal Townlands: Place Gazetteer Specification
 
-Status: Draft 2, open for review (draft 2 adds the 1926 test result, the phonetic matching method and Keadew Lower)
+Status: Draft 3, open for review (draft 3 seeds the gazetteer from Logainm and records what the wider GRA census files show; draft 2 added the 1926 test result, the phonetic matching method and Keadew Lower)
 Date: 2026-11-01
 Location in repository: `docs/GAZETTEER_SPEC.md`
 Parent document: `docs/DATA_ARCHITECTURE.md` (section 6.1)
@@ -12,7 +12,7 @@ Every place association in the project points to a stable place ID from this gaz
 ## 2. Scope
 
 - In scope: Donegal places at townland level and above (townland, DED, civil parish, Catholic parish where needed, barony, county).
-- Included from the start: Clogher, Cullionboy, and the other townlands in the project townland dictionary (about 70 names).
+- Included from the start: every place named in the census files held in the source layer. That is the Clogher, Magheraclogher, Donegal, Laghy, Tawnawully and Tullynaught DEDs for 1901, 1911 and 1926. The project townland dictionary (about 70 names) is a cross-check, not the scope.
 - Out of scope for now: sub-townland units (holdings, fields, houses). These belong to the property model.
 - Out of scope: places outside Donegal. The template may later be cloned, with its own gazetteer.
 
@@ -21,7 +21,7 @@ Every place association in the project points to a stable place ID from this gaz
 | Field | Description |
 |---|---|
 | place_id | Stable UUID, never reused. Registered in the identifier registry (type: place). |
-| place_type | townland, ded, civil_parish, catholic_parish, barony, county, other |
+| place_type | townland, town, town_part, ded, civil_parish, catholic_parish, barony, county, other. A town part is a street or "part of" subdivision, as in the Donegal DED files. |
 | preferred_name | Display name used on the site |
 | irish_name | Where established, with source |
 | external_refs | townlands.ie identifier, OSM relation, Logainm ID, with retrieval date |
@@ -30,7 +30,7 @@ Every place association in the project points to a stable place ID from this gaz
 | status | draft, reviewed, accepted |
 | notes | Free text |
 
-A townland and a DED of the same name are two places with different IDs and types. Clogher the townland and Clogher the DED must never share a record.
+The place_id is the project's own UUID. The Logainm ID is stored as an external reference and is never used as the project identifier, so the gazetteer stays valid for places Logainm does not hold. A townland and a DED of the same name are two places with different IDs and types. Clogher the townland and Clogher the DED must never share a record.
 
 ## 4. Name variants
 
@@ -58,7 +58,7 @@ Rules:
 | Observed | Likely relation | Action |
 |---|---|---|
 | Drumenny Upper, Drummenny Lower, Drummenny Middle | Same family of names with inconsistent spelling in the dictionary | Decide one preferred spelling per place and record the other as a variant |
-| Tawnawully Mountains (dictionary), Tawnawilly (microfilm index filename) | Spelling variant, possibly the same place | Verify against townlands.ie before accepting |
+| Tawnawully Mountains (dictionary), Tawnawully (NAI DED name), Tawnawilly (microfilm index filename) | The NAI data spells the DED Tawnawully. Tawnawilly is a variant in the microfilm filename. | Record Tawnawilly as a variant of the DED. Verify the townland against Logainm. |
 | Tawnagh, Tawnaghgorm, Tawnaghlahan, Tawnalary | Similar names, distinct places | Keep separate. Flag fuzzy-match risk. |
 | Clogher | Townland and DED | Two place records |
 | Clarcam, Clarcarricknagun, Clardrumbarren, Clardrumnagahan, Clarlougheask | Shared prefix, distinct places | Keep separate. Exact match preferred over fuzzy. |
@@ -113,7 +113,7 @@ Using the DED column to disambiguate is important, but it only helps once more t
 
 ## 7. Seeding and maintenance
 
-1. Seed from the project townland dictionary and townlands.ie. Keep both as preserved source files. The dictionary is known to lack Keadew Lower, so reconcile it against townlands.ie and add any other missing townlands before census association begins.
+1. Seed from Logainm, using a fetcher adapted from GRA's `fetch_places.py` (needs a Logainm API key). It supplies the Logainm ID, the hierarchy (DED, barony, civil parish, county) and coordinates for each place. Keep the raw responses as preserved source files. The project townland dictionary and townlands.ie are cross-checks. Reconcile them against the Logainm seed, list places missing from either side (the dictionary already lacks Keadew Lower), and add any missing places as manual entries marked with their source. Manual entries are also needed for places Logainm does not cover, such as church parishes.
 2. Assign place IDs and register them.
 3. Add variants from each source as it is processed, always as `proposed` first.
 4. Keep a change log: what changed, when, why, who accepted it.
@@ -135,8 +135,8 @@ Using the DED column to disambiguate is important, but it only helps once more t
 | Preferred spelling policy | Official (townlands.ie or OSI) versus the spelling found in Griffith's. Proposed: official for display, historical forms as variants. |
 | Granularity of time validity | Needed only if boundary or name changes affect Donegal townlands in the study period. Start simple. |
 | Catholic parish units | Needed for parish registers. Defer until that source is specified. |
-| Source for Irish names | Logainm is the candidate. Check licence and attribution. |
-| Whether Drumhome parish townlands load at the start | Likely yes, to avoid reworking later. |
+| Logainm licence and attribution | Logainm is now the seed source for names and hierarchy. Check its licence and attribution terms before committing responses. |
+| Logainm coverage | Unknown until fetched: historical spellings, town parts, and places such as Keadew Lower. Gaps become manual entries. |
 | Verification of every variant in section 4.1 | The census CSVs have now been used. townlands.ie and the source images still need checking. |
 | Missing townlands in the dictionary | Keadew Lower found. Others may exist outside the Clogher DED. |
 | Tawnawully versus Tawnawilly | Still unverified. Not exercised by the Clogher census files. |
@@ -162,3 +162,12 @@ The test was run against the townland dictionary as the seed list, with no gazet
 - Phonetic matching alone produced no ambiguous results on this data. This is a small test set and does not show the method is safe against the full set of Drumholm townlands, where Tawnagh, Tawnaghgorm and similar names sit close together.
 
 The review list of every distinct place string, with proposed match and status, is the next input to human review.
+
+### 10.2 What the wider GRA census files show
+
+The other DEDs show that the dictionary cannot be the gazetteer:
+
+- 28 of 45 distinct townland strings in the Tullynaught files, and all 51 in the Laghy files, do not match the dictionary exactly.
+- The Donegal DED includes street entries such as "Donegal Town: Bridge Street (part of)", which need a town part place type.
+- Some strings hold two names, such as "Tullyleague or Tullybrook". These are stored as aliases of one place and flagged.
+- A search for "Clogher" in the NAI API also returned the Magheraclogher DED (about three times as many rows). The DED selection happens in processing, so the source file keeps the complete response and the gazetteer holds both DEDs as separate places.
