@@ -1,0 +1,69 @@
+name: Logainm snapshot
+
+# Manual run only. Fetches a dated Logainm snapshot, checks it, builds the place
+# table and pushes the manifest and place table to a new branch for review.
+# Needs a repository secret named LOGAINM_API_KEY (Settings, Secrets and variables, Actions).
+# Raw responses are NOT committed. They are kept as a workflow artifact
+# only when the check finds no note or citation fields. In a public repository any
+# GitHub user can download artifacts, hence that condition.
+
+on:
+  workflow_dispatch:
+    inputs:
+      ded_ids:
+        description: "Logainm IDs of the DEDs, comma separated"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests
+      - name: Fetch
+        env:
+          LOGAINM_API_KEY: ${{ secrets.LOGAINM_API_KEY }}
+          DED_IDS: ${{ inputs.ded_ids }}
+        run: |
+          args=""
+          for id in $(echo "$DED_IDS" | tr ',' ' '); do
+            case "$id" in ''|*[!0-9]*) echo "Bad ID: $id"; exit 1;; esac
+            args="$args --id $id"
+          done
+          python tools/logainm.py fetch $args --date "$(date -u +%F)"
+      - name: Check
+        id: check
+        shell: bash
+        run: python tools/logainm.py check --date "$(date -u +%F)" | tee check.txt
+      - name: Build place table
+        run: python tools/logainm.py build --date "$(date -u +%F)"
+      - name: Keep raw files if clean
+        run: |
+          if grep -q "may be notes or citations" check.txt; then
+            echo "Raw files held back: notes or citations found."
+          else
+            tar czf raw.tgz -C data/source/logainm "$(date -u +%F)/raw"
+            echo "KEEP_RAW=1" >> "$GITHUB_ENV"
+          fi
+      - uses: actions/upload-artifact@v4
+        if: env.KEEP_RAW == '1'
+        with:
+          name: logainm-raw
+          path: raw.tgz
+          retention-days: 30
+      - name: Push manifest and place table to a review branch
+        run: |
+          d="$(date -u +%F)"
+          git config user.name "github-actions"
+          git config user.email "actions@users.noreply.github.com"
+          git checkout -b "logainm-snapshot-$d"
+          git add "data/source/logainm/$d/snapshot_manifest.csv" data/processed/places/places.csv
+          git commit -m "Logainm snapshot $d: manifest and place table"
+          git push origin "logainm-snapshot-$d"
