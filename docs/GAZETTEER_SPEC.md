@@ -27,7 +27,8 @@ GRA reached the same conclusion when it built its place authority, and kept a fl
 
 - Raw Logainm API responses are saved unchanged, with a manifest entry for each: query, Logainm ID, retrieval date and licence note.
 - The fetcher is adapted from GRA's `fetch_places.py`, with no database. It needs a Logainm API key, read from the environment and never committed.
-- The snapshot keeps results reproducible if Logainm later changes, merges or retires an ID.
+- The snapshot keeps results reproducible if Logainm later changes, merges or retires an ID. Logainm asks users to refresh copies from the API monthly, so each snapshot is dated and a refresh is a new dated snapshot, not an edit.
+- Licence: the Logainm placename data is CC BY 4.0 (Government of Ireland). Logainm's explanatory notes and the placename citations it collected from other sources are outside that licence and must not be reproduced. Before raw responses are committed, check whether they contain those fields. If they do, keep the raw responses outside the repository and commit only the derived place table, with the checksums of the raw files in the manifest.
 
 ### 3.2 Place table (derived)
 
@@ -120,8 +121,8 @@ Matching always runs on the original `townland` value, which is preserved. The c
 
 | Item | Notes |
 |---|---|
-| Logainm API key | Needed before anything can be fetched. |
-| Logainm licence and attribution | Check the terms before committing raw responses. |
+| Logainm API key | Needed before anything can be fetched. Obtained by creating an account on the Gaois Developer Hub (docs.gaois.ie). Mike to register. |
+| Raw responses in the repository | Licence found: CC BY 4.0, except Logainm's explanatory notes and collected citations. Decide after seeing a real response whether raw files can be committed. |
 | Logainm coverage | Unknown until fetched: historical spellings, town parts, and places such as Keadew Lower. Gaps become manual places. |
 | Retired or merged Logainm IDs | Proposed: record the change in the registry and migrate associations by a documented decision. |
 | Time validity | Not modelled. Add only if a boundary or name change affects a place in the study period. |
