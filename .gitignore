@@ -1,2 +1,6 @@
 __pycache__/
 *.pyc
+
+# Raw Logainm responses stay out of git until the licence question is settled.
+# The snapshot manifest in each dated folder is committed.
+data/source/logainm/*/raw/
