@@ -10,20 +10,31 @@ townlands/<name>/:
   records/census.json   census rows (python tools/extract_census.py <name>)
 Writes docs/<name>/index.html (served by GitHub Pages from /docs).
 
-A case may hold less than that. That is a valid research state, not an error:
-  ready       all three files present: the page is built
-  partial     some evidence present but not enough for a page: nothing is built
-  empty       place identity only (place.json, STATUS.md): nothing is built
-Building never invents content, never deletes a published page and never
-changes a case folder. Only a name with no case folder at all is an error."""
-import json, sys, pathlib
+A case may hold less than that. That is a valid research state, not an error,
+and every place publishes what it has:
+  ready       all three files present: the full study page is built
+  partial     some evidence present, not enough for a study: a place page is built
+  empty       place identity only (place.json, STATUS.md): a place page is built
+A place page (engine/place.html) shows the Logainm place record and says plainly
+that research has not begun or is incomplete. It uses the same URL the full
+study will use later, and it never invents content. Building never replaces a
+page it did not generate, never deletes a page and never changes a case folder.
+--all also regenerates docs/index.html, the list of every place.
+Only a name with no case folder at all is an error."""
+import csv, html as htmllib, json, sys, pathlib
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 NEEDED = ('townland.json', 'content.json', 'records/census.json')
 EVIDENCE = NEEDED + ('records/events.csv', 'records/corrections.json')
 
 
-def load(p): return json.load(open(p, encoding='utf-8'))
+def load(p):
+    with open(p, encoding='utf-8') as h:
+        return json.load(h)
 def esc(t): return t.replace('&', '&amp;').replace('<', '&lt;')
+def q(t): return htmllib.escape(str(t), quote=True)
+
+PLACE_MARK = '<!-- generated: donegal-townlands place page -->'
+INDEX_MARK = '<!-- generated: donegal-townlands index -->'
 
 
 def case_state(base):
@@ -36,17 +47,111 @@ def case_state(base):
     return 'empty', missing
 
 
+def ded_names():
+    """DED Logainm ID -> name, from the place register. Empty if unavailable."""
+    path = ROOT / 'data' / 'processed' / 'places' / 'places.csv'
+    if not path.is_file():
+        return {}
+    with path.open(encoding='utf-8-sig', newline='') as h:
+        return {r['logainm_id']: r['name_en'] for r in csv.DictReader(h) if r.get('place_type') == 'ded'}
+
+
+def records_held(base):
+    """Plain facts about evidence already in the case, for a partial page."""
+    held = []
+    cpath = base / 'records' / 'census.json'
+    if cpath.is_file():
+        for year, rows in sorted(load(cpath).items()):
+            held.append('Census ' + year + ': ' + str(len(rows)) + ' people recorded')
+    return held
+
+
+def place_body(place, state, held):
+    name = place.get('name_en') or 'Unnamed townland'
+    out = ['<h1>' + q(name) + '</h1>']
+    if place.get('name_ga'):
+        out.append('<p class="ga" lang="ga">' + q(place['name_ga']) + '</p>')
+    rows = []
+    ded = ded_names().get(str(place.get('ded_id') or ''))
+    rows.append(('Place type', 'Townland' + (', in the ' + ded + ' District Electoral Division' if ded else '')))
+    rows.append(('Logainm', '<a href="https://www.logainm.ie/en/' + q(place['logainm_id']) + '">Logainm record ' + q(place['logainm_id']) + '</a>'))
+    if place.get('latitude') and place.get('longitude'):
+        lat, lon = place['latitude'], place['longitude']
+        rows.append(('Location', '<a href="https://www.openstreetmap.org/?mlat=' + q(lat) + '&amp;mlon=' + q(lon) + '&amp;zoom=15">' + q(round(float(lat), 4)) + ', ' + q(round(float(lon), 4)) + '</a>'))
+    out.append('<div class="card"><h2>Place record</h2><dl>' + ''.join('<dt>' + k + '</dt><dd>' + (v if k in ('Logainm', 'Location') else q(v)) + '</dd>' for k, v in rows) + '</dl></div>')
+    if state == 'partial':
+        text = 'Some historical records have been added for this townland, but not yet enough for a full study. This page will be replaced by the study as the research is completed.'
+    else:
+        text = 'No historical records have been added for this townland yet. This is a starting point, not a finding about its history. Records will be added here as they are researched.'
+    out.append('<div class="card note"><h2>Research status</h2><p>' + q(text) + '</p></div>')
+    if held:
+        out.append('<div class="card"><h2>Records held so far</h2><ul>' + ''.join('<li>' + q(x) + '</li>' for x in held) + '</ul></div>')
+    return '\n'.join(out)
+
+
+def write_place_page(name, base, state, missing):
+    place_path = base / 'place.json'
+    if not place_path.is_file():
+        print(name + ': ' + state + ' case with no place.json. Run tools/create_townland_cases.py. Not built.')
+        return
+    dest = ROOT / 'docs' / name / 'index.html'
+    if dest.exists() and PLACE_MARK not in dest.read_text(encoding='utf-8'):
+        print(name + ': docs/' + name + '/index.html was not generated as a place page. Left untouched.')
+        return
+    place = load(place_path)
+    template = (ROOT / 'engine' / 'place.html').read_text(encoding='utf-8')
+    page = (template.replace('__TITLE__', q((place.get('name_en') or name) + ' | Donegal Townlands'))
+                    .replace('__BODY__', place_body(place, state, records_held(base))))
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    dest.write_text(page, encoding='utf-8')
+    print(name + ': ' + state + ' case. Place page written.')
+
+
+def write_index(entries):
+    """Rewrite docs/index.html: studies first, then places. entries = [(slug, name, state)]."""
+    def links(items):
+        return ''.join('    <a class="townland" href="./' + q(s) + '/">\n        ' + q(n) + ' &rarr;\n    </a>\n\n' for s, n, _ in items)
+    studies = sorted((e for e in entries if e[2] == 'ready'), key=lambda e: e[1].casefold())
+    places = sorted((e for e in entries if e[2] != 'ready'), key=lambda e: e[1].casefold())
+    page = """<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donegal Townlands</title>
+    """ + INDEX_MARK + """
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 900px; margin: 40px auto; padding: 20px; color: #333; background: #f7f7f5; }
+        h1 { color: #234b35; }
+        .townland { display: block; padding: 14px 18px; margin: 10px 0; background: white; border-radius: 6px; text-decoration: none; color: #234b35; border: 1px solid #ddd; }
+        .townland:hover { background: #eaf1eb; }
+        footer { margin-top: 28px; font-size: 0.85em; color: #5b6f62; }
+    </style>
+</head>
+<body>
+    <h1>Donegal Townlands</h1>
+    <p>Explore the townlands of County Donegal. Every townland has a page. Where research has begun, the page is a full study. The others show the place record and will be enriched as records are added.</p>
+
+    <h2>Townland studies</h2>
+
+""" + links(studies) + """    <h2>Townlands awaiting research</h2>
+
+""" + links(places) + """    <footer>Irish-language placename data by Logainm, Government of Ireland, licensed under CC BY 4.0.</footer>
+</body>
+</html>
+"""
+    (ROOT / 'docs' / 'index.html').write_text(page, encoding='utf-8')
+    print('wrote docs/index.html:', len(studies), 'studies,', len(places), 'places')
+
+
 def build(name):
     """Build one case if it can be built. Returns its state."""
     base = ROOT / 'townlands' / name
     if not base.is_dir():
         sys.exit('No case folder townlands/' + name)
     state, missing = case_state(base)
-    if state == 'empty':
-        print(name + ': empty case (place identity only). Nothing to publish yet.')
-        return state
-    if state == 'partial':
-        print(name + ': partial case. Not built. Missing: ' + ', '.join(missing))
+    if state != 'ready':
+        write_place_page(name, base, state, missing)
         return state
     townland = load(base / 'townland.json')
     content = load(base / 'content.json')
@@ -70,13 +175,21 @@ def main(argv):
         build(argv[0])
         return
     counts = {'ready': 0, 'partial': 0, 'empty': 0}
+    entries = []
     for base in sorted((ROOT / 'townlands').iterdir()):
-        if base.is_dir():
-            if case_state(base)[0] == 'empty':
-                counts['empty'] += 1   # summarised, not listed 53 times
-            else:
-                counts[build(base.name)] += 1
-    print('Cases: %(ready)d built or buildable, %(partial)d partial, %(empty)d empty (nothing to publish yet).' % counts)
+        if not base.is_dir():
+            continue
+        state = build(base.name)
+        counts[state] += 1
+        if state == 'ready':
+            label = load(base / 'townland.json').get('name', base.name)
+        elif (base / 'place.json').is_file():
+            label = load(base / 'place.json').get('name_en') or base.name
+        else:
+            continue
+        entries.append((base.name, label, state))
+    write_index(entries)
+    print('Cases: %(ready)d studies, %(partial)d partial, %(empty)d empty. Every case with a place record has a page.' % counts)
 
 
 if __name__ == '__main__':
