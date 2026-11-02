@@ -1,0 +1,14 @@
+{
+  "logainm_id": "13973",
+  "name_en": "Keadew Upper",
+  "name_ga": "Céide Uachtarach",
+  "place_type": "townland",
+  "ded_id": "1372439",
+  "civil_parish_id": "784",
+  "barony_id": "52",
+  "county_id": "100013",
+  "latitude": "54.70504288353722",
+  "longitude": "-7.96342444871463",
+  "snapshot_date": "2026-11-01",
+  "_generated_by": "donegal-townlands.create_townland_cases"
+}

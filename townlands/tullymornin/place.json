@@ -1,0 +1,14 @@
+{
+  "logainm_id": "14303",
+  "name_en": "Tullymornin",
+  "name_ga": "",
+  "place_type": "townland",
+  "ded_id": "111482",
+  "civil_parish_id": "785",
+  "barony_id": "52",
+  "county_id": "100013",
+  "latitude": "54.63047967892829",
+  "longitude": "-8.094751986284713",
+  "snapshot_date": "2026-11-01",
+  "_generated_by": "donegal-townlands.create_townland_cases"
+}

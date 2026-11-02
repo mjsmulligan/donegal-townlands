@@ -1,0 +1,14 @@
+{
+  "logainm_id": "14295",
+  "name_en": "Moyne",
+  "name_ga": "",
+  "place_type": "townland",
+  "ded_id": "111482",
+  "civil_parish_id": "785",
+  "barony_id": "52",
+  "county_id": "100013",
+  "latitude": "54.63249446390411",
+  "longitude": "-8.06020338795152",
+  "snapshot_date": "2026-11-01",
+  "_generated_by": "donegal-townlands.create_townland_cases"
+}

@@ -1,0 +1,14 @@
+{
+  "logainm_id": "14288",
+  "name_en": "Barnesyneilly",
+  "name_ga": "",
+  "place_type": "townland",
+  "ded_id": "111482",
+  "civil_parish_id": "785",
+  "barony_id": "52",
+  "county_id": "100013",
+  "latitude": "54.66651353687088",
+  "longitude": "-7.948860241483583",
+  "snapshot_date": "2026-11-01",
+  "_generated_by": "donegal-townlands.create_townland_cases"
+}
