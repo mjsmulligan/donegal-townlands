@@ -59,6 +59,7 @@ The rule applies to information the project holds that is not itself taken from 
 ## Layout
 
 - `engine/walk.html`: the gallery walk (scenes, plates, HUD, drawer) that every townland page is built from, with no exceptions. Holds no townland content. Placeholders: `__TITLE__`, `__BRAND__`, `__DATA__`. A plate appears only when its content exists, so a townland with only a Logainm place record gets a short walk and one with census returns and an authored study gets the full one.
+- `engine/place.html`: a plain, data-first place page template. Not used by the build now. Kept for a possible researcher view. Do not delete.
 - `townlands/<name>/`: `townland.json` (name, page title, storage key, census spellings), `content.json` (family stories, Griffith's rows, open questions, plate copy), `records/` (census.json, corrections.json, later events.csv), `media/` (web-sized images with captions), `STATUS.md`.
 - `data/census/`: source census CSVs for the Clogher DED.
 - `tools/build.py <name>` (or `--all`) builds every case the same way, `tools/validate.py` checks before commit. `tools/extract_census.py` is superseded by `tools/attach_census.py` and kept for reference.
