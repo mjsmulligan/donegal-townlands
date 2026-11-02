@@ -153,8 +153,37 @@ class AttachCensusTests(unittest.TestCase):
         self.run_attach()
         match = json.loads(self.case_file("alpha", "census_match.json").read_text(encoding="utf-8"))
         self.assertEqual(match["years"]["1926"]["spellings"][0]["method"], "reviewed_variant")
+        self.assertEqual(match["status"], "reviewed")
         again = self.review()[0]
         self.assertEqual((again["status"], again["accepted_logainm_id"]), ("accepted", "1"))
+
+    def test_reviewer_note_survives_a_rerun(self):
+        self.census(1926, [self.p("Alfa", year=1926)])
+        self.run_attach()
+        rows = self.review()
+        rows[0].update(status="accepted", accepted_logainm_id="1", reviewer_note="checked by elimination")
+        with ac.REVIEW_CSV.open("w", encoding="utf-8", newline="") as h:
+            w = csv.DictWriter(h, fieldnames=ac.REVIEW_FIELDS)
+            w.writeheader()
+            w.writerows(rows)
+        self.run_attach()
+        self.run_attach()
+        self.assertEqual(self.review()[0]["reviewer_note"], "checked by elimination")
+
+    def test_mixed_exact_and_reviewed_matches_are_labelled_honestly(self):
+        self.census(1901, [self.p("Alpha")])
+        self.census(1926, [self.p("Alfa", year=1926)])
+        self.run_attach()
+        rows = self.review()
+        rows[0].update(status="accepted", accepted_logainm_id="1")
+        with ac.REVIEW_CSV.open("w", encoding="utf-8", newline="") as h:
+            w = csv.DictWriter(h, fieldnames=ac.REVIEW_FIELDS)
+            w.writeheader()
+            w.writerows(rows)
+        self.run_attach()
+        match = json.loads(self.case_file("alpha", "census_match.json").read_text(encoding="utf-8"))
+        self.assertEqual(match["status"], "proposed")
+        self.assertIn("accepted on review", match["note"])
 
     def test_rejected_decision_is_preserved_and_attaches_nothing(self):
         self.census(1926, [self.p("Alfa", year=1926)])
@@ -169,17 +198,23 @@ class AttachCensusTests(unittest.TestCase):
         self.assertEqual(self.review()[0]["status"], "rejected")
         self.assertFalse(self.case_file("alpha", "census.json").exists())
 
-    def test_people_born_in_the_last_100_years_are_withheld(self):
+    def test_published_census_rows_are_all_kept_including_missing_ages(self):
         self.census(1926, [self.p("Alpha", age="0", year=1926),
                            self.p("Alpha", sur="Unknown", age="", year=1926)])
-        ac.THIS_YEAR_SAVED = ac.THIS_YEAR
-        ac.THIS_YEAR = 2020
-        self.addCleanup(setattr, ac, "THIS_YEAR", ac.THIS_YEAR_SAVED)
         self.run_attach()
         data = json.loads(self.case_file("alpha", "census.json").read_text(encoding="utf-8"))
-        self.assertEqual(data["1926"], [])
+        self.assertEqual(len(data["1926"]), 2)
         match = json.loads(self.case_file("alpha", "census_match.json").read_text(encoding="utf-8"))
-        self.assertEqual(match["years"]["1926"]["withheld"], 2)
+        self.assertEqual(match["years"]["1926"]["people"], 2)
+        self.assertNotIn("withheld", match["years"]["1926"])
+
+    def test_a_census_year_after_1926_is_refused(self):
+        saved = ac.YEARS
+        ac.YEARS = (1901, 1911, 1926, 1936)
+        self.addCleanup(setattr, ac, "YEARS", saved)
+        with contextlib.redirect_stderr(io.StringIO()) as err, self.assertRaises(SystemExit):
+            self.run_attach()
+        self.assertIn("1936", err.getvalue())
 
     def test_source_csv_files_are_not_modified(self):
         self.census(1901, [self.p("Alpha")])

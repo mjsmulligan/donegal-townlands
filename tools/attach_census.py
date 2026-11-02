@@ -28,14 +28,15 @@ Safety.
 - A case that already has records/census.json written by someone else (Clogher
   and Cullionboy) is left untouched.
 - Their census_spelling entries in townland.json count as already accepted.
-- Rows for anyone born less than 100 years ago, or whose age is unknown in
-  1926, are withheld (100/75/50 rule) and counted.
+- Census returns are published by their custodian (National Archives) and have
+  already passed its privacy review, so rows are not withheld here. The one
+  guard kept is that no census year after 1926 is ever attached. tools/validate.py
+  enforces the same limit on the source files.
 - The original CSV files are only read.
 """
 
 import ast
 import csv
-import datetime
 import difflib
 import json
 import sys
@@ -51,7 +52,7 @@ CENSUS_DIR = ROOT / "data" / "census"
 DED_NAME = "Clogher"
 YEARS = (1901, 1911, 1926)
 GENERATED_MARKER = "donegal-townlands.attach_census"
-THIS_YEAR = datetime.date.today().year
+MAX_PUBLISHED_CENSUS = 1926
 
 REVIEW_FIELDS = [
     "ded",
@@ -61,6 +62,7 @@ REVIEW_FIELDS = [
     "status",
     "accepted_logainm_id",
     "similar_places_not_confirmed",
+    "reviewer_note",
 ]
 HUMAN_STATUSES = {"accepted", "rejected"}
 
@@ -136,13 +138,6 @@ def row_1926(x):
     }
 
 
-def withheld(year, row):
-    """100/75/50 rule for census persons: born within the last 100 years."""
-    if row["a"] is None:
-        return year >= THIS_YEAR - 100
-    return (year - row["a"]) > THIS_YEAR - 100
-
-
 def build_row(year, raw):
     return row_1926(raw) if year == 1926 else row_1901_1911(raw)
 
@@ -186,6 +181,9 @@ def write_json(path, data, compact=False):
 
 
 def main():
+    late = [y for y in YEARS if y > MAX_PUBLISHED_CENSUS]
+    if late:
+        fail(f"Census years after {MAX_PUBLISHED_CENSUS} are not published: {late}")
     places_all = read_csv(PLACES_CSV)
     ded_ids = [r["logainm_id"] for r in places_all
                if r["place_type"] == "ded" and r["name_en"] == DED_NAME]
@@ -208,7 +206,7 @@ def main():
     accepted_case = accepted_in_case(places, index)
     review_old = read_review()
 
-    matches = {}      # logainm_id -> year -> {"rows": [...], "spellings": [...], "withheld": n}
+    matches = {}      # logainm_id -> year -> {"rows": [...], "spellings": [...]}
     review_rows = []
 
     for year in YEARS:
@@ -235,14 +233,10 @@ def main():
 
             if target:
                 slot = matches.setdefault(target, {}).setdefault(
-                    year, {"rows": [], "spellings": [], "withheld": 0})
+                    year, {"rows": [], "spellings": []})
                 slot["spellings"].append({"spelling": spelling, "method": method, "rows": len(raws)})
                 for raw in raws:
-                    row = build_row(year, raw)
-                    if withheld(year, row):
-                        slot["withheld"] += 1
-                    else:
-                        slot["rows"].append(row)
+                    slot["rows"].append(build_row(year, raw))
 
             if method != "exact_name":
                 names = [p["name_en"] for p in places]
@@ -256,6 +250,7 @@ def main():
                     "accepted_logainm_id": (old or {}).get("accepted_logainm_id", "")
                     if status in HUMAN_STATUSES else (target or ""),
                     "similar_places_not_confirmed": "; ".join(similar),
+                    "reviewer_note": (old or {}).get("reviewer_note", ""),
                 })
 
     attached = skipped_authored = 0
@@ -276,16 +271,23 @@ def main():
 
         rows = {str(y): years[y]["rows"] for y in sorted(years)}
         write_json(census_path, rows, compact=True)
+        methods = {sp["method"] for y in years.values() for sp in y["spellings"]}
+        exact = "exact_name" in methods
         write_json(match_path, {
             "_generated_by": GENERATED_MARKER,
-            "status": "proposed",
-            "note": "Matched by identical name only. Not reviewed.",
+            "status": "proposed" if exact else "reviewed",
+            "note": (
+                "Identical-name matches are proposed and not yet reviewed. "
+                "Other spellings were accepted on review (see census_spelling_review.csv)."
+                if exact and "reviewed_variant" in methods else
+                "Matched by identical name only. Not reviewed." if exact else
+                "Spellings accepted on review (see census_spelling_review.csv)."
+            ),
             "ded": DED_NAME,
             "years": {
                 str(y): {
                     "spellings": years[y]["spellings"],
                     "people": len(years[y]["rows"]),
-                    "withheld": years[y]["withheld"],
                 }
                 for y in sorted(years)
             },

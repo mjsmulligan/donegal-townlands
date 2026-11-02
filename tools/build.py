@@ -101,16 +101,18 @@ def census_sections(base):
     out = ['<div class="card note"><h2>About these census returns</h2><p>' + q(
         'These are the census returns as transcribed, with no interpretation added. '
         'Each year is linked to this townland by the spelling recorded in that census. '
-        'The link is a proposed match from the name alone and has not yet been reviewed. '
-        'Years recorded under a different spelling are not shown until the spelling is reviewed.') + '</p></div>']
+        'A link made from an identical name is a proposed match and has not yet been reviewed. '
+        'A link made from a different spelling was accepted when that spelling was reviewed. '
+        'A year with no table has no return linked to this townland.') + '</p></div>']
     for year in sorted(census):
         rows = census[year]
         info = match.get(year, {})
         spellings = ', '.join(sorted({x['spelling'] for x in info.get('spellings', [])}))
+        reviewed = any(x.get('method') == 'reviewed_variant' for x in info.get('spellings', []))
         houses = len({str(r.get('h')) for r in rows})
         head = 'Census ' + year + ': ' + str(len(rows)) + ' people in ' + str(houses) + ' households'
         if spellings:
-            head += ' (recorded as ' + spellings + ')'
+            head += ' (recorded as ' + spellings + (', spelling accepted on review' if reviewed else '') + ')'
         body = ['<details open><summary>' + q(head) + '</summary><div class="scroll"><table><tr>'
                 + ''.join('<th>' + h + '</th>' for h in ('House', 'Surname', 'Forename', 'Age', 'Sex', 'Relation to head', 'Marital status', 'Occupation', 'Irish', 'Return'))
                 + '</tr>']
@@ -121,8 +123,6 @@ def census_sections(base):
             cells = (r.get('h'), r.get('s'), r.get('f'), r.get('a'), r.get('x'), r.get('r'), r.get('m'), r.get('o'), 'Yes' if r.get('i') else '', r.get('ref'))
             body.append('<tr' + cls + '>' + ''.join('<td>' + q('' if c is None else c) + '</td>' for c in cells) + '</tr>')
         body.append('</table></div>')
-        if info.get('withheld'):
-            body.append('<p>' + q(str(info['withheld']) + ' return(s) withheld under the living-people rule.') + '</p>')
         body.append('</details>')
         out.append(''.join(body))
     return '\n'.join(out)

@@ -162,9 +162,16 @@ class BuildStateTests(unittest.TestCase):
         self.assertIn("Census 1901: 2 people in 1 households (recorded as Beta)", page)
         self.assertIn("<td>Harvey</td>", page)
         self.assertIn("nai1", page)
-        self.assertIn("proposed match from the name alone", page)
-        self.assertIn("3 return(s) withheld", page)
+        self.assertIn("A link made from an identical name is a proposed match", page)
+        self.assertNotIn("withheld", page)
         self.assertNotIn("<b>Ann</b>", page)
+
+    def test_page_says_when_a_spelling_was_accepted_on_review(self):
+        self.case("beta", {"place.json": PLACE.replace("Druminnin", "Beta"),
+            "records/census.json": json.dumps({"1926": [{"h": 1, "s": "A", "f": "B", "a": 40, "x": "F", "r": "Head", "m": "", "o": "", "i": 0, "ref": "r1"}]}),
+            "records/census_match.json": json.dumps({"years": {"1926": {"spellings": [{"spelling": "Betta", "method": "reviewed_variant", "rows": 1}], "withheld": 0}}})})
+        self.run_build("beta")
+        self.assertIn("(recorded as Betta, spelling accepted on review)", self.page("beta"))
 
     def test_index_groups_census_cases_separately(self):
         self.empty_case("one")

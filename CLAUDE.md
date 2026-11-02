@@ -54,6 +54,8 @@ The central working specification is [`docs/DATA_ARCHITECTURE.md`](docs/DATA_ARC
 
 Publish only births and baptisms 100 or more years old, marriages 75 or more, deaths and burials 50 or more, measured against the current year. A person born in the last 100 years with no death record is presumed living and is excluded. Overrides go in `privacy_overrides.csv`. Run `python tools/validate.py` before every commit. No recent photographs of identifiable people.
 
+The rule applies to information the project holds that is not itself taken from a published source: people and events entered in the GEDCOM from family knowledge, oral accounts, unpublished records and photographs. A record taken unchanged from a source published by its custodian, such as the National Archives census releases (1926 and earlier), has already passed that custodian's privacy review, so the project does not withhold it a second time. `tools/validate.py` still refuses census files after 1926. Decided 2026-11-02.
+
 ## Layout
 
 - `engine/walk.html`: page template (scenes, plates, HUD, drawer). Holds no townland content. Placeholders: `__TITLE__`, `__BRAND__`, `__DATA__`.

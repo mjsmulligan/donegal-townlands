@@ -12,8 +12,7 @@
           "rows": 41
         }
       ],
-      "people": 41,
-      "withheld": 0
+      "people": 41
     },
     "1911": {
       "spellings": [
@@ -23,8 +22,7 @@
           "rows": 34
         }
       ],
-      "people": 34,
-      "withheld": 0
+      "people": 34
     },
     "1926": {
       "spellings": [
@@ -34,8 +32,7 @@
           "rows": 26
         }
       ],
-      "people": 23,
-      "withheld": 3
+      "people": 26
     }
   }
 }
