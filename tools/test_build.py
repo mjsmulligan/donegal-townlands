@@ -163,7 +163,7 @@ class BuildStateTests(unittest.TestCase):
         self.assertIn("<td>Harvey</td>", page)
         self.assertIn("nai1", page)
         self.assertIn("A link made from an identical name is a proposed match", page)
-        self.assertIn("3 return(s) withheld", page)
+        self.assertNotIn("withheld", page)
         self.assertNotIn("<b>Ann</b>", page)
 
     def test_page_says_when_a_spelling_was_accepted_on_review(self):

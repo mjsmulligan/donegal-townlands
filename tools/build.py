@@ -123,8 +123,6 @@ def census_sections(base):
             cells = (r.get('h'), r.get('s'), r.get('f'), r.get('a'), r.get('x'), r.get('r'), r.get('m'), r.get('o'), 'Yes' if r.get('i') else '', r.get('ref'))
             body.append('<tr' + cls + '>' + ''.join('<td>' + q('' if c is None else c) + '</td>' for c in cells) + '</tr>')
         body.append('</table></div>')
-        if info.get('withheld'):
-            body.append('<p>' + q(str(info['withheld']) + ' return(s) withheld under the living-people rule.') + '</p>')
         body.append('</details>')
         out.append(''.join(body))
     return '\n'.join(out)

@@ -198,17 +198,23 @@ class AttachCensusTests(unittest.TestCase):
         self.assertEqual(self.review()[0]["status"], "rejected")
         self.assertFalse(self.case_file("alpha", "census.json").exists())
 
-    def test_people_born_in_the_last_100_years_are_withheld(self):
+    def test_published_census_rows_are_all_kept_including_missing_ages(self):
         self.census(1926, [self.p("Alpha", age="0", year=1926),
                            self.p("Alpha", sur="Unknown", age="", year=1926)])
-        ac.THIS_YEAR_SAVED = ac.THIS_YEAR
-        ac.THIS_YEAR = 2020
-        self.addCleanup(setattr, ac, "THIS_YEAR", ac.THIS_YEAR_SAVED)
         self.run_attach()
         data = json.loads(self.case_file("alpha", "census.json").read_text(encoding="utf-8"))
-        self.assertEqual(data["1926"], [])
+        self.assertEqual(len(data["1926"]), 2)
         match = json.loads(self.case_file("alpha", "census_match.json").read_text(encoding="utf-8"))
-        self.assertEqual(match["years"]["1926"]["withheld"], 2)
+        self.assertEqual(match["years"]["1926"]["people"], 2)
+        self.assertNotIn("withheld", match["years"]["1926"])
+
+    def test_a_census_year_after_1926_is_refused(self):
+        saved = ac.YEARS
+        ac.YEARS = (1901, 1911, 1926, 1936)
+        self.addCleanup(setattr, ac, "YEARS", saved)
+        with contextlib.redirect_stderr(io.StringIO()) as err, self.assertRaises(SystemExit):
+            self.run_attach()
+        self.assertIn("1936", err.getvalue())
 
     def test_source_csv_files_are_not_modified(self):
         self.census(1901, [self.p("Alpha")])

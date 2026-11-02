@@ -105,7 +105,7 @@ Every requirement has an acceptance test. A work package is finished when the te
 
 | ID | Requirement | Pri | Test |
 |---|---|---|---|
-| PRV-01 | The 100/75/50 rule and `privacy_overrides.csv` are applied when the evidence bundles and the published GEDCOM are built. | M | A person born less than 100 years ago with no death record is absent from the output. |
+| PRV-01 | The 100/75/50 rule and `privacy_overrides.csv` are applied when the evidence bundles and the published GEDCOM are built, to information not taken from a source published by its custodian. Published census returns (1926 and earlier) are not withheld again. | M | A person born less than 100 years ago with no death record is absent from the output. |
 | PRV-02 | The validator fails the build if a presumed living person appears in published output. | M | A seeded test person is caught. |
 | PRV-03 | The project decides what the public repository may hold, including the processed research layers and the GEDCOM. | M | The decision is recorded in `DECISIONS.md`. |
 
