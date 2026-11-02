@@ -1,41 +1,632 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Spierstown | Donegal Townlands</title>
-<!-- generated: donegal-townlands place page -->
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&display=swap">
 <style>
-  body { font-family: Arial, sans-serif; max-width: 720px; margin: 24px auto; padding: 0 16px 40px; color: #333; background: #f7f7f5; line-height: 1.5; }
-  a { color: #234b35; }
-  h1 { color: #234b35; margin-bottom: 4px; }
-  .ga { color: #5b6f62; margin-top: 0; font-size: 1.1em; }
-  .card { background: white; border: 1px solid #ddd; border-radius: 6px; padding: 14px 18px; margin: 14px 0; }
-  .card h2 { margin: 0 0 6px; font-size: 1.05em; color: #234b35; }
-  dl { margin: 0; }
-  dt { font-weight: bold; margin-top: 8px; }
-  dd { margin: 0; }
-  .note { background: #eaf1eb; border-color: #cfdfd2; }
-  details { background: white; border: 1px solid #ddd; border-radius: 6px; padding: 10px 14px; margin: 14px 0; }
-  summary { cursor: pointer; font-weight: bold; color: #234b35; }
-  .scroll { overflow-x: auto; margin-top: 8px; }
-  table { border-collapse: collapse; width: 100%; font-size: 0.9em; }
-  th, td { text-align: left; padding: 4px 8px; border-bottom: 1px solid #e4e8e4; white-space: nowrap; }
-  th { background: #eaf1eb; color: #234b35; }
-  tr.first td { border-top: 2px solid #cfdfd2; }
-  footer { margin-top: 28px; font-size: 0.85em; color: #5b6f62; }
+:root{
+  /* Layout concept: a gallery walk. One painted scene per plate, full width, with a museum caption beneath.
+     The sky moves from dawn (1850s) through day and late afternoon to dusk (1926) as the plates go on.
+     Cottages stand for households. Tables and checklists wait in the archive at the end. */
+  --wall:#F3F6F4; --paper:#FBFCFA; --ink:#1D2F33; --ink2:#53686D; --rule:#D3DDD9;
+  --hill:#7FAEA5; --hill-d:#4F8A86; --gorse:#EBC94B; --gorse-soft:#F5E8AC; --lough:#C4DAE5;
+  --display:'Newsreader', Georgia, 'Times New Roman', serif;
+  --body:'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  color-scheme: light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-snap-type:y proximity}
+body{margin:0;background:var(--wall);color:var(--ink);font:400 17px/1.6 var(--body);-webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums}
+a{color:var(--ink);text-decoration-color:var(--hill);text-underline-offset:3px}
+:focus-visible{outline:3px solid var(--ink);outline-offset:2px;border-radius:3px}
+.wrap,.sheet,.plate>*{min-width:0}
+.wrap{max-width:1240px;margin-inline:auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);font-weight:300;margin:0;text-wrap:balance;line-height:1.04;letter-spacing:-.012em}
+p{margin:0}
+.small{font-size:14px;color:var(--ink2);line-height:1.5}
+
+/* header and hud */
+.top{position:fixed;inset:0 0 auto;z-index:40;padding-top:env(safe-area-inset-top,0px);background:linear-gradient(180deg,rgba(243,246,244,.92),rgba(243,246,244,0));pointer-events:none}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:56px;gap:16px}
+.top .brand{font:italic 400 21px var(--display);pointer-events:auto;text-decoration:none}
+.top .right{display:flex;align-items:center;gap:14px;pointer-events:auto;min-width:0}
+.room-now{font:italic 400 17px var(--display);color:var(--ink2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.btn{appearance:none;border:1px solid var(--ink);background:rgba(251,252,250,.85);color:var(--ink);font:500 14px var(--body);padding:7px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.btn:hover{background:var(--ink);color:#fff}
+.hud{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:40;display:flex;align-items:center;gap:4px;background:rgba(251,252,250,.92);border:1px solid var(--rule);border-radius:999px;padding:4px;box-shadow:0 10px 30px rgba(29,47,51,.14);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.hud button{appearance:none;border:0;background:transparent;width:40px;height:40px;border-radius:50%;cursor:pointer;color:var(--ink);font-size:20px;line-height:1;display:grid;place-items:center}
+.hud button:hover{background:var(--gorse-soft)}
+.hud button[disabled]{opacity:.3;cursor:default;background:transparent}
+.count{font:500 15px var(--body);min-width:5.4em;text-align:center}
+.count i{font-style:normal;color:var(--ink2)}
+
+/* contents drawer */
+.drawer{position:fixed;inset:0;z-index:60;background:rgba(29,47,51,.35);display:none}
+.drawer.open{display:block}
+.drawer-in{position:absolute;right:0;top:0;bottom:0;width:min(440px,100%);background:var(--paper);padding:calc(20px + env(safe-area-inset-top,0px)) max(22px,env(safe-area-inset-right,0px)) 40px 28px;overflow:auto}
+.drawer h2{font-size:34px;margin-bottom:6px}
+.drawer h3{font:italic 400 20px var(--display);color:var(--ink2);margin:26px 0 6px}
+.drawer ol{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.drawer li a{display:grid;grid-template-columns:2.4em 1fr;gap:6px;padding:7px 4px;text-decoration:none;border-radius:6px;font-size:16px}
+.drawer li a:hover{background:var(--gorse-soft)}
+.drawer li a b{font-weight:500;color:var(--ink2)}
+.drawer .close{float:right}
+
+/* plates */
+.plate{position:relative;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;scroll-snap-align:start;background:var(--wall)}
+.art{position:relative;flex:1 1 auto;min-height:clamp(360px,64svh,820px);overflow:hidden}
+.art canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.roomtag{position:absolute;left:0;right:0;top:78px;pointer-events:none}
+.roomtag p{font:italic 300 clamp(20px,2.6vw,30px) var(--display);color:var(--ink2)}
+.roomtag b{font:500 14px var(--body);font-style:normal;color:var(--ink2);margin-right:10px}
+.bigtitle{position:absolute;left:0;right:0;top:clamp(120px,22vh,200px);pointer-events:none}
+.bigtitle h1{font-size:clamp(76px,17vw,230px);line-height:.88;letter-spacing:-.03em;font-weight:300}
+.bigtitle .irish{font:italic 300 clamp(22px,3vw,34px) var(--display);color:var(--hill-d);margin-bottom:10px}
+.walkhint{position:absolute;left:0;right:0;bottom:18px;pointer-events:none}
+.walkhint p{font-size:14px;color:var(--ink2)}
+.label{position:relative;background:var(--paper);border-top:1px solid var(--rule);padding-block:26px 96px}
+.lab-grid{display:grid;grid-template-columns:1fr;gap:18px 40px;align-items:start}
+.pn{display:block;font:500 14px var(--body);color:var(--ink2);margin-bottom:8px}
+.label h2{font-size:clamp(34px,4.4vw,58px)}
+.medium{font-size:14px;color:var(--ink2);margin-top:10px;line-height:1.45;max-width:38ch}
+.story{font:300 clamp(21px,2.1vw,26px)/1.38 var(--display);max-width:40ch}
+.story + .story{margin-top:12px}
+.yrs{display:flex;gap:6px;flex-wrap:wrap}
+.yr{appearance:none;border:1px solid var(--rule);background:var(--wall);font:500 14px var(--body);color:var(--ink);padding:7px 14px;border-radius:999px;cursor:pointer}
+.yr:hover{border-color:var(--ink)}
+.yr[aria-selected="true"]{background:var(--gorse-soft);border-color:var(--gorse)}
+.yr[disabled]{opacity:.4;cursor:default}
+.cnt{font-size:14px;color:var(--ink2);margin-top:10px}
+@media (min-width:900px){.lab-grid{grid-template-columns:minmax(220px,1fr) minmax(0,1.5fr) minmax(190px,.8fr)}}
+details.rec{margin-top:22px;border-top:1px solid var(--rule);padding-top:14px}
+details.rec summary{cursor:pointer;font-weight:500;font-size:15px;list-style:none;display:inline-flex;gap:10px;align-items:center}
+details.rec summary::-webkit-details-marker{display:none}
+details.rec summary::before{content:"+";display:inline-grid;place-items:center;width:22px;height:22px;border:1px solid var(--ink);border-radius:50%;font-size:15px;line-height:1}
+details.rec[open] summary::before{content:"\2212"}
+.rec-in{display:grid;gap:26px;grid-template-columns:minmax(0,1fr);margin-top:16px}
+@media (min-width:900px){.rec-in{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr)}}
+.rec-txt{display:flex;flex-direction:column;gap:13px;max-width:62ch;font-size:16.5px}
+.tbl{overflow-x:auto;border:1px solid var(--rule);border-radius:8px;background:var(--paper);max-width:100%}
+table{border-collapse:collapse;width:100%;font-size:13.5px;min-width:560px}
+th,td{text-align:left;padding:6px 10px;border-bottom:1px solid var(--rule);vertical-align:top}
+th{font-weight:600;background:#E6EDE9;position:sticky;top:0}
+td.n,th.n{text-align:right;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+
+/* paper sheet (Griffith's) */
+.sheetart{display:grid;grid-template-columns:minmax(0,1fr);justify-items:center;padding-inline:14px;padding-block:96px 56px}
+.sheet{position:relative;width:min(100%,1040px);background:var(--paper);border:1px solid var(--rule);border-radius:3px;box-shadow:0 30px 70px rgba(29,47,51,.16);padding:clamp(18px,3vw,38px);font-family:var(--display)}
+.sheet h3{font:400 clamp(26px,3vw,36px) var(--display);text-align:center;letter-spacing:.01em}
+.sheet .sub{text-align:center;font:italic 300 17px var(--display);color:var(--ink2);margin:4px 0 18px}
+.sheet .tbl{border:0;border-radius:0;background:transparent}
+.sheet table{font:400 15px var(--display);min-width:700px}
+.sheet th{background:transparent;font:500 13px var(--body);color:var(--ink2);position:static;border-bottom:1.5px solid var(--ink)}
+.sheet td{border-bottom:1px dotted var(--rule)}
+.sheet tr.tot td{border-top:1.5px solid var(--ink);border-bottom:0;font-weight:500}
+.sheet .foot{margin-top:14px;font:400 14px var(--body);color:var(--ink2);max-width:80ch}
+
+/* treemap */
+.treeart{padding-block:92px 40px;display:grid;place-items:center}
+.tree{position:relative;width:min(100%,1160px);height:clamp(380px,60svh,640px);margin-inline:auto}
+.tile{position:absolute;overflow:hidden;padding:8px 10px;font:italic 400 15px/1.15 var(--display);color:var(--ink);border-radius:3px;display:flex;flex-direction:column;gap:3px}
+.tile span{font:500 12px var(--body);font-style:normal;color:rgba(29,47,51,.75)}
+.tile:hover{filter:brightness(1.05);outline:2px solid var(--ink);z-index:2}
+.treenote{margin-top:12px;font-size:14px;color:var(--ink2)}
+
+/* empty frames */
+.frames{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:22px;width:min(100%,1160px);margin-inline:auto;padding-block:100px 56px}
+.frame{aspect-ratio:4/5;border:2px dashed var(--hill-d);border-radius:3px;padding:12px;display:flex;flex-direction:column;justify-content:flex-end;background:rgba(251,252,250,.55);gap:4px}
+.frame.held{border:2px solid var(--gorse);background:rgba(251,252,250,.85)}
+.frame b{font:italic 400 18px/1.15 var(--display)}
+.frame span{font-size:13px;color:var(--ink2);line-height:1.35}
+.frame em{font-style:normal;font-weight:500;font-size:12px;color:var(--ink)}
+
+/* archive */
+.archive{background:var(--paper);border-top:1px solid var(--rule);scroll-snap-align:start;min-height:auto;display:block}
+.archive .wrap{padding-block:clamp(64px,9vw,110px) 32px}
+.archive h2{font-size:clamp(38px,5vw,64px);margin-bottom:6px}
+.archive .pn{margin-bottom:10px}
+.archive .intro{max-width:62ch;color:var(--ink2);margin:14px 0 30px}
+.q{list-style:none;margin:0;padding:0;display:grid;gap:4px;max-width:72ch}
+.q label{display:grid;grid-template-columns:24px 1fr;gap:12px;padding:10px 12px;border-radius:10px;cursor:pointer;align-items:start}
+.q label:hover{background:var(--wall)}
+.q input{width:20px;height:20px;margin:2px 0 0;accent-color:var(--hill-d)}
+.q input:checked+span{color:var(--ink2);text-decoration:line-through;text-decoration-color:var(--hill)}
+.cols{display:grid;gap:40px;grid-template-columns:minmax(0,1fr)}
+@media (min-width:900px){.cols{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+.prose{display:flex;flex-direction:column;gap:13px;max-width:62ch}
+.rtabs{display:flex;flex-wrap:wrap;gap:6px;margin-block:18px 12px}
+.rtab{appearance:none;border:1px solid var(--rule);background:var(--wall);font:500 14px var(--body);padding:7px 14px;border-radius:999px;cursor:pointer;color:var(--ink)}
+.rtab[aria-selected="true"]{background:var(--gorse-soft);border-color:var(--gorse)}
+.rfilter{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:8px}
+.rfilter input{font:inherit;font-size:15px;padding:8px 12px;border:1px solid var(--rule);border-radius:8px;background:var(--wall);color:var(--ink);min-width:0;width:min(100%,280px)}
+.rscroll{max-height:70vh;overflow:auto}
+.end{text-align:center;padding-block:46px 130px;font:italic 300 22px var(--display);color:var(--ink2);background:var(--paper)}
+.tip{position:fixed;pointer-events:none;background:var(--ink);color:#fff;font-size:13px;line-height:1.35;padding:6px 10px;border-radius:6px;max-width:260px;z-index:70;transform:translate(-50%,-130%)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;scroll-snap-type:none}}
 </style>
-</head>
-<body>
-<p><a href="../">&larr; All townlands</a></p>
-<h1>Spierstown</h1>
-<div class="card"><h2>Place record</h2><dl><dt>Place type</dt><dd>Townland, in the Clogher District Electoral Division</dd><dt>Logainm</dt><dd><a href="https://www.logainm.ie/en/13978">Logainm record 13978</a></dd><dt>Location</dt><dd><a href="https://www.openstreetmap.org/?mlat=54.669497511032674&amp;mlon=-8.061290076812655&amp;zoom=15">54.6695, -8.0613</a></dd></dl></div>
-<div class="card note"><h2>Research status</h2><p>Some historical records have been added for this townland, but not yet enough for a full study. This page will be replaced by the study as the research is completed.</p></div>
-<div class="card"><h2>Records held so far</h2><ul><li>Census 1901: 28 people recorded</li><li>Census 1911: 31 people recorded</li><li>Census 1926: 18 people recorded</li></ul></div>
-<div class="card note"><h2>About these census returns</h2><p>These are the census returns as transcribed, with no interpretation added. Each year is linked to this townland by the spelling recorded in that census. A link made from an identical name is a proposed match and has not yet been reviewed. A link made from a different spelling was accepted when that spelling was reviewed. A year with no table has no return linked to this townland.</p></div>
-<details open><summary>Census 1901: 28 people in 6 households (recorded as Shierstown, spelling accepted on review)</summary><div class="scroll"><table><tr><th>House</th><th>Surname</th><th>Forename</th><th>Age</th><th>Sex</th><th>Relation to head</th><th>Marital status</th><th>Occupation</th><th>Irish</th><th>Return</th></tr><tr class="first"><td>1</td><td>Hannah</td><td>William</td><td>95</td><td>M</td><td>Head of Family</td><td>Married</td><td>Farmer</td><td></td><td>nai000648050</td></tr><tr><td>1</td><td>Hannah</td><td>Elizabeth</td><td>84</td><td>F</td><td>Wife</td><td>Married</td><td></td><td></td><td>nai000648050</td></tr><tr><td>1</td><td>Hannah</td><td>Robert</td><td>53</td><td>M</td><td>Son</td><td>Not Married</td><td>Farmer</td><td></td><td>nai000648050</td></tr><tr><td>1</td><td>Hannah</td><td>John</td><td>39</td><td>M</td><td>Son</td><td>Not Married</td><td>Policeman</td><td></td><td>nai000648050</td></tr><tr><td>1</td><td>Hannah</td><td>Mary</td><td>56</td><td>F</td><td>Daughter</td><td>Not Married</td><td>Farmer&#x27;s Daughter</td><td></td><td>nai000648050</td></tr><tr><td>1</td><td>Hannah</td><td>Sarah Jane</td><td>45</td><td>F</td><td>Daughter</td><td>Not Married</td><td>Farmer&#x27;s Daughter</td><td></td><td>nai000648050</td></tr><tr class="first"><td>2</td><td>Wray</td><td>Alexander</td><td>49</td><td>M</td><td>Head of Family</td><td>Married</td><td>Farmer</td><td></td><td>nai000648051</td></tr><tr><td>2</td><td>Wray</td><td>Maud</td><td>35</td><td>F</td><td>Wife</td><td>Married</td><td></td><td></td><td>nai000648051</td></tr><tr class="first"><td>3</td><td>Buchanan</td><td>James</td><td>60</td><td>M</td><td>Head of Family</td><td>Married</td><td>Farmer</td><td></td><td>nai000648052</td></tr><tr><td>3</td><td>Buchanan</td><td>Maggie</td><td>53</td><td>F</td><td>Wife</td><td>Married</td><td></td><td></td><td>nai000648052</td></tr><tr><td>3</td><td>Buchanan</td><td>Maggie</td><td>52</td><td>F</td><td>Sister</td><td>Not Married</td><td>Seamstress</td><td></td><td>nai000648052</td></tr><tr><td>3</td><td>Buchanan</td><td>Mary</td><td>14</td><td>F</td><td>Daughter</td><td>Not Married</td><td>Scholar</td><td></td><td>nai000648052</td></tr><tr class="first"><td>4</td><td>Knight</td><td>Samuel</td><td>58</td><td>M</td><td>Head of Family</td><td>Married</td><td>Farmer</td><td></td><td>nai000648053</td></tr><tr><td>4</td><td>Knight</td><td>Ellen</td><td>47</td><td>F</td><td>Wife</td><td>Married</td><td></td><td></td><td>nai000648053</td></tr><tr><td>4</td><td>Knight</td><td>George</td><td>55</td><td>M</td><td>Brother</td><td>Not Married</td><td>Farmer</td><td></td><td>nai000648053</td></tr><tr><td>4</td><td>Cambell</td><td>Grace</td><td>18</td><td>F</td><td>Servant</td><td>Not Married</td><td>General Servant</td><td></td><td>nai000648053</td></tr><tr class="first"><td>5</td><td>Irwin</td><td>Samuel</td><td>51</td><td>M</td><td>Head of Family</td><td>Married</td><td>Farmer</td><td></td><td>nai000648054</td></tr><tr><td>5</td><td>Irwin</td><td>Eliza Anne</td><td>40</td><td>F</td><td>Wife</td><td>Married</td><td></td><td></td><td>nai000648054</td></tr><tr><td>5</td><td>Irwin</td><td>Mary Jane</td><td>18</td><td>F</td><td>Daughter</td><td>Not Married</td><td>Seamstress</td><td></td><td>nai000648054</td></tr><tr><td>5</td><td>Irwin</td><td>William James</td><td>14</td><td>M</td><td>Son</td><td>Not Married</td><td>Farmer</td><td></td><td>nai000648054</td></tr><tr><td>5</td><td>Irwin</td><td>Annie</td><td>11</td><td>F</td><td>Daughter</td><td>Not Married</td><td>Scholar</td><td></td><td>nai000648054</td></tr><tr><td>5</td><td>Irwin</td><td>Lizzie</td><td>8</td><td>F</td><td>Daughter</td><td>Not Married</td><td>Scholar</td><td></td><td>nai000648054</td></tr><tr><td>5</td><td>Irwin</td><td>Samuel</td><td>5</td><td>M</td><td>Son</td><td>Not Married</td><td>Scholar</td><td></td><td>nai000648054</td></tr><tr class="first"><td>6</td><td>Lowry</td><td>Robert</td><td>68</td><td>M</td><td>Head of Family</td><td>Widower</td><td>Farmer</td><td></td><td>nai000648055</td></tr><tr><td>6</td><td>Lowry</td><td>Martha</td><td>28</td><td>F</td><td>Daughter</td><td>Not Married</td><td>Dressmaker</td><td></td><td>nai000648055</td></tr><tr><td>6</td><td>Lowry</td><td>Robert</td><td>26</td><td>M</td><td>Son</td><td>Not Married</td><td>Farmer&#x27;s Son</td><td></td><td>nai000648055</td></tr><tr><td>6</td><td>Lowry</td><td>Joseph</td><td>24</td><td>M</td><td>Son</td><td>Not Married</td><td>Farmer&#x27;s Son</td><td></td><td>nai000648055</td></tr><tr><td>6</td><td>Lowry</td><td>Barbara</td><td>17</td><td>F</td><td>Daughter</td><td>Not Married</td><td>Scholar</td><td></td><td>nai000648055</td></tr></table></div></details>
-<details open><summary>Census 1911: 31 people in 6 households (recorded as Spierstown)</summary><div class="scroll"><table><tr><th>House</th><th>Surname</th><th>Forename</th><th>Age</th><th>Sex</th><th>Relation to head</th><th>Marital status</th><th>Occupation</th><th>Irish</th><th>Return</th></tr><tr class="first"><td>1</td><td>Lowry</td><td>Robert</td><td>76</td><td>M</td><td>Head of Family</td><td>Widower</td><td>Farmer</td><td></td><td>nai002045095</td></tr><tr><td>1</td><td>Lowry</td><td>Robert</td><td>38</td><td>M</td><td>Son</td><td>Married</td><td></td><td></td><td>nai002045095</td></tr><tr><td>1</td><td>Lowry</td><td>Margaret E</td><td>27</td><td>F</td><td>Daughter in Law</td><td>Married</td><td></td><td></td><td>nai002045095</td></tr><tr><td>1</td><td>Lowry</td><td>Rebecca J</td><td>5</td><td>F</td><td>Grand Daughter</td><td>Single</td><td>Scholar</td><td></td><td>nai002045095</td></tr><tr><td>1</td><td>Lowry</td><td>Louisa M</td><td>3</td><td>F</td><td>Grand Daughter</td><td>Single</td><td></td><td></td><td>nai002045095</td></tr><tr><td>1</td><td>Lowry</td><td>Robert</td><td>0</td><td>M</td><td>Grand Son</td><td>Single</td><td></td><td></td><td>nai002045095</td></tr><tr><td>1</td><td>Lowry</td><td>Rebecca J</td><td>31</td><td>F</td><td>Boarder</td><td>Single</td><td>Teacher N S</td><td></td><td>nai002045095</td></tr><tr class="first"><td>2</td><td>Cunningham</td><td>Bernard</td><td>39</td><td>M</td><td>Head of Family</td><td></td><td>Catholic Curate</td><td>Yes</td><td>nai002045097</td></tr><tr><td>2</td><td>Cunningham</td><td>Michael</td><td>33</td><td>M</td><td>Visitor</td><td>Single</td><td>Assistant Co Surveyor</td><td>Yes</td><td>nai002045097</td></tr><tr><td>2</td><td>McGettigan</td><td>Sarah</td><td>40</td><td>F</td><td>House Keeper</td><td>Single</td><td>Cook and Domestic Servant</td><td>Yes</td><td>nai002045097</td></tr><tr><td>2</td><td>Hanna</td><td>Robert</td><td>60</td><td>M</td><td>Head of Family</td><td>Single</td><td>Farmer</td><td></td><td>nai002045099</td></tr><tr><td>2</td><td>Hanna</td><td>Mary Anne</td><td>63</td><td>F</td><td>Sister</td><td>Single</td><td></td><td></td><td>nai002045099</td></tr><tr><td>2</td><td>Hanna</td><td>Sarah Jane</td><td>48</td><td>F</td><td>Sister</td><td>Single</td><td></td><td></td><td>nai002045099</td></tr><tr class="first"><td>3</td><td>Wray</td><td>Alexander</td><td>64</td><td>M</td><td>Head of Family</td><td>Married</td><td>Farmer</td><td></td><td>nai002045101</td></tr><tr><td>3</td><td>Wray</td><td>Martha</td><td>46</td><td>F</td><td>Wife</td><td>Married</td><td></td><td></td><td>nai002045101</td></tr><tr class="first"><td>4</td><td>Buchanan</td><td>James</td><td>72</td><td>M</td><td>Head of Family</td><td>Married</td><td>Farmer</td><td></td><td>nai002045103</td></tr><tr><td>4</td><td>Buchanan</td><td>Margaret</td><td>68</td><td>F</td><td>Wife</td><td>Married</td><td></td><td></td><td>nai002045103</td></tr><tr><td>4</td><td>Moran</td><td>John</td><td>40</td><td>M</td><td>Son in Law</td><td>Married</td><td>Farmer</td><td></td><td>nai002045103</td></tr><tr><td>4</td><td>Moran</td><td>Mary Anne</td><td>24</td><td>F</td><td>Daughter</td><td>Married</td><td></td><td></td><td>nai002045103</td></tr><tr><td>4</td><td>Moran</td><td>Elizabeth</td><td>0</td><td>F</td><td>Grand Daughter</td><td>Single</td><td></td><td></td><td>nai002045103</td></tr><tr class="first"><td>5</td><td>Knight</td><td>Samuel</td><td>67</td><td>M</td><td>Head of Family</td><td>Married</td><td>Farmer</td><td></td><td>nai002045105</td></tr><tr><td>5</td><td>Knight</td><td>Ellenor</td><td>58</td><td>F</td><td>Wife</td><td>Married</td><td></td><td></td><td>nai002045105</td></tr><tr><td>5</td><td>Knight</td><td>George</td><td>70</td><td>M</td><td>Brother</td><td>Single</td><td>Farmer&#x27;s Brother</td><td></td><td>nai002045105</td></tr><tr><td>5</td><td>Corr</td><td>Rose Anne</td><td>17</td><td>F</td><td>Servant</td><td>Single</td><td>Domestic Servant</td><td></td><td>nai002045105</td></tr><tr class="first"><td>6</td><td>Irwin</td><td>Samuel</td><td>63</td><td>M</td><td>Head of Family</td><td>Married</td><td>Farmer</td><td></td><td>nai002045107</td></tr><tr><td>6</td><td>Irwin</td><td>Eliza An</td><td>56</td><td>F</td><td>Wife</td><td>Married</td><td></td><td></td><td>nai002045107</td></tr><tr><td>6</td><td>Irwin</td><td>Mary Jane</td><td>27</td><td>F</td><td>Daughter</td><td>Single</td><td>Seamstress</td><td></td><td>nai002045107</td></tr><tr><td>6</td><td>Irwin</td><td>Willie James</td><td>24</td><td>M</td><td>Son</td><td>Single</td><td>Farmer&#x27;s Son</td><td></td><td>nai002045107</td></tr><tr><td>6</td><td>Irwin</td><td>Annie</td><td>23</td><td>F</td><td>Daughter</td><td>Single</td><td>Seamstress</td><td></td><td>nai002045107</td></tr><tr><td>6</td><td>Irwin</td><td>Lizzie Ellen</td><td>19</td><td>F</td><td>Daughter</td><td>Single</td><td>Seamstress</td><td></td><td>nai002045107</td></tr><tr><td>6</td><td>Irwin</td><td>Samuel</td><td>17</td><td>M</td><td>Son</td><td>Single</td><td>Farmer&#x27;s Son</td><td></td><td>nai002045107</td></tr></table></div></details>
-<details open><summary>Census 1926: 18 people in 5 households (recorded as Spearstown, spelling accepted on review)</summary><div class="scroll"><table><tr><th>House</th><th>Surname</th><th>Forename</th><th>Age</th><th>Sex</th><th>Relation to head</th><th>Marital status</th><th>Occupation</th><th>Irish</th><th>Return</th></tr><tr class="first"><td>0002</td><td>Hanna</td><td>Robert</td><td>77</td><td>M</td><td>Head</td><td>Single</td><td></td><td></td><td>Spearstown_0352_0020_0002_0_00003.pdf</td></tr><tr><td>0002</td><td>Hanna</td><td>Sarah</td><td>67</td><td>F</td><td>Robert Hanna</td><td>Single</td><td></td><td></td><td>Spearstown_0352_0020_0002_0_00003.pdf</td></tr><tr class="first"><td>0003</td><td>Knight</td><td>Eleanor</td><td></td><td>F</td><td>Head</td><td>Widow</td><td></td><td></td><td>Spearstown_0352_0020_0003_0_00004.pdf</td></tr><tr><td>0003</td><td>McKee</td><td>Eliza J</td><td>27</td><td>F</td><td>Eleanor Knight</td><td></td><td></td><td></td><td>Spearstown_0352_0020_0003_0_00004.pdf</td></tr><tr><td>0003</td><td>O&#x27;Donnell</td><td>Mary</td><td>74</td><td>F</td><td>Eleanor Knight</td><td>Widow</td><td></td><td></td><td>Spearstown_0352_0020_0003_0_00004.pdf</td></tr><tr><td>0003</td><td>McDyre</td><td>Mary</td><td>16</td><td>F</td><td>Eleanor Knight</td><td>Single</td><td></td><td></td><td>Spearstown_0352_0020_0003_0_00004.pdf</td></tr><tr class="first"><td>0004</td><td>Irwin</td><td>Samuel</td><td>77</td><td>M</td><td>Head</td><td>Married</td><td></td><td></td><td>Spearstown_0352_0020_0004_0_00005.pdf</td></tr><tr><td>0004</td><td>Irwin</td><td>Lizzie</td><td>69</td><td>F</td><td>Samuel Irwin</td><td>Married</td><td></td><td></td><td>Spearstown_0352_0020_0004_0_00005.pdf</td></tr><tr><td>0004</td><td>Irwin</td><td>William</td><td>40</td><td>M</td><td>Samuel Irwin</td><td>Single</td><td></td><td></td><td>Spearstown_0352_0020_0004_0_00005.pdf</td></tr><tr><td>0004</td><td>Irwin</td><td>Samuel</td><td>30</td><td>M</td><td>Samuel Irwin</td><td>Single</td><td></td><td></td><td>Spearstown_0352_0020_0004_0_00005.pdf</td></tr><tr class="first"><td>0005</td><td>Wray</td><td>Alexander</td><td>80</td><td>M</td><td>Head</td><td>Married</td><td></td><td></td><td>Spearstown_0352_0020_0005_0_00006.pdf</td></tr><tr><td>0005</td><td>Wray</td><td>Martha Stephenson</td><td>62</td><td>F</td><td>Alexander Wray</td><td>Married</td><td></td><td></td><td>Spearstown_0352_0020_0005_0_00006.pdf</td></tr><tr class="first"><td>0006</td><td>Lowry</td><td>Robert</td><td>54</td><td>M</td><td>Head</td><td>Married</td><td></td><td></td><td>Spearstown_0352_0020_0006_0_00007.pdf</td></tr><tr><td>0006</td><td>Lowry</td><td>Margaret</td><td>42</td><td>F</td><td>Robert Lowry</td><td>4 children living</td><td></td><td></td><td>Spearstown_0352_0020_0006_0_00007.pdf</td></tr><tr><td>0006</td><td>Lowry</td><td>Margaret Louisa</td><td>18</td><td>F</td><td>Robert Lowry</td><td>Single</td><td></td><td></td><td>Spearstown_0352_0020_0006_0_00007.pdf</td></tr><tr><td>0006</td><td>Lowry</td><td>Robert</td><td>15</td><td>M</td><td>Robert Lowry</td><td>Both Parents Alive</td><td></td><td></td><td>Spearstown_0352_0020_0006_0_00007.pdf</td></tr><tr><td>0006</td><td>Lowry</td><td>Thomas H</td><td>9</td><td>M</td><td>Robert Lowry</td><td>Both Parents Alive</td><td></td><td></td><td>Spearstown_0352_0020_0006_0_00007.pdf</td></tr><tr><td>0006</td><td>Stevenson</td><td>John</td><td>76</td><td>M</td><td>Robert Lowry</td><td>Single</td><td></td><td></td><td>Spearstown_0352_0020_0006_0_00007.pdf</td></tr></table></div></details>
-<footer>Irish-language placename data by Logainm, Government of Ireland, licensed under CC BY 4.0.</footer>
-</body>
-</html>
+
+<header class="top"><div class="wrap">
+  <a class="brand" href="#p01">Spierstown</a>
+  <div class="right"><span class="room-now" id="roomNow"></span><button class="btn" id="openC" aria-haspopup="dialog">Contents</button></div>
+</div></header>
+
+<main id="walk"></main>
+
+<div class="hud" role="group" aria-label="Walk the townland">
+  <button id="prev" aria-label="Previous plate">&#8592;</button>
+  <span class="count" id="count" aria-live="polite"></span>
+  <button id="next" aria-label="Next plate">&#8594;</button>
+</div>
+
+<div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Contents">
+  <div class="drawer-in" id="drawerIn"></div>
+</div>
+<div class="tip" id="tip" hidden></div>
+
+<script>
+(function(){
+'use strict';
+var DATA = {"census":{"1901":[{"h":1,"s":"Hannah","f":"William","a":95,"x":"M","r":"Head of Family","m":"Married","o":"Farmer","i":0,"ref":"nai000648050"},{"h":1,"s":"Hannah","f":"Elizabeth","a":84,"x":"F","r":"Wife","m":"Married","o":"","i":0,"ref":"nai000648050"},{"h":1,"s":"Hannah","f":"Robert","a":53,"x":"M","r":"Son","m":"Not Married","o":"Farmer","i":0,"ref":"nai000648050"},{"h":1,"s":"Hannah","f":"John","a":39,"x":"M","r":"Son","m":"Not Married","o":"Policeman","i":0,"ref":"nai000648050"},{"h":1,"s":"Hannah","f":"Mary","a":56,"x":"F","r":"Daughter","m":"Not Married","o":"Farmer's Daughter","i":0,"ref":"nai000648050"},{"h":1,"s":"Hannah","f":"Sarah Jane","a":45,"x":"F","r":"Daughter","m":"Not Married","o":"Farmer's Daughter","i":0,"ref":"nai000648050"},{"h":2,"s":"Wray","f":"Alexander","a":49,"x":"M","r":"Head of Family","m":"Married","o":"Farmer","i":0,"ref":"nai000648051"},{"h":2,"s":"Wray","f":"Maud","a":35,"x":"F","r":"Wife","m":"Married","o":"","i":0,"ref":"nai000648051"},{"h":3,"s":"Buchanan","f":"James","a":60,"x":"M","r":"Head of Family","m":"Married","o":"Farmer","i":0,"ref":"nai000648052"},{"h":3,"s":"Buchanan","f":"Maggie","a":53,"x":"F","r":"Wife","m":"Married","o":"","i":0,"ref":"nai000648052"},{"h":3,"s":"Buchanan","f":"Maggie","a":52,"x":"F","r":"Sister","m":"Not Married","o":"Seamstress","i":0,"ref":"nai000648052"},{"h":3,"s":"Buchanan","f":"Mary","a":14,"x":"F","r":"Daughter","m":"Not Married","o":"Scholar","i":0,"ref":"nai000648052"},{"h":4,"s":"Knight","f":"Samuel","a":58,"x":"M","r":"Head of Family","m":"Married","o":"Farmer","i":0,"ref":"nai000648053"},{"h":4,"s":"Knight","f":"Ellen","a":47,"x":"F","r":"Wife","m":"Married","o":"","i":0,"ref":"nai000648053"},{"h":4,"s":"Knight","f":"George","a":55,"x":"M","r":"Brother","m":"Not Married","o":"Farmer","i":0,"ref":"nai000648053"},{"h":4,"s":"Cambell","f":"Grace","a":18,"x":"F","r":"Servant","m":"Not Married","o":"General Servant","i":0,"ref":"nai000648053"},{"h":5,"s":"Irwin","f":"Samuel","a":51,"x":"M","r":"Head of Family","m":"Married","o":"Farmer","i":0,"ref":"nai000648054"},{"h":5,"s":"Irwin","f":"Eliza Anne","a":40,"x":"F","r":"Wife","m":"Married","o":"","i":0,"ref":"nai000648054"},{"h":5,"s":"Irwin","f":"Mary Jane","a":18,"x":"F","r":"Daughter","m":"Not Married","o":"Seamstress","i":0,"ref":"nai000648054"},{"h":5,"s":"Irwin","f":"William James","a":14,"x":"M","r":"Son","m":"Not Married","o":"Farmer","i":0,"ref":"nai000648054"},{"h":5,"s":"Irwin","f":"Annie","a":11,"x":"F","r":"Daughter","m":"Not Married","o":"Scholar","i":0,"ref":"nai000648054"},{"h":5,"s":"Irwin","f":"Lizzie","a":8,"x":"F","r":"Daughter","m":"Not Married","o":"Scholar","i":0,"ref":"nai000648054"},{"h":5,"s":"Irwin","f":"Samuel","a":5,"x":"M","r":"Son","m":"Not Married","o":"Scholar","i":0,"ref":"nai000648054"},{"h":6,"s":"Lowry","f":"Robert","a":68,"x":"M","r":"Head of Family","m":"Widower","o":"Farmer","i":0,"ref":"nai000648055"},{"h":6,"s":"Lowry","f":"Martha","a":28,"x":"F","r":"Daughter","m":"Not Married","o":"Dressmaker","i":0,"ref":"nai000648055"},{"h":6,"s":"Lowry","f":"Robert","a":26,"x":"M","r":"Son","m":"Not Married","o":"Farmer's Son","i":0,"ref":"nai000648055"},{"h":6,"s":"Lowry","f":"Joseph","a":24,"x":"M","r":"Son","m":"Not Married","o":"Farmer's Son","i":0,"ref":"nai000648055"},{"h":6,"s":"Lowry","f":"Barbara","a":17,"x":"F","r":"Daughter","m":"Not Married","o":"Scholar","i":0,"ref":"nai000648055"}],"1911":[{"h":1,"s":"Lowry","f":"Robert","a":76,"x":"M","r":"Head of Family","m":"Widower","o":"Farmer","i":0,"ref":"nai002045095"},{"h":1,"s":"Lowry","f":"Robert","a":38,"x":"M","r":"Son","m":"Married","o":"","i":0,"ref":"nai002045095"},{"h":1,"s":"Lowry","f":"Margaret E","a":27,"x":"F","r":"Daughter in Law","m":"Married","o":"","i":0,"ref":"nai002045095"},{"h":1,"s":"Lowry","f":"Rebecca J","a":5,"x":"F","r":"Grand Daughter","m":"Single","o":"Scholar","i":0,"ref":"nai002045095"},{"h":1,"s":"Lowry","f":"Louisa M","a":3,"x":"F","r":"Grand Daughter","m":"Single","o":"","i":0,"ref":"nai002045095"},{"h":1,"s":"Lowry","f":"Robert","a":0,"x":"M","r":"Grand Son","m":"Single","o":"","i":0,"ref":"nai002045095"},{"h":1,"s":"Lowry","f":"Rebecca J","a":31,"x":"F","r":"Boarder","m":"Single","o":"Teacher N S","i":0,"ref":"nai002045095"},{"h":2,"s":"Cunningham","f":"Bernard","a":39,"x":"M","r":"Head of Family","m":"","o":"Catholic Curate","i":1,"ref":"nai002045097"},{"h":2,"s":"Cunningham","f":"Michael","a":33,"x":"M","r":"Visitor","m":"Single","o":"Assistant Co Surveyor","i":1,"ref":"nai002045097"},{"h":2,"s":"McGettigan","f":"Sarah","a":40,"x":"F","r":"House Keeper","m":"Single","o":"Cook and Domestic Servant","i":1,"ref":"nai002045097"},{"h":2,"s":"Hanna","f":"Robert","a":60,"x":"M","r":"Head of Family","m":"Single","o":"Farmer","i":0,"ref":"nai002045099"},{"h":2,"s":"Hanna","f":"Mary Anne","a":63,"x":"F","r":"Sister","m":"Single","o":"","i":0,"ref":"nai002045099"},{"h":2,"s":"Hanna","f":"Sarah Jane","a":48,"x":"F","r":"Sister","m":"Single","o":"","i":0,"ref":"nai002045099"},{"h":3,"s":"Wray","f":"Alexander","a":64,"x":"M","r":"Head of Family","m":"Married","o":"Farmer","i":0,"ref":"nai002045101"},{"h":3,"s":"Wray","f":"Martha","a":46,"x":"F","r":"Wife","m":"Married","o":"","i":0,"ref":"nai002045101"},{"h":4,"s":"Buchanan","f":"James","a":72,"x":"M","r":"Head of Family","m":"Married","o":"Farmer","i":0,"ref":"nai002045103"},{"h":4,"s":"Buchanan","f":"Margaret","a":68,"x":"F","r":"Wife","m":"Married","o":"","i":0,"ref":"nai002045103"},{"h":4,"s":"Moran","f":"John","a":40,"x":"M","r":"Son in Law","m":"Married","o":"Farmer","i":0,"ref":"nai002045103"},{"h":4,"s":"Moran","f":"Mary Anne","a":24,"x":"F","r":"Daughter","m":"Married","o":"","i":0,"ref":"nai002045103"},{"h":4,"s":"Moran","f":"Elizabeth","a":0,"x":"F","r":"Grand Daughter","m":"Single","o":"","i":0,"ref":"nai002045103"},{"h":5,"s":"Knight","f":"Samuel","a":67,"x":"M","r":"Head of Family","m":"Married","o":"Farmer","i":0,"ref":"nai002045105"},{"h":5,"s":"Knight","f":"Ellenor","a":58,"x":"F","r":"Wife","m":"Married","o":"","i":0,"ref":"nai002045105"},{"h":5,"s":"Knight","f":"George","a":70,"x":"M","r":"Brother","m":"Single","o":"Farmer's Brother","i":0,"ref":"nai002045105"},{"h":5,"s":"Corr","f":"Rose Anne","a":17,"x":"F","r":"Servant","m":"Single","o":"Domestic Servant","i":0,"ref":"nai002045105"},{"h":6,"s":"Irwin","f":"Samuel","a":63,"x":"M","r":"Head of Family","m":"Married","o":"Farmer","i":0,"ref":"nai002045107"},{"h":6,"s":"Irwin","f":"Eliza An","a":56,"x":"F","r":"Wife","m":"Married","o":"","i":0,"ref":"nai002045107"},{"h":6,"s":"Irwin","f":"Mary Jane","a":27,"x":"F","r":"Daughter","m":"Single","o":"Seamstress","i":0,"ref":"nai002045107"},{"h":6,"s":"Irwin","f":"Willie James","a":24,"x":"M","r":"Son","m":"Single","o":"Farmer's Son","i":0,"ref":"nai002045107"},{"h":6,"s":"Irwin","f":"Annie","a":23,"x":"F","r":"Daughter","m":"Single","o":"Seamstress","i":0,"ref":"nai002045107"},{"h":6,"s":"Irwin","f":"Lizzie Ellen","a":19,"x":"F","r":"Daughter","m":"Single","o":"Seamstress","i":0,"ref":"nai002045107"},{"h":6,"s":"Irwin","f":"Samuel","a":17,"x":"M","r":"Son","m":"Single","o":"Farmer's Son","i":0,"ref":"nai002045107"}],"1926":[{"h":"0002","fo":"0002","s":"Hanna","f":"Robert","a":77,"x":"M","r":"Head","m":"Single","o":"","i":0,"ref":"Spearstown_0352_0020_0002_0_00003.pdf"},{"h":"0002","fo":"0002","s":"Hanna","f":"Sarah","a":67,"x":"F","r":"Robert Hanna","m":"Single","o":"","i":0,"ref":"Spearstown_0352_0020_0002_0_00003.pdf"},{"h":"0003","fo":"0003","s":"Knight","f":"Eleanor","a":null,"x":"F","r":"Head","m":"Widow","o":"","i":0,"ref":"Spearstown_0352_0020_0003_0_00004.pdf"},{"h":"0003","fo":"0003","s":"McKee","f":"Eliza J","a":27,"x":"F","r":"Eleanor Knight","m":"","o":"","i":0,"ref":"Spearstown_0352_0020_0003_0_00004.pdf"},{"h":"0003","fo":"0003","s":"O'Donnell","f":"Mary","a":74,"x":"F","r":"Eleanor Knight","m":"Widow","o":"","i":0,"ref":"Spearstown_0352_0020_0003_0_00004.pdf"},{"h":"0003","fo":"0003","s":"McDyre","f":"Mary","a":16,"x":"F","r":"Eleanor Knight","m":"Single","o":"","i":0,"ref":"Spearstown_0352_0020_0003_0_00004.pdf"},{"h":"0004","fo":"0004","s":"Irwin","f":"Samuel","a":77,"x":"M","r":"Head","m":"Married","o":"","i":0,"ref":"Spearstown_0352_0020_0004_0_00005.pdf"},{"h":"0004","fo":"0004","s":"Irwin","f":"Lizzie","a":69,"x":"F","r":"Samuel Irwin","m":"Married","o":"","i":0,"ref":"Spearstown_0352_0020_0004_0_00005.pdf"},{"h":"0004","fo":"0004","s":"Irwin","f":"William","a":40,"x":"M","r":"Samuel Irwin","m":"Single","o":"","i":0,"ref":"Spearstown_0352_0020_0004_0_00005.pdf"},{"h":"0004","fo":"0004","s":"Irwin","f":"Samuel","a":30,"x":"M","r":"Samuel Irwin","m":"Single","o":"","i":0,"ref":"Spearstown_0352_0020_0004_0_00005.pdf"},{"h":"0005","fo":"0005","s":"Wray","f":"Alexander","a":80,"x":"M","r":"Head","m":"Married","o":"","i":0,"ref":"Spearstown_0352_0020_0005_0_00006.pdf"},{"h":"0005","fo":"0005","s":"Wray","f":"Martha Stephenson","a":62,"x":"F","r":"Alexander Wray","m":"Married","o":"","i":0,"ref":"Spearstown_0352_0020_0005_0_00006.pdf"},{"h":"0006","fo":"0006","s":"Lowry","f":"Robert","a":54,"x":"M","r":"Head","m":"Married","o":"","i":0,"ref":"Spearstown_0352_0020_0006_0_00007.pdf"},{"h":"0006","fo":"0006","s":"Lowry","f":"Margaret","a":42,"x":"F","r":"Robert Lowry","m":"4 children living","o":"","i":0,"ref":"Spearstown_0352_0020_0006_0_00007.pdf"},{"h":"0006","fo":"0006","s":"Lowry","f":"Margaret Louisa","a":18,"x":"F","r":"Robert Lowry","m":"Single","o":"","i":0,"ref":"Spearstown_0352_0020_0006_0_00007.pdf"},{"h":"0006","fo":"0006","s":"Lowry","f":"Robert","a":15,"x":"M","r":"Robert Lowry","m":"Both Parents Alive","o":"","i":0,"ref":"Spearstown_0352_0020_0006_0_00007.pdf"},{"h":"0006","fo":"0006","s":"Lowry","f":"Thomas H","a":9,"x":"M","r":"Robert Lowry","m":"Both Parents Alive","o":"","i":0,"ref":"Spearstown_0352_0020_0006_0_00007.pdf"},{"h":"0006","fo":"0006","s":"Stevenson","f":"John","a":76,"x":"M","r":"Robert Lowry","m":"Single","o":"","i":0,"ref":"Spearstown_0352_0020_0006_0_00007.pdf"}]},"content":{"groups":{"colours":{"Other":"#A9B7B3"},"territory":["Other"],"map":{}},"families":[],"questions":["The census spells this townland Shierstown in 1901, Spierstown in 1911 and Spearstown in 1926. Both spellings were accepted as the same place on review. Do other records spell it differently?","Griffith's Valuation, the mid 1850s baseline, has not yet been added for this townland.","The Tithe Applotment Books, valuation revision books, civil records from 1864 and parish registers have not yet been added, so no census household can yet be linked to an earlier record."],"plates":{"title":{"title":"Spierstown","irish":"","heading":"Spierstown","medium":"A townland in Clogher electoral division, Donegal civil parish, Tirhugh barony","story":["Spierstown is a townland recognised by Logainm, the placenames database of the Government of Ireland.","The census returns for 1901, 1911 and 1926 are held for this townland. Every scene here is drawn from them. Cottages stand for households and are not placed on a map."]},"not_yet_hung":{"title":"Not yet hung","medium":"Six frames for six kinds of record. One is filled","story":["Each frame is a kind of record that can be hung here. A dashed frame is empty. A frame with a gold edge holds records for this townland.","Records are added one source at a time, and each new source adds to this page instead of replacing it."],"frames":[["Tithe Applotment Books","1820s and 1830s","Not yet added.",false],["Griffith's Valuation","Mid 1850s","Not yet added.",false],["Valuation revision books","After the 1850s","Not yet added.",false],["Civil births, marriages and deaths","From 1864","Not yet added.",false],["Parish records","Various dates","Not yet added.",false],["Census returns","1901, 1911 and 1926","Held for 1901, 1911 and 1926.",true]]},"method":{"paras":[{"before":"Place details come from ","link":{"href":"https://www.logainm.ie/en/13978","text":"Logainm"},"after":", the placenames database of the Government of Ireland (CC BY 4.0). The record number is 13978."},"The census tables are the Spierstown rows of the census files for Clogher electoral division, which also hold other townlands. A household is the set of people on one house number in 1901 and 1911, or on one form number in 1926. Names are shown as spelled in the files. Some values, such as relationships and Irish language, were filled in or corrected by the researcher in columns marked updated, so they are not always a straight copy of the printed return. The townland is spelled Shierstown in 1901, Spierstown in 1911 and Spearstown in 1926 in the census files.",{"before":"Census returns are held by the ","link":{"href":"https://www.census.nationalarchives.ie/","text":"National Archives of Ireland"},"after":"."}],"numbers_intro":"The census files record {n1901} people in 1901, {n1911} in 1911 and {n1926} in 1926."},"records":{"placeholder":"for example Irwin"}}},"townland":{"name":"Spierstown","page_title":"Spierstown | Donegal Townlands","storage_key":"spierstown-q","census_spelling":{"1901":"Shierstown","1911":"Spierstown","1926":"Spearstown"}},"place":{"logainm_id":"13978","name_en":"Spierstown","name_ga":"","ded":"Clogher","civil_parish":"Donegal","barony":"Tirhugh","county":"Donegal","latitude":"54.669497511032674","longitude":"-8.061290076812655","snapshot_date":"2026-11-01","logainm_url":"https://www.logainm.ie/en/13978","credit":"Irish-language placename data by Logainm, Government of Ireland, licensed under CC BY 4.0.","osm_url":"https://www.openstreetmap.org/?mlat=54.669497511032674&mlon=-8.061290076812655&zoom=15"}};
+var C = DATA.content, TOWN = DATA.townland, PL = C.plates, PLACE = DATA.place || {}, CEN = DATA.census || {};
+var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var $ = function(s,el){return (el||document).querySelector(s)};
+function h(tag,props){
+  var e=document.createElement(tag), kids=Array.prototype.slice.call(arguments,2);
+  if(props) for(var k in props){
+    var v=props[k];
+    if(k==='class') e.className=v;
+    else if(k==='text') e.textContent=v;
+    else if(k==='style') Object.assign(e.style,v);
+    else if(k.indexOf('on')===0) e.addEventListener(k.slice(2),v);
+    else e.setAttribute(k,v);
+  }
+  (function add(list){list.forEach(function(c){
+    if(c==null||c===false) return;
+    if(Array.isArray(c)) add(c);
+    else e.append(c.nodeType?c:document.createTextNode(String(c)));
+  })})(kids);
+  return e;
+}
+
+/* ================= data: families, Griffith's, census ================= */
+var GRP=C.groups||{colours:{Other:'#A9B7B3'},territory:['Other'],map:{}};
+var COL=GRP.colours, TERR=GRP.territory, GMAP=GRP.map;
+function G(s){return GMAP[String(s).toLowerCase().replace(/[^a-z]/g,'')]||'Other'}
+function T(g){return TERR.indexOf(g)>=0?g:'Other'}
+function surOf(name){var w=name.replace(/\(.*\)/,'').trim().split(/\s+/);return w[w.length-1]}
+
+var GRF=C.griffiths||null, GR=GRF?GRF.rows:[], MOUNTAIN=GRF&&GRF.mountain_acres, WATER=GRF&&GRF.water_acres, HAS_GR=GR.length>0;
+var CY=['1901','1911','1926'].filter(function(y){return (CEN[y]||[]).length});
+/* what the case holds, in words: used on the title plate and in the contents */
+var SPAN=(function(){
+  if(HAS_GR&&CY.length) return 'from the 1850s to '+CY[CY.length-1];
+  if(CY.length>1) return 'from '+CY[0]+' to '+CY[CY.length-1];
+  if(CY.length) return 'the census of '+CY[0];
+  if(HAS_GR) return 'the 1850s';
+  return '';
+})();
+
+function censusHH(y){
+  var rows=CEN[y]||[], map={}, order=[];
+  rows.forEach(function(r){var k=String(r.h); if(!map[k]){map[k]=[];order.push(k)} map[k].push(r)});
+  return order.map(function(k){
+    var m=map[k], head;
+    if(y==='1926') head=m.find(function(r){return r.r==='Head'})||m.find(function(r){return r.r===(r.f+' '+r.s)})||m[0];
+    else head=m.find(function(r){return /^Head/.test(r.r)})||m[0];
+    var rest=m.filter(function(r){return r!==head}).sort(function(a,b){return (b.a==null?-1:b.a)-(a.a==null?-1:a.a)});
+    return {key:k,year:y,head:head,hname:head.f+' '+head.s,grp:T(G(head.s)),members:[head].concat(rest)};
+  });
+}
+function griffHH(){
+  var map={}, order=[];
+  GR.forEach(function(r){if(!map[r.hd]){map[r.hd]=[];order.push(r.hd)} map[r.hd].push(r)});
+  return order.map(function(k){
+    var m=map[k], first=m[0];
+    return {key:k,year:'1850s',head:{f:'',s:surOf(first.occ)},hname:first.names||first.occ,grp:T(G(surOf(first.occ))),lot:first.lot,members:m};
+  });
+}
+var SN={'1850s':griffHH(),'1901':censusHH('1901'),'1911':censusHH('1911'),'1926':censusHH('1926')};
+var YEARS=['1850s','1901','1911','1926'], PHASE={'1850s':0,'1901':1,'1911':2,'1926':3};
+function hhFor(year,keys){return SN[year].filter(function(x){return keys.indexOf(x.grp)>=0})}
+function peopleOf(list){return list.reduce(function(n,x){return n+x.members.length},0)}
+
+/* ================= colour and scene engine ================= */
+function hex(h){return [parseInt(h.substr(1,2),16),parseInt(h.substr(3,2),16),parseInt(h.substr(5,2),16)]}
+function toHex(a){return '#'+a.map(function(v){v=Math.max(0,Math.min(255,Math.round(v)));return (v<16?'0':'')+v.toString(16)}).join('')}
+function mixh(a,b,f){var x=hex(a),y=hex(b);return toHex([x[0]+(y[0]-x[0])*f,x[1]+(y[1]-x[1])*f,x[2]+(y[2]-x[2])*f])}
+function lerp(a,b,f){return a+(b-a)*f}
+var PH=[
+ {sky:['#F7EEF2','#E9EFF4','#DDEBEE'],far:'#E4E4EE',near:'#A8C3C5',disc:'#F8DACA',ground:'#B7CEC6',house:'#35545C',glow:'#F6E2A0',ga:.55,dx:.2,dy:.6,dr:.055},
+ {sky:['#F2F8F9','#E1EDF2','#D3E7EA'],far:'#DAE7EE',near:'#9CC1BB',disc:'#F6E9AE',ground:'#B1CEC3',house:'#35545C',glow:'#F6E2A0',ga:.3,dx:.34,dy:.3,dr:.05},
+ {sky:['#F8F3DD','#EEF0DA','#DCEBE3'],far:'#ECE8D3',near:'#AFC9A8',disc:'#F5DF98',ground:'#BBD1A8',house:'#35545C',glow:'#F6E2A0',ga:.45,dx:.74,dy:.4,dr:.065},
+ {sky:['#EFEAF5','#E1E1F0','#D2DCE9'],far:'#D9DAEA',near:'#9BB0C5',disc:'#F6F3FC',ground:'#A8BCC6',house:'#2F4A57',glow:'#F8E8A8',ga:.95,dx:.8,dy:.22,dr:.04}
+];
+function mixPh(p){
+  p=Math.max(0,Math.min(3,p)); var i=Math.min(2,Math.floor(p)), f=p-i, a=PH[i], b=PH[i+1], o={};
+  o.sky=[0,1,2].map(function(k){return mixh(a.sky[k],b.sky[k],f)});
+  ['far','near','disc','ground','house','glow'].forEach(function(k){o[k]=mixh(a[k],b[k],f)});
+  ['ga','dx','dy','dr'].forEach(function(k){o[k]=lerp(a[k],b[k],f)});
+  return o;
+}
+function rnd(seed){return function(){seed|=0;seed=seed+0x6D2B79F5|0;var q=Math.imul(seed^seed>>>15,1|seed);q=q+Math.imul(q^q>>>7,61|q)^q;return((q^q>>>14)>>>0)/4294967296}}
+
+var scenes=[], tipEl=$('#tip');
+function makeScene(art,opts){
+  var cv=h('canvas',{'aria-hidden':'true'}); art.prepend(cv);
+  var r=rnd(opts.seed||3), lay=[], kind=opts.kind||'hills';
+  var bases=kind==='mountain'?[.20,.32,.44,.57,.70]:(kind==='mist'?[.38,.46,.54,.62,.72]:[.34,.44,.54,.63,.72]);
+  var amps=kind==='mountain'?[96,78,60,42,16]:[40,36,31,26,13];
+  for(var i=0;i<5;i++) lay.push({base:bases[i],amp:amps[i],f:[.0036+r()*.002+i*.0006,.0098+r()*.003,.0215+r()*.006],ph:[r()*6,r()*6,r()*6]});
+  var specks=[]; for(i=0;i<(opts.gorse===false?0:130);i++) specks.push({u:r(),v:.1+r()*.8,s:1.1+r()*1.8});
+  var sc={cv:cv,ctx:cv.getContext('2d'),W:0,H:0,ph:opts.ph||0,phT:opts.ph||0,kind:kind,lay:lay,specks:specks,houses:opts.houses||[],names:!!opts.names,hits:[],vis:false,dirty:true,fadeT:performance.now(),mist:opts.mist!==false};
+  sc.setHouses=function(list,ph){sc.houses=list;if(ph!=null)sc.phT=ph;sc.fadeT=performance.now();sc.dirty=true;if(reduce)sc.ph=sc.phT};
+  function size(){var d=Math.min(2,window.devicePixelRatio||1),b=art.getBoundingClientRect();sc.W=b.width;sc.H=b.height;cv.width=Math.round(sc.W*d);cv.height=Math.round(sc.H*d);sc.ctx.setTransform(d,0,0,d,0,0);sc.dirty=true}
+  if('ResizeObserver' in window) new ResizeObserver(size).observe(art); else window.addEventListener('resize',size);
+  size();
+  if('IntersectionObserver' in window) new IntersectionObserver(function(e){sc.vis=e[0].isIntersecting;if(sc.vis)sc.dirty=true},{rootMargin:'120px'}).observe(art); else sc.vis=true;
+  cv.addEventListener('pointermove',function(e){hover(sc,e)});
+  cv.addEventListener('pointerdown',function(e){hover(sc,e,true)});
+  cv.addEventListener('pointerleave',function(){tipEl.hidden=true});
+  scenes.push(sc); return sc;
+}
+function hover(sc,e,sticky){
+  var b=sc.cv.getBoundingClientRect(), x=e.clientX-b.left, y=e.clientY-b.top, best=null;
+  sc.hits.forEach(function(p){if(x>=p.x0&&x<=p.x1&&y>=p.y0&&y<=p.y1) best=p});
+  if(best){tipEl.hidden=false;tipEl.textContent=best.t;tipEl.style.left=e.clientX+'px';tipEl.style.top=(e.clientY-6)+'px';sc.cv.style.cursor='help';if(sticky){clearTimeout(hover.t);hover.t=setTimeout(function(){tipEl.hidden=true},2600)}}
+  else{tipEl.hidden=true;sc.cv.style.cursor=''}
+}
+function ridgeY(sc,L,i,x,t){var d=t*.04*(1+i*.35),H=sc.H,peaky=sc.kind==='mountain'&&i<3;
+  var a=Math.sin(x*L.f[0]+L.ph[0]+d), b=Math.sin(x*L.f[1]+L.ph[1]-d*.7), c=Math.sin(x*L.f[2]+L.ph[2]+d*1.3);
+  if(peaky){a=1-2*Math.abs(a)*Math.abs(a)}
+  return H*L.base+L.amp*(.55*a+.3*b+.15*c)}
+function placeHouses(list,opts){
+  opts=opts||{}; var n=list.length, rows=n>12?3:(n>6?2:1), per=Math.ceil(n/rows), out=[], r=rnd(11+n);
+  var order=list.slice().sort(function(a,b){return TERR.indexOf(a.grp)-TERR.indexOf(b.grp)||(a.key>b.key?1:-1)});
+  order.forEach(function(hh,i){
+    var row=Math.floor(i/per), idx=i%per, cnt=Math.min(per,n-row*per);
+    var spread=Math.min(.84,.2*cnt+.14), off=rows>1&&row%2?.5/cnt*spread:0;
+    var fx=.5+((idx+.5)/cnt-.5)*spread+off*.4+(r()-.5)*.03/Math.max(1,rows-1);
+    var ys=rows===3?[.76,.83,.905]:(rows===2?[.775,.875]:[.81]), ss=rows===3?[.76,.94,1.12]:(rows===2?[.88,1.1]:[1.2]);
+    var np=hh.members.length;
+    out.push({fx:fx,fy:ys[row]+(r()-.5)*.012,s:ss[row],w:24+6.5*Math.sqrt(np),lit:Math.min(3,1+Math.floor(np/5)),color:COL[hh.grp]||COL.Other,name:opts.names?(hh.members[0].f?hh.members[0].f+' '+hh.members[0].s:hh.hname):'',
+      text:hh.year==='1850s'?(hh.hname+', lot '+hh.lot):(hh.hname+', '+np+(np===1?' person':' people'))});
+  });
+  return out;
+}
+function drawScene(sc,t){
+  var c=sc.ctx,W=sc.W,H=sc.H; if(!W||!H) return;
+  var P=mixPh(sc.ph), unit=Math.max(.62,Math.min(1.22,W/1200));
+  var g=c.createLinearGradient(0,0,0,H*.8); g.addColorStop(0,P.sky[0]);g.addColorStop(.55,P.sky[1]);g.addColorStop(1,P.sky[2]);
+  c.fillStyle=g;c.fillRect(0,0,W,H);
+  var dx=P.dx*W, dy=P.dy*H*(sc.kind==='mountain'?.7:1), dr=P.dr*Math.min(W,1400)+10;
+  var hg=c.createRadialGradient(dx,dy,dr*.4,dx,dy,dr*3.4); hg.addColorStop(0,'rgba(255,255,255,.55)');hg.addColorStop(1,'rgba(255,255,255,0)');
+  c.fillStyle=hg;c.fillRect(0,0,W,H);
+  c.beginPath();c.arc(dx,dy,dr,0,7);c.fillStyle=P.disc;c.fill();
+  var i,x;
+  for(i=0;i<5;i++){
+    var L=sc.lay[i], col=mixh(P.far,P.near,i/4);
+    if(i===4) col=P.ground;
+    c.beginPath();c.moveTo(0,H);
+    for(x=0;x<=W+8;x+=8)c.lineTo(x,ridgeY(sc,L,i,x,t));
+    c.lineTo(W,H);c.closePath();c.fillStyle=col;c.fill();
+    c.lineWidth=1;
+    for(var j=0;j<3;j++){c.beginPath();for(x=0;x<=W+8;x+=8){var yy=ridgeY(sc,L,i,x,t)+5+j*9;x?c.lineTo(x,yy):c.moveTo(x,yy)}c.strokeStyle='rgba(60,110,110,'+(.26-j*.07)+')';c.stroke()}
+    if(sc.mist&&(i===1||i===3)){
+      for(var m=0;m<3;m++){var mx=((m*.37+t*.004*(i===1?1:-1))%1.3-.15)*W,my=H*(L.base+.05+m*.02),mr=W*.28;
+        c.save();c.translate(mx,my);c.scale(1,.12);var mg=c.createRadialGradient(0,0,0,0,0,mr);mg.addColorStop(0,'rgba(255,255,255,.55)');mg.addColorStop(1,'rgba(255,255,255,0)');c.fillStyle=mg;c.beginPath();c.arc(0,0,mr,0,7);c.fill();c.restore()}
+    }
+    if(i===3&&sc.specks.length){
+      var ga=sc.ph>2.4?.55:.95;
+      sc.specks.forEach(function(s){var px=s.u*W,y1=ridgeY(sc,sc.lay[3],3,px,t),y2=ridgeY(sc,sc.lay[4],4,px,t);if(y2-y1<10)return;c.beginPath();c.arc(px,y1+(y2-y1)*s.v,s.s*unit,0,7);c.fillStyle='rgba(235,201,75,'+ga+')';c.fill()});
+    }
+  }
+  var fg=c.createLinearGradient(0,H*.78,0,H);fg.addColorStop(0,'rgba(255,255,255,0)');fg.addColorStop(1,'rgba(79,138,134,.16)');c.fillStyle=fg;c.fillRect(0,H*.78,W,H*.22);
+  sc.hits=[];
+  var fa=Math.min(1,(performance.now()-sc.fadeT)/520); if(fa<1) sc.dirty=true;
+  c.globalAlpha=fa;
+  sc.houses.slice().sort(function(a,b){return a.fy-b.fy}).forEach(function(hs){
+    var s=hs.s*unit, w=hs.w*s, bh=w*.56, rh=w*.34, x0=hs.fx*W, y0=hs.fy*H;
+    var roof=mixh(P.house,hs.color,.5);
+    if(P.ga>.6){var gl=c.createRadialGradient(x0,y0-bh*.5,2,x0,y0-bh*.5,w*1.4);gl.addColorStop(0,'rgba(248,232,168,.28)');gl.addColorStop(1,'rgba(248,232,168,0)');c.fillStyle=gl;c.fillRect(x0-w*1.5,y0-w*1.6,w*3,w*2)}
+    c.fillStyle='rgba(40,70,70,.16)';c.beginPath();c.ellipse(x0+w*.1,y0+1,w*.62,w*.09,0,0,7);c.fill();
+    c.fillStyle=P.house;c.fillRect(x0-w/2,y0-bh,w,bh);
+    c.fillStyle=roof;c.beginPath();c.moveTo(x0-w/2-w*.07,y0-bh);c.lineTo(x0,y0-bh-rh);c.lineTo(x0+w/2+w*.07,y0-bh);c.closePath();c.fill();
+    c.fillStyle=P.house;c.fillRect(x0+w*.2,y0-bh-rh*.8,w*.1,rh*.7);
+    var ww=w*.15,wh=bh*.3;
+    for(var k=0;k<hs.lit;k++){var wx=x0-w*.36+k*(w*.3);
+      var wg=c.createRadialGradient(wx+ww/2,y0-bh*.62,1,wx+ww/2,y0-bh*.62,ww*2.2);wg.addColorStop(0,'rgba(246,226,160,'+(.55*P.ga+.15)+')');wg.addColorStop(1,'rgba(246,226,160,0)');
+      c.fillStyle=wg;c.fillRect(wx-ww*2,y0-bh*.62-ww*2.4,ww*5,ww*5);
+      c.fillStyle=P.glow;c.fillRect(wx,y0-bh*.78,ww,wh)}
+    c.fillStyle='rgba(20,40,45,.55)';c.fillRect(x0+w*.28,y0-bh*.5,w*.14,bh*.5);
+    for(var q=0;q<3;q++){var ph=((t*.12+q/3+hs.fx*3)%1),sx=x0+w*.25+Math.sin(ph*6+q)*w*.1*(ph+.3),sy=y0-bh-rh-ph*w*1.1;c.beginPath();c.arc(sx,sy,w*(.05+ph*.1),0,7);c.fillStyle='rgba(255,255,255,'+(.5*(1-ph))+')';c.fill()}
+    if(sc.names&&hs.name){c.font='italic 400 '+Math.round(13*unit+1)+'px Newsreader, Georgia, serif';c.textAlign='center';c.fillStyle='rgba(29,47,51,.9)';c.fillText(hs.name,x0,y0+17*unit)}
+    sc.hits.push({x0:x0-w*.6,x1:x0+w*.6,y0:y0-bh-rh-8,y1:y0+(sc.names?22:6),t:hs.text});
+  });
+  c.globalAlpha=1;
+}
+var lastT=0;
+function loop(ts){
+  requestAnimationFrame(loop);
+  if(ts-lastT<38) return; lastT=ts;
+  scenes.forEach(function(sc){
+    if(!sc.vis) return;
+    if(Math.abs(sc.ph-sc.phT)>.003){sc.ph+=(sc.phT-sc.ph)*.09;sc.dirty=true}
+    if(!reduce||sc.dirty){drawScene(sc,reduce?0:ts/1000);sc.dirty=false}
+  });
+}
+
+/* ================= copy ================= */
+var FAM=C.families||[];
+
+/* ================= plate builders ================= */
+var plates=[], ROOMS=[['I','The land'],['II','The households'],['III','Not yet hung'],['IV','The archive']];
+function pad(n){return (n<10?'0':'')+n}
+function plate(room,title,build){plates.push({room:room,title:title,build:build})}
+function labelBlock(num,title,medium,story,extra){
+  return h('div',{class:'label'},h('div',{class:'wrap lab-grid'},
+    h('div',null,h('span',{class:'pn',text:'Plate '+num}),h('h2',{text:title}),medium?h('p',{class:'medium',text:medium}):null),
+    h('div',null,(Array.isArray(story)?story:[story]).map(function(s){return h('p',{class:'story',text:s})})),
+    h('div',null,extra)));
+}
+function roomTag(art,room){
+  art.append(h('div',{class:'roomtag'},h('div',{class:'wrap'},h('p',null,h('b',{text:'Room '+ROOMS[room][0]}),ROOMS[room][1]))));
+}
+function famRows(keys){
+  var out=[];
+  YEARS.forEach(function(y,si){
+    hhFor(y,keys).forEach(function(hh){
+      hh.members.forEach(function(r){
+        if(si===0) out.push(['1850s','lot '+r.lot,r.occ,'','Occupier',r.area==='shared'?'shared area':r.area,'£'+r.tot]);
+        else out.push([y,y==='1926'?r.fo:String(r.h),r.f+' '+r.s,r.a==null?'':String(r.a),y==='1926'?(r===hh.head?'Head':'in the household of '+hh.hname):r.r,(r.m||'')+(r.o?'; '+r.o:''),'']);
+      });
+    });
+  });
+  return out;
+}
+function table(head,rows,numCol){
+  return h('div',{class:'tbl'},h('table',null,h('thead',null,h('tr',null,head.map(function(c,i){return h('th',{class:i===numCol?'n':'',text:c})}))),
+    h('tbody',null,rows.map(function(r){return h('tr',null,r.map(function(c,i){return h('td',{class:i===numCol?'n':'',text:c==null?'':String(c)})}))}))));
+}
+function yearTabs(avail,cur,onPick){
+  var box=h('div',{class:'yrs',role:'tablist','aria-label':'Choose a date'});
+  YEARS.forEach(function(y){
+    var b=h('button',{class:'yr',role:'tab','aria-selected':y===cur?'true':'false',onclick:function(){onPick(y)}},y);
+    if(!avail[y]) b.setAttribute('data-empty','1');
+    box.append(b);
+  });
+  return box;
+}
+function setSel(box,y){Array.prototype.forEach.call(box.children,function(b){b.setAttribute('aria-selected',b.textContent===y?'true':'false')})}
+function countText(y,list,keys){
+  var n=peopleOf(list);
+  if(y==='1850s') return list.length? (list.length+(list.length===1?' holding':' holdings')+' on the page, '+n+(n===1?' occupier.':' occupiers.')) : 'No holding of this name on the page.';
+  return list.length? (y+', census return: '+list.length+(list.length===1?' household, ':' households, ')+n+(n===1?' person.':' people.')) : y+', census return: no household of this name.';
+}
+function sceneHouses(y,list,names){return placeHouses(list,{names:names})}
+
+/* The Logainm place record, shown on the title plate of every townland. Logainm is both the place authority and a source. */
+function placeCard(){
+  if(!PLACE.logainm_id) return null;
+  var kids=[h('p',{class:'small'},'Place record from ',h('a',{href:PLACE.logainm_url,target:'_blank',rel:'noopener',text:'Logainm record '+PLACE.logainm_id}),'.')];
+  if(PLACE.osm_url) kids.push(h('p',{class:'small'},'Location ',h('a',{href:PLACE.osm_url,target:'_blank',rel:'noopener',text:Number(PLACE.latitude).toFixed(4)+', '+Number(PLACE.longitude).toFixed(4)}),'.'));
+  if(PLACE.credit) kids.push(h('p',{class:'small',text:PLACE.credit}));
+  return kids;
+}
+
+/* Plate 1: title */
+plate(0,PL.title.title,function(num){
+  var art=h('div',{class:'art'}); var sc=makeScene(art,{seed:5,ph:0,kind:'hills'});
+  roomTag(art,0);
+  art.append(h('div',{class:'bigtitle'},h('div',{class:'wrap'},PL.title.irish?h('p',{class:'irish',text:PL.title.irish}):null,h('h1',{text:PL.title.heading}))),
+    h('div',{class:'walkhint'},h('div',{class:'wrap'},h('p',{text:'Scroll down to walk the townland, or use the arrows.'+(SPAN?(SPAN.indexOf('from')===0?' It runs '+SPAN+'.':' It covers '+SPAN+'.'):'')}))));
+  var sec=h('section',{class:'plate',id:'p'+pad(num)},art,labelBlock(pad(num),PL.title.heading,PL.title.medium,PL.title.story,placeCard()));
+  return sec;
+});
+
+/* Plate 2: mountain (only for townlands whose content defines one) */
+if(PL.mountain) plate(0,PL.mountain.title,function(num){
+  var art=h('div',{class:'art'}); makeScene(art,{seed:9,ph:0,kind:'mountain',gorse:false});
+  var sec=h('section',{class:'plate',id:'p'+pad(num)},art,labelBlock(pad(num),PL.mountain.title,PL.mountain.medium,PL.mountain.story,null));
+  return sec;
+});
+
+/* Plate 3: the page */
+if(HAS_GR) plate(0,PL.griffiths.title,function(num){
+  var art=h('div',{class:'art sheetart'}); makeScene(art,{seed:2,ph:0,kind:'mist',gorse:false});
+  var S=C.griffiths.sheet;
+  var rows=GR.map(function(r){return [r.lot,r.occ,r.les,r.desc,r.area,r.land,r.bld,r.tot]});
+  rows.push(S.printed_total.slice());
+  var t=table(['Lot','Occupier','Immediate lessor','Description','Area (A R P)','Land','Buildings','Total'],rows,-1);
+  Array.prototype.forEach.call(t.querySelectorAll('tbody tr'),function(tr,i){if(i===rows.length-1) tr.className='tot'; Array.prototype.forEach.call(tr.children,function(td,j){if(j>=4)td.className='n'}); });
+  Array.prototype.forEach.call(t.querySelectorAll('thead th'),function(th,j){if(j>=4)th.className='n'});
+  var sheet=h('div',{class:'sheet'},h('h3',{text:S.heading}),h('p',{class:'sub',text:S.sub}),t,h('p',{class:'foot',text:S.foot}));
+  art.append(h('div',{class:'wrap',style:{position:'relative',width:'100%'}},sheet));
+  return h('section',{class:'plate',id:'p'+pad(num)},art,labelBlock(pad(num),PL.griffiths.title,PL.griffiths.medium,PL.griffiths.story,null));
+});
+
+/* Plate 4: treemap */
+function squarify(data,x,y,w,hh){
+  var res=[], items=data.slice().sort(function(a,b){return b.v-a.v}), total=items.reduce(function(s,d){return s+d.v},0), area=w*hh, row=[];
+  items=items.map(function(d){return {d:d,a:d.v/total*area}});
+  function worst(r,side){var s=r.reduce(function(t,q){return t+q.a},0),mx=Math.max.apply(null,r.map(function(q){return q.a})),mn=Math.min.apply(null,r.map(function(q){return q.a}));return Math.max(side*side*mx/(s*s),s*s/(side*side*mn))}
+  function lay(r){var s=r.reduce(function(t,q){return t+q.a},0);
+    if(w>=hh){var rw=s/hh,yy=y;r.forEach(function(q){var rh=q.a/rw;res.push({d:q.d,x:x,y:yy,w:rw,h:rh});yy+=rh});x+=rw;w-=rw}
+    else{var rh=s/w,xx=x;r.forEach(function(q){var rw=q.a/rh;res.push({d:q.d,x:xx,y:y,w:rw,h:rh});xx+=rw});y+=rh;hh-=rh}}
+  while(items.length){var side=Math.min(w,hh),it=items[0];
+    if(!row.length||worst(row.concat([it]),side)<=worst(row,side)){row.push(it);items.shift()}else{lay(row);row=[]}}
+  if(row.length) lay(row);
+  return res;
+}
+if(HAS_GR) plate(0,PL.treemap.title,function(num){
+  var art=h('div',{class:'art treeart'}); makeScene(art,{seed:4,ph:0,kind:'mist',gorse:false});
+  var box=h('div',{class:'tree'}); var wrapEl=h('div',{class:'wrap',style:{position:'relative',width:'100%'}},box,h('p',{class:'treenote',text:'Areas are to scale. Positions are not. Hover or tap a block for the printed area and valuation.'}));
+  art.append(wrapEl);
+  var data=GR.filter(function(r){return r.ac}).map(function(r){return {v:r.ac,name:r.names,col:COL[G(surOf(r.occ))]||COL.Other,tip:'Lot '+r.lot+', '+r.area+', valued at £'+r.tot}});
+  if(MOUNTAIN) data.push({v:MOUNTAIN,name:PL.treemap.mountain_name,col:'#BDD6CF',tip:PL.treemap.mountain_tip});
+  if(WATER) data.push({v:WATER,name:PL.treemap.water_name,col:'#C4DAE5',tip:PL.treemap.water_tip});
+  function layout(){
+    box.replaceChildren(); var W=box.clientWidth,H=box.clientHeight; if(!W||!H) return;
+    squarify(data,0,0,W,H).forEach(function(r){
+      var big=r.w>86&&r.h>46;
+      box.append(h('div',{class:'tile',title:r.d.name+'. '+r.d.tip,style:{left:r.x+1.5+'px',top:r.y+1.5+'px',width:Math.max(0,r.w-3)+'px',height:Math.max(0,r.h-3)+'px',background:r.d.col+(r.d.col.length===7?'D9':'')}},
+        big?[r.d.name,h('span',{text:r.d.v.toFixed(1)+' acres'})]:null));
+    });
+  }
+  if('ResizeObserver' in window) new ResizeObserver(layout).observe(box); else window.addEventListener('resize',layout);
+  layout();
+  return h('section',{class:'plate',id:'p'+pad(num)},art,labelBlock(pad(num),PL.treemap.title,PL.treemap.medium,PL.treemap.story,null));
+});
+
+/* Plate 5: census overview (every census year the case holds) */
+if(CY.length) plate(1,CY.length===3?'Three censuses':(CY.length===2?'Two censuses':'The census of '+CY[0]),function(num){
+  var art=h('div',{class:'art'}), sc=makeScene(art,{seed:6,ph:1,kind:'hills'}); roomTag(art,1);
+  var cnt=h('p',{class:'cnt'}), box;
+  function pick(y){var list=SN[y].filter(function(x){return true}); sc.setHouses(placeHouses(list,{names:false}),PHASE[y]); setSel(box,y); var n=peopleOf(list);
+    cnt.textContent=y+', census return: '+list.length+(list.length===1?' household, ':' households, ')+n+(n===1?' person.':' people.')}
+  box=h('div',{class:'yrs',role:'tablist','aria-label':'Choose a census'},CY.map(function(y){return h('button',{class:'yr',role:'tab','aria-selected':y===CY[0]?'true':'false',onclick:function(){pick(y)}},y)}));
+  var yl=CY.length>1?CY.slice(0,-1).join(', ')+' and '+CY[CY.length-1]:CY[0];
+  var sec=h('section',{class:'plate',id:'p'+pad(num)},art,labelBlock(pad(num),CY.length===3?'Three censuses':(CY.length===2?'Two censuses':'The census of '+CY[0]),'Census returns of '+yl+'. Hover or tap a cottage',
+    [(HAS_GR?'From here the page is about households. ':'The page is about households. ')+'Each cottage is one house in the census, lit by the people inside it, and cottages keep the same neighbourhood from year to year.']
+      .concat(CY.length>1?['Pick a year and the light changes with it.']:[]),[box,cnt]));
+  pick(CY[0]);
+  return sec;
+});
+
+/* Plates 6 to 19: families */
+function famPlate(f){
+  plate(1,f.name,function(num){
+    var art=h('div',{class:'art'}); var avail={}; YEARS.forEach(function(y){avail[y]=hhFor(y,f.keys).length>0});
+    var cur=avail['1901']?'1901':(avail['1926']?'1926':'1850s');
+    var sc=makeScene(art,{seed:20+num,ph:PHASE[cur],kind:'hills'});
+    var cnt=h('p',{class:'cnt'}), tabs=yearTabs(avail,cur,function(y){pick(y)});
+    function pick(y){var list=hhFor(y,f.keys); sc.names=true; sc.setHouses(placeHouses(list,{names:true}),PHASE[y]); setSel(tabs,y); cnt.textContent=countText(y,list,f.keys)}
+    var rows=famRows(f.keys);
+    var rec=h('details',{class:'rec'},h('summary',{text:'Read the record'}),h('div',{class:'rec-in'},
+      h('div',{class:'rec-txt'},f.paras.map(function(p){return h('p',{text:p})})),
+      h('div',null,h('p',{class:'small',style:{marginBottom:'8px'},text:rows.length+' rows behind this family'}),table(['Year','House or lot','Name','Age','Relation or role','Marital or note','Valuation'],rows,3))));
+    var lab=labelBlock(pad(num),f.name,f.medium,f.story,[tabs,cnt]);
+    lab.append(h('div',{class:'wrap'},rec));
+    var sec=h('section',{class:'plate',id:'p'+pad(num)},art,lab);
+    pick(cur);
+    return sec;
+  });
+}
+FAM.forEach(famPlate);
+
+/* Room III: not yet hung */
+plate(2,PL.not_yet_hung.title,function(num){
+  var art=h('div',{class:'art'}); makeScene(art,{seed:30,ph:3,kind:'mist',gorse:false}); roomTag(art,2);
+  var fr=PL.not_yet_hung.frames;
+  art.append(h('div',{class:'wrap',style:{position:'relative'}},h('div',{class:'frames'},fr.map(function(f){
+    return h('div',{class:'frame'+(f[3]?' held':'')},h('b',{text:f[0]}),h('span',{text:f[1]}),h('em',{text:f[2]}))}))));
+  return h('section',{class:'plate',id:'p'+pad(num)},art,labelBlock(pad(num),PL.not_yet_hung.title,PL.not_yet_hung.medium,PL.not_yet_hung.story,null));
+});
+
+/* Plate: open questions */
+var QS=C.questions;
+plate(2,'What is still open',function(num){
+  var saved={}; try{saved=JSON.parse(localStorage.getItem(TOWN.storage_key)||'{}')||{}}catch(e){saved={}}
+  var ul=h('ul',{class:'q'});
+  QS.forEach(function(q,i){
+    var cb=h('input',{type:'checkbox',id:'q'+i}); cb.checked=!!saved[i];
+    cb.addEventListener('change',function(){saved[i]=cb.checked;try{localStorage.setItem(TOWN.storage_key,JSON.stringify(saved))}catch(e){}});
+    ul.append(h('li',null,h('label',{for:'q'+i},cb,h('span',{text:q}))));
+  });
+  return h('section',{class:'plate archive',id:'p'+pad(num)},h('div',{class:'wrap'},h('span',{class:'pn',text:'Plate '+pad(num)}),h('h2',{text:'What is still open'}),
+    h('p',{class:'intro',text:'Tick items off as they close. Ticks stay in this browser only.'}),ul));
+});
+
+/* Plate: method and numbers */
+plate(3,CY.length?'Method, sources and numbers':'Method and sources',function(num){
+  var ys=CY, D=ys.map(function(y){
+    var r=CEN[y], hh=SN[y].length, ages=r.filter(function(x){return x.a!=null});
+    return {y:y,n:r.length,hh:hh,f:r.filter(function(x){return x.x==='F'}).length,m:r.filter(function(x){return x.x==='M'}).length,u15:ages.filter(function(x){return x.a<15}).length,o65:ages.filter(function(x){return x.a>=65}).length,na:ages.length,irish:r.filter(function(x){return x.i}).length};
+  });
+  var tb=h('tbody');
+  function row(l,fn){tb.append(h('tr',null,h('td',{text:l}),D.map(function(d){return h('td',{class:'n',text:fn(d)})})))}
+  row('People',function(d){return d.n}); row('Households',function(d){return d.hh}); row('People per household',function(d){return (d.n/d.hh).toFixed(1)});
+  row('Women and men',function(d){return d.f+' and '+d.m});
+  row('Aged under 15',function(d){return d.u15+(d.na<d.n?' (of '+d.na+' with ages)':'')});
+  row('Aged 65 and over',function(d){return d.o65+(d.na<d.n?' (of '+d.na+' with ages)':'')});
+  row('Recorded with Irish',function(d){return d.irish});
+  var tbl=h('div',{class:'tbl'},h('table',null,h('thead',null,h('tr',null,[h('th',{text:'Measure'})].concat(ys.map(function(y){return h('th',{class:'n',text:y})})))),tb));
+  var ni=PL.method.numbers_intro||''; D.forEach(function(d){ni=ni.replace('{n'+d.y+'}',d.n)});
+  return h('section',{class:'plate archive',id:'p'+pad(num)},h('div',{class:'wrap'},h('span',{class:'pn',text:'Plate '+pad(num)}),h('h2',{text:CY.length?'Method, sources and numbers':'Method and sources'}),
+    h('div',{class:'cols',style:{marginTop:'26px'}},
+      h('div',{class:'prose'},
+        PL.method.paras.map(function(p){return typeof p==='string'?h('p',{text:p}):h('p',null,p.before,h('a',{href:p.link.href,target:'_blank',rel:'noopener',text:p.link.text}),p.after)})),
+      CY.length?h('div',null,h('h3',{style:{fontSize:'30px',marginBottom:'14px'},text:'The townland in numbers'}),
+        h('p',{class:'small',style:{marginBottom:'12px'},text:ni}),tbl):null)));
+});
+
+/* Plate: records (every source the case holds) */
+var SRC=[]; if(HAS_GR) SRC.push({k:'gr',name:"Griffith's, mid 1850s"});
+CY.forEach(function(y){var sp=(TOWN.census_spelling||{})[y]; SRC.push({k:y,name:'Census '+y+(sp&&(y==='1926'||sp!==TOWN.name)?' ('+sp+')':'')})});
+if(SRC.length) plate(3,'The records',function(num){
+  var tabs=h('div',{class:'rtabs',role:'tablist'}), thead=h('thead'), tbody=h('tbody'), inp=h('input',{id:'recFilter',type:'search',placeholder:PL.records.placeholder,autocomplete:'off'}), cnt=h('span',{class:'small'}), act=0;
+  function render(){
+    var q=inp.value.trim().toLowerCase(), n=0; thead.replaceChildren(); tbody.replaceChildren();
+    if(SRC[act].k==='gr'){
+      thead.append(h('tr',null,['Lot','Occupier','Immediate lessor','Description','Area (A R P)','Land','Buildings','Total'].map(function(c,i){return h('th',{class:i>=4?'n':'',text:c})})));
+      GR.forEach(function(r){if(q&&(r.occ+' '+r.lot).toLowerCase().indexOf(q)<0) return; n++;
+        tbody.append(h('tr',null,[r.lot,r.occ,r.les,r.desc,r.area,r.land,r.bld,r.tot].map(function(c,i){return h('td',{class:i>=4?'n':'',text:c})})))});
+      cnt.textContent=n+' of '+GR.length+' rows.';
+    }else{
+      var y=SRC[act].k, rows=CEN[y];
+      thead.append(h('tr',null,[y==='1926'?'Form':'House','Surname','First name','Age','Sex','Relation','Marital or note','Occupation'].map(function(c,i){return h('th',{class:i===3?'n':'',text:c})})));
+      rows.forEach(function(r){if(q&&(r.s+' '+r.f).toLowerCase().indexOf(q)<0) return; n++;
+        tbody.append(h('tr',null,[y==='1926'?r.fo:r.h,r.s,r.f,r.a==null?'':r.a,r.x,r.r,r.m,r.o].map(function(c,i){return h('td',{class:i===3?'n':'',text:c==null?'':String(c)})})))});
+      cnt.textContent=n+' of '+rows.length+' rows. Spelling as recorded.';
+    }
+  }
+  SRC.forEach(function(sr,i){tabs.append(h('button',{class:'rtab',role:'tab','aria-selected':i===0?'true':'false',onclick:function(){act=i;Array.prototype.forEach.call(tabs.children,function(b,j){b.setAttribute('aria-selected',j===i?'true':'false')});render()}},sr.name))});
+  inp.addEventListener('input',render); render();
+  return h('section',{class:'plate archive',id:'p'+pad(num)},h('div',{class:'wrap'},h('span',{class:'pn',text:'Plate '+pad(num)}),h('h2',{text:'The records'}),
+    h('p',{class:'intro',text:'Every row behind the plates above. Choose a source, then filter by any part of a name.'}),tabs,
+    h('div',{class:'rfilter'},h('label',{for:'recFilter',class:'small',text:'Filter by name'}),inp,cnt),
+    h('div',{class:'tbl rscroll'},h('table',null,thead,tbody))));
+});
+
+/* ================= assemble ================= */
+var walk=$('#walk'), els=[];
+plates.forEach(function(p,i){
+  var el=p.build(i+1); el.setAttribute('data-room',p.room); walk.append(el); els.push(el);
+});
+walk.append(h('div',{class:'end',text:'End of the walk. '+plates.length+' plates.'}));
+
+/* contents */
+var drawer=$('#drawer'), din=$('#drawerIn');
+(function(){
+  din.append(h('button',{class:'btn close',onclick:function(){drawer.classList.remove('open')}},'Close'),h('h2',{text:'Contents'}),h('p',{class:'small',text:TOWN.name+(SPAN?', '+SPAN+'.':'.')}));
+  ROOMS.forEach(function(r,ri){
+    var ol=h('ol'); plates.forEach(function(p,i){if(p.room!==ri) return;
+      ol.append(h('li',null,h('a',{href:'#p'+pad(i+1),onclick:function(e){e.preventDefault();drawer.classList.remove('open');els[i].scrollIntoView({behavior:reduce?'auto':'smooth'})}},h('b',{text:pad(i+1)}),h('span',{text:p.title}))))});
+    if(!ol.children.length) return;
+    din.append(h('h3',{text:'Room '+r[0]+'. '+r[1]}),ol);
+  });
+})();
+$('#openC').addEventListener('click',function(){drawer.classList.add('open')});
+drawer.addEventListener('click',function(e){if(e.target===drawer) drawer.classList.remove('open')});
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape') drawer.classList.remove('open');
+  var tg=e.target&&e.target.tagName; if(tg==='INPUT'||tg==='TEXTAREA'||tg==='SELECT'||e.metaKey||e.ctrlKey||e.altKey) return;
+  if(e.key==='ArrowRight') go(1); if(e.key==='ArrowLeft') go(-1);
+});
+
+/* hud */
+var cur=0;
+function setCur(i){cur=i;$('#count').replaceChildren(document.createTextNode(pad(i+1)+' '),h('i',{text:'/ '+pad(plates.length)}));$('#roomNow').textContent='Room '+ROOMS[plates[i].room][0]+'. '+ROOMS[plates[i].room][1];$('#prev').disabled=i===0;$('#next').disabled=i===plates.length-1}
+function go(d){var i=Math.max(0,Math.min(plates.length-1,cur+d)); els[i].scrollIntoView({behavior:reduce?'auto':'smooth'})}
+$('#prev').addEventListener('click',function(){go(-1)});
+$('#next').addEventListener('click',function(){go(1)});
+if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting) setCur(els.indexOf(e.target))})},{rootMargin:'-45% 0px -50% 0px'});
+  els.forEach(function(e){io.observe(e)});
+}
+setCur(0);
+if(location.hash&&/^#p\d\d$/.test(location.hash)){var t=document.getElementById(location.hash.slice(1)); if(t) setTimeout(function(){t.scrollIntoView()},50)}
+requestAnimationFrame(loop);
+if(document.fonts&&document.fonts.ready) document.fonts.ready.then(function(){scenes.forEach(function(s){s.dirty=true})});
+})();
+</script>

@@ -1,0 +1,51 @@
+{
+  "_generated_by": "donegal-townlands.attach_census",
+  "status": "proposed",
+  "note": "Identical-name matches are proposed and not yet reviewed. Other spellings were accepted on review (see census_spelling_review.csv).",
+  "ded": "Clogher",
+  "years": {
+    "1901": {
+      "spellings": [
+        {
+          "spelling": "Cullionboy",
+          "method": "exact_name",
+          "rows": 93
+        }
+      ],
+      "people": 93
+    },
+    "1911": {
+      "spellings": [
+        {
+          "spelling": "Cullionboy",
+          "method": "exact_name",
+          "rows": 72
+        }
+      ],
+      "people": 72
+    },
+    "1926": {
+      "spellings": [
+        {
+          "spelling": "Collinboy",
+          "method": "case_spelling",
+          "rows": 79
+        }
+      ],
+      "people": 79
+    }
+  },
+  "corrections": [
+    {
+      "year": "1926",
+      "match": {
+        "fo": "0016"
+      },
+      "set": {
+        "h": "0017"
+      },
+      "reason": "The 1926 form 0016 (Philip Bradley, aged 3) names Patrick Bradley as head, so it is counted in Patrick's household, form 0017.",
+      "rows": 1
+    }
+  ]
+}

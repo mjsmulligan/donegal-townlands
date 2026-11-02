@@ -1,0 +1,4 @@
+logainm_id,name_en,place_type,source
+784,Donegal,civil_parish,Named in the Clogher and Cullionboy title plates (researcher); both townlands carry civil_parish_id 784. Replace with the Logainm hierarchy when it is fetched.
+52,Tirhugh,barony,Named in the Clogher and Cullionboy title plates (researcher); both townlands carry barony_id 52. Replace with the Logainm hierarchy when it is fetched.
+100013,Donegal,county,Every row in places.csv carries county_id 100013 and the project scope is County Donegal. Replace with the Logainm hierarchy when it is fetched.
