@@ -19,7 +19,8 @@ A place page (engine/place.html) shows the Logainm place record and says plainly
 that research has not begun or is incomplete. It uses the same URL the full
 study will use later, and it never invents content. Building never replaces a
 page it did not generate, never deletes a page and never changes a case folder.
---all also regenerates docs/index.html, the list of every place.
+Every build regenerates docs/index.html, the list of every place, so the index
+is never edited by hand and is always the way to reach every page.
 Only a name with no case folder at all is an error."""
 import csv, html as htmllib, json, sys, pathlib
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -168,19 +169,13 @@ def build(name):
     return state
 
 
-def main(argv):
-    if len(argv) != 1:
-        sys.exit(__doc__)
-    if argv[0] != '--all':
-        build(argv[0])
-        return
-    counts = {'ready': 0, 'partial': 0, 'empty': 0}
+def index_entries():
+    """(slug, display name, state) for every case that has a name to show."""
     entries = []
     for base in sorted((ROOT / 'townlands').iterdir()):
         if not base.is_dir():
             continue
-        state = build(base.name)
-        counts[state] += 1
+        state = case_state(base)[0]
         if state == 'ready':
             label = load(base / 'townland.json').get('name', base.name)
         elif (base / 'place.json').is_file():
@@ -188,8 +183,21 @@ def main(argv):
         else:
             continue
         entries.append((base.name, label, state))
-    write_index(entries)
-    print('Cases: %(ready)d studies, %(partial)d partial, %(empty)d empty. Every case with a place record has a page.' % counts)
+    return entries
+
+
+def main(argv):
+    if len(argv) != 1:
+        sys.exit(__doc__)
+    if argv[0] != '--all':
+        build(argv[0])
+    else:
+        counts = {'ready': 0, 'partial': 0, 'empty': 0}
+        for base in sorted((ROOT / 'townlands').iterdir()):
+            if base.is_dir():
+                counts[build(base.name)] += 1
+        print('Cases: %(ready)d studies, %(partial)d partial, %(empty)d empty. Every case with a place record has a page.' % counts)
+    write_index(index_entries())
 
 
 if __name__ == '__main__':
