@@ -151,6 +151,16 @@ class BuildStateTests(unittest.TestCase):
         self.assertIn('href="./one/"', index)
         self.assertNotIn('href="./beta/"', index)
 
+    def test_building_one_case_still_regenerates_the_index(self):
+        self.full_case("alpha")
+        self.empty_case("one")
+        with contextlib.redirect_stdout(io.StringIO()):
+            build.main(["one"])
+        index = (self.root / "docs" / "index.html").read_text(encoding="utf-8")
+        self.assertIn('href="./one/"', index)
+        self.assertIn('href="./alpha/"', index)  # a study stays listed when another case is built
+        self.assertIn("generated: donegal-townlands index", index)
+
     def test_no_em_dashes_in_output(self):
         self.empty_case()
         self.assertNotIn(chr(0x2014), self.run_build("druminnin")[1])
