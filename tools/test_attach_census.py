@@ -208,6 +208,66 @@ class AttachCensusTests(unittest.TestCase):
         self.assertEqual(match["years"]["1926"]["people"], 2)
         self.assertNotIn("withheld", match["years"]["1926"])
 
+    def form(self, row, number):
+        row["aform_name"] = f"Alpha_0001_0002_{number}_0_00004.pdf"
+        return row
+
+    def test_1926_rows_carry_form_numbers_and_are_sorted_by_form(self):
+        self.census(1926, [self.form(self.p("Alpha", sur="Late", year=1926), "0009"),
+                           self.form(self.p("Alpha", sur="Early", year=1926), "0002")])
+        self.run_attach()
+        rows = json.loads(self.case_file("alpha", "census.json").read_text(encoding="utf-8"))["1926"]
+        self.assertEqual([(r["s"], r["fo"], r["h"]) for r in rows], [("Early", "0002", "0002"), ("Late", "0009", "0009")])
+
+    def test_researcher_corrections_are_applied_and_recorded(self):
+        self.census(1926, [self.form(self.p("Alpha", sur="Bradley", year=1926), "0016")])
+        self.case_file("alpha", "corrections.json").parent.mkdir(parents=True, exist_ok=True)
+        self.case_file("alpha", "corrections.json").write_text(json.dumps(
+            {"1926": [{"match": {"fo": "0016"}, "set": {"h": "0017"}, "reason": "Named as a child in form 0017"}]}),
+            encoding="utf-8")
+        self.run_attach()
+        rows = json.loads(self.case_file("alpha", "census.json").read_text(encoding="utf-8"))["1926"]
+        self.assertEqual((rows[0]["fo"], rows[0]["h"]), ("0016", "0017"))
+        match = json.loads(self.case_file("alpha", "census_match.json").read_text(encoding="utf-8"))
+        self.assertEqual(match["corrections"][0]["rows"], 1)
+        self.assertEqual(match["corrections"][0]["reason"], "Named as a child in form 0017")
+
+    def test_a_spelling_accepted_in_a_case_is_attached(self):
+        (self.root / "townlands" / "beta" / "townland.json").write_text(
+            json.dumps({"census_spelling": {"1926": "Betta"}}), encoding="utf-8")
+        self.census(1926, [self.p("Betta", year=1926)])
+        self.run_attach()
+        match = json.loads(self.case_file("beta", "census_match.json").read_text(encoding="utf-8"))
+        self.assertEqual(match["years"]["1926"]["spellings"][0]["method"], "case_spelling")
+        self.assertEqual(len(json.loads(self.case_file("beta", "census.json").read_text(encoding="utf-8"))["1926"]), 1)
+        self.assertEqual(self.review()[0]["status"], "accepted_in_case")
+
+    def test_an_identical_hand_extracted_census_is_adopted(self):
+        self.census(1901, [self.p("Alpha")])
+        path = self.case_file("alpha", "census.json")
+        path.parent.mkdir(parents=True, exist_ok=True)
+        expected = ac.build_row(1901, self.p("Alpha"))
+        expected.pop("ref")
+        path.write_text(json.dumps({"1901": [expected]}), encoding="utf-8")
+        self.run_attach()
+        rows = json.loads(path.read_text(encoding="utf-8"))["1901"]
+        self.assertEqual(rows[0]["ref"], "nai000111")
+        self.assertTrue(self.case_file("alpha", "census_match.json").is_file())
+
+    def test_a_townland_with_no_return_is_recorded_as_checked(self):
+        self.census(1901, [self.p("Alpha")])
+        self.run_attach()
+        match = json.loads(self.case_file("beta", "census_match.json").read_text(encoding="utf-8"))
+        self.assertEqual((match["status"], match["years"]), ("checked", {}))
+        self.assertIn("1901, 1911, 1926", match["note"])
+        self.assertFalse(self.case_file("beta", "census.json").exists())
+
+    def test_checked_note_admits_spellings_still_awaiting_review(self):
+        self.census(1901, [self.p("Alpha"), self.p("Alfa")])
+        self.run_attach()
+        match = json.loads(self.case_file("beta", "census_match.json").read_text(encoding="utf-8"))
+        self.assertIn("awaiting review", match["note"])
+
     def test_a_census_year_after_1926_is_refused(self):
         saved = ac.YEARS
         ac.YEARS = (1901, 1911, 1926, 1936)

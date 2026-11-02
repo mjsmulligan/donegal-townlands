@@ -1,4 +1,7 @@
-"""Extract one townland's census rows from the Clogher DED files into records/census.json.
+"""SUPERSEDED on 2026-11-02 by tools/attach_census.py, which reproduces this output exactly for
+Clogher and Cullionboy (checked) and handles every townland the same way. Kept for reference.
+
+Extract one townland's census rows from the Clogher DED files into records/census.json.
 usage: python tools/extract_census.py <townland-folder-name>      e.g. cullionboy
 Reads townlands/<name>/townland.json (townland spellings per census year) and, if present,
 townlands/<name>/records/corrections.json (explicit researcher corrections, each with a reason).

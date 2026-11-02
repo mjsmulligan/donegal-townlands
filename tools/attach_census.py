@@ -24,10 +24,17 @@ listed in the review CSV for Mike to decide. To accept a spelling, set its
 status to accepted and fill accepted_logainm_id, then run this script again.
 Decisions made in the review CSV are never overwritten.
 
+Every case is handled the same way, including the two original studies
+(Clogher and Cullionboy). Researcher corrections in records/corrections.json
+are applied to the rows, and a spelling already accepted in a case's
+townland.json (for example Collinboy for Cullionboy) counts as accepted.
+
 Safety.
-- A case that already has records/census.json written by someone else (Clogher
-  and Cullionboy) is left untouched.
-- Their census_spelling entries in townland.json count as already accepted.
+- A census.json that this script did not write is replaced only if the rows it
+  would write are identical to it (ignoring the added "ref" field). Anything
+  else is left untouched and reported, so authored work is never overwritten.
+- A townland with no return in any year gets a census_match.json saying it was
+  checked, so a page can tell "no return found" from "not yet looked at".
 - Census returns are published by their custodian (National Archives) and have
   already passed its privacy review, so rows are not withheld here. The one
   guard kept is that no census year after 1926 is ever attached. tools/validate.py
@@ -126,6 +133,7 @@ def row_1926(x):
     )
     return {
         "h": house,
+        "fo": house,
         "s": x.get("surname", ""),
         "f": x.get("first_name", ""),
         "a": num(x.get("updated_age")),
@@ -140,6 +148,35 @@ def row_1926(x):
 
 def build_row(year, raw):
     return row_1926(raw) if year == 1926 else row_1901_1911(raw)
+
+
+def read_corrections(case_dir):
+    """Researcher corrections: {year: [{match, set, reason}]}. Never changed here."""
+    path = case_dir / "records" / "corrections.json"
+    if not path.is_file():
+        return {}
+    with path.open("r", encoding="utf-8") as handle:
+        return json.load(handle)
+
+
+def apply_corrections(rows_by_year, corrections):
+    """Apply corrections in place. Returns a record of what each one changed."""
+    applied = []
+    for year, rules in corrections.items():
+        for rule in rules:
+            hit = [z for z in rows_by_year.get(str(year), [])
+                   if all(z.get(k) == v for k, v in rule["match"].items())]
+            for z in hit:
+                z.update(rule["set"])
+            applied.append({"year": str(year), "match": rule["match"],
+                            "set": rule["set"], "reason": rule["reason"],
+                            "rows": len(hit)})
+    return applied
+
+
+def without_ref(rows_by_year):
+    return {y: [{k: v for k, v in r.items() if k != "ref"} for r in rows]
+            for y, rows in rows_by_year.items()}
 
 
 def read_case_index():
@@ -225,6 +262,7 @@ def main():
             elif key in by_name:
                 status = "ambiguous"
             elif (str(year), key) in accepted_case:
+                target, method = accepted_case[(str(year), key)], "case_spelling"
                 status = "accepted_in_case"
             elif old and old["status"] == "accepted" and old["accepted_logainm_id"] in by_id:
                 target, method, status = old["accepted_logainm_id"], "reviewed_variant", "accepted"
@@ -253,33 +291,63 @@ def main():
                     "reviewer_note": (old or {}).get("reviewer_note", ""),
                 })
 
-    attached = skipped_authored = 0
-    for logainm_id, years in sorted(matches.items()):
+    pending = [r for r in review_rows if r["status"] in ("unreviewed", "ambiguous")]
+    attached = skipped_authored = checked_none = 0
+    for logainm_id in sorted(by_id):
+        years = matches.get(logainm_id)
         case_dir = ROOT / index[logainm_id]
         census_path = case_dir / "records" / "census.json"
         match_path = case_dir / "records" / "census_match.json"
+        name = by_id[logainm_id]["name_en"]
 
         mine = False
         if match_path.is_file():
             with match_path.open("r", encoding="utf-8") as handle:
                 mine = json.load(handle).get("_generated_by") == GENERATED_MARKER
 
-        if census_path.is_file() and not mine:
-            skipped_authored += 1
-            print(f"authored, untouched: {by_id[logainm_id]['name_en']} ({logainm_id})")
+        if not years:
+            if census_path.is_file() or (match_path.is_file() and not mine):
+                continue
+            write_json(match_path, {
+                "_generated_by": GENERATED_MARKER,
+                "status": "checked",
+                "ded": DED_NAME,
+                "years": {},
+                "note": (
+                    f"No return for this townland appears in the {DED_NAME} "
+                    "electoral division census files for "
+                    + ", ".join(str(y) for y in YEARS) + "."
+                    + (" Some spellings are still awaiting review."
+                       if pending else " Every spelling in those files was reviewed."))
+            })
+            checked_none += 1
+            print(f"checked, no return: {name} ({logainm_id})")
             continue
 
         rows = {str(y): years[y]["rows"] for y in sorted(years)}
+        if "1926" in rows:
+            rows["1926"].sort(key=lambda z: z["fo"])
+        applied = apply_corrections(rows, read_corrections(case_dir))
+
+        if census_path.is_file() and not mine:
+            with census_path.open("r", encoding="utf-8") as handle:
+                existing = json.load(handle)
+            if existing != without_ref(rows):
+                skipped_authored += 1
+                print(f"authored census differs, untouched: {name} ({logainm_id})")
+                continue
+
         write_json(census_path, rows, compact=True)
         methods = {sp["method"] for y in years.values() for sp in y["spellings"]}
         exact = "exact_name" in methods
+        reviewed = bool(methods & {"reviewed_variant", "case_spelling"})
         write_json(match_path, {
             "_generated_by": GENERATED_MARKER,
             "status": "proposed" if exact else "reviewed",
             "note": (
                 "Identical-name matches are proposed and not yet reviewed. "
                 "Other spellings were accepted on review (see census_spelling_review.csv)."
-                if exact and "reviewed_variant" in methods else
+                if exact and reviewed else
                 "Matched by identical name only. Not reviewed." if exact else
                 "Spellings accepted on review (see census_spelling_review.csv)."
             ),
@@ -291,9 +359,10 @@ def main():
                 }
                 for y in sorted(years)
             },
+            "corrections": applied,
         })
         attached += 1
-        print(f"attached: {by_id[logainm_id]['name_en']} ({logainm_id}) -> "
+        print(f"attached: {name} ({logainm_id}) -> "
               + ", ".join(f"{y}: {len(years[y]['rows'])}" for y in sorted(years)))
 
     REVIEW_CSV.parent.mkdir(parents=True, exist_ok=True)
@@ -305,7 +374,8 @@ def main():
     print()
     print(f"{DED_NAME} DED townlands: {len(places)}")
     print(f"Cases with census attached: {attached}")
-    print(f"Authored cases left untouched: {skipped_authored}")
+    print(f"Townlands checked with no return: {checked_none}")
+    print(f"Authored census left untouched because it differs: {skipped_authored}")
     print(f"Spellings listed for review: {len(review_rows)}")
     print(f"Review file: {REVIEW_CSV.relative_to(ROOT)}")
 
