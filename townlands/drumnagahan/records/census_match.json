@@ -1,0 +1,41 @@
+{
+  "_generated_by": "donegal-townlands.attach_census",
+  "status": "proposed",
+  "note": "Matched by identical name only. Not reviewed.",
+  "ded": "Clogher",
+  "years": {
+    "1901": {
+      "spellings": [
+        {
+          "spelling": "Drumnagahan",
+          "method": "exact_name",
+          "rows": 16
+        }
+      ],
+      "people": 16,
+      "withheld": 0
+    },
+    "1911": {
+      "spellings": [
+        {
+          "spelling": "Drumnagahan",
+          "method": "exact_name",
+          "rows": 16
+        }
+      ],
+      "people": 16,
+      "withheld": 0
+    },
+    "1926": {
+      "spellings": [
+        {
+          "spelling": "Drumnagahan",
+          "method": "exact_name",
+          "rows": 25
+        }
+      ],
+      "people": 22,
+      "withheld": 3
+    }
+  }
+}

@@ -90,6 +90,44 @@ def place_body(place, state, held):
     return '\n'.join(out)
 
 
+def census_sections(base):
+    """Census returns as transcribed, for a case that holds them but is not yet a study."""
+    cpath = base / 'records' / 'census.json'
+    if not cpath.is_file():
+        return ''
+    census = load(cpath)
+    mpath = base / 'records' / 'census_match.json'
+    match = load(mpath).get('years', {}) if mpath.is_file() else {}
+    out = ['<div class="card note"><h2>About these census returns</h2><p>' + q(
+        'These are the census returns as transcribed, with no interpretation added. '
+        'Each year is linked to this townland by the spelling recorded in that census. '
+        'The link is a proposed match from the name alone and has not yet been reviewed. '
+        'Years recorded under a different spelling are not shown until the spelling is reviewed.') + '</p></div>']
+    for year in sorted(census):
+        rows = census[year]
+        info = match.get(year, {})
+        spellings = ', '.join(sorted({x['spelling'] for x in info.get('spellings', [])}))
+        houses = len({str(r.get('h')) for r in rows})
+        head = 'Census ' + year + ': ' + str(len(rows)) + ' people in ' + str(houses) + ' households'
+        if spellings:
+            head += ' (recorded as ' + spellings + ')'
+        body = ['<details open><summary>' + q(head) + '</summary><div class="scroll"><table><tr>'
+                + ''.join('<th>' + h + '</th>' for h in ('House', 'Surname', 'Forename', 'Age', 'Sex', 'Relation to head', 'Marital status', 'Occupation', 'Irish', 'Return'))
+                + '</tr>']
+        last = object()
+        for r in rows:
+            cls = ' class="first"' if r.get('h') != last else ''
+            last = r.get('h')
+            cells = (r.get('h'), r.get('s'), r.get('f'), r.get('a'), r.get('x'), r.get('r'), r.get('m'), r.get('o'), 'Yes' if r.get('i') else '', r.get('ref'))
+            body.append('<tr' + cls + '>' + ''.join('<td>' + q('' if c is None else c) + '</td>' for c in cells) + '</tr>')
+        body.append('</table></div>')
+        if info.get('withheld'):
+            body.append('<p>' + q(str(info['withheld']) + ' return(s) withheld under the living-people rule.') + '</p>')
+        body.append('</details>')
+        out.append(''.join(body))
+    return '\n'.join(out)
+
+
 def write_place_page(name, base, state, missing):
     place_path = base / 'place.json'
     if not place_path.is_file():
@@ -102,7 +140,7 @@ def write_place_page(name, base, state, missing):
     place = load(place_path)
     template = (ROOT / 'engine' / 'place.html').read_text(encoding='utf-8')
     page = (template.replace('__TITLE__', q((place.get('name_en') or name) + ' | Donegal Townlands'))
-                    .replace('__BODY__', place_body(place, state, records_held(base))))
+                    .replace('__BODY__', place_body(place, state, records_held(base)) + '\n' + census_sections(base)))
     dest.parent.mkdir(parents=True, exist_ok=True)
     dest.write_text(page, encoding='utf-8')
     print(name + ': ' + state + ' case. Place page written.')
@@ -113,7 +151,8 @@ def write_index(entries):
     def links(items):
         return ''.join('    <a class="townland" href="./' + q(s) + '/">\n        ' + q(n) + ' &rarr;\n    </a>\n\n' for s, n, _ in items)
     studies = sorted((e for e in entries if e[2] == 'ready'), key=lambda e: e[1].casefold())
-    places = sorted((e for e in entries if e[2] != 'ready'), key=lambda e: e[1].casefold())
+    census = sorted((e for e in entries if e[2] == 'partial'), key=lambda e: e[1].casefold())
+    places = sorted((e for e in entries if e[2] == 'empty'), key=lambda e: e[1].casefold())
     page = """<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -131,18 +170,20 @@ def write_index(entries):
 </head>
 <body>
     <h1>Donegal Townlands</h1>
-    <p>Explore the townlands of County Donegal. Every townland has a page. Where research has begun, the page is a full study. The others show the place record and will be enriched as records are added.</p>
+    <p>Explore the townlands of County Donegal. Every townland has a page. Where research has begun, the page is a full study. Others show the census returns held so far, or just the place record, and will be enriched as records are added.</p>
 
     <h2>Townland studies</h2>
 
-""" + links(studies) + """    <h2>Townlands awaiting research</h2>
+""" + links(studies) + """    <h2>Townlands with census returns</h2>
+
+""" + links(census) + """    <h2>Townlands awaiting research</h2>
 
 """ + links(places) + """    <footer>Irish-language placename data by Logainm, Government of Ireland, licensed under CC BY 4.0.</footer>
 </body>
 </html>
 """
     (ROOT / 'docs' / 'index.html').write_text(page, encoding='utf-8')
-    print('wrote docs/index.html:', len(studies), 'studies,', len(places), 'places')
+    print('wrote docs/index.html:', len(studies), 'studies,', len(census), 'with census,', len(places), 'awaiting')
 
 
 def build(name):

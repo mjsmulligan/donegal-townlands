@@ -1,0 +1,30 @@
+{
+  "_generated_by": "donegal-townlands.attach_census",
+  "status": "proposed",
+  "note": "Matched by identical name only. Not reviewed.",
+  "ded": "Clogher",
+  "years": {
+    "1911": {
+      "spellings": [
+        {
+          "spelling": "Birchhill",
+          "method": "exact_name",
+          "rows": 43
+        }
+      ],
+      "people": 43,
+      "withheld": 0
+    },
+    "1926": {
+      "spellings": [
+        {
+          "spelling": "Birchhill",
+          "method": "exact_name",
+          "rows": 31
+        }
+      ],
+      "people": 28,
+      "withheld": 3
+    }
+  }
+}

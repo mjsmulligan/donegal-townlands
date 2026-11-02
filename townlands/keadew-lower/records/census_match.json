@@ -1,0 +1,30 @@
+{
+  "_generated_by": "donegal-townlands.attach_census",
+  "status": "proposed",
+  "note": "Matched by identical name only. Not reviewed.",
+  "ded": "Clogher",
+  "years": {
+    "1901": {
+      "spellings": [
+        {
+          "spelling": "Keadew Lower",
+          "method": "exact_name",
+          "rows": 17
+        }
+      ],
+      "people": 17,
+      "withheld": 0
+    },
+    "1911": {
+      "spellings": [
+        {
+          "spelling": "Keadew Lower",
+          "method": "exact_name",
+          "rows": 14
+        }
+      ],
+      "people": 14,
+      "withheld": 0
+    }
+  }
+}

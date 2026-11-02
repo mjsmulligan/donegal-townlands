@@ -1,0 +1,30 @@
+{
+  "_generated_by": "donegal-townlands.attach_census",
+  "status": "proposed",
+  "note": "Matched by identical name only. Not reviewed.",
+  "ded": "Clogher",
+  "years": {
+    "1901": {
+      "spellings": [
+        {
+          "spelling": "Carnbeagh North",
+          "method": "exact_name",
+          "rows": 29
+        }
+      ],
+      "people": 29,
+      "withheld": 0
+    },
+    "1911": {
+      "spellings": [
+        {
+          "spelling": "Carnbeagh North",
+          "method": "exact_name",
+          "rows": 20
+        }
+      ],
+      "people": 20,
+      "withheld": 0
+    }
+  }
+}
