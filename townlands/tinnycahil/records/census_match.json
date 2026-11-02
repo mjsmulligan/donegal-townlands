@@ -1,0 +1,19 @@
+{
+  "_generated_by": "donegal-townlands.attach_census",
+  "status": "proposed",
+  "note": "Matched by identical name only. Not reviewed.",
+  "ded": "Clogher",
+  "years": {
+    "1911": {
+      "spellings": [
+        {
+          "spelling": "Tinnycahil",
+          "method": "exact_name",
+          "rows": 15
+        }
+      ],
+      "people": 15,
+      "withheld": 0
+    }
+  }
+}

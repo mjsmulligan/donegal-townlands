@@ -151,6 +151,31 @@ class BuildStateTests(unittest.TestCase):
         self.assertIn('href="./one/"', index)
         self.assertNotIn('href="./beta/"', index)
 
+    def test_partial_place_page_shows_census_returns_as_proposed(self):
+        base = self.case("beta", {"place.json": PLACE.replace("Druminnin", "Beta"),
+            "records/census.json": json.dumps({"1901": [
+                {"h": 1, "s": "Harvey", "f": "James", "a": 52, "x": "M", "r": "Head", "m": "Married", "o": "Farmer", "i": 1, "ref": "nai1"},
+                {"h": 1, "s": "Harvey", "f": "<b>Ann</b>", "a": 50, "x": "F", "r": "Wife", "m": "Married", "o": "", "i": 0, "ref": "nai1"}]}),
+            "records/census_match.json": json.dumps({"years": {"1901": {"spellings": [{"spelling": "Beta", "method": "exact_name", "rows": 2}], "withheld": 3}}})})
+        self.run_build("beta")
+        page = self.page("beta")
+        self.assertIn("Census 1901: 2 people in 1 households (recorded as Beta)", page)
+        self.assertIn("<td>Harvey</td>", page)
+        self.assertIn("nai1", page)
+        self.assertIn("proposed match from the name alone", page)
+        self.assertIn("3 return(s) withheld", page)
+        self.assertNotIn("<b>Ann</b>", page)
+
+    def test_index_groups_census_cases_separately(self):
+        self.empty_case("one")
+        self.case("two", {"place.json": PLACE.replace("Druminnin", "Two"), "records/census.json": "{}"})
+        with contextlib.redirect_stdout(io.StringIO()):
+            build.main(["--all"])
+        index = (self.root / "docs" / "index.html").read_text(encoding="utf-8")
+        head = index.index("Townlands with census returns")
+        wait = index.index("Townlands awaiting research")
+        self.assertTrue(head < index.index('href="./two/"') < wait < index.index('href="./one/"'))
+
     def test_building_one_case_still_regenerates_the_index(self):
         self.full_case("alpha")
         self.empty_case("one")
