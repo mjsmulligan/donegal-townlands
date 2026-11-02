@@ -16,9 +16,11 @@ Generated outputs:
 
 Identity is based on Logainm ID, never on the townland name or folder name.
 
-Existing cases are adopted by matching the name in their townland.json.
-This allows the existing Clogher and Cullionboy research folders to be
-retained without moving or replacing their authored files.
+Existing cases are recognised by Logainm ID, found in place.json or in
+townland.json. A legacy case with no recorded ID (the original Clogher
+and Cullionboy folders) is adopted once, by a name match that must be
+unique and must agree with its recorded DED. The ID is then written to
+place.json, so later runs never depend on the name again.
 
 The script never deletes a case and never overwrites authored research files.
 """
@@ -41,6 +43,7 @@ INDEX_FIELDS = [
     "case_path",
     "name_en",
     "snapshot_date",
+    "in_latest_snapshot",
 ]
 
 GENERATED_MARKER = "donegal-townlands.create_townland_cases"
@@ -68,6 +71,9 @@ def make_slug(value):
     return value or "unnamed-townland"
 
 
+ded_names = {}
+
+
 def read_places():
     if not PLACES_CSV.is_file():
         fail(f"Places file not found: {PLACES_CSV}")
@@ -91,9 +97,18 @@ def read_places():
 
         places = []
         seen_ids = set()
+        ded_names.clear()
 
         for row in reader:
-            if (row.get("place_type") or "").strip().casefold() != "townland":
+            kind = (row.get("place_type") or "").strip().casefold()
+
+            if kind == "ded":
+                ded_names[(row.get("logainm_id") or "").strip()] = (
+                    row.get("name_en") or ""
+                ).strip()
+                continue
+
+            if kind != "townland":
                 continue
 
             logainm_id = (row.get("logainm_id") or "").strip()
@@ -117,46 +132,98 @@ def read_places():
     return places
 
 
-def read_case_name(case_dir):
-    """
-    Return the name recorded in townland.json, if present.
-
-    Existing townland.json files are read only. They are never rewritten.
-    """
-    metadata_path = case_dir / "townland.json"
-
-    if not metadata_path.is_file():
-        return None
-
+def read_json(path):
     try:
-        with metadata_path.open("r", encoding="utf-8") as handle:
-            metadata = json.load(handle)
+        with path.open("r", encoding="utf-8") as handle:
+            return json.load(handle)
     except (OSError, json.JSONDecodeError) as exc:
-        fail(f"Cannot read {metadata_path}: {exc}")
-
-    return metadata.get("name")
+        fail(f"Cannot read {path}: {exc}")
 
 
-def find_existing_case(place):
+def scan_cases():
     """
-    Find an existing case by its townland.json name.
+    Read every existing case directory once. Nothing is written.
 
-    More than one match is ambiguous and stops the run.
+    Returns (by_id, legacy):
+      by_id:  Logainm ID -> case directory, from place.json or townland.json
+      legacy: case directories that record no Logainm ID anywhere
     """
-    target = normalise_name(place["name_en"])
-    matches = []
+    by_id = {}
+    legacy = []
 
     if not TOWNLANDS_DIR.is_dir():
-        return None
+        return by_id, legacy
 
     for case_dir in sorted(TOWNLANDS_DIR.iterdir()):
         if not case_dir.is_dir():
             continue
 
-        existing_name = read_case_name(case_dir)
+        recorded = None
 
-        if existing_name and normalise_name(existing_name) == target:
-            matches.append(case_dir)
+        for filename in ("place.json", "townland.json"):
+            path = case_dir / filename
+            if not path.is_file():
+                continue
+            value = read_json(path).get("logainm_id")
+            if value not in (None, ""):
+                value = str(value).strip()
+                if recorded is not None and recorded != value:
+                    fail(
+                        f"{case_dir} records two different Logainm IDs "
+                        f"({recorded} and {value})."
+                    )
+                recorded = value
+
+        if recorded is None:
+            if (case_dir / "townland.json").is_file():
+                legacy.append(case_dir)
+            continue
+
+        if recorded in by_id:
+            fail(
+                f"Logainm ID {recorded} is claimed by two case "
+                f"directories: {by_id[recorded].name} and {case_dir.name}"
+            )
+        by_id[recorded] = case_dir
+
+    return by_id, legacy
+
+
+def find_existing_case(place, by_id, legacy, ded_names, places):
+    """
+    Find the case for a place. The Logainm ID decides.
+
+    A legacy case (no recorded ID) is adopted by name only when:
+    - exactly one legacy case has that name,
+    - exactly one townland in the register has that name, and
+    - the DED in its townland.json, if given, matches the place's DED.
+    Anything else is left alone and a new case is created, never a guess.
+    """
+    logainm_id = place["logainm_id"].strip()
+
+    if logainm_id in by_id:
+        return by_id[logainm_id]
+
+    target = normalise_name(place["name_en"])
+
+    same_name_places = [
+        p for p in places if normalise_name(p["name_en"]) == target
+    ]
+    if len(same_name_places) != 1:
+        return None
+
+    matches = []
+    for case_dir in legacy:
+        metadata = read_json(case_dir / "townland.json")
+        if normalise_name(metadata.get("name")) != target:
+            continue
+        case_ded = normalise_name(metadata.get("ded"))
+        place_ded = normalise_name(
+            ded_names.get((place.get("ded_id") or "").strip(), "")
+        )
+        if case_ded and place_ded and case_ded != place_ded:
+            continue
+        matches.append(case_dir)
 
     if len(matches) > 1:
         paths = ", ".join(str(path.relative_to(ROOT)) for path in matches)
@@ -165,7 +232,11 @@ def find_existing_case(place):
             f"{place['name_en']!r}: {paths}"
         )
 
-    return matches[0] if matches else None
+    if matches:
+        legacy.remove(matches[0])
+        return matches[0]
+
+    return None
 
 
 def make_place_record(place):
@@ -224,10 +295,12 @@ def write_place_record(case_dir, place):
                 f"{place['logainm_id']}."
             )
 
-    path.write_text(
-        json.dumps(record, ensure_ascii=False, indent=2) + "\n",
-        encoding="utf-8",
-    )
+    text = json.dumps(record, ensure_ascii=False, indent=2) + "\n"
+
+    if path.exists() and path.read_text(encoding="utf-8") == text:
+        return
+
+    path.write_text(text, encoding="utf-8")
 
 
 def create_status_file(case_dir, place):
@@ -268,10 +341,16 @@ townland. Evidence can be added incrementally as sources are researched.
 
 
 def choose_new_case_path(place, used_slugs):
-    """Choose a new directory without colliding with another townland."""
+    """
+    Choose a new directory without colliding with another townland.
+
+    If the plain name is taken (by another townland or by any directory
+    already on disk) the Logainm ID is appended. An existing directory is
+    never reused for a place that was not matched to it by ID.
+    """
     slug = make_slug(place["name_en"])
 
-    if slug in used_slugs:
+    if slug in used_slugs or (TOWNLANDS_DIR / slug).exists():
         slug = f"{slug}-{place['logainm_id']}"
 
     candidate = TOWNLANDS_DIR / slug
@@ -305,32 +384,40 @@ def main():
 
     TOWNLANDS_DIR.mkdir(parents=True, exist_ok=True)
 
+    by_id, legacy = scan_cases()
+
     used_slugs = set()
     index_rows = []
+    current_ids = set()
     created = 0
     adopted = 0
-    refreshed = 0
+    existing = 0
+    status_created_count = 0
 
     for place in places:
         logainm_id = place["logainm_id"].strip()
+        current_ids.add(logainm_id)
 
-        case_dir = find_existing_case(place)
+        case_dir = find_existing_case(place, by_id, legacy, ded_names, places)
 
         if case_dir is None:
             case_dir = choose_new_case_path(place, used_slugs)
             case_dir.mkdir(parents=True, exist_ok=False)
             created += 1
             action = "created"
+        elif logainm_id in by_id:
+            existing += 1
+            action = "existing"
         else:
             adopted += 1
             action = "adopted"
 
+        by_id[logainm_id] = case_dir
+
         write_place_record(case_dir, place)
 
-        status_created = create_status_file(case_dir, place)
-
-        if status_created:
-            refreshed += 1
+        if create_status_file(case_dir, place):
+            status_created_count += 1
 
         case_path = case_dir.relative_to(ROOT).as_posix()
 
@@ -339,17 +426,37 @@ def main():
             "case_path": case_path,
             "name_en": place["name_en"].strip(),
             "snapshot_date": place["snapshot_date"].strip(),
+            "in_latest_snapshot": "yes",
         })
 
         print(f"{action}: {place['name_en']} ({logainm_id}) -> {case_path}")
+
+    # Cases whose townland is absent from this snapshot are kept and listed.
+    retained = 0
+    for logainm_id, case_dir in sorted(by_id.items()):
+        if logainm_id in current_ids:
+            continue
+        place_path = case_dir / "place.json"
+        record = read_json(place_path) if place_path.is_file() else {}
+        index_rows.append({
+            "logainm_id": logainm_id,
+            "case_path": case_dir.relative_to(ROOT).as_posix(),
+            "name_en": record.get("name_en", ""),
+            "snapshot_date": record.get("snapshot_date", ""),
+            "in_latest_snapshot": "no",
+        })
+        retained += 1
+        print(f"retained: {logainm_id} -> {case_dir.name} (not in snapshot)")
 
     write_index(index_rows)
 
     print()
     print(f"Townlands processed: {len(places)}")
     print(f"New cases created: {created}")
-    print(f"Existing cases adopted: {adopted}")
-    print(f"Starter status files created: {refreshed}")
+    print(f"Legacy cases adopted by ID: {adopted}")
+    print(f"Cases already known by ID: {existing}")
+    print(f"Cases retained, absent from snapshot: {retained}")
+    print(f"Starter status files created: {status_created_count}")
     print(f"Index written: {INDEX_CSV.relative_to(ROOT)}")
     print("No existing research files or cases were deleted.")
 

@@ -1,0 +1,14 @@
+{
+  "logainm_id": "14286",
+  "name_en": "Tullyloskan",
+  "name_ga": "",
+  "place_type": "townland",
+  "ded_id": "111482",
+  "civil_parish_id": "784",
+  "barony_id": "52",
+  "county_id": "100013",
+  "latitude": "54.64411493161979",
+  "longitude": "-8.071389650872769",
+  "snapshot_date": "2026-11-01",
+  "_generated_by": "donegal-townlands.create_townland_cases"
+}

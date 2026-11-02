@@ -1,0 +1,14 @@
+{
+  "logainm_id": "14273",
+  "name_en": "Drumadoney",
+  "name_ga": "",
+  "place_type": "townland",
+  "ded_id": "111482",
+  "civil_parish_id": "784",
+  "barony_id": "52",
+  "county_id": "100013",
+  "latitude": "54.65895495910957",
+  "longitude": "-8.036523966278136",
+  "snapshot_date": "2026-11-01",
+  "_generated_by": "donegal-townlands.create_townland_cases"
+}

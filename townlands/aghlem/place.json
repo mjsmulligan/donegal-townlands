@@ -1,0 +1,14 @@
+{
+  "logainm_id": "14271",
+  "name_en": "Aghlem",
+  "name_ga": "",
+  "place_type": "townland",
+  "ded_id": "111482",
+  "civil_parish_id": "784",
+  "barony_id": "52",
+  "county_id": "100013",
+  "latitude": "54.656709868801784",
+  "longitude": "-8.021811403837578",
+  "snapshot_date": "2026-11-01",
+  "_generated_by": "donegal-townlands.create_townland_cases"
+}

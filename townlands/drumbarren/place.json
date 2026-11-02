@@ -1,0 +1,14 @@
+{
+  "logainm_id": "13968",
+  "name_en": "Drumbarren",
+  "name_ga": "",
+  "place_type": "townland",
+  "ded_id": "1372439",
+  "civil_parish_id": "784",
+  "barony_id": "52",
+  "county_id": "100013",
+  "latitude": "54.66905653562753",
+  "longitude": "-8.080501197272394",
+  "snapshot_date": "2026-11-01",
+  "_generated_by": "donegal-townlands.create_townland_cases"
+}

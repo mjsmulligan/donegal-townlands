@@ -1,0 +1,14 @@
+{
+  "logainm_id": "13972",
+  "name_en": "Keadew Lower",
+  "name_ga": "Céide Íochtarach",
+  "place_type": "townland",
+  "ded_id": "1372439",
+  "civil_parish_id": "784",
+  "barony_id": "52",
+  "county_id": "100013",
+  "latitude": "54.697035616273624",
+  "longitude": "-7.996016338864254",
+  "snapshot_date": "2026-11-01",
+  "_generated_by": "donegal-townlands.create_townland_cases"
+}

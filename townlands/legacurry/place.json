@@ -1,0 +1,14 @@
+{
+  "logainm_id": "14294",
+  "name_en": "Legacurry",
+  "name_ga": "Lag an Choire",
+  "place_type": "townland",
+  "ded_id": "111482",
+  "civil_parish_id": "785",
+  "barony_id": "52",
+  "county_id": "100013",
+  "latitude": "54.624581803896305",
+  "longitude": "-8.121673603291555",
+  "snapshot_date": "2026-11-01",
+  "_generated_by": "donegal-townlands.create_townland_cases"
+}

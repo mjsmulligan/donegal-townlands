@@ -1,0 +1,14 @@
+{
+  "logainm_id": "14276",
+  "name_en": "Drummenny Lower",
+  "name_ga": "",
+  "place_type": "townland",
+  "ded_id": "111482",
+  "civil_parish_id": "784",
+  "barony_id": "52",
+  "county_id": "100013",
+  "latitude": "54.651335342333596",
+  "longitude": "-8.083376529126403",
+  "snapshot_date": "2026-11-01",
+  "_generated_by": "donegal-townlands.create_townland_cases"
+}

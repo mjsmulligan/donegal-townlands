@@ -1,0 +1,14 @@
+{
+  "logainm_id": "14293",
+  "name_en": "Drumlask",
+  "name_ga": "",
+  "place_type": "townland",
+  "ded_id": "111482",
+  "civil_parish_id": "785",
+  "barony_id": "52",
+  "county_id": "100013",
+  "latitude": "54.63914848779389",
+  "longitude": "-8.065615275073613",
+  "snapshot_date": "2026-11-01",
+  "_generated_by": "donegal-townlands.create_townland_cases"
+}

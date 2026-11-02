@@ -1,0 +1,14 @@
+{
+  "logainm_id": "13958",
+  "name_en": "Carnbeagh North",
+  "name_ga": "",
+  "place_type": "townland",
+  "ded_id": "1372439",
+  "civil_parish_id": "784",
+  "barony_id": "52",
+  "county_id": "100013",
+  "latitude": "54.66642831180954",
+  "longitude": "-8.041794954723551",
+  "snapshot_date": "2026-11-01",
+  "_generated_by": "donegal-townlands.create_townland_cases"
+}

@@ -1,0 +1,14 @@
+{
+  "logainm_id": "14301",
+  "name_en": "Tullyearl",
+  "name_ga": "Tulaigh Iarla",
+  "place_type": "townland",
+  "ded_id": "111482",
+  "civil_parish_id": "785",
+  "barony_id": "52",
+  "county_id": "100013",
+  "latitude": "54.629242847830525",
+  "longitude": "-8.112234170301221",
+  "snapshot_date": "2026-11-01",
+  "_generated_by": "donegal-townlands.create_townland_cases"
+}
