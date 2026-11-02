@@ -8,6 +8,18 @@ The townland, rather than the individual or family, is the organising framework 
 
 Griffith's Valuation is a foundational source because it records land and occupation within townland boundaries. Census records, maps, church and civil records, and other historical sources add further dimensions to the history of the same place.
 
+## Every townland can have a research case
+
+Every recognised townland is eligible for a research case, whether or not historical records have yet been found or processed for it.
+
+The existence and identity of the case do not depend on the availability of census records, valuation records, parish registers or any other historical source. The place is the starting point for research, not a conclusion derived from the records currently available.
+
+Historical evidence enriches the case incrementally. A case may begin with place-register information alone, acquire census evidence later, and subsequently be extended through valuation records, parish registers, maps and other sources.
+
+An empty case is a valid research state. It must not contain invented historical content or imply that research has been completed. The absence of evidence in the project is not evidence that nothing happened in the townland.
+
+Preserve the distinction between the identity of a place, the records associated with it, and the conclusions drawn from those records. Where place identity, historical boundaries or spelling variations are uncertain, retain the uncertainty for research rather than resolving it by assumption.
+
 ## Family histories provide the human narrative
 
 The townland is the organising framework, but the richness and human interest of the narrative will come largely through the histories of the families who lived there.
@@ -25,6 +37,8 @@ Maintain a clear distinction between:
 3. Conclusions: what can reasonably be established about the townland and its families.
 
 Preserve original recorded details. Do not silently replace them with normalised or inferred values. Identify the evidence supporting significant interpretations. Distinguish established facts from probable identifications and hypotheses. Retain uncertainties and contradictory evidence.
+
+Wherever possible, provide readers with a direct link to the original historical record or source image, not merely to a transcription or derived dataset. Readers should be able to inspect the underlying evidence and draw their own conclusions. Preserve the information needed to trace each observation back to its original source.
 
 The presentation should make the direct evidence accessible before presenting interpretations or conclusions.
 
