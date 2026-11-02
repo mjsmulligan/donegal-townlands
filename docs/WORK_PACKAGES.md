@@ -9,7 +9,9 @@ Each package ends with a handover and a `DECISIONS.md` update (GOV-05).
 
 ## 1. Approach
 
-Build one thin path end to end first: the 1926 Clogher census through preservation, ETL, observation IDs, place layer, association, review and the evidence build. Then widen to other years and DEDs, then to other sources. The existing Cullionboy and Clogher pages keep working throughout and are switched over only when the new path reproduces them.
+Build the system around two connected paths. First, every recognised townland in the derived place table must be capable of becoming an independently identifiable research case, whether or not historical sources are available. Second, historical sources progressively enrich those cases through preservation, ETL, observation IDs, association, review and the evidence build.
+
+Validate the complete path first against the current place table and the Clogher DED pilot. Then widen to other years, DEDs and source types. The existing Cullionboy and Clogher pages keep working throughout and are switched over only when the new path reproduces them.
 
 GRA's source ingest and its already fetched census files are the starting point. Its person-linking pipelines are not used.
 
@@ -72,11 +74,12 @@ Phase A completes the thin path. WP1 and WP2 can start now. WP3 needs a Logainm 
 - **Acceptance:** the tests in the requirements pass, including rejection of a rewritten line.
 
 ### WP3 Place layer from Logainm
-- **Goal:** a Logainm snapshot and a derived place table for every DED held, plus a home for manual places and name variants. Logainm is the authority, so there is no full gazetteer to build.
+
+- **Goal:** a Logainm snapshot and derived place table for every DED held, together with the ability to create an independently identifiable research case for every recognised townland. A case must not depend on historical source availability.
 - **Inputs:** an adapted `fetch_places.py`, the Logainm IDs for the six DEDs, an API key, the project dictionary as a cross-check.
-- **Outputs:** the snapshot in the source layer with manifest entries; the derived place table; a list of dictionary townlands missing from Logainm and the reverse; an empty manual places table with its registry hook; the name variants table, loaded from the 15 census files as proposed.
-- **Requirements:** PLC-01 to PLC-07.
-- **Acceptance:** every townland string in the 15 census files is either matched, proposed or listed as unresolved. Keadew Lower is a separate place, either from Logainm or as a manual place. Regenerating the place table gives identical output.
+- **Outputs:** the snapshot in the source layer with manifest entries; the derived place table; a list of dictionary townlands missing from Logainm and the reverse; an empty manual places table with its registry hook; the name variants table, loaded from the 15 census files as proposed; a repeatable townland case generator; a derived index mapping Logainm townland IDs to case locations.
+- **Requirements:** PLC-01 to PLC-15.
+- **Acceptance:** every townland row in `places.csv` is eligible for a case, including townlands with no historical records. Only rows with `place_type=townland` generate cases. Case identity is based on the Logainm ID. Repeated generation creates no duplicates and preserves researcher-authored content. A townland missing from a later snapshot is not silently deleted. The case index correctly identifies every generated case. Existing census townland strings are either matched, proposed or listed as unresolved. Keadew Lower remains a separate place, either from Logainm or as a manual place.
 - **Risk:** Logainm may not cover historical spellings, town parts or every townland. Gaps become manual places and unresolved strings feed WP6.
 
 ### WP4 1926 census ETL and observation IDs
@@ -102,7 +105,7 @@ Phase A completes the thin path. WP1 and WP2 can start now. WP3 needs a Logainm 
 - **Goal:** generate the per-townland evidence bundle for Clogher DED 1926.
 - **Outputs:** bundle JSON; link builder for the 1926 template (`aform_name`); reference checker; privacy filter.
 - **Requirements:** EVD-01 to EVD-04, PRV-01, PRV-02.
-- **Acceptance:** a bundle contains only accepted associations. A sample of links opens the right household. A broken reference fails the build.
+- **Acceptance:** a bundle contains only accepted associations. A sample of links opens the right household. A broken reference fails the build. The build also handles a valid townland case with no historical evidence without treating the absence of evidence as an invalid case. The Phase A end-to-end acceptance milestone is completed before Phase A is declared finished.
 
 ### WP8 Cutover of the Clogher and Cullionboy pages
 - **Goal:** the live pages read from the new path.
@@ -145,3 +148,19 @@ Phase A completes the thin path. WP1 and WP2 can start now. WP3 needs a Logainm 
 1. Mike decides the open items in the requirements (public repository, GEDCOM editing, genealogy software, Logainm key).
 2. Start WP1 and WP2, which have no dependencies.
 3. Start WP4 in parallel with WP3 once the key is available.
+
+### Phase A end-to-end acceptance milestone
+
+Phase A is not complete merely because the source files have been ingested or the evidence build works for Clogher. It must demonstrate that the place-first, evidence-incremental system works as a whole.
+
+The milestone passes when:
+
+1. Every row with `place_type=townland` in the current `places.csv` has a valid, independently identifiable research case, including cases with no historical evidence.
+2. DED and other non-townland rows do not generate townland cases.
+3. Case generation is repeatable and does not create duplicates, overwrite researcher-authored work or silently delete cases when a place is absent from a later snapshot.
+4. Clogher and Cullionboy retain their existing research content and can be represented in the case system without loss.
+5. Druminnin can begin as a census-only case, with its spelling variants and identity questions kept open for research rather than assumed to be resolved.
+6. Historical evidence can be added to a case incrementally, with source references and the distinction between source content and research conclusions retained.
+7. The evidence build produces valid output for a case with evidence, while an empty case remains valid even when it has nothing to publish as historical narrative.
+
+Record the test results and any unresolved issues in the Phase A handover. The milestone is a validation of the whole system, not a requirement to complete the historical research for every townland.
