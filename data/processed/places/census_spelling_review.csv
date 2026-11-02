@@ -1,20 +1,20 @@
-ded,census_year,census_spelling,rows,status,accepted_logainm_id,similar_places_not_confirmed
-Clogher,1901,Birchill,54,unreviewed,,Birchhill
-Clogher,1901,Clardrumbarron,1,unreviewed,,Clardrumbarren
-Clogher,1901,Clardumnagahan,8,unreviewed,,Clardrumnagahan; Drumnagahan
-Clogher,1901,Drumbarron,9,unreviewed,,Drumbarren
-Clogher,1901,Finnabunes,76,unreviewed,,Finnabanes
-Clogher,1901,Finny Cahill,22,unreviewed,,
-Clogher,1901,Shierstown,28,unreviewed,,Spierstown
-Clogher,1926,Carnbeigh North,10,unreviewed,,Carnbeagh North; Carnbeagh South
-Clogher,1926,Clardrimbarren,10,unreviewed,,Clardrumbarren
-Clogher,1926,Clardrimnagahan,13,unreviewed,,Clardrumnagahan
-Clogher,1926,Clarlougheske,37,unreviewed,,Clarlougheask
-Clogher,1926,Collinboy,79,accepted_in_case,,Cullionboy
-Clogher,1926,Druminin,91,unreviewed,,Druminnin
-Clogher,1926,Finabanes,60,unreviewed,,Finnabanes
-Clogher,1926,Keadue Lower,10,unreviewed,,Keadew Lower
-Clogher,1926,Keadue Upper,38,unreviewed,,Keadew Upper
-Clogher,1926,Mullinalamphery,23,unreviewed,,Mullanalamphry
-Clogher,1926,Spearstown,18,unreviewed,,Spierstown
-Clogher,1926,Tennycahill,13,unreviewed,,Tinnycahil
+ded,census_year,census_spelling,rows,status,accepted_logainm_id,similar_places_not_confirmed,reviewer_note
+Clogher,1901,Birchill,54,accepted,13957,Birchhill,Accepted by Mike 2026-11-02. Checked by elimination within the census year and against the townlands.ie Clogher list.
+Clogher,1901,Clardrumbarron,1,accepted,13961,Clardrumbarren,Accepted by Mike 2026-11-02. Checked by elimination within the census year and against the townlands.ie Clogher list.
+Clogher,1901,Clardumnagahan,8,accepted,13962,Clardrumnagahan; Drumnagahan,Accepted by Mike 2026-11-02. Checked by elimination within the census year and against the townlands.ie Clogher list.
+Clogher,1901,Drumbarron,9,accepted,13968,Drumbarren,Accepted by Mike 2026-11-02. Checked by elimination within the census year and against the townlands.ie Clogher list.
+Clogher,1901,Finnabunes,76,accepted,13971,Finnabanes,Accepted by Mike 2026-11-02. Checked by elimination within the census year and against the townlands.ie Clogher list.
+Clogher,1901,Finny Cahill,22,accepted,13979,,Accepted by Mike 2026-11-02. Checked by elimination within the census year and against the townlands.ie Clogher list.
+Clogher,1901,Shierstown,28,accepted,13978,Spierstown,Accepted by Mike 2026-11-02. Checked by elimination within the census year and against the townlands.ie Clogher list.
+Clogher,1926,Carnbeigh North,10,accepted,13958,Carnbeagh North; Carnbeagh South,Accepted by Mike 2026-11-02. Checked by elimination within the census year and against the townlands.ie Clogher list.
+Clogher,1926,Clardrimbarren,10,accepted,13961,Clardrumbarren,Accepted by Mike 2026-11-02. Checked by elimination within the census year and against the townlands.ie Clogher list.
+Clogher,1926,Clardrimnagahan,13,accepted,13962,Clardrumnagahan,Accepted by Mike 2026-11-02. Checked by elimination within the census year and against the townlands.ie Clogher list.
+Clogher,1926,Clarlougheske,37,accepted,13963,Clarlougheask,Accepted by Mike 2026-11-02. Checked by elimination within the census year and against the townlands.ie Clogher list.
+Clogher,1926,Collinboy,79,accepted_in_case,,Cullionboy,
+Clogher,1926,Druminin,91,accepted,13969,Druminnin,Accepted by Mike 2026-11-02. Checked by elimination within the census year and against the townlands.ie Clogher list.
+Clogher,1926,Finabanes,60,accepted,13971,Finnabanes,Accepted by Mike 2026-11-02. Checked by elimination within the census year and against the townlands.ie Clogher list.
+Clogher,1926,Keadue Lower,10,accepted,13972,Keadew Lower,Accepted by Mike 2026-11-02. Checked by elimination within the census year and against the townlands.ie Clogher list.
+Clogher,1926,Keadue Upper,38,accepted,13973,Keadew Upper,Accepted by Mike 2026-11-02. Checked by elimination within the census year and against the townlands.ie Clogher list.
+Clogher,1926,Mullinalamphery,23,accepted,13976,Mullanalamphry,Accepted by Mike 2026-11-02. Checked by elimination within the census year and against the townlands.ie Clogher list.
+Clogher,1926,Spearstown,18,accepted,13978,Spierstown,Accepted by Mike 2026-11-02. Checked by elimination within the census year and against the townlands.ie Clogher list.
+Clogher,1926,Tennycahill,13,accepted,13979,Tinnycahil,Accepted by Mike 2026-11-02. Checked by elimination within the census year and against the townlands.ie Clogher list.

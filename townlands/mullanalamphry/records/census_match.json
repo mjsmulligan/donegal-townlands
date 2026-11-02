@@ -1,7 +1,7 @@
 {
   "_generated_by": "donegal-townlands.attach_census",
   "status": "proposed",
-  "note": "Matched by identical name only. Not reviewed.",
+  "note": "Identical-name matches are proposed and not yet reviewed. Other spellings were accepted on review (see census_spelling_review.csv).",
   "ded": "Clogher",
   "years": {
     "1901": {
@@ -25,6 +25,17 @@
       ],
       "people": 35,
       "withheld": 0
+    },
+    "1926": {
+      "spellings": [
+        {
+          "spelling": "Mullinalamphery",
+          "method": "reviewed_variant",
+          "rows": 23
+        }
+      ],
+      "people": 22,
+      "withheld": 1
     }
   }
 }

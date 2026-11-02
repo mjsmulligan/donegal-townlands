@@ -1,9 +1,20 @@
 {
   "_generated_by": "donegal-townlands.attach_census",
   "status": "proposed",
-  "note": "Matched by identical name only. Not reviewed.",
+  "note": "Identical-name matches are proposed and not yet reviewed. Other spellings were accepted on review (see census_spelling_review.csv).",
   "ded": "Clogher",
   "years": {
+    "1901": {
+      "spellings": [
+        {
+          "spelling": "Shierstown",
+          "method": "reviewed_variant",
+          "rows": 28
+        }
+      ],
+      "people": 28,
+      "withheld": 0
+    },
     "1911": {
       "spellings": [
         {
@@ -14,6 +25,17 @@
       ],
       "people": 31,
       "withheld": 0
+    },
+    "1926": {
+      "spellings": [
+        {
+          "spelling": "Spearstown",
+          "method": "reviewed_variant",
+          "rows": 18
+        }
+      ],
+      "people": 17,
+      "withheld": 1
     }
   }
 }

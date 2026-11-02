@@ -61,6 +61,7 @@ REVIEW_FIELDS = [
     "status",
     "accepted_logainm_id",
     "similar_places_not_confirmed",
+    "reviewer_note",
 ]
 HUMAN_STATUSES = {"accepted", "rejected"}
 
@@ -256,6 +257,7 @@ def main():
                     "accepted_logainm_id": (old or {}).get("accepted_logainm_id", "")
                     if status in HUMAN_STATUSES else (target or ""),
                     "similar_places_not_confirmed": "; ".join(similar),
+                    "reviewer_note": (old or {}).get("reviewer_note", ""),
                 })
 
     attached = skipped_authored = 0
@@ -276,10 +278,18 @@ def main():
 
         rows = {str(y): years[y]["rows"] for y in sorted(years)}
         write_json(census_path, rows, compact=True)
+        methods = {sp["method"] for y in years.values() for sp in y["spellings"]}
+        exact = "exact_name" in methods
         write_json(match_path, {
             "_generated_by": GENERATED_MARKER,
-            "status": "proposed",
-            "note": "Matched by identical name only. Not reviewed.",
+            "status": "proposed" if exact else "reviewed",
+            "note": (
+                "Identical-name matches are proposed and not yet reviewed. "
+                "Other spellings were accepted on review (see census_spelling_review.csv)."
+                if exact and "reviewed_variant" in methods else
+                "Matched by identical name only. Not reviewed." if exact else
+                "Spellings accepted on review (see census_spelling_review.csv)."
+            ),
             "ded": DED_NAME,
             "years": {
                 str(y): {

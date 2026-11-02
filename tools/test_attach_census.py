@@ -153,8 +153,37 @@ class AttachCensusTests(unittest.TestCase):
         self.run_attach()
         match = json.loads(self.case_file("alpha", "census_match.json").read_text(encoding="utf-8"))
         self.assertEqual(match["years"]["1926"]["spellings"][0]["method"], "reviewed_variant")
+        self.assertEqual(match["status"], "reviewed")
         again = self.review()[0]
         self.assertEqual((again["status"], again["accepted_logainm_id"]), ("accepted", "1"))
+
+    def test_reviewer_note_survives_a_rerun(self):
+        self.census(1926, [self.p("Alfa", year=1926)])
+        self.run_attach()
+        rows = self.review()
+        rows[0].update(status="accepted", accepted_logainm_id="1", reviewer_note="checked by elimination")
+        with ac.REVIEW_CSV.open("w", encoding="utf-8", newline="") as h:
+            w = csv.DictWriter(h, fieldnames=ac.REVIEW_FIELDS)
+            w.writeheader()
+            w.writerows(rows)
+        self.run_attach()
+        self.run_attach()
+        self.assertEqual(self.review()[0]["reviewer_note"], "checked by elimination")
+
+    def test_mixed_exact_and_reviewed_matches_are_labelled_honestly(self):
+        self.census(1901, [self.p("Alpha")])
+        self.census(1926, [self.p("Alfa", year=1926)])
+        self.run_attach()
+        rows = self.review()
+        rows[0].update(status="accepted", accepted_logainm_id="1")
+        with ac.REVIEW_CSV.open("w", encoding="utf-8", newline="") as h:
+            w = csv.DictWriter(h, fieldnames=ac.REVIEW_FIELDS)
+            w.writeheader()
+            w.writerows(rows)
+        self.run_attach()
+        match = json.loads(self.case_file("alpha", "census_match.json").read_text(encoding="utf-8"))
+        self.assertEqual(match["status"], "proposed")
+        self.assertIn("accepted on review", match["note"])
 
     def test_rejected_decision_is_preserved_and_attaches_nothing(self):
         self.census(1926, [self.p("Alfa", year=1926)])
