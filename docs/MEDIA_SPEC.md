@@ -215,7 +215,7 @@ Order: MP1, MP2, MP3, then MP4 and MP5, then MP6, MP7. MP8 any time after MP3.
 | MP4 Header photos on the title plate | Done 2026-11-03, awaiting Mike's phone check | `engine/walk.html`, `tools/test_walk_render.py` |
 | MP5 Family Photos tab | Done 2026-11-03, awaiting Mike's phone check | `engine/walk.html`, `tools/test_walk_render.py` |
 | MP6 Cullionboy pilot | Done 2026-11-03, awaiting Mike's acceptance | Header panorama and The Kellys photograph in `townlands/cullionboy/media/`, `docs/cullionboy/` rebuilt, both show |
-| MP7 Rollout | Not started | |
+| MP7 Rollout | Done 2026-11-03 | All 55 pages rebuilt with the new engine, separate commit |
 | MP8 CDN route | Deferred (O1) | The `base_url` path is built and tested in MP2 and MP3; only the provider choice and an upload note remain |
 
 ### Handover: MP2 and MP3 (2026-11-03)
@@ -255,3 +255,12 @@ Order: MP1, MP2, MP3, then MP4 and MP5, then MP6, MP7. MP8 any time after MP3.
 - **Review:** no independent review yet. Mike to view The Kellys plate on his phone.
 - **Not done:** MP7 (rebuild all other pages with the new engine) and MP8 (CDN). Other built pages in `docs/` still carry the old engine, which behaves the same for them because they have no media.
 - **Next step:** Mike checks Cullionboy on his phone. Then MP7, and a pull request for review.
+
+### Handover: MP7 (2026-11-03)
+
+- **Outcome:** every page in `docs/` is rebuilt with the media-aware engine (`python tools/build.py --all`), in its own commit so the diff is reviewable. Only Cullionboy has media. `docs/index.html` is unchanged.
+- **Proof that pages without media did not change:** for all 54 other pages, the embedded page data is identical to the previous version and no page carries a `media` entry. Each of those pages was also opened in a browser before and after, at 390 px and 1440 px wide, and the rendered text, number of plates and year tabs matched exactly, with no page errors. Cullionboy was left out of the comparison on purpose.
+- **Not checked:** the painted scenes themselves (canvas pictures) are not part of rendered text, so they were not compared. The scene code is unchanged apart from the new class names and the Photos tab.
+- **Validation:** all `tools/test_*.py` modules pass. `validate.py` still fails only on the missing `data/source/manifest.csv`.
+- **Review:** no independent review yet. The branch is ready for a pull request.
+- **Next step:** Mike's decision on the pull request. MP8 (CDN) waits for a provider choice.
