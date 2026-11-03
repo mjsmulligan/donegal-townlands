@@ -131,6 +131,20 @@ class BuildTests(unittest.TestCase):
         self.assertEqual(c["plates"]["records"]["placeholder"], "for example Harvey")
         self.assertTrue(any("1926" in q and "No census return" in q for q in c["questions"]))
 
+    def test_census_links_are_offered_only_for_years_held(self):
+        self.census_case()
+        self.run_build("druminnin")
+        urls = self.data_of("druminnin")["census_urls"]
+        self.assertEqual(sorted(urls), ["1901", "1911"])
+        self.assertTrue(all(u.startswith("https://nationalarchives.ie/collections/search-the-census/view-pdf/?doc={ref}")
+                            for u in urls.values()))
+        self.assertIn("view-1926-pdf", build.CENSUS_URLS["1926"])
+
+    def test_empty_case_has_no_census_links(self):
+        self.case("alpha", {"place.json": dict(PLACE, name_en="Alpha")})
+        self.run_build("alpha")
+        self.assertEqual(self.data_of("alpha")["census_urls"], {})
+
     def test_method_text_does_not_claim_the_census_is_a_plain_transcription(self):
         self.census_case()
         self.run_build("druminnin")
