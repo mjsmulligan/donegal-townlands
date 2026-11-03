@@ -256,6 +256,28 @@ class CaseTests(unittest.TestCase):
         item = media.describe(res['rows'], self.case)['families']['The Dunnions'][0]
         self.assertEqual((item['w'], item['h']), (None, None))
 
+    # ---- MED-25 header shape
+
+    def test_a_header_photograph_that_is_not_landscape_warns_but_is_used(self):
+        self.image('wide.jpg', jpeg(300, 200)); self.image('tall.jpg', jpeg(200, 300)); self.image('sq.jpg', jpeg(200, 200))
+        self.sheet('wide.jpg,townland,1,,Cap,,Src,,,,', 'tall.jpg,townland,2,,Cap,,Src,,,,', 'sq.jpg,townland,3,,Cap,,Src,,,,')
+        res = self.load()
+        self.assertEqual(res['errors'], [])
+        self.assertEqual(len(res['rows']), 3)
+        self.assertEqual(len(res['warnings']), 2)
+        self.assertIn('tall.jpg is not landscape', res['warnings'][0])
+        self.assertIn('sq.jpg is not landscape', res['warnings'][1])
+
+    def test_household_photographs_may_be_any_shape(self):
+        self.image('tall.jpg', jpeg(200, 300))
+        self.sheet('tall.jpg,family,,The Dunnions,Cap,,Src,,,,')
+        self.assertEqual(self.load()['warnings'], [])
+
+    def test_a_rotated_phone_photograph_is_judged_by_the_shape_it_shows(self):
+        self.image('phone.jpg', jpeg(300, 200, orientation=6))    # stored wide, shown tall
+        self.sheet('phone.jpg,townland,1,,Cap,,Src,,,,')
+        self.assertIn('is not landscape', self.load()['warnings'][0])
+
     # ---- MED-08 text checks
 
     def test_em_dash_in_any_field_fails(self):
@@ -329,7 +351,7 @@ class RepoTests(unittest.TestCase):
     def test_totals_and_the_size_warning(self):
         mdir = self.root / 'townlands' / 'clogher' / 'media'
         mdir.mkdir()
-        (mdir / 'a.jpg').write_bytes(jpeg(1, 1) + b'x' * 3000)
+        (mdir / 'a.jpg').write_bytes(jpeg(3, 2) + b'x' * 3000)
         (mdir / 'media.csv').write_text(HEADER + 'a.jpg,townland,1,,Cap,,Src,,,,\n', encoding='utf-8')
         errors, warnings, summary = media.check_repo(self.root)
         self.assertEqual((errors, warnings), ([], []))

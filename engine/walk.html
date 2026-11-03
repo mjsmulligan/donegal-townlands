@@ -184,12 +184,13 @@ details.vitrine[open] .vitrine-title::before{transform:rotate(90deg)}
 .hang-row{display:flex;gap:16px;height:100%;overflow-x:auto;overflow-y:hidden;padding:6px 18px 10px;scroll-snap-type:x proximity;scrollbar-width:thin;-webkit-overflow-scrolling:touch}
 .hang-row>.hung:first-child{margin-left:auto}
 .hang-row>.hung:last-child{margin-right:auto}
-.hung{margin:0;flex:0 0 auto;display:flex;flex-direction:column;gap:6px;height:100%;scroll-snap-align:center}
-/* The frame is sized from the photo's shape (--ar, width over height) so the whole picture fits with a small mat and nothing is cropped.
-   Frame height = row height less 61px (row padding 16, caption 45). Frame width = picture height times shape plus 16px of mat. */
-.frame{appearance:none;display:flex;flex:0 0 auto;height:calc(var(--hh) - 61px);width:calc((var(--hh) - 77px)*var(--ar,1.5) + 16px);max-width:calc(100vw - 36px);padding:7px;background:var(--paper);border:1px solid var(--rule);border-radius:2px;box-shadow:0 8px 22px rgba(29,47,51,.2),inset 0 0 0 1px #fff;cursor:zoom-in;font:inherit;color:var(--ink2)}
-.frame img{display:block;width:100%;height:100%;object-fit:contain}
-.frame.broken{cursor:default;align-items:center;padding:14px;font-size:13px}
+.hung{margin:0;flex:0 0 auto;display:flex;flex-direction:column;justify-content:flex-end;gap:6px;height:100%;scroll-snap-align:center}
+/* The frame is sized from the photo's shape (--ar, width over height), so the whole picture fits with a small mat and nothing is cropped.
+   Picture height is at most the row height less 77px (row padding 16, caption 45, mat 16). On a narrow screen the width is capped and the frame
+   shrinks in height to match, so the mat stays even. */
+.pframe{appearance:none;display:block;flex:0 0 auto;width:min(calc((var(--hh) - 77px)*var(--ar,1.5) + 16px),calc(100vw - 36px));padding:7px;background:var(--paper);border:1px solid var(--rule);border-radius:2px;box-shadow:0 8px 22px rgba(29,47,51,.2),inset 0 0 0 1px #fff;cursor:zoom-in;font:inherit;color:var(--ink2)}
+.pframe img{display:block;width:100%;height:auto;aspect-ratio:var(--ar,1.5);object-fit:contain}
+.pframe.broken{cursor:default;padding:14px;font-size:13px}
 .hung figcaption{width:0;min-width:100%;max-height:2.6em;margin-top:3px;font-size:12.5px;line-height:1.3;color:var(--ink2);background:rgba(251,252,250,.92);padding:0 8px;border-radius:3px;box-shadow:0 0 0 3px rgba(251,252,250,.92);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 html.lb-lock{overflow:hidden}
 .lb{position:fixed;inset:0;z-index:70;display:none;background:var(--wall);overflow:auto}
@@ -490,7 +491,7 @@ var MEDIA=DATA.media||{header:[],families:{}}, LB={open:false,box:null,set:[],i:
 function webLink(u){return /^https?:\/\//i.test(u||'')}
 function photoFrame(item,set,i){
   var img=h('img',{src:item.url,alt:item.alt||item.caption||'',decoding:'async'});
-  var btn=h('button',{class:'frame',type:'button','aria-haspopup':'dialog',onclick:function(){openPhoto(set,i,btn)}},img);
+  var btn=h('button',{class:'pframe',type:'button','aria-haspopup':'dialog',onclick:function(){openPhoto(set,i,btn)}},img);
   img.addEventListener('error',function(){btn.classList.add('broken');btn.replaceChildren(h('span',{text:'Photograph not available'}))});
   var cap=h('figcaption',{text:item.caption||''});
   if((item.alt||item.caption)===item.caption) cap.setAttribute('aria-hidden','true');   /* the alt text already says it */

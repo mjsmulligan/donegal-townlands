@@ -40,6 +40,7 @@ Out of scope for this feature:
 | M8 | No automated privacy check on photographs. Mike checks each photograph himself before adding it. The validator does not apply the 100/75/50 rule to media. | Agreed 2026-11-03 |
 | M9 | `date` and `people_shown` are optional. When `people_shown` is filled it names only people already in the project datasets. The validator does not check this. | Agreed 2026-11-03 |
 | M10 | Work is on branch `feature/media` and reviewed before merging to main. | Agreed 2026-11-03 |
+| M11 | Header photographs should be landscape (wider than tall). This is guidance, checked with a warning, not a failure. Household photos can be any shape. | Agreed 2026-11-03 |
 
 M6 and M9 change the standing image rule in `CLAUDE.md` (web-sized copies about 1600 px, caption record with source, reference, date, people shown, family). `CLAUDE.md` is updated to match in MP1.
 
@@ -60,7 +61,7 @@ docs/<name>/media/<image files>          build output, never edited by hand
 |---|---|---|
 | `file` | M | File name inside the townland's `media/` folder. |
 | `scope` | M | `townland` (header image) or `family` (household photo). |
-| `slot` | for `townland` | 1, 2 or 3. Order across the header. Unique within the townland. |
+| `slot` | for `townland` | 1, 2 or 3. Order across the header. Unique within the townland. Header images should be landscape (M11). |
 | `family` | for `family` | One or more family names exactly as in `content.json` `families[].name`, separated by semicolons. |
 | `caption` | M | Text shown with the image. |
 | `source` | M | Where the image came from, for example "Family collection". |
@@ -105,6 +106,7 @@ Empty or absent: images are copied from the townland `media/` folder into `docs/
 | MED-08 | Media files and `media.csv` are checked for em dashes by the existing validator. | M | A caption with an em dash fails. |
 | MED-09 | The validator applies no 100/75/50 test to media (decision M8). | M | A row with `people_shown` and a recent `date` passes. |
 | MED-10 | Only `.jpg`, `.jpeg`, `.png` and `.webp` files are accepted. | M | Another extension fails. |
+| MED-25 | A header image (`scope=townland`) that is not landscape, that is square or taller than wide as a browser shows it, gives a warning and still builds. Household photos are not checked for shape. | S | A portrait header warns. A landscape header and a portrait household photo do not. |
 
 ### 5.2 Build
 
@@ -236,3 +238,10 @@ Order: MP1, MP2, MP3, then MP4 and MP5, then MP6, MP7. MP8 any time after MP3.
 - **Found while testing:** the focus trap first listed buttons out of page order and let Tab escape the enlarged view. Fixed and covered by a test.
 - **Review:** no independent review yet. Mike to view one page on his phone.
 - **Next step:** MP5, the family Photos tab.
+
+### Update: landscape guidance and frame fit (2026-11-03)
+
+- **Landscape:** header photographs should be landscape (decision M11, requirement MED-25). A portrait or square header gives a warning from `validate.py` and `build.py` and still builds. A rotated phone photo is judged by the shape it shows. Household photographs are not checked for shape. Mike's Cullionboy panorama (2576 x 886, about 2.9 to 1) was tried as the header: it fills a desktop frame and fits a phone frame with an even mat.
+- **Frame fit:** the first MP4 layout left extra white mat above and below a wide photograph on a phone, where the frame width is capped by the screen. The frame now takes its height from the picture, so the mat is even at any width.
+- **Found while testing:** the page already had a `.frame` class (4:5, dashed) for the "Not yet hung" plate, and the photograph frame was inheriting its shape. Photographs now use `.pframe`, and a test checks the mat is even and the border solid.
+- **Validation:** all `tools/test_*.py` modules pass, 126 tests.

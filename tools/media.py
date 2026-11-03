@@ -130,6 +130,11 @@ def load_case(case_dir, base_url='', families=()):
                 bad(row_no, "scope must be 'townland' or 'family', not '" + row.get('scope', '') + "'")
                 ok = False
             slot = None
+            if scope == 'townland' and name and (media_dir / name).is_file():
+                size = image_size(media_dir / name)
+                if size and size[0] <= size[1]:
+                    out['warnings'].append(label + ' media.csv row ' + str(row_no) + ': ' + name
+                                           + ' is not landscape. Header photographs should be wider than tall.')
             if scope == 'townland':
                 try:
                     slot = int(row.get('slot', ''))

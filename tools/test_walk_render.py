@@ -205,14 +205,27 @@ class MediaRenderTests(unittest.TestCase):
     def test_three_photographs_are_framed_whole_at_phone_and_desktop_widths(self):
         for width, height in ((375, 667), (1440, 900)):
             page = self.open("three", width, height)
-            shapes = page.evaluate("""() => [...document.querySelectorAll('.frame img')].map(i => {
+            shapes = page.evaluate("""() => [...document.querySelectorAll('.pframe img')].map(i => {
                 const b = i.getBoundingClientRect(); return {w: b.width, h: b.height, nw: i.naturalWidth, nh: i.naturalHeight}})""")
             self.assertEqual(len(shapes), 3)
             for s in shapes:    # the picture area has the photograph's own shape, so nothing is cropped
                 self.assertAlmostEqual(s["w"] / s["h"], s["nw"] / s["nh"], delta=0.03, msg=str(width))
-            self.assertEqual(page.evaluate("getComputedStyle(document.querySelector('.frame img')).objectFit"), "contain")
+            self.assertEqual(page.evaluate("getComputedStyle(document.querySelector('.pframe img')).objectFit"), "contain")
             self.assertFalse(page.evaluate("document.documentElement.scrollWidth > innerWidth + 2"), str(width))
         self.assertEqual(self.errors, [])
+
+    def test_the_frame_hugs_the_picture_with_an_even_mat(self):
+        # Regression: the page already has a .frame class (4:5, dashed) for the "Not yet hung" plate.
+        # Photographs use .pframe so they cannot inherit its shape, border or extra height.
+        for width in (375, 1440):
+            page = self.open("three", width, 800)
+            boxes = page.evaluate("""() => [...document.querySelectorAll('.pframe')].map(f => {
+                const r = f.getBoundingClientRect(), i = f.querySelector('img').getBoundingClientRect();
+                return {extraW: r.width - i.width, extraH: r.height - i.height, dashed: getComputedStyle(f).borderStyle}})""")
+            for b in boxes:
+                self.assertAlmostEqual(b["extraW"], b["extraH"], delta=1.5, msg=str(width))   # same mat all round
+                self.assertLess(b["extraH"], 20, str(width))
+                self.assertEqual(b["dashed"], "solid")
 
     def test_photographs_never_overlap_the_title_on_a_short_wide_screen(self):
         page = self.open("three", 1280, 720)
@@ -221,12 +234,12 @@ class MediaRenderTests(unittest.TestCase):
         self.assertGreaterEqual(gap, 20)
 
     def test_every_photograph_has_alt_text_falling_back_to_the_caption(self):
-        alts = self.open("three").evaluate("[...document.querySelectorAll('.frame img')].map(i => i.alt)")
+        alts = self.open("three").evaluate("[...document.querySelectorAll('.pframe img')].map(i => i.alt)")
         self.assertEqual(alts, ["Alt for the tall one", "A square photograph", "A wide photograph"])
 
     def test_enlarge_opens_and_closes_from_the_keyboard_and_returns_focus(self):
         page = self.open("three")
-        page.focus(".frame")
+        page.focus(".pframe")
         page.keyboard.press("Enter")
         self.assertTrue(page.evaluate("!!document.querySelector('.lb.open')"))
         self.assertEqual(page.evaluate("document.activeElement.textContent"), "Close")
@@ -243,19 +256,19 @@ class MediaRenderTests(unittest.TestCase):
             self.assertTrue(page.evaluate("!!document.activeElement.closest('.lb')"))
         page.keyboard.press("Escape")
         self.assertFalse(page.evaluate("!!document.querySelector('.lb.open')"))
-        self.assertEqual(page.evaluate("document.activeElement.className"), "frame")
+        self.assertEqual(page.evaluate("document.activeElement.className"), "pframe")
         self.assertEqual(self.errors, [])
 
     def test_a_single_photograph_has_no_next_or_previous(self):
         page = self.open("one")
-        page.click(".frame")
+        page.click(".pframe")
         self.assertFalse(page.is_visible(".lb button[aria-label='Next photograph']"))
         self.assertEqual(page.inner_text(".lb-count"), "")
 
     def test_an_image_that_will_not_load_says_so_instead_of_showing_a_broken_icon(self):
         page = self.open("broken")
-        self.assertEqual(page.locator(".frame.broken").count(), 1)
-        self.assertIn("Photograph not available", page.inner_text(".frame.broken"))
+        self.assertEqual(page.locator(".pframe.broken").count(), 1)
+        self.assertIn("Photograph not available", page.inner_text(".pframe.broken"))
         self.assertEqual(self.errors, [])
 
 
