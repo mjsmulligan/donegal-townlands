@@ -60,7 +60,7 @@ The rule applies to information the project holds that is not itself taken from 
 
 - `engine/walk.html`: the gallery walk (scenes, plates, HUD, drawer) that every townland page is built from, with no exceptions. Holds no townland content. Placeholders: `__TITLE__`, `__BRAND__`, `__DATA__`. A plate appears only when its content exists, so a townland with only a Logainm place record gets a short walk and one with census returns and an authored study gets the full one.
 - `engine/place.html`: a plain, data-first place page template. Not used by the build now. Kept for a possible researcher view. Do not delete.
-- `townlands/<name>/`: `townland.json` (name, page title, storage key, census spellings), `content.json` (family stories, Griffith's rows, open questions, plate copy), `records/` (census.json, corrections.json, later events.csv), `media/` (web-sized images with captions), `STATUS.md`.
+- `townlands/<name>/`: `townland.json` (name, page title, storage key, census spellings), `content.json` (family stories, Griffith's rows, open questions, plate copy), `records/` (census.json, corrections.json, later events.csv), `media/` (images as supplied and `media.csv`, see `docs/MEDIA_SPEC.md`), `STATUS.md`.
 - `data/census/`: source census CSVs for the Clogher DED.
 - `tools/build.py <name>` (or `--all`) builds every case the same way, `tools/validate.py` checks before commit. `tools/extract_census.py` is superseded by `tools/attach_census.py` and kept for reference.
 - `tools/create_townland_cases.py` makes a case for every Logainm townland. `tools/attach_census.py` attaches Clogher DED census returns to every case in the DED, including Clogher and Cullionboy, by identical name or an accepted spelling, applies `records/corrections.json`, writes `records/census.json` and `records/census_match.json`, and lists other spellings in `data/processed/places/census_spelling_review.csv` for Mike's review.
@@ -72,5 +72,5 @@ Family stories, the Griffith's transcription and plate copy live in `townlands/<
 
 ## Standing rules for images
 
-Originals stay outside the repo. Commit web-sized copies (about 1600 px). Each image needs a caption record: source, reference, date, people shown, family.
+Specified in [`docs/MEDIA_SPEC.md`](docs/MEDIA_SPEC.md) (draft, decided 2026-11-03). Images are committed as supplied, not resized, in `townlands/<name>/media/`, with a row for each in that folder's `media.csv`. Required per image: file, scope, caption, source. Date, reference, people shown and original link are optional. Photographs are shown whole in a frame, never cropped. Mike checks each photograph for privacy himself before adding it; the validator applies no 100/75/50 test to media.
 
