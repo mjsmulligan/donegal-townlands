@@ -214,7 +214,7 @@ Order: MP1, MP2, MP3, then MP4 and MP5, then MP6, MP7. MP8 any time after MP3.
 | MP3 Build integration | Done 2026-11-03 | `tools/build.py`, `tools/test_build.py` |
 | MP4 Header photos on the title plate | Done 2026-11-03, awaiting Mike's phone check | `engine/walk.html`, `tools/test_walk_render.py` |
 | MP5 Family Photos tab | Not started | |
-| MP6 Cullionboy pilot | Not started | Needs family, caption and source for each photo from Mike |
+| MP6 Cullionboy pilot | Partly done 2026-11-03 | Header panorama and The Kellys photograph added to `townlands/cullionboy/media/`, page rebuilt. The family photograph shows once MP5 is built |
 | MP7 Rollout | Not started | |
 | MP8 CDN route | Deferred (O1) | The `base_url` path is built and tested in MP2 and MP3; only the provider choice and an upload note remain |
 
