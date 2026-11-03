@@ -202,3 +202,26 @@ Order: MP1, MP2, MP3, then MP4 and MP5, then MP6, MP7. MP8 any time after MP3.
 | O3 | Size warning threshold (8 MB per file, 500 MB total). | As in MED-07. |
 | O4 | Whether townlands with no authored families, and so no family plates, can show household photos anywhere. | Not shown. Header photos still work. |
 | O5 | Caption wording standard (for example how to word an unknown date). | Free text. |
+
+## 8. Progress and handovers
+
+| Package | Status | Where |
+|---|---|---|
+| MP1 Specification and decisions | Done 2026-11-03 | Commit `eddbaff` |
+| MP2 Media loader and validation | Done 2026-11-03 | `tools/media.py`, `tools/test_media.py`, `tools/validate.py` |
+| MP3 Build integration | Done 2026-11-03 | `tools/build.py`, `tools/test_build.py` |
+| MP4 Header photos on the title plate | Not started | |
+| MP5 Family Photos tab | Not started | |
+| MP6 Cullionboy pilot | Not started | Needs family, caption and source for each photo from Mike |
+| MP7 Rollout | Not started | |
+| MP8 CDN route | Deferred (O1) | The `base_url` path is built and tested in MP2 and MP3; only the provider choice and an upload note remain |
+
+### Handover: MP2 and MP3 (2026-11-03)
+
+- **Outcome:** `media.csv` and `media_config.json` are read and checked. The build adds a `media` entry to the page data (header images by slot, household photos by family, each with url, pixel size, caption and optional fields) and copies the images unchanged to `docs/<name>/media/`. The page does not show media yet, because `engine/walk.html` is unchanged until MP4 and MP5.
+- **Files:** `tools/media.py` (new), `tools/test_media.py` (new), `tools/build.py`, `tools/test_build.py`, `tools/validate.py`.
+- **Decisions and assumptions:** image size is read from the file header with the standard library, and a JPEG's EXIF orientation is applied so a rotated phone photo gets the shape a browser shows. A case with media errors is reported and not built, and the other cases still build. Old copies in `docs/<name>/media/` are never deleted. With a CDN `base_url`, the size is still read when the file also exists in the townland's media folder, otherwise the page uses natural size.
+- **Validation:** `python -m unittest` over all `tools/test_*.py` modules, 115 tests, all pass. `python tools/build.py --all` rewrote all 55 pages with no change in `docs/`, so townlands without media build as before (MED-13). `python tools/validate.py` fails only on the missing `data/source/manifest.csv`, which also fails on main and is not part of this work.
+- **Review:** no independent review yet.
+- **Git state:** branch `feature/media`, see the latest commit.
+- **Next step:** MP4, the header strip in `engine/walk.html`. Mike views one page on his phone before MP5.
