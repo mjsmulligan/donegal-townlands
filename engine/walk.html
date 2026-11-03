@@ -198,7 +198,7 @@ details.vitrine[open] .vitrine-title::before{transform:rotate(90deg)}
 (function(){
 'use strict';
 var DATA = __DATA__;
-var C = DATA.content, TOWN = DATA.townland, PL = C.plates, PLACE = DATA.place || {}, CEN = DATA.census || {};
+var C = DATA.content, TOWN = DATA.townland, PL = C.plates, PLACE = DATA.place || {}, CEN = DATA.census || {}, CURL = DATA.census_urls || {};
 var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 var $ = function(s,el){return (el||document).querySelector(s)};
 function h(tag,props){
@@ -629,10 +629,13 @@ if(SRC.length) plate(3,'The records',function(num){
       cnt.textContent=n+' of '+GR.length+' rows.';
     }else{
       var y=SRC[act].k, rows=CEN[y];
-      thead.append(h('tr',null,[y==='1926'?'Form':'House','Surname','First name','Age','Sex','Relation','Marital or note','Occupation'].map(function(c,i){return h('th',{class:i===3?'n':'',text:c})})));
+      var lk=!!CURL[y];
+      thead.append(h('tr',null,[y==='1926'?'Form':'House','Surname','First name','Age','Sex','Relation','Marital or note','Occupation'].concat(lk?['Return']:[]).map(function(c,i){return h('th',{class:i===3?'n':'',text:c})})));
       rows.forEach(function(r){if(q&&(r.s+' '+r.f).toLowerCase().indexOf(q)<0) return; n++;
-        tbody.append(h('tr',null,[y==='1926'?r.fo:r.h,r.s,r.f,r.a==null?'':r.a,r.x,r.r,r.m,r.o].map(function(c,i){return h('td',{class:i===3?'n':'',text:c==null?'':String(c)})})))});
-      cnt.textContent=n+' of '+rows.length+' rows. Spelling as recorded.';
+        var tr=h('tr',null,[y==='1926'?r.fo:r.h,r.s,r.f,r.a==null?'':r.a,r.x,r.r,r.m,r.o].map(function(c,i){return h('td',{class:i===3?'n':'',text:c==null?'':String(c)})}));
+        if(lk) tr.append(h('td',null,r.ref?h('a',{href:CURL[y].replace('{ref}',encodeURIComponent(r.ref)),target:'_blank',rel:'noopener','aria-label':'Original return for '+r.f+' '+r.s+', '+y,text:'Original'}):''));
+        tbody.append(tr)});
+      cnt.textContent=n+' of '+rows.length+' rows. Spelling as recorded.'+(lk?' "Original" opens the National Archives image of the return.':'');
     }
   }
   SRC.forEach(function(sr,i){tabs.append(h('button',{class:'rtab',role:'tab','aria-selected':i===0?'true':'false',onclick:function(){act=i;Array.prototype.forEach.call(tabs.children,function(b,j){b.setAttribute('aria-selected',j===i?'true':'false')});render()}},sr.name))});

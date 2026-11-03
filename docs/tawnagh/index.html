@@ -144,6 +144,36 @@ tr:last-child td{border-bottom:0}
 .end{text-align:center;padding-block:46px 130px;font:italic 300 22px var(--display);color:var(--ink2);background:var(--paper)}
 .tip{position:fixed;pointer-events:none;background:var(--ink);color:#fff;font-size:13px;line-height:1.35;padding:6px 10px;border-radius:6px;max-width:260px;z-index:70;transform:translate(-50%,-130%)}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;scroll-snap-type:none}}
+
+/* ================= Curated Museum Exhibition Styling ================= */
+.fam-plate{scroll-margin-top:54px;border-bottom:1px solid var(--rule)}
+.fam-art{min-height:clamp(320px,50svh,620px);background:var(--wall);box-shadow:inset 0 -1px 0 var(--rule)}
+.fam-label{padding-block:36px 80px;background:var(--paper)}
+.fam-grid{display:grid;grid-template-columns:1fr;gap:28px 48px;align-items:start}
+@media (min-width:960px){
+  .fam-grid{grid-template-columns:minmax(280px,360px) minmax(0,1fr);gap:40px 64px}
+}
+.fam-header-col{position:sticky;top:80px}
+.fam-title{font-size:clamp(36px,4vw,54px);line-height:1.05;margin-bottom:8px}
+.fam-timeline-box{margin-top:28px;padding:16px;background:var(--wall);border:1px solid var(--rule);border-radius:8px}
+.fam-timeline-label{display:block;font-size:12.5px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--ink2);margin-bottom:10px}
+.fam-story-col{display:flex;flex-direction:column;gap:20px;max-width:68ch}
+.fam-lead{font:300 clamp(22px,2.2vw,27px)/1.42 var(--display);color:var(--ink);letter-spacing:-.01em}
+.fam-paras-wrap{display:flex;flex-direction:column;gap:16px;border-top:1px solid var(--rule);padding-top:20px}
+.fam-para{font:400 17px/1.65 var(--display);color:var(--ink);text-align:justify;text-justify:inter-word}
+@media (max-width:640px){.fam-para{text-align:left}}
+.vitrine{margin-top:40px;border:1px solid var(--rule);border-radius:8px;background:var(--wall);padding:0;overflow:hidden}
+details.vitrine summary{padding:14px 18px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;background:var(--wall);font-family:var(--body);font-size:14.5px;font-weight:500;user-select:none;transition:background .15s ease}
+details.vitrine summary:hover{background:var(--paper)}
+details.vitrine summary::-webkit-details-marker{display:none}
+details.vitrine summary::before{display:none}
+.vitrine-title{display:inline-flex;align-items:center;gap:10px;color:var(--ink)}
+.vitrine-title::before{content:"\25B8";font-size:13px;display:inline-block;transition:transform .2s ease}
+details.vitrine[open] .vitrine-title::before{transform:rotate(90deg)}
+.vitrine-badge{font-size:12px;font-weight:600;color:var(--ink2);background:var(--paper);border:1px solid var(--rule);padding:3px 10px;border-radius:999px}
+.vitrine-in{padding:18px;background:var(--paper);border-top:1px solid var(--rule)}
+.vitrine-note{font-size:13.5px;color:var(--ink2);margin-bottom:14px;line-height:1.45}
+
 </style>
 
 <header class="top"><div class="wrap">
@@ -167,8 +197,8 @@ tr:last-child td{border-bottom:0}
 <script>
 (function(){
 'use strict';
-var DATA = {"census":{},"content":{"groups":{"colours":{"Other":"#A9B7B3"},"territory":["Other"],"map":{}},"families":[],"questions":["Census returns have not yet been attached to this townland.","Griffith's Valuation, the mid 1850s baseline, has not yet been added for this townland.","The Tithe Applotment Books, valuation revision books, civil records from 1864 and parish registers have not yet been added."],"plates":{"title":{"title":"Tawnagh","irish":"","heading":"Tawnagh","medium":"A townland in Tullynaught electoral division, Donegal civil parish, Tirhugh barony","story":["Tawnagh is a townland recognised by Logainm, the placenames database of the Government of Ireland.","No historical records have been added yet. This page is a starting point, not a finding about the history of the townland. It grows as records are added."]},"not_yet_hung":{"title":"Not yet hung","medium":"Six frames for six kinds of record. None is filled","story":["Each frame is a kind of record that can be hung here. A dashed frame is empty. A frame with a gold edge holds records for this townland.","Records are added one source at a time, and each new source adds to this page instead of replacing it."],"frames":[["Tithe Applotment Books","1820s and 1830s","Not yet added.",false],["Griffith's Valuation","Mid 1850s","Not yet added.",false],["Valuation revision books","After the 1850s","Not yet added.",false],["Civil births, marriages and deaths","From 1864","Not yet added.",false],["Parish records","Various dates","Not yet added.",false],["Census returns","1901, 1911 and 1926","Not yet added.",false]]},"method":{"paras":[{"before":"Place details come from ","link":{"href":"https://www.logainm.ie/en/14285","text":"Logainm"},"after":", the placenames database of the Government of Ireland (CC BY 4.0). The record number is 14285."},"No other source has been added for this townland yet."],"numbers_intro":""},"records":{"placeholder":"for example Gallagher"}}},"townland":{"name":"Tawnagh","page_title":"Tawnagh | Donegal Townlands","storage_key":"tawnagh-q","census_spelling":{}},"place":{"logainm_id":"14285","name_en":"Tawnagh","name_ga":"","ded":"Tullynaught","civil_parish":"Donegal","barony":"Tirhugh","county":"Donegal","latitude":"54.643841350230005","longitude":"-8.05546994008739","snapshot_date":"2026-11-01","logainm_url":"https://www.logainm.ie/en/14285","credit":"Irish-language placename data by Logainm, Government of Ireland, licensed under CC BY 4.0.","osm_url":"https://www.openstreetmap.org/?mlat=54.643841350230005&mlon=-8.05546994008739&zoom=15"}};
-var C = DATA.content, TOWN = DATA.townland, PL = C.plates, PLACE = DATA.place || {}, CEN = DATA.census || {};
+var DATA = {"census":{},"content":{"groups":{"colours":{"Other":"#A9B7B3"},"territory":["Other"],"map":{}},"families":[],"questions":["Census returns have not yet been attached to this townland.","Griffith's Valuation, the mid 1850s baseline, has not yet been added for this townland.","The Tithe Applotment Books, valuation revision books, civil records from 1864 and parish registers have not yet been added."],"plates":{"title":{"title":"Tawnagh","irish":"","heading":"Tawnagh","medium":"A townland in Tullynaught electoral division, Donegal civil parish, Tirhugh barony","story":["Tawnagh is a townland recognised by Logainm, the placenames database of the Government of Ireland.","No historical records have been added yet. This page is a starting point, not a finding about the history of the townland. It grows as records are added."]},"not_yet_hung":{"title":"Not yet hung","medium":"Six frames for six kinds of record. None is filled","story":["Each frame is a kind of record that can be hung here. A dashed frame is empty. A frame with a gold edge holds records for this townland.","Records are added one source at a time, and each new source adds to this page instead of replacing it."],"frames":[["Tithe Applotment Books","1820s and 1830s","Not yet added.",false],["Griffith's Valuation","Mid 1850s","Not yet added.",false],["Valuation revision books","After the 1850s","Not yet added.",false],["Civil births, marriages and deaths","From 1864","Not yet added.",false],["Parish records","Various dates","Not yet added.",false],["Census returns","1901, 1911 and 1926","Not yet added.",false]]},"method":{"paras":[{"before":"Place details come from ","link":{"href":"https://www.logainm.ie/en/14285","text":"Logainm"},"after":", the placenames database of the Government of Ireland (CC BY 4.0). The record number is 14285."},"No other source has been added for this townland yet."],"numbers_intro":""},"records":{"placeholder":"for example Gallagher"}}},"townland":{"name":"Tawnagh","page_title":"Tawnagh | Donegal Townlands","storage_key":"tawnagh-q","census_spelling":{}},"place":{"logainm_id":"14285","name_en":"Tawnagh","name_ga":"","ded":"Tullynaught","civil_parish":"Donegal","barony":"Tirhugh","county":"Donegal","latitude":"54.643841350230005","longitude":"-8.05546994008739","snapshot_date":"2026-11-01","logainm_url":"https://www.logainm.ie/en/14285","credit":"Irish-language placename data by Logainm, Government of Ireland, licensed under CC BY 4.0.","osm_url":"https://www.openstreetmap.org/?mlat=54.643841350230005&mlon=-8.05546994008739&zoom=15"},"census_urls":{}};
+var C = DATA.content, TOWN = DATA.townland, PL = C.plates, PLACE = DATA.place || {}, CEN = DATA.census || {}, CURL = DATA.census_urls || {};
 var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 var $ = function(s,el){return (el||document).querySelector(s)};
 function h(tag,props){
@@ -496,18 +526,43 @@ if(CY.length) plate(1,CY.length===3?'Three censuses':(CY.length===2?'Two censuse
 /* Plates 6 to 19: families */
 function famPlate(f){
   plate(1,f.name,function(num){
-    var art=h('div',{class:'art'}); var avail={}; YEARS.forEach(function(y){avail[y]=hhFor(y,f.keys).length>0});
+    var art=h('div',{class:'art fam-art'}); var avail={}; YEARS.forEach(function(y){avail[y]=hhFor(y,f.keys).length>0});
     var cur=avail['1901']?'1901':(avail['1926']?'1926':'1850s');
     var sc=makeScene(art,{seed:20+num,ph:PHASE[cur],kind:'hills'});
+    roomTag(art,1);
     var cnt=h('p',{class:'cnt'}), tabs=yearTabs(avail,cur,function(y){pick(y)});
     function pick(y){var list=hhFor(y,f.keys); sc.names=true; sc.setHouses(placeHouses(list,{names:true}),PHASE[y]); setSel(tabs,y); cnt.textContent=countText(y,list,f.keys)}
     var rows=famRows(f.keys);
-    var rec=h('details',{class:'rec'},h('summary',{text:'Read the record'}),h('div',{class:'rec-in'},
-      h('div',{class:'rec-txt'},f.paras.map(function(p){return h('p',{text:p})})),
-      h('div',null,h('p',{class:'small',style:{marginBottom:'8px'},text:rows.length+' rows behind this family'}),table(['Year','House or lot','Name','Age','Relation or role','Marital or note','Valuation'],rows,3))));
-    var lab=labelBlock(pad(num),f.name,f.medium,f.story,[tabs,cnt]);
-    lab.append(h('div',{class:'wrap'},rec));
-    var sec=h('section',{class:'plate',id:'p'+pad(num)},art,lab);
+
+    /* Museum Exhibition Installation: Placard, Wall Narrative & Primary Source Vitrine */
+    var leadSummary=(Array.isArray(f.story)?f.story:[f.story]).map(function(s){return h('p',{class:'fam-lead'},s)});
+    var narrativeParas=(f.paras||[]).map(function(p){return h('p',{class:'fam-para'},p)});
+
+    var vitrine=h('details',{class:'vitrine'},
+      h('summary',null,
+        h('span',{class:'vitrine-title',text:'Primary source evidence'}),
+        h('span',{class:'vitrine-badge',text:rows.length+' documented records'})),
+      h('div',{class:'vitrine-in'},
+        h('p',{class:'vitrine-note',text:'Documentary census returns and valuation entries backing the narrative above. Tap or hover over cottages on the canvas to inspect households.'}),
+        table(['Year','House or lot','Name','Age','Relation or role','Marital or note','Valuation'],rows,3)));
+
+    var placard=h('div',{class:'label fam-label'},
+      h('div',{class:'wrap'},
+        h('div',{class:'fam-grid'},
+          h('div',{class:'fam-header-col'},
+            h('span',{class:'pn',text:'Plate '+pad(num)+' &middot; Room II'}),
+            h('h2',{class:'fam-title',text:f.name}),
+            f.medium?h('p',{class:'medium',text:f.medium}):null,
+            h('div',{class:'fam-timeline-box'},
+              h('span',{class:'fam-timeline-label',text:'Landscape by era'}),
+              tabs,
+              cnt)),
+          h('div',{class:'fam-story-col'},
+            h('div',{class:'fam-lead-wrap'},leadSummary),
+            narrativeParas.length?h('div',{class:'fam-paras-wrap'},narrativeParas):null)),
+        vitrine));
+
+    var sec=h('section',{class:'plate fam-plate',id:'p'+pad(num)},art,placard);
     pick(cur);
     return sec;
   });
@@ -574,10 +629,13 @@ if(SRC.length) plate(3,'The records',function(num){
       cnt.textContent=n+' of '+GR.length+' rows.';
     }else{
       var y=SRC[act].k, rows=CEN[y];
-      thead.append(h('tr',null,[y==='1926'?'Form':'House','Surname','First name','Age','Sex','Relation','Marital or note','Occupation'].map(function(c,i){return h('th',{class:i===3?'n':'',text:c})})));
+      var lk=!!CURL[y];
+      thead.append(h('tr',null,[y==='1926'?'Form':'House','Surname','First name','Age','Sex','Relation','Marital or note','Occupation'].concat(lk?['Return']:[]).map(function(c,i){return h('th',{class:i===3?'n':'',text:c})})));
       rows.forEach(function(r){if(q&&(r.s+' '+r.f).toLowerCase().indexOf(q)<0) return; n++;
-        tbody.append(h('tr',null,[y==='1926'?r.fo:r.h,r.s,r.f,r.a==null?'':r.a,r.x,r.r,r.m,r.o].map(function(c,i){return h('td',{class:i===3?'n':'',text:c==null?'':String(c)})})))});
-      cnt.textContent=n+' of '+rows.length+' rows. Spelling as recorded.';
+        var tr=h('tr',null,[y==='1926'?r.fo:r.h,r.s,r.f,r.a==null?'':r.a,r.x,r.r,r.m,r.o].map(function(c,i){return h('td',{class:i===3?'n':'',text:c==null?'':String(c)})}));
+        if(lk) tr.append(h('td',null,r.ref?h('a',{href:CURL[y].replace('{ref}',encodeURIComponent(r.ref)),target:'_blank',rel:'noopener','aria-label':'Original return for '+r.f+' '+r.s+', '+y,text:'Original'}):''));
+        tbody.append(tr)});
+      cnt.textContent=n+' of '+rows.length+' rows. Spelling as recorded.'+(lk?' "Original" opens the National Archives image of the return.':'');
     }
   }
   SRC.forEach(function(sr,i){tabs.append(h('button',{class:'rtab',role:'tab','aria-selected':i===0?'true':'false',onclick:function(){act=i;Array.prototype.forEach.call(tabs.children,function(b,j){b.setAttribute('aria-selected',j===i?'true':'false')});render()}},sr.name))});

@@ -214,6 +214,17 @@ def default_content(name, place, census, match, has_griffiths, townland_name):
     }
 
 
+# Where each published census return can be opened. The patterns are the National
+# Archives of Ireland viewer URLs, copied from GRA docs/repositories.md v1.6
+# (Sources 3 to 5). Only the URL patterns are taken, no data. {ref} is the
+# row's ref: the first image id for 1901 and 1911, the aform_name for 1926.
+CENSUS_URLS = {
+    '1901': 'https://nationalarchives.ie/collections/search-the-census/view-pdf/?doc={ref}',
+    '1911': 'https://nationalarchives.ie/collections/search-the-census/view-pdf/?doc={ref}',
+    '1926': 'https://nationalarchives.ie/collections/search-the-1926-census/view-1926-pdf/?doc={ref}',
+}
+
+
 def payload_for(name):
     """Everything the page needs for one case. Pure: reads the case, writes nothing."""
     base = ROOT / 'townlands' / name
@@ -235,7 +246,9 @@ def payload_for(name):
     plates.update(authored.get('plates', {}))
     content.update({k: v for k, v in authored.items() if k != 'plates'})
     content['plates'] = plates
-    return {'census': census, 'content': content, 'townland': townland, 'place': place}
+    urls = {y: u for y, u in CENSUS_URLS.items() if (census.get('years') or census).get(y)}
+    return {'census': census, 'content': content, 'townland': townland, 'place': place,
+            'census_urls': urls}
 
 
 def build(name):
