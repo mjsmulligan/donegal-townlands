@@ -44,6 +44,7 @@ p{margin:0}
 .drawer{position:fixed;inset:0;z-index:60;background:rgba(29,47,51,.35);display:none}
 .drawer.open{display:block}
 .drawer-in{position:absolute;right:0;top:0;bottom:0;width:min(440px,100%);background:var(--paper);padding:calc(20px + env(safe-area-inset-top,0px)) max(22px,env(safe-area-inset-right,0px)) 40px 28px;overflow:auto}
+.tbl td a{white-space:nowrap}
 .drawer h2{font-size:34px;margin-bottom:6px}
 .drawer h3{font:italic 400 20px var(--display);color:var(--ink2);margin:26px 0 6px}
 .drawer ol{list-style:none;margin:0;padding:0;display:grid;gap:0}
@@ -408,15 +409,23 @@ function famRows(keys){
     hhFor(y,keys).forEach(function(hh){
       hh.members.forEach(function(r){
         if(si===0) out.push(['1850s','lot '+r.lot,r.occ,'','Occupier',r.area==='shared'?'shared area':r.area,'£'+r.tot]);
-        else out.push([y,y==='1926'?r.fo:String(r.h),r.f+' '+r.s,r.a==null?'':String(r.a),y==='1926'?(r===hh.head?'Head':'in the household of '+hh.hname):r.r,(r.m||'')+(r.o?'; '+r.o:''),'']);
+        else out.push([y,retCell(y,r,y==='1926'?r.fo:String(r.h)),r.f+' '+r.s,r.a==null?'':String(r.a),y==='1926'?(r===hh.head?'Head':'in the household of '+hh.hname):r.r,(r.m||'')+(r.o?'; '+r.o:''),'']);
       });
     });
   });
   return out;
 }
+function retCell(y,r,text){
+  if(!CURL[y]||!r.ref) return text;
+  return {t:text,href:CURL[y].replace('{ref}',encodeURIComponent(r.ref)),label:'Open the original '+y+' return for '+r.f+' '+r.s};
+}
+function cellNode(c,cls){
+  if(c&&typeof c==='object') return h('td',{class:cls},h('a',{href:c.href,target:'_blank',rel:'noopener','aria-label':c.label,title:'Open the original return',text:String(c.t)+' \u2197'}));
+  return h('td',{class:cls,text:c==null?'':String(c)});
+}
 function table(head,rows,numCol){
   return h('div',{class:'tbl'},h('table',null,h('thead',null,h('tr',null,head.map(function(c,i){return h('th',{class:i===numCol?'n':'',text:c})}))),
-    h('tbody',null,rows.map(function(r){return h('tr',null,r.map(function(c,i){return h('td',{class:i===numCol?'n':'',text:c==null?'':String(c)})}))}))));
+    h('tbody',null,rows.map(function(r){return h('tr',null,r.map(function(c,i){return cellNode(c,i===numCol?'n':'')}))}))));
 }
 function yearTabs(avail,cur,onPick){
   var box=h('div',{class:'yrs',role:'tablist','aria-label':'Choose a date'});
@@ -543,7 +552,7 @@ function famPlate(f){
         h('span',{class:'vitrine-title',text:'Primary source evidence'}),
         h('span',{class:'vitrine-badge',text:rows.length+' documented records'})),
       h('div',{class:'vitrine-in'},
-        h('p',{class:'vitrine-note',text:'Documentary census returns and valuation entries backing the narrative above. Tap or hover over cottages on the canvas to inspect households.'}),
+        h('p',{class:'vitrine-note',text:'Documentary census returns and valuation entries backing the narrative above. Tap or hover over cottages on the canvas to inspect households.'+(Object.keys(CURL).length?' A house number marked with an arrow opens the National Archives image of the original return.':'')}),
         table(['Year','House or lot','Name','Age','Relation or role','Marital or note','Valuation'],rows,3)));
 
     var placard=h('div',{class:'label fam-label'},
@@ -630,12 +639,11 @@ if(SRC.length) plate(3,'The records',function(num){
     }else{
       var y=SRC[act].k, rows=CEN[y];
       var lk=!!CURL[y];
-      thead.append(h('tr',null,[y==='1926'?'Form':'House','Surname','First name','Age','Sex','Relation','Marital or note','Occupation'].concat(lk?['Return']:[]).map(function(c,i){return h('th',{class:i===3?'n':'',text:c})})));
+      thead.append(h('tr',null,[y==='1926'?'Form':'House','Surname','First name','Age','Sex','Relation','Marital or note','Occupation'].map(function(c,i){return h('th',{class:i===3?'n':'',text:c})})));
       rows.forEach(function(r){if(q&&(r.s+' '+r.f).toLowerCase().indexOf(q)<0) return; n++;
-        var tr=h('tr',null,[y==='1926'?r.fo:r.h,r.s,r.f,r.a==null?'':r.a,r.x,r.r,r.m,r.o].map(function(c,i){return h('td',{class:i===3?'n':'',text:c==null?'':String(c)})}));
-        if(lk) tr.append(h('td',null,r.ref?h('a',{href:CURL[y].replace('{ref}',encodeURIComponent(r.ref)),target:'_blank',rel:'noopener','aria-label':'Original return for '+r.f+' '+r.s+', '+y,text:'Original'}):''));
+        var tr=h('tr',null,[retCell(y,r,String(y==='1926'?r.fo:r.h)),r.s,r.f,r.a==null?'':r.a,r.x,r.r,r.m,r.o].map(function(c,i){return cellNode(c,i===3?'n':'')}));
         tbody.append(tr)});
-      cnt.textContent=n+' of '+rows.length+' rows. Spelling as recorded.'+(lk?' "Original" opens the National Archives image of the return.':'');
+      cnt.textContent=n+' of '+rows.length+' rows. Spelling as recorded.'+(lk?' The house or form number links to the National Archives image of the original return.':'');
     }
   }
   SRC.forEach(function(sr,i){tabs.append(h('button',{class:'rtab',role:'tab','aria-selected':i===0?'true':'false',onclick:function(){act=i;Array.prototype.forEach.call(tabs.children,function(b,j){b.setAttribute('aria-selected',j===i?'true':'false')});render()}},sr.name))});
