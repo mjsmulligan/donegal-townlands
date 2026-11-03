@@ -14,6 +14,7 @@ import unittest
 from pathlib import Path
 
 from tools import build
+from tools.test_media import jpeg, png
 
 REAL_ROOT = build.ROOT
 PLACE = {"logainm_id": "13969", "name_en": "Druminnin", "name_ga": "", "ded_id": "900",
@@ -242,6 +243,84 @@ class BuildTests(unittest.TestCase):
         self.census_case()
         self.run_build("druminnin")
         self.assertNotIn(chr(0x2014), json.dumps(self.data_of("druminnin")["content"], ensure_ascii=False))
+
+    # ---- media (docs/MEDIA_SPEC.md)
+
+    SHEET = ("file,scope,slot,family,caption,alt,source,reference,date,people_shown,link\n"
+             "wide.jpg,townland,1,,A wide view,,Family collection,,,,\n"
+             "tall photo.png,family,,The Harveys,A tall one,,Family collection,Ref 1,c. 1930s,,https://example.org/o\n")
+
+    def media_case(self, sheet=None):
+        base = self.authored()
+        folder = base / "media"
+        folder.mkdir()
+        (folder / "wide.jpg").write_bytes(jpeg(1600, 900))
+        (folder / "tall photo.png").write_bytes(png(500, 800))
+        (folder / "media.csv").write_text(self.SHEET if sheet is None else sheet, encoding="utf-8")
+        return base
+
+    def test_a_case_without_media_has_no_media_data_and_no_media_folder(self):
+        self.authored()
+        self.run_build("alpha")
+        self.assertNotIn("media", self.data_of("alpha"))
+        self.assertFalse((self.root / "docs" / "alpha" / "media").exists())
+
+    def test_media_reaches_the_page_data_and_images_are_copied_unchanged(self):
+        base = self.media_case()
+        state, out = self.run_build("alpha")
+        self.assertEqual(state, "ready")
+        m = self.data_of("alpha")["media"]
+        self.assertEqual([(h["url"], h["w"], h["h"], h["caption"]) for h in m["header"]],
+                         [("media/wide.jpg", 1600, 900, "A wide view")])
+        photo = m["families"]["The Harveys"][0]
+        self.assertEqual((photo["url"], photo["w"], photo["h"], photo["date"]), ("media/tall%20photo.png", 500, 800, "c. 1930s"))
+        for name in ("wide.jpg", "tall photo.png"):
+            self.assertEqual((self.root / "docs" / "alpha" / "media" / name).read_bytes(), (base / "media" / name).read_bytes())
+        self.assertIn("media 2 rows, 2 files copied", out)
+
+    def test_rebuilding_media_is_deterministic_and_copies_nothing_twice(self):
+        self.media_case()
+        self.run_build("alpha")
+        first = self.page("alpha")
+        _, out = self.run_build("alpha")
+        self.assertEqual(self.page("alpha"), first)
+        self.assertIn("0 files copied", out)
+
+    def test_a_cdn_base_address_means_nothing_is_copied(self):
+        self.media_case()
+        (self.root / "townlands" / "media_config.json").write_text('{"base_url": "https://cdn.example.org/m"}', encoding="utf-8")
+        _, out = self.run_build("alpha")
+        m = self.data_of("alpha")["media"]
+        self.assertEqual(m["header"][0]["url"], "https://cdn.example.org/m/wide.jpg")
+        self.assertEqual(m["header"][0]["w"], 1600)          # still sized from the local file when it exists
+        self.assertFalse((self.root / "docs" / "alpha" / "media").exists())
+        self.assertIn("served from https://cdn.example.org/m/", out)
+
+    def test_media_problems_stop_that_case_only_and_say_why(self):
+        self.media_case("file,scope,slot,family,caption,source\nwide.jpg,family,,The Smiths,Cap,Src\n")
+        self.census_case("two")
+        out = io.StringIO()
+        with contextlib.redirect_stdout(out):
+            build.main(["--all"])
+        text = out.getvalue()
+        self.assertIn("alpha: media problems, not built", text)
+        self.assertIn("unknown family The Smiths", text)
+        self.assertFalse((self.root / "docs" / "alpha" / "index.html").exists())
+        self.assertTrue((self.root / "docs" / "two" / "index.html").exists())
+
+    def test_old_media_copies_are_never_deleted(self):
+        self.media_case()
+        stale = self.root / "docs" / "alpha" / "media" / "old.jpg"
+        stale.parent.mkdir(parents=True)
+        stale.write_bytes(b"old")
+        self.run_build("alpha")
+        self.assertEqual(stale.read_bytes(), b"old")
+
+    def test_media_text_is_escaped_in_the_page(self):
+        self.media_case("file,scope,slot,family,caption,source\nwide.jpg,townland,1,,</script><b>x,Src\n")
+        self.run_build("alpha")
+        self.assertNotIn("</script><b>", self.page("alpha"))
+        self.assertEqual(self.data_of("alpha")["media"]["header"][0]["caption"], "</script><b>x")
 
     # ---- the index
 

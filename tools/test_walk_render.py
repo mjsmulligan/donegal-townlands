@@ -10,8 +10,10 @@ import contextlib
 import io
 import json
 import shutil
+import struct
 import tempfile
 import unittest
+import zlib
 from pathlib import Path
 
 from tools import build
@@ -123,6 +125,243 @@ class WalkRenderTests(unittest.TestCase):
         self.assertIn("Twenty-five names", info["plates"])
         self.assertIn("It runs from the 1850s to 1926.", info["text"])
         self.assertIn("Census 1926 (Collinboy)", info["text"])
+
+
+def real_png(w, h, rgb=(180, 200, 195)):
+    """A small PNG a browser can really decode (the test_media images are header-only)."""
+    def chunk(kind, data):
+        return struct.pack(">I", len(data)) + kind + data + struct.pack(">I", zlib.crc32(kind + data) & 0xFFFFFFFF)
+    raw = b"".join(b"\x00" + bytes(rgb) * w for _ in range(h))
+    return (b"\x89PNG\r\n\x1a\n" + chunk(b"IHDR", struct.pack(">IIBBBBB", w, h, 8, 2, 0, 0, 0))
+            + chunk(b"IDAT", zlib.compress(raw)) + chunk(b"IEND", b""))
+
+
+@unittest.skipIf(sync_playwright is None, "Playwright is not installed")
+class MediaRenderTests(unittest.TestCase):
+    """Header photographs on the title plate (docs/MEDIA_SPEC.md, MED-15 and MED-17 to MED-21)."""
+    HEAD = "file,scope,slot,family,caption,alt,source,reference,date,people_shown,link\n"
+    ROWS = [
+        "tall.png,townland,1,,A tall photograph,Alt for the tall one,Family collection,,,,https://example.org/original",
+        "square.png,townland,2,,A square photograph,,Family collection,,c. 1930s,,",
+        "wide.png,townland,3,,A wide photograph,,Family collection,,,,",
+    ]
+
+    @classmethod
+    def setUpClass(cls):
+        cls.tmp = tempfile.TemporaryDirectory()
+        cls.root = Path(cls.tmp.name)
+        build.ROOT = cls.root
+        (cls.root / "engine").mkdir()
+        shutil.copy(REAL_ROOT / "engine" / "walk.html", cls.root / "engine" / "walk.html")
+        shutil.copytree(REAL_ROOT / "data" / "processed" / "places", cls.root / "data" / "processed" / "places")
+        (cls.root / "townlands").mkdir()
+        place = {"logainm_id": "1", "name_en": "Sample", "name_ga": "", "ded_id": "1372439", "civil_parish_id": "784",
+                 "barony_id": "52", "county_id": "100013", "latitude": "54.6", "longitude": "-8.0", "snapshot_date": "2026-11-01"}
+        images = {"tall.png": real_png(100, 200), "square.png": real_png(150, 150), "wide.png": real_png(300, 150)}
+
+        def case(name, rows=None, files=None):
+            base = cls.root / "townlands" / name
+            base.mkdir()
+            (base / "place.json").write_text(json.dumps({**place, "name_en": name.title()}), encoding="utf-8")
+            if rows:
+                (base / "media").mkdir()
+                for fname, data in (files if files is not None else images).items():
+                    (base / "media" / fname).write_bytes(data)
+                (base / "media" / "media.csv").write_text(cls.HEAD + "\n".join(rows) + "\n", encoding="utf-8")
+
+        case("plain")
+        fam = cls.root / "townlands" / "families"
+        (fam / "records").mkdir(parents=True)
+        (fam / "media").mkdir()
+        (fam / "place.json").write_text(json.dumps({**place, "name_en": "Families"}), encoding="utf-8")
+        (fam / "townland.json").write_text(json.dumps({"name": "Families", "page_title": "Families", "storage_key": "families-q",
+                                                       "census_spelling": {"1901": "Families"}}), encoding="utf-8")
+        (fam / "content.json").write_text(json.dumps({
+            "groups": {"colours": {"Harvey": "#6A9A93", "Gildea": "#C9B25A", "Doherty": "#8FB8C9", "Other": "#A9B7B3"},
+                       "territory": ["Harvey", "Gildea", "Doherty", "Other"],
+                       "map": {"harvey": "Harvey", "gildea": "Gildea", "doherty": "Doherty"}},
+            "families": [{"name": "The Harveys", "keys": ["Harvey"], "story": "A story."},
+                         {"name": "The Gildeas", "keys": ["Gildea"], "story": "A story."},
+                         {"name": "The Dohertys", "keys": ["Doherty"], "story": "A story."}]}), encoding="utf-8")
+        (fam / "records" / "census.json").write_text(json.dumps({"1901": [person("Harvey", 1), person("Gildea", 2), person("Doherty", 3)]}), encoding="utf-8")
+        (fam / "records" / "census_match.json").write_text(json.dumps({"status": "proposed", "years": {"1901": {
+            "spellings": [{"spelling": "Families", "method": "exact_name", "rows": 3}], "people": 3}}}), encoding="utf-8")
+        for fname, data in images.items():
+            (fam / "media" / fname).write_bytes(data)
+        (fam / "media" / "media.csv").write_text(cls.HEAD + "\n".join([
+            "tall.png,family,,The Harveys,Harvey photograph,,Personal photo,,,,",
+            "square.png,family,,The Harveys; The Gildeas,Shared photograph,,Personal photo,,,,",
+        ]) + "\n", encoding="utf-8")
+        case("three", cls.ROWS)
+        case("one", cls.ROWS[:1])
+        case("broken", ["bad.png,townland,1,,Broken one,,Src,,,,"], {"bad.png": b"this is not an image"})
+        with contextlib.redirect_stdout(io.StringIO()):
+            for name in ("plain", "families", "three", "one", "broken"):
+                build.build(name)
+        cls.pw = sync_playwright().start()
+        cls.browser = cls.pw.chromium.launch()
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.browser.close()
+        cls.pw.stop()
+        build.ROOT = REAL_ROOT
+        cls.tmp.cleanup()
+
+    def open(self, name, width=375, height=667):
+        page = self.browser.new_page(viewport={"width": width, "height": height})
+        self.errors = []
+        page.on("pageerror", lambda e: self.errors.append(str(e)))
+        page.route("**/fonts.*/**", lambda r: r.abort())
+        page.goto((self.root / "docs" / name / "index.html").as_uri())
+        page.wait_for_timeout(300)
+        self.addCleanup(page.close)
+        return page
+
+    def test_no_header_photographs_leaves_the_title_plate_as_it_was(self):
+        page = self.open("plain")
+        self.assertEqual(page.locator(".hang").count(), 0)
+        self.assertEqual(page.locator(".art.has-hang").count(), 0)
+        self.assertEqual(self.errors, [])
+
+    def test_three_photographs_are_framed_whole_at_phone_and_desktop_widths(self):
+        for width, height in ((375, 667), (1440, 900)):
+            page = self.open("three", width, height)
+            shapes = page.evaluate("""() => [...document.querySelectorAll('.pframe img')].map(i => {
+                const b = i.getBoundingClientRect(); return {w: b.width, h: b.height, nw: i.naturalWidth, nh: i.naturalHeight}})""")
+            self.assertEqual(len(shapes), 3)
+            for s in shapes:    # the picture area has the photograph's own shape, so nothing is cropped
+                self.assertAlmostEqual(s["w"] / s["h"], s["nw"] / s["nh"], delta=0.03, msg=str(width))
+            self.assertEqual(page.evaluate("getComputedStyle(document.querySelector('.pframe img')).objectFit"), "contain")
+            self.assertFalse(page.evaluate("document.documentElement.scrollWidth > innerWidth + 2"), str(width))
+        self.assertEqual(self.errors, [])
+
+    def test_the_frame_hugs_the_picture_with_an_even_mat(self):
+        # Regression: the page already has a .frame class (4:5, dashed) for the "Not yet hung" plate.
+        # Photographs use .pframe so they cannot inherit its shape, border or extra height.
+        for width in (375, 1440):
+            page = self.open("three", width, 800)
+            boxes = page.evaluate("""() => [...document.querySelectorAll('.pframe')].map(f => {
+                const r = f.getBoundingClientRect(), i = f.querySelector('img').getBoundingClientRect();
+                return {extraW: r.width - i.width, extraH: r.height - i.height, dashed: getComputedStyle(f).borderStyle}})""")
+            for b in boxes:
+                self.assertAlmostEqual(b["extraW"], b["extraH"], delta=1.5, msg=str(width))   # same mat all round
+                self.assertLess(b["extraH"], 20, str(width))
+                self.assertEqual(b["dashed"], "solid")
+
+    def test_photographs_never_overlap_the_title_on_a_short_wide_screen(self):
+        page = self.open("three", 1280, 720)
+        gap = page.evaluate("""() => document.querySelector('.hang').getBoundingClientRect().top
+                              - document.querySelector('.bigtitle h1').getBoundingClientRect().bottom""")
+        self.assertGreaterEqual(gap, 20)
+
+    def test_every_photograph_has_alt_text_falling_back_to_the_caption(self):
+        alts = self.open("three").evaluate("[...document.querySelectorAll('.pframe img')].map(i => i.alt)")
+        self.assertEqual(alts, ["Alt for the tall one", "A square photograph", "A wide photograph"])
+
+    def test_enlarge_opens_and_closes_from_the_keyboard_and_returns_focus(self):
+        page = self.open("three")
+        page.focus(".pframe")
+        page.keyboard.press("Enter")
+        self.assertTrue(page.evaluate("!!document.querySelector('.lb.open')"))
+        self.assertEqual(page.evaluate("document.activeElement.textContent"), "Close")
+        self.assertIn("A tall photograph", page.inner_text(".lb-cap"))
+        self.assertIn("Source: Family collection.", page.inner_text(".lb-meta"))
+        self.assertTrue(page.is_visible(".lb-link"))                    # this one has an original link
+        plate_before = page.inner_text("#count")
+        page.keyboard.press("ArrowRight")                               # next photograph, not next plate
+        self.assertEqual(page.inner_text(".lb-count"), "2 / 3")
+        self.assertEqual(page.inner_text("#count"), plate_before)
+        self.assertFalse(page.is_visible(".lb-link"))                   # this one has none
+        for _ in range(8):                                              # Tab stays inside the enlarged view
+            page.keyboard.press("Tab")
+            self.assertTrue(page.evaluate("!!document.activeElement.closest('.lb')"))
+        page.keyboard.press("Escape")
+        self.assertFalse(page.evaluate("!!document.querySelector('.lb.open')"))
+        self.assertEqual(page.evaluate("document.activeElement.className"), "pframe")
+        self.assertEqual(self.errors, [])
+
+
+    # ---- the family Photos tab (MED-16, MED-18, MED-22)
+
+    def plate(self, page, title):
+        return page.locator("section.fam-plate", has=page.locator("h2.fam-title", has_text=title))
+
+    def cottage_hits(self, page, plate):
+        """How many points on the family scene show a cottage tooltip when hovered."""
+        page.wait_for_timeout(700)
+        return plate.locator("canvas").evaluate("""cv => {
+            const b = cv.getBoundingClientRect(); let n = 0, tip = document.getElementById('tip');
+            for (let y = 4; y < b.height; y += 10) for (let x = 4; x < b.width; x += 10) {
+              cv.dispatchEvent(new PointerEvent('pointermove', {clientX: b.left + x, clientY: b.top + y, bubbles: true}));
+              if (!tip.hidden) n++;
+            }
+            return n}""")
+
+    def test_a_family_with_photographs_gets_a_photos_tab_first_and_shown_by_default(self):
+        page = self.open("families", 1440, 900)
+        harveys = self.plate(page, "The Harveys")
+        self.assertEqual(harveys.locator(".yr").all_inner_texts(), ["Photos", "1850s", "1901", "1911", "1926"])
+        self.assertEqual(harveys.locator(".yr[aria-selected=true]").inner_text(), "Photos")
+        self.assertEqual(harveys.locator(".pframe").count(), 2)
+        self.assertEqual(self.errors, [])
+
+    def test_a_family_without_photographs_is_unchanged(self):
+        page = self.open("families", 1440, 900)
+        dohertys = self.plate(page, "The Dohertys")
+        self.assertEqual(dohertys.locator(".yr").all_inner_texts(), ["1850s", "1901", "1911", "1926"])
+        self.assertEqual(dohertys.locator(".fam-hang").count(), 0)
+        self.assertEqual(dohertys.locator(".yr[aria-selected=true]").inner_text(), "1901")
+
+    def test_a_photograph_naming_two_families_shows_on_both(self):
+        page = self.open("families", 1440, 900)
+        self.assertIn("Shared photograph", self.plate(page, "The Harveys").locator(".fam-hang").inner_text())
+        gildeas = self.plate(page, "The Gildeas")
+        self.assertIn("Shared photograph", gildeas.locator(".fam-hang").inner_text())
+        self.assertNotIn("Harvey photograph", gildeas.locator(".fam-hang").inner_text())
+        self.assertEqual(gildeas.locator(".pframe").count(), 1)
+
+    def test_photographs_show_only_on_the_photos_tab_and_cottages_only_on_the_year_tabs(self):
+        page = self.open("families", 1440, 900)
+        harveys = self.plate(page, "The Harveys")
+        self.assertEqual(self.cottage_hits(page, harveys), 0)               # M4: no cottages under the photographs
+        harveys.locator(".yr", has_text="1901").click()
+        self.assertFalse(harveys.locator(".fam-hang").is_visible())         # MED-18: no photographs on a year tab
+        self.assertIn("1901, census return: 1 household", harveys.locator(".cnt").inner_text())
+        self.assertGreater(self.cottage_hits(page, harveys), 0)             # the households are back
+        harveys.locator(".yr", has_text="1850s").click()
+        self.assertFalse(harveys.locator(".fam-hang").is_visible())
+        harveys.locator(".yr", has_text="Photos").click()
+        self.assertTrue(harveys.locator(".fam-hang").is_visible())
+        self.assertEqual(self.cottage_hits(page, harveys), 0)
+        self.assertEqual(self.errors, [])
+
+    def test_family_photographs_are_whole_and_enlarge_without_leaving_the_plate(self):
+        for width, height in ((375, 667), (1440, 900)):
+            page = self.open("families", width, height)
+            harveys = self.plate(page, "The Harveys")
+            shapes = harveys.locator(".pframe img").evaluate_all(
+                "els => els.map(i => { const b = i.getBoundingClientRect(); return {w: b.width, h: b.height, nw: i.naturalWidth, nh: i.naturalHeight} })")
+            for s in shapes:
+                self.assertAlmostEqual(s["w"] / s["h"], s["nw"] / s["nh"], delta=0.03, msg=str(width))
+            self.assertFalse(page.evaluate("document.documentElement.scrollWidth > innerWidth + 2"), str(width))
+            harveys.locator(".pframe").first.click()
+            self.assertIn("Harvey photograph", page.inner_text(".lb-cap"))
+            self.assertEqual(page.inner_text(".lb-count"), "1 / 2")             # only this family's photographs are in the set
+            page.keyboard.press("Escape")
+            self.assertFalse(page.evaluate("!!document.querySelector('.lb.open')"))
+
+    def test_a_single_photograph_has_no_next_or_previous(self):
+        page = self.open("one")
+        page.click(".pframe")
+        self.assertFalse(page.is_visible(".lb button[aria-label='Next photograph']"))
+        self.assertEqual(page.inner_text(".lb-count"), "")
+
+    def test_an_image_that_will_not_load_says_so_instead_of_showing_a_broken_icon(self):
+        page = self.open("broken")
+        self.assertEqual(page.locator(".pframe.broken").count(), 1)
+        self.assertIn("Photograph not available", page.inner_text(".pframe.broken"))
+        self.assertEqual(self.errors, [])
 
 
 if __name__ == "__main__":
