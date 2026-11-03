@@ -213,8 +213,8 @@ Order: MP1, MP2, MP3, then MP4 and MP5, then MP6, MP7. MP8 any time after MP3.
 | MP2 Media loader and validation | Done 2026-11-03 | `tools/media.py`, `tools/test_media.py`, `tools/validate.py` |
 | MP3 Build integration | Done 2026-11-03 | `tools/build.py`, `tools/test_build.py` |
 | MP4 Header photos on the title plate | Done 2026-11-03, awaiting Mike's phone check | `engine/walk.html`, `tools/test_walk_render.py` |
-| MP5 Family Photos tab | Not started | |
-| MP6 Cullionboy pilot | Partly done 2026-11-03 | Header panorama and The Kellys photograph added to `townlands/cullionboy/media/`, page rebuilt. The family photograph shows once MP5 is built |
+| MP5 Family Photos tab | Done 2026-11-03, awaiting Mike's phone check | `engine/walk.html`, `tools/test_walk_render.py` |
+| MP6 Cullionboy pilot | Done 2026-11-03, awaiting Mike's acceptance | Header panorama and The Kellys photograph in `townlands/cullionboy/media/`, `docs/cullionboy/` rebuilt, both show |
 | MP7 Rollout | Not started | |
 | MP8 CDN route | Deferred (O1) | The `base_url` path is built and tested in MP2 and MP3; only the provider choice and an upload note remain |
 
@@ -245,3 +245,13 @@ Order: MP1, MP2, MP3, then MP4 and MP5, then MP6, MP7. MP8 any time after MP3.
 - **Frame fit:** the first MP4 layout left extra white mat above and below a wide photograph on a phone, where the frame width is capped by the screen. The frame now takes its height from the picture, so the mat is even at any width.
 - **Found while testing:** the page already had a `.frame` class (4:5, dashed) for the "Not yet hung" plate, and the photograph frame was inheriting its shape. Photographs now use `.pframe`, and a test checks the mat is even and the border solid.
 - **Validation:** all `tools/test_*.py` modules pass, 126 tests.
+
+### Handover: MP5 and MP6 (2026-11-03)
+
+- **Outcome:** a family plate with photographs gets a Photos tab, first and selected by default, ahead of 1850s, 1901, 1911 and 1926. It shows the painted midday landscape with no cottages and the family's photographs hung over it, each whole in its frame. Tapping one opens the same enlarged view as the header, limited to that family's photographs. The year tabs are unchanged, and a family with no photographs has no Photos tab and looks exactly as before. A photograph naming several families appears on each. The Cullionboy page is rebuilt, so The Kellys plate shows the "Bella, Rose & Mary Kate Kelly" photograph.
+- **Files:** `engine/walk.html` (`hangRow` takes a label, `yearTabs` takes an optional lead tab, `famPlate`), `tools/test_walk_render.py` (new family fixture and five tests), `docs/cullionboy/` rebuilt, `townlands/cullionboy/STATUS.md`.
+- **Decisions and assumptions:** photographs sit in one row that scrolls sideways inside itself when there are more than fit, not a wrapping grid as first sketched, so any number of photographs fits a fixed-height plate and phone scrolling stays predictable. The family art area is taller than usual when a family has photographs, and stays that height on every tab so the page does not jump when switching. The tab label box reads "Photographs, and landscape by era" for those families.
+- **Validation:** 131 tests pass across all `tools/test_*.py` modules. New browser tests check the tab order and default, a family without photographs, a photograph shared by two families, that cottages are absent on Photos and return on the year tabs (by hovering a grid of points on the scene), whole photographs at 375 px and 1440 px, and that the enlarged view holds only that family's photographs. I looked at screenshots of The Kellys plate on both tabs. `validate.py` still fails only on the missing `data/source/manifest.csv`.
+- **Review:** no independent review yet. Mike to view The Kellys plate on his phone.
+- **Not done:** MP7 (rebuild all other pages with the new engine) and MP8 (CDN). Other built pages in `docs/` still carry the old engine, which behaves the same for them because they have no media.
+- **Next step:** Mike checks Cullionboy on his phone. Then MP7, and a pull request for review.

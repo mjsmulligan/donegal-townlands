@@ -170,11 +170,33 @@ class MediaRenderTests(unittest.TestCase):
                 (base / "media" / "media.csv").write_text(cls.HEAD + "\n".join(rows) + "\n", encoding="utf-8")
 
         case("plain")
+        fam = cls.root / "townlands" / "families"
+        (fam / "records").mkdir(parents=True)
+        (fam / "media").mkdir()
+        (fam / "place.json").write_text(json.dumps({**place, "name_en": "Families"}), encoding="utf-8")
+        (fam / "townland.json").write_text(json.dumps({"name": "Families", "page_title": "Families", "storage_key": "families-q",
+                                                       "census_spelling": {"1901": "Families"}}), encoding="utf-8")
+        (fam / "content.json").write_text(json.dumps({
+            "groups": {"colours": {"Harvey": "#6A9A93", "Gildea": "#C9B25A", "Doherty": "#8FB8C9", "Other": "#A9B7B3"},
+                       "territory": ["Harvey", "Gildea", "Doherty", "Other"],
+                       "map": {"harvey": "Harvey", "gildea": "Gildea", "doherty": "Doherty"}},
+            "families": [{"name": "The Harveys", "keys": ["Harvey"], "story": "A story."},
+                         {"name": "The Gildeas", "keys": ["Gildea"], "story": "A story."},
+                         {"name": "The Dohertys", "keys": ["Doherty"], "story": "A story."}]}), encoding="utf-8")
+        (fam / "records" / "census.json").write_text(json.dumps({"1901": [person("Harvey", 1), person("Gildea", 2), person("Doherty", 3)]}), encoding="utf-8")
+        (fam / "records" / "census_match.json").write_text(json.dumps({"status": "proposed", "years": {"1901": {
+            "spellings": [{"spelling": "Families", "method": "exact_name", "rows": 3}], "people": 3}}}), encoding="utf-8")
+        for fname, data in images.items():
+            (fam / "media" / fname).write_bytes(data)
+        (fam / "media" / "media.csv").write_text(cls.HEAD + "\n".join([
+            "tall.png,family,,The Harveys,Harvey photograph,,Personal photo,,,,",
+            "square.png,family,,The Harveys; The Gildeas,Shared photograph,,Personal photo,,,,",
+        ]) + "\n", encoding="utf-8")
         case("three", cls.ROWS)
         case("one", cls.ROWS[:1])
         case("broken", ["bad.png,townland,1,,Broken one,,Src,,,,"], {"bad.png": b"this is not an image"})
         with contextlib.redirect_stdout(io.StringIO()):
-            for name in ("plain", "three", "one", "broken"):
+            for name in ("plain", "families", "three", "one", "broken"):
                 build.build(name)
         cls.pw = sync_playwright().start()
         cls.browser = cls.pw.chromium.launch()
@@ -258,6 +280,76 @@ class MediaRenderTests(unittest.TestCase):
         self.assertFalse(page.evaluate("!!document.querySelector('.lb.open')"))
         self.assertEqual(page.evaluate("document.activeElement.className"), "pframe")
         self.assertEqual(self.errors, [])
+
+
+    # ---- the family Photos tab (MED-16, MED-18, MED-22)
+
+    def plate(self, page, title):
+        return page.locator("section.fam-plate", has=page.locator("h2.fam-title", has_text=title))
+
+    def cottage_hits(self, page, plate):
+        """How many points on the family scene show a cottage tooltip when hovered."""
+        page.wait_for_timeout(700)
+        return plate.locator("canvas").evaluate("""cv => {
+            const b = cv.getBoundingClientRect(); let n = 0, tip = document.getElementById('tip');
+            for (let y = 4; y < b.height; y += 10) for (let x = 4; x < b.width; x += 10) {
+              cv.dispatchEvent(new PointerEvent('pointermove', {clientX: b.left + x, clientY: b.top + y, bubbles: true}));
+              if (!tip.hidden) n++;
+            }
+            return n}""")
+
+    def test_a_family_with_photographs_gets_a_photos_tab_first_and_shown_by_default(self):
+        page = self.open("families", 1440, 900)
+        harveys = self.plate(page, "The Harveys")
+        self.assertEqual(harveys.locator(".yr").all_inner_texts(), ["Photos", "1850s", "1901", "1911", "1926"])
+        self.assertEqual(harveys.locator(".yr[aria-selected=true]").inner_text(), "Photos")
+        self.assertEqual(harveys.locator(".pframe").count(), 2)
+        self.assertEqual(self.errors, [])
+
+    def test_a_family_without_photographs_is_unchanged(self):
+        page = self.open("families", 1440, 900)
+        dohertys = self.plate(page, "The Dohertys")
+        self.assertEqual(dohertys.locator(".yr").all_inner_texts(), ["1850s", "1901", "1911", "1926"])
+        self.assertEqual(dohertys.locator(".fam-hang").count(), 0)
+        self.assertEqual(dohertys.locator(".yr[aria-selected=true]").inner_text(), "1901")
+
+    def test_a_photograph_naming_two_families_shows_on_both(self):
+        page = self.open("families", 1440, 900)
+        self.assertIn("Shared photograph", self.plate(page, "The Harveys").locator(".fam-hang").inner_text())
+        gildeas = self.plate(page, "The Gildeas")
+        self.assertIn("Shared photograph", gildeas.locator(".fam-hang").inner_text())
+        self.assertNotIn("Harvey photograph", gildeas.locator(".fam-hang").inner_text())
+        self.assertEqual(gildeas.locator(".pframe").count(), 1)
+
+    def test_photographs_show_only_on_the_photos_tab_and_cottages_only_on_the_year_tabs(self):
+        page = self.open("families", 1440, 900)
+        harveys = self.plate(page, "The Harveys")
+        self.assertEqual(self.cottage_hits(page, harveys), 0)               # M4: no cottages under the photographs
+        harveys.locator(".yr", has_text="1901").click()
+        self.assertFalse(harveys.locator(".fam-hang").is_visible())         # MED-18: no photographs on a year tab
+        self.assertIn("1901, census return: 1 household", harveys.locator(".cnt").inner_text())
+        self.assertGreater(self.cottage_hits(page, harveys), 0)             # the households are back
+        harveys.locator(".yr", has_text="1850s").click()
+        self.assertFalse(harveys.locator(".fam-hang").is_visible())
+        harveys.locator(".yr", has_text="Photos").click()
+        self.assertTrue(harveys.locator(".fam-hang").is_visible())
+        self.assertEqual(self.cottage_hits(page, harveys), 0)
+        self.assertEqual(self.errors, [])
+
+    def test_family_photographs_are_whole_and_enlarge_without_leaving_the_plate(self):
+        for width, height in ((375, 667), (1440, 900)):
+            page = self.open("families", width, height)
+            harveys = self.plate(page, "The Harveys")
+            shapes = harveys.locator(".pframe img").evaluate_all(
+                "els => els.map(i => { const b = i.getBoundingClientRect(); return {w: b.width, h: b.height, nw: i.naturalWidth, nh: i.naturalHeight} })")
+            for s in shapes:
+                self.assertAlmostEqual(s["w"] / s["h"], s["nw"] / s["nh"], delta=0.03, msg=str(width))
+            self.assertFalse(page.evaluate("document.documentElement.scrollWidth > innerWidth + 2"), str(width))
+            harveys.locator(".pframe").first.click()
+            self.assertIn("Harvey photograph", page.inner_text(".lb-cap"))
+            self.assertEqual(page.inner_text(".lb-count"), "1 / 2")             # only this family's photographs are in the set
+            page.keyboard.press("Escape")
+            self.assertFalse(page.evaluate("!!document.querySelector('.lb.open')"))
 
     def test_a_single_photograph_has_no_next_or_previous(self):
         page = self.open("one")
