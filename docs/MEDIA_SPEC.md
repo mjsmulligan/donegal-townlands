@@ -82,7 +82,7 @@ Empty or absent: images are copied from the townland `media/` folder into `docs/
 
 ## 4. Presentation
 
-- **Title plate.** 1 to 3 framed photos hang over the painted scene in the sky area, side by side at a common height. Widths follow each photo's shape. On a narrow screen they become a horizontal swipe row.
+- **Title plate.** 1 to 3 framed photos sit over the painted scene, below the townland name and above the scroll hint, side by side at a common height. The plate stacks these in page order, so the photos never overlap the name on a short screen. Widths follow each photo's shape. When the row is wider than the screen it scrolls sideways inside itself, so the page never scrolls sideways.
 - **Family plate.** The Photos tab shows the painted landscape (midday sky, no cottages) with the family's photos hung over it in a wrapping arrangement.
 - **Frame.** Light mat and thin border with a soft shadow. Whole image visible, original proportions kept.
 - **Enlarge.** Tapping or pressing Enter on a photo opens it large with caption, source, date, people and the "View original" link where present. Escape or a close button returns. The enlarged view is keyboard operable.
@@ -210,7 +210,7 @@ Order: MP1, MP2, MP3, then MP4 and MP5, then MP6, MP7. MP8 any time after MP3.
 | MP1 Specification and decisions | Done 2026-11-03 | Commit `eddbaff` |
 | MP2 Media loader and validation | Done 2026-11-03 | `tools/media.py`, `tools/test_media.py`, `tools/validate.py` |
 | MP3 Build integration | Done 2026-11-03 | `tools/build.py`, `tools/test_build.py` |
-| MP4 Header photos on the title plate | Not started | |
+| MP4 Header photos on the title plate | Done 2026-11-03, awaiting Mike's phone check | `engine/walk.html`, `tools/test_walk_render.py` |
 | MP5 Family Photos tab | Not started | |
 | MP6 Cullionboy pilot | Not started | Needs family, caption and source for each photo from Mike |
 | MP7 Rollout | Not started | |
@@ -225,3 +225,14 @@ Order: MP1, MP2, MP3, then MP4 and MP5, then MP6, MP7. MP8 any time after MP3.
 - **Review:** no independent review yet.
 - **Git state:** branch `feature/media`, see the latest commit.
 - **Next step:** MP4, the header strip in `engine/walk.html`. Mike views one page on his phone before MP5.
+
+### Handover: MP4 (2026-11-03)
+
+- **Outcome:** header photographs show on the title plate. Each is framed whole (`object-fit: contain`, light mat, soft shadow) with a short caption under it. Tap or press Enter to enlarge: the enlarged view shows the whole photograph with caption, source, reference, date, people and a "View original" link when present. Arrow keys step between photographs, Escape closes, Tab stays inside, and focus returns to the photograph that was opened. A photograph that fails to load shows "Photograph not available". With no header photographs the title plate is unchanged.
+- **Files:** `engine/walk.html` (styles, `photoFrame`, `hangRow`, enlarged view, title plate), `tools/test_walk_render.py` (new `MediaRenderTests`).
+- **Decisions and assumptions:** a frame's width is calculated from the photograph's shape (width over height from the build, corrected from the loaded file), because a browser cannot turn a percentage height into a width. A photograph wider than the screen is scaled down inside its frame, not cropped. The title plate becomes a stacked layout only when it has photographs. The enlarged view keeps its photographs in the order of their slots.
+- **Not done:** the family Photos tab (MP5). The built pages in `docs/` have not been rebuilt, so they do not carry the new engine until MP7.
+- **Validation:** all `tools/test_*.py` modules pass. Render tests cover 0, 1 and 3 photographs, shape at 375 px and 1440 px, no overlap at 1280 x 720, alt text, keyboard operation including Tab, and a failed image. I also looked at screenshots at 360 px to 1920 px wide.
+- **Found while testing:** the focus trap first listed buttons out of page order and let Tab escape the enlarged view. Fixed and covered by a test.
+- **Review:** no independent review yet. Mike to view one page on his phone.
+- **Next step:** MP5, the family Photos tab.

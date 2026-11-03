@@ -175,6 +175,37 @@ details.vitrine[open] .vitrine-title::before{transform:rotate(90deg)}
 .vitrine-in{padding:18px;background:var(--paper);border-top:1px solid var(--rule)}
 .vitrine-note{font-size:13.5px;color:var(--ink2);margin-bottom:14px;line-height:1.45}
 
+/* photographs: shown whole in a light frame, never cropped (docs/MEDIA_SPEC.md) */
+/* With header photos the title plate stacks in the page flow (title, photographs, hint) so they can never overlap on a short screen. */
+.art.has-hang{display:flex;flex-direction:column;min-height:clamp(520px,92svh,960px)}
+.art.has-hang .bigtitle{position:relative;top:auto;margin-top:clamp(120px,22vh,200px);margin-bottom:clamp(28px,4vw,56px)}
+.art.has-hang .walkhint{position:relative;bottom:auto;margin-top:10px;padding-bottom:18px}
+.hang{--hh:clamp(170px,32svh,340px);position:relative;height:var(--hh);margin-top:auto;z-index:2;flex:0 0 auto}
+.hang-row{display:flex;gap:16px;height:100%;overflow-x:auto;overflow-y:hidden;padding:6px 18px 10px;scroll-snap-type:x proximity;scrollbar-width:thin;-webkit-overflow-scrolling:touch}
+.hang-row>.hung:first-child{margin-left:auto}
+.hang-row>.hung:last-child{margin-right:auto}
+.hung{margin:0;flex:0 0 auto;display:flex;flex-direction:column;gap:6px;height:100%;scroll-snap-align:center}
+/* The frame is sized from the photo's shape (--ar, width over height) so the whole picture fits with a small mat and nothing is cropped.
+   Frame height = row height less 61px (row padding 16, caption 45). Frame width = picture height times shape plus 16px of mat. */
+.frame{appearance:none;display:flex;flex:0 0 auto;height:calc(var(--hh) - 61px);width:calc((var(--hh) - 77px)*var(--ar,1.5) + 16px);max-width:calc(100vw - 36px);padding:7px;background:var(--paper);border:1px solid var(--rule);border-radius:2px;box-shadow:0 8px 22px rgba(29,47,51,.2),inset 0 0 0 1px #fff;cursor:zoom-in;font:inherit;color:var(--ink2)}
+.frame img{display:block;width:100%;height:100%;object-fit:contain}
+.frame.broken{cursor:default;align-items:center;padding:14px;font-size:13px}
+.hung figcaption{width:0;min-width:100%;max-height:2.6em;margin-top:3px;font-size:12.5px;line-height:1.3;color:var(--ink2);background:rgba(251,252,250,.92);padding:0 8px;border-radius:3px;box-shadow:0 0 0 3px rgba(251,252,250,.92);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+html.lb-lock{overflow:hidden}
+.lb{position:fixed;inset:0;z-index:70;display:none;background:var(--wall);overflow:auto}
+.lb.open{display:block}
+.lb-in{min-height:100%;display:flex;flex-direction:column;gap:12px;padding:max(12px,env(safe-area-inset-top,0px)) max(14px,env(safe-area-inset-right,0px)) max(14px,env(safe-area-inset-bottom,0px)) max(14px,env(safe-area-inset-left,0px))}
+.lb-bar{display:flex;align-items:center;gap:8px}
+.lb-bar .lb-count{font:500 14px var(--body);color:var(--ink2);margin-inline:6px auto}
+.lb-bar .btn[disabled]{opacity:.3;cursor:default}
+.lb-pic{flex:1 1 auto;display:flex;align-items:center;justify-content:center}
+.lb-mat{display:flex;padding:8px;background:var(--paper);border:1px solid var(--rule);box-shadow:0 10px 30px rgba(29,47,51,.18)}
+.lb-mat img{display:block;max-width:calc(100vw - 60px);max-height:calc(100svh - 250px);object-fit:contain}
+.lb-text{width:min(70ch,100%);margin-inline:auto}
+.lb-cap{font:400 20px/1.35 var(--display);color:var(--ink)}
+.lb-meta{margin-top:4px}
+.lb-link{display:inline-block;margin-top:6px;font-size:15px}
+.lb [hidden]{display:none!important}
 </style>
 
 <header class="top"><div class="wrap">
@@ -453,12 +484,78 @@ function placeCard(){
   return kids;
 }
 
+/* ================= photographs (docs/MEDIA_SPEC.md) =================
+   Each photograph is shown whole in a frame, never cropped. Tap or press Enter to enlarge. */
+var MEDIA=DATA.media||{header:[],families:{}}, LB={open:false,box:null,set:[],i:0,from:null};
+function webLink(u){return /^https?:\/\//i.test(u||'')}
+function photoFrame(item,set,i){
+  var img=h('img',{src:item.url,alt:item.alt||item.caption||'',decoding:'async'});
+  var btn=h('button',{class:'frame',type:'button','aria-haspopup':'dialog',onclick:function(){openPhoto(set,i,btn)}},img);
+  img.addEventListener('error',function(){btn.classList.add('broken');btn.replaceChildren(h('span',{text:'Photograph not available'}))});
+  var cap=h('figcaption',{text:item.caption||''});
+  if((item.alt||item.caption)===item.caption) cap.setAttribute('aria-hidden','true');   /* the alt text already says it */
+  var fig=h('figure',{class:'hung'},btn,cap);
+  function shape(w,hh){if(w&&hh) fig.style.setProperty('--ar',(w/hh).toFixed(4))}
+  shape(item.w,item.h);                                                   /* from the build, so the page does not jump */
+  img.addEventListener('load',function(){shape(img.naturalWidth,img.naturalHeight)});   /* the browser's own reading wins */
+  return fig;
+}
+function hangRow(items){
+  return h('div',{class:'hang'},h('div',{class:'hang-row',role:'group','aria-label':'Photographs of '+TOWN.name},
+    items.map(function(it,i){return photoFrame(it,items,i)})));
+}
+function buildLightbox(){
+  var img=h('img',{alt:''}), cap=h('p',{class:'lb-cap'}), meta=h('p',{class:'small lb-meta'});
+  var link=h('a',{class:'lb-link',target:'_blank',rel:'noopener',text:'View original ↗'});
+  var count=h('span',{class:'lb-count','aria-live':'polite'});
+  var prev=h('button',{class:'btn',type:'button','aria-label':'Previous photograph',onclick:function(){stepPhoto(-1)}},'←');
+  var next=h('button',{class:'btn',type:'button','aria-label':'Next photograph',onclick:function(){stepPhoto(1)}},'→');
+  var close=h('button',{class:'btn',type:'button',onclick:closePhoto},'Close');
+  var box=h('div',{class:'lb',role:'dialog','aria-modal':'true','aria-label':'Photograph',onclick:function(e){if(e.target===box||e.target===box.firstChild)closePhoto()}},
+    h('div',{class:'lb-in'},h('div',{class:'lb-bar'},prev,next,count,close),h('div',{class:'lb-pic'},h('div',{class:'lb-mat'},img)),h('div',{class:'lb-text'},cap,meta,link)));
+  box.addEventListener('keydown',function(e){
+    if(e.key!=='Tab') return;
+    var f=Array.prototype.filter.call(box.querySelectorAll('button,a[href]'),function(x){return x.offsetParent!==null&&!x.disabled});   /* in page order */
+    if(!f.length) return;
+    var a=f.indexOf(document.activeElement);
+    if(e.shiftKey&&a<=0){e.preventDefault();f[f.length-1].focus()}
+    else if(!e.shiftKey&&a===f.length-1){e.preventDefault();f[0].focus()}
+  });
+  document.body.append(box);
+  LB.box=box; LB.img=img; LB.cap=cap; LB.meta=meta; LB.link=link; LB.count=count; LB.prev=prev; LB.next=next; LB.close=close;
+}
+function showPhoto(){
+  var it=LB.set[LB.i], n=LB.set.length;
+  LB.img.src=it.url; LB.img.alt=it.alt||it.caption||'';
+  LB.cap.textContent=it.caption||'';
+  var m=[['Source',it.source],['Reference',it.reference],['Date',it.date],['People',it.people]].filter(function(x){return x[1]}).map(function(x){return x[0]+': '+x[1]+'.'});
+  LB.meta.textContent=m.join(' ');
+  if(webLink(it.link)){LB.link.href=it.link;LB.link.hidden=false}else{LB.link.removeAttribute('href');LB.link.hidden=true}
+  LB.count.textContent=n>1?(LB.i+1)+' / '+n:'';
+  LB.prev.hidden=LB.next.hidden=n<2; LB.prev.disabled=LB.i===0; LB.next.disabled=LB.i===n-1;
+}
+function openPhoto(set,i,from){
+  if(!LB.box) buildLightbox();
+  LB.set=set; LB.i=i; LB.from=from; LB.open=true;
+  showPhoto(); LB.box.classList.add('open'); document.documentElement.classList.add('lb-lock'); LB.close.focus();
+}
+function stepPhoto(d){
+  var j=LB.i+d; if(j<0||j>=LB.set.length) return;
+  LB.i=j; showPhoto();
+}
+function closePhoto(){
+  if(!LB.open) return;
+  LB.open=false; LB.box.classList.remove('open'); document.documentElement.classList.remove('lb-lock');
+  if(LB.from&&LB.from.isConnected) LB.from.focus();
+}
+
 /* Plate 1: title */
 plate(0,PL.title.title,function(num){
   var art=h('div',{class:'art'}); var sc=makeScene(art,{seed:5,ph:0,kind:'hills'});
   roomTag(art,0);
   art.append(h('div',{class:'bigtitle'},h('div',{class:'wrap'},PL.title.irish?h('p',{class:'irish',text:PL.title.irish}):null,h('h1',{text:PL.title.heading}))),
     h('div',{class:'walkhint'},h('div',{class:'wrap'},h('p',{text:'Scroll down to walk the townland, or use the arrows.'+(SPAN?(SPAN.indexOf('from')===0?' It runs '+SPAN+'.':' It covers '+SPAN+'.'):'')}))));
+  if(MEDIA.header.length){art.classList.add('has-hang'); art.insertBefore(hangRow(MEDIA.header),art.querySelector('.walkhint'))}
   var sec=h('section',{class:'plate',id:'p'+pad(num)},art,labelBlock(pad(num),PL.title.heading,PL.title.medium,PL.title.story,placeCard()));
   return sec;
 });
@@ -675,6 +772,10 @@ var drawer=$('#drawer'), din=$('#drawerIn');
 $('#openC').addEventListener('click',function(){drawer.classList.add('open')});
 drawer.addEventListener('click',function(e){if(e.target===drawer) drawer.classList.remove('open')});
 document.addEventListener('keydown',function(e){
+  if(LB.open){   /* the enlarged photograph owns the keys while it is open */
+    if(e.key==='Escape') closePhoto(); else if(e.key==='ArrowRight') stepPhoto(1); else if(e.key==='ArrowLeft') stepPhoto(-1);
+    return;
+  }
   if(e.key==='Escape') drawer.classList.remove('open');
   var tg=e.target&&e.target.tagName; if(tg==='INPUT'||tg==='TEXTAREA'||tg==='SELECT'||e.metaKey||e.ctrlKey||e.altKey) return;
   if(e.key==='ArrowRight') go(1); if(e.key==='ArrowLeft') go(-1);
