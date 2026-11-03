@@ -207,6 +207,10 @@ html.lb-lock{overflow:hidden}
 .lb-meta{margin-top:4px}
 .lb-link{display:inline-block;margin-top:6px;font-size:15px}
 .lb [hidden]{display:none!important}
+/* family plate: the Photos tab shows the painted landscape with the photographs hung over it, and no cottages */
+.fam-art.has-photos{min-height:clamp(440px,66svh,760px)}
+.hang.fam-hang{--hh:clamp(210px,44svh,470px);position:absolute;left:0;right:0;bottom:26px;margin-top:0}
+.hang.fam-hang[hidden]{display:none}
 </style>
 
 <header class="top"><div class="wrap">
@@ -459,9 +463,9 @@ function table(head,rows,numCol){
   return h('div',{class:'tbl'},h('table',null,h('thead',null,h('tr',null,head.map(function(c,i){return h('th',{class:i===numCol?'n':'',text:c})}))),
     h('tbody',null,rows.map(function(r){return h('tr',null,r.map(function(c,i){return cellNode(c,i===numCol?'n':'')}))}))));
 }
-function yearTabs(avail,cur,onPick){
-  var box=h('div',{class:'yrs',role:'tablist','aria-label':'Choose a date'});
-  YEARS.forEach(function(y){
+function yearTabs(avail,cur,onPick,lead){
+  var box=h('div',{class:'yrs',role:'tablist','aria-label':lead?'Choose photographs or a date':'Choose a date'});
+  (lead?[lead]:[]).concat(YEARS).forEach(function(y){
     var b=h('button',{class:'yr',role:'tab','aria-selected':y===cur?'true':'false',onclick:function(){onPick(y)}},y);
     if(!avail[y]) b.setAttribute('data-empty','1');
     box.append(b);
@@ -501,8 +505,8 @@ function photoFrame(item,set,i){
   img.addEventListener('load',function(){shape(img.naturalWidth,img.naturalHeight)});   /* the browser's own reading wins */
   return fig;
 }
-function hangRow(items){
-  return h('div',{class:'hang'},h('div',{class:'hang-row',role:'group','aria-label':'Photographs of '+TOWN.name},
+function hangRow(items,label,extra){
+  return h('div',{class:'hang'+(extra?' '+extra:'')},h('div',{class:'hang-row',role:'group','aria-label':'Photographs of '+(label||TOWN.name)},
     items.map(function(it,i){return photoFrame(it,items,i)})));
 }
 function buildLightbox(){
@@ -634,11 +638,20 @@ if(CY.length) plate(1,CY.length===3?'Three censuses':(CY.length===2?'Two censuse
 function famPlate(f){
   plate(1,f.name,function(num){
     var art=h('div',{class:'art fam-art'}); var avail={}; YEARS.forEach(function(y){avail[y]=hhFor(y,f.keys).length>0});
-    var cur=avail['1901']?'1901':(avail['1926']?'1926':'1850s');
-    var sc=makeScene(art,{seed:20+num,ph:PHASE[cur],kind:'hills'});
+    var pics=(MEDIA.families||{})[f.name]||[];            /* photographs for this family, in media.csv order */
+    var cur=pics.length?'Photos':(avail['1901']?'1901':(avail['1926']?'1926':'1850s'));
+    var sc=makeScene(art,{seed:20+num,ph:PHASE[cur==='Photos'?'1901':cur],kind:'hills'});
     roomTag(art,1);
-    var cnt=h('p',{class:'cnt'}), tabs=yearTabs(avail,cur,function(y){pick(y)});
-    function pick(y){var list=hhFor(y,f.keys); sc.names=true; sc.setHouses(placeHouses(list,{names:true}),PHASE[y]); setSel(tabs,y); cnt.textContent=countText(y,list,f.keys)}
+    var hang=null;
+    if(pics.length){avail['Photos']=true; art.classList.add('has-photos'); hang=hangRow(pics,f.name,'fam-hang'); art.append(hang)}
+    var cnt=h('p',{class:'cnt'}), tabs=yearTabs(avail,cur,function(y){pick(y)},pics.length?'Photos':null);
+    function pick(y){
+      if(hang) hang.hidden=y!=='Photos';
+      if(y==='Photos'){   /* midday landscape, no cottages under the photographs */
+        sc.names=false; sc.setHouses([],PHASE['1901']); setSel(tabs,y);
+        cnt.textContent=pics.length+(pics.length===1?' photograph. ':' photographs. ')+'Each is shown whole. Tap one to enlarge it.'; return;
+      }
+      var list=hhFor(y,f.keys); sc.names=true; sc.setHouses(placeHouses(list,{names:true}),PHASE[y]); setSel(tabs,y); cnt.textContent=countText(y,list,f.keys)}
     var rows=famRows(f.keys);
 
     /* Museum Exhibition Installation: Placard, Wall Narrative & Primary Source Vitrine */
@@ -661,7 +674,7 @@ function famPlate(f){
             h('h2',{class:'fam-title',text:f.name}),
             f.medium?h('p',{class:'medium',text:f.medium}):null,
             h('div',{class:'fam-timeline-box'},
-              h('span',{class:'fam-timeline-label',text:'Landscape by era'}),
+              h('span',{class:'fam-timeline-label',text:pics.length?'Photographs, and landscape by era':'Landscape by era'}),
               tabs,
               cnt)),
           h('div',{class:'fam-story-col'},
