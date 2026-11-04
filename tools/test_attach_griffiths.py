@@ -69,11 +69,17 @@ class AttachTests(unittest.TestCase):
         n, out = self.run_it()
         self.assertEqual(n, 0)
         d = self.index()
-        self.assertEqual([r["role"] for r in d["rows"]], ["occupier"] * 3 + ["foot_entry"] * 2)
+        self.assertEqual([r["role"] for r in d["rows"]], ["occupier"] * 3 + ["title_entry", "blank_entry"])
         self.assertTrue(all(r["tier"] == 1 for r in d["rows"]))
         self.assertNotIn("mysession", json.dumps(d))
         self.assertEqual(d["rows"][0]["image_url"], ag.image_url(10, 5))
         self.assertEqual(d["parish_master_entries"], 5)
+
+    def test_rows_follow_record_id_not_page_position(self):
+        rows = [idx_row(20, 35, "A", "ONE"), idx_row(21, 1, "B", "TWO"), idx_row(22, 2, "C", "THREE")]
+        self.write_index(rows, 3)
+        self.run_it()
+        self.assertEqual([r["record_id"] for r in self.index()["rows"]], [20, 21, 22])
 
     def test_status_columns_set_the_tier(self):
         rows = [idx_row(1, 1, "A", "B", website_transcription_status="captured"),
@@ -122,7 +128,7 @@ class NamesOnlyPlateTests(_B):
         return {"townland": "Druminnin", "rows": [
             {"record_id": 1, "position": 3, "surname": "GILDEA", "forename": "PATRICK", "role": "occupier", "tier": 1,
              "image_url": "https://x/1"},
-            {"record_id": 2, "position": 4, "surname": "", "forename": "", "role": "foot_entry", "tier": 1,
+            {"record_id": 2, "position": 4, "surname": "", "forename": "", "role": "blank_entry", "tier": 1,
              "image_url": "https://x/2"}]}
 
     def test_index_only_case_carries_names_and_says_so(self):
@@ -151,3 +157,49 @@ class NamesOnlyPlateTests(_B):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+from tools import parse_griffiths_pages as pg
+
+
+def page(rows, total, place=77, start=1):
+    body = "".join(
+        '<tr><td class="results">%s</td><td class="results">%s</td><td class="results">DONEGAL</td><td class="results">DONEGAL</td>'
+        '<td><a href="https://x/details.xml?action=showDetails&amp;mysession=5&amp;ID=%d&amp;la=">d</a></td>'
+        '<td><a href="https://x/details.xml?action=showImage&amp;mysession=5&amp;ID=%d&amp;rs=%d&amp;width=640&amp;height=480">p</a></td>'
+        '<td><a href="https://x/details.xml?action=i8&amp;sheet=94&amp;mysession=5&amp;barony=TIRHUGH&amp;townland=TESTLAND">m</a></td></tr>'
+        % (s, f, rid, rid, rs) for s, f, rid, rs in rows)
+    return ('<!-- saved from url=(0100)https://x/index.xml?PlaceID=%d&totalrows=%d -->Results %d to %d of %d'
+            '<table>%s</table>' % (place, total, start, start + len(rows) - 1, total, body))
+
+
+class ParsePagesTests(unittest.TestCase):
+    A = page([("CASSIDY", "PETER", 12, 35), ("MCGINTY", "MARY", 13, 1)], 4)
+    B = page([("", "", 16, 2), ("ARRAN", "EARL OF", 15, 3)], 4, start=3)
+
+    def test_two_pages_become_rows_in_record_id_order_with_gaps_reported(self):
+        say = []
+        name, rows = pg.build([self.A, self.B], {"77": "Testland"}, say.append)
+        self.assertEqual(name, "Testland")
+        self.assertEqual([r["askaboutireland_record_id"] for r in rows], [12, 13, 15, 16])
+        self.assertEqual(rows[0]["original_page_position_rs"], 35)
+        self.assertNotIn("width=", rows[0]["original_page_url"])
+        self.assertEqual(rows[0]["barony"], "Tirhugh")
+        self.assertEqual(rows[3]["notes"], "Blank occupier name in source index; retain as an entry")
+        self.assertTrue(any("14 to 14" in s for s in say))
+
+    def test_missing_page_stops_the_run(self):
+        with self.assertRaises(ValueError):
+            pg.build([self.A], {"77": "Testland"}, lambda s: None)
+
+    def test_same_page_twice_stops_the_run(self):
+        with self.assertRaises(ValueError):
+            pg.build([self.A, self.A], {"77": "Testland"}, lambda s: None)
+
+    def test_pages_for_two_places_stop_the_run(self):
+        with self.assertRaises(ValueError):
+            pg.build([self.A, page([("A", "B", 40, 1)], 4, place=78)], {}, lambda s: None)
+
+    def test_not_a_results_page_stops_the_run(self):
+        with self.assertRaises(ValueError):
+            pg.parse_page("<html>nothing here</html>")

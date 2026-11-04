@@ -29,9 +29,13 @@ Rules.
   place ids are kept and the links are rebuilt without a session. The rebuilt links
   have not been opened from the build environment (network access is restricted).
   Mike to spot-check one.
-- Index entries that are not occupiers (a blank name, a title such as EARL OF ARRAN
-  at the foot of the page) are kept and labelled "foot_entry", as a proposed reading
-  for Mike to confirm. They are never counted as households.
+- Index entries that are not occupiers are kept and labelled as a proposed reading for
+  Mike to confirm: "blank_entry" (no name) or "title_entry" (a title such as EARL OF ARRAN
+  in the forename field). They are never counted as households. Corrected 2026-11-04: the
+  Earl is second to last in Cullionboy but fourth to last in Druminnin, so he is not
+  assumed to be a foot-of-page line.
+- Rows are ordered by record id, which is the order askaboutireland lists them. The page
+  position (rs) is not monotonic within a townland: Druminnin runs 35 to 38 and then 1 to 34.
 - Matching to a transcription is by page order, then checked name by name. A mismatch
   is reported and recorded, never silently resolved.
 - Authored content.json is never changed."""
@@ -65,9 +69,9 @@ def tier_of(row):
 
 def role_of(surname, forename):
     if not surname.strip() and not forename.strip():
-        return 'foot_entry', 'blank name in the source index'
+        return 'blank_entry', 'blank name in the source index (in Cullionboy and Druminnin it is the last entry)'
     if any(forename.strip().upper().startswith(t) for t in FOOT_TITLES):
-        return 'foot_entry', 'a title in the forename field, probably a proprietor line at the foot of the page'
+        return 'title_entry', 'a title in the forename field. Its place in the list varies, so it is not assumed to be a foot-of-page line'
     return 'occupier', ''
 
 
@@ -88,7 +92,7 @@ def read_index(path):
                 'tier': tier_of(r), 'note': (r.get('notes') or '').strip(),
                 'details_url': details_url(rid), 'image_url': image_url(rid, pos),
             })
-    out.sort(key=lambda x: x['position'])
+    out.sort(key=lambda x: x['record_id'])
     return out
 
 

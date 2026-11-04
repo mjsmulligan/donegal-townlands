@@ -14,7 +14,7 @@ Page: `docs/cullionboy/index.html`, built from `engine/walk.html` and `records/c
 - Which woman is which is not recorded, so `people_shown` is left blank.
 
 ## Griffith's index check (2026-11-04)
-- The askaboutireland index (`data/source/griffiths/cullionboy_griffiths_individuals.csv`, 27 entries) agrees with the transcription: 25 of 25 occupiers match by page order and name. Entries 52 (Earl of Arran) and 53 (blank name) are not tenants and are proposed as foot-of-page lines. Record: `records/griffiths_index.json` and `records/griffiths_match.json`, written by `tools/attach_griffiths.py`.
+- The askaboutireland index (`data/source/griffiths/cullionboy_griffiths_individuals.csv`, 27 entries) agrees with the transcription: 25 of 25 occupiers match by page order and name. Entries 52 (Earl of Arran) and 53 (blank name) are not tenants. They are labelled title_entry and blank_entry, proposed readings only. Record: `records/griffiths_index.json` and `records/griffiths_match.json`, written by `tools/attach_griffiths.py`.
 - The index supports the readings Dimon, Hallaghy, Mulrenin and Phideas, but it is itself a transcription, so this is corroboration and not proof.
 
 ## Missing
