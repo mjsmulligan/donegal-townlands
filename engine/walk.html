@@ -211,6 +211,45 @@ html.lb-lock{overflow:hidden}
 .fam-art.has-photos{min-height:clamp(440px,66svh,760px)}
 .hang.fam-hang{--hh:clamp(210px,44svh,470px);position:absolute;left:0;right:0;bottom:26px;margin-top:0}
 .hang.fam-hang[hidden]{display:none}
+
+/* Phones and touch screens. Some phone webviews report a layout width above 900px, so width alone is not a safe test:
+   the touch query catches those. Type is lifted so nothing reads below 14px and body text sits near 19px. */
+@media (max-width:640px),(hover:none) and (pointer:coarse){
+  body{font-size:19px}
+  .small,.medium,.cnt,.walkhint p,.treenote,.sheet .foot,.vitrine-note{font-size:16.5px}
+  .pn,.roomtag b,.btn,.yr,.rtab,.lb-bar .lb-count{font-size:16px}
+  .btn,.yr,.rtab{padding:9px 16px}
+  .top .brand{font-size:24px}
+  .room-now{font-size:19px}
+  .count{font-size:17px}
+  .hud button{width:48px;height:48px;font-size:22px}
+  .drawer li a{font-size:18px}
+  .drawer h3{font-size:22px}
+  .roomtag p{font-size:clamp(24px,3vw,30px)}
+  .label h2,.fam-title{font-size:clamp(40px,6vw,54px)}
+  .story,.fam-lead{font-size:clamp(25px,3vw,30px)}
+  .fam-para{font-size:19.5px}
+  .rec-txt{font-size:18.5px}
+  details.rec summary,details.vitrine summary{font-size:17px}
+  .vitrine-badge,.fam-timeline-label{font-size:14.5px}
+  .vitrine-title::before{font-size:15px}
+  table{font-size:15.5px}
+  .sheet table{font-size:17px}
+  .sheet th{font-size:15px}
+  .sheet .sub{font-size:19px}
+  .tile{font-size:17px}
+  .tile span{font-size:14px}
+  .frame b{font-size:20px}
+  .frame span{font-size:15px}
+  .frame em{font-size:14px}
+  .end{font-size:24px}
+  .tip{font-size:15px}
+  .rfilter input{font-size:16px}
+  .hung figcaption{font-size:15px;max-height:2.7em}
+  .pframe.broken{font-size:15px}
+  .lb-cap{font-size:22px}
+  .lb-link{font-size:17px}
+}
 </style>
 
 <header class="top"><div class="wrap">
@@ -234,6 +273,7 @@ html.lb-lock{overflow:hidden}
 <script>
 (function(){
 'use strict';
+var TOUCH=!!(window.matchMedia&&window.matchMedia('(max-width:640px),(hover:none) and (pointer:coarse)').matches);
 var DATA = __DATA__;
 var C = DATA.content, TOWN = DATA.townland, PL = C.plates, PLACE = DATA.place || {}, CEN = DATA.census || {}, CURL = DATA.census_urls || {};
 var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -407,8 +447,8 @@ function drawScene(sc,t){
       c.fillStyle=P.glow;c.fillRect(wx,y0-bh*.78,ww,wh)}
     c.fillStyle='rgba(20,40,45,.55)';c.fillRect(x0+w*.28,y0-bh*.5,w*.14,bh*.5);
     for(var q=0;q<3;q++){var ph=((t*.12+q/3+hs.fx*3)%1),sx=x0+w*.25+Math.sin(ph*6+q)*w*.1*(ph+.3),sy=y0-bh-rh-ph*w*1.1;c.beginPath();c.arc(sx,sy,w*(.05+ph*.1),0,7);c.fillStyle='rgba(255,255,255,'+(.5*(1-ph))+')';c.fill()}
-    if(sc.names&&hs.name){c.font='italic 400 '+Math.round(13*unit+1)+'px Newsreader, Georgia, serif';c.textAlign='center';c.fillStyle='rgba(29,47,51,.9)';c.fillText(hs.name,x0,y0+17*unit)}
-    sc.hits.push({x0:x0-w*.6,x1:x0+w*.6,y0:y0-bh-rh-8,y1:y0+(sc.names?22:6),t:hs.text});
+    if(sc.names&&hs.name){c.font='italic 400 '+Math.round((13*unit+1)*(TOUCH?1.4:1))+'px Newsreader, Georgia, serif';c.textAlign='center';c.fillStyle='rgba(29,47,51,.9)';c.fillText(hs.name,x0,y0+(TOUCH?22:17)*unit)}
+    sc.hits.push({x0:x0-w*.6,x1:x0+w*.6,y0:y0-bh-rh-8,y1:y0+(sc.names?(TOUCH?30:22):6),t:hs.text});
   });
   c.globalAlpha=1;
 }
