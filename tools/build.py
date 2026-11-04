@@ -131,7 +131,7 @@ def spelling_phrase(spell, name):
     return join_words([s + ' in ' + join_words(ys) for s, ys in by.items()])
 
 
-def default_content(name, place, census, match, has_griffiths, townland_name):
+def default_content(name, place, census, match, has_griffiths, townland_name, names_only=False):
     """Honest generated content for whatever the case holds. Authored content overrides it."""
     years = [y for y in CENSUS_YEARS if census.get(y)]
     spell = census_spellings(match)
@@ -154,7 +154,8 @@ def default_content(name, place, census, match, has_griffiths, townland_name):
     held = [False, has_griffiths, False, False, False, bool(years)]
     frames = [
         ['Tithe Applotment Books', '1820s and 1830s', 'Not yet added.', False],
-        ["Griffith's Valuation", 'Mid 1850s', 'Held.' if has_griffiths else 'Not yet added.', has_griffiths],
+        ["Griffith's Valuation", 'Mid 1850s',
+         'Held.' if has_griffiths else ('Names only.' if names_only else 'Not yet added.'), has_griffiths or names_only],
         ['Valuation revision books', 'After the 1850s', 'Not yet added.', False],
         ['Civil births, marriages and deaths', 'From 1864', 'Not yet added.', False],
         ['Parish records', 'Various dates', 'Not yet added.', False],
@@ -199,7 +200,10 @@ def default_content(name, place, census, match, has_griffiths, townland_name):
     elif len(years) < 3:
         missing = [y for y in CENSUS_YEARS if y not in years]
         qs.append('No census return is linked to this townland for %s. Was it unoccupied then, or is it recorded under a name not yet matched?' % join_words(missing))
-    if not has_griffiths:
+    if names_only:
+        qs.append("Griffith's Valuation holds only the askaboutireland index for this townland: names and page positions. "
+                  "Holding numbers, lessors, areas and valuations have not yet been added.")
+    elif not has_griffiths:
         qs.append("Griffith's Valuation, the mid 1850s baseline, has not yet been added for this townland.")
     qs.append('The Tithe Applotment Books, valuation revision books, civil records from 1864 and parish registers have not yet been added'
               + (', so no census household can yet be linked to an earlier record.' if years else '.'))
@@ -248,7 +252,9 @@ def payload_for(name):
         'census_spelling': census_spellings(match),
     }
     townland.update({k: v for k, v in meta.items() if v not in (None, '')})
-    content = default_content(display, place, census, match, bool(authored.get('griffiths')), display)
+    gindex = maybe('records/griffiths_index.json')
+    names_only = bool(gindex.get('rows')) and not authored.get('griffiths')
+    content = default_content(display, place, census, match, bool(authored.get('griffiths')), display, names_only)
     plates = dict(content['plates'])
     plates.update(authored.get('plates', {}))
     content.update({k: v for k, v in authored.items() if k != 'plates'})
@@ -258,6 +264,8 @@ def payload_for(name):
                'census_urls': urls}
     found = media_for(name)
     shown = media.describe(found['rows'], base, found['base_url'])
+    if names_only:                    # tier 1: the index only. A case with a transcription uses that instead
+        payload['griffiths_index'] = {k: gindex[k] for k in ('townland', 'rows') if k in gindex}
     if shown:                         # a case with no media builds exactly as before
         payload['media'] = shown
     return payload
