@@ -20,7 +20,7 @@ Page: `docs/cullionboy/index.html`, built from `engine/walk.html` and `records/c
 - Griffith's lot areas sum one acre over the printed total
 - Some Griffith's name readings uncertain
 - Dimon to Dunnion link is a hypothesis
-- Further open items are listed in the page's "What is still open" plate (`QS` in walk.html)
+- Further open items are kept in `questions` in content.json. The page no longer shows them (the "What is still open" plate was removed 2026-11-04).
 
 ## Doc
 Claude Doc 845ed338-9fd0-41b6-9388-c94ad29267d4 still says "six children" for Bella Cassidy in one place. Correct is five.

@@ -1,3 +1,8 @@
+<!doctype html>
+<html lang="en-IE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Druminardagh | Donegal Townlands</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -106,14 +111,6 @@ tr:last-child td{border-bottom:0}
 .sheet tr.tot td{border-top:1.5px solid var(--ink);border-bottom:0;font-weight:500}
 .sheet .foot{margin-top:14px;font:400 14px var(--body);color:var(--ink2);max-width:80ch}
 
-/* treemap */
-.treeart{padding-block:92px 40px;display:grid;place-items:center}
-.tree{position:relative;width:min(100%,1160px);height:clamp(380px,60svh,640px);margin-inline:auto}
-.tile{position:absolute;overflow:hidden;padding:8px 10px;font:italic 400 15px/1.15 var(--display);color:var(--ink);border-radius:3px;display:flex;flex-direction:column;gap:3px}
-.tile span{font:500 12px var(--body);font-style:normal;color:rgba(29,47,51,.75)}
-.tile:hover{filter:brightness(1.05);outline:2px solid var(--ink);z-index:2}
-.treenote{margin-top:12px;font-size:14px;color:var(--ink2)}
-
 /* empty frames */
 .frames{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:22px;width:min(100%,1160px);margin-inline:auto;padding-block:100px 56px}
 .frame{aspect-ratio:4/5;border:2px dashed var(--hill-d);border-radius:3px;padding:12px;display:flex;flex-direction:column;justify-content:flex-end;background:rgba(251,252,250,.55);gap:4px}
@@ -211,7 +208,60 @@ html.lb-lock{overflow:hidden}
 .fam-art.has-photos{min-height:clamp(440px,66svh,760px)}
 .hang.fam-hang{--hh:clamp(210px,44svh,470px);position:absolute;left:0;right:0;bottom:26px;margin-top:0}
 .hang.fam-hang[hidden]{display:none}
+
+/* Phones: single column, larger type, photographs sized by width, and a slim bar for the plate counter that
+   sits below the content instead of floating over it. */
+@media (max-width:640px){
+  body{font-size:18px;padding-bottom:calc(64px + env(safe-area-inset-bottom,0px))}
+  .small,.medium,.cnt,.walkhint p,.treenote,.sheet .foot,.vitrine-note{font-size:16px}
+  .pn,.roomtag b,.btn,.yr,.rtab,.lb-bar .lb-count{font-size:16px}
+  .btn,.yr,.rtab{padding:9px 16px}
+  .top{background:rgba(243,246,244,.97);border-bottom:1px solid var(--rule)}
+  .top .brand{font-size:23px}
+  .room-now{font-size:17px}
+  .count{font-size:17px}
+  .hud{left:0;right:0;bottom:0;transform:none;justify-content:center;gap:18px;border-radius:0;border-width:1px 0 0;padding:6px 6px calc(6px + env(safe-area-inset-bottom,0px));background:rgba(251,252,250,.98);box-shadow:0 -6px 18px rgba(29,47,51,.08)}
+  .hud button{width:48px;height:48px;font-size:22px}
+  .drawer li a{font-size:18px}
+  .drawer h3{font-size:22px}
+  .roomtag p{font-size:24px}
+  .label h2,.fam-title{font-size:42px}
+  .story,.fam-lead{font-size:24px}
+  .fam-para{font-size:18.5px}
+  .rec-txt{font-size:18px}
+  details.rec summary,details.vitrine summary{font-size:17px}
+  .vitrine-badge,.fam-timeline-label{font-size:14.5px}
+  .vitrine-title::before{font-size:15px}
+  table{font-size:15.5px}
+  .sheet table{font-size:17px}
+  .sheet th{font-size:15px}
+  .sheet .sub{font-size:19px}
+  .frame b{font-size:20px}
+  .frame span{font-size:15px}
+  .frame em{font-size:14px}
+  .end{font-size:24px}
+  .tip{font-size:15px}
+  .rfilter input{font-size:16px}
+  .label{padding-block:26px 40px}
+  .fam-label{padding-block:30px 40px}
+  .fam-header-col{position:static}
+  /* photographs fill the width, whole and uncropped. A tall photograph is capped near 70% of the screen height. */
+  .hang{height:auto}
+  .hang-row{height:auto;padding:6px 18px 12px}
+  .hung{height:auto}
+  .pframe{width:min(calc(100vw - 36px),calc((70svh - 77px)*var(--ar,1.5) + 16px))}
+  .hung figcaption{font-size:15px;max-height:2.7em}
+  .pframe.broken{font-size:15px}
+  .art.has-hang{min-height:0}
+  .art.has-hang .bigtitle{margin-top:clamp(120px,22vh,180px);margin-bottom:24px}
+  .fam-art.has-photos{display:flex;flex-direction:column;justify-content:flex-end;padding-top:130px;min-height:clamp(440px,calc(70svh + 210px),980px)}
+  .hang.fam-hang{position:relative;left:auto;right:auto;bottom:auto;margin:0 0 20px}
+  .lb-cap{font-size:22px}
+  .lb-link{font-size:17px}
+}
 </style>
+</head>
+<body>
 
 <header class="top"><div class="wrap">
   <a class="brand" href="#p01">Druminardagh</a>
@@ -234,6 +284,7 @@ html.lb-lock{overflow:hidden}
 <script>
 (function(){
 'use strict';
+var TOUCH=!!(window.matchMedia&&window.matchMedia('(max-width:640px)').matches);
 var DATA = {"census":{},"content":{"groups":{"colours":{"Other":"#A9B7B3"},"territory":["Other"],"map":{}},"families":[],"questions":["Census returns have not yet been attached to this townland.","Griffith's Valuation, the mid 1850s baseline, has not yet been added for this townland.","The Tithe Applotment Books, valuation revision books, civil records from 1864 and parish registers have not yet been added."],"plates":{"title":{"title":"Druminardagh","irish":"","heading":"Druminardagh","medium":"A townland in Tullynaught electoral division, Donegal civil parish, Tirhugh barony","story":["Druminardagh is a townland recognised by Logainm, the placenames database of the Government of Ireland.","No historical records have been added yet. This page is a starting point, not a finding about the history of the townland. It grows as records are added."]},"not_yet_hung":{"title":"Not yet hung","medium":"Six frames for six kinds of record. None is filled","story":["Each frame is a kind of record that can be hung here. A dashed frame is empty. A frame with a gold edge holds records for this townland.","Records are added one source at a time, and each new source adds to this page instead of replacing it."],"frames":[["Tithe Applotment Books","1820s and 1830s","Not yet added.",false],["Griffith's Valuation","Mid 1850s","Not yet added.",false],["Valuation revision books","After the 1850s","Not yet added.",false],["Civil births, marriages and deaths","From 1864","Not yet added.",false],["Parish records","Various dates","Not yet added.",false],["Census returns","1901, 1911 and 1926","Not yet added.",false]]},"method":{"paras":[{"before":"Place details come from ","link":{"href":"https://www.logainm.ie/en/14275","text":"Logainm"},"after":", the placenames database of the Government of Ireland (CC BY 4.0). The record number is 14275."},"No other source has been added for this townland yet."],"numbers_intro":""},"records":{"placeholder":"for example Gallagher"}}},"townland":{"name":"Druminardagh","page_title":"Druminardagh | Donegal Townlands","storage_key":"druminardagh-q","census_spelling":{}},"place":{"logainm_id":"14275","name_en":"Druminardagh","name_ga":"","ded":"Tullynaught","civil_parish":"Donegal","barony":"Tirhugh","county":"Donegal","latitude":"54.644538183879554","longitude":"-8.024656347008648","snapshot_date":"2026-11-01","logainm_url":"https://www.logainm.ie/en/14275","credit":"Irish-language placename data by Logainm, Government of Ireland, licensed under CC BY 4.0.","osm_url":"https://www.openstreetmap.org/?mlat=54.644538183879554&mlon=-8.024656347008648&zoom=15"},"census_urls":{}};
 var C = DATA.content, TOWN = DATA.townland, PL = C.plates, PLACE = DATA.place || {}, CEN = DATA.census || {}, CURL = DATA.census_urls || {};
 var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -261,10 +312,13 @@ var GRP=C.groups||{colours:{Other:'#A9B7B3'},territory:['Other'],map:{}};
 var COL=GRP.colours, TERR=GRP.territory, GMAP=GRP.map;
 function G(s){return GMAP[String(s).toLowerCase().replace(/[^a-z]/g,'')]||'Other'}
 function T(g){return TERR.indexOf(g)>=0?g:'Other'}
+function surKey(sn){return 'S:'+String(sn||'').toLowerCase().replace(/[^a-z]/g,'')}
 function surOf(name){var w=name.replace(/\(.*\)/,'').trim().split(/\s+/);return w[w.length-1]}
 
 var GRF=C.griffiths||null, GR=GRF?GRF.rows:[], MOUNTAIN=GRF&&GRF.mountain_acres, WATER=GRF&&GRF.water_acres, HAS_GR=GR.length>0;
 var CY=['1901','1911','1926'].filter(function(y){return (CEN[y]||[]).length});
+/* A case with no authored families gets one plate per surname, built only from the returns it holds (genFamilies). */
+var GEN=!((C.families||[]).length)&&CY.length>0;
 /* what the case holds, in words: used on the title plate and in the contents */
 var SPAN=(function(){
   if(HAS_GR&&CY.length) return 'from the 1850s to '+CY[CY.length-1];
@@ -282,7 +336,7 @@ function censusHH(y){
     if(y==='1926') head=m.find(function(r){return r.r==='Head'})||m.find(function(r){return r.r===(r.f+' '+r.s)})||m[0];
     else head=m.find(function(r){return /^Head/.test(r.r)})||m[0];
     var rest=m.filter(function(r){return r!==head}).sort(function(a,b){return (b.a==null?-1:b.a)-(a.a==null?-1:a.a)});
-    return {key:k,year:y,head:head,hname:head.f+' '+head.s,grp:T(G(head.s)),members:[head].concat(rest)};
+    return {key:k,year:y,head:head,hname:head.f+' '+head.s,grp:GEN?surKey(head.s):T(G(head.s)),members:[head].concat(rest)};
   });
 }
 function griffHH(){
@@ -290,7 +344,7 @@ function griffHH(){
   GR.forEach(function(r){if(!map[r.hd]){map[r.hd]=[];order.push(r.hd)} map[r.hd].push(r)});
   return order.map(function(k){
     var m=map[k], first=m[0];
-    return {key:k,year:'1850s',head:{f:'',s:surOf(first.occ)},hname:first.names||first.occ,grp:T(G(surOf(first.occ))),lot:first.lot,members:m};
+    return {key:k,year:'1850s',head:{f:'',s:surOf(first.occ)},hname:first.names||first.occ,grp:GEN?surKey(surOf(first.occ)):T(G(surOf(first.occ))),lot:first.lot,members:m};
   });
 }
 var SN={'1850s':griffHH(),'1901':censusHH('1901'),'1911':censusHH('1911'),'1926':censusHH('1926')};
@@ -407,8 +461,8 @@ function drawScene(sc,t){
       c.fillStyle=P.glow;c.fillRect(wx,y0-bh*.78,ww,wh)}
     c.fillStyle='rgba(20,40,45,.55)';c.fillRect(x0+w*.28,y0-bh*.5,w*.14,bh*.5);
     for(var q=0;q<3;q++){var ph=((t*.12+q/3+hs.fx*3)%1),sx=x0+w*.25+Math.sin(ph*6+q)*w*.1*(ph+.3),sy=y0-bh-rh-ph*w*1.1;c.beginPath();c.arc(sx,sy,w*(.05+ph*.1),0,7);c.fillStyle='rgba(255,255,255,'+(.5*(1-ph))+')';c.fill()}
-    if(sc.names&&hs.name){c.font='italic 400 '+Math.round(13*unit+1)+'px Newsreader, Georgia, serif';c.textAlign='center';c.fillStyle='rgba(29,47,51,.9)';c.fillText(hs.name,x0,y0+17*unit)}
-    sc.hits.push({x0:x0-w*.6,x1:x0+w*.6,y0:y0-bh-rh-8,y1:y0+(sc.names?22:6),t:hs.text});
+    if(sc.names&&hs.name){c.font='italic 400 '+Math.round((13*unit+1)*(TOUCH?1.4:1))+'px Newsreader, Georgia, serif';c.textAlign='center';c.fillStyle='rgba(29,47,51,.9)';c.fillText(hs.name,x0,y0+(TOUCH?22:17)*unit)}
+    sc.hits.push({x0:x0-w*.6,x1:x0+w*.6,y0:y0-bh-rh-8,y1:y0+(sc.names?(TOUCH?30:22):6),t:hs.text});
   });
   c.globalAlpha=1;
 }
@@ -423,8 +477,44 @@ function loop(ts){
   });
 }
 
+
+/* ================= generated families =================
+   For a case with no authored families: one plate per surname of household head, as recorded in the returns.
+   The text states only what the returns record. It links no household to another and draws no conclusion. */
+function genFamilies(){
+  var by={}, order=[];
+  function add(hh){var k=hh.grp; if(!by[k]){by[k]={k:k,sn:hh.head.s,n:0};order.push(k)} return by[k]}
+  CY.forEach(function(y){SN[y].forEach(function(hh){add(hh).n+=hh.members.length})});
+  if(HAS_GR) SN['1850s'].forEach(function(hh){add(hh)});
+  order.sort(function(a,b){return by[b].n-by[a].n||(by[a].sn>by[b].sn?1:-1)});
+  function plural(sn){return /(s|x|z|ch|sh)$/i.test(sn)?sn+'es':sn+'s'}
+  function joinList(a){return a.length<2?a.join(''):a.slice(0,-1).join(', ')+' and '+a[a.length-1]}
+  function who(y,r,head){
+    var nm=r.f+(r.s&&r.s!==head.s?' '+r.s:''), bits=[];
+    if(r.a!=null) bits.push(String(r.a));
+    if(y!=='1926'&&r.r) bits.push(String(r.r).toLowerCase());
+    return nm+(bits.length?' ('+bits.join(', ')+')':'');
+  }
+  function sentence(y,hh){
+    var head=hh.head, label=y==='1926'?('form '+(head.fo||hh.key)):('house '+hh.key), others=hh.members.slice(1).map(function(r){return who(y,r,head)});
+    return head.f+' '+head.s+(head.a!=null?' ('+head.a+')':'')+' headed '+label+(others.length?' with '+joinList(others)+'.':', the only person recorded.');
+  }
+  return order.map(function(k){
+    var sn=by[k].sn, yrs=CY.filter(function(y){return hhFor(y,[k]).length}), paras=[];
+    yrs.forEach(function(y){
+      var hs=hhFor(y,[k]);
+      paras.push('In '+y+(hs.length>1?' there were '+hs.length+' households headed by this name. ':', ')+hs.map(function(hh){return sentence(y,hh)}).join(' '));
+    });
+    var lead=yrs.length?('Census returns for '+joinList(yrs)+'.'):'Not in the census returns held here.';
+    if(HAS_GR){var gh=hhFor('1850s',[k]); lead+=gh.length?(" Griffith's: "+gh.length+(gh.length===1?' holding':' holdings')+' on the page.'):" Not on Griffith's page."}
+    return {name:'The '+plural(sn),keys:[k],generated:true,
+      medium:'Built from the census returns'+(HAS_GR?" and Griffith's Valuation":'')+'. No researched account has been written for this family yet.',
+      story:lead,paras:paras};
+  });
+}
+
 /* ================= copy ================= */
-var FAM=C.families||[];
+var FAM=GEN?genFamilies():(C.families||[]);
 
 /* ================= plate builders ================= */
 var plates=[], ROOMS=[['I','The land'],['II','The households'],['III','Not yet hung'],['IV','The archive']];
@@ -586,39 +676,6 @@ if(HAS_GR) plate(0,PL.griffiths.title,function(num){
   return h('section',{class:'plate',id:'p'+pad(num)},art,labelBlock(pad(num),PL.griffiths.title,PL.griffiths.medium,PL.griffiths.story,null));
 });
 
-/* Plate 4: treemap */
-function squarify(data,x,y,w,hh){
-  var res=[], items=data.slice().sort(function(a,b){return b.v-a.v}), total=items.reduce(function(s,d){return s+d.v},0), area=w*hh, row=[];
-  items=items.map(function(d){return {d:d,a:d.v/total*area}});
-  function worst(r,side){var s=r.reduce(function(t,q){return t+q.a},0),mx=Math.max.apply(null,r.map(function(q){return q.a})),mn=Math.min.apply(null,r.map(function(q){return q.a}));return Math.max(side*side*mx/(s*s),s*s/(side*side*mn))}
-  function lay(r){var s=r.reduce(function(t,q){return t+q.a},0);
-    if(w>=hh){var rw=s/hh,yy=y;r.forEach(function(q){var rh=q.a/rw;res.push({d:q.d,x:x,y:yy,w:rw,h:rh});yy+=rh});x+=rw;w-=rw}
-    else{var rh=s/w,xx=x;r.forEach(function(q){var rw=q.a/rh;res.push({d:q.d,x:xx,y:y,w:rw,h:rh});xx+=rw});y+=rh;hh-=rh}}
-  while(items.length){var side=Math.min(w,hh),it=items[0];
-    if(!row.length||worst(row.concat([it]),side)<=worst(row,side)){row.push(it);items.shift()}else{lay(row);row=[]}}
-  if(row.length) lay(row);
-  return res;
-}
-if(HAS_GR) plate(0,PL.treemap.title,function(num){
-  var art=h('div',{class:'art treeart'}); makeScene(art,{seed:4,ph:0,kind:'mist',gorse:false});
-  var box=h('div',{class:'tree'}); var wrapEl=h('div',{class:'wrap',style:{position:'relative',width:'100%'}},box,h('p',{class:'treenote',text:'Areas are to scale. Positions are not. Hover or tap a block for the printed area and valuation.'}));
-  art.append(wrapEl);
-  var data=GR.filter(function(r){return r.ac}).map(function(r){return {v:r.ac,name:r.names,col:COL[G(surOf(r.occ))]||COL.Other,tip:'Lot '+r.lot+', '+r.area+', valued at £'+r.tot}});
-  if(MOUNTAIN) data.push({v:MOUNTAIN,name:PL.treemap.mountain_name,col:'#BDD6CF',tip:PL.treemap.mountain_tip});
-  if(WATER) data.push({v:WATER,name:PL.treemap.water_name,col:'#C4DAE5',tip:PL.treemap.water_tip});
-  function layout(){
-    box.replaceChildren(); var W=box.clientWidth,H=box.clientHeight; if(!W||!H) return;
-    squarify(data,0,0,W,H).forEach(function(r){
-      var big=r.w>86&&r.h>46;
-      box.append(h('div',{class:'tile',title:r.d.name+'. '+r.d.tip,style:{left:r.x+1.5+'px',top:r.y+1.5+'px',width:Math.max(0,r.w-3)+'px',height:Math.max(0,r.h-3)+'px',background:r.d.col+(r.d.col.length===7?'D9':'')}},
-        big?[r.d.name,h('span',{text:r.d.v.toFixed(1)+' acres'})]:null));
-    });
-  }
-  if('ResizeObserver' in window) new ResizeObserver(layout).observe(box); else window.addEventListener('resize',layout);
-  layout();
-  return h('section',{class:'plate',id:'p'+pad(num)},art,labelBlock(pad(num),PL.treemap.title,PL.treemap.medium,PL.treemap.story,null));
-});
-
 /* Plate 5: census overview (every census year the case holds) */
 if(CY.length) plate(1,CY.length===3?'Three censuses':(CY.length===2?'Two censuses':'The census of '+CY[0]),function(num){
   var art=h('div',{class:'art'}), sc=makeScene(art,{seed:6,ph:1,kind:'hills'}); roomTag(art,1);
@@ -663,14 +720,14 @@ function famPlate(f){
         h('span',{class:'vitrine-title',text:'Primary source evidence'}),
         h('span',{class:'vitrine-badge',text:rows.length+' documented records'})),
       h('div',{class:'vitrine-in'},
-        h('p',{class:'vitrine-note',text:'Documentary census returns and valuation entries backing the narrative above. Tap or hover over cottages on the canvas to inspect households.'+(Object.keys(CURL).length?' A house number marked with an arrow opens the National Archives image of the original return.':'')}),
+        h('p',{class:'vitrine-note',text:'Documentary census returns and valuation entries'+(f.generated?'.':' backing the narrative above.')+' Tap or hover over cottages on the canvas to inspect households.'+(Object.keys(CURL).length?' A house number marked with an arrow opens the National Archives image of the original return.':'')}),
         table(['Year','House or lot','Name','Age','Relation or role','Marital or note','Valuation'],rows,3)));
 
     var placard=h('div',{class:'label fam-label'},
       h('div',{class:'wrap'},
         h('div',{class:'fam-grid'},
           h('div',{class:'fam-header-col'},
-            h('span',{class:'pn',text:'Plate '+pad(num)+' &middot; Room II'}),
+            h('span',{class:'pn',text:'Plate '+pad(num)+' \u00b7 Room II'}),
             h('h2',{class:'fam-title',text:f.name}),
             f.medium?h('p',{class:'medium',text:f.medium}):null,
             h('div',{class:'fam-timeline-box'},
@@ -696,20 +753,6 @@ plate(2,PL.not_yet_hung.title,function(num){
   art.append(h('div',{class:'wrap',style:{position:'relative'}},h('div',{class:'frames'},fr.map(function(f){
     return h('div',{class:'frame'+(f[3]?' held':'')},h('b',{text:f[0]}),h('span',{text:f[1]}),h('em',{text:f[2]}))}))));
   return h('section',{class:'plate',id:'p'+pad(num)},art,labelBlock(pad(num),PL.not_yet_hung.title,PL.not_yet_hung.medium,PL.not_yet_hung.story,null));
-});
-
-/* Plate: open questions */
-var QS=C.questions;
-plate(2,'What is still open',function(num){
-  var saved={}; try{saved=JSON.parse(localStorage.getItem(TOWN.storage_key)||'{}')||{}}catch(e){saved={}}
-  var ul=h('ul',{class:'q'});
-  QS.forEach(function(q,i){
-    var cb=h('input',{type:'checkbox',id:'q'+i}); cb.checked=!!saved[i];
-    cb.addEventListener('change',function(){saved[i]=cb.checked;try{localStorage.setItem(TOWN.storage_key,JSON.stringify(saved))}catch(e){}});
-    ul.append(h('li',null,h('label',{for:'q'+i},cb,h('span',{text:q}))));
-  });
-  return h('section',{class:'plate archive',id:'p'+pad(num)},h('div',{class:'wrap'},h('span',{class:'pn',text:'Plate '+pad(num)}),h('h2',{text:'What is still open'}),
-    h('p',{class:'intro',text:'Tick items off as they close. Ticks stay in this browser only.'}),ul));
 });
 
 /* Plate: method and numbers */
@@ -811,3 +854,5 @@ requestAnimationFrame(loop);
 if(document.fonts&&document.fonts.ready) document.fonts.ready.then(function(){scenes.forEach(function(s){s.dirty=true})});
 })();
 </script>
+</body>
+</html>

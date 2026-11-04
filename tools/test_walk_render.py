@@ -93,17 +93,25 @@ class WalkRenderTests(unittest.TestCase):
 
     def test_empty_place_is_a_short_walk_with_no_empty_rooms(self):
         info = self.render("empty")
-        self.assertEqual(info["count"], 4)
+        self.assertEqual(info["count"], 3)
         self.assertNotIn("The households", info["text"])  # no households, so no Room II
         self.assertIn("Not yet hung", info["plates"])
         self.assertNotIn("It runs from", info["text"])
+
+    def test_page_has_a_viewport_so_phones_do_not_shrink_it(self):
+        html = (self.root / "docs" / "empty" / "index.html").read_text(encoding="utf-8")
+        self.assertTrue(html.lstrip().lower().startswith("<!doctype html>"))
+        self.assertIn('name="viewport" content="width=device-width,initial-scale=1', html)
 
     def test_checked_place_says_no_return_was_found(self):
         self.assertIn("Checked. No return found.", self.render("checked")["text"])
 
     def test_one_census_year(self):
         info = self.render("oneyear")
-        self.assertEqual(info["count"], 6)
+        self.assertEqual(info["count"], 7)
+        self.assertIn("The Harveys", info["plates"])   # generated, one plate per surname of household head
+        self.assertIn("The Gildeas", info["plates"])
+        self.assertIn("No researched account has been written for this family yet.", info["text"])
         self.assertIn("The census of 1911", info["plates"])
         self.assertIn("It covers the census of 1911.", info["text"])
         self.assertNotIn("Pick a year", info["text"])
@@ -121,7 +129,9 @@ class WalkRenderTests(unittest.TestCase):
 
     def test_authored_study_still_renders_in_full(self):
         info = self.render("cullionboy")
-        self.assertEqual(info["count"], 23)
+        self.assertEqual(info["count"], 21)
+        self.assertNotIn("What is still open", info["plates"])
+        self.assertNotIn("Holdings by size", info["plates"])
         self.assertIn("Twenty-five names", info["plates"])
         self.assertIn("It runs from the 1850s to 1926.", info["text"])
         self.assertIn("Census 1926 (Collinboy)", info["text"])

@@ -17,7 +17,7 @@ Page: `docs/clogher/index.html`, built from `engine/walk.html`, `townland.json`,
 - Griffith's lots 3 and 20 areas are the least certain readings. Publication year and union still to confirm.
 - 1926: four ages missing, three Hone women with no age, "English Only" for everyone, Kone, two Flanagan women both named Unity (82 and 62).
 - 1911: house numbers 12 and 15 have no Clogher rows.
-- Further open items are listed in the page's "What is still open" plate (`questions` in content.json).
+- Further open items are kept in `questions` in content.json. The page no longer shows them (the "What is still open" plate was removed 2026-11-04).
 
 ## Notes
 - Built from the earlier Clogher Claude Doc study (27 Oct 2026). Its Griffith's map plan, "Who held land beside whom" section and "On the map" paragraphs are left out, because the map is not part of the standard process.
