@@ -72,7 +72,9 @@ class AttachTests(unittest.TestCase):
         self.assertEqual([r["role"] for r in d["rows"]], ["occupier"] * 3 + ["title_entry", "blank_entry"])
         self.assertTrue(all(r["tier"] == 1 for r in d["rows"]))
         self.assertNotIn("mysession", json.dumps(d))
-        self.assertEqual(d["rows"][0]["image_url"], ag.image_url(10, 5))
+        self.assertEqual(d["rows"][0]["listing_url"], ag.listing_url(1, 5, 0))
+        self.assertNotIn("image_url", d["rows"][0])
+        self.assertNotIn("details_url", d["rows"][0])
         self.assertEqual(d["parish_master_entries"], 5)
 
     def test_rows_follow_record_id_not_page_position(self):
@@ -80,6 +82,16 @@ class AttachTests(unittest.TestCase):
         self.write_index(rows, 3)
         self.run_it()
         self.assertEqual([r["record_id"] for r in self.index()["rows"]], [20, 21, 22])
+
+    def test_listing_link_has_no_session_and_pages_run_in_twenties(self):
+        rows = [idx_row(100 + i, i + 1, "S%d" % i, "F") for i in range(45)]
+        self.write_index(rows, 45)
+        self.run_it()
+        d = self.index()["rows"]
+        self.assertEqual([d[i]["listing_page"] for i in (0, 19, 20, 39, 40, 44)], [1, 1, 2, 2, 3, 3])
+        self.assertIn("offset=20&", d[20]["listing_url"])
+        self.assertIn("totalrows=45&PlaceID=1&", d[20]["listing_url"])
+        self.assertNotIn("mysession", json.dumps(d))
 
     def test_status_columns_set_the_tier(self):
         rows = [idx_row(1, 1, "A", "B", website_transcription_status="captured"),
@@ -127,9 +139,9 @@ class NamesOnlyPlateTests(_B):
     def index_payload(self):
         return {"townland": "Druminnin", "rows": [
             {"record_id": 1, "position": 3, "surname": "GILDEA", "forename": "PATRICK", "role": "occupier", "tier": 1,
-             "image_url": "https://x/1"},
+             "listing_url": "https://x/l", "listing_page": 1},
             {"record_id": 2, "position": 4, "surname": "", "forename": "", "role": "blank_entry", "tier": 1,
-             "image_url": "https://x/2"}]}
+             "listing_url": "https://x/l", "listing_page": 1}]}
 
     def test_index_only_case_carries_names_and_says_so(self):
         self.case("druminnin", {"place.json": {**__import__("tools.test_build", fromlist=["PLACE"]).PLACE},
