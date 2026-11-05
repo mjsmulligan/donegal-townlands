@@ -170,7 +170,7 @@ def page(rows, total, place=77, start=1):
         '<td><a href="https://x/details.xml?action=i8&amp;sheet=94&amp;mysession=5&amp;barony=TIRHUGH&amp;townland=TESTLAND">m</a></td></tr>'
         % (s, f, rid, rid, rs) for s, f, rid, rs in rows)
     return ('<!-- saved from url=(0100)https://x/index.xml?PlaceID=%d&totalrows=%d -->Results %d to %d of %d'
-            '<table>%s</table>' % (place, total, start, start + len(rows) - 1, total, body))
+            '<table class="gv-results">%s</table>' % (place, total, start, start + len(rows) - 1, total, body))
 
 
 class ParsePagesTests(unittest.TestCase):
@@ -203,3 +203,31 @@ class ParsePagesTests(unittest.TestCase):
     def test_not_a_results_page_stops_the_run(self):
         with self.assertRaises(ValueError):
             pg.parse_page("<html>nothing here</html>")
+
+
+class RawPageTests(unittest.TestCase):
+    """The raw page source: unquoted attributes, relative links, unclosed rows, no PlaceID."""
+    RAW = ("Results 1 to 2 of 2 <table class='gv-results'><tr><th class=\"doprint\">Surname</th></tr>"
+           "<tr><td class=results> THOMAS </td><td class=results> MICHAEL </td><td class=results> DONEGAL </td>"
+           "<td class=results> DONEGAL </td><td><a href=\"details.xml?action=showDetails&mysession=5&ID=31&la=\">d</a></td>"
+           "<td><a href=\"details.xml?action=showImage&mysession=5&ID=31&rs=17&width=640&height=480\">p</a>"
+           "<a href=\"details.xml?action=showImage&mysession=5&ID=31&rs=17\">p</a></td>"
+           "<td class=resultsmap><a href=\"details.xml?action=i8&sheet=94&mysession=5&placename=MULLANALAMPHRY&barony=TIRHUGH\">m</a></td>"
+           "<tr><td class=results> LYNCH </td><td class=results> JAMES </td><td class=results> DONEGAL </td>"
+           "<td class=results> DONEGAL </td><td><a href=\"details.xml?action=showDetails&mysession=5&ID=32&la=\">d</a></td>"
+           "<td><a href=\"details.xml?action=showImage&mysession=5&ID=32&rs=18\">p</a></td>"
+           "<td class=resultsmap><a href=\"details.xml?action=i8&sheet=94&mysession=5&placename=MULLANALAMPHRY&barony=TIRHUGH\">m</a></td>"
+           "</table> footer details.xml?action=showDetails&ID=99")
+    NAMES = {"MULLANALAMPHRY": [(1489546, "Mullanalamphry")]}
+
+    def test_raw_page_rows_and_townland_from_the_placename(self):
+        name, rows = pg.build([self.RAW], {}, lambda s: None, self.NAMES)
+        self.assertEqual(name, "Mullanalamphry")
+        self.assertEqual([r["askaboutireland_record_id"] for r in rows], [31, 32])
+        self.assertEqual(rows[0]["askaboutireland_place_id"], 1489546)
+        self.assertTrue(rows[0]["original_page_url"].startswith("https://www.askaboutireland.ie/griffith-valuation/details.xml"))
+        self.assertNotIn("width=", rows[0]["original_page_url"])
+
+    def test_unknown_placename_stops_the_run(self):
+        with self.assertRaises(ValueError):
+            pg.build([self.RAW], {}, lambda s: None, {})

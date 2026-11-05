@@ -14,8 +14,13 @@ Output:
     data/source/griffiths/<townland>_griffiths_individuals.csv   (same columns as the
     Cullionboy file, every row tier 1: not yet captured, not yet transcribed)
 
+Two kinds of saved page are read: a browser's Save Page As (quoted attributes, a saved-from
+comment holding the PlaceID) and the raw page source (unquoted attributes, relative links,
+no PlaceID). Without a PlaceID the townland is found from the placename in the map link
+and the parish master, and the run stops if that is not exactly one townland.
+
 Checks, all reported on screen and any failure stops the run:
-- the saved-from comment gives one PlaceID for every page given
+- every page is for one place (the PlaceID, or the placename when there is no PlaceID)
 - the "of N" total on the pages equals the rows found
 - a record id appears once
 Gaps in the run of record ids are reported, not hidden: they may be entries the search
@@ -25,6 +30,7 @@ a record of what was retrieved. attach_griffiths.py never uses it."""
 import csv, html, pathlib, re, sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
+SITE = 'https://www.askaboutireland.ie/griffith-valuation/'
 SRC = ROOT / 'data' / 'source' / 'griffiths'
 FIELDS = ['townland', 'civil_parish', 'county', 'barony', 'askaboutireland_place_id', 'askaboutireland_record_id',
           'occupier_surname_as_indexed', 'occupier_forename_as_indexed', 'original_page_position_rs',
@@ -32,18 +38,25 @@ FIELDS = ['townland', 'civil_parish', 'county', 'barony', 'askaboutireland_place
           'website_transcription_status', 'image_transcription_status', 'notes']
 
 
+def absolute(url):
+    return url if url.startswith('http') else SITE + url.lstrip('./')
+
+
 def parse_page(text):
-    """One saved results page -> (place_id, total, rows)."""
+    """One saved results page -> (place_id or None, total, rows)."""
     place = re.search(r'PlaceID=(\d+)', text)
     total = re.search(r'Results \d+ to \d+ of (\d+)', text)
-    if not place or not total:
+    if not total or not re.search(r'class=["\']?gv-results', text):
         raise ValueError('not an askaboutireland results page')
     rows = []
-    for chunk in re.findall(r'<tr>\s*<td class="results">(.*?)</tr>', text, flags=re.S):
-        chunk = '<td class="results">' + chunk
-        cells = re.findall(r'<td class="results"[^>]*>(.*?)</td>', chunk, flags=re.S)
+    start = re.search(r'class=["\']?gv-results', text).start()
+    # Split on <tr> because the raw page source leaves rows unclosed. Stop at the end of the table.
+    for chunk in re.split(r'<tr\b[^>]*>', text[start:].split('</table>')[0])[1:]:
+        if not re.match(r'\s*<td class=["\']?results["\']?>', chunk):
+            continue                      # the header row
+        cells = re.findall(r'<td class=["\']?results["\']?[^>]*>(.*?)</td>', chunk, flags=re.S)
         name = [re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', '', c)).strip() for c in cells[:4]]
-        hrefs = [html.unescape(h) for h in re.findall(r'href="([^"]+)"', chunk)]
+        hrefs = [absolute(html.unescape(h)) for h in re.findall(r'href=["\']?([^"\' >]+)', chunk)]
         details = next((h for h in hrefs if 'action=showDetails' in h), '')
         image = next((h for h in hrefs if 'action=showImage' in h), '')
         mapv = next((h for h in hrefs if 'action=i8' in h), '')
@@ -58,7 +71,7 @@ def parse_page(text):
                      'record_id': int(rid.group(1)), 'rs': int(rs.group(1)),
                      'details': details, 'image': image, 'map': mapv,
                      'sheet': sheet.group(1) if sheet else '', 'barony': baron.group(1) if baron else ''})
-    return int(place.group(1)), int(total.group(1)), rows
+    return (int(place.group(1)) if place else None), int(total.group(1)), rows
 
 
 def load_master(src=SRC):
@@ -71,16 +84,39 @@ def load_master(src=SRC):
     return out
 
 
-def build(pages, master, say=print):
+def load_names(src=SRC):
+    """askaboutireland placename (upper case) -> (place id, townland), from the parish master."""
+    p = src / 'donegal_griffiths_parish_master_complete.csv'
+    out = {}
+    if p.is_file():
+        with p.open(encoding='utf-8-sig', newline='') as h:
+            for r in csv.DictReader(h):
+                out.setdefault((r.get('askaboutireland_placename') or r['townland']).upper(), []).append(
+                    (int(r['askaboutireland_place_id']), r['townland']))
+    return out
+
+
+def build(pages, master, say=print, names=None):
     """pages: list of page texts. Returns (townland, csv_rows)."""
-    place_ids, totals, rows = set(), set(), []
+    place_ids, totals, rows, placenames, named = set(), set(), [], set(), None
     for text in pages:
         pid, total, got = parse_page(text)
         place_ids.add(pid); totals.add(total); rows += got
-    if len(place_ids) != 1:
-        raise ValueError('pages are for different places: %s' % sorted(place_ids))
+        placenames |= {re.search(r'placename=([^&]*)', r['map']).group(1).upper() for r in got
+                       if re.search(r'placename=([^&]*)', r['map'])}
     if len(totals) != 1:
         raise ValueError('pages disagree on the total: %s' % sorted(totals))
+    if None in place_ids:
+        if len(place_ids) > 1 or len(placenames) != 1:
+            raise ValueError('pages are for different places or a page names none')
+        found = (names or {}).get(next(iter(placenames)).replace('%2C', ',').replace('%20', ' '), [])
+        if len(found) != 1:
+            raise ValueError('placename %s is not exactly one townland in the parish master' % sorted(placenames))
+        place_ids = {found[0][0]}
+        named = found[0][1]
+        say('  no PlaceID in the pages: townland found from the placename %s' % next(iter(placenames)))
+    if len(place_ids) != 1:
+        raise ValueError('pages are for different places: %s' % sorted(place_ids))
     pid, total = place_ids.pop(), totals.pop()
     ids = [r['record_id'] for r in rows]
     if len(set(ids)) != len(ids):
@@ -91,7 +127,10 @@ def build(pages, master, say=print):
     gaps = [(a, b) for a, b in zip(ids and sorted(ids), sorted(ids)[1:]) if b - a > 1]
     for a, b in gaps:
         say('  record ids %d to %d are not in the listing (%d ids)' % (a + 1, b - 1, b - a - 1))
-    townland = master.get(str(pid)) or rows[0]['map'] and re.search(r'townland=([^&]*)', rows[0]['map']).group(1).title()
+    guess = re.search(r'townland=([^&]*)', rows[0]['map'])
+    townland = master.get(str(pid)) or named or (guess.group(1).title() if guess else '')
+    if not townland:
+        raise ValueError('cannot tell which townland these pages are for')
     out = []
     for r in rows:
         blank = not r['surname'] and not r['forename']
@@ -111,7 +150,7 @@ def main(argv):
         print(__doc__); return 2
     pages = [pathlib.Path(a).read_bytes().decode('cp1252', errors='replace') for a in argv]
     try:
-        townland, rows = build(pages, load_master())
+        townland, rows = build(pages, load_master(), names=load_names())
     except ValueError as e:
         print('stopped: ' + str(e)); return 1
     out = SRC / ('%s_griffiths_individuals.csv' % re.sub(r'[^a-z0-9]+', '-', townland.casefold()).strip('-'))
