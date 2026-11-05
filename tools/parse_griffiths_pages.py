@@ -56,7 +56,8 @@ def parse_page(text):
             continue                      # the header row
         cells = re.findall(r'<td class=["\']?results["\']?[^>]*>(.*?)</td>', chunk, flags=re.S)
         name = [re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', '', c)).strip() for c in cells[:4]]
-        hrefs = [absolute(html.unescape(h)) for h in re.findall(r'href=["\']?([^"\' >]+)', chunk)]
+        hrefs = [absolute(html.unescape(a or b or c)) for a, b, c in
+                 re.findall(r'href=(?:"([^"]*)"|\'([^\']*)\'|([^\s>]+))', chunk)]
         details = next((h for h in hrefs if 'action=showDetails' in h), '')
         image = next((h for h in hrefs if 'action=showImage' in h), '')
         mapv = next((h for h in hrefs if 'action=i8' in h), '')
@@ -109,7 +110,7 @@ def build(pages, master, say=print, names=None):
     if None in place_ids:
         if len(place_ids) > 1 or len(placenames) != 1:
             raise ValueError('pages are for different places or a page names none')
-        found = (names or {}).get(next(iter(placenames)).replace('%2C', ',').replace('%20', ' '), [])
+        found = (names or {}).get(next(iter(placenames)).replace('%2C', ',').replace('%20', ' ').strip(), [])
         if len(found) != 1:
             raise ValueError('placename %s is not exactly one townland in the parish master' % sorted(placenames))
         place_ids = {found[0][0]}

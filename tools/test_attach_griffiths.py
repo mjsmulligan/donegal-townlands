@@ -243,3 +243,11 @@ class RawPageTests(unittest.TestCase):
     def test_unknown_placename_stops_the_run(self):
         with self.assertRaises(ValueError):
             pg.build([self.RAW], {}, lambda s: None, {})
+
+
+class SpaceInPlacenameTests(unittest.TestCase):
+    def test_address_with_a_space_and_comma_is_read_whole(self):
+        raw = RawPageTests.RAW.replace("placename=MULLANALAMPHRY", "placename=CARNBEAGH, NORTH")
+        names = {"CARNBEAGH, NORTH": [(1489379, "Carnbeagh North")]}
+        name, rows = pg.build([raw], {}, lambda s: None, names)
+        self.assertEqual((name, rows[0]["askaboutireland_place_id"]), ("Carnbeagh North", 1489379))
