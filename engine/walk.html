@@ -335,7 +335,12 @@ var GRP=C.groups||{colours:{Other:'#A9B7B3'},territory:['Other'],map:{}};
 var COL=GRP.colours, TERR=GRP.territory, GMAP=GRP.map;
 function G(s){return GMAP[String(s).toLowerCase().replace(/[^a-z]/g,'')]||'Other'}
 function T(g){return TERR.indexOf(g)>=0?g:'Other'}
-function surKey(sn){return 'S:'+String(sn||'').toLowerCase().replace(/[^a-z]/g,'')}
+/* Verified spelling families (records/name_families.json, DECISIONS.md 2026-11-05): the label and spellings only. */
+var NF=DATA.name_families||[], NFMAP={};
+function nameKey(sn){return String(sn||'').toLowerCase().replace(/[^a-z]/g,'')}
+NF.forEach(function(f){f.recorded_as.forEach(function(s){NFMAP[nameKey(s)]=f})});
+function nfOf(sn){return NFMAP[nameKey(sn)]||null}
+function surKey(sn){var f=nfOf(sn); return f?'F:'+nameKey(f.label):'S:'+nameKey(sn)}
 function surOf(name){var w=name.replace(/\(.*\)/,'').trim().split(/\s+/);return w[w.length-1]}
 
 var D_GI=DATA.griffiths_index||null;
@@ -507,7 +512,7 @@ function loop(ts){
    The text states only what the returns record. It links no household to another and draws no conclusion. */
 function genFamilies(){
   var by={}, order=[];
-  function add(hh){var k=hh.grp; if(!by[k]){by[k]={k:k,sn:hh.head.s,n:0};order.push(k)} return by[k]}
+  function add(hh){var k=hh.grp, f=nfOf(hh.head.s); if(!by[k]){by[k]={k:k,sn:f?f.label:hh.head.s,nf:f,n:0};order.push(k)} return by[k]}
   CY.forEach(function(y){SN[y].forEach(function(hh){add(hh).n+=hh.members.length})});
   if(HAS_GR) SN['1850s'].forEach(function(hh){add(hh)});
   order.sort(function(a,b){return by[b].n-by[a].n||(by[a].sn>by[b].sn?1:-1)});
@@ -531,6 +536,13 @@ function genFamilies(){
     });
     var lead=yrs.length?('Census returns for '+joinList(yrs)+'.'):'Not in the census returns held here.';
     if(HAS_GR){var gh=hhFor('1850s',[k]); lead+=gh.length?(" Griffith's: "+gh.length+(gh.length===1?' holding':' holdings')+' on the page.'):" Not on Griffith's page."}
+    var nf=by[k].nf;
+    if(nf){
+      lead+=' Recorded under several spellings: '+joinList(nf.recorded_as)+'. Each record keeps the spelling its writer used.';
+      var gi=(D_GI&&D_GI.rows||[]).filter(function(r){return r.role==='occupier'&&nfOf(r.surname)===nf});
+      if(gi.length){var sp=[]; gi.forEach(function(r){var s=nf.recorded_as.filter(function(x){return nameKey(x)===nameKey(r.surname)})[0]||r.surname; if(sp.indexOf(s)<0) sp.push(s)});
+        lead+=" The Griffith's list of the 1850s names "+gi.length+(gi.length===1?' occupier':' occupiers')+' of the family, spelled '+joinList(sp)+'.'}
+    }
     return {name:'The '+plural(sn),keys:[k],generated:true,
       medium:'Built from the census returns'+(HAS_GR?" and Griffith's Valuation":'')+'. No researched account has been written for this family yet.',
       story:lead,paras:paras};
@@ -707,7 +719,9 @@ if(!HAS_GR&&D_GI&&D_GI.rows&&D_GI.rows.length) plate(0,"Griffith's, the names",f
   var rows=occ.map(function(r,i){return [String(i+1),(r.forename+' '+r.surname).trim()]});
   var t=table(['No.','Occupier, as indexed'],rows,-1);
   Array.prototype.forEach.call(t.querySelectorAll('tbody tr'),function(tr,i){
-    var td=tr.children[1], a=h('a',{href:occ[i].listing_url,target:'_blank',rel:'noopener',title:'Opens the askaboutireland list for this townland, page '+occ[i].listing_page+'. Open the details or page icon there.',text:' List p.'+occ[i].listing_page}); td.append(a)});
+    var td=tr.children[1], nf=nfOf(occ[i].surname);
+    if(nf) td.append(h('span',{style:{opacity:'.7',fontStyle:'italic',marginLeft:'6px'},text:'('+nf.label+' family)'}));
+    var a=h('a',{href:occ[i].listing_url,target:'_blank',rel:'noopener',title:'Opens the askaboutireland list for this townland, page '+occ[i].listing_page+'. Open the details or page icon there.',text:' List p.'+occ[i].listing_page}); td.append(a)});
   var note="Names in the order askaboutireland.ie lists them. Holding numbers, lessors, areas and valuations have not yet been added, and the index may misread the page. The links open the askaboutireland list this name is on. The site's own record and page-image links only work inside a live session, so open the details or page icon from the list. "+(foot.length?foot.length+(foot.length===1?' further index entry is':' further index entries are')+' not an occupier (a blank name or a title) and '+(foot.length===1?'is':'are')+' left out of this list.':'');
   var sheet=h('div',{class:'sheet'},h('h3',{text:D_GI.townland.toUpperCase()}),h('p',{class:'sub',text:"Griffith's Valuation, mid 1850s. The index only."}),t,h('p',{class:'foot',text:note}));
   art.append(h('div',{class:'wrap',style:{position:'relative',width:'100%'}},sheet));

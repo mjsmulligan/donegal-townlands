@@ -15,6 +15,7 @@ import sys
 
 from source_manifest import verify_manifest
 import media
+import name_families
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 THIS = datetime.date.today().year
@@ -59,6 +60,9 @@ if verify_manifest() != 0:
 
 media_errors, media_warnings, media_summary = media.check_repo(ROOT)
 bad += media_errors
+
+for _case in sorted((ROOT / 'townlands').glob('*/records/name_families.json')):
+    bad += ['%s: %s' % (_case.parent.parent.name, e) for e in name_families.load_case(_case.parent.parent)[1]]
 
 for warning in media_warnings:
     print('warning: ' + warning)
