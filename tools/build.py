@@ -27,9 +27,9 @@ changes a case folder. Every build regenerates docs/index.html, the list of ever
 so the index is never edited by hand. Only a name with no case folder is an error."""
 import collections, csv, html as htmllib, json, re, shutil, sys, pathlib
 try:
-    from tools import media
+    from tools import media, name_families
 except ImportError:                  # run as a script: python tools/build.py
-    import media
+    import media, name_families
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 NEEDED = ('townland.json', 'content.json', 'records/census.json')
 EVIDENCE = NEEDED + ('records/events.csv', 'records/corrections.json')
@@ -266,6 +266,9 @@ def payload_for(name):
     shown = media.describe(found['rows'], base, found['base_url'])
     if names_only:                    # tier 1: the index only. A case with a transcription uses that instead
         payload['griffiths_index'] = {k: gindex[k] for k in ('townland', 'rows') if k in gindex}
+    families, _ = name_families.load_case(base)
+    if families:                      # verified spelling families: the label and spellings only
+        payload['name_families'] = families
     if shown:                         # a case with no media builds exactly as before
         payload['media'] = shown
     return payload
@@ -319,6 +322,12 @@ def build(name):
     if found['errors']:
         print(name + ': media problems, not built (python tools/validate.py lists them):')
         for error in found['errors']:
+            print('  ' + error)
+        return state
+    _, family_errors = name_families.load_case(ROOT / 'townlands' / name)
+    if family_errors:
+        print(name + ': name_families problems, not built:')
+        for error in family_errors:
             print('  ' + error)
         return state
     payload = payload_for(name)
