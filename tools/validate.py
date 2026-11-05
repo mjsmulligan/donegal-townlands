@@ -3,7 +3,8 @@
 2. Living-people rule (100/75/50) for townland event records.
 3. Census files stay at 1926 or earlier.
 4. Preserved census source files match data/source/manifest.csv.
-5. Media: townlands/<name>/media/media.csv rows and files (docs/MEDIA_SPEC.md). Warnings
+5. Surname variant reference: data/reference/surname_variants.csv (DECISIONS.md, 2026-11-05).
+6. Media: townlands/<name>/media/media.csv rows and files (docs/MEDIA_SPEC.md). Warnings
    are printed but do not fail. No 100/75/50 test is applied to media (DECISIONS.md, 2026-11-03).
 Exit code 1 on any failure.
 """
@@ -15,6 +16,7 @@ import sys
 
 from source_manifest import verify_manifest
 import media
+import variants_reference
 import name_families
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -57,6 +59,8 @@ for path in (ROOT / 'data' / 'census').glob('*.csv'):
 # by the command-line tool, but importing the function keeps one implementation.
 if verify_manifest() != 0:
     bad.append('source manifest verification failed')
+
+bad += variants_reference.check()
 
 media_errors, media_warnings, media_summary = media.check_repo(ROOT)
 bad += media_errors
