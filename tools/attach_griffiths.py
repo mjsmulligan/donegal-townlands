@@ -25,10 +25,13 @@ A row's tier comes from its two status columns. A row matched to the authored
 transcription in content.json counts as tier 3 whatever the status columns say.
 
 Rules.
-- The CSVs carry session ids in their URLs. These expire, so only the record and
-  place ids are kept and the links are rebuilt without a session. The rebuilt links
-  have not been opened from the build environment (network access is restricted).
-  Mike to spot-check one.
+- The CSVs carry session ids in their URLs. These expire, and askaboutireland's record and
+  page-image links do not work without a live session (Mike tried them, 2026-11-05: "your
+  session has timed out"). So no per-record link is made. Each row instead carries the
+  address of the townland's results list, at the offset of the page it is on, and the
+  reader opens the details or page icon from there. Only the record id is kept for a row.
+  These listing addresses are copied from the form of the saved pages and have not been
+  opened from the build environment (network access is restricted). Mike to spot-check.
 - Index entries that are not occupiers are kept and labelled as a proposed reading for
   Mike to confirm: "blank_entry" (no name) or "title_entry" (a title such as EARL OF ARRAN
   in the forename field). They are never counted as households. Corrected 2026-11-04: the
@@ -51,12 +54,15 @@ def slug(text):
     return re.sub(r'[^a-z0-9]+', '-', text.casefold()).strip('-')
 
 
-def details_url(record_id):
-    return BASE + 'details.xml?action=showDetails&ID=%s&la=' % record_id
+PAGE = 20     # entries per results page on askaboutireland
 
 
-def image_url(record_id, position):
-    return BASE + 'details.xml?action=showImage&ID=%s&rs=%s' % (record_id, position)
+def listing_url(place_id, total, offset):
+    """The townland's results list, in the form of the address askaboutireland shows for it.
+    The address holds no session id, so it opens on its own. The record and page-image links
+    inside the list need a live session and cannot be linked to directly (DECISIONS.md, 2026-11-05)."""
+    return (BASE + 'index.xml?action=doNameSearch&familyname=&firstname=&offset=%d&countyname=&parishname='
+            '&unionname=&baronyname=&totalrows=%d&PlaceID=%s&wildcard=' % (offset, total, place_id))
 
 
 def tier_of(row):
@@ -75,7 +81,7 @@ def role_of(surname, forename):
     return 'occupier', ''
 
 
-def read_index(path):
+def read_index(path, place_id=None):
     out = []
     with path.open(encoding='utf-8-sig', newline='') as h:
         for r in csv.DictReader(h):
@@ -90,9 +96,11 @@ def read_index(path):
                 'role': role, 'role_note': why,
                 'sheet': r.get('valuation_sheet_reference', ''),
                 'tier': tier_of(r), 'note': (r.get('notes') or '').strip(),
-                'details_url': details_url(rid), 'image_url': image_url(rid, pos),
             })
     out.sort(key=lambda x: x['record_id'])
+    for i, r in enumerate(out):
+        r['listing_url'] = listing_url(place_id, len(out), i // PAGE * PAGE)
+        r['listing_page'] = i // PAGE + 1
     return out
 
 
@@ -143,7 +151,7 @@ def run(src=SRC, root=ROOT, say=print):
         folder = root / 'townlands' / slug(townland)
         if not folder.is_dir():
             say('%s: no case folder townlands/%s, skipped' % (townland, slug(townland))); problems_total += 1; continue
-        rows = read_index(path)
+        rows = read_index(path, int(first['askaboutireland_place_id']))
         m = master.get(townland, {})
         index = {
             'source': 'askaboutireland.ie Griffith\'s Valuation index',

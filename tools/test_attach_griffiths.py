@@ -72,7 +72,9 @@ class AttachTests(unittest.TestCase):
         self.assertEqual([r["role"] for r in d["rows"]], ["occupier"] * 3 + ["title_entry", "blank_entry"])
         self.assertTrue(all(r["tier"] == 1 for r in d["rows"]))
         self.assertNotIn("mysession", json.dumps(d))
-        self.assertEqual(d["rows"][0]["image_url"], ag.image_url(10, 5))
+        self.assertEqual(d["rows"][0]["listing_url"], ag.listing_url(1, 5, 0))
+        self.assertNotIn("image_url", d["rows"][0])
+        self.assertNotIn("details_url", d["rows"][0])
         self.assertEqual(d["parish_master_entries"], 5)
 
     def test_rows_follow_record_id_not_page_position(self):
@@ -80,6 +82,16 @@ class AttachTests(unittest.TestCase):
         self.write_index(rows, 3)
         self.run_it()
         self.assertEqual([r["record_id"] for r in self.index()["rows"]], [20, 21, 22])
+
+    def test_listing_link_has_no_session_and_pages_run_in_twenties(self):
+        rows = [idx_row(100 + i, i + 1, "S%d" % i, "F") for i in range(45)]
+        self.write_index(rows, 45)
+        self.run_it()
+        d = self.index()["rows"]
+        self.assertEqual([d[i]["listing_page"] for i in (0, 19, 20, 39, 40, 44)], [1, 1, 2, 2, 3, 3])
+        self.assertIn("offset=20&", d[20]["listing_url"])
+        self.assertIn("totalrows=45&PlaceID=1&", d[20]["listing_url"])
+        self.assertNotIn("mysession", json.dumps(d))
 
     def test_status_columns_set_the_tier(self):
         rows = [idx_row(1, 1, "A", "B", website_transcription_status="captured"),
@@ -127,9 +139,9 @@ class NamesOnlyPlateTests(_B):
     def index_payload(self):
         return {"townland": "Druminnin", "rows": [
             {"record_id": 1, "position": 3, "surname": "GILDEA", "forename": "PATRICK", "role": "occupier", "tier": 1,
-             "image_url": "https://x/1"},
+             "listing_url": "https://x/l", "listing_page": 1},
             {"record_id": 2, "position": 4, "surname": "", "forename": "", "role": "blank_entry", "tier": 1,
-             "image_url": "https://x/2"}]}
+             "listing_url": "https://x/l", "listing_page": 1}]}
 
     def test_index_only_case_carries_names_and_says_so(self):
         self.case("druminnin", {"place.json": {**__import__("tools.test_build", fromlist=["PLACE"]).PLACE},
@@ -170,7 +182,7 @@ def page(rows, total, place=77, start=1):
         '<td><a href="https://x/details.xml?action=i8&amp;sheet=94&amp;mysession=5&amp;barony=TIRHUGH&amp;townland=TESTLAND">m</a></td></tr>'
         % (s, f, rid, rid, rs) for s, f, rid, rs in rows)
     return ('<!-- saved from url=(0100)https://x/index.xml?PlaceID=%d&totalrows=%d -->Results %d to %d of %d'
-            '<table>%s</table>' % (place, total, start, start + len(rows) - 1, total, body))
+            '<table class="gv-results">%s</table>' % (place, total, start, start + len(rows) - 1, total, body))
 
 
 class ParsePagesTests(unittest.TestCase):
@@ -203,3 +215,39 @@ class ParsePagesTests(unittest.TestCase):
     def test_not_a_results_page_stops_the_run(self):
         with self.assertRaises(ValueError):
             pg.parse_page("<html>nothing here</html>")
+
+
+class RawPageTests(unittest.TestCase):
+    """The raw page source: unquoted attributes, relative links, unclosed rows, no PlaceID."""
+    RAW = ("Results 1 to 2 of 2 <table class='gv-results'><tr><th class=\"doprint\">Surname</th></tr>"
+           "<tr><td class=results> THOMAS </td><td class=results> MICHAEL </td><td class=results> DONEGAL </td>"
+           "<td class=results> DONEGAL </td><td><a href=\"details.xml?action=showDetails&mysession=5&ID=31&la=\">d</a></td>"
+           "<td><a href=\"details.xml?action=showImage&mysession=5&ID=31&rs=17&width=640&height=480\">p</a>"
+           "<a href=\"details.xml?action=showImage&mysession=5&ID=31&rs=17\">p</a></td>"
+           "<td class=resultsmap><a href=\"details.xml?action=i8&sheet=94&mysession=5&placename=MULLANALAMPHRY&barony=TIRHUGH\">m</a></td>"
+           "<tr><td class=results> LYNCH </td><td class=results> JAMES </td><td class=results> DONEGAL </td>"
+           "<td class=results> DONEGAL </td><td><a href=\"details.xml?action=showDetails&mysession=5&ID=32&la=\">d</a></td>"
+           "<td><a href=\"details.xml?action=showImage&mysession=5&ID=32&rs=18\">p</a></td>"
+           "<td class=resultsmap><a href=\"details.xml?action=i8&sheet=94&mysession=5&placename=MULLANALAMPHRY&barony=TIRHUGH\">m</a></td>"
+           "</table> footer details.xml?action=showDetails&ID=99")
+    NAMES = {"MULLANALAMPHRY": [(1489546, "Mullanalamphry")]}
+
+    def test_raw_page_rows_and_townland_from_the_placename(self):
+        name, rows = pg.build([self.RAW], {}, lambda s: None, self.NAMES)
+        self.assertEqual(name, "Mullanalamphry")
+        self.assertEqual([r["askaboutireland_record_id"] for r in rows], [31, 32])
+        self.assertEqual(rows[0]["askaboutireland_place_id"], 1489546)
+        self.assertTrue(rows[0]["original_page_url"].startswith("https://www.askaboutireland.ie/griffith-valuation/details.xml"))
+        self.assertNotIn("width=", rows[0]["original_page_url"])
+
+    def test_unknown_placename_stops_the_run(self):
+        with self.assertRaises(ValueError):
+            pg.build([self.RAW], {}, lambda s: None, {})
+
+
+class SpaceInPlacenameTests(unittest.TestCase):
+    def test_address_with_a_space_and_comma_is_read_whole(self):
+        raw = RawPageTests.RAW.replace("placename=MULLANALAMPHRY", "placename=CARNBEAGH, NORTH")
+        names = {"CARNBEAGH, NORTH": [(1489379, "Carnbeagh North")]}
+        name, rows = pg.build([raw], {}, lambda s: None, names)
+        self.assertEqual((name, rows[0]["askaboutireland_place_id"]), ("Carnbeagh North", 1489379))
