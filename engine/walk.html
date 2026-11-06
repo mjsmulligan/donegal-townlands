@@ -335,7 +335,7 @@ var GRP=C.groups||{colours:{Other:'#A9B7B3'},territory:['Other'],map:{}};
 var COL=GRP.colours, TERR=GRP.territory, GMAP=GRP.map;
 function G(s){return GMAP[String(s).toLowerCase().replace(/[^a-z]/g,'')]||'Other'}
 function T(g){return TERR.indexOf(g)>=0?g:'Other'}
-/* Verified spelling families (records/name_families.json, DECISIONS.md 2026-11-05): the label and spellings only. */
+/* Verified spelling families (data/reference/surname_variants.csv, DECISIONS.md 2026-11-06): the label and spellings only. */
 var NF=DATA.name_families||[], NFMAP={};
 function nameKey(sn){return String(sn||'').toLowerCase().replace(/[^a-z]/g,'')}
 NF.forEach(function(f){f.recorded_as.forEach(function(s){NFMAP[nameKey(s)]=f})});

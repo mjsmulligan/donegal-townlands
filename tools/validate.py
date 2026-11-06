@@ -18,7 +18,6 @@ import sys
 from source_manifest import verify_manifest
 import media
 import variants_reference
-import name_families
 import gedcom_census
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -70,8 +69,8 @@ bad += variants_reference.check()
 media_errors, media_warnings, media_summary = media.check_repo(ROOT)
 bad += media_errors
 
-for _case in sorted((ROOT / 'townlands').glob('*/records/name_families.json')):
-    bad += ['%s: %s' % (_case.parent.parent.name, e) for e in name_families.load_case(_case.parent.parent)[1]]
+for _w in variants_reference.warnings():
+    print("warning: " + _w)
 
 for warning in media_warnings:
     print('warning: ' + warning)

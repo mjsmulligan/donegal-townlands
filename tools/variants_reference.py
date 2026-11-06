@@ -13,9 +13,11 @@ variants recur across records and geography. One row is one family:
     added        the date the row was added
     notes        anything else
 
-A row is a lead and never a rule. A spelling that is one family in one townland may be
-unrelated families in another, so nothing here groups spellings on a page by itself.
-A townland's own records/name_families.json does that, once Mike has confirmed it.
+This file is the single surname dictionary (DECISIONS.md, 2026-11-06). Mike verifies a row
+using local knowledge and a verified row applies to every townland: the build gives each
+page the verified families whose spellings it holds. A proposed row is a lead and never
+changes a page. An assistant adds rows only as proposed. A spelling may sit in only one
+verified family, and a verified spelling may not appear in any other row.
 Matching ignores case, spaces and punctuation."""
 import csv
 import pathlib
@@ -70,7 +72,40 @@ def check(path=PATH):
             for f in ('authority', 'basis', 'observed_in'):
                 if not r.get(f, '').strip():
                     errors.append(where + ': a verified row needs ' + f)
+    errors += [m for m, severe in overlaps(load(path)) if severe]
     return errors
+
+
+def overlaps(rows):
+    """(message, severe) for each spelling held by more than one row, rejected rows left out.
+    Severe when a verified row is involved, because that would change a page."""
+    holders = {}
+    for r in rows:
+        if r['status'] == 'rejected':
+            continue
+        for sp in r['spellings']:
+            holders.setdefault(key(sp), []).append(r)
+    out = []
+    for k, rs in sorted(holders.items()):
+        if len(rs) > 1:
+            ids = ', '.join(r['family_id'] for r in rs)
+            out.append(('surname_variants.csv: the spelling %s is in more than one family (%s)' % (k, ids),
+                        any(r['status'] == 'verified' for r in rs)))
+    return out
+
+
+def warnings(path=PATH):
+    """Overlaps that involve only proposed rows. They do not fail validation."""
+    return [m for m, severe in overlaps(load(path)) if not severe]
+
+
+def page_families(present, rows=None):
+    """Verified families for a page: label and spellings, for families with a spelling in `present`
+    (an iterable of surnames the case holds). Only verified rows ever reach a page."""
+    rows = load() if rows is None else rows
+    have = {key(x) for x in present}
+    return [{'label': r['label'], 'recorded_as': list(r['spellings'])} for r in rows
+            if r['status'] == 'verified' and have & {key(sp) for sp in r['spellings']}]
 
 
 def lookup(spelling, rows=None):

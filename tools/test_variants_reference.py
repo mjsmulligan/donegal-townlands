@@ -69,8 +69,27 @@ class ReferenceTests(unittest.TestCase):
         self.assertEqual(vr.lookup("mcab", rows), [])
         self.assertEqual(vr.lookup("unknown", rows), [])
 
+    def test_overlap_with_a_verified_row_fails_and_between_proposed_rows_only_warns(self):
+        ver = dict(status="verified", authority="Mike", basis="x", observed_in="y")
+        self.write([row(), row(family_id="c-d", label="Cd", spellings="Cd|Ba")])
+        self.assertEqual(vr.check(self.path), [])
+        self.assertEqual(len(vr.warnings(self.path)), 1)
+        self.write([row(**ver), row(family_id="c-d", label="Cd", spellings="Cd|Ba")])
+        self.assertTrue(any("more than one family" in m for m in vr.check(self.path)))
+        self.assertEqual(vr.warnings(self.path), [])
+
+    def test_a_page_gets_only_verified_families_with_a_spelling_it_holds(self):
+        ver = dict(status="verified", authority="Mike", basis="x", observed_in="y")
+        self.write([row(**ver), row(family_id="c-d", label="Cd", spellings="Cd|Dc"),
+                    row(family_id="e-f", label="Ef", spellings="Ef|Fe", **ver)])
+        rows = vr.load(self.path)
+        self.assertEqual(vr.page_families(["AB"], rows), [{"label": "Ab", "recorded_as": ["Ab", "Ba"]}])
+        self.assertEqual(vr.page_families(["Dc"], rows), [])
+        self.assertEqual(vr.page_families(["Zz"], rows), [])
+
     def test_the_real_reference_is_valid_and_only_mcanaw_is_verified(self):
         self.assertEqual(vr.check(), [])
+        self.assertEqual(vr.warnings(), [])
         verified = [r["family_id"] for r in vr.load() if r["status"] == "verified"]
         self.assertEqual(verified, ["mcanaw"])
         self.assertEqual([r["family_id"] for r in vr.lookup("McKenna")], ["mcanaw"])

@@ -27,9 +27,9 @@ changes a case folder. Every build regenerates docs/index.html, the list of ever
 so the index is never edited by hand. Only a name with no case folder is an error."""
 import collections, csv, html as htmllib, json, re, shutil, sys, pathlib
 try:
-    from tools import media, name_families
+    from tools import media, variants_reference
 except ImportError:                  # run as a script: python tools/build.py
-    import media, name_families
+    import media, variants_reference
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 NEEDED = ('townland.json', 'content.json', 'records/census.json')
 EVIDENCE = NEEDED + ('records/events.csv', 'records/corrections.json')
@@ -266,8 +266,10 @@ def payload_for(name):
     shown = media.describe(found['rows'], base, found['base_url'])
     if names_only:                    # tier 1: the index only. A case with a transcription uses that instead
         payload['griffiths_index'] = {k: gindex[k] for k in ('townland', 'rows') if k in gindex}
-    families, _ = name_families.load_case(base)
-    if families:                      # verified spelling families: the label and spellings only
+    names = [r.get('s', '') for rows in (census.get('years') or census).values() if isinstance(rows, list) for r in rows]
+    names += [r.get('surname', '') for r in gindex.get('rows', [])]
+    families = variants_reference.page_families(names)
+    if families:                      # verified dictionary families the case holds: the label and spellings only
         payload['name_families'] = families
     if shown:                         # a case with no media builds exactly as before
         payload['media'] = shown
@@ -324,9 +326,9 @@ def build(name):
         for error in found['errors']:
             print('  ' + error)
         return state
-    _, family_errors = name_families.load_case(ROOT / 'townlands' / name)
+    family_errors = variants_reference.check()
     if family_errors:
-        print(name + ': name_families problems, not built:')
+        print(name + ': surname dictionary problems, not built:')
         for error in family_errors:
             print('  ' + error)
         return state
