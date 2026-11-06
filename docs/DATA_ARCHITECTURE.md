@@ -215,6 +215,9 @@ to the presentation and research requirements.
 - GEDCOM pointers are not Donegal Townlands identifiers.
 - Citations support individual facts, not a general bibliography.
 - A source observation does not establish identity. Person matching is subject to human review.
+- The GEDCOM is a secondary source, derived from Mike's research. Only high quality claims are used; errors are flagged for review and unsatisfactory claims are not used (see `docs/RESEARCH_PRINCIPLES.md`).
+- GEDCOM people are linked to census observations by reviewed associations (WP16), not by editing the census rows. Links are keyed on the observation ID and the GEDCOM person pointer, with the person's name and birth kept as a guard.
+- Tested 2026-11-06 with Ancestry exports: person pointers (`@I...@`) stayed stable across a re-download and across deleting three people. Family pointers (`@F...@`) were renumbered. Key anything durable on people, never on family pointers.
 
 Open: GEDCOM 7 as target version, pending compatibility and round-trip testing in the intended genealogy software. GEDCOM 7 `UID`, `EXID` and `REFN` are candidate carriers for Donegal Townlands identifiers. The choice needs testing, including whether identifiers survive edit and regeneration.
 

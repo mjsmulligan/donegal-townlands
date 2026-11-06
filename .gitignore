@@ -4,3 +4,7 @@ __pycache__/
 # Raw Logainm responses stay out of git until the licence question is settled.
 # The snapshot manifest in each dated folder is committed.
 data/source/logainm/*/raw/
+
+# Generated GEDCOM reports hold names from Mike's private GEDCOM. Regenerate with
+# python tools/gedcom_census.py propose FILE. Only the reviewed decisions file is committed.
+data/processed/gedcom/

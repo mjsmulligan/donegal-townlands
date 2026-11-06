@@ -54,6 +54,12 @@ The data architecture that follows from this is set out in `docs/DATA_ARCHITECTU
 
 In short: **Grá tells us what the sources contain. Donegal Townlands investigates what those records tell us about the history of a place.**
 
+## The GEDCOM is a secondary source
+
+Primary sources are the evidence. The GEDCOM records Mike's research from them and is a secondary source. Use only GEDCOM data of high quality. Where an error is found, flag it and review it with Mike. If he is not satisfied with a claim, it is not used. Removing a weak entry from the GEDCOM is preferred to keeping a suspected one (2026-11-06, Owen McCadden).
+
+Birth was not registered systematically before 1864, so people born earlier estimated their own ages in census returns. Age drift between returns is expected for those births and is recorded, not treated as an error. A civil birth record outranks census ages where one exists.
+
 ## Link readers to original sources
 
 Wherever possible, significant factual claims in a townland history should link to the original historical or archival source, not only to a project transcription, dataset or summary.
