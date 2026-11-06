@@ -1,0 +1,76 @@
+person_ptr,person_name,person_birth,obs_id,status,reviewer,date,method,proposed_confidence,note
+@I202759754055@,Patrick McCadden,20 Oct 1911,census1926:tullynaught:2775809,accepted,Mike,2026-11-06,schedule id; given exact; surname exact,high,age 14 vs cited 14
+@I202759754056@,Rosanna Kelly,30 Jul 1913,census1926:clogher:2886915,accepted,Mike,2026-11-06,schedule id; given nickname; surname exact,medium,age 12 vs cited 12
+@I202759754057@,John McCadden,19 Feb 1882,census1901:tullynaught:6040537,accepted,Mike,2026-11-06,townland; given exact; surname exact,high,age 18 vs cited 18
+@I202759754057@,John McCadden,19 Feb 1882,census1911:tullynaught:1441598,accepted,Mike,2026-11-06,townland; given exact; surname exact,high,age 30 vs birth-year implied 29
+@I202759754057@,John McCadden,19 Feb 1882,census1926:tullynaught:2775807,accepted,Mike,2026-11-06,townland; given exact; surname exact,medium,age 44 vs cited 44
+@I202759754058@,Mary Frances Logue,23 Jun 1890,census1901:tullynaught:6041084,accepted,Mike,2026-11-06,townland; given exact; surname exact,high,age 10 vs cited 10
+@I202759754058@,Mary Frances Logue,23 Jun 1890,census1911:tullynaught:1441599,accepted,Mike,2026-11-06,townland; given exact; surname head-surname:exact,high,age 21 vs cited 21
+@I202759754058@,Mary Frances Logue,23 Jun 1890,census1926:tullynaught:2775808,accepted,Mike,2026-11-06,townland; given nickname; surname head-surname:exact,medium,age 36 vs cited 36
+@I202759754059@,Joseph Kelly,8 Jun 1875,census1901:clogher:6384915,accepted,Mike,2026-11-06,townland; given exact; surname exact,high,age 24 vs cited 24
+@I202759754059@,Joseph Kelly,8 Jun 1875,census1911:clogher:2239295,accepted,Mike,2026-11-06,townland; given exact; surname exact,high,age 35 vs cited 35
+@I202759754060@,Isabella McGettigan,6 Feb 1879,census1901:clogher:6385354,accepted,Mike,2026-11-06,townland; given nickname; surname exact,medium,age 20 vs cited 20
+@I202759754060@,Isabella McGettigan,6 Feb 1879,census1911:clogher:2239296,accepted,Mike,2026-11-06,townland; given nickname; surname head-surname:exact,medium,age 32 vs cited 32
+@I202759754060@,Isabella McGettigan,6 Feb 1879,census1926:clogher:2886913,accepted,Mike,2026-11-06,townland; given nickname; surname head-surname:exact,medium,age 45 vs cited 45
+@I202759754061@,Patrick McCadden,ABT 1855,census1901:tullynaught:6040534,accepted,Mike,2026-11-06,townland; given nickname; surname exact,medium,age 46 vs cited 46
+@I202759754061@,Patrick McCadden,ABT 1855,census1911:tullynaught:1441127,accepted,Mike,2026-11-06,townland; given exact; surname exact,high,age 59 vs cited 59
+@I202759754061@,Patrick McCadden,ABT 1855,census1926:tullynaught:2775443,accepted,Mike,2026-11-06,townland; given exact; surname exact,medium,age 75 vs cited 75
+@I202759754062@,Bridget Gillespie,ABT 1856,census1901:tullynaught:6040535,accepted,Mike,2026-11-06,"townland; given exact; surname none (married name or variant, review)",medium,age 45 vs cited 45
+@I202759754062@,Bridget Gillespie,ABT 1856,census1911:tullynaught:1441128,accepted,Mike,2026-11-06,"townland; given exact; surname none (married name or variant, review)",medium,age 60 vs cited 60
+@I202759754062@,Bridget Gillespie,ABT 1856,census1926:tullynaught:2775444,accepted,Mike,2026-11-06,"townland; given exact; surname none (married name or variant, review)",low,age 75 vs cited 75
+@I202759754063@,Thomas Logue,ABT 1864,census1901:tullynaught:6041082,accepted,Mike,2026-11-06,townland; given exact; surname exact,high,age 37 vs cited 37
+@I202759754063@,Thomas Logue,ABT 1864,census1911:tullynaught:1441628,accepted,Mike,2026-11-06,townland; given exact; surname exact,high,age 44 vs cited 44
+@I202759754063@,Thomas Logue,ABT 1864,census1926:tullynaught:2775366,accepted,Mike,2026-11-06,townland; given exact; surname exact,medium,age 68 vs cited 68
+@I202759754064@,Sarah Gallagher,28 Nov 1867,census1901:tullynaught:6041083,accepted,Mike,2026-11-06,"townland; given exact; surname none (married name or variant, review)",medium,age 33 vs cited 33
+@I202759754064@,Sarah Gallagher,28 Nov 1867,census1911:tullynaught:1441629,accepted,Mike,2026-11-06,"townland; given exact; surname none (married name or variant, review)",medium,age 43 vs cited 43
+@I202759754065@,Thomas Kelly,ABT 1840,census1901:clogher:6384912,accepted,Mike,2026-11-06,townland; given exact; surname exact,high,age 60 vs cited 60
+@I202759754065@,Thomas Kelly,ABT 1840,census1911:clogher:2239293,accepted,Mike,2026-11-06,townland; given exact; surname exact,high,age 74 vs cited 74
+@I202759754066@,Margaret McElhar,ABT 1840,census1901:clogher:6384913,accepted,Mike,2026-11-06,"townland; given exact; surname none (married name or variant, review)",medium,age 62 vs cited 62
+@I202759754066@,Margaret McElhar,ABT 1840,census1911:clogher:2239294,accepted,Mike,2026-11-06,"townland; given nickname; surname none (married name or variant, review)",medium,age 74 vs cited 74
+@I202759754067@,Hugh McGettigan,ABT 1851,census1901:clogher:6385351,accepted,Mike,2026-11-06,townland; given exact; surname exact,high,age 51 vs cited 51
+@I202759754068@,Mary McAna,ABT 1854,census1901:clogher:6385352,accepted,Mike,2026-11-06,"townland; given exact; surname none (married name or variant, review)",medium,age 47 vs cited 47
+@I202759754068@,Mary McAna,ABT 1854,census1911:clogher:2239701,accepted,Mike,2026-11-06,"townland; given exact; surname none (married name or variant, review)",medium,age 68 vs cited 68
+@I202759754068@,Mary McAna,ABT 1854,census1926:clogher:2887474,accepted,Mike,2026-11-06,"townland; given exact; surname none (married name or variant, review)",low,age 79 vs cited 79
+@I202759754069@,Patrick McCadden,ABT 1808,census1901:tullynaught:6041562,accepted,Mike,2026-11-06,townland; given exact; surname exact,high,age 90 vs cited 90
+@I202759754071@,Andrew Gillespie,ABT 1816,census1901:tullynaught:6040688,accepted,Mike,2026-11-06,townland; given exact; surname exact,high,age 85 vs cited 85
+@I202759754072@,Catherine McAnaw,ABT 1832,census1901:tullynaught:6040689,accepted,Mike,2026-11-06,"townland; given nickname; surname none (married name or variant, review)",medium,age 68 vs cited 68
+@I202759754085@,Cassie McCadden,ABT 1882,census1901:tullynaught:6040536,accepted,Mike,2026-11-06,townland; given exact; surname exact,high,age 19 vs cited 19
+@I202759754085@,Cassie McCadden,ABT 1882,census1926:clogher:2887068,accepted,Mike,2026-11-06,townland; given exact; surname head-surname:exact,medium,age 44 vs cited 44
+@I202759754086@,Michael Breslin,ABT 1876,census1926:clogher:2887067,accepted,Mike,2026-11-06,townland; given exact; surname exact,medium,age 50 vs cited 50
+@I202759754087@,Andrew Francis McCadden,ABT 1887,census1901:tullynaught:6040538,accepted,Mike,2026-11-06,townland; given exact; surname exact,high,age 14 vs cited 14
+@I202759754088@,James McCadden,ABT 1891,census1901:tullynaught:6040540,accepted,Mike,2026-11-06,townland; given exact; surname exact,high,age 10 vs cited 10
+@I202759754089@,Thomas John Logue,ABT 1893,census1901:tullynaught:6041085,accepted,Mike,2026-11-06,townland; given exact; surname exact,high,age 8 vs cited 8
+@I202759754090@,James Logue,ABT 1894,census1901:tullynaught:6041086,accepted,Mike,2026-11-06,townland; given exact; surname exact,high,age 7 vs cited 7
+@I202759754091@,Samuel Logue,ABT 1913,census1926:tullynaught:2775370,accepted,Mike,2026-11-06,townland; given exact; surname exact,medium,age 13 vs cited 13
+@I202759754092@,Margaret Kelly,ABT 1912,census1926:clogher:2887476,accepted,Mike,2026-11-06,townland; given nickname; surname exact,medium,age 14 vs cited 14
+@I202759754093@,John Patrick Kelly,ABT 1881,census1901:clogher:6384916,accepted,Mike,2026-11-06,townland; given exact; surname exact,high,age 21 vs cited 21
+@I202759754094@,Edward Gillespie,ABT 1866,census1901:tullynaught:6040690,accepted,Mike,2026-11-06,townland; given exact; surname exact,high,age 35 vs cited 35
+@I202759754097@,Edward McGettigan,ABT 1877,census1901:clogher:6385353,accepted,Mike,2026-11-06,townland; given exact; surname exact,high,age 24 vs cited 24
+@I202759754098@,Mary Anne McGettigan,ABT 1886,census1901:clogher:6385355,accepted,Mike,2026-11-06,townland; given exact; surname exact,high,age 15 vs cited 15
+@I202759754099@,Catherine McGettigan,ABT 1887,census1901:clogher:6385356,accepted,Mike,2026-11-06,townland; given exact; surname exact,high,age 14 vs cited 14
+@I202759754100@,Patrick McGettigan,ABT 1889,census1901:clogher:6385357,accepted,Mike,2026-11-06,townland; given exact; surname exact,high,age 12 vs cited 12
+@I202759754101@,John McCadden,ABT 1861,census1901:tullynaught:6041563,accepted,Mike,2026-11-06,townland; given exact; surname exact,high,age 40 vs cited 40
+@I202759754102@,Rose Quinn,ABT 1831,census1901:tullynaught:6041561,accepted,Mike,2026-11-06,"townland; given exact; surname none (married name or variant, review)",medium,age 70 vs cited 70
+@I202759754103@,Patrick McCadden,ABT 1865,census1901:tullynaught:6041556,accepted,Mike,2026-11-06,townland; given exact; surname exact,high,age 36 vs cited 36
+@I202759754104@,Ellen,ABT 1879,census1901:tullynaught:6041557,accepted,Mike,2026-11-06,"townland; given exact; surname none (married name or variant, review)",medium,age 22 vs cited 22
+@I202759754105@,Edward McCadden,ABT 1924,census1926:tullynaught:2775813,accepted,Mike,2026-11-06,townland; given exact; surname exact,medium,age 2 vs cited 2
+@I202759754106@,Mary Katie Kelly,ABT 1913,census1926:clogher:2886914,accepted,Mike,2026-11-06,townland; given exact; surname exact,medium,age 13 vs cited 13
+@I202759754107@,Thomas Joseph Kelly,ABT 1917,census1926:clogher:2886916,accepted,Mike,2026-11-06,townland; given exact; surname exact,medium,age 9 vs cited 9
+@I202759754108@,Hugh Patrick Kelly,ABT 1919,census1926:clogher:2886917,accepted,Mike,2026-11-06,townland; given exact; surname exact,medium,age 7 vs cited 7
+@I202759754109@,Joseph Edward McCadden,ABT 1887,census1901:tullynaught:6040539,accepted,Mike,2026-11-06,townland; given exact; surname exact,high,age 14 vs cited 14
+@I202759754110@,Fanny Agnes Logue,ABT 1896,census1901:tullynaught:6041087,accepted,Mike,2026-11-06,townland; given exact; surname exact,high,age 5 vs cited 5
+@I202759754111@,Maggie Anne Logue,ABT 1901,census1901:tullynaught:6041088,accepted,Mike,2026-11-06,townland; given exact; surname exact,high,age 0 vs cited 0
+@I202759754112@,Norah Delia Logue,ABT 1904,census1911:tullynaught:1441634,accepted,Mike,2026-11-06,townland; given exact; surname exact,high,age 7 vs cited 7
+@I202759754113@,Kathleen Logue,ABT 1907,census1911:tullynaught:1441635,accepted,Mike,2026-11-06,townland; given variant; surname exact,medium,age 4 vs cited 4
+@I202759754114@,Ellen Josephine Logue,ABT 1910,census1911:tullynaught:1441636,accepted,Mike,2026-11-06,townland; given exact; surname exact,high,age 1 vs cited 1
+@I202759754115@,Joseph Logue,ABT 1905,census1926:tullynaught:2775367,accepted,Mike,2026-11-06,townland; given exact; surname exact,medium,age 21 vs cited 21
+@I202759754116@,Thomas Kelly,ABT 1871,census1901:clogher:6384914,accepted,Mike,2026-11-06,townland; given exact; surname exact,high,age 30 vs cited 30
+@I202759754117@,James Kelly,ABT 1883,census1901:clogher:6384917,accepted,Mike,2026-11-06,townland; given exact; surname exact,high,age 18 vs cited 18
+@I202759754118@,Denis McGettigan,ABT 1882,census1911:clogher:2239702,accepted,Mike,2026-11-06,townland; given exact; surname exact,medium,age 29 vs cited 29
+@I202759754119@,Mary Anita McGettigan,ABT 1887,census1911:clogher:2239703,accepted,Mike,2026-11-06,townland; given exact; surname exact,medium,age 24 vs cited 24
+@I202759754120@,Cecelia Agnes McCadden,ABT 1897,census1901:tullynaught:6041558,accepted,Mike,2026-11-06,townland; given exact; surname exact,high,age 4 vs cited 4
+@I202759754121@,Teresa McCadden,ABT 1914,census1926:tullynaught:2775810,accepted,Mike,2026-11-06,townland; given exact; surname exact,medium,age 12 vs cited 12
+@I202759754122@,James Francis McCadden,ABT 1916,census1926:tullynaught:2775811,accepted,Mike,2026-11-06,townland; given exact; surname exact,medium,age 10 vs cited 10
+@I202759754123@,Thomas Francis McCadden,ABT 1922,census1926:tullynaught:2775812,accepted,Mike,2026-11-06,townland; given exact; surname exact,medium,age 4 vs cited 4
+@I202759754124@,Eileen Logue,ABT 1910,census1926:tullynaught:2775369,accepted,Mike,2026-11-06,townland; given exact; surname exact,medium,age 16 vs cited 16
+@I202759754125@,Patrick Vincent Breslin,ABT 1910,census1926:tullynaught:2775446,accepted,Mike,2026-11-06,townland; given exact; surname exact,medium,age 16 vs cited 16

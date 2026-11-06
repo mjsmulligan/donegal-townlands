@@ -3,7 +3,8 @@
 2. Living-people rule (100/75/50) for townland event records.
 3. Census files stay at 1926 or earlier.
 4. Preserved census source files match data/source/manifest.csv.
-5. Media: townlands/<name>/media/media.csv rows and files (docs/MEDIA_SPEC.md). Warnings
+5. GEDCOM to census decisions file is well formed (data/research/associations/gedcom_census.csv).
+6. Media: townlands/<name>/media/media.csv rows and files (docs/MEDIA_SPEC.md). Warnings
    are printed but do not fail. No 100/75/50 test is applied to media (DECISIONS.md, 2026-11-03).
 Exit code 1 on any failure.
 """
@@ -16,6 +17,7 @@ import sys
 from source_manifest import verify_manifest
 import media
 import name_families
+import gedcom_census
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 THIS = datetime.date.today().year
@@ -57,6 +59,10 @@ for path in (ROOT / 'data' / 'census').glob('*.csv'):
 # by the command-line tool, but importing the function keeps one implementation.
 if verify_manifest() != 0:
     bad.append('source manifest verification failed')
+
+# GEDCOM to census decisions (WP16): format, reviewer and date. The person-ID guard
+# needs the private GEDCOM, so it runs with: python tools/gedcom_census.py check --gedcom FILE
+bad += gedcom_census.check_decisions()
 
 media_errors, media_warnings, media_summary = media.check_repo(ROOT)
 bad += media_errors

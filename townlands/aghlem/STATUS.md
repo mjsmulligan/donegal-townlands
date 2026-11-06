@@ -22,3 +22,4 @@ townland. Evidence can be added incrementally as sources are researched.
 - Confirm historical spellings and any relevant variations.
 - Establish historical place relationships where the evidence permits.
 - Add historical records with references to their original sources.
+- An Owen McCadden is enumerated in Aghlem, house 11, in 1911 (age 55, census id 1441119, head of family, married, farmer) and in 1926 (age 75, a_id 2775438, schedule Aghlem_0508_0001_0008_0_00014.pdf). He is not in the 1901 return. The ages drift by 20 years over 15. He is not linked to anyone in Mike's GEDCOM: a suspected family link (a brother of Patrick McCadden Sr) rests on oral tradition only, and the tree entry was removed on 2026-11-06 for lack of solid evidence (DECISIONS.md). Held open. Whether he belongs to that family is not established.

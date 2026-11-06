@@ -55,6 +55,7 @@ GRA's source ingest and its already fetched census files are the starting point.
 | 13 | Parish registers and Tithe import specifications | 6 | L | C |
 | 14 | Property and land model (Griffith's, revision books) | design first | L | C |
 | 15 | Shared protocol follow-up in the GRA repository | none | S | any |
+| 16 | GEDCOM to census associations | 6 | S | B |
 
 Phase A completes the thin path. WP1 and WP2 can start now. WP3 needs a Logainm API key. WP10 needs the genealogy software to be named.
 
@@ -142,6 +143,17 @@ Phase A completes the thin path. WP1 and WP2 can start now. WP3 needs a Logainm 
 
 ### WP15 Shared protocol follow-up in the GRA repository
 - **Goal:** apply the section 2 and 3 changes made here to GRA's copy of `docs/SHARED_ASSISTANT_PROTOCOL.md`, in its own pull request.
+
+### WP16 GEDCOM to census associations
+- **Goal:** link people in Mike's GEDCOM to the census rows their citations refer to, as reviewed associations, and audit the tree against the census.
+- **Status:** first version built (2026-11-06) on branch `feature/gedcom-census-associations`.
+- **Outputs:** `tools/gedcom_census.py` (`propose`, `accept`, `check`); `tools/test_gedcom_census.py`; `data/research/associations/gedcom_census.csv` (reviewed decisions); generated reports in `data/processed/gedcom/` (not committed).
+- **Method:** each census citation on a GEDCOM person is parsed (year, townland, house, head of household, relationship, age, 1926 schedule file) and matched to a census row. A schedule file name or a house number plus name and age gives high confidence. A married woman under her husband's surname, or a nickname without a locator, is capped at medium or low. Every link is proposed until Mike accepts it. Observation IDs follow DATA_ARCHITECTURE 5.2 (`census1901:tullynaught:<id>`).
+- **Audit:** tree birth years are compared with census-implied birth years. Births before 1864 were not registered, so census ages are estimates and drift is reported as expected drift for information. A conflict (an exact birth date from 1864 or later whose ages disagree by more than 3 years, or any tree year more than 10 years from every census-implied year) goes to Mike for review.
+- **Privacy:** links are dropped for anyone born within the last 100 years. The GEDCOM is read from outside the repository and is never copied into it.
+- **Person IDs:** Ancestry person pointers (`@I...@`) were stable across two downloads and across an edit and a deletion of three people (2026-11-06). Family pointers (`@F...@`) were renumbered by the deletion. The decisions file therefore keys on the person pointer and stores the name and birth as a guard, and never uses a family pointer.
+- **Acceptance:** the 75 links proposed for the 69 person tree equal the 75 Mike reviewed and accepted. Two runs give identical files. A person pointer that now names someone else fails `check`.
+- **Open:** permanent person IDs wait on the GEDCOM UID test (WP10). `check --gedcom` needs the private GEDCOM, so the ID guard is not part of `validate.py`.
 
 ## 6. First steps
 
