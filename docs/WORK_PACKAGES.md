@@ -56,6 +56,7 @@ GRA's source ingest and its already fetched census files are the starting point.
 | 14 | Property and land model (Griffith's, revision books) | design first | L | C |
 | 15 | Shared protocol follow-up in the GRA repository | none | S | any |
 | 16 | GEDCOM to census associations | 6 | S | B |
+| 17 | Family tree research on the pages | 16 | S | B |
 
 Phase A completes the thin path. WP1 and WP2 can start now. WP3 needs a Logainm API key. WP10 needs the genealogy software to be named.
 
@@ -176,3 +177,10 @@ The milestone passes when:
 7. The evidence build produces valid output for a case with evidence, while an empty case remains valid even when it has nothing to publish as historical narrative.
 
 Record the test results and any unresolved issues in the Phase A handover. The milestone is a validation of the whole system, not a requirement to complete the historical research for every townland.
+
+### WP17 Family tree research on the pages
+- **Goal:** show dates, relationships and Mike's notes from the GEDCOM on the townland pages, for the people who appear in that townland's census returns, and keep them apart from the evidence.
+- **Status:** first version built (2026-11-06) on branch `feature/gedcom-people-on-pages`.
+- **Outputs:** `tools/gedcom_people.py` (`export`, `check`); `tools/test_gedcom_people.py`; `townlands/<name>/records/people.json` (committed, privacy filtered); `payload_for` in `tools/build.py` passes it through; `engine/walk.html` shows a "From the family tree" section in each family plate, labelled as research and placed above the census evidence.
+- **Rules:** only people with an accepted link in `data/research/associations/gedcom_census.csv` are used. The 100/75/50 rule applies per person and per event. A relative is named only if that relative also passes. A note naming a year inside the last 50 years is withheld and listed for review. The tree's own numbering (Ahnentafel, Ahn. N) is removed. A family note shared by several people is shown once. `tools/validate.py` re-checks every `people.json`.
+- **Not done:** townlands without attached census (the Tullynaught cases, 46 links) get nothing until WP9 attaches that census. A person is shown in the family plate of the household their census row sits in, so a wife appears under her husband's household.
