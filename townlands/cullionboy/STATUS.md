@@ -17,6 +17,11 @@ Page: `docs/cullionboy/index.html`, built from `engine/walk.html` and `records/c
 - The askaboutireland index (`data/source/griffiths/cullionboy_griffiths_individuals.csv`, 27 entries) agrees with the transcription: 25 of 25 occupiers match by page order and name. Entries 52 (Earl of Arran) and 53 (blank name) are not tenants. They are labelled title_entry and blank_entry, proposed readings only. Record: `records/griffiths_index.json` and `records/griffiths_match.json`, written by `tools/attach_griffiths.py`.
 - The index supports the readings Dimon, Hallaghy, Mulrenin and Phideas, but it is itself a transcription, so this is corroboration and not proof.
 
+## Story voice pilot (2026-11-07, branch story-voice-kelly)
+- The Kellys plate is the pilot for the family-gathering voice (DECISIONS.md, 2026-11-07). Its text is one account drawn from the census, Griffith's and the family tree, with no citations, IDs or "the records show". Other families still carry the earlier census-report text and are to be rewritten once Mike approves the register.
+- The tree's Margaret Kelly (b. about 1912) is left out of the story because she may be Mary Katie recorded twice. Joseph's age at death is left out because the tree gives 47 and his birth date gives 50. Both are in `questions` in content.json.
+- The tree link between Mary Kelly of Griffith's lot 5 and Thomas's mother Mary (b. about 1820) is stated in the story as a possibility only.
+
 ## Missing
 - Tithe Applotment, valuation revision books, civil BMD from 1864, parish records
 
