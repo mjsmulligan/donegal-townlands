@@ -269,6 +269,9 @@ def payload_for(name):
     families, _ = name_families.load_case(base)
     if families:                      # verified spelling families: the label and spellings only
         payload['name_families'] = families
+    people = maybe('records/people.json')
+    if people.get('people'):          # family tree research for people in the returns (tools/gedcom_people.py)
+        payload['people'] = people
     if shown:                         # a case with no media builds exactly as before
         payload['media'] = shown
     return payload

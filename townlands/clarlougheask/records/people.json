@@ -1,0 +1,123 @@
+{
+ "_generated_by": "tools/gedcom_people.py",
+ "source": "Mike's family tree (GEDCOM), a secondary source built from research. Census returns are the evidence.",
+ "privacy": "100/75/50 rule applied (CLAUDE.md). Generated for year 2026.",
+ "people": [
+  {
+   "ptr": "@I202759754086@",
+   "name": "Michael Breslin",
+   "given": "Michael",
+   "surname": "Breslin",
+   "nick": "",
+   "sex": "M",
+   "birth": {
+    "date": "about 1876",
+    "raw": "ABT 1876",
+    "place": "County Donegal, Ireland"
+   },
+   "death": null,
+   "occupations": [],
+   "parents": [],
+   "marriages": [
+    {
+     "spouse": "@I202759754085@",
+     "date": "before 1882",
+     "raw": "BEF 1882",
+     "place": ""
+    }
+   ],
+   "children": [
+    "@I202759754125@"
+   ],
+   "notes": [
+    "Husband of Cassie McCadden. Living at Clarlougheask, Clogher, 1926."
+   ],
+   "census": [
+    {
+     "year": "1926",
+     "h": "0003",
+     "s": "Breslin",
+     "f": "Michael",
+     "a": 50
+    }
+   ]
+  },
+  {
+   "ptr": "@I202759754085@",
+   "name": "Cassie McCadden",
+   "given": "Cassie",
+   "surname": "McCadden",
+   "nick": "",
+   "sex": "F",
+   "birth": {
+    "date": "about 1882",
+    "raw": "ABT 1882",
+    "place": "Aghlem, County Donegal, Ireland"
+   },
+   "death": null,
+   "occupations": [],
+   "parents": [
+    "@I202759754061@",
+    "@I202759754062@"
+   ],
+   "marriages": [
+    {
+     "spouse": "@I202759754086@",
+     "date": "before 1882",
+     "raw": "BEF 1882",
+     "place": ""
+    }
+   ],
+   "children": [
+    "@I202759754125@"
+   ],
+   "notes": [
+    "Sister of John McCadden. Daughter of Patrick (Paddy) McCadden and Bridget Gillespie. Married Michael Breslin. Living at Clarlougheask by 1926 with husband and 6 children. Son Patrick Vincent Breslin (b. ~1910) was witness at Packie McCadden and Rose Kelly's marriage 1949. Son Patrick Breslin (age 16 in 1926) lived with grandparents Paddy and Bridget in Aghlem - a common arrangement in rural Donegal."
+   ],
+   "census": [
+    {
+     "year": "1926",
+     "h": "0003",
+     "s": "Breslin",
+     "f": "Cassie",
+     "a": 44
+    }
+   ]
+  }
+ ],
+ "refs": {
+  "@I202759754061@": {
+   "name": "Patrick McCadden",
+   "nick": "",
+   "born": "about 1855",
+   "died": "Jan 1933"
+  },
+  "@I202759754062@": {
+   "name": "Bridget Gillespie",
+   "nick": "",
+   "born": "about 1856",
+   "died": "about 1933"
+  },
+  "@I202759754086@": {
+   "name": "Michael Breslin",
+   "nick": "",
+   "born": "about 1876",
+   "died": ""
+  },
+  "@I202759754125@": {
+   "name": "Patrick Vincent Breslin",
+   "nick": "",
+   "born": "about 1910",
+   "died": ""
+  },
+  "@I202759754085@": {
+   "name": "Cassie McCadden",
+   "nick": "",
+   "born": "about 1882",
+   "died": ""
+  }
+ },
+ "family_notes": [
+  "Cassie McCadden married Michael Breslin. Living at Clarlougheask, Clogher, 1926. Children include Patrick Vincent Breslin (witness at Packie McCadden's 1949 marriage)."
+ ]
+}

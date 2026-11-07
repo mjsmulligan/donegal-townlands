@@ -1,0 +1,527 @@
+{
+ "_generated_by": "tools/gedcom_people.py",
+ "source": "Mike's family tree (GEDCOM), a secondary source built from research. Census returns are the evidence.",
+ "privacy": "100/75/50 rule applied (CLAUDE.md). Generated for year 2026.",
+ "people": [
+  {
+   "ptr": "@I202759754067@",
+   "name": "Hugh McGettigan",
+   "given": "Hugh",
+   "surname": "McGettigan",
+   "nick": "",
+   "sex": "M",
+   "birth": {
+    "date": "about 1851",
+    "raw": "ABT 1851",
+    "place": "Druminnin, County Donegal, Ireland"
+   },
+   "death": {
+    "date": "about 1904",
+    "raw": "ABT 1904",
+    "place": "County Donegal, Ireland"
+   },
+   "occupations": [
+    "Farmer"
+   ],
+   "parents": [
+    "@I202759754081@"
+   ],
+   "marriages": [
+    {
+     "spouse": "@I202759754068@",
+     "date": "before 1879",
+     "raw": "BEF 1879",
+     "place": ""
+    }
+   ],
+   "children": [
+    "@I202759754097@",
+    "@I202759754060@",
+    "@I202759754118@",
+    "@I202759754098@",
+    "@I202759754099@",
+    "@I202759754119@",
+    "@I202759754100@"
+   ],
+   "notes": [
+    "Death record not yet located. Death confirmed by 1911 census showing wife Mary as widow. Not to be confused with Hugh McGettigan (Gen 5, died 1878 aged 85) or Hugh McGettigan Sr (Gen 6 or earlier, died 1878). Surname also recorded in earlier records as Gaitens/Gaitins - earlier anglicisation that switched permanently to McGettigan in later records. Irish and English speaker (1901). Married Mary McAna - marriage record not yet located."
+   ],
+   "census": [
+    {
+     "year": "1901",
+     "h": 7,
+     "s": "McGettigan",
+     "f": "Hugh",
+     "a": 51
+    }
+   ]
+  },
+  {
+   "ptr": "@I202759754068@",
+   "name": "Mary McAna",
+   "given": "Mary",
+   "surname": "McAna",
+   "nick": "",
+   "sex": "F",
+   "birth": {
+    "date": "about 1854",
+    "raw": "ABT 1854",
+    "place": "Druminnin, County Donegal, Ireland"
+   },
+   "death": {
+    "date": "2 May 1927",
+    "raw": "2 May 1927",
+    "place": "Mullinalamphry, County Donegal, Ireland"
+   },
+   "occupations": [
+    "Farmer's Wife; Farmer (widow)"
+   ],
+   "parents": [
+    "@I202759754083@",
+    "@I202759754084@"
+   ],
+   "marriages": [
+    {
+     "spouse": "@I202759754067@",
+     "date": "before 1879",
+     "raw": "BEF 1879",
+     "place": ""
+    }
+   ],
+   "children": [
+    "@I202759754097@",
+    "@I202759754060@",
+    "@I202759754118@",
+    "@I202759754098@",
+    "@I202759754099@",
+    "@I202759754119@",
+    "@I202759754100@"
+   ],
+   "notes": [
+    "Surname variants: McAna, McAnaw, McNaw, McNan, McKenna - all same family, phonetic transcription variations. From Druminnin - the McAnaw family cluster in Druminnin established across all three census returns. Preferred birth year ~1854 from 1901 census (most reliable for this generation). 1911 and 1926 census ages show drift (giving ~1843 and ~1847 respectively). Irish and English speaker. Granddaughter Maggie J Kelly living with her in 1926. Present at daughter Bella's birth 1879 - Catherine McAna (likely sister) also present."
+   ],
+   "census": [
+    {
+     "year": "1901",
+     "h": 7,
+     "s": "McGettigan",
+     "f": "Mary",
+     "a": 47
+    },
+    {
+     "year": "1911",
+     "h": 4,
+     "s": "McGettigan",
+     "f": "Mary",
+     "a": 68
+    },
+    {
+     "year": "1926",
+     "h": "0004",
+     "s": "McGettigan",
+     "f": "Mary",
+     "a": 79
+    }
+   ]
+  },
+  {
+   "ptr": "@I202759754097@",
+   "name": "Edward McGettigan",
+   "given": "Edward",
+   "surname": "McGettigan",
+   "nick": "",
+   "sex": "M",
+   "birth": {
+    "date": "about 1877",
+    "raw": "ABT 1877",
+    "place": "Mullinalamphry, County Donegal, Ireland"
+   },
+   "death": null,
+   "occupations": [],
+   "parents": [
+    "@I202759754067@",
+    "@I202759754068@"
+   ],
+   "marriages": [],
+   "children": [],
+   "notes": [
+    "Son of Hugh McGettigan and Mary McAna. Present in 1901 census, Mullinalamphry."
+   ],
+   "census": [
+    {
+     "year": "1901",
+     "h": 7,
+     "s": "McGettigan",
+     "f": "Edward",
+     "a": 24
+    }
+   ]
+  },
+  {
+   "ptr": "@I202759754060@",
+   "name": "Isabella McGettigan",
+   "given": "Isabella",
+   "surname": "McGettigan",
+   "nick": "",
+   "sex": "F",
+   "birth": {
+    "date": "6 Feb 1879",
+    "raw": "6 Feb 1879",
+    "place": "Druminnin, County Donegal, Ireland"
+   },
+   "death": {
+    "date": "5 May 1954",
+    "raw": "5 May 1954",
+    "place": "Cullionboy, County Donegal, Ireland"
+   },
+   "occupations": [
+    "Farmer's Wife; Farmer (widow)"
+   ],
+   "parents": [
+    "@I202759754067@",
+    "@I202759754068@"
+   ],
+   "marriages": [
+    {
+     "spouse": "@I202759754059@",
+     "date": "6 Feb 1910",
+     "raw": "6 Feb 1910",
+     "place": "St. Patrick's Church, Donegal Town, County Donegal, Ireland"
+    }
+   ],
+   "children": [
+    "@I202759754092@",
+    "@I202759754106@",
+    "@I202759754056@",
+    "@I202759754107@",
+    "@I202759754108@"
+   ],
+   "notes": [
+    "Known as Bella. Born at Druminnin (family home), father recorded on birth certificate as Hugh Gaitens - earlier anglicisation of McGettigan. Catherine McAna present at birth - relationship to Mary McAna unknown, possibly sister but unproven. Married Joseph Kelly on her 31st birthday, 6 February 1910. Several children born at maternal grandmother's home in Mullinalamphry. Surname variants: McGettigan / Gaitens / Gaitins."
+   ],
+   "census": [
+    {
+     "year": "1901",
+     "h": 7,
+     "s": "McGettigan",
+     "f": "Bella",
+     "a": 20
+    }
+   ]
+  },
+  {
+   "ptr": "@I202759754118@",
+   "name": "Denis McGettigan",
+   "given": "Denis",
+   "surname": "McGettigan",
+   "nick": "",
+   "sex": "M",
+   "birth": {
+    "date": "about 1882",
+    "raw": "ABT 1882",
+    "place": "Mullinalamphry, County Donegal, Ireland"
+   },
+   "death": null,
+   "occupations": [],
+   "parents": [
+    "@I202759754067@",
+    "@I202759754068@"
+   ],
+   "marriages": [],
+   "children": [],
+   "notes": [
+    "Son of Hugh McGettigan and Mary McAna. Present 1911 and 1926 with mother."
+   ],
+   "census": [
+    {
+     "year": "1911",
+     "h": 4,
+     "s": "McGettigan",
+     "f": "Denis",
+     "a": 29
+    }
+   ]
+  },
+  {
+   "ptr": "@I202759754098@",
+   "name": "Mary Anne McGettigan",
+   "given": "Mary Anne",
+   "surname": "McGettigan",
+   "nick": "",
+   "sex": "F",
+   "birth": {
+    "date": "about 1886",
+    "raw": "ABT 1886",
+    "place": "Mullinalamphry, County Donegal, Ireland"
+   },
+   "death": null,
+   "occupations": [],
+   "parents": [
+    "@I202759754067@",
+    "@I202759754068@"
+   ],
+   "marriages": [],
+   "children": [],
+   "notes": [
+    "Daughter of Hugh McGettigan and Mary McAna. A central figure in community life. Present at birth of Rosanna Kelly (30 Jul/6 Aug 1913) and death of Margaret Kelly nee McElhar (6 Aug 1913) on the same day - her presence at both events on 6 Aug 1913 explains the registration date discrepancy for Rose Kelly's birth. Informant at death of Nancy O'Donnell/McAnaw 1905."
+   ],
+   "census": [
+    {
+     "year": "1901",
+     "h": 7,
+     "s": "McGettigan",
+     "f": "Mary Anne",
+     "a": 15
+    }
+   ]
+  },
+  {
+   "ptr": "@I202759754099@",
+   "name": "Catherine McGettigan",
+   "given": "Catherine",
+   "surname": "McGettigan",
+   "nick": "",
+   "sex": "F",
+   "birth": {
+    "date": "about 1887",
+    "raw": "ABT 1887",
+    "place": "Mullinalamphry, County Donegal, Ireland"
+   },
+   "death": null,
+   "occupations": [],
+   "parents": [
+    "@I202759754067@",
+    "@I202759754068@"
+   ],
+   "marriages": [],
+   "children": [],
+   "notes": [
+    "Daughter of Hugh McGettigan and Mary McAna. Present in 1901 census, Mullinalamphry."
+   ],
+   "census": [
+    {
+     "year": "1901",
+     "h": 7,
+     "s": "McGettigan",
+     "f": "Catherine",
+     "a": 14
+    }
+   ]
+  },
+  {
+   "ptr": "@I202759754119@",
+   "name": "Mary Anita McGettigan",
+   "given": "Mary Anita",
+   "surname": "McGettigan",
+   "nick": "",
+   "sex": "F",
+   "birth": {
+    "date": "about 1887",
+    "raw": "ABT 1887",
+    "place": "Mullinalamphry, County Donegal, Ireland"
+   },
+   "death": null,
+   "occupations": [
+    "Dressmaker"
+   ],
+   "parents": [
+    "@I202759754067@",
+    "@I202759754068@"
+   ],
+   "marriages": [],
+   "children": [],
+   "notes": [
+    "Daughter of Hugh McGettigan and Mary McAna. Present 1911. Absent from 1926 - likely married out."
+   ],
+   "census": [
+    {
+     "year": "1911",
+     "h": 4,
+     "s": "McGettigan",
+     "f": "Mary Anita",
+     "a": 24
+    }
+   ]
+  },
+  {
+   "ptr": "@I202759754100@",
+   "name": "Patrick McGettigan",
+   "given": "Patrick",
+   "surname": "McGettigan",
+   "nick": "",
+   "sex": "M",
+   "birth": {
+    "date": "about 1889",
+    "raw": "ABT 1889",
+    "place": "Mullinalamphry, County Donegal, Ireland"
+   },
+   "death": null,
+   "occupations": [],
+   "parents": [
+    "@I202759754067@",
+    "@I202759754068@"
+   ],
+   "marriages": [],
+   "children": [],
+   "notes": [
+    "Son of Hugh McGettigan and Mary McAna. Present in 1901 census, Mullinalamphry."
+   ],
+   "census": [
+    {
+     "year": "1901",
+     "h": 7,
+     "s": "McGettigan",
+     "f": "Patrick",
+     "a": 12
+    }
+   ]
+  },
+  {
+   "ptr": "@I202759754092@",
+   "name": "Margaret Kelly",
+   "given": "Margaret",
+   "surname": "Kelly",
+   "nick": "",
+   "sex": "F",
+   "birth": {
+    "date": "about 1912",
+    "raw": "ABT 1912",
+    "place": "Mullinalamphry, County Donegal, Ireland"
+   },
+   "death": null,
+   "occupations": [],
+   "parents": [
+    "@I202759754059@",
+    "@I202759754060@"
+   ],
+   "marriages": [],
+   "children": [],
+   "notes": [
+    "Elder sister of Rose Kelly. Daughter of Joseph Kelly and Bella McGettigan. First born child of Joseph and Bella - born after 1911 census (parents married 1 year in 1911, no children yet). Living with maternal grandmother Mary McAna in Mullinalamphry in 1926."
+   ],
+   "census": [
+    {
+     "year": "1926",
+     "h": "0004",
+     "s": "Kelly",
+     "f": "Maggie J",
+     "a": 14
+    }
+   ]
+  }
+ ],
+ "refs": {
+  "@I202759754067@": {
+   "name": "Hugh McGettigan",
+   "nick": "",
+   "born": "about 1851",
+   "died": "about 1904"
+  },
+  "@I202759754068@": {
+   "name": "Mary McAna",
+   "nick": "",
+   "born": "about 1854",
+   "died": "2 May 1927"
+  },
+  "@I202759754059@": {
+   "name": "Joseph Kelly",
+   "nick": "",
+   "born": "8 Jun 1875",
+   "died": "27 Dec 1925"
+  },
+  "@I202759754092@": {
+   "name": "Margaret Kelly",
+   "nick": "",
+   "born": "about 1912",
+   "died": ""
+  },
+  "@I202759754106@": {
+   "name": "Mary Katie Kelly",
+   "nick": "",
+   "born": "about 1913",
+   "died": ""
+  },
+  "@I202759754056@": {
+   "name": "Rosanna Kelly",
+   "nick": "",
+   "born": "30 Jul 1913",
+   "died": ""
+  },
+  "@I202759754107@": {
+   "name": "Thomas Joseph Kelly",
+   "nick": "",
+   "born": "about 1917",
+   "died": ""
+  },
+  "@I202759754108@": {
+   "name": "Hugh Patrick Kelly",
+   "nick": "",
+   "born": "about 1919",
+   "died": ""
+  },
+  "@I202759754081@": {
+   "name": "Hugh McGettigan",
+   "nick": "",
+   "born": "about 1815",
+   "died": "before 1901"
+  },
+  "@I202759754097@": {
+   "name": "Edward McGettigan",
+   "nick": "",
+   "born": "about 1877",
+   "died": ""
+  },
+  "@I202759754060@": {
+   "name": "Isabella McGettigan",
+   "nick": "",
+   "born": "6 Feb 1879",
+   "died": "5 May 1954"
+  },
+  "@I202759754118@": {
+   "name": "Denis McGettigan",
+   "nick": "",
+   "born": "about 1882",
+   "died": ""
+  },
+  "@I202759754098@": {
+   "name": "Mary Anne McGettigan",
+   "nick": "",
+   "born": "about 1886",
+   "died": ""
+  },
+  "@I202759754099@": {
+   "name": "Catherine McGettigan",
+   "nick": "",
+   "born": "about 1887",
+   "died": ""
+  },
+  "@I202759754119@": {
+   "name": "Mary Anita McGettigan",
+   "nick": "",
+   "born": "about 1887",
+   "died": ""
+  },
+  "@I202759754100@": {
+   "name": "Patrick McGettigan",
+   "nick": "",
+   "born": "about 1889",
+   "died": ""
+  },
+  "@I202759754083@": {
+   "name": "John McAnaw",
+   "nick": "",
+   "born": "about 1816",
+   "died": "6 Feb 1901"
+  },
+  "@I202759754084@": {
+   "name": "Nancy O'Donnell",
+   "nick": "",
+   "born": "about 1819",
+   "died": "8 Apr 1905"
+  }
+ },
+ "family_notes": [
+  "Marriage record not located. Married approximately 1875-1878 based on ages of children. Both Irish and English speakers (1901 census).",
+  "Marriage record not yet located. Married approximately 1875-1878 based on ages of children. Both Irish and English speakers. Hugh died ~1904, Mary survived as widow through 1926 census."
+ ]
+}
