@@ -12,6 +12,10 @@ Before undertaking research, analysis, data work, writing, presentation, or deve
 
 The townland is the primary unit of research and presentation. Family histories provide the human narrative within that townland framework. Present direct documentary evidence distinctly from analysis, interpretation, and conclusions. Preserve original recorded details, identify the evidence supporting interpretations, and retain uncertainty and conflicting evidence. Do not make identity matching the organising purpose of the project.
 
+## Story voice
+
+Family stories are written in a plain, lay person's tone, as one account that draws on the records and the family tree without citations, IDs or "the records show". State what the evidence shows and stop there: no speculation, no leads, no open questions on the page, and no second-guessing of the tree (DECISIONS.md, 2026-11-07). The evidence stays reachable in the closed "The records behind this" panel.
+
 ## Owner and working style
 
 - Owner: Mike (genealogist, limited Python, relies on you for implementation).
