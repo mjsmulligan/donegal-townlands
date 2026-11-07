@@ -52,9 +52,14 @@ def sha256_file(path: Path) -> str:
 
 def source_metadata(path: Path) -> dict[str, str]:
     match = re.match(r"^(1901|1911|1926)_(.+)\.csv$", path.name, re.IGNORECASE)
-    if not match:
-        raise ValueError(f"Unexpected census source filename: {path.name}")
-    year, ded = match.groups()
+    if match:
+        year, ded = match.groups()
+    else:
+        # GRA's naming, <DED>_<year>.csv, which is how the adopted files are named.
+        match = re.match(r"^(.+)_(1901|1911|1926)\.csv$", path.name, re.IGNORECASE)
+        if not match:
+            raise ValueError(f"Unexpected census source filename: {path.name}")
+        ded, year = match.groups()
     if year == "1926":
         licence = (
             "National Archives of Ireland 1926 Census: CC BY 4.0. Include the "
