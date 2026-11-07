@@ -1,0 +1,39 @@
+{
+  "_generated_by": "donegal-townlands.attach_census",
+  "status": "proposed",
+  "note": "Matched by identical name only. Not reviewed.",
+  "ded": "Tullynaught",
+  "years": {
+    "1901": {
+      "spellings": [
+        {
+          "spelling": "Legacurry",
+          "method": "exact_name",
+          "rows": 18
+        }
+      ],
+      "people": 18
+    },
+    "1911": {
+      "spellings": [
+        {
+          "spelling": "Legacurry",
+          "method": "exact_name",
+          "rows": 12
+        }
+      ],
+      "people": 12
+    },
+    "1926": {
+      "spellings": [
+        {
+          "spelling": "Legacurry",
+          "method": "exact_name",
+          "rows": 9
+        }
+      ],
+      "people": 9
+    }
+  },
+  "corrections": []
+}

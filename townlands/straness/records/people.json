@@ -1,0 +1,277 @@
+{
+ "_generated_by": "tools/gedcom_people.py",
+ "source": "Mike's family tree (GEDCOM), a secondary source built from research. Census returns are the evidence.",
+ "privacy": "100/75/50 rule applied (CLAUDE.md). Generated for year 2026.",
+ "people": [
+  {
+   "ptr": "@I202759754069@",
+   "name": "Patrick McCadden",
+   "given": "Patrick",
+   "surname": "McCadden",
+   "nick": "",
+   "sex": "M",
+   "birth": {
+    "date": "about 1808",
+    "raw": "ABT 1808",
+    "place": "Straness, County Donegal, Ireland"
+   },
+   "death": {
+    "date": "1 Nov 1904",
+    "raw": "1 Nov 1904",
+    "place": "Straness, County Donegal, Ireland"
+   },
+   "occupations": [
+    "Farmer"
+   ],
+   "parents": [],
+   "marriages": [],
+   "children": [
+    "@I202759754061@",
+    "@I202759754101@"
+   ],
+   "notes": [
+    "Father of Patrick (Paddy) McCadden. Birth year ~1808 confirmed by death record (age 96). Irish and English speaker. Widower by 1901 - wife Catherine deceased. Living in Straness with son John in 1901. Oral tradition of brotherhood with Denis McCadden and Owen McCadden now supported by Griffith's evidence - Denis and Patrick listed as occupiers in same townland under same lessor c.1857. Surname also recorded as McAdam. Died aged ~96 - one of the oldest individuals in the dataset."
+   ],
+   "census": [
+    {
+     "year": "1901",
+     "h": 5,
+     "s": "McCadden",
+     "f": "Patrick",
+     "a": 90
+    }
+   ]
+  },
+  {
+   "ptr": "@I202759754102@",
+   "name": "Rose Quinn",
+   "given": "Rose",
+   "surname": "Quinn",
+   "nick": "",
+   "sex": "F",
+   "birth": {
+    "date": "about 1831",
+    "raw": "ABT 1831",
+    "place": "County Donegal, Ireland"
+   },
+   "death": {
+    "date": "after 1901",
+    "raw": "AFT 1901",
+    "place": "County Donegal, Ireland"
+   },
+   "occupations": [],
+   "parents": [],
+   "marriages": [],
+   "children": [
+    "@I202759754103@"
+   ],
+   "notes": [
+    "Wife of Denis McCadden. Recorded as Rose McCadden (widow) in 1901 census, Straness, living with son Patrick (age 36) and his wife Ellen. Maiden name Quinn per family oral tradition. The Quinn cluster in Straness at Griffith's (~1857) - Charles Quinn, Bryan Quinn, Patrick Quinn, Daniel Quinn - likely her family."
+   ],
+   "census": [
+    {
+     "year": "1901",
+     "h": 4,
+     "s": "McCadden",
+     "f": "Rose",
+     "a": 70
+    }
+   ]
+  },
+  {
+   "ptr": "@I202759754101@",
+   "name": "John McCadden",
+   "given": "John",
+   "surname": "McCadden",
+   "nick": "",
+   "sex": "M",
+   "birth": {
+    "date": "about 1861",
+    "raw": "ABT 1861",
+    "place": "Straness, County Donegal, Ireland"
+   },
+   "death": null,
+   "occupations": [],
+   "parents": [
+    "@I202759754069@"
+   ],
+   "marriages": [],
+   "children": [],
+   "notes": [
+    "Son of Patrick McCadden Sr and Catherine. Remained in Straness while brother Paddy moved to Aghlem. Informant at father Patrick Sr's death 1904. Present in Straness 1901 with father. Not to be confused with John McCadden (, b.1882) who is his nephew."
+   ],
+   "census": [
+    {
+     "year": "1901",
+     "h": 5,
+     "s": "McCadden",
+     "f": "John",
+     "a": 40
+    }
+   ]
+  },
+  {
+   "ptr": "@I202759754103@",
+   "name": "Patrick McCadden",
+   "given": "Patrick",
+   "surname": "McCadden",
+   "nick": "",
+   "sex": "M",
+   "birth": {
+    "date": "about 1865",
+    "raw": "ABT 1865",
+    "place": "Straness, County Donegal, Ireland"
+   },
+   "death": null,
+   "occupations": [],
+   "parents": [
+    "@I202759754102@"
+   ],
+   "marriages": [
+    {
+     "spouse": "@I202759754104@",
+     "date": "before 1897",
+     "raw": "BEF 1897",
+     "place": ""
+    }
+   ],
+   "children": [
+    "@I202759754120@"
+   ],
+   "notes": [
+    "Son of Denis McCadden and Rose Quinn. Living in Straness 1901 with wife Ellen and mother Rose Quinn (widow). Not to be confused with Patrick McCadden Sr (, b.~1808) or Patrick (Paddy) McCadden (, b.~1855)."
+   ],
+   "census": [
+    {
+     "year": "1901",
+     "h": 4,
+     "s": "McCadden",
+     "f": "Patrick",
+     "a": 36
+    }
+   ]
+  },
+  {
+   "ptr": "@I202759754104@",
+   "name": "Ellen",
+   "given": "Ellen",
+   "surname": "",
+   "nick": "",
+   "sex": "F",
+   "birth": {
+    "date": "about 1879",
+    "raw": "ABT 1879",
+    "place": "County Donegal, Ireland"
+   },
+   "death": null,
+   "occupations": [],
+   "parents": [],
+   "marriages": [
+    {
+     "spouse": "@I202759754103@",
+     "date": "before 1897",
+     "raw": "BEF 1897",
+     "place": ""
+    }
+   ],
+   "children": [
+    "@I202759754120@"
+   ],
+   "notes": [
+    "Wife of Patrick McCadden (son of Denis McCadden). Surname unknown. Present in Straness 1901."
+   ],
+   "census": [
+    {
+     "year": "1901",
+     "h": 4,
+     "s": "McCadden",
+     "f": "Ellen",
+     "a": 22
+    }
+   ]
+  },
+  {
+   "ptr": "@I202759754120@",
+   "name": "Cecelia Agnes McCadden",
+   "given": "Cecelia Agnes",
+   "surname": "McCadden",
+   "nick": "",
+   "sex": "F",
+   "birth": {
+    "date": "about 1897",
+    "raw": "ABT 1897",
+    "place": "Straness, County Donegal, Ireland"
+   },
+   "death": null,
+   "occupations": [],
+   "parents": [
+    "@I202759754103@",
+    "@I202759754104@"
+   ],
+   "marriages": [],
+   "children": [],
+   "notes": [
+    "Granddaughter of Denis McCadden through son Patrick (I50, b.~1865). Great-niece of Patrick McCadden Sr."
+   ],
+   "census": [
+    {
+     "year": "1901",
+     "h": 4,
+     "s": "McCadden",
+     "f": "Cecelia Agnes",
+     "a": 4
+    }
+   ]
+  }
+ ],
+ "refs": {
+  "@I202759754061@": {
+   "name": "Patrick McCadden",
+   "nick": "",
+   "born": "about 1855",
+   "died": "Jan 1933"
+  },
+  "@I202759754101@": {
+   "name": "John McCadden",
+   "nick": "",
+   "born": "about 1861",
+   "died": ""
+  },
+  "@I202759754069@": {
+   "name": "Patrick McCadden",
+   "nick": "",
+   "born": "about 1808",
+   "died": "1 Nov 1904"
+  },
+  "@I202759754103@": {
+   "name": "Patrick McCadden",
+   "nick": "",
+   "born": "about 1865",
+   "died": ""
+  },
+  "@I202759754102@": {
+   "name": "Rose Quinn",
+   "nick": "",
+   "born": "about 1831",
+   "died": "after 1901"
+  },
+  "@I202759754104@": {
+   "name": "Ellen",
+   "nick": "",
+   "born": "about 1879",
+   "died": ""
+  },
+  "@I202759754120@": {
+   "name": "Cecelia Agnes McCadden",
+   "nick": "",
+   "born": "about 1897",
+   "died": ""
+  }
+ },
+ "family_notes": [
+  "Marriage predates civil registration (1864). Wife Catherine surname unknown, deceased before 1901 census.",
+  "Marriage record predates civil registration (1864). Wife Catherine (surname unknown) deceased before 1901 census. Patrick recorded as widower in 1901 and at death in 1904.",
+  "Marriage predates civil registration (1864). Denis McCadden deceased before 1901. Rose Quinn recorded as widow in Straness 1901.",
+  "Patrick McCadden (son of Denis) and Ellen (surname unknown). Present in Straness 1901."
+ ]
+}

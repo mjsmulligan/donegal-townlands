@@ -1,0 +1,374 @@
+{
+ "_generated_by": "tools/gedcom_people.py",
+ "source": "Mike's family tree (GEDCOM), a secondary source built from research. Census returns are the evidence.",
+ "privacy": "100/75/50 rule applied (CLAUDE.md). Generated for year 2026.",
+ "people": [
+  {
+   "ptr": "@I202759754057@",
+   "name": "John McCadden",
+   "given": "John",
+   "surname": "McCadden",
+   "nick": "",
+   "sex": "M",
+   "birth": {
+    "date": "19 Feb 1882",
+    "raw": "19 Feb 1882",
+    "place": "Aghlem, County Donegal, Ireland"
+   },
+   "death": {
+    "date": "27 Jan 1953",
+    "raw": "27 Jan 1953",
+    "place": "Meenadreen, County Donegal, Ireland"
+   },
+   "occupations": [
+    "Farmer"
+   ],
+   "parents": [
+    "@I202759754061@",
+    "@I202759754062@"
+   ],
+   "marriages": [
+    {
+     "spouse": "@I202759754058@",
+     "date": "30 Dec 1909",
+     "raw": "30 Dec 1909",
+     "place": "St. Patrick's Church, Donegal Town, County Donegal, Ireland"
+    }
+   ],
+   "children": [
+    "@I202759754055@",
+    "@I202759754121@",
+    "@I202759754122@",
+    "@I202759754123@",
+    "@I202759754105@"
+   ],
+   "notes": [
+    "Birth year 1882 confirmed by civil birth record and consistent across three census returns (1901: age 18; 1911: age 30; 1926: age 44). Tree date of 1875 is an error - corrected on basis of BMD evidence. Surname also recorded as McAdam (variant). Married Mary Frances (Minnie) Logue 30 December 1909 at St. Patrick's Church, Donegal Town."
+   ],
+   "census": [
+    {
+     "year": "1911",
+     "h": 13,
+     "s": "McCadden",
+     "f": "John",
+     "a": 30
+    },
+    {
+     "year": "1926",
+     "h": "0015",
+     "s": "McCadden",
+     "f": "John",
+     "a": 44
+    }
+   ]
+  },
+  {
+   "ptr": "@I202759754058@",
+   "name": "Mary Frances Logue",
+   "given": "Mary Frances",
+   "surname": "Logue",
+   "nick": "",
+   "sex": "F",
+   "birth": {
+    "date": "23 Jun 1890",
+    "raw": "23 Jun 1890",
+    "place": "Tawnagh, County Donegal, Ireland"
+   },
+   "death": {
+    "date": "11 Jun 1934",
+    "raw": "11 Jun 1934",
+    "place": "District Hospital, Donegal, County Donegal, Ireland"
+   },
+   "occupations": [
+    "Farmer's Wife"
+   ],
+   "parents": [
+    "@I202759754063@",
+    "@I202759754064@"
+   ],
+   "marriages": [
+    {
+     "spouse": "@I202759754057@",
+     "date": "30 Dec 1909",
+     "raw": "30 Dec 1909",
+     "place": "St. Patrick's Church, Donegal Town, County Donegal, Ireland"
+    }
+   ],
+   "children": [
+    "@I202759754055@",
+    "@I202759754121@",
+    "@I202759754122@",
+    "@I202759754123@",
+    "@I202759754105@"
+   ],
+   "notes": [
+    "Full given name Mary Frances confirmed by birth record. Known as Minnie (nickname) to distinguish from other Marys in community - same pattern as husband John whose father Patrick was known as Paddy. Died aged 44 of Acute Diphtheria in Donegal District Hospital - sudden acute illness explaining death away from home. Death leaves husband John as widower with young children. Absent from 1911 census (Tawnagh) - already married to John McCadden by then."
+   ],
+   "census": [
+    {
+     "year": "1911",
+     "h": 13,
+     "s": "McCadden",
+     "f": "Mary",
+     "a": 21
+    },
+    {
+     "year": "1926",
+     "h": "0015",
+     "s": "McCadden",
+     "f": "Minnie",
+     "a": 36
+    }
+   ]
+  },
+  {
+   "ptr": "@I202759754055@",
+   "name": "Patrick McCadden",
+   "given": "Patrick",
+   "surname": "McCadden",
+   "nick": "",
+   "sex": "M",
+   "birth": {
+    "date": "20 Oct 1911",
+    "raw": "20 Oct 1911",
+    "place": "Meenadreen, County Donegal, Ireland"
+   },
+   "death": null,
+   "occupations": [
+    "Bricklayer"
+   ],
+   "parents": [
+    "@I202759754057@",
+    "@I202759754058@"
+   ],
+   "marriages": [
+    {
+     "spouse": "@I202759754056@",
+     "date": "27 Jan 1949",
+     "raw": "27 Jan 1949",
+     "place": "St. Agatha's Church, Clar, County Donegal, Ireland"
+    }
+   ],
+   "children": [],
+   "notes": [
+    "Known as Packie (nickname) to distinguish from numerous other Patricks in family and community. Given name Patrick confirmed by birth record and marriage record. Bricklayer by trade - generational shift from farming background of father. Married Rose Kelly 27 January 1949 at St. Agatha's Church, Clar."
+   ],
+   "census": [
+    {
+     "year": "1926",
+     "h": "0015",
+     "s": "McCadden",
+     "f": "Patrick",
+     "a": 14
+    }
+   ]
+  },
+  {
+   "ptr": "@I202759754121@",
+   "name": "Teresa McCadden",
+   "given": "Teresa",
+   "surname": "McCadden",
+   "nick": "",
+   "sex": "F",
+   "birth": {
+    "date": "about 1914",
+    "raw": "ABT 1914",
+    "place": "Meenadreen, County Donegal, Ireland"
+   },
+   "death": null,
+   "occupations": [],
+   "parents": [
+    "@I202759754057@",
+    "@I202759754058@"
+   ],
+   "marriages": [],
+   "children": [],
+   "notes": [
+    "Daughter of John McCadden and Minnie Logue."
+   ],
+   "census": [
+    {
+     "year": "1926",
+     "h": "0015",
+     "s": "McCadden",
+     "f": "Teresa",
+     "a": 12
+    }
+   ]
+  },
+  {
+   "ptr": "@I202759754122@",
+   "name": "James Francis McCadden",
+   "given": "James Francis",
+   "surname": "McCadden",
+   "nick": "",
+   "sex": "M",
+   "birth": {
+    "date": "about 1916",
+    "raw": "ABT 1916",
+    "place": "Meenadreen, County Donegal, Ireland"
+   },
+   "death": null,
+   "occupations": [],
+   "parents": [
+    "@I202759754057@",
+    "@I202759754058@"
+   ],
+   "marriages": [],
+   "children": [],
+   "notes": [
+    "Son of John McCadden and Minnie Logue."
+   ],
+   "census": [
+    {
+     "year": "1926",
+     "h": "0015",
+     "s": "McCadden",
+     "f": "James F",
+     "a": 10
+    }
+   ]
+  },
+  {
+   "ptr": "@I202759754123@",
+   "name": "Thomas Francis McCadden",
+   "given": "Thomas Francis",
+   "surname": "McCadden",
+   "nick": "",
+   "sex": "M",
+   "birth": {
+    "date": "about 1922",
+    "raw": "ABT 1922",
+    "place": "Meenadreen, County Donegal, Ireland"
+   },
+   "death": null,
+   "occupations": [],
+   "parents": [
+    "@I202759754057@",
+    "@I202759754058@"
+   ],
+   "marriages": [],
+   "children": [],
+   "notes": [
+    "Son of John McCadden and Minnie Logue."
+   ],
+   "census": [
+    {
+     "year": "1926",
+     "h": "0015",
+     "s": "McCadden",
+     "f": "Thomas F",
+     "a": 4
+    }
+   ]
+  },
+  {
+   "ptr": "@I202759754105@",
+   "name": "Edward McCadden",
+   "given": "Edward",
+   "surname": "McCadden",
+   "nick": "",
+   "sex": "M",
+   "birth": {
+    "date": "about 1924",
+    "raw": "ABT 1924",
+    "place": "Meenadreen, County Donegal, Ireland"
+   },
+   "death": null,
+   "occupations": [],
+   "parents": [
+    "@I202759754057@",
+    "@I202759754058@"
+   ],
+   "marriages": [],
+   "children": [],
+   "notes": [
+    "Son of John McCadden and Minnie Logue."
+   ],
+   "census": [
+    {
+     "year": "1926",
+     "h": "0015",
+     "s": "McCadden",
+     "f": "Edward",
+     "a": 2
+    }
+   ]
+  }
+ ],
+ "refs": {
+  "@I202759754057@": {
+   "name": "John McCadden",
+   "nick": "",
+   "born": "19 Feb 1882",
+   "died": "27 Jan 1953"
+  },
+  "@I202759754058@": {
+   "name": "Mary Frances Logue",
+   "nick": "",
+   "born": "23 Jun 1890",
+   "died": "11 Jun 1934"
+  },
+  "@I202759754056@": {
+   "name": "Rosanna Kelly",
+   "nick": "",
+   "born": "30 Jul 1913",
+   "died": ""
+  },
+  "@I202759754061@": {
+   "name": "Patrick McCadden",
+   "nick": "",
+   "born": "about 1855",
+   "died": "Jan 1933"
+  },
+  "@I202759754062@": {
+   "name": "Bridget Gillespie",
+   "nick": "",
+   "born": "about 1856",
+   "died": "about 1933"
+  },
+  "@I202759754055@": {
+   "name": "Patrick McCadden",
+   "nick": "",
+   "born": "20 Oct 1911",
+   "died": ""
+  },
+  "@I202759754121@": {
+   "name": "Teresa McCadden",
+   "nick": "",
+   "born": "about 1914",
+   "died": ""
+  },
+  "@I202759754122@": {
+   "name": "James Francis McCadden",
+   "nick": "",
+   "born": "about 1916",
+   "died": ""
+  },
+  "@I202759754123@": {
+   "name": "Thomas Francis McCadden",
+   "nick": "",
+   "born": "about 1922",
+   "died": ""
+  },
+  "@I202759754105@": {
+   "name": "Edward McCadden",
+   "nick": "",
+   "born": "about 1924",
+   "died": ""
+  },
+  "@I202759754063@": {
+   "name": "Thomas Logue",
+   "nick": "",
+   "born": "about 1864",
+   "died": "Apr 1939"
+  },
+  "@I202759754064@": {
+   "name": "Sarah Gallagher",
+   "nick": "",
+   "born": "28 Nov 1867",
+   "died": "24 May 1918"
+  }
+ },
+ "family_notes": []
+}

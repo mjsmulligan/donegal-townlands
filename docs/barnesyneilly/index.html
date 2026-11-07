@@ -171,6 +171,14 @@ details.vitrine[open] .vitrine-title::before{transform:rotate(90deg)}
 .vitrine-badge{font-size:12px;font-weight:600;color:var(--ink2);background:var(--paper);border:1px solid var(--rule);padding:3px 10px;border-radius:999px}
 .vitrine-in{padding:18px;background:var(--paper);border-top:1px solid var(--rule)}
 .vitrine-note{font-size:13.5px;color:var(--ink2);margin-bottom:14px;line-height:1.45}
+/* family tree research (records/people.json): a secondary source, kept apart from the returns */
+.tree-fam{margin:0 0 6px;font:400 16px/1.6 var(--display);color:var(--ink)}
+.tree-person{padding:14px 0;border-top:1px solid var(--rule)}
+.tree-person:first-of-type{border-top:0}
+.tree-name{margin:0 0 4px;font:500 19px/1.3 var(--display);color:var(--ink)}
+.tree-nick{font-weight:400;font-size:15px;color:var(--ink2)}
+.tree-facts{margin:2px 0;font-size:15px;line-height:1.5;color:var(--ink)}
+.tree-note{margin:8px 0 0;font:400 16px/1.6 var(--display);color:var(--ink)}
 
 /* photographs: shown whole in a light frame, never cropped (docs/MEDIA_SPEC.md) */
 /* With header photos the title plate stacks in the page flow (title, photographs, hint) so they can never overlap on a short screen. */
@@ -308,7 +316,7 @@ html.lb-lock{overflow:hidden}
 (function(){
 'use strict';
 var TOUCH=!!(window.matchMedia&&window.matchMedia('(max-width:640px)').matches);
-var DATA = {"census":{},"content":{"groups":{"colours":{"Other":"#A9B7B3"},"territory":["Other"],"map":{}},"families":[],"questions":["Census returns have not yet been attached to this townland.","Griffith's Valuation, the mid 1850s baseline, has not yet been added for this townland.","The Tithe Applotment Books, valuation revision books, civil records from 1864 and parish registers have not yet been added."],"plates":{"title":{"title":"Barnesyneilly","irish":"","heading":"Barnesyneilly","medium":"A townland in Tullynaught electoral division, Tirhugh barony","story":["Barnesyneilly is a townland recognised by Logainm, the placenames database of the Government of Ireland.","No historical records have been added yet. This page is a starting point, not a finding about the history of the townland. It grows as records are added."]},"not_yet_hung":{"title":"Not yet hung","medium":"Six frames for six kinds of record. None is filled","story":["Each frame is a kind of record that can be hung here. A dashed frame is empty. A frame with a gold edge holds records for this townland.","Records are added one source at a time, and each new source adds to this page instead of replacing it."],"frames":[["Tithe Applotment Books","1820s and 1830s","Not yet added.",false],["Griffith's Valuation","Mid 1850s","Not yet added.",false],["Valuation revision books","After the 1850s","Not yet added.",false],["Civil births, marriages and deaths","From 1864","Not yet added.",false],["Parish records","Various dates","Not yet added.",false],["Census returns","1901, 1911 and 1926","Not yet added.",false]]},"method":{"paras":[{"before":"Place details come from ","link":{"href":"https://www.logainm.ie/en/14288","text":"Logainm"},"after":", the placenames database of the Government of Ireland (CC BY 4.0). The record number is 14288."},"No other source has been added for this townland yet."],"numbers_intro":""},"records":{"placeholder":"for example Gallagher"}}},"townland":{"name":"Barnesyneilly","page_title":"Barnesyneilly | Donegal Townlands","storage_key":"barnesyneilly-q","census_spelling":{}},"place":{"logainm_id":"14288","name_en":"Barnesyneilly","name_ga":"","ded":"Tullynaught","civil_parish":"","barony":"Tirhugh","county":"Donegal","latitude":"54.66651353687088","longitude":"-7.948860241483583","snapshot_date":"2026-11-01","logainm_url":"https://www.logainm.ie/en/14288","credit":"Irish-language placename data by Logainm, Government of Ireland, licensed under CC BY 4.0.","osm_url":"https://www.openstreetmap.org/?mlat=54.66651353687088&mlon=-7.948860241483583&zoom=15"},"census_urls":{}};
+var DATA = {"census":{},"content":{"groups":{"colours":{"Other":"#A9B7B3"},"territory":["Other"],"map":{}},"families":[],"questions":["No census return is linked to this townland for 1901, 1911 and 1926. Was it unoccupied then, or is it recorded under a name not yet matched?","Griffith's Valuation, the mid 1850s baseline, has not yet been added for this townland.","The Tithe Applotment Books, valuation revision books, civil records from 1864 and parish registers have not yet been added."],"plates":{"title":{"title":"Barnesyneilly","irish":"","heading":"Barnesyneilly","medium":"A townland in Tullynaught electoral division, Tirhugh barony","story":["Barnesyneilly is a townland recognised by Logainm, the placenames database of the Government of Ireland.","No historical records have been added yet. This page is a starting point, not a finding about the history of the townland. It grows as records are added."]},"not_yet_hung":{"title":"Not yet hung","medium":"Six frames for six kinds of record. None is filled","story":["Each frame is a kind of record that can be hung here. A dashed frame is empty. A frame with a gold edge holds records for this townland.","Records are added one source at a time, and each new source adds to this page instead of replacing it."],"frames":[["Tithe Applotment Books","1820s and 1830s","Not yet added.",false],["Griffith's Valuation","Mid 1850s","Not yet added.",false],["Valuation revision books","After the 1850s","Not yet added.",false],["Civil births, marriages and deaths","From 1864","Not yet added.",false],["Parish records","Various dates","Not yet added.",false],["Census returns","1901, 1911 and 1926","Checked. No return found.",false]]},"method":{"paras":[{"before":"Place details come from ","link":{"href":"https://www.logainm.ie/en/14288","text":"Logainm"},"after":", the placenames database of the Government of Ireland (CC BY 4.0). The record number is 14288."},"No other source has been added for this townland yet."],"numbers_intro":""},"records":{"placeholder":"for example Gallagher"}}},"townland":{"name":"Barnesyneilly","page_title":"Barnesyneilly | Donegal Townlands","storage_key":"barnesyneilly-q","census_spelling":{}},"place":{"logainm_id":"14288","name_en":"Barnesyneilly","name_ga":"","ded":"Tullynaught","civil_parish":"","barony":"Tirhugh","county":"Donegal","latitude":"54.66651353687088","longitude":"-7.948860241483583","snapshot_date":"2026-11-01","logainm_url":"https://www.logainm.ie/en/14288","credit":"Irish-language placename data by Logainm, Government of Ireland, licensed under CC BY 4.0.","osm_url":"https://www.openstreetmap.org/?mlat=54.66651353687088&mlon=-7.948860241483583&zoom=15"},"census_urls":{}};
 var C = DATA.content, TOWN = DATA.townland, PL = C.plates, PLACE = DATA.place || {}, CEN = DATA.census || {}, CURL = DATA.census_urls || {};
 var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 var $ = function(s,el){return (el||document).querySelector(s)};
@@ -789,12 +797,61 @@ function famPlate(f){
           h('div',{class:'fam-story-col'},
             h('div',{class:'fam-lead-wrap'},leadSummary),
             narrativeParas.length?h('div',{class:'fam-paras-wrap'},narrativeParas):null)),
-        vitrine));
+        treeBlock(f.keys),vitrine));
 
     var sec=h('section',{class:'plate fam-plate',id:'p'+pad(num)},art,placard);
     pick(cur);
     return sec;
   });
+}
+/* ================= family tree research =================
+   records/people.json (tools/gedcom_people.py): dates, relationships and notes from the family tree, for people
+   who appear in this case's returns. It is a secondary source built from research, so it sits apart from the
+   returns, labelled, and is never mixed into the evidence table. */
+var PPL=DATA.people||null;
+function listJoin(a){return a.length<2?a.join(''):a.slice(0,-1).join(', ')+' and '+a[a.length-1]}
+function placeShort(s){return String(s||'').replace(/,\s*Ireland$/,'')}
+function refName(ptr){
+  var r=((PPL&&PPL.refs)||{})[ptr]; if(!r) return '';
+  var y=String(r.born||'').match(/\d{4}/);
+  return r.name+(y?' (b. '+y[0]+')':'');
+}
+function treeFor(keys){
+  if(!PPL||!PPL.people) return [];
+  return PPL.people.filter(function(p){
+    return (p.census||[]).some(function(l){
+      return (SN[l.year]||[]).some(function(hh){return hh.key===String(l.h)&&keys.indexOf(hh.grp)>=0});
+    });
+  });
+}
+function treePerson(p){
+  var life=[], rel=[];
+  if(p.birth) life.push('Born '+p.birth.date+(p.birth.place?' at '+placeShort(p.birth.place):'')+'.');
+  if(p.death) life.push('Died '+p.death.date+(p.death.place?' at '+placeShort(p.death.place):'')+'.');
+  var par=(p.parents||[]).map(refName).filter(Boolean);
+  if(par.length) rel.push((p.sex==='M'?'Son':p.sex==='F'?'Daughter':'Child')+' of '+listJoin(par)+'.');
+  (p.marriages||[]).forEach(function(m){
+    var sp=m.spouse?refName(m.spouse):'';
+    if(sp||m.date) rel.push('Married'+(sp?' '+sp:'')+(m.date?', '+m.date:'')+(m.place?', at '+placeShort(m.place):'')+'.');
+  });
+  var kids=(p.children||[]).map(refName).filter(Boolean);
+  if(kids.length) rel.push('Children: '+listJoin(kids)+'.');
+  if((p.occupations||[]).length) rel.push('Occupation: '+p.occupations.join(', ')+'.');
+  return h('div',{class:'tree-person'},
+    h('h4',{class:'tree-name'},p.name,p.nick?h('span',{class:'tree-nick',text:', known as '+p.nick}):null),
+    life.concat(rel).map(function(t){return h('p',{class:'tree-facts',text:t})}),
+    (p.notes||[]).map(function(n){return h('p',{class:'tree-note',text:n})}));
+}
+function treeBlock(keys){
+  var list=treeFor(keys); if(!list.length) return null;
+  return h('details',{class:'vitrine tree'},
+    h('summary',null,
+      h('span',{class:'vitrine-title',text:'From the family tree'}),
+      h('span',{class:'vitrine-badge',text:list.length+(list.length===1?' person':' people')})),
+    h('div',{class:'vitrine-in'},
+      h('p',{class:'vitrine-note',text:'Dates, relationships and notes from the family tree. This is research built on the records, not a record itself. The census returns below are the evidence.'}),
+      (PPL.family_notes||[]).length&&list.length>1?h('div',null,h('p',{class:'tree-fam',text:'Family notes'}),PPL.family_notes.map(function(n){return h('p',{class:'tree-note',text:n})})):null,
+      list.map(treePerson)));
 }
 FAM.forEach(famPlate);
 

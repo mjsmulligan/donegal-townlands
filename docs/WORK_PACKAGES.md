@@ -118,6 +118,7 @@ Phase A completes the thin path. WP1 and WP2 can start now. WP3 needs a Logainm 
 - **Goal:** the locator rule generalises. The 1901 and 1911 files use `id` and the `images` field.
 - **Requirements:** ETL-04, ETL-05, PLC-03.
 - **Acceptance:** all 15 files load. Review lists exist for all DEDs.
+- **Status:** partly done (2026-11-07). `tools/attach_census.py` now handles every DED it finds, with both file name patterns (`1901_Clogher.csv`, `Tullynaught_1901.csv`), each DED against its own townlands only. Clogher (21 cases) and Tullynaught (30 of 33 townlands) are attached. Donegal, Laghy and Tawnawully are skipped with a notice because their townlands are not in the place layer yet (WP3). One review file, with a `ded` column, lists the spellings not matched by identical name.
 
 ### WP10 GEDCOM generation and GEDCOM 7 test
 - **Goal:** a script that generates the master GEDCOM from accepted decision files, and a tested identifier carrier.
@@ -183,4 +184,4 @@ Record the test results and any unresolved issues in the Phase A handover. The m
 - **Status:** first version built (2026-11-06) on branch `feature/gedcom-people-on-pages`.
 - **Outputs:** `tools/gedcom_people.py` (`export`, `check`); `tools/test_gedcom_people.py`; `townlands/<name>/records/people.json` (committed, privacy filtered); `payload_for` in `tools/build.py` passes it through; `engine/walk.html` shows a "From the family tree" section in each family plate, labelled as research and placed above the census evidence.
 - **Rules:** only people with an accepted link in `data/research/associations/gedcom_census.csv` are used. The 100/75/50 rule applies per person and per event. A relative is named only if that relative also passes. A note naming a year inside the last 50 years is withheld and listed for review. The tree's own numbering (Ahnentafel, Ahn. N) is removed. A family note shared by several people is shown once. `tools/validate.py` re-checks every `people.json`.
-- **Not done:** townlands without attached census (the Tullynaught cases, 46 links) get nothing until WP9 attaches that census. A person is shown in the family plate of the household their census row sits in, so a wife appears under her husband's household.
+- **Not done:** 11 links in "Townagh" wait for Mike to decide whether that spelling is Tawnagh (see `census_spelling_review.csv`). A person is shown in the family plate of the household their census row sits in, so a wife appears under her husband's household.

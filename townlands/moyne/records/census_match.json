@@ -1,0 +1,39 @@
+{
+  "_generated_by": "donegal-townlands.attach_census",
+  "status": "proposed",
+  "note": "Matched by identical name only. Not reviewed.",
+  "ded": "Tullynaught",
+  "years": {
+    "1901": {
+      "spellings": [
+        {
+          "spelling": "Moyne",
+          "method": "exact_name",
+          "rows": 71
+        }
+      ],
+      "people": 71
+    },
+    "1911": {
+      "spellings": [
+        {
+          "spelling": "Moyne",
+          "method": "exact_name",
+          "rows": 62
+        }
+      ],
+      "people": 62
+    },
+    "1926": {
+      "spellings": [
+        {
+          "spelling": "Moyne",
+          "method": "exact_name",
+          "rows": 45
+        }
+      ],
+      "people": 45
+    }
+  },
+  "corrections": []
+}

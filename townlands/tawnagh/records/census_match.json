@@ -1,0 +1,19 @@
+{
+  "_generated_by": "donegal-townlands.attach_census",
+  "status": "proposed",
+  "note": "Matched by identical name only. Not reviewed.",
+  "ded": "Tullynaught",
+  "years": {
+    "1911": {
+      "spellings": [
+        {
+          "spelling": "Tawnagh",
+          "method": "exact_name",
+          "rows": 38
+        }
+      ],
+      "people": 38
+    }
+  },
+  "corrections": []
+}

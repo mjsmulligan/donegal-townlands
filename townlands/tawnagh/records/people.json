@@ -1,0 +1,329 @@
+{
+ "_generated_by": "tools/gedcom_people.py",
+ "source": "Mike's family tree (GEDCOM), a secondary source built from research. Census returns are the evidence.",
+ "privacy": "100/75/50 rule applied (CLAUDE.md). Generated for year 2026.",
+ "people": [
+  {
+   "ptr": "@I202759754063@",
+   "name": "Thomas Logue",
+   "given": "Thomas",
+   "surname": "Logue",
+   "nick": "",
+   "sex": "M",
+   "birth": {
+    "date": "about 1864",
+    "raw": "ABT 1864",
+    "place": "Tawnagh, County Donegal, Ireland"
+   },
+   "death": {
+    "date": "Apr 1939",
+    "raw": "Apr 1939",
+    "place": "Tawnagh, County Donegal, Ireland"
+   },
+   "occupations": [
+    "Farmer"
+   ],
+   "parents": [
+    "@I202759754073@",
+    "@I202759754074@"
+   ],
+   "marriages": [
+    {
+     "spouse": "@I202759754064@",
+     "date": "26 Apr 1888",
+     "raw": "26 Apr 1888",
+     "place": "St. Bridget's Church, Drumholm, County Donegal, Ireland"
+    }
+   ],
+   "children": [
+    "@I202759754058@",
+    "@I202759754089@",
+    "@I202759754090@",
+    "@I202759754110@",
+    "@I202759754111@",
+    "@I202759754112@",
+    "@I202759754115@",
+    "@I202759754113@",
+    "@I202759754114@",
+    "@I202759754124@",
+    "@I202759754091@"
+   ],
+   "notes": [
+    "Birth year ~1864 strongly supported by 1901 census and death record. 1911 census notes 22 years married (married ~1889 - consistent with marriage record April 1888) and 11 children born, 10 living. Widower by 1926 - wife Sarah died 24 May 1918 of Pulmonary Tuberculosis. Married Sarah Gallagher 26 April 1888 at St. Bridget's Church, Drumholm Parish."
+   ],
+   "census": [
+    {
+     "year": "1911",
+     "h": 6,
+     "s": "Logue",
+     "f": "Thomas",
+     "a": 44
+    }
+   ]
+  },
+  {
+   "ptr": "@I202759754064@",
+   "name": "Sarah Gallagher",
+   "given": "Sarah",
+   "surname": "Gallagher",
+   "nick": "",
+   "sex": "F",
+   "birth": {
+    "date": "28 Nov 1867",
+    "raw": "28 Nov 1867",
+    "place": "Raneeny Bar, County Donegal, Ireland"
+   },
+   "death": {
+    "date": "24 May 1918",
+    "raw": "24 May 1918",
+    "place": "Tawnagh, County Donegal, Ireland"
+   },
+   "occupations": [
+    "Domestic Servant (before marriage); Farmer's Wife"
+   ],
+   "parents": [
+    "@I202759754075@",
+    "@I202759754076@"
+   ],
+   "marriages": [
+    {
+     "spouse": "@I202759754063@",
+     "date": "26 Apr 1888",
+     "raw": "26 Apr 1888",
+     "place": "St. Bridget's Church, Drumholm, County Donegal, Ireland"
+    }
+   ],
+   "children": [
+    "@I202759754058@",
+    "@I202759754089@",
+    "@I202759754090@",
+    "@I202759754110@",
+    "@I202759754111@",
+    "@I202759754112@",
+    "@I202759754115@",
+    "@I202759754113@",
+    "@I202759754114@",
+    "@I202759754124@",
+    "@I202759754091@"
+   ],
+   "notes": [
+    "From Raneeny Bar, Laghy - outside the immediate Tullynaught/Clogher community. Her family (Gallaghers of Raneeny Bar) are in Drumholm/Laghy area. Occupation as Domestic Servant at time of marriage (1888). Died of Pulmonary Tuberculosis aged 49 - same disease that killed Joseph Kelly in 1925. Her death in 1918 confirmed by 1926 census showing Thomas as widower and son Samuel noted as Mother is Dead. Married Thomas Logue 26 April 1888 at St. Bridget's Church, Drumholm Parish."
+   ],
+   "census": [
+    {
+     "year": "1911",
+     "h": 6,
+     "s": "Logue",
+     "f": "Sarah",
+     "a": 43
+    }
+   ]
+  },
+  {
+   "ptr": "@I202759754112@",
+   "name": "Norah Delia Logue",
+   "given": "Norah Delia",
+   "surname": "Logue",
+   "nick": "",
+   "sex": "F",
+   "birth": {
+    "date": "about 1904",
+    "raw": "ABT 1904",
+    "place": "Tawnagh, County Donegal, Ireland"
+   },
+   "death": null,
+   "occupations": [],
+   "parents": [
+    "@I202759754063@",
+    "@I202759754064@"
+   ],
+   "marriages": [],
+   "children": [],
+   "notes": [
+    "Daughter of Thomas Logue and Sarah Gallagher. Present 1911 only. Absent from 1926 - likely married out."
+   ],
+   "census": [
+    {
+     "year": "1911",
+     "h": 6,
+     "s": "Logue",
+     "f": "Norah Delia",
+     "a": 7
+    }
+   ]
+  },
+  {
+   "ptr": "@I202759754113@",
+   "name": "Kathleen Logue",
+   "given": "Kathleen",
+   "surname": "Logue",
+   "nick": "",
+   "sex": "F",
+   "birth": {
+    "date": "about 1907",
+    "raw": "ABT 1907",
+    "place": "Tawnagh, County Donegal, Ireland"
+   },
+   "death": null,
+   "occupations": [],
+   "parents": [
+    "@I202759754063@",
+    "@I202759754064@"
+   ],
+   "marriages": [],
+   "children": [],
+   "notes": [
+    "Daughter of Thomas Logue and Sarah Gallagher. Present 1911 and 1926."
+   ],
+   "census": [
+    {
+     "year": "1911",
+     "h": 6,
+     "s": "Logue",
+     "f": "Kathlean",
+     "a": 4
+    }
+   ]
+  },
+  {
+   "ptr": "@I202759754114@",
+   "name": "Ellen Josephine Logue",
+   "given": "Ellen Josephine",
+   "surname": "Logue",
+   "nick": "",
+   "sex": "F",
+   "birth": {
+    "date": "about 1910",
+    "raw": "ABT 1910",
+    "place": "Tawnagh, County Donegal, Ireland"
+   },
+   "death": null,
+   "occupations": [],
+   "parents": [
+    "@I202759754063@",
+    "@I202759754064@"
+   ],
+   "marriages": [],
+   "children": [],
+   "notes": [
+    "Daughter of Thomas Logue and Sarah Gallagher. Youngest child in 1911. May be same as Eileen (I72) in 1926."
+   ],
+   "census": [
+    {
+     "year": "1911",
+     "h": 6,
+     "s": "Logue",
+     "f": "Ellen Josaphine",
+     "a": 1
+    }
+   ]
+  }
+ ],
+ "refs": {
+  "@I202759754073@": {
+   "name": "Samuel Logue",
+   "nick": "",
+   "born": "about 1819",
+   "died": "29 Dec 1879"
+  },
+  "@I202759754074@": {
+   "name": "Fanny McGlynn",
+   "nick": "",
+   "born": "about 1822",
+   "died": "16 Dec 1887"
+  },
+  "@I202759754064@": {
+   "name": "Sarah Gallagher",
+   "nick": "",
+   "born": "28 Nov 1867",
+   "died": "24 May 1918"
+  },
+  "@I202759754058@": {
+   "name": "Mary Frances Logue",
+   "nick": "",
+   "born": "23 Jun 1890",
+   "died": "11 Jun 1934"
+  },
+  "@I202759754089@": {
+   "name": "Thomas John Logue",
+   "nick": "",
+   "born": "about 1893",
+   "died": ""
+  },
+  "@I202759754090@": {
+   "name": "James Logue",
+   "nick": "",
+   "born": "about 1894",
+   "died": ""
+  },
+  "@I202759754110@": {
+   "name": "Fanny Agnes Logue",
+   "nick": "",
+   "born": "about 1896",
+   "died": ""
+  },
+  "@I202759754111@": {
+   "name": "Maggie Anne Logue",
+   "nick": "",
+   "born": "about 1901",
+   "died": ""
+  },
+  "@I202759754112@": {
+   "name": "Norah Delia Logue",
+   "nick": "",
+   "born": "about 1904",
+   "died": ""
+  },
+  "@I202759754115@": {
+   "name": "Joseph Logue",
+   "nick": "",
+   "born": "about 1905",
+   "died": ""
+  },
+  "@I202759754113@": {
+   "name": "Kathleen Logue",
+   "nick": "",
+   "born": "about 1907",
+   "died": ""
+  },
+  "@I202759754114@": {
+   "name": "Ellen Josephine Logue",
+   "nick": "",
+   "born": "about 1910",
+   "died": ""
+  },
+  "@I202759754124@": {
+   "name": "Eileen Logue",
+   "nick": "",
+   "born": "about 1910",
+   "died": ""
+  },
+  "@I202759754091@": {
+   "name": "Samuel Logue",
+   "nick": "",
+   "born": "about 1913",
+   "died": ""
+  },
+  "@I202759754075@": {
+   "name": "James Gallagher",
+   "nick": "",
+   "born": "about 1823",
+   "died": "before 1917"
+  },
+  "@I202759754076@": {
+   "name": "Mary McElhar",
+   "nick": "",
+   "born": "about 1838",
+   "died": "9 Dec 1917"
+  },
+  "@I202759754063@": {
+   "name": "Thomas Logue",
+   "nick": "",
+   "born": "about 1864",
+   "died": "Apr 1939"
+  }
+ },
+ "family_notes": [
+  "1911 census records 11 children born, 10 living. Children listed here are those identified from census records. Other children may exist including Kathleen, Eileen, Joseph, Norah Delia, Ellen Josephine, Fanny Agnes identified in census returns."
+ ]
+}
