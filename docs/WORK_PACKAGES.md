@@ -185,3 +185,29 @@ Record the test results and any unresolved issues in the Phase A handover. The m
 - **Outputs:** `tools/gedcom_people.py` (`export`, `check`); `tools/test_gedcom_people.py`; `townlands/<name>/records/people.json` (committed, privacy filtered); `payload_for` in `tools/build.py` passes it through; `engine/walk.html` shows a "From the family tree" section in each family plate, labelled as research and placed above the census evidence.
 - **Rules:** only people with an accepted link in `data/research/associations/gedcom_census.csv` are used. The 100/75/50 rule applies per person and per event. A relative is named only if that relative also passes. A note naming a year inside the last 50 years is withheld and listed for review. The tree's own numbering (Ahnentafel, Ahn. N) is removed. A family note shared by several people is shown once. `tools/validate.py` re-checks every `people.json`.
 - **Not done:** 11 links in "Townagh" wait for Mike to decide whether that spelling is Tawnagh (see `census_spelling_review.csv`). A person is shown in the family plate of the household their census row sits in, so a wife appears under her husband's household.
+
+### WP18 Census linker and review report
+- **Goal:** propose links between a person's rows in consecutive census returns, with confidence, and produce a review report Mike can work through by townland and then by family.
+- **Status:** proposed (2026-11-07), design agreed in `docs/CENSUS_GEDCOM_SPEC.md`. Not built.
+- **Outputs:** `data/reference/given_name_variants.csv` (verified by Mike only, checked by `tools/validate.py` like the surname dictionary); `tools/census_links.py` (`propose`); tests; confidence thresholds in a config file; reports in `data/processed/` (not committed).
+- **Acceptance:** on the Clogher and Tullynaught DEDs the matcher is run against the 19 consecutive pairs from Mike's accepted tree links, and recovery, confidence and any wrong links are reported. The two John Cassidys in Cullionboy do not reach high confidence. Two runs give identical output. Women whose surname changed are capped at low.
+
+### WP19 Accepting census links
+- **Goal:** record Mike's decisions as reviewed associations.
+- **Depends on:** WP18.
+- **Outputs:** `tools/census_links.py accept`; `data/research/associations/census_links.csv` (accepted and rejected rows only, with reviewer and date); validator checks that every row points at real observation IDs, that no row links twice in one direction, and that a rejected pair is never proposed again. A household can be accepted in one step when every link in it is high.
+- **Acceptance:** accepting then regenerating changes nothing. A reprocessed census file either reproduces the same observation IDs or fails loudly.
+
+### WP20 Census GEDCOM writer
+- **Goal:** generate a GEDCOM from accepted chains, one file per DED, tied to Mike's tree.
+- **Depends on:** WP19, WP16.
+- **Outputs:** `tools/census_gedcom.py`; generated files in `data/processed/` (not committed). Content as set out in section 6 of the spec: every recorded spelling as a `NAME`, one census event per return with the age as recorded, a derived `BIRT ABT` tagged as derived, families only where a return states the relationship, and no inferred marriage, death or emigration.
+- **Rules:** the 75 accepted GEDCOM-to-census links are anchors and no row they use is reassigned. A disagreement between an anchor and the matcher is listed as a conflict for Mike.
+- **Acceptance:** a person in both Mike's tree and the census appears once. Output reads cleanly in the genealogy software Mike names, and two runs give identical files.
+
+### WP21 Family fact sheet and story check
+- **Goal:** give every family a fact sheet and check each story against it.
+- **Depends on:** WP19, and WP20 for census-only families.
+- **Outputs:** `townlands/<name>/records/facts/<family>.json` (committed), each fact marked as accepted census chain, tree or Griffith's; `tools/check_story.py`, which fails any name, date, age, place or relationship in a story that is not in the fact sheet, and flags anyone not cleared for privacy; STORY_SPEC checklist items automated where possible.
+- **Acceptance:** the Kellys story passes with no edits. A sentence with an invented date fails.
+

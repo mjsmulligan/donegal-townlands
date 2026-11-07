@@ -1,6 +1,6 @@
 # Census GEDCOM spec
 
-Status: draft, 2026-11-07, for Mike's agreement. Nothing here is built. Read with `docs/DATA_ARCHITECTURE.md` (sections 3, 5, 6.2, 7), `docs/RESEARCH_PRINCIPLES.md` and `docs/STORY_SPEC.md`.
+Status: agreed in principle by Mike on 2026-11-07 (see the settled list at the end). Nothing here is built. Read with `docs/DATA_ARCHITECTURE.md` (sections 3, 5, 6.2, 7), `docs/RESEARCH_PRINCIPLES.md` and `docs/STORY_SPEC.md`.
 
 ## 1. Purpose
 
@@ -49,13 +49,15 @@ Scope is within one DED. A person who moves between townlands inside the DED can
 - The tool writes a review report, not decisions, to `data/processed/` (not committed, like the WP16 reports).
 - The report is grouped by household and sorted by confidence, so Mike can accept a whole household chain in one step when every link in it is high.
 - Mike edits the status column, and an `accept` command writes only accepted and rejected rows to `data/research/associations/census_links.csv`, with reviewer and date, as WP16 does.
-- Review policy is Mike's choice. Either he reviews medium and low links and audits a random sample of high links, or he reviews everything. The tool supports both.
+- Review policy (agreed 2026-11-07): Mike reviews medium and low links and audits a random sample of high links. The tool can also list everything if he wants it.
+- Review is done in pieces. First a townland, with every household in it, then one family at a time inside that townland. The report can be cut by townland or by family surname group, and the first full run is Cullionboy.
 
 ## 6. The census GEDCOM
 
 Generated from accepted chains, one file per DED, never edited by hand.
 
 - One `INDI` per chain. Every spelling recorded across the returns is kept as a separate `NAME`, and the first return gives the primary name. Sex as recorded.
+- A `BIRT` with an `ABT` year from the age in the earliest return, tagged as derived, with a note naming the return it came from (agreed 2026-11-07). The ages as recorded stay on the census events.
 - One census event per return, with the place (townland, DED, county), the age as recorded and a source citation to the observation ID. Nothing else is stated as an event. No marriages or deaths are inferred.
 - Families only where the return states the relationship in one household: a Head and Wife make a `FAM`, and a Son or Daughter of the Head is a child of the head. A child joins the wife in the `FAM` only if `years_married` and the children counts allow it, which covers a head who had married before. Sons-in-law, servants and visitors get no family.
 - Mike's tree anchors the result. The 75 accepted GEDCOM-to-census links are fixed. A row used by an anchor is never reassigned. If the matcher disagrees with an anchor it is shown as a conflict for review and the anchor stands until Mike says otherwise.
@@ -70,7 +72,7 @@ Each family gets a fact sheet. Each fact in it is marked as coming from an accep
 - Census files up to 1926 are custodian-published and are not withheld a second time (CLAUDE.md, decided 2026-11-02). The validator still refuses census files after 1926.
 - The generated GEDCOM adds no event the returns do not state. Anyone with later data comes from Mike's tree under his own privacy check.
 - A person aged under one in 1926 turns 100 in 2026, so no one in the returns is under the limit this year.
-- The generated GEDCOM is not committed. The decisions file and the tools are.
+- The generated GEDCOM is regenerated when needed and is not committed (agreed 2026-11-07). The decisions file and the tools are.
 
 ## 9. Test plan
 
@@ -90,11 +92,11 @@ Not yet added to `docs/WORK_PACKAGES.md`.
 - **WP20** census GEDCOM writer, with tree anchoring and conflict report.
 - **WP21** fact sheet per family and the story check from `docs/STORY_SPEC.md`.
 
-## 11. Decisions for Mike
+## 11. Settled 2026-11-07
 
-1. Review policy: medium and low only plus a sample of high, or everything.
-2. Whether the GEDCOM carries a derived `BIRT` with `ABT` year from the earliest age, tagged as derived, or only the ages as recorded. Many genealogy programs expect a birth year.
-3. Whether the generated GEDCOM stays uncommitted and is regenerated (proposed), or is committed.
-4. Confirm that the census GEDCOM is a generated input layer and not a townland-specific master GEDCOM.
-5. Who verifies the given-name reference. Proposed: Mike, as with surnames.
-6. Whether to link across DEDs in a second phase.
+1. Review medium and low links and audit a sample of high ones, in pieces: a townland first, then one family at a time.
+2. The GEDCOM carries a derived `BIRT` with `ABT`, because it suits the stories.
+3. The generated GEDCOM is regenerated, not committed.
+4. The census GEDCOM is a generated input layer and not a townland-specific master, for now.
+5. Mike verifies the given-name reference.
+6. Linking across DEDs is a second phase. Mike expects something larger then, including hyperlinking between people in the presentation, so the chain IDs and links should be designed to support it.
