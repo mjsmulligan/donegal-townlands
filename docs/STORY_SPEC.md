@@ -104,7 +104,7 @@ Absence from a return is not told as a departure. A person who is not in a house
 
 The story refers to a family's photographs where they add to it, in the same plain voice: "There is a photograph of Bella with her daughters Rose and Mary Kate." It states only what the caption and the datasets hold: who is named, never who is where, and no date or age unless the media record carries one. Photographs are shown beside the story on the family's Photos tab (`docs/MEDIA_SPEC.md`).
 
-Proposed, for Mike to confirm: do not build per-person tagging now. The caption names the people, and the `family` column places the photograph on the right plate. Fill `people_shown` only when it adds something the caption does not, such as which person is which, and only when Mike supplies it. Add person-level links to the tree later if a photograph has to appear under more than one family or beside one person's paragraph.
+Agreed with Mike, 2026-11-07: do not build per-person tagging now. The caption names the people, and the `family` column places the photograph on the right plate. Fill `people_shown` only when it adds something the caption does not, such as which person is which, and only when Mike supplies it. Add person-level links to the tree later if a photograph has to appear under more than one family or beside one person's paragraph.
 
 ## Settled 2026-11-07
 
@@ -112,7 +112,7 @@ Proposed, for Mike to confirm: do not build per-person tagging now. The caption 
 2. Go as far as the evidence takes. Mike does the privacy check before adding evidence.
 3. Departures and absences are told only where there is evidence.
 4. Length is driven by the evidence.
-5. Photographs are referred to in the story. Tagging is proposed above and not yet decided.
+5. Photographs are referred to in the story. No per-person tagging for now (see Photographs).
 
 ## Later
 
