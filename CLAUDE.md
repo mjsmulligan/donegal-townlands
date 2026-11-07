@@ -14,7 +14,7 @@ The townland is the primary unit of research and presentation. Family histories 
 
 ## Story voice
 
-Family stories are written in a plain, lay person's tone, as one account that draws on the records and the family tree without citations, IDs or "the records show". State what the evidence shows and stop there: no speculation, no leads, no open questions on the page, and no second-guessing of the tree (DECISIONS.md, 2026-11-07). The evidence stays reachable in the closed "The records behind this" panel.
+Family stories are written in a plain, lay person's tone, as one account that draws on the records and the family tree without citations, IDs or "the records show". State what the evidence shows and stop there: no speculation, no leads, no open questions on the page, and no second-guessing of the tree (DECISIONS.md, 2026-11-07). The evidence stays reachable in the closed "The records behind this" panel. The draft spec is [`docs/STORY_SPEC.md`](docs/STORY_SPEC.md). The draft census linking and GEDCOM design is [`docs/CENSUS_GEDCOM_SPEC.md`](docs/CENSUS_GEDCOM_SPEC.md).
 
 ## Owner and working style
 
