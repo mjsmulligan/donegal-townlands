@@ -87,11 +87,12 @@ class ReferenceTests(unittest.TestCase):
         self.assertEqual(vr.page_families(["Dc"], rows), [])
         self.assertEqual(vr.page_families(["Zz"], rows), [])
 
-    def test_the_real_reference_is_valid_and_only_mcanaw_and_gallagher_are_verified(self):
+    def test_the_real_reference_is_valid_and_every_row_is_verified(self):
         self.assertEqual(vr.check(), [])
         self.assertEqual(vr.warnings(), [])
         verified = [r["family_id"] for r in vr.load() if r["status"] == "verified"]
-        self.assertEqual(verified, ["mcanaw", "gallagher-hallaghy"])
+        self.assertEqual(verified, [r["family_id"] for r in vr.load()])
+        self.assertEqual(len(verified), 10)
         self.assertEqual([r["family_id"] for r in vr.lookup("McKenna")], ["mcanaw"])
 
 
