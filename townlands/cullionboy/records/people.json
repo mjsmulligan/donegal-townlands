@@ -1,0 +1,591 @@
+{
+ "_generated_by": "tools/gedcom_people.py",
+ "source": "Mike's family tree (GEDCOM), a secondary source built from research. Census returns are the evidence.",
+ "privacy": "100/75/50 rule applied (CLAUDE.md). Generated for year 2026.",
+ "people": [
+  {
+   "ptr": "@I202759754066@",
+   "name": "Margaret McElhar",
+   "given": "Margaret",
+   "surname": "McElhar",
+   "nick": "",
+   "sex": "F",
+   "birth": {
+    "date": "about 1840",
+    "raw": "ABT 1840",
+    "place": "Friary, County Donegal, Ireland"
+   },
+   "death": {
+    "date": "6 Aug 1913",
+    "raw": "6 Aug 1913",
+    "place": "Cullionboy, County Donegal, Ireland"
+   },
+   "occupations": [
+    "Farmer's Wife"
+   ],
+   "parents": [
+    "@I202759754079@"
+   ],
+   "marriages": [
+    {
+     "spouse": "@I202759754065@",
+     "date": "17 Feb 1864",
+     "raw": "17 Feb 1864",
+     "place": "Killymard Parish Church, County Donegal, Ireland"
+    }
+   ],
+   "children": [
+    "@I202759754116@",
+    "@I202759754059@",
+    "@I202759754093@",
+    "@I202759754117@"
+   ],
+   "notes": [
+    "Surname recorded as both McElhar and Carr - interchangeable variants of the same surname in common usage within the family and community. Birth record of son Joseph Kelly (1875) gives mother's maiden name as McElhar; later records use Carr. From Friary townland, Lough Eske, Killymard Parish. Death on 6 August 1913 - same date as birth of Rose Kelly, both registered by Mary Anne McGettigan. Preferred birth year ~1840 from marriage record."
+   ],
+   "census": [
+    {
+     "year": "1901",
+     "h": 3,
+     "s": "Kelly",
+     "f": "Margaret",
+     "a": 62
+    },
+    {
+     "year": "1911",
+     "h": 3,
+     "s": "Kelly",
+     "f": "Marget",
+     "a": 74
+    }
+   ]
+  },
+  {
+   "ptr": "@I202759754065@",
+   "name": "Thomas Kelly",
+   "given": "Thomas",
+   "surname": "Kelly",
+   "nick": "",
+   "sex": "M",
+   "birth": {
+    "date": "about 1840",
+    "raw": "ABT 1840",
+    "place": "County Donegal, Ireland"
+   },
+   "death": {
+    "date": "about 1913",
+    "raw": "ABT 1913",
+    "place": "Cullionboy, County Donegal, Ireland"
+   },
+   "occupations": [
+    "Farmer"
+   ],
+   "parents": [
+    "@I202759754077@",
+    "@I202759754078@"
+   ],
+   "marriages": [
+    {
+     "spouse": "@I202759754066@",
+     "date": "17 Feb 1864",
+     "raw": "17 Feb 1864",
+     "place": "Killymard Parish Church, County Donegal, Ireland"
+    }
+   ],
+   "children": [
+    "@I202759754116@",
+    "@I202759754059@",
+    "@I202759754093@",
+    "@I202759754117@"
+   ],
+   "notes": [
+    "Birth year ~1840 from marriage record (1864, age 24) and 1901 census. 1911 census notes 45 years married and 8 children born, 3 living. Irish and English speaker (1901). Married Margaret McElhar/Carr 17 February 1864 at Killymard Parish - one of the earliest civil registration records in district. Death record not located."
+   ],
+   "census": [
+    {
+     "year": "1901",
+     "h": 3,
+     "s": "Kelly",
+     "f": "Thomas",
+     "a": 60
+    },
+    {
+     "year": "1911",
+     "h": 3,
+     "s": "Kelly",
+     "f": "Thomas",
+     "a": 74
+    }
+   ]
+  },
+  {
+   "ptr": "@I202759754116@",
+   "name": "Thomas Kelly",
+   "given": "Thomas",
+   "surname": "Kelly",
+   "nick": "",
+   "sex": "M",
+   "birth": {
+    "date": "about 1871",
+    "raw": "ABT 1871",
+    "place": "Cullionboy, County Donegal, Ireland"
+   },
+   "death": null,
+   "occupations": [],
+   "parents": [
+    "@I202759754065@",
+    "@I202759754066@"
+   ],
+   "marriages": [],
+   "children": [],
+   "notes": [
+    "Son of Thomas Kelly and Margaret McElhar/Carr. Present in 1901. Absent from 1911 - likely emigrated or deceased."
+   ],
+   "census": [
+    {
+     "year": "1901",
+     "h": 3,
+     "s": "Kelly",
+     "f": "Thomas",
+     "a": 30
+    }
+   ]
+  },
+  {
+   "ptr": "@I202759754059@",
+   "name": "Joseph Kelly",
+   "given": "Joseph",
+   "surname": "Kelly",
+   "nick": "",
+   "sex": "M",
+   "birth": {
+    "date": "8 Jun 1875",
+    "raw": "8 Jun 1875",
+    "place": "Cullionboy, County Donegal, Ireland"
+   },
+   "death": {
+    "date": "27 Dec 1925",
+    "raw": "27 Dec 1925",
+    "place": "Cullionboy, County Donegal, Ireland"
+   },
+   "occupations": [
+    "Farmer"
+   ],
+   "parents": [
+    "@I202759754065@",
+    "@I202759754066@"
+   ],
+   "marriages": [
+    {
+     "spouse": "@I202759754060@",
+     "date": "6 Feb 1910",
+     "raw": "6 Feb 1910",
+     "place": "St. Patrick's Church, Donegal Town, County Donegal, Ireland"
+    }
+   ],
+   "children": [
+    "@I202759754092@",
+    "@I202759754106@",
+    "@I202759754056@",
+    "@I202759754107@",
+    "@I202759754108@"
+   ],
+   "notes": [
+    "Died of Pulmonary Tuberculosis aged 47 - same cause as Sarah Gallagher Logue (1918), reflecting prevalence of TB in rural Donegal in this period. Married Isabella McGettigan 6 February 1910 at St. Patrick's Church, Donegal Town. Death confirmed by 1926 census where wife Bella recorded as widow with children noting father dead."
+   ],
+   "census": [
+    {
+     "year": "1901",
+     "h": 3,
+     "s": "Kelly",
+     "f": "Joseph",
+     "a": 24
+    },
+    {
+     "year": "1911",
+     "h": 3,
+     "s": "Kelly",
+     "f": "Joseph",
+     "a": 35
+    }
+   ]
+  },
+  {
+   "ptr": "@I202759754060@",
+   "name": "Isabella McGettigan",
+   "given": "Isabella",
+   "surname": "McGettigan",
+   "nick": "",
+   "sex": "F",
+   "birth": {
+    "date": "6 Feb 1879",
+    "raw": "6 Feb 1879",
+    "place": "Druminnin, County Donegal, Ireland"
+   },
+   "death": {
+    "date": "5 May 1954",
+    "raw": "5 May 1954",
+    "place": "Cullionboy, County Donegal, Ireland"
+   },
+   "occupations": [
+    "Farmer's Wife; Farmer (widow)"
+   ],
+   "parents": [
+    "@I202759754067@",
+    "@I202759754068@"
+   ],
+   "marriages": [
+    {
+     "spouse": "@I202759754059@",
+     "date": "6 Feb 1910",
+     "raw": "6 Feb 1910",
+     "place": "St. Patrick's Church, Donegal Town, County Donegal, Ireland"
+    }
+   ],
+   "children": [
+    "@I202759754092@",
+    "@I202759754106@",
+    "@I202759754056@",
+    "@I202759754107@",
+    "@I202759754108@"
+   ],
+   "notes": [
+    "Known as Bella. Born at Druminnin (family home), father recorded on birth certificate as Hugh Gaitens - earlier anglicisation of McGettigan. Catherine McAna present at birth - relationship to Mary McAna unknown, possibly sister but unproven. Married Joseph Kelly on her 31st birthday, 6 February 1910. Several children born at maternal grandmother's home in Mullinalamphry. Surname variants: McGettigan / Gaitens / Gaitins."
+   ],
+   "census": [
+    {
+     "year": "1911",
+     "h": 3,
+     "s": "Kelly",
+     "f": "Bella",
+     "a": 32
+    },
+    {
+     "year": "1926",
+     "h": "0002",
+     "s": "Kelly",
+     "f": "Bella",
+     "a": 45
+    }
+   ]
+  },
+  {
+   "ptr": "@I202759754093@",
+   "name": "John Patrick Kelly",
+   "given": "John Patrick",
+   "surname": "Kelly",
+   "nick": "",
+   "sex": "M",
+   "birth": {
+    "date": "about 1881",
+    "raw": "ABT 1881",
+    "place": "Cullionboy, County Donegal, Ireland"
+   },
+   "death": null,
+   "occupations": [],
+   "parents": [
+    "@I202759754065@",
+    "@I202759754066@"
+   ],
+   "marriages": [],
+   "children": [],
+   "notes": [
+    "Brother of Joseph Kelly. Son of Thomas Kelly and Margaret McElhar/Carr."
+   ],
+   "census": [
+    {
+     "year": "1901",
+     "h": 3,
+     "s": "Kelly",
+     "f": "John",
+     "a": 21
+    }
+   ]
+  },
+  {
+   "ptr": "@I202759754117@",
+   "name": "James Kelly",
+   "given": "James",
+   "surname": "Kelly",
+   "nick": "",
+   "sex": "M",
+   "birth": {
+    "date": "about 1883",
+    "raw": "ABT 1883",
+    "place": "Cullionboy, County Donegal, Ireland"
+   },
+   "death": null,
+   "occupations": [],
+   "parents": [
+    "@I202759754065@",
+    "@I202759754066@"
+   ],
+   "marriages": [],
+   "children": [],
+   "notes": [
+    "Son of Thomas Kelly and Margaret McElhar/Carr. Present in 1901. Absent from 1911. Note: 1911 records only 3 of 8 children living."
+   ],
+   "census": [
+    {
+     "year": "1901",
+     "h": 3,
+     "s": "Kelly",
+     "f": "James",
+     "a": 18
+    }
+   ]
+  },
+  {
+   "ptr": "@I202759754106@",
+   "name": "Mary Katie Kelly",
+   "given": "Mary Katie",
+   "surname": "Kelly",
+   "nick": "",
+   "sex": "F",
+   "birth": {
+    "date": "about 1913",
+    "raw": "ABT 1913",
+    "place": "Mullinalamphry, County Donegal, Ireland"
+   },
+   "death": null,
+   "occupations": [],
+   "parents": [
+    "@I202759754059@",
+    "@I202759754060@"
+   ],
+   "marriages": [],
+   "children": [],
+   "notes": [
+    "Daughter of Joseph Kelly and Bella McGettigan."
+   ],
+   "census": [
+    {
+     "year": "1926",
+     "h": "0002",
+     "s": "Kelly",
+     "f": "Mary Katie",
+     "a": 13
+    }
+   ]
+  },
+  {
+   "ptr": "@I202759754056@",
+   "name": "Rosanna Kelly",
+   "given": "Rosanna",
+   "surname": "Kelly",
+   "nick": "",
+   "sex": "F",
+   "birth": {
+    "date": "30 Jul 1913",
+    "raw": "30 Jul 1913",
+    "place": "Mullinalamphry, County Donegal, Ireland"
+   },
+   "death": null,
+   "occupations": [],
+   "parents": [
+    "@I202759754059@",
+    "@I202759754060@"
+   ],
+   "marriages": [
+    {
+     "spouse": "@I202759754055@",
+     "date": "27 Jan 1949",
+     "raw": "27 Jan 1949",
+     "place": "St. Agatha's Church, Clar, County Donegal, Ireland"
+    }
+   ],
+   "children": [],
+   "notes": [
+    "Preferred name Rose - used throughout her life and signed on official documents including mother Bella's death registration 1954. Full given name Rosanna confirmed by birth record. Born at maternal grandmother Mary McAna's home in Mullinalamphry while family home was Cullionboy - several of Bella's children born at the McGettigan/McAna household. Birth date: family oral tradition gives 30 July 1913; civil registration date of 6 August 1913 likely reflects registration date rather than birth date."
+   ],
+   "census": [
+    {
+     "year": "1926",
+     "h": "0002",
+     "s": "Kelly",
+     "f": "Rose Anne",
+     "a": 12
+    }
+   ]
+  },
+  {
+   "ptr": "@I202759754107@",
+   "name": "Thomas Joseph Kelly",
+   "given": "Thomas Joseph",
+   "surname": "Kelly",
+   "nick": "",
+   "sex": "M",
+   "birth": {
+    "date": "about 1917",
+    "raw": "ABT 1917",
+    "place": "Mullinalamphry, County Donegal, Ireland"
+   },
+   "death": null,
+   "occupations": [],
+   "parents": [
+    "@I202759754059@",
+    "@I202759754060@"
+   ],
+   "marriages": [],
+   "children": [],
+   "notes": [
+    "Son of Joseph Kelly and Bella McGettigan. Named after paternal grandfather Thomas Kelly."
+   ],
+   "census": [
+    {
+     "year": "1926",
+     "h": "0002",
+     "s": "Kelly",
+     "f": "Thomas Joseph",
+     "a": 9
+    }
+   ]
+  },
+  {
+   "ptr": "@I202759754108@",
+   "name": "Hugh Patrick Kelly",
+   "given": "Hugh Patrick",
+   "surname": "Kelly",
+   "nick": "",
+   "sex": "M",
+   "birth": {
+    "date": "about 1919",
+    "raw": "ABT 1919",
+    "place": "Mullinalamphry, County Donegal, Ireland"
+   },
+   "death": null,
+   "occupations": [],
+   "parents": [
+    "@I202759754059@",
+    "@I202759754060@"
+   ],
+   "marriages": [],
+   "children": [],
+   "notes": [
+    "Son of Joseph Kelly and Bella McGettigan. Named after maternal grandfather Hugh McGettigan."
+   ],
+   "census": [
+    {
+     "year": "1926",
+     "h": "0002",
+     "s": "Kelly",
+     "f": "Hugh Patrick",
+     "a": 7
+    }
+   ]
+  }
+ ],
+ "refs": {
+  "@I202759754059@": {
+   "name": "Joseph Kelly",
+   "nick": "",
+   "born": "8 Jun 1875",
+   "died": "27 Dec 1925"
+  },
+  "@I202759754060@": {
+   "name": "Isabella McGettigan",
+   "nick": "",
+   "born": "6 Feb 1879",
+   "died": "5 May 1954"
+  },
+  "@I202759754055@": {
+   "name": "Patrick McCadden",
+   "nick": "",
+   "born": "20 Oct 1911",
+   "died": ""
+  },
+  "@I202759754065@": {
+   "name": "Thomas Kelly",
+   "nick": "",
+   "born": "about 1840",
+   "died": "about 1913"
+  },
+  "@I202759754066@": {
+   "name": "Margaret McElhar",
+   "nick": "",
+   "born": "about 1840",
+   "died": "6 Aug 1913"
+  },
+  "@I202759754092@": {
+   "name": "Margaret Kelly",
+   "nick": "",
+   "born": "about 1912",
+   "died": ""
+  },
+  "@I202759754106@": {
+   "name": "Mary Katie Kelly",
+   "nick": "",
+   "born": "about 1913",
+   "died": ""
+  },
+  "@I202759754056@": {
+   "name": "Rosanna Kelly",
+   "nick": "",
+   "born": "30 Jul 1913",
+   "died": ""
+  },
+  "@I202759754107@": {
+   "name": "Thomas Joseph Kelly",
+   "nick": "",
+   "born": "about 1917",
+   "died": ""
+  },
+  "@I202759754108@": {
+   "name": "Hugh Patrick Kelly",
+   "nick": "",
+   "born": "about 1919",
+   "died": ""
+  },
+  "@I202759754067@": {
+   "name": "Hugh McGettigan",
+   "nick": "",
+   "born": "about 1851",
+   "died": "about 1904"
+  },
+  "@I202759754068@": {
+   "name": "Mary McAna",
+   "nick": "",
+   "born": "about 1854",
+   "died": "2 May 1927"
+  },
+  "@I202759754077@": {
+   "name": "John Kelly",
+   "nick": "",
+   "born": "about 1816",
+   "died": "before 1901"
+  },
+  "@I202759754078@": {
+   "name": "Mary",
+   "nick": "",
+   "born": "about 1820",
+   "died": "before 1901"
+  },
+  "@I202759754116@": {
+   "name": "Thomas Kelly",
+   "nick": "",
+   "born": "about 1871",
+   "died": ""
+  },
+  "@I202759754093@": {
+   "name": "John Patrick Kelly",
+   "nick": "",
+   "born": "about 1881",
+   "died": ""
+  },
+  "@I202759754117@": {
+   "name": "James Kelly",
+   "nick": "",
+   "born": "about 1883",
+   "died": ""
+  },
+  "@I202759754079@": {
+   "name": "Patrick Carr",
+   "nick": "",
+   "born": "about 1816",
+   "died": "before 1901"
+  }
+ },
+ "family_notes": [
+  "1911 census records 8 children born, 3 living. Other children include Thomas Kelly (b. ~1871) and James Kelly (b. ~1883) identified in 1901 census. Only 3 survived to 1911."
+ ]
+}
