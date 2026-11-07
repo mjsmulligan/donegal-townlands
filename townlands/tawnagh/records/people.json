@@ -53,11 +53,25 @@
    ],
    "census": [
     {
+     "year": "1901",
+     "h": 2,
+     "s": "Logue",
+     "f": "Thomas",
+     "a": 37
+    },
+    {
      "year": "1911",
      "h": 6,
      "s": "Logue",
      "f": "Thomas",
      "a": 44
+    },
+    {
+     "year": "1926",
+     "h": "0005",
+     "s": "Logue",
+     "f": "Thomas",
+     "a": 68
     }
    ]
   },
@@ -111,11 +125,202 @@
    ],
    "census": [
     {
+     "year": "1901",
+     "h": 2,
+     "s": "Logue",
+     "f": "Sarah",
+     "a": 33
+    },
+    {
      "year": "1911",
      "h": 6,
      "s": "Logue",
      "f": "Sarah",
      "a": 43
+    }
+   ]
+  },
+  {
+   "ptr": "@I202759754058@",
+   "name": "Mary Frances Logue",
+   "given": "Mary Frances",
+   "surname": "Logue",
+   "nick": "",
+   "sex": "F",
+   "birth": {
+    "date": "23 Jun 1890",
+    "raw": "23 Jun 1890",
+    "place": "Tawnagh, County Donegal, Ireland"
+   },
+   "death": {
+    "date": "11 Jun 1934",
+    "raw": "11 Jun 1934",
+    "place": "District Hospital, Donegal, County Donegal, Ireland"
+   },
+   "occupations": [
+    "Farmer's Wife"
+   ],
+   "parents": [
+    "@I202759754063@",
+    "@I202759754064@"
+   ],
+   "marriages": [
+    {
+     "spouse": "@I202759754057@",
+     "date": "30 Dec 1909",
+     "raw": "30 Dec 1909",
+     "place": "St. Patrick's Church, Donegal Town, County Donegal, Ireland"
+    }
+   ],
+   "children": [
+    "@I202759754055@",
+    "@I202759754121@",
+    "@I202759754122@",
+    "@I202759754123@",
+    "@I202759754105@"
+   ],
+   "notes": [
+    "Full given name Mary Frances confirmed by birth record. Known as Minnie (nickname) to distinguish from other Marys in community - same pattern as husband John whose father Patrick was known as Paddy. Died aged 44 of Acute Diphtheria in Donegal District Hospital - sudden acute illness explaining death away from home. Death leaves husband John as widower with young children. Absent from 1911 census (Tawnagh) - already married to John McCadden by then."
+   ],
+   "census": [
+    {
+     "year": "1901",
+     "h": 2,
+     "s": "Logue",
+     "f": "Mary",
+     "a": 10
+    }
+   ]
+  },
+  {
+   "ptr": "@I202759754089@",
+   "name": "Thomas John Logue",
+   "given": "Thomas John",
+   "surname": "Logue",
+   "nick": "",
+   "sex": "M",
+   "birth": {
+    "date": "about 1893",
+    "raw": "ABT 1893",
+    "place": "Tawnagh, County Donegal, Ireland"
+   },
+   "death": null,
+   "occupations": [],
+   "parents": [
+    "@I202759754063@",
+    "@I202759754064@"
+   ],
+   "marriages": [],
+   "children": [],
+   "notes": [
+    "Brother of Minnie Logue. Son of Thomas Logue and Sarah Gallagher."
+   ],
+   "census": [
+    {
+     "year": "1901",
+     "h": 2,
+     "s": "Logue",
+     "f": "Thomas John",
+     "a": 8
+    }
+   ]
+  },
+  {
+   "ptr": "@I202759754090@",
+   "name": "James Logue",
+   "given": "James",
+   "surname": "Logue",
+   "nick": "",
+   "sex": "M",
+   "birth": {
+    "date": "about 1894",
+    "raw": "ABT 1894",
+    "place": "Tawnagh, County Donegal, Ireland"
+   },
+   "death": null,
+   "occupations": [],
+   "parents": [
+    "@I202759754063@",
+    "@I202759754064@"
+   ],
+   "marriages": [],
+   "children": [],
+   "notes": [
+    "Son of Thomas Logue and Sarah Gallagher. Born ~1894 - too young to be the James Logue who witnessed Thomas and Sarah's marriage in 1888. That James Logue was likely Samuel Logue's son (Thomas's older brother) who appears in Griffith's Valuation (~1857) sub-leasing from Samuel Logue in Tawnagh. This James (I37) is a younger brother of Minnie Logue."
+   ],
+   "census": [
+    {
+     "year": "1901",
+     "h": 2,
+     "s": "Logue",
+     "f": "James",
+     "a": 7
+    }
+   ]
+  },
+  {
+   "ptr": "@I202759754110@",
+   "name": "Fanny Agnes Logue",
+   "given": "Fanny Agnes",
+   "surname": "Logue",
+   "nick": "",
+   "sex": "F",
+   "birth": {
+    "date": "about 1896",
+    "raw": "ABT 1896",
+    "place": "Tawnagh, County Donegal, Ireland"
+   },
+   "death": null,
+   "occupations": [],
+   "parents": [
+    "@I202759754063@",
+    "@I202759754064@"
+   ],
+   "marriages": [],
+   "children": [],
+   "notes": [
+    "Daughter of Thomas Logue and Sarah Gallagher. Named after paternal grandmother Fanny McGlynn. Absent from 1926 - likely married out."
+   ],
+   "census": [
+    {
+     "year": "1901",
+     "h": 2,
+     "s": "Logue",
+     "f": "Fanny",
+     "a": 5
+    }
+   ]
+  },
+  {
+   "ptr": "@I202759754111@",
+   "name": "Maggie Anne Logue",
+   "given": "Maggie Anne",
+   "surname": "Logue",
+   "nick": "",
+   "sex": "F",
+   "birth": {
+    "date": "about 1901",
+    "raw": "ABT 1901",
+    "place": "Tawnagh, County Donegal, Ireland"
+   },
+   "death": null,
+   "occupations": [],
+   "parents": [
+    "@I202759754063@",
+    "@I202759754064@"
+   ],
+   "marriages": [],
+   "children": [],
+   "notes": [
+    "Daughter of Thomas Logue and Sarah Gallagher. Absent from 1926 - likely married out."
+   ],
+   "census": [
+    {
+     "year": "1901",
+     "h": 2,
+     "s": "Logue",
+     "f": "Maggie Anne",
+     "a": 0
     }
    ]
   },
@@ -153,6 +358,39 @@
    ]
   },
   {
+   "ptr": "@I202759754115@",
+   "name": "Joseph Logue",
+   "given": "Joseph",
+   "surname": "Logue",
+   "nick": "",
+   "sex": "M",
+   "birth": {
+    "date": "about 1905",
+    "raw": "ABT 1905",
+    "place": "Tawnagh, County Donegal, Ireland"
+   },
+   "death": null,
+   "occupations": [],
+   "parents": [
+    "@I202759754063@",
+    "@I202759754064@"
+   ],
+   "marriages": [],
+   "children": [],
+   "notes": [
+    "Son of Thomas Logue and Sarah Gallagher. Informant at father Thomas's death 1939. Present in 1926."
+   ],
+   "census": [
+    {
+     "year": "1926",
+     "h": "0005",
+     "s": "Logue",
+     "f": "Joseph",
+     "a": 21
+    }
+   ]
+  },
+  {
    "ptr": "@I202759754113@",
    "name": "Kathleen Logue",
    "given": "Kathleen",
@@ -182,6 +420,39 @@
      "s": "Logue",
      "f": "Kathlean",
      "a": 4
+    }
+   ]
+  },
+  {
+   "ptr": "@I202759754124@",
+   "name": "Eileen Logue",
+   "given": "Eileen",
+   "surname": "Logue",
+   "nick": "",
+   "sex": "F",
+   "birth": {
+    "date": "about 1910",
+    "raw": "ABT 1910",
+    "place": "Tawnagh, County Donegal, Ireland"
+   },
+   "death": null,
+   "occupations": [],
+   "parents": [
+    "@I202759754063@",
+    "@I202759754064@"
+   ],
+   "marriages": [],
+   "children": [],
+   "notes": [
+    "Daughter of Thomas Logue and Sarah Gallagher. Possibly same person as Ellen Josephine (I61) - ages consistent across records."
+   ],
+   "census": [
+    {
+     "year": "1926",
+     "h": "0005",
+     "s": "Logue",
+     "f": "Eileen",
+     "a": 16
     }
    ]
   },
@@ -217,9 +488,90 @@
      "a": 1
     }
    ]
+  },
+  {
+   "ptr": "@I202759754091@",
+   "name": "Samuel Logue",
+   "given": "Samuel",
+   "surname": "Logue",
+   "nick": "",
+   "sex": "M",
+   "birth": {
+    "date": "about 1913",
+    "raw": "ABT 1913",
+    "place": "Tawnagh, County Donegal, Ireland"
+   },
+   "death": null,
+   "occupations": [],
+   "parents": [
+    "@I202759754063@",
+    "@I202759754064@"
+   ],
+   "marriages": [],
+   "children": [],
+   "notes": [
+    "Brother of Minnie Logue. Son of Thomas Logue and Sarah Gallagher. Named after paternal grandfather Samuel Logue. Noted Mother is Dead in 1926 census - consistent with Sarah's death 1918."
+   ],
+   "census": [
+    {
+     "year": "1926",
+     "h": "0005",
+     "s": "Logue",
+     "f": "Samuel",
+     "a": 13
+    }
+   ]
   }
  ],
  "refs": {
+  "@I202759754063@": {
+   "name": "Thomas Logue",
+   "nick": "",
+   "born": "about 1864",
+   "died": "Apr 1939"
+  },
+  "@I202759754064@": {
+   "name": "Sarah Gallagher",
+   "nick": "",
+   "born": "28 Nov 1867",
+   "died": "24 May 1918"
+  },
+  "@I202759754057@": {
+   "name": "John McCadden",
+   "nick": "",
+   "born": "19 Feb 1882",
+   "died": "27 Jan 1953"
+  },
+  "@I202759754055@": {
+   "name": "Patrick McCadden",
+   "nick": "",
+   "born": "20 Oct 1911",
+   "died": ""
+  },
+  "@I202759754121@": {
+   "name": "Teresa McCadden",
+   "nick": "",
+   "born": "about 1914",
+   "died": ""
+  },
+  "@I202759754122@": {
+   "name": "James Francis McCadden",
+   "nick": "",
+   "born": "about 1916",
+   "died": ""
+  },
+  "@I202759754123@": {
+   "name": "Thomas Francis McCadden",
+   "nick": "",
+   "born": "about 1922",
+   "died": ""
+  },
+  "@I202759754105@": {
+   "name": "Edward McCadden",
+   "nick": "",
+   "born": "about 1924",
+   "died": ""
+  },
   "@I202759754073@": {
    "name": "Samuel Logue",
    "nick": "",
@@ -231,12 +583,6 @@
    "nick": "",
    "born": "about 1822",
    "died": "16 Dec 1887"
-  },
-  "@I202759754064@": {
-   "name": "Sarah Gallagher",
-   "nick": "",
-   "born": "28 Nov 1867",
-   "died": "24 May 1918"
   },
   "@I202759754058@": {
    "name": "Mary Frances Logue",
@@ -315,12 +661,6 @@
    "nick": "",
    "born": "about 1838",
    "died": "9 Dec 1917"
-  },
-  "@I202759754063@": {
-   "name": "Thomas Logue",
-   "nick": "",
-   "born": "about 1864",
-   "died": "Apr 1939"
   }
  },
  "family_notes": [

@@ -22,4 +22,4 @@ townland. Evidence can be added incrementally as sources are researched.
 - Confirm historical spellings and any relevant variations.
 - Establish historical place relationships where the evidence permits.
 - Add historical records with references to their original sources.
-- The 1901 and 1926 census files spell this townland "Townagh" (42 and 35 rows); only 1911 uses "Tawnagh" (38 rows). Only the 1911 rows are attached. Whether Townagh is Tawnagh is Mike's decision, listed in `data/processed/places/census_spelling_review.csv`. Eleven links from his GEDCOM wait on it.
+- The 1901 and 1926 census files spell this townland "Townagh" (42 and 35 rows); 1911 uses "Tawnagh" (38 rows). Mike decided on 2026-11-07 that Townagh is a spelling variant of Tawnagh (recorded in `data/processed/places/census_spelling_review.csv`). All three returns are now attached, each row keeping the spelling as recorded. The eleven GEDCOM links that waited on this decision are now in scope for the Tawnagh page.
