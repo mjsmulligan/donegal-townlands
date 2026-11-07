@@ -89,7 +89,9 @@ class ReferenceTests(unittest.TestCase):
 
     def test_the_real_reference_is_valid_and_only_mcanaw_is_verified(self):
         self.assertEqual(vr.check(), [])
-        self.assertEqual(vr.warnings(), [])
+        # Gallaghan is deliberately in both Callaghan and Gallagher until Mike decides (2026-11-07).
+        self.assertEqual(len(vr.warnings()), 1)
+        self.assertIn('gallaghan', vr.warnings()[0])
         verified = [r["family_id"] for r in vr.load() if r["status"] == "verified"]
         self.assertEqual(verified, ["mcanaw"])
         self.assertEqual([r["family_id"] for r in vr.lookup("McKenna")], ["mcanaw"])
