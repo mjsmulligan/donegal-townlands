@@ -1,0 +1,39 @@
+{
+  "_generated_by": "donegal-townlands.attach_census",
+  "status": "proposed",
+  "note": "Matched by identical name only. Not reviewed.",
+  "ded": "Tullynaught",
+  "years": {
+    "1901": {
+      "spellings": [
+        {
+          "spelling": "Straness",
+          "method": "exact_name",
+          "rows": 34
+        }
+      ],
+      "people": 34
+    },
+    "1911": {
+      "spellings": [
+        {
+          "spelling": "Straness",
+          "method": "exact_name",
+          "rows": 47
+        }
+      ],
+      "people": 47
+    },
+    "1926": {
+      "spellings": [
+        {
+          "spelling": "Straness",
+          "method": "exact_name",
+          "rows": 31
+        }
+      ],
+      "people": 31
+    }
+  },
+  "corrections": []
+}

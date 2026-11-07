@@ -116,6 +116,47 @@ class AttachCensusTests(unittest.TestCase):
         self.run_attach()
         self.assertFalse(self.case_file("other", "census.json").exists())
 
+    def second_ded(self, year, rows):
+        """A second DED, file named <DED>_<year>.csv as the Tullynaught files are."""
+        fields = C26_FIELDS if year == 1926 else C_FIELDS
+        with (ac.CENSUS_DIR / f"Second_{year}.csv").open("w", encoding="utf-8", newline="") as h:
+            w = csv.DictWriter(h, fieldnames=fields)
+            w.writeheader()
+            w.writerows(rows)
+
+    def test_every_ded_in_the_place_layer_is_attached_on_its_own(self):
+        self.places([place("1", "Alpha"), place("2", "Beta"), place("900", "Clogher", "ded"),
+                     place("3", "Other", ded="901"), place("901", "Second", "ded")])
+        self.census(1901, [self.p("Alpha")])
+        self.second_ded(1901, [self.p("Other"), self.p("Alpha", "Smith")])
+        self.run_attach()
+        self.assertTrue(self.case_file("alpha", "census.json").exists())
+        other = json.loads(self.case_file("other", "census.json").read_text(encoding="utf-8"))
+        self.assertEqual(len(other["1901"]), 1)
+        # Alpha is a Clogher townland: a Second DED row named Alpha is not attached to it.
+        alpha = json.loads(self.case_file("alpha", "census.json").read_text(encoding="utf-8"))
+        self.assertEqual(len(alpha["1901"]), 1)
+        match = json.loads(self.case_file("other", "census_match.json").read_text(encoding="utf-8"))
+        self.assertEqual(match["ded"], "Second")
+        self.assertEqual([r["ded"] for r in self.review()], ["Second"])
+
+    def test_ded_not_in_place_layer_is_skipped_and_its_review_rows_are_kept(self):
+        self.census(1901, [self.p("Alpha")])
+        self.second_ded(1901, [self.p("Elsewhere")])
+        with ac.REVIEW_CSV.open("w", encoding="utf-8", newline="") as h:
+            w = csv.DictWriter(h, fieldnames=ac.REVIEW_FIELDS)
+            w.writeheader()
+            w.writerow({"ded": "Second", "census_year": "1901", "census_spelling": "Elsewhere", "rows": "1",
+                        "status": "accepted", "accepted_logainm_id": "77", "similar_places_not_confirmed": "",
+                        "reviewer_note": "kept"})
+        out = io.StringIO()
+        with contextlib.redirect_stdout(out):
+            ac.main()
+        self.assertIn("not in the place layer yet", out.getvalue())
+        self.assertTrue(self.case_file("alpha", "census.json").exists())
+        kept = [r for r in self.review() if r["ded"] == "Second"]
+        self.assertEqual([(r["census_spelling"], r["reviewer_note"]) for r in kept], [("Elsewhere", "kept")])
+
     def test_authored_census_is_never_touched(self):
         path = self.case_file("alpha", "census.json")
         path.parent.mkdir(parents=True)

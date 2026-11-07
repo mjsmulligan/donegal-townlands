@@ -1,0 +1,478 @@
+{
+ "_generated_by": "tools/gedcom_people.py",
+ "source": "Mike's family tree (GEDCOM), a secondary source built from research. Census returns are the evidence.",
+ "privacy": "100/75/50 rule applied (CLAUDE.md). Generated for year 2026.",
+ "people": [
+  {
+   "ptr": "@I202759754061@",
+   "name": "Patrick McCadden",
+   "given": "Patrick",
+   "surname": "McCadden",
+   "nick": "",
+   "sex": "M",
+   "birth": {
+    "date": "about 1855",
+    "raw": "ABT 1855",
+    "place": "Straness, County Donegal, Ireland"
+   },
+   "death": {
+    "date": "Jan 1933",
+    "raw": "Jan 1933",
+    "place": "Aghlem, County Donegal, Ireland"
+   },
+   "occupations": [
+    "Farmer"
+   ],
+   "parents": [
+    "@I202759754069@"
+   ],
+   "marriages": [
+    {
+     "spouse": "@I202759754062@",
+     "date": "16 Feb 1879",
+     "raw": "16 Feb 1879",
+     "place": "St. Agatha's Church, Clar, County Donegal, Ireland"
+    }
+   ],
+   "children": [
+    "@I202759754085@",
+    "@I202759754057@",
+    "@I202759754087@",
+    "@I202759754109@",
+    "@I202759754088@"
+   ],
+   "notes": [
+    "Known as Paddy to distinguish from father Patrick and other Patricks in family. Born in Straness (from census image record) but living in Aghlem by 1901. Surname also recorded as McAdam. Married Bridget Gillespie 16 February 1879 at St. Agatha's Church, Clar. 1911 census: married 32 years, 6 children born, all living. Preferred birth year ~1855 based on 1901 census; death record age less reliable."
+   ],
+   "census": [
+    {
+     "year": "1901",
+     "h": 14,
+     "s": "McCadden",
+     "f": "Pat",
+     "a": 46
+    },
+    {
+     "year": "1911",
+     "h": 12,
+     "s": "McCadden",
+     "f": "Patrick",
+     "a": 59
+    },
+    {
+     "year": "1926",
+     "h": "0009",
+     "s": "McCadden",
+     "f": "Patrick",
+     "a": 75
+    }
+   ]
+  },
+  {
+   "ptr": "@I202759754062@",
+   "name": "Bridget Gillespie",
+   "given": "Bridget",
+   "surname": "Gillespie",
+   "nick": "",
+   "sex": "F",
+   "birth": {
+    "date": "about 1856",
+    "raw": "ABT 1856",
+    "place": "Druminardagh, County Donegal, Ireland"
+   },
+   "death": {
+    "date": "about 1933",
+    "raw": "ABT 1933",
+    "place": "County Donegal, Ireland"
+   },
+   "occupations": [
+    "Domestic Servant (before marriage); Farmer's Wife"
+   ],
+   "parents": [
+    "@I202759754071@",
+    "@I202759754072@"
+   ],
+   "marriages": [
+    {
+     "spouse": "@I202759754061@",
+     "date": "16 Feb 1879",
+     "raw": "16 Feb 1879",
+     "place": "St. Agatha's Church, Clar, County Donegal, Ireland"
+    }
+   ],
+   "children": [
+    "@I202759754085@",
+    "@I202759754057@",
+    "@I202759754087@",
+    "@I202759754109@",
+    "@I202759754088@"
+   ],
+   "notes": [
+    "From Druminardagh - confirmed by marriage record 1879 and Andy Gillespie household found in 1901 census at Druminardagh. Occupation as Domestic Servant at time of marriage (1879) - common occupation for young women in community before marriage. Death record not yet located - believed died ~1933. Birth year ~1856 from 1901 census (age 45); later censuses show some drift."
+   ],
+   "census": [
+    {
+     "year": "1901",
+     "h": 14,
+     "s": "McCadden",
+     "f": "Bridget",
+     "a": 45
+    },
+    {
+     "year": "1911",
+     "h": 12,
+     "s": "McCadden",
+     "f": "Bridget",
+     "a": 60
+    },
+    {
+     "year": "1926",
+     "h": "0009",
+     "s": "McCadden",
+     "f": "Bridget",
+     "a": 75
+    }
+   ]
+  },
+  {
+   "ptr": "@I202759754085@",
+   "name": "Cassie McCadden",
+   "given": "Cassie",
+   "surname": "McCadden",
+   "nick": "",
+   "sex": "F",
+   "birth": {
+    "date": "about 1882",
+    "raw": "ABT 1882",
+    "place": "Aghlem, County Donegal, Ireland"
+   },
+   "death": null,
+   "occupations": [],
+   "parents": [
+    "@I202759754061@",
+    "@I202759754062@"
+   ],
+   "marriages": [
+    {
+     "spouse": "@I202759754086@",
+     "date": "before 1882",
+     "raw": "BEF 1882",
+     "place": ""
+    }
+   ],
+   "children": [
+    "@I202759754125@"
+   ],
+   "notes": [
+    "Sister of John McCadden. Daughter of Patrick (Paddy) McCadden and Bridget Gillespie. Married Michael Breslin. Living at Clarlougheask by 1926 with husband and 6 children. Son Patrick Vincent Breslin (b. ~1910) was witness at Packie McCadden and Rose Kelly's marriage 1949. Son Patrick Breslin (age 16 in 1926) lived with grandparents Paddy and Bridget in Aghlem - a common arrangement in rural Donegal."
+   ],
+   "census": [
+    {
+     "year": "1901",
+     "h": 14,
+     "s": "McCadden",
+     "f": "Cassie",
+     "a": 19
+    }
+   ]
+  },
+  {
+   "ptr": "@I202759754057@",
+   "name": "John McCadden",
+   "given": "John",
+   "surname": "McCadden",
+   "nick": "",
+   "sex": "M",
+   "birth": {
+    "date": "19 Feb 1882",
+    "raw": "19 Feb 1882",
+    "place": "Aghlem, County Donegal, Ireland"
+   },
+   "death": {
+    "date": "27 Jan 1953",
+    "raw": "27 Jan 1953",
+    "place": "Meenadreen, County Donegal, Ireland"
+   },
+   "occupations": [
+    "Farmer"
+   ],
+   "parents": [
+    "@I202759754061@",
+    "@I202759754062@"
+   ],
+   "marriages": [
+    {
+     "spouse": "@I202759754058@",
+     "date": "30 Dec 1909",
+     "raw": "30 Dec 1909",
+     "place": "St. Patrick's Church, Donegal Town, County Donegal, Ireland"
+    }
+   ],
+   "children": [
+    "@I202759754055@",
+    "@I202759754121@",
+    "@I202759754122@",
+    "@I202759754123@",
+    "@I202759754105@"
+   ],
+   "notes": [
+    "Birth year 1882 confirmed by civil birth record and consistent across three census returns (1901: age 18; 1911: age 30; 1926: age 44). Tree date of 1875 is an error - corrected on basis of BMD evidence. Surname also recorded as McAdam (variant). Married Mary Frances (Minnie) Logue 30 December 1909 at St. Patrick's Church, Donegal Town."
+   ],
+   "census": [
+    {
+     "year": "1901",
+     "h": 14,
+     "s": "McCadden",
+     "f": "John",
+     "a": 18
+    }
+   ]
+  },
+  {
+   "ptr": "@I202759754087@",
+   "name": "Andrew Francis McCadden",
+   "given": "Andrew Francis",
+   "surname": "McCadden",
+   "nick": "",
+   "sex": "M",
+   "birth": {
+    "date": "about 1887",
+    "raw": "ABT 1887",
+    "place": "Aghlem, County Donegal, Ireland"
+   },
+   "death": null,
+   "occupations": [],
+   "parents": [
+    "@I202759754061@",
+    "@I202759754062@"
+   ],
+   "marriages": [],
+   "children": [],
+   "notes": [
+    "Brother of John McCadden. Son of Patrick (Paddy) McCadden and Bridget Gillespie. Witness at marriage of John McCadden and Minnie Logue, 30 December 1909. Still living at Aghlem with parents in 1911 and 1926 census returns."
+   ],
+   "census": [
+    {
+     "year": "1901",
+     "h": 14,
+     "s": "McCadden",
+     "f": "Andrew F",
+     "a": 14
+    }
+   ]
+  },
+  {
+   "ptr": "@I202759754109@",
+   "name": "Joseph Edward McCadden",
+   "given": "Joseph Edward",
+   "surname": "McCadden",
+   "nick": "",
+   "sex": "M",
+   "birth": {
+    "date": "about 1887",
+    "raw": "ABT 1887",
+    "place": "Aghlem, County Donegal, Ireland"
+   },
+   "death": null,
+   "occupations": [],
+   "parents": [
+    "@I202759754061@",
+    "@I202759754062@"
+   ],
+   "marriages": [],
+   "children": [],
+   "notes": [
+    "Son of Patrick (Paddy) McCadden and Bridget Gillespie. Listed alongside Andrew Francis (I34) in 1901, both age 14. Absent from 1911 - likely emigrated."
+   ],
+   "census": [
+    {
+     "year": "1901",
+     "h": 14,
+     "s": "McCadden",
+     "f": "Joseph E",
+     "a": 14
+    }
+   ]
+  },
+  {
+   "ptr": "@I202759754088@",
+   "name": "James McCadden",
+   "given": "James",
+   "surname": "McCadden",
+   "nick": "",
+   "sex": "M",
+   "birth": {
+    "date": "about 1891",
+    "raw": "ABT 1891",
+    "place": "Aghlem, County Donegal, Ireland"
+   },
+   "death": null,
+   "occupations": [],
+   "parents": [
+    "@I202759754061@",
+    "@I202759754062@"
+   ],
+   "marriages": [],
+   "children": [],
+   "notes": [
+    "Brother of John McCadden. Son of Patrick (Paddy) McCadden and Bridget Gillespie. Occupation Post Boy in 1911 census."
+   ],
+   "census": [
+    {
+     "year": "1901",
+     "h": 14,
+     "s": "McCadden",
+     "f": "James",
+     "a": 10
+    }
+   ]
+  },
+  {
+   "ptr": "@I202759754125@",
+   "name": "Patrick Vincent Breslin",
+   "given": "Patrick Vincent",
+   "surname": "Breslin",
+   "nick": "",
+   "sex": "M",
+   "birth": {
+    "date": "about 1910",
+    "raw": "ABT 1910",
+    "place": "Clarlougheask, County Donegal, Ireland"
+   },
+   "death": null,
+   "occupations": [],
+   "parents": [
+    "@I202759754086@",
+    "@I202759754085@"
+   ],
+   "marriages": [],
+   "children": [],
+   "notes": [
+    "Son of Michael Breslin (I33) and Cassie McCadden (I32). Witness at marriage of Patrick (Packie) McCadden and Rose Kelly, 27 January 1949. Living with maternal grandparents Paddy and Bridget McCadden in Aghlem in 1926."
+   ],
+   "census": [
+    {
+     "year": "1926",
+     "h": "0009",
+     "s": "Breslin",
+     "f": "Patrick",
+     "a": 16
+    }
+   ]
+  }
+ ],
+ "refs": {
+  "@I202759754061@": {
+   "name": "Patrick McCadden",
+   "nick": "",
+   "born": "about 1855",
+   "died": "Jan 1933"
+  },
+  "@I202759754062@": {
+   "name": "Bridget Gillespie",
+   "nick": "",
+   "born": "about 1856",
+   "died": "about 1933"
+  },
+  "@I202759754058@": {
+   "name": "Mary Frances Logue",
+   "nick": "",
+   "born": "23 Jun 1890",
+   "died": "11 Jun 1934"
+  },
+  "@I202759754055@": {
+   "name": "Patrick McCadden",
+   "nick": "",
+   "born": "20 Oct 1911",
+   "died": ""
+  },
+  "@I202759754121@": {
+   "name": "Teresa McCadden",
+   "nick": "",
+   "born": "about 1914",
+   "died": ""
+  },
+  "@I202759754122@": {
+   "name": "James Francis McCadden",
+   "nick": "",
+   "born": "about 1916",
+   "died": ""
+  },
+  "@I202759754123@": {
+   "name": "Thomas Francis McCadden",
+   "nick": "",
+   "born": "about 1922",
+   "died": ""
+  },
+  "@I202759754105@": {
+   "name": "Edward McCadden",
+   "nick": "",
+   "born": "about 1924",
+   "died": ""
+  },
+  "@I202759754069@": {
+   "name": "Patrick McCadden",
+   "nick": "",
+   "born": "about 1808",
+   "died": "1 Nov 1904"
+  },
+  "@I202759754085@": {
+   "name": "Cassie McCadden",
+   "nick": "",
+   "born": "about 1882",
+   "died": ""
+  },
+  "@I202759754057@": {
+   "name": "John McCadden",
+   "nick": "",
+   "born": "19 Feb 1882",
+   "died": "27 Jan 1953"
+  },
+  "@I202759754087@": {
+   "name": "Andrew Francis McCadden",
+   "nick": "",
+   "born": "about 1887",
+   "died": ""
+  },
+  "@I202759754109@": {
+   "name": "Joseph Edward McCadden",
+   "nick": "",
+   "born": "about 1887",
+   "died": ""
+  },
+  "@I202759754088@": {
+   "name": "James McCadden",
+   "nick": "",
+   "born": "about 1891",
+   "died": ""
+  },
+  "@I202759754071@": {
+   "name": "Andrew Gillespie",
+   "nick": "",
+   "born": "about 1816",
+   "died": "before 1911"
+  },
+  "@I202759754072@": {
+   "name": "Catherine McAnaw",
+   "nick": "",
+   "born": "about 1832",
+   "died": "before 1911"
+  },
+  "@I202759754086@": {
+   "name": "Michael Breslin",
+   "nick": "",
+   "born": "about 1876",
+   "died": ""
+  },
+  "@I202759754125@": {
+   "name": "Patrick Vincent Breslin",
+   "nick": "",
+   "born": "about 1910",
+   "died": ""
+  }
+ },
+ "family_notes": [
+  "1911 census records 6 children born, all living. Children listed here are those identified from census records. Other children may exist.",
+  "Cassie McCadden married Michael Breslin. Living at Clarlougheask, Clogher, 1926. Children include Patrick Vincent Breslin (witness at Packie McCadden's 1949 marriage)."
+ ]
+}

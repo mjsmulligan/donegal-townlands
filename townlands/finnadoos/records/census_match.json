@@ -1,0 +1,29 @@
+{
+  "_generated_by": "donegal-townlands.attach_census",
+  "status": "proposed",
+  "note": "Matched by identical name only. Not reviewed.",
+  "ded": "Tullynaught",
+  "years": {
+    "1901": {
+      "spellings": [
+        {
+          "spelling": "Finnadoos",
+          "method": "exact_name",
+          "rows": 72
+        }
+      ],
+      "people": 72
+    },
+    "1911": {
+      "spellings": [
+        {
+          "spelling": "Finnadoos",
+          "method": "exact_name",
+          "rows": 60
+        }
+      ],
+      "people": 60
+    }
+  },
+  "corrections": []
+}

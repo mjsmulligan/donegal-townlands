@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 """
-Attach census returns to townland cases, Clogher DED only.
+Attach census returns to townland cases, for every DED that is in the place layer.
 
 Usage:
     python tools/attach_census.py
 
 Inputs:
-    data/census/{1901,1911,1926}_Clogher.csv
+    data/census/<year>_<DED>.csv or <DED>_<year>.csv for 1901, 1911 and 1926
+        (for example 1901_Clogher.csv and Tullynaught_1901.csv)
     data/processed/places/places.csv
     data/processed/places/townland_cases.csv   (python tools/create_townland_cases.py)
 
@@ -14,7 +15,11 @@ Outputs, per matched case:
     townlands/<case>/records/census.json         census rows, as transcribed
     townlands/<case>/records/census_match.json   how the rows were matched
 Output for the whole run:
-    data/processed/places/census_spelling_review.csv
+    data/processed/places/census_spelling_review.csv   (one file, a ded column per row)
+
+Each DED is handled on its own, against the townlands of that DED only. A DED whose
+census files are present but whose townlands are not in the place layer yet (WP3) is
+skipped with a notice and attached to nothing. Its review rows, if any, are kept.
 
 Matching rule. A census townland string is attached to a Logainm townland only
 when the two names are identical apart from case, accents and spacing. Every
@@ -46,6 +51,7 @@ import ast
 import csv
 import difflib
 import json
+import re
 import sys
 import unicodedata
 from pathlib import Path
@@ -56,7 +62,6 @@ CASES_CSV = ROOT / "data" / "processed" / "places" / "townland_cases.csv"
 REVIEW_CSV = ROOT / "data" / "processed" / "places" / "census_spelling_review.csv"
 CENSUS_DIR = ROOT / "data" / "census"
 
-DED_NAME = "Clogher"
 YEARS = (1901, 1911, 1926)
 GENERATED_MARKER = "donegal-townlands.attach_census"
 MAX_PUBLISHED_CENSUS = 1926
@@ -188,7 +193,7 @@ def read_review():
         return {}
     with REVIEW_CSV.open("r", encoding="utf-8", newline="") as handle:
         return {
-            (r["census_year"], r["census_spelling"]): r
+            (r["ded"], r["census_year"], r["census_spelling"]): r
             for r in csv.DictReader(handle)
         }
 
@@ -217,19 +222,35 @@ def write_json(path, data, compact=False):
     path.write_text(text, encoding="utf-8")
 
 
-def main():
-    late = [y for y in YEARS if y > MAX_PUBLISHED_CENSUS]
-    if late:
-        fail(f"Census years after {MAX_PUBLISHED_CENSUS} are not published: {late}")
-    places_all = read_csv(PLACES_CSV)
+def discover_deds():
+    """{DED name: {year: path}} from the census files present.
+
+    Two file names are in use: <year>_<DED>.csv (Clogher) and <DED>_<year>.csv."""
+    found = {}
+    for path in sorted(CENSUS_DIR.glob("*.csv")):
+        m = re.fullmatch(r"(\d{4})_(.+)\.csv", path.name) or re.fullmatch(r"(.+)_(\d{4})\.csv", path.name)
+        if not m:
+            continue
+        year, ded = (m[1], m[2]) if m[1].isdigit() else (m[2], m[1])
+        if int(year) in YEARS:
+            found.setdefault(ded, {})[int(year)] = path
+    return found
+
+
+def attach_ded(ded, files, places_all, index, review_old):
+    """Attach one DED. Returns (review_rows, counts)."""
     ded_ids = [r["logainm_id"] for r in places_all
-               if r["place_type"] == "ded" and r["name_en"] == DED_NAME]
+               if r["place_type"] == "ded" and r["name_en"] == ded]
     if len(ded_ids) != 1:
-        fail(f"Expected exactly one {DED_NAME} DED in places.csv, found {len(ded_ids)}.")
+        print(f"SKIPPED {ded} DED: expected exactly one DED of that name in places.csv, "
+              f"found {len(ded_ids)}. Its townlands need adding to the place layer first (WP3).")
+        return None
     places = [r for r in places_all
               if r["place_type"] == "townland" and r["ded_id"] == ded_ids[0]]
+    if not places:
+        print(f"SKIPPED {ded} DED: no townlands of this DED in places.csv yet (WP3).")
+        return None
     by_id = {p["logainm_id"]: p for p in places}
-    index = read_case_index()
 
     missing = [p["name_en"] for p in places if p["logainm_id"] not in index]
     if missing:
@@ -241,20 +262,21 @@ def main():
         by_name.setdefault(normalise_name(p["name_en"]), []).append(p)
 
     accepted_case = accepted_in_case(places, index)
-    review_old = read_review()
 
     matches = {}      # logainm_id -> year -> {"rows": [...], "spellings": [...]}
     review_rows = []
 
     for year in YEARS:
-        source = CENSUS_DIR / f"{year}_{DED_NAME}.csv"
+        if year not in files:
+            print(f"note: {ded} DED has no {year} file")
+            continue
         by_spelling = {}
-        for raw in read_csv(source):
+        for raw in read_csv(files[year]):
             by_spelling.setdefault(raw.get("townland", ""), []).append(raw)
 
         for spelling, raws in sorted(by_spelling.items()):
             key = normalise_name(spelling)
-            old = review_old.get((str(year), spelling))
+            old = review_old.get((ded, str(year), spelling))
             target, method, status = None, None, "unreviewed"
 
             if key in by_name and len(by_name[key]) == 1:
@@ -280,7 +302,7 @@ def main():
                 names = [p["name_en"] for p in places]
                 similar = difflib.get_close_matches(spelling, names, n=3, cutoff=0.75)
                 review_rows.append({
-                    "ded": DED_NAME,
+                    "ded": ded,
                     "census_year": year,
                     "census_spelling": spelling,
                     "rows": len(raws),
@@ -311,10 +333,10 @@ def main():
             write_json(match_path, {
                 "_generated_by": GENERATED_MARKER,
                 "status": "checked",
-                "ded": DED_NAME,
+                "ded": ded,
                 "years": {},
                 "note": (
-                    f"No return for this townland appears in the {DED_NAME} "
+                    f"No return for this townland appears in the {ded} "
                     "electoral division census files for "
                     + ", ".join(str(y) for y in YEARS) + "."
                     + (" Some spellings are still awaiting review."
@@ -351,7 +373,7 @@ def main():
                 "Matched by identical name only. Not reviewed." if exact else
                 "Spellings accepted on review (see census_spelling_review.csv)."
             ),
-            "ded": DED_NAME,
+            "ded": ded,
             "years": {
                 str(y): {
                     "spellings": years[y]["spellings"],
@@ -365,19 +387,50 @@ def main():
         print(f"attached: {name} ({logainm_id}) -> "
               + ", ".join(f"{y}: {len(years[y]['rows'])}" for y in sorted(years)))
 
-    REVIEW_CSV.parent.mkdir(parents=True, exist_ok=True)
-    with REVIEW_CSV.open("w", encoding="utf-8", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=REVIEW_FIELDS)
-        writer.writeheader()
-        writer.writerows(sorted(review_rows, key=lambda r: (r["census_year"], r["census_spelling"])))
-
     print()
-    print(f"{DED_NAME} DED townlands: {len(places)}")
+    print(f"{ded} DED townlands: {len(places)}")
     print(f"Cases with census attached: {attached}")
     print(f"Townlands checked with no return: {checked_none}")
     print(f"Authored census left untouched because it differs: {skipped_authored}")
     print(f"Spellings listed for review: {len(review_rows)}")
-    print(f"Review file: {REVIEW_CSV.relative_to(ROOT)}")
+    print()
+    return review_rows, {"attached": attached, "checked_none": checked_none, "skipped": skipped_authored}
+
+
+def main():
+    late = [y for y in YEARS if y > MAX_PUBLISHED_CENSUS]
+    if late:
+        fail(f"Census years after {MAX_PUBLISHED_CENSUS} are not published: {late}")
+    places_all = read_csv(PLACES_CSV)
+    index = read_case_index()
+    review_old = read_review()
+    deds = discover_deds()
+    if not deds:
+        fail(f"No census files found in {CENSUS_DIR}")
+
+    review_rows, done, skipped = [], [], []
+    for ded in sorted(deds):
+        result = attach_ded(ded, deds[ded], places_all, index, review_old)
+        if result is None:
+            skipped.append(ded)
+            continue
+        done.append(ded)
+        review_rows += result[0]
+
+    # Keep review rows of DEDs not handled in this run, so nothing a person decided is lost.
+    kept = [r for (d, _y, _s), r in review_old.items() if d not in done]
+    all_rows = review_rows + kept
+
+    REVIEW_CSV.parent.mkdir(parents=True, exist_ok=True)
+    with REVIEW_CSV.open("w", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=REVIEW_FIELDS)
+        writer.writeheader()
+        writer.writerows(sorted(all_rows, key=lambda r: (r["ded"], str(r["census_year"]), r["census_spelling"])))
+
+    print(f"DEDs attached: {', '.join(done) or 'none'}")
+    if skipped:
+        print(f"DEDs with census files but not in the place layer yet (WP3): {', '.join(skipped)}")
+    print(f"Review file: {REVIEW_CSV.relative_to(ROOT)} ({len(all_rows)} rows)")
 
 
 if __name__ == "__main__":

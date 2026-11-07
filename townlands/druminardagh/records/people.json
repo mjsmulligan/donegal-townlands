@@ -1,0 +1,160 @@
+{
+ "_generated_by": "tools/gedcom_people.py",
+ "source": "Mike's family tree (GEDCOM), a secondary source built from research. Census returns are the evidence.",
+ "privacy": "100/75/50 rule applied (CLAUDE.md). Generated for year 2026.",
+ "people": [
+  {
+   "ptr": "@I202759754071@",
+   "name": "Andrew Gillespie",
+   "given": "Andrew",
+   "surname": "Gillespie",
+   "nick": "",
+   "sex": "M",
+   "birth": {
+    "date": "about 1816",
+    "raw": "ABT 1816",
+    "place": "County Donegal, Ireland"
+   },
+   "death": {
+    "date": "before 1911",
+    "raw": "BEF 1911",
+    "place": "Druminardagh, County Donegal, Ireland"
+   },
+   "occupations": [
+    "Farmer"
+   ],
+   "parents": [],
+   "marriages": [
+    {
+     "spouse": "@I202759754072@",
+     "date": "before 1856",
+     "raw": "BEF 1856",
+     "place": ""
+    }
+   ],
+   "children": [
+    "@I202759754062@",
+    "@I202759754094@"
+   ],
+   "notes": [
+    "Father of Bridget Gillespie. Birth year ~1816 confirmed by 1901 census - exact match with tree. Irish and English speaker. Confirmed in Druminardagh at Griffith's date (~1857) with house, office and land under lessor James Hamilton. Present in 1901 census at Druminardagh with wife Catherine McAnaw and son Edward. Absent from 1911 census - deceased by then. Son Edward Gillespie remained in Druminardagh through 1926."
+   ],
+   "census": [
+    {
+     "year": "1901",
+     "h": 8,
+     "s": "Gillespie",
+     "f": "Andrew",
+     "a": 85
+    }
+   ]
+  },
+  {
+   "ptr": "@I202759754072@",
+   "name": "Catherine McAnaw",
+   "given": "Catherine",
+   "surname": "McAnaw",
+   "nick": "",
+   "sex": "F",
+   "birth": {
+    "date": "about 1832",
+    "raw": "ABT 1832",
+    "place": "County Donegal, Ireland"
+   },
+   "death": {
+    "date": "before 1911",
+    "raw": "BEF 1911",
+    "place": "County Donegal, Ireland"
+   },
+   "occupations": [],
+   "parents": [],
+   "marriages": [
+    {
+     "spouse": "@I202759754071@",
+     "date": "before 1856",
+     "raw": "BEF 1856",
+     "place": ""
+    }
+   ],
+   "children": [
+    "@I202759754062@",
+    "@I202759754094@"
+   ],
+   "notes": [
+    "Wife of Andy Gillespie. Maiden name McAnaw - from the Druminnin McAnaw cluster, same family as Mary McAna (, wife of Hugh McGettigan). The precise relationship between Catherine McAnaw and Mary McAna requires further research into pre-census records. Both being McAnaw women connected to this community and sharing the Druminnin origin strongly suggests they were related - possibly sisters. Surname variants: McAnaw, McNaw, McNan, McKenna. Irish and English speaker."
+   ],
+   "census": [
+    {
+     "year": "1901",
+     "h": 8,
+     "s": "Gillespie",
+     "f": "Catharine",
+     "a": 68
+    }
+   ]
+  },
+  {
+   "ptr": "@I202759754094@",
+   "name": "Edward Gillespie",
+   "given": "Edward",
+   "surname": "Gillespie",
+   "nick": "",
+   "sex": "M",
+   "birth": {
+    "date": "about 1866",
+    "raw": "ABT 1866",
+    "place": "Druminardagh, County Donegal, Ireland"
+   },
+   "death": null,
+   "occupations": [],
+   "parents": [
+    "@I202759754071@",
+    "@I202759754072@"
+   ],
+   "marriages": [],
+   "children": [],
+   "notes": [
+    "Son of Andy Gillespie and Catherine McAnaw. Brother of Bridget Gillespie. Remained in Druminardagh through 1901, 1911 and 1926 census returns. Married Lizzie (surname unknown) - married 7 years in 1911 census."
+   ],
+   "census": [
+    {
+     "year": "1901",
+     "h": 8,
+     "s": "Gillespie",
+     "f": "Edward",
+     "a": 35
+    }
+   ]
+  }
+ ],
+ "refs": {
+  "@I202759754072@": {
+   "name": "Catherine McAnaw",
+   "nick": "",
+   "born": "about 1832",
+   "died": "before 1911"
+  },
+  "@I202759754062@": {
+   "name": "Bridget Gillespie",
+   "nick": "",
+   "born": "about 1856",
+   "died": "about 1933"
+  },
+  "@I202759754094@": {
+   "name": "Edward Gillespie",
+   "nick": "",
+   "born": "about 1866",
+   "died": ""
+  },
+  "@I202759754071@": {
+   "name": "Andrew Gillespie",
+   "nick": "",
+   "born": "about 1816",
+   "died": "before 1911"
+  }
+ },
+ "family_notes": [
+  "Marriage predates civil registration (1864). Both present in 1901 census at Druminardagh, both absent by 1911.",
+  "Marriage record predates civil registration (1864). Both present in 1901 census at Druminardagh, both absent by 1911 - deceased in that decade."
+ ]
+}
