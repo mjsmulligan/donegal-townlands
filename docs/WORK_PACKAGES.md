@@ -188,7 +188,7 @@ Record the test results and any unresolved issues in the Phase A handover. The m
 
 ### WP18 Census linker and review report
 - **Goal:** propose links between a person's rows in consecutive census returns, with confidence, and produce a review report Mike can work through by townland and then by family.
-- **Status:** proposed (2026-11-07), design agreed in `docs/CENSUS_GEDCOM_SPEC.md`. Not built.
+- **Status:** built, awaiting Mike's review (2026-11-08). `python tools/census_links.py propose` writes one review CSV per DED to `data/processed/census_links/` (git-ignored); `check` compares the matcher with the tree's 19 pairs. The 24 given-name families are all `proposed` and none changes a link until Mike verifies them (`--include-proposed-given-names` previews the effect). Tree recovery of 18 within-DED pairs: verified names only, found 15 (high 5, medium 3, low 4, ambiguous 3), not found 3; with proposed given names, found 18 (high 6, medium 6, low 4, ambiguous 2). The two John Cassidys in Cullionboy are both low and ambiguous. Run time under one second for all five DEDs.
 - **Outputs:** `data/reference/given_name_variants.csv` (verified by Mike only, checked by `tools/validate.py` like the surname dictionary); `tools/census_links.py` (`propose`); tests; confidence thresholds in a config file; reports in `data/processed/` (not committed).
 - **Acceptance:** on the Clogher and Tullynaught DEDs the matcher is run against the 19 consecutive pairs from Mike's accepted tree links, and recovery, confidence and any wrong links are reported. The two John Cassidys in Cullionboy do not reach high confidence. Two runs give identical output. Women whose surname changed are capped at low.
 
