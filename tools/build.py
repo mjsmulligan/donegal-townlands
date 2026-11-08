@@ -24,7 +24,7 @@ and empty (place record only). All three build.
 
 Building never replaces a page it did not generate, never deletes a page and never
 changes a case folder. Every build regenerates docs/index.html, the list of every place,
-so the index is never edited by hand. Only a name with no case folder is an error."""
+so the index is never edited by hand (its layout is engine/index.html). Only a name with no case folder is an error."""
 import collections, csv, html as htmllib, json, re, shutil, sys, pathlib
 try:
     from tools import media, variants_reference
@@ -351,61 +351,63 @@ def build(name):
     return state
 
 
+INDEX_TAGS = {'ready': 'Townland Study', 'partial': 'Census Returns', 'empty': 'Townland Record'}
+INDEX_FOOTER = 'Placename data sourced from Logainm (Government of Ireland) & historical cartographic surveys. ' + LOGAINM_CREDIT
+
+
+def index_page(entries, template):
+    """The index page: a map and a card for each case, from engine/index.html. entries are dicts with
+    slug, name, state, name_ga, lat and lng. A case with no coordinates gets a card and no map pin."""
+    entries = sorted(entries, key=lambda e: e['name'].casefold())
+    cards = []
+    for e in entries:
+        where = (' data-lat="%s" data-lng="%s"' % (q(e['lat']), q(e['lng']))) if e['lat'] and e['lng'] else ''
+        ga = '<div class="card-ga">%s</div>' % q(e['name_ga']) if e['name_ga'] else ''
+        cards.append(
+            '        <a class="townland-card" href="./%s/"%s data-slug="%s" data-name="%s">\n'
+            '            <div class="card-header">\n'
+            '                <span class="card-en">%s</span>\n'
+            '                <span class="card-arrow">&rarr;</span>\n'
+            '            </div>\n'
+            '            %s\n'
+            '            <div class="card-footer">\n'
+            '                <span class="card-tag">%s</span>\n'
+            '            </div>\n'
+            '        </a>\n' % (q(e['slug']), where, q(e['slug']), q(e['name']), q(e['name']), ga, INDEX_TAGS[e['state']]))
+    features = [{'type': 'Feature', 'properties': {'name': e['name'], 'name_ga': e['name_ga'], 'slug': e['slug']},
+                 'geometry': {'type': 'Point', 'coordinates': [float(e['lng']), float(e['lat'])]}}
+                for e in entries if e['lat'] and e['lng']]
+    geo = json.dumps({'type': 'FeatureCollection', 'features': features}, ensure_ascii=False).replace('</', '<\\/')
+    return (template.replace('__MARK__', INDEX_MARK).replace('__COUNT__', str(len(entries)))
+                    .replace('__FOOTER__', q(INDEX_FOOTER).replace('&amp;', '&amp;'))
+                    .replace('__GEOJSON__', geo).replace('__CARDS__', ''.join(cards)))
+
+
 def write_index(entries):
-    """Rewrite docs/index.html: studies first, then census, then the rest. entries = [(slug, name, state)]."""
-    def links(items):
-        return ''.join('    <a class="townland" href="./' + q(s) + '/">\n        ' + q(n) + ' &rarr;\n    </a>\n\n' for s, n, _ in items)
-    by_name = lambda e: e[1].casefold()
-    studies = sorted((e for e in entries if e[2] == 'ready'), key=by_name)
-    census = sorted((e for e in entries if e[2] == 'partial'), key=by_name)
-    places = sorted((e for e in entries if e[2] == 'empty'), key=by_name)
-    page = """<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Donegal Townlands</title>
-    """ + INDEX_MARK + """
-    <style>
-        body { font-family: Arial, sans-serif; max-width: 900px; margin: 40px auto; padding: 20px; color: #333; background: #f7f7f5; }
-        h1 { color: #234b35; }
-        .townland { display: block; padding: 14px 18px; margin: 10px 0; background: white; border-radius: 6px; text-decoration: none; color: #234b35; border: 1px solid #ddd; }
-        .townland:hover { background: #eaf1eb; }
-        footer { margin-top: 28px; font-size: 0.85em; color: #5b6f62; }
-    </style>
-</head>
-<body>
-    <h1>Donegal Townlands</h1>
-    <p>Explore the townlands of County Donegal. Every townland has a page to walk through. Where research has begun the walk is a full study. Others show the census returns held so far, or just the place record, and grow as records are added.</p>
-
-    <h2>Townland studies</h2>
-
-""" + links(studies) + """    <h2>Townlands with census returns</h2>
-
-""" + links(census) + """    <h2>Townlands awaiting research</h2>
-
-""" + links(places) + """    <footer>""" + LOGAINM_CREDIT + """</footer>
-</body>
-</html>
-"""
+    """Rewrite docs/index.html from engine/index.html. Never edit docs/index.html by hand."""
+    page = index_page(entries, (ROOT / 'engine' / 'index.html').read_text(encoding='utf-8'))
     (ROOT / 'docs' / 'index.html').write_text(page, encoding='utf-8')
-    print('wrote docs/index.html:', len(studies), 'studies,', len(census), 'with census,', len(places), 'awaiting')
+    states = [e['state'] for e in entries]
+    print('wrote docs/index.html:', len(entries), 'places on the map index (%d studies, %d with census, %d place records)'
+          % (states.count('ready'), states.count('partial'), states.count('empty')))
 
 
 def index_entries():
-    """(slug, display name, state) for every case that has a name to show."""
+    """One dict for every case that has a name to show."""
     entries = []
     for base in sorted((ROOT / 'townlands').iterdir()):
         if not base.is_dir():
             continue
         state = case_state(base)[0]
+        place = load(base / 'place.json') if (base / 'place.json').is_file() else {}
         if (base / 'townland.json').is_file():
             label = load(base / 'townland.json').get('name', base.name)
-        elif (base / 'place.json').is_file():
-            label = load(base / 'place.json').get('name_en') or base.name
+        elif place:
+            label = place.get('name_en') or base.name
         else:
             continue
-        entries.append((base.name, label, state))
+        entries.append({'slug': base.name, 'name': label, 'state': state, 'name_ga': place.get('name_ga', ''),
+                        'lat': place.get('latitude', ''), 'lng': place.get('longitude', '')})
     return entries
 
 

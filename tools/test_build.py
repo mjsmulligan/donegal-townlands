@@ -34,7 +34,8 @@ class BuildTests(unittest.TestCase):
         build.ROOT = self.root
         self.addCleanup(setattr, build, "ROOT", REAL_ROOT)
         (self.root / "engine").mkdir()
-        (self.root / "engine" / "walk.html").write_bytes((REAL_ROOT / "engine" / "walk.html").read_bytes())
+        for _n in ("walk.html", "index.html"):
+            (self.root / "engine" / _n).write_bytes((REAL_ROOT / "engine" / _n).read_bytes())
         (self.root / "townlands").mkdir()
         names = self.root / "data" / "processed" / "places"
         names.mkdir(parents=True)
@@ -333,8 +334,12 @@ class BuildTests(unittest.TestCase):
             build.main(["--all"])
         self.assertIn("1 studies, 1 partial, 1 empty", out.getvalue())
         index = (self.root / "docs" / "index.html").read_text(encoding="utf-8")
-        studies, census, rest = (index.index(x) for x in ("Townland studies", "Townlands with census returns", "Townlands awaiting research"))
-        self.assertTrue(studies < index.index('href="./alpha/"') < census < index.index('href="./two/"') < rest < index.index('href="./one/"'))
+        pos = [index.index('href="./%s/"' % s) for s in ("alpha", "one", "two")]
+        self.assertEqual(pos, sorted(pos))    # one list, in name order
+        for slug, tag in (("alpha", "Townland Study"), ("two", "Census Returns"), ("one", "Townland Record")):
+            card = index[index.index('data-slug="%s"' % slug):]
+            self.assertIn(tag, card[:card.index("</a>")])
+        self.assertIn("3 Records", index)
         self.assertIn("generated: donegal-townlands index", index)
         self.assertIn("Logainm, Government of Ireland", index)
 

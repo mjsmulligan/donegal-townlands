@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donegal Townlands | Index & Historic Records</title>
+    __MARK__
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=IM+Fell+English:ital@0;1&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f4efe6;
+            --card-bg: #fcf9f2;
+            --card-hover: #f5eedf;
+            --primary: #2d4030;
+            --primary-dark: #1e2c20;
+            --accent-gold: #8c6d3b;
+            --accent-gold-light: #b3935a;
+            --border-color: #d8ceb9;
+            --border-dark: #b8a686;
+            --text-dark: #2b251d;
+            --text-muted: #6b5e4c;
+            --shadow-subtle: 0 4px 16px rgba(45, 64, 48, 0.06);
+            --shadow-hover: 0 8px 24px rgba(45, 64, 48, 0.12);
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'Libre Baskerville', Georgia, serif;
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 24px 60px 24px;
+            color: var(--text-dark);
+            background-color: var(--bg-color);
+            background-image: radial-gradient(#d8ceb9 0.75px, transparent 0.75px);
+            background-size: 24px 24px;
+            line-height: 1.7;
+        }
+
+        header {
+            text-align: center;
+            padding: 48px 24px 36px 24px;
+            margin-bottom: 36px;
+            background: var(--card-bg);
+            border-bottom: 3px double var(--border-dark);
+            box-shadow: var(--shadow-subtle);
+            border-radius: 0 0 8px 8px;
+            position: relative;
+        }
+
+        header::after {
+            content: "";
+            display: block;
+            width: 120px;
+            height: 2px;
+            background: var(--accent-gold);
+            margin: 20px auto 0 auto;
+        }
+
+        .site-eyebrow {
+            font-family: 'Cinzel', serif;
+            font-size: 0.85rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--accent-gold);
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        h1 {
+            font-family: 'Cinzel', serif;
+            color: var(--primary);
+            font-size: 2.75rem;
+            margin: 0 0 12px 0;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            line-height: 1.2;
+        }
+
+        .intro {
+            font-family: 'IM Fell English', Georgia, serif;
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 820px;
+            margin: 0 auto;
+            font-style: italic;
+        }
+
+        .map-section {
+            margin-bottom: 40px;
+        }
+
+        .map-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 14px;
+            padding: 0 4px;
+        }
+
+        .map-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.15rem;
+            color: var(--primary);
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .map-subtitle {
+            font-family: 'IM Fell English', Georgia, serif;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        #map-container {
+            width: 100%;
+            height: 540px;
+            border-radius: 6px;
+            border: 3px double var(--border-dark);
+            box-shadow: var(--shadow-subtle);
+            z-index: 1;
+        }
+
+        #map-container .leaflet-tile-pane {
+            filter: sepia(0.65) contrast(1.08) saturate(0.75) hue-rotate(-10deg);
+        }
+        #map-container {
+            background-color: #f4efe6;
+        }
+
+
+        .townland-label {
+            background: rgba(252, 249, 242, 0.92) !important;
+            border: 1px solid #b8a686 !important;
+            border-radius: 4px !important;
+            padding: 2px 8px !important;
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 0.78rem;
+            color: #2d4030;
+            box-shadow: 0 2px 6px rgba(45, 64, 48, 0.15) !important;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        .search-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 580px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 14px 20px;
+            font-family: 'Libre Baskerville', Georgia, serif;
+            font-size: 1rem;
+            border: 1px solid var(--border-dark);
+            border-radius: 4px;
+            background: var(--card-bg);
+            color: var(--text-dark);
+            outline: none;
+            box-shadow: inset 0 2px 4px rgba(43, 37, 29, 0.05);
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .search-input:focus {
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 0 3px rgba(140, 109, 59, 0.2);
+        }
+
+        section { margin-bottom: 48px; }
+
+        .section-header {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            margin-bottom: 24px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border-dark);
+        }
+
+        h2 {
+            font-family: 'Cinzel', serif;
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin: 0;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+        }
+
+        .section-count {
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            color: var(--accent-gold);
+            font-weight: 700;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 18px;
+        }
+
+        .townland-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20px 22px;
+            background: var(--card-bg);
+            border-radius: 6px;
+            text-decoration: none;
+            color: var(--text-dark);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--primary);
+            box-shadow: var(--shadow-subtle);
+            transition: all 0.2s ease;
+            min-height: 120px;
+        }
+
+        .townland-card:hover {
+            background: var(--card-hover);
+            border-color: var(--border-dark);
+            border-left-color: var(--accent-gold);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 4px;
+        }
+
+        .card-en {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--primary);
+            letter-spacing: 0.01em;
+        }
+
+        .townland-card:hover .card-en {
+            color: var(--primary-dark);
+        }
+
+        .card-arrow {
+            font-size: 1.1rem;
+            color: var(--border-dark);
+            transition: transform 0.2s ease, color 0.2s ease;
+        }
+
+        .townland-card:hover .card-arrow {
+            color: var(--accent-gold);
+            transform: translateX(4px);
+        }
+
+        .card-ga {
+            font-family: 'IM Fell English', Georgia, serif;
+            font-size: 0.98rem;
+            color: var(--text-muted);
+            font-style: italic;
+            margin-bottom: 12px;
+        }
+
+        .card-footer {
+            margin-top: auto;
+            padding-top: 8px;
+            border-top: 1px dashed var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .card-tag {
+            font-family: 'Cinzel', serif;
+            font-size: 0.72rem;
+            color: var(--accent-gold);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        footer {
+            margin-top: 60px;
+            padding-top: 28px;
+            border-top: 3px double var(--border-dark);
+            font-family: 'IM Fell English', Georgia, serif;
+            font-size: 1rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        .no-results {
+            display: none;
+            padding: 40px;
+            text-align: center;
+            background: var(--card-bg);
+            border-radius: 6px;
+            border: 2px dashed var(--border-dark);
+            color: var(--text-muted);
+            font-style: italic;
+            font-family: 'IM Fell English', Georgia, serif;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="site-eyebrow">Donegal Historical Placename Study</div>
+        <h1>Donegal Townlands</h1>
+        <p class="intro">An index and cartographic chronicle of the historic townlands across County Donegal.</p>
+    </header>
+
+    <div class="map-section">
+        <div class="map-header">
+            <span class="map-title">Townland Placenames Map</span>
+            <span class="map-subtitle">Topographic & Placename Survey</span>
+        </div>
+        <div id="map-container"></div>
+    </div>
+
+    <div class="controls">
+        <div class="search-wrapper">
+            <input type="text" id="searchInput" class="search-input" placeholder="Search townland or Irish placename..." aria-label="Search townlands">
+        </div>
+    </div>
+
+    <div id="noResults" class="no-results">No townlands match your query.</div>
+
+    <section>
+        <div class="section-header">
+            <h2>Townland Index</h2>
+            <span class="section-count">__COUNT__ Records</span>
+        </div>
+        <div class="grid" id="townlandGrid">
+__CARDS__        </div>
+    </section>
+
+    <footer>__FOOTER__</footer>
+
+    <!-- Leaflet JS -->
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        // Initial view zoomed in on the townland cluster (z=13)
+        const map = L.map('map-container').setView([54.665, -8.030], 13);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 18,
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        const townlandData = __GEOJSON__;
+        const markerLayers = {};
+        const townlandCards = document.querySelectorAll('.townland-card');
+        const searchInput = document.getElementById('searchInput');
+        const noResults = document.getElementById('noResults');
+
+        const markersGroup = L.featureGroup().addTo(map);
+
+        townlandData.features.forEach(feature => {
+            const coords = feature.geometry.coordinates;
+            const props = feature.properties;
+            const lat = coords[1];
+            const lng = coords[0];
+            const name = props.name;
+            const ga = props.name_ga;
+            const slug = props.slug;
+
+            // Historical survey pin marker styling
+            const marker = L.circleMarker([lat, lng], {
+                radius: 7,
+                fillColor: '#8c6d3b',
+                color: '#2d4030',
+                weight: 2,
+                fillOpacity: 0.85
+            });
+
+            const tooltipText = ga ? `${name} (${ga})` : name;
+            marker.bindTooltip(tooltipText, {
+                permanent: false,
+                direction: 'top',
+                offset: [0, -6],
+                className: 'townland-label'
+            });
+
+            marker.on('click', () => {
+                const card = document.querySelector(`.townland-card[data-name="${name}"]`);
+                if (card) {
+                    window.location.href = card.getAttribute('href');
+                } else if (slug) {
+                    window.location.href = `./${slug}/`;
+                }
+            });
+
+            marker.addTo(markersGroup);
+            markerLayers[name.toLowerCase()] = marker;
+        });
+
+        // Synchronized Search Filter
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase().trim();
+            let totalVisible = 0;
+
+            townlandCards.forEach(card => {
+                const nameEn = (card.dataset.name || '').toLowerCase();
+                const gaEl = card.querySelector('.card-ga');
+                const nameGa = gaEl ? gaEl.textContent.toLowerCase() : '';
+                const match = nameEn.includes(query) || nameGa.includes(query);
+
+                card.style.display = match ? 'flex' : 'none';
+                if (match) totalVisible++;
+
+                const marker = markerLayers[nameEn];
+                if (marker) {
+                    if (match || query === '') {
+                        markersGroup.addLayer(marker);
+                    } else {
+                        markersGroup.removeLayer(marker);
+                    }
+                }
+            });
+
+            noResults.style.display = (totalVisible === 0 && query !== '') ? 'block' : 'none';
+        });
+    </script>
+</body>
+</html>
