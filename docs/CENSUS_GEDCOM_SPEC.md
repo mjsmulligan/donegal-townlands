@@ -100,3 +100,10 @@ Not yet added to `docs/WORK_PACKAGES.md`.
 4. The census GEDCOM is a generated input layer and not a townland-specific master, for now.
 5. Mike verifies the given-name reference.
 6. Linking across DEDs is a second phase. Mike expects something larger then, including hyperlinking between people in the presentation, so the chain IDs and links should be designed to support it.
+
+## 12. Added 2026-11-08
+
+1. **Review page.** Review is done on a generated page with one row per person across the three returns (section 5). It replaces editing the CSV. The page records nothing in the project; Mike sends his decisions back and WP19 records them.
+2. **Smaller GEDCOM scopes.** Besides one file per DED, the writer can produce a file for one townland or one family (section 6), so Mike can load a small tree into Ancestry and test it against other records. This follows his plan to look at civil records and to build test trees. Whole households are included for each return a chain touches, so the relationships in the file match the returns.
+3. **Order of work.** Review, then accepted links recorded (WP19), then GEDCOM output (WP20). The GEDCOM adds nothing the returns do not state, and still carries only accepted links.
+

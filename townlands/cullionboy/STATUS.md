@@ -27,6 +27,7 @@ Page: `docs/cullionboy/index.html`, built from `engine/walk.html` and `records/c
 - Griffith's lot areas sum one acre over the printed total
 - Some Griffith's name readings uncertain
 - Dimon to Dunnion link is a hypothesis
+- 1926 return, Michael Dunnion (71, Collinboy form 0352_0011_0004): years married is recorded as "0906", which is not a plausible number of years. Kept as recorded. Found 2026-11-08 in the census link review page.
 - Further open items are kept in `questions` in content.json. The page no longer shows them (the "What is still open" plate was removed 2026-11-04).
 
 ## Doc
