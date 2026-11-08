@@ -73,7 +73,7 @@ textarea{width:100%;min-height:150px;margin-top:10px;font:.8rem var(--mono);back
 .note{color:var(--muted);font-size:.85rem;margin:8px 0 0}
 
 .tw{overflow-x:auto}
-table{border-collapse:collapse;width:100%;font-size:.88rem;min-width:760px}
+table{border-collapse:collapse;width:100%;font-size:.88rem;min-width:980px}
 caption{text-align:left;padding:8px 14px;font-weight:600;background:var(--bg);border-bottom:1px solid var(--line);border-top:1px solid var(--line)}
 caption span{font-weight:400;color:var(--muted)}
 th{text-align:left;font-weight:600;color:var(--muted);font-size:.75rem;text-transform:uppercase;letter-spacing:.04em;padding:6px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
@@ -82,6 +82,14 @@ tr:last-child td{border-bottom:0}
 td.n{font-variant-numeric:tabular-nums;text-align:right}
 th.n{text-align:right}
 td.name{font-weight:600;min-width:150px}
+td.cell{min-width:190px}
+td.cell b{font-weight:600}
+td.cell small{display:block;color:var(--muted);font-size:.8rem}
+td.cell .hd{font-size:.65rem;font-weight:600;color:var(--accent);text-transform:uppercase;margin-left:4px}
+td.cell.ext small.where{color:var(--med)}
+td.none{color:var(--muted)}
+.hhline{padding:8px 14px;font-size:.85rem;color:var(--muted);border-bottom:1px solid var(--line);background:var(--accent-soft)}
+.hhline b{color:var(--ink)}
 td.name small{font-weight:400;color:var(--muted)}
 tr.head td.name::after{content:" head";font-size:.7rem;font-weight:600;color:var(--accent);margin-left:4px;text-transform:uppercase}
 tr.nolink td{color:var(--muted)}
@@ -102,7 +110,7 @@ a.orig:hover{border-bottom-color:var(--accent)}
 <div class="wrap">
 <header>
   <h1 id="ttl"></h1>
-  <p class="sub">Each card is one household in an earlier return and the household its members appear in later. Accept a link only where you are satisfied it is the same person. Nothing here is saved to the project until you send the decisions back.</p>
+  <p class="sub">Each card is one household in an earlier return and the household its members appear in later. Each row is one person, with their entry in each return. A dash means no link is proposed for that return. Birthplace is shown only when it is not Co Donegal. Accept a link only where you are satisfied it is the same person. Nothing here is saved to the project until you send the decisions back.</p>
 </header>
 <div class="bar">
   <div class="stats" id="stats"></div>
@@ -139,26 +147,17 @@ const FILTERS = [
 let filt = "review";
 const esc = s => String(s == null ? "" : s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 function person(p){ return '<span class="who"><b>' + esc(p.name) + '</b> <span>' + esc(p.age) + ', ' + esc(p.rel) + (p.town ? ', ' + esc(p.town) : '') + '</span></span>'; }
-function headsHtml(rows){
-  const own = new Set([rows[0].from.hh, rows[0].to.hh]);
-  const set = new Set(), mem = new Set();
-  rows.forEach(r => { mem.add(r.from.obs); mem.add(r.to.obs); });
-  D.rows.forEach(r => {
-    if (rivals(r).length) return;
-    if (mem.has(r.from.obs)) set.add(r.to.hh);
-    if (mem.has(r.to.obs)) set.add(r.from.hh);
-  });
-  const ids = [...set].filter(i => !own.has(i)).sort((a, b) => D.hh[a].y - D.hh[b].y);
-  if (!ids.length) return "";
-  return '<div class="heads"><div><span class="yr">Also</span>These people continue in another return:</div>' + ids.map(id => { const h = D.hh[id];
-    return '<div><span class="yr">' + h.y + '</span><b>' + (h.head ? esc(h.head) + (h.age !== "" ? ', ' + esc(h.age) : '') : 'no head recorded') + '</b> <span class="sz">head, ' + esc(h.town) + ' ' + esc(h.label) + ', ' + h.size + ' in the household</span></div>'; }).join("") + '</div>';
+function hhLine(rows){
+  const f = D.hh[rows[0].from.hh], t = D.hh[rows[0].to.hh];
+  const d = h => '<b>' + h.y + '</b> ' + esc(h.town) + ' ' + esc(h.label) + ' (' + h.size + ' people, head ' + (h.head ? esc(h.head) : 'not recorded') + ')';
+  return '<div class="hhline">' + d(f) + ' &#8594; ' + d(t) + '</div>';
 }
 function who(p){ return esc(p.name) + ' (' + esc(p.age) + ', ' + esc(p.rel) + ')'; }
 function linkOut(r){
   const d = dec[r.k], rv = rivals(r), b = blocked(r);
   const fl = r.flags.map(f => '<span class="flag">' + esc(f) + '</span>').join("") + (r.audit ? '<span class="aud">in audit sample</span>' : "");
   const rival = rv.length ? '<div class="rival">Also proposed: ' + rv.map(x => esc(x.from.name) + ' (' + esc(x.from.age) + ', ' + x.years.slice(0,4) + ') with ' + esc(x.to.name) + ' (' + esc(x.to.age) + ', ' + x.years.slice(-4) + ')' + (dec[x.k] ? ' [' + dec[x.k] + ']' : '')).join("; ") + '</div>' : "";
-  return '<div class="lk"><div class="top"><span class="badge ' + r.conf + '">' + r.conf + '</span><span>to <b>' + esc(r.to.name) + '</b>, ' + esc(r.to.age) + ' in ' + r.years.slice(-4) + '</span>' + (d ? '<span class="stat ' + d + '">' + d + '</span>' : '') + '</div>' +
+  return '<div class="lk"><div class="top"><span class="badge ' + r.conf + '">' + r.conf + '</span><span>' + r.years.slice(0,4) + ' to ' + r.years.slice(-4) + ': <b>' + esc(r.from.name) + '</b> with <b>' + esc(r.to.name) + '</b></span>' + (d ? '<span class="stat ' + d + '">' + d + '</span>' : '') + '</div>' +
     '<div class="why" title="' + esc(r.from.obs + ' to ' + r.to.obs) + '">' + esc(r.method) + '</div>' +
     (fl ? '<div class="flags">' + fl + '</div>' : "") + rival + (b ? '<div class="rival">Another candidate for this person is already accepted.</div>' : "") +
     '<div class="acts"><button class="btn' + (d === "accepted" ? " on-a" : "") + '" data-k="' + esc(r.k) + '" data-a="accepted" aria-pressed="' + (d === "accepted") + '"' + (b && d !== "accepted" ? " disabled" : "") + '>Accept</button> ' +
@@ -168,20 +167,68 @@ function linkIn(r){
   const d = dec[r.k];
   return '<div class="lk flip"><div class="top"><span class="badge ' + r.conf + '">' + r.conf + '</span><span>from <b>' + esc(r.from.name) + '</b>, ' + esc(r.from.age) + ' in ' + r.years.slice(0,4) + '</span>' + (d ? '<span class="stat ' + d + '">' + d + '</span>' : '') + '</div></div>';
 }
-function table(hid, side, f){
-  const h = D.hh[hid];
-  const mine = D.rows.filter(r => r[side].hh === hid);
-  const bySide = {};
-  mine.forEach(r => { (bySide[r[side].obs] = bySide[r[side].obs] || []).push(r); });
-  const out = side === "from";
-  const trs = h.members.map(m => {
-    const ls = bySide[m.obs] || [];
-    const cls = (m.rel === "Head" || /^head/i.test(m.rel) ? "head " : "") + (ls.length ? (ls.some(f) ? "" : "ctx ") : "nolink");
-    const why = ls.length ? ls.map(out ? linkOut : linkIn).join("") : '<span>' + (out ? "No link proposed" : "No link proposed from an earlier return") + '</span>';
-    return '<tr class="' + cls + '"><td class="name">' + esc(m.name) + '</td><td class="n">' + esc(m.age) + '</td><td>' + esc(m.sex) + '</td><td>' + esc(m.rel) + '</td><td>' + esc(m.marital) + '</td><td>' + esc(m.occ) + '</td><td>' + esc(m.birth) + '</td><td>' + (m.url ? '<a class="orig" href="' + esc(m.url) + '" target="_blank" rel="noopener">View original</a>' : "") + '</td><td class="why">' + why + '</td></tr>';
+const OBS = {};
+Object.keys(D.hh).forEach(id => D.hh[id].members.forEach(m => { OBS[m.obs] = {m: m, id: id, h: D.hh[id]}; }));
+const best = ls => ls.slice().sort((x, y) => RANK[y.conf] - RANK[x.conf])[0];
+function lineSet(rows){
+  const A = D.hh[rows[0].from.hh], B = D.hh[rows[0].to.hh];
+  const used = new Set(), lines = [];
+  A.members.forEach(m => {
+    const ls = rows.filter(r => r.from.obs === m.obs);
+    const line = {cells: {}, links: ls.slice(), own: {}};
+    line.cells[A.y] = m; line.own[A.y] = true;
+    const open = ls.filter(r => !used.has(r.to.obs));
+    if (open.length) { const r = best(open); used.add(r.to.obs); line.cells[B.y] = OBS[r.to.obs].m; line.own[B.y] = true; }
+    lines.push(line);
+  });
+  B.members.forEach(m => {
+    if (used.has(m.obs)) return;
+    const inc = rows.filter(r => r.to.obs === m.obs);
+    const line = {cells: {}, links: [], own: {}, alt: inc};
+    line.cells[B.y] = m; line.own[B.y] = true;
+    lines.push(line);
+  });
+  lines.forEach(line => {
+    for (let pass = 0; pass < 2; pass++) {
+      [1901, 1911, 1926].forEach(y => {
+        if (line.cells[y]) return;
+        const cands = [];
+        Object.keys(line.cells).forEach(k => {
+          const c = line.cells[k];
+          D.rows.forEach(r => {
+            if (r.from.obs === c.obs && +r.years.slice(-4) === y) cands.push([r, r.to.obs]);
+            if (r.to.obs === c.obs && +r.years.slice(0, 4) === y) cands.push([r, r.from.obs]);
+          });
+        });
+        if (!cands.length) return;
+        cands.sort((p, q) => RANK[q[0].conf] - RANK[p[0].conf]);
+        line.cells[y] = OBS[cands[0][1]].m;
+        cands.forEach(p => { if (!line.links.includes(p[0])) line.links.push(p[0]); });
+      });
+    }
+  });
+  return lines;
+}
+function cell(m, own, A, B){
+  if (!m) return '<td class="cell none">-</td>';
+  const h = OBS[m.obs].h;
+  const head = /^head/i.test(m.rel) ? '<span class="hd">head</span>' : "";
+  const bits = [m.rel, m.marital, m.occ, m.birth === "Co Donegal" ? "" : m.birth].filter(x => x && String(x).trim());
+  const where = own ? "" : '<small class="where">' + esc(h.town) + ' ' + esc(h.label) + (h.head ? ', head ' + esc(h.head) : '') + '</small>';
+  return '<td class="cell' + (own ? "" : " ext") + '"><b>' + esc(m.name) + '</b>, ' + esc(m.age) + (m.sex ? ' ' + esc(m.sex) : '') + head +
+    '<small>' + esc(bits.join(" \u00b7 ")) + '</small>' + where +
+    (m.url ? '<small><a class="orig" href="' + esc(m.url) + '" target="_blank" rel="noopener">View original</a></small>' : '') + '</td>';
+}
+function table(rows, f){
+  const lines = lineSet(rows);
+  const own = {}; own[D.hh[rows[0].from.hh].y] = true; own[D.hh[rows[0].to.hh].y] = true;
+  const trs = lines.map(line => {
+    const cls = line.links.length ? (line.links.some(f) ? "" : "ctx") : "nolink";
+    const why = line.links.length ? line.links.map(r => linkOut(r)).join("") :
+      (line.alt && line.alt.length ? '<span>Possible match for ' + line.alt.map(r => esc(r.from.name) + ' (' + esc(r.from.age) + ')').join(", ") + ', see that row</span>' : '<span>No link proposed</span>');
+    return '<tr class="' + cls + '">' + [1901, 1911, 1926].map(y => cell(line.cells[y], !!line.own[y], 0, 0)).join("") + '<td class="why">' + why + '</td></tr>';
   }).join("");
-  return '<div class="tw"><table><caption>' + h.y + ': ' + esc(h.town) + ' ' + esc(h.label) + ' <span>' + h.members.length + ' people' + (h.head ? ', head ' + esc(h.head) : '') + '</span></caption>' +
-    '<thead><tr><th>Name</th><th class="n">Age</th><th>Sex</th><th>Relation</th><th>Marital</th><th>Occupation</th><th>Born</th><th>Original</th><th>' + (out ? "Proposed link and rationale" : "Linked from") + '</th></tr></thead><tbody>' + trs + '</tbody></table></div>';
+  return '<div class="tw"><table><thead><tr><th>1901</th><th>1911</th><th>1926</th><th>Proposed link and rationale</th></tr></thead><tbody>' + trs + '</tbody></table></div>';
 }
 function render(){
   const f = FILTERS.find(x => x[0] === filt)[1 + 1];
@@ -199,8 +246,7 @@ function render(){
   document.getElementById("list").innerHTML = groups.length ? groups.map(([g, rows]) => {
     const hi = rows.filter(r => r.conf === "high" && !dec[r.k] && !blocked(r)).length;
     return '<section class="card"><div class="ch"><div><h2>' + esc(g) + '</h2><div class="meta">' + rows.length + ' proposed link' + (rows.length === 1 ? "" : "s") + '</div></div>' +
-      (hi ? '<button class="btn go" data-g="' + esc(g) + '">Accept the ' + hi + ' high link' + (hi === 1 ? "" : "s") + '</button>' : '') + '</div>' + headsHtml(rows) +
-      table(rows[0].from.hh, "from", f) + table(rows[0].to.hh, "to", f) + '</section>';
+      (hi ? '<button class="btn go" data-g="' + esc(g) + '">Accept the ' + hi + ' high link' + (hi === 1 ? "" : "s") + '</button>' : '') + '</div>' + hhLine(rows) + table(rows, f) + '</section>';
   }).join("") : '<p class="empty">Nothing in this view.</p>';
   const out = D.rows.filter(r => dec[r.k]);
   document.getElementById("ncount").textContent = out.length;
