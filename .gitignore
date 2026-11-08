@@ -12,3 +12,6 @@ data/processed/gedcom/
 # Generated census link reports (WP18). Regenerate with python tools/census_links.py propose.
 # Only reviewed decisions are committed.
 data/processed/census_links/
+
+# Generated census GEDCOM test files (WP20). Regenerate with python tools/census_gedcom.py.
+data/processed/census_gedcom/

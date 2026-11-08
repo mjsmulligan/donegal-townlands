@@ -195,6 +195,7 @@ Record the test results and any unresolved issues in the Phase A handover. The m
 - **Acceptance:** on the Clogher and Tullynaught DEDs the matcher is run against the 19 consecutive pairs from Mike's accepted tree links, and recovery, confidence and any wrong links are reported. The two John Cassidys in Cullionboy do not reach high confidence. Two runs give identical output. Women whose surname changed are capped at low.
 
 ### WP19 Accepting census links
+- **Status:** built 2026-11-08. `python tools/census_links.py accept <file>` (or `-` for standard input) records the decisions copied from the review page; `--dry-run` shows what would change. Decisions are checked on every `tools/validate.py` run. Regenerating the review page shows recorded decisions as already made. Tests: `ReviewTests` and `AcceptTests` in `tools/test_census_links.py`.
 - **Goal:** record Mike's decisions as reviewed associations.
 - **Depends on:** WP18.
 - **Input (added 2026-11-08):** the decisions text copied from the review page (status, confidence, from_obs, to_obs, names, reviewer, date), so `accept` can read a pasted file as well as an edited CSV.
@@ -202,6 +203,7 @@ Record the test results and any unresolved issues in the Phase A handover. The m
 - **Acceptance:** accepting then regenerating changes nothing. A reprocessed census file either reproduces the same observation IDs or fails loudly.
 
 ### WP20 Census GEDCOM writer
+- **Status:** built 2026-11-08. `python tools/census_gedcom.py --townland cullionboy`, `--family Kelly` or `--ded Clogher` writes `data/processed/census_gedcom/<scope>.ged` and a `_report.txt` of items to review (not committed). `--wife-parent assume` attaches children to the wife unless the return contradicts it; the default needs marriage evidence, as the spec says. Tests: `tools/test_census_gedcom.py`. Not yet tried in Ancestry.
 - **Goal:** generate a GEDCOM from accepted chains, tied to Mike's tree. Scopes (added 2026-11-08): one file per DED, one per townland, or one per family (a surname group from the verified dictionary), so that a single townland or family can be loaded as a test tree in Ancestry or other software.
 - **Depends on:** WP19, WP16.
 - **Outputs:** `tools/census_gedcom.py`; generated files in `data/processed/` (not committed). Content as set out in section 6 of the spec: every recorded spelling as a `NAME`, one census event per return with the age as recorded, a derived `BIRT ABT` tagged as derived, families only where a return states the relationship, and no inferred marriage, death or emigration.
