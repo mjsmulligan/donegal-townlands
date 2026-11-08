@@ -3,246 +3,995 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Donegal Townlands</title>
-    <!-- generated: donegal-townlands index -->
+    <title>Donegal Townlands — Index & Historic Records</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=IM+Fell+English:ital@0;1&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
-        body { font-family: Arial, sans-serif; max-width: 900px; margin: 40px auto; padding: 20px; color: #333; background: #f7f7f5; }
-        h1 { color: #234b35; }
-        .townland { display: block; padding: 14px 18px; margin: 10px 0; background: white; border-radius: 6px; text-decoration: none; color: #234b35; border: 1px solid #ddd; }
-        .townland:hover { background: #eaf1eb; }
-        footer { margin-top: 28px; font-size: 0.85em; color: #5b6f62; }
+        :root {
+            --bg-color: #f4efe6;
+            --card-bg: #fcf9f2;
+            --card-hover: #f5eedf;
+            --primary: #2d4030;
+            --primary-dark: #1e2c20;
+            --accent-gold: #8c6d3b;
+            --accent-gold-light: #b3935a;
+            --border-color: #d8ceb9;
+            --border-dark: #b8a686;
+            --text-dark: #2b251d;
+            --text-muted: #6b5e4c;
+            --shadow-subtle: 0 4px 16px rgba(45, 64, 48, 0.06);
+            --shadow-hover: 0 8px 24px rgba(45, 64, 48, 0.12);
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'Libre Baskerville', Georgia, serif;
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 24px 60px 24px;
+            color: var(--text-dark);
+            background-color: var(--bg-color);
+            background-image: radial-gradient(#d8ceb9 0.75px, transparent 0.75px);
+            background-size: 24px 24px;
+            line-height: 1.7;
+        }
+
+        header {
+            text-align: center;
+            padding: 48px 24px 36px 24px;
+            margin-bottom: 36px;
+            background: var(--card-bg);
+            border-bottom: 3px double var(--border-dark);
+            box-shadow: var(--shadow-subtle);
+            border-radius: 0 0 8px 8px;
+            position: relative;
+        }
+
+        header::after {
+            content: "";
+            display: block;
+            width: 120px;
+            height: 2px;
+            background: var(--accent-gold);
+            margin: 20px auto 0 auto;
+        }
+
+        .site-eyebrow {
+            font-family: 'Cinzel', serif;
+            font-size: 0.85rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--accent-gold);
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        h1 {
+            font-family: 'Cinzel', serif;
+            color: var(--primary);
+            font-size: 2.75rem;
+            margin: 0 0 12px 0;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            line-height: 1.2;
+        }
+
+        .intro {
+            font-family: 'IM Fell English', Georgia, serif;
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 820px;
+            margin: 0 auto;
+            font-style: italic;
+        }
+
+        .map-section {
+            margin-bottom: 40px;
+        }
+
+        .map-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 14px;
+            padding: 0 4px;
+        }
+
+        .map-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.15rem;
+            color: var(--primary);
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .map-subtitle {
+            font-family: 'IM Fell English', Georgia, serif;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        #map-container {
+            width: 100%;
+            height: 540px;
+            border-radius: 6px;
+            border: 3px double var(--border-dark);
+            box-shadow: var(--shadow-subtle);
+            z-index: 1;
+        }
+
+        #map-container .leaflet-tile-pane {
+            filter: sepia(0.65) contrast(1.08) saturate(0.75) hue-rotate(-10deg);
+        }
+        #map-container {
+            background-color: #f4efe6;
+        }
+
+
+        .townland-label {
+            background: rgba(252, 249, 242, 0.92) !important;
+            border: 1px solid #b8a686 !important;
+            border-radius: 4px !important;
+            padding: 2px 8px !important;
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 0.78rem;
+            color: #2d4030;
+            box-shadow: 0 2px 6px rgba(45, 64, 48, 0.15) !important;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        .search-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 580px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 14px 20px;
+            font-family: 'Libre Baskerville', Georgia, serif;
+            font-size: 1rem;
+            border: 1px solid var(--border-dark);
+            border-radius: 4px;
+            background: var(--card-bg);
+            color: var(--text-dark);
+            outline: none;
+            box-shadow: inset 0 2px 4px rgba(43, 37, 29, 0.05);
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .search-input:focus {
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 0 3px rgba(140, 109, 59, 0.2);
+        }
+
+        section { margin-bottom: 48px; }
+
+        .section-header {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            margin-bottom: 24px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border-dark);
+        }
+
+        h2 {
+            font-family: 'Cinzel', serif;
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin: 0;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+        }
+
+        .section-count {
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            color: var(--accent-gold);
+            font-weight: 700;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 18px;
+        }
+
+        .townland-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20px 22px;
+            background: var(--card-bg);
+            border-radius: 6px;
+            text-decoration: none;
+            color: var(--text-dark);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--primary);
+            box-shadow: var(--shadow-subtle);
+            transition: all 0.2s ease;
+            min-height: 120px;
+        }
+
+        .townland-card:hover {
+            background: var(--card-hover);
+            border-color: var(--border-dark);
+            border-left-color: var(--accent-gold);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 4px;
+        }
+
+        .card-en {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--primary);
+            letter-spacing: 0.01em;
+        }
+
+        .townland-card:hover .card-en {
+            color: var(--primary-dark);
+        }
+
+        .card-arrow {
+            font-size: 1.1rem;
+            color: var(--border-dark);
+            transition: transform 0.2s ease, color 0.2s ease;
+        }
+
+        .townland-card:hover .card-arrow {
+            color: var(--accent-gold);
+            transform: translateX(4px);
+        }
+
+        .card-ga {
+            font-family: 'IM Fell English', Georgia, serif;
+            font-size: 0.98rem;
+            color: var(--text-muted);
+            font-style: italic;
+            margin-bottom: 12px;
+        }
+
+        .card-footer {
+            margin-top: auto;
+            padding-top: 8px;
+            border-top: 1px dashed var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .card-tag {
+            font-family: 'Cinzel', serif;
+            font-size: 0.72rem;
+            color: var(--accent-gold);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        footer {
+            margin-top: 60px;
+            padding-top: 28px;
+            border-top: 3px double var(--border-dark);
+            font-family: 'IM Fell English', Georgia, serif;
+            font-size: 1rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        .no-results {
+            display: none;
+            padding: 40px;
+            text-align: center;
+            background: var(--card-bg);
+            border-radius: 6px;
+            border: 2px dashed var(--border-dark);
+            color: var(--text-muted);
+            font-style: italic;
+            font-family: 'IM Fell English', Georgia, serif;
+            font-size: 1.1rem;
+        }
     </style>
 </head>
 <body>
-    <h1>Donegal Townlands</h1>
-    <p>Explore the townlands of County Donegal. Every townland has a page to walk through. Where research has begun the walk is a full study. Others show the census returns held so far, or just the place record, and grow as records are added.</p>
+    <header>
+        <div class="site-eyebrow">Donegal Historical Placename Study</div>
+        <h1>Donegal Townlands</h1>
+        <p class="intro">An index and cartographic chronicle of the historic townlands across County Donegal.</p>
+    </header>
 
-    <h2>Townland studies</h2>
+    <div class="map-section">
+        <div class="map-header">
+            <span class="map-title">Townland Placenames Map</span>
+            <span class="map-subtitle">Topographic & Placename Survey</span>
+        </div>
+        <div id="map-container"></div>
+    </div>
 
-    <a class="townland" href="./clogher/">
-        Clogher &rarr;
-    </a>
+    <div class="controls">
+        <div class="search-wrapper">
+            <input type="text" id="searchInput" class="search-input" placeholder="Search townland or Irish placename..." aria-label="Search townlands">
+        </div>
+    </div>
 
-    <a class="townland" href="./cullionboy/">
-        Cullionboy &rarr;
-    </a>
+    <div id="noResults" class="no-results">No townlands match your query.</div>
 
-    <h2>Townlands with census returns</h2>
+    <section>
+        <div class="section-header">
+            <h2>Townland Index</h2>
+            <span class="section-count">56 Records</span>
+        </div>
+        <div class="grid" id="townlandGrid">
+        <a class="townland-card" href="./aghlem/" data-lat="54.65670986880178" data-lng="-8.021811403837578" data-slug="aghlem" data-name="Aghlem">
+            <div class="card-header">
+                <span class="card-en">Aghlem</span>
+                <span class="card-arrow">&rarr;</span>
+            </div>
+            
+            <div class="card-footer">
+                <span class="card-tag">Townland Record</span>
+            </div>
+        </a>
+        <a class="townland-card" href="./ardnagassan/" data-lat="54.65148201566514" data-lng="-8.041187350516738" data-slug="ardnagassan" data-name="Ardnagassan">
+            <div class="card-header">
+                <span class="card-en">Ardnagassan</span>
+                <span class="card-arrow">&rarr;</span>
+            </div>
+            
+            <div class="card-footer">
+                <span class="card-tag">Townland Record</span>
+            </div>
+        </a>
+        <a class="townland-card" href="./barnesyneilly/" data-lat="54.66651353687088" data-lng="-7.948860241483583" data-slug="barnesyneilly" data-name="Barnesyneilly">
+            <div class="card-header">
+                <span class="card-en">Barnesyneilly</span>
+                <span class="card-arrow">&rarr;</span>
+            </div>
+            
+            <div class="card-footer">
+                <span class="card-tag">Townland Record</span>
+            </div>
+        </a>
+        <a class="townland-card" href="./birchhill/" data-lat="54.67617195976887" data-lng="-8.036300764452982" data-slug="birchhill" data-name="Birchhill">
+            <div class="card-header">
+                <span class="card-en">Birchhill</span>
+                <span class="card-arrow">&rarr;</span>
+            </div>
+            <div class="card-ga">Carn Beitheach</div>
+            <div class="card-footer">
+                <span class="card-tag">Townland Record</span>
+            </div>
+        </a>
+        <a class="townland-card" href="./carnbeagh-north/" data-lat="54.66642831180954" data-lng="-8.041794954723551" data-slug="carnbeagh-north" data-name="Carnbeagh North">
+            <div class="card-header">
+                <span class="card-en">Carnbeagh North</span>
+                <span class="card-arrow">&rarr;</span>
+            </div>
+            
+            <div class="card-footer">
+                <span class="card-tag">Townland Record</span>
+            </div>
+        </a>
+        <a class="townland-card" href="./carnbeagh-south/" data-lat="54.66313046072472" data-lng="-8.042584537399893" data-slug="carnbeagh-south" data-name="Carnbeagh South">
+            <div class="card-header">
+                <span class="card-en">Carnbeagh South</span>
+                <span class="card-arrow">&rarr;</span>
+            </div>
+            
+            <div class="card-footer">
+                <span class="card-tag">Townland Record</span>
+            </div>
+        </a>
+        <a class="townland-card" href="./clarcam/" data-lat="54.66616907006589" data-lng="-8.054174286789825" data-slug="clarcam" data-name="Clarcam">
+            <div class="card-header">
+                <span class="card-en">Clarcam</span>
+                <span class="card-arrow">&rarr;</span>
+            </div>
+            
+            <div class="card-footer">
+                <span class="card-tag">Townland Record</span>
+            </div>
+        </a>
+        <a class="townland-card" href="./clardrumbarren/" data-lat="54.67326878005159" data-lng="-8.071599218672985" data-slug="clardrumbarren" data-name="Clardrumbarren">
+            <div class="card-header">
+                <span class="card-en">Clardrumbarren</span>
+                <span class="card-arrow">&rarr;</span>
+            </div>
+            
+            <div class="card-footer">
+                <span class="card-tag">Townland Record</span>
+            </div>
+        </a>
+        <a class="townland-card" href="./clardrumnagahan/" data-lat="54.67512161097278" data-lng="-8.06704352206109" data-slug="clardrumnagahan" data-name="Clardrumnagahan">
+            <div class="card-header">
+                <span class="card-en">Clardrumnagahan</span>
+                <span class="card-arrow">&rarr;</span>
+            </div>
+            <div class="card-ga">Clár Dhroim na nGuthann</div>
+            <div class="card-footer">
+                <span class="card-tag">Townland Record</span>
+            </div>
+        </a>
+        <a class="townland-card" href="./clarlougheask/" data-lat="54.6783534148979" data-lng="-8.054076854584464" data-slug="clarlougheask" data-name="Clarlougheask">
+            <div class="card-header">
+                <span class="card-en">Clarlougheask</span>
+                <span class="card-arrow">&rarr;</span>
+            </div>
+            
+            <div class="card-footer">
+                <span class="card-tag">Townland Record</span>
+            </div>
+        </a>
+        <a class="townland-card" href="./clogher/" data-lat="54.6778636096755" data-lng="-7.976910710473294" data-slug="clogher" data-name="Clogher">
+            <div class="card-header">
+                <span class="card-en">Clogher</span>
+                <span class="card-arrow">&rarr;</span>
+            </div>
+            <div class="card-ga">An Clochar</div>
+            <div class="card-footer">
+                <span class="card-tag">Townland Record</span>
+            </div>
+        </a>
+        <a class="townland-card" href="./copany/" data-lat="54.64785809344684" data-lng="-8.031866089803021" data-slug="copany" data-name="Copany">
+            <div class="card-header">
+                <span class="card-en">Copany</span>
+                <span class="card-arrow">&rarr;</span>
+            </div>
+            
+            <div class="card-footer">
+                <span class="card-tag">Townland Record</span>
+            </div>
+        </a>
+        <a class="townland-card" href="./corveen/" data-lat="54.68514568973288" data-lng="-8.038800094113705" data-slug="corveen" data-name="Corveen">
+            <div class="card-header">
+                <span class="card-en">Corveen</span>
+                <span class="card-arrow">&rarr;</span>
+            </div>
+            <div class="card-ga">Corr Mhín</div>
+            <div class="card-footer">
+                <span class="card-tag">Townland Record</span>
+            </div>
+        </a>
+        <a class="townland-card" href="./craigroe/" data-lat="54.65965304242089" data-lng="-8.066786981930905" data-slug="craigroe" data-name="Craigroe">
+            <div class="card-header">
+                <span class="card-en">Craigroe</span>
+                <span class="card-arrow">&rarr;</span>
+            </div>
+            
+            <div class="card-footer">
+                <span class="card-tag">Townland Record</span>
+            </div>
+        </a>
+        <a class="townland-card" href="./croaghnakern/" data-lat="54.66802251680322" data-lng="-7.919629575176964" data-slug="croaghnakern" data-name="Croaghnakern">
+            <div class="card-header">
+                <span class="card-en">Croaghnakern</span>
+                <span class="card-arrow">&rarr;</span>
+            </div>
+            <div class="card-ga">Cruach na gCeithearn</div>
+            <div class="card-footer">
+                <span class="card-tag">Townland Record</span>
+            </div>
+        </a>
+        <a class="townland-card" href="./croaghnameal/" data-lat="54.65153089155776" data-lng="-7.959019619502319" data-slug="croaghnameal" data-name="Croaghnameal">
+            <div class="card-header">
+                <span class="card-en">Croaghnameal</span>
+                <span class="card-arrow">&rarr;</span>
+            </div>
+            <div class="card-ga">Cruach na Míol</div>
+            <div class="card-footer">
+                <span class="card-tag">Townland Record</span>
+            </div>
+        </a>
+        <a class="townland-card" href="./cuilly/" data-lat="54.639399562879824" data-lng="-8.050936908315729" data-slug="cuilly" data-name="Cuilly">
+            <div class="card-header">
+                <span class="card-en">Cuilly</span>
+                <span class="card-arrow">&rarr;</span>
+            </div>
+            
+            <div class="card-footer">
+                <span class="card-tag">Townland Record</span>
+            </div>
+        </a>
+        <a class="townland-card" href="./cullionboy/" data-lat="54.68550158558223" data-lng="-7.975891682422917" data-slug="cullionboy" data-name="Cullionboy">
+            <div class="card-header">
+                <span class="card-en">Cullionboy</span>
+                <span class="card-arrow">&rarr;</span>
+            </div>
+            <div class="card-ga">Cuilleann Buí</div>
+            <div class="card-footer">
+                <span class="card-tag">Townland Record</span>
+            </div>
+        </a>
+        <a class="townland-card" href="./drumadoney/" data-lat="54.65895495910957" data-lng="-8.036523966278136" data-slug="drumadoney" data-name="Drumadoney">
+            <div class="card-header">
+                <span class="card-en">Drumadoney</span>
+                <span class="card-arrow">&rarr;</span>
+            </div>
+            
+            <div class="card-footer">
+                <span class="card-tag">Townland Record</span>
+            </div>
+        </a>
+        <a class="townland-card" href="./drumbarren/" data-lat="54.66905653562753" data-lng="-8.080501197272394" data-slug="drumbarren" data-name="Drumbarren">
+            <div class="card-header">
+                <span class="card-en">Drumbarren</span>
+                <span class="card-arrow">&rarr;</span>
+            </div>
+            
+            <div class="card-footer">
+                <span class="card-tag">Townland Record</span>
+            </div>
+        </a>
+        <a class="townland-card" href="./drumcroagh/" data-lat="54.64930477455988" data-lng="-8.059091938978147" data-slug="drumcroagh" data-name="Drumcroagh">
+            <div class="card-header">
+                <span class="card-en">Drumcroagh</span>
+                <span class="card-arrow">&rarr;</span>
+            </div>
+            
+            <div class="card-footer">
+                <span class="card-tag">Townland Record</span>
+            </div>
+        </a>
+        <a class="townland-card" href="./druminardagh/" data-lat="54.644538183879554" data-lng="-8.024656347008648" data-slug="druminardagh" data-name="Druminardagh">
+            <div class="card-header">
+                <span class="card-en">Druminardagh</span>
+                <span class="card-arrow">&rarr;</span>
+            </div>
+            
+            <div class="card-footer">
+                <span class="card-tag">Townland Record</span>
+            </div>
+        </a>
+        <a class="townland-card" href="./druminnin/" data-lat="54.682252864512456" data-lng="-8.02076701378752" data-slug="druminnin" data-name="Druminnin">
+            <div class="card-header">
+                <span class="card-en">Druminnin</span>
+                <span class="card-arrow">&rarr;</span>
+            </div>
+            
+            <div class="card-footer">
+                <span class="card-tag">Townland Record</span>
+            </div>
+        </a>
+        <a class="townland-card" href="./drumlask/" data-lat="54.63914848779389" data-lng="-8.065615275073613" data-slug="drumlask" data-name="Drumlask">
+            <div class="card-header">
+                <span class="card-en">Drumlask</span>
+                <span class="card-arrow">&rarr;</span>
+            </div>
+            
+            <div class="card-footer">
+                <span class="card-tag">Townland Record</span>
+            </div>
+        </a>
+        <a class="townland-card" href="./drummenny-lower/" data-lat="54.6513353423336" data-lng="-8.083376529126403" data-slug="drummenny-lower" data-name="Drummenny Lower">
+            <div class="card-header">
+                <span class="card-en">Drummenny Lower</span>
+                <span class="card-arrow">&rarr;</span>
+            </div>
+            
+            <div class="card-footer">
+                <span class="card-tag">Townland Record</span>
+            </div>
+        </a>
+        <a class="townland-card" href="./drummenny-middle/" data-lat="54.65339220415258" data-lng="-8.065851828016408" data-slug="drummenny-middle" data-name="Drummenny Middle">
+            <div class="card-header">
+                <span class="card-en">Drummenny Middle</span>
+                <span class="card-arrow">&rarr;</span>
+            </div>
+            
+            <div class="card-footer">
+                <span class="card-tag">Townland Record</span>
+            </div>
+        </a>
+        <a class="townland-card" href="./drummenny-upper/" data-lat="54.65861862163256" data-lng="-8.05221491911212" data-slug="drummenny-upper" data-name="Drummenny Upper">
+            <div class="card-header">
+                <span class="card-en">Drummenny Upper</span>
+                <span class="card-arrow">&rarr;</span>
+            </div>
+            
+            <div class="card-footer">
+                <span class="card-tag">Townland Record</span>
+            </div>
+        </a>
+        <a class="townland-card" href="./drumnagahan/" data-lat="54.674604495087024" data-lng="-8.051280941859472" data-slug="drumnagahan" data-name="Drumnagahan">
+            <div class="card-header">
+                <span class="card-en">Drumnagahan</span>
+                <span class="card-arrow">&rarr;</span>
+            </div>
+            <div class="card-ga">Droim na nGuthann</div>
+            <div class="card-footer">
+                <span class="card-tag">Townland Record</span>
+            </div>
+        </a>
+        <a class="townland-card" href="./drumnahoul/" data-lat="54.65567247109422" data-lng="-8.046801569018859" data-slug="drumnahoul" data-name="Drumnahoul">
+            <div class="card-header">
+                <span class="card-en">Drumnahoul</span>
+                <span class="card-arrow">&rarr;</span>
+            </div>
+            
+            <div class="card-footer">
+                <span class="card-tag">Townland Record</span>
+            </div>
+        </a>
+        <a class="townland-card" href="./finnabanes/" data-lat="54.67175134634319" data-lng="-8.037353496007347" data-slug="finnabanes" data-name="Finnabanes">
+            <div class="card-header">
+                <span class="card-en">Finnabanes</span>
+                <span class="card-arrow">&rarr;</span>
+            </div>
+            
+            <div class="card-footer">
+                <span class="card-tag">Townland Record</span>
+            </div>
+        </a>
+        <a class="townland-card" href="./finnadoos/" data-lat="54.66605527224653" data-lng="-8.026379144793653" data-slug="finnadoos" data-name="Finnadoos">
+            <div class="card-header">
+                <span class="card-en">Finnadoos</span>
+                <span class="card-arrow">&rarr;</span>
+            </div>
+            
+            <div class="card-footer">
+                <span class="card-tag">Townland Record</span>
+            </div>
+        </a>
+        <a class="townland-card" href="./keadew-lower/" data-lat="54.69703561627362" data-lng="-7.996016338864254" data-slug="keadew-lower" data-name="Keadew Lower">
+            <div class="card-header">
+                <span class="card-en">Keadew Lower</span>
+                <span class="card-arrow">&rarr;</span>
+            </div>
+            <div class="card-ga">Céide Íochtarach</div>
+            <div class="card-footer">
+                <span class="card-tag">Townland Record</span>
+            </div>
+        </a>
+        <a class="townland-card" href="./keadew-upper/" data-lat="54.70504288353722" data-lng="-7.96342444871463" data-slug="keadew-upper" data-name="Keadew Upper">
+            <div class="card-header">
+                <span class="card-en">Keadew Upper</span>
+                <span class="card-arrow">&rarr;</span>
+            </div>
+            <div class="card-ga">Céide Uachtarach</div>
+            <div class="card-footer">
+                <span class="card-tag">Townland Record</span>
+            </div>
+        </a>
+        <a class="townland-card" href="./keeldrum/" data-lat="54.66671003599959" data-lng="-8.071908448499906" data-slug="keeldrum" data-name="Keeldrum">
+            <div class="card-header">
+                <span class="card-en">Keeldrum</span>
+                <span class="card-arrow">&rarr;</span>
+            </div>
+            <div class="card-ga">Caoldroim</div>
+            <div class="card-footer">
+                <span class="card-tag">Townland Record</span>
+            </div>
+        </a>
+        <a class="townland-card" href="./legacurry/" data-lat="54.62458180389631" data-lng="-8.121673603291555" data-slug="legacurry" data-name="Legacurry">
+            <div class="card-header">
+                <span class="card-en">Legacurry</span>
+                <span class="card-arrow">&rarr;</span>
+            </div>
+            <div class="card-ga">Lag an Choire</div>
+            <div class="card-footer">
+                <span class="card-tag">Townland Record</span>
+            </div>
+        </a>
+        <a class="townland-card" href="./leghawny/" data-lat="54.66256119880154" data-lng="-8.007576429235472" data-slug="leghawny" data-name="Leghawny">
+            <div class="card-header">
+                <span class="card-en">Leghawny</span>
+                <span class="card-arrow">&rarr;</span>
+            </div>
+            
+            <div class="card-footer">
+                <span class="card-tag">Townland Record</span>
+            </div>
+        </a>
+        <a class="townland-card" href="./loughcuill/" data-lat="54.65143052315233" data-lng="-7.966366926628516" data-slug="loughcuill" data-name="Loughcuill">
+            <div class="card-header">
+                <span class="card-en">Loughcuill</span>
+                <span class="card-arrow">&rarr;</span>
+            </div>
+            
+            <div class="card-footer">
+                <span class="card-tag">Townland Record</span>
+            </div>
+        </a>
+        <a class="townland-card" href="./loughkip/" data-lat="54.649976900785234" data-lng="-7.995206944990984" data-slug="loughkip" data-name="Loughkip">
+            <div class="card-header">
+                <span class="card-en">Loughkip</span>
+                <span class="card-arrow">&rarr;</span>
+            </div>
+            
+            <div class="card-footer">
+                <span class="card-tag">Townland Record</span>
+            </div>
+        </a>
+        <a class="townland-card" href="./meenabrock/" data-lat="54.68130559088727" data-lng="-7.92120027633523" data-slug="meenabrock" data-name="Meenabrock">
+            <div class="card-header">
+                <span class="card-en">Meenabrock</span>
+                <span class="card-arrow">&rarr;</span>
+            </div>
+            <div class="card-ga">Mín na mBroc</div>
+            <div class="card-footer">
+                <span class="card-tag">Townland Record</span>
+            </div>
+        </a>
+        <a class="townland-card" href="./meenadreen/" data-lat="54.65847435331013" data-lng="-7.983220693643983" data-slug="meenadreen" data-name="Meenadreen">
+            <div class="card-header">
+                <span class="card-en">Meenadreen</span>
+                <span class="card-arrow">&rarr;</span>
+            </div>
+            
+            <div class="card-footer">
+                <span class="card-tag">Townland Record</span>
+            </div>
+        </a>
+        <a class="townland-card" href="./moyne/" data-lat="54.63249446390411" data-lng="-8.06020338795152" data-slug="moyne" data-name="Moyne">
+            <div class="card-header">
+                <span class="card-en">Moyne</span>
+                <span class="card-arrow">&rarr;</span>
+            </div>
+            
+            <div class="card-footer">
+                <span class="card-tag">Townland Record</span>
+            </div>
+        </a>
+        <a class="townland-card" href="./mullanalamphry/" data-lat="54.68771379764564" data-lng="-8.020136372383499" data-slug="mullanalamphry" data-name="Mullanalamphry">
+            <div class="card-header">
+                <span class="card-en">Mullanalamphry</span>
+                <span class="card-arrow">&rarr;</span>
+            </div>
+            
+            <div class="card-footer">
+                <span class="card-tag">Townland Record</span>
+            </div>
+        </a>
+        <a class="townland-card" href="./mullans/" data-lat="54.63445139640165" data-lng="-8.070911870844332" data-slug="mullans" data-name="Mullans">
+            <div class="card-header">
+                <span class="card-en">Mullans</span>
+                <span class="card-arrow">&rarr;</span>
+            </div>
+            
+            <div class="card-footer">
+                <span class="card-tag">Townland Record</span>
+            </div>
+        </a>
+        <a class="townland-card" href="./rooney-s-island/" data-lat="54.62355154317861" data-lng="-8.13995394431129" data-slug="rooney-s-island" data-name="Rooney's Island">
+            <div class="card-header">
+                <span class="card-en">Rooney's Island</span>
+                <span class="card-arrow">&rarr;</span>
+            </div>
+            <div class="card-ga">Oileán Uí Ruanaí</div>
+            <div class="card-footer">
+                <span class="card-tag">Townland Record</span>
+            </div>
+        </a>
+        <a class="townland-card" href="./rossmore/" data-lat="54.625024457811854" data-lng="-8.10861043957741" data-slug="rossmore" data-name="Rossmore">
+            <div class="card-header">
+                <span class="card-en">Rossmore</span>
+                <span class="card-arrow">&rarr;</span>
+            </div>
+            
+            <div class="card-footer">
+                <span class="card-tag">Townland Record</span>
+            </div>
+        </a>
+        <a class="townland-card" href="./skreen/" data-lat="54.643906017617454" data-lng="-8.008659731350736" data-slug="skreen" data-name="Skreen">
+            <div class="card-header">
+                <span class="card-en">Skreen</span>
+                <span class="card-arrow">&rarr;</span>
+            </div>
+            
+            <div class="card-footer">
+                <span class="card-tag">Townland Record</span>
+            </div>
+        </a>
+        <a class="townland-card" href="./spierstown/" data-lat="54.669497511032674" data-lng="-8.061290076812655" data-slug="spierstown" data-name="Spierstown">
+            <div class="card-header">
+                <span class="card-en">Spierstown</span>
+                <span class="card-arrow">&rarr;</span>
+            </div>
+            
+            <div class="card-footer">
+                <span class="card-tag">Townland Record</span>
+            </div>
+        </a>
+        <a class="townland-card" href="./straness/" data-lat="54.663890239594345" data-lng="-7.979409314688271" data-slug="straness" data-name="Straness">
+            <div class="card-header">
+                <span class="card-en">Straness</span>
+                <span class="card-arrow">&rarr;</span>
+            </div>
+            
+            <div class="card-footer">
+                <span class="card-tag">Townland Record</span>
+            </div>
+        </a>
+        <a class="townland-card" href="./tawnagh/" data-lat="54.643841350230005" data-lng="-8.05546994008739" data-slug="tawnagh" data-name="Tawnagh">
+            <div class="card-header">
+                <span class="card-en">Tawnagh</span>
+                <span class="card-arrow">&rarr;</span>
+            </div>
+            
+            <div class="card-footer">
+                <span class="card-tag">Townland Record</span>
+            </div>
+        </a>
+        <a class="townland-card" href="./tinnycahil/" data-lat="54.66190336834972" data-lng="-8.067269058526376" data-slug="tinnycahil" data-name="Tinnycahil">
+            <div class="card-header">
+                <span class="card-en">Tinnycahil</span>
+                <span class="card-arrow">&rarr;</span>
+            </div>
+            
+            <div class="card-footer">
+                <span class="card-tag">Townland Record</span>
+            </div>
+        </a>
+        <a class="townland-card" href="./tullyearl/" data-lat="54.629242847830525" data-lng="-8.112234170301221" data-slug="tullyearl" data-name="Tullyearl">
+            <div class="card-header">
+                <span class="card-en">Tullyearl</span>
+                <span class="card-arrow">&rarr;</span>
+            </div>
+            <div class="card-ga">Tulaigh Iarla</div>
+            <div class="card-footer">
+                <span class="card-tag">Townland Record</span>
+            </div>
+        </a>
+        <a class="townland-card" href="./tullyleague-or-tullybrook/" data-lat="54.63070364106823" data-lng="-8.081412547097738" data-slug="tullyleague-or-tullybrook" data-name="Tullyleague or Tullybrook">
+            <div class="card-header">
+                <span class="card-en">Tullyleague or Tullybrook</span>
+                <span class="card-arrow">&rarr;</span>
+            </div>
+            
+            <div class="card-footer">
+                <span class="card-tag">Townland Record</span>
+            </div>
+        </a>
+        <a class="townland-card" href="./tullyloskan/" data-lat="54.64411493161979" data-lng="-8.071389650872769" data-slug="tullyloskan" data-name="Tullyloskan">
+            <div class="card-header">
+                <span class="card-en">Tullyloskan</span>
+                <span class="card-arrow">&rarr;</span>
+            </div>
+            
+            <div class="card-footer">
+                <span class="card-tag">Townland Record</span>
+            </div>
+        </a>
+        <a class="townland-card" href="./tullymornin/" data-lat="54.63047967892829" data-lng="-8.094751986284713" data-slug="tullymornin" data-name="Tullymornin">
+            <div class="card-header">
+                <span class="card-en">Tullymornin</span>
+                <span class="card-arrow">&rarr;</span>
+            </div>
+            
+            <div class="card-footer">
+                <span class="card-tag">Townland Record</span>
+            </div>
+        </a>
+        <a class="townland-card" href="./tullynaught/" data-lat="54.64555464590881" data-lng="-8.043578345672014" data-slug="tullynaught" data-name="Tullynaught">
+            <div class="card-header">
+                <span class="card-en">Tullynaught</span>
+                <span class="card-arrow">&rarr;</span>
+            </div>
+            <div class="card-ga">Tulaigh Shneachta</div>
+            <div class="card-footer">
+                <span class="card-tag">Townland Record</span>
+            </div>
+        </a>
+        <a class="townland-card" href="./whitehill/" data-lat="54.6397469471964" data-lng="-8.07654684199413" data-slug="whitehill" data-name="Whitehill">
+            <div class="card-header">
+                <span class="card-en">Whitehill</span>
+                <span class="card-arrow">&rarr;</span>
+            </div>
+            
+            <div class="card-footer">
+                <span class="card-tag">Townland Record</span>
+            </div>
+        </a>
+        </div>
+    </section>
 
-    <a class="townland" href="./aghlem/">
-        Aghlem &rarr;
-    </a>
+    <footer>Placename data sourced from Logainm (Government of Ireland) & historical cartographic surveys.</footer>
 
-    <a class="townland" href="./ardnagassan/">
-        Ardnagassan &rarr;
-    </a>
+    <!-- Leaflet JS -->
 
-    <a class="townland" href="./barnesyneilly/">
-        Barnesyneilly &rarr;
-    </a>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        // Initial view zoomed in on the townland cluster (z=13)
+        const map = L.map('map-container').setView([54.665, -8.030], 13);
 
-    <a class="townland" href="./birchhill/">
-        Birchhill &rarr;
-    </a>
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 18,
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
 
-    <a class="townland" href="./carnbeagh-north/">
-        Carnbeagh North &rarr;
-    </a>
+        const townlandData = {"type": "FeatureCollection", "features": [{"type": "Feature", "properties": {"name": "Birchhill", "name_ga": "Carn Beitheach", "slug": "birchhill"}, "geometry": {"type": "Point", "coordinates": [-8.036300764452982, 54.67617195976887]}}, {"type": "Feature", "properties": {"name": "Carnbeagh North", "name_ga": "", "slug": "carnbeagh-north"}, "geometry": {"type": "Point", "coordinates": [-8.041794954723551, 54.66642831180954]}}, {"type": "Feature", "properties": {"name": "Carnbeagh South", "name_ga": "", "slug": "carnbeagh-south"}, "geometry": {"type": "Point", "coordinates": [-8.042584537399893, 54.66313046072472]}}, {"type": "Feature", "properties": {"name": "Clarcam", "name_ga": "", "slug": "clarcam"}, "geometry": {"type": "Point", "coordinates": [-8.054174286789825, 54.66616907006589]}}, {"type": "Feature", "properties": {"name": "Clardrumbarren", "name_ga": "", "slug": "clardrumbarren"}, "geometry": {"type": "Point", "coordinates": [-8.071599218672985, 54.67326878005159]}}, {"type": "Feature", "properties": {"name": "Clardrumnagahan", "name_ga": "Cl\u00e1r Dhroim na nGuthann", "slug": "clardrumnagahan"}, "geometry": {"type": "Point", "coordinates": [-8.06704352206109, 54.67512161097278]}}, {"type": "Feature", "properties": {"name": "Clarlougheask", "name_ga": "", "slug": "clarlougheask"}, "geometry": {"type": "Point", "coordinates": [-8.054076854584464, 54.6783534148979]}}, {"type": "Feature", "properties": {"name": "Clogher", "name_ga": "An Clochar", "slug": "clogher"}, "geometry": {"type": "Point", "coordinates": [-7.976910710473294, 54.6778636096755]}}, {"type": "Feature", "properties": {"name": "Corveen", "name_ga": "Corr Mh\u00edn", "slug": "corveen"}, "geometry": {"type": "Point", "coordinates": [-8.038800094113705, 54.68514568973288]}}, {"type": "Feature", "properties": {"name": "Craigroe", "name_ga": "", "slug": "craigroe"}, "geometry": {"type": "Point", "coordinates": [-8.066786981930905, 54.65965304242089]}}, {"type": "Feature", "properties": {"name": "Cullionboy", "name_ga": "Cuilleann Bu\u00ed", "slug": "cullionboy"}, "geometry": {"type": "Point", "coordinates": [-7.975891682422917, 54.68550158558223]}}, {"type": "Feature", "properties": {"name": "Drumbarren", "name_ga": "", "slug": "drumbarren"}, "geometry": {"type": "Point", "coordinates": [-8.080501197272394, 54.66905653562753]}}, {"type": "Feature", "properties": {"name": "Druminnin", "name_ga": "", "slug": "druminnin"}, "geometry": {"type": "Point", "coordinates": [-8.02076701378752, 54.682252864512456]}}, {"type": "Feature", "properties": {"name": "Drumnagahan", "name_ga": "Droim na nGuthann", "slug": "drumnagahan"}, "geometry": {"type": "Point", "coordinates": [-8.051280941859472, 54.674604495087024]}}, {"type": "Feature", "properties": {"name": "Finnabanes", "name_ga": "", "slug": "finnabanes"}, "geometry": {"type": "Point", "coordinates": [-8.037353496007347, 54.67175134634319]}}, {"type": "Feature", "properties": {"name": "Keadew Lower", "name_ga": "C\u00e9ide \u00cdochtarach", "slug": "keadew-lower"}, "geometry": {"type": "Point", "coordinates": [-7.996016338864254, 54.69703561627362]}}, {"type": "Feature", "properties": {"name": "Keadew Upper", "name_ga": "C\u00e9ide Uachtarach", "slug": "keadew-upper"}, "geometry": {"type": "Point", "coordinates": [-7.96342444871463, 54.70504288353722]}}, {"type": "Feature", "properties": {"name": "Keeldrum", "name_ga": "Caoldroim", "slug": "keeldrum"}, "geometry": {"type": "Point", "coordinates": [-8.071908448499906, 54.66671003599959]}}, {"type": "Feature", "properties": {"name": "Meenabrock", "name_ga": "M\u00edn na mBroc", "slug": "meenabrock"}, "geometry": {"type": "Point", "coordinates": [-7.92120027633523, 54.68130559088727]}}, {"type": "Feature", "properties": {"name": "Mullanalamphry", "name_ga": "", "slug": "mullanalamphry"}, "geometry": {"type": "Point", "coordinates": [-8.020136372383499, 54.68771379764564]}}, {"type": "Feature", "properties": {"name": "Spierstown", "name_ga": "", "slug": "spierstown"}, "geometry": {"type": "Point", "coordinates": [-8.061290076812655, 54.669497511032674]}}, {"type": "Feature", "properties": {"name": "Tinnycahil", "name_ga": "", "slug": "tinnycahil"}, "geometry": {"type": "Point", "coordinates": [-8.067269058526376, 54.66190336834972]}}, {"type": "Feature", "properties": {"name": "Aghlem", "name_ga": "", "slug": "aghlem"}, "geometry": {"type": "Point", "coordinates": [-8.021811403837578, 54.65670986880178]}}, {"type": "Feature", "properties": {"name": "Ardnagassan", "name_ga": "", "slug": "ardnagassan"}, "geometry": {"type": "Point", "coordinates": [-8.041187350516738, 54.65148201566514]}}, {"type": "Feature", "properties": {"name": "Drumadoney", "name_ga": "", "slug": "drumadoney"}, "geometry": {"type": "Point", "coordinates": [-8.036523966278136, 54.65895495910957]}}, {"type": "Feature", "properties": {"name": "Drumcroagh", "name_ga": "", "slug": "drumcroagh"}, "geometry": {"type": "Point", "coordinates": [-8.059091938978147, 54.64930477455988]}}, {"type": "Feature", "properties": {"name": "Druminardagh", "name_ga": "", "slug": "druminardagh"}, "geometry": {"type": "Point", "coordinates": [-8.024656347008648, 54.644538183879554]}}, {"type": "Feature", "properties": {"name": "Drummenny Lower", "name_ga": "", "slug": "drummenny-lower"}, "geometry": {"type": "Point", "coordinates": [-8.083376529126403, 54.6513353423336]}}, {"type": "Feature", "properties": {"name": "Drummenny Middle", "name_ga": "", "slug": "drummenny-middle"}, "geometry": {"type": "Point", "coordinates": [-8.065851828016408, 54.65339220415258]}}, {"type": "Feature", "properties": {"name": "Drummenny Upper", "name_ga": "", "slug": "drummenny-upper"}, "geometry": {"type": "Point", "coordinates": [-8.05221491911212, 54.65861862163256]}}, {"type": "Feature", "properties": {"name": "Drumnahoul", "name_ga": "", "slug": "drumnahoul"}, "geometry": {"type": "Point", "coordinates": [-8.046801569018859, 54.65567247109422]}}, {"type": "Feature", "properties": {"name": "Finnadoos", "name_ga": "", "slug": "finnadoos"}, "geometry": {"type": "Point", "coordinates": [-8.026379144793653, 54.66605527224653]}}, {"type": "Feature", "properties": {"name": "Leghawny", "name_ga": "", "slug": "leghawny"}, "geometry": {"type": "Point", "coordinates": [-8.007576429235472, 54.66256119880154]}}, {"type": "Feature", "properties": {"name": "Loughcuill", "name_ga": "", "slug": "loughcuill"}, "geometry": {"type": "Point", "coordinates": [-7.966366926628516, 54.65143052315233]}}, {"type": "Feature", "properties": {"name": "Loughkip", "name_ga": "", "slug": "loughkip"}, "geometry": {"type": "Point", "coordinates": [-7.995206944990984, 54.649976900785234]}}, {"type": "Feature", "properties": {"name": "Meenadreen", "name_ga": "", "slug": "meenadreen"}, "geometry": {"type": "Point", "coordinates": [-7.983220693643983, 54.65847435331013]}}, {"type": "Feature", "properties": {"name": "Tawnagh", "name_ga": "", "slug": "tawnagh"}, "geometry": {"type": "Point", "coordinates": [-8.05546994008739, 54.643841350230005]}}, {"type": "Feature", "properties": {"name": "Tullyloskan", "name_ga": "", "slug": "tullyloskan"}, "geometry": {"type": "Point", "coordinates": [-8.071389650872769, 54.64411493161979]}}, {"type": "Feature", "properties": {"name": "Whitehill", "name_ga": "", "slug": "whitehill"}, "geometry": {"type": "Point", "coordinates": [-8.07654684199413, 54.6397469471964]}}, {"type": "Feature", "properties": {"name": "Barnesyneilly", "name_ga": "", "slug": "barnesyneilly"}, "geometry": {"type": "Point", "coordinates": [-7.948860241483583, 54.66651353687088]}}, {"type": "Feature", "properties": {"name": "Copany", "name_ga": "", "slug": "copany"}, "geometry": {"type": "Point", "coordinates": [-8.031866089803021, 54.64785809344684]}}, {"type": "Feature", "properties": {"name": "Croaghnakern", "name_ga": "Cruach na gCeithearn", "slug": "croaghnakern"}, "geometry": {"type": "Point", "coordinates": [-7.919629575176964, 54.66802251680322]}}, {"type": "Feature", "properties": {"name": "Croaghnameal", "name_ga": "Cruach na M\u00edol", "slug": "croaghnameal"}, "geometry": {"type": "Point", "coordinates": [-7.959019619502319, 54.65153089155776]}}, {"type": "Feature", "properties": {"name": "Cuilly", "name_ga": "", "slug": "cuilly"}, "geometry": {"type": "Point", "coordinates": [-8.050936908315729, 54.639399562879824]}}, {"type": "Feature", "properties": {"name": "Drumlask", "name_ga": "", "slug": "drumlask"}, "geometry": {"type": "Point", "coordinates": [-8.065615275073613, 54.63914848779389]}}, {"type": "Feature", "properties": {"name": "Legacurry", "name_ga": "Lag an Choire", "slug": "legacurry"}, "geometry": {"type": "Point", "coordinates": [-8.121673603291555, 54.62458180389631]}}, {"type": "Feature", "properties": {"name": "Moyne", "name_ga": "", "slug": "moyne"}, "geometry": {"type": "Point", "coordinates": [-8.06020338795152, 54.63249446390411]}}, {"type": "Feature", "properties": {"name": "Mullans", "name_ga": "", "slug": "mullans"}, "geometry": {"type": "Point", "coordinates": [-8.070911870844332, 54.63445139640165]}}, {"type": "Feature", "properties": {"name": "Rooney's Island", "name_ga": "Oile\u00e1n U\u00ed Ruana\u00ed", "slug": "rooney-s-island"}, "geometry": {"type": "Point", "coordinates": [-8.13995394431129, 54.62355154317861]}}, {"type": "Feature", "properties": {"name": "Rossmore", "name_ga": "", "slug": "rossmore"}, "geometry": {"type": "Point", "coordinates": [-8.10861043957741, 54.625024457811854]}}, {"type": "Feature", "properties": {"name": "Skreen", "name_ga": "", "slug": "skreen"}, "geometry": {"type": "Point", "coordinates": [-8.008659731350736, 54.643906017617454]}}, {"type": "Feature", "properties": {"name": "Straness", "name_ga": "", "slug": "straness"}, "geometry": {"type": "Point", "coordinates": [-7.979409314688271, 54.663890239594345]}}, {"type": "Feature", "properties": {"name": "Tullyearl", "name_ga": "Tulaigh Iarla", "slug": "tullyearl"}, "geometry": {"type": "Point", "coordinates": [-8.112234170301221, 54.629242847830525]}}, {"type": "Feature", "properties": {"name": "Tullyleague or Tullybrook", "name_ga": "", "slug": "tullyleague-or-tullybrook"}, "geometry": {"type": "Point", "coordinates": [-8.081412547097738, 54.63070364106823]}}, {"type": "Feature", "properties": {"name": "Tullymornin", "name_ga": "", "slug": "tullymornin"}, "geometry": {"type": "Point", "coordinates": [-8.094751986284713, 54.63047967892829]}}, {"type": "Feature", "properties": {"name": "Tullynaught", "name_ga": "Tulaigh Shneachta", "slug": "tullynaught"}, "geometry": {"type": "Point", "coordinates": [-8.043578345672014, 54.64555464590881]}}]};
+        const markerLayers = {};
+        const townlandCards = document.querySelectorAll('.townland-card');
+        const searchInput = document.getElementById('searchInput');
+        const noResults = document.getElementById('noResults');
 
-    <a class="townland" href="./carnbeagh-south/">
-        Carnbeagh South &rarr;
-    </a>
+        const markersGroup = L.featureGroup().addTo(map);
 
-    <a class="townland" href="./clarcam/">
-        Clarcam &rarr;
-    </a>
+        townlandData.features.forEach(feature => {
+            const coords = feature.geometry.coordinates;
+            const props = feature.properties;
+            const lat = coords[1];
+            const lng = coords[0];
+            const name = props.name;
+            const ga = props.name_ga;
+            const slug = props.slug;
 
-    <a class="townland" href="./clardrumbarren/">
-        Clardrumbarren &rarr;
-    </a>
+            // Historical survey pin marker styling
+            const marker = L.circleMarker([lat, lng], {
+                radius: 7,
+                fillColor: '#8c6d3b',
+                color: '#2d4030',
+                weight: 2,
+                fillOpacity: 0.85
+            });
 
-    <a class="townland" href="./clardrumnagahan/">
-        Clardrumnagahan &rarr;
-    </a>
+            const tooltipText = ga ? `${name} (${ga})` : name;
+            marker.bindTooltip(tooltipText, {
+                permanent: false,
+                direction: 'top',
+                offset: [0, -6],
+                className: 'townland-label'
+            });
 
-    <a class="townland" href="./clarlougheask/">
-        Clarlougheask &rarr;
-    </a>
+            marker.on('click', () => {
+                const card = document.querySelector(`.townland-card[data-name="${name}"]`);
+                if (card) {
+                    window.location.href = card.getAttribute('href');
+                } else if (slug) {
+                    window.location.href = `./${slug}/`;
+                }
+            });
 
-    <a class="townland" href="./copany/">
-        Copany &rarr;
-    </a>
+            marker.addTo(markersGroup);
+            markerLayers[name.toLowerCase()] = marker;
+        });
 
-    <a class="townland" href="./corveen/">
-        Corveen &rarr;
-    </a>
+        // Synchronized Search Filter
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase().trim();
+            let totalVisible = 0;
 
-    <a class="townland" href="./craigroe/">
-        Craigroe &rarr;
-    </a>
+            townlandCards.forEach(card => {
+                const nameEn = (card.dataset.name || '').toLowerCase();
+                const gaEl = card.querySelector('.card-ga');
+                const nameGa = gaEl ? gaEl.textContent.toLowerCase() : '';
+                const match = nameEn.includes(query) || nameGa.includes(query);
 
-    <a class="townland" href="./croaghnameal/">
-        Croaghnameal &rarr;
-    </a>
+                card.style.display = match ? 'flex' : 'none';
+                if (match) totalVisible++;
 
-    <a class="townland" href="./cuilly/">
-        Cuilly &rarr;
-    </a>
+                const marker = markerLayers[nameEn];
+                if (marker) {
+                    if (match || query === '') {
+                        markersGroup.addLayer(marker);
+                    } else {
+                        markersGroup.removeLayer(marker);
+                    }
+                }
+            });
 
-    <a class="townland" href="./drumadoney/">
-        Drumadoney &rarr;
-    </a>
-
-    <a class="townland" href="./drumbarren/">
-        Drumbarren &rarr;
-    </a>
-
-    <a class="townland" href="./drumcroagh/">
-        Drumcroagh &rarr;
-    </a>
-
-    <a class="townland" href="./druminardagh/">
-        Druminardagh &rarr;
-    </a>
-
-    <a class="townland" href="./druminnin/">
-        Druminnin &rarr;
-    </a>
-
-    <a class="townland" href="./drumlask/">
-        Drumlask &rarr;
-    </a>
-
-    <a class="townland" href="./drummenny-lower/">
-        Drummenny Lower &rarr;
-    </a>
-
-    <a class="townland" href="./drummenny-middle/">
-        Drummenny Middle &rarr;
-    </a>
-
-    <a class="townland" href="./drummenny-upper/">
-        Drummenny Upper &rarr;
-    </a>
-
-    <a class="townland" href="./drumnagahan/">
-        Drumnagahan &rarr;
-    </a>
-
-    <a class="townland" href="./drumnahoul/">
-        Drumnahoul &rarr;
-    </a>
-
-    <a class="townland" href="./finnabanes/">
-        Finnabanes &rarr;
-    </a>
-
-    <a class="townland" href="./finnadoos/">
-        Finnadoos &rarr;
-    </a>
-
-    <a class="townland" href="./keadew-lower/">
-        Keadew Lower &rarr;
-    </a>
-
-    <a class="townland" href="./keadew-upper/">
-        Keadew Upper &rarr;
-    </a>
-
-    <a class="townland" href="./keeldrum/">
-        Keeldrum &rarr;
-    </a>
-
-    <a class="townland" href="./legacurry/">
-        Legacurry &rarr;
-    </a>
-
-    <a class="townland" href="./leghawny/">
-        Leghawny &rarr;
-    </a>
-
-    <a class="townland" href="./loughcuill/">
-        Loughcuill &rarr;
-    </a>
-
-    <a class="townland" href="./loughkip/">
-        Loughkip &rarr;
-    </a>
-
-    <a class="townland" href="./meenadreen/">
-        Meenadreen &rarr;
-    </a>
-
-    <a class="townland" href="./moyne/">
-        Moyne &rarr;
-    </a>
-
-    <a class="townland" href="./mullanalamphry/">
-        Mullanalamphry &rarr;
-    </a>
-
-    <a class="townland" href="./mullans/">
-        Mullans &rarr;
-    </a>
-
-    <a class="townland" href="./rossmore/">
-        Rossmore &rarr;
-    </a>
-
-    <a class="townland" href="./skreen/">
-        Skreen &rarr;
-    </a>
-
-    <a class="townland" href="./spierstown/">
-        Spierstown &rarr;
-    </a>
-
-    <a class="townland" href="./straness/">
-        Straness &rarr;
-    </a>
-
-    <a class="townland" href="./tawnagh/">
-        Tawnagh &rarr;
-    </a>
-
-    <a class="townland" href="./tinnycahil/">
-        Tinnycahil &rarr;
-    </a>
-
-    <a class="townland" href="./tullyearl/">
-        Tullyearl &rarr;
-    </a>
-
-    <a class="townland" href="./tullyleague-or-tullybrook/">
-        Tullyleague or Tullybrook &rarr;
-    </a>
-
-    <a class="townland" href="./tullyloskan/">
-        Tullyloskan &rarr;
-    </a>
-
-    <a class="townland" href="./tullymornin/">
-        Tullymornin &rarr;
-    </a>
-
-    <a class="townland" href="./whitehill/">
-        Whitehill &rarr;
-    </a>
-
-    <h2>Townlands awaiting research</h2>
-
-    <a class="townland" href="./croaghnakern/">
-        Croaghnakern &rarr;
-    </a>
-
-    <a class="townland" href="./meenabrock/">
-        Meenabrock &rarr;
-    </a>
-
-    <a class="townland" href="./rooney-s-island/">
-        Rooney&#x27;s Island &rarr;
-    </a>
-
-    <footer>Irish-language placename data by Logainm, Government of Ireland, licensed under CC BY 4.0.</footer>
+            noResults.style.display = (totalVisible === 0 && query !== '') ? 'block' : 'none';
+        });
+    </script>
 </body>
 </html>
