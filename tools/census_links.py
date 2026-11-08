@@ -26,6 +26,7 @@ only to compare.
 from __future__ import annotations
 
 import argparse
+import ast
 import collections
 import csv
 import json
@@ -120,6 +121,13 @@ def rel_class(s: str) -> str:
     return "other"
 
 
+def _first_image(images) -> str:
+    try:
+        return ast.literal_eval(images or "[]")[0]["id"]
+    except (ValueError, SyntaxError, IndexError, KeyError, TypeError):
+        return ""
+
+
 def load_census(directory: Path) -> list[dict]:
     """Census rows for 1901, 1911 and 1926. Observation IDs follow DATA_ARCHITECTURE 5.2 and are
     identical to the IDs used by tools/gedcom_census.py."""
@@ -135,6 +143,8 @@ def load_census(directory: Path) -> list[dict]:
                         "rel": _clean(r["updated_relationship_to_head"]) or _clean(r["relationship_to_head"]),
                         "marital": marital_class(r["updated_marriage"]), "marr_years": _int(r["years_married"]),
                         "born": _int(r["children_born_alive"]), "loc": r["a_id"],
+                        "marital_raw": _clean(r["updated_marriage"]), "occ": "",
+                        "birth": _clean(r["birthplace_county"]), "ref": r["aform_name"],
                     }
                 else:
                     row = {
@@ -145,6 +155,9 @@ def load_census(directory: Path) -> list[dict]:
                         "form": "", "rel": _clean(r.get("relation_to_head_updated")) or _clean(r["relation_to_head"]),
                         "marital": marital_class(r["marriage_status"]), "marr_years": _int(r["marriage_years"]),
                         "born": _int(r["children_born"]), "loc": r["id"],
+                        "marital_raw": _clean(r["marriage_status"]),
+                        "occ": _clean(r.get("occupation_updated")) or _clean(r.get("occupation")),
+                        "birth": _clean(r.get("birthplace")), "ref": _first_image(r.get("images")),
                     }
                 row["obs"] = f"census{row['year']}:{row['ded'].lower()}:{row['loc']}"
                 if row["obs"] in seen:

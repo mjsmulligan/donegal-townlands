@@ -51,9 +51,6 @@ button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .btn{font:inherit;font-size:.85rem;border:1px solid var(--line);background:var(--panel);color:var(--ink);padding:4px 10px;border-radius:6px;cursor:pointer}
 .btn:disabled{opacity:.4;cursor:not-allowed}
 .btn.go{border-color:var(--accent);color:var(--accent)}
-.row{display:grid;grid-template-columns:78px minmax(0,1fr) auto;gap:6px 12px;padding:10px 14px;border-top:1px solid var(--line);align-items:start}
-.row:first-of-type{border-top:0}
-.ctx{opacity:.62}
 .badge{font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;padding:2px 8px;border-radius:999px;text-align:center;align-self:start}
 .high{background:var(--high-soft);color:var(--high)} .medium{background:var(--med-soft);color:var(--med)} .low{background:var(--low-soft);color:var(--low)}
 .pair{display:grid;gap:2px}
@@ -74,10 +71,32 @@ details.out{margin-top:20px;background:var(--panel);border:1px solid var(--line)
 details.out summary{cursor:pointer;font-weight:600}
 textarea{width:100%;min-height:150px;margin-top:10px;font:.8rem var(--mono);background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:8px;box-sizing:border-box}
 .note{color:var(--muted);font-size:.85rem;margin:8px 0 0}
-@media (max-width:620px){
-  .row{grid-template-columns:minmax(0,1fr) auto}
-  .badge{grid-column:1/-1;justify-self:start}
-}
+
+.tw{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.88rem;min-width:760px}
+caption{text-align:left;padding:8px 14px;font-weight:600;background:var(--bg);border-bottom:1px solid var(--line);border-top:1px solid var(--line)}
+caption span{font-weight:400;color:var(--muted)}
+th{text-align:left;font-weight:600;color:var(--muted);font-size:.75rem;text-transform:uppercase;letter-spacing:.04em;padding:6px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:7px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+td.n{font-variant-numeric:tabular-nums;text-align:right}
+th.n{text-align:right}
+td.name{font-weight:600;min-width:150px}
+td.name small{font-weight:400;color:var(--muted)}
+tr.head td.name::after{content:" head";font-size:.7rem;font-weight:600;color:var(--accent);margin-left:4px;text-transform:uppercase}
+tr.nolink td{color:var(--muted)}
+tr.ctx td{opacity:.6}
+td.why{min-width:300px}
+.lk{padding:4px 0;border-top:1px dashed var(--line)}
+.lk:first-child{border-top:0;padding-top:0}
+.lk .top{display:flex;flex-wrap:wrap;gap:4px 8px;align-items:center}
+a.orig{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-soft);white-space:nowrap}
+a.orig:hover{border-bottom-color:var(--accent)}
+.stat{font-size:.75rem;font-weight:600;padding:1px 7px;border-radius:4px}
+.stat.accepted{background:var(--high-soft);color:var(--ok)} .stat.rejected{background:var(--low-soft);color:var(--no)}
+.lk .acts{margin-top:4px}
+.lk.flip{color:var(--muted)}
+
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 <div class="wrap">
@@ -121,30 +140,48 @@ let filt = "review";
 const esc = s => String(s == null ? "" : s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 function person(p){ return '<span class="who"><b>' + esc(p.name) + '</b> <span>' + esc(p.age) + ', ' + esc(p.rel) + (p.town ? ', ' + esc(p.town) : '') + '</span></span>'; }
 function headsHtml(rows){
-  const set = new Set();
-  rows.forEach(r => { set.add(r.from.hh); set.add(r.to.hh); });
-  const mem = new Set();
+  const own = new Set([rows[0].from.hh, rows[0].to.hh]);
+  const set = new Set(), mem = new Set();
   rows.forEach(r => { mem.add(r.from.obs); mem.add(r.to.obs); });
   D.rows.forEach(r => {
     if (rivals(r).length) return;
     if (mem.has(r.from.obs)) set.add(r.to.hh);
     if (mem.has(r.to.obs)) set.add(r.from.hh);
   });
-  const ids = [...set].sort((a, b) => D.hh[a].y - D.hh[b].y || D.hh[a].label.localeCompare(D.hh[b].label, undefined, {numeric: true}));
-  return '<div class="heads" aria-label="Heads of household">' + ids.map(id => { const h = D.hh[id];
+  const ids = [...set].filter(i => !own.has(i)).sort((a, b) => D.hh[a].y - D.hh[b].y);
+  if (!ids.length) return "";
+  return '<div class="heads"><div><span class="yr">Also</span>These people continue in another return:</div>' + ids.map(id => { const h = D.hh[id];
     return '<div><span class="yr">' + h.y + '</span><b>' + (h.head ? esc(h.head) + (h.age !== "" ? ', ' + esc(h.age) : '') : 'no head recorded') + '</b> <span class="sz">head, ' + esc(h.town) + ' ' + esc(h.label) + ', ' + h.size + ' in the household</span></div>'; }).join("") + '</div>';
 }
-function rowHtml(r, show){
-  const d = dec[r.k], rv = rivals(r);
+function who(p){ return esc(p.name) + ' (' + esc(p.age) + ', ' + esc(p.rel) + ')'; }
+function linkOut(r){
+  const d = dec[r.k], rv = rivals(r), b = blocked(r);
   const fl = r.flags.map(f => '<span class="flag">' + esc(f) + '</span>').join("") + (r.audit ? '<span class="aud">in audit sample</span>' : "");
   const rival = rv.length ? '<div class="rival">Also proposed: ' + rv.map(x => esc(x.from.name) + ' (' + esc(x.from.age) + ', ' + x.years.slice(0,4) + ') with ' + esc(x.to.name) + ' (' + esc(x.to.age) + ', ' + x.years.slice(-4) + ')' + (dec[x.k] ? ' [' + dec[x.k] + ']' : '')).join("; ") + '</div>' : "";
-  const b = blocked(r);
-  return '<div class="row' + (show ? "" : " ctx") + '"><span class="badge ' + r.conf + '">' + r.conf + '</span>' +
-    '<div><div class="pair">' + person(r.from) + '<span class="arrow">' + r.years.slice(0,4) + ' to ' + r.years.slice(-4) + ' &#8595;</span>' + person(r.to) + '</div>' +
+  return '<div class="lk"><div class="top"><span class="badge ' + r.conf + '">' + r.conf + '</span><span>to <b>' + esc(r.to.name) + '</b>, ' + esc(r.to.age) + ' in ' + r.years.slice(-4) + '</span>' + (d ? '<span class="stat ' + d + '">' + d + '</span>' : '') + '</div>' +
     '<div class="why" title="' + esc(r.from.obs + ' to ' + r.to.obs) + '">' + esc(r.method) + '</div>' +
-    (fl ? '<div class="flags">' + fl + '</div>' : "") + rival + (b ? '<div class="rival">Another candidate for this person is already accepted.</div>' : "") + '</div>' +
-    '<div class="acts"><button class="btn' + (d === "accepted" ? " on-a" : "") + '" data-k="' + esc(r.k) + '" data-a="accepted" aria-pressed="' + (d === "accepted") + '"' + (b && d !== "accepted" ? " disabled" : "") + '>Accept</button>' +
+    (fl ? '<div class="flags">' + fl + '</div>' : "") + rival + (b ? '<div class="rival">Another candidate for this person is already accepted.</div>' : "") +
+    '<div class="acts"><button class="btn' + (d === "accepted" ? " on-a" : "") + '" data-k="' + esc(r.k) + '" data-a="accepted" aria-pressed="' + (d === "accepted") + '"' + (b && d !== "accepted" ? " disabled" : "") + '>Accept</button> ' +
     '<button class="btn' + (d === "rejected" ? " on-r" : "") + '" data-k="' + esc(r.k) + '" data-a="rejected" aria-pressed="' + (d === "rejected") + '">Reject</button></div></div>';
+}
+function linkIn(r){
+  const d = dec[r.k];
+  return '<div class="lk flip"><div class="top"><span class="badge ' + r.conf + '">' + r.conf + '</span><span>from <b>' + esc(r.from.name) + '</b>, ' + esc(r.from.age) + ' in ' + r.years.slice(0,4) + '</span>' + (d ? '<span class="stat ' + d + '">' + d + '</span>' : '') + '</div></div>';
+}
+function table(hid, side, f){
+  const h = D.hh[hid];
+  const mine = D.rows.filter(r => r[side].hh === hid);
+  const bySide = {};
+  mine.forEach(r => { (bySide[r[side].obs] = bySide[r[side].obs] || []).push(r); });
+  const out = side === "from";
+  const trs = h.members.map(m => {
+    const ls = bySide[m.obs] || [];
+    const cls = (m.rel === "Head" || /^head/i.test(m.rel) ? "head " : "") + (ls.length ? (ls.some(f) ? "" : "ctx ") : "nolink");
+    const why = ls.length ? ls.map(out ? linkOut : linkIn).join("") : '<span>' + (out ? "No link proposed" : "No link proposed from an earlier return") + '</span>';
+    return '<tr class="' + cls + '"><td class="name">' + esc(m.name) + '</td><td class="n">' + esc(m.age) + '</td><td>' + esc(m.sex) + '</td><td>' + esc(m.rel) + '</td><td>' + esc(m.marital) + '</td><td>' + esc(m.occ) + '</td><td>' + esc(m.birth) + '</td><td>' + (m.url ? '<a class="orig" href="' + esc(m.url) + '" target="_blank" rel="noopener">View original</a>' : "") + '</td><td class="why">' + why + '</td></tr>';
+  }).join("");
+  return '<div class="tw"><table><caption>' + h.y + ': ' + esc(h.town) + ' ' + esc(h.label) + ' <span>' + h.members.length + ' people' + (h.head ? ', head ' + esc(h.head) : '') + '</span></caption>' +
+    '<thead><tr><th>Name</th><th class="n">Age</th><th>Sex</th><th>Relation</th><th>Marital</th><th>Occupation</th><th>Born</th><th>Original</th><th>' + (out ? "Proposed link and rationale" : "Linked from") + '</th></tr></thead><tbody>' + trs + '</tbody></table></div>';
 }
 function render(){
   const f = FILTERS.find(x => x[0] === filt)[1 + 1];
@@ -163,7 +200,7 @@ function render(){
     const hi = rows.filter(r => r.conf === "high" && !dec[r.k] && !blocked(r)).length;
     return '<section class="card"><div class="ch"><div><h2>' + esc(g) + '</h2><div class="meta">' + rows.length + ' proposed link' + (rows.length === 1 ? "" : "s") + '</div></div>' +
       (hi ? '<button class="btn go" data-g="' + esc(g) + '">Accept the ' + hi + ' high link' + (hi === 1 ? "" : "s") + '</button>' : '') + '</div>' + headsHtml(rows) +
-      rows.map(r => rowHtml(r, f(r))).join("") + '</section>';
+      table(rows[0].from.hh, "from", f) + table(rows[0].to.hh, "to", f) + '</section>';
   }).join("") : '<p class="empty">Nothing in this view.</p>';
   const out = D.rows.filter(r => dec[r.k]);
   document.getElementById("ncount").textContent = out.length;

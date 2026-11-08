@@ -55,8 +55,29 @@ def build_rows(csv_files: list[Path]) -> list[dict]:
     return rows
 
 
+CENSUS_URLS = {  # National Archives viewer patterns, as in tools/build.py CENSUS_URLS
+    1901: "https://nationalarchives.ie/collections/search-the-census/view-pdf/?doc=%s",
+    1911: "https://nationalarchives.ie/collections/search-the-census/view-pdf/?doc=%s",
+    1926: "https://nationalarchives.ie/collections/search-the-1926-census/view-1926-pdf/?doc=%s",
+}
+
+
+def _member(c: dict) -> dict:
+    marital = c["marital_raw"]
+    extra = []
+    if c["marr_years"] is not None:
+        extra.append("%s yrs" % c["marr_years"])
+    if c["born"] is not None:
+        extra.append("%s born" % c["born"])
+    if extra:
+        marital = (marital + ", " if marital else "") + ", ".join(extra)
+    return {"obs": c["obs"], "name": cl._name(c), "age": c["age"] if c["age"] is not None else "",
+            "sex": c["sex"], "rel": c["rel"], "marital": marital, "occ": c["occ"], "birth": c["birth"],
+            "url": CENSUS_URLS[c["year"]] % c["ref"] if c["ref"] else ""}
+
+
 def household_heads(census_dir: Path, rows: list[dict]) -> dict:
-    """Head of each household that a proposed link touches, and the household id on every row."""
+    """Every household a proposed link touches, with its head and members, and the household id on each row."""
     census = cl.load_census(census_dir)
     obs = {r["obs"]: r for r in census}
     members = {}
@@ -69,10 +90,11 @@ def household_heads(census_dir: Path, rows: list[dict]) -> dict:
             hid = "%d|%s" % (c["year"], c["form"] or ("%s|%s" % (c["tkey"], c["house"] or c["loc"])))
             row[side]["hh"] = hid
             if hid not in heads:
-                head = next((m for m in members[c["hh"]] if m["relc"] == "head"), None)
+                group = members[c["hh"]]
+                head = next((m for m in group if m["relc"] == "head"), None)
                 heads[hid] = {"y": c["year"], "label": cl._hh_label(c), "town": c["townland"],
                               "head": cl._name(head) if head else "", "age": head["age"] if head else "",
-                              "size": len(members[c["hh"]])}
+                              "size": len(group), "members": [_member(m) for m in group]}
     return heads
 
 
