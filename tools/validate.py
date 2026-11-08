@@ -19,6 +19,7 @@ import sys
 from source_manifest import verify_manifest
 import media
 import variants_reference
+import given_names_reference
 import gedcom_census
 import gedcom_people
 
@@ -67,6 +68,7 @@ if verify_manifest() != 0:
 # needs the private GEDCOM, so it runs with: python tools/gedcom_census.py check --gedcom FILE
 bad += gedcom_census.check_decisions()
 bad += variants_reference.check()
+bad += given_names_reference.check()
 # Family tree research on the pages (WP17): 100/75/50 applied again to every people.json.
 bad += gedcom_people.check_repo()
 

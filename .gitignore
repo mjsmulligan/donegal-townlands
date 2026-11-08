@@ -8,3 +8,7 @@ data/source/logainm/*/raw/
 # Generated GEDCOM reports hold names from Mike's private GEDCOM. Regenerate with
 # python tools/gedcom_census.py propose FILE. Only the reviewed decisions file is committed.
 data/processed/gedcom/
+
+# Generated census link reports (WP18). Regenerate with python tools/census_links.py propose.
+# Only reviewed decisions are committed.
+data/processed/census_links/

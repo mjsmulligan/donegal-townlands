@@ -1,0 +1,28 @@
+{
+ "_note": "Thresholds for tools/census_links.py (WP18). Tuned against the tree test in docs/CENSUS_GEDCOM_SPEC.md section 9. Values only, no code. old_age_from and age_drift_max_old allow a larger age drift for people of 60 or more at the later return, graded low.",
+ "age_tolerance": 3,
+ "age_tolerance_wide": 6,
+ "wide_age_before_birth_year": 1864,
+ "margin": 2,
+ "married_name_max_candidates": 3,
+ "married_name_extra_years": 1,
+ "weights": {
+  "given_exact": 3,
+  "given_verified": 2,
+  "given_proposed": 1,
+  "surname_exact": 2,
+  "surname_variant": 1,
+  "age_drift_0_1": 3,
+  "age_drift_2_3": 2,
+  "age_drift_wide": 1,
+  "household_support_each": 1,
+  "household_support_max": 3,
+  "same_townland": 1,
+  "same_house": 1,
+  "implausible_relation": -3,
+  "marital_regress": -3,
+  "surname_change": -2
+ },
+ "old_age_from": 60,
+ "age_drift_max_old": 12
+}
