@@ -131,6 +131,7 @@ const KEY = "censusreview:" + D.townland.toLowerCase();
 const RANK = {low:0, medium:1, high:2};
 let dec = {};
 try { dec = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) { dec = {}; }
+D.rows.forEach(r => { if (r.prior && !(r.k in dec)) dec[r.k] = r.prior; });
 function save(){ try { localStorage.setItem(KEY, JSON.stringify(dec)); } catch (e) {} }
 const byFrom = {}, byTo = {};
 D.rows.forEach(r => { (byFrom[r.from.obs] = byFrom[r.from.obs] || []).push(r); (byTo[r.to.obs] = byTo[r.to.obs] || []).push(r); });

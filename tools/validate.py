@@ -20,6 +20,7 @@ from source_manifest import verify_manifest
 import media
 import variants_reference
 import given_names_reference
+import census_links
 import gedcom_census
 import gedcom_people
 
@@ -69,6 +70,7 @@ if verify_manifest() != 0:
 bad += gedcom_census.check_decisions()
 bad += variants_reference.check()
 bad += given_names_reference.check()
+bad += census_links.check_decisions()
 # Family tree research on the pages (WP17): 100/75/50 applied again to every people.json.
 bad += gedcom_people.check_repo()
 

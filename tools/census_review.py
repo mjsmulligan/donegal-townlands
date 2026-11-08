@@ -41,7 +41,7 @@ def build_rows(csv_files: list[Path]) -> list[dict]:
                     "to": {"obs": r["to_obs"], "name": r["to_name"], "age": r["to_age"],
                            "rel": r["to_relation"], "town": ""},
                     "method": r["method"], "flags": [x for x in r["flags"].split("; ") if x],
-                    "audit": False,
+                    "audit": False, "prior": r["status"],
                     "_ft": r["from_townland"], "_tt": r["to_townland"],
                 })
     for r in rows:
