@@ -38,7 +38,8 @@ class WalkRenderTests(unittest.TestCase):
         cls.root = Path(cls.tmp.name)
         build.ROOT = cls.root
         (cls.root / "engine").mkdir()
-        shutil.copy(REAL_ROOT / "engine" / "walk.html", cls.root / "engine" / "walk.html")
+        for _n in ("walk.html", "index.html"):
+            shutil.copy(REAL_ROOT / "engine" / _n, cls.root / "engine" / _n)
         shutil.copytree(REAL_ROOT / "data" / "processed" / "places", cls.root / "data" / "processed" / "places")
         (cls.root / "townlands").mkdir()
         place = {"logainm_id": "1", "name_en": "Sample", "name_ga": "", "ded_id": "1372439", "civil_parish_id": "784",
@@ -162,7 +163,8 @@ class MediaRenderTests(unittest.TestCase):
         cls.root = Path(cls.tmp.name)
         build.ROOT = cls.root
         (cls.root / "engine").mkdir()
-        shutil.copy(REAL_ROOT / "engine" / "walk.html", cls.root / "engine" / "walk.html")
+        for _n in ("walk.html", "index.html"):
+            shutil.copy(REAL_ROOT / "engine" / _n, cls.root / "engine" / _n)
         shutil.copytree(REAL_ROOT / "data" / "processed" / "places", cls.root / "data" / "processed" / "places")
         (cls.root / "townlands").mkdir()
         place = {"logainm_id": "1", "name_en": "Sample", "name_ga": "", "ded_id": "1372439", "civil_parish_id": "784",
