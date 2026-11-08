@@ -55,12 +55,33 @@ def build_rows(csv_files: list[Path]) -> list[dict]:
     return rows
 
 
-def build_page(townland: str, rows: list[dict]) -> str:
+def household_heads(census_dir: Path, rows: list[dict]) -> dict:
+    """Head of each household that a proposed link touches, and the household id on every row."""
+    census = cl.load_census(census_dir)
+    obs = {r["obs"]: r for r in census}
+    members = {}
+    for r in census:
+        members.setdefault(r["hh"], []).append(r)
+    heads = {}
+    for row in rows:
+        for side in ("from", "to"):
+            c = obs[row[side]["obs"]]
+            hid = "%d|%s" % (c["year"], c["form"] or ("%s|%s" % (c["tkey"], c["house"] or c["loc"])))
+            row[side]["hh"] = hid
+            if hid not in heads:
+                head = next((m for m in members[c["hh"]] if m["relc"] == "head"), None)
+                heads[hid] = {"y": c["year"], "label": cl._hh_label(c), "town": c["townland"],
+                              "head": cl._name(head) if head else "", "age": head["age"] if head else "",
+                              "size": len(members[c["hh"]])}
+    return heads
+
+
+def build_page(townland: str, rows: list[dict], heads: dict) -> str:
     groups = []
     for r in rows:
         if r["group"] not in groups:
             groups.append(r["group"])
-    data = {"townland": townland, "rows": rows, "groups": groups}
+    data = {"townland": townland, "rows": rows, "groups": groups, "hh": heads}
     payload = json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
     return TEMPLATE.read_text(encoding="utf-8").replace("__DATA__", payload)
 
@@ -82,7 +103,7 @@ def main(argv=None) -> int:
         print("No proposed links involve %s." % args.townland)
         return 1
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(build_page(args.townland.title(), rows), encoding="utf-8")
+    out.write_text(build_page(args.townland.title(), rows, household_heads(args.census_dir, rows)), encoding="utf-8")
     n = {c: sum(1 for r in rows if r["conf"] == c) for c in ("high", "medium", "low")}
     print("%d links (high %d, medium %d, low %d). Review page: %s" % (len(rows), n["high"], n["medium"], n["low"], out))
     return 0

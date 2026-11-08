@@ -43,6 +43,10 @@ button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:8px;margin-top:14px;overflow:hidden}
 .ch{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;justify-content:space-between;padding:10px 14px;border-bottom:1px solid var(--line)}
 .ch h2{font-size:.95rem;font-weight:600;margin:0;min-width:0;overflow-wrap:anywhere}
+.heads{padding:8px 14px;border-bottom:1px solid var(--line);background:var(--accent-soft);font-size:.85rem;display:grid;gap:2px}
+.heads b{font-weight:600}
+.heads .yr{display:inline-block;min-width:3.2em;font-weight:600;color:var(--accent);font-variant-numeric:tabular-nums}
+.heads .sz{color:var(--muted)}
 .ch .meta{color:var(--muted);font-size:.85rem}
 .btn{font:inherit;font-size:.85rem;border:1px solid var(--line);background:var(--panel);color:var(--ink);padding:4px 10px;border-radius:6px;cursor:pointer}
 .btn:disabled{opacity:.4;cursor:not-allowed}
@@ -116,6 +120,20 @@ const FILTERS = [
 let filt = "review";
 const esc = s => String(s == null ? "" : s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 function person(p){ return '<span class="who"><b>' + esc(p.name) + '</b> <span>' + esc(p.age) + ', ' + esc(p.rel) + (p.town ? ', ' + esc(p.town) : '') + '</span></span>'; }
+function headsHtml(rows){
+  const set = new Set();
+  rows.forEach(r => { set.add(r.from.hh); set.add(r.to.hh); });
+  const mem = new Set();
+  rows.forEach(r => { mem.add(r.from.obs); mem.add(r.to.obs); });
+  D.rows.forEach(r => {
+    if (rivals(r).length) return;
+    if (mem.has(r.from.obs)) set.add(r.to.hh);
+    if (mem.has(r.to.obs)) set.add(r.from.hh);
+  });
+  const ids = [...set].sort((a, b) => D.hh[a].y - D.hh[b].y || D.hh[a].label.localeCompare(D.hh[b].label, undefined, {numeric: true}));
+  return '<div class="heads" aria-label="Heads of household">' + ids.map(id => { const h = D.hh[id];
+    return '<div><span class="yr">' + h.y + '</span><b>' + (h.head ? esc(h.head) + (h.age !== "" ? ', ' + esc(h.age) : '') : 'no head recorded') + '</b> <span class="sz">head, ' + esc(h.town) + ' ' + esc(h.label) + ', ' + h.size + ' in the household</span></div>'; }).join("") + '</div>';
+}
 function rowHtml(r, show){
   const d = dec[r.k], rv = rivals(r);
   const fl = r.flags.map(f => '<span class="flag">' + esc(f) + '</span>').join("") + (r.audit ? '<span class="aud">in audit sample</span>' : "");
@@ -144,7 +162,7 @@ function render(){
   document.getElementById("list").innerHTML = groups.length ? groups.map(([g, rows]) => {
     const hi = rows.filter(r => r.conf === "high" && !dec[r.k] && !blocked(r)).length;
     return '<section class="card"><div class="ch"><div><h2>' + esc(g) + '</h2><div class="meta">' + rows.length + ' proposed link' + (rows.length === 1 ? "" : "s") + '</div></div>' +
-      (hi ? '<button class="btn go" data-g="' + esc(g) + '">Accept the ' + hi + ' high link' + (hi === 1 ? "" : "s") + '</button>' : '') + '</div>' +
+      (hi ? '<button class="btn go" data-g="' + esc(g) + '">Accept the ' + hi + ' high link' + (hi === 1 ? "" : "s") + '</button>' : '') + '</div>' + headsHtml(rows) +
       rows.map(r => rowHtml(r, f(r))).join("") + '</section>';
   }).join("") : '<p class="empty">Nothing in this view.</p>';
   const out = D.rows.filter(r => dec[r.k]);
