@@ -1,0 +1,177 @@
+<title>Census Link Review</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400&display=swap">
+<style>
+/* Layout: a sticky summary bar, then one card per household pair with a row per proposed link. */
+:root{
+  --bg:#f5f7f8; --panel:#ffffff; --ink:#1d2a33; --muted:#5d6c77; --line:#dbe2e7;
+  --accent:#1f6f8b; --accent-ink:#ffffff; --accent-soft:#e1eef3;
+  --high:#2f7d5b; --high-soft:#e0f1e8;
+  --med:#a06a00; --med-soft:#fbf0d2;
+  --low:#b2403f; --low-soft:#f8e1e0;
+  --ok:#2f7d5b; --no:#b2403f;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#12191e; --panel:#1a242b; --ink:#e4ebef; --muted:#93a3ae; --line:#2b3a44;
+  --accent:#5fb4d1; --accent-ink:#0d1a21; --accent-soft:#1e3440;
+  --high:#6cc39a; --high-soft:#1b3328; --med:#e5b84e; --med-soft:#3a3016;
+  --low:#ef8785; --low-soft:#3d2121; --ok:#6cc39a; --no:#ef8785; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#12191e; --panel:#1a242b; --ink:#e4ebef; --muted:#93a3ae; --line:#2b3a44;
+  --accent:#5fb4d1; --accent-ink:#0d1a21; --accent-soft:#1e3440;
+  --high:#6cc39a; --high-soft:#1b3328; --med:#e5b84e; --med-soft:#3a3016;
+  --low:#ef8785; --low-soft:#3d2121; --ok:#6cc39a; --no:#ef8785; color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.45;
+  padding-block:0 48px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:980px;margin:0 auto}
+header{padding-top:20px}
+h1{font-size:1.5rem;font-weight:600;margin:0 0 4px;text-wrap:balance}
+.sub{color:var(--muted);margin:0 0 14px;max-width:70ch}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding:10px 0;border-bottom:1px solid var(--line)}
+.stats{display:flex;flex-wrap:wrap;gap:6px 18px;font-variant-numeric:tabular-nums;margin-bottom:8px}
+.stats b{font-weight:600}
+.prog{height:6px;background:var(--line);border-radius:3px;overflow:hidden;display:flex;margin-bottom:10px}
+.prog i{display:block;height:100%}
+.prog .a{background:var(--ok)} .prog .r{background:var(--no)}
+.tabs{display:flex;flex-wrap:wrap;gap:6px}
+.tab{font:inherit;border:1px solid var(--line);background:var(--panel);color:var(--ink);padding:5px 11px;border-radius:999px;cursor:pointer}
+.tab[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.tab small{opacity:.75;margin-left:4px;font-variant-numeric:tabular-nums}
+button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;margin-top:14px;overflow:hidden}
+.ch{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;justify-content:space-between;padding:10px 14px;border-bottom:1px solid var(--line)}
+.ch h2{font-size:.95rem;font-weight:600;margin:0;min-width:0;overflow-wrap:anywhere}
+.ch .meta{color:var(--muted);font-size:.85rem}
+.btn{font:inherit;font-size:.85rem;border:1px solid var(--line);background:var(--panel);color:var(--ink);padding:4px 10px;border-radius:6px;cursor:pointer}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.btn.go{border-color:var(--accent);color:var(--accent)}
+.row{display:grid;grid-template-columns:78px minmax(0,1fr) auto;gap:6px 12px;padding:10px 14px;border-top:1px solid var(--line);align-items:start}
+.row:first-of-type{border-top:0}
+.ctx{opacity:.62}
+.badge{font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;padding:2px 8px;border-radius:999px;text-align:center;align-self:start}
+.high{background:var(--high-soft);color:var(--high)} .medium{background:var(--med-soft);color:var(--med)} .low{background:var(--low-soft);color:var(--low)}
+.pair{display:grid;gap:2px}
+.who{min-width:0}
+.who b{font-weight:600}
+.who span{color:var(--muted);font-size:.9rem}
+.arrow{color:var(--muted)}
+.why{margin-top:3px;color:var(--muted);font-size:.85rem}
+.flags{display:flex;flex-wrap:wrap;gap:4px;margin-top:4px}
+.flag{font-size:.75rem;padding:1px 7px;border-radius:4px;background:var(--low-soft);color:var(--low)}
+.aud{font-size:.75rem;padding:1px 7px;border-radius:4px;background:var(--accent-soft);color:var(--accent)}
+.rival{margin-top:4px;font-size:.85rem;color:var(--med)}
+.acts{display:flex;gap:6px}
+.btn.on-a{background:var(--ok);color:var(--accent-ink);border-color:var(--ok)}
+.btn.on-r{background:var(--no);color:var(--accent-ink);border-color:var(--no)}
+.empty{padding:36px 0;color:var(--muted);text-align:center}
+details.out{margin-top:20px;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:10px 14px}
+details.out summary{cursor:pointer;font-weight:600}
+textarea{width:100%;min-height:150px;margin-top:10px;font:.8rem var(--mono);background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:8px;box-sizing:border-box}
+.note{color:var(--muted);font-size:.85rem;margin:8px 0 0}
+@media (max-width:620px){
+  .row{grid-template-columns:minmax(0,1fr) auto}
+  .badge{grid-column:1/-1;justify-self:start}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+<div class="wrap">
+<header>
+  <h1 id="ttl"></h1>
+  <p class="sub">Each card is one household in an earlier return and the household its members appear in later. Accept a link only where you are satisfied it is the same person. Nothing here is saved to the project until you send the decisions back.</p>
+</header>
+<div class="bar">
+  <div class="stats" id="stats"></div>
+  <div class="prog" id="prog"></div>
+  <div class="tabs" id="tabs"></div>
+</div>
+<main id="list"></main>
+<details class="out" id="out">
+  <summary>Your decisions (<span id="ncount">0</span>)</summary>
+  <p class="note">Press Copy and paste the text into the chat. Only accepted and rejected links are listed. Decisions are also kept in this browser while you work.</p>
+  <button class="btn go" id="copy" type="button">Copy decisions</button> <span class="note" id="copied"></span>
+  <textarea id="csv" readonly aria-label="Decisions as CSV"></textarea>
+</details>
+</div>
+<script>
+const D = __DATA__;
+const KEY = "censusreview:" + D.townland.toLowerCase();
+const RANK = {low:0, medium:1, high:2};
+let dec = {};
+try { dec = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) { dec = {}; }
+function save(){ try { localStorage.setItem(KEY, JSON.stringify(dec)); } catch (e) {} }
+const byFrom = {}, byTo = {};
+D.rows.forEach(r => { (byFrom[r.from.obs] = byFrom[r.from.obs] || []).push(r); (byTo[r.to.obs] = byTo[r.to.obs] || []).push(r); });
+function rivals(r){ return (byFrom[r.from.obs].concat(byTo[r.to.obs])).filter((x, i, a) => x !== r && a.indexOf(x) === i); }
+function blocked(r){ return rivals(r).some(x => dec[x.k] === "accepted"); }
+function needs(r){ return !dec[r.k] && (r.conf !== "high" || r.audit); }
+const FILTERS = [
+  ["review", "To review", r => needs(r)],
+  ["audit", "High audit sample", r => r.audit],
+  ["high", "All high", r => r.conf === "high"],
+  ["decided", "Decided", r => !!dec[r.k]],
+  ["all", "All links", r => true]
+];
+let filt = "review";
+const esc = s => String(s == null ? "" : s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+function person(p){ return '<span class="who"><b>' + esc(p.name) + '</b> <span>' + esc(p.age) + ', ' + esc(p.rel) + (p.town ? ', ' + esc(p.town) : '') + '</span></span>'; }
+function rowHtml(r, show){
+  const d = dec[r.k], rv = rivals(r);
+  const fl = r.flags.map(f => '<span class="flag">' + esc(f) + '</span>').join("") + (r.audit ? '<span class="aud">in audit sample</span>' : "");
+  const rival = rv.length ? '<div class="rival">Also proposed: ' + rv.map(x => esc(x.from.name) + ' (' + esc(x.from.age) + ', ' + x.years.slice(0,4) + ') with ' + esc(x.to.name) + ' (' + esc(x.to.age) + ', ' + x.years.slice(-4) + ')' + (dec[x.k] ? ' [' + dec[x.k] + ']' : '')).join("; ") + '</div>' : "";
+  const b = blocked(r);
+  return '<div class="row' + (show ? "" : " ctx") + '"><span class="badge ' + r.conf + '">' + r.conf + '</span>' +
+    '<div><div class="pair">' + person(r.from) + '<span class="arrow">' + r.years.slice(0,4) + ' to ' + r.years.slice(-4) + ' &#8595;</span>' + person(r.to) + '</div>' +
+    '<div class="why" title="' + esc(r.from.obs + ' to ' + r.to.obs) + '">' + esc(r.method) + '</div>' +
+    (fl ? '<div class="flags">' + fl + '</div>' : "") + rival + (b ? '<div class="rival">Another candidate for this person is already accepted.</div>' : "") + '</div>' +
+    '<div class="acts"><button class="btn' + (d === "accepted" ? " on-a" : "") + '" data-k="' + esc(r.k) + '" data-a="accepted" aria-pressed="' + (d === "accepted") + '"' + (b && d !== "accepted" ? " disabled" : "") + '>Accept</button>' +
+    '<button class="btn' + (d === "rejected" ? " on-r" : "") + '" data-k="' + esc(r.k) + '" data-a="rejected" aria-pressed="' + (d === "rejected") + '">Reject</button></div></div>';
+}
+function render(){
+  const f = FILTERS.find(x => x[0] === filt)[1 + 1];
+  const acc = D.rows.filter(r => dec[r.k] === "accepted").length, rej = D.rows.filter(r => dec[r.k] === "rejected").length;
+  const todo = D.rows.filter(needs).length, n = D.rows.length;
+  document.getElementById("stats").innerHTML = '<span><b>' + n + '</b> proposed links</span><span><b>' + acc + '</b> accepted</span><span><b>' + rej + '</b> rejected</span><span><b>' + todo + '</b> still to review</span>';
+  document.getElementById("prog").innerHTML = '<i class="a" style="width:' + (100 * acc / n) + '%"></i><i class="r" style="width:' + (100 * rej / n) + '%"></i>';
+  document.getElementById("tabs").innerHTML = FILTERS.map(x => '<button class="tab" data-f="' + x[0] + '" aria-pressed="' + (x[0] === filt) + '">' + x[1] + '<small>' + D.rows.filter(x[2]).length + '</small></button>').join("");
+  const groups = [];
+  D.groups.forEach(g => {
+    const rows = D.rows.filter(r => r.group === g);
+    if (rows.some(f)) groups.push([g, rows]);
+  });
+  groups.sort((a, b) => Math.min(...a[1].map(r => RANK[r.conf])) - Math.min(...b[1].map(r => RANK[r.conf])));
+  document.getElementById("list").innerHTML = groups.length ? groups.map(([g, rows]) => {
+    const hi = rows.filter(r => r.conf === "high" && !dec[r.k] && !blocked(r)).length;
+    return '<section class="card"><div class="ch"><div><h2>' + esc(g) + '</h2><div class="meta">' + rows.length + ' proposed link' + (rows.length === 1 ? "" : "s") + '</div></div>' +
+      (hi ? '<button class="btn go" data-g="' + esc(g) + '">Accept the ' + hi + ' high link' + (hi === 1 ? "" : "s") + '</button>' : '') + '</div>' +
+      rows.map(r => rowHtml(r, f(r))).join("") + '</section>';
+  }).join("") : '<p class="empty">Nothing in this view.</p>';
+  const out = D.rows.filter(r => dec[r.k]);
+  document.getElementById("ncount").textContent = out.length;
+  const today = new Date().toISOString().slice(0, 10);
+  const q = s => '"' + String(s).replace(/"/g, '""') + '"';
+  document.getElementById("csv").value = "status,confidence,from_obs,to_obs,from_name,to_name,reviewer,date\n" +
+    out.map(r => [dec[r.k], r.conf, r.from.obs, r.to.obs, q(r.from.name), q(r.to.name), "Mike", today].join(",")).join("\n");
+}
+document.addEventListener("click", e => {
+  const t = e.target.closest("button"); if (!t) return;
+  if (t.dataset.f) { filt = t.dataset.f; render(); return; }
+  if (t.dataset.a) {
+    const k = t.dataset.k;
+    if (dec[k] === t.dataset.a) delete dec[k]; else dec[k] = t.dataset.a;
+    save(); render(); return;
+  }
+  if (t.dataset.g) {
+    D.rows.filter(r => r.group === t.dataset.g && r.conf === "high" && !dec[r.k] && !blocked(r)).forEach(r => { dec[r.k] = "accepted"; });
+    save(); render(); return;
+  }
+  if (t.id === "copy") {
+    const ta = document.getElementById("csv"), m = document.getElementById("copied");
+    const fallback = () => { ta.select(); m.textContent = "Press Ctrl+C to copy."; };
+    try { navigator.clipboard.writeText(ta.value).then(() => { m.textContent = "Copied."; }, fallback); } catch (err) { fallback(); }
+  }
+});
+document.getElementById("ttl").textContent = D.townland + ": census links to review";
+render();
+</script>
