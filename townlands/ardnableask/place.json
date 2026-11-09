@@ -1,0 +1,14 @@
+{
+  "logainm_id": "14238",
+  "name_en": "Ardnableask",
+  "name_ga": "Ard na mBlaosc",
+  "place_type": "townland",
+  "ded_id": "1372542",
+  "civil_parish_id": "784",
+  "barony_id": "52",
+  "county_id": "100013",
+  "latitude": "54.69622912710026",
+  "longitude": "-8.010488268960446",
+  "snapshot_date": "2026-11-09",
+  "_generated_by": "donegal-townlands.create_townland_cases"
+}

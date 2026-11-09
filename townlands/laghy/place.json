@@ -1,0 +1,14 @@
+{
+  "logainm_id": "14144",
+  "name_en": "Laghy",
+  "name_ga": "An Lathaigh",
+  "place_type": "townland",
+  "ded_id": "1372507",
+  "civil_parish_id": "785",
+  "barony_id": "52",
+  "county_id": "100013",
+  "latitude": "54.617850625448476",
+  "longitude": "-8.081772569922919",
+  "snapshot_date": "2026-11-09",
+  "_generated_by": "donegal-townlands.create_townland_cases"
+}

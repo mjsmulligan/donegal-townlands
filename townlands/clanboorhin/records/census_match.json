@@ -1,0 +1,39 @@
+{
+  "_generated_by": "donegal-townlands.attach_census",
+  "status": "proposed",
+  "note": "Matched by identical name only. Not reviewed.",
+  "ded": "Donegal",
+  "years": {
+    "1901": {
+      "spellings": [
+        {
+          "spelling": "Clanboorhin",
+          "method": "exact_name",
+          "rows": 39
+        }
+      ],
+      "people": 39
+    },
+    "1911": {
+      "spellings": [
+        {
+          "spelling": "Clanboorhin",
+          "method": "exact_name",
+          "rows": 50
+        }
+      ],
+      "people": 50
+    },
+    "1926": {
+      "spellings": [
+        {
+          "spelling": "Clanboorhin",
+          "method": "exact_name",
+          "rows": 47
+        }
+      ],
+      "people": 47
+    }
+  },
+  "corrections": []
+}

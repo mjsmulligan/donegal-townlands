@@ -1,0 +1,14 @@
+{
+  "logainm_id": "14245",
+  "name_en": "Roshin Island",
+  "name_ga": "",
+  "place_type": "townland",
+  "ded_id": "1372542",
+  "civil_parish_id": "784",
+  "barony_id": "52",
+  "county_id": "100013",
+  "latitude": "54.670573530012504",
+  "longitude": "-8.04572989420831",
+  "snapshot_date": "2026-11-09",
+  "_generated_by": "donegal-townlands.create_townland_cases"
+}

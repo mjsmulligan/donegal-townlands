@@ -1,0 +1,14 @@
+{
+  "logainm_id": "14024",
+  "name_en": "Summerhill",
+  "name_ga": "Cnoc an tSamhraidh",
+  "place_type": "townland",
+  "ded_id": "1372456",
+  "civil_parish_id": "801",
+  "barony_id": "54",
+  "county_id": "100013",
+  "latitude": "54.637959376977825",
+  "longitude": "-8.158183455021954",
+  "snapshot_date": "2026-11-09",
+  "_generated_by": "donegal-townlands.create_townland_cases"
+}

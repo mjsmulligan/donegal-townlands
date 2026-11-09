@@ -1,0 +1,14 @@
+{
+  "logainm_id": "14042",
+  "name_en": "Tullaghcullion",
+  "name_ga": "",
+  "place_type": "townland",
+  "ded_id": "1372456",
+  "civil_parish_id": "784",
+  "barony_id": "52",
+  "county_id": "100013",
+  "latitude": "54.64495684581314",
+  "longitude": "-8.118212768470238",
+  "snapshot_date": "2026-11-09",
+  "_generated_by": "donegal-townlands.create_townland_cases"
+}

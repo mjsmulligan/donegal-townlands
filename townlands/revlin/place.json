@@ -1,0 +1,14 @@
+{
+  "logainm_id": "14022",
+  "name_en": "Revlin",
+  "name_ga": "Ruibhlinn",
+  "place_type": "townland",
+  "ded_id": "1372456",
+  "civil_parish_id": "801",
+  "barony_id": "54",
+  "county_id": "100013",
+  "latitude": "54.652294640881514",
+  "longitude": "-8.125290722653267",
+  "snapshot_date": "2026-11-09",
+  "_generated_by": "donegal-townlands.create_townland_cases"
+}

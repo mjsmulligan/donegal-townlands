@@ -1,0 +1,969 @@
+<!doctype html>
+<html lang="en-IE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Greaghs | Donegal Townlands</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&display=swap">
+<style>
+:root{
+  /* Layout concept: a gallery walk. One painted scene per plate, full width, with a museum caption beneath.
+     The sky moves from dawn (1850s) through day and late afternoon to dusk (1926) as the plates go on.
+     Cottages stand for households. Tables and checklists wait in the archive at the end. */
+  --wall:#F3F6F4; --paper:#FBFCFA; --ink:#1D2F33; --ink2:#53686D; --rule:#D3DDD9;
+  --hill:#7FAEA5; --hill-d:#4F8A86; --gorse:#EBC94B; --gorse-soft:#F5E8AC; --lough:#C4DAE5;
+  --display:'Newsreader', Georgia, 'Times New Roman', serif;
+  --body:'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  color-scheme: light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-snap-type:y proximity}
+body{margin:0;background:var(--wall);color:var(--ink);font:400 17px/1.6 var(--body);-webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums}
+a{color:var(--ink);text-decoration-color:var(--hill);text-underline-offset:3px}
+:focus-visible{outline:3px solid var(--ink);outline-offset:2px;border-radius:3px}
+.wrap,.sheet,.plate>*{min-width:0}
+.wrap{max-width:1240px;margin-inline:auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);font-weight:300;margin:0;text-wrap:balance;line-height:1.04;letter-spacing:-.012em}
+p{margin:0}
+.small{font-size:14px;color:var(--ink2);line-height:1.5}
+
+/* header and hud */
+.top{position:fixed;inset:0 0 auto;z-index:40;padding-top:env(safe-area-inset-top,0px);background:linear-gradient(180deg,rgba(243,246,244,.92),rgba(243,246,244,0));pointer-events:none}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:56px;gap:16px}
+.top .brand{font:italic 400 21px var(--display);pointer-events:auto;text-decoration:none}
+.top .right{display:flex;align-items:center;gap:14px;pointer-events:auto;min-width:0}
+.room-now{font:italic 400 17px var(--display);color:var(--ink2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.btn{appearance:none;border:1px solid var(--ink);background:rgba(251,252,250,.85);color:var(--ink);font:500 14px var(--body);padding:7px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.btn:hover{background:var(--ink);color:#fff}
+.hud{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:40;display:flex;align-items:center;gap:4px;background:rgba(251,252,250,.92);border:1px solid var(--rule);border-radius:999px;padding:4px;box-shadow:0 10px 30px rgba(29,47,51,.14);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.hud button{appearance:none;border:0;background:transparent;width:40px;height:40px;border-radius:50%;cursor:pointer;color:var(--ink);font-size:20px;line-height:1;display:grid;place-items:center}
+.hud button:hover{background:var(--gorse-soft)}
+.hud button[disabled]{opacity:.3;cursor:default;background:transparent}
+.count{font:500 15px var(--body);min-width:5.4em;text-align:center}
+.count i{font-style:normal;color:var(--ink2)}
+
+/* contents drawer */
+.drawer{position:fixed;inset:0;z-index:60;background:rgba(29,47,51,.35);display:none}
+.drawer.open{display:block}
+.drawer-in{position:absolute;right:0;top:0;bottom:0;width:min(440px,100%);background:var(--paper);padding:calc(20px + env(safe-area-inset-top,0px)) max(22px,env(safe-area-inset-right,0px)) 40px 28px;overflow:auto}
+.tbl td a{white-space:nowrap}
+.drawer h2{font-size:34px;margin-bottom:6px}
+.drawer h3{font:italic 400 20px var(--display);color:var(--ink2);margin:26px 0 6px}
+.drawer ol{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.drawer li a{display:grid;grid-template-columns:2.4em 1fr;gap:6px;padding:7px 4px;text-decoration:none;border-radius:6px;font-size:16px}
+.drawer li a:hover{background:var(--gorse-soft)}
+.drawer li a b{font-weight:500;color:var(--ink2)}
+.drawer .close{float:right}
+
+/* plates */
+.plate{position:relative;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;scroll-snap-align:start;background:var(--wall)}
+.art{position:relative;flex:1 1 auto;min-height:clamp(360px,64svh,820px);overflow:hidden}
+.art canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.roomtag{position:absolute;left:0;right:0;top:78px;pointer-events:none}
+.roomtag p{font:italic 300 clamp(20px,2.6vw,30px) var(--display);color:var(--ink2)}
+.roomtag b{font:500 14px var(--body);font-style:normal;color:var(--ink2);margin-right:10px}
+.bigtitle{position:absolute;left:0;right:0;top:clamp(120px,22vh,200px);pointer-events:none}
+.bigtitle h1{font-size:clamp(76px,17vw,230px);line-height:.88;letter-spacing:-.03em;font-weight:300}
+.bigtitle .irish{font:italic 300 clamp(22px,3vw,34px) var(--display);color:var(--hill-d);margin-bottom:10px}
+.walkhint{position:absolute;left:0;right:0;bottom:18px;pointer-events:none}
+.walkhint p{font-size:14px;color:var(--ink2)}
+.label{position:relative;background:var(--paper);border-top:1px solid var(--rule);padding-block:26px 96px}
+.lab-grid{display:grid;grid-template-columns:1fr;gap:18px 40px;align-items:start}
+.pn{display:block;font:500 14px var(--body);color:var(--ink2);margin-bottom:8px}
+.label h2{font-size:clamp(34px,4.4vw,58px)}
+.medium{font-size:14px;color:var(--ink2);margin-top:10px;line-height:1.45;max-width:38ch}
+.story{font:300 clamp(21px,2.1vw,26px)/1.38 var(--display);max-width:40ch}
+.story + .story{margin-top:12px}
+.yrs{display:flex;gap:6px;flex-wrap:wrap}
+.yr{appearance:none;border:1px solid var(--rule);background:var(--wall);font:500 14px var(--body);color:var(--ink);padding:7px 14px;border-radius:999px;cursor:pointer}
+.yr:hover{border-color:var(--ink)}
+.yr[aria-selected="true"]{background:var(--gorse-soft);border-color:var(--gorse)}
+.yr[disabled]{opacity:.4;cursor:default}
+.cnt{font-size:14px;color:var(--ink2);margin-top:10px}
+@media (min-width:900px){.lab-grid{grid-template-columns:minmax(220px,1fr) minmax(0,1.5fr) minmax(190px,.8fr)}}
+details.rec{margin-top:22px;border-top:1px solid var(--rule);padding-top:14px}
+details.rec summary{cursor:pointer;font-weight:500;font-size:15px;list-style:none;display:inline-flex;gap:10px;align-items:center}
+details.rec summary::-webkit-details-marker{display:none}
+details.rec summary::before{content:"+";display:inline-grid;place-items:center;width:22px;height:22px;border:1px solid var(--ink);border-radius:50%;font-size:15px;line-height:1}
+details.rec[open] summary::before{content:"\2212"}
+.rec-in{display:grid;gap:26px;grid-template-columns:minmax(0,1fr);margin-top:16px}
+@media (min-width:900px){.rec-in{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr)}}
+.rec-txt{display:flex;flex-direction:column;gap:13px;max-width:62ch;font-size:16.5px}
+.tbl{overflow-x:auto;border:1px solid var(--rule);border-radius:8px;background:var(--paper);max-width:100%}
+table{border-collapse:collapse;width:100%;font-size:13.5px;min-width:560px}
+th,td{text-align:left;padding:6px 10px;border-bottom:1px solid var(--rule);vertical-align:top}
+th{font-weight:600;background:#E6EDE9;position:sticky;top:0}
+td.n,th.n{text-align:right;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+
+/* paper sheet (Griffith's) */
+.sheetart{display:grid;grid-template-columns:minmax(0,1fr);justify-items:center;padding-inline:14px;padding-block:96px 56px}
+.sheet{position:relative;width:min(100%,1040px);background:var(--paper);border:1px solid var(--rule);border-radius:3px;box-shadow:0 30px 70px rgba(29,47,51,.16);padding:clamp(18px,3vw,38px);font-family:var(--display)}
+.sheet h3{font:400 clamp(26px,3vw,36px) var(--display);text-align:center;letter-spacing:.01em}
+.sheet .sub{text-align:center;font:italic 300 17px var(--display);color:var(--ink2);margin:4px 0 18px}
+.sheet .tbl{border:0;border-radius:0;background:transparent}
+.sheet table{font:400 15px var(--display);min-width:700px}
+.sheet th{background:transparent;font:500 13px var(--body);color:var(--ink2);position:static;border-bottom:1.5px solid var(--ink)}
+.sheet td{border-bottom:1px dotted var(--rule)}
+.sheet tr.tot td{border-top:1.5px solid var(--ink);border-bottom:0;font-weight:500}
+.sheet .foot{margin-top:14px;font:400 14px var(--body);color:var(--ink2);max-width:80ch}
+
+/* empty frames */
+.frames{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:22px;width:min(100%,1160px);margin-inline:auto;padding-block:100px 56px}
+.frame{aspect-ratio:4/5;border:2px dashed var(--hill-d);border-radius:3px;padding:12px;display:flex;flex-direction:column;justify-content:flex-end;background:rgba(251,252,250,.55);gap:4px}
+.frame.held{border:2px solid var(--gorse);background:rgba(251,252,250,.85)}
+.frame b{font:italic 400 18px/1.15 var(--display)}
+.frame span{font-size:13px;color:var(--ink2);line-height:1.35}
+.frame em{font-style:normal;font-weight:500;font-size:12px;color:var(--ink)}
+
+/* archive */
+.archive{background:var(--paper);border-top:1px solid var(--rule);scroll-snap-align:start;min-height:auto;display:block}
+.archive .wrap{padding-block:clamp(64px,9vw,110px) 32px}
+.archive h2{font-size:clamp(38px,5vw,64px);margin-bottom:6px}
+.archive .pn{margin-bottom:10px}
+.archive .intro{max-width:62ch;color:var(--ink2);margin:14px 0 30px}
+.q{list-style:none;margin:0;padding:0;display:grid;gap:4px;max-width:72ch}
+.q label{display:grid;grid-template-columns:24px 1fr;gap:12px;padding:10px 12px;border-radius:10px;cursor:pointer;align-items:start}
+.q label:hover{background:var(--wall)}
+.q input{width:20px;height:20px;margin:2px 0 0;accent-color:var(--hill-d)}
+.q input:checked+span{color:var(--ink2);text-decoration:line-through;text-decoration-color:var(--hill)}
+.cols{display:grid;gap:40px;grid-template-columns:minmax(0,1fr)}
+@media (min-width:900px){.cols{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+.prose{display:flex;flex-direction:column;gap:13px;max-width:62ch}
+.rtabs{display:flex;flex-wrap:wrap;gap:6px;margin-block:18px 12px}
+.rtab{appearance:none;border:1px solid var(--rule);background:var(--wall);font:500 14px var(--body);padding:7px 14px;border-radius:999px;cursor:pointer;color:var(--ink)}
+.rtab[aria-selected="true"]{background:var(--gorse-soft);border-color:var(--gorse)}
+.rfilter{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:8px}
+.rfilter input{font:inherit;font-size:15px;padding:8px 12px;border:1px solid var(--rule);border-radius:8px;background:var(--wall);color:var(--ink);min-width:0;width:min(100%,280px)}
+.rscroll{max-height:70vh;overflow:auto}
+.end{text-align:center;padding-block:46px 130px;font:italic 300 22px var(--display);color:var(--ink2);background:var(--paper)}
+.tip{position:fixed;pointer-events:none;background:var(--ink);color:#fff;font-size:13px;line-height:1.35;padding:6px 10px;border-radius:6px;max-width:260px;z-index:70;transform:translate(-50%,-130%)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;scroll-snap-type:none}}
+
+/* ================= Curated Museum Exhibition Styling ================= */
+.fam-plate{scroll-margin-top:54px;border-bottom:1px solid var(--rule)}
+.fam-art{min-height:clamp(320px,50svh,620px);background:var(--wall);box-shadow:inset 0 -1px 0 var(--rule)}
+.fam-label{padding-block:36px 80px;background:var(--paper)}
+.fam-grid{display:grid;grid-template-columns:1fr;gap:28px 48px;align-items:start}
+@media (min-width:960px){
+  .fam-grid{grid-template-columns:minmax(280px,360px) minmax(0,1fr);gap:40px 64px}
+}
+.fam-header-col{position:sticky;top:80px}
+.fam-title{font-size:clamp(36px,4vw,54px);line-height:1.05;margin-bottom:8px}
+.fam-timeline-box{margin-top:28px;padding:16px;background:var(--wall);border:1px solid var(--rule);border-radius:8px}
+.fam-timeline-label{display:block;font-size:12.5px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--ink2);margin-bottom:10px}
+.fam-story-col{display:flex;flex-direction:column;gap:20px;max-width:68ch}
+.fam-lead{font:300 clamp(22px,2.2vw,27px)/1.42 var(--display);color:var(--ink);letter-spacing:-.01em}
+.fam-paras-wrap{display:flex;flex-direction:column;gap:16px;border-top:1px solid var(--rule);padding-top:20px}
+.fam-para{font:400 17px/1.65 var(--display);color:var(--ink);text-align:justify;text-justify:inter-word}
+@media (max-width:640px){.fam-para{text-align:left}}
+.vitrine{margin-top:40px;border:1px solid var(--rule);border-radius:8px;background:var(--wall);padding:0;overflow:hidden}
+details.vitrine summary{padding:14px 18px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;background:var(--wall);font-family:var(--body);font-size:14.5px;font-weight:500;user-select:none;transition:background .15s ease}
+details.vitrine summary:hover{background:var(--paper)}
+details.vitrine summary::-webkit-details-marker{display:none}
+details.vitrine summary::before{display:none}
+.vitrine-title{display:inline-flex;align-items:center;gap:10px;color:var(--ink)}
+.vitrine-title::before{content:"\25B8";font-size:13px;display:inline-block;transition:transform .2s ease}
+details.vitrine[open] .vitrine-title::before{transform:rotate(90deg)}
+.vitrine-badge{font-size:12px;font-weight:600;color:var(--ink2);background:var(--paper);border:1px solid var(--rule);padding:3px 10px;border-radius:999px}
+.vitrine-in{padding:18px;background:var(--paper);border-top:1px solid var(--rule)}
+.vitrine-note{font-size:13.5px;color:var(--ink2);margin-bottom:14px;line-height:1.45}
+/* family tree research (records/people.json): a secondary source, kept apart from the returns */
+.vitrine-in .tree{margin-top:26px;border-top:1px solid var(--rule);padding-top:20px}
+.tree-fam{margin:0 0 6px;font:400 16px/1.6 var(--display);color:var(--ink)}
+.tree-person{padding:14px 0;border-top:1px solid var(--rule)}
+.tree-person:first-of-type{border-top:0}
+.tree-name{margin:0 0 4px;font:500 19px/1.3 var(--display);color:var(--ink)}
+.tree-nick{font-weight:400;font-size:15px;color:var(--ink2)}
+.tree-facts{margin:2px 0;font-size:15px;line-height:1.5;color:var(--ink)}
+.tree-note{margin:8px 0 0;font:400 16px/1.6 var(--display);color:var(--ink)}
+
+/* photographs: shown whole in a light frame, never cropped (docs/MEDIA_SPEC.md) */
+/* With header photos the title plate stacks in the page flow (title, photographs, hint) so they can never overlap on a short screen. */
+.art.has-hang{display:flex;flex-direction:column;min-height:clamp(520px,92svh,960px)}
+.art.has-hang .bigtitle{position:relative;top:auto;margin-top:clamp(120px,22vh,200px);margin-bottom:clamp(28px,4vw,56px)}
+.art.has-hang .walkhint{position:relative;bottom:auto;margin-top:10px;padding-bottom:18px}
+.hang{--hh:clamp(170px,32svh,340px);position:relative;height:var(--hh);margin-top:auto;z-index:2;flex:0 0 auto}
+.hang-row{display:flex;gap:16px;height:100%;overflow-x:auto;overflow-y:hidden;padding:6px 18px 10px;scroll-snap-type:x proximity;scrollbar-width:thin;-webkit-overflow-scrolling:touch}
+.hang-row>.hung:first-child{margin-left:auto}
+.hang-row>.hung:last-child{margin-right:auto}
+.hung{margin:0;flex:0 0 auto;display:flex;flex-direction:column;justify-content:flex-end;gap:6px;height:100%;scroll-snap-align:center}
+/* The frame is sized from the photo's shape (--ar, width over height), so the whole picture fits with a small mat and nothing is cropped.
+   Picture height is at most the row height less 77px (row padding 16, caption 45, mat 16). On a narrow screen the width is capped and the frame
+   shrinks in height to match, so the mat stays even. */
+.pframe{appearance:none;display:block;flex:0 0 auto;width:min(calc((var(--hh) - 77px)*var(--ar,1.5) + 16px),calc(100vw - 36px));padding:7px;background:var(--paper);border:1px solid var(--rule);border-radius:2px;box-shadow:0 8px 22px rgba(29,47,51,.2),inset 0 0 0 1px #fff;cursor:zoom-in;font:inherit;color:var(--ink2)}
+.pframe img{display:block;width:100%;height:auto;aspect-ratio:var(--ar,1.5);object-fit:contain}
+.pframe.broken{cursor:default;padding:14px;font-size:13px}
+.hung figcaption{width:0;min-width:100%;max-height:2.6em;margin-top:3px;font-size:12.5px;line-height:1.3;color:var(--ink2);background:rgba(251,252,250,.92);padding:0 8px;border-radius:3px;box-shadow:0 0 0 3px rgba(251,252,250,.92);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+html.lb-lock{overflow:hidden}
+.lb{position:fixed;inset:0;z-index:70;display:none;background:var(--wall);overflow:auto}
+.lb.open{display:block}
+.lb-in{min-height:100%;display:flex;flex-direction:column;gap:12px;padding:max(12px,env(safe-area-inset-top,0px)) max(14px,env(safe-area-inset-right,0px)) max(14px,env(safe-area-inset-bottom,0px)) max(14px,env(safe-area-inset-left,0px))}
+.lb-bar{display:flex;align-items:center;gap:8px}
+.lb-bar .lb-count{font:500 14px var(--body);color:var(--ink2);margin-inline:6px auto}
+.lb-bar .btn[disabled]{opacity:.3;cursor:default}
+.lb-pic{flex:1 1 auto;display:flex;align-items:center;justify-content:center}
+.lb-mat{display:flex;padding:8px;background:var(--paper);border:1px solid var(--rule);box-shadow:0 10px 30px rgba(29,47,51,.18)}
+.lb-mat img{display:block;max-width:calc(100vw - 60px);max-height:calc(100svh - 250px);object-fit:contain}
+.lb-text{width:min(70ch,100%);margin-inline:auto}
+.lb-cap{font:400 20px/1.35 var(--display);color:var(--ink)}
+.lb-meta{margin-top:4px}
+.lb-link{display:inline-block;margin-top:6px;font-size:15px}
+.lb [hidden]{display:none!important}
+/* family plate: the Photos tab shows the painted landscape with the photographs hung over it, and no cottages */
+.fam-art.has-photos{min-height:clamp(440px,66svh,760px)}
+.hang.fam-hang{--hh:clamp(210px,44svh,470px);position:absolute;left:0;right:0;bottom:26px;margin-top:0}
+.hang.fam-hang[hidden]{display:none}
+
+/* Phones: single column, larger type, photographs sized by width, and a slim bar for the plate counter that
+   sits below the content instead of floating over it. */
+@media (max-width:640px){
+  body{font-size:18px;padding-bottom:calc(64px + env(safe-area-inset-bottom,0px))}
+  .small,.medium,.cnt,.walkhint p,.treenote,.sheet .foot,.vitrine-note{font-size:16px}
+  .pn,.roomtag b,.btn,.yr,.rtab,.lb-bar .lb-count{font-size:16px}
+  .btn,.yr,.rtab{padding:9px 16px}
+  .top{background:rgba(243,246,244,.97);border-bottom:1px solid var(--rule)}
+  .top .brand{font-size:23px}
+  .room-now{font-size:17px}
+  .count{font-size:17px}
+  .hud{left:0;right:0;bottom:0;transform:none;justify-content:center;gap:18px;border-radius:0;border-width:1px 0 0;padding:6px 6px calc(6px + env(safe-area-inset-bottom,0px));background:rgba(251,252,250,.98);box-shadow:0 -6px 18px rgba(29,47,51,.08)}
+  .hud button{width:48px;height:48px;font-size:22px}
+  .drawer li a{font-size:18px}
+  .drawer h3{font-size:22px}
+  .roomtag p{font-size:24px}
+  .label h2,.fam-title{font-size:42px}
+  .story,.fam-lead{font-size:24px}
+  .fam-para{font-size:18.5px}
+  .rec-txt{font-size:18px}
+  details.rec summary,details.vitrine summary{font-size:17px}
+  .vitrine-badge,.fam-timeline-label{font-size:14.5px}
+  .vitrine-title::before{font-size:15px}
+  table{font-size:15.5px}
+  .sheet table{font-size:17px}
+  .sheet th{font-size:15px}
+  .sheet .sub{font-size:19px}
+  .frame b{font-size:20px}
+  .frame span{font-size:15px}
+  .frame em{font-size:14px}
+  .end{font-size:24px}
+  .tip{font-size:15px}
+  .rfilter input{font-size:16px}
+  .label{padding-block:26px 40px}
+  .fam-label{padding-block:30px 40px}
+  .fam-header-col{position:static}
+  /* photographs fill the width, whole and uncropped. A tall photograph is capped near 70% of the screen height. */
+  .hang{height:auto}
+  .hang-row{height:auto;padding:6px 18px 12px}
+  .hung{height:auto}
+  .pframe{width:min(calc(100vw - 36px),calc((70svh - 77px)*var(--ar,1.5) + 16px))}
+  .hung figcaption{font-size:15px;max-height:2.7em}
+  .pframe.broken{font-size:15px}
+  .art.has-hang{min-height:0}
+  .art.has-hang .bigtitle{margin-top:clamp(120px,22vh,180px);margin-bottom:24px}
+  .fam-art.has-photos{display:flex;flex-direction:column;justify-content:flex-end;padding-top:130px;min-height:clamp(440px,calc(70svh + 210px),980px)}
+  .hang.fam-hang{position:relative;left:auto;right:auto;bottom:auto;margin:0 0 20px}
+  .lb-cap{font-size:22px}
+  .lb-link{font-size:17px}
+
+  /* Composition: a shorter painting with the text on a raised card that overlaps its foot, and more room to breathe. */
+  .wrap{padding-left:max(22px,env(safe-area-inset-left,0px));padding-right:max(22px,env(safe-area-inset-right,0px))}
+  .art{min-height:clamp(300px,44svh,420px)}
+  .fam-art{min-height:clamp(300px,44svh,420px)}
+  .label,.fam-label{position:relative;z-index:2;margin-top:-26px;border-radius:24px 24px 0 0;border-top:0;box-shadow:0 -10px 30px rgba(29,47,51,.10);padding:34px 0 56px}
+  .plate.archive .label{margin-top:0}
+  .lab-grid,.fam-grid{gap:26px}
+  .label h2,.fam-title{line-height:1.06}
+  .pn{margin-bottom:10px}
+  .medium{margin-top:12px;line-height:1.5}
+  .story,.fam-lead{line-height:1.42}
+  .story+.story{margin-top:18px}
+  .fam-story-col{gap:24px}
+  .fam-paras-wrap{gap:22px;padding-top:26px}
+  .fam-para{line-height:1.72}
+  .fam-timeline-box{margin-top:26px;padding:20px}
+  .yrs{gap:10px}
+  .cnt{margin-top:14px;line-height:1.5}
+  .vitrine{margin-top:36px}
+  details.vitrine summary{padding:18px 20px}
+  .vitrine-in{padding:20px}
+  .hud{box-shadow:0 -6px 18px rgba(29,47,51,.10)}
+}
+</style>
+</head>
+<body>
+
+<header class="top"><div class="wrap">
+  <a class="brand" href="#p01">Greaghs</a>
+  <div class="right"><span class="room-now" id="roomNow"></span><button class="btn" id="openC" aria-haspopup="dialog">Contents</button></div>
+</div></header>
+
+<main id="walk"></main>
+
+<div class="hud" role="group" aria-label="Walk the townland">
+  <button id="prev" aria-label="Previous plate">&#8592;</button>
+  <span class="count" id="count" aria-live="polite"></span>
+  <button id="next" aria-label="Next plate">&#8594;</button>
+</div>
+
+<div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Contents">
+  <div class="drawer-in" id="drawerIn"></div>
+</div>
+<div class="tip" id="tip" hidden></div>
+
+<script>
+(function(){
+'use strict';
+var TOUCH=!!(window.matchMedia&&window.matchMedia('(max-width:640px)').matches);
+var DATA = {"census":{"1901":[{"h":1,"s":"Scanlin","f":"Pat","a":43,"x":"M","r":"Head of Family","m":"Married","o":"Labourer","i":0,"ref":"nai000650935"},{"h":1,"s":"Scanlin","f":"Mary A","a":80,"x":"F","r":"Wife","m":"Married","o":"Sewer","i":0,"ref":"nai000650935"},{"h":1,"s":"McGroary","f":"Bridget","a":40,"x":"F","r":"Lodger","m":"Not Married","o":"Sewer","i":0,"ref":"nai000650935"},{"h":3,"s":"Boyle","f":"Giles","a":68,"x":"F","r":"Head of Family","m":"Widow","o":"nan","i":0,"ref":"nai000650936"},{"h":3,"s":"Boyle","f":"Bernard","a":29,"x":"M","r":"Son","m":"Widow","o":"Farmer","i":0,"ref":"nai000650936"},{"h":3,"s":"Boyle","f":"William","a":27,"x":"M","r":"Son","m":"Not Married","o":"Farmer","i":0,"ref":"nai000650936"},{"h":3,"s":"Boyle","f":"Jeanie","a":5,"x":"F","r":"Grand Child","m":"Not Married","o":"nan","i":0,"ref":"nai000650936"},{"h":4,"s":"Lappin","f":"James","a":38,"x":"M","r":"Head of Family","m":"Married","o":"Farmer","i":0,"ref":"nai000650937"},{"h":4,"s":"Lappin","f":"Rosy","a":43,"x":"F","r":"Wife","m":"Married","o":"nan","i":0,"ref":"nai000650937"},{"h":4,"s":"Lappin","f":"Patrk","a":11,"x":"M","r":"Son","m":"Not Married","o":"Scholar","i":0,"ref":"nai000650937"},{"h":4,"s":"Lappin","f":"Mary A","a":10,"x":"F","r":"Daughter","m":"Not Married","o":"Scholar","i":0,"ref":"nai000650937"},{"h":4,"s":"Lappin","f":"Winnie","a":4,"x":"F","r":"Daughter","m":"Not Married","o":"Scholar","i":0,"ref":"nai000650937"},{"h":4,"s":"Lappin","f":"Hugh","a":27,"x":"M","r":"Brother","m":"Not Married","o":"Labourer","i":0,"ref":"nai000650937"},{"h":5,"s":"Gallagher","f":"John","a":70,"x":"M","r":"Head of Family","m":"Married","o":"Farmer","i":0,"ref":"nai000650938"},{"h":5,"s":"Gallagher","f":"Ann","a":62,"x":"F","r":"Wife","m":"Married","o":"Farmer's Wife","i":0,"ref":"nai000650938"},{"h":5,"s":"Gallagher","f":"Thomas John","a":25,"x":"M","r":"Son","m":"Not Married","o":"Farmer's Son","i":0,"ref":"nai000650938"},{"h":5,"s":"Gallagher","f":"Francis","a":21,"x":"M","r":"Son","m":"Not Married","o":"Farmer's Son","i":0,"ref":"nai000650938"},{"h":6,"s":"Gorman","f":"John","a":40,"x":"M","r":"Head of Family","m":"Not Married","o":"Farmer","i":0,"ref":"nai000650939"},{"h":6,"s":"Gorman","f":"Patrick","a":21,"x":"M","r":"Nephew","m":"Not Married","o":"Farmer","i":0,"ref":"nai000650939"},{"h":6,"s":"Gorman","f":"Edward","a":19,"x":"M","r":"Nephew","m":"Not Married","o":"Farmer's Son","i":0,"ref":"nai000650939"},{"h":6,"s":"Gorman","f":"Michael","a":13,"x":"M","r":"Nephew","m":"Not Married","o":"Scholar","i":0,"ref":"nai000650939"},{"h":7,"s":"Gorman","f":"Charles","a":56,"x":"M","r":"Head of Family","m":"Married","o":"Farmer","i":0,"ref":"nai000650940"},{"h":7,"s":"Gorman","f":"Mary","a":46,"x":"F","r":"Wife","m":"Married","o":"nan","i":0,"ref":"nai000650940"},{"h":7,"s":"Gorman","f":"Mary","a":16,"x":"F","r":"Daughter","m":"Not Married","o":"Farmer's Daughter","i":0,"ref":"nai000650940"},{"h":7,"s":"Gorman","f":"Margaret","a":11,"x":"F","r":"Daughter","m":"Not Married","o":"Scholar","i":0,"ref":"nai000650940"},{"h":7,"s":"Gorman","f":"James","a":5,"x":"M","r":"Son","m":"Not Married","o":"Scholar","i":0,"ref":"nai000650940"},{"h":8,"s":"Gallagher","f":"Thomas","a":64,"x":"M","r":"Head of Family","m":"Married","o":"Farmer","i":0,"ref":"nai000650941"},{"h":8,"s":"Gallagher","f":"Margaret","a":60,"x":"F","r":"Wife","m":"Married","o":"nan","i":0,"ref":"nai000650941"},{"h":8,"s":"Gallagher","f":"Mary","a":39,"x":"F","r":"Daughter","m":"Not Married","o":"Farmer's Daughter","i":0,"ref":"nai000650941"},{"h":8,"s":"Gallagher","f":"Catherine","a":39,"x":"F","r":"Niece","m":"Not Married","o":"Embroiderer","i":0,"ref":"nai000650941"},{"h":9,"s":"Travers","f":"Daniel","a":40,"x":"M","r":"Head of Family","m":"Married","o":"Farmer","i":0,"ref":"nai000650942"},{"h":9,"s":"Travers","f":"Catherine","a":40,"x":"F","r":"Wife","m":"Married","o":"nan","i":0,"ref":"nai000650942"},{"h":9,"s":"Travers","f":"Patrick","a":14,"x":"M","r":"Son","m":"Not Married","o":"Scholar","i":0,"ref":"nai000650942"},{"h":9,"s":"Travers","f":"John","a":12,"x":"M","r":"Son","m":"Not Married","o":"Scholar","i":0,"ref":"nai000650942"},{"h":9,"s":"Travers","f":"Mary Anne","a":10,"x":"F","r":"Daughter","m":"Not Married","o":"Scholar","i":0,"ref":"nai000650942"},{"h":9,"s":"Trower","f":"Mary","a":70,"x":"F","r":"Step Mother","m":"Widow","o":"nan","i":0,"ref":"nai000650942"},{"h":10,"s":"Lappin","f":"James","a":80,"x":"M","r":"Head of Family","m":"Married","o":"Farmer","i":1,"ref":"nai000650943"},{"h":10,"s":"Lappin","f":"Mary","a":80,"x":"F","r":"Wife","m":"Married","o":"nan","i":0,"ref":"nai000650943"},{"h":11,"s":"Furey","f":"Patrick","a":41,"x":"M","r":"Head of Family","m":"Married","o":"National Teacher","i":1,"ref":"nai000650944"},{"h":11,"s":"Furey","f":"Hannah A T","a":38,"x":"F","r":"Wife","m":"Married","o":"nan","i":0,"ref":"nai000650944"},{"h":11,"s":"Furey","f":"Robert","a":17,"x":"M","r":"Son","m":"Not Married","o":"Scholar","i":0,"ref":"nai000650944"},{"h":11,"s":"Furey","f":"Isabella Jos","a":15,"x":"F","r":"Daughter","m":"Not Married","o":"Scholar","i":0,"ref":"nai000650944"},{"h":11,"s":"Furey","f":"John","a":11,"x":"M","r":"Son","m":"Not Married","o":"Scholar","i":0,"ref":"nai000650944"},{"h":11,"s":"Furey","f":"Peter","a":9,"x":"M","r":"Son","m":"Not Married","o":"Scholar","i":0,"ref":"nai000650944"},{"h":11,"s":"Furey","f":"Francis","a":7,"x":"M","r":"Son","m":"Not Married","o":"Scholar","i":0,"ref":"nai000650944"},{"h":11,"s":"Furey","f":"James","a":4,"x":"M","r":"Son","m":"Not Married","o":"Scholar","i":0,"ref":"nai000650944"},{"h":11,"s":"Furey","f":"Mary Eliz","a":2,"x":"F","r":"Daughter","m":"Not Married","o":"nan","i":0,"ref":"nai000650944"},{"h":11,"s":"Furey","f":"Maggie Jane","a":0,"x":"F","r":"Daughter","m":"Not Married","o":"nan","i":0,"ref":"nai000650944"},{"h":12,"s":"Gallagher","f":"James","a":64,"x":"M","r":"Head of Family","m":"Married","o":"Farmer","i":0,"ref":"nai000650945"},{"h":12,"s":"Gallagher","f":"Rose","a":56,"x":"F","r":"Wife","m":"Married","o":"nan","i":0,"ref":"nai000650945"},{"h":12,"s":"Gallagher","f":"John","a":27,"x":"M","r":"Son","m":"Married","o":"Farmer","i":0,"ref":"nai000650945"},{"h":12,"s":"Gallagher","f":"Mary Jane","a":21,"x":"F","r":"Daughter in Law","m":"Married","o":"nan","i":0,"ref":"nai000650945"},{"h":13,"s":"Gallagher","f":"Francis","a":42,"x":"M","r":"Head of Family","m":"Married","o":"Farmer","i":0,"ref":"nai000650946"},{"h":13,"s":"Gallagher","f":"Grace","a":36,"x":"F","r":"Wife","m":"Married","o":"nan","i":0,"ref":"nai000650946"},{"h":13,"s":"Gallagher","f":"Mary","a":8,"x":"F","r":"Daughter","m":"Not Married","o":"Scholar","i":0,"ref":"nai000650946"},{"h":13,"s":"Gallagher","f":"Ellen","a":7,"x":"F","r":"Daughter","m":"Not Married","o":"Scholar","i":0,"ref":"nai000650946"},{"h":13,"s":"Gallagher","f":"Neil","a":5,"x":"M","r":"Son","m":"Not Married","o":"Scholar","i":0,"ref":"nai000650946"},{"h":13,"s":"Gallagher","f":"Francis","a":4,"x":"M","r":"Son","m":"Not Married","o":"Scholar","i":0,"ref":"nai000650946"},{"h":13,"s":"Gallagher","f":"Susan","a":1,"x":"F","r":"Daughter","m":"Not Married","o":"nan","i":0,"ref":"nai000650946"},{"h":14,"s":"McGlinchey","f":"Bridget","a":50,"x":"F","r":"Head of Family","m":"Widow","o":"nan","i":0,"ref":"nai000650947"},{"h":14,"s":"McGlinchey","f":"James","a":29,"x":"M","r":"Son","m":"Not Married","o":"Farmer","i":0,"ref":"nai000650947"},{"h":14,"s":"McGlinchey","f":"Sarah","a":18,"x":"F","r":"Daughter","m":"Not Married","o":"Farmer's Daughter","i":0,"ref":"nai000650947"},{"h":15,"s":"Hilly","f":"Patrick","a":50,"x":"M","r":"Head of Family","m":"Married","o":"Farmer","i":0,"ref":"nai000650948"},{"h":15,"s":"Hilly","f":"Margaret","a":50,"x":"F","r":"Wife","m":"Married","o":"nan","i":0,"ref":"nai000650948"},{"h":15,"s":"Hilly","f":"Francis","a":23,"x":"M","r":"Son","m":"Not Married","o":"Farmer's Son","i":0,"ref":"nai000650948"},{"h":15,"s":"Hilly","f":"Joseph","a":18,"x":"M","r":"Son","m":"Not Married","o":"Farmer's Son","i":0,"ref":"nai000650948"},{"h":15,"s":"Hilly","f":"Margaret","a":18,"x":"F","r":"Daughter","m":"Not Married","o":"Farmer's Daughter","i":0,"ref":"nai000650948"},{"h":15,"s":"Hilly","f":"James","a":15,"x":"M","r":"Son","m":"Not Married","o":"Farmer's Son","i":0,"ref":"nai000650948"},{"h":15,"s":"Hilly","f":"John","a":11,"x":"M","r":"Son","m":"Not Married","o":"Farmer's Son","i":0,"ref":"nai000650948"},{"h":15,"s":"Hilly","f":"Catherine","a":8,"x":"M","r":"Daughter","m":"Not Married","o":"Scholar","i":0,"ref":"nai000650948"},{"h":16,"s":"Gorman","f":"Catherine","a":80,"x":"F","r":"Head of Family","m":"Widow","o":"nan","i":0,"ref":"nai000650949"},{"h":16,"s":"Gorman","f":"Daniel","a":27,"x":"M","r":"Son","m":"Married","o":"Farmer","i":0,"ref":"nai000650949"},{"h":16,"s":"Gorman","f":"Catherine","a":30,"x":"F","r":"Daughter in Law","m":"Married","o":"nan","i":0,"ref":"nai000650949"},{"h":16,"s":"Gorman","f":"Bridget","a":3,"x":"F","r":"Grand Daughter","m":"Not Married","o":"nan","i":0,"ref":"nai000650949"},{"h":16,"s":"Gorman","f":"Thomas","a":1,"x":"M","r":"Grand Son","m":"Not Married","o":"nan","i":0,"ref":"nai000650949"},{"h":17,"s":"O Donnell","f":"John","a":54,"x":"M","r":"Head of Family","m":"Not Married","o":"Farmer","i":1,"ref":"nai000650950"},{"h":17,"s":"O Donnell","f":"Bridget","a":56,"x":"F","r":"Sister","m":"Not Married","o":"nan","i":1,"ref":"nai000650950"}],"1911":[{"h":1,"s":"Boyle","f":"Giles","a":78,"x":"F","r":"Head of Family","m":"Widow","o":"Farmer","i":0,"ref":"nai002051245"},{"h":1,"s":"Boyle","f":"William","a":36,"x":"M","r":"Son","m":"Single","o":"Farmer's Son","i":0,"ref":"nai002051245"},{"h":1,"s":"Boyle","f":"Jane","a":15,"x":"F","r":"Grand Daughter","m":"Single","o":"nan","i":0,"ref":"nai002051245"},{"h":2,"s":"Lappin","f":"James","a":50,"x":"M","r":"Head of Family","m":"Married","o":"Farmer","i":0,"ref":"nai002051247"},{"h":2,"s":"Lappin","f":"Rosy","a":57,"x":"F","r":"Wife","m":"Married","o":"nan","i":0,"ref":"nai002051247"},{"h":2,"s":"Lappin","f":"Pat","a":21,"x":"M","r":"Son","m":"Single","o":"Farmer's Son","i":0,"ref":"nai002051247"},{"h":2,"s":"Lappin","f":"Mary A","a":20,"x":"F","r":"Daughter","m":"Single","o":"Seamstress","i":0,"ref":"nai002051247"},{"h":2,"s":"Lappin","f":"Winnie","a":14,"x":"F","r":"Daughter","m":"Single","o":"Scholar","i":0,"ref":"nai002051247"},{"h":3,"s":"Harron","f":"Mervin","a":44,"x":"M","r":"Head of Family","m":"Married","o":"Farmer","i":0,"ref":"nai002051249"},{"h":3,"s":"Harron","f":"Ellen G","a":39,"x":"F","r":"Wife","m":"Married","o":"nan","i":0,"ref":"nai002051249"},{"h":3,"s":"Harron","f":"William J","a":1,"x":"M","r":"Son","m":"nan","o":"nan","i":0,"ref":"nai002051249"},{"h":3,"s":"Monaghan","f":"Andrew","a":16,"x":"M","r":"Servant","m":"Single","o":"Farm Servant","i":0,"ref":"nai002051249"},{"h":4,"s":"Gallagher","f":"John","a":38,"x":"M","r":"Head of Family","m":"Married","o":"Farmer","i":0,"ref":"nai002051251"},{"h":4,"s":"Gallagher","f":"Mary Anne","a":31,"x":"F","r":"Wife","m":"Married","o":"nan","i":0,"ref":"nai002051251"},{"h":5,"s":"Gallagher","f":"Francis","a":52,"x":"M","r":"Head of Family","m":"Married","o":"Farmer","i":0,"ref":"nai002051253"},{"h":5,"s":"Gallagher","f":"Grace","a":48,"x":"F","r":"Wife","m":"Married","o":"nan","i":1,"ref":"nai002051253"},{"h":5,"s":"Gallagher","f":"Mary","a":18,"x":"F","r":"Daughter","m":"Single","o":"Seamstress","i":0,"ref":"nai002051253"},{"h":5,"s":"Gallagher","f":"Ellen","a":17,"x":"F","r":"Daughter","m":"Single","o":"Seamstress","i":0,"ref":"nai002051253"},{"h":5,"s":"Gallagher","f":"Neil","a":15,"x":"M","r":"Son","m":"Single","o":"Scholar","i":0,"ref":"nai002051253"},{"h":5,"s":"Gallagher","f":"Francis","a":14,"x":"M","r":"Son","m":"nan","o":"Scholar","i":0,"ref":"nai002051253"},{"h":5,"s":"Gallagher","f":"Susan","a":11,"x":"F","r":"Daughter","m":"nan","o":"Scholar","i":0,"ref":"nai002051253"},{"h":6,"s":"Furey","f":"Patrick","a":51,"x":"M","r":"Head of Family","m":"Married","o":"National S Teacher","i":1,"ref":"nai002051255"},{"h":6,"s":"Furey","f":"Hannah A","a":49,"x":"F","r":"Wife","m":"Married","o":"nan","i":0,"ref":"nai002051255"},{"h":6,"s":"Furey","f":"Isabella Josof","a":25,"x":"F","r":"Daughter","m":"Single","o":"National S Teacher","i":0,"ref":"nai002051255"},{"h":6,"s":"Furey","f":"Francis","a":17,"x":"M","r":"Son","m":"Single","o":"nan","i":0,"ref":"nai002051255"},{"h":6,"s":"Furey","f":"James","a":15,"x":"M","r":"Son","m":"Single","o":"Scholar","i":0,"ref":"nai002051255"},{"h":6,"s":"Furey","f":"Mary Eliz","a":12,"x":"F","r":"Daughter","m":"Single","o":"Scholar","i":0,"ref":"nai002051255"},{"h":6,"s":"Furey","f":"Maggie Jane","a":10,"x":"F","r":"Daughter","m":"Single","o":"Scholar","i":0,"ref":"nai002051255"},{"h":6,"s":"Furey","f":"Annie","a":8,"x":"F","r":"Daughter","m":"Single","o":"Scholar","i":0,"ref":"nai002051255"},{"h":6,"s":"Furey","f":"Josephine","a":4,"x":"F","r":"Niece","m":"Single","o":"nan","i":0,"ref":"nai002051255"},{"h":7,"s":"Travers","f":"Daniel","a":52,"x":"M","r":"Head of Family","m":"Married","o":"Farmer","i":0,"ref":"nai002051257"},{"h":7,"s":"Travers","f":"Katie","a":64,"x":"F","r":"Wife","m":"Married","o":"nan","i":0,"ref":"nai002051257"},{"h":7,"s":"Travers","f":"Patrick","a":24,"x":"M","r":"Son","m":"Single","o":"Farmer's Son","i":0,"ref":"nai002051257"},{"h":7,"s":"Travers","f":"John","a":23,"x":"M","r":"Son","m":"Single","o":"Farmer's Son","i":0,"ref":"nai002051257"},{"h":7,"s":"Travers","f":"Mary A","a":21,"x":"F","r":"Daughter","m":"Single","o":"nan","i":0,"ref":"nai002051257"},{"h":8,"s":"Gallagher","f":"Thomas","a":79,"x":"M","r":"Head of Family","m":"Married","o":"Farmer","i":0,"ref":"nai002051259"},{"h":8,"s":"Gallagher","f":"Margaret","a":80,"x":"F","r":"Wife","m":"Married","o":"nan","i":0,"ref":"nai002051259"},{"h":8,"s":"Gallagher","f":"Mary","a":50,"x":"F","r":"Daughter","m":"Married","o":"nan","i":0,"ref":"nai002051259"},{"h":9,"s":"Gallagher","f":"Anne","a":74,"x":"F","r":"Head of Family","m":"Widow","o":"Farmer","i":0,"ref":"nai002051261"},{"h":9,"s":"Gallagher","f":"Thomas J","a":34,"x":"M","r":"Son","m":"Single","o":"Farmer's Son","i":0,"ref":"nai002051261"},{"h":10,"s":"Gorman","f":"Charles","a":71,"x":"M","r":"Head of Family","m":"Married","o":"Farmer","i":0,"ref":"nai002051263"},{"h":10,"s":"Gorman","f":"Mary","a":55,"x":"F","r":"Wife","m":"Married","o":"nan","i":0,"ref":"nai002051263"},{"h":10,"s":"Gorman","f":"Edward","a":27,"x":"M","r":"Son","m":"Single","o":"Farmer's Son","i":0,"ref":"nai002051263"},{"h":10,"s":"Gorman","f":"Maggie","a":19,"x":"F","r":"Daughter","m":"Single","o":"nan","i":0,"ref":"nai002051263"},{"h":10,"s":"Gorman","f":"James","a":15,"x":"M","r":"Son","m":"Single","o":"Farmer's Son","i":0,"ref":"nai002051263"},{"h":11,"s":"Gorman","f":"John","a":60,"x":"M","r":"Head of Family","m":"Single","o":"Farmer","i":0,"ref":"nai002051265"},{"h":12,"s":"Hilley","f":"Patrick","a":67,"x":"M","r":"Head of Family","m":"Married","o":"Farmer","i":0,"ref":"nai002051267"},{"h":12,"s":"Hilley","f":"Margaret","a":66,"x":"F","r":"Wife","m":"Married","o":"nan","i":0,"ref":"nai002051267"},{"h":12,"s":"Hilley","f":"Francis","a":35,"x":"M","r":"Son","m":"nan","o":"Fish Dealer","i":0,"ref":"nai002051267"},{"h":12,"s":"Hilley","f":"Maggie","a":30,"x":"F","r":"Daughter","m":"nan","o":"nan","i":0,"ref":"nai002051267"},{"h":12,"s":"Hilley","f":"John","a":22,"x":"M","r":"Son","m":"nan","o":"Farmer's Son","i":0,"ref":"nai002051267"},{"h":12,"s":"Hilley","f":"Cassie","a":20,"x":"F","r":"Daughter","m":"nan","o":"nan","i":0,"ref":"nai002051267"},{"h":13,"s":"McGlinchey","f":"James","a":44,"x":"M","r":"Head of Family","m":"Single","o":"Farmer","i":0,"ref":"nai002051269"},{"h":14,"s":"Gorman","f":"Catherine","a":86,"x":"F","r":"Head of Family","m":"Widow","o":"Farmer","i":0,"ref":"nai002051271"},{"h":14,"s":"Gorman","f":"Daniel","a":40,"x":"M","r":"Son","m":"Married","o":"Farmer's Son","i":0,"ref":"nai002051271"},{"h":14,"s":"Gorman","f":"Catherine","a":41,"x":"F","r":"Daughter in Law","m":"Married","o":"nan","i":0,"ref":"nai002051271"},{"h":14,"s":"Gorman","f":"Bridget","a":13,"x":"F","r":"Grand Daughter","m":"Single","o":"Scholar","i":0,"ref":"nai002051271"},{"h":14,"s":"Gorman","f":"Thomas","a":11,"x":"M","r":"Grand Son","m":"nan","o":"Scholar","i":0,"ref":"nai002051271"},{"h":14,"s":"Gorman","f":"Edward","a":8,"x":"M","r":"Grand Son","m":"nan","o":"nan","i":0,"ref":"nai002051271"},{"h":14,"s":"Gorman","f":"Daniel","a":6,"x":"M","r":"Grand Son","m":"nan","o":"nan","i":0,"ref":"nai002051271"},{"h":14,"s":"Gorman","f":"Elizia","a":3,"x":"F","r":"Grand Daughter","m":"nan","o":"nan","i":0,"ref":"nai002051271"}],"1926":[{"h":"0002","fo":"0002","s":"Hilley","f":"Patrick","a":78,"x":"M","r":"Head","m":"Widower","o":"","i":0,"ref":"Greaghs_0488_0037_0002_0_00003.pdf"},{"h":"0002","fo":"0002","s":"Hilley","f":"Francis","a":50,"x":"M","r":"nan","m":"Single","o":"","i":0,"ref":"Greaghs_0488_0037_0002_0_00003.pdf"},{"h":"0003","fo":"0003","s":"Travers","f":"Peter","a":66,"x":"M","r":"Head","m":"Married","o":"","i":0,"ref":"Greaghs_0488_0037_0003_0_00004.pdf"},{"h":"0003","fo":"0003","s":"Travers","f":"Fanny","a":62,"x":"F","r":"nan","m":"Married","o":"","i":0,"ref":"Greaghs_0488_0037_0003_0_00004.pdf"},{"h":"0003","fo":"0003","s":"Bartley","f":"Kate","a":11,"x":"F","r":"nan","m":"nan","o":"","i":0,"ref":"Greaghs_0488_0037_0003_0_00004.pdf"},{"h":"0004","fo":"0004","s":"Furey","f":"Patrick","a":66,"x":"M","r":"Head","m":"Married","o":"","i":1,"ref":"Greaghs_0488_0037_0004_0_00005.pdf"},{"h":"0004","fo":"0004","s":"Furey","f":"Hannah","a":64,"x":"F","r":"nan","m":"Married","o":"","i":0,"ref":"Greaghs_0488_0037_0004_0_00005.pdf"},{"h":"0004","fo":"0004","s":"Furey","f":"Francis","a":32,"x":"M","r":"nan","m":"Single","o":"","i":1,"ref":"Greaghs_0488_0037_0004_0_00005.pdf"},{"h":"0004","fo":"0004","s":"Furey","f":"Annie","a":23,"x":"F","r":"nan","m":"Single","o":"","i":1,"ref":"Greaghs_0488_0037_0004_0_00005.pdf"},{"h":"0005","fo":"0005","s":"Gallagher","f":"John","a":55,"x":"M","r":"Head","m":"Married","o":"","i":0,"ref":"Greaghs_0488_0037_0005_0_00006.pdf"},{"h":"0005","fo":"0005","s":"Gallagher","f":"Bridget","a":36,"x":"F","r":"nan","m":"Married","o":"","i":0,"ref":"Greaghs_0488_0037_0005_0_00006.pdf"},{"h":"0006","fo":"0006","s":"Gallagher","f":"Francis","a":28,"x":"M","r":"Head","m":"nan","o":"","i":0,"ref":"Greaghs_0488_0037_0006_0_00007.pdf"},{"h":"0006","fo":"0006","s":"Gallagher","f":"Mary","a":33,"x":"F","r":"nan","m":"nan","o":"","i":0,"ref":"Greaghs_0488_0037_0006_0_00007.pdf"},{"h":"0006","fo":"0006","s":"Gallagher","f":"Ellen","a":32,"x":"F","r":"nan","m":"nan","o":"","i":0,"ref":"Greaghs_0488_0037_0006_0_00007.pdf"},{"h":"0006","fo":"0006","s":"Gallagher","f":"Neil","a":29,"x":"M","r":"nan","m":"Single","o":"","i":0,"ref":"Greaghs_0488_0037_0006_0_00007.pdf"},{"h":"0007","fo":"0007","s":"Gorman","f":"John","a":73,"x":"M","r":"Head","m":"Single","o":"","i":0,"ref":"Greaghs_0488_0037_0007_0_00008.pdf"},{"h":"0008","fo":"0008","s":"Gorman","f":"Edward","a":44,"x":"M","r":"Head","m":"nan","o":"","i":0,"ref":"Greaghs_0488_0037_0008_0_00009.pdf"},{"h":"0008","fo":"0008","s":"Gorman","f":"Agness","a":33,"x":"F","r":"nan","m":"Married","o":"","i":0,"ref":"Greaghs_0488_0037_0008_0_00009.pdf"},{"h":"0008","fo":"0008","s":"Gorman","f":"Mary Josephine","a":9,"x":"F","r":"nan","m":"nan","o":"","i":0,"ref":"Greaghs_0488_0037_0008_0_00009.pdf"},{"h":"0008","fo":"0008","s":"Gorman","f":"[Catherine]","a":7,"x":"F","r":"nan","m":"nan","o":"","i":0,"ref":"Greaghs_0488_0037_0008_0_00009.pdf"},{"h":"0008","fo":"0008","s":"Gorman","f":"Joseph","a":5,"x":"M","r":"nan","m":"nan","o":"","i":0,"ref":"Greaghs_0488_0037_0008_0_00009.pdf"},{"h":"0008","fo":"0008","s":"Gorman","f":"Michael","a":4,"x":"M","r":"nan","m":"nan","o":"","i":0,"ref":"Greaghs_0488_0037_0008_0_00009.pdf"},{"h":"0008","fo":"0008","s":"Gorman","f":"Edward","a":2,"x":"M","r":"nan","m":"nan","o":"","i":0,"ref":"Greaghs_0488_0037_0008_0_00009.pdf"},{"h":"0008","fo":"0008","s":"Gorman","f":"William James","a":0,"x":"M","r":"nan","m":"nan","o":"","i":0,"ref":"Greaghs_0488_0037_0008_0_00009.pdf"},{"h":"0009","fo":"0009","s":"Gorman","f":"Mary","a":71,"x":"F","r":"Head","m":"Widow","o":"","i":0,"ref":"Greaghs_0488_0037_0009_0_00010.pdf"},{"h":"0009","fo":"0009","s":"Gorman","f":"Mary","a":36,"x":"F","r":"nan","m":"Single","o":"","i":0,"ref":"Greaghs_0488_0037_0009_0_00010.pdf"},{"h":"0010","fo":"0010","s":"Travers","f":"Daniel","a":70,"x":"M","r":"Head","m":"Widower","o":"","i":0,"ref":"Greaghs_0488_0037_0010_0_00011.pdf"},{"h":"0010","fo":"0010","s":"Travers","f":"Patrick","a":40,"x":"M","r":"nan","m":"Single","o":"","i":0,"ref":"Greaghs_0488_0037_0010_0_00011.pdf"},{"h":"0010","fo":"0010","s":"Travers","f":"John","a":35,"x":"M","r":"nan","m":"Single","o":"","i":0,"ref":"Greaghs_0488_0037_0010_0_00011.pdf"},{"h":"0011","fo":"0011","s":"Gallagher","f":"Thomas John","a":5,"x":"M","r":"Head","m":"Married","o":"","i":0,"ref":"Greaghs_0488_0037_0011_0_00012.pdf"},{"h":"0011","fo":"0011","s":"Gallagher","f":"Mary Ellen","a":29,"x":"F","r":"nan","m":"Married","o":"","i":0,"ref":"Greaghs_0488_0037_0011_0_00012.pdf"},{"h":"0011","fo":"0011","s":"Gallagher","f":"Annie C","a":0,"x":"F","r":"nan","m":"Both Parents Alive","o":"","i":0,"ref":"Greaghs_0488_0037_0011_0_00012.pdf"},{"h":"0012","fo":"0012","s":"Lappin","f":"James","a":62,"x":"M","r":"Head","m":"Widower","o":"","i":0,"ref":"Greaghs_0488_0037_0012_0_00013.pdf"},{"h":"0013","fo":"0013","s":"Harron","f":"Mervyn","a":58,"x":"M","r":"Head","m":"Married","o":"","i":0,"ref":"Greaghs_0488_0037_0013_0_00014.pdf"},{"h":"0013","fo":"0013","s":"Harron","f":"Ellen Jane","a":55,"x":"F","r":"nan","m":"Married","o":"","i":0,"ref":"Greaghs_0488_0037_0013_0_00014.pdf"},{"h":"0013","fo":"0013","s":"Harron","f":"William John","a":17,"x":"M","r":"nan","m":"Single","o":"","i":0,"ref":"Greaghs_0488_0037_0013_0_00014.pdf"},{"h":"0014","fo":"0014","s":"Gorman","f":"Daniel","a":52,"x":"M","r":"Head","m":"nan","o":"","i":0,"ref":"Greaghs_0488_0037_0014_0_00015.pdf"},{"h":"0014","fo":"0014","s":"Gorman","f":"Bridget","a":26,"x":"F","r":"nan","m":"Single","o":"","i":0,"ref":"Greaghs_0488_0037_0014_0_00015.pdf"},{"h":"0014","fo":"0014","s":"Gorman","f":"Charles","a":14,"x":"M","r":"nan","m":"Single","o":"","i":0,"ref":"Greaghs_0488_0037_0014_0_00015.pdf"}]},"content":{"groups":{"colours":{"Other":"#A9B7B3"},"territory":["Other"],"map":{}},"families":[],"questions":["Griffith's Valuation, the mid 1850s baseline, has not yet been added for this townland.","The Tithe Applotment Books, valuation revision books, civil records from 1864 and parish registers have not yet been added, so no census household can yet be linked to an earlier record."],"plates":{"title":{"title":"Greaghs","irish":"","heading":"Greaghs","medium":"A townland in Laghy electoral division, Tirhugh barony","story":["Greaghs is a townland recognised by Logainm, the placenames database of the Government of Ireland.","The census returns for 1901, 1911 and 1926 are held for this townland. Every scene here is drawn from them. Cottages stand for households and are not placed on a map."]},"not_yet_hung":{"title":"Not yet hung","medium":"Six frames for six kinds of record. One is filled","story":["Each frame is a kind of record that can be hung here. A dashed frame is empty. A frame with a gold edge holds records for this townland.","Records are added one source at a time, and each new source adds to this page instead of replacing it."],"frames":[["Tithe Applotment Books","1820s and 1830s","Not yet added.",false],["Griffith's Valuation","Mid 1850s","Not yet added.",false],["Valuation revision books","After the 1850s","Not yet added.",false],["Civil births, marriages and deaths","From 1864","Not yet added.",false],["Parish records","Various dates","Not yet added.",false],["Census returns","1901, 1911 and 1926","Held for 1901, 1911 and 1926.",true]]},"method":{"paras":[{"before":"Place details come from ","link":{"href":"https://www.logainm.ie/en/14141","text":"Logainm"},"after":", the placenames database of the Government of Ireland (CC BY 4.0). The record number is 14141."},"The census tables are the Greaghs rows of the census files for Laghy electoral division, which also hold other townlands. A household is the set of people on one house number in 1901 and 1911, or on one form number in 1926. Names are shown as spelled in the files. Some values, such as relationships and Irish language, were filled in or corrected by the researcher in columns marked updated, so they are not always a straight copy of the printed return.",{"before":"Census returns are held by the ","link":{"href":"https://www.census.nationalarchives.ie/","text":"National Archives of Ireland"},"after":"."}],"numbers_intro":"The census files record {n1901} people in 1901, {n1911} in 1911 and {n1926} in 1926."},"records":{"placeholder":"for example Gallagher"}}},"townland":{"name":"Greaghs","page_title":"Greaghs | Donegal Townlands","storage_key":"greaghs-q","census_spelling":{"1901":"Greaghs","1911":"Greaghs","1926":"Greaghs"}},"place":{"logainm_id":"14141","name_en":"Greaghs","name_ga":"","ded":"Laghy","civil_parish":"","barony":"Tirhugh","county":"Donegal","latitude":"54.61461905361941","longitude":"-8.06147110231555","snapshot_date":"2026-11-09","logainm_url":"https://www.logainm.ie/en/14141","credit":"Irish-language placename data by Logainm, Government of Ireland, licensed under CC BY 4.0.","osm_url":"https://www.openstreetmap.org/?mlat=54.61461905361941&mlon=-8.06147110231555&zoom=15"},"census_urls":{"1901":"https://nationalarchives.ie/collections/search-the-census/view-pdf/?doc={ref}","1911":"https://nationalarchives.ie/collections/search-the-census/view-pdf/?doc={ref}","1926":"https://nationalarchives.ie/collections/search-the-1926-census/view-1926-pdf/?doc={ref}"},"name_families":[{"label":"Gallagher","recorded_as":["Gallagher","Hallaghy"]}]};
+var C = DATA.content, TOWN = DATA.townland, PL = C.plates, PLACE = DATA.place || {}, CEN = DATA.census || {}, CURL = DATA.census_urls || {};
+var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var $ = function(s,el){return (el||document).querySelector(s)};
+function h(tag,props){
+  var e=document.createElement(tag), kids=Array.prototype.slice.call(arguments,2);
+  if(props) for(var k in props){
+    var v=props[k];
+    if(k==='class') e.className=v;
+    else if(k==='text') e.textContent=v;
+    else if(k==='style') Object.assign(e.style,v);
+    else if(k.indexOf('on')===0) e.addEventListener(k.slice(2),v);
+    else e.setAttribute(k,v);
+  }
+  (function add(list){list.forEach(function(c){
+    if(c==null||c===false) return;
+    if(Array.isArray(c)) add(c);
+    else e.append(c.nodeType?c:document.createTextNode(String(c)));
+  })})(kids);
+  return e;
+}
+
+/* ================= data: families, Griffith's, census ================= */
+var GRP=C.groups||{colours:{Other:'#A9B7B3'},territory:['Other'],map:{}};
+var COL=GRP.colours, TERR=GRP.territory, GMAP=GRP.map;
+function G(s){return GMAP[String(s).toLowerCase().replace(/[^a-z]/g,'')]||'Other'}
+function T(g){return TERR.indexOf(g)>=0?g:'Other'}
+/* Verified spelling families (data/reference/surname_variants.csv, DECISIONS.md 2026-11-06): the label and spellings only. */
+var NF=DATA.name_families||[], NFMAP={};
+function nameKey(sn){return String(sn||'').toLowerCase().replace(/[^a-z]/g,'')}
+NF.forEach(function(f){f.recorded_as.forEach(function(s){NFMAP[nameKey(s)]=f})});
+function nfOf(sn){return NFMAP[nameKey(sn)]||null}
+function surKey(sn){var f=nfOf(sn); return f?'F:'+nameKey(f.label):'S:'+nameKey(sn)}
+function surOf(name){var w=name.replace(/\(.*\)/,'').trim().split(/\s+/);return w[w.length-1]}
+
+var D_GI=DATA.griffiths_index||null;
+var GRF=C.griffiths||null, GR=GRF?GRF.rows:[], MOUNTAIN=GRF&&GRF.mountain_acres, WATER=GRF&&GRF.water_acres, HAS_GR=GR.length>0;
+var CY=['1901','1911','1926'].filter(function(y){return (CEN[y]||[]).length});
+/* A case with no authored families gets one plate per surname, built only from the returns it holds (genFamilies). */
+var GEN=!((C.families||[]).length)&&CY.length>0;
+/* what the case holds, in words: used on the title plate and in the contents */
+var SPAN=(function(){
+  if(HAS_GR&&CY.length) return 'from the 1850s to '+CY[CY.length-1];
+  if(CY.length>1) return 'from '+CY[0]+' to '+CY[CY.length-1];
+  if(CY.length) return 'the census of '+CY[0];
+  if(HAS_GR) return 'the 1850s';
+  return '';
+})();
+
+function censusHH(y){
+  var rows=CEN[y]||[], map={}, order=[];
+  rows.forEach(function(r){var k=String(r.h); if(!map[k]){map[k]=[];order.push(k)} map[k].push(r)});
+  return order.map(function(k){
+    var m=map[k], head;
+    if(y==='1926') head=m.find(function(r){return r.r==='Head'})||m.find(function(r){return r.r===(r.f+' '+r.s)})||m[0];
+    else head=m.find(function(r){return /^Head/.test(r.r)})||m[0];
+    var rest=m.filter(function(r){return r!==head}).sort(function(a,b){return (b.a==null?-1:b.a)-(a.a==null?-1:a.a)});
+    return {key:k,year:y,head:head,hname:head.f+' '+head.s,grp:GEN?surKey(head.s):T(G(head.s)),members:[head].concat(rest)};
+  });
+}
+function griffHH(){
+  var map={}, order=[];
+  GR.forEach(function(r){if(!map[r.hd]){map[r.hd]=[];order.push(r.hd)} map[r.hd].push(r)});
+  return order.map(function(k){
+    var m=map[k], first=m[0];
+    return {key:k,year:'1850s',head:{f:'',s:surOf(first.occ)},hname:first.names||first.occ,grp:GEN?surKey(surOf(first.occ)):T(G(surOf(first.occ))),lot:first.lot,members:m};
+  });
+}
+var SN={'1850s':griffHH(),'1901':censusHH('1901'),'1911':censusHH('1911'),'1926':censusHH('1926')};
+var YEARS=['1850s','1901','1911','1926'], PHASE={'1850s':0,'1901':1,'1911':2,'1926':3};
+function hhFor(year,keys){return SN[year].filter(function(x){return keys.indexOf(x.grp)>=0})}
+function peopleOf(list){return list.reduce(function(n,x){return n+x.members.length},0)}
+
+/* ================= colour and scene engine ================= */
+function hex(h){return [parseInt(h.substr(1,2),16),parseInt(h.substr(3,2),16),parseInt(h.substr(5,2),16)]}
+function toHex(a){return '#'+a.map(function(v){v=Math.max(0,Math.min(255,Math.round(v)));return (v<16?'0':'')+v.toString(16)}).join('')}
+function mixh(a,b,f){var x=hex(a),y=hex(b);return toHex([x[0]+(y[0]-x[0])*f,x[1]+(y[1]-x[1])*f,x[2]+(y[2]-x[2])*f])}
+function lerp(a,b,f){return a+(b-a)*f}
+var PH=[
+ {sky:['#F7EEF2','#E9EFF4','#DDEBEE'],far:'#E4E4EE',near:'#A8C3C5',disc:'#F8DACA',ground:'#B7CEC6',house:'#35545C',glow:'#F6E2A0',ga:.55,dx:.2,dy:.6,dr:.055},
+ {sky:['#F2F8F9','#E1EDF2','#D3E7EA'],far:'#DAE7EE',near:'#9CC1BB',disc:'#F6E9AE',ground:'#B1CEC3',house:'#35545C',glow:'#F6E2A0',ga:.3,dx:.34,dy:.3,dr:.05},
+ {sky:['#F8F3DD','#EEF0DA','#DCEBE3'],far:'#ECE8D3',near:'#AFC9A8',disc:'#F5DF98',ground:'#BBD1A8',house:'#35545C',glow:'#F6E2A0',ga:.45,dx:.74,dy:.4,dr:.065},
+ {sky:['#EFEAF5','#E1E1F0','#D2DCE9'],far:'#D9DAEA',near:'#9BB0C5',disc:'#F6F3FC',ground:'#A8BCC6',house:'#2F4A57',glow:'#F8E8A8',ga:.95,dx:.8,dy:.22,dr:.04}
+];
+function mixPh(p){
+  p=Math.max(0,Math.min(3,p)); var i=Math.min(2,Math.floor(p)), f=p-i, a=PH[i], b=PH[i+1], o={};
+  o.sky=[0,1,2].map(function(k){return mixh(a.sky[k],b.sky[k],f)});
+  ['far','near','disc','ground','house','glow'].forEach(function(k){o[k]=mixh(a[k],b[k],f)});
+  ['ga','dx','dy','dr'].forEach(function(k){o[k]=lerp(a[k],b[k],f)});
+  return o;
+}
+function rnd(seed){return function(){seed|=0;seed=seed+0x6D2B79F5|0;var q=Math.imul(seed^seed>>>15,1|seed);q=q+Math.imul(q^q>>>7,61|q)^q;return((q^q>>>14)>>>0)/4294967296}}
+
+var scenes=[], tipEl=$('#tip');
+function makeScene(art,opts){
+  var cv=h('canvas',{'aria-hidden':'true'}); art.prepend(cv);
+  var r=rnd(opts.seed||3), lay=[], kind=opts.kind||'hills';
+  var bases=kind==='mountain'?[.20,.32,.44,.57,.70]:(kind==='mist'?[.38,.46,.54,.62,.72]:[.34,.44,.54,.63,.72]);
+  var amps=kind==='mountain'?[96,78,60,42,16]:[40,36,31,26,13];
+  for(var i=0;i<5;i++) lay.push({base:bases[i],amp:amps[i],f:[.0036+r()*.002+i*.0006,.0098+r()*.003,.0215+r()*.006],ph:[r()*6,r()*6,r()*6]});
+  var specks=[]; for(i=0;i<(opts.gorse===false?0:130);i++) specks.push({u:r(),v:.1+r()*.8,s:1.1+r()*1.8});
+  var sc={cv:cv,ctx:cv.getContext('2d'),W:0,H:0,ph:opts.ph||0,phT:opts.ph||0,kind:kind,lay:lay,specks:specks,houses:opts.houses||[],names:!!opts.names,hits:[],vis:false,dirty:true,fadeT:performance.now(),mist:opts.mist!==false};
+  sc.setHouses=function(list,ph){sc.houses=list;if(ph!=null)sc.phT=ph;sc.fadeT=performance.now();sc.dirty=true;if(reduce)sc.ph=sc.phT};
+  function size(){var d=Math.min(2,window.devicePixelRatio||1),b=art.getBoundingClientRect();sc.W=b.width;sc.H=b.height;cv.width=Math.round(sc.W*d);cv.height=Math.round(sc.H*d);sc.ctx.setTransform(d,0,0,d,0,0);sc.dirty=true}
+  if('ResizeObserver' in window) new ResizeObserver(size).observe(art); else window.addEventListener('resize',size);
+  size();
+  if('IntersectionObserver' in window) new IntersectionObserver(function(e){sc.vis=e[0].isIntersecting;if(sc.vis)sc.dirty=true},{rootMargin:'120px'}).observe(art); else sc.vis=true;
+  cv.addEventListener('pointermove',function(e){hover(sc,e)});
+  cv.addEventListener('pointerdown',function(e){hover(sc,e,true)});
+  cv.addEventListener('pointerleave',function(){tipEl.hidden=true});
+  scenes.push(sc); return sc;
+}
+function hover(sc,e,sticky){
+  var b=sc.cv.getBoundingClientRect(), x=e.clientX-b.left, y=e.clientY-b.top, best=null;
+  sc.hits.forEach(function(p){if(x>=p.x0&&x<=p.x1&&y>=p.y0&&y<=p.y1) best=p});
+  if(best){tipEl.hidden=false;tipEl.textContent=best.t;tipEl.style.left=e.clientX+'px';tipEl.style.top=(e.clientY-6)+'px';sc.cv.style.cursor='help';if(sticky){clearTimeout(hover.t);hover.t=setTimeout(function(){tipEl.hidden=true},2600)}}
+  else{tipEl.hidden=true;sc.cv.style.cursor=''}
+}
+function ridgeY(sc,L,i,x,t){var d=t*.04*(1+i*.35),H=sc.H,peaky=sc.kind==='mountain'&&i<3;
+  var a=Math.sin(x*L.f[0]+L.ph[0]+d), b=Math.sin(x*L.f[1]+L.ph[1]-d*.7), c=Math.sin(x*L.f[2]+L.ph[2]+d*1.3);
+  if(peaky){a=1-2*Math.abs(a)*Math.abs(a)}
+  return H*L.base+L.amp*(.55*a+.3*b+.15*c)}
+function placeHouses(list,opts){
+  opts=opts||{}; var n=list.length, rows=n>12?3:(n>6?2:1), per=Math.ceil(n/rows), out=[], r=rnd(11+n);
+  var order=list.slice().sort(function(a,b){return TERR.indexOf(a.grp)-TERR.indexOf(b.grp)||(a.key>b.key?1:-1)});
+  order.forEach(function(hh,i){
+    var row=Math.floor(i/per), idx=i%per, cnt=Math.min(per,n-row*per);
+    var spread=Math.min(.84,.2*cnt+.14), off=rows>1&&row%2?.5/cnt*spread:0;
+    var fx=.5+((idx+.5)/cnt-.5)*spread+off*.4+(r()-.5)*.03/Math.max(1,rows-1);
+    var ys=rows===3?[.76,.83,.905]:(rows===2?[.775,.875]:[.81]), ss=rows===3?[.76,.94,1.12]:(rows===2?[.88,1.1]:[1.2]);
+    var np=hh.members.length;
+    out.push({fx:fx,fy:ys[row]+(r()-.5)*.012,s:ss[row],w:24+6.5*Math.sqrt(np),lit:Math.min(3,1+Math.floor(np/5)),color:COL[hh.grp]||COL.Other,name:opts.names?(hh.members[0].f?hh.members[0].f+' '+hh.members[0].s:hh.hname):'',
+      text:hh.year==='1850s'?(hh.hname+', lot '+hh.lot):(hh.hname+', '+np+(np===1?' person':' people'))});
+  });
+  return out;
+}
+function drawScene(sc,t){
+  var c=sc.ctx,W=sc.W,H=sc.H; if(!W||!H) return;
+  var P=mixPh(sc.ph), unit=Math.max(.62,Math.min(1.22,W/1200));
+  var g=c.createLinearGradient(0,0,0,H*.8); g.addColorStop(0,P.sky[0]);g.addColorStop(.55,P.sky[1]);g.addColorStop(1,P.sky[2]);
+  c.fillStyle=g;c.fillRect(0,0,W,H);
+  var dx=P.dx*W, dy=P.dy*H*(sc.kind==='mountain'?.7:1), dr=P.dr*Math.min(W,1400)+10;
+  var hg=c.createRadialGradient(dx,dy,dr*.4,dx,dy,dr*3.4); hg.addColorStop(0,'rgba(255,255,255,.55)');hg.addColorStop(1,'rgba(255,255,255,0)');
+  c.fillStyle=hg;c.fillRect(0,0,W,H);
+  c.beginPath();c.arc(dx,dy,dr,0,7);c.fillStyle=P.disc;c.fill();
+  var i,x;
+  for(i=0;i<5;i++){
+    var L=sc.lay[i], col=mixh(P.far,P.near,i/4);
+    if(i===4) col=P.ground;
+    c.beginPath();c.moveTo(0,H);
+    for(x=0;x<=W+8;x+=8)c.lineTo(x,ridgeY(sc,L,i,x,t));
+    c.lineTo(W,H);c.closePath();c.fillStyle=col;c.fill();
+    c.lineWidth=1;
+    for(var j=0;j<3;j++){c.beginPath();for(x=0;x<=W+8;x+=8){var yy=ridgeY(sc,L,i,x,t)+5+j*9;x?c.lineTo(x,yy):c.moveTo(x,yy)}c.strokeStyle='rgba(60,110,110,'+(.26-j*.07)+')';c.stroke()}
+    if(sc.mist&&(i===1||i===3)){
+      for(var m=0;m<3;m++){var mx=((m*.37+t*.004*(i===1?1:-1))%1.3-.15)*W,my=H*(L.base+.05+m*.02),mr=W*.28;
+        c.save();c.translate(mx,my);c.scale(1,.12);var mg=c.createRadialGradient(0,0,0,0,0,mr);mg.addColorStop(0,'rgba(255,255,255,.55)');mg.addColorStop(1,'rgba(255,255,255,0)');c.fillStyle=mg;c.beginPath();c.arc(0,0,mr,0,7);c.fill();c.restore()}
+    }
+    if(i===3&&sc.specks.length){
+      var ga=sc.ph>2.4?.55:.95;
+      sc.specks.forEach(function(s){var px=s.u*W,y1=ridgeY(sc,sc.lay[3],3,px,t),y2=ridgeY(sc,sc.lay[4],4,px,t);if(y2-y1<10)return;c.beginPath();c.arc(px,y1+(y2-y1)*s.v,s.s*unit,0,7);c.fillStyle='rgba(235,201,75,'+ga+')';c.fill()});
+    }
+  }
+  var fg=c.createLinearGradient(0,H*.78,0,H);fg.addColorStop(0,'rgba(255,255,255,0)');fg.addColorStop(1,'rgba(79,138,134,.16)');c.fillStyle=fg;c.fillRect(0,H*.78,W,H*.22);
+  sc.hits=[];
+  var fa=Math.min(1,(performance.now()-sc.fadeT)/520); if(fa<1) sc.dirty=true;
+  c.globalAlpha=fa;
+  sc.houses.slice().sort(function(a,b){return a.fy-b.fy}).forEach(function(hs){
+    var s=hs.s*unit, w=hs.w*s, bh=w*.56, rh=w*.34, x0=hs.fx*W, y0=hs.fy*H;
+    var roof=mixh(P.house,hs.color,.5);
+    if(P.ga>.6){var gl=c.createRadialGradient(x0,y0-bh*.5,2,x0,y0-bh*.5,w*1.4);gl.addColorStop(0,'rgba(248,232,168,.28)');gl.addColorStop(1,'rgba(248,232,168,0)');c.fillStyle=gl;c.fillRect(x0-w*1.5,y0-w*1.6,w*3,w*2)}
+    c.fillStyle='rgba(40,70,70,.16)';c.beginPath();c.ellipse(x0+w*.1,y0+1,w*.62,w*.09,0,0,7);c.fill();
+    c.fillStyle=P.house;c.fillRect(x0-w/2,y0-bh,w,bh);
+    c.fillStyle=roof;c.beginPath();c.moveTo(x0-w/2-w*.07,y0-bh);c.lineTo(x0,y0-bh-rh);c.lineTo(x0+w/2+w*.07,y0-bh);c.closePath();c.fill();
+    c.fillStyle=P.house;c.fillRect(x0+w*.2,y0-bh-rh*.8,w*.1,rh*.7);
+    var ww=w*.15,wh=bh*.3;
+    for(var k=0;k<hs.lit;k++){var wx=x0-w*.36+k*(w*.3);
+      var wg=c.createRadialGradient(wx+ww/2,y0-bh*.62,1,wx+ww/2,y0-bh*.62,ww*2.2);wg.addColorStop(0,'rgba(246,226,160,'+(.55*P.ga+.15)+')');wg.addColorStop(1,'rgba(246,226,160,0)');
+      c.fillStyle=wg;c.fillRect(wx-ww*2,y0-bh*.62-ww*2.4,ww*5,ww*5);
+      c.fillStyle=P.glow;c.fillRect(wx,y0-bh*.78,ww,wh)}
+    c.fillStyle='rgba(20,40,45,.55)';c.fillRect(x0+w*.28,y0-bh*.5,w*.14,bh*.5);
+    for(var q=0;q<3;q++){var ph=((t*.12+q/3+hs.fx*3)%1),sx=x0+w*.25+Math.sin(ph*6+q)*w*.1*(ph+.3),sy=y0-bh-rh-ph*w*1.1;c.beginPath();c.arc(sx,sy,w*(.05+ph*.1),0,7);c.fillStyle='rgba(255,255,255,'+(.5*(1-ph))+')';c.fill()}
+    if(sc.names&&hs.name){c.font='italic 400 '+Math.round((13*unit+1)*(TOUCH?1.4:1))+'px Newsreader, Georgia, serif';c.textAlign='center';c.fillStyle='rgba(29,47,51,.9)';c.fillText(hs.name,x0,y0+(TOUCH?22:17)*unit)}
+    sc.hits.push({x0:x0-w*.6,x1:x0+w*.6,y0:y0-bh-rh-8,y1:y0+(sc.names?(TOUCH?30:22):6),t:hs.text});
+  });
+  c.globalAlpha=1;
+}
+var lastT=0;
+function loop(ts){
+  requestAnimationFrame(loop);
+  if(ts-lastT<38) return; lastT=ts;
+  scenes.forEach(function(sc){
+    if(!sc.vis) return;
+    if(Math.abs(sc.ph-sc.phT)>.003){sc.ph+=(sc.phT-sc.ph)*.09;sc.dirty=true}
+    if(!reduce||sc.dirty){drawScene(sc,reduce?0:ts/1000);sc.dirty=false}
+  });
+}
+
+
+/* ================= generated families =================
+   For a case with no authored families: one plate per surname of household head, as recorded in the returns.
+   The text states only what the returns record. It links no household to another and draws no conclusion. */
+function genFamilies(){
+  var by={}, order=[];
+  function add(hh){var k=hh.grp, f=nfOf(hh.head.s); if(!by[k]){by[k]={k:k,sn:f?f.label:hh.head.s,nf:f,n:0};order.push(k)} return by[k]}
+  CY.forEach(function(y){SN[y].forEach(function(hh){add(hh).n+=hh.members.length})});
+  if(HAS_GR) SN['1850s'].forEach(function(hh){add(hh)});
+  order.sort(function(a,b){return by[b].n-by[a].n||(by[a].sn>by[b].sn?1:-1)});
+  function plural(sn){return /(s|x|z|ch|sh)$/i.test(sn)?sn+'es':sn+'s'}
+  function joinList(a){return a.length<2?a.join(''):a.slice(0,-1).join(', ')+' and '+a[a.length-1]}
+  function who(y,r,head){
+    var nm=r.f+(r.s&&r.s!==head.s?' '+r.s:''), bits=[];
+    if(r.a!=null) bits.push(String(r.a));
+    if(y!=='1926'&&r.r) bits.push(String(r.r).toLowerCase());
+    return nm+(bits.length?' ('+bits.join(', ')+')':'');
+  }
+  function sentence(y,hh){
+    var head=hh.head, label=y==='1926'?('form '+(head.fo||hh.key)):('house '+hh.key), others=hh.members.slice(1).map(function(r){return who(y,r,head)});
+    return head.f+' '+head.s+(head.a!=null?' ('+head.a+')':'')+' headed '+label+(others.length?' with '+joinList(others)+'.':', the only person recorded.');
+  }
+  return order.map(function(k){
+    var sn=by[k].sn, yrs=CY.filter(function(y){return hhFor(y,[k]).length}), paras=[];
+    yrs.forEach(function(y){
+      var hs=hhFor(y,[k]);
+      paras.push('In '+y+(hs.length>1?' there were '+hs.length+' households headed by this name. ':', ')+hs.map(function(hh){return sentence(y,hh)}).join(' '));
+    });
+    var lead=yrs.length?('Census returns for '+joinList(yrs)+'.'):'Not in the census returns held here.';
+    if(HAS_GR){var gh=hhFor('1850s',[k]); lead+=gh.length?(" Griffith's: "+gh.length+(gh.length===1?' holding':' holdings')+' on the page.'):" Not on Griffith's page."}
+    var nf=by[k].nf;
+    if(nf){
+      lead+=' Recorded under several spellings: '+joinList(nf.recorded_as)+'. Each record keeps the spelling its writer used.';
+      var gi=(D_GI&&D_GI.rows||[]).filter(function(r){return r.role==='occupier'&&nfOf(r.surname)===nf});
+      if(gi.length){var sp=[]; gi.forEach(function(r){var s=nf.recorded_as.filter(function(x){return nameKey(x)===nameKey(r.surname)})[0]||r.surname; if(sp.indexOf(s)<0) sp.push(s)});
+        lead+=" The Griffith's list of the 1850s names "+gi.length+(gi.length===1?' occupier':' occupiers')+' of the family, spelled '+joinList(sp)+'.'}
+    }
+    return {name:'The '+plural(sn),keys:[k],generated:true,
+      medium:'Built from the census returns'+(HAS_GR?" and Griffith's Valuation":'')+'. No researched account has been written for this family yet.',
+      story:lead,paras:paras};
+  });
+}
+
+/* ================= copy ================= */
+var FAM=GEN?genFamilies():(C.families||[]);
+
+/* ================= plate builders ================= */
+var plates=[], ROOMS=[['I','The land'],['II','The households'],['III','Not yet hung'],['IV','The archive']];
+function pad(n){return (n<10?'0':'')+n}
+function plate(room,title,build){plates.push({room:room,title:title,build:build})}
+function labelBlock(num,title,medium,story,extra){
+  return h('div',{class:'label'},h('div',{class:'wrap lab-grid'},
+    h('div',null,h('span',{class:'pn',text:'Plate '+num}),h('h2',{text:title}),medium?h('p',{class:'medium',text:medium}):null),
+    h('div',null,(Array.isArray(story)?story:[story]).map(function(s){return h('p',{class:'story',text:s})})),
+    h('div',null,extra)));
+}
+function roomTag(art,room){
+  art.append(h('div',{class:'roomtag'},h('div',{class:'wrap'},h('p',null,h('b',{text:'Room '+ROOMS[room][0]}),ROOMS[room][1]))));
+}
+function famRows(keys){
+  var out=[];
+  YEARS.forEach(function(y,si){
+    hhFor(y,keys).forEach(function(hh){
+      hh.members.forEach(function(r){
+        if(si===0) out.push(['1850s','lot '+r.lot,r.occ,'','Occupier',r.area==='shared'?'shared area':r.area,'£'+r.tot]);
+        else out.push([y,retCell(y,r,y==='1926'?r.fo:String(r.h)),r.f+' '+r.s,r.a==null?'':String(r.a),y==='1926'?(r===hh.head?'Head':'in the household of '+hh.hname):r.r,(r.m||'')+(r.o?'; '+r.o:''),'']);
+      });
+    });
+  });
+  return out;
+}
+function retCell(y,r,text){
+  if(!CURL[y]||!r.ref) return text;
+  return {t:text,href:CURL[y].replace('{ref}',encodeURIComponent(r.ref)),label:'Open the original '+y+' return for '+r.f+' '+r.s};
+}
+function cellNode(c,cls){
+  if(c&&typeof c==='object') return h('td',{class:cls},h('a',{href:c.href,target:'_blank',rel:'noopener','aria-label':c.label,title:'Open the original return',text:String(c.t)+' \u2197'}));
+  return h('td',{class:cls,text:c==null?'':String(c)});
+}
+function table(head,rows,numCol){
+  return h('div',{class:'tbl'},h('table',null,h('thead',null,h('tr',null,head.map(function(c,i){return h('th',{class:i===numCol?'n':'',text:c})}))),
+    h('tbody',null,rows.map(function(r){return h('tr',null,r.map(function(c,i){return cellNode(c,i===numCol?'n':'')}))}))));
+}
+function yearTabs(avail,cur,onPick,lead){
+  var box=h('div',{class:'yrs',role:'tablist','aria-label':lead?'Choose photographs or a date':'Choose a date'});
+  (lead?[lead]:[]).concat(YEARS).forEach(function(y){
+    var b=h('button',{class:'yr',role:'tab','aria-selected':y===cur?'true':'false',onclick:function(){onPick(y)}},y);
+    if(!avail[y]) b.setAttribute('data-empty','1');
+    box.append(b);
+  });
+  return box;
+}
+function setSel(box,y){Array.prototype.forEach.call(box.children,function(b){b.setAttribute('aria-selected',b.textContent===y?'true':'false')})}
+function countText(y,list,keys){
+  var n=peopleOf(list);
+  if(y==='1850s') return list.length? (list.length+(list.length===1?' holding':' holdings')+' on the page, '+n+(n===1?' occupier.':' occupiers.')) : 'No holding of this name on the page.';
+  return list.length? (y+', census return: '+list.length+(list.length===1?' household, ':' households, ')+n+(n===1?' person.':' people.')) : y+', census return: no household of this name.';
+}
+function sceneHouses(y,list,names){return placeHouses(list,{names:names})}
+
+/* The Logainm place record, shown on the title plate of every townland. Logainm is both the place authority and a source. */
+function placeCard(){
+  if(!PLACE.logainm_id) return null;
+  var kids=[h('p',{class:'small'},'Place record from ',h('a',{href:PLACE.logainm_url,target:'_blank',rel:'noopener',text:'Logainm record '+PLACE.logainm_id}),'.')];
+  if(PLACE.osm_url) kids.push(h('p',{class:'small'},'Location ',h('a',{href:PLACE.osm_url,target:'_blank',rel:'noopener',text:Number(PLACE.latitude).toFixed(4)+', '+Number(PLACE.longitude).toFixed(4)}),'.'));
+  if(PLACE.credit) kids.push(h('p',{class:'small',text:PLACE.credit}));
+  return kids;
+}
+
+/* ================= photographs (docs/MEDIA_SPEC.md) =================
+   Each photograph is shown whole in a frame, never cropped. Tap or press Enter to enlarge. */
+var MEDIA=DATA.media||{header:[],families:{}}, LB={open:false,box:null,set:[],i:0,from:null};
+function webLink(u){return /^https?:\/\//i.test(u||'')}
+function photoFrame(item,set,i){
+  var img=h('img',{src:item.url,alt:item.alt||item.caption||'',decoding:'async'});
+  var btn=h('button',{class:'pframe',type:'button','aria-haspopup':'dialog',onclick:function(){openPhoto(set,i,btn)}},img);
+  img.addEventListener('error',function(){btn.classList.add('broken');btn.replaceChildren(h('span',{text:'Photograph not available'}))});
+  var cap=h('figcaption',{text:item.caption||''});
+  if((item.alt||item.caption)===item.caption) cap.setAttribute('aria-hidden','true');   /* the alt text already says it */
+  var fig=h('figure',{class:'hung'},btn,cap);
+  function shape(w,hh){if(w&&hh) fig.style.setProperty('--ar',(w/hh).toFixed(4))}
+  shape(item.w,item.h);                                                   /* from the build, so the page does not jump */
+  img.addEventListener('load',function(){shape(img.naturalWidth,img.naturalHeight)});   /* the browser's own reading wins */
+  return fig;
+}
+function hangRow(items,label,extra){
+  return h('div',{class:'hang'+(extra?' '+extra:'')},h('div',{class:'hang-row',role:'group','aria-label':'Photographs of '+(label||TOWN.name)},
+    items.map(function(it,i){return photoFrame(it,items,i)})));
+}
+function buildLightbox(){
+  var img=h('img',{alt:''}), cap=h('p',{class:'lb-cap'}), meta=h('p',{class:'small lb-meta'});
+  var link=h('a',{class:'lb-link',target:'_blank',rel:'noopener',text:'View original ↗'});
+  var count=h('span',{class:'lb-count','aria-live':'polite'});
+  var prev=h('button',{class:'btn',type:'button','aria-label':'Previous photograph',onclick:function(){stepPhoto(-1)}},'←');
+  var next=h('button',{class:'btn',type:'button','aria-label':'Next photograph',onclick:function(){stepPhoto(1)}},'→');
+  var close=h('button',{class:'btn',type:'button',onclick:closePhoto},'Close');
+  var box=h('div',{class:'lb',role:'dialog','aria-modal':'true','aria-label':'Photograph',onclick:function(e){if(e.target===box||e.target===box.firstChild)closePhoto()}},
+    h('div',{class:'lb-in'},h('div',{class:'lb-bar'},prev,next,count,close),h('div',{class:'lb-pic'},h('div',{class:'lb-mat'},img)),h('div',{class:'lb-text'},cap,meta,link)));
+  box.addEventListener('keydown',function(e){
+    if(e.key!=='Tab') return;
+    var f=Array.prototype.filter.call(box.querySelectorAll('button,a[href]'),function(x){return x.offsetParent!==null&&!x.disabled});   /* in page order */
+    if(!f.length) return;
+    var a=f.indexOf(document.activeElement);
+    if(e.shiftKey&&a<=0){e.preventDefault();f[f.length-1].focus()}
+    else if(!e.shiftKey&&a===f.length-1){e.preventDefault();f[0].focus()}
+  });
+  document.body.append(box);
+  LB.box=box; LB.img=img; LB.cap=cap; LB.meta=meta; LB.link=link; LB.count=count; LB.prev=prev; LB.next=next; LB.close=close;
+}
+function showPhoto(){
+  var it=LB.set[LB.i], n=LB.set.length;
+  LB.img.src=it.url; LB.img.alt=it.alt||it.caption||'';
+  LB.cap.textContent=it.caption||'';
+  var m=[['Source',it.source],['Reference',it.reference],['Date',it.date],['People',it.people]].filter(function(x){return x[1]}).map(function(x){return x[0]+': '+x[1]+'.'});
+  LB.meta.textContent=m.join(' ');
+  if(webLink(it.link)){LB.link.href=it.link;LB.link.hidden=false}else{LB.link.removeAttribute('href');LB.link.hidden=true}
+  LB.count.textContent=n>1?(LB.i+1)+' / '+n:'';
+  LB.prev.hidden=LB.next.hidden=n<2; LB.prev.disabled=LB.i===0; LB.next.disabled=LB.i===n-1;
+}
+function openPhoto(set,i,from){
+  if(!LB.box) buildLightbox();
+  LB.set=set; LB.i=i; LB.from=from; LB.open=true;
+  showPhoto(); LB.box.classList.add('open'); document.documentElement.classList.add('lb-lock'); LB.close.focus();
+}
+function stepPhoto(d){
+  var j=LB.i+d; if(j<0||j>=LB.set.length) return;
+  LB.i=j; showPhoto();
+}
+function closePhoto(){
+  if(!LB.open) return;
+  LB.open=false; LB.box.classList.remove('open'); document.documentElement.classList.remove('lb-lock');
+  if(LB.from&&LB.from.isConnected) LB.from.focus();
+}
+
+/* Plate 1: title */
+plate(0,PL.title.title,function(num){
+  var art=h('div',{class:'art'}); var sc=makeScene(art,{seed:5,ph:0,kind:'hills'});
+  roomTag(art,0);
+  art.append(h('div',{class:'bigtitle'},h('div',{class:'wrap'},PL.title.irish?h('p',{class:'irish',text:PL.title.irish}):null,h('h1',{text:PL.title.heading}))),
+    h('div',{class:'walkhint'},h('div',{class:'wrap'},h('p',{text:'Scroll down to walk the townland, or use the arrows.'+(SPAN?(SPAN.indexOf('from')===0?' It runs '+SPAN+'.':' It covers '+SPAN+'.'):'')}))));
+  if(MEDIA.header.length){art.classList.add('has-hang'); art.insertBefore(hangRow(MEDIA.header),art.querySelector('.walkhint'))}
+  var sec=h('section',{class:'plate',id:'p'+pad(num)},art,labelBlock(pad(num),PL.title.heading,PL.title.medium,PL.title.story,placeCard()));
+  return sec;
+});
+
+/* Plate 2: mountain (only for townlands whose content defines one) */
+if(PL.mountain) plate(0,PL.mountain.title,function(num){
+  var art=h('div',{class:'art'}); makeScene(art,{seed:9,ph:0,kind:'mountain',gorse:false});
+  var sec=h('section',{class:'plate',id:'p'+pad(num)},art,labelBlock(pad(num),PL.mountain.title,PL.mountain.medium,PL.mountain.story,null));
+  return sec;
+});
+
+/* Plate 3: the page */
+if(HAS_GR) plate(0,PL.griffiths.title,function(num){
+  var art=h('div',{class:'art sheetart'}); makeScene(art,{seed:2,ph:0,kind:'mist',gorse:false});
+  var S=C.griffiths.sheet;
+  var rows=GR.map(function(r){return [r.lot,r.occ,r.les,r.desc,r.area,r.land,r.bld,r.tot]});
+  rows.push(S.printed_total.slice());
+  var t=table(['Lot','Occupier','Immediate lessor','Description','Area (A R P)','Land','Buildings','Total'],rows,-1);
+  Array.prototype.forEach.call(t.querySelectorAll('tbody tr'),function(tr,i){if(i===rows.length-1) tr.className='tot'; Array.prototype.forEach.call(tr.children,function(td,j){if(j>=4)td.className='n'}); });
+  Array.prototype.forEach.call(t.querySelectorAll('thead th'),function(th,j){if(j>=4)th.className='n'});
+  var sheet=h('div',{class:'sheet'},h('h3',{text:S.heading}),h('p',{class:'sub',text:S.sub}),t,h('p',{class:'foot',text:S.foot}));
+  art.append(h('div',{class:'wrap',style:{position:'relative',width:'100%'}},sheet));
+  return h('section',{class:'plate',id:'p'+pad(num)},art,labelBlock(pad(num),PL.griffiths.title,PL.griffiths.medium,PL.griffiths.story,null));
+});
+
+/* Plate 3b: Griffith's, names only (tier 1: the askaboutireland index, nothing transcribed yet) */
+if(!HAS_GR&&D_GI&&D_GI.rows&&D_GI.rows.length) plate(0,"Griffith's, the names",function(num){
+  var art=h('div',{class:'art sheetart'}); makeScene(art,{seed:2,ph:0,kind:'mist',gorse:false});
+  var occ=D_GI.rows.filter(function(r){return r.role==='occupier'}), foot=D_GI.rows.filter(function(r){return r.role!=='occupier'});
+  var rows=occ.map(function(r,i){return [String(i+1),(r.forename+' '+r.surname).trim()]});
+  var t=table(['No.','Occupier, as indexed'],rows,-1);
+  Array.prototype.forEach.call(t.querySelectorAll('tbody tr'),function(tr,i){
+    var td=tr.children[1], nf=nfOf(occ[i].surname);
+    if(nf) td.append(h('span',{style:{opacity:'.7',fontStyle:'italic',marginLeft:'6px'},text:'('+nf.label+' family)'}));
+    var a=h('a',{href:occ[i].listing_url,target:'_blank',rel:'noopener',title:'Opens the askaboutireland list for this townland, page '+occ[i].listing_page+'. Open the details or page icon there.',text:' List p.'+occ[i].listing_page}); td.append(a)});
+  var note="Names in the order askaboutireland.ie lists them. Holding numbers, lessors, areas and valuations have not yet been added, and the index may misread the page. The links open the askaboutireland list this name is on. The site's own record and page-image links only work inside a live session, so open the details or page icon from the list. "+(foot.length?foot.length+(foot.length===1?' further index entry is':' further index entries are')+' not an occupier (a blank name or a title) and '+(foot.length===1?'is':'are')+' left out of this list.':'');
+  var sheet=h('div',{class:'sheet'},h('h3',{text:D_GI.townland.toUpperCase()}),h('p',{class:'sub',text:"Griffith's Valuation, mid 1850s. The index only."}),t,h('p',{class:'foot',text:note}));
+  art.append(h('div',{class:'wrap',style:{position:'relative',width:'100%'}},sheet));
+  return h('section',{class:'plate',id:'p'+pad(num)},art,labelBlock(pad(num),"Griffith's, the names","The tenants named on the page, mid 1850s",["This is the first and lightest layer of Griffith's Valuation: who was named as an occupier here. The rest of the page is added when it has been transcribed from the image."],null));
+});
+
+/* Plate 5: census overview (every census year the case holds) */
+if(CY.length) plate(1,CY.length===3?'Three censuses':(CY.length===2?'Two censuses':'The census of '+CY[0]),function(num){
+  var art=h('div',{class:'art'}), sc=makeScene(art,{seed:6,ph:1,kind:'hills'}); roomTag(art,1);
+  var cnt=h('p',{class:'cnt'}), box;
+  function pick(y){var list=SN[y].filter(function(x){return true}); sc.setHouses(placeHouses(list,{names:false}),PHASE[y]); setSel(box,y); var n=peopleOf(list);
+    cnt.textContent=y+', census return: '+list.length+(list.length===1?' household, ':' households, ')+n+(n===1?' person.':' people.')}
+  box=h('div',{class:'yrs',role:'tablist','aria-label':'Choose a census'},CY.map(function(y){return h('button',{class:'yr',role:'tab','aria-selected':y===CY[0]?'true':'false',onclick:function(){pick(y)}},y)}));
+  var yl=CY.length>1?CY.slice(0,-1).join(', ')+' and '+CY[CY.length-1]:CY[0];
+  var sec=h('section',{class:'plate',id:'p'+pad(num)},art,labelBlock(pad(num),CY.length===3?'Three censuses':(CY.length===2?'Two censuses':'The census of '+CY[0]),'Census returns of '+yl+'. Hover or tap a cottage',
+    [(HAS_GR?'From here the page is about households. ':'The page is about households. ')+'Each cottage is one house in the census, lit by the people inside it, and cottages keep the same neighbourhood from year to year.']
+      .concat(CY.length>1?['Pick a year and the light changes with it.']:[]),[box,cnt]));
+  pick(CY[0]);
+  return sec;
+});
+
+/* Plates 6 to 19: families */
+function famPlate(f){
+  plate(1,f.name,function(num){
+    var art=h('div',{class:'art fam-art'}); var avail={}; YEARS.forEach(function(y){avail[y]=hhFor(y,f.keys).length>0});
+    var pics=(MEDIA.families||{})[f.name]||[];            /* photographs for this family, in media.csv order */
+    var cur=pics.length?'Photos':(avail['1901']?'1901':(avail['1926']?'1926':'1850s'));
+    var sc=makeScene(art,{seed:20+num,ph:PHASE[cur==='Photos'?'1901':cur],kind:'hills'});
+    roomTag(art,1);
+    var hang=null;
+    if(pics.length){avail['Photos']=true; art.classList.add('has-photos'); hang=hangRow(pics,f.name,'fam-hang'); art.append(hang)}
+    var cnt=h('p',{class:'cnt'}), tabs=yearTabs(avail,cur,function(y){pick(y)},pics.length?'Photos':null);
+    function pick(y){
+      if(hang) hang.hidden=y!=='Photos';
+      if(y==='Photos'){   /* midday landscape, no cottages under the photographs */
+        sc.names=false; sc.setHouses([],PHASE['1901']); setSel(tabs,y);
+        cnt.textContent=pics.length+(pics.length===1?' photograph. ':' photographs. ')+'Each is shown whole. Tap one to enlarge it.'; return;
+      }
+      var list=hhFor(y,f.keys); sc.names=true; sc.setHouses(placeHouses(list,{names:true}),PHASE[y]); setSel(tabs,y); cnt.textContent=countText(y,list,f.keys)}
+    var rows=famRows(f.keys);
+
+    /* Museum Exhibition Installation: Placard, Wall Narrative & Primary Source Vitrine */
+    var leadSummary=(Array.isArray(f.story)?f.story:[f.story]).map(function(s){return h('p',{class:'fam-lead'},s)});
+    var narrativeParas=(f.paras||[]).map(function(p){return h('p',{class:'fam-para'},p)});
+
+    /* One quiet disclosure for everything the story is drawn from: the census and valuation entries first,
+       then the family tree notes (a secondary source, labelled as such). Closed by default. */
+    var treeList=treeFor(f.keys);
+    var vitrine=h('details',{class:'vitrine'},
+      h('summary',null,
+        h('span',{class:'vitrine-title',text:'The records behind this'}),
+        h('span',{class:'vitrine-badge',text:rows.length+(rows.length===1?' record':' records')+(treeList.length?', '+treeList.length+' in the tree':'')})),
+      h('div',{class:'vitrine-in'},
+        h('p',{class:'vitrine-note',text:'Census returns and valuation entries'+(f.generated?'.':' this story is drawn from.')+' Tap or hover over cottages on the canvas to inspect households.'+(Object.keys(CURL).length?' A house number marked with an arrow opens the National Archives image of the original return.':'')}),
+        table(['Year','House or lot','Name','Age','Relation or role','Marital or note','Valuation'],rows,3),
+        treeBlock(treeList)));
+
+    var placard=h('div',{class:'label fam-label'},
+      h('div',{class:'wrap'},
+        h('div',{class:'fam-grid'},
+          h('div',{class:'fam-header-col'},
+            h('span',{class:'pn',text:'Plate '+pad(num)+' \u00b7 Room II'}),
+            h('h2',{class:'fam-title',text:f.name}),
+            f.medium?h('p',{class:'medium',text:f.medium}):null,
+            h('div',{class:'fam-timeline-box'},
+              h('span',{class:'fam-timeline-label',text:pics.length?'Photographs, and landscape by era':'Landscape by era'}),
+              tabs,
+              cnt)),
+          h('div',{class:'fam-story-col'},
+            h('div',{class:'fam-lead-wrap'},leadSummary),
+            narrativeParas.length?h('div',{class:'fam-paras-wrap'},narrativeParas):null)),
+        vitrine));
+
+    var sec=h('section',{class:'plate fam-plate',id:'p'+pad(num)},art,placard);
+    pick(cur);
+    return sec;
+  });
+}
+/* ================= family tree research =================
+   records/people.json (tools/gedcom_people.py): dates, relationships and notes from the family tree, for people
+   who appear in this case's returns. It is a secondary source built from research, so it sits apart from the
+   returns, labelled, and is never mixed into the evidence table. */
+var PPL=DATA.people||null;
+function listJoin(a){return a.length<2?a.join(''):a.slice(0,-1).join(', ')+' and '+a[a.length-1]}
+function placeShort(s){return String(s||'').replace(/,\s*Ireland$/,'')}
+function refName(ptr){
+  var r=((PPL&&PPL.refs)||{})[ptr]; if(!r) return '';
+  var y=String(r.born||'').match(/\d{4}/);
+  return r.name+(y?' (b. '+y[0]+')':'');
+}
+function treeFor(keys){
+  if(!PPL||!PPL.people) return [];
+  return PPL.people.filter(function(p){
+    return (p.census||[]).some(function(l){
+      return (SN[l.year]||[]).some(function(hh){return hh.key===String(l.h)&&keys.indexOf(hh.grp)>=0});
+    });
+  });
+}
+function treePerson(p){
+  var life=[], rel=[];
+  if(p.birth) life.push('Born '+p.birth.date+(p.birth.place?' at '+placeShort(p.birth.place):'')+'.');
+  if(p.death) life.push('Died '+p.death.date+(p.death.place?' at '+placeShort(p.death.place):'')+'.');
+  var par=(p.parents||[]).map(refName).filter(Boolean);
+  if(par.length) rel.push((p.sex==='M'?'Son':p.sex==='F'?'Daughter':'Child')+' of '+listJoin(par)+'.');
+  (p.marriages||[]).forEach(function(m){
+    var sp=m.spouse?refName(m.spouse):'';
+    if(sp||m.date) rel.push('Married'+(sp?' '+sp:'')+(m.date?', '+m.date:'')+(m.place?', at '+placeShort(m.place):'')+'.');
+  });
+  var kids=(p.children||[]).map(refName).filter(Boolean);
+  if(kids.length) rel.push('Children: '+listJoin(kids)+'.');
+  if((p.occupations||[]).length) rel.push('Occupation: '+p.occupations.join(', ')+'.');
+  return h('div',{class:'tree-person'},
+    h('h4',{class:'tree-name'},p.name,p.nick?h('span',{class:'tree-nick',text:', known as '+p.nick}):null),
+    life.concat(rel).map(function(t){return h('p',{class:'tree-facts',text:t})}),
+    (p.notes||[]).map(function(n){return h('p',{class:'tree-note',text:n})}));
+}
+function treeBlock(list){
+  if(!list||!list.length) return null;
+  return h('div',{class:'tree'},
+    h('p',{class:'tree-fam',text:'From the family tree'}),
+    h('p',{class:'vitrine-note',text:'Dates, relationships and notes from the family tree. This is research built on the records, not a record itself. The census returns above are the evidence.'}),
+    (PPL.family_notes||[]).length&&list.length>1?h('div',null,h('p',{class:'tree-fam',text:'Family notes'}),PPL.family_notes.map(function(n){return h('p',{class:'tree-note',text:n})})):null,
+    list.map(treePerson));
+}
+FAM.forEach(famPlate);
+
+/* Room III: not yet hung */
+plate(2,PL.not_yet_hung.title,function(num){
+  var art=h('div',{class:'art'}); makeScene(art,{seed:30,ph:3,kind:'mist',gorse:false}); roomTag(art,2);
+  var fr=PL.not_yet_hung.frames;
+  art.append(h('div',{class:'wrap',style:{position:'relative'}},h('div',{class:'frames'},fr.map(function(f){
+    return h('div',{class:'frame'+(f[3]?' held':'')},h('b',{text:f[0]}),h('span',{text:f[1]}),h('em',{text:f[2]}))}))));
+  return h('section',{class:'plate',id:'p'+pad(num)},art,labelBlock(pad(num),PL.not_yet_hung.title,PL.not_yet_hung.medium,PL.not_yet_hung.story,null));
+});
+
+/* Plate: method and numbers */
+plate(3,CY.length?'Method, sources and numbers':'Method and sources',function(num){
+  var ys=CY, D=ys.map(function(y){
+    var r=CEN[y], hh=SN[y].length, ages=r.filter(function(x){return x.a!=null});
+    return {y:y,n:r.length,hh:hh,f:r.filter(function(x){return x.x==='F'}).length,m:r.filter(function(x){return x.x==='M'}).length,u15:ages.filter(function(x){return x.a<15}).length,o65:ages.filter(function(x){return x.a>=65}).length,na:ages.length,irish:r.filter(function(x){return x.i}).length};
+  });
+  var tb=h('tbody');
+  function row(l,fn){tb.append(h('tr',null,h('td',{text:l}),D.map(function(d){return h('td',{class:'n',text:fn(d)})})))}
+  row('People',function(d){return d.n}); row('Households',function(d){return d.hh}); row('People per household',function(d){return (d.n/d.hh).toFixed(1)});
+  row('Women and men',function(d){return d.f+' and '+d.m});
+  row('Aged under 15',function(d){return d.u15+(d.na<d.n?' (of '+d.na+' with ages)':'')});
+  row('Aged 65 and over',function(d){return d.o65+(d.na<d.n?' (of '+d.na+' with ages)':'')});
+  row('Recorded with Irish',function(d){return d.irish});
+  var tbl=h('div',{class:'tbl'},h('table',null,h('thead',null,h('tr',null,[h('th',{text:'Measure'})].concat(ys.map(function(y){return h('th',{class:'n',text:y})})))),tb));
+  var ni=PL.method.numbers_intro||''; D.forEach(function(d){ni=ni.replace('{n'+d.y+'}',d.n)});
+  return h('section',{class:'plate archive',id:'p'+pad(num)},h('div',{class:'wrap'},h('span',{class:'pn',text:'Plate '+pad(num)}),h('h2',{text:CY.length?'Method, sources and numbers':'Method and sources'}),
+    h('div',{class:'cols',style:{marginTop:'26px'}},
+      h('div',{class:'prose'},
+        PL.method.paras.map(function(p){return typeof p==='string'?h('p',{text:p}):h('p',null,p.before,h('a',{href:p.link.href,target:'_blank',rel:'noopener',text:p.link.text}),p.after)})),
+      CY.length?h('div',null,h('h3',{style:{fontSize:'30px',marginBottom:'14px'},text:'The townland in numbers'}),
+        h('p',{class:'small',style:{marginBottom:'12px'},text:ni}),tbl):null)));
+});
+
+/* Plate: records (every source the case holds) */
+var SRC=[]; if(HAS_GR) SRC.push({k:'gr',name:"Griffith's, mid 1850s"});
+CY.forEach(function(y){var sp=(TOWN.census_spelling||{})[y]; SRC.push({k:y,name:'Census '+y+(sp&&(y==='1926'||sp!==TOWN.name)?' ('+sp+')':'')})});
+if(SRC.length) plate(3,'The records',function(num){
+  var tabs=h('div',{class:'rtabs',role:'tablist'}), thead=h('thead'), tbody=h('tbody'), inp=h('input',{id:'recFilter',type:'search',placeholder:PL.records.placeholder,autocomplete:'off'}), cnt=h('span',{class:'small'}), act=0;
+  function render(){
+    var q=inp.value.trim().toLowerCase(), n=0; thead.replaceChildren(); tbody.replaceChildren();
+    if(SRC[act].k==='gr'){
+      thead.append(h('tr',null,['Lot','Occupier','Immediate lessor','Description','Area (A R P)','Land','Buildings','Total'].map(function(c,i){return h('th',{class:i>=4?'n':'',text:c})})));
+      GR.forEach(function(r){if(q&&(r.occ+' '+r.lot).toLowerCase().indexOf(q)<0) return; n++;
+        tbody.append(h('tr',null,[r.lot,r.occ,r.les,r.desc,r.area,r.land,r.bld,r.tot].map(function(c,i){return h('td',{class:i>=4?'n':'',text:c})})))});
+      cnt.textContent=n+' of '+GR.length+' rows.';
+    }else{
+      var y=SRC[act].k, rows=CEN[y];
+      var lk=!!CURL[y];
+      thead.append(h('tr',null,[y==='1926'?'Form':'House','Surname','First name','Age','Sex','Relation','Marital or note','Occupation'].map(function(c,i){return h('th',{class:i===3?'n':'',text:c})})));
+      rows.forEach(function(r){if(q&&(r.s+' '+r.f).toLowerCase().indexOf(q)<0) return; n++;
+        var tr=h('tr',null,[retCell(y,r,String(y==='1926'?r.fo:r.h)),r.s,r.f,r.a==null?'':r.a,r.x,r.r,r.m,r.o].map(function(c,i){return cellNode(c,i===3?'n':'')}));
+        tbody.append(tr)});
+      cnt.textContent=n+' of '+rows.length+' rows. Spelling as recorded.'+(lk?' The house or form number links to the National Archives image of the original return.':'');
+    }
+  }
+  SRC.forEach(function(sr,i){tabs.append(h('button',{class:'rtab',role:'tab','aria-selected':i===0?'true':'false',onclick:function(){act=i;Array.prototype.forEach.call(tabs.children,function(b,j){b.setAttribute('aria-selected',j===i?'true':'false')});render()}},sr.name))});
+  inp.addEventListener('input',render); render();
+  return h('section',{class:'plate archive',id:'p'+pad(num)},h('div',{class:'wrap'},h('span',{class:'pn',text:'Plate '+pad(num)}),h('h2',{text:'The records'}),
+    h('p',{class:'intro',text:'Every row behind the plates above. Choose a source, then filter by any part of a name.'}),tabs,
+    h('div',{class:'rfilter'},h('label',{for:'recFilter',class:'small',text:'Filter by name'}),inp,cnt),
+    h('div',{class:'tbl rscroll'},h('table',null,thead,tbody))));
+});
+
+/* ================= assemble ================= */
+var walk=$('#walk'), els=[];
+plates.forEach(function(p,i){
+  var el=p.build(i+1); el.setAttribute('data-room',p.room); walk.append(el); els.push(el);
+});
+walk.append(h('div',{class:'end',text:'End of the walk. '+plates.length+' plates.'}));
+
+/* contents */
+var drawer=$('#drawer'), din=$('#drawerIn');
+(function(){
+  din.append(h('button',{class:'btn close',onclick:function(){drawer.classList.remove('open')}},'Close'),h('h2',{text:'Contents'}),h('p',{class:'small',text:TOWN.name+(SPAN?', '+SPAN+'.':'.')}));
+  ROOMS.forEach(function(r,ri){
+    var ol=h('ol'); plates.forEach(function(p,i){if(p.room!==ri) return;
+      ol.append(h('li',null,h('a',{href:'#p'+pad(i+1),onclick:function(e){e.preventDefault();drawer.classList.remove('open');els[i].scrollIntoView({behavior:reduce?'auto':'smooth'})}},h('b',{text:pad(i+1)}),h('span',{text:p.title}))))});
+    if(!ol.children.length) return;
+    din.append(h('h3',{text:'Room '+r[0]+'. '+r[1]}),ol);
+  });
+})();
+$('#openC').addEventListener('click',function(){drawer.classList.add('open')});
+drawer.addEventListener('click',function(e){if(e.target===drawer) drawer.classList.remove('open')});
+document.addEventListener('keydown',function(e){
+  if(LB.open){   /* the enlarged photograph owns the keys while it is open */
+    if(e.key==='Escape') closePhoto(); else if(e.key==='ArrowRight') stepPhoto(1); else if(e.key==='ArrowLeft') stepPhoto(-1);
+    return;
+  }
+  if(e.key==='Escape') drawer.classList.remove('open');
+  var tg=e.target&&e.target.tagName; if(tg==='INPUT'||tg==='TEXTAREA'||tg==='SELECT'||e.metaKey||e.ctrlKey||e.altKey) return;
+  if(e.key==='ArrowRight') go(1); if(e.key==='ArrowLeft') go(-1);
+});
+
+/* hud */
+var cur=0;
+function setCur(i){cur=i;$('#count').replaceChildren(document.createTextNode(pad(i+1)+' '),h('i',{text:'/ '+pad(plates.length)}));$('#roomNow').textContent='Room '+ROOMS[plates[i].room][0]+'. '+ROOMS[plates[i].room][1];$('#prev').disabled=i===0;$('#next').disabled=i===plates.length-1}
+function go(d){var i=Math.max(0,Math.min(plates.length-1,cur+d)); els[i].scrollIntoView({behavior:reduce?'auto':'smooth'})}
+$('#prev').addEventListener('click',function(){go(-1)});
+$('#next').addEventListener('click',function(){go(1)});
+if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting) setCur(els.indexOf(e.target))})},{rootMargin:'-45% 0px -50% 0px'});
+  els.forEach(function(e){io.observe(e)});
+}
+setCur(0);
+if(location.hash&&/^#p\d\d$/.test(location.hash)){var t=document.getElementById(location.hash.slice(1)); if(t) setTimeout(function(){t.scrollIntoView()},50)}
+requestAnimationFrame(loop);
+if(document.fonts&&document.fonts.ready) document.fonts.ready.then(function(){scenes.forEach(function(s){s.dirty=true})});
+})();
+</script>
+</body>
+</html>

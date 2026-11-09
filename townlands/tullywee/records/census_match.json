@@ -1,0 +1,39 @@
+{
+  "_generated_by": "donegal-townlands.attach_census",
+  "status": "proposed",
+  "note": "Matched by identical name only. Not reviewed.",
+  "ded": "Laghy",
+  "years": {
+    "1901": {
+      "spellings": [
+        {
+          "spelling": "Tullywee",
+          "method": "exact_name",
+          "rows": 14
+        }
+      ],
+      "people": 14
+    },
+    "1911": {
+      "spellings": [
+        {
+          "spelling": "Tullywee",
+          "method": "exact_name",
+          "rows": 9
+        }
+      ],
+      "people": 9
+    },
+    "1926": {
+      "spellings": [
+        {
+          "spelling": "Tullywee",
+          "method": "exact_name",
+          "rows": 7
+        }
+      ],
+      "people": 7
+    }
+  },
+  "corrections": []
+}

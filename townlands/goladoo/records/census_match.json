@@ -1,0 +1,39 @@
+{
+  "_generated_by": "donegal-townlands.attach_census",
+  "status": "proposed",
+  "note": "Matched by identical name only. Not reviewed.",
+  "ded": "Tawnawully",
+  "years": {
+    "1901": {
+      "spellings": [
+        {
+          "spelling": "Goladoo",
+          "method": "exact_name",
+          "rows": 90
+        }
+      ],
+      "people": 90
+    },
+    "1911": {
+      "spellings": [
+        {
+          "spelling": "Goladoo",
+          "method": "exact_name",
+          "rows": 81
+        }
+      ],
+      "people": 81
+    },
+    "1926": {
+      "spellings": [
+        {
+          "spelling": "Goladoo",
+          "method": "exact_name",
+          "rows": 59
+        }
+      ],
+      "people": 59
+    }
+  },
+  "corrections": []
+}

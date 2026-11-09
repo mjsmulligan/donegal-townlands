@@ -1,0 +1,39 @@
+{
+  "_generated_by": "donegal-townlands.attach_census",
+  "status": "proposed",
+  "note": "Matched by identical name only. Not reviewed.",
+  "ded": "Laghy",
+  "years": {
+    "1901": {
+      "spellings": [
+        {
+          "spelling": "Raneany East",
+          "method": "exact_name",
+          "rows": 30
+        }
+      ],
+      "people": 30
+    },
+    "1911": {
+      "spellings": [
+        {
+          "spelling": "Raneany East",
+          "method": "exact_name",
+          "rows": 36
+        }
+      ],
+      "people": 36
+    },
+    "1926": {
+      "spellings": [
+        {
+          "spelling": "Raneany East",
+          "method": "exact_name",
+          "rows": 35
+        }
+      ],
+      "people": 35
+    }
+  },
+  "corrections": []
+}

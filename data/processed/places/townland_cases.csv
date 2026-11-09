@@ -1,56 +1,144 @@
 logainm_id,case_path,name_en,snapshot_date,in_latest_snapshot
-13957,townlands/birchhill,Birchhill,2026-11-01,yes
-13958,townlands/carnbeagh-north,Carnbeagh North,2026-11-01,yes
-13959,townlands/carnbeagh-south,Carnbeagh South,2026-11-01,yes
-13960,townlands/clarcam,Clarcam,2026-11-01,yes
-13961,townlands/clardrumbarren,Clardrumbarren,2026-11-01,yes
-13962,townlands/clardrumnagahan,Clardrumnagahan,2026-11-01,yes
-13963,townlands/clarlougheask,Clarlougheask,2026-11-01,yes
-13964,townlands/clogher,Clogher,2026-11-01,yes
-13965,townlands/corveen,Corveen,2026-11-01,yes
-13966,townlands/craigroe,Craigroe,2026-11-01,yes
-13967,townlands/cullionboy,Cullionboy,2026-11-01,yes
-13968,townlands/drumbarren,Drumbarren,2026-11-01,yes
-13969,townlands/druminnin,Druminnin,2026-11-01,yes
-13970,townlands/drumnagahan,Drumnagahan,2026-11-01,yes
-13971,townlands/finnabanes,Finnabanes,2026-11-01,yes
-13972,townlands/keadew-lower,Keadew Lower,2026-11-01,yes
-13973,townlands/keadew-upper,Keadew Upper,2026-11-01,yes
-13974,townlands/keeldrum,Keeldrum,2026-11-01,yes
-13975,townlands/meenabrock,Meenabrock,2026-11-01,yes
-13976,townlands/mullanalamphry,Mullanalamphry,2026-11-01,yes
-13978,townlands/spierstown,Spierstown,2026-11-01,yes
-13979,townlands/tinnycahil,Tinnycahil,2026-11-01,yes
-14271,townlands/aghlem,Aghlem,2026-11-01,yes
-14272,townlands/ardnagassan,Ardnagassan,2026-11-01,yes
-14273,townlands/drumadoney,Drumadoney,2026-11-01,yes
-14274,townlands/drumcroagh,Drumcroagh,2026-11-01,yes
-14275,townlands/druminardagh,Druminardagh,2026-11-01,yes
-14276,townlands/drummenny-lower,Drummenny Lower,2026-11-01,yes
-14277,townlands/drummenny-middle,Drummenny Middle,2026-11-01,yes
-14278,townlands/drummenny-upper,Drummenny Upper,2026-11-01,yes
-14279,townlands/drumnahoul,Drumnahoul,2026-11-01,yes
-14280,townlands/finnadoos,Finnadoos,2026-11-01,yes
-14281,townlands/leghawny,Leghawny,2026-11-01,yes
-14282,townlands/loughcuill,Loughcuill,2026-11-01,yes
-14283,townlands/loughkip,Loughkip,2026-11-01,yes
-14284,townlands/meenadreen,Meenadreen,2026-11-01,yes
-14285,townlands/tawnagh,Tawnagh,2026-11-01,yes
-14286,townlands/tullyloskan,Tullyloskan,2026-11-01,yes
-14287,townlands/whitehill,Whitehill,2026-11-01,yes
-14288,townlands/barnesyneilly,Barnesyneilly,2026-11-01,yes
-14289,townlands/copany,Copany,2026-11-01,yes
-14290,townlands/croaghnakern,Croaghnakern,2026-11-01,yes
-14291,townlands/croaghnameal,Croaghnameal,2026-11-01,yes
-14292,townlands/cuilly,Cuilly,2026-11-01,yes
-14293,townlands/drumlask,Drumlask,2026-11-01,yes
-14294,townlands/legacurry,Legacurry,2026-11-01,yes
-14295,townlands/moyne,Moyne,2026-11-01,yes
-14296,townlands/mullans,Mullans,2026-11-01,yes
-14297,townlands/rooney-s-island,Rooney's Island,2026-11-01,yes
-14298,townlands/rossmore,Rossmore,2026-11-01,yes
-14299,townlands/skreen,Skreen,2026-11-01,yes
-14300,townlands/straness,Straness,2026-11-01,yes
-14301,townlands/tullyearl,Tullyearl,2026-11-01,yes
-14302,townlands/tullyleague-or-tullybrook,Tullyleague or Tullybrook,2026-11-01,yes
-14303,townlands/tullymornin,Tullymornin,2026-11-01,yes
+13957,townlands/birchhill,Birchhill,2026-11-09,yes
+13958,townlands/carnbeagh-north,Carnbeagh North,2026-11-09,yes
+13959,townlands/carnbeagh-south,Carnbeagh South,2026-11-09,yes
+13960,townlands/clarcam,Clarcam,2026-11-09,yes
+13961,townlands/clardrumbarren,Clardrumbarren,2026-11-09,yes
+13962,townlands/clardrumnagahan,Clardrumnagahan,2026-11-09,yes
+13963,townlands/clarlougheask,Clarlougheask,2026-11-09,yes
+13964,townlands/clogher,Clogher,2026-11-09,yes
+13965,townlands/corveen,Corveen,2026-11-09,yes
+13966,townlands/craigroe,Craigroe,2026-11-09,yes
+13967,townlands/cullionboy,Cullionboy,2026-11-09,yes
+13968,townlands/drumbarren,Drumbarren,2026-11-09,yes
+13969,townlands/druminnin,Druminnin,2026-11-09,yes
+13970,townlands/drumnagahan,Drumnagahan,2026-11-09,yes
+13971,townlands/finnabanes,Finnabanes,2026-11-09,yes
+13972,townlands/keadew-lower,Keadew Lower,2026-11-09,yes
+13973,townlands/keadew-upper,Keadew Upper,2026-11-09,yes
+13974,townlands/keeldrum,Keeldrum,2026-11-09,yes
+13975,townlands/meenabrock,Meenabrock,2026-11-09,yes
+13976,townlands/mullanalamphry,Mullanalamphry,2026-11-09,yes
+13978,townlands/spierstown,Spierstown,2026-11-09,yes
+13979,townlands/tinnycahil,Tinnycahil,2026-11-09,yes
+13995,townlands/abbernadoorny,Abbernadoorny,2026-11-09,yes
+13996,townlands/altadoo,Altadoo,2026-11-09,yes
+13997,townlands/ballyboyle,Ballyboyle,2026-11-09,yes
+13999,townlands/ballydevitt,Ballydevitt,2026-11-09,yes
+14000,townlands/ballydevitt-beg,Ballydevitt Beg,2026-11-09,yes
+14001,townlands/clanboorhin,Clanboorhin,2026-11-09,yes
+14003,townlands/doonan,Doonan,2026-11-09,yes
+14004,townlands/dromore,Dromore,2026-11-09,yes
+14005,townlands/drumark,Drumark,2026-11-09,yes
+14006,townlands/drumcliff,Drumcliff,2026-11-09,yes
+14007,townlands/drumgornan,Drumgornan,2026-11-09,yes
+14008,townlands/drumgun,Drumgun,2026-11-09,yes
+14009,townlands/drumkeeghan,Drumkeeghan,2026-11-09,yes
+14010,townlands/drumroosk,Drumroosk,2026-11-09,yes
+14011,townlands/drumroosk-east,Drumroosk East,2026-11-09,yes
+14012,townlands/drumroosk-middle,Drumroosk Middle,2026-11-09,yes
+14013,townlands/drumroosk-west,Drumroosk West,2026-11-09,yes
+14014,townlands/drumstevlin,Drumstevlin,2026-11-09,yes
+14015,townlands/eddrim-glebe,Eddrim Glebe,2026-11-09,yes
+14016,townlands/gortlosky,Gortlosky,2026-11-09,yes
+14017,townlands/holmes,Holmes,2026-11-09,yes
+14018,townlands/meenacally,Meenacally,2026-11-09,yes
+14019,townlands/milltown,Milltown,2026-11-09,yes
+14020,townlands/mullans-14020,Mullans,2026-11-09,yes
+14021,townlands/newtowndrumgornan,Newtowndrumgornan,2026-11-09,yes
+14022,townlands/revlin,Revlin,2026-11-09,yes
+14023,townlands/rossylongan,Rossylongan,2026-11-09,yes
+14024,townlands/summerhill,Summerhill,2026-11-09,yes
+14025,townlands/ardchicken,Ardchicken,2026-11-09,yes
+14026,townlands/ardeskin,Ardeskin,2026-11-09,yes
+14027,townlands/ardlenagh,Ardlenagh,2026-11-09,yes
+14028,townlands/brookfield,Brookfield,2026-11-09,yes
+14029,townlands/clarcarricknagun,Clarcarricknagun,2026-11-09,yes
+14030,townlands/donegal,Donegal,2026-11-09,yes
+14031,townlands/drumbar,Drumbar,2026-11-09,yes
+14032,townlands/drumgowan,Drumgowan,2026-11-09,yes
+14033,townlands/drumlaght,Drumlaght,2026-11-09,yes
+14034,townlands/drumlonagher,Drumlonagher,2026-11-09,yes
+14035,townlands/drumrat,Drumrat,2026-11-09,yes
+14036,townlands/glebe,Glebe,2026-11-09,yes
+14037,townlands/lurganboy,Lurganboy,2026-11-09,yes
+14038,townlands/muckros,Muckros,2026-11-09,yes
+14039,townlands/raforker,Raforker,2026-11-09,yes
+14040,townlands/rarooey,Rarooey,2026-11-09,yes
+14041,townlands/tawnalary,Tawnalary,2026-11-09,yes
+14042,townlands/tullaghcullion,Tullaghcullion,2026-11-09,yes
+14043,townlands/tully,Tully,2026-11-09,yes
+14132,townlands/ardbane-or-laghy-barr,Ardbane or Laghy Barr,2026-11-09,yes
+14133,townlands/ballykillowen,Ballykillowen,2026-11-09,yes
+14135,townlands/blabreenagh,Blabreenagh,2026-11-09,yes
+14136,townlands/carrick-east,Carrick East,2026-11-09,yes
+14137,townlands/carrick-upper-and-lower-barr,Carrick Upper and Lower Barr,2026-11-09,yes
+14138,townlands/carrick-west,Carrick West,2026-11-09,yes
+14139,townlands/cormullin,Cormullin,2026-11-09,yes
+14140,townlands/golard,Golard,2026-11-09,yes
+14141,townlands/greaghs,Greaghs,2026-11-09,yes
+14142,townlands/inishpat,Inishpat,2026-11-09,yes
+14144,townlands/laghy,Laghy,2026-11-09,yes
+14145,townlands/meenacargagh-or-raneany-barr,Meenacargagh or Raneany Barr,2026-11-09,yes
+14146,townlands/greaghs-barr-or-meenavanaghan,Greaghs Barr or Meenavanaghan,2026-11-09,yes
+14147,townlands/mullanasole,Mullanasole,2026-11-09,yes
+14148,townlands/mullanasole-barr,Mullanasole Barr,2026-11-09,yes
+14149,townlands/oughtnadrin,Oughtnadrin,2026-11-09,yes
+14151,townlands/raneany-west,Raneany West,2026-11-09,yes
+14152,townlands/raneany-east,Raneany East,2026-11-09,yes
+14153,townlands/rossilly,Rossilly,2026-11-09,yes
+14154,townlands/rossilly-barr,Rossilly Barr,2026-11-09,yes
+14155,townlands/rossyvolan,Rossyvolan,2026-11-09,yes
+14156,townlands/trumman-east,Trumman East,2026-11-09,yes
+14157,townlands/trumman-west,Trumman West,2026-11-09,yes
+14158,townlands/trumman-west-barr,Trumman West Barr,2026-11-09,yes
+14159,townlands/tullygallan,Tullygallan,2026-11-09,yes
+14160,townlands/tullygallen-tullywee-and-oughtnadrin-barr,"Tullygallen, Tullywee and Oughtnadrin Barr",2026-11-09,yes
+14161,townlands/tullywee,Tullywee,2026-11-09,yes
+14235,townlands/ardatowel,Ardatowel,2026-11-09,yes
+14236,townlands/ardeevin,Ardeevin,2026-11-09,yes
+14237,townlands/ardinawark,Ardinawark,2026-11-09,yes
+14238,townlands/ardnableask,Ardnableask,2026-11-09,yes
+14239,townlands/cornaveagh,Cornaveagh,2026-11-09,yes
+14240,townlands/corracramph,Corracramph,2026-11-09,yes
+14241,townlands/friarsbush,Friarsbush,2026-11-09,yes
+14242,townlands/garvagh,Garvagh,2026-11-09,yes
+14243,townlands/goladoo,Goladoo,2026-11-09,yes
+14244,townlands/milltown-14244,Milltown,2026-11-09,yes
+14245,townlands/roshin-island,Roshin Island,2026-11-09,yes
+14246,townlands/tawnaghgorm,Tawnaghgorm,2026-11-09,yes
+14247,townlands/tawnaghlahan,Tawnaghlahan,2026-11-09,yes
+14248,townlands/tawnawully-mountains,Tawnawully Mountains,2026-11-09,yes
+14271,townlands/aghlem,Aghlem,2026-11-09,yes
+14272,townlands/ardnagassan,Ardnagassan,2026-11-09,yes
+14273,townlands/drumadoney,Drumadoney,2026-11-09,yes
+14274,townlands/drumcroagh,Drumcroagh,2026-11-09,yes
+14275,townlands/druminardagh,Druminardagh,2026-11-09,yes
+14276,townlands/drummenny-lower,Drummenny Lower,2026-11-09,yes
+14277,townlands/drummenny-middle,Drummenny Middle,2026-11-09,yes
+14278,townlands/drummenny-upper,Drummenny Upper,2026-11-09,yes
+14279,townlands/drumnahoul,Drumnahoul,2026-11-09,yes
+14280,townlands/finnadoos,Finnadoos,2026-11-09,yes
+14281,townlands/leghawny,Leghawny,2026-11-09,yes
+14282,townlands/loughcuill,Loughcuill,2026-11-09,yes
+14283,townlands/loughkip,Loughkip,2026-11-09,yes
+14284,townlands/meenadreen,Meenadreen,2026-11-09,yes
+14285,townlands/tawnagh,Tawnagh,2026-11-09,yes
+14286,townlands/tullyloskan,Tullyloskan,2026-11-09,yes
+14287,townlands/whitehill,Whitehill,2026-11-09,yes
+14288,townlands/barnesyneilly,Barnesyneilly,2026-11-09,yes
+14289,townlands/copany,Copany,2026-11-09,yes
+14290,townlands/croaghnakern,Croaghnakern,2026-11-09,yes
+14291,townlands/croaghnameal,Croaghnameal,2026-11-09,yes
+14292,townlands/cuilly,Cuilly,2026-11-09,yes
+14293,townlands/drumlask,Drumlask,2026-11-09,yes
+14294,townlands/legacurry,Legacurry,2026-11-09,yes
+14295,townlands/moyne,Moyne,2026-11-09,yes
+14296,townlands/mullans,Mullans,2026-11-09,yes
+14297,townlands/rooney-s-island,Rooney's Island,2026-11-09,yes
+14298,townlands/rossmore,Rossmore,2026-11-09,yes
+14299,townlands/skreen,Skreen,2026-11-09,yes
+14300,townlands/straness,Straness,2026-11-09,yes
+14301,townlands/tullyearl,Tullyearl,2026-11-09,yes
+14302,townlands/tullyleague-or-tullybrook,Tullyleague or Tullybrook,2026-11-09,yes
+14303,townlands/tullymornin,Tullymornin,2026-11-09,yes

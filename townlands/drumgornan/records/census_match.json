@@ -1,0 +1,29 @@
+{
+  "_generated_by": "donegal-townlands.attach_census",
+  "status": "proposed",
+  "note": "Matched by identical name only. Not reviewed.",
+  "ded": "Donegal",
+  "years": {
+    "1911": {
+      "spellings": [
+        {
+          "spelling": "Drumgornan",
+          "method": "exact_name",
+          "rows": 64
+        }
+      ],
+      "people": 64
+    },
+    "1926": {
+      "spellings": [
+        {
+          "spelling": "Drumgornan",
+          "method": "exact_name",
+          "rows": 43
+        }
+      ],
+      "people": 43
+    }
+  },
+  "corrections": []
+}

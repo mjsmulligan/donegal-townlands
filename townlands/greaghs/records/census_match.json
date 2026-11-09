@@ -1,0 +1,39 @@
+{
+  "_generated_by": "donegal-townlands.attach_census",
+  "status": "proposed",
+  "note": "Matched by identical name only. Not reviewed.",
+  "ded": "Laghy",
+  "years": {
+    "1901": {
+      "spellings": [
+        {
+          "spelling": "Greaghs",
+          "method": "exact_name",
+          "rows": 77
+        }
+      ],
+      "people": 77
+    },
+    "1911": {
+      "spellings": [
+        {
+          "spelling": "Greaghs",
+          "method": "exact_name",
+          "rows": 61
+        }
+      ],
+      "people": 61
+    },
+    "1926": {
+      "spellings": [
+        {
+          "spelling": "Greaghs",
+          "method": "exact_name",
+          "rows": 39
+        }
+      ],
+      "people": 39
+    }
+  },
+  "corrections": []
+}

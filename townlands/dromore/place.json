@@ -1,0 +1,14 @@
+{
+  "logainm_id": "14004",
+  "name_en": "Dromore",
+  "name_ga": "An Droim Mór",
+  "place_type": "townland",
+  "ded_id": "1372456",
+  "civil_parish_id": "801",
+  "barony_id": "54",
+  "county_id": "100013",
+  "latitude": "54.65645052787495",
+  "longitude": "-8.176350018935032",
+  "snapshot_date": "2026-11-09",
+  "_generated_by": "donegal-townlands.create_townland_cases"
+}

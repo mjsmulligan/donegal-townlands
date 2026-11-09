@@ -172,6 +172,7 @@ details.vitrine[open] .vitrine-title::before{transform:rotate(90deg)}
 .vitrine-in{padding:18px;background:var(--paper);border-top:1px solid var(--rule)}
 .vitrine-note{font-size:13.5px;color:var(--ink2);margin-bottom:14px;line-height:1.45}
 /* family tree research (records/people.json): a secondary source, kept apart from the returns */
+.vitrine-in .tree{margin-top:26px;border-top:1px solid var(--rule);padding-top:20px}
 .tree-fam{margin:0 0 6px;font:400 16px/1.6 var(--display);color:var(--ink)}
 .tree-person{padding:14px 0;border-top:1px solid var(--rule)}
 .tree-person:first-of-type{border-top:0}
@@ -316,7 +317,7 @@ html.lb-lock{overflow:hidden}
 (function(){
 'use strict';
 var TOUCH=!!(window.matchMedia&&window.matchMedia('(max-width:640px)').matches);
-var DATA = {"census":{},"content":{"groups":{"colours":{"Other":"#A9B7B3"},"territory":["Other"],"map":{}},"families":[],"questions":["No census return is linked to this townland for 1901, 1911 and 1926. Was it unoccupied then, or is it recorded under a name not yet matched?","Griffith's Valuation, the mid 1850s baseline, has not yet been added for this townland.","The Tithe Applotment Books, valuation revision books, civil records from 1864 and parish registers have not yet been added."],"plates":{"title":{"title":"Mín na mBroc","irish":"Mín na mBroc","heading":"Meenabrock","medium":"A townland in Clogher electoral division, Donegal civil parish, Tirhugh barony","story":["Meenabrock is a townland recognised by Logainm, the placenames database of the Government of Ireland. Its Irish name is Mín na mBroc.","No historical records have been added yet. This page is a starting point, not a finding about the history of the townland. It grows as records are added."]},"not_yet_hung":{"title":"Not yet hung","medium":"Six frames for six kinds of record. None is filled","story":["Each frame is a kind of record that can be hung here. A dashed frame is empty. A frame with a gold edge holds records for this townland.","Records are added one source at a time, and each new source adds to this page instead of replacing it."],"frames":[["Tithe Applotment Books","1820s and 1830s","Not yet added.",false],["Griffith's Valuation","Mid 1850s","Not yet added.",false],["Valuation revision books","After the 1850s","Not yet added.",false],["Civil births, marriages and deaths","From 1864","Not yet added.",false],["Parish records","Various dates","Not yet added.",false],["Census returns","1901, 1911 and 1926","Checked. No return found.",false]]},"method":{"paras":[{"before":"Place details come from ","link":{"href":"https://www.logainm.ie/en/13975","text":"Logainm"},"after":", the placenames database of the Government of Ireland (CC BY 4.0). The record number is 13975."},"No other source has been added for this townland yet."],"numbers_intro":""},"records":{"placeholder":"for example Gallagher"}}},"townland":{"name":"Meenabrock","page_title":"Meenabrock | Donegal Townlands","storage_key":"meenabrock-q","census_spelling":{}},"place":{"logainm_id":"13975","name_en":"Meenabrock","name_ga":"Mín na mBroc","ded":"Clogher","civil_parish":"Donegal","barony":"Tirhugh","county":"Donegal","latitude":"54.68130559088727","longitude":"-7.92120027633523","snapshot_date":"2026-11-01","logainm_url":"https://www.logainm.ie/en/13975","credit":"Irish-language placename data by Logainm, Government of Ireland, licensed under CC BY 4.0.","osm_url":"https://www.openstreetmap.org/?mlat=54.68130559088727&mlon=-7.92120027633523&zoom=15"},"census_urls":{}};
+var DATA = {"census":{},"content":{"groups":{"colours":{"Other":"#A9B7B3"},"territory":["Other"],"map":{}},"families":[],"questions":["No census return is linked to this townland for 1901, 1911 and 1926. Was it unoccupied then, or is it recorded under a name not yet matched?","Griffith's Valuation, the mid 1850s baseline, has not yet been added for this townland.","The Tithe Applotment Books, valuation revision books, civil records from 1864 and parish registers have not yet been added."],"plates":{"title":{"title":"Mín na mBroc","irish":"Mín na mBroc","heading":"Meenabrock","medium":"A townland in Clogher electoral division, Donegal civil parish, Tirhugh barony","story":["Meenabrock is a townland recognised by Logainm, the placenames database of the Government of Ireland. Its Irish name is Mín na mBroc.","No historical records have been added yet. This page is a starting point, not a finding about the history of the townland. It grows as records are added."]},"not_yet_hung":{"title":"Not yet hung","medium":"Six frames for six kinds of record. None is filled","story":["Each frame is a kind of record that can be hung here. A dashed frame is empty. A frame with a gold edge holds records for this townland.","Records are added one source at a time, and each new source adds to this page instead of replacing it."],"frames":[["Tithe Applotment Books","1820s and 1830s","Not yet added.",false],["Griffith's Valuation","Mid 1850s","Not yet added.",false],["Valuation revision books","After the 1850s","Not yet added.",false],["Civil births, marriages and deaths","From 1864","Not yet added.",false],["Parish records","Various dates","Not yet added.",false],["Census returns","1901, 1911 and 1926","Checked. No return found.",false]]},"method":{"paras":[{"before":"Place details come from ","link":{"href":"https://www.logainm.ie/en/13975","text":"Logainm"},"after":", the placenames database of the Government of Ireland (CC BY 4.0). The record number is 13975."},"No other source has been added for this townland yet."],"numbers_intro":""},"records":{"placeholder":"for example Gallagher"}}},"townland":{"name":"Meenabrock","page_title":"Meenabrock | Donegal Townlands","storage_key":"meenabrock-q","census_spelling":{}},"place":{"logainm_id":"13975","name_en":"Meenabrock","name_ga":"Mín na mBroc","ded":"Clogher","civil_parish":"Donegal","barony":"Tirhugh","county":"Donegal","latitude":"54.68130559088727","longitude":"-7.92120027633523","snapshot_date":"2026-11-09","logainm_url":"https://www.logainm.ie/en/13975","credit":"Irish-language placename data by Logainm, Government of Ireland, licensed under CC BY 4.0.","osm_url":"https://www.openstreetmap.org/?mlat=54.68130559088727&mlon=-7.92120027633523&zoom=15"},"census_urls":{}};
 var C = DATA.content, TOWN = DATA.townland, PL = C.plates, PLACE = DATA.place || {}, CEN = DATA.census || {}, CURL = DATA.census_urls || {};
 var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 var $ = function(s,el){return (el||document).querySelector(s)};
@@ -775,13 +776,17 @@ function famPlate(f){
     var leadSummary=(Array.isArray(f.story)?f.story:[f.story]).map(function(s){return h('p',{class:'fam-lead'},s)});
     var narrativeParas=(f.paras||[]).map(function(p){return h('p',{class:'fam-para'},p)});
 
+    /* One quiet disclosure for everything the story is drawn from: the census and valuation entries first,
+       then the family tree notes (a secondary source, labelled as such). Closed by default. */
+    var treeList=treeFor(f.keys);
     var vitrine=h('details',{class:'vitrine'},
       h('summary',null,
-        h('span',{class:'vitrine-title',text:'Primary source evidence'}),
-        h('span',{class:'vitrine-badge',text:rows.length+' documented records'})),
+        h('span',{class:'vitrine-title',text:'The records behind this'}),
+        h('span',{class:'vitrine-badge',text:rows.length+(rows.length===1?' record':' records')+(treeList.length?', '+treeList.length+' in the tree':'')})),
       h('div',{class:'vitrine-in'},
-        h('p',{class:'vitrine-note',text:'Documentary census returns and valuation entries'+(f.generated?'.':' backing the narrative above.')+' Tap or hover over cottages on the canvas to inspect households.'+(Object.keys(CURL).length?' A house number marked with an arrow opens the National Archives image of the original return.':'')}),
-        table(['Year','House or lot','Name','Age','Relation or role','Marital or note','Valuation'],rows,3)));
+        h('p',{class:'vitrine-note',text:'Census returns and valuation entries'+(f.generated?'.':' this story is drawn from.')+' Tap or hover over cottages on the canvas to inspect households.'+(Object.keys(CURL).length?' A house number marked with an arrow opens the National Archives image of the original return.':'')}),
+        table(['Year','House or lot','Name','Age','Relation or role','Marital or note','Valuation'],rows,3),
+        treeBlock(treeList)));
 
     var placard=h('div',{class:'label fam-label'},
       h('div',{class:'wrap'},
@@ -797,7 +802,7 @@ function famPlate(f){
           h('div',{class:'fam-story-col'},
             h('div',{class:'fam-lead-wrap'},leadSummary),
             narrativeParas.length?h('div',{class:'fam-paras-wrap'},narrativeParas):null)),
-        treeBlock(f.keys),vitrine));
+        vitrine));
 
     var sec=h('section',{class:'plate fam-plate',id:'p'+pad(num)},art,placard);
     pick(cur);
@@ -842,16 +847,13 @@ function treePerson(p){
     life.concat(rel).map(function(t){return h('p',{class:'tree-facts',text:t})}),
     (p.notes||[]).map(function(n){return h('p',{class:'tree-note',text:n})}));
 }
-function treeBlock(keys){
-  var list=treeFor(keys); if(!list.length) return null;
-  return h('details',{class:'vitrine tree'},
-    h('summary',null,
-      h('span',{class:'vitrine-title',text:'From the family tree'}),
-      h('span',{class:'vitrine-badge',text:list.length+(list.length===1?' person':' people')})),
-    h('div',{class:'vitrine-in'},
-      h('p',{class:'vitrine-note',text:'Dates, relationships and notes from the family tree. This is research built on the records, not a record itself. The census returns below are the evidence.'}),
-      (PPL.family_notes||[]).length&&list.length>1?h('div',null,h('p',{class:'tree-fam',text:'Family notes'}),PPL.family_notes.map(function(n){return h('p',{class:'tree-note',text:n})})):null,
-      list.map(treePerson)));
+function treeBlock(list){
+  if(!list||!list.length) return null;
+  return h('div',{class:'tree'},
+    h('p',{class:'tree-fam',text:'From the family tree'}),
+    h('p',{class:'vitrine-note',text:'Dates, relationships and notes from the family tree. This is research built on the records, not a record itself. The census returns above are the evidence.'}),
+    (PPL.family_notes||[]).length&&list.length>1?h('div',null,h('p',{class:'tree-fam',text:'Family notes'}),PPL.family_notes.map(function(n){return h('p',{class:'tree-note',text:n})})):null,
+    list.map(treePerson));
 }
 FAM.forEach(famPlate);
 

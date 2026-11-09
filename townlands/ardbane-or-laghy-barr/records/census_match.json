@@ -1,0 +1,19 @@
+{
+  "_generated_by": "donegal-townlands.attach_census",
+  "status": "proposed",
+  "note": "Matched by identical name only. Not reviewed.",
+  "ded": "Laghy",
+  "years": {
+    "1911": {
+      "spellings": [
+        {
+          "spelling": "Ardbane or Laghy Barr",
+          "method": "exact_name",
+          "rows": 36
+        }
+      ],
+      "people": 36
+    }
+  },
+  "corrections": []
+}

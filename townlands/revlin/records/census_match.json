@@ -1,0 +1,39 @@
+{
+  "_generated_by": "donegal-townlands.attach_census",
+  "status": "proposed",
+  "note": "Matched by identical name only. Not reviewed.",
+  "ded": "Donegal",
+  "years": {
+    "1901": {
+      "spellings": [
+        {
+          "spelling": "Revlin",
+          "method": "exact_name",
+          "rows": 19
+        }
+      ],
+      "people": 19
+    },
+    "1911": {
+      "spellings": [
+        {
+          "spelling": "Revlin",
+          "method": "exact_name",
+          "rows": 17
+        }
+      ],
+      "people": 17
+    },
+    "1926": {
+      "spellings": [
+        {
+          "spelling": "Revlin",
+          "method": "exact_name",
+          "rows": 8
+        }
+      ],
+      "people": 8
+    }
+  },
+  "corrections": []
+}

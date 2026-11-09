@@ -1,0 +1,29 @@
+{
+  "_generated_by": "donegal-townlands.attach_census",
+  "status": "proposed",
+  "note": "Matched by identical name only. Not reviewed.",
+  "ded": "Laghy",
+  "years": {
+    "1901": {
+      "spellings": [
+        {
+          "spelling": "Trumman East",
+          "method": "exact_name",
+          "rows": 142
+        }
+      ],
+      "people": 142
+    },
+    "1911": {
+      "spellings": [
+        {
+          "spelling": "Trumman East",
+          "method": "exact_name",
+          "rows": 131
+        }
+      ],
+      "people": 131
+    }
+  },
+  "corrections": []
+}

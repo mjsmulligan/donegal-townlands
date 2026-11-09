@@ -1,0 +1,14 @@
+{
+  "logainm_id": "14008",
+  "name_en": "Drumgun",
+  "name_ga": "",
+  "place_type": "townland",
+  "ded_id": "1372456",
+  "civil_parish_id": "801",
+  "barony_id": "54",
+  "county_id": "100013",
+  "latitude": "54.64887063799456",
+  "longitude": "-8.152539379554806",
+  "snapshot_date": "2026-11-09",
+  "_generated_by": "donegal-townlands.create_townland_cases"
+}

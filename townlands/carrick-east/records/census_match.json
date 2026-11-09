@@ -1,0 +1,39 @@
+{
+  "_generated_by": "donegal-townlands.attach_census",
+  "status": "proposed",
+  "note": "Matched by identical name only. Not reviewed.",
+  "ded": "Laghy",
+  "years": {
+    "1901": {
+      "spellings": [
+        {
+          "spelling": "Carrick East",
+          "method": "exact_name",
+          "rows": 33
+        }
+      ],
+      "people": 33
+    },
+    "1911": {
+      "spellings": [
+        {
+          "spelling": "Carrick East",
+          "method": "exact_name",
+          "rows": 25
+        }
+      ],
+      "people": 25
+    },
+    "1926": {
+      "spellings": [
+        {
+          "spelling": "Carrick East",
+          "method": "exact_name",
+          "rows": 19
+        }
+      ],
+      "people": 19
+    }
+  },
+  "corrections": []
+}

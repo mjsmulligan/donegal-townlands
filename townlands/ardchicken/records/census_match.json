@@ -1,0 +1,39 @@
+{
+  "_generated_by": "donegal-townlands.attach_census",
+  "status": "proposed",
+  "note": "Matched by identical name only. Not reviewed.",
+  "ded": "Donegal",
+  "years": {
+    "1901": {
+      "spellings": [
+        {
+          "spelling": "Ardchicken",
+          "method": "exact_name",
+          "rows": 8
+        }
+      ],
+      "people": 8
+    },
+    "1911": {
+      "spellings": [
+        {
+          "spelling": "Ardchicken",
+          "method": "exact_name",
+          "rows": 9
+        }
+      ],
+      "people": 9
+    },
+    "1926": {
+      "spellings": [
+        {
+          "spelling": "Ardchicken",
+          "method": "exact_name",
+          "rows": 3
+        }
+      ],
+      "people": 3
+    }
+  },
+  "corrections": []
+}

@@ -1,0 +1,14 @@
+{
+  "logainm_id": "14235",
+  "name_en": "Ardatowel",
+  "name_ga": "",
+  "place_type": "townland",
+  "ded_id": "1372542",
+  "civil_parish_id": "784",
+  "barony_id": "52",
+  "county_id": "100013",
+  "latitude": "54.698931718656084",
+  "longitude": "-8.018968759412461",
+  "snapshot_date": "2026-11-09",
+  "_generated_by": "donegal-townlands.create_townland_cases"
+}
