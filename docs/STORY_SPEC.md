@@ -114,6 +114,6 @@ Agreed with Mike, 2026-11-07: do not build per-person tagging now. The caption n
 4. Length is driven by the evidence.
 5. Photographs are referred to in the story. No per-person tagging for now (see Photographs).
 
-## Later
+## Fact sheet and automatic check
 
-A fact sheet per family, and a check that fails any date, name, age or place in a story that is not in the fact sheet, are specified separately with the census GEDCOM design.
+Built 2026-11-09 (WP21). `python tools/family_facts.py <townland> <family>` writes the fact sheet and `python tools/check_story.py <townland> <family>` checks the story against it. The check covers names, places, dates, ages, numbers, relationships, privacy and causes of death. It does not check voice, sense or order, so the review checklist above still applies. Facts from links Mike has not accepted are on the sheet marked `proposed` and cannot support a story.

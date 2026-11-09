@@ -32,3 +32,7 @@ Page: `docs/cullionboy/index.html`, built from `engine/walk.html` and `records/c
 
 ## Doc
 Claude Doc 845ed338-9fd0-41b6-9388-c94ad29267d4 still says "six children" for Bella Cassidy in one place. Correct is five.
+
+## Kelly fact sheet conflicts (2026-11-09, WP21)
+- Joseph Kelly: a tree note gives age 47 at death, but the birth (8 Jun 1875) and death (27 Dec 1925) dates give 50. Held open. The Kellys story does not state his age at death.
+- Thomas Kelly: aged 60 in 1901 and 74 in 1911, a drift of 4 years against the 10 between returns. Held open. The story says "about sixty" in 1901.

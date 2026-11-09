@@ -1,0 +1,3146 @@
+{
+ "_generated_by": "tools/family_facts.py",
+ "townland": "cullionboy",
+ "family": "Kelly",
+ "surname_family": "kelly",
+ "year": 2026,
+ "tiers": {
+  "accepted": 15,
+  "census": 21,
+  "derived": 14,
+  "griffiths": 2,
+  "media": 1,
+  "proposed": 6,
+  "tree": 232
+ },
+ "accepted_census_links": 0,
+ "proposed_census_links": 6,
+ "conflicts": [
+  "Joseph Kelly: a tree note gives age 47 at death, but the birth and death dates give 50.",
+  "Thomas Kelly: aged 60 in 1901 and 74 in 1911, a drift of +4 years against the 10 between returns."
+ ],
+ "facts": [
+  {
+   "id": "F001",
+   "kind": "person",
+   "tier": "tree",
+   "usable": true,
+   "text": "Margaret McElhar; born about 1840 at Friary; died 6 Aug 1913 at Cullionboy",
+   "who": "Margaret McElhar",
+   "ptr": "@I202759754066@",
+   "sex": "F",
+   "born": "about 1840",
+   "born_place": "Friary",
+   "died": "6 Aug 1913",
+   "died_place": "Cullionboy",
+   "occupations": [
+    "Farmer's Wife"
+   ],
+   "cleared": true,
+   "cleared_because": "died 50 or more years ago"
+  },
+  {
+   "id": "F002",
+   "kind": "note",
+   "tier": "tree",
+   "usable": true,
+   "text": "Surname recorded as both McElhar and Carr - interchangeable variants of the same surname in common usage within the family and community. Birth record of son Joseph Kelly (1875) gives mother's maiden name as McElhar; later records use Carr. From Friary townland, Lough Eske, Killymard Parish. Death on 6 August 1913 - same date as birth of Rose Kelly, both registered by Mary Anne McGettigan. Preferred birth year ~1840 from marriage record.",
+   "who": "Margaret McElhar",
+   "ptr": "@I202759754066@"
+  },
+  {
+   "id": "F003",
+   "kind": "person",
+   "tier": "tree",
+   "usable": true,
+   "text": "Thomas Kelly; born about 1840 at ; died about 1913 at Cullionboy",
+   "who": "Thomas Kelly",
+   "ptr": "@I202759754065@",
+   "sex": "M",
+   "born": "about 1840",
+   "died": "about 1913",
+   "died_place": "Cullionboy",
+   "occupations": [
+    "Farmer"
+   ],
+   "cleared": true,
+   "cleared_because": "died 50 or more years ago"
+  },
+  {
+   "id": "F004",
+   "kind": "note",
+   "tier": "tree",
+   "usable": true,
+   "text": "Birth year ~1840 from marriage record (1864, age 24) and 1901 census. 1911 census notes 45 years married and 8 children born, 3 living. Irish and English speaker (1901). Married Margaret McElhar/Carr 17 February 1864 at Killymard Parish - one of the earliest civil registration records in district. Death record not located.",
+   "who": "Thomas Kelly",
+   "ptr": "@I202759754065@"
+  },
+  {
+   "id": "F005",
+   "kind": "marriage",
+   "tier": "tree",
+   "usable": true,
+   "text": "Thomas Kelly married Margaret McElhar on 17 Feb 1864 at Killymard Parish Church",
+   "who": [
+    "Thomas Kelly",
+    "Margaret McElhar"
+   ],
+   "date": "17 Feb 1864",
+   "place": "Killymard Parish Church"
+  },
+  {
+   "id": "F006",
+   "kind": "person",
+   "tier": "tree",
+   "usable": true,
+   "text": "Thomas Kelly; born about 1871 at Cullionboy",
+   "who": "Thomas Kelly",
+   "ptr": "@I202759754116@",
+   "sex": "M",
+   "born": "about 1871",
+   "born_place": "Cullionboy",
+   "cleared": true,
+   "cleared_because": "born 100 or more years ago"
+  },
+  {
+   "id": "F007",
+   "kind": "note",
+   "tier": "tree",
+   "usable": true,
+   "text": "Son of Thomas Kelly and Margaret McElhar/Carr. Present in 1901. Absent from 1911 - likely emigrated or deceased.",
+   "who": "Thomas Kelly",
+   "ptr": "@I202759754116@"
+  },
+  {
+   "id": "F008",
+   "kind": "person",
+   "tier": "tree",
+   "usable": true,
+   "text": "Joseph Kelly; born 8 Jun 1875 at Cullionboy; died 27 Dec 1925 at Cullionboy",
+   "who": "Joseph Kelly",
+   "ptr": "@I202759754059@",
+   "sex": "M",
+   "born": "8 Jun 1875",
+   "born_place": "Cullionboy",
+   "died": "27 Dec 1925",
+   "died_place": "Cullionboy",
+   "occupations": [
+    "Farmer"
+   ],
+   "cleared": true,
+   "cleared_because": "died 50 or more years ago"
+  },
+  {
+   "id": "F009",
+   "kind": "note",
+   "tier": "tree",
+   "usable": true,
+   "text": "Died of Pulmonary Tuberculosis aged 47 - same cause as Sarah Gallagher Logue (1918), reflecting prevalence of TB in rural Donegal in this period. Married Isabella McGettigan 6 February 1910 at St. Patrick's Church, Donegal Town. Death confirmed by 1926 census where wife Bella recorded as widow with children noting father dead.",
+   "who": "Joseph Kelly",
+   "ptr": "@I202759754059@"
+  },
+  {
+   "id": "F010",
+   "kind": "marriage",
+   "tier": "tree",
+   "usable": true,
+   "text": "Joseph Kelly married Isabella McGettigan on 6 Feb 1910 at St. Patrick's Church, Donegal Town",
+   "who": [
+    "Joseph Kelly",
+    "Isabella McGettigan"
+   ],
+   "date": "6 Feb 1910",
+   "place": "St. Patrick's Church, Donegal Town"
+  },
+  {
+   "id": "F011",
+   "kind": "person",
+   "tier": "tree",
+   "usable": true,
+   "text": "Isabella McGettigan; born 6 Feb 1879 at Druminnin; died 5 May 1954 at Cullionboy",
+   "who": "Isabella McGettigan",
+   "ptr": "@I202759754060@",
+   "sex": "F",
+   "born": "6 Feb 1879",
+   "born_place": "Druminnin",
+   "died": "5 May 1954",
+   "died_place": "Cullionboy",
+   "occupations": [
+    "Farmer's Wife; Farmer (widow)"
+   ],
+   "cleared": true,
+   "cleared_because": "died 50 or more years ago"
+  },
+  {
+   "id": "F012",
+   "kind": "note",
+   "tier": "tree",
+   "usable": true,
+   "text": "Known as Bella. Born at Druminnin (family home), father recorded on birth certificate as Hugh Gaitens - earlier anglicisation of McGettigan. Catherine McAna present at birth - relationship to Mary McAna unknown, possibly sister but unproven. Married Joseph Kelly on her 31st birthday, 6 February 1910. Several children born at maternal grandmother's home in Mullinalamphry. Surname variants: McGettigan / Gaitens / Gaitins.",
+   "who": "Isabella McGettigan",
+   "ptr": "@I202759754060@"
+  },
+  {
+   "id": "F013",
+   "kind": "person",
+   "tier": "tree",
+   "usable": true,
+   "text": "John Patrick Kelly; born about 1881 at Cullionboy",
+   "who": "John Patrick Kelly",
+   "ptr": "@I202759754093@",
+   "sex": "M",
+   "born": "about 1881",
+   "born_place": "Cullionboy",
+   "cleared": true,
+   "cleared_because": "born 100 or more years ago"
+  },
+  {
+   "id": "F014",
+   "kind": "note",
+   "tier": "tree",
+   "usable": true,
+   "text": "Brother of Joseph Kelly. Son of Thomas Kelly and Margaret McElhar/Carr.",
+   "who": "John Patrick Kelly",
+   "ptr": "@I202759754093@"
+  },
+  {
+   "id": "F015",
+   "kind": "person",
+   "tier": "tree",
+   "usable": true,
+   "text": "James Kelly; born about 1883 at Cullionboy",
+   "who": "James Kelly",
+   "ptr": "@I202759754117@",
+   "sex": "M",
+   "born": "about 1883",
+   "born_place": "Cullionboy",
+   "cleared": true,
+   "cleared_because": "born 100 or more years ago"
+  },
+  {
+   "id": "F016",
+   "kind": "note",
+   "tier": "tree",
+   "usable": true,
+   "text": "Son of Thomas Kelly and Margaret McElhar/Carr. Present in 1901. Absent from 1911. Note: 1911 records only 3 of 8 children living.",
+   "who": "James Kelly",
+   "ptr": "@I202759754117@"
+  },
+  {
+   "id": "F017",
+   "kind": "person",
+   "tier": "tree",
+   "usable": true,
+   "text": "Mary Katie Kelly; born about 1913 at Mullinalamphry",
+   "who": "Mary Katie Kelly",
+   "ptr": "@I202759754106@",
+   "sex": "F",
+   "born": "about 1913",
+   "born_place": "Mullinalamphry",
+   "cleared": true,
+   "cleared_because": "born 100 or more years ago"
+  },
+  {
+   "id": "F018",
+   "kind": "note",
+   "tier": "tree",
+   "usable": true,
+   "text": "Daughter of Joseph Kelly and Bella McGettigan.",
+   "who": "Mary Katie Kelly",
+   "ptr": "@I202759754106@"
+  },
+  {
+   "id": "F019",
+   "kind": "person",
+   "tier": "tree",
+   "usable": true,
+   "text": "Rosanna Kelly; born 30 Jul 1913 at Mullinalamphry",
+   "who": "Rosanna Kelly",
+   "ptr": "@I202759754056@",
+   "sex": "F",
+   "born": "30 Jul 1913",
+   "born_place": "Mullinalamphry",
+   "cleared": true,
+   "cleared_because": "born 100 or more years ago"
+  },
+  {
+   "id": "F020",
+   "kind": "note",
+   "tier": "tree",
+   "usable": true,
+   "text": "Preferred name Rose - used throughout her life and signed on official documents including mother Bella's death registration 1954. Full given name Rosanna confirmed by birth record. Born at maternal grandmother Mary McAna's home in Mullinalamphry while family home was Cullionboy - several of Bella's children born at the McGettigan/McAna household. Birth date: family oral tradition gives 30 July 1913; civil registration date of 6 August 1913 likely reflects registration date rather than birth date.",
+   "who": "Rosanna Kelly",
+   "ptr": "@I202759754056@"
+  },
+  {
+   "id": "F021",
+   "kind": "marriage",
+   "tier": "tree",
+   "usable": true,
+   "text": "Rosanna Kelly married Patrick McCadden on 27 Jan 1949 at St. Agatha's Church, Clar",
+   "who": [
+    "Rosanna Kelly",
+    "Patrick McCadden"
+   ],
+   "date": "27 Jan 1949",
+   "place": "St. Agatha's Church, Clar"
+  },
+  {
+   "id": "F022",
+   "kind": "person",
+   "tier": "tree",
+   "usable": true,
+   "text": "Thomas Joseph Kelly; born about 1917 at Mullinalamphry",
+   "who": "Thomas Joseph Kelly",
+   "ptr": "@I202759754107@",
+   "sex": "M",
+   "born": "about 1917",
+   "born_place": "Mullinalamphry",
+   "cleared": true,
+   "cleared_because": "born 100 or more years ago"
+  },
+  {
+   "id": "F023",
+   "kind": "note",
+   "tier": "tree",
+   "usable": true,
+   "text": "Son of Joseph Kelly and Bella McGettigan. Named after paternal grandfather Thomas Kelly.",
+   "who": "Thomas Joseph Kelly",
+   "ptr": "@I202759754107@"
+  },
+  {
+   "id": "F024",
+   "kind": "person",
+   "tier": "tree",
+   "usable": true,
+   "text": "Hugh Patrick Kelly; born about 1919 at Mullinalamphry",
+   "who": "Hugh Patrick Kelly",
+   "ptr": "@I202759754108@",
+   "sex": "M",
+   "born": "about 1919",
+   "born_place": "Mullinalamphry",
+   "cleared": true,
+   "cleared_because": "born 100 or more years ago"
+  },
+  {
+   "id": "F025",
+   "kind": "note",
+   "tier": "tree",
+   "usable": true,
+   "text": "Son of Joseph Kelly and Bella McGettigan. Named after maternal grandfather Hugh McGettigan.",
+   "who": "Hugh Patrick Kelly",
+   "ptr": "@I202759754108@"
+  },
+  {
+   "id": "F026",
+   "kind": "person",
+   "tier": "tree",
+   "usable": true,
+   "text": "Patrick McCadden; born 20 Oct 1911",
+   "who": "Patrick McCadden",
+   "ptr": "@I202759754055@",
+   "born": "20 Oct 1911",
+   "cleared": true,
+   "cleared_because": "named by a person who passed 100/75/50 (people.json)"
+  },
+  {
+   "id": "F027",
+   "kind": "person",
+   "tier": "tree",
+   "usable": true,
+   "text": "Hugh McGettigan; born about 1851; died about 1904",
+   "who": "Hugh McGettigan",
+   "ptr": "@I202759754067@",
+   "born": "about 1851",
+   "died": "about 1904",
+   "cleared": true,
+   "cleared_because": "named by a person who passed 100/75/50 (people.json)"
+  },
+  {
+   "id": "F028",
+   "kind": "person",
+   "tier": "tree",
+   "usable": true,
+   "text": "Mary McAna; born about 1854; died 2 May 1927",
+   "who": "Mary McAna",
+   "ptr": "@I202759754068@",
+   "born": "about 1854",
+   "died": "2 May 1927",
+   "cleared": true,
+   "cleared_because": "named by a person who passed 100/75/50 (people.json)"
+  },
+  {
+   "id": "F029",
+   "kind": "person",
+   "tier": "tree",
+   "usable": true,
+   "text": "John Kelly; born about 1816; died before 1901",
+   "who": "John Kelly",
+   "ptr": "@I202759754077@",
+   "born": "about 1816",
+   "died": "before 1901",
+   "cleared": true,
+   "cleared_because": "named by a person who passed 100/75/50 (people.json)"
+  },
+  {
+   "id": "F030",
+   "kind": "person",
+   "tier": "tree",
+   "usable": true,
+   "text": "Mary; born about 1820; died before 1901",
+   "who": "Mary",
+   "ptr": "@I202759754078@",
+   "born": "about 1820",
+   "died": "before 1901",
+   "cleared": true,
+   "cleared_because": "named by a person who passed 100/75/50 (people.json)"
+  },
+  {
+   "id": "F031",
+   "kind": "person",
+   "tier": "tree",
+   "usable": true,
+   "text": "Patrick Carr; born about 1816; died before 1901",
+   "who": "Patrick Carr",
+   "ptr": "@I202759754079@",
+   "born": "about 1816",
+   "died": "before 1901",
+   "cleared": true,
+   "cleared_because": "named by a person who passed 100/75/50 (people.json)"
+  },
+  {
+   "id": "F032",
+   "kind": "person",
+   "tier": "tree",
+   "usable": true,
+   "text": "Margaret Kelly; born about 1912",
+   "who": "Margaret Kelly",
+   "ptr": "@I202759754092@",
+   "born": "about 1912",
+   "cleared": true,
+   "cleared_because": "named by a person who passed 100/75/50 (people.json)"
+  },
+  {
+   "id": "F033",
+   "kind": "age",
+   "tier": "derived",
+   "usable": true,
+   "text": "Margaret McElhar was 24 at the marriage on 17 Feb 1864",
+   "who": "Margaret McElhar",
+   "age": 24,
+   "exact": false,
+   "year": 1864
+  },
+  {
+   "id": "F034",
+   "kind": "age",
+   "tier": "derived",
+   "usable": true,
+   "text": "Thomas Kelly was 24 at the marriage on 17 Feb 1864",
+   "who": "Thomas Kelly",
+   "age": 24,
+   "exact": false,
+   "year": 1864
+  },
+  {
+   "id": "F035",
+   "kind": "count",
+   "tier": "derived",
+   "usable": true,
+   "text": "Thomas Kelly and Margaret McElhar had 4 children in the tree",
+   "who": "Thomas Kelly",
+   "count": 4
+  },
+  {
+   "id": "F036",
+   "kind": "age",
+   "tier": "derived",
+   "usable": true,
+   "text": "Joseph Kelly was 34 at the marriage on 6 Feb 1910",
+   "who": "Joseph Kelly",
+   "age": 34,
+   "exact": true,
+   "year": 1910
+  },
+  {
+   "id": "F037",
+   "kind": "age",
+   "tier": "derived",
+   "usable": true,
+   "text": "Joseph Kelly was 50 at death on 27 Dec 1925",
+   "who": "Joseph Kelly",
+   "age": 50,
+   "exact": true,
+   "year": 1925
+  },
+  {
+   "id": "F038",
+   "kind": "count",
+   "tier": "derived",
+   "usable": true,
+   "text": "Joseph Kelly and Isabella McGettigan had 5 children in the tree",
+   "who": "Joseph Kelly",
+   "count": 5
+  },
+  {
+   "id": "F039",
+   "kind": "age",
+   "tier": "derived",
+   "usable": true,
+   "text": "Isabella McGettigan was 31 at the marriage on 6 Feb 1910",
+   "who": "Isabella McGettigan",
+   "age": 31,
+   "exact": true,
+   "year": 1910
+  },
+  {
+   "id": "F040",
+   "kind": "age",
+   "tier": "derived",
+   "usable": true,
+   "text": "Isabella McGettigan was 75 at death on 5 May 1954",
+   "who": "Isabella McGettigan",
+   "age": 75,
+   "exact": true,
+   "year": 1954
+  },
+  {
+   "id": "F041",
+   "kind": "age",
+   "tier": "derived",
+   "usable": true,
+   "text": "Rosanna Kelly was 35 at the marriage on 27 Jan 1949",
+   "who": "Rosanna Kelly",
+   "age": 35,
+   "exact": true,
+   "year": 1949
+  },
+  {
+   "id": "F042",
+   "kind": "count",
+   "tier": "derived",
+   "usable": true,
+   "text": "3 children in the tree were born at Cullionboy: Thomas Kelly, John Patrick Kelly, James Kelly",
+   "who": [
+    "Thomas Kelly",
+    "John Patrick Kelly",
+    "James Kelly"
+   ],
+   "count": 3,
+   "place": "Cullionboy"
+  },
+  {
+   "id": "F043",
+   "kind": "count",
+   "tier": "derived",
+   "usable": true,
+   "text": "4 children in the tree were born at Mullinalamphry: Mary Katie Kelly, Rosanna Kelly, Thomas Joseph Kelly, Hugh Patrick Kelly",
+   "who": [
+    "Mary Katie Kelly",
+    "Rosanna Kelly",
+    "Thomas Joseph Kelly",
+    "Hugh Patrick Kelly"
+   ],
+   "count": 4,
+   "place": "Mullinalamphry"
+  },
+  {
+   "id": "F044",
+   "kind": "anchor",
+   "tier": "accepted",
+   "usable": true,
+   "text": "Margaret McElhar is Margaret Kelly, aged 62, in the 1901 return",
+   "who": "Margaret McElhar",
+   "year": 1901,
+   "age": 62,
+   "recorded_name": "Margaret Kelly"
+  },
+  {
+   "id": "F045",
+   "kind": "anchor",
+   "tier": "accepted",
+   "usable": true,
+   "text": "Margaret McElhar is Marget Kelly, aged 74, in the 1911 return",
+   "who": "Margaret McElhar",
+   "year": 1911,
+   "age": 74,
+   "recorded_name": "Marget Kelly"
+  },
+  {
+   "id": "F046",
+   "kind": "anchor",
+   "tier": "accepted",
+   "usable": true,
+   "text": "Thomas Kelly is Thomas Kelly, aged 60, in the 1901 return",
+   "who": "Thomas Kelly",
+   "year": 1901,
+   "age": 60,
+   "recorded_name": "Thomas Kelly"
+  },
+  {
+   "id": "F047",
+   "kind": "anchor",
+   "tier": "accepted",
+   "usable": true,
+   "text": "Thomas Kelly is Thomas Kelly, aged 74, in the 1911 return",
+   "who": "Thomas Kelly",
+   "year": 1911,
+   "age": 74,
+   "recorded_name": "Thomas Kelly"
+  },
+  {
+   "id": "F048",
+   "kind": "anchor",
+   "tier": "accepted",
+   "usable": true,
+   "text": "Thomas Kelly is Thomas Kelly, aged 30, in the 1901 return",
+   "who": "Thomas Kelly",
+   "year": 1901,
+   "age": 30,
+   "recorded_name": "Thomas Kelly"
+  },
+  {
+   "id": "F049",
+   "kind": "anchor",
+   "tier": "accepted",
+   "usable": true,
+   "text": "Joseph Kelly is Joseph Kelly, aged 24, in the 1901 return",
+   "who": "Joseph Kelly",
+   "year": 1901,
+   "age": 24,
+   "recorded_name": "Joseph Kelly"
+  },
+  {
+   "id": "F050",
+   "kind": "anchor",
+   "tier": "accepted",
+   "usable": true,
+   "text": "Joseph Kelly is Joseph Kelly, aged 35, in the 1911 return",
+   "who": "Joseph Kelly",
+   "year": 1911,
+   "age": 35,
+   "recorded_name": "Joseph Kelly"
+  },
+  {
+   "id": "F051",
+   "kind": "anchor",
+   "tier": "accepted",
+   "usable": true,
+   "text": "Isabella McGettigan is Bella Kelly, aged 32, in the 1911 return",
+   "who": "Isabella McGettigan",
+   "year": 1911,
+   "age": 32,
+   "recorded_name": "Bella Kelly"
+  },
+  {
+   "id": "F052",
+   "kind": "anchor",
+   "tier": "accepted",
+   "usable": true,
+   "text": "Isabella McGettigan is Bella Kelly, aged 45, in the 1926 return",
+   "who": "Isabella McGettigan",
+   "year": 1926,
+   "age": 45,
+   "recorded_name": "Bella Kelly"
+  },
+  {
+   "id": "F053",
+   "kind": "anchor",
+   "tier": "accepted",
+   "usable": true,
+   "text": "John Patrick Kelly is John Kelly, aged 21, in the 1901 return",
+   "who": "John Patrick Kelly",
+   "year": 1901,
+   "age": 21,
+   "recorded_name": "John Kelly"
+  },
+  {
+   "id": "F054",
+   "kind": "anchor",
+   "tier": "accepted",
+   "usable": true,
+   "text": "James Kelly is James Kelly, aged 18, in the 1901 return",
+   "who": "James Kelly",
+   "year": 1901,
+   "age": 18,
+   "recorded_name": "James Kelly"
+  },
+  {
+   "id": "F055",
+   "kind": "anchor",
+   "tier": "accepted",
+   "usable": true,
+   "text": "Mary Katie Kelly is Mary Katie Kelly, aged 13, in the 1926 return",
+   "who": "Mary Katie Kelly",
+   "year": 1926,
+   "age": 13,
+   "recorded_name": "Mary Katie Kelly"
+  },
+  {
+   "id": "F056",
+   "kind": "anchor",
+   "tier": "accepted",
+   "usable": true,
+   "text": "Rosanna Kelly is Rose Anne Kelly, aged 12, in the 1926 return",
+   "who": "Rosanna Kelly",
+   "year": 1926,
+   "age": 12,
+   "recorded_name": "Rose Anne Kelly"
+  },
+  {
+   "id": "F057",
+   "kind": "anchor",
+   "tier": "accepted",
+   "usable": true,
+   "text": "Thomas Joseph Kelly is Thomas Joseph Kelly, aged 9, in the 1926 return",
+   "who": "Thomas Joseph Kelly",
+   "year": 1926,
+   "age": 9,
+   "recorded_name": "Thomas Joseph Kelly"
+  },
+  {
+   "id": "F058",
+   "kind": "anchor",
+   "tier": "accepted",
+   "usable": true,
+   "text": "Hugh Patrick Kelly is Hugh Patrick Kelly, aged 7, in the 1926 return",
+   "who": "Hugh Patrick Kelly",
+   "year": 1926,
+   "age": 7,
+   "recorded_name": "Hugh Patrick Kelly"
+  },
+  {
+   "id": "F059",
+   "kind": "census",
+   "tier": "census",
+   "usable": true,
+   "text": "James Kelly, 18, in the 1901 return; recorded as Son; Not Married; Farmer's Son; born Co Donegal",
+   "who": "James Kelly",
+   "year": 1901,
+   "age": 18,
+   "relation": "Son",
+   "household": "3",
+   "obs": "census1901:clogher:6384917",
+   "in_family": true
+  },
+  {
+   "id": "F060",
+   "kind": "census",
+   "tier": "census",
+   "usable": true,
+   "text": "John Kelly, 21, in the 1901 return; recorded as Son; Not Married; Farmer's Son; born Co Donegal",
+   "who": "John Kelly",
+   "year": 1901,
+   "age": 21,
+   "relation": "Son",
+   "household": "3",
+   "obs": "census1901:clogher:6384916",
+   "in_family": true
+  },
+  {
+   "id": "F061",
+   "kind": "census",
+   "tier": "census",
+   "usable": true,
+   "text": "Joseph Kelly, 24, in the 1901 return; recorded as Son; Not Married; Farmer's Son; born Co Donegal",
+   "who": "Joseph Kelly",
+   "year": 1901,
+   "age": 24,
+   "relation": "Son",
+   "household": "3",
+   "obs": "census1901:clogher:6384915",
+   "in_family": true
+  },
+  {
+   "id": "F062",
+   "kind": "census",
+   "tier": "census",
+   "usable": true,
+   "text": "Margaret Kelly, 62, in the 1901 return; recorded as Wife; Married; born Co Donegal",
+   "who": "Margaret Kelly",
+   "year": 1901,
+   "age": 62,
+   "relation": "Wife",
+   "household": "3",
+   "obs": "census1901:clogher:6384913",
+   "in_family": true
+  },
+  {
+   "id": "F063",
+   "kind": "census",
+   "tier": "census",
+   "usable": true,
+   "text": "Thomas Kelly, 60, in the 1901 return; recorded as Head of Family; Married; Farmer; born Co Donegal",
+   "who": "Thomas Kelly",
+   "year": 1901,
+   "age": 60,
+   "relation": "Head of Family",
+   "household": "3",
+   "obs": "census1901:clogher:6384912",
+   "in_family": true
+  },
+  {
+   "id": "F064",
+   "kind": "census",
+   "tier": "census",
+   "usable": true,
+   "text": "Thomas Kelly, 30, in the 1901 return; recorded as Son; Not Married; Farmer's Son; born Co Donegal",
+   "who": "Thomas Kelly",
+   "year": 1901,
+   "age": 30,
+   "relation": "Son",
+   "household": "3",
+   "obs": "census1901:clogher:6384914",
+   "in_family": true
+  },
+  {
+   "id": "F065",
+   "kind": "census",
+   "tier": "census",
+   "usable": true,
+   "text": "Bella Kelly, 32, in the 1911 return; recorded as Daughter in Law; Married; born Co Donegal; 1 years married",
+   "who": "Bella Kelly",
+   "year": 1911,
+   "age": 32,
+   "relation": "Daughter in Law",
+   "household": "3",
+   "obs": "census1911:clogher:2239296",
+   "in_family": true
+  },
+  {
+   "id": "F066",
+   "kind": "census",
+   "tier": "census",
+   "usable": true,
+   "text": "John Patrick Kelly, 30, in the 1911 return; recorded as Son; Single; Farmer's Son; born Co Donegal",
+   "who": "John Patrick Kelly",
+   "year": 1911,
+   "age": 30,
+   "relation": "Son",
+   "household": "3",
+   "obs": "census1911:clogher:2239297",
+   "in_family": true
+  },
+  {
+   "id": "F067",
+   "kind": "census",
+   "tier": "census",
+   "usable": true,
+   "text": "Joseph Kelly, 35, in the 1911 return; recorded as Son; Married; Farmer's Son; born Co Donegal",
+   "who": "Joseph Kelly",
+   "year": 1911,
+   "age": 35,
+   "relation": "Son",
+   "household": "3",
+   "obs": "census1911:clogher:2239295",
+   "in_family": true
+  },
+  {
+   "id": "F068",
+   "kind": "census",
+   "tier": "census",
+   "usable": true,
+   "text": "Marget Kelly, 74, in the 1911 return; recorded as Wife; Married; born Co Donegal; 45 years married; 8 children born",
+   "who": "Marget Kelly",
+   "year": 1911,
+   "age": 74,
+   "relation": "Wife",
+   "household": "3",
+   "obs": "census1911:clogher:2239294",
+   "in_family": true
+  },
+  {
+   "id": "F069",
+   "kind": "census",
+   "tier": "census",
+   "usable": true,
+   "text": "Thomas Kelly, 74, in the 1911 return; recorded as Head of Family; Married; Farmer; born Co Donegal",
+   "who": "Thomas Kelly",
+   "year": 1911,
+   "age": 74,
+   "relation": "Head of Family",
+   "household": "3",
+   "obs": "census1911:clogher:2239293",
+   "in_family": true
+  },
+  {
+   "id": "F070",
+   "kind": "census",
+   "tier": "census",
+   "usable": true,
+   "text": "Bella Kelly, 45, in the 1926 return; recorded as Head; born Donegal",
+   "who": "Bella Kelly",
+   "year": 1926,
+   "age": 45,
+   "relation": "Head",
+   "household": "Collinboy_0352_0011_0002_0_00003.pdf",
+   "obs": "census1926:clogher:2886913",
+   "in_family": true
+  },
+  {
+   "id": "F071",
+   "kind": "census",
+   "tier": "census",
+   "usable": true,
+   "text": "Hugh Patrick Kelly, 7, in the 1926 return; recorded as Bella Kelly; born Donegal",
+   "who": "Hugh Patrick Kelly",
+   "year": 1926,
+   "age": 7,
+   "relation": "Bella Kelly",
+   "household": "Collinboy_0352_0011_0002_0_00003.pdf",
+   "obs": "census1926:clogher:2886917",
+   "in_family": true
+  },
+  {
+   "id": "F072",
+   "kind": "census",
+   "tier": "census",
+   "usable": true,
+   "text": "Mary Katie Kelly, 13, in the 1926 return; recorded as Bella Kelly; Father is Dead; born Donegal",
+   "who": "Mary Katie Kelly",
+   "year": 1926,
+   "age": 13,
+   "relation": "Bella Kelly",
+   "household": "Collinboy_0352_0011_0002_0_00003.pdf",
+   "obs": "census1926:clogher:2886914",
+   "in_family": true
+  },
+  {
+   "id": "F073",
+   "kind": "census",
+   "tier": "census",
+   "usable": true,
+   "text": "Rose Anne Kelly, 12, in the 1926 return; recorded as Bella Kelly; born Donegal",
+   "who": "Rose Anne Kelly",
+   "year": 1926,
+   "age": 12,
+   "relation": "Bella Kelly",
+   "household": "Collinboy_0352_0011_0002_0_00003.pdf",
+   "obs": "census1926:clogher:2886915",
+   "in_family": true
+  },
+  {
+   "id": "F074",
+   "kind": "census",
+   "tier": "census",
+   "usable": true,
+   "text": "Thomas Joseph Kelly, 9, in the 1926 return; recorded as Bella Kelly; born Donegal",
+   "who": "Thomas Joseph Kelly",
+   "year": 1926,
+   "age": 9,
+   "relation": "Bella Kelly",
+   "household": "Collinboy_0352_0011_0002_0_00003.pdf",
+   "obs": "census1926:clogher:2886916",
+   "in_family": true
+  },
+  {
+   "id": "F075",
+   "kind": "count",
+   "tier": "derived",
+   "usable": true,
+   "text": "In 1901 the Kelly household held 6 people: 4 sons and 4 children of the head",
+   "year": 1901,
+   "count": 6,
+   "counts": [
+    6,
+    4,
+    4
+   ],
+   "who": "Thomas Kelly"
+  },
+  {
+   "id": "F076",
+   "kind": "count",
+   "tier": "derived",
+   "usable": true,
+   "text": "In 1911 the Kelly household held 5 people: 2 sons and 2 children of the head",
+   "year": 1911,
+   "count": 5,
+   "counts": [
+    5,
+    2,
+    2
+   ],
+   "who": "Thomas Kelly"
+  },
+  {
+   "id": "F077",
+   "kind": "count",
+   "tier": "derived",
+   "usable": true,
+   "text": "In 1926 the Kelly household held 5 people: 0 sons and 0 children of the head",
+   "year": 1926,
+   "count": 5,
+   "counts": [
+    5,
+    0,
+    0
+   ],
+   "who": "Bella Kelly"
+  },
+  {
+   "id": "F078",
+   "kind": "source",
+   "tier": "griffiths",
+   "usable": true,
+   "text": "Griffith's Valuation, mid 1850s, townland of Cullionboy",
+   "year": 1850
+  },
+  {
+   "id": "F079",
+   "kind": "griffiths",
+   "tier": "griffiths",
+   "usable": true,
+   "text": "Mary Kelly held 22 2 20 acres roods perches (lot 5, House, office, and land) from Earl of Arran, valued at 3 5 0",
+   "who": "Mary Kelly",
+   "acres": 22.625,
+   "lot": "5",
+   "lessor": "Earl of Arran"
+  },
+  {
+   "id": "F080",
+   "kind": "media",
+   "tier": "media",
+   "usable": true,
+   "text": "Photograph: Bella, Rose & Mary Kate Kelly",
+   "file": "kelly-bella-rose-mary-kate.jpg",
+   "caption": "Bella, Rose & Mary Kate Kelly"
+  },
+  {
+   "id": "F081",
+   "kind": "link",
+   "tier": "proposed",
+   "usable": false,
+   "text": "Proposed, not accepted: Thomas Kelly (60, 1901) may be Thomas Kelly (74, 1911); matcher confidence medium",
+   "obs": [
+    "census1901:clogher:6384912",
+    "census1911:clogher:2239293"
+   ],
+   "confidence": "medium",
+   "flags": [
+    "age drift 4"
+   ]
+  },
+  {
+   "id": "F082",
+   "kind": "link",
+   "tier": "proposed",
+   "usable": false,
+   "text": "Proposed, not accepted: Margaret Kelly (62, 1901) may be Marget Kelly (74, 1911); matcher confidence medium",
+   "obs": [
+    "census1901:clogher:6384913",
+    "census1911:clogher:2239294"
+   ],
+   "confidence": "medium",
+   "flags": [
+    "given name variant"
+   ]
+  },
+  {
+   "id": "F083",
+   "kind": "link",
+   "tier": "proposed",
+   "usable": false,
+   "text": "Proposed, not accepted: Joseph Kelly (24, 1901) may be Joseph Kelly (35, 1911); matcher confidence high",
+   "obs": [
+    "census1901:clogher:6384915",
+    "census1911:clogher:2239295"
+   ],
+   "confidence": "high"
+  },
+  {
+   "id": "F084",
+   "kind": "link",
+   "tier": "proposed",
+   "usable": false,
+   "text": "Proposed, not accepted: John Kelly (21, 1901) may be John Patrick Kelly (30, 1911); matcher confidence high",
+   "obs": [
+    "census1901:clogher:6384916",
+    "census1911:clogher:2239297"
+   ],
+   "confidence": "high"
+  },
+  {
+   "id": "F085",
+   "kind": "link",
+   "tier": "proposed",
+   "usable": false,
+   "text": "Proposed, not accepted: Bella McGettigan (20, 1901) may be Bella Kelly (32, 1911); matcher confidence low",
+   "obs": [
+    "census1901:clogher:6385354",
+    "census1911:clogher:2239296"
+   ],
+   "confidence": "low",
+   "flags": [
+    "ambiguous",
+    "surname change",
+    "no household continuity"
+   ]
+  },
+  {
+   "id": "F086",
+   "kind": "link",
+   "tier": "proposed",
+   "usable": false,
+   "text": "Proposed, not accepted: Bella Kelly (32, 1911) may be Bella Kelly (45, 1926); matcher confidence medium",
+   "obs": [
+    "census1911:clogher:2239296",
+    "census1926:clogher:2886913"
+   ],
+   "confidence": "medium",
+   "flags": [
+    "no household continuity"
+   ]
+  },
+  {
+   "id": "F087",
+   "kind": "relation",
+   "tier": "census",
+   "usable": true,
+   "text": "Hugh Patrick Kelly is bella kelly of Bella Kelly",
+   "relation": "bella kelly",
+   "who": "Hugh Patrick Kelly",
+   "of": "Bella Kelly"
+  },
+  {
+   "id": "F088",
+   "kind": "relation",
+   "tier": "census",
+   "usable": true,
+   "text": "Mary Katie Kelly is bella kelly of Bella Kelly",
+   "relation": "bella kelly",
+   "who": "Mary Katie Kelly",
+   "of": "Bella Kelly"
+  },
+  {
+   "id": "F089",
+   "kind": "relation",
+   "tier": "census",
+   "usable": true,
+   "text": "Rose Anne Kelly is bella kelly of Bella Kelly",
+   "relation": "bella kelly",
+   "who": "Rose Anne Kelly",
+   "of": "Bella Kelly"
+  },
+  {
+   "id": "F090",
+   "kind": "relation",
+   "tier": "census",
+   "usable": true,
+   "text": "Thomas Joseph Kelly is bella kelly of Bella Kelly",
+   "relation": "bella kelly",
+   "who": "Thomas Joseph Kelly",
+   "of": "Bella Kelly"
+  },
+  {
+   "id": "F091",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Hugh Patrick Kelly is brother of Mary Katie Kelly",
+   "relation": "brother",
+   "who": "Hugh Patrick Kelly",
+   "of": "Mary Katie Kelly"
+  },
+  {
+   "id": "F092",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Hugh Patrick Kelly is brother of Rosanna Kelly",
+   "relation": "brother",
+   "who": "Hugh Patrick Kelly",
+   "of": "Rosanna Kelly"
+  },
+  {
+   "id": "F093",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Hugh Patrick Kelly is brother of Rose Anne Kelly",
+   "relation": "brother",
+   "who": "Hugh Patrick Kelly",
+   "of": "Rose Anne Kelly"
+  },
+  {
+   "id": "F094",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Hugh Patrick Kelly is brother of Thomas Joseph Kelly",
+   "relation": "brother",
+   "who": "Hugh Patrick Kelly",
+   "of": "Thomas Joseph Kelly"
+  },
+  {
+   "id": "F095",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "James Kelly is brother of John Kelly",
+   "relation": "brother",
+   "who": "James Kelly",
+   "of": "John Kelly"
+  },
+  {
+   "id": "F096",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "James Kelly is brother of John Patrick Kelly",
+   "relation": "brother",
+   "who": "James Kelly",
+   "of": "John Patrick Kelly"
+  },
+  {
+   "id": "F097",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "James Kelly is brother of Joseph Kelly",
+   "relation": "brother",
+   "who": "James Kelly",
+   "of": "Joseph Kelly"
+  },
+  {
+   "id": "F098",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "James Kelly is brother of Thomas Kelly",
+   "relation": "brother",
+   "who": "James Kelly",
+   "of": "Thomas Kelly"
+  },
+  {
+   "id": "F099",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "John Kelly is brother of James Kelly",
+   "relation": "brother",
+   "who": "John Kelly",
+   "of": "James Kelly"
+  },
+  {
+   "id": "F100",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "John Kelly is brother of Joseph Kelly",
+   "relation": "brother",
+   "who": "John Kelly",
+   "of": "Joseph Kelly"
+  },
+  {
+   "id": "F101",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "John Kelly is brother of Thomas Kelly",
+   "relation": "brother",
+   "who": "John Kelly",
+   "of": "Thomas Kelly"
+  },
+  {
+   "id": "F102",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "John Patrick Kelly is brother of James Kelly",
+   "relation": "brother",
+   "who": "John Patrick Kelly",
+   "of": "James Kelly"
+  },
+  {
+   "id": "F103",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "John Patrick Kelly is brother of Joseph Kelly",
+   "relation": "brother",
+   "who": "John Patrick Kelly",
+   "of": "Joseph Kelly"
+  },
+  {
+   "id": "F104",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "John Patrick Kelly is brother of Thomas Kelly",
+   "relation": "brother",
+   "who": "John Patrick Kelly",
+   "of": "Thomas Kelly"
+  },
+  {
+   "id": "F105",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Joseph Kelly is brother of James Kelly",
+   "relation": "brother",
+   "who": "Joseph Kelly",
+   "of": "James Kelly"
+  },
+  {
+   "id": "F106",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Joseph Kelly is brother of John Kelly",
+   "relation": "brother",
+   "who": "Joseph Kelly",
+   "of": "John Kelly"
+  },
+  {
+   "id": "F107",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Joseph Kelly is brother of John Patrick Kelly",
+   "relation": "brother",
+   "who": "Joseph Kelly",
+   "of": "John Patrick Kelly"
+  },
+  {
+   "id": "F108",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Joseph Kelly is brother of Thomas Kelly",
+   "relation": "brother",
+   "who": "Joseph Kelly",
+   "of": "Thomas Kelly"
+  },
+  {
+   "id": "F109",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Thomas Joseph Kelly is brother of Hugh Patrick Kelly",
+   "relation": "brother",
+   "who": "Thomas Joseph Kelly",
+   "of": "Hugh Patrick Kelly"
+  },
+  {
+   "id": "F110",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Thomas Joseph Kelly is brother of Mary Katie Kelly",
+   "relation": "brother",
+   "who": "Thomas Joseph Kelly",
+   "of": "Mary Katie Kelly"
+  },
+  {
+   "id": "F111",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Thomas Joseph Kelly is brother of Rosanna Kelly",
+   "relation": "brother",
+   "who": "Thomas Joseph Kelly",
+   "of": "Rosanna Kelly"
+  },
+  {
+   "id": "F112",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Thomas Joseph Kelly is brother of Rose Anne Kelly",
+   "relation": "brother",
+   "who": "Thomas Joseph Kelly",
+   "of": "Rose Anne Kelly"
+  },
+  {
+   "id": "F113",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Thomas Kelly is brother of James Kelly",
+   "relation": "brother",
+   "who": "Thomas Kelly",
+   "of": "James Kelly"
+  },
+  {
+   "id": "F114",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Thomas Kelly is brother of John Kelly",
+   "relation": "brother",
+   "who": "Thomas Kelly",
+   "of": "John Kelly"
+  },
+  {
+   "id": "F115",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Thomas Kelly is brother of John Patrick Kelly",
+   "relation": "brother",
+   "who": "Thomas Kelly",
+   "of": "John Patrick Kelly"
+  },
+  {
+   "id": "F116",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Thomas Kelly is brother of Joseph Kelly",
+   "relation": "brother",
+   "who": "Thomas Kelly",
+   "of": "Joseph Kelly"
+  },
+  {
+   "id": "F117",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Margaret Kelly is child of Bella Kelly",
+   "relation": "child",
+   "who": "Margaret Kelly",
+   "of": "Bella Kelly"
+  },
+  {
+   "id": "F118",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Margaret Kelly is child of Isabella McGettigan",
+   "relation": "child",
+   "who": "Margaret Kelly",
+   "of": "Isabella McGettigan"
+  },
+  {
+   "id": "F119",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Margaret Kelly is child of Joseph Kelly",
+   "relation": "child",
+   "who": "Margaret Kelly",
+   "of": "Joseph Kelly"
+  },
+  {
+   "id": "F120",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Mary Katie Kelly is daughter of Bella Kelly",
+   "relation": "daughter",
+   "who": "Mary Katie Kelly",
+   "of": "Bella Kelly"
+  },
+  {
+   "id": "F121",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Mary Katie Kelly is daughter of Isabella McGettigan",
+   "relation": "daughter",
+   "who": "Mary Katie Kelly",
+   "of": "Isabella McGettigan"
+  },
+  {
+   "id": "F122",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Mary Katie Kelly is daughter of Joseph Kelly",
+   "relation": "daughter",
+   "who": "Mary Katie Kelly",
+   "of": "Joseph Kelly"
+  },
+  {
+   "id": "F123",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Rosanna Kelly is daughter of Bella Kelly",
+   "relation": "daughter",
+   "who": "Rosanna Kelly",
+   "of": "Bella Kelly"
+  },
+  {
+   "id": "F124",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Rosanna Kelly is daughter of Isabella McGettigan",
+   "relation": "daughter",
+   "who": "Rosanna Kelly",
+   "of": "Isabella McGettigan"
+  },
+  {
+   "id": "F125",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Rosanna Kelly is daughter of Joseph Kelly",
+   "relation": "daughter",
+   "who": "Rosanna Kelly",
+   "of": "Joseph Kelly"
+  },
+  {
+   "id": "F126",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Rose Anne Kelly is daughter of Isabella McGettigan",
+   "relation": "daughter",
+   "who": "Rose Anne Kelly",
+   "of": "Isabella McGettigan"
+  },
+  {
+   "id": "F127",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Rose Anne Kelly is daughter of Joseph Kelly",
+   "relation": "daughter",
+   "who": "Rose Anne Kelly",
+   "of": "Joseph Kelly"
+  },
+  {
+   "id": "F128",
+   "kind": "relation",
+   "tier": "census",
+   "usable": true,
+   "text": "Bella Kelly is daughter in law of Thomas Kelly",
+   "relation": "daughter in law",
+   "who": "Bella Kelly",
+   "of": "Thomas Kelly"
+  },
+  {
+   "id": "F129",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Joseph Kelly is father of Hugh Patrick Kelly",
+   "relation": "father",
+   "who": "Joseph Kelly",
+   "of": "Hugh Patrick Kelly"
+  },
+  {
+   "id": "F130",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Joseph Kelly is father of Margaret Kelly",
+   "relation": "father",
+   "who": "Joseph Kelly",
+   "of": "Margaret Kelly"
+  },
+  {
+   "id": "F131",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Joseph Kelly is father of Mary Katie Kelly",
+   "relation": "father",
+   "who": "Joseph Kelly",
+   "of": "Mary Katie Kelly"
+  },
+  {
+   "id": "F132",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Joseph Kelly is father of Rosanna Kelly",
+   "relation": "father",
+   "who": "Joseph Kelly",
+   "of": "Rosanna Kelly"
+  },
+  {
+   "id": "F133",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Joseph Kelly is father of Rose Anne Kelly",
+   "relation": "father",
+   "who": "Joseph Kelly",
+   "of": "Rose Anne Kelly"
+  },
+  {
+   "id": "F134",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Joseph Kelly is father of Thomas Joseph Kelly",
+   "relation": "father",
+   "who": "Joseph Kelly",
+   "of": "Thomas Joseph Kelly"
+  },
+  {
+   "id": "F135",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Thomas Kelly is father of James Kelly",
+   "relation": "father",
+   "who": "Thomas Kelly",
+   "of": "James Kelly"
+  },
+  {
+   "id": "F136",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Thomas Kelly is father of John Kelly",
+   "relation": "father",
+   "who": "Thomas Kelly",
+   "of": "John Kelly"
+  },
+  {
+   "id": "F137",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Thomas Kelly is father of John Patrick Kelly",
+   "relation": "father",
+   "who": "Thomas Kelly",
+   "of": "John Patrick Kelly"
+  },
+  {
+   "id": "F138",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Thomas Kelly is father of Joseph Kelly",
+   "relation": "father",
+   "who": "Thomas Kelly",
+   "of": "Joseph Kelly"
+  },
+  {
+   "id": "F139",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Thomas Kelly is father of Thomas Kelly",
+   "relation": "father",
+   "who": "Thomas Kelly",
+   "of": "Thomas Kelly"
+  },
+  {
+   "id": "F140",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Hugh McGettigan is grandfather of Hugh Patrick Kelly",
+   "relation": "grandfather",
+   "who": "Hugh McGettigan",
+   "of": "Hugh Patrick Kelly"
+  },
+  {
+   "id": "F141",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Thomas Kelly is grandfather of Thomas Joseph Kelly",
+   "relation": "grandfather",
+   "who": "Thomas Kelly",
+   "of": "Thomas Joseph Kelly"
+  },
+  {
+   "id": "F142",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Mary McAna is grandmother of Rosanna Kelly",
+   "relation": "grandmother",
+   "who": "Mary McAna",
+   "of": "Rosanna Kelly"
+  },
+  {
+   "id": "F143",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Mary McAna is grandmother of Rose Anne Kelly",
+   "relation": "grandmother",
+   "who": "Mary McAna",
+   "of": "Rose Anne Kelly"
+  },
+  {
+   "id": "F144",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Hugh McGettigan is grandparent of Hugh Patrick Kelly",
+   "relation": "grandparent",
+   "who": "Hugh McGettigan",
+   "of": "Hugh Patrick Kelly"
+  },
+  {
+   "id": "F145",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Hugh McGettigan is grandparent of Mary Katie Kelly",
+   "relation": "grandparent",
+   "who": "Hugh McGettigan",
+   "of": "Mary Katie Kelly"
+  },
+  {
+   "id": "F146",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Hugh McGettigan is grandparent of Rosanna Kelly",
+   "relation": "grandparent",
+   "who": "Hugh McGettigan",
+   "of": "Rosanna Kelly"
+  },
+  {
+   "id": "F147",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Hugh McGettigan is grandparent of Rose Anne Kelly",
+   "relation": "grandparent",
+   "who": "Hugh McGettigan",
+   "of": "Rose Anne Kelly"
+  },
+  {
+   "id": "F148",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Hugh McGettigan is grandparent of Thomas Joseph Kelly",
+   "relation": "grandparent",
+   "who": "Hugh McGettigan",
+   "of": "Thomas Joseph Kelly"
+  },
+  {
+   "id": "F149",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "John Kelly is grandparent of James Kelly",
+   "relation": "grandparent",
+   "who": "John Kelly",
+   "of": "James Kelly"
+  },
+  {
+   "id": "F150",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "John Kelly is grandparent of John Kelly",
+   "relation": "grandparent",
+   "who": "John Kelly",
+   "of": "John Kelly"
+  },
+  {
+   "id": "F151",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "John Kelly is grandparent of John Patrick Kelly",
+   "relation": "grandparent",
+   "who": "John Kelly",
+   "of": "John Patrick Kelly"
+  },
+  {
+   "id": "F152",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "John Kelly is grandparent of Joseph Kelly",
+   "relation": "grandparent",
+   "who": "John Kelly",
+   "of": "Joseph Kelly"
+  },
+  {
+   "id": "F153",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "John Kelly is grandparent of Thomas Kelly",
+   "relation": "grandparent",
+   "who": "John Kelly",
+   "of": "Thomas Kelly"
+  },
+  {
+   "id": "F154",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Margaret McElhar is grandparent of Hugh Patrick Kelly",
+   "relation": "grandparent",
+   "who": "Margaret McElhar",
+   "of": "Hugh Patrick Kelly"
+  },
+  {
+   "id": "F155",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Margaret McElhar is grandparent of Mary Katie Kelly",
+   "relation": "grandparent",
+   "who": "Margaret McElhar",
+   "of": "Mary Katie Kelly"
+  },
+  {
+   "id": "F156",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Margaret McElhar is grandparent of Rosanna Kelly",
+   "relation": "grandparent",
+   "who": "Margaret McElhar",
+   "of": "Rosanna Kelly"
+  },
+  {
+   "id": "F157",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Margaret McElhar is grandparent of Rose Anne Kelly",
+   "relation": "grandparent",
+   "who": "Margaret McElhar",
+   "of": "Rose Anne Kelly"
+  },
+  {
+   "id": "F158",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Margaret McElhar is grandparent of Thomas Joseph Kelly",
+   "relation": "grandparent",
+   "who": "Margaret McElhar",
+   "of": "Thomas Joseph Kelly"
+  },
+  {
+   "id": "F159",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Marget Kelly is grandparent of Hugh Patrick Kelly",
+   "relation": "grandparent",
+   "who": "Marget Kelly",
+   "of": "Hugh Patrick Kelly"
+  },
+  {
+   "id": "F160",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Marget Kelly is grandparent of Mary Katie Kelly",
+   "relation": "grandparent",
+   "who": "Marget Kelly",
+   "of": "Mary Katie Kelly"
+  },
+  {
+   "id": "F161",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Marget Kelly is grandparent of Rosanna Kelly",
+   "relation": "grandparent",
+   "who": "Marget Kelly",
+   "of": "Rosanna Kelly"
+  },
+  {
+   "id": "F162",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Marget Kelly is grandparent of Thomas Joseph Kelly",
+   "relation": "grandparent",
+   "who": "Marget Kelly",
+   "of": "Thomas Joseph Kelly"
+  },
+  {
+   "id": "F163",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Mary is grandparent of James Kelly",
+   "relation": "grandparent",
+   "who": "Mary",
+   "of": "James Kelly"
+  },
+  {
+   "id": "F164",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Mary is grandparent of John Kelly",
+   "relation": "grandparent",
+   "who": "Mary",
+   "of": "John Kelly"
+  },
+  {
+   "id": "F165",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Mary is grandparent of John Patrick Kelly",
+   "relation": "grandparent",
+   "who": "Mary",
+   "of": "John Patrick Kelly"
+  },
+  {
+   "id": "F166",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Mary is grandparent of Joseph Kelly",
+   "relation": "grandparent",
+   "who": "Mary",
+   "of": "Joseph Kelly"
+  },
+  {
+   "id": "F167",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Mary is grandparent of Thomas Kelly",
+   "relation": "grandparent",
+   "who": "Mary",
+   "of": "Thomas Kelly"
+  },
+  {
+   "id": "F168",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Mary McAna is grandparent of Hugh Patrick Kelly",
+   "relation": "grandparent",
+   "who": "Mary McAna",
+   "of": "Hugh Patrick Kelly"
+  },
+  {
+   "id": "F169",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Mary McAna is grandparent of Mary Katie Kelly",
+   "relation": "grandparent",
+   "who": "Mary McAna",
+   "of": "Mary Katie Kelly"
+  },
+  {
+   "id": "F170",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Mary McAna is grandparent of Rosanna Kelly",
+   "relation": "grandparent",
+   "who": "Mary McAna",
+   "of": "Rosanna Kelly"
+  },
+  {
+   "id": "F171",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Mary McAna is grandparent of Rose Anne Kelly",
+   "relation": "grandparent",
+   "who": "Mary McAna",
+   "of": "Rose Anne Kelly"
+  },
+  {
+   "id": "F172",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Mary McAna is grandparent of Thomas Joseph Kelly",
+   "relation": "grandparent",
+   "who": "Mary McAna",
+   "of": "Thomas Joseph Kelly"
+  },
+  {
+   "id": "F173",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Patrick Carr is grandparent of James Kelly",
+   "relation": "grandparent",
+   "who": "Patrick Carr",
+   "of": "James Kelly"
+  },
+  {
+   "id": "F174",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Patrick Carr is grandparent of John Kelly",
+   "relation": "grandparent",
+   "who": "Patrick Carr",
+   "of": "John Kelly"
+  },
+  {
+   "id": "F175",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Patrick Carr is grandparent of John Patrick Kelly",
+   "relation": "grandparent",
+   "who": "Patrick Carr",
+   "of": "John Patrick Kelly"
+  },
+  {
+   "id": "F176",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Patrick Carr is grandparent of Joseph Kelly",
+   "relation": "grandparent",
+   "who": "Patrick Carr",
+   "of": "Joseph Kelly"
+  },
+  {
+   "id": "F177",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Patrick Carr is grandparent of Thomas Kelly",
+   "relation": "grandparent",
+   "who": "Patrick Carr",
+   "of": "Thomas Kelly"
+  },
+  {
+   "id": "F178",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Thomas Kelly is grandparent of Hugh Patrick Kelly",
+   "relation": "grandparent",
+   "who": "Thomas Kelly",
+   "of": "Hugh Patrick Kelly"
+  },
+  {
+   "id": "F179",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Thomas Kelly is grandparent of Mary Katie Kelly",
+   "relation": "grandparent",
+   "who": "Thomas Kelly",
+   "of": "Mary Katie Kelly"
+  },
+  {
+   "id": "F180",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Thomas Kelly is grandparent of Rosanna Kelly",
+   "relation": "grandparent",
+   "who": "Thomas Kelly",
+   "of": "Rosanna Kelly"
+  },
+  {
+   "id": "F181",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Thomas Kelly is grandparent of Rose Anne Kelly",
+   "relation": "grandparent",
+   "who": "Thomas Kelly",
+   "of": "Rose Anne Kelly"
+  },
+  {
+   "id": "F182",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Thomas Kelly is grandparent of Thomas Joseph Kelly",
+   "relation": "grandparent",
+   "who": "Thomas Kelly",
+   "of": "Thomas Joseph Kelly"
+  },
+  {
+   "id": "F183",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Joseph Kelly is husband of Bella Kelly",
+   "relation": "husband",
+   "who": "Joseph Kelly",
+   "of": "Bella Kelly"
+  },
+  {
+   "id": "F184",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Joseph Kelly is husband of Isabella McGettigan",
+   "relation": "husband",
+   "who": "Joseph Kelly",
+   "of": "Isabella McGettigan"
+  },
+  {
+   "id": "F185",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Patrick McCadden is husband of Rosanna Kelly",
+   "relation": "husband",
+   "who": "Patrick McCadden",
+   "of": "Rosanna Kelly"
+  },
+  {
+   "id": "F186",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Patrick McCadden is husband of Rose Anne Kelly",
+   "relation": "husband",
+   "who": "Patrick McCadden",
+   "of": "Rose Anne Kelly"
+  },
+  {
+   "id": "F187",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Thomas Kelly is husband of Margaret McElhar",
+   "relation": "husband",
+   "who": "Thomas Kelly",
+   "of": "Margaret McElhar"
+  },
+  {
+   "id": "F188",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Thomas Kelly is husband of Marget Kelly",
+   "relation": "husband",
+   "who": "Thomas Kelly",
+   "of": "Marget Kelly"
+  },
+  {
+   "id": "F189",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Bella is mother of Rosanna Kelly",
+   "relation": "mother",
+   "who": "Bella",
+   "of": "Rosanna Kelly"
+  },
+  {
+   "id": "F190",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Bella is mother of Rose Anne Kelly",
+   "relation": "mother",
+   "who": "Bella",
+   "of": "Rose Anne Kelly"
+  },
+  {
+   "id": "F191",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Bella Kelly is mother of Hugh Patrick Kelly",
+   "relation": "mother",
+   "who": "Bella Kelly",
+   "of": "Hugh Patrick Kelly"
+  },
+  {
+   "id": "F192",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Bella Kelly is mother of Margaret Kelly",
+   "relation": "mother",
+   "who": "Bella Kelly",
+   "of": "Margaret Kelly"
+  },
+  {
+   "id": "F193",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Bella Kelly is mother of Mary Katie Kelly",
+   "relation": "mother",
+   "who": "Bella Kelly",
+   "of": "Mary Katie Kelly"
+  },
+  {
+   "id": "F194",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Bella Kelly is mother of Rosanna Kelly",
+   "relation": "mother",
+   "who": "Bella Kelly",
+   "of": "Rosanna Kelly"
+  },
+  {
+   "id": "F195",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Bella Kelly is mother of Thomas Joseph Kelly",
+   "relation": "mother",
+   "who": "Bella Kelly",
+   "of": "Thomas Joseph Kelly"
+  },
+  {
+   "id": "F196",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Isabella McGettigan is mother of Hugh Patrick Kelly",
+   "relation": "mother",
+   "who": "Isabella McGettigan",
+   "of": "Hugh Patrick Kelly"
+  },
+  {
+   "id": "F197",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Isabella McGettigan is mother of Margaret Kelly",
+   "relation": "mother",
+   "who": "Isabella McGettigan",
+   "of": "Margaret Kelly"
+  },
+  {
+   "id": "F198",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Isabella McGettigan is mother of Mary Katie Kelly",
+   "relation": "mother",
+   "who": "Isabella McGettigan",
+   "of": "Mary Katie Kelly"
+  },
+  {
+   "id": "F199",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Isabella McGettigan is mother of Rosanna Kelly",
+   "relation": "mother",
+   "who": "Isabella McGettigan",
+   "of": "Rosanna Kelly"
+  },
+  {
+   "id": "F200",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Isabella McGettigan is mother of Rose Anne Kelly",
+   "relation": "mother",
+   "who": "Isabella McGettigan",
+   "of": "Rose Anne Kelly"
+  },
+  {
+   "id": "F201",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Isabella McGettigan is mother of Thomas Joseph Kelly",
+   "relation": "mother",
+   "who": "Isabella McGettigan",
+   "of": "Thomas Joseph Kelly"
+  },
+  {
+   "id": "F202",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Margaret McElhar is mother of James Kelly",
+   "relation": "mother",
+   "who": "Margaret McElhar",
+   "of": "James Kelly"
+  },
+  {
+   "id": "F203",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Margaret McElhar is mother of John Kelly",
+   "relation": "mother",
+   "who": "Margaret McElhar",
+   "of": "John Kelly"
+  },
+  {
+   "id": "F204",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Margaret McElhar is mother of John Patrick Kelly",
+   "relation": "mother",
+   "who": "Margaret McElhar",
+   "of": "John Patrick Kelly"
+  },
+  {
+   "id": "F205",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Margaret McElhar is mother of Joseph Kelly",
+   "relation": "mother",
+   "who": "Margaret McElhar",
+   "of": "Joseph Kelly"
+  },
+  {
+   "id": "F206",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Margaret McElhar is mother of Thomas Kelly",
+   "relation": "mother",
+   "who": "Margaret McElhar",
+   "of": "Thomas Kelly"
+  },
+  {
+   "id": "F207",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Marget Kelly is mother of James Kelly",
+   "relation": "mother",
+   "who": "Marget Kelly",
+   "of": "James Kelly"
+  },
+  {
+   "id": "F208",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Marget Kelly is mother of John Patrick Kelly",
+   "relation": "mother",
+   "who": "Marget Kelly",
+   "of": "John Patrick Kelly"
+  },
+  {
+   "id": "F209",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Marget Kelly is mother of Joseph Kelly",
+   "relation": "mother",
+   "who": "Marget Kelly",
+   "of": "Joseph Kelly"
+  },
+  {
+   "id": "F210",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Marget Kelly is mother of Thomas Kelly",
+   "relation": "mother",
+   "who": "Marget Kelly",
+   "of": "Thomas Kelly"
+  },
+  {
+   "id": "F211",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Bella Kelly is parent of Hugh Patrick Kelly",
+   "relation": "parent",
+   "who": "Bella Kelly",
+   "of": "Hugh Patrick Kelly"
+  },
+  {
+   "id": "F212",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Bella Kelly is parent of Mary Katie Kelly",
+   "relation": "parent",
+   "who": "Bella Kelly",
+   "of": "Mary Katie Kelly"
+  },
+  {
+   "id": "F213",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Bella Kelly is parent of Rosanna Kelly",
+   "relation": "parent",
+   "who": "Bella Kelly",
+   "of": "Rosanna Kelly"
+  },
+  {
+   "id": "F214",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Bella Kelly is parent of Thomas Joseph Kelly",
+   "relation": "parent",
+   "who": "Bella Kelly",
+   "of": "Thomas Joseph Kelly"
+  },
+  {
+   "id": "F215",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Hugh McGettigan is parent of Bella Kelly",
+   "relation": "parent",
+   "who": "Hugh McGettigan",
+   "of": "Bella Kelly"
+  },
+  {
+   "id": "F216",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Hugh McGettigan is parent of Isabella McGettigan",
+   "relation": "parent",
+   "who": "Hugh McGettigan",
+   "of": "Isabella McGettigan"
+  },
+  {
+   "id": "F217",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Isabella McGettigan is parent of Hugh Patrick Kelly",
+   "relation": "parent",
+   "who": "Isabella McGettigan",
+   "of": "Hugh Patrick Kelly"
+  },
+  {
+   "id": "F218",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Isabella McGettigan is parent of Mary Katie Kelly",
+   "relation": "parent",
+   "who": "Isabella McGettigan",
+   "of": "Mary Katie Kelly"
+  },
+  {
+   "id": "F219",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Isabella McGettigan is parent of Rosanna Kelly",
+   "relation": "parent",
+   "who": "Isabella McGettigan",
+   "of": "Rosanna Kelly"
+  },
+  {
+   "id": "F220",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Isabella McGettigan is parent of Rose Anne Kelly",
+   "relation": "parent",
+   "who": "Isabella McGettigan",
+   "of": "Rose Anne Kelly"
+  },
+  {
+   "id": "F221",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Isabella McGettigan is parent of Thomas Joseph Kelly",
+   "relation": "parent",
+   "who": "Isabella McGettigan",
+   "of": "Thomas Joseph Kelly"
+  },
+  {
+   "id": "F222",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "John Kelly is parent of Thomas Kelly",
+   "relation": "parent",
+   "who": "John Kelly",
+   "of": "Thomas Kelly"
+  },
+  {
+   "id": "F223",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Joseph Kelly is parent of Hugh Patrick Kelly",
+   "relation": "parent",
+   "who": "Joseph Kelly",
+   "of": "Hugh Patrick Kelly"
+  },
+  {
+   "id": "F224",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Joseph Kelly is parent of Mary Katie Kelly",
+   "relation": "parent",
+   "who": "Joseph Kelly",
+   "of": "Mary Katie Kelly"
+  },
+  {
+   "id": "F225",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Joseph Kelly is parent of Rosanna Kelly",
+   "relation": "parent",
+   "who": "Joseph Kelly",
+   "of": "Rosanna Kelly"
+  },
+  {
+   "id": "F226",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Joseph Kelly is parent of Rose Anne Kelly",
+   "relation": "parent",
+   "who": "Joseph Kelly",
+   "of": "Rose Anne Kelly"
+  },
+  {
+   "id": "F227",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Joseph Kelly is parent of Thomas Joseph Kelly",
+   "relation": "parent",
+   "who": "Joseph Kelly",
+   "of": "Thomas Joseph Kelly"
+  },
+  {
+   "id": "F228",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Margaret McElhar is parent of James Kelly",
+   "relation": "parent",
+   "who": "Margaret McElhar",
+   "of": "James Kelly"
+  },
+  {
+   "id": "F229",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Margaret McElhar is parent of John Kelly",
+   "relation": "parent",
+   "who": "Margaret McElhar",
+   "of": "John Kelly"
+  },
+  {
+   "id": "F230",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Margaret McElhar is parent of John Patrick Kelly",
+   "relation": "parent",
+   "who": "Margaret McElhar",
+   "of": "John Patrick Kelly"
+  },
+  {
+   "id": "F231",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Margaret McElhar is parent of Joseph Kelly",
+   "relation": "parent",
+   "who": "Margaret McElhar",
+   "of": "Joseph Kelly"
+  },
+  {
+   "id": "F232",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Margaret McElhar is parent of Thomas Kelly",
+   "relation": "parent",
+   "who": "Margaret McElhar",
+   "of": "Thomas Kelly"
+  },
+  {
+   "id": "F233",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Marget Kelly is parent of James Kelly",
+   "relation": "parent",
+   "who": "Marget Kelly",
+   "of": "James Kelly"
+  },
+  {
+   "id": "F234",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Marget Kelly is parent of John Patrick Kelly",
+   "relation": "parent",
+   "who": "Marget Kelly",
+   "of": "John Patrick Kelly"
+  },
+  {
+   "id": "F235",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Marget Kelly is parent of Joseph Kelly",
+   "relation": "parent",
+   "who": "Marget Kelly",
+   "of": "Joseph Kelly"
+  },
+  {
+   "id": "F236",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Marget Kelly is parent of Thomas Kelly",
+   "relation": "parent",
+   "who": "Marget Kelly",
+   "of": "Thomas Kelly"
+  },
+  {
+   "id": "F237",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Mary is parent of Thomas Kelly",
+   "relation": "parent",
+   "who": "Mary",
+   "of": "Thomas Kelly"
+  },
+  {
+   "id": "F238",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Mary McAna is parent of Bella Kelly",
+   "relation": "parent",
+   "who": "Mary McAna",
+   "of": "Bella Kelly"
+  },
+  {
+   "id": "F239",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Mary McAna is parent of Isabella McGettigan",
+   "relation": "parent",
+   "who": "Mary McAna",
+   "of": "Isabella McGettigan"
+  },
+  {
+   "id": "F240",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Patrick Carr is parent of Margaret McElhar",
+   "relation": "parent",
+   "who": "Patrick Carr",
+   "of": "Margaret McElhar"
+  },
+  {
+   "id": "F241",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Patrick Carr is parent of Marget Kelly",
+   "relation": "parent",
+   "who": "Patrick Carr",
+   "of": "Marget Kelly"
+  },
+  {
+   "id": "F242",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Thomas Kelly is parent of James Kelly",
+   "relation": "parent",
+   "who": "Thomas Kelly",
+   "of": "James Kelly"
+  },
+  {
+   "id": "F243",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Thomas Kelly is parent of John Kelly",
+   "relation": "parent",
+   "who": "Thomas Kelly",
+   "of": "John Kelly"
+  },
+  {
+   "id": "F244",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Thomas Kelly is parent of John Patrick Kelly",
+   "relation": "parent",
+   "who": "Thomas Kelly",
+   "of": "John Patrick Kelly"
+  },
+  {
+   "id": "F245",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Thomas Kelly is parent of Joseph Kelly",
+   "relation": "parent",
+   "who": "Thomas Kelly",
+   "of": "Joseph Kelly"
+  },
+  {
+   "id": "F246",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Thomas Kelly is parent of Thomas Kelly",
+   "relation": "parent",
+   "who": "Thomas Kelly",
+   "of": "Thomas Kelly"
+  },
+  {
+   "id": "F247",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Mary Katie Kelly is sister of Hugh Patrick Kelly",
+   "relation": "sister",
+   "who": "Mary Katie Kelly",
+   "of": "Hugh Patrick Kelly"
+  },
+  {
+   "id": "F248",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Mary Katie Kelly is sister of Rosanna Kelly",
+   "relation": "sister",
+   "who": "Mary Katie Kelly",
+   "of": "Rosanna Kelly"
+  },
+  {
+   "id": "F249",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Mary Katie Kelly is sister of Rose Anne Kelly",
+   "relation": "sister",
+   "who": "Mary Katie Kelly",
+   "of": "Rose Anne Kelly"
+  },
+  {
+   "id": "F250",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Mary Katie Kelly is sister of Thomas Joseph Kelly",
+   "relation": "sister",
+   "who": "Mary Katie Kelly",
+   "of": "Thomas Joseph Kelly"
+  },
+  {
+   "id": "F251",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Rosanna Kelly is sister of Hugh Patrick Kelly",
+   "relation": "sister",
+   "who": "Rosanna Kelly",
+   "of": "Hugh Patrick Kelly"
+  },
+  {
+   "id": "F252",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Rosanna Kelly is sister of Mary Katie Kelly",
+   "relation": "sister",
+   "who": "Rosanna Kelly",
+   "of": "Mary Katie Kelly"
+  },
+  {
+   "id": "F253",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Rosanna Kelly is sister of Thomas Joseph Kelly",
+   "relation": "sister",
+   "who": "Rosanna Kelly",
+   "of": "Thomas Joseph Kelly"
+  },
+  {
+   "id": "F254",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Rose Anne Kelly is sister of Hugh Patrick Kelly",
+   "relation": "sister",
+   "who": "Rose Anne Kelly",
+   "of": "Hugh Patrick Kelly"
+  },
+  {
+   "id": "F255",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Rose Anne Kelly is sister of Mary Katie Kelly",
+   "relation": "sister",
+   "who": "Rose Anne Kelly",
+   "of": "Mary Katie Kelly"
+  },
+  {
+   "id": "F256",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Rose Anne Kelly is sister of Thomas Joseph Kelly",
+   "relation": "sister",
+   "who": "Rose Anne Kelly",
+   "of": "Thomas Joseph Kelly"
+  },
+  {
+   "id": "F257",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Hugh Patrick Kelly is son of Bella Kelly",
+   "relation": "son",
+   "who": "Hugh Patrick Kelly",
+   "of": "Bella Kelly"
+  },
+  {
+   "id": "F258",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Hugh Patrick Kelly is son of Isabella McGettigan",
+   "relation": "son",
+   "who": "Hugh Patrick Kelly",
+   "of": "Isabella McGettigan"
+  },
+  {
+   "id": "F259",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Hugh Patrick Kelly is son of Joseph Kelly",
+   "relation": "son",
+   "who": "Hugh Patrick Kelly",
+   "of": "Joseph Kelly"
+  },
+  {
+   "id": "F260",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "James Kelly is son of Margaret McElhar",
+   "relation": "son",
+   "who": "James Kelly",
+   "of": "Margaret McElhar"
+  },
+  {
+   "id": "F261",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "James Kelly is son of Marget Kelly",
+   "relation": "son",
+   "who": "James Kelly",
+   "of": "Marget Kelly"
+  },
+  {
+   "id": "F262",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "James Kelly is son of Thomas Kelly",
+   "relation": "son",
+   "who": "James Kelly",
+   "of": "Thomas Kelly"
+  },
+  {
+   "id": "F263",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "John Kelly is son of Margaret McElhar",
+   "relation": "son",
+   "who": "John Kelly",
+   "of": "Margaret McElhar"
+  },
+  {
+   "id": "F264",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "John Kelly is son of Thomas Kelly",
+   "relation": "son",
+   "who": "John Kelly",
+   "of": "Thomas Kelly"
+  },
+  {
+   "id": "F265",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "John Patrick Kelly is son of Margaret McElhar",
+   "relation": "son",
+   "who": "John Patrick Kelly",
+   "of": "Margaret McElhar"
+  },
+  {
+   "id": "F266",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "John Patrick Kelly is son of Marget Kelly",
+   "relation": "son",
+   "who": "John Patrick Kelly",
+   "of": "Marget Kelly"
+  },
+  {
+   "id": "F267",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "John Patrick Kelly is son of Thomas Kelly",
+   "relation": "son",
+   "who": "John Patrick Kelly",
+   "of": "Thomas Kelly"
+  },
+  {
+   "id": "F268",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Joseph Kelly is son of Margaret McElhar",
+   "relation": "son",
+   "who": "Joseph Kelly",
+   "of": "Margaret McElhar"
+  },
+  {
+   "id": "F269",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Joseph Kelly is son of Marget Kelly",
+   "relation": "son",
+   "who": "Joseph Kelly",
+   "of": "Marget Kelly"
+  },
+  {
+   "id": "F270",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Joseph Kelly is son of Thomas Kelly",
+   "relation": "son",
+   "who": "Joseph Kelly",
+   "of": "Thomas Kelly"
+  },
+  {
+   "id": "F271",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Thomas Joseph Kelly is son of Bella Kelly",
+   "relation": "son",
+   "who": "Thomas Joseph Kelly",
+   "of": "Bella Kelly"
+  },
+  {
+   "id": "F272",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Thomas Joseph Kelly is son of Isabella McGettigan",
+   "relation": "son",
+   "who": "Thomas Joseph Kelly",
+   "of": "Isabella McGettigan"
+  },
+  {
+   "id": "F273",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Thomas Joseph Kelly is son of Joseph Kelly",
+   "relation": "son",
+   "who": "Thomas Joseph Kelly",
+   "of": "Joseph Kelly"
+  },
+  {
+   "id": "F274",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Thomas Kelly is son of Margaret McElhar",
+   "relation": "son",
+   "who": "Thomas Kelly",
+   "of": "Margaret McElhar"
+  },
+  {
+   "id": "F275",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Thomas Kelly is son of Marget Kelly",
+   "relation": "son",
+   "who": "Thomas Kelly",
+   "of": "Marget Kelly"
+  },
+  {
+   "id": "F276",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Thomas Kelly is son of Thomas Kelly",
+   "relation": "son",
+   "who": "Thomas Kelly",
+   "of": "Thomas Kelly"
+  },
+  {
+   "id": "F277",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Bella Kelly is spouse of Joseph Kelly",
+   "relation": "spouse",
+   "who": "Bella Kelly",
+   "of": "Joseph Kelly"
+  },
+  {
+   "id": "F278",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Isabella McGettigan is spouse of Joseph Kelly",
+   "relation": "spouse",
+   "who": "Isabella McGettigan",
+   "of": "Joseph Kelly"
+  },
+  {
+   "id": "F279",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Joseph Kelly is spouse of Bella Kelly",
+   "relation": "spouse",
+   "who": "Joseph Kelly",
+   "of": "Bella Kelly"
+  },
+  {
+   "id": "F280",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Joseph Kelly is spouse of Isabella McGettigan",
+   "relation": "spouse",
+   "who": "Joseph Kelly",
+   "of": "Isabella McGettigan"
+  },
+  {
+   "id": "F281",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Margaret McElhar is spouse of Thomas Kelly",
+   "relation": "spouse",
+   "who": "Margaret McElhar",
+   "of": "Thomas Kelly"
+  },
+  {
+   "id": "F282",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Marget Kelly is spouse of Thomas Kelly",
+   "relation": "spouse",
+   "who": "Marget Kelly",
+   "of": "Thomas Kelly"
+  },
+  {
+   "id": "F283",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Patrick McCadden is spouse of Rosanna Kelly",
+   "relation": "spouse",
+   "who": "Patrick McCadden",
+   "of": "Rosanna Kelly"
+  },
+  {
+   "id": "F284",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Patrick McCadden is spouse of Rose Anne Kelly",
+   "relation": "spouse",
+   "who": "Patrick McCadden",
+   "of": "Rose Anne Kelly"
+  },
+  {
+   "id": "F285",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Thomas Kelly is spouse of Margaret McElhar",
+   "relation": "spouse",
+   "who": "Thomas Kelly",
+   "of": "Margaret McElhar"
+  },
+  {
+   "id": "F286",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Thomas Kelly is spouse of Marget Kelly",
+   "relation": "spouse",
+   "who": "Thomas Kelly",
+   "of": "Marget Kelly"
+  },
+  {
+   "id": "F287",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Bella Kelly is wife of Joseph Kelly",
+   "relation": "wife",
+   "who": "Bella Kelly",
+   "of": "Joseph Kelly"
+  },
+  {
+   "id": "F288",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Isabella McGettigan is wife of Joseph Kelly",
+   "relation": "wife",
+   "who": "Isabella McGettigan",
+   "of": "Joseph Kelly"
+  },
+  {
+   "id": "F289",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Margaret Kelly is wife of Thomas Kelly",
+   "relation": "wife",
+   "who": "Margaret Kelly",
+   "of": "Thomas Kelly"
+  },
+  {
+   "id": "F290",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Margaret McElhar is wife of Thomas Kelly",
+   "relation": "wife",
+   "who": "Margaret McElhar",
+   "of": "Thomas Kelly"
+  },
+  {
+   "id": "F291",
+   "kind": "relation",
+   "tier": "tree",
+   "usable": true,
+   "text": "Marget Kelly is wife of Thomas Kelly",
+   "relation": "wife",
+   "who": "Marget Kelly",
+   "of": "Thomas Kelly"
+  }
+ ]
+}
