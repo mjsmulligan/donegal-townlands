@@ -102,3 +102,5 @@
 - 2026-11-09 Mike confirmed the three two-candidate 1901 Donegal spellings: Drumcar to Drumbar, Drumgorman to Drumgornan, Drumlanagher to Drumlonagher. He also confirmed that Raneany Bar (1926 Laghy) is the short form of one townland written as "Meenacargagh or Raneany Barr", two names for a single place, so it is accepted against that Logainm place. Greaghs Bar (1926) stays open.
 
 - 2026-11-09 Mike confirmed Raneany East (14152) and Raneany West (14151) are distinct townlands from Raneany Barr, which is only ever recorded as part of "Meenacargagh or Raneany Barr" (14145). No census spelling is matched to Raneany East or West on the strength of the name Raneany alone.
+
+- 2026-11-09 Mike confirmed Greaghs Bar (1926 Laghy) is the short form of the longer designation. It is accepted against Logainm "Greaghs Barr or Meenavanaghan" (14146), together with the 1901 and 1911 long forms "Meenavanaghan or Greaghs Bar(r)", which are the same two names in reverse order (the matcher could not see this, so it listed only Greaghs). Greaghs (14141) is a separate townland.
