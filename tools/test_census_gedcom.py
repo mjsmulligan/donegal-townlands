@@ -114,6 +114,62 @@ class CarriedYearsTests(unittest.TestCase):
         self.assertTrue(any("born alive" in r for r in report))
 
 
+class HouseholdShapeTests(unittest.TestCase):
+    def fams(self, text):
+        return [n for n in gedcom_census.parse_gedcom(text) if n.tag == "FAM"]
+
+    def test_wife_row_is_not_paired_with_a_widowed_head(self):
+        head = row(1911, "Hugh", "White", 85)
+        head["marital_raw"] = "Widower"
+        son = row(1911, "William", "White", 38, "M", "Son")
+        wife = row(1911, "Rebeca", "White", 36, "F", "Wife", marr=12, born=7)
+        text, report, _ = build([head, son, wife])
+        self.assertFalse(any("1 WIFE" in l for l in text.split("\n")))
+        self.assertTrue(any(r.startswith("household:") and "widower" in r.lower() for r in report))
+
+    def test_two_heads_pair_with_the_wife_of_the_opposite_sex_and_give_no_children_to_anyone(self):
+        anne = row(1911, "Anne", "McCadden", 80, "F", "Head of Family")
+        anne["marital_raw"] = "Widow"
+        adam = row(1911, "Adam", "McClay", 66, "M", "Head of Family")
+        adam["marital_raw"] = "Married"
+        euphema = row(1911, "Euphema", "McClay", 44, "F", "Wife", marr=10, born=2)
+        edith = row(1911, "Edith", "McClay", 9, "F", "Daughter")
+        text, report, _ = build([anne, adam, euphema, edith])
+        self.assertNotIn("1 CHIL", text)
+        self.assertEqual(len(self.fams(text)), 1)
+        fam = [b for b in text.split("\n0 ") if " FAM" in b.split("\n")[0]][0]
+        self.assertIn("1 HUSB", fam)
+        self.assertIn("1 WIFE", fam)
+        self.assertTrue(any(r.startswith("household:") and "2 heads" in r for r in report))
+
+    def test_a_normal_head_and_wife_are_unaffected(self):
+        head = row(1911, "Tom", "Kelly", 50)
+        head["marital_raw"] = "Married"
+        wife = row(1911, "Mary", "Kelly", 45, "F", "Wife", marr=20, born=3)
+        kid = row(1911, "Joe", "Kelly", 10, "M", "Son")
+        text, report, _ = build([head, wife, kid])
+        self.assertIn("1 WIFE", text)
+        self.assertEqual(text.count("1 CHIL"), 1)
+        self.assertFalse(any(r.startswith("household:") for r in report))
+
+
+class ConflictTests(unittest.TestCase):
+    def test_a_mother_too_old_for_her_child_is_listed_and_the_family_is_kept(self):
+        head = row(1911, "John", "McCadden", 55)
+        wife = row(1911, "Catherine", "McCadden", 58, "F", "Wife", marr=20, born=10)
+        kid = row(1911, "Anthony", "McCadden", 1, "M", "Son")
+        text, report, _ = build([head, wife, kid])
+        self.assertEqual(text.count("1 CHIL"), 1)
+        self.assertTrue(any(r.startswith("conflict:") and "mother" in r for r in report))
+
+    def test_two_wives_with_one_first_name_are_listed_not_merged(self):
+        h1, w1 = row(1901, "Patrick", "Hone", 60), row(1901, "Maggie", "Hone", 40, "F", "Wife")
+        h2, w2 = row(1911, "Patrick", "Hone", 69), row(1911, "Maggie", "Hone", 64, "F", "Wife")
+        text, report, _ = build([h1, w1, h2, w2], [(h1["obs"], h2["obs"])])
+        self.assertEqual(len(indis(text)), 3)
+        self.assertTrue(any(r.startswith("conflict:") and "2 wives with the same first name" in r for r in report))
+
+
 class TentativeTests(unittest.TestCase):
     def link(self, a, b, conf="high", flags=()):
         return {"fo": a["obs"], "to": b["obs"], "confidence": conf, "flags": list(flags)}
@@ -285,7 +341,7 @@ class RealDataSmokeTest(unittest.TestCase):
         text, report, counts = cg.build_gedcom(rows, [], cg.load_anchors(), "townland", "Cullionboy", NAMES)
         self.assertEqual(cg.check_gedcom(text), [])
         self.assertGreater(counts["people"], 100)
-        self.assertEqual([r for r in report if "years married for the wife taken from" not in r], [])
+        self.assertEqual([r for r in report if not r.startswith(("household:", "conflict:")) and "years married for the wife taken from" not in r], [])
 
 
 if __name__ == "__main__":
