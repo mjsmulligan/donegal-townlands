@@ -104,8 +104,12 @@ def load_anchors(path: Path = cl.TREE) -> dict[str, str]:
     return out
 
 
-def build_chains(rows, accepted_pairs, anchors):
-    """Returns (chain id to member rows, row to chain id, report lines)."""
+def build_chains(rows, accepted_pairs, anchors, tentative=(), tent_used=None):
+    """Returns (chain id to member rows, row to chain id, report lines, accepted links used).
+
+    `tentative` is a list of matcher links Mike has not reviewed, each a dict with fo, to,
+    confidence and flags. They are joined last, strongest first, so tree anchors and accepted
+    links always win a clash. The ones that join are appended to `tent_used`."""
     present = {r["obs"] for r in rows}
     ch = Chains(rows, {o: p for o, p in anchors.items() if o in present})
     by_person = collections.defaultdict(list)
@@ -124,6 +128,11 @@ def build_chains(rows, accepted_pairs, anchors):
     for fo, to in sorted(accepted_pairs, key=lambda p: (ch.by_obs[p[0]]["year"], p[0], p[1])):
         if fo in present and to in present:
             used += ch.join(fo, to, "accepted link %s > %s" % (fo, to))
+    ordered = sorted(tentative or [], key=lambda t: (cl.RANK[t["confidence"]], t["fo"], t["to"]))
+    for t in ordered:
+        if t["fo"] in present and t["to"] in present:
+            if ch.join(t["fo"], t["to"], "tentative link %s > %s" % (t["fo"], t["to"])) and tent_used is not None:
+                tent_used.append(t)
     report = ch.refused + report
     groups = ch.groups()
     chain_of = {r["obs"]: cid for cid, members in groups.items() for r in members}
@@ -267,9 +276,14 @@ def choose_family(opts: list, notes: list[str], label: str, parents=None):
 
 # ------------------------------------------------------------------ build
 
-def build_gedcom(rows, accepted_pairs, anchors, kind, value, names, wife_parent="evidence"):
-    """Returns (text, report lines, counts)."""
-    groups, chain_of, report, joined = build_chains(rows, accepted_pairs, anchors)
+def build_gedcom(rows, accepted_pairs, anchors, kind, value, names, wife_parent="evidence", tentative=()):
+    """Returns (text, report lines, counts). `tentative` is a list of unreviewed matcher links (see
+    build_chains); with none, the file is built from accepted links and tree anchors only."""
+    tent_used: list[dict] = []
+    groups, chain_of, report, joined = build_chains(rows, accepted_pairs, anchors, tentative, tent_used)
+    tent_by_chain = collections.defaultdict(list)
+    for t in tent_used:
+        tent_by_chain[chain_of[t["fo"]]].append(t)
     in_scope = scope_filter(kind, value, names)
     selected = {cid for cid, members in groups.items() if any(in_scope(r) for r in members)}
     hh_all = collections.defaultdict(list)
@@ -309,6 +323,10 @@ def build_gedcom(rows, accepted_pairs, anchors, kind, value, names, wife_parent=
                    "accepted by the researcher, and links accepted from the researcher's own tree. Birth years are derived from the "
                    "age in the earliest return and are not recorded dates. No marriage, death or emigration is stated. "
                    "Regenerate it rather than editing it." % (kind, value))
+    if tentative:
+        out += note(1, "TENTATIVE LINKS: this file also joins returns by links proposed by a matching program and NOT reviewed or "
+                       "accepted by the researcher. Each such person carries a note starting TENTATIVE LINK with the matcher's "
+                       "confidence. Use the file to test hints, not as a record of identity.")
     out += ["0 @U1@ SUBM", "1 NAME Donegal Townlands"]
     for y, title in sorted(SOURCES.items()):
         out += ["0 @S%d@ SOUR" % y] + line(1, "TITL", title) + line(1, "AUTH", "National Archives of Ireland")
@@ -332,6 +350,11 @@ def build_gedcom(rows, accepted_pairs, anchors, kind, value, names, wife_parent=
         if first_age:
             out += ["1 BIRT", "2 DATE ABT %d" % (first_age["year"] - first_age["age"])]
             out += note(2, "Derived from age %d in the %d return. Not a recorded date." % (first_age["age"], first_age["year"]))
+        for t in sorted(tent_by_chain.get(cid, []), key=lambda t: (chain_of[t["fo"]], t["fo"], t["to"])):
+            ra, rb = [r for r in members if r["obs"] == t["fo"]][0], [r for r in members if r["obs"] == t["to"]][0]
+            out += note(1, "TENTATIVE LINK, not accepted by the researcher: %s is the same person as %s. Matcher confidence %s%s."
+                           % (ra_label(ra), ra_label(rb), t["confidence"],
+                              "; " + ", ".join(t["flags"]) if t.get("flags") else ""))
         for r in members:
             n_events += 1
             out += ["1 CENS", "2 DATE %d" % r["year"]]
@@ -359,7 +382,22 @@ def build_gedcom(rows, accepted_pairs, anchors, kind, value, names, wife_parent=
     counts = {"people": len(people), "families": len(fams), "events": n_events,
               "chains of two or more rows": sum(1 for c in people if len(groups[c]) > 1),
               "households": len(hh_rows), "accepted links used": joined}
+    if tentative:
+        used_in_scope = [t for cc in people for t in tent_by_chain.get(cc, [])]
+        counts["tentative links used"] = len(used_in_scope)
+        for conf in cl.RANK:
+            counts["tentative %s" % conf] = sum(1 for t in used_in_scope if t["confidence"] == conf)
+        by_obs = {r["obs"]: r for r in rows}
+        for t in sorted(used_in_scope, key=lambda t: (cl.RANK[t["confidence"]], t["fo"], t["to"])):
+            notes.append("tentative link, matcher confidence %s%s: %s is %s" % (
+                t["confidence"], " (" + ", ".join(t["flags"]) + ")" if t.get("flags") else "",
+                ra_label(by_obs[t["fo"]]), ra_label(by_obs[t["to"]])))
     return "\n".join(out) + "\n", report + notes, counts
+
+
+def ra_label(r: dict) -> str:
+    return "%s %s (age %s, %d, %s)" % (clean_name(r["first"]), clean_name(r["surname"]),
+                                       r["age"] if r["age"] is not None else "not given", r["year"], r["townland"])
 
 
 def person_label(members, with_age=True):
@@ -413,7 +451,31 @@ def slug(s: str) -> str:
     return re.sub(r"[^a-z0-9]+", "_", s.lower()).strip("_")
 
 
-def run(kind: str, value: str, census_dir: Path, out_dir: Path, decisions: Path, tree: Path, wife_parent: str, out=sys.stdout) -> int:
+def tentative_links(rows, names, decisions: Path, min_confidence: str = "low"):
+    """Links the matcher proposes that Mike has not reviewed, for a test file. Ambiguous links and
+    rejected pairs are left out, and nothing here is written to the decisions file. Returns
+    (links, number of ambiguous links left out)."""
+    cfg = cl.load_config()
+    reviewed = cl.load_decisions(decisions) if Path(decisions).is_file() else {}
+    by_ded = collections.defaultdict(list)
+    for r in rows:
+        by_ded[r["ded"]].append(r)
+    out, ambiguous = [], 0
+    for ded in sorted(by_ded):
+        links, _ = cl.propose_ded(by_ded[ded], names, cfg, reviewed)
+        for c in links:
+            if c.get("decision"):
+                continue
+            if c.get("ambiguous_with"):
+                ambiguous += 1
+            elif cl.RANK[c["confidence"]] <= cl.RANK[min_confidence]:
+                out.append({"fo": c["a"]["obs"], "to": c["b"]["obs"], "confidence": c["confidence"],
+                            "flags": list(c.get("flags") or [])})
+    return out, ambiguous
+
+
+def run(kind: str, value: str, census_dir: Path, out_dir: Path, decisions: Path, tree: Path, wife_parent: str, out=sys.stdout,
+        tentative: bool = False, min_confidence: str = "low") -> int:
     rows = cl.load_census(census_dir)
     for r in rows:
         r["url"] = ""
@@ -427,7 +489,8 @@ def run(kind: str, value: str, census_dir: Path, out_dir: Path, decisions: Path,
     names = cl.Names(given_names_reference.load(), variants_reference.load())
     pairs = load_accepted_pairs(decisions)
     anchors = load_anchors(tree)
-    text, report, counts = build_gedcom(rows, pairs, anchors, kind, value, names, wife_parent)
+    tent, n_ambiguous = tentative_links(rows, names, decisions, min_confidence) if tentative else ([], 0)
+    text, report, counts = build_gedcom(rows, pairs, anchors, kind, value, names, wife_parent, tentative=tent)
     if counts["people"] == 0:
         out.write("No people found for %s %s.\n" % (kind, value))
         return 1
@@ -436,17 +499,21 @@ def run(kind: str, value: str, census_dir: Path, out_dir: Path, decisions: Path,
         out.write("The generated file failed its own checks:\n" + "\n".join("  " + e for e in errs[:20]) + "\n")
         return 1
     out_dir.mkdir(parents=True, exist_ok=True)
-    stem = "%s_%s" % (kind, slug(value))
+    stem = "%s_%s%s" % (kind, slug(value), "_tentative" if tentative else "")
     (out_dir / (stem + ".ged")).write_text(text, encoding="utf-8")
-    lines = ["Census GEDCOM for %s %s" % (kind, value),
+    lines = ["Census GEDCOM for %s %s%s" % (kind, value, " (TENTATIVE LINKS, a test file)" if tentative else ""),
              "Accepted census links on record: %d. Tree anchors: %d." % (len(pairs), len(anchors))]
+    if tentative:
+        lines += ["Tentative links are matcher proposals that have not been reviewed. Minimum confidence: %s. Ambiguous proposals "
+                  "left out (all returns read): %d." % (min_confidence, n_ambiguous)]
     lines += ["%s: %s" % (k, v) for k, v in counts.items()]
+    shown = len(lines)
     lines += ["", "For review (%d):" % len(report)] + ["  " + r for r in report]
     (out_dir / (stem + "_report.txt")).write_text("\n".join(lines) + "\n", encoding="utf-8")
-    out.write("\n".join(lines[:2 + len(counts)]) + "\n")
+    out.write("\n".join(lines[:shown]) + "\n")
     if report:
         out.write("%d items for review are in %s_report.txt\n" % (len(report), stem))
-    if not pairs:
+    if not pairs and not tentative:
         out.write("No census links have been accepted yet, so people appear once per return unless your tree ties them.\n")
     out.write("Written: %s\n" % (out_dir / (stem + ".ged")))
     return 0
@@ -465,9 +532,15 @@ def main(argv=None) -> int:
     ap.add_argument("--wife-parent", choices=("evidence", "assume"), default="evidence",
                     help="evidence: a child is attached to the wife only where years married allow it (default). "
                          "assume: attach unless the return contradicts it")
+    ap.add_argument("--tentative", action="store_true",
+                    help="also join returns by matcher links Mike has not reviewed (ambiguous ones are left out), so the file can be "
+                         "tried in Ancestry. Nothing is written to the decisions file, and the output is named *_tentative.ged")
+    ap.add_argument("--min-confidence", choices=tuple(cl.RANK), default="low",
+                    help="with --tentative, the weakest matcher confidence to use (default low, which means all)")
     a = ap.parse_args(argv)
     kind, value = ("townland", a.townland) if a.townland else ("family", a.family) if a.family else ("ded", a.ded)
-    return run(kind, value, a.census_dir, a.out, a.decisions, a.tree, a.wife_parent)
+    return run(kind, value, a.census_dir, a.out, a.decisions, a.tree, a.wife_parent,
+               tentative=a.tentative, min_confidence=a.min_confidence)
 
 
 if __name__ == "__main__":
