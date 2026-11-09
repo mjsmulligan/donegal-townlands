@@ -1,0 +1,14 @@
+{
+  "logainm_id": "14036",
+  "name_en": "Glebe",
+  "name_ga": "",
+  "place_type": "townland",
+  "ded_id": "1372456",
+  "civil_parish_id": "784",
+  "barony_id": "52",
+  "county_id": "100013",
+  "latitude": "54.6498659559559",
+  "longitude": "-8.111371452928108",
+  "snapshot_date": "2026-11-09",
+  "_generated_by": "donegal-townlands.create_townland_cases"
+}

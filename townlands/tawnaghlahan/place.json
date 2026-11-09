@@ -1,0 +1,14 @@
+{
+  "logainm_id": "14247",
+  "name_en": "Tawnaghlahan",
+  "name_ga": "Tamhnach Leathan",
+  "place_type": "townland",
+  "ded_id": "1372542",
+  "civil_parish_id": "784",
+  "barony_id": "52",
+  "county_id": "100013",
+  "latitude": "54.70085298088621",
+  "longitude": "-7.999736078223418",
+  "snapshot_date": "2026-11-09",
+  "_generated_by": "donegal-townlands.create_townland_cases"
+}

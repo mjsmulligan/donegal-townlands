@@ -118,7 +118,7 @@ Phase A completes the thin path. WP1 and WP2 can start now. WP3 needs a Logainm 
 - **Goal:** the locator rule generalises. The 1901 and 1911 files use `id` and the `images` field.
 - **Requirements:** ETL-04, ETL-05, PLC-03.
 - **Acceptance:** all 15 files load. Review lists exist for all DEDs.
-- **Status:** partly done (2026-11-07). `tools/attach_census.py` now handles every DED it finds, with both file name patterns (`1901_Clogher.csv`, `Tullynaught_1901.csv`), each DED against its own townlands only. Clogher (21 cases) and Tullynaught (30 of 33 townlands) are attached. Donegal, Laghy and Tawnawully are skipped with a notice because their townlands are not in the place layer yet (WP3). One review file, with a `ded` column, lists the spellings not matched by identical name.
+- **Status:** partly done (2026-11-07). `tools/attach_census.py` now handles every DED it finds, with both file name patterns (`1901_Clogher.csv`, `Tullynaught_1901.csv`), each DED against its own townlands only. Clogher (21 cases) and Tullynaught (30 of 33 townlands) are attached. Update 2026-11-09: the Logainm snapshot now covers all five DEDs (143 townlands), so Donegal, Laghy and Tawnawully attach too. 109 spellings await Mike's review. One review file, with a `ded` column, lists the spellings not matched by identical name.
 
 ### WP10 GEDCOM generation and GEDCOM 7 test
 - **Goal:** a script that generates the master GEDCOM from accepted decision files, and a tested identifier carrier.

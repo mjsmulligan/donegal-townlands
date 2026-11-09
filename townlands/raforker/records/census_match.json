@@ -1,0 +1,39 @@
+{
+  "_generated_by": "donegal-townlands.attach_census",
+  "status": "proposed",
+  "note": "Matched by identical name only. Not reviewed.",
+  "ded": "Donegal",
+  "years": {
+    "1901": {
+      "spellings": [
+        {
+          "spelling": "Raforker",
+          "method": "exact_name",
+          "rows": 9
+        }
+      ],
+      "people": 9
+    },
+    "1911": {
+      "spellings": [
+        {
+          "spelling": "Raforker",
+          "method": "exact_name",
+          "rows": 5
+        }
+      ],
+      "people": 5
+    },
+    "1926": {
+      "spellings": [
+        {
+          "spelling": "Raforker",
+          "method": "exact_name",
+          "rows": 4
+        }
+      ],
+      "people": 4
+    }
+  },
+  "corrections": []
+}

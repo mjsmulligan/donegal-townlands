@@ -1,0 +1,39 @@
+{
+  "_generated_by": "donegal-townlands.attach_census",
+  "status": "proposed",
+  "note": "Matched by identical name only. Not reviewed.",
+  "ded": "Donegal",
+  "years": {
+    "1901": {
+      "spellings": [
+        {
+          "spelling": "Tully",
+          "method": "exact_name",
+          "rows": 19
+        }
+      ],
+      "people": 19
+    },
+    "1911": {
+      "spellings": [
+        {
+          "spelling": "Tully",
+          "method": "exact_name",
+          "rows": 13
+        }
+      ],
+      "people": 13
+    },
+    "1926": {
+      "spellings": [
+        {
+          "spelling": "Tully",
+          "method": "exact_name",
+          "rows": 9
+        }
+      ],
+      "people": 9
+    }
+  },
+  "corrections": []
+}

@@ -1,0 +1,19 @@
+{
+  "_generated_by": "donegal-townlands.attach_census",
+  "status": "proposed",
+  "note": "Matched by identical name only. Not reviewed.",
+  "ded": "Donegal",
+  "years": {
+    "1911": {
+      "spellings": [
+        {
+          "spelling": "Muckros",
+          "method": "exact_name",
+          "rows": 6
+        }
+      ],
+      "people": 6
+    }
+  },
+  "corrections": []
+}

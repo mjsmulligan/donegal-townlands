@@ -1,0 +1,39 @@
+{
+  "_generated_by": "donegal-townlands.attach_census",
+  "status": "proposed",
+  "note": "Matched by identical name only. Not reviewed.",
+  "ded": "Donegal",
+  "years": {
+    "1901": {
+      "spellings": [
+        {
+          "spelling": "Dromore",
+          "method": "exact_name",
+          "rows": 147
+        }
+      ],
+      "people": 147
+    },
+    "1911": {
+      "spellings": [
+        {
+          "spelling": "Dromore",
+          "method": "exact_name",
+          "rows": 134
+        }
+      ],
+      "people": 134
+    },
+    "1926": {
+      "spellings": [
+        {
+          "spelling": "Dromore",
+          "method": "exact_name",
+          "rows": 113
+        }
+      ],
+      "people": 113
+    }
+  },
+  "corrections": []
+}

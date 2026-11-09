@@ -1,0 +1,14 @@
+{
+  "logainm_id": "14000",
+  "name_en": "Ballydevitt Beg",
+  "name_ga": "Baile Daibhéid Beag",
+  "place_type": "townland",
+  "ded_id": "1372456",
+  "civil_parish_id": "801",
+  "barony_id": "54",
+  "county_id": "100013",
+  "latitude": "54.66925790611829",
+  "longitude": "-8.131656109443812",
+  "snapshot_date": "2026-11-09",
+  "_generated_by": "donegal-townlands.create_townland_cases"
+}

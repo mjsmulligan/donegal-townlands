@@ -1,0 +1,39 @@
+{
+  "_generated_by": "donegal-townlands.attach_census",
+  "status": "proposed",
+  "note": "Matched by identical name only. Not reviewed.",
+  "ded": "Tawnawully",
+  "years": {
+    "1901": {
+      "spellings": [
+        {
+          "spelling": "Garvagh",
+          "method": "exact_name",
+          "rows": 86
+        }
+      ],
+      "people": 86
+    },
+    "1911": {
+      "spellings": [
+        {
+          "spelling": "Garvagh",
+          "method": "exact_name",
+          "rows": 60
+        }
+      ],
+      "people": 60
+    },
+    "1926": {
+      "spellings": [
+        {
+          "spelling": "Garvagh",
+          "method": "exact_name",
+          "rows": 54
+        }
+      ],
+      "people": 54
+    }
+  },
+  "corrections": []
+}

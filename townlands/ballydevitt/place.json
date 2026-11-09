@@ -1,0 +1,14 @@
+{
+  "logainm_id": "13999",
+  "name_en": "Ballydevitt",
+  "name_ga": "Baile Daibhéid",
+  "place_type": "townland",
+  "ded_id": "1372456",
+  "civil_parish_id": "801",
+  "barony_id": "54",
+  "county_id": "100013",
+  "latitude": "54.66802169676203",
+  "longitude": "-8.13664402606572",
+  "snapshot_date": "2026-11-09",
+  "_generated_by": "donegal-townlands.create_townland_cases"
+}

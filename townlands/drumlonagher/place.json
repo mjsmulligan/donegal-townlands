@@ -1,0 +1,14 @@
+{
+  "logainm_id": "14034",
+  "name_en": "Drumlonagher",
+  "name_ga": "Droim Lonachair",
+  "place_type": "townland",
+  "ded_id": "1372456",
+  "civil_parish_id": "784",
+  "barony_id": "52",
+  "county_id": "100013",
+  "latitude": "54.660023607152226",
+  "longitude": "-8.09025292495705",
+  "snapshot_date": "2026-11-09",
+  "_generated_by": "donegal-townlands.create_townland_cases"
+}

@@ -1,0 +1,14 @@
+{
+  "logainm_id": "14137",
+  "name_en": "Carrick Upper and Lower Barr",
+  "name_ga": "",
+  "place_type": "townland",
+  "ded_id": "1372507",
+  "civil_parish_id": "785",
+  "barony_id": "52",
+  "county_id": "100013",
+  "latitude": "54.61487823550586",
+  "longitude": "-8.001976431768613",
+  "snapshot_date": "2026-11-09",
+  "_generated_by": "donegal-townlands.create_townland_cases"
+}

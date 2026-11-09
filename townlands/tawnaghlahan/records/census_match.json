@@ -1,0 +1,29 @@
+{
+  "_generated_by": "donegal-townlands.attach_census",
+  "status": "proposed",
+  "note": "Matched by identical name only. Not reviewed.",
+  "ded": "Tawnawully",
+  "years": {
+    "1901": {
+      "spellings": [
+        {
+          "spelling": "Tawnaghlahan",
+          "method": "exact_name",
+          "rows": 35
+        }
+      ],
+      "people": 35
+    },
+    "1911": {
+      "spellings": [
+        {
+          "spelling": "Tawnaghlahan",
+          "method": "exact_name",
+          "rows": 36
+        }
+      ],
+      "people": 36
+    }
+  },
+  "corrections": []
+}

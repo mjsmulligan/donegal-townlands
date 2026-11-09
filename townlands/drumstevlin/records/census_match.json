@@ -1,0 +1,39 @@
+{
+  "_generated_by": "donegal-townlands.attach_census",
+  "status": "proposed",
+  "note": "Matched by identical name only. Not reviewed.",
+  "ded": "Donegal",
+  "years": {
+    "1901": {
+      "spellings": [
+        {
+          "spelling": "Drumstevlin",
+          "method": "exact_name",
+          "rows": 11
+        }
+      ],
+      "people": 11
+    },
+    "1911": {
+      "spellings": [
+        {
+          "spelling": "Drumstevlin",
+          "method": "exact_name",
+          "rows": 7
+        }
+      ],
+      "people": 7
+    },
+    "1926": {
+      "spellings": [
+        {
+          "spelling": "Drumstevlin",
+          "method": "exact_name",
+          "rows": 16
+        }
+      ],
+      "people": 16
+    }
+  },
+  "corrections": []
+}

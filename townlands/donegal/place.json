@@ -1,0 +1,14 @@
+{
+  "logainm_id": "14030",
+  "name_en": "Donegal",
+  "name_ga": "Dún na nGall",
+  "place_type": "townland",
+  "ded_id": "1372456",
+  "civil_parish_id": "784",
+  "barony_id": "52",
+  "county_id": "100013",
+  "latitude": "54.65471965070146",
+  "longitude": "-8.101769823734127",
+  "snapshot_date": "2026-11-09",
+  "_generated_by": "donegal-townlands.create_townland_cases"
+}

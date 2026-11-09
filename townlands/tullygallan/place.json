@@ -1,0 +1,14 @@
+{
+  "logainm_id": "14159",
+  "name_en": "Tullygallan",
+  "name_ga": "Tulaigh Dhalláin",
+  "place_type": "townland",
+  "ded_id": "1372507",
+  "civil_parish_id": "785",
+  "barony_id": "52",
+  "county_id": "100013",
+  "latitude": "54.62571472915505",
+  "longitude": "-8.092625807003047",
+  "snapshot_date": "2026-11-09",
+  "_generated_by": "donegal-townlands.create_townland_cases"
+}

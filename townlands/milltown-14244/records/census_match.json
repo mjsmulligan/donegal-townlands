@@ -1,0 +1,39 @@
+{
+  "_generated_by": "donegal-townlands.attach_census",
+  "status": "proposed",
+  "note": "Matched by identical name only. Not reviewed.",
+  "ded": "Tawnawully",
+  "years": {
+    "1901": {
+      "spellings": [
+        {
+          "spelling": "Milltown",
+          "method": "exact_name",
+          "rows": 24
+        }
+      ],
+      "people": 24
+    },
+    "1911": {
+      "spellings": [
+        {
+          "spelling": "Milltown",
+          "method": "exact_name",
+          "rows": 30
+        }
+      ],
+      "people": 30
+    },
+    "1926": {
+      "spellings": [
+        {
+          "spelling": "Milltown",
+          "method": "exact_name",
+          "rows": 25
+        }
+      ],
+      "people": 25
+    }
+  },
+  "corrections": []
+}
