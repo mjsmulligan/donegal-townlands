@@ -70,6 +70,50 @@ class ChainTests(unittest.TestCase):
         self.assertTrue(any("already have a row" in r or "both already" in r for r in report))
 
 
+class CarriedYearsTests(unittest.TestCase):
+    """The 1901 and 1926 returns do not state years married, so a wife's figure from 1911 is carried along her chain."""
+
+    def setUp(self):
+        self.h01 = row(1901, "Pat", "McCadden", 46, house="14")
+        self.w01 = row(1901, "Bridget", "McCadden", 45, "F", "Wife", house="14")
+        self.k01 = row(1901, "John", "McCadden", 18, "M", "Son", house="14")
+        self.h11 = row(1911, "Pat", "McCadden", 59, house="12")
+        self.w11 = row(1911, "Bridget", "McCadden", 60, "F", "Wife", house="12", marr=32, born=6)
+        self.rows = [self.h01, self.w01, self.k01, self.h11, self.w11]
+        self.pairs = [(self.h01["obs"], self.h11["obs"]), (self.w01["obs"], self.w11["obs"])]
+
+    def fams(self, text):
+        return [n for n in gedcom_census.parse_gedcom(text) if n.tag == "FAM"]
+
+    def test_child_in_1901_joins_the_wife_through_her_1911_years_married(self):
+        text, report, _ = build(self.rows, self.pairs)
+        fams = self.fams(text)
+        self.assertEqual(len(fams), 1)
+        self.assertEqual(sum(1 for f in text.split("\n") if f.startswith("1 WIFE")), 1)
+        self.assertEqual(text.count("1 CHIL"), 1)
+        self.assertTrue(any("years married for the wife taken from her 1911 return" in r for r in report))
+
+    def test_without_the_link_there_is_no_carried_figure_and_the_child_stays_with_the_head(self):
+        text, _, _ = build(self.rows)
+        self.assertNotIn("years married for the wife taken from", " ".join(build(self.rows)[1]))
+        self.assertGreaterEqual(len(self.fams(text)), 2)
+
+    def test_child_born_before_the_marriage_stays_with_the_head_only(self):
+        old = row(1901, "Mick", "McCadden", 30, "M", "Son", house="14")   # 30 is older than 22 years married
+        self.rows.append(old)
+        text, _, _ = build(self.rows, self.pairs)
+        wife_fams = [f for f in text.split("\n0 ") if " FAM" in f.split("\n")[0] and "1 WIFE" in f]
+        self.assertEqual(len(wife_fams), 1)
+        self.assertEqual(wife_fams[0].count("1 CHIL"), 1)    # John only, not Mick
+        self.assertGreaterEqual(len(self.fams(text)), 2)     # Mick has a head-only family
+
+    def test_born_alive_from_a_later_return_caps_the_children_attached(self):
+        for i in range(7):
+            self.rows.append(row(1901, "Kid%d" % i, "McCadden", 5, "M", "Son", house="14"))
+        text, report, _ = build(self.rows, self.pairs)
+        self.assertTrue(any("born alive" in r for r in report))
+
+
 class TentativeTests(unittest.TestCase):
     def link(self, a, b, conf="high", flags=()):
         return {"fo": a["obs"], "to": b["obs"], "confidence": conf, "flags": list(flags)}
@@ -90,6 +134,12 @@ class TentativeTests(unittest.TestCase):
         text, _, counts = build([a, b], [(a["obs"], b["obs"])])
         self.assertNotIn("TENTATIVE", text)
         self.assertNotIn("tentative links used", counts)
+
+    def test_link_already_implied_by_the_tree_is_not_labelled_tentative(self):
+        a, b = row(1901, "Joe", "Kelly", 30), row(1911, "Joe", "Kelly", 40)
+        text, report, counts = build([a, b], anchors={a["obs"]: "I1", b["obs"]: "I1"}, tentative=[self.link(a, b)])
+        self.assertEqual(counts["tentative links used"], 0)
+        self.assertNotIn("TENTATIVE LINK, not accepted", text)
 
     def test_tree_anchor_beats_a_tentative_link(self):
         a, b = row(1901, "Joe", "Kelly", 30), row(1911, "Joe", "Kelly", 40)
@@ -235,7 +285,7 @@ class RealDataSmokeTest(unittest.TestCase):
         text, report, counts = cg.build_gedcom(rows, [], cg.load_anchors(), "townland", "Cullionboy", NAMES)
         self.assertEqual(cg.check_gedcom(text), [])
         self.assertGreater(counts["people"], 100)
-        self.assertEqual(report, [])
+        self.assertEqual([r for r in report if "years married for the wife taken from" not in r], [])
 
 
 if __name__ == "__main__":
