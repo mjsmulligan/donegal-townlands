@@ -18,9 +18,9 @@ Clogher,1926,Keadue Upper,38,accepted,13973,Keadew Upper,Accepted by Mike 2026-1
 Clogher,1926,Mullinalamphery,23,accepted,13976,Mullanalamphry,Accepted by Mike 2026-11-02. Checked by elimination within the census year and against the townlands.ie Clogher list.
 Clogher,1926,Spearstown,18,accepted,13978,Spierstown,Accepted by Mike 2026-11-02. Checked by elimination within the census year and against the townlands.ie Clogher list.
 Clogher,1926,Tennycahill,13,accepted,13979,Tinnycahil,Accepted by Mike 2026-11-02. Checked by elimination within the census year and against the townlands.ie Clogher list.
-Donegal,1901,Aberna Dorney,31,unreviewed,,Abbernadoorny,
-Donegal,1901,Altidoo,103,unreviewed,,Altadoo,
-Donegal,1901,Ardeanagh,3,unreviewed,,Ardlenagh,
+Donegal,1901,Aberna Dorney,31,accepted,13995,Abbernadoorny,"Accepted by Mike 2026-11-09 as a spelling variant. Qualified names (Upper, Lower, Middle, East, West, Bar) are different townlands and were matched only to a candidate with the same qualifier."
+Donegal,1901,Altidoo,103,accepted,13996,Altadoo,"Accepted by Mike 2026-11-09 as a spelling variant. Qualified names (Upper, Lower, Middle, East, West, Bar) are different townlands and were matched only to a candidate with the same qualifier."
+Donegal,1901,Ardeanagh,3,accepted,14027,Ardlenagh,"Accepted by Mike 2026-11-09 as a spelling variant. Qualified names (Upper, Lower, Middle, East, West, Bar) are different townlands and were matched only to a candidate with the same qualifier."
 Donegal,1901,Bridge End,91,unreviewed,,,
 Donegal,1901,Bridge Street,55,unreviewed,,,
 Donegal,1901,Brighams Court,22,unreviewed,,,
@@ -29,19 +29,19 @@ Donegal,1901,Church Street,24,unreviewed,,,
 Donegal,1901,Claber Lane,7,unreviewed,,,
 Donegal,1901,Diamond,182,unreviewed,,,
 Donegal,1901,Donegal Port,4,unreviewed,,,
-Donegal,1901,Doonam,51,unreviewed,,Doonan,
+Donegal,1901,Doonam,51,accepted,14003,Doonan,"Accepted by Mike 2026-11-09 as a spelling variant. Qualified names (Upper, Lower, Middle, East, West, Bar) are different townlands and were matched only to a candidate with the same qualifier."
 Donegal,1901,Drumcar,40,unreviewed,,Drumbar; Drumark,
 Donegal,1901,Drumgorman,51,unreviewed,,Drumgornan; Drumgowan,
-Donegal,1901,Drumkeehan,61,unreviewed,,Drumkeeghan,
+Donegal,1901,Drumkeehan,61,accepted,14009,Drumkeeghan,"Accepted by Mike 2026-11-09 as a spelling variant. Qualified names (Upper, Lower, Middle, East, West, Bar) are different townlands and were matched only to a candidate with the same qualifier."
 Donegal,1901,Drumlanagher,22,unreviewed,,Drumlonagher; Drumlaght,
-Donegal,1901,Edrim Glebe,120,unreviewed,,Eddrim Glebe,
-Donegal,1901,Gortloskey,12,unreviewed,,Gortlosky,
+Donegal,1901,Edrim Glebe,120,accepted,14015,Eddrim Glebe,"Accepted by Mike 2026-11-09 as a spelling variant. Qualified names (Upper, Lower, Middle, East, West, Bar) are different townlands and were matched only to a candidate with the same qualifier."
+Donegal,1901,Gortloskey,12,accepted,14016,Gortlosky,"Accepted by Mike 2026-11-09 as a spelling variant. Qualified names (Upper, Lower, Middle, East, West, Bar) are different townlands and were matched only to a candidate with the same qualifier."
 Donegal,1901,Gregstown,18,unreviewed,,,
 Donegal,1901,Main Street,418,unreviewed,,,
-Donegal,1901,Muckross,22,unreviewed,,Muckros,
+Donegal,1901,Muckross,22,accepted,14038,Muckros,"Accepted by Mike 2026-11-09 as a spelling variant. Qualified names (Upper, Lower, Middle, East, West, Bar) are different townlands and were matched only to a candidate with the same qualifier."
 Donegal,1901,New Row,196,unreviewed,,,
 Donegal,1901,Quay Street,118,unreviewed,,,
-Donegal,1901,Rossy Longan,27,unreviewed,,Rossylongan,
+Donegal,1901,Rossy Longan,27,accepted,14023,Rossylongan,"Accepted by Mike 2026-11-09 as a spelling variant. Qualified names (Upper, Lower, Middle, East, West, Bar) are different townlands and were matched only to a candidate with the same qualifier."
 Donegal,1901,Town Larry,10,unreviewed,,,
 Donegal,1901,Water Lane,62,unreviewed,,,
 Donegal,1911,Donegal Town: Bridge End (part of),56,unreviewed,,,
@@ -58,75 +58,75 @@ Donegal,1911,Donegal Town: Tyrconnell St. (part of),24,unreviewed,,,
 Donegal,1911,Donegal Town: Water Lane (part of),54,unreviewed,,,
 Donegal,1911,Donegal Town: Waterloo Place (part of),38,unreviewed,,,
 Donegal,1911,Gregstown or Brookfield,12,unreviewed,,,
-Donegal,1926,Abbernadoorney,9,unreviewed,,Abbernadoorny,
-Donegal,1926,Altidoo,68,unreviewed,,Altadoo,
+Donegal,1926,Abbernadoorney,9,accepted,13995,Abbernadoorny,"Accepted by Mike 2026-11-09 as a spelling variant. Qualified names (Upper, Lower, Middle, East, West, Bar) are different townlands and were matched only to a candidate with the same qualifier."
+Donegal,1926,Altidoo,68,accepted,13996,Altadoo,"Accepted by Mike 2026-11-09 as a spelling variant. Qualified names (Upper, Lower, Middle, East, West, Bar) are different townlands and were matched only to a candidate with the same qualifier."
 Donegal,1926,Bridge Street,60,unreviewed,,,
 Donegal,1926,Castle Street,100,unreviewed,,,
 Donegal,1926,Church Street,45,unreviewed,,,
-Donegal,1926,Drumrooske,12,unreviewed,,Drumroosk; Drumroosk West; Drumroosk Middle,
-Donegal,1926,Drumrooske Middle,22,unreviewed,,Drumroosk Middle,
-Donegal,1926,Drumrooske West,18,unreviewed,,Drumroosk West; Drumroosk East; Drumroosk,
-Donegal,1926,Edrim Glebe,67,unreviewed,,Eddrim Glebe,
+Donegal,1926,Drumrooske,12,accepted,14010,Drumroosk; Drumroosk West; Drumroosk Middle,"Accepted by Mike 2026-11-09 as a spelling variant. Qualified names (Upper, Lower, Middle, East, West, Bar) are different townlands and were matched only to a candidate with the same qualifier."
+Donegal,1926,Drumrooske Middle,22,accepted,14012,Drumroosk Middle,"Accepted by Mike 2026-11-09 as a spelling variant. Qualified names (Upper, Lower, Middle, East, West, Bar) are different townlands and were matched only to a candidate with the same qualifier."
+Donegal,1926,Drumrooske West,18,accepted,14013,Drumroosk West; Drumroosk East; Drumroosk,"Accepted by Mike 2026-11-09 as a spelling variant. Qualified names (Upper, Lower, Middle, East, West, Bar) are different townlands and were matched only to a candidate with the same qualifier."
+Donegal,1926,Edrim Glebe,67,accepted,14015,Eddrim Glebe,"Accepted by Mike 2026-11-09 as a spelling variant. Qualified names (Upper, Lower, Middle, East, West, Bar) are different townlands and were matched only to a candidate with the same qualifier."
 Donegal,1926,Gregstown,8,unreviewed,,,
 Donegal,1926,Main Street,354,unreviewed,,,
 Donegal,1926,Meetinghouse Row,65,unreviewed,,,
-Donegal,1926,Miltown,17,unreviewed,,Milltown,
-Donegal,1926,Muckross,2,unreviewed,,Muckros,
+Donegal,1926,Miltown,17,accepted,14019,Milltown,"Accepted by Mike 2026-11-09 as a spelling variant. Qualified names (Upper, Lower, Middle, East, West, Bar) are different townlands and were matched only to a candidate with the same qualifier."
+Donegal,1926,Muckross,2,accepted,14038,Muckros,"Accepted by Mike 2026-11-09 as a spelling variant. Qualified names (Upper, Lower, Middle, East, West, Bar) are different townlands and were matched only to a candidate with the same qualifier."
 Donegal,1926,New Row,68,unreviewed,,,
 Donegal,1926,Quay Street,84,unreviewed,,,
-Donegal,1926,Rarooy,6,unreviewed,,Rarooey,
+Donegal,1926,Rarooy,6,accepted,14040,Rarooey,"Accepted by Mike 2026-11-09 as a spelling variant. Qualified names (Upper, Lower, Middle, East, West, Bar) are different townlands and were matched only to a candidate with the same qualifier."
 Donegal,1926,The Diamond,124,unreviewed,,,
 Donegal,1926,The Glebe,23,unreviewed,,,
-Donegal,1926,The Holmes,9,unreviewed,,Holmes,
-Donegal,1926,The Mullans,109,unreviewed,,Mullans,
-Donegal,1926,Tullycullion,38,unreviewed,,Tullaghcullion,
+Donegal,1926,The Holmes,9,accepted,14017,Holmes,"Accepted by Mike 2026-11-09 as a spelling variant. Qualified names (Upper, Lower, Middle, East, West, Bar) are different townlands and were matched only to a candidate with the same qualifier."
+Donegal,1926,The Mullans,109,accepted,14020,Mullans,"Accepted by Mike 2026-11-09 as a spelling variant. Qualified names (Upper, Lower, Middle, East, West, Bar) are different townlands and were matched only to a candidate with the same qualifier."
+Donegal,1926,Tullycullion,38,accepted,14042,Tullaghcullion,"Accepted by Mike 2026-11-09 as a spelling variant. Qualified names (Upper, Lower, Middle, East, West, Bar) are different townlands and were matched only to a candidate with the same qualifier."
 Donegal,1926,Tyrconnell Street,73,unreviewed,,,
 Donegal,1926,Water Street,62,unreviewed,,,
 Donegal,1926,Waterloo Place,32,unreviewed,,,
-Laghy,1901,Ardbane or Laghy Bar,41,unreviewed,,Ardbane or Laghy Barr,
-Laghy,1901,Ballykillown,97,unreviewed,,Ballykillowen,
-Laghy,1901,Carrick Upper & Lower Bar,46,unreviewed,,Carrick Upper and Lower Barr,
+Laghy,1901,Ardbane or Laghy Bar,41,accepted,14132,Ardbane or Laghy Barr,"Accepted by Mike 2026-11-09 as a spelling variant. Qualified names (Upper, Lower, Middle, East, West, Bar) are different townlands and were matched only to a candidate with the same qualifier."
+Laghy,1901,Ballykillown,97,accepted,14133,Ballykillowen,"Accepted by Mike 2026-11-09 as a spelling variant. Qualified names (Upper, Lower, Middle, East, West, Bar) are different townlands and were matched only to a candidate with the same qualifier."
+Laghy,1901,Carrick Upper & Lower Bar,46,accepted,14137,Carrick Upper and Lower Barr,"Accepted by Mike 2026-11-09 as a spelling variant. Qualified names (Upper, Lower, Middle, East, West, Bar) are different townlands and were matched only to a candidate with the same qualifier."
 Laghy,1901,Inishpat Island,5,unreviewed,,,
-Laghy,1901,Meenacaragh or Raneany Bar,44,unreviewed,,Meenacargagh or Raneany Barr,
+Laghy,1901,Meenacaragh or Raneany Bar,44,accepted,14145,Meenacargagh or Raneany Barr,"Accepted by Mike 2026-11-09 as a spelling variant. Qualified names (Upper, Lower, Middle, East, West, Bar) are different townlands and were matched only to a candidate with the same qualifier."
 Laghy,1901,Meenavanaghan or Greaghs Bar,17,unreviewed,,,
-Laghy,1901,Mullinasole,103,unreviewed,,Mullanasole,
-Laghy,1901,Mullinasole Bar,27,unreviewed,,Mullanasole Barr; Mullanasole,
-Laghy,1901,Oughtradrin,24,unreviewed,,Oughtnadrin,
-Laghy,1901,Rossilly Bar,32,unreviewed,,Rossilly Barr; Rossilly,
-Laghy,1901,Rossvolan,6,unreviewed,,Rossyvolan,
-Laghy,1901,Trumman West Bar,29,unreviewed,,Trumman West Barr; Trumman West,
+Laghy,1901,Mullinasole,103,accepted,14147,Mullanasole,"Accepted by Mike 2026-11-09 as a spelling variant. Qualified names (Upper, Lower, Middle, East, West, Bar) are different townlands and were matched only to a candidate with the same qualifier."
+Laghy,1901,Mullinasole Bar,27,accepted,14148,Mullanasole Barr; Mullanasole,"Accepted by Mike 2026-11-09 as a spelling variant. Qualified names (Upper, Lower, Middle, East, West, Bar) are different townlands and were matched only to a candidate with the same qualifier."
+Laghy,1901,Oughtradrin,24,accepted,14149,Oughtnadrin,"Accepted by Mike 2026-11-09 as a spelling variant. Qualified names (Upper, Lower, Middle, East, West, Bar) are different townlands and were matched only to a candidate with the same qualifier."
+Laghy,1901,Rossilly Bar,32,accepted,14154,Rossilly Barr; Rossilly,"Accepted by Mike 2026-11-09 as a spelling variant. Qualified names (Upper, Lower, Middle, East, West, Bar) are different townlands and were matched only to a candidate with the same qualifier."
+Laghy,1901,Rossvolan,6,accepted,14155,Rossyvolan,"Accepted by Mike 2026-11-09 as a spelling variant. Qualified names (Upper, Lower, Middle, East, West, Bar) are different townlands and were matched only to a candidate with the same qualifier."
+Laghy,1901,Trumman West Bar,29,accepted,14158,Trumman West Barr; Trumman West,"Accepted by Mike 2026-11-09 as a spelling variant. Qualified names (Upper, Lower, Middle, East, West, Bar) are different townlands and were matched only to a candidate with the same qualifier."
 Laghy,1901,Tullygallan or Oughmallion Bar,33,unreviewed,,,
-Laghy,1911,Carrick Upper and Lower Bar,42,unreviewed,,Carrick Upper and Lower Barr,
+Laghy,1911,Carrick Upper and Lower Bar,42,accepted,14137,Carrick Upper and Lower Barr,"Accepted by Mike 2026-11-09 as a spelling variant. Qualified names (Upper, Lower, Middle, East, West, Bar) are different townlands and were matched only to a candidate with the same qualifier."
 Laghy,1911,Inishpat Island,5,unreviewed,,,
 Laghy,1911,Meenavanaghan or Greaghs Barr,20,unreviewed,,,
-Laghy,1911,"Tullygallan, Tullywee, and Oughtnadrin Barr",24,unreviewed,,"Tullygallen, Tullywee and Oughtnadrin Barr",
-Laghy,1926,Ardbane or Laghy Bar,22,unreviewed,,Ardbane or Laghy Barr,
+Laghy,1911,"Tullygallan, Tullywee, and Oughtnadrin Barr",24,accepted,14160,"Tullygallen, Tullywee and Oughtnadrin Barr","Accepted by Mike 2026-11-09 as a spelling variant. Qualified names (Upper, Lower, Middle, East, West, Bar) are different townlands and were matched only to a candidate with the same qualifier."
+Laghy,1926,Ardbane or Laghy Bar,22,accepted,14132,Ardbane or Laghy Barr,"Accepted by Mike 2026-11-09 as a spelling variant. Qualified names (Upper, Lower, Middle, East, West, Bar) are different townlands and were matched only to a candidate with the same qualifier."
 Laghy,1926,Carrickbar Upper,39,unreviewed,,,
-Laghy,1926,Cormullen,75,unreviewed,,Cormullin,
-Laghy,1926,Gollard,61,unreviewed,,Golard,
+Laghy,1926,Cormullen,75,accepted,14139,Cormullin,"Accepted by Mike 2026-11-09 as a spelling variant. Qualified names (Upper, Lower, Middle, East, West, Bar) are different townlands and were matched only to a candidate with the same qualifier."
+Laghy,1926,Gollard,61,accepted,14140,Golard,"Accepted by Mike 2026-11-09 as a spelling variant. Qualified names (Upper, Lower, Middle, East, West, Bar) are different townlands and were matched only to a candidate with the same qualifier."
 Laghy,1926,Greaghs Bar,19,unreviewed,,Greaghs,
 Laghy,1926,Laghey Town,99,unreviewed,,,
-Laghy,1926,Mullinasole,55,unreviewed,,Mullanasole,
-Laghy,1926,Mullinasole Bar,20,unreviewed,,Mullanasole Barr; Mullanasole,
-Laghy,1926,Oughnadrin,16,unreviewed,,Oughtnadrin,
+Laghy,1926,Mullinasole,55,accepted,14147,Mullanasole,"Accepted by Mike 2026-11-09 as a spelling variant. Qualified names (Upper, Lower, Middle, East, West, Bar) are different townlands and were matched only to a candidate with the same qualifier."
+Laghy,1926,Mullinasole Bar,20,accepted,14148,Mullanasole Barr; Mullanasole,"Accepted by Mike 2026-11-09 as a spelling variant. Qualified names (Upper, Lower, Middle, East, West, Bar) are different townlands and were matched only to a candidate with the same qualifier."
+Laghy,1926,Oughnadrin,16,accepted,14149,Oughtnadrin,"Accepted by Mike 2026-11-09 as a spelling variant. Qualified names (Upper, Lower, Middle, East, West, Bar) are different townlands and were matched only to a candidate with the same qualifier."
 Laghy,1926,Raneany Bar,27,unreviewed,,Raneany East,
-Laghy,1926,Rossilly Bar,34,unreviewed,,Rossilly Barr; Rossilly,
-Laghy,1926,Rossyvollan,3,unreviewed,,Rossyvolan,
-Laghy,1926,Trummon East,89,unreviewed,,Trumman East; Trumman West,
-Laghy,1926,Trummon West,81,unreviewed,,Trumman West; Trumman West Barr; Trumman East,
-Laghy,1926,Trummon West Bar,4,unreviewed,,Trumman West Barr; Trumman West,
+Laghy,1926,Rossilly Bar,34,accepted,14154,Rossilly Barr; Rossilly,"Accepted by Mike 2026-11-09 as a spelling variant. Qualified names (Upper, Lower, Middle, East, West, Bar) are different townlands and were matched only to a candidate with the same qualifier."
+Laghy,1926,Rossyvollan,3,accepted,14155,Rossyvolan,"Accepted by Mike 2026-11-09 as a spelling variant. Qualified names (Upper, Lower, Middle, East, West, Bar) are different townlands and were matched only to a candidate with the same qualifier."
+Laghy,1926,Trummon East,89,accepted,14156,Trumman East; Trumman West,"Accepted by Mike 2026-11-09 as a spelling variant. Qualified names (Upper, Lower, Middle, East, West, Bar) are different townlands and were matched only to a candidate with the same qualifier."
+Laghy,1926,Trummon West,81,accepted,14157,Trumman West; Trumman West Barr; Trumman East,"Accepted by Mike 2026-11-09 as a spelling variant. Qualified names (Upper, Lower, Middle, East, West, Bar) are different townlands and were matched only to a candidate with the same qualifier."
+Laghy,1926,Trummon West Bar,4,accepted,14158,Trumman West Barr; Trumman West,"Accepted by Mike 2026-11-09 as a spelling variant. Qualified names (Upper, Lower, Middle, East, West, Bar) are different townlands and were matched only to a candidate with the same qualifier."
 Laghy,1926,Tullywee Tullygallen and Aughnadreen Bar,27,unreviewed,,,
-Tawnawully,1901,Ardnatowel,78,unreviewed,,Ardatowel,
-Tawnawully,1901,Carnaveigh,51,unreviewed,,Cornaveagh,
-Tawnawully,1901,Carracramph,58,unreviewed,,Corracramph,
-Tawnawully,1901,Tawnaghorm,82,unreviewed,,Tawnaghgorm,
-Tawnawully,1926,Ardevrin,16,unreviewed,,Ardeevin,
-Tawnawully,1926,Ardinableask,50,unreviewed,,Ardnableask,
-Tawnawully,1926,Ardnawark,67,unreviewed,,Ardinawark,
-Tawnawully,1926,Cornveigh,31,unreviewed,,Cornaveagh,
-Tawnawully,1926,Corracramp,52,unreviewed,,Corracramph,
-Tawnawully,1926,Townaghgorm,52,unreviewed,,Tawnaghgorm,
-Tawnawully,1926,Townalaghan,24,unreviewed,,Tawnaghlahan,
+Tawnawully,1901,Ardnatowel,78,accepted,14235,Ardatowel,"Accepted by Mike 2026-11-09 as a spelling variant. Qualified names (Upper, Lower, Middle, East, West, Bar) are different townlands and were matched only to a candidate with the same qualifier."
+Tawnawully,1901,Carnaveigh,51,accepted,14239,Cornaveagh,"Accepted by Mike 2026-11-09 as a spelling variant. Qualified names (Upper, Lower, Middle, East, West, Bar) are different townlands and were matched only to a candidate with the same qualifier."
+Tawnawully,1901,Carracramph,58,accepted,14240,Corracramph,"Accepted by Mike 2026-11-09 as a spelling variant. Qualified names (Upper, Lower, Middle, East, West, Bar) are different townlands and were matched only to a candidate with the same qualifier."
+Tawnawully,1901,Tawnaghorm,82,accepted,14246,Tawnaghgorm,"Accepted by Mike 2026-11-09 as a spelling variant. Qualified names (Upper, Lower, Middle, East, West, Bar) are different townlands and were matched only to a candidate with the same qualifier."
+Tawnawully,1926,Ardevrin,16,accepted,14236,Ardeevin,"Accepted by Mike 2026-11-09 as a spelling variant. Qualified names (Upper, Lower, Middle, East, West, Bar) are different townlands and were matched only to a candidate with the same qualifier."
+Tawnawully,1926,Ardinableask,50,accepted,14238,Ardnableask,"Accepted by Mike 2026-11-09 as a spelling variant. Qualified names (Upper, Lower, Middle, East, West, Bar) are different townlands and were matched only to a candidate with the same qualifier."
+Tawnawully,1926,Ardnawark,67,accepted,14237,Ardinawark,"Accepted by Mike 2026-11-09 as a spelling variant. Qualified names (Upper, Lower, Middle, East, West, Bar) are different townlands and were matched only to a candidate with the same qualifier."
+Tawnawully,1926,Cornveigh,31,accepted,14239,Cornaveagh,"Accepted by Mike 2026-11-09 as a spelling variant. Qualified names (Upper, Lower, Middle, East, West, Bar) are different townlands and were matched only to a candidate with the same qualifier."
+Tawnawully,1926,Corracramp,52,accepted,14240,Corracramph,"Accepted by Mike 2026-11-09 as a spelling variant. Qualified names (Upper, Lower, Middle, East, West, Bar) are different townlands and were matched only to a candidate with the same qualifier."
+Tawnawully,1926,Townaghgorm,52,accepted,14246,Tawnaghgorm,"Accepted by Mike 2026-11-09 as a spelling variant. Qualified names (Upper, Lower, Middle, East, West, Bar) are different townlands and were matched only to a candidate with the same qualifier."
+Tawnawully,1926,Townalaghan,24,accepted,14247,Tawnaghlahan,"Accepted by Mike 2026-11-09 as a spelling variant. Qualified names (Upper, Lower, Middle, East, West, Bar) are different townlands and were matched only to a candidate with the same qualifier."
 Tullynaught,1901,Ardnagassen,47,accepted,14272,Ardnagassan,"Mike, 2026-11-07: known spelling variant."
 Tullynaught,1901,Barnesneilly,9,accepted,14288,Barnesyneilly,"Mike, 2026-11-07: known spelling variant."
 Tullynaught,1901,Drummeny Lower,27,accepted,14276,Drummenny Lower; Drummenny Upper,"Mike, 2026-11-07: known spelling variant."

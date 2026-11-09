@@ -1,7 +1,19 @@
 {
   "_generated_by": "donegal-townlands.attach_census",
-  "status": "checked",
+  "status": "reviewed",
+  "note": "Spellings accepted on review (see census_spelling_review.csv).",
   "ded": "Donegal",
-  "years": {},
-  "note": "No return for this townland appears in the Donegal electoral division census files for 1901, 1911, 1926. Some spellings are still awaiting review."
+  "years": {
+    "1926": {
+      "spellings": [
+        {
+          "spelling": "The Holmes",
+          "method": "reviewed_variant",
+          "rows": 9
+        }
+      ],
+      "people": 9
+    }
+  },
+  "corrections": []
 }
