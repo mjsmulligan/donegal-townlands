@@ -84,7 +84,13 @@ class StoryCheckTests(unittest.TestCase):
 
     def test_proposed_link_is_not_usable(self):
         # Tom is named only in a proposed link, so the story cannot use him
-        self.assertTrue(any(f.rule == "name" for f in fails("Tom was twenty in 1901.")))
+        self.assertTrue(any(f.rule == "name" for f in run("Tom was twenty in 1901.")))
+        self.assertTrue(any(f.rule == "name" and f.level == "FAIL" for f in fails("The house had Tom in 1901.")))
+
+    def test_unknown_word_at_sentence_start_warns(self):
+        r = run("Gerald was at home.")
+        self.assertTrue(any(f.rule == "name" and f.level == "WARN" for f in r))
+        self.assertEqual([f for f in r if f.level == "FAIL"], [])
 
     def test_uncleared_person_is_flagged(self):
         s = sheet(*BASE["facts"], fact(9, "person", "tree", "Mary Kelly; born 1990", who="Mary Kelly", cleared=False))
