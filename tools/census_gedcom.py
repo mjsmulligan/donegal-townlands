@@ -131,6 +131,8 @@ def build_chains(rows, accepted_pairs, anchors, tentative=(), tent_used=None):
     ordered = sorted(tentative or [], key=lambda t: (cl.RANK[t["confidence"]], t["fo"], t["to"]))
     for t in ordered:
         if t["fo"] in present and t["to"] in present:
+            if ch.find(t["fo"]) == ch.find(t["to"]):
+                continue   # already one person through the tree or an accepted link, so nothing tentative about it
             if ch.join(t["fo"], t["to"], "tentative link %s > %s" % (t["fo"], t["to"])) and tent_used is not None:
                 tent_used.append(t)
     report = ch.refused + report
@@ -217,7 +219,36 @@ def event_note(r: dict) -> str:
 
 # ------------------------------------------------------------------ families
 
-def household_families(hh_rows: dict, chain_of: dict, wife_parent: str, notes: list[str]):
+def chain_years(members, own: dict, year: int):
+    """Years married for a wife in the return of `year`. Her own return is used if it states them.
+    Otherwise the nearest return in her chain that does, moved by the years between the two
+    returns (the 1901 and 1926 returns do not ask). Returns (years or None, note or None)."""
+    v = valid_years(own)
+    if v is not None:
+        return v, None
+    best = None
+    for r in members or []:
+        w = valid_years(r)
+        if w is None or r["year"] == year:
+            continue
+        here = w + (year - r["year"])
+        if 0 <= here <= MAX_MARRIED_YEARS and (best is None or abs(r["year"] - year) < best[0]):
+            best = (abs(r["year"] - year), here, r["year"], w)
+    if best is None:
+        return None, None
+    return best[1], "years married for the wife taken from her %d return (%d, so %d in %d)" % (best[2], best[3], best[1], year)
+
+
+def chain_born(members, own: dict, year: int):
+    """Children born alive: her own return, else the next later return that states it, which is an
+    upper bound for the earlier return. Never taken from an earlier return, since it can only grow."""
+    if own.get("born") is not None:
+        return own["born"]
+    later = sorted((r for r in members or [] if r["year"] > year and r.get("born") is not None), key=lambda r: r["year"])
+    return later[0]["born"] if later else None
+
+
+def household_families(hh_rows: dict, chain_of: dict, wife_parent: str, notes: list[str], groups=None):
     """Couples and children from the relationship each return states. Returns
     (couples: key -> (husb chain, wife chain), child options: chain -> list of (year, key, couple?))."""
     couples, options = {}, collections.defaultdict(list)
@@ -240,12 +271,15 @@ def household_families(hh_rows: dict, chain_of: dict, wife_parent: str, notes: l
         couples.setdefault(single, single)
         eligible = set()
         if fkey:
-            yrs = valid_years(wife_row)
+            wmembers = (groups or {}).get(chain_of[wife_row["obs"]])
+            yrs, ynote = chain_years(wmembers, wife_row, year)
+            if ynote:
+                notes.append("%d %s: %s" % (year, cl._hh_label(head), ynote))
             if wife_parent == "assume":
                 eligible = {c["obs"] for c in kids if yrs is None or c["age"] is None or c["age"] <= yrs + 1}
             else:
                 eligible = {c["obs"] for c in kids if yrs is not None and c["age"] is not None and c["age"] <= yrs + 1}
-            born = wife_row.get("born")
+            born = chain_born(wmembers, wife_row, year)
             if born is not None and len(eligible) > born:
                 notes.append("%d %s: %d children are shown with %s but she recorded %d born alive, so none is attached to her"
                              % (year, cl._hh_label(head), len(eligible), clean_name(wife_row["first"] + " " + wife_row["surname"]), born))
@@ -293,7 +327,7 @@ def build_gedcom(rows, accepted_pairs, anchors, kind, value, names, wife_parent=
     hh_rows = {k: hh_all[k] for k in hh_in}
     people = set(selected) | {chain_of[r["obs"]] for rs in hh_rows.values() for r in rs}
     notes: list[str] = []
-    couples, options = household_families(hh_rows, chain_of, wife_parent, notes)
+    couples, options = household_families(hh_rows, chain_of, wife_parent, notes, groups)
 
     child_family = {}
     for cc, opts in options.items():
