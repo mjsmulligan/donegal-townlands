@@ -4,6 +4,16 @@
   "note": "Spellings accepted on review (see census_spelling_review.csv).",
   "ded": "Laghy",
   "years": {
+    "1901": {
+      "spellings": [
+        {
+          "spelling": "Tullygallan or Oughmallion Bar",
+          "method": "reviewed_variant",
+          "rows": 33
+        }
+      ],
+      "people": 33
+    },
     "1911": {
       "spellings": [
         {
@@ -13,6 +23,16 @@
         }
       ],
       "people": 24
+    },
+    "1926": {
+      "spellings": [
+        {
+          "spelling": "Tullywee Tullygallen and Aughnadreen Bar",
+          "method": "reviewed_variant",
+          "rows": 27
+        }
+      ],
+      "people": 27
     }
   },
   "corrections": []

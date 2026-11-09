@@ -104,3 +104,5 @@
 - 2026-11-09 Mike confirmed Raneany East (14152) and Raneany West (14151) are distinct townlands from Raneany Barr, which is only ever recorded as part of "Meenacargagh or Raneany Barr" (14145). No census spelling is matched to Raneany East or West on the strength of the name Raneany alone.
 
 - 2026-11-09 Mike confirmed Greaghs Bar (1926 Laghy) is the short form of the longer designation. It is accepted against Logainm "Greaghs Barr or Meenavanaghan" (14146), together with the 1901 and 1911 long forms "Meenavanaghan or Greaghs Bar(r)", which are the same two names in reverse order (the matcher could not see this, so it listed only Greaghs). Greaghs (14141) is a separate townland.
+
+- 2026-11-09 Mike confirmed Tullygallen is the same townland across the variants of its compound designation. The 1901 "Tullygallan or Oughmallion Bar" and the 1926 "Tullywee Tullygallen and Aughnadreen Bar" are accepted against Logainm "Tullygallen, Tullywee and Oughtnadrin Barr" (14160), with the 1911 spelling. Tullygallan (14159) is left without a census spelling matched to it. Interpretation to confirm: that the 1901 form belongs to 14160 and not to 14159.
