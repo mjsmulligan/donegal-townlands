@@ -70,6 +70,64 @@ class ChainTests(unittest.TestCase):
         self.assertTrue(any("already have a row" in r or "both already" in r for r in report))
 
 
+class TentativeTests(unittest.TestCase):
+    def link(self, a, b, conf="high", flags=()):
+        return {"fo": a["obs"], "to": b["obs"], "confidence": conf, "flags": list(flags)}
+
+    def test_tentative_link_joins_rows_and_is_labelled_in_header_person_and_report(self):
+        a, b = row(1901, "Ellen", "Doherty", 12, "F", "Daughter"), row(1911, "Ellen", "Doherty", 22, "F", "Daughter")
+        text, report, counts = build([a, b], tentative=[self.link(a, b, "medium", ["age drift 4"])])
+        self.assertEqual(len(indis(text)), 1)
+        self.assertIn("TENTATIVE LINKS: this file also joins", text)
+        self.assertIn("TENTATIVE LINK, not accepted by the researcher", text)
+        self.assertIn("Matcher confidence medium; age drift 4", text)
+        self.assertEqual(counts["tentative links used"], 1)
+        self.assertEqual(counts["tentative medium"], 1)
+        self.assertTrue(any(r.startswith("tentative link, matcher confidence medium") for r in report))
+
+    def test_no_tentative_links_means_no_tentative_wording(self):
+        a, b = row(1901, "Ellen", "Doherty", 12, "F", "Daughter"), row(1911, "Ellen", "Doherty", 22, "F", "Daughter")
+        text, _, counts = build([a, b], [(a["obs"], b["obs"])])
+        self.assertNotIn("TENTATIVE", text)
+        self.assertNotIn("tentative links used", counts)
+
+    def test_tree_anchor_beats_a_tentative_link(self):
+        a, b = row(1901, "Joe", "Kelly", 30), row(1911, "Joe", "Kelly", 40)
+        text, report, counts = build([a, b], anchors={a["obs"]: "I1", b["obs"]: "I2"}, tentative=[self.link(a, b)])
+        self.assertEqual(len(indis(text)), 2)
+        self.assertEqual(counts["tentative links used"], 0)
+        self.assertTrue(any("different people" in r for r in report))
+
+    def test_accepted_link_beats_a_competing_tentative_link(self):
+        a = row(1901, "Joe", "Kelly", 30)
+        b1, b2 = row(1911, "Joe", "Kelly", 40, house="1"), row(1911, "Joe", "Kelly", 40, house="2")
+        text, report, counts = build([a, b1, b2], [(a["obs"], b2["obs"])], tentative=[self.link(a, b1)])
+        self.assertEqual(counts["tentative links used"], 0)
+        self.assertEqual(len(indis(text)), 2)
+
+    def test_tentative_output_passes_structure_check_and_is_repeatable(self):
+        a, b = row(1901, "Ellen", "Doherty", 12, "F", "Daughter"), row(1911, "Ellen", "Doherty", 22, "F", "Daughter")
+        t = [self.link(a, b)]
+        t1, t2 = build([a, b], tentative=t)[0], build([a, b], tentative=t)[0]
+        self.assertEqual(t1, t2)
+        self.assertEqual(cg.check_gedcom(t1), [])
+
+    def test_run_names_the_file_tentative_and_leaves_the_decisions_file_alone(self):
+        import io
+        import tempfile
+        if not cl.CENSUS_DIR.is_dir():
+            self.skipTest("census files not present")
+        before = cl.DECISIONS.read_bytes() if cl.DECISIONS.is_file() else None
+        with tempfile.TemporaryDirectory() as d:
+            buf = io.StringIO()
+            rc = cg.run("family", "Kelly", cl.CENSUS_DIR, Path(d), cl.DECISIONS, cl.TREE, "evidence", buf, tentative=True)
+            self.assertEqual(rc, 0)
+            self.assertTrue((Path(d) / "family_kelly_tentative.ged").is_file())
+            self.assertTrue((Path(d) / "family_kelly_tentative_report.txt").is_file())
+        after = cl.DECISIONS.read_bytes() if cl.DECISIONS.is_file() else None
+        self.assertEqual(before, after)
+
+
 class FamilyTests(unittest.TestCase):
     def household(self, yrs, wife_born=None, child_age=10):
         head = row(1911, "Tom", "Kelly", 50)

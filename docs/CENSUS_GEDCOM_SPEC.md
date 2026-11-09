@@ -62,6 +62,7 @@ Generated from accepted chains, one file per DED, never edited by hand.
 - Families only where the return states the relationship in one household: a Head and Wife make a `FAM`, and a Son or Daughter of the Head is a child of the head. A child joins the wife in the `FAM` only if `years_married` and the children counts allow it, which covers a head who had married before. Sons-in-law, servants and visitors get no family.
 - Mike's tree anchors the result. The 75 accepted GEDCOM-to-census links are fixed. A row used by an anchor is never reassigned. If the matcher disagrees with an anchor it is shown as a conflict for review and the anchor stands until Mike says otherwise.
 - Persons in both files appear once, tied by the person pointer.
+- **Tentative test files (2026-11-09).** With `--tentative` the writer also joins rows by matcher links Mike has not reviewed, strongest first, after tree anchors and accepted links, which always win a clash. Ambiguous links are left out. The header, each joined person and the report say TENTATIVE LINK with the matcher's confidence, and the file is named `*_tentative.ged`. Nothing is written to `census_links.csv`. These files exist to test links in Ancestry before review, and are never a source for stories.
 
 ## 7. Using it in stories
 
