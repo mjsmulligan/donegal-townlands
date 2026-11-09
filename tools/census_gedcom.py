@@ -254,12 +254,30 @@ def household_families(hh_rows: dict, chain_of: dict, wife_parent: str, notes: l
     couples, options = {}, collections.defaultdict(list)
     for key in sorted(hh_rows, key=lambda k: (k[1][0], str(k))):
         members = sorted(hh_rows[key], key=lambda r: r["loc"])
-        head = next((r for r in members if r["relc"] == "head"), None)
-        if not head:
+        heads = [r for r in members if r["relc"] == "head"]
+        if not heads:
             continue
         spouse = next((r for r in members if r["relc"] in ("wife", "husband")), None)
         kids = [r for r in members if r["relc"] in ("son", "daughter") and "step" not in r["rel"].lower()]
-        year = head["year"]
+        year = heads[0]["year"]
+        head = heads[0]
+        if len(heads) > 1:
+            # Two heads in one household (two families sharing a house). Only the head of the opposite sex to the
+            # wife or husband row can be paired with it, and no child is given to either head.
+            opp = [r for r in heads if spouse and r["sex"] != spouse["sex"] and r["sex"] in "MF" and spouse["sex"] in "MF"]
+            notes.append("household: %d %s lists %d heads (%s). Children are not attached to any of them; check the household."
+                         % (year, cl._hh_label(heads[0]), len(heads), ", ".join(clean_name(r["first"] + " " + r["surname"]) for r in heads)))
+            kids = []
+            if len(opp) != 1:
+                spouse = None
+            else:
+                head = opp[0]
+        if spouse and cl.marital_class(head.get("marital_raw") or "") in ("widowed", "single"):
+            notes.append("household: %d %s: %s is listed as %s but the head, %s, is recorded as %s, so she or he is not paired with the head "
+                         "(possibly the wife or husband of another member)."
+                         % (year, cl._hh_label(head), clean_name(spouse["first"] + " " + spouse["surname"]), spouse["rel"],
+                            clean_name(head["first"] + " " + head["surname"]), head["marital_raw"]))
+            spouse = None
         h = chain_of[head["obs"]]
         fkey, wife_row = None, None
         if spouse and head["sex"] != spouse["sex"] and head["sex"] in "MF" and spouse["sex"] in "MF":
@@ -343,6 +361,7 @@ def build_gedcom(rows, accepted_pairs, anchors, kind, value, names, wife_parent=
         for c in k:
             if c:
                 spouse_in[c].append(k)
+    notes += family_conflicts(fams, kids_of, groups)
 
     def ip(cid):
         return ptr("I", cid)
@@ -432,6 +451,39 @@ def build_gedcom(rows, accepted_pairs, anchors, kind, value, names, wife_parent=
 def ra_label(r: dict) -> str:
     return "%s %s (age %s, %d, %s)" % (clean_name(r["first"]), clean_name(r["surname"]),
                                        r["age"] if r["age"] is not None else "not given", r["year"], r["townland"])
+
+
+def derived_birth(members):
+    r = next((r for r in members if r["age"] is not None), None)
+    return r["year"] - r["age"] if r else None
+
+
+def family_conflicts(fams, kids_of, groups) -> list[str]:
+    """Things in the finished families that cannot all be right, for Mike. Nothing is changed or resolved."""
+    out = []
+    nm = lambda c: clean_name("%s %s" % (groups[c][0]["first"], groups[c][0]["surname"]))
+    for k in sorted(fams, key=lambda k: (str(k[0]), str(k[1]))):
+        husb, wife = k
+        for cc in sorted(kids_of.get(k, [])):
+            cb = derived_birth(groups[cc])
+            for par, role, lo, hi in ((wife, "mother", 15, 50), (husb, "father", 15, 70)):
+                pb = derived_birth(groups[par]) if par else None
+                if pb and cb and (cb - pb < lo or cb - pb > hi):
+                    out.append("conflict: %s (born about %d) is the %s of %s (born about %d) in the file, a gap of %d years. "
+                               "One of the ages in the returns is probably wrong." % (nm(par), pb, role, nm(cc), cb, cb - pb))
+    by_husb = collections.defaultdict(list)
+    for k in fams:
+        if k[0] and k[1]:
+            by_husb[k[0]].append(k[1])
+    for h, wives in sorted(by_husb.items()):
+        firsts = collections.defaultdict(list)
+        for w in wives:
+            firsts[clean_name(groups[w][0]["first"]).split(" ")[0].casefold()].append(w)
+        for f, ws in sorted(firsts.items()):
+            if len(ws) > 1:
+                out.append("conflict: %s has %d wives with the same first name (%s). They may be one woman whose age is recorded "
+                           "differently in two returns." % (nm(h), len(ws), "; ".join("%s, born about %s" % (nm(w), derived_birth(groups[w])) for w in ws)))
+    return out
 
 
 def person_label(members, with_age=True):
