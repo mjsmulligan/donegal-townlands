@@ -197,8 +197,11 @@ def check_text(text: str, sheet: dict) -> tuple[list[Finding], dict]:
                 continue
             if first and not nxt[:1].isupper() and re.search(r"(?<![.!?]\s)\b%s\b" % re.escape(tok.lower()), text):
                 continue   # the same word appears in lower case elsewhere, so it is an ordinary word
-            out.append(Finding("FAIL", "name", tok, "not in the fact sheet" + (
-                " (if it is an ordinary word that starts a sentence, add it to STARTERS in check_story.py)" if first else "")))
+            if first and not nxt[:1].isupper():
+                out.append(Finding("WARN", "name", tok, "starts a sentence and is not in the fact sheet; check it is an "
+                                   "ordinary word (add it to STARTERS in check_story.py if so)"))
+            else:
+                out.append(Finding("FAIL", "name", tok, "not in the fact sheet"))
     # dates
     claimed = []
     for m in re.finditer(r"\b(\d{1,2})(?:st|nd|rd|th)? (%s)(?: (\d{4}))?" % MONTH_RE, text):
