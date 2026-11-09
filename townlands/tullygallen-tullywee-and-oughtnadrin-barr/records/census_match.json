@@ -1,7 +1,39 @@
 {
   "_generated_by": "donegal-townlands.attach_census",
-  "status": "checked",
+  "status": "reviewed",
+  "note": "Spellings accepted on review (see census_spelling_review.csv).",
   "ded": "Laghy",
-  "years": {},
-  "note": "No return for this townland appears in the Laghy electoral division census files for 1901, 1911, 1926. Some spellings are still awaiting review."
+  "years": {
+    "1901": {
+      "spellings": [
+        {
+          "spelling": "Tullygallan or Oughmallion Bar",
+          "method": "reviewed_variant",
+          "rows": 33
+        }
+      ],
+      "people": 33
+    },
+    "1911": {
+      "spellings": [
+        {
+          "spelling": "Tullygallan, Tullywee, and Oughtnadrin Barr",
+          "method": "reviewed_variant",
+          "rows": 24
+        }
+      ],
+      "people": 24
+    },
+    "1926": {
+      "spellings": [
+        {
+          "spelling": "Tullywee Tullygallen and Aughnadreen Bar",
+          "method": "reviewed_variant",
+          "rows": 27
+        }
+      ],
+      "people": 27
+    }
+  },
+  "corrections": []
 }

@@ -1,9 +1,19 @@
 {
   "_generated_by": "donegal-townlands.attach_census",
   "status": "proposed",
-  "note": "Matched by identical name only. Not reviewed.",
+  "note": "Identical-name matches are proposed and not yet reviewed. Other spellings were accepted on review (see census_spelling_review.csv).",
   "ded": "Laghy",
   "years": {
+    "1901": {
+      "spellings": [
+        {
+          "spelling": "Trumman West Bar",
+          "method": "reviewed_variant",
+          "rows": 29
+        }
+      ],
+      "people": 29
+    },
     "1911": {
       "spellings": [
         {
@@ -13,6 +23,16 @@
         }
       ],
       "people": 34
+    },
+    "1926": {
+      "spellings": [
+        {
+          "spelling": "Trummon West Bar",
+          "method": "reviewed_variant",
+          "rows": 4
+        }
+      ],
+      "people": 4
     }
   },
   "corrections": []
