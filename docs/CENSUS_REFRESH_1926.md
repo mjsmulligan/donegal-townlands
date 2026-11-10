@@ -1,6 +1,6 @@
 # 1926 census refresh from NAI
 
-Status: implemented 2026-11-10 (WP22). Not yet run against the live NAI service. See "Assumptions to confirm on the first live run".
+Status: implemented and run live 2026-11-10 (WP22). The first refresh is merged.
 
 NAI publishes transcription corrections to the 1926 census from time to time. `tools/refresh_census_1926.py` replaces the preserved 1926 source files with the current NAI data, all DEDs together or none.
 
@@ -58,20 +58,24 @@ Written to `data/source/census_refresh/<UTC stamp>/` (and to the workflow artifa
 
 The comparison reads both files and writes nothing to either.
 
-## The first refresh will look large
+## What the first refresh changed (2026-11-10)
 
-The existing 1926 files in `data/source/census/` were written by GRA through pandas, so they are not exactly as NAI supplied. They use CRLF line endings, write the text `nan` for blanks and write whole numbers as floats (`70.0`). The refreshed files will not. So on the first refresh every hash changes and most rows show as changed. The report labels a difference that is only `nan` against blank, or `70.0` against `70`, as serialisation only. Review the substantive changes: those are NAI's corrections.
+The first live run (workflow run of 2026-11-10, branch `census-1926-refresh-20261110T082929Z`, merged in PR 55) replaced all five DEDs. The record is in `data/source/census_refresh/20261110T082907Z/`.
 
-Effect downstream, measured on a rehearsal with simulated NAI data: re-running `python tools/attach_census.py` afterwards changes about 100 `townlands/*/records/census.json` files. Apart from real corrections, the changes are the removal of the text `nan` from the 1926 marriage, relationship and sex fields (it is currently carried through), and a marriage text such as "2 children living" appearing where `children_living` is now a plain number. The refresh does not regenerate these files. Regenerate, review the diff and rebuild as a separate step after the refresh branch is accepted. `tools/validate.py` and the test suite pass with or without that regeneration.
+| DED | Logainm ID | Before | After | Added | Removed |
+|---|---|---|---|---|---|
+| Clogher | 1372439 | 3627 | 3622 | 0 | 5 |
+| Donegal | 1372456 | 2352 | 2366 | 15 | 1 |
+| Laghy | 1372507 | 994 | 994 | 0 | 0 |
+| Tawnawully | 1372542 | 512 | 512 | 0 | 0 |
+| Tullynaught | 111482 | 894 | 901 | 17 | 10 |
 
-## Assumptions to confirm on the first live run
+Nearly every row differs, and almost none of that is formatting. The earlier files came from an older NAI release that GRA had also passed through pandas (the text `nan` for blanks, floats such as `70.0`). Only 0 to 51 changed rows per DED differ in those ways alone. The substantive differences are NAI's own: in the current release `relationship_to_head` is empty and `updated_relationship_to_head`, `updated_religion` and `updated_marriage` are filled for every person, while the stray text in `years_married` and `children_*` (for example `y`, `Own Account`) is mostly gone. NAI's files use CRLF line endings, so line endings are not a difference. The new files contain no `nan`.
 
-The build environment could not reach `c26-api.nationalarchives.ie` (its proxy refused the connection), so the live service was not checked. The tool follows GRA's working fetcher (`src/ingest/fetch_census.py`) and the response shape recorded in GAZETTEER_SPEC.md. These points are unconfirmed:
+Downstream effect: the code reads `updated_relationship_to_head` first, and `tools/validate.py` and the test suite pass. The derived `townlands/*/records/census.json` files were not regenerated. When they are, expect the 1926 relationship, religion and marriage fields to fill in and the `years_married` and `children_*` values to thin out, so census link proposals may change. Review that diff before accepting it.
 
-1. The endpoint `https://c26-api.nationalarchives.ie/api/census/query_c26a/census-records.csv` and the parameters `county`, `ded__icontains`, `limit` and `offset`.
-2. A request past the end returns an empty body or a header-only CSV, not an error.
-3. The service accepts the tool's User-Agent. GRA sent a browser one. If requests are refused, run with `--user-agent`.
-4. Whether the response ends with a newline and uses CRLF or LF (the tool keeps whatever it receives).
-5. No API key is needed. If the live service asks for one, report it.
+Clogher: `data/census/1926_Clogher.csv` was not replaced. Of its 665 people, 146 have an `updated_relationship_to_head` equal to NAI's new value. The rest differ and are listed in the comparison report for Mike's review. Researcher-filled values are still not separated from source (DECISIONS.md, 2026-11-01).
 
-A failure on any of these stops the run safely with nothing changed.
+## Live service behaviour (confirmed 2026-11-10)
+
+The first run confirmed the endpoint, the `county`, `ded__icontains`, `limit` and `offset` parameters and the paging, that the tool's User-Agent is accepted, and that no API key is needed. Column names and order matched the previous files. If NAI changes its schema, the run stops with nothing changed.

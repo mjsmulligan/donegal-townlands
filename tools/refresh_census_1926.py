@@ -517,10 +517,10 @@ def render_report(results: list[Result], run_id: str, acquired: str, replaced: s
                  f"{r.changed_serialisation if ok else 'n/a'} | {r.unchanged if ok else 'n/a'} | {('yes' if r.byte_identical else 'no') if ok else 'n/a'} | "
                  f"{'passed' if ok else 'FAILED'} |")
     L += ["", "Rows are matched on `a_id`. The previous snapshots were written by GRA through pandas, which "
-          "used CRLF line endings, wrote the text `nan` for blanks and wrote whole numbers as floats "
-          "(`70.0`). NAI's own file has none of these. A difference that is only that is labelled "
-          "serialisation only and is not a correction by NAI. Hashes change on a first refresh regardless. "
-          "Substantive differences are the ones to review.", ""]
+          "wrote the text `nan` for blanks and wrote whole numbers as floats (`70.0`). NAI's own file has "
+          "neither. A difference that is only that is labelled serialisation only. Every other difference "
+          "is labelled substantive and is a difference between the two NAI releases, which are what to "
+          "review.", ""]
     for r in results:
         L += [f"## {r.dataset.ded_name}", ""]
         if r.status != "passed":
