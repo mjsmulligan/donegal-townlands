@@ -16,11 +16,8 @@ Source integrity (docs/DATA_ARCHITECTURE.md, "preserve the original unchanged"):
 
 What is replaced (Mike, 2026-11-10):
     data/source/census/<DED>_1926.csv     the manifest-covered original
-    data/census/<DED>_1926.csv            its byte-identical working copy, where one exists
+    data/census/<DED>_1926.csv            its byte-identical copy, where one exists
     data/source/manifest.csv              rows for the refreshed files only
-    data/census/1926_<DED>.csv            NEVER touched. It carries researcher-filled values
-                                          (Clogher). The comparison report shows how the new
-                                          NAI rows differ from it, for review only.
 
 Transaction: every DED is downloaded to a staging directory outside the repository and
 validated first. Nothing in the repository changes unless every DED passes. If any step
@@ -120,7 +117,6 @@ class Dataset:
     filename: str
     source_path: pathlib.Path
     mirrors: list = field(default_factory=list)
-    working_copy: pathlib.Path | None = None
 
 
 @dataclass
@@ -147,7 +143,6 @@ class Result:
     unchanged: int = 0
     deds_in_file: dict = field(default_factory=dict)
     changes: list = field(default_factory=list)
-    working_compare: dict | None = None
     error: str = ""
 
 
@@ -195,9 +190,6 @@ def discover_datasets(paths: Paths) -> list[Dataset]:
                     f"{mirror} exists but is not identical to {path}. It is not a plain copy, so it will not be "
                     "overwritten. Report this to Mike before refreshing.")
             ds.mirrors.append(mirror)
-        wc = paths.working_dir / f"{CENSUS_YEAR}_{name}.csv"
-        if wc.exists():
-            ds.working_copy = wc
         datasets.append(ds)
     if not datasets:
         raise RefreshError(f"No *_{CENSUS_YEAR}.csv files found in {paths.source_dir}")
@@ -446,10 +438,6 @@ def stage_all(datasets: list[Dataset], get, staging: pathlib.Path, *, delay: flo
             res.changed_serialisation = cmp["changed_serialisation"]
             res.changes = cmp["changes"]
             res.deds_in_file = facts["deds"]
-            if ds.working_copy is not None:
-                exact = lambda h, r, name=ds.ded_name.casefold(): r[h.index("ded")].casefold() == name  # noqa: E731
-                wc = compare(ds.working_copy.read_bytes(), dl.content, f"{ds.ded_name} (working copy)", exact)
-                res.working_compare = wc
             res.status = "passed"
         except (RefreshError, OSError) as exc:
             res.status = "failed"
@@ -539,21 +527,6 @@ def render_report(results: list[Result], run_id: str, acquired: str, replaced: s
             L.append("")
         else:
             L += ["No row differs from the previous snapshot.", ""]
-        wc = r.working_compare
-        if wc is not None:
-            L += [f"### New NAI rows against the working copy {r.dataset.working_copy.name}", "",
-                  "The working copy is never modified. It holds researcher-filled values, so differences are expected "
-                  "and are listed here for review only.", "",
-                  f"- Working copy records: {wc['old_count']}. NAI records for this DED: {wc['new_count']}.",
-                  f"- In NAI only: {wc['added']}. In the working copy only: {wc['removed']}. "
-                  f"Rows that differ: {wc['changed']} ({wc['changed_serialisation']} serialisation only). "
-                  f"Identical rows: {wc['unchanged']}.", ""]
-            if wc["field_counts"]:
-                L.append("Substantively differing fields (count of rows):")
-                L.append("")
-                for name, n in sorted(wc["field_counts"].items(), key=lambda kv: -kv[1]):
-                    L.append(f"- {name}: {n}")
-                L.append("")
     return "\n".join(L) + "\n"
 
 
@@ -561,8 +534,6 @@ def all_change_rows(results: list[Result]) -> list[list]:
     rows = []
     for r in results:
         rows += r.changes
-        if r.working_compare:
-            rows += r.working_compare["changes"]
     return rows
 
 

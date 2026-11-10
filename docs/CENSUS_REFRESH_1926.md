@@ -15,7 +15,6 @@ The CSV saved is what NAI supplied. No column is added, removed, renamed or reor
 | `data/source/census/<DED>_1926.csv` | Replaced. The manifest-covered original. One file per DED already held. |
 | `data/census/<DED>_1926.csv` | Replaced, where it exists and is byte-identical to the original (Donegal, Laghy, Tawnawully, Tullynaught). If it differs the run stops. |
 | `data/source/manifest.csv` | The rows for the refreshed files are updated in the same transaction (provenance, date, SHA-256). Other rows are untouched. |
-| `data/census/1926_<DED>.csv` | Never touched. `1926_Clogher.csv` holds about 500 researcher-filled relationship values. |
 | 1901 and 1911 files | Never touched. |
 | `townlands/`, `docs/`, `data/processed/` | Never touched. Derived census records are not regenerated (see below). |
 
@@ -53,7 +52,7 @@ Replacement keeps a backup of every file, verifies each SHA-256 and the source m
 Written to `data/source/census_refresh/<UTC stamp>/` (and to the workflow artifact):
 
 - `refresh_manifest.csv`: timestamp, endpoint, query, DED name and Logainm ID, county, census year, records, pages, SHA-256 of the download, previous and new hash, row counts, validation status.
-- `comparison_report.md`: per DED, previous and new counts, added, removed, changed and unchanged rows (matched on `a_id`). For Clogher it also compares the new NAI rows with the working copy `1926_Clogher.csv`, for review only.
+- `comparison_report.md`: per DED, previous and new counts, added, removed, changed and unchanged rows (matched on `a_id`).
 - `changes.csv`: every added, removed and changed value, each changed value labelled `serialisation` or `substantive`.
 
 The comparison reads both files and writes nothing to either.
@@ -74,7 +73,7 @@ Nearly every row differs, and almost none of that is formatting. The earlier fil
 
 Downstream effect: the code reads `updated_relationship_to_head` first, and `tools/validate.py` and the test suite pass. The derived `townlands/*/records/census.json` files were not regenerated. When they are, expect the 1926 relationship, religion and marriage fields to fill in and the `years_married` and `children_*` values to thin out, so census link proposals may change. Review that diff before accepting it.
 
-Clogher: `data/census/1926_Clogher.csv` was not replaced. Of its 665 people, 146 have an `updated_relationship_to_head` equal to NAI's new value. The rest differ and are listed in the comparison report for Mike's review. Researcher-filled values are still not separated from source (DECISIONS.md, 2026-11-01).
+Clogher: an older file, `data/census/1926_Clogher.csv`, was removed on 2026-11-10. It was thought to hold researcher-filled relationship values. Mike confirmed there were never any researcher annotations in it, so the difference from NAI's release was a misreading of NAI data, not project work. NAI's release in `data/source/census/Clogher_1926.csv` is the only 1926 Clogher source.
 
 ## Live service behaviour (confirmed 2026-11-10)
 

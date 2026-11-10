@@ -40,7 +40,6 @@ The central working specification is [`docs/DATA_ARCHITECTURE.md`](docs/DATA_ARC
 - Check `docs/repositories.md` in GRA for a source's licence before committing anything from it. Never commit Historic Graves data.
 - Do not treat any GRA person match as a confirmed Townlands identity.
 - Any code, data or design taken from GRA is copied or referenced explicitly, with provenance and licence checked. Any future interface between the two projects needs design discussion and Mike's approval.
-- The local copy `data/census/1926_Clogher.csv` is the verified source. GRA's `data/Clogher_1926.csv` lacks about 500 researcher-filled relationship values.
 
 ## Method
 
@@ -59,7 +58,7 @@ Publish only births and baptisms 100 or more years old, marriages 75 or more, de
 - `engine/walk.html`: page template (scenes, plates, HUD, drawer). Holds no townland content. Placeholders: `__TITLE__`, `__BRAND__`, `__DATA__`.
 - `townlands/<name>/`: `townland.json` (name, page title, storage key, census spellings), `content.json` (family stories, Griffith's rows, open questions, plate copy), `records/` (census.json, corrections.json, later events.csv), `media/` (web-sized images with captions), `STATUS.md`.
 - `data/census/`: source census CSVs for the Clogher DED.
-- `data/source/census/` holds the manifest-covered originals. `tools/refresh_census_1926.py` (and the manual workflow "Refresh 1926 census from NAI") refreshes the 1926 files from NAI, all or none, saved as supplied. See `docs/CENSUS_REFRESH_1926.md`.
+- `data/source/census/` holds the manifest-covered originals. `tools/refresh_census_1926.py` (and the manual workflow "Refresh 1926 census from NAI") refreshes the 1926 files from NAI, all or none, saved as supplied. There are no researcher annotations in the census files. See `docs/CENSUS_REFRESH_1926.md`.
 - `tools/extract_census.py <name>`, `tools/build.py <name>`, `tools/validate.py`.
 - `docs/<name>/index.html`: built output, served by GitHub Pages from /docs. Never edit by hand; run build.
 
