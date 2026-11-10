@@ -1,0 +1,101 @@
+name: Refresh 1926 census from NAI
+
+# Manual run only. Downloads the latest 1926 census CSV for every DED already held,
+# validates all of them, and only then replaces the source files and commits to a new
+# review branch (the same convention as the Logainm snapshot workflow). If any DED
+# fails, nothing in the repository changes and the job fails.
+#
+# The CSVs are saved exactly as NAI supplies them. Acquisition metadata goes in
+# data/source/manifest.csv and data/source/census_refresh/<run>/. See
+# docs/CENSUS_REFRESH_1926.md.
+#
+# No secret is needed: the NAI census endpoint is public. The LOGAINM_API_KEY is not used.
+# The 1901 and 1911 files and data/census/1926_<DED>.csv (researcher working copies)
+# are never touched, and a guard step fails the run if any of them would change.
+
+on:
+  workflow_dispatch:
+    inputs:
+      apply:
+        description: "Replace the files and commit a review branch. Untick for a dry run that only reports."
+        required: true
+        default: true
+        type: boolean
+
+# Least privilege: contents write is needed only to push the review branch.
+permissions:
+  contents: write
+
+concurrency:
+  group: census-1926-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      STAGING: ${{ runner.temp }}/census-refresh
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests
+
+      - name: Test the refresh tool
+        run: python -m unittest discover -s tools -p "test_refresh_census_1926.py"
+
+      - name: Refresh (dry run)
+        if: ${{ !inputs.apply }}
+        run: python tools/refresh_census_1926.py --all --staging "$STAGING"
+
+      - name: Refresh and replace
+        if: ${{ inputs.apply }}
+        run: python tools/refresh_census_1926.py --all --apply --staging "$STAGING"
+
+      - name: Keep the manifest and comparison report
+        if: always()
+        run: |
+          mkdir -p "$RUNNER_TEMP/census-report"
+          cp "$STAGING"/report/* "$RUNNER_TEMP/census-report/" 2>/dev/null || echo "No report was produced."
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: census-1926-refresh-report
+          path: ${{ runner.temp }}/census-report
+          if-no-files-found: ignore
+          retention-days: 30
+
+      - name: Guard that only the intended files changed
+        if: ${{ inputs.apply }}
+        shell: bash
+        run: |
+          changed="$(git status --porcelain --untracked-files=all | cut -c4-)"
+          echo "Changed paths:"; echo "$changed"
+          allowed='^(data/source/census/[^/]+_1926\.csv|data/census/[^/]+_1926\.csv|data/source/manifest\.csv|data/source/census_refresh/.+)$'
+          bad="$(echo "$changed" | grep -v -E "$allowed" || true)"
+          if [ -n "$bad" ]; then
+            echo "Unexpected changes, refusing to commit:"; echo "$bad"; exit 1
+          fi
+          # Run folders are named by timestamp and can contain 1901 or 1911 by chance, so skip them here.
+          if echo "$changed" | grep -v '^data/source/census_refresh/' | grep -E '(1901|1911)|data/census/1926_'; then
+            echo "A 1901, 1911 or working-copy file changed, refusing to commit."; exit 1
+          fi
+
+      - name: Validate the repository
+        if: ${{ inputs.apply }}
+        run: python tools/validate.py
+
+      - name: Commit to a review branch
+        if: ${{ inputs.apply }}
+        run: |
+          d="$(date -u +%Y%m%dT%H%M%SZ)"
+          git config user.name "github-actions"
+          git config user.email "actions@users.noreply.github.com"
+          git checkout -b "census-1926-refresh-$d"
+          git add data/source/census data/census data/source/manifest.csv data/source/census_refresh
+          git commit -m "Refresh 1926 census source files from NAI ($d)" \
+            -m "CSVs saved as supplied by NAI. See data/source/census_refresh for the manifest and comparison report. Derived census records were not regenerated."
+          git push origin "census-1926-refresh-$d"
