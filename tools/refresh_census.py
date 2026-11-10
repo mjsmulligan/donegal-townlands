@@ -234,6 +234,10 @@ def discover_datasets(paths: Paths, years: list[int] | tuple = (1926,)) -> list[
                 check_legacy_copy(legacy, path, ds.spec.locator)
                 ds.new_mirrors.append(mirror)
                 ds.retire.append(legacy)
+            else:
+                # No working copy at all (Clogher 1926 after its old file was removed): create
+                # one, so data/census always holds every year for every DED.
+                ds.new_mirrors.append(mirror)
             datasets.append(ds)
         if not found:
             raise RefreshError(f"No *_{year}.csv files found in {paths.source_dir}")

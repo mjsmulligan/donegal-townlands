@@ -272,6 +272,11 @@ def attach_ded(ded, files, places_all, index, review_old):
             continue
         by_spelling = {}
         for raw in read_csv(files[year]):
+            # NAI's search for a DED name is a substring match, so the Clogher files also hold
+            # the Magheraclogher DED. Those rows belong to another DED and are not attached here.
+            row_ded = (raw.get("ded") or "").strip()
+            if row_ded and row_ded.casefold() != ded.casefold():
+                continue
             by_spelling.setdefault(raw.get("townland", ""), []).append(raw)
 
         for spelling, raws in sorted(by_spelling.items()):

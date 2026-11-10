@@ -294,6 +294,15 @@ class RunTests(unittest.TestCase):
         self.assertEqual((ds["Alpha"].ded_id, ds["Alpha"].county), ("1001", "Donegal"))
         self.assertEqual(len(ds["Alpha"].mirrors), 1)
 
+    def test_a_missing_working_copy_is_created(self):
+        mirror = self.repo.paths.working_dir / "Alpha_1926.csv"
+        mirror.unlink()
+        ds = {d.ded_name: d for d in rc.discover_datasets(self.repo.paths)}
+        self.assertEqual(ds["Alpha"].mirrors, [])
+        self.assertEqual(ds["Alpha"].new_mirrors, [mirror])
+        self.assertEqual(self.go(new_server()), 0)
+        self.assertEqual(mirror.read_bytes(), (self.repo.paths.source_dir / "Alpha_1926.csv").read_bytes())
+
     def test_a_data_census_copy_that_is_not_a_plain_copy_stops_the_run(self):
         (self.repo.paths.working_dir / "Beta_1926.csv").write_bytes(make_csv("Beta", [10, 11, 12], surname="Hand"))
         with self.assertRaisesRegex(rc.RefreshError, "not identical"):
