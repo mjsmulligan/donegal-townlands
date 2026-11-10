@@ -34,8 +34,6 @@ jobs:
   refresh:
     runs-on: ubuntu-latest
     timeout-minutes: 30
-    env:
-      STAGING: ${{ runner.temp }}/census-refresh
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -48,17 +46,17 @@ jobs:
 
       - name: Refresh (dry run)
         if: ${{ !inputs.apply }}
-        run: python tools/refresh_census_1926.py --all --staging "$STAGING"
+        run: python tools/refresh_census_1926.py --all --staging "$RUNNER_TEMP/census-refresh"
 
       - name: Refresh and replace
         if: ${{ inputs.apply }}
-        run: python tools/refresh_census_1926.py --all --apply --staging "$STAGING"
+        run: python tools/refresh_census_1926.py --all --apply --staging "$RUNNER_TEMP/census-refresh"
 
       - name: Keep the manifest and comparison report
         if: always()
         run: |
           mkdir -p "$RUNNER_TEMP/census-report"
-          cp "$STAGING"/report/* "$RUNNER_TEMP/census-report/" 2>/dev/null || echo "No report was produced."
+          cp "$RUNNER_TEMP"/census-refresh/report/* "$RUNNER_TEMP/census-report/" 2>/dev/null || echo "No report was produced."
 
       - uses: actions/upload-artifact@v4
         if: always()
