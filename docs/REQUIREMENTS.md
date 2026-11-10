@@ -137,5 +137,5 @@ Every requirement has an acceptance test. A work package is finished when the te
 | Genealogy software in use | Needed for GED-04 and GED-05. |
 | Logainm API key | Needed for PLC-02. |
 | Logainm licence and coverage | Licence found: CC BY 4.0 (Government of Ireland), except Logainm's explanatory notes and collected citations. Attribution is required. Coverage of town parts, historical spellings and places such as Keadew Lower is unknown until fetched. |
-| Overlay format for researcher-filled values | Proposed: one CSV per source, keyed by the locator. Needs agreement. |
+| Overlay format for corrections and curated values (not 1926 relationships, which were never researcher-filled) | Proposed: one CSV per source, keyed by the locator. Needs agreement. |
 | Source folder layout | To be settled in work package 1. |

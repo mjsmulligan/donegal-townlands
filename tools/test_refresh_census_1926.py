@@ -87,9 +87,6 @@ class Repo:
             (self.paths.working_dir / f"{ded}_1926.csv").write_bytes(content)
         (self.paths.source_dir / "Alpha_1901.csv").write_bytes(b"census_year\r\n1901\r\n")
         (self.paths.source_dir / "Alpha_1911.csv").write_bytes(b"census_year\r\n1911\r\n")
-        # A researcher working copy that must never be touched.
-        self.working = make_csv("Alpha", [1, 2, 3, 4], surname="Edited")
-        (self.paths.working_dir / "1926_Alpha.csv").write_bytes(self.working)
         rows = [source_manifest.source_metadata(p) for p in sorted(self.paths.source_dir.glob("*.csv"))]
         with self.paths.manifest.open("w", encoding="utf-8", newline="") as s:
             w = csv.DictWriter(s, fieldnames=source_manifest.FIELDS)
@@ -296,10 +293,8 @@ class RunTests(unittest.TestCase):
         self.assertEqual(set(ds), {"Alpha", "Beta"})
         self.assertEqual((ds["Alpha"].ded_id, ds["Alpha"].county), ("1001", "Donegal"))
         self.assertEqual(len(ds["Alpha"].mirrors), 1)
-        self.assertEqual(ds["Alpha"].working_copy.name, "1926_Alpha.csv")
-        self.assertIsNone(ds["Beta"].working_copy)
 
-    def test_a_working_copy_that_is_not_a_plain_copy_stops_the_run(self):
+    def test_a_data_census_copy_that_is_not_a_plain_copy_stops_the_run(self):
         (self.repo.paths.working_dir / "Beta_1926.csv").write_bytes(make_csv("Beta", [10, 11, 12], surname="Hand"))
         with self.assertRaisesRegex(rc.RefreshError, "not identical"):
             rc.discover_datasets(self.repo.paths)
@@ -325,10 +320,8 @@ class RunTests(unittest.TestCase):
             self.assertEqual((self.repo.paths.working_dir / f"{ded}_1926.csv").read_bytes(), expected[ded])
         after = self.repo.snapshot()
         changed = {k for k in after if before.get(k) != after[k]}
-        untouched = {"data/source/census/Alpha_1901.csv", "data/source/census/Alpha_1911.csv",
-                     "data/census/1926_Alpha.csv"}
+        untouched = {"data/source/census/Alpha_1901.csv", "data/source/census/Alpha_1911.csv"}
         self.assertFalse(changed & untouched)
-        self.assertEqual(self.repo.working, (self.repo.paths.working_dir / "1926_Alpha.csv").read_bytes())
         self.assertTrue(self.repo.verify())
 
     def test_manifest_rows_and_outputs(self):
@@ -350,7 +343,7 @@ class RunTests(unittest.TestCase):
         self.assertNotEqual(m["Alpha"]["previous_sha256"], m["Alpha"]["new_sha256"])
         self.assertEqual(m["Beta"]["byte_identical_to_previous"], "yes")
         report = (out / "comparison_report.md").read_text(encoding="utf-8")
-        self.assertIn("working copy 1926_Alpha.csv", report)
+        self.assertNotIn("working copy", report)
         self.assertNotIn(chr(0x2014), report)
         self.assertTrue((out / "changes.csv").exists())
 

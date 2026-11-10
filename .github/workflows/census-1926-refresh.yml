@@ -10,8 +10,8 @@ name: Refresh 1926 census from NAI
 # docs/CENSUS_REFRESH_1926.md.
 #
 # No secret is needed: the NAI census endpoint is public. The LOGAINM_API_KEY is not used.
-# The 1901 and 1911 files and data/census/1926_<DED>.csv (researcher working copies)
-# are never touched, and a guard step fails the run if any of them would change.
+# The 1901 and 1911 files are never touched, and a guard step fails the run if any of
+# them would change.
 
 on:
   workflow_dispatch:
@@ -78,8 +78,8 @@ jobs:
             echo "Unexpected changes, refusing to commit:"; echo "$bad"; exit 1
           fi
           # Run folders are named by timestamp and can contain 1901 or 1911 by chance, so skip them here.
-          if echo "$changed" | grep -v '^data/source/census_refresh/' | grep -E '(1901|1911)|data/census/1926_'; then
-            echo "A 1901, 1911 or working-copy file changed, refusing to commit."; exit 1
+          if echo "$changed" | grep -v '^data/source/census_refresh/' | grep -E '(1901|1911)'; then
+            echo "A 1901 or 1911 file changed, refusing to commit."; exit 1
           fi
 
       - name: Validate the repository

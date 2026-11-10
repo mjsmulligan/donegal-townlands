@@ -9,8 +9,8 @@ Writes townlands/<name>/records/census.json."""
 import csv, json, sys, pathlib
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 D = str(ROOT / 'data' / 'census') + '/'
-# Source files are in data/census/. Note: the sister repo (irish-genealogy-research, data/Clogher_*.csv) holds an older
-# 1926 file that lacks about 500 researcher-filled relationship values, so these local copies are the verified source for now.
+# SUPERSEDED by tools/attach_census.py and kept for reference only. It reads data/census/1926_Clogher.csv, which was
+# removed on 2026-11-10 (NAI's current release in data/source/census/ is the authority), so it no longer runs for Clogher 1926.
 def L(f): return list(csv.DictReader(open(D + f, encoding='utf-8')))
 def num(v):
     try: return int(float(v))
