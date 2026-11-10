@@ -1,6 +1,6 @@
 # Census refresh from NAI (1901, 1911, 1926)
 
-Status: 1926 implemented, run live and merged 2026-11-10 (WP22). 1901 and 1911 built the same day, rehearsed offline, and awaiting a live dry run in GitHub Actions (the build environment cannot reach NAI).
+Status: 1926 run live 2026-11-10 (PR 55). 1901 and 1911 run live the same day (workflow run 42895407366, review branch `census-refresh-1901-1911-20261110T202812Z`, run record `data/source/census_refresh/20261110T202721Z/`).
 
 NAI publishes transcription corrections to its census data from time to time. `tools/refresh_census.py` replaces the preserved source files for the years chosen with the current NAI data, all DEDs and years chosen together or none.
 
@@ -52,7 +52,9 @@ Replacement keeps a backup of every file, verifies each SHA-256 and the source m
 
 NAI serves both years from `https://api-census.nationalarchives.ie/census/query/census-records.csv`, in one response with a `census_year` column. The tool downloads the response once per DED and splits it by `census_year`. The split only selects whole rows, each kept byte for byte (it is quote-aware, so a row with a line break inside a field stays whole). A row with any other `census_year` stops the run. The earlier files carried two GRA columns, `townland_clean` and `ded_clean`, that NAI does not supply. Under the as-supplied principle they are not recreated. `tools/census_links.py` and `tools/gedcom_census.py` fall back to the raw `townland` where `townland_clean` is absent, so townland names will be NAI's own spellings. As with Clogher 1926, the Clogher files hold the Clogher and Magheraclogher DEDs.
 
-Unverified until the first live dry run: that the 1901/1911 endpoint accepts the `county`, `ded__icontains`, `limit` and `offset` parameters as GRA's fetcher used them, and that its column names match the earlier files apart from the two GRA columns. If either is wrong the run stops with nothing changed.
+First live run (2026-11-10): the endpoint, parameters and column names behaved as assumed. Every DED returned exactly the records already held: 1901 and 1911 for Clogher, Donegal, Laghy, Tawnawully and Tullynaught, none added, none removed. Almost every difference is serialisation (`nan` for a blank, floats for whole numbers). The only substantive differences are about 10 values that GRA's files had as `nan` and NAI writes as the text `None` (language, education, occupation, deafdumb), all in Donegal 1901 and Tullynaught 1901. The two GRA columns are gone from the files, as expected.
+
+Working copies: `data/census/Clogher_1901.csv`, `Clogher_1911.csv` and `Clogher_1926.csv` are now plain copies of the source files, so the tool creates a working copy whenever one is missing. `tools/attach_census.py` ignores rows whose `ded` is not the file's DED, so the Magheraclogher rows in the Clogher files are not attached to Clogher townlands or listed for spelling review.
 
 ## Outputs
 
