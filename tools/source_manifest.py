@@ -8,6 +8,10 @@ Usage:
 The manifest identifies the exact local files held in data/source/census/. It
 never edits or copies source files. Creation is refused if a manifest already
 exists, so changed files cannot silently acquire new trusted checksums.
+
+Files refreshed directly from NAI by tools/refresh_census_1926.py have their rows
+updated by that tool as part of one all-or-nothing replacement. Their retrieval
+method begins "Direct download from the NAI".
 """
 from __future__ import annotations
 
@@ -27,6 +31,8 @@ FIRST_SEEN = "2026-07-10"
 GRA_REFERENCE_COMMIT = "1dab647"
 GRA_REPOSITORY = "https://github.com/mjsmulligan/irish-genealogy-research"
 GRA_DATA_PATH = "data/{filename}"
+ADOPTED_FROM_GRA = "Adopted from the Gra repository"
+DIRECT_FROM_NAI = "Direct download from the NAI"
 FIELDS = [
     "file", "source", "county", "census_year", "ded",
     "origin_repository", "origin_path", "repository_reference_commit",
@@ -155,10 +161,15 @@ def verify_manifest() -> int:
         for field in FIELDS:
             if not row.get(field, "").strip():
                 errors.append(f"Blank manifest field {field!r} for {name}")
-        if row.get("upstream_generation_commit") != "unknown":
-            errors.append(f"Upstream generation commit must remain 'unknown' unless evidenced: {name}")
-        if row.get("repository_reference_commit") != GRA_REFERENCE_COMMIT:
-            errors.append(f"Unexpected Grá repository reference commit: {name}")
+        # The two Grá provenance checks apply to files adopted from Grá. A file refreshed
+        # directly from NAI by tools/refresh_census_1926.py records its own provenance.
+        if row.get("retrieval_method", "").startswith(ADOPTED_FROM_GRA):
+            if row.get("upstream_generation_commit") != "unknown":
+                errors.append(f"Upstream generation commit must remain 'unknown' unless evidenced: {name}")
+            if row.get("repository_reference_commit") != GRA_REFERENCE_COMMIT:
+                errors.append(f"Unexpected Grá repository reference commit: {name}")
+        elif not row.get("retrieval_method", "").startswith(DIRECT_FROM_NAI):
+            errors.append(f"Unrecognised retrieval method for {name}")
     if errors:
         print("\n".join(errors), file=sys.stderr)
         return 1
