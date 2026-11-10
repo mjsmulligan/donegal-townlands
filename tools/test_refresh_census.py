@@ -1,4 +1,4 @@
-"""Tests for tools/refresh_census_1926.py.
+"""Tests for tools/refresh_census.py.
 
 Everything here is offline. A fake NAI server stands in for the live API, whose
 behaviour could not be verified from the build sandbox (its proxy blocks the NAI host).
@@ -17,7 +17,7 @@ from unittest import mock
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "tools"))
 
-import refresh_census_1926 as rc  # noqa: E402
+import refresh_census as rc  # noqa: E402
 import source_manifest  # noqa: E402
 
 HEADER = b"aform_name,county,townland,ded,first_name,surname,a_id\r\n"
@@ -251,7 +251,7 @@ class CompareTests(unittest.TestCase):
         c = rc.compare(old, new, "Alpha")
         self.assertEqual((c["added"], c["removed"], c["changed"], c["unchanged"]), (1, 1, 1, 2))
         self.assertEqual(c["field_counts"], {"surname": 1})
-        self.assertIn(["Alpha", "2", "changed", "surname", "Smith", "Fixed", "Ann", "Fixed", "Testland", "substantive"],
+        self.assertIn([1926, "Alpha", "2", "changed", "surname", "Smith", "Fixed", "Ann", "Fixed", "Testland", "substantive"],
                       c["changes"])
         self.assertEqual(c["changed_serialisation"], 0)
 
@@ -388,18 +388,195 @@ class RunTests(unittest.TestCase):
         self.assertEqual({c["ded__icontains"] for c in server.calls}, {"Beta"})
 
     def test_unknown_ded_id(self):
-        with self.assertRaisesRegex(rc.RefreshError, "no existing 1926 file"):
+        with self.assertRaisesRegex(rc.RefreshError, "no existing file for"):
             self.go(new_server(), apply=False, ded_ids=["999"])
+
+
+# ------------------------------------------------------------ 1901 and 1911
+
+H19 = b"id,census_year,county,surname,firstname,townland,ded\r\n"
+H19_OLD = b"id,census_year,county,surname,firstname,townland,ded,townland_clean,ded_clean\r\n"
+
+
+def row19(rid, year, ded, surname="Smith", townland="Testland"):
+    return f"{rid},{year},Donegal,{surname},Ann,{townland},{ded}\r\n".encode()
+
+
+def old19(rid, year, ded, surname="Smith"):
+    return f"{rid},{year},Donegal,{surname},Ann,Testland,{ded},testland,{ded.lower()}\r\n".encode()
+
+
+class Repo19(Repo):
+    """Adds GRA-style 1901 and 1911 files for Alpha, and Beta 1901 with only a legacy-named working copy."""
+
+    def __init__(self, tmp):
+        super().__init__(tmp)
+        src, work = self.paths.source_dir, self.paths.working_dir
+        a01 = H19_OLD + old19(1, 1901, "Alpha") + old19(2, 1901, "Alpha") + old19(3, 1901, "Alpha")
+        a11 = H19_OLD + old19(7, 1911, "Alpha") + old19(8, 1911, "Alpha")
+        b01 = H19_OLD + old19(20, 1901, "Beta") + old19(21, 1901, "Beta")
+        (src / "Alpha_1901.csv").write_bytes(a01)
+        (work / "Alpha_1901.csv").write_bytes(a01)
+        (src / "Alpha_1911.csv").write_bytes(a11)
+        (work / "Alpha_1911.csv").write_bytes(a11)
+        (src / "Beta_1901.csv").write_bytes(b01)
+        (work / "1901_Beta.csv").write_bytes(H19_OLD + old19(20, 1901, "Beta"))  # a derived subset
+        rows = [source_manifest.source_metadata(p) for p in sorted(src.glob("*.csv"))]
+        with self.paths.manifest.open("w", encoding="utf-8", newline="") as s:
+            w = csv.DictWriter(s, fieldnames=source_manifest.FIELDS)
+            w.writeheader()
+            w.writerows(rows)
+
+    def verify(self):
+        with mock.patch.object(source_manifest, "SOURCE_DIR", self.paths.source_dir), \
+                mock.patch.object(source_manifest, "MANIFEST", self.paths.manifest), \
+                mock.patch.object(source_manifest, "EXPECTED_FILES", 5), \
+                mock.patch.object(source_manifest, "ROOT", self.root):
+            return source_manifest.verify_manifest() == 0
+
+
+def server19(header=H19, **kw):
+    data = {
+        "Alpha": [row19(1, 1901, "Alpha"), row19(2, 1901, "Alpha", surname="Corrected"), row19(3, 1901, "Alpha"),
+                  row19(4, 1901, "Alpha"), row19(7, 1911, "Alpha"), row19(8, 1911, "Alpha"), row19(9, 1911, "Alpha")],
+        "Beta": [row19(20, 1901, "Beta"), row19(21, 1901, "Beta"), row19(30, 1911, "Beta")],
+    }
+    return FakeNAI(data, header=header, **kw)
+
+
+class SplitTests(unittest.TestCase):
+    def test_split_records_round_trips_and_honours_quoted_newlines(self):
+        body = H19 + b'1,1901,Donegal,"Sm\nith",Ann,T,Alpha\n2,1911,Donegal,Jones,Bo,T,Alpha\r\n3,1901,Donegal,X,Y,T,Alpha'
+        records = rc.split_records(body)
+        self.assertEqual(b"".join(records), body)
+        self.assertEqual(len(records), 4)
+
+    def test_select_year_copies_whole_rows_unchanged(self):
+        rows = [b'1,1901,Donegal,"Sm\nith",Ann,T,Alpha\n', b"2,1911,Donegal,Jones,Bo,T,Alpha\n",
+                b"3,1901,Donegal,X,Y,T,Alpha\n"]
+        header = b"id,census_year,county,surname,firstname,townland,ded\n"
+        dl = rc.Download(content=header + b"".join(rows), pages=1, page_rows=[3])
+        out = rc.select_year(dl, rc.SPECS[1901])
+        self.assertEqual(out.content, header + rows[0] + rows[2])
+        self.assertEqual(out.other_year_rows, 1)
+        self.assertEqual(rc.select_year(dl, rc.SPECS[1911]).content, header + rows[1])
+
+    def test_an_unexpected_census_year_is_refused(self):
+        dl = rc.Download(content=H19 + row19(1, 1921, "Alpha"), pages=1, page_rows=[1])
+        with self.assertRaisesRegex(rc.RefreshError, "Unexpected census_year"):
+            rc.select_year(dl, rc.SPECS[1901])
+
+    def test_page_count_must_match_the_response(self):
+        dl = rc.Download(content=H19 + row19(1, 1901, "Alpha"), pages=1, page_rows=[5])
+        with self.assertRaisesRegex(rc.RefreshError, "Pages reported"):
+            rc.select_year(dl, rc.SPECS[1901])
+
+
+class SchemaTests(unittest.TestCase):
+    def test_missing_gra_columns_alone_is_expected(self):
+        d = rc.schema_difference(H19_OLD.decode().strip().split(","), H19.decode().strip().split(","))
+        self.assertTrue(d["expected"])
+        self.assertEqual(d["removed"], ["townland_clean", "ded_clean"])
+
+    def test_any_other_difference_is_not(self):
+        old = H19_OLD.decode().strip().split(",")
+        self.assertFalse(rc.schema_difference(old, old + ["new_col"])["expected"])
+        self.assertFalse(rc.schema_difference(old, old[:3] + ["firstname", "surname"] + old[5:])["expected"])
+        self.assertFalse(rc.schema_difference(old, [c for c in old if c != "surname"])["expected"])
+
+
+class YearsRunTests(unittest.TestCase):
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.tmp.cleanup)
+        self.repo = Repo19(self.tmp.name + "/repo")
+        self.staging = pathlib.Path(self.tmp.name) / "staging"
+
+    def go(self, server, apply=True, years=(1901, 1911), **kw):
+        get = {rc.ENDPOINT_1901_1911: server.get}
+        return rc.run(self.repo.paths, get=get, years=years, ded_ids=kw.pop("ded_ids", None), apply=apply,
+                      staging=self.staging, delay=0, sleep=no_sleep, verify=kw.pop("verify", self.repo.verify),
+                      now=lambda: NOW, **kw)
+
+    def test_each_year_file_is_the_selected_rows_as_supplied(self):
+        server = server19()
+        self.assertEqual(self.go(server), 0)
+        src, work = self.repo.paths.source_dir, self.repo.paths.working_dir
+        self.assertEqual((src / "Alpha_1901.csv").read_bytes(),
+                         H19 + row19(1, 1901, "Alpha") + row19(2, 1901, "Alpha", surname="Corrected")
+                         + row19(3, 1901, "Alpha") + row19(4, 1901, "Alpha"))
+        self.assertEqual((src / "Alpha_1911.csv").read_bytes(),
+                         H19 + row19(7, 1911, "Alpha") + row19(8, 1911, "Alpha") + row19(9, 1911, "Alpha"))
+        self.assertEqual((work / "Alpha_1901.csv").read_bytes(), (src / "Alpha_1901.csv").read_bytes())
+        self.assertTrue(self.repo.verify())
+
+    def test_one_download_serves_both_years(self):
+        server = server19()
+        self.go(server, apply=False)
+        self.assertEqual([c["ded__icontains"] for c in server.calls].count("Alpha"), 2)  # one page, then the empty end page
+        self.assertEqual([c["ded__icontains"] for c in server.calls].count("Beta"), 2)
+
+    def test_legacy_named_working_copy_is_replaced_by_the_standard_name(self):
+        self.assertEqual(self.go(server19()), 0)
+        work = self.repo.paths.working_dir
+        self.assertFalse((work / "1901_Beta.csv").exists())
+        self.assertEqual((work / "Beta_1901.csv").read_bytes(), (self.repo.paths.source_dir / "Beta_1901.csv").read_bytes())
+
+    def test_a_legacy_copy_with_records_not_in_the_source_is_not_retired(self):
+        (self.repo.paths.working_dir / "1901_Beta.csv").write_bytes(H19_OLD + old19(99, 1901, "Beta"))
+        before = self.repo.snapshot()
+        with self.assertRaisesRegex(rc.RefreshError, "not in"):
+            self.go(server19())
+        self.assertEqual(self.repo.snapshot(), before)
+
+    def test_1926_files_are_not_touched_when_refreshing_1901_and_1911(self):
+        before = self.repo.snapshot()
+        self.go(server19())
+        after = self.repo.snapshot()
+        for name in before:
+            if name.endswith("_1926.csv"):
+                self.assertEqual(before[name], after[name])
+
+    def test_manifest_rows_say_how_the_file_was_made(self):
+        self.go(server19())
+        rows = {r["file"]: r for r in csv.DictReader(self.repo.paths.manifest.open(encoding="utf-8", newline=""))}
+        r = rows["Alpha_1901.csv"]
+        self.assertTrue(r["retrieval_method"].startswith("Direct download from the NAI"))
+        self.assertIn("1901", r["retrieval_method"])
+        self.assertIn("selected", r["origin_path"])
+        self.assertEqual(r["origin_repository"], rc.ENDPOINT_1901_1911)
+
+    def test_report_names_the_columns_nai_does_not_have(self):
+        self.go(server19())
+        report = next(self.repo.paths.refresh_dir.glob("*/comparison_report.md")).read_text(encoding="utf-8")
+        self.assertIn("townland_clean, ded_clean", report)
+        changes = next(self.repo.paths.refresh_dir.glob("*/changes.csv")).read_text(encoding="utf-8")
+        self.assertIn("census_year", changes.splitlines()[0])
+
+    def test_another_schema_change_blocks_unless_allowed(self):
+        server = server19(header=H19.replace(b"surname", b"lastname"))
+        before = self.repo.snapshot()
+        self.assertEqual(self.go(server), 1)
+        self.assertEqual(self.repo.snapshot(), before)
+
+    def test_a_failure_after_replacement_restores_the_retired_copy(self):
+        before = self.repo.snapshot()
+        self.assertEqual(self.go(server19(), verify=lambda: False), 1)
+        self.assertEqual(self.repo.snapshot(), before)
+
+    def test_a_year_with_no_rows_in_the_response_fails(self):
+        server = FakeNAI({"Alpha": [row19(1, 1901, "Alpha")], "Beta": [row19(20, 1901, "Beta")]}, header=H19)
+        self.assertEqual(self.go(server, apply=False), 1)
 
 
 class CliTests(unittest.TestCase):
     def test_apply_needs_all(self):
         with self.assertRaises(SystemExit):
-            rc.main(["--ded-id", "1001", "--apply"])
+            rc.main(["--year", "1926", "--ded-id", "1001", "--apply"])
 
     def test_needs_all_or_a_ded(self):
         with self.assertRaises(SystemExit):
-            rc.main([])
+            rc.main(["--year", "1926"])
 
 
 class ManifestVerificationTests(unittest.TestCase):

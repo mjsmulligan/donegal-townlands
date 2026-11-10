@@ -9,7 +9,7 @@ The manifest identifies the exact local files held in data/source/census/. It
 never edits or copies source files. Creation is refused if a manifest already
 exists, so changed files cannot silently acquire new trusted checksums.
 
-Files refreshed directly from NAI by tools/refresh_census_1926.py have their rows
+Files refreshed directly from NAI by tools/refresh_census.py have their rows
 updated by that tool as part of one all-or-nothing replacement. Their retrieval
 method begins "Direct download from the NAI".
 """
@@ -162,7 +162,7 @@ def verify_manifest() -> int:
             if not row.get(field, "").strip():
                 errors.append(f"Blank manifest field {field!r} for {name}")
         # The two Grá provenance checks apply to files adopted from Grá. A file refreshed
-        # directly from NAI by tools/refresh_census_1926.py records its own provenance.
+        # directly from NAI by tools/refresh_census.py records its own provenance.
         if row.get("retrieval_method", "").startswith(ADOPTED_FROM_GRA):
             if row.get("upstream_generation_commit") != "unknown":
                 errors.append(f"Upstream generation commit must remain 'unknown' unless evidenced: {name}")

@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Refresh the preserved 1926 census source files from the National Archives of Ireland (NAI).
+"""Refresh the preserved census source files (1901, 1911, 1926) from the National Archives of Ireland (NAI).
 
 Usage:
-    python tools/refresh_census_1926.py --all                 # stage, validate, report (nothing replaced)
-    python tools/refresh_census_1926.py --all --apply         # as above, then replace every file or none
-    python tools/refresh_census_1926.py --ded-id 1372439      # stage and report one DED (never replaces)
+    python tools/refresh_census.py --year 1926 --all             # stage, validate, report (nothing replaced)
+    python tools/refresh_census.py --year 1901 --year 1911 --all --apply   # as above, then replace every file or none
+    python tools/refresh_census.py --year 1926 --ded-id 1372439  # stage and report one DED (never replaces)
 
 Source integrity (docs/DATA_ARCHITECTURE.md, "preserve the original unchanged"):
     The CSV saved is the NAI response as supplied. No column is added, removed,
@@ -14,9 +14,14 @@ Source integrity (docs/DATA_ARCHITECTURE.md, "preserve the original unchanged"):
     are dropped, which is the one unavoidable step in joining pages. Acquisition
     metadata is kept in a separate manifest, never in the CSV.
 
+    1901 and 1911 come from one NAI endpoint that returns both years together, with a
+    census_year column. Each year's file is the rows of that year, each copied byte for
+    byte from the response (a selection of whole rows, nothing rewritten).
+
 What is replaced (Mike, 2026-11-10):
-    data/source/census/<DED>_1926.csv     the manifest-covered original
-    data/census/<DED>_1926.csv            its byte-identical copy, where one exists
+    data/source/census/<DED>_<year>.csv   the manifest-covered original
+    data/census/<DED>_<year>.csv          its byte-identical copy, where one exists
+    data/census/<year>_<DED>.csv          retired legacy copy (Clogher 1901 and 1911), replaced by the line above
     data/source/manifest.csv              rows for the refreshed files only
 
 Transaction: every DED is downloaded to a staging directory outside the repository and
@@ -26,10 +31,10 @@ of the replacement fails, every file is restored from backup.
 Reference: the pagination, retry and endpoint approach is adapted from GRA
 `src/ingest/fetch_census.py` (mjsmulligan/irish-genealogy-research, commit 1dab647;
 Mike is the copyright holder). Its database and place_authority code, its pandas
-re-serialisation and its census_year filtering were not carried over, because they
-would alter the file as supplied.
+re-serialisation, its *_clean columns and its census_year filtering by dataframe were
+not carried over, because they would alter the file as supplied.
 
-NAI 1926 Census data: CC BY 4.0. Attribution to the National Archives of Ireland is
+NAI census data: CC BY 4.0. Attribution to the National Archives of Ireland is
 required, and modifications must be identified when sharing.
 """
 from __future__ import annotations
@@ -52,8 +57,28 @@ from typing import Callable
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "tools"))
 
-ENDPOINT = "https://c26-api.nationalarchives.ie/api/census/query_c26a/census-records.csv"
-CENSUS_YEAR = 1926
+@dataclass(frozen=True)
+class YearSpec:
+    year: int
+    endpoint: str
+    locator: str                 # unique record column
+    years_in_response: tuple     # census_year values the endpoint returns (a split is needed if more than one)
+    first_name: str
+    label: str
+
+
+ENDPOINT_1926 = "https://c26-api.nationalarchives.ie/api/census/query_c26a/census-records.csv"
+ENDPOINT_1901_1911 = "https://api-census.nationalarchives.ie/census/query/census-records.csv"
+SPECS = {
+    1926: YearSpec(1926, ENDPOINT_1926, "a_id", (1926,), "first_name", "1926"),
+    1901: YearSpec(1901, ENDPOINT_1901_1911, "id", (1901, 1911), "firstname", "1901"),
+    1911: YearSpec(1911, ENDPOINT_1901_1911, "id", (1901, 1911), "firstname", "1911"),
+}
+ENDPOINT = ENDPOINT_1926  # kept for callers that predate the other years
+# Columns the GRA project added to the 1901 and 1911 files. NAI's files do not have them.
+# Their absence alone is expected and is not treated as a schema change. Any other
+# difference stops the run unless --allow-schema-change is given.
+GRA_ADDED_COLUMNS = ("townland_clean", "ded_clean")
 PAGE_SIZE = 1000
 MAX_PAGES = 200
 # The place register stores the county only as a Logainm ID. The project is Donegal
@@ -62,16 +87,16 @@ COUNTY_NAMES = {"100013": "Donegal"}
 RETRY_STATUSES = {429, 500, 502, 503, 504}
 USER_AGENT = "donegal-townlands-census-refresh (+https://github.com/mjsmulligan/donegal-townlands)"
 SHRINK_LIMIT = 0.9
-REQUIRED_COLUMNS = ("county", "ded", "a_id")
+REQUIRED_COLUMNS = ("county", "ded")
 
 MANIFEST_FIELDS = [
     "run_id", "acquired_utc", "source_endpoint", "query", "ded_name", "logainm_ded_id",
     "county", "census_year", "records_retrieved", "pages", "sha256_downloaded",
     "previous_sha256", "new_sha256", "byte_identical_to_previous", "rows_added",
     "rows_removed", "rows_changed", "rows_changed_serialisation_only", "rows_unchanged", "deds_in_file",
-    "validation_status", "replaced",
+    "columns_not_in_nai_file", "columns_only_in_nai_file", "validation_status", "replaced",
 ]
-CHANGE_FIELDS = ["ded", "a_id", "change", "field", "old_value", "new_value",
+CHANGE_FIELDS = ["census_year", "ded", "record_id", "change", "field", "old_value", "new_value",
                  "first_name", "surname", "townland", "kind"]
 
 
@@ -117,6 +142,13 @@ class Dataset:
     filename: str
     source_path: pathlib.Path
     mirrors: list = field(default_factory=list)
+    year: int = 1926
+    new_mirrors: list = field(default_factory=list)   # working copy to create (replaces a legacy-named one)
+    retire: list = field(default_factory=list)        # legacy-named working copies removed with the replacement
+
+    @property
+    def spec(self) -> "YearSpec":
+        return SPECS[self.year]
 
 
 @dataclass
@@ -124,6 +156,7 @@ class Download:
     content: bytes
     pages: int
     page_rows: list
+    other_year_rows: int = 0
 
 
 @dataclass
@@ -144,6 +177,9 @@ class Result:
     deds_in_file: dict = field(default_factory=dict)
     changes: list = field(default_factory=list)
     error: str = ""
+    removed_columns: list = field(default_factory=list)
+    added_columns: list = field(default_factory=list)
+    other_year_rows: int = 0
 
 
 def sha256_bytes(data: bytes) -> str:
@@ -165,40 +201,63 @@ def load_deds(places_csv: pathlib.Path) -> list[dict]:
         return [r for r in csv.DictReader(stream) if r.get("place_type") == "ded"]
 
 
-def discover_datasets(paths: Paths) -> list[Dataset]:
-    """Find every existing 1926 DED file and resolve its Logainm ID and county."""
+def discover_datasets(paths: Paths, years: list[int] | tuple = (1926,)) -> list[Dataset]:
+    """Find every existing DED file for the given years and resolve its Logainm ID and county."""
     if not paths.source_dir.is_dir():
         raise RefreshError(f"Source directory not found: {paths.source_dir}")
     deds = load_deds(paths.places)
     datasets = []
-    for path in sorted(paths.source_dir.glob(f"*_{CENSUS_YEAR}.csv")):
-        name = path.name[: -len(f"_{CENSUS_YEAR}.csv")]
-        matches = [d for d in deds if d["name_en"].casefold() == name.casefold()]
-        if len(matches) != 1:
-            raise RefreshError(
-                f"{path.name}: expected exactly one DED named {name!r} in the place register, found {len(matches)}")
-        ded = matches[0]
-        county = COUNTY_NAMES.get(ded["county_id"])
-        if not county:
-            raise RefreshError(f"{path.name}: county ID {ded['county_id']!r} is not known to this tool")
-        ds = Dataset(ded_name=ded["name_en"], ded_id=ded["logainm_id"], county=county,
-                     filename=path.name, source_path=path)
-        mirror = paths.working_dir / path.name
-        if mirror.exists():
-            if sha256_file(mirror) != sha256_file(path):
+    for year in years:
+        found = False
+        for path in sorted(paths.source_dir.glob(f"*_{year}.csv")):
+            found = True
+            name = path.name[: -len(f"_{year}.csv")]
+            matches = [d for d in deds if d["name_en"].casefold() == name.casefold()]
+            if len(matches) != 1:
                 raise RefreshError(
-                    f"{mirror} exists but is not identical to {path}. It is not a plain copy, so it will not be "
-                    "overwritten. Report this to Mike before refreshing.")
-            ds.mirrors.append(mirror)
-        datasets.append(ds)
-    if not datasets:
-        raise RefreshError(f"No *_{CENSUS_YEAR}.csv files found in {paths.source_dir}")
+                    f"{path.name}: expected exactly one DED named {name!r} in the place register, found {len(matches)}")
+            ded = matches[0]
+            county = COUNTY_NAMES.get(ded["county_id"])
+            if not county:
+                raise RefreshError(f"{path.name}: county ID {ded['county_id']!r} is not known to this tool")
+            ds = Dataset(ded_name=ded["name_en"], ded_id=ded["logainm_id"], county=county,
+                         filename=path.name, source_path=path, year=year)
+            mirror = paths.working_dir / path.name
+            legacy = paths.working_dir / f"{year}_{name}.csv"
+            if mirror.exists():
+                if sha256_file(mirror) != sha256_file(path):
+                    raise RefreshError(
+                        f"{mirror} exists but is not identical to {path}. It is not a plain copy, so it will not be "
+                        "overwritten. Report this to Mike before refreshing.")
+                ds.mirrors.append(mirror)
+            elif legacy.exists():
+                check_legacy_copy(legacy, path, ds.spec.locator)
+                ds.new_mirrors.append(mirror)
+                ds.retire.append(legacy)
+            datasets.append(ds)
+        if not found:
+            raise RefreshError(f"No *_{year}.csv files found in {paths.source_dir}")
     return datasets
+
+
+def check_legacy_copy(legacy: pathlib.Path, source: pathlib.Path, locator: str) -> None:
+    """A legacy-named working copy (for example data/census/1901_Clogher.csv) is retired
+    only if every record in it is also in the source file. It is a derived copy, not the
+    source, so nothing in it is lost."""
+    old = parse_csv(legacy.read_bytes())
+    new = parse_csv(source.read_bytes())
+    if locator not in old[0] or locator not in new[0]:
+        raise RefreshError(f"{legacy}: no {locator!r} column, so it cannot be checked against {source}")
+    missing = {r[old[0].index(locator)] for r in old[1:]} - {r[new[0].index(locator)] for r in new[1:]}
+    if missing:
+        raise RefreshError(
+            f"{legacy} holds {len(missing)} records that are not in {source} (first {sorted(missing)[:3]}). "
+            "It will not be retired. Report this to Mike before refreshing.")
 
 
 # ---------------------------------------------------------------------- download
 
-def make_http_get(url: str = ENDPOINT, user_agent: str = USER_AGENT, timeout: float = 60.0
+def make_http_get(url: str = ENDPOINT_1926, user_agent: str = USER_AGENT, timeout: float = 60.0
                   ) -> Callable[[dict], Response]:
     import requests  # imported here so tests and the other tools need no network library
 
@@ -241,6 +300,52 @@ def parse_csv(content: bytes) -> list[list[str]]:
     except csv.Error as exc:
         raise RefreshError(f"Response is not valid CSV: {exc}") from exc
     return [r for r in rows if r]
+
+
+def split_records(content: bytes) -> list[bytes]:
+    """Split CSV bytes into records, each with its own line ending, honouring quoted newlines.
+    Joining the records gives back exactly the input."""
+    records, start, in_quote = [], 0, False
+    for m in re.finditer(rb'"|\n', content):
+        if m.group() == b'"':
+            in_quote = not in_quote
+        elif not in_quote:
+            records.append(content[start: m.end()])
+            start = m.end()
+    if start < len(content):
+        records.append(content[start:])
+    return [r for r in records if r.strip()]
+
+
+def select_year(dl: "Download", spec: "YearSpec") -> "Download":
+    """For an endpoint that returns several census years together, keep the rows of one year.
+    Each kept row is the original bytes, so the file is a selection of whole rows."""
+    if len(spec.years_in_response) == 1:
+        return dl
+    records = split_records(dl.content)
+    if not records:
+        return Download(content=b"", pages=dl.pages, page_rows=[])
+    header_row = parse_csv(records[0])[0]
+    if "census_year" not in header_row:
+        raise RefreshError("The response has no census_year column, so the years cannot be separated")
+    col = header_row.index("census_year")
+    if sum(dl.page_rows) != len(records) - 1:
+        raise RefreshError(f"Pages reported {sum(dl.page_rows)} rows but the response holds {len(records) - 1}")
+    kept, others = [records[0]], 0
+    for rec in records[1:]:
+        row = parse_csv(rec)[0]
+        if len(row) <= col:
+            raise RefreshError(f"A row has too few fields to hold census_year: {rec[:80]!r}")
+        value = row[col].strip()
+        if value == str(spec.year):
+            kept.append(rec)
+        elif value in {str(y) for y in spec.years_in_response}:
+            others += 1
+        else:
+            raise RefreshError(f"Unexpected census_year value {value!r}; expected one of {spec.years_in_response}")
+    content = b"".join(kept)
+    return Download(content=content, pages=dl.pages, page_rows=[len(kept) - 1] if len(kept) > 1 else [],
+                    other_year_rows=others)
 
 
 def check_page(resp: Response) -> None:
@@ -298,19 +403,33 @@ def download_ded(ded_name: str, county: str, get: Callable[[dict], Response], *,
 
 # -------------------------------------------------------------------- validation
 
-def validate_download(dl: Download, ds: Dataset, previous: bytes, allow_shrink: bool = False) -> dict:
+def schema_difference(old: list[str], new: list[str]) -> dict:
+    """Describe how NAI's header differs from the preserved file's header."""
+    removed = [c for c in old if c not in new]
+    added = [c for c in new if c not in old]
+    kept_old = [c for c in old if c in new]
+    kept_new = [c for c in new if c in old]
+    return {"removed": removed, "added": added, "reordered": kept_old != kept_new,
+            "expected": (not added and not kept_old != kept_new and set(removed) <= set(GRA_ADDED_COLUMNS))}
+
+
+def validate_download(dl: Download, ds: Dataset, previous: bytes, allow_shrink: bool = False,
+                      allow_schema_change: bool = False) -> dict:
     """Return the parsed facts about a download, or raise RefreshError."""
     if not dl.content:
         raise RefreshError("NAI returned no records")
+    locator = ds.spec.locator
     rows = parse_csv(dl.content)
     header, data = rows[0], rows[1:]
     old_rows = parse_csv(previous)
-    if header != old_rows[0]:
+    diff = schema_difference(old_rows[0], header)
+    if header != old_rows[0] and not diff["expected"] and not allow_schema_change:
         raise RefreshError(
             "NAI column names or order differ from the preserved snapshot. This is a schema change that "
             "affects downstream code and must be reported to Mike before any file is replaced. "
-            f"Old: {old_rows[0]} New: {header}")
-    for column in REQUIRED_COLUMNS:
+            f"Columns only in the old file: {diff['removed']}. Columns only in NAI's file: {diff['added']}. "
+            f"Order changed: {diff['reordered']}. Re-run with --allow-schema-change once reported.")
+    for column in (*REQUIRED_COLUMNS, locator):
         if column not in header:
             raise RefreshError(f"Required column {column!r} is missing")
     bad = [i for i, r in enumerate(data, start=2) if len(r) != len(header)]
@@ -318,7 +437,7 @@ def validate_download(dl: Download, ds: Dataset, previous: bytes, allow_shrink: 
         raise RefreshError(f"{len(bad)} rows do not have {len(header)} fields (first at line {bad[0]})")
     if sum(dl.page_rows) != len(data):
         raise RefreshError(f"Pages reported {sum(dl.page_rows)} rows but the file holds {len(data)}")
-    idx = {name: header.index(name) for name in REQUIRED_COLUMNS}
+    idx = {name: header.index(name) for name in (*REQUIRED_COLUMNS, locator)}
     counties = {r[idx["county"]] for r in data}
     if {c.casefold() for c in counties} != {ds.county.casefold()}:
         raise RefreshError(f"Unexpected county values {sorted(counties)}; expected {ds.county!r}")
@@ -330,24 +449,24 @@ def validate_download(dl: Download, ds: Dataset, previous: bytes, allow_shrink: 
     stray = [d for d in deds if ds.ded_name.casefold() not in d.casefold()]
     if stray:
         raise RefreshError(f"DED values that do not match the query {ds.ded_name!r}: {stray}")
-    ids = [r[idx["a_id"]] for r in data]
+    ids = [r[idx[locator]] for r in data]
     if any(not i.strip() for i in ids):
-        raise RefreshError("Blank a_id values found")
+        raise RefreshError(f"Blank {locator} values found")
     if len(set(ids)) != len(ids):
-        raise RefreshError("Duplicate a_id values found, which suggests overlapping pages")
+        raise RefreshError(f"Duplicate {locator} values found, which suggests overlapping pages")
     old_count = len(old_rows) - 1
     if not allow_shrink and len(data) < SHRINK_LIMIT * old_count:
         raise RefreshError(
             f"{len(data)} records is more than 10% fewer than the previous {old_count}. "
             "Treated as an incomplete download. Re-run with --allow-shrink once checked.")
-    return {"header": header, "records": len(data), "deds": deds}
+    return {"header": header, "records": len(data), "deds": deds, "schema": diff}
 
 
 # ------------------------------------------------------------------- comparison
 
-def keyed(content: bytes) -> tuple[list[str], dict[str, list[str]]]:
+def keyed(content: bytes, locator: str) -> tuple[list[str], dict[str, list[str]]]:
     rows = parse_csv(content)
-    key = rows[0].index("a_id")
+    key = rows[0].index(locator)
     return rows[0], {r[key]: r for r in rows[1:]}
 
 
@@ -367,36 +486,42 @@ def serialisation_only(old: str, new: str) -> bool:
         return False
 
 
-def compare(old: bytes, new: bytes, ded_label: str, new_filter: Callable[[list, list], bool] | None = None) -> dict:
-    """Audit comparison by a_id. Reads both files, writes nothing."""
-    header, old_rows = keyed(old)
-    new_header, new_rows = keyed(new)
-    if new_filter:
-        new_rows = {k: r for k, r in new_rows.items() if new_filter(new_header, r)}
+def compare(old: bytes, new: bytes, ded_label: str, spec: YearSpec | None = None) -> dict:
+    """Audit comparison by record ID, over the columns both files have. Reads both files, writes nothing."""
+    spec = spec or SPECS[1926]
+    old_header, old_rows = keyed(old, spec.locator)
+    new_header, new_rows = keyed(new, spec.locator)
+    common = [c for c in old_header if c in new_header]
+    oi = {c: old_header.index(c) for c in common}
+    ni = {c: new_header.index(c) for c in common}
+    ctx_names = (spec.first_name, "surname", "townland")
+
+    def context(header, row):
+        return [row[header.index(c)] if c in header else "" for c in ctx_names]
+
     added = sorted(set(new_rows) - set(old_rows))
     removed = sorted(set(old_rows) - set(new_rows))
     changes, changed, unchanged, ser_rows = [], 0, 0, 0
     field_counts: dict[str, int] = {}
-    ctx = [header.index(c) for c in ("first_name", "surname", "townland")]
-    for a_id in sorted(set(old_rows) & set(new_rows)):
-        o, n = old_rows[a_id], new_rows[a_id]
-        if o == n:
+    for rid in sorted(set(old_rows) & set(new_rows)):
+        o, n = old_rows[rid], new_rows[rid]
+        diffs = [c for c in common if o[oi[c]] != n[ni[c]]]
+        if not diffs:
             unchanged += 1
             continue
         changed += 1
-        diffs = [i for i in range(len(header)) if o[i] != n[i]]
-        if all(serialisation_only(o[i], n[i]) for i in diffs):
+        if all(serialisation_only(o[oi[c]], n[ni[c]]) for c in diffs):
             ser_rows += 1
-        for i in diffs:
-            name = header[i]
-            kind = "serialisation" if serialisation_only(o[i], n[i]) else "substantive"
+        for c in diffs:
+            kind = "serialisation" if serialisation_only(o[oi[c]], n[ni[c]]) else "substantive"
             if kind == "substantive":
-                field_counts[name] = field_counts.get(name, 0) + 1
-            changes.append([ded_label, a_id, "changed", name, o[i], n[i], *(n[c] for c in ctx), kind])
-    for a_id in added:
-        changes.append([ded_label, a_id, "added", "", "", "", *(new_rows[a_id][c] for c in ctx), ""])
-    for a_id in removed:
-        changes.append([ded_label, a_id, "removed", "", "", "", *(old_rows[a_id][c] for c in ctx), ""])
+                field_counts[c] = field_counts.get(c, 0) + 1
+            changes.append([spec.year, ded_label, rid, "changed", c, o[oi[c]], n[ni[c]],
+                            *context(new_header, n), kind])
+    for rid in added:
+        changes.append([spec.year, ded_label, rid, "added", "", "", "", *context(new_header, new_rows[rid]), ""])
+    for rid in removed:
+        changes.append([spec.year, ded_label, rid, "removed", "", "", "", *context(old_header, old_rows[rid]), ""])
     return {"added": len(added), "removed": len(removed), "changed": changed, "unchanged": unchanged,
             "changed_serialisation": ser_rows, "old_count": len(old_rows), "new_count": len(new_rows),
             "field_counts": field_counts, "changes": changes}
@@ -404,30 +529,53 @@ def compare(old: bytes, new: bytes, ded_label: str, new_filter: Callable[[list, 
 
 # ------------------------------------------------------------- staging and runs
 
+def get_for(get, endpoint: str):
+    """`get` is one callable for every endpoint, or a dict of endpoint to callable."""
+    if isinstance(get, dict):
+        if endpoint not in get:
+            raise RefreshError(f"No HTTP client for {endpoint}")
+        return get[endpoint]
+    return get
+
+
 def stage_all(datasets: list[Dataset], get, staging: pathlib.Path, *, delay: float, retries: int,
               allow_shrink: bool, sleep: Callable[[float], None] = time.sleep,
-              page_size: int = PAGE_SIZE) -> list[Result]:
+              page_size: int = PAGE_SIZE, allow_schema_change: bool = False) -> list[Result]:
     """Download and validate every dataset. Failures are recorded, not raised, so the
-    report can show all of them, but any failure blocks replacement."""
+    report can show all of them, but any failure blocks replacement. A response shared by
+    two years (1901 and 1911) is downloaded once."""
     staging.mkdir(parents=True, exist_ok=True)
     results = []
-    for n, ds in enumerate(datasets):
+    cache: dict[tuple, Download | RefreshError] = {}
+    first = True
+    for ds in datasets:
         res = Result(dataset=ds)
         results.append(res)
-        if n:
-            sleep(delay)
         try:
-            print(f"Fetching {ds.ded_name} (Logainm {ds.ded_id}, {ds.county}) ...", flush=True)
+            spec = ds.spec
+            key = (spec.endpoint, ds.ded_name, ds.county)
+            print(f"Fetching {ds.ded_name} {ds.year} (Logainm {ds.ded_id}, {ds.county}) ...", flush=True)
             previous = ds.source_path.read_bytes()
             check_county_against_snapshot(ds, previous)
-            dl = download_ded(ds.ded_name, ds.county, get, page_size=page_size, delay=delay,
-                              retries=retries, sleep=sleep)
-            facts = validate_download(dl, ds, previous, allow_shrink)
+            if key not in cache:
+                if not first:
+                    sleep(delay)
+                first = False
+                try:
+                    cache[key] = download_ded(ds.ded_name, ds.county, get_for(get, spec.endpoint),
+                                              page_size=page_size, delay=delay, retries=retries, sleep=sleep)
+                except RefreshError as exc:
+                    cache[key] = exc
+            whole = cache[key]
+            if isinstance(whole, RefreshError):
+                raise whole
+            dl = select_year(whole, spec)
+            facts = validate_download(dl, ds, previous, allow_shrink, allow_schema_change)
             staged = staging / ds.filename
             staged.write_bytes(dl.content)
             if staged.read_bytes() != dl.content:
                 raise RefreshError("Staged file does not match the downloaded bytes")
-            cmp = compare(previous, dl.content, ds.ded_name)
+            cmp = compare(previous, dl.content, ds.ded_name, spec)
             res.staged = staged
             res.records, res.pages = facts["records"], dl.pages
             res.sha256 = sha256_bytes(dl.content)
@@ -438,6 +586,9 @@ def stage_all(datasets: list[Dataset], get, staging: pathlib.Path, *, delay: flo
             res.changed_serialisation = cmp["changed_serialisation"]
             res.changes = cmp["changes"]
             res.deds_in_file = facts["deds"]
+            res.removed_columns = facts["schema"]["removed"]
+            res.added_columns = facts["schema"]["added"]
+            res.other_year_rows = dl.other_year_rows
             res.status = "passed"
         except (RefreshError, OSError) as exc:
             res.status = "failed"
@@ -456,16 +607,23 @@ def check_county_against_snapshot(ds: Dataset, previous: bytes) -> None:
 
 # ----------------------------------------------------------------------- outputs
 
+def query_text(ds: Dataset) -> str:
+    text = f"county={ds.county}&ded__icontains={ds.ded_name}&limit={PAGE_SIZE} (all pages)"
+    if len(ds.spec.years_in_response) > 1:
+        text += f"; rows with census_year={ds.year} selected"
+    return text
+
+
 def manifest_rows(results: list[Result], run_id: str, acquired: str, replaced: str) -> list[dict]:
     rows = []
     for r in results:
         ds = r.dataset
         ok = r.status == "passed"
         rows.append({
-            "run_id": run_id, "acquired_utc": acquired, "source_endpoint": ENDPOINT,
-            "query": f"county={ds.county}&ded__icontains={ds.ded_name}&limit={PAGE_SIZE} (all pages)",
+            "run_id": run_id, "acquired_utc": acquired, "source_endpoint": ds.spec.endpoint,
+            "query": query_text(ds),
             "ded_name": ds.ded_name, "logainm_ded_id": ds.ded_id, "county": ds.county,
-            "census_year": CENSUS_YEAR, "records_retrieved": r.records if ok else "",
+            "census_year": ds.year, "records_retrieved": r.records if ok else "",
             "pages": r.pages if ok else "", "sha256_downloaded": r.sha256,
             "previous_sha256": r.previous_sha256,
             "new_sha256": r.sha256 if (ok and replaced == "yes") else "",
@@ -474,6 +632,7 @@ def manifest_rows(results: list[Result], run_id: str, acquired: str, replaced: s
             "rows_changed": r.changed if ok else "",
             "rows_changed_serialisation_only": r.changed_serialisation if ok else "", "rows_unchanged": r.unchanged if ok else "",
             "deds_in_file": "; ".join(f"{d}={n}" for d, n in sorted(r.deds_in_file.items())),
+            "columns_not_in_nai_file": "; ".join(r.removed_columns), "columns_only_in_nai_file": "; ".join(r.added_columns),
             "validation_status": "passed" if ok else f"failed: {r.error}", "replaced": replaced,
         })
     return rows
@@ -488,42 +647,50 @@ def render_csv(fields: list[str], rows: list[list]) -> str:
 
 
 def render_report(results: list[Result], run_id: str, acquired: str, replaced: str) -> str:
-    L = [f"# 1926 census refresh {run_id}", "",
+    years = sorted({r.dataset.year for r in results})
+    endpoints = sorted({r.dataset.spec.endpoint for r in results})
+    L = [f"# Census refresh {run_id} ({', '.join(str(y) for y in years)})", "",
          f"- Acquired (UTC): {acquired}",
-         f"- Source: {ENDPOINT}",
+         "- Source: " + "; ".join(endpoints),
          f"- Files replaced in the repository: {replaced}",
-         "- Source: National Archives of Ireland 1926 Census, CC BY 4.0. The CSVs are saved as supplied by NAI.",
+         "- Source: National Archives of Ireland census, CC BY 4.0. The CSVs are saved as supplied by NAI.",
          "- This report is an audit aid. It does not modify any data.", "",
          "## Summary", "",
-         "| DED | Logainm ID | Previous records | New records | Added | Removed | Changed | of which serialisation only | Unchanged | Bytes identical | Status |",
-         "|---|---|---|---|---|---|---|---|---|---|---|"]
+         "| Year | DED | Logainm ID | Previous records | New records | Added | Removed | Changed | of which serialisation only | Unchanged | Bytes identical | Status |",
+         "|---|---|---|---|---|---|---|---|---|---|---|---|"]
     for r in results:
         ok = r.status == "passed"
         prev = r.removed + r.changed + r.unchanged if ok else "n/a"
-        L.append(f"| {r.dataset.ded_name} | {r.dataset.ded_id} | {prev} | {r.records if ok else 'n/a'} | "
+        L.append(f"| {r.dataset.year} | {r.dataset.ded_name} | {r.dataset.ded_id} | {prev} | {r.records if ok else 'n/a'} | "
                  f"{r.added if ok else 'n/a'} | {r.removed if ok else 'n/a'} | {r.changed if ok else 'n/a'} | "
                  f"{r.changed_serialisation if ok else 'n/a'} | {r.unchanged if ok else 'n/a'} | {('yes' if r.byte_identical else 'no') if ok else 'n/a'} | "
                  f"{'passed' if ok else 'FAILED'} |")
-    L += ["", "Rows are matched on `a_id`. The previous snapshots were written by GRA through pandas, which "
-          "wrote the text `nan` for blanks and wrote whole numbers as floats (`70.0`). NAI's own file has "
-          "neither. A difference that is only that is labelled serialisation only. Every other difference "
-          "is labelled substantive and is a difference between the two NAI releases, which are what to "
-          "review.", ""]
+    L += ["", "Rows are matched on the record ID (`a_id` for 1926, `id` for 1901 and 1911) and compared on the columns "
+          "both files have. The previous snapshots were written through pandas, which wrote the text `nan` "
+          "for blanks and wrote whole numbers as floats (`70.0`). NAI's own file has neither. A difference that is "
+          "only that is labelled serialisation only. Every other difference is labelled substantive and is a "
+          "difference between the two NAI releases (or, for a column GRA changed, between GRA's version and "
+          "NAI's), which is what to review.", ""]
     for r in results:
-        L += [f"## {r.dataset.ded_name}", ""]
+        L += [f"## {r.dataset.ded_name} {r.dataset.year}", ""]
         if r.status != "passed":
             L += [f"Validation failed: {r.error}", ""]
             continue
         L.append("DEDs in the file: " + ", ".join(f"{d} ({n})" for d, n in sorted(r.deds_in_file.items())))
+        if len(r.dataset.spec.years_in_response) > 1:
+            L.append(f"NAI's response also held {r.other_year_rows} rows of the other census year, which are not in this file.")
+        if r.removed_columns or r.added_columns:
+            L.append(f"Columns in the previous file that NAI's file does not have: {', '.join(r.removed_columns) or 'none'}. "
+                     f"Columns in NAI's file that the previous file did not have: {', '.join(r.added_columns) or 'none'}.")
         L.append("")
         if r.added or r.removed or r.changed:
             L.append(f"Added {r.added}, removed {r.removed}, changed {r.changed} "
                      f"({r.changed_serialisation} serialisation only). First substantive changes "
                      "(full list in changes.csv, column kind):")
             L.append("")
-            shown = [c for c in r.changes if c[2] == "changed" and c[9] == "substantive"][:20]
+            shown = [c for c in r.changes if c[3] == "changed" and c[10] == "substantive"][:20]
             for c in shown:
-                L.append(f"- a_id {c[1]} {c[6]} {c[7]} ({c[8]}): {c[3]} was {c[4]!r}, now {c[5]!r}")
+                L.append(f"- id {c[2]} {c[7]} {c[8]} ({c[9]}): {c[4]} was {c[5]!r}, now {c[6]!r}")
             L.append("")
         else:
             L += ["No row differs from the previous snapshot.", ""]
@@ -571,13 +738,17 @@ def updated_source_manifest(paths: Paths, results: list[Result], acquired_date: 
         seen.add(row["file"])
         ds = res.dataset
         row.update({
-            "source": "National Archives of Ireland 1926 census data, downloaded directly from the NAI API",
-            "origin_repository": ENDPOINT,
-            "origin_path": f"county={ds.county}&ded__icontains={ds.ded_name} (all pages, limit {PAGE_SIZE})",
+            "source": f"National Archives of Ireland {ds.year} census data, downloaded directly from the NAI API",
+            "origin_repository": ds.spec.endpoint,
+            "origin_path": query_text(ds).replace(" (all pages)", f" (all pages, limit {PAGE_SIZE})", 1)
+            if len(ds.spec.years_in_response) == 1 else
+            f"county={ds.county}&ded__icontains={ds.ded_name} (all pages, limit {PAGE_SIZE}); rows with census_year={ds.year} selected",
             "repository_reference_commit": "not applicable (direct NAI download)",
             "upstream_generation_commit": "not applicable (direct NAI download)",
-            "retrieval_method": ("Direct download from the NAI 1926 census API by tools/refresh_census_1926.py. "
-                                 "Saved as supplied; pages joined with the repeated header lines dropped."),
+            "retrieval_method": (f"Direct download from the NAI {ds.year} census API by tools/refresh_census.py. "
+                                 "Saved as supplied; pages joined with the repeated header lines dropped."
+                                 + (f" The response holds 1901 and 1911 together; the rows of {ds.year} were selected "
+                                    "and each is copied byte for byte." if len(ds.spec.years_in_response) > 1 else "")),
             "date_acquired": acquired_date,
             "sha256": res.sha256,
         })
@@ -593,11 +764,13 @@ def updated_source_manifest(paths: Paths, results: list[Result], acquired_date: 
 
 def apply_replacement(replacements: list[tuple[pathlib.Path, pathlib.Path]],
                       outputs: list[tuple[pathlib.Path, pathlib.Path]],
-                      verify: Callable[[], bool] | None, backup_dir: pathlib.Path) -> None:
+                      verify: Callable[[], bool] | None, backup_dir: pathlib.Path,
+                      removals: list[pathlib.Path] | None = None) -> None:
     """Replace every target or none. replacements and outputs are (target, new_content_file).
     Outputs are new files in the refresh folder. Any failure restores every file."""
     backup_dir.mkdir(parents=True, exist_ok=True)
     done: list[tuple[pathlib.Path, pathlib.Path | None]] = []
+    removed: list[tuple[pathlib.Path, pathlib.Path]] = []
     created_dirs: list[pathlib.Path] = []
 
     def put(target: pathlib.Path, source: pathlib.Path, n: int) -> None:
@@ -625,7 +798,16 @@ def apply_replacement(replacements: list[tuple[pathlib.Path, pathlib.Path]],
         for target, source in outputs:
             put(target, source, n)
             n += 1
+        for target in removals or []:
+            if target.exists():
+                backup = backup_dir / f"{n}_{target.name}"
+                shutil.copy2(target, backup)
+                removed.append((target, backup))
+                n += 1
+                target.unlink()
     except Exception:
+        for target, backup in reversed(removed):
+            shutil.copyfile(backup, target)
         for target, backup in reversed(done):
             if backup is not None:
                 shutil.copyfile(backup, target)
@@ -646,19 +828,21 @@ def run(paths: Paths, *, get, ded_ids: list[str] | None, apply: bool, staging: p
         delay: float = 1.0, retries: int = 4, allow_shrink: bool = False,
         sleep: Callable[[float], None] = time.sleep, verify: Callable[[], bool] | None = None,
         now: Callable[[], dt.datetime] = lambda: dt.datetime.now(dt.timezone.utc),
-        page_size: int = PAGE_SIZE) -> int:
-    datasets = discover_datasets(paths)
+        page_size: int = PAGE_SIZE, years: list[int] | tuple = (1926,),
+        allow_schema_change: bool = False) -> int:
+    datasets = discover_datasets(paths, years)
     if ded_ids:
         unknown = set(ded_ids) - {d.ded_id for d in datasets}
         if unknown:
-            raise RefreshError(f"Logainm DED IDs with no existing 1926 file: {sorted(unknown)}")
+            raise RefreshError(f"Logainm DED IDs with no existing file for {list(years)}: {sorted(unknown)}")
         datasets = [d for d in datasets if d.ded_id in ded_ids]
-    print(f"DEDs: {', '.join(f'{d.ded_name} ({d.ded_id})' for d in datasets)}")
+    print(f"Years {list(years)}. DEDs: {', '.join(f'{d.ded_name} {d.year} ({d.ded_id})' for d in datasets)}")
     moment = now()
     run_id = moment.strftime("%Y%m%dT%H%M%SZ")
     acquired = moment.strftime("%Y-%m-%dT%H:%M:%SZ")
     results = stage_all(datasets, get, staging / "downloads", delay=delay, retries=retries,
-                        allow_shrink=allow_shrink, sleep=sleep, page_size=page_size)
+                        allow_shrink=allow_shrink, sleep=sleep, page_size=page_size,
+                        allow_schema_change=allow_schema_change)
     failed = [r for r in results if r.status != "passed"]
     report_dir = staging / "report"
     if failed or not apply:
@@ -674,14 +858,15 @@ def run(paths: Paths, *, get, ded_ids: list[str] | None, apply: bool, staging: p
         replacements = []
         for r in results:
             replacements.append((r.dataset.source_path, r.staged))
-            replacements += [(m, r.staged) for m in r.dataset.mirrors]
+            replacements += [(m, r.staged) for m in r.dataset.mirrors + r.dataset.new_mirrors]
         manifest_new = staging / "source_manifest.new.csv"
         manifest_new.write_bytes(updated_source_manifest(paths, results, moment.strftime("%Y-%m-%d")))
         replacements.append((paths.manifest, manifest_new))
         written = write_outputs(results, staging / "report", run_id, acquired, "yes")
         target_dir = paths.refresh_dir / run_id
         outputs = [(target_dir / p.name, p) for p in written]
-        apply_replacement(replacements, outputs, verify, staging / "backup")
+        removals = [path for r in results for path in r.dataset.retire]
+        apply_replacement(replacements, outputs, verify, staging / "backup", removals)
     except Exception as exc:
         write_outputs(results, report_dir, run_id, acquired, "no (rolled back)")
         print(f"ABORTED during replacement: {exc}. Every file was restored.", file=sys.stderr)
@@ -692,7 +877,12 @@ def run(paths: Paths, *, get, ded_ids: list[str] | None, apply: bool, staging: p
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--all", action="store_true", help="every existing 1926 DED file")
+    parser.add_argument("--year", type=int, action="append", choices=sorted(SPECS), required=True,
+                        help="census year to refresh (repeatable: --year 1901 --year 1911)")
+    parser.add_argument("--all", action="store_true", help="every existing DED file for the chosen years")
+    parser.add_argument("--allow-schema-change", action="store_true",
+                        help="accept NAI column names or order that differ from the preserved file (report to Mike first). "
+                             "The absence of GRA's townland_clean and ded_clean columns is expected and needs no flag.")
     parser.add_argument("--ded-id", action="append", metavar="LOGAINM_ID",
                         help="one DED by Logainm ID (repeatable). Stages and reports only.")
     parser.add_argument("--apply", action="store_true", help="replace the files after every DED passes (needs --all)")
@@ -717,7 +907,9 @@ def main(argv: list[str] | None = None) -> int:
     paths = default_paths()
     import source_manifest
     try:
-        return run(paths, get=make_http_get(ENDPOINT, args.user_agent, args.timeout),
+        years = sorted(set(args.year))
+        clients = {SPECS[y].endpoint: make_http_get(SPECS[y].endpoint, args.user_agent, args.timeout) for y in years}
+        return run(paths, get=clients, years=years, allow_schema_change=args.allow_schema_change,
                    ded_ids=args.ded_id, apply=args.apply, staging=staging, delay=args.delay,
                    retries=args.retries, allow_shrink=args.allow_shrink,
                    verify=lambda: source_manifest.verify_manifest() == 0)

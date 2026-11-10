@@ -1,8 +1,8 @@
-# 1926 census refresh from NAI
+# Census refresh from NAI (1901, 1911, 1926)
 
-Status: implemented and run live 2026-11-10 (WP22). The first refresh is merged.
+Status: 1926 implemented, run live and merged 2026-11-10 (WP22). 1901 and 1911 built the same day, rehearsed offline, and awaiting a live dry run in GitHub Actions (the build environment cannot reach NAI).
 
-NAI publishes transcription corrections to the 1926 census from time to time. `tools/refresh_census_1926.py` replaces the preserved 1926 source files with the current NAI data, all DEDs together or none.
+NAI publishes transcription corrections to its census data from time to time. `tools/refresh_census.py` replaces the preserved source files for the years chosen with the current NAI data, all DEDs and years chosen together or none.
 
 ## The rule
 
@@ -12,10 +12,11 @@ The CSV saved is what NAI supplied. No column is added, removed, renamed or reor
 
 | Path | Treatment |
 |---|---|
-| `data/source/census/<DED>_1926.csv` | Replaced. The manifest-covered original. One file per DED already held. |
-| `data/census/<DED>_1926.csv` | Replaced, where it exists and is byte-identical to the original (Donegal, Laghy, Tawnawully, Tullynaught). If it differs the run stops. |
+| `data/source/census/<DED>_<year>.csv` | Replaced. The manifest-covered original. One file per DED already held. |
+| `data/census/<DED>_<year>.csv` | Replaced, where it exists and is byte-identical to the original. If it differs the run stops. |
+| `data/census/<year>_<DED>.csv` (Clogher 1901 and 1911 only) | Retired and replaced by `data/census/Clogher_<year>.csv`, a copy of the source file. These legacy files held only the Clogher DED rows in GRA's column order. They are retired only if every id in them is in the original. |
 | `data/source/manifest.csv` | The rows for the refreshed files are updated in the same transaction (provenance, date, SHA-256). Other rows are untouched. |
-| 1901 and 1911 files | Never touched. |
+| Years not chosen | Never touched. The workflow guard fails the run if another year's file would change. |
 | `townlands/`, `docs/`, `data/processed/` | Never touched. Derived census records are not regenerated (see below). |
 
 DEDs are discovered from the existing `*_1926.csv` files and their Logainm IDs are resolved from `data/processed/places/places.csv`. The place register holds the county only as an ID, so the tool maps 100013 to Donegal and checks that name against each existing file.
@@ -26,11 +27,11 @@ The Clogher request returns both the Clogher and Magheraclogher DEDs (the search
 
 Local (needs `pip install requests`):
 
-    python tools/refresh_census_1926.py --all            # dry run: stage, validate, report
-    python tools/refresh_census_1926.py --all --apply    # replace everything, or nothing
-    python tools/refresh_census_1926.py --ded-id 1372439 # stage and report one DED (never replaces)
+    python tools/refresh_census.py --year 1901 --year 1911 --all           # dry run: stage, validate, report
+    python tools/refresh_census.py --year 1901 --year 1911 --all --apply   # replace everything, or nothing
+    python tools/refresh_census.py --year 1926 --ded-id 1372439            # stage and report one DED (never replaces)
 
-GitHub: Actions, "Refresh 1926 census from NAI", Run workflow. Leave "apply" ticked to replace and commit, or untick it for a dry run. On success the workflow pushes a branch named `census-1926-refresh-<UTC stamp>` for review (the Logainm snapshot convention). It fails with nothing changed if any DED fails. The manifest and comparison report are attached to the run as an artifact. No secret is needed.
+GitHub: Actions, "Refresh census from NAI", Run workflow. Choose the years, and leave "apply" ticked to replace and commit, or untick it for a dry run. "allow_schema_change" stays unticked unless Mike has seen a dry run that reports a column difference. On success the workflow pushes a branch named `census-refresh-<years>-<UTC stamp>` for review (the Logainm snapshot convention). It fails with nothing changed if any DED fails. The manifest and comparison report are attached to the run as an artifact. No secret is needed.
 
 Both paths run `python tools/validate.py` after replacing. The workflow also fails if any file outside the list above would change.
 
@@ -40,12 +41,18 @@ Every DED is staged outside the repository and checked before anything is replac
 
 - Complete: an empty page ends the data, and the pages must add up to the rows in the file. A short page does not end it, so a server that caps the page size is still read in full. A page that repeats the previous one stops the run.
 - Valid CSV: UTF-8, every row has the header's field count.
-- Same schema: column names and order equal the existing file. Any change stops the run and must be reported to Mike.
-- Expected DED and county are present. Any other DED value must contain the query name (as Magheraclogher does for Clogher). `a_id` is present and unique.
+- Same schema: column names and order equal the existing file. Any change stops the run and must be reported to Mike, who can then allow it with `--allow-schema-change`. The one exception: for 1901 and 1911 the absence of `townland_clean` and `ded_clean` (columns GRA added, not NAI's) is expected and is only reported.
+- Expected DED and county are present. Any other DED value must contain the query name (as Magheraclogher does for Clogher). The record id (`a_id` for 1926, `id` for 1901 and 1911) is present and unique.
 - Not suspiciously small: more than 10% fewer records than before is treated as incomplete. Use `--allow-shrink` once checked.
 - Retries with backoff on network errors, 429 and 5xx. 60 second timeout. One second between requests.
 
 Replacement keeps a backup of every file, verifies each SHA-256 and the source manifest afterwards, and restores everything if any step fails.
+
+## 1901 and 1911
+
+NAI serves both years from `https://api-census.nationalarchives.ie/census/query/census-records.csv`, in one response with a `census_year` column. The tool downloads the response once per DED and splits it by `census_year`. The split only selects whole rows, each kept byte for byte (it is quote-aware, so a row with a line break inside a field stays whole). A row with any other `census_year` stops the run. The earlier files carried two GRA columns, `townland_clean` and `ded_clean`, that NAI does not supply. Under the as-supplied principle they are not recreated. `tools/census_links.py` and `tools/gedcom_census.py` fall back to the raw `townland` where `townland_clean` is absent, so townland names will be NAI's own spellings. As with Clogher 1926, the Clogher files hold the Clogher and Magheraclogher DEDs.
+
+Unverified until the first live dry run: that the 1901/1911 endpoint accepts the `county`, `ded__icontains`, `limit` and `offset` parameters as GRA's fetcher used them, and that its column names match the earlier files apart from the two GRA columns. If either is wrong the run stops with nothing changed.
 
 ## Outputs
 
