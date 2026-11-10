@@ -29,6 +29,13 @@ Family stories are written in a plain, lay person's tone, as one account that dr
 - Donegal only. Place model: townland, civil parish, barony, DED, county.
 - Study order: Cullionboy (first), Clogher next, then townlands in Drumholm and neighbouring Drumhome.
 
+## Source data principles
+
+Decided by Mike, 2026-11-10 (DECISIONS.md). They apply to every source, 1926 included.
+
+1. Source data is ingested as supplied. It is not changed or annotated: no values edited, no columns added, removed, renamed or reordered, no metadata altered. Acquisition facts go in a separate manifest. Corrections, interpretations and researcher-filled values live in separate downstream files, never in the source file.
+2. The custodian is the authority. For census data the National Archives of Ireland (NAI) is the source, so its latest published files are correct, and the project adjusts to them. When a refresh changes a value, a field or a column's content, derived data and code are updated to follow it. The source is not bent to fit the project, and an older local copy does not outrank the custodian's current release.
+
 ## Data architecture
 
 The central working specification is [`docs/DATA_ARCHITECTURE.md`](docs/DATA_ARCHITECTURE.md). The place authority is specified in [`docs/GAZETTEER_SPEC.md`](docs/GAZETTEER_SPEC.md). Read both before data design, ETL, identifier or GEDCOM work. In short: original sources are preserved unchanged; each source gets its own ETL and import specification; source observations, place associations, established research entities and assertions are kept distinct; one master GEDCOM serves the whole project; identity and association decisions are made by human review. Both documents are drafts and record their open decisions explicitly.
@@ -44,7 +51,7 @@ The central working specification is [`docs/DATA_ARCHITECTURE.md`](docs/DATA_ARC
 - Check `docs/repositories.md` in GRA for a source's licence before committing anything from it. Never commit Historic Graves data.
 - Do not treat any GRA person match as a confirmed Townlands identity.
 - Any code, data or design taken from GRA is copied or referenced explicitly, with provenance and licence checked. Any future interface between the two projects needs design discussion and Mike's approval.
-- The local copy `data/census/1926_Clogher.csv` is the verified source. GRA's `data/Clogher_1926.csv` lacks about 500 researcher-filled relationship values.
+- `data/census/1926_Clogher.csv` is an older local copy with about 500 researcher-filled relationship values added to the NAI columns. Under the source data principles it is not the authority: NAI's current release in `data/source/census/Clogher_1926.csv` is. The copy is kept, not deleted, until Mike decides what to do with those values. Do not use it as a source.
 
 ## Method
 

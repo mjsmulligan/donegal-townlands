@@ -40,7 +40,7 @@ The central working specification is [`docs/DATA_ARCHITECTURE.md`](docs/DATA_ARC
 - Check `docs/repositories.md` in GRA for a source's licence before committing anything from it. Never commit Historic Graves data.
 - Do not treat any GRA person match as a confirmed Townlands identity.
 - Any code, data or design taken from GRA is copied or referenced explicitly, with provenance and licence checked. Any future interface between the two projects needs design discussion and Mike's approval.
-- The local copy `data/census/1926_Clogher.csv` is the verified source. GRA's `data/Clogher_1926.csv` lacks about 500 researcher-filled relationship values.
+- `data/census/1926_Clogher.csv` is an older local copy with about 500 researcher-filled relationship values added to the NAI columns. Under the source data principles it is not the authority: NAI's current release in `data/source/census/Clogher_1926.csv` is. The copy is kept, not deleted, until Mike decides what to do with those values. Do not use it as a source. See the Source data principles in CLAUDE.md.
 
 ## Method
 

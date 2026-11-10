@@ -74,7 +74,7 @@ Nearly every row differs, and almost none of that is formatting. The earlier fil
 
 Downstream effect: the code reads `updated_relationship_to_head` first, and `tools/validate.py` and the test suite pass. The derived `townlands/*/records/census.json` files were not regenerated. When they are, expect the 1926 relationship, religion and marriage fields to fill in and the `years_married` and `children_*` values to thin out, so census link proposals may change. Review that diff before accepting it.
 
-Clogher: `data/census/1926_Clogher.csv` was not replaced. Of its 665 people, 146 have an `updated_relationship_to_head` equal to NAI's new value. The rest differ and are listed in the comparison report for Mike's review. Researcher-filled values are still not separated from source (DECISIONS.md, 2026-11-01).
+Clogher: `data/census/1926_Clogher.csv` was not replaced. Of its 665 people, 146 have an `updated_relationship_to_head` equal to NAI's new value. The rest differ and are listed in the comparison report for Mike's review. Under the source data principles (DECISIONS.md, 2026-11-10) NAI's release is the authority and this copy is not a source. What to do with its researcher-filled values is for Mike to decide.
 
 ## Live service behaviour (confirmed 2026-11-10)
 

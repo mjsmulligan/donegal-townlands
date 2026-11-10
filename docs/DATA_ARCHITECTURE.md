@@ -68,6 +68,7 @@ Every piece of data belongs to exactly one of these. They are stored and identif
 
 ## 4. Source acquisition and processing
 
+0. Principles (decided 2026-11-10): the source is ingested as supplied, never changed or annotated, with its columns and metadata left as they are. The custodian is the authority, so a newer custodian release replaces an older one and the project adjusts.
 1. Download the original dataset into the project data area.
 2. Preserve it unchanged, with a checksum and acquisition record (date, URL or repository, version).
 3. Apply source-specific ETL to produce a research-ready form.
@@ -367,7 +368,7 @@ The requirements are in `docs/REQUIREMENTS.md` and the work packages in `docs/WO
 - Accept and reject decisions are made in a review CSV and applied by script.
 - Code from GRA is copied and adapted, with a provenance header, not imported. Person-linking pipelines are not reused.
 - Logainm is the place authority and its ID is the place key. The project builds no full gazetteer, only name variants, manual places and associations. The project dictionary is a cross-check.
-- Researcher-filled values are kept in overlay files so source files stay unchanged (proposed).
+- Researcher-filled values are kept in overlay files so source files stay unchanged (proposed). Source files are never annotated, and the custodian's latest release is the authority (CLAUDE.md, Source data principles, decided 2026-11-10).
 - Open: whether the public repository may hold processed research layers and the GEDCOM, whether the GEDCOM is ever edited in genealogy software, which genealogy software is used, and a Logainm API key.
 - Townland cases are generated from the Logainm place register, independently
   of historical source availability. Case generation is repeatable and
