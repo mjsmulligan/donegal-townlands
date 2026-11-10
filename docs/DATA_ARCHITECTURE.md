@@ -78,7 +78,7 @@ Every piece of data belongs to exactly one of these. They are stored and identif
 Consequences:
 
 - Acquisition is not limited to townlands under investigation. Original datasets stay complete. A query can return more than was intended: the NAI search for the Clogher DED also returned the Magheraclogher DED. The source file keeps the complete response and selection happens in processing.
-- A source can be refreshed when its custodian publishes corrections. The 1926 census refresh (docs/CENSUS_REFRESH_1926.md) saves NAI's response as supplied and records the acquisition in a separate manifest. Files adopted from GRA were written through pandas (`nan` for blanks, floats for whole numbers, CRLF) and so were not exactly as supplied. Any comparison between snapshots labels that kind of difference as serialisation, apart from substantive changes.
+- A source can be refreshed when its custodian publishes corrections. The census refresh for 1901, 1911 and 1926 (docs/CENSUS_REFRESH.md) saves NAI's response as supplied and records the acquisition in a separate manifest. Files adopted from GRA were written through pandas (`nan` for blanks, floats for whole numbers, CRLF) and so were not exactly as supplied. Any comparison between snapshots labels that kind of difference as serialisation, apart from substantive changes.
 - ETL is as simple as possible and specific to the source. A census CSV, a parish register image, a valuation book and a Duchas entry are not forced through one universal importer.
 - A shared framework sets common principles. Each source type has its own import specification (section 12).
 

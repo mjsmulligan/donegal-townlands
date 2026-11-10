@@ -1,0 +1,131 @@
+name: Refresh census from NAI
+
+# Manual run only. Downloads the latest NAI census CSV (1901, 1911 and/or 1926) for every
+# DED already held, validates all of them, and only then replaces the source files and
+# commits to a new review branch (the same convention as the Logainm snapshot workflow).
+# If any DED fails, nothing in the repository changes and the job fails.
+#
+# The CSVs are saved exactly as NAI supplies them. Acquisition metadata goes in
+# data/source/manifest.csv and data/source/census_refresh/<run>/. See
+# docs/CENSUS_REFRESH.md.
+#
+# No secret is needed: the NAI census endpoints are public. The LOGAINM_API_KEY is not used.
+# Only the years chosen are touched, and a guard step fails the run if any other year's
+# file would change.
+
+on:
+  workflow_dispatch:
+    inputs:
+      years:
+        description: "Which census years to refresh"
+        required: true
+        default: "1901 and 1911"
+        type: choice
+        options:
+          - "1901 and 1911"
+          - "1926"
+          - "1901, 1911 and 1926"
+      apply:
+        description: "Replace the files and commit a review branch. Untick for a dry run that only reports."
+        required: true
+        default: true
+        type: boolean
+      allow_schema_change:
+        description: "Accept NAI column changes beyond the absent townland_clean and ded_clean. Only after Mike has seen the dry run."
+        required: true
+        default: false
+        type: boolean
+
+# Least privilege: contents write is needed only to push the review branch.
+permissions:
+  contents: write
+
+concurrency:
+  group: census-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      YEARS_INPUT: ${{ inputs.years }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests
+
+      - name: Test the refresh tool
+        run: python -m unittest discover -s tools -p "test_refresh_census.py"
+
+      - name: Work out the years
+        id: years
+        shell: bash
+        run: |
+          case "$YEARS_INPUT" in
+            "1901 and 1911") args="--year 1901 --year 1911"; tag="1901-1911" ;;
+            "1926") args="--year 1926"; tag="1926" ;;
+            "1901, 1911 and 1926") args="--year 1901 --year 1911 --year 1926"; tag="all" ;;
+            *) echo "Unknown years: $YEARS_INPUT"; exit 1 ;;
+          esac
+          if [ "${{ inputs.allow_schema_change }}" = "true" ]; then args="$args --allow-schema-change"; fi
+          echo "args=$args" >> "$GITHUB_OUTPUT"
+          echo "tag=$tag" >> "$GITHUB_OUTPUT"
+
+      - name: Refresh (dry run)
+        if: ${{ !inputs.apply }}
+        run: python tools/refresh_census.py ${{ steps.years.outputs.args }} --all --staging "$RUNNER_TEMP/census-refresh"
+
+      - name: Refresh and replace
+        if: ${{ inputs.apply }}
+        run: python tools/refresh_census.py ${{ steps.years.outputs.args }} --all --apply --staging "$RUNNER_TEMP/census-refresh"
+
+      - name: Keep the manifest and comparison report
+        if: always()
+        run: |
+          mkdir -p "$RUNNER_TEMP/census-report"
+          cp "$RUNNER_TEMP"/census-refresh/report/* "$RUNNER_TEMP/census-report/" 2>/dev/null || echo "No report was produced."
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: census-refresh-report
+          path: ${{ runner.temp }}/census-report
+          if-no-files-found: ignore
+          retention-days: 30
+
+      - name: Guard that only the intended files changed
+        if: ${{ inputs.apply }}
+        shell: bash
+        run: |
+          changed="$(git status --porcelain --untracked-files=all | cut -c4-)"
+          echo "Changed paths:"; echo "$changed"
+          case "$YEARS_INPUT" in
+            "1901 and 1911") yrs='1901|1911' ;;
+            "1926") yrs='1926' ;;
+            *) yrs='1901|1911|1926' ;;
+          esac
+          allowed="^(data/source/census/[^/]+_(${yrs})\.csv|data/census/[^/]+_(${yrs})\.csv|data/census/(${yrs})_[^/]+\.csv|data/source/manifest\.csv|data/source/census_refresh/.+)\$"
+          bad="$(echo "$changed" | grep -v -E "$allowed" || true)"
+          if [ -n "$bad" ]; then
+            echo "Unexpected changes, refusing to commit:"; echo "$bad"; exit 1
+          fi
+
+      - name: Validate the repository
+        if: ${{ inputs.apply }}
+        run: python tools/validate.py
+
+      - name: Commit to a review branch
+        if: ${{ inputs.apply }}
+        run: |
+          d="$(date -u +%Y%m%dT%H%M%SZ)"
+          b="census-refresh-${{ steps.years.outputs.tag }}-$d"
+          git config user.name "github-actions"
+          git config user.email "actions@users.noreply.github.com"
+          git checkout -b "$b"
+          git add -A data/source/census data/census data/source/manifest.csv data/source/census_refresh
+          git commit -m "Refresh census source files from NAI: $YEARS_INPUT ($d)" \
+            -m "CSVs saved as supplied by NAI. See data/source/census_refresh for the manifest and comparison report. Derived census records were not regenerated."
+          git push origin "$b"
