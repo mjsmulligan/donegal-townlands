@@ -6,7 +6,7 @@ Page: `docs/clogher/index.html`, built from `engine/walk.html`, `townland.json`,
 - Griffith's Valuation (mid 1850s), Parish of Donegal, page 96, transcribed from an image into `content.json` (`griffiths.rows`). Areas (with the water entry) and total valuations add exactly to the printed totals.
 - Census 1901, 1911, 1926 (`data/source/census/`, extracted to `records/census.json`). Clogher townland rows only: 125, 112 and 89 people in 27, 23 and 20 households.
 - townlands.ie for area, Irish name and neighbours.
-- Tawnawilly registers: page index only (`data/Microfilm_04599_04_Tawnawilly_index.csv`), no names, so no Clogher baptisms or marriages yet.
+- Tawnawilly registers: only a page index exists (held by Mike outside the repository), no names, so no Clogher baptisms or marriages yet.
 
 ## Missing
 - Tithe Applotment, valuation revision books, civil BMD from 1864, parish register entries.
