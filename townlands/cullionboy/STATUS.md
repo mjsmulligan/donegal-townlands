@@ -4,7 +4,7 @@ Page: `docs/cullionboy/index.html`, built from `engine/walk.html` and `records/c
 
 ## Sources in
 - Griffith's Valuation (mid 1850s), transcribed from page images, in `engine/walk.html` (`GR`)
-- Census 1901, 1911, 1926 (`data/census/`, extracted to `records/census.json`; 1926 spells it Collinboy)
+- Census 1901, 1911, 1926 (`data/source/census/`, extracted to `records/census.json`; 1926 spells it Collinboy)
 - townlands.ie for area and neighbours (Clogher is to the south)
 
 ## Media

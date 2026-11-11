@@ -1,7 +1,7 @@
 name: Census to GEDCOM
 
 # Manual run only. Builds a GEDCOM test file from the census returns already in the repository
-# (data/census) and the links Mike has accepted (data/research/associations), using
+# (data/source/census) and the links Mike has accepted (data/research/associations), using
 # tools/census_gedcom.py. Nothing is downloaded and nothing needs uploading.
 #
 # Two kinds of file, never mixed:

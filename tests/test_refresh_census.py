@@ -68,11 +68,11 @@ class Repo:
     def __init__(self, tmp):
         self.root = pathlib.Path(tmp)
         self.paths = rc.Paths(
-            source_dir=self.root / "data/source/census", working_dir=self.root / "data/census",
+            source_dir=self.root / "data/source/census",
             manifest=self.root / "data/source/manifest.csv",
             refresh_dir=self.root / "data/source/census_refresh",
             places=self.root / "data/processed/places/places.csv")
-        for p in (self.paths.source_dir, self.paths.working_dir, self.paths.places.parent):
+        for p in (self.paths.source_dir, self.paths.places.parent):
             p.mkdir(parents=True)
         with self.paths.places.open("w", encoding="utf-8", newline="") as s:
             w = csv.writer(s)
@@ -84,7 +84,6 @@ class Repo:
         self.old = {"Alpha": make_csv("Alpha", [1, 2, 3, 4]), "Beta": make_csv("Beta", [10, 11, 12])}
         for ded, content in self.old.items():
             (self.paths.source_dir / f"{ded}_1926.csv").write_bytes(content)
-            (self.paths.working_dir / f"{ded}_1926.csv").write_bytes(content)
         (self.paths.source_dir / "Alpha_1901.csv").write_bytes(b"census_year\r\n1901\r\n")
         (self.paths.source_dir / "Alpha_1911.csv").write_bytes(b"census_year\r\n1911\r\n")
         rows = [source_manifest.source_metadata(p) for p in sorted(self.paths.source_dir.glob("*.csv"))]
@@ -288,25 +287,10 @@ class RunTests(unittest.TestCase):
                       staging=self.staging, delay=0, sleep=no_sleep, verify=kw.pop("verify", self.repo.verify),
                       now=lambda: NOW, **kw)
 
-    def test_discovery_resolves_ids_and_finds_copies(self):
+    def test_discovery_resolves_ids_and_counties(self):
         ds = {d.ded_name: d for d in rc.discover_datasets(self.repo.paths)}
         self.assertEqual(set(ds), {"Alpha", "Beta"})
         self.assertEqual((ds["Alpha"].ded_id, ds["Alpha"].county), ("1001", "Donegal"))
-        self.assertEqual(len(ds["Alpha"].mirrors), 1)
-
-    def test_a_missing_working_copy_is_created(self):
-        mirror = self.repo.paths.working_dir / "Alpha_1926.csv"
-        mirror.unlink()
-        ds = {d.ded_name: d for d in rc.discover_datasets(self.repo.paths)}
-        self.assertEqual(ds["Alpha"].mirrors, [])
-        self.assertEqual(ds["Alpha"].new_mirrors, [mirror])
-        self.assertEqual(self.go(new_server()), 0)
-        self.assertEqual(mirror.read_bytes(), (self.repo.paths.source_dir / "Alpha_1926.csv").read_bytes())
-
-    def test_a_data_census_copy_that_is_not_a_plain_copy_stops_the_run(self):
-        (self.repo.paths.working_dir / "Beta_1926.csv").write_bytes(make_csv("Beta", [10, 11, 12], surname="Hand"))
-        with self.assertRaisesRegex(rc.RefreshError, "not identical"):
-            rc.discover_datasets(self.repo.paths)
 
     def test_a_ded_missing_from_the_register_stops_the_run(self):
         (self.repo.paths.source_dir / "Gamma_1926.csv").write_bytes(make_csv("Gamma", [1]))
@@ -326,7 +310,6 @@ class RunTests(unittest.TestCase):
         expected = {d: HEADER + b"".join(rows) for d, rows in server.data.items()}
         for ded in ("Alpha", "Beta"):
             self.assertEqual((self.repo.paths.source_dir / f"{ded}_1926.csv").read_bytes(), expected[ded])
-            self.assertEqual((self.repo.paths.working_dir / f"{ded}_1926.csv").read_bytes(), expected[ded])
         after = self.repo.snapshot()
         changed = {k for k in after if before.get(k) != after[k]}
         untouched = {"data/source/census/Alpha_1901.csv", "data/source/census/Alpha_1911.csv"}
@@ -416,20 +399,17 @@ def old19(rid, year, ded, surname="Smith"):
 
 
 class Repo19(Repo):
-    """Adds GRA-style 1901 and 1911 files for Alpha, and Beta 1901 with only a legacy-named working copy."""
+    """Adds GRA-style 1901 and 1911 files for Alpha and Beta 1901."""
 
     def __init__(self, tmp):
         super().__init__(tmp)
-        src, work = self.paths.source_dir, self.paths.working_dir
+        src = self.paths.source_dir
         a01 = H19_OLD + old19(1, 1901, "Alpha") + old19(2, 1901, "Alpha") + old19(3, 1901, "Alpha")
         a11 = H19_OLD + old19(7, 1911, "Alpha") + old19(8, 1911, "Alpha")
         b01 = H19_OLD + old19(20, 1901, "Beta") + old19(21, 1901, "Beta")
         (src / "Alpha_1901.csv").write_bytes(a01)
-        (work / "Alpha_1901.csv").write_bytes(a01)
         (src / "Alpha_1911.csv").write_bytes(a11)
-        (work / "Alpha_1911.csv").write_bytes(a11)
         (src / "Beta_1901.csv").write_bytes(b01)
-        (work / "1901_Beta.csv").write_bytes(H19_OLD + old19(20, 1901, "Beta"))  # a derived subset
         rows = [source_manifest.source_metadata(p) for p in sorted(src.glob("*.csv"))]
         with self.paths.manifest.open("w", encoding="utf-8", newline="") as s:
             w = csv.DictWriter(s, fieldnames=source_manifest.FIELDS)
@@ -510,13 +490,12 @@ class YearsRunTests(unittest.TestCase):
     def test_each_year_file_is_the_selected_rows_as_supplied(self):
         server = server19()
         self.assertEqual(self.go(server), 0)
-        src, work = self.repo.paths.source_dir, self.repo.paths.working_dir
+        src = self.repo.paths.source_dir
         self.assertEqual((src / "Alpha_1901.csv").read_bytes(),
                          H19 + row19(1, 1901, "Alpha") + row19(2, 1901, "Alpha", surname="Corrected")
                          + row19(3, 1901, "Alpha") + row19(4, 1901, "Alpha"))
         self.assertEqual((src / "Alpha_1911.csv").read_bytes(),
                          H19 + row19(7, 1911, "Alpha") + row19(8, 1911, "Alpha") + row19(9, 1911, "Alpha"))
-        self.assertEqual((work / "Alpha_1901.csv").read_bytes(), (src / "Alpha_1901.csv").read_bytes())
         self.assertTrue(self.repo.verify())
 
     def test_one_download_serves_both_years(self):
@@ -524,19 +503,6 @@ class YearsRunTests(unittest.TestCase):
         self.go(server, apply=False)
         self.assertEqual([c["ded__icontains"] for c in server.calls].count("Alpha"), 2)  # one page, then the empty end page
         self.assertEqual([c["ded__icontains"] for c in server.calls].count("Beta"), 2)
-
-    def test_legacy_named_working_copy_is_replaced_by_the_standard_name(self):
-        self.assertEqual(self.go(server19()), 0)
-        work = self.repo.paths.working_dir
-        self.assertFalse((work / "1901_Beta.csv").exists())
-        self.assertEqual((work / "Beta_1901.csv").read_bytes(), (self.repo.paths.source_dir / "Beta_1901.csv").read_bytes())
-
-    def test_a_legacy_copy_with_records_not_in_the_source_is_not_retired(self):
-        (self.repo.paths.working_dir / "1901_Beta.csv").write_bytes(H19_OLD + old19(99, 1901, "Beta"))
-        before = self.repo.snapshot()
-        with self.assertRaisesRegex(rc.RefreshError, "not in"):
-            self.go(server19())
-        self.assertEqual(self.repo.snapshot(), before)
 
     def test_1926_files_are_not_touched_when_refreshing_1901_and_1911(self):
         before = self.repo.snapshot()
@@ -568,7 +534,7 @@ class YearsRunTests(unittest.TestCase):
         self.assertEqual(self.go(server), 1)
         self.assertEqual(self.repo.snapshot(), before)
 
-    def test_a_failure_after_replacement_restores_the_retired_copy(self):
+    def test_a_failure_after_replacement_restores_every_file(self):
         before = self.repo.snapshot()
         self.assertEqual(self.go(server19(), verify=lambda: False), 1)
         self.assertEqual(self.repo.snapshot(), before)

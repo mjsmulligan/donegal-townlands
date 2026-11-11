@@ -107,7 +107,7 @@ jobs:
             "1926") yrs='1926' ;;
             *) yrs='1901|1911|1926' ;;
           esac
-          allowed="^(data/source/census/[^/]+_(${yrs})\.csv|data/census/[^/]+_(${yrs})\.csv|data/census/(${yrs})_[^/]+\.csv|data/source/manifest\.csv|data/source/census_refresh/.+)\$"
+          allowed="^(data/source/census/[^/]+_(${yrs})\.csv|data/source/manifest\.csv|data/source/census_refresh/.+)\$"
           bad="$(echo "$changed" | grep -v -E "$allowed" || true)"
           if [ -n "$bad" ]; then
             echo "Unexpected changes, refusing to commit:"; echo "$bad"; exit 1
@@ -125,7 +125,7 @@ jobs:
           git config user.name "github-actions"
           git config user.email "actions@users.noreply.github.com"
           git checkout -b "$b"
-          git add -A data/source/census data/census data/source/manifest.csv data/source/census_refresh
+          git add -A data/source/census data/source/manifest.csv data/source/census_refresh
           git commit -m "Refresh census source files from NAI: $YEARS_INPUT ($d)" \
             -m "CSVs saved as supplied by NAI. See data/source/census_refresh for the manifest and comparison report. Derived census records were not regenerated."
           git push origin "$b"

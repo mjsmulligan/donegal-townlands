@@ -17,7 +17,7 @@ This is a supporting layer for stories. Identity matching is not the purpose of 
 
 ## 3. Inputs
 
-The three census files for a DED, as held in `data/census/` and `data/source/census/`.
+The three census files for a DED, as held in `data/source/census/`.
 
 | Year | Row ID | Household key | Useful columns |
 |---|---|---|---|

@@ -55,7 +55,7 @@ for path in ROOT.glob('townlands/*/records/events.csv'):
         if row['event'] in ('birth', 'baptism') and THIS - year < 100 and row['person'] not in deceased:
             bad.append(f"{path.parent.parent.name}: {row['person']} presumed living")
 
-for path in (ROOT / 'data' / 'census').glob('*.csv'):
+for path in (ROOT / 'data' / 'source' / 'census').glob('*.csv'):
     match = re.match(r'(\d{4})_', path.name)
     if match and int(match.group(1)) > 1926:
         bad.append(f'census year after 1926: {path.name}')
