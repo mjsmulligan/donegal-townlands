@@ -57,14 +57,14 @@ Publish only births and baptisms 100 or more years old, marriages 75 or more, de
 
 - `engine/walk.html`: page template (scenes, plates, HUD, drawer). Holds no townland content. Placeholders: `__TITLE__`, `__BRAND__`, `__DATA__`.
 - `townlands/<name>/`: `townland.json` (name, page title, storage key, census spellings), `content.json` (family stories, Griffith's rows, open questions, plate copy), `records/` (census.json, corrections.json, later events.csv), `media/` (web-sized images with captions), `STATUS.md`.
-- `data/census/`: source census CSVs for the Clogher DED.
+- `data/census/`: working copies of the census CSVs for the five held DEDs (Clogher, Tullynaught, Donegal, Laghy, Tawnawully), byte-identical to `data/source/census/`.
 - `data/source/census/` holds the manifest-covered originals. `tools/refresh_census.py` (and the manual workflow "Refresh census from NAI") refreshes the 1901, 1911 and 1926 files from NAI, all or none, saved as supplied. There are no researcher annotations in the census files. See `docs/CENSUS_REFRESH.md`.
-- `tools/extract_census.py <name>`, `tools/build.py <name>`, `tools/validate.py`.
+- `tools/attach_census.py`, `tools/build.py <name>`, `tools/validate.py`.
 - `docs/<name>/index.html`: built output, served by GitHub Pages from /docs. Never edit by hand; run build.
 
 ## Current state of the engine
 
-Family stories, the Griffith's transcription and plate copy live in `townlands/<name>/content.json`, so a new townland needs no engine edits: add `townland.json`, `content.json` and corrections, run `python tools/extract_census.py <name>`, then `python tools/build.py <name>`. Researcher corrections to census rows go in `records/corrections.json` with a reason, never in code. The mountain plate is optional: omit `plates.mountain` and `griffiths.mountain_acres` and `griffiths.water_acres` and the plate and its treemap tiles are skipped.
+Family stories, the Griffith's transcription and plate copy live in `townlands/<name>/content.json`, so a new townland needs no engine edits: add `townland.json`, `content.json` and corrections, run `python tools/attach_census.py`, then `python tools/build.py <name>`. Researcher corrections to census rows go in `records/corrections.json` with a reason, never in code. The mountain plate is optional: omit `plates.mountain` and `griffiths.mountain_acres` and `griffiths.water_acres` and the plate and its treemap tiles are skipped.
 
 ## Standing rules for images
 
