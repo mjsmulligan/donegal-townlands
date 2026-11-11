@@ -3,7 +3,7 @@
 2. Living-people rule (100/75/50) for townland event records.
 3. Census files stay at 1926 or earlier.
 4. Preserved census source files match data/source/manifest.csv.
-5. GEDCOM to census decisions file is well formed (data/research/associations/gedcom_census.csv),
+5. GEDCOM to census decisions file is well formed (data/research/associations/tree_census_links.csv),
    and every townlands/<name>/records/people.json obeys the 100/75/50 rule.
 6. Surname variant reference: data/reference/surname_variants.csv (DECISIONS.md, 2026-11-05).
 7. Media: townlands/<name>/media/media.csv rows and files (docs/MEDIA_SPEC.md). Warnings

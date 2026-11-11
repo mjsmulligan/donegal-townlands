@@ -6,7 +6,7 @@
 
 The file is built from the census returns, the census links Mike accepted (WP19,
 `data/research/associations/census_links.csv`) and the links he accepted from his own tree
-(`data/research/associations/gedcom_census.csv`). Nothing is stated that the returns do not state:
+(`data/research/associations/tree_census_links.csv`). Nothing is stated that the returns do not state:
 one person per chain of accepted links, every recorded spelling as a name, one census event per
 return, a derived birth year from the age in the earliest return, and families only where a return
 shows the relationship. No marriage, death or emigration is inferred.

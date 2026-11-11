@@ -2,7 +2,7 @@
 """Export the GEDCOM people who appear in a townland's census returns (WP17).
 
 Reads Mike's private GEDCOM (kept outside the repository) and the reviewed links in
-data/research/associations/gedcom_census.csv, and writes
+data/research/associations/tree_census_links.csv, and writes
 townlands/<case>/records/people.json for every case that holds a linked census row:
 dates, relationships and Mike's research notes, filtered by the 100/75/50 rule.
 The page builder reads only that file. The GEDCOM is a secondary source: the page
