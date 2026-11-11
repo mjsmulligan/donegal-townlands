@@ -337,7 +337,8 @@ class RunTests(unittest.TestCase):
         report = (out / "comparison_report.md").read_text(encoding="utf-8")
         self.assertNotIn("working copy", report)
         self.assertNotIn(chr(0x2014), report)
-        self.assertTrue((out / "changes.csv").exists())
+        self.assertFalse((out / "changes.csv").exists())      # too large to commit
+        self.assertTrue((self.staging / "report" / "changes.csv").exists())
 
     def test_one_failing_ded_means_nothing_is_replaced(self):
         before = self.repo.snapshot()
@@ -525,7 +526,9 @@ class YearsRunTests(unittest.TestCase):
         self.go(server19())
         report = next(self.repo.paths.refresh_dir.glob("*/comparison_report.md")).read_text(encoding="utf-8")
         self.assertIn("townland_clean, ded_clean", report)
-        changes = next(self.repo.paths.refresh_dir.glob("*/changes.csv")).read_text(encoding="utf-8")
+        # changes.csv is a report-folder output only: it is not committed with the run
+        self.assertEqual(list(self.repo.paths.refresh_dir.glob("*/changes.csv")), [])
+        changes = (self.staging / "report" / "changes.csv").read_text(encoding="utf-8")
         self.assertIn("census_year", changes.splitlines()[0])
 
     def test_another_schema_change_blocks_unless_allowed(self):

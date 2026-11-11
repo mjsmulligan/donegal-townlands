@@ -94,6 +94,7 @@ MANIFEST_FIELDS = [
     "rows_removed", "rows_changed", "rows_changed_serialisation_only", "rows_unchanged", "deds_in_file",
     "columns_not_in_nai_file", "columns_only_in_nai_file", "validation_status", "replaced",
 ]
+COMMITTED_SKIP = "changes.csv"   # written to the report folder but not committed to the repository
 CHANGE_FIELDS = ["census_year", "ded", "record_id", "change", "field", "old_value", "new_value",
                  "first_name", "surname", "townland", "kind"]
 
@@ -652,7 +653,7 @@ def render_report(results: list[Result], run_id: str, acquired: str, replaced: s
         if r.added or r.removed or r.changed:
             L.append(f"Added {r.added}, removed {r.removed}, changed {r.changed} "
                      f"({r.changed_serialisation} serialisation only). First substantive changes "
-                     "(full list in changes.csv, column kind):")
+                     "(full list in changes.csv in the workflow artifact, column kind):")
             L.append("")
             shown = [c for c in r.changes if c[3] == "changed" and c[10] == "substantive"][:20]
             for c in shown:
@@ -829,7 +830,9 @@ def run(paths: Paths, *, get, ded_ids: list[str] | None, apply: bool, staging: p
         replacements.append((paths.manifest, manifest_new))
         written = write_outputs(results, staging / "report", run_id, acquired, "yes")
         target_dir = paths.refresh_dir / run_id
-        outputs = [(target_dir / p.name, p) for p in written]
+        # changes.csv holds every changed value and is large (7 to 13 MB a run). It stays in the staging
+        # report and the workflow artifact. Only the manifest and the comparison report are committed.
+        outputs = [(target_dir / p.name, p) for p in written if p.name != COMMITTED_SKIP]
         apply_replacement(replacements, outputs, verify, staging / "backup")
     except Exception as exc:
         write_outputs(results, report_dir, run_id, acquired, "no (rolled back)")
