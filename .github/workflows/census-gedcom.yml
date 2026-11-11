@@ -1,0 +1,154 @@
+name: Census to GEDCOM
+
+# Manual run only. Builds a GEDCOM test file from the census returns already in the repository
+# (data/census) and the links Mike has accepted (data/research/associations), using
+# tools/census_gedcom.py. Nothing is downloaded and nothing needs uploading.
+#
+# Two kinds of file, never mixed:
+#   NORMAL     accepted links and tree anchors only. Always made.
+#   TENTATIVE  also joins returns by matcher proposals nobody has reviewed. Made only when the
+#              "tentative" box is ticked. For private inspection, for example importing into Ancestry.
+#              It is disposable and must never be treated as a decision.
+#
+# The files are workflow artifacts to download from the run page. This workflow never commits,
+# pushes, publishes or edits anything, including data/research/associations/census_links.csv
+# (the accepted decisions) and the master GEDCOM. A guard step fails the run if any tracked or
+# untracked file in the repository changed. See docs/CENSUS_GEDCOM_WORKFLOW.md.
+#
+# No secret is needed and the token is read-only.
+
+on:
+  workflow_dispatch:
+    inputs:
+      scope:
+        description: "What to build"
+        required: true
+        default: "townland"
+        type: choice
+        options:
+          - townland
+          - family
+          - ded
+      value:
+        description: "The townland name, the family surname (its verified spellings are included) or the DED name. Example: Cullionboy"
+        required: true
+        type: string
+      tentative:
+        description: "Also make a TENTATIVE file that includes unreviewed matcher proposals. Off by default."
+        required: true
+        default: false
+        type: boolean
+      min_confidence:
+        description: "Tentative file only: the lowest matcher confidence to include"
+        required: true
+        default: "low"
+        type: choice
+        options:
+          - low
+          - medium
+          - high
+      wife_parent:
+        description: "Whether a child may be given the head's wife as mother when the returns do not say. Leave on evidence."
+        required: true
+        default: "evidence"
+        type: choice
+        options:
+          - evidence
+          - assume
+
+# Least privilege: the job only reads the repository.
+permissions:
+  contents: read
+
+jobs:
+  gedcom:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      SCOPE: ${{ inputs.scope }}
+      VALUE: ${{ inputs.value }}
+      TENTATIVE: ${{ inputs.tentative }}
+      MIN_CONFIDENCE: ${{ inputs.min_confidence }}
+      WIFE_PARENT: ${{ inputs.wife_parent }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Test the census linking and GEDCOM tools
+        run: python -m unittest discover -s tools -p "test_census_*.py"
+
+      - name: Check the inputs
+        id: inputs
+        shell: bash
+        run: |
+          set -euo pipefail
+          case "$SCOPE" in
+            townland) flag="--townland" ;;
+            family) flag="--family" ;;
+            ded) flag="--ded" ;;
+            *) echo "Unknown scope: $SCOPE"; exit 1 ;;
+          esac
+          # A whole-string match: grep would test each line of a multi-line value separately.
+          pattern="^[A-Za-z][A-Za-z0-9 '.-]{0,60}$"
+          if ! [[ "$VALUE" =~ $pattern ]]; then
+            echo "The value must be a plain name (letters, digits, spaces, apostrophes, full stops, hyphens)."; exit 1
+          fi
+          slug="$(printf '%s' "$VALUE" | tr '[:upper:]' '[:lower:]' | sed -E 's/[^a-z0-9]+/-/g; s/^-+//; s/-+$//')"
+          echo "flag=$flag" >> "$GITHUB_OUTPUT"
+          echo "slug=$slug" >> "$GITHUB_OUTPUT"
+
+      - name: Make the NORMAL GEDCOM (accepted links and tree anchors only)
+        run: |
+          python tools/census_gedcom.py "${{ steps.inputs.outputs.flag }}" "$VALUE" \
+            --wife-parent "$WIFE_PARENT" --out "$RUNNER_TEMP/census-gedcom/normal"
+
+      - name: Make the TENTATIVE GEDCOM (includes unreviewed matcher proposals)
+        if: ${{ inputs.tentative }}
+        run: |
+          python tools/census_gedcom.py "${{ steps.inputs.outputs.flag }}" "$VALUE" \
+            --wife-parent "$WIFE_PARENT" --tentative --min-confidence "$MIN_CONFIDENCE" \
+            --out "$RUNNER_TEMP/census-gedcom/tentative"
+
+      - name: Guard that nothing in the repository changed
+        shell: bash
+        run: |
+          changed="$(git status --porcelain --untracked-files=all)"
+          if [ -n "$changed" ]; then
+            echo "The workflow must not change the repository. Changed paths:"; echo "$changed"; exit 1
+          fi
+          echo "Repository unchanged."
+
+      - name: Summary
+        shell: bash
+        run: |
+          {
+            echo "## Census to GEDCOM: $SCOPE $VALUE"
+            echo
+            echo "- **NORMAL** file (accepted links and tree anchors only): artifact \`census-gedcom-normal-$SCOPE-${{ steps.inputs.outputs.slug }}\`"
+            if [ "$TENTATIVE" = "true" ]; then
+              echo "- **TENTATIVE** file (includes unreviewed matcher proposals, minimum confidence $MIN_CONFIDENCE): artifact \`census-gedcom-TENTATIVE-$SCOPE-${{ steps.inputs.outputs.slug }}\`. For private inspection only. It does not change any accepted decision."
+            else
+              echo "- No tentative file was requested."
+            fi
+            echo
+            echo "Download from the Artifacts section at the bottom of this page. Nothing was committed or published."
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: census-gedcom-normal-${{ inputs.scope }}-${{ steps.inputs.outputs.slug }}
+          path: ${{ runner.temp }}/census-gedcom/normal
+          if-no-files-found: error
+          retention-days: 14
+
+      - uses: actions/upload-artifact@v4
+        if: ${{ inputs.tentative }}
+        with:
+          name: census-gedcom-TENTATIVE-${{ inputs.scope }}-${{ steps.inputs.outputs.slug }}
+          path: ${{ runner.temp }}/census-gedcom/tentative
+          if-no-files-found: error
+          retention-days: 14

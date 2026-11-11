@@ -115,7 +115,7 @@ def build(townland: str, family: str, root: Path = ROOT, census_dir: Path = cl.C
     names = cl.Names(given_names_reference.load(), variants_reference.load())
     canon = names.surname_canon(family)
     sh = Sheet()
-    tkey = gedcom_census.place_key(townland)
+    tkey = cl.townland_key(townland.replace("-", " "))
 
     # ---------------------------------------------------------------- tree
     pj = case / "records" / "people.json"

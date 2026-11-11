@@ -40,7 +40,7 @@ import re
 import sys
 from pathlib import Path
 
-import gedcom_census  # place_key only
+import gedcom_census  # place_key only, as the base of townland_key
 import given_names_reference
 import variants_reference
 
@@ -56,15 +56,21 @@ STATUSES = {"accepted", "rejected"}
 SUCCESSIVE = [(1901, 1911), (1911, 1926)]
 SKIP = (1901, 1926)
 RANK = {"high": 0, "medium": 1, "low": 2}
+# A trailing word that makes a townland a different place from the bare name or from its sister
+# townlands (Keadew Upper and Keadew Lower are two places). It is never folded away or swapped.
+PLACE_SUFFIXES = {"upper", "lower", "middle", "east", "west", "north", "south", "beg", "more", "mor",
+                  "big", "little", "inner", "outer"}
 
 DEFAULTS = {
     "age_tolerance": 3, "age_tolerance_wide": 6, "wide_age_before_birth_year": 1864, "margin": 2,
     "married_name_max_candidates": 3, "married_name_extra_years": 1,
-    "old_age_from": 60, "age_drift_max_old": 12,
+    "old_age_from": 60, "age_drift_max_old": 12, "place_variants": [],
+    "household_min_supporters": 2, "household_support_min_confidence": "medium",
     "weights": {
         "given_exact": 3, "given_verified": 2, "given_proposed": 1, "surname_exact": 2,
         "surname_variant": 1, "age_drift_0_1": 3, "age_drift_2_3": 2, "age_drift_wide": 1,
-        "household_support_each": 1, "household_support_max": 3, "same_townland": 1,
+        "household_support_each": 1, "household_support_max": 3, "household_conflict_each": -1,
+        "household_conflict_max": 2, "same_townland": 1,
         "same_house": 1, "implausible_relation": -3, "marital_regress": -3, "surname_change": -2,
     },
 }
@@ -88,6 +94,40 @@ def load_config(path: Path = CONFIG) -> dict:
             elif not k.startswith("_"):
                 cfg[k] = v
     return cfg
+
+
+# ------------------------------------------------------------------ townland identity
+
+_VARIANTS: dict = {}
+
+
+def _variant_map(path: Path = CONFIG) -> dict:
+    """Spelling to canonical base spelling, from "place_variants" in the config (groups Mike verified)."""
+    key = str(path)
+    if key not in _VARIANTS:
+        out = {}
+        for group in load_config(path).get("place_variants", []):
+            ks = sorted(re.sub(r"[^a-z ]", "", g.lower()).strip() for g in group)
+            for k in ks:
+                out[k] = ks[0]
+        _VARIANTS[key] = out
+    return _VARIANTS[key]
+
+
+def townland_key(name: str) -> str:
+    """The key townlands are compared by. It comes from the original `townland` value, lower case and
+    without punctuation. Verified spelling variants of the base name are treated as one (Keadew and
+    Keadue). A suffix word (Upper, Lower, Middle, East, West and so on) is kept as it is and is never
+    folded away, so Keadew Upper, Keadew Lower and a bare Keadew stay three different places."""
+    k = re.sub(r"[^a-z ]", "", (name or "").lower().replace(" or ", " ")).strip()
+    parts = k.split()
+    suffix = ""
+    if len(parts) > 1 and parts[-1] in PLACE_SUFFIXES:
+        suffix = parts[-1]
+        k = " ".join(parts[:-1])
+    base = gedcom_census.place_key(k)
+    base = _variant_map().get(base, base)
+    return (base + " " + suffix).strip()
 
 
 # ------------------------------------------------------------------ census rows
@@ -158,7 +198,9 @@ def load_census(directory: Path) -> list[dict]:
                 else:
                     row = {
                         "year": int(r["census_year"]), "ded": r["ded"],
-                        "townland": r.get("townland_clean") or r["townland"],
+                        # The original value only. The curated townland_clean (absent from NAI's files) folded
+                        # Keadew Lower into Keadew Upper, so it is never used for matching or for places.
+                        "townland": r["townland"],
                         "first": r["firstname"], "surname": r["surname"], "age": _int(r["age"]),
                         "sex": _clean(r["sex"]).upper()[:1], "house": str(_int(r["house_number"]) or ""),
                         "form": "", "rel": _clean(r.get("relation_to_head_updated")) or _clean(r["relation_to_head"]),
@@ -172,7 +214,7 @@ def load_census(directory: Path) -> list[dict]:
                 if row["obs"] in seen:
                     continue
                 seen.add(row["obs"])
-                row["tkey"] = gedcom_census.place_key(row["townland"])
+                row["tkey"] = townland_key(row["townland"])
                 row["relc"] = rel_class(row["rel"])
                 row["hh"] = ((row["year"], "form", row["form"]) if row["year"] == 1926 else
                              (row["year"], row["tkey"], row["house"] or "row" + row["loc"]))
@@ -317,23 +359,96 @@ def _pair(a, b, gap, tol, names, cfg, skip, change):
         "same_house": bool(a["year"] != 1926 and b["year"] != 1926 and a["tkey"] == b["tkey"]
                            and a["house"] and a["house"] == b["house"]),
         "implausible": implausible_relation(a["relc"], b["relc"]), "regress": regress,
-        "children_fell": fell, "skip": skip, "support": 0,
+        "children_fell": fell, "skip": skip, "support": 0, "supporters": [], "conflicts": [],
     }
 
 
-def add_support(cands, hh_size):
-    """Household continuity: how many other members of the earlier household continue into the
-    same later household. Surname change pairs neither give nor receive support."""
-    groups = collections.defaultdict(list)
+PARENT_ROLES = ("head", "wife", "husband")
+
+
+def _member_text(c: dict) -> str:
+    return "%s %s to %s" % (_name(c["a"]), c["a"]["age"], c["b"]["age"])
+
+
+def add_support(cands, hh_size, cfg):
+    """Household continuity as corroboration (WP18, 2026-11-11).
+
+    Individual links come first. A link can support the others in its household pair only when it is
+    sound on its own evidence: not a surname change, no relationship or marital contradiction, and at
+    least `household_support_min_confidence` before any household term is added (so no severe flag and
+    at most one weak one). A link with an odd relationship can receive support but never gives it. A household pair counts as continuing only when `household_min_supporters`
+    or more distinct members agree on it, and one later person cannot corroborate two earlier ones.
+    Weak links therefore never prop each other up. Support is worked out from the individual evidence
+    alone, so it cannot feed back on itself. A link that is ambiguous against rivals in other
+    households can still count, because a household is exactly what separates cousins with the same
+    names, but then its rivals in the same pair of households gain nothing from it.
+
+    Members who left, arrived, married or died are simply not counted. Only contradictions count against
+    a link (the two rules below) and they are recorded for the review rationale."""
+    margin, need_n = cfg["margin"], cfg["household_min_supporters"]
+    min_rank = RANK[cfg["household_support_min_confidence"]]
     for c in cands:
-        if c["surname"] != "change":
-            groups[(c["a"]["hh"], c["b"]["hh"])].append(c)
-    for members in groups.values():
-        for c in members:
-            c["support"] = len({m["a"]["obs"] for m in members
-                                if m["a"]["obs"] != c["a"]["obs"] and m["b"]["obs"] != c["b"]["obs"]})
+        c["support"], c["supporters"], c["conflicts"] = 0, [], []
+        c["score"] = score(c, cfg)          # the person's own evidence only
+    by_a, by_b = collections.defaultdict(list), collections.defaultdict(list)
+    for c in cands:
+        by_a[c["a"]["obs"]].append(c)
+        by_b[c["b"]["obs"]].append(c)
+    pair = lambda c: (c["a"]["hh"], c["b"]["hh"])  # noqa: E731
+    sound = collections.defaultdict(list)
+    risky = collections.defaultdict(list)
+    for c in cands:
+        if c["surname"] == "change":
+            continue
+        if c["implausible"] or c["regress"]:
+            # Only a risky link that is that person's best candidate says anything about the household.
+            if _lead(c, by_a[c["a"]["obs"]]) > 0 and _lead(c, by_b[c["b"]["obs"]]) > 0:
+                risky[pair(c)].append(c)
+        elif RANK[grade(c, household=False)[0]] <= min_rank:
+            sound[pair(c)].append(c)
+
+    def agreeing(p, skip_a=None, skip_b=None):
+        """The distinct earlier members of pair p with a sound link, one link each (the strongest), and
+        no later person used twice. Returns the list of links."""
+        used_b, out = set(), []
+        for c in sorted(sound.get(p, []), key=lambda c: (-c["score"], c["a"]["obs"], c["b"]["obs"])):
+            if c["a"]["obs"] in (skip_a, ) or c["b"]["obs"] in (skip_b, ):
+                continue
+            if c["b"]["obs"] in used_b or any(o["a"]["obs"] == c["a"]["obs"] for o in out):
+                continue
+            used_b.add(c["b"]["obs"])
+            out.append(c)
+        return out
+
+    continuing = {p for p in sound if len(agreeing(p)) >= need_n}
     for c in cands:
         c["hh_sizes"] = (hh_size[c["a"]["hh"]], hh_size[c["b"]["hh"]])
+        if c["surname"] == "change":
+            continue
+        p = pair(c)
+        coherent = not (c["implausible"] or c["regress"])
+        if p in continuing:
+            # A link with an odd relationship (a head who is a son in 1926, say) still receives the household's
+            # support. Dropping it would hide a real household merge, and it stays low for review through its own flag.
+            others = agreeing(p, c["a"]["obs"], c["b"]["obs"])
+            c["support"] = len(others)
+            c["supporters"] = [_member_text(s) for s in others]
+        # Rule 1: a head or spouse whose other household members continue together in a different household.
+        if c["a"]["relc"] in PARENT_ROLES and not (p in continuing and c in sound[p]):
+            for q in sorted(sound, key=str):
+                if q[0] == c["a"]["hh"] and q[1] != c["b"]["hh"] and q in continuing:
+                    rest = agreeing(q, c["a"]["obs"])
+                    if len(rest) >= need_n:
+                        c["conflicts"].append({"severe": True, "text": "the other members of the %d household (%s) continue together in %s in %d"
+                                               % (c["a"]["year"], "; ".join(_member_text(s) for s in rest),
+                                                  _hh_label(rest[0]["b"]), rest[0]["b"]["year"])})
+        # Rule 2: in a household that otherwise continues, another member's best link reverses a relationship
+        # or marital status.
+        if coherent and p in continuing:
+            for r in risky.get(p, []):
+                if r["a"]["obs"] != c["a"]["obs"]:
+                    c["conflicts"].append({"severe": False, "text": "%s is %s in %d but %s in %d, which does not fit the same household"
+                                           % (_name(r["a"]), r["a"]["rel"] or "?", r["a"]["year"], r["b"]["rel"] or "?", r["b"]["year"])})
 
 
 def score(c: dict, cfg: dict) -> int:
@@ -343,6 +458,7 @@ def score(c: dict, cfg: dict) -> int:
     d = c["drift"]
     s += w["age_drift_0_1"] if d <= 1 else w["age_drift_2_3"] if d <= cfg["age_tolerance"] else w["age_drift_wide"]
     s += min(c["support"], w["household_support_max"]) * w["household_support_each"]
+    s += min(len(c.get("conflicts", ())), w["household_conflict_max"]) * w["household_conflict_each"]
     s += w["same_townland"] if c["same_townland"] else 0
     s += w["same_house"] if c["same_house"] else 0
     s += w["implausible_relation"] if c["implausible"] else 0
@@ -390,7 +506,9 @@ def _lead(c, group) -> int:
     return c["score"] - max(others) if others else 10 ** 6
 
 
-def grade(c: dict) -> tuple[str, list[str]]:
+def grade(c: dict, household: bool = True) -> tuple[str, list[str]]:
+    """Confidence and flags. With household False only the person's own evidence is used, which is how
+    a link is judged before it is allowed to support others (add_support)."""
     severe, weak = [], []
     if c.get("ambiguous_with"):
         severe.append("ambiguous")
@@ -410,8 +528,11 @@ def grade(c: dict) -> tuple[str, list[str]]:
         weak.append("age drift %d" % c["drift"])
     if not c["same_townland"] and c["surname"] != "change":
         weak.append("moved townland")
-    if c["support"] < 1 and c["hh_sizes"] != (1, 1):
-        weak.append("no household continuity")
+    if household:
+        if c["support"] < 1 and c["hh_sizes"] != (1, 1):
+            weak.append("no household continuity")
+        for k in c.get("conflicts", ()):
+            (severe if k["severe"] else weak).append("household contradiction: " + k["text"])
     if c["skip"]:
         weak.append("skips 1911")
     if c["children_fell"]:
@@ -424,12 +545,21 @@ def method_text(c: dict) -> str:
     bits = ["given " + {"exact": "exact", "verified": "verified variant", "proposed": "variant not verified"}[c["given"]],
             "surname " + {"exact": "exact", "variant": "verified family", "change": "differs, single in earlier return"}[c["surname"]],
             "age drift %d" % c["drift"]]
-    if c["support"]:
-        bits.append("%d other household member%s continue" % (c["support"], "" if c["support"] == 1 else "s"))
     bits.append("same townland" if c["same_townland"] else "different townland")
     if c["same_house"]:
         bits.append("same house number")
-    return "; ".join(bits)
+    # The person's own evidence and the household's corroboration are kept apart so a reviewer can see
+    # which carries the link.
+    if c["support"]:
+        hh = "%d other member%s into the same household (%s)" % (
+            c["support"], " continues" if c["support"] == 1 else "s continue", "; ".join(c["supporters"]))
+    elif c["hh_sizes"] == (1, 1):
+        hh = "one person in each household, nothing to corroborate"
+    else:
+        hh = "not corroborated, fewer than 2 sound links agree on this household"
+    for k in c.get("conflicts", ()):
+        hh += "; contradiction: " + k["text"]
+    return "Individual: %s. Household: %s." % ("; ".join(bits), hh)
 
 
 # ------------------------------------------------------------------ one DED
@@ -466,7 +596,7 @@ def propose_ded(rows: list[dict], names: Names, cfg: dict, decisions: dict | Non
         cands = [c for c in cands if (c["a"]["obs"], c["b"]["obs"]) not in rejected
                  and c["a"]["obs"] not in linked_from and c["b"]["obs"] not in linked_to]
         stats.update(skipped)
-        add_support(cands, hh_size)
+        add_support(cands, hh_size, cfg)
         chosen, ambiguous = assign(cands, cfg)
         for c in chosen + ambiguous:
             links.append(c)
@@ -478,7 +608,7 @@ def propose_ded(rows: list[dict], names: Names, cfg: dict, decisions: dict | Non
         if left_a and left_b:
             cands, skipped = candidates(left_a, left_b, names, cfg, skip=True)
             cands = [c for c in cands if (c["a"]["obs"], c["b"]["obs"]) not in rejected]
-            add_support(cands, hh_size)
+            add_support(cands, hh_size, cfg)
             chosen, ambiguous = assign(cands, cfg)
             links += chosen + ambiguous
     for c in links:
@@ -589,9 +719,9 @@ def run_propose(census_dir: Path, out: Path, cfg: dict, only_ded=None, townland=
             hh_members[r["hh"]].append(r)
         recs = link_records(links, hh_members)
         if townland:
-            tk = gedcom_census.place_key(townland)
-            recs = [x for x in recs if gedcom_census.place_key(x["from_townland"]) == tk
-                    or gedcom_census.place_key(x["to_townland"]) == tk]
+            tk = townland_key(townland)
+            recs = [x for x in recs if townland_key(x["from_townland"]) == tk
+                    or townland_key(x["to_townland"]) == tk]
         if surname:
             recs = [x for x in recs if surname_matches(x, surname, names)]
         write_csv(Path(out) / (ded.lower() + "_links.csv"), recs)

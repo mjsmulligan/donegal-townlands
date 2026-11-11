@@ -1,7 +1,10 @@
 """Tests for tools/census_gedcom.py (WP20). All rows are invented except the smoke test, which reads
 the census files held in the repository."""
 
+import io
+import re
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -10,6 +13,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import census_gedcom as cg  # noqa: E402
 import census_links as cl  # noqa: E402
 import gedcom_census  # noqa: E402
+import test_census_links as tcl  # noqa: E402
 
 NAMES = cl.Names()
 _n = [0]
@@ -21,7 +25,7 @@ def row(year, first, surname, age, sex="M", rel="Head", town="Alpha", house="1",
          "house": house, "form": "", "rel": rel, "relc": cl.rel_class(rel), "marital": "", "marital_raw": "",
          "marr_years": marr, "born": born, "occ": "", "birth": "", "loc": "%06d" % _n[0], "ref": "", "url": ""}
     r["obs"] = "census%d:test:%d" % (year, _n[0])
-    r["tkey"] = gedcom_census.place_key(town)
+    r["tkey"] = cl.townland_key(town)
     r["hh"] = (year, r["tkey"], house)
     return r
 
@@ -331,6 +335,215 @@ class OutputTests(unittest.TestCase):
         text = build([r])[0]
         self.assertEqual(cg.check_gedcom(text), [])
         self.assertTrue(all(len(l) <= 255 for l in text.split("\n")))
+
+
+# ------------------------------------------------------------------ writer behaviour (2026-11-11)
+
+def unfold(text):
+    """Join CONC continuation lines, so wrapped notes can be searched."""
+    return re.sub(r"\n\d CONC ", "", text)
+
+
+def gedcom_records(text):
+    """Return {pointer: node} for INDI and FAM records."""
+    return {n.ptr: n for n in gedcom_census.parse_gedcom(text) if n.tag in ("INDI", "FAM")}
+
+
+def reciprocal_errors(text):
+    """Every FAMC and FAMS must point at a family that lists the person back, and the reverse."""
+    recs = gedcom_records(text)
+    errs = []
+    for ptr, n in recs.items():
+        if n.tag == "INDI":
+            for k in n.kids:
+                if k.tag in ("FAMC", "FAMS"):
+                    fam = recs.get(k.val)
+                    want = "CHIL" if k.tag == "FAMC" else ("HUSB", "WIFE")
+                    if fam is None or not any(f.tag in want and f.val == ptr for f in fam.kids):
+                        errs.append("%s %s %s not reciprocated" % (ptr, k.tag, k.val))
+        else:
+            for k in n.kids:
+                if k.tag in ("HUSB", "WIFE", "CHIL"):
+                    person = recs.get(k.val)
+                    back = "FAMC" if k.tag == "CHIL" else "FAMS"
+                    if person is None or not any(f.tag == back and f.val == ptr for f in person.kids):
+                        errs.append("%s %s %s not reciprocated" % (ptr, k.tag, k.val))
+    return errs
+
+
+class NormalAndTentativeSeparationTests(unittest.TestCase):
+    """WP20: normal output holds accepted links and tree anchors only. Tentative output is opt-in."""
+
+    def setUp(self):
+        self._tmp = tempfile.TemporaryDirectory()
+        self.dir = Path(self._tmp.name)
+        self.census = self.dir / "census"
+        self.census.mkdir()
+        tcl.write_census(self.census, tcl.PEOPLE)
+        self.decisions = self.dir / "no_decisions.csv"          # nothing accepted, and it must stay that way
+        self.tree = self.dir / "no_tree.csv"
+
+    def tearDown(self):
+        self._tmp.cleanup()
+
+    def run_cg(self, tentative, out_name):
+        out = self.dir / out_name
+        rc = cg.run("townland", "Alpha", self.census, out, self.decisions, self.tree, "evidence", io.StringIO(), tentative=tentative)
+        self.assertEqual(rc, 0)
+        return out
+
+    def test_unreviewed_links_are_excluded_from_the_normal_file(self):
+        out = self.run_cg(False, "normal")
+        text = (out / "townland_alpha.ged").read_text(encoding="utf-8")
+        self.assertNotIn("TENTATIVE", text)
+        self.assertEqual(text.count("\n1 CENS\n"), 7)                 # seven returns, none joined
+        self.assertEqual(len(indis(text)), 7)
+        self.assertFalse((out / "townland_alpha_tentative.ged").exists())
+        self.assertEqual(cg.check_gedcom(text), [])
+
+    def test_tentative_links_appear_only_when_requested_and_are_clearly_marked(self):
+        out = self.run_cg(True, "tentative")
+        self.assertFalse((out / "townland_alpha.ged").exists())       # the tentative run never writes the normal name
+        raw = (out / "townland_alpha_tentative.ged").read_text(encoding="utf-8")
+        text = unfold(raw)
+        self.assertIn("TENTATIVE LINKS: this file also joins returns", text)   # the header says so
+        self.assertIn("TENTATIVE LINK, not accepted by the researcher: ", text)
+        self.assertIn("Matcher confidence", text)
+        self.assertIn("Rationale: Individual: given exact; surname exact", text)
+        self.assertIn("Household: 1 other member continues into the same household (Margaret Kelly 58 to 68)", text)
+        self.assertLess(len(indis(text)), 7)                           # the Kelly returns are joined
+        self.assertEqual(cg.check_gedcom(raw), [])
+
+    def test_a_tentative_run_never_creates_or_changes_accepted_decisions(self):
+        self.run_cg(True, "tentative")
+        self.assertFalse(self.decisions.exists())
+        self.assertEqual(cg.load_accepted_pairs(self.decisions), [])
+
+    def test_the_normal_file_is_identical_whether_or_not_a_tentative_file_was_made(self):
+        first = (self.run_cg(False, "n1") / "townland_alpha.ged").read_text(encoding="utf-8")
+        self.run_cg(True, "t1")
+        second = (self.run_cg(False, "n2") / "townland_alpha.ged").read_text(encoding="utf-8")
+        self.assertEqual(first, second)
+
+    def test_a_family_that_includes_a_tentative_person_is_marked(self):
+        a, b = row(1901, "Mary", "Kelly", 30, "F", "Wife"), row(1911, "Mary", "Kelly", 40, "F", "Wife")
+        tom = row(1911, "Tom", "Kelly", 45)
+        tent = [{"fo": a["obs"], "to": b["obs"], "confidence": "medium", "flags": [], "method": "Individual: x. Household: y."}]
+        marked, _, _ = build([a, b, tom], tentative=tent)
+        marked = unfold(marked)
+        plain, _, _ = build([a, b, tom])
+        self.assertIn("TENTATIVE: this family includes a person joined by a link that has not been reviewed", marked)
+        self.assertIn("Rationale: Individual: x. Household: y.", marked)
+        self.assertNotIn("TENTATIVE", plain)
+
+    def test_accepted_links_appear_in_the_normal_file(self):
+        a, b = row(1901, "Ellen", "Doherty", 12, "F", "Daughter"), row(1911, "Ellen", "Doherty", 22, "F", "Daughter")
+        text, _, _ = build([a, b], [(a["obs"], b["obs"])])
+        self.assertEqual(len(indis(text)), 1)
+        self.assertNotIn("TENTATIVE", text)
+
+
+class CitationAndEstimateTests(unittest.TestCase):
+    def test_every_return_keeps_its_citation_url_and_observation_details(self):
+        a = row(1901, "Joe", "Kelly", 30, marr=5, born=2)
+        a.update({"marital_raw": "Married", "occ": "Farmer", "birth": "Co Donegal", "ref": "abc", "url": "https://example.test/1901/abc"})
+        b = row(1911, "Joe", "Kelly", 40)
+        text, _, _ = build([a, b], [(a["obs"], b["obs"])])
+        self.assertIn("1 SOUR", text)
+        self.assertEqual(text.count("2 SOUR @S1901@") + text.count("2 SOUR @S1911@"), 2)
+        self.assertIn("3 PAGE " + a["obs"], text)
+        self.assertIn("3 PAGE " + b["obs"], text)
+        for bit in ("Relation to head: Head.", "Marital status: Married.", "Occupation: Farmer.", "Birthplace: Co Donegal.",
+                    "Years married as recorded: 5.", "Children born alive as recorded: 2.", "Household: "):
+            self.assertIn(bit, text)
+        self.assertIn("https://example.test/1901/abc", text)
+
+    def test_birth_is_always_an_estimate_and_never_a_plain_recorded_date(self):
+        a = row(1901, "Ellen", "Doherty", 12, "F", "Daughter")
+        text, _, _ = build([a])
+        for p in indis(text):
+            births = [k for k in p.kids if k.tag == "BIRT"]
+            self.assertEqual(len(births), 1)
+            date = next(k for k in births[0].kids if k.tag == "DATE")
+            self.assertTrue(date.val.startswith("ABT "), date.val)
+        self.assertIn("Not a recorded date", text)
+
+    def test_a_return_with_no_age_gets_no_birth_event(self):
+        a = row(1901, "Ellen", "Doherty", None, "F", "Daughter")
+        text, _, _ = build([a])
+        self.assertNotIn("1 BIRT", text)
+
+
+class FamilyConservatismTests(unittest.TestCase):
+    def test_parents_children_and_spouses_are_reciprocal(self):
+        rows = [row(1911, "Tom", "Kelly", 50), row(1911, "Mary", "Kelly", 45, "F", "Wife", marr=15, born=2),
+                row(1911, "Joe", "Kelly", 10, "M", "Son"), row(1911, "Ann", "Kelly", 8, "F", "Daughter")]
+        text, _, _ = build(rows)
+        self.assertEqual(reciprocal_errors(text), [])
+        self.assertEqual(cg.check_gedcom(text), [])
+
+    def test_boarders_servants_and_grandchildren_get_no_parents_from_the_head(self):
+        rows = [row(1911, "Tom", "Kelly", 70), row(1911, "Mary", "Kelly", 65, "F", "Wife", marr=40),
+                row(1911, "Pat", "Boyle", 20, "M", "Boarder"), row(1911, "Ann", "Doherty", 17, "F", "Servant"),
+                row(1911, "Hugh", "Kelly", 5, "M", "Grandson")]
+        text, _, _ = build(rows)
+        recs = gedcom_records(text)
+        by_name = {next(k.val for k in n.kids if k.tag == "NAME"): n for n in recs.values() if n.tag == "INDI"}
+        for who in ("Pat /Boyle/", "Ann /Doherty/", "Hugh /Kelly/"):
+            self.assertFalse(any(k.tag == "FAMC" for k in by_name[who].kids), who)
+        self.assertEqual(reciprocal_errors(text), [])
+
+    def test_two_heads_in_one_household_never_produce_a_shared_child(self):
+        rows = [row(1911, "Tom", "Kelly", 50), row(1911, "Pat", "Kelly", 48), row(1911, "Joe", "Kelly", 10, "M", "Son")]
+        text, report, _ = build(rows)
+        children = [n for n in gedcom_records(text).values() if n.tag == "FAM" and any(k.tag == "CHIL" for k in k_all(n))]
+        for fam in children:
+            self.assertLessEqual(sum(1 for k in fam.kids if k.tag in ("HUSB", "WIFE")), 1)
+        self.assertEqual(reciprocal_errors(text), [])
+
+
+def k_all(n):
+    return n.kids
+
+
+class PlaceDistinctionTests(unittest.TestCase):
+    def test_keadew_lower_and_upper_remain_distinct_places_in_the_file(self):
+        a = row(1911, "John", "Gallagher", 40, town="Keadew Lower")
+        b = row(1911, "Pat", "Gallagher", 40, town="Keadew Upper", house="2")
+        text, _, _ = build([a, b], kind="ded", value="Test")
+        self.assertIn("Keadew Lower", text)
+        self.assertIn("Keadew Upper", text)
+        places = {l.split("PLAC ", 1)[1].split(",")[0] for l in text.splitlines() if "PLAC " in l}
+        self.assertTrue({"Keadew Lower", "Keadew Upper"} <= places)
+
+    def test_scoping_to_one_of_the_keadews_leaves_the_other_out(self):
+        a = row(1911, "John", "Gallagher", 40, town="Keadew Lower")
+        b = row(1911, "Pat", "Gallagher", 40, town="Keadew Upper", house="2")
+        keep = cg.scope_filter("townland", "Keadew Lower", NAMES)
+        self.assertEqual([r["first"] for r in [a, b] if keep(r)], ["John"])
+        spelt = cg.scope_filter("townland", "Keadue Upper", NAMES)
+        self.assertEqual([r["first"] for r in [a, b] if spelt(r)], ["Pat"])
+
+    def test_original_townland_survives_a_townland_clean_that_would_have_merged_them(self):
+        with tempfile.TemporaryDirectory() as d:
+            census = Path(d) / "census"
+            census.mkdir()
+            with open(census / "1901_Test.csv", "w", encoding="utf-8", newline="") as fh:
+                import csv
+                w = csv.DictWriter(fh, fieldnames=tcl.H1, lineterminator="\n")
+                w.writeheader()
+                for i, town in enumerate(("Keadew Lower", "Keadew Upper")):
+                    w.writerow({"census_year": 1901, "ded": "Test", "townland": town, "townland_clean": "Keadew Upper",
+                                "firstname": "John", "surname": "Gallagher", "age": 30, "sex": "Male", "house_number": str(i + 1),
+                                "relation_to_head": "Head", "relation_to_head_updated": "Head", "marriage_status": "Single",
+                                "marriage_years": "", "children_born": "", "id": str(700 + i), "images": "[]", "occupation": "",
+                                "occupation_updated": "", "birthplace": ""})
+            out = Path(d) / "out"
+            rc = cg.run("ded", "Test", census, out, Path(d) / "none.csv", Path(d) / "none_tree.csv", "evidence", io.StringIO())
+            self.assertEqual(rc, 0)
+            text = (out / "ded_test.ged").read_text(encoding="utf-8")
+        self.assertIn("Keadew Lower", text)
+        self.assertIn("Keadew Upper", text)
 
 
 class RealDataSmokeTest(unittest.TestCase):
