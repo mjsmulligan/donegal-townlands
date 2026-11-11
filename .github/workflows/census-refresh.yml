@@ -94,7 +94,7 @@ jobs:
           name: census-refresh-report
           path: ${{ runner.temp }}/census-report
           if-no-files-found: ignore
-          retention-days: 30
+          retention-days: 90
 
       - name: Guard that only the intended files changed
         if: ${{ inputs.apply }}
