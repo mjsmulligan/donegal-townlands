@@ -34,7 +34,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import census_links as cl  # noqa: E402
-import gedcom_census  # noqa: E402
+import tree_census_links  # noqa: E402
 import given_names_reference  # noqa: E402
 import variants_reference  # noqa: E402
 

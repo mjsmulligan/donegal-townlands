@@ -1,4 +1,4 @@
-"""Tests for tools/gedcom_census.py (WP16). Uses small invented fixtures only."""
+"""Tests for tools/tree_census_links.py (WP16). Uses small invented fixtures only."""
 import csv
 import pathlib
 import sys
@@ -8,7 +8,7 @@ import unittest
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "tools"))
 
-import gedcom_census as gc  # noqa: E402
+import tree_census_links as gc  # noqa: E402
 
 CENSUS_1901_HEADER = ("id,census_year,county,surname,firstname,townland,townland_clean,ded,age,sex,house_number,"
                       "relation_to_head,relation_to_head_updated")

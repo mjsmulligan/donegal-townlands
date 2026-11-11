@@ -29,9 +29,9 @@ import sys
 from pathlib import Path
 
 try:
-    from tools import gedcom_census as gc
+    from tools import tree_census_links as gc
 except ImportError:  # run as a script: python tools/gedcom_people.py
-    import gedcom_census as gc
+    import tree_census_links as gc
 
 ROOT = Path(__file__).resolve().parent.parent
 THIS_YEAR = datetime.date.today().year

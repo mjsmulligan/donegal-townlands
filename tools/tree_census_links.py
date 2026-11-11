@@ -8,9 +8,9 @@ birth years against the census ages. Nothing is accepted by the tool. Accepted
 links are rows in data/research/associations/gedcom_census.csv, made by a human.
 
 Usage:
-    python tools/gedcom_census.py propose GEDCOM [--census-dir DIR] [--out DIR]
-    python tools/gedcom_census.py accept --reviewer NAME --date YYYY-MM-DD [--out DIR]
-    python tools/gedcom_census.py check [--gedcom GEDCOM] [--census-dir DIR]
+    python tools/tree_census_links.py propose GEDCOM [--census-dir DIR] [--out DIR]
+    python tools/tree_census_links.py accept --reviewer NAME --date YYYY-MM-DD [--out DIR]
+    python tools/tree_census_links.py check [--gedcom GEDCOM] [--census-dir DIR]
 
 The GEDCOM is read from outside the repository and is never copied into it.
 Generated reports go to data/processed/gedcom/, which is not committed.
@@ -611,7 +611,7 @@ def main(argv=None) -> int:
     people = load_people(a.gedcom) if a.gedcom else None
     rows = load_census(a.census_dir) if a.gedcom else None
     errs = check_decisions(DECISIONS, people, rows)
-    print("\n".join(errs) or "gedcom_census check: ok")
+    print("\n".join(errs) or "tree_census_links check: ok")
     return 1 if errs else 0
 
 

@@ -18,7 +18,7 @@ from tests import test_census_links as tcl  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 WORKFLOW = ROOT / ".github" / "workflows" / "census-gedcom.yml"
-TOOL = ROOT / "tools" / "census_gedcom.py"
+TOOL = ROOT / "tools" / "census_gedcom_export.py"
 
 
 def text() -> str:

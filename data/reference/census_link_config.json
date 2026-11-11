@@ -27,7 +27,7 @@
  },
  "old_age_from": 60,
  "age_drift_max_old": 12,
- "_place_variants": "Groups of spellings of one townland base name that Mike verified (2026-11-11), in addition to the spelling groups already in tools/gedcom_census.py PLACE_GROUPS, which he confirmed the same day. A suffix word (Upper, Lower, Middle, East, West and so on) is never folded, so Keadew Upper and Keadue Lower stay different places.",
+ "_place_variants": "Groups of spellings of one townland base name that Mike verified (2026-11-11), in addition to the spelling groups already in tools/tree_census_links.py PLACE_GROUPS, which he confirmed the same day. A suffix word (Upper, Lower, Middle, East, West and so on) is never folded, so Keadew Upper and Keadue Lower stay different places.",
  "place_variants": [
   [
    "Keadew",
