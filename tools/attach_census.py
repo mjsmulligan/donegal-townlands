@@ -6,7 +6,7 @@ Usage:
     python tools/attach_census.py
 
 Inputs:
-    data/census/<year>_<DED>.csv or <DED>_<year>.csv for 1901, 1911 and 1926
+    data/source/census/<year>_<DED>.csv or <DED>_<year>.csv for 1901, 1911 and 1926
         (for example 1901_Clogher.csv and Tullynaught_1901.csv)
     data/processed/places/places.csv
     data/processed/places/townland_cases.csv   (python tools/create_townland_cases.py)
@@ -60,7 +60,7 @@ ROOT = Path(__file__).resolve().parent.parent
 PLACES_CSV = ROOT / "data" / "processed" / "places" / "places.csv"
 CASES_CSV = ROOT / "data" / "processed" / "places" / "townland_cases.csv"
 REVIEW_CSV = ROOT / "data" / "processed" / "places" / "census_spelling_review.csv"
-CENSUS_DIR = ROOT / "data" / "census"
+CENSUS_DIR = ROOT / "data" / "source" / "census"
 
 YEARS = (1901, 1911, 1926)
 GENERATED_MARKER = "donegal-townlands.attach_census"

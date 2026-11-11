@@ -13,8 +13,6 @@ The CSV saved is what NAI supplied. No column is added, removed, renamed or reor
 | Path | Treatment |
 |---|---|
 | `data/source/census/<DED>_<year>.csv` | Replaced. The manifest-covered original. One file per DED already held. |
-| `data/census/<DED>_<year>.csv` | Replaced, where it exists and is byte-identical to the original. If it differs the run stops. |
-| `data/census/<year>_<DED>.csv` (Clogher 1901 and 1911 only) | Retired and replaced by `data/census/Clogher_<year>.csv`, a copy of the source file. These legacy files held only the Clogher DED rows in GRA's column order. They are retired only if every id in them is in the original. |
 | `data/source/manifest.csv` | The rows for the refreshed files are updated in the same transaction (provenance, date, SHA-256). Other rows are untouched. |
 | Years not chosen | Never touched. The workflow guard fails the run if another year's file would change. |
 | `townlands/`, `docs/`, `data/processed/` | Never touched. Derived census records are not regenerated (see below). |
@@ -54,7 +52,7 @@ NAI serves both years from `https://api-census.nationalarchives.ie/census/query/
 
 First live run (2026-11-10): the endpoint, parameters and column names behaved as assumed. Every DED returned exactly the records already held: 1901 and 1911 for Clogher, Donegal, Laghy, Tawnawully and Tullynaught, none added, none removed. Almost every difference is serialisation (`nan` for a blank, floats for whole numbers). The only substantive differences are about 10 values that GRA's files had as `nan` and NAI writes as the text `None` (language, education, occupation, deafdumb), all in Donegal 1901 and Tullynaught 1901. The two GRA columns are gone from the files, as expected.
 
-Working copies: `data/census/Clogher_1901.csv`, `Clogher_1911.csv` and `Clogher_1926.csv` are now plain copies of the source files, so the tool creates a working copy whenever one is missing. `tools/attach_census.py` ignores rows whose `ded` is not the file's DED, so the Magheraclogher rows in the Clogher files are not attached to Clogher townlands or listed for spelling review.
+There are no working copies. Until 2026-11-11 `data/census/` held byte-identical copies of the originals; it was removed and every tool now reads `data/source/census/`. `tools/attach_census.py` ignores rows whose `ded` is not the file's DED, so the Magheraclogher rows in the Clogher files are not attached to Clogher townlands or listed for spelling review.
 
 ## Outputs
 

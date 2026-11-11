@@ -4,7 +4,7 @@ Status: built 2026-11-11 (WP20). The workflow file is `.github/workflows/census-
 
 ## What it does
 
-It builds the census GEDCOM test file described in [`CENSUS_GEDCOM_SPEC.md`](CENSUS_GEDCOM_SPEC.md) without anyone running Python locally. It uses the census files already in `data/census/`, the accepted links in `data/research/associations/` and the tree anchors already in the repository. Nothing is uploaded by hand.
+It builds the census GEDCOM test file described in [`CENSUS_GEDCOM_SPEC.md`](CENSUS_GEDCOM_SPEC.md) without anyone running Python locally. It uses the census files already in `data/source/census/`, the accepted links in `data/research/associations/` and the tree anchors already in the repository. Nothing is uploaded by hand.
 
 It produces up to two files, which are never mixed:
 

@@ -20,8 +20,6 @@ Source integrity (docs/DATA_ARCHITECTURE.md, "preserve the original unchanged"):
 
 What is replaced (Mike, 2026-11-10):
     data/source/census/<DED>_<year>.csv   the manifest-covered original
-    data/census/<DED>_<year>.csv          its byte-identical copy, where one exists
-    data/census/<year>_<DED>.csv          retired legacy copy (Clogher 1901 and 1911), replaced by the line above
     data/source/manifest.csv              rows for the refreshed files only
 
 Transaction: every DED is downloaded to a staging directory outside the repository and
@@ -111,7 +109,6 @@ class TransientError(Exception):
 @dataclass
 class Paths:
     source_dir: pathlib.Path
-    working_dir: pathlib.Path
     manifest: pathlib.Path
     refresh_dir: pathlib.Path
     places: pathlib.Path
@@ -120,7 +117,6 @@ class Paths:
 def default_paths() -> Paths:
     return Paths(
         source_dir=ROOT / "data" / "source" / "census",
-        working_dir=ROOT / "data" / "census",
         manifest=ROOT / "data" / "source" / "manifest.csv",
         refresh_dir=ROOT / "data" / "source" / "census_refresh",
         places=ROOT / "data" / "processed" / "places" / "places.csv",
@@ -141,10 +137,7 @@ class Dataset:
     county: str
     filename: str
     source_path: pathlib.Path
-    mirrors: list = field(default_factory=list)
     year: int = 1926
-    new_mirrors: list = field(default_factory=list)   # working copy to create (replaces a legacy-named one)
-    retire: list = field(default_factory=list)        # legacy-named working copies removed with the replacement
 
     @property
     def spec(self) -> "YearSpec":
@@ -222,41 +215,10 @@ def discover_datasets(paths: Paths, years: list[int] | tuple = (1926,)) -> list[
                 raise RefreshError(f"{path.name}: county ID {ded['county_id']!r} is not known to this tool")
             ds = Dataset(ded_name=ded["name_en"], ded_id=ded["logainm_id"], county=county,
                          filename=path.name, source_path=path, year=year)
-            mirror = paths.working_dir / path.name
-            legacy = paths.working_dir / f"{year}_{name}.csv"
-            if mirror.exists():
-                if sha256_file(mirror) != sha256_file(path):
-                    raise RefreshError(
-                        f"{mirror} exists but is not identical to {path}. It is not a plain copy, so it will not be "
-                        "overwritten. Report this to Mike before refreshing.")
-                ds.mirrors.append(mirror)
-            elif legacy.exists():
-                check_legacy_copy(legacy, path, ds.spec.locator)
-                ds.new_mirrors.append(mirror)
-                ds.retire.append(legacy)
-            else:
-                # No working copy at all (Clogher 1926 after its old file was removed): create
-                # one, so data/census always holds every year for every DED.
-                ds.new_mirrors.append(mirror)
             datasets.append(ds)
         if not found:
             raise RefreshError(f"No *_{year}.csv files found in {paths.source_dir}")
     return datasets
-
-
-def check_legacy_copy(legacy: pathlib.Path, source: pathlib.Path, locator: str) -> None:
-    """A legacy-named working copy (for example data/census/1901_Clogher.csv) is retired
-    only if every record in it is also in the source file. It is a derived copy, not the
-    source, so nothing in it is lost."""
-    old = parse_csv(legacy.read_bytes())
-    new = parse_csv(source.read_bytes())
-    if locator not in old[0] or locator not in new[0]:
-        raise RefreshError(f"{legacy}: no {locator!r} column, so it cannot be checked against {source}")
-    missing = {r[old[0].index(locator)] for r in old[1:]} - {r[new[0].index(locator)] for r in new[1:]}
-    if missing:
-        raise RefreshError(
-            f"{legacy} holds {len(missing)} records that are not in {source} (first {sorted(missing)[:3]}). "
-            "It will not be retired. Report this to Mike before refreshing.")
 
 
 # ---------------------------------------------------------------------- download
@@ -862,15 +824,13 @@ def run(paths: Paths, *, get, ded_ids: list[str] | None, apply: bool, staging: p
         replacements = []
         for r in results:
             replacements.append((r.dataset.source_path, r.staged))
-            replacements += [(m, r.staged) for m in r.dataset.mirrors + r.dataset.new_mirrors]
         manifest_new = staging / "source_manifest.new.csv"
         manifest_new.write_bytes(updated_source_manifest(paths, results, moment.strftime("%Y-%m-%d")))
         replacements.append((paths.manifest, manifest_new))
         written = write_outputs(results, staging / "report", run_id, acquired, "yes")
         target_dir = paths.refresh_dir / run_id
         outputs = [(target_dir / p.name, p) for p in written]
-        removals = [path for r in results for path in r.dataset.retire]
-        apply_replacement(replacements, outputs, verify, staging / "backup", removals)
+        apply_replacement(replacements, outputs, verify, staging / "backup")
     except Exception as exc:
         write_outputs(results, report_dir, run_id, acquired, "no (rolled back)")
         print(f"ABORTED during replacement: {exc}. Every file was restored.", file=sys.stderr)

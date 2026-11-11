@@ -45,7 +45,7 @@ import given_names_reference
 import variants_reference
 
 ROOT = Path(__file__).resolve().parent.parent
-CENSUS_DIR = ROOT / "data" / "census"
+CENSUS_DIR = ROOT / "data" / "source" / "census"
 OUT_DIR = ROOT / "data" / "processed" / "census_links"
 CONFIG = ROOT / "data" / "reference" / "census_link_config.json"
 GIVEN = ROOT / "data" / "reference" / "given_name_variants.csv"
