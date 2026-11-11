@@ -1,6 +1,6 @@
 """Tests for tools/build.py. Run from the repo root:
 
-    python -m unittest tools.test_build -v
+    python -m unittest tests.test_build -v
 
 Every test works in a temporary directory. The real repository is never touched.
 """
@@ -14,7 +14,7 @@ import unittest
 from pathlib import Path
 
 from tools import build
-from tools.test_media import jpeg, png
+from tests.test_media import jpeg, png
 
 REAL_ROOT = build.ROOT
 PLACE = {"logainm_id": "13969", "name_en": "Druminnin", "name_ga": "", "ded_id": "900",

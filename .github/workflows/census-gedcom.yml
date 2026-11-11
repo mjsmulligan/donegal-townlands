@@ -79,7 +79,7 @@ jobs:
           python-version: "3.12"
 
       - name: Test the census linking and GEDCOM tools
-        run: python -m unittest discover -s tools -p "test_census_*.py"
+        run: python -m unittest discover -s tests -p "test_census_*.py"
 
       - name: Check the inputs
         id: inputs

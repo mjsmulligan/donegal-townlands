@@ -1,6 +1,6 @@
 """Tests for tools/attach_griffiths.py and the names-only Griffith's plate. Run from the repo root:
 
-    python -m unittest tools.test_attach_griffiths -v
+    python -m unittest tests.test_attach_griffiths -v
 
 Every test works in a temporary directory. The real repository is never touched.
 """
@@ -16,7 +16,7 @@ from pathlib import Path
 
 from tools import attach_griffiths as ag
 from tools import build
-from tools.test_build import BuildTests as _B
+from tests.test_build import BuildTests as _B
 
 FIELDS = ["townland", "civil_parish", "county", "barony", "askaboutireland_place_id", "askaboutireland_record_id",
           "occupier_surname_as_indexed", "occupier_forename_as_indexed", "original_page_position_rs",
@@ -144,7 +144,7 @@ class NamesOnlyPlateTests(_B):
              "listing_url": "https://x/l", "listing_page": 1}]}
 
     def test_index_only_case_carries_names_and_says_so(self):
-        self.case("druminnin", {"place.json": {**__import__("tools.test_build", fromlist=["PLACE"]).PLACE},
+        self.case("druminnin", {"place.json": {**__import__("tests.test_build", fromlist=["PLACE"]).PLACE},
                                 "records/griffiths_index.json": self.index_payload()})
         self.run_build("druminnin")
         d = self.data_of("druminnin")
@@ -155,7 +155,7 @@ class NamesOnlyPlateTests(_B):
         self.assertIn("Griffith's, the names", self.page("druminnin"))
 
     def test_a_transcription_wins_over_the_index(self):
-        P = __import__("tools.test_build", fromlist=["PLACE"]).PLACE
+        P = __import__("tests.test_build", fromlist=["PLACE"]).PLACE
         self.case("druminnin", {"place.json": {**P}, "records/griffiths_index.json": self.index_payload(),
                                 "townland.json": {"name": "Druminnin"},
                                 "content.json": {"griffiths": {"rows": [{"lot": "1", "hd": "1", "occ": "Patrick Gildea"}],

@@ -1,6 +1,6 @@
 """Tests for tools/attach_census.py. Run from the repo root:
 
-    python -m unittest tools.test_attach_census -v
+    python -m unittest tests.test_attach_census -v
 
 Every test works in a temporary directory. The real repository is never touched.
 """

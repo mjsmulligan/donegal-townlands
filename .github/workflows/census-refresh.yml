@@ -58,7 +58,7 @@ jobs:
       - run: pip install requests
 
       - name: Test the refresh tool
-        run: python -m unittest discover -s tools -p "test_refresh_census.py"
+        run: python -m unittest discover -s tests -p "test_refresh_census.py"
 
       - name: Work out the years
         id: years

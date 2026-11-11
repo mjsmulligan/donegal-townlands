@@ -1,6 +1,6 @@
 """Tests for tools/create_townland_cases.py. Run from the repo root:
 
-    python -m unittest tools.test_create_townland_cases -v
+    python -m unittest tests.test_create_townland_cases -v
 
 Every test works in a temporary directory. The real repository is never touched.
 """

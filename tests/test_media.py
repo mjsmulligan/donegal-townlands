@@ -1,6 +1,6 @@
 """Tests for tools/media.py. Run from the repo root:
 
-    python -m unittest tools.test_media -v
+    python -m unittest tests.test_media -v
 
 Every test works in a temporary directory. The real repository is never touched.
 Image files are built from a few header bytes, so no imaging library is needed.
