@@ -1,6 +1,6 @@
 """Renders real built pages in a browser. Run from the repo root:
 
-    python -m unittest tools.test_walk_render -v
+    python -m unittest tests.test_walk_render -v
 
 Needs Playwright with Chromium; the tests are skipped if it is not installed.
 Every test works in a temporary directory. The real repository is only read.

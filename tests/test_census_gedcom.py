@@ -8,12 +8,12 @@ import tempfile
 import unittest
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parent))
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "tools"))
 
 import census_gedcom as cg  # noqa: E402
 import census_links as cl  # noqa: E402
 import gedcom_census  # noqa: E402
-import test_census_links as tcl  # noqa: E402
+from tests import test_census_links as tcl  # noqa: E402
 
 NAMES = cl.Names()
 _n = [0]

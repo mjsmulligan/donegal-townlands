@@ -1,6 +1,6 @@
 """Tests for tools/variants_reference.py. Run from the repo root:
 
-    python -m unittest tools.test_variants_reference -v
+    python -m unittest tests.test_variants_reference -v
 
 Every test works in a temporary directory except the last, which checks the real file.
 """

@@ -1,10 +1,10 @@
-"""Tests for tools/gedcom_people.py (WP17). Run: python -m pytest tools/test_gedcom_people.py"""
+"""Tests for tools/gedcom_people.py (WP17). Run: python -m pytest tests/test_gedcom_people.py"""
 import json
 import sys
 import tempfile
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parent))
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "tools"))
 import gedcom_people as gp  # noqa: E402
 
 GED = """0 HEAD

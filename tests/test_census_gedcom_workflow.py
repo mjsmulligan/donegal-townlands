@@ -12,9 +12,9 @@ import textwrap
 import unittest
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parent))
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "tools"))
 
-import test_census_links as tcl  # noqa: E402
+from tests import test_census_links as tcl  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 WORKFLOW = ROOT / ".github" / "workflows" / "census-gedcom.yml"
@@ -74,7 +74,7 @@ class WorkflowConfigurationTests(unittest.TestCase):
         self.assertIn("actions/checkout@v4", t)
         self.assertIn("actions/setup-python@v5", t)
         self.assertIn("actions/upload-artifact@v4", t)
-        self.assertIn('python -m unittest discover -s tools -p "test_census_*.py"', t)    # tests run first
+        self.assertIn('python -m unittest discover -s tests -p "test_census_*.py"', t)    # tests run first
         self.assertNotIn("pip install", t)                                                  # standard library only
 
     def test_tentative_output_is_explicitly_opt_in(self):

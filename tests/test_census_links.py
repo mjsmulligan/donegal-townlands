@@ -1,6 +1,6 @@
 """Tests for tools/census_links.py (WP18). Run from the repo root:
 
-    python -m pytest -q tools/test_census_links.py
+    python -m pytest -q tests/test_census_links.py
 
 All rows are invented. The real census files are never read.
 """
@@ -12,7 +12,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parent))
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "tools"))
 
 import census_links as cl  # noqa: E402
 import given_names_reference  # noqa: E402
