@@ -5,7 +5,7 @@ The GEDCOM is a secondary source: it records Mike's research. Census rows are
 the primary evidence. This tool reads the census citations on each GEDCOM
 person, proposes the census row each one refers to, and audits the tree's
 birth years against the census ages. Nothing is accepted by the tool. Accepted
-links are rows in data/research/associations/gedcom_census.csv, made by a human.
+links are rows in data/research/associations/tree_census_links.csv, made by a human.
 
 Usage:
     python tools/tree_census_links.py propose GEDCOM [--census-dir DIR] [--out DIR]
@@ -32,7 +32,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 CENSUS_DIR = ROOT / "data" / "source" / "census"
 OUT_DIR = ROOT / "data" / "processed" / "gedcom"
-DECISIONS = ROOT / "data" / "research" / "associations" / "gedcom_census.csv"
+DECISIONS = ROOT / "data" / "research" / "associations" / "tree_census_links.csv"
 DECISION_FIELDS = [
     "person_ptr", "person_name", "person_birth", "obs_id", "status",
     "reviewer", "date", "method", "proposed_confidence", "note",

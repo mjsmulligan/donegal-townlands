@@ -18,7 +18,7 @@ data/research/associations/census_links.csv (WP19). Only accepted and rejected r
 Later runs of `propose` keep accepted links, never propose a rejected pair again, and do not
 let an accepted row compete for another link.
 `check` runs the matcher against the links Mike accepted between the tree and the census
-(data/research/associations/gedcom_census.csv) and reports how many it recovers and at what
+(data/research/associations/tree_census_links.csv) and reports how many it recovers and at what
 confidence, and whether any known link is replaced by a wrong one.
 
 Matching is within one DED. Surnames match only when identical or in a verified family in
@@ -49,7 +49,7 @@ CENSUS_DIR = ROOT / "data" / "source" / "census"
 OUT_DIR = ROOT / "data" / "processed" / "census_links"
 CONFIG = ROOT / "data" / "reference" / "census_link_config.json"
 GIVEN = ROOT / "data" / "reference" / "given_name_variants.csv"
-TREE = ROOT / "data" / "research" / "associations" / "gedcom_census.csv"
+TREE = ROOT / "data" / "research" / "associations" / "tree_census_links.csv"
 DECISIONS = ROOT / "data" / "research" / "associations" / "census_links.csv"
 DECISION_FIELDS = ["from_obs", "to_obs", "status", "reviewer", "date", "confidence", "from_name", "to_name", "note"]
 STATUSES = {"accepted", "rejected"}
