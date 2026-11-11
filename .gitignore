@@ -6,12 +6,12 @@ __pycache__/
 data/source/logainm/*/raw/
 
 # Generated GEDCOM reports hold names from Mike's private GEDCOM. Regenerate with
-# python tools/gedcom_census.py propose FILE. Only the reviewed decisions file is committed.
+# python tools/tree_census_links.py propose FILE. Only the reviewed decisions file is committed.
 data/processed/gedcom/
 
 # Generated census link reports (WP18). Regenerate with python tools/census_links.py propose.
 # Only reviewed decisions are committed.
 data/processed/census_links/
 
-# Generated census GEDCOM test files (WP20). Regenerate with python tools/census_gedcom.py.
+# Generated census GEDCOM test files (WP20). Regenerate with python tools/census_gedcom_export.py.
 data/processed/census_gedcom/

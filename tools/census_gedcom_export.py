@@ -1,8 +1,8 @@
 """Census GEDCOM writer (WP20): a GEDCOM test file for one townland, one family or one DED.
 
-    python tools/census_gedcom.py --townland cullionboy
-    python tools/census_gedcom.py --family Kelly
-    python tools/census_gedcom.py --ded Clogher
+    python tools/census_gedcom_export.py --townland cullionboy
+    python tools/census_gedcom_export.py --family Kelly
+    python tools/census_gedcom_export.py --ded Clogher
 
 The file is built from the census returns, the census links Mike accepted (WP19,
 `data/research/associations/census_links.csv`) and the links he accepted from his own tree
@@ -30,7 +30,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import census_links as cl  # noqa: E402
-import gedcom_census  # noqa: E402
+import tree_census_links  # noqa: E402
 import given_names_reference  # noqa: E402
 import variants_reference  # noqa: E402
 
@@ -98,7 +98,7 @@ def load_anchors(path: Path = cl.TREE) -> dict[str, str]:
     """Census row to tree person pointer, from the links Mike accepted in his tree."""
     out = {}
     if Path(path).is_file():
-        for r in gedcom_census.read_decisions(path):
+        for r in tree_census_links.read_decisions(path):
             if r["status"] == "accepted":
                 out[r["obs_id"]] = r["person_ptr"].strip("@")
     return out

@@ -56,8 +56,8 @@ Structural checks pass for every file the tool writes, but that does not show th
 ## Running the same thing on your own computer
 
 ```
-python tools/census_gedcom.py --townland "Keadew Lower"
-python tools/census_gedcom.py --townland "Keadew Lower" --tentative --min-confidence low
+python tools/census_gedcom_export.py --townland "Keadew Lower"
+python tools/census_gedcom_export.py --townland "Keadew Lower" --tentative --min-confidence low
 ```
 
 Files go to `data/processed/census_gedcom/`, which is not committed. The command line is unchanged by the workflow.

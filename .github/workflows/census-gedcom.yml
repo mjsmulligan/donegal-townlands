@@ -2,7 +2,7 @@ name: Census to GEDCOM
 
 # Manual run only. Builds a GEDCOM test file from the census returns already in the repository
 # (data/source/census) and the links Mike has accepted (data/research/associations), using
-# tools/census_gedcom.py. Nothing is downloaded and nothing needs uploading.
+# tools/census_gedcom_export.py. Nothing is downloaded and nothing needs uploading.
 #
 # Two kinds of file, never mixed:
 #   NORMAL     accepted links and tree anchors only. Always made.
@@ -103,13 +103,13 @@ jobs:
 
       - name: Make the NORMAL GEDCOM (accepted links and tree anchors only)
         run: |
-          python tools/census_gedcom.py "${{ steps.inputs.outputs.flag }}" "$VALUE" \
+          python tools/census_gedcom_export.py "${{ steps.inputs.outputs.flag }}" "$VALUE" \
             --wife-parent "$WIFE_PARENT" --out "$RUNNER_TEMP/census-gedcom/normal"
 
       - name: Make the TENTATIVE GEDCOM (includes unreviewed matcher proposals)
         if: ${{ inputs.tentative }}
         run: |
-          python tools/census_gedcom.py "${{ steps.inputs.outputs.flag }}" "$VALUE" \
+          python tools/census_gedcom_export.py "${{ steps.inputs.outputs.flag }}" "$VALUE" \
             --wife-parent "$WIFE_PARENT" --tentative --min-confidence "$MIN_CONFIDENCE" \
             --out "$RUNNER_TEMP/census-gedcom/tentative"
 

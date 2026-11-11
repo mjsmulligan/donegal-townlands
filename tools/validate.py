@@ -21,7 +21,7 @@ import media
 import variants_reference
 import given_names_reference
 import census_links
-import gedcom_census
+import tree_census_links
 import gedcom_people
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -66,8 +66,8 @@ if verify_manifest() != 0:
     bad.append('source manifest verification failed')
 
 # GEDCOM to census decisions (WP16): format, reviewer and date. The person-ID guard
-# needs the private GEDCOM, so it runs with: python tools/gedcom_census.py check --gedcom FILE
-bad += gedcom_census.check_decisions()
+# needs the private GEDCOM, so it runs with: python tools/tree_census_links.py check --gedcom FILE
+bad += tree_census_links.check_decisions()
 bad += variants_reference.check()
 bad += given_names_reference.check()
 bad += census_links.check_decisions()

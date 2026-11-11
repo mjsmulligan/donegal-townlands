@@ -40,7 +40,7 @@ import re
 import sys
 from pathlib import Path
 
-import gedcom_census  # place_key only, as the base of townland_key
+import tree_census_links  # place_key only, as the base of townland_key
 import given_names_reference
 import variants_reference
 
@@ -125,7 +125,7 @@ def townland_key(name: str) -> str:
     if len(parts) > 1 and parts[-1] in PLACE_SUFFIXES:
         suffix = parts[-1]
         k = " ".join(parts[:-1])
-    base = gedcom_census.place_key(k)
+    base = tree_census_links.place_key(k)
     base = _variant_map().get(base, base)
     return (base + " " + suffix).strip()
 
@@ -179,7 +179,7 @@ def _first_image(images) -> str:
 
 def load_census(directory: Path) -> list[dict]:
     """Census rows for 1901, 1911 and 1926. Observation IDs follow DATA_ARCHITECTURE 5.2 and are
-    identical to the IDs used by tools/gedcom_census.py."""
+    identical to the IDs used by tools/tree_census_links.py."""
     rows, seen = [], set()
     for f in sorted(Path(directory).glob("*.csv")):
         with open(f, encoding="utf-8-sig", newline="") as fh:

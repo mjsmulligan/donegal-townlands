@@ -1,4 +1,4 @@
-"""Tests for tools/census_gedcom.py (WP20). All rows are invented except the smoke test, which reads
+"""Tests for tools/census_gedcom_export.py (WP20). All rows are invented except the smoke test, which reads
 the census files held in the repository."""
 
 import io
@@ -10,9 +10,9 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "tools"))
 
-import census_gedcom as cg  # noqa: E402
+import census_gedcom_export as cg  # noqa: E402
 import census_links as cl  # noqa: E402
-import gedcom_census  # noqa: E402
+import tree_census_links  # noqa: E402
 from tests import test_census_links as tcl  # noqa: E402
 
 NAMES = cl.Names()
@@ -35,7 +35,7 @@ def build(rows, pairs=(), anchors=None, kind="townland", value="Alpha", **kw):
 
 
 def indis(text):
-    return [n for n in gedcom_census.parse_gedcom(text) if n.tag == "INDI"]
+    return [n for n in tree_census_links.parse_gedcom(text) if n.tag == "INDI"]
 
 
 class ChainTests(unittest.TestCase):
@@ -87,7 +87,7 @@ class CarriedYearsTests(unittest.TestCase):
         self.pairs = [(self.h01["obs"], self.h11["obs"]), (self.w01["obs"], self.w11["obs"])]
 
     def fams(self, text):
-        return [n for n in gedcom_census.parse_gedcom(text) if n.tag == "FAM"]
+        return [n for n in tree_census_links.parse_gedcom(text) if n.tag == "FAM"]
 
     def test_child_in_1901_joins_the_wife_through_her_1911_years_married(self):
         text, report, _ = build(self.rows, self.pairs)
@@ -120,7 +120,7 @@ class CarriedYearsTests(unittest.TestCase):
 
 class HouseholdShapeTests(unittest.TestCase):
     def fams(self, text):
-        return [n for n in gedcom_census.parse_gedcom(text) if n.tag == "FAM"]
+        return [n for n in tree_census_links.parse_gedcom(text) if n.tag == "FAM"]
 
     def test_wife_row_is_not_paired_with_a_widowed_head(self):
         head = row(1911, "Hugh", "White", 85)
@@ -246,7 +246,7 @@ class FamilyTests(unittest.TestCase):
         return [head, wife, kid]
 
     def fam(self, text):
-        return [n for n in gedcom_census.parse_gedcom(text) if n.tag == "FAM"]
+        return [n for n in tree_census_links.parse_gedcom(text) if n.tag == "FAM"]
 
     def test_head_and_wife_make_a_family_and_child_joins_when_years_married_allow(self):
         text, _, _ = build(self.household(yrs=15, wife_born=1))
@@ -346,7 +346,7 @@ def unfold(text):
 
 def gedcom_records(text):
     """Return {pointer: node} for INDI and FAM records."""
-    return {n.ptr: n for n in gedcom_census.parse_gedcom(text) if n.tag in ("INDI", "FAM")}
+    return {n.ptr: n for n in tree_census_links.parse_gedcom(text) if n.tag in ("INDI", "FAM")}
 
 
 def reciprocal_errors(text):
