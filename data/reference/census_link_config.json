@@ -21,8 +21,20 @@
   "same_house": 1,
   "implausible_relation": -3,
   "marital_regress": -3,
-  "surname_change": -2
+  "surname_change": -2,
+  "household_conflict_each": -1,
+  "household_conflict_max": 2
  },
  "old_age_from": 60,
- "age_drift_max_old": 12
+ "age_drift_max_old": 12,
+ "_place_variants": "Groups of spellings of one townland base name that Mike verified (2026-11-11), in addition to the spelling groups already in tools/gedcom_census.py PLACE_GROUPS, which he confirmed the same day. A suffix word (Upper, Lower, Middle, East, West and so on) is never folded, so Keadew Upper and Keadue Lower stay different places.",
+ "place_variants": [
+  [
+   "Keadew",
+   "Keadue"
+  ]
+ ],
+ "_household": "Household corroboration (2026-11-10). Only an individual link at or above household_support_min_confidence that is not ambiguous and has no severe flag supports another. Two or more such links are needed before a household pair counts as continuing (household_min_supporters). A contradiction between the two households (head or spouse role reversed, a person marked unlikely) subtracts from the other members.",
+ "household_min_supporters": 2,
+ "household_support_min_confidence": "medium"
 }

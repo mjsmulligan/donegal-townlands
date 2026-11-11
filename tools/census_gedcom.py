@@ -147,7 +147,7 @@ def scope_filter(kind: str, value: str, names: cl.Names):
     if kind == "ded":
         return lambda r: r["ded"].lower() == value.lower()
     if kind == "townland":
-        key = gedcom_census.place_key(value)
+        key = cl.townland_key(value)
         return lambda r: r["tkey"] == key
     canon = names.surname_canon(value)
     return lambda r: names.surname_canon(r["surname"]) == canon
@@ -405,9 +405,10 @@ def build_gedcom(rows, accepted_pairs, anchors, kind, value, names, wife_parent=
             out += note(2, "Derived from age %d in the %d return. Not a recorded date." % (first_age["age"], first_age["year"]))
         for t in sorted(tent_by_chain.get(cid, []), key=lambda t: (chain_of[t["fo"]], t["fo"], t["to"])):
             ra, rb = [r for r in members if r["obs"] == t["fo"]][0], [r for r in members if r["obs"] == t["to"]][0]
-            out += note(1, "TENTATIVE LINK, not accepted by the researcher: %s is the same person as %s. Matcher confidence %s%s."
+            out += note(1, "TENTATIVE LINK, not accepted by the researcher: %s is the same person as %s. Matcher confidence %s%s.%s"
                            % (ra_label(ra), ra_label(rb), t["confidence"],
-                              "; " + ", ".join(t["flags"]) if t.get("flags") else ""))
+                              "; " + ", ".join(t["flags"]) if t.get("flags") else "",
+                              " Rationale: " + t["method"] if t.get("method") else ""))
         for r in members:
             n_events += 1
             out += ["1 CENS", "2 DATE %d" % r["year"]]
@@ -430,6 +431,9 @@ def build_gedcom(rows, accepted_pairs, anchors, kind, value, names, wife_parent=
             out += ["1 WIFE " + ip(k[1])]
         for cc in sorted(kids_of.get(k, []), key=lambda c: (groups[c][0]["age"] is None, -(groups[c][0]["year"] - (groups[c][0]["age"] or 0)), c)):
             out += ["1 CHIL " + ip(cc)]
+        if any(c in tent_by_chain for c in [k[0], k[1]] + kids_of.get(k, []) if c):
+            out += note(1, "TENTATIVE: this family includes a person joined by a link that has not been reviewed or accepted by the "
+                           "researcher. See the TENTATIVE LINK note on each such person.")
     out.append("0 TRLR")
 
     counts = {"people": len(people), "families": len(fams), "events": n_events,
@@ -556,7 +560,7 @@ def tentative_links(rows, names, decisions: Path, min_confidence: str = "low"):
                 ambiguous += 1
             elif cl.RANK[c["confidence"]] <= cl.RANK[min_confidence]:
                 out.append({"fo": c["a"]["obs"], "to": c["b"]["obs"], "confidence": c["confidence"],
-                            "flags": list(c.get("flags") or [])})
+                            "flags": list(c.get("flags") or []), "method": cl.method_text(c)})
     return out, ambiguous
 
 
