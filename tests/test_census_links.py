@@ -101,6 +101,64 @@ class LinkTests(unittest.TestCase):
         self.assertTrue(all("ambiguous" in c["flags"] for c in links))
 
 
+
+class AcceptedSupportTests(unittest.TestCase):
+    """Accepting links must not weaken the links left in the same household (2026-11-12)."""
+
+    def household(self):
+        a = [row(1901, "Thomas", "Kelly", 50), row(1901, "Margaret", "Kelly", 48, "F", rel="Wife"),
+             row(1901, "Joe", "Kelly", 12, rel="Son", marital="Single"),
+             row(1901, "Anne", "Kelly", 10, "F", rel="Daughter", marital="Single")]
+        b = [row(1911, "Thomas", "Kelly", 60), row(1911, "Margaret", "Kelly", 58, "F", rel="Wife"),
+             row(1911, "Joe", "Kelly", 22, rel="Son", marital="Single"),
+             row(1911, "Anne", "Kelly", 20, "F", rel="Daughter", marital="Single")]
+        return a, b
+
+    def decisions(self, a, b, names):
+        out = {}
+        for ra, rb in zip(a, b):
+            if ra["first"] in names:
+                out[(ra["obs"], rb["obs"])] = {"status": "accepted", "confidence": "high", "reviewer": "Mike",
+                                               "date": "2026-11-12", "from_obs": ra["obs"], "to_obs": rb["obs"],
+                                               "from_name": "", "to_name": "", "note": ""}
+        return out
+
+    def test_a_link_keeps_its_household_support_when_the_others_are_accepted(self):
+        a, b = self.household()
+        before = pairs(cl.propose_ded(a + b, NAMES, CFG)[0])[(a[3]["obs"], b[3]["obs"])]
+        self.assertEqual((before["confidence"], before["support"]), ("high", 3))
+        dec = self.decisions(a, b, {"Thomas", "Margaret", "Joe"})
+        links = pairs(cl.propose_ded(a + b, NAMES, CFG, dec)[0])
+        anne = links[(a[3]["obs"], b[3]["obs"])]
+        self.assertEqual(anne["confidence"], "high")
+        self.assertEqual(anne["support"], 3)
+        self.assertEqual(anne["flags"], [])
+        self.assertIn("3 other members continue", cl.method_text(anne))
+
+    def test_two_accepted_members_are_enough_to_corroborate_a_third(self):
+        a, b = self.household()
+        dec = self.decisions(a, b, {"Thomas", "Margaret"})
+        links = pairs(cl.propose_ded(a + b, NAMES, CFG, dec)[0])
+        for i in (2, 3):
+            self.assertEqual(links[(a[i]["obs"], b[i]["obs"])]["confidence"], "high")
+
+    def test_accepting_changes_nothing_for_a_two_person_household(self):
+        a, b = self.household()
+        a, b = a[:2], b[:2]
+        key = (a[1]["obs"], b[1]["obs"])
+        before = pairs(cl.propose_ded(a + b, NAMES, CFG)[0])[key]
+        after = pairs(cl.propose_ded(a + b, NAMES, CFG, self.decisions(a, b, {"Thomas"}))[0])[key]
+        self.assertEqual((before["confidence"], before["support"]), (after["confidence"], after["support"]))
+
+    def test_accepted_links_in_another_pair_of_returns_do_not_count(self):
+        a, b = self.household()
+        c = [row(1926, "Thomas", "Kelly", 76, house="1"), row(1926, "Margaret", "Kelly", 74, "F", house="1", rel="Wife")]
+        dec = self.decisions(b[:2], c, {"Thomas", "Margaret"})       # 1911 to 1926 only
+        links = pairs(cl.propose_ded(a + b, NAMES, CFG, dec)[0])
+        anne = links[(a[3]["obs"], b[3]["obs"])]
+        self.assertEqual(anne["support"], 3)                         # from the three proposed 1901 links, not the 1926 ones
+
+
 H1 = ["census_year", "ded", "townland", "townland_clean", "firstname", "surname", "age", "sex", "house_number",
       "relation_to_head", "relation_to_head_updated", "marriage_status", "marriage_years", "children_born", "id",
       "images", "occupation", "occupation_updated", "birthplace"]

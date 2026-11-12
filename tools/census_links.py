@@ -370,7 +370,7 @@ def _member_text(c: dict) -> str:
     return "%s %s to %s" % (_name(c["a"]), c["a"]["age"], c["b"]["age"])
 
 
-def add_support(cands, hh_size, cfg):
+def add_support(cands, hh_size, cfg, accepted=()):
     """Household continuity as corroboration (WP18, 2026-11-11).
 
     Individual links come first. A link can support the others in its household pair only when it is
@@ -382,6 +382,11 @@ def add_support(cands, hh_size, cfg):
     alone, so it cannot feed back on itself. A link that is ambiguous against rivals in other
     households can still count, because a household is exactly what separates cousins with the same
     names, but then its rivals in the same pair of households gain nothing from it.
+
+    `accepted` is the links Mike has already accepted for the same pair of returns, as (earlier row, later
+    row). A reviewed link is sound by definition, so it counts as one of the agreeing members for its
+    household pair, whatever its confidence was. Without this a household's links lose their corroboration
+    one by one as they are accepted, because an accepted row leaves the candidate pool (2026-11-12).
 
     Members who left, arrived, married or died are simply not counted. Only contradictions count against
     a link (the two rules below) and they are recorded for the review rationale."""
@@ -406,6 +411,10 @@ def add_support(cands, hh_size, cfg):
                 risky[pair(c)].append(c)
         elif RANK[grade(c, household=False)[0]] <= min_rank:
             sound[pair(c)].append(c)
+
+    for ra, rb in accepted:
+        # Ranked above any proposal so a reviewed link is always the one that counts for its member.
+        sound[pair({"a": ra, "b": rb})].append({"a": ra, "b": rb, "score": 10 ** 6, "reviewed": True})
 
     def agreeing(p, skip_a=None, skip_b=None):
         """The distinct earlier members of pair p with a sound link, one link each (the strongest), and
@@ -596,7 +605,7 @@ def propose_ded(rows: list[dict], names: Names, cfg: dict, decisions: dict | Non
         cands = [c for c in cands if (c["a"]["obs"], c["b"]["obs"]) not in rejected
                  and c["a"]["obs"] not in linked_from and c["b"]["obs"] not in linked_to]
         stats.update(skipped)
-        add_support(cands, hh_size, cfg)
+        add_support(cands, hh_size, cfg, [(x, y) for x, y, _ in accepted if (x["year"], y["year"]) == (ya, yb)])
         chosen, ambiguous = assign(cands, cfg)
         for c in chosen + ambiguous:
             links.append(c)
@@ -608,7 +617,7 @@ def propose_ded(rows: list[dict], names: Names, cfg: dict, decisions: dict | Non
         if left_a and left_b:
             cands, skipped = candidates(left_a, left_b, names, cfg, skip=True)
             cands = [c for c in cands if (c["a"]["obs"], c["b"]["obs"]) not in rejected]
-            add_support(cands, hh_size, cfg)
+            add_support(cands, hh_size, cfg, [(x, y) for x, y, _ in accepted if (x["year"], y["year"]) == SKIP])
             chosen, ambiguous = assign(cands, cfg)
             links += chosen + ambiguous
     for c in links:
