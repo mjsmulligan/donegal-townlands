@@ -27,6 +27,9 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15p
   padding-block:0 48px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 .wrap{max-width:980px;margin:0 auto}
 header{padding-top:20px}
+details.how{margin:0 0 12px}
+details.how>summary{cursor:pointer;color:var(--accent);font-size:.9rem}
+@media (max-width:600px){.bar{position:static}}
 h1{font-size:1.5rem;font-weight:600;margin:0 0 4px;text-wrap:balance}
 .sub{color:var(--muted);margin:0 0 14px;max-width:70ch}
 .bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding:10px 0;border-bottom:1px solid var(--line)}
@@ -102,16 +105,33 @@ a.orig{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--ac
 a.orig:hover{border-bottom-color:var(--accent)}
 .stat{font-size:.75rem;font-weight:600;padding:1px 7px;border-radius:4px}
 .stat.accepted{background:var(--high-soft);color:var(--ok)} .stat.rejected{background:var(--low-soft);color:var(--no)}
-.lk .acts{margin-top:4px}
+.lk .acts{margin-left:auto;display:inline-flex;gap:6px}
+.only-narrow{display:none}
+@media (max-width:600px){.lk .nm{display:none}.only-narrow{display:block}td.why{min-width:260px}}
 .lk.flip{color:var(--muted)}
+.topact{display:flex;flex-wrap:wrap;gap:8px 10px;align-items:center;margin:0 0 12px;padding:10px 12px;background:var(--panel);border:1px solid var(--line);border-radius:8px}
+.topact .note{margin:0}
+details.rat{margin-top:4px}
+details.rat>summary{cursor:pointer;color:var(--accent);font-size:.85rem;list-style:none;display:inline-flex;align-items:center;gap:4px;padding:2px 0}
+details.rat>summary::-webkit-details-marker{display:none}
+details.rat>summary::before{content:"\25B8";display:inline-block;transition:transform .15s}
+details.rat[open]>summary::before{transform:rotate(90deg)}
+details.rat>summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.skip{font-size:.8rem;color:var(--muted)}
 
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 <div class="wrap">
 <header>
   <h1 id="ttl"></h1>
-  <p class="sub">Each card is one household in an earlier return and the household its members appear in later. Each row is one person, with their entry in each return. A dash means no link is proposed for that return. Birthplace is shown only when it is not Co Donegal. Accept a link only where you are satisfied it is the same person. Nothing here is saved to the project until you send the decisions back. Low links that move townland with no household support and no surname change are hidden from the review view and listed in the Hidden tab. They are not rejected, and nothing is recorded for them.</p>
 </header>
+<div class="topact">
+  <button class="btn go" type="button" data-do="dl">Download decisions</button>
+  <button class="btn" type="button" data-do="copy">Copy decisions</button>
+  <span class="note"><b id="ncount2">0</b> decisions so far. Download or copy them when you finish and send them back.</span>
+  <span class="note msg" role="status"></span>
+</div>
+<details class="how" id="how"><summary>How to read this page</summary><p class="sub">Each card is one household in an earlier return and the household its members appear in later. Each row is one person, with their entry in each return. A dash means no link is proposed for that return. Birthplace is shown only when it is not Co Donegal. Accept a link only where you are satisfied it is the same person. Nothing here is saved to the project until you send the decisions back. Low links that move townland with no household support and no surname change are hidden from the review view and listed in the Hidden tab. They are not rejected, and nothing is recorded for them.</p></details>
 <div class="bar">
   <div class="stats" id="stats"></div>
   <div class="prog" id="prog"></div>
@@ -120,8 +140,8 @@ a.orig:hover{border-bottom-color:var(--accent)}
 <main id="list"></main>
 <details class="out" id="out">
   <summary>Your decisions (<span id="ncount">0</span>)</summary>
-  <p class="note">Download the file and attach it to the chat, or press Copy and paste the text. Only accepted and rejected links are listed. Decisions are also kept in this browser while you work.</p>
-  <button class="btn go" id="dl" type="button">Download decisions</button> <button class="btn" id="copy" type="button">Copy decisions</button> <span class="note" id="copied"></span>
+  <p class="note">The same decisions as text, for copying by hand if the buttons do not work. Only accepted and rejected links are listed. Decisions are also kept in this browser while you work.</p>
+  <button class="btn go" type="button" data-do="dl">Download decisions</button> <button class="btn" type="button" data-do="copy">Copy decisions</button> <span class="note msg" role="status"></span>
   <textarea id="csv" readonly aria-label="Decisions as CSV"></textarea>
 </details>
 </div>
@@ -137,6 +157,10 @@ const byFrom = {}, byTo = {};
 D.rows.forEach(r => { (byFrom[r.from.obs] = byFrom[r.from.obs] || []).push(r); (byTo[r.to.obs] = byTo[r.to.obs] || []).push(r); });
 function rivals(r){ return (byFrom[r.from.obs].concat(byTo[r.to.obs])).filter((x, i, a) => x !== r && a.indexOf(x) === i); }
 function blocked(r){ return rivals(r).some(x => dec[x.k] === "accepted"); }
+const RANKED = {high: 0, medium: 1, low: 2};
+// A link the household button may accept: undecided, not hidden, not blocked by an accepted rival, and with no
+// undecided rival of its own (those need a choice, so they are left for the reviewer).
+function eligible(r){ return !dec[r.k] && r.queue !== "hidden" && !blocked(r) && rivals(r).every(x => dec[x.k] === "rejected"); }
 function needs(r){ return !dec[r.k] && r.queue !== "hidden" && (r.conf !== "high" || r.audit); }
 const FILTERS = [
   ["review", "To review", r => needs(r)],
@@ -155,15 +179,23 @@ function hhLine(rows){
   return '<div class="hhline">' + d(f) + ' &#8594; ' + d(t) + '</div>';
 }
 function who(p){ return esc(p.name) + ' (' + esc(p.age) + ', ' + esc(p.rel) + ')'; }
+const wide = window.matchMedia ? window.matchMedia("(min-width: 900px)").matches : true;
+const opened = {};
 function linkOut(r){
   const d = dec[r.k], rv = rivals(r), b = blocked(r);
-  const fl = r.flags.map(f => '<span class="flag">' + esc(f) + '</span>').join("") + (r.audit ? '<span class="aud">in audit sample</span>' : "");
+  const fl = r.flags.map(f => '<span class="flag">' + esc(f) + '</span>').join("");
   const rival = rv.length ? '<div class="rival">Also proposed: ' + rv.map(x => esc(x.from.name) + ' (' + esc(x.from.age) + ', ' + x.years.slice(0,4) + ') with ' + esc(x.to.name) + ' (' + esc(x.to.age) + ', ' + x.years.slice(-4) + ')' + (dec[x.k] ? ' [' + dec[x.k] + ']' : '')).join("; ") + '</div>' : "";
-  return '<div class="lk"><div class="top"><span class="badge ' + r.conf + '">' + r.conf + '</span><span>' + r.years.slice(0,4) + ' to ' + r.years.slice(-4) + ': <b>' + esc(r.from.name) + '</b> with <b>' + esc(r.to.name) + '</b></span>' + (d ? '<span class="stat ' + d + '">' + d + '</span>' : '') + '</div>' +
+  const isOpen = r.k in opened ? opened[r.k] : wide;
+  const n = r.flags.length;
+  const names = '<b>' + esc(r.from.name) + '</b> with <b>' + esc(r.to.name) + '</b>';
+  const btns = '<span class="acts"><button class="btn' + (d === "accepted" ? " on-a" : "") + '" data-k="' + esc(r.k) + '" data-a="accepted" aria-pressed="' + (d === "accepted") + '"' + (b && d !== "accepted" ? " disabled" : "") + '>Accept</button> ' +
+    '<button class="btn' + (d === "rejected" ? " on-r" : "") + '" data-k="' + esc(r.k) + '" data-a="rejected" aria-pressed="' + (d === "rejected") + '">Reject</button></span>';
+  return '<div class="lk"><div class="top"><span class="badge ' + r.conf + '">' + r.conf + '</span><span class="yrs">' + r.years.slice(0,4) + ' to ' + r.years.slice(-4) + '</span><span class="nm">: ' + names + '</span>' + (r.audit ? '<span class="aud">audit</span>' : "") + (d ? '<span class="stat ' + d + '">' + d + '</span>' : '') + btns + '</div>' +
+    (b ? '<div class="rival">Another candidate for this person is already accepted.</div>' : "") +
+    '<details class="rat" data-k="' + esc(r.k) + '"' + (isOpen ? " open" : "") + '><summary>Why' + (n ? ' (' + n + ' flag' + (n === 1 ? "" : "s") + ')' : "") + '</summary>' +
+    '<div class="why only-narrow">' + names + '</div>' +
     '<div class="why" title="' + esc(r.from.obs + ' to ' + r.to.obs) + '">' + esc(r.method) + '</div>' +
-    (fl ? '<div class="flags">' + fl + '</div>' : "") + rival + (b ? '<div class="rival">Another candidate for this person is already accepted.</div>' : "") +
-    '<div class="acts"><button class="btn' + (d === "accepted" ? " on-a" : "") + '" data-k="' + esc(r.k) + '" data-a="accepted" aria-pressed="' + (d === "accepted") + '"' + (b && d !== "accepted" ? " disabled" : "") + '>Accept</button> ' +
-    '<button class="btn' + (d === "rejected" ? " on-r" : "") + '" data-k="' + esc(r.k) + '" data-a="rejected" aria-pressed="' + (d === "rejected") + '">Reject</button></div></div>';
+    (fl ? '<div class="flags">' + fl + '</div>' : "") + rival + '</details></div>';
 }
 function linkIn(r){
   const d = dec[r.k];
@@ -246,12 +278,14 @@ function render(){
   });
   groups.sort((a, b) => Math.min(...a[1].map(r => RANK[r.conf])) - Math.min(...b[1].map(r => RANK[r.conf])));
   document.getElementById("list").innerHTML = groups.length ? groups.map(([g, rows]) => {
-    const hi = rows.filter(r => r.conf === "high" && !dec[r.k] && !blocked(r)).length;
+    const hi = rows.filter(eligible).length;
+    const left = rows.filter(r => !dec[r.k] && r.queue !== "hidden" && !blocked(r) && !eligible(r)).length;
     return '<section class="card"><div class="ch"><div><h2>' + esc(g) + '</h2><div class="meta">' + rows.length + ' proposed link' + (rows.length === 1 ? "" : "s") + '</div></div>' +
-      (hi ? '<button class="btn go" data-g="' + esc(g) + '">Accept the ' + hi + ' high link' + (hi === 1 ? "" : "s") + '</button>' : '') + '</div>' + hhLine(rows) + table(rows, f) + '</section>';
+      (hi || left ? '<div>' + (hi ? '<button class="btn go" data-g="' + esc(g) + '">Accept all ' + hi + ' link' + (hi === 1 ? "" : "s") + '</button>' : '') + (left ? ' <span class="skip">' + left + ' with competing candidates need your choice</span>' : '') + '</div>' : '') + '</div>' + hhLine(rows) + table(rows, f) + '</section>';
   }).join("") : '<p class="empty">Nothing in this view.</p>';
   const out = D.rows.filter(r => dec[r.k]);
   document.getElementById("ncount").textContent = out.length;
+  document.getElementById("ncount2").textContent = out.length;
   const today = new Date().toISOString().slice(0, 10);
   const q = s => '"' + String(s).replace(/"/g, '""') + '"';
   document.getElementById("csv").value = "status,confidence,from_obs,to_obs,from_name,to_name,reviewer,date\n" +
@@ -266,28 +300,45 @@ document.addEventListener("click", e => {
     save(); render(); return;
   }
   if (t.dataset.g) {
-    D.rows.filter(r => r.group === t.dataset.g && r.conf === "high" && !dec[r.k] && !blocked(r)).forEach(r => { dec[r.k] = "accepted"; });
+    D.rows.filter(r => r.group === t.dataset.g).sort((x, y) => RANKED[x.conf] - RANKED[y.conf])
+      .forEach(r => { if (eligible(r)) dec[r.k] = "accepted"; });
     save(); render(); return;
   }
-  if (t.id === "dl") {
-    const m = document.getElementById("copied"), text = document.getElementById("csv").value;
-    if (!D.rows.some(r => dec[r.k])) { m.textContent = "No decisions to download yet."; return; }
-    try {
-      const url = URL.createObjectURL(new Blob([text + "\n"], {type: "text/csv"}));
-      const a = document.createElement("a");
-      a.href = url; a.download = "census_decisions_" + D.townland.toLowerCase().replace(/[^a-z0-9]+/g, "_") + "_" + new Date().toISOString().slice(0, 10) + ".csv";
-      document.body.appendChild(a); a.click(); a.remove();
-      setTimeout(() => URL.revokeObjectURL(url), 1000);
-      m.textContent = "Downloaded.";
-    } catch (err) { m.textContent = "Download is not available here, use Copy."; }
+  if (t.dataset.do) {
+    const msg = x => document.querySelectorAll(".msg").forEach(e => { e.textContent = x; });
+    const ta = document.getElementById("csv"), text = ta.value + "\n";
+    if (!D.rows.some(r => dec[r.k])) { msg("No decisions yet."); return; }
+    if (t.dataset.do === "copy") {
+      const fallback = () => { document.getElementById("out").open = true; ta.select(); msg("Press Ctrl+C to copy."); };
+      try { navigator.clipboard.writeText(ta.value).then(() => msg("Copied."), fallback); } catch (err) { fallback(); }
+      return;
+    }
+    const name = "census_decisions_" + D.townland.toLowerCase().replace(/[^a-z0-9]+/g, "_") + "_" + new Date().toISOString().slice(0, 10) + ".csv";
+    (async () => {
+      let dls = null;
+      try { dls = window.claude && claude.use ? await claude.use("downloads") : null; } catch (err) { dls = null; }
+      if (dls) {
+        try { await dls.save({filename: name, data: text}); msg("Saved."); }
+        catch (err) { msg(err && err.code === "declined" ? "Not saved." : "Download is not available here, use Copy."); }
+        return;
+      }
+      try {
+        const url = URL.createObjectURL(new Blob([text], {type: "text/csv"}));
+        const a = document.createElement("a");
+        a.href = url; a.download = name;
+        document.body.appendChild(a); a.click(); a.remove();
+        setTimeout(() => URL.revokeObjectURL(url), 1000);
+        msg("Downloaded.");
+      } catch (err) { msg("Download is not available here, use Copy."); }
+    })();
     return;
   }
-  if (t.id === "copy") {
-    const ta = document.getElementById("csv"), m = document.getElementById("copied");
-    const fallback = () => { ta.select(); m.textContent = "Press Ctrl+C to copy."; };
-    try { navigator.clipboard.writeText(ta.value).then(() => { m.textContent = "Copied."; }, fallback); } catch (err) { fallback(); }
-  }
 });
+document.addEventListener("toggle", e => {
+  const el = e.target;
+  if (el && el.classList && el.classList.contains("rat")) opened[el.dataset.k] = el.open;
+}, true);
+if (wide) document.getElementById("how").open = true;
 document.getElementById("ttl").textContent = D.townland + ": census links to review";
 render();
 </script>
