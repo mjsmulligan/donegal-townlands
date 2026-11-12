@@ -110,7 +110,7 @@ a.orig:hover{border-bottom-color:var(--accent)}
 <div class="wrap">
 <header>
   <h1 id="ttl"></h1>
-  <p class="sub">Each card is one household in an earlier return and the household its members appear in later. Each row is one person, with their entry in each return. A dash means no link is proposed for that return. Birthplace is shown only when it is not Co Donegal. Accept a link only where you are satisfied it is the same person. Nothing here is saved to the project until you send the decisions back.</p>
+  <p class="sub">Each card is one household in an earlier return and the household its members appear in later. Each row is one person, with their entry in each return. A dash means no link is proposed for that return. Birthplace is shown only when it is not Co Donegal. Accept a link only where you are satisfied it is the same person. Nothing here is saved to the project until you send the decisions back. Low links that move townland with no household support and no surname change are hidden from the review view and listed in the Hidden tab. They are not rejected, and nothing is recorded for them.</p>
 </header>
 <div class="bar">
   <div class="stats" id="stats"></div>
@@ -120,8 +120,8 @@ a.orig:hover{border-bottom-color:var(--accent)}
 <main id="list"></main>
 <details class="out" id="out">
   <summary>Your decisions (<span id="ncount">0</span>)</summary>
-  <p class="note">Press Copy and paste the text into the chat. Only accepted and rejected links are listed. Decisions are also kept in this browser while you work.</p>
-  <button class="btn go" id="copy" type="button">Copy decisions</button> <span class="note" id="copied"></span>
+  <p class="note">Download the file and attach it to the chat, or press Copy and paste the text. Only accepted and rejected links are listed. Decisions are also kept in this browser while you work.</p>
+  <button class="btn go" id="dl" type="button">Download decisions</button> <button class="btn" id="copy" type="button">Copy decisions</button> <span class="note" id="copied"></span>
   <textarea id="csv" readonly aria-label="Decisions as CSV"></textarea>
 </details>
 </div>
@@ -137,10 +137,11 @@ const byFrom = {}, byTo = {};
 D.rows.forEach(r => { (byFrom[r.from.obs] = byFrom[r.from.obs] || []).push(r); (byTo[r.to.obs] = byTo[r.to.obs] || []).push(r); });
 function rivals(r){ return (byFrom[r.from.obs].concat(byTo[r.to.obs])).filter((x, i, a) => x !== r && a.indexOf(x) === i); }
 function blocked(r){ return rivals(r).some(x => dec[x.k] === "accepted"); }
-function needs(r){ return !dec[r.k] && (r.conf !== "high" || r.audit); }
+function needs(r){ return !dec[r.k] && r.queue !== "hidden" && (r.conf !== "high" || r.audit); }
 const FILTERS = [
   ["review", "To review", r => needs(r)],
   ["audit", "High audit sample", r => r.audit],
+  ["hidden", "Hidden", r => r.queue === "hidden" && !dec[r.k]],
   ["high", "All high", r => r.conf === "high"],
   ["decided", "Decided", r => !!dec[r.k]],
   ["all", "All links", r => true]
@@ -234,8 +235,8 @@ function table(rows, f){
 function render(){
   const f = FILTERS.find(x => x[0] === filt)[1 + 1];
   const acc = D.rows.filter(r => dec[r.k] === "accepted").length, rej = D.rows.filter(r => dec[r.k] === "rejected").length;
-  const todo = D.rows.filter(needs).length, n = D.rows.length;
-  document.getElementById("stats").innerHTML = '<span><b>' + n + '</b> proposed links</span><span><b>' + acc + '</b> accepted</span><span><b>' + rej + '</b> rejected</span><span><b>' + todo + '</b> still to review</span>';
+  const todo = D.rows.filter(needs).length, n = D.rows.length, hid = D.rows.filter(r => r.queue === "hidden" && !dec[r.k]).length;
+  document.getElementById("stats").innerHTML = '<span><b>' + n + '</b> proposed links</span><span><b>' + acc + '</b> accepted</span><span><b>' + rej + '</b> rejected</span><span><b>' + todo + '</b> still to review</span>' + (hid ? '<span><b>' + hid + '</b> hidden, see the Hidden tab</span>' : '');
   document.getElementById("prog").innerHTML = '<i class="a" style="width:' + (100 * acc / n) + '%"></i><i class="r" style="width:' + (100 * rej / n) + '%"></i>';
   document.getElementById("tabs").innerHTML = FILTERS.map(x => '<button class="tab" data-f="' + x[0] + '" aria-pressed="' + (x[0] === filt) + '">' + x[1] + '<small>' + D.rows.filter(x[2]).length + '</small></button>').join("");
   const groups = [];
@@ -267,6 +268,19 @@ document.addEventListener("click", e => {
   if (t.dataset.g) {
     D.rows.filter(r => r.group === t.dataset.g && r.conf === "high" && !dec[r.k] && !blocked(r)).forEach(r => { dec[r.k] = "accepted"; });
     save(); render(); return;
+  }
+  if (t.id === "dl") {
+    const m = document.getElementById("copied"), text = document.getElementById("csv").value;
+    if (!D.rows.some(r => dec[r.k])) { m.textContent = "No decisions to download yet."; return; }
+    try {
+      const url = URL.createObjectURL(new Blob([text + "\n"], {type: "text/csv"}));
+      const a = document.createElement("a");
+      a.href = url; a.download = "census_decisions_" + D.townland.toLowerCase().replace(/[^a-z0-9]+/g, "_") + "_" + new Date().toISOString().slice(0, 10) + ".csv";
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+      m.textContent = "Downloaded.";
+    } catch (err) { m.textContent = "Download is not available here, use Copy."; }
+    return;
   }
   if (t.id === "copy") {
     const ta = document.getElementById("csv"), m = document.getElementById("copied");
