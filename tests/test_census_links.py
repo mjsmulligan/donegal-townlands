@@ -159,6 +159,70 @@ class AcceptedSupportTests(unittest.TestCase):
         self.assertEqual(anne["support"], 3)                         # from the three proposed 1901 links, not the 1926 ones
 
 
+
+class CalibrateTests(unittest.TestCase):
+    def test_wilson_lower_is_cautious_and_grows_with_evidence(self):
+        self.assertEqual(cl.wilson_lower(0, 0), 0.0)
+        self.assertAlmostEqual(cl.wilson_lower(12, 12), 1 / (1 + cl.Z95 ** 2 / 12), places=9)   # closed form for a perfect record
+        self.assertGreater(cl.wilson_lower(120, 120), cl.wilson_lower(12, 12))
+        self.assertLess(cl.wilson_lower(11, 12), cl.wilson_lower(12, 12))
+        self.assertLess(cl.wilson_lower(100, 120), 100 / 120)
+
+    def test_more_needed_counts_further_accepted_decisions(self):
+        self.assertEqual(cl.more_needed(12, 12, 0.95), 40)
+        self.assertEqual(cl.more_needed(52, 52, 0.95), 0)
+        self.assertGreater(cl.more_needed(10, 12, 0.95), cl.more_needed(12, 12, 0.95))
+        self.assertIsNone(cl.more_needed(1, 10, 0.99, limit=50))
+
+    def test_flag_kinds_ignore_names_and_numbers(self):
+        self.assertEqual(cl._flag_kind("age drift 4"), "age drift")
+        self.assertEqual(cl._flag_kind("age drift 12, beyond the limit for an older age"), "age drift")
+        self.assertEqual(cl._flag_kind("household contradiction: Tom is Head in 1901 but Son in 1911"), "household contradiction")
+        self.assertEqual(cl._flag_kind("surname change"), "surname change")
+
+    def household(self):
+        a = [row(1901, "Thomas", "Kelly", 50), row(1901, "Margaret", "Kelly", 48, "F", rel="Wife"),
+             row(1901, "Joe", "Kelly", 12, rel="Son", marital="Single")]
+        b = [row(1911, "Thomas", "Kelly", 60), row(1911, "Margaret", "Kelly", 58, "F", rel="Wife"),
+             row(1911, "Joe", "Kelly", 22, rel="Son", marital="Single")]
+        return a, b
+
+    def decision(self, ra, rb, status, band):
+        return {"status": status, "confidence": band, "reviewer": "Mike", "date": "2026-11-13", "from_obs": ra["obs"],
+                "to_obs": rb["obs"], "from_name": "", "to_name": "", "note": ""}
+
+    def test_counts_by_band_pair_and_flag(self):
+        a, b = self.household()
+        dec = {(a[0]["obs"], b[0]["obs"]): self.decision(a[0], b[0], "accepted", "high"),
+               (a[1]["obs"], b[1]["obs"]): self.decision(a[1], b[1], "accepted", "high"),
+               (a[2]["obs"], b[2]["obs"]): self.decision(a[2], b[2], "rejected", "medium")}
+        res = cl.calibrate_rows(a + b, CFG, dec, NAMES)
+        self.assertEqual(res["decisions"], 3)
+        self.assertEqual(res["tally"]["band"]["high"], (2, 0))
+        self.assertEqual(res["tally"]["band"]["medium"], (0, 1))
+        self.assertEqual(res["tally"]["years"]["1901 to 1911"], (2, 1))
+        self.assertEqual(res["tally"]["flag"]["no flags"], (2, 1))
+        self.assertEqual(res["unmatched"], 0)
+        self.assertEqual(res["proposed"].get("high"), 3)
+
+    def test_decisions_the_matcher_does_not_propose_are_counted_apart(self):
+        a, b = self.household()
+        dec = {(a[0]["obs"], b[1]["obs"]): self.decision(a[0], b[1], "accepted", "low")}
+        res = cl.calibrate_rows(a + b, CFG, dec, NAMES)
+        self.assertEqual(res["unmatched"], 1)
+        self.assertEqual(res["tally"]["band"]["low"], (1, 0))
+        self.assertEqual(res["tally"]["flag"], {})
+
+    def test_the_report_changes_nothing_and_handles_no_decisions(self):
+        import io
+        a, b = self.household()
+        out = io.StringIO()
+        with tempfile.TemporaryDirectory() as tmp:
+            res = cl.run_calibrate(Path(tmp), CFG, Path(tmp) / "none.csv", out)
+        self.assertEqual(res["decisions"], 0)
+        self.assertIn("nothing to calibrate", out.getvalue())
+
+
 H1 = ["census_year", "ded", "townland", "townland_clean", "firstname", "surname", "age", "sex", "house_number",
       "relation_to_head", "relation_to_head_updated", "marriage_status", "marriage_years", "children_born", "id",
       "images", "occupation", "occupation_updated", "birthplace"]
