@@ -11,12 +11,16 @@ Usage:
                                          [--surname NAME] [--out DIR] [--config FILE]
     python tools/census_links.py check   [--census-dir DIR] [--decisions FILE] [--config FILE]
     python tools/census_links.py accept  FILE|- [--reviewer NAME] [--date YYYY-MM-DD] [--dry-run]
+    python tools/census_links.py calibrate [--census-dir DIR] [--records FILE] [--config FILE]
 
 `propose` writes one review CSV per DED to data/processed/census_links/ (not committed).
 `accept` records the decisions Mike copied from the review page (or an edited review CSV) in
 data/research/associations/census_links.csv (WP19). Only accepted and rejected rows are kept.
 Later runs of `propose` keep accepted links, never propose a rejected pair again, and do not
 let an accepted row compete for another link.
+`calibrate` reports, from the reviewed decisions, how often each confidence band, flag and pair of
+returns was accepted, with a cautious lower bound, and how many more error-free decisions a band
+needs before bulk accepting could be considered (WP23). It changes nothing and recommends nothing.
 `check` runs the matcher against the links Mike accepted between the tree and the census
 (data/research/associations/tree_census_links.csv) and reports how many it recovers and at what
 confidence, and whether any known link is replaced by a wrong one.
@@ -36,6 +40,7 @@ import collections
 import csv
 import datetime
 import json
+import math
 import re
 import sys
 from pathlib import Path
@@ -839,6 +844,121 @@ def run_accept(text: str, path: Path = DECISIONS, census_dir: Path = CENSUS_DIR,
     return 0
 
 
+# ------------------------------------------------------------------ calibration (WP23)
+
+Z95 = 1.645          # one-sided 95 percent
+TARGETS = (0.95, 0.98)
+
+
+def wilson_lower(ok: int, n: int, z: float = Z95) -> float:
+    """Lower end of the one-sided Wilson interval for a proportion ok/n. Cautious for small n."""
+    if n <= 0:
+        return 0.0
+    p = ok / n
+    centre = p + z * z / (2 * n)
+    margin = z * math.sqrt(p * (1 - p) / n + z * z / (4 * n * n))
+    return max(0.0, (centre - margin) / (1 + z * z / n))
+
+
+def more_needed(ok: int, n: int, target: float, limit: int = 5000):
+    """How many further decisions, all accepted, before the lower bound reaches target (None beyond limit)."""
+    for k in range(limit + 1):
+        if wilson_lower(ok + k, n + k) >= target:
+            return k
+    return None
+
+
+def _flag_kind(flag: str) -> str:
+    """The kind of a flag: its leading words, without the names and numbers that follow ("age drift 4" and
+    "age drift 12, beyond the limit" are both "age drift")."""
+    return re.sub(r"\s*\d+.*$", "", re.split(r"[:,]", flag)[0]).strip() or flag
+
+
+def calibrate(census_dir: Path, cfg: dict, records: Path = DECISIONS, names=None) -> dict:
+    """Counts of accepted and rejected decisions by band, flag, pair of returns and DED. The band is the
+    one Mike saw when he decided. Flags are recomputed by proposing again with no decisions, because a
+    decided link is stored without its flags; a decision the matcher no longer proposes is counted apart."""
+    names = names or Names(given_names_reference.load(GIVEN), variants_reference.load(), False)
+    return calibrate_rows(load_census(census_dir), cfg, load_decisions(records), names)
+
+
+def calibrate_rows(rows: list[dict], cfg: dict, decisions: dict, names) -> dict:
+    """The counting part of calibrate, on census rows already loaded."""
+    per_ded = collections.defaultdict(list)
+    for r in rows:
+        per_ded[r["ded"]].append(r)
+    proposed = {}                                    # (from_obs, to_obs) -> (flags, band now, ded)
+    totals = collections.Counter()
+    for ded, rs in per_ded.items():
+        links, _ = propose_ded(rs, names, cfg, None)
+        for c in links:
+            proposed[(c["a"]["obs"], c["b"]["obs"])] = (c["flags"], c["confidence"], ded)
+            totals[c["confidence"]] += 1
+    reviewed = {k: d for k, d in decisions.items() if d["status"] in STATUSES}
+    tally = {key: collections.defaultdict(lambda: [0, 0]) for key in ("band", "flag", "years", "ded")}
+    unmatched = 0
+    for (fo, to), d in reviewed.items():
+        i = 0 if d["status"] == "accepted" else 1
+        band = d["confidence"] if d["confidence"] in RANK else "unknown"
+        tally["band"][band][i] += 1
+        tally["years"]["%s to %s" % (fo.split(":")[0][-4:], to.split(":")[0][-4:])][i] += 1
+        if (fo, to) not in proposed:
+            unmatched += 1
+            continue
+        flags, _, ded = proposed[(fo, to)]
+        tally["ded"][ded][i] += 1
+        for f in sorted({_flag_kind(x) for x in flags}) or ["no flags"]:
+            tally["flag"][f][i] += 1
+    reviewed_by_band = {b: sum(v) for b, v in tally["band"].items()}
+    return {"tally": {k: {n: tuple(v) for n, v in t.items()} for k, t in tally.items()},
+            "decisions": len(reviewed), "unmatched": unmatched, "proposed": dict(totals),
+            "reviewed_by_band": reviewed_by_band}
+
+
+def _line(label: str, ok: int, bad: int, width: int) -> str:
+    n = ok + bad
+    lo = wilson_lower(ok, n)
+    need = ["%s" % (more_needed(ok, n, t) if more_needed(ok, n, t) is not None else "many") for t in TARGETS]
+    return "  %-*s %5d %6d %6d   %5.0f%%   %5.0f%%   %6s %6s" % (width, label, n, ok, bad, 100 * ok / n if n else 0,
+                                                              100 * lo, need[0], need[1])
+
+
+def run_calibrate(census_dir: Path, cfg: dict, records: Path = DECISIONS, out=sys.stdout, names=None) -> dict:
+    res = calibrate(census_dir, cfg, records, names)
+    w = out.write
+    if not res["decisions"]:
+        w("No reviewed decisions yet, so there is nothing to calibrate.\n")
+        return res
+    w("Calibration from %d reviewed decisions (WP23). Nothing is changed or recommended by this report.\n"
+      % res["decisions"])
+    w("Lower bound: one-sided 95 percent Wilson bound on the share of accepted links. 'More for 95/98' is how many\n"
+      "further decisions, all accepted, would lift the lower bound to that level.\n")
+    head = "  %-*s %5s %6s %6s   %6s   %6s   %6s %6s"
+    for title, key, order in (("By confidence band when reviewed", "band", ["high", "medium", "low", "unknown"]),
+                              ("By pair of returns", "years", None),
+                              ("By flag (flags recomputed, a link can carry several)", "flag", None),
+                              ("By DED", "ded", None)):
+        t = res["tally"][key]
+        if not t:
+            continue
+        labels = [x for x in (order or sorted(t, key=lambda k: -sum(t[k]))) if x in t]
+        width = max(len(x) for x in labels + ["group"])
+        w("\n%s\n" % title)
+        w(head % (width, "group", "n", "accept", "reject", "rate", "lower", "more95", "more98") + "\n")
+        for lab in labels:
+            ok, bad = t[lab]
+            w(_line(lab, ok, bad, width) + "\n")
+    w("\nCoverage: reviewed %s of proposed %s.\n" % (
+        ", ".join("%s %d" % (b, res["reviewed_by_band"].get(b, 0)) for b in RANK),
+        ", ".join("%s %d" % (b, res["proposed"].get(b, 0)) for b in RANK)))
+    if res["unmatched"]:
+        w("%d decisions are for pairs the matcher no longer proposes on its own, so they are left out of the flag and "
+          "DED tables.\n" % res["unmatched"])
+    w("Caution: these links are the households Mike chose to review, so they are not a random sample of the proposals.\n"
+      "Rates from a few decisions say little; the 'more' columns show how much more evidence a band needs.\n")
+    return res
+
+
 # ------------------------------------------------------------------ check against the tree
 
 def tree_pairs(path: Path = TREE):
@@ -913,7 +1033,9 @@ def main(argv=None) -> int:
     p3.add_argument("--dry-run", action="store_true")
     p3.add_argument("--census-dir", type=Path, default=CENSUS_DIR)
     p3.add_argument("--records", type=Path, default=DECISIONS)
-    for p in (p1, p2):
+    p4 = sub.add_parser("calibrate", help="report accept and reject rates per band and flag from the reviewed decisions")
+    p4.add_argument("--records", type=Path, default=DECISIONS)
+    for p in (p1, p2, p4):
         p.add_argument("--census-dir", type=Path, default=CENSUS_DIR)
         p.add_argument("--config", type=Path, default=CONFIG)
         p.add_argument("--include-proposed-given-names", action="store_true",
@@ -937,6 +1059,9 @@ def main(argv=None) -> int:
             for k, v in sorted(s["left out"].items()):
                 print("  left out: %s: %d" % (k, v))
         print("Review files are in %s. Nothing is accepted by this tool." % args.out)
+        return 0
+    if args.cmd == "calibrate":
+        run_calibrate(args.census_dir, cfg, args.records)
         return 0
     run_check(args.census_dir, cfg, args.decisions, include_proposed=args.include_proposed_given_names)
     return 0
