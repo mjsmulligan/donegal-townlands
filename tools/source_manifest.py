@@ -12,6 +12,18 @@ exists, so changed files cannot silently acquire new trusted checksums.
 Files refreshed directly from NAI by tools/refresh_census.py have their rows
 updated by that tool as part of one all-or-nothing replacement. Their retrieval
 method begins "Direct download from the NAI".
+
+The manifest also covers our own transcriptions of parish registers, held in
+data/source/nli_parish/<register>/raw/. Their rows name the file relative to
+data/source (for example nli_parish/tawnawilly/raw/tawnawilly_baptisms_raw.csv)
+and their retrieval method begins "Own transcription". Unlike census files they
+change by reviewed adjudication, so after a review commit run:
+
+    python tools/source_manifest.py register-update
+
+which recomputes the SHA-256 of the listed register files only. It never adds a
+row and never touches a census row. New register files are added by
+`register-add`, which refuses to alter an existing row.
 """
 from __future__ import annotations
 
@@ -33,6 +45,26 @@ GRA_REPOSITORY = "https://github.com/mjsmulligan/irish-genealogy-research"
 GRA_DATA_PATH = "data/{filename}"
 ADOPTED_FROM_GRA = "Adopted from the Gra repository"
 DIRECT_FROM_NAI = "Direct download from the NAI"
+OWN_TRANSCRIPTION = "Own transcription"
+REGISTER_DIR = "nli_parish"
+NLI_PAGE_PATTERN = "https://registers.nli.ie/pages/vtls000631954_NNN"
+REGISTER_LICENCE = (
+    "The transcription is the project's own work. The register images are National "
+    "Library of Ireland material and are not held in this repository. Confirm NLI "
+    "terms before publishing images or extended extracts; this note is not a grant "
+    "of permission."
+)
+# One entry per raw register file: what it is and which pages it covers.
+REGISTER_DESCRIPTIONS = {
+    "nli_parish/tawnawilly/raw/tawnawilly_baptisms_raw.csv": (
+        "NLI Catholic parish register, Tawnawilly (Raphoe), baptisms: own transcription of the page images",
+        "Microfilm 04599/04, baptisms, pages 004 to 036",
+    ),
+    "nli_parish/tawnawilly/raw/tawnawilly_marriages_raw.csv": (
+        "NLI Catholic parish register, Tawnawilly (Raphoe), marriages: own transcription of the page images",
+        "Microfilm 04599/04, marriages, pages 037 to 043",
+    ),
+}
 FIELDS = [
     "file", "source", "county", "census_year", "ded",
     "origin_repository", "origin_path", "repository_reference_commit",
@@ -104,6 +136,96 @@ def census_files() -> list[Path]:
     return sorted(p for p in SOURCE_DIR.iterdir() if p.is_file() and p.suffix.lower() == ".csv")
 
 
+def register_files() -> list[Path]:
+    base = MANIFEST.parent / REGISTER_DIR
+    if not base.is_dir():
+        return []
+    return sorted(base.glob("*/raw/*.csv"))
+
+
+def register_name(path: Path) -> str:
+    return path.relative_to(MANIFEST.parent).as_posix()
+
+
+def register_metadata(path: Path, acquired: str) -> dict[str, str]:
+    name = register_name(path)
+    if name not in REGISTER_DESCRIPTIONS:
+        raise ValueError(f"No description for register file {name}; add it to REGISTER_DESCRIPTIONS")
+    source, locator = REGISTER_DESCRIPTIONS[name]
+    return {
+        "file": name,
+        "source": source,
+        "county": "Donegal",
+        "census_year": "not applicable",
+        "ded": "not applicable",
+        "origin_repository": NLI_PAGE_PATTERN,
+        "origin_path": locator,
+        "repository_reference_commit": "not applicable (own transcription)",
+        "upstream_generation_commit": "not applicable (own transcription)",
+        "retrieval_method": (
+            f"{OWN_TRANSCRIPTION} from the NLI page images: first reading by Claude, second reading by "
+            "Gemini, differences adjudicated by Mike. Changed only by reviewed adjudication commits; "
+            "run register-update after each one. See data/source/nli_parish/tawnawilly/SCHEMA.md."
+        ),
+        "date_acquired": acquired,
+        "date_first_seen": acquired,
+        "licence_note": REGISTER_LICENCE,
+        "sha256": sha256_file(path),
+    }
+
+
+def read_manifest() -> list[dict[str, str]]:
+    with MANIFEST.open(encoding="utf-8", newline="") as stream:
+        reader = csv.DictReader(stream)
+        if reader.fieldnames != FIELDS:
+            raise ValueError("Manifest columns do not match the required schema.")
+        return list(reader)
+
+
+def write_manifest(rows: list[dict[str, str]]) -> None:
+    with MANIFEST.open("w", encoding="utf-8", newline="") as stream:
+        writer = csv.DictWriter(stream, fieldnames=FIELDS)
+        writer.writeheader()
+        writer.writerows(rows)
+
+
+def register_add() -> int:
+    rows = read_manifest()
+    listed = {row["file"] for row in rows}
+    today = date.today().isoformat()
+    added = []
+    for path in register_files():
+        if register_name(path) not in listed:
+            rows.append(register_metadata(path, today))
+            added.append(register_name(path))
+    if not added:
+        print("No register files to add.")
+        return 0
+    write_manifest(rows)
+    print(f"Added {len(added)} register file(s) to {display_path(MANIFEST)}: " + ", ".join(added))
+    return 0
+
+
+def register_update() -> int:
+    rows = read_manifest()
+    changed = []
+    for row in rows:
+        if not row["file"].startswith(REGISTER_DIR + "/"):
+            continue
+        path = MANIFEST.parent / row["file"]
+        if not path.is_file():
+            print(f"Register file is missing: {row['file']}", file=sys.stderr)
+            return 1
+        digest = sha256_file(path)
+        if digest != row["sha256"]:
+            row["sha256"] = digest
+            changed.append(row["file"])
+    if changed:
+        write_manifest(rows)
+    print(f"register-update: {len(changed)} checksum(s) updated" + (": " + ", ".join(changed) if changed else ""))
+    return 0
+
+
 def create_manifest() -> int:
     if MANIFEST.exists():
         print(f"Refusing to overwrite existing manifest: {display_path(MANIFEST)}", file=sys.stderr)
@@ -138,12 +260,14 @@ def verify_manifest() -> int:
         else:
             rows = list(reader)
     names = [row.get("file", "") for row in rows]
+    register_rows = [row for row in rows if row.get("file", "").startswith(REGISTER_DIR + "/")]
+    rows = [row for row in rows if not row.get("file", "").startswith(REGISTER_DIR + "/")]
     if len(rows) != EXPECTED_FILES:
-        errors.append(f"Manifest has {len(rows)} entries; expected {EXPECTED_FILES}.")
+        errors.append(f"Manifest has {len(rows)} census entries; expected {EXPECTED_FILES}.")
     if len(names) != len(set(names)):
         errors.append("Manifest contains duplicate filenames.")
     actual = {p.name: p for p in census_files()}
-    listed = set(names)
+    listed = {row.get("file", "") for row in rows}
     for name in sorted(set(actual) - listed):
         errors.append(f"Source file missing from manifest: {name}")
     for name in sorted(listed - set(actual)):
@@ -170,19 +294,42 @@ def verify_manifest() -> int:
                 errors.append(f"Unexpected Grá repository reference commit: {name}")
         elif not row.get("retrieval_method", "").startswith(DIRECT_FROM_NAI):
             errors.append(f"Unrecognised retrieval method for {name}")
+    # Own parish-register transcriptions: every raw file is listed and every listed file is present.
+    actual_register = {register_name(p): p for p in register_files()}
+    listed_register = {row.get("file", "") for row in register_rows}
+    for name in sorted(set(actual_register) - listed_register):
+        errors.append(f"Register file missing from manifest: {name}")
+    for name in sorted(listed_register - set(actual_register)):
+        errors.append(f"Manifest register file is missing from source directory: {name}")
+    for row in register_rows:
+        name = row.get("file", "")
+        path = actual_register.get(name)
+        if path is None:
+            continue
+        expected = row.get("sha256", "")
+        if not re.fullmatch(r"[0-9a-f]{64}", expected):
+            errors.append(f"Invalid SHA-256 value for {name}")
+        elif sha256_file(path) != expected:
+            errors.append(f"SHA-256 mismatch: {name} (after a review, run: python tools/source_manifest.py register-update)")
+        for field in FIELDS:
+            if not row.get(field, "").strip():
+                errors.append(f"Blank manifest field {field!r} for {name}")
+        if not row.get("retrieval_method", "").startswith(OWN_TRANSCRIPTION):
+            errors.append(f"Unrecognised retrieval method for {name}")
     if errors:
         print("\n".join(errors), file=sys.stderr)
         return 1
-    print(f"source manifest: ok ({len(rows)} files, SHA-256 verified)")
+    print(f"source manifest: ok ({len(rows)} census files, {len(register_rows)} register files, SHA-256 verified)")
     return 0
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=("create", "verify"))
+    parser.add_argument("command", choices=("create", "verify", "register-add", "register-update"))
     args = parser.parse_args()
     try:
-        return create_manifest() if args.command == "create" else verify_manifest()
+        return {"create": create_manifest, "verify": verify_manifest,
+                "register-add": register_add, "register-update": register_update}[args.command]()
     except (OSError, ValueError) as exc:
         print(str(exc), file=sys.stderr)
         return 1
