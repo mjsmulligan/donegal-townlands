@@ -1,0 +1,14 @@
+row_id,confidence,interpretation_basis_from_v1_comment
+TAW-B-p008-r78,possible,"father_surname: Mall -> Moss (probable): Same couple (Owen + Anne McCrudden) as p20 rec 363; read Mall here, Ross there; Gemini reads Moss on both; Moss attested in Clogher || sponsor1: Patrick Mall -> Patrick Moss (possible): Ditto after mother, so same surname as father (Moss)"
+TAW-B-p018-r229,probable,"father_surname: Dougan -> Doogan (probable): Mike accepts Doogan (2026-11-16); mother Unity Hilly of Clogher; 1901 census Unity Doogan, 60, head of Clogher house 6"
+TAW-B-p019-r351,probable,"father_surname: McNeely -> McNulty (probable): Marriage p37 rec 4, sponsor Susan McMenamin and the 1901 Charles and Hannah McNulty household in Ardnableask; McNeely a likely misreading"
+TAW-B-p020-r363,probable,father_surname: Ross -> Moss (probable): See p8 rec 78
+TAW-B-p030-r30_mar17,probable,"father_surname: Tinney -> Furey (probable): Same couple (John Fury + Brigid Kelly) as p5 rec 15, p15 rec 178, p23 rec 1903; we read Tinney, Gemini reads Fury"
+TAW-B-p032-r50,probable,date: 1879-06-03 -> 1879-07-03 (probable): Follows 30 Jun (rec 49) and precedes rec 51 (between 3 Jun and 23 Jul); June cannot sit after 30 June
+TAW-B-p033-r69,possible,sponsor1: William Layden -> William Layden (possible): William Layden (p25 rec 1938) is the same given name; Layden in surname dictionary || sponsor2: Kate Layden -> Kate Layden (possible): As sponsor1
+TAW-B-p034-r87,probable,"father_surname: Keach -> Black (probable): Mike accepts Black (2026-11-16); same-couple, Gemini reading and 1901 census (Robert Black, shoemaker, Bridge End, Donegal Town) agree || sponsor1: Timothy McMullin -> Timothy McMullin (probable): Timothy McMullin married Bridget McGowan 13 Feb 1877 (marriage p40 rec 59); sponsor2 is Brigid McGowan, so these are husband and wife"
+TAW-B-p036-r124,probable,"sponsor1: Charles Kearney? -> Charles Kearney (probable): Charles Kearney witnesses marriage p43 rec 96 (Feb 1881) with Ellen Mulhern; same circle, same weeks || sponsor2: Bridget Mulhern? -> Bridget Mulhern (probable): Mulhern linked to Kearney in marriage p43 rec 96"
+TAW-M-p042-r81,probable,bride_surname: Haslett -> Haslett (probable): Francis Kelly + Anne Haslett baptise p34 rec 89
+TAW-M-p042-r83,probable,groom_surname: LeCallan -> Scallan (probable): Daniel Scanlan witness p40 rec 54; James Scallan sponsor p33 rec 75; Gemini also reads Scallan; LeCallan/McCallan not attested
+TAW-M-p042-r93,probable,witness2: Anne Carbin -> Anne Carbin (probable): Carbin family (Mike); Anne Carabine sponsor p13 rec 163
+TAW-M-p043-rU_43,probable,groom_surname: Gildea -> Gilday (probable): Gilday family in register; same clerk writes Gelday for a Gilday bride (p40 rec 56)
