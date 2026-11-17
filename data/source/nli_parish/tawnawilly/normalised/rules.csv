@@ -1,0 +1,119 @@
+kind,as_written,normalised,status,basis
+forename,Anty.,Anthony,abbreviation,abbreviation or variant expanded in the earlier normalised file
+forename,Bern.,Bernard,abbreviation,abbreviation or variant expanded in the earlier normalised file
+forename,Bernd.,Bernard,abbreviation,abbreviation or variant expanded in the earlier normalised file
+forename,Cath.,Catherine,abbreviation,abbreviation or variant expanded in the earlier normalised file
+forename,Cathrine,Catherine,abbreviation,abbreviation or variant expanded in the earlier normalised file
+forename,Chas.,Charles,abbreviation,abbreviation or variant expanded in the earlier normalised file
+forename,Dan,Daniel,abbreviation,abbreviation or variant expanded in the earlier normalised file
+forename,Dan.,Daniel,abbreviation,abbreviation or variant expanded in the earlier normalised file
+forename,Danl.,Daniel,abbreviation,abbreviation or variant expanded in the earlier normalised file
+forename,Ed.,Edward,abbreviation,abbreviation or variant expanded in the earlier normalised file
+forename,Edwd,Edward,abbreviation,abbreviation or variant expanded in the earlier normalised file
+forename,Edwd.,Edward,abbreviation,abbreviation or variant expanded in the earlier normalised file
+forename,Jas.,James,abbreviation,abbreviation or variant expanded in the earlier normalised file
+forename,Margt.,Margaret,abbreviation,abbreviation or variant expanded in the earlier normalised file
+forename,Mich.,Michael,abbreviation,abbreviation or variant expanded in the earlier normalised file
+forename,Michl,Michael,abbreviation,abbreviation or variant expanded in the earlier normalised file
+forename,Michl.,Michael,abbreviation,abbreviation or variant expanded in the earlier normalised file
+forename,Pat,Patrick,abbreviation,abbreviation or variant expanded in the earlier normalised file
+forename,Pat.,Patrick,abbreviation,abbreviation or variant expanded in the earlier normalised file
+forename,Patk.,Patrick,abbreviation,abbreviation or variant expanded in the earlier normalised file
+forename,Patt.,Patrick,abbreviation,abbreviation or variant expanded in the earlier normalised file
+forename,Robt.,Robert,abbreviation,abbreviation or variant expanded in the earlier normalised file
+forename,Saml.,Samuel,abbreviation,abbreviation or variant expanded in the earlier normalised file
+forename,Sera,Sarah,abbreviation,abbreviation or variant expanded in the earlier normalised file
+forename,Thos.,Thomas,abbreviation,abbreviation or variant expanded in the earlier normalised file
+forename,Widow Cath.,Catherine,abbreviation,abbreviation or variant expanded in the earlier normalised file
+forename,Wm,William,abbreviation,abbreviation or variant expanded in the earlier normalised file
+forename,Wm.,William,abbreviation,abbreviation or variant expanded in the earlier normalised file
+surname,Breslan,Breslin,proposed,"'variant family, verified' in the earlier normalised file; confirm before it goes in data/reference/surname_variants.csv"
+surname,Brisland,Breslin,proposed,"'variant family, verified' in the earlier normalised file; confirm before it goes in data/reference/surname_variants.csv"
+surname,Carabine,Carbin,proposed,"'variant family, verified' in the earlier normalised file; confirm before it goes in data/reference/surname_variants.csv"
+surname,Carbary,Carbin,proposed,"'variant family, verified' in the earlier normalised file; confirm before it goes in data/reference/surname_variants.csv"
+surname,Carbine,Carbin,proposed,"'variant family, verified' in the earlier normalised file; confirm before it goes in data/reference/surname_variants.csv"
+surname,Carrabin,Carbin,proposed,"'variant family, verified' in the earlier normalised file; confirm before it goes in data/reference/surname_variants.csv"
+surname,Corbin,Carbin,proposed,"'variant family, verified' in the earlier normalised file; confirm before it goes in data/reference/surname_variants.csv"
+surname,Dealin,Devlin,proposed,"'variant family, verified' in the earlier normalised file; confirm before it goes in data/reference/surname_variants.csv"
+surname,Dinnion,Dunnion,proposed,"'variant family, verified' in the earlier normalised file; confirm before it goes in data/reference/surname_variants.csv"
+surname,Dunion,Dunnion,proposed,"'variant family, verified' in the earlier normalised file; confirm before it goes in data/reference/surname_variants.csv"
+surname,Dunleavy,Dunlevy,proposed,"'variant family, verified' in the earlier normalised file; confirm before it goes in data/reference/surname_variants.csv"
+surname,Dunleny,Dunlevy,proposed,"'variant family, verified' in the earlier normalised file; confirm before it goes in data/reference/surname_variants.csv"
+surname,Dunngan,Dunnion,proposed,"'variant family, verified' in the earlier normalised file; confirm before it goes in data/reference/surname_variants.csv"
+surname,Fury,Furey,proposed,"'variant family, verified' in the earlier normalised file; confirm before it goes in data/reference/surname_variants.csv"
+surname,Gallanagh,Gallinagh,proposed,"'variant family, verified' in the earlier normalised file; confirm before it goes in data/reference/surname_variants.csv"
+surname,Gallina,Gallinagh,proposed,"'variant family, verified' in the earlier normalised file; confirm before it goes in data/reference/surname_variants.csv"
+surname,Gilday,Gildea,proposed,"'variant family, verified' in the earlier normalised file; confirm before it goes in data/reference/surname_variants.csv"
+surname,McGolrick,McGoldrick,proposed,"'variant family, verified' in the earlier normalised file; confirm before it goes in data/reference/surname_variants.csv"
+surname,McMillon,McMullin,proposed,"'variant family, verified' in the earlier normalised file; confirm before it goes in data/reference/surname_variants.csv"
+surname,McMullen,McMullin,proposed,"'variant family, verified' in the earlier normalised file; confirm before it goes in data/reference/surname_variants.csv"
+surname,Mulrine,Mulreany,proposed,"'variant family, verified' in the earlier normalised file; confirm before it goes in data/reference/surname_variants.csv"
+surname,Timmony,Timoney,proposed,"'variant family, verified' in the earlier normalised file; confirm before it goes in data/reference/surname_variants.csv"
+surname,Timony,Timoney,proposed,"'variant family, verified' in the earlier normalised file; confirm before it goes in data/reference/surname_variants.csv"
+surname,Trower,Travers,proposed,"'variant family, verified' in the earlier normalised file; confirm before it goes in data/reference/surname_variants.csv"
+townland,Ardatole,Ardatowel,verified,"verified, Mike place evidence (Ardatowel / Ardnatowel)"
+townland,Ardatowel,Ardatowel,dictionary,
+townland,Ardevin,Ardeevin,verified,"verified, Mike place evidence (Ardevrin 1926 form); dictionary Ardeevin"
+townland,Ardnableask,Ardnableask,dictionary,
+townland,Ardnagassan,Ardnagassan,dictionary,
+townland,Ardnawark,Ardinawark,dictionary,"dictionary, Project dictionary spelling; 1901 Ardinawark, 1926 Ardnawark"
+townland,Aughlim,Aghlem,verified,"verified, Mike: Aughlin is a variant of Aghlem"
+townland,Aughlin,Aghlem,verified,"verified, Mike"
+townland,B. Hill,Birchhill,dictionary,"dictionary, Project dictionary"
+townland,Ballykillowen,Ballykillowen,verified,
+townland,Barnagh,,unresolved,
+townland,Birch Hill,Birchhill,dictionary,"dictionary, Project dictionary"
+townland,Birchhill,Birchhill,dictionary,
+townland,Carnbeagh,Carnbeagh (North/South unresolved),ambiguous,"North/South unresolved) (ambiguous, Dictionary has North and South"
+townland,Clar Drumbarron,Clardrumbarren,probable,"probable, Project dictionary (Clardrumbarren)"
+townland,Clarcam,Clarcam,dictionary,
+townland,Clarlough-Eske,Clarlougheask,verified,"verified, Mike place evidence"
+townland,Clarloughask,Clarlougheask,dictionary,"dictionary, as Clarlougheask"
+townland,Clarlougheask,Clarlougheask,dictionary,
+townland,Cloghan,,unmapped,
+townland,Clogher,Clogher,dictionary,
+townland,Corracramph,Corracramph,verified,
+townland,Creigh-Kyn,,unmapped,
+townland,Cullionboy,Cullionboy,dictionary,
+townland,Donegal,Donegal Town,probable,"probable, Probable: same place as Town"
+townland,Donegal town,Donegal Town,verified,"verified, Mike"
+townland,Drimark,,unmapped,
+townland,Drimenny,Drummenny (Lower/Middle/Upper unresolved),ambiguous,"Lower/Middle/Upper unresolved) (ambiguous, as Drumenny"
+townland,Drumadoney,Drumadoney,verified,
+townland,Drumbar,Drumbar,dictionary,
+townland,Drumenny,Drummenny (Lower/Middle/Upper unresolved),ambiguous,"Lower/Middle/Upper unresolved) (ambiguous, Mike: three townlands, register does not say which; never merge"
+townland,Druminardagh,Druminardagh,verified,
+townland,Drumminin,Druminnin,verified,"verified, Mike: Druminnin primary, Drumminin variant"
+townland,Drumnagahan,Drumnagahan,dictionary,
+townland,Drumnamardagh,Druminardagh,possible,"possible, Possible variant; check"
+townland,Drumroak,,unmapped,
+townland,Finmore,Finmore,verified,
+townland,Finnabanes,Finnabanes,dictionary,
+townland,Finnadoos,Finnadoos,dictionary,
+townland,Garvagh,Garvagh,dictionary,
+townland,Goladoo,Goladoo,dictionary,
+townland,Gragstown,Brookfield,verified,"verified, Mike: Gregstown aka Brookfield"
+townland,Gregstown,Brookfield,verified,"verified, Mike"
+townland,Laughkippe,Loughkip,dictionary,"dictionary, Project dictionary (Loughkip)"
+townland,Leghawny,Leghawny,dictionary,
+townland,Leghowney,Leghawny,verified,"verified, Mike confirmed spelling Leghowney; dictionary Leghawny"
+townland,Loughkippe,Loughkip,dictionary,"dictionary, Project dictionary (Loughkip)"
+townland,Meenadreen,Meenadreen,verified,
+townland,Mullanalamphry,Mullanalamphry,dictionary,
+townland,Mullinalamphrey,Mullanalamphry,dictionary,"dictionary, Project dictionary"
+townland,Raforker,Raforker,dictionary,
+townland,Readen,,unmapped,
+townland,Skreen,Skreen,verified,
+townland,Stranass,,unmapped,
+townland,Tawnagorm,Tawnaghgorm,verified,"verified, Mike place evidence"
+townland,Tawnawully,Tawnawully,dictionary,
+townland,"The Moor, Donegal",,unresolved,
+townland,Tomnagorm,Tawnaghgorm,probable,"probable, as Tawnagorm"
+townland,Town,Donegal Town,verified,"verified, Mike (local knowledge); 22 baptism notes"
+townland,Town (Constabulary),Donegal Town,probable,"probable, Entry notes Constabulary; same place"
+townland,Townagorm,Tawnaghgorm,verified,"verified, Mike place evidence"
+townland,Tully,Tully,dictionary,
+townland,Tullyearl,,unmapped,
+townland,Tullyloskan,Tullyloskan,dictionary,
+townland,Vagus,,unmapped,
+townland,Workhouse,Workhouse,institution,

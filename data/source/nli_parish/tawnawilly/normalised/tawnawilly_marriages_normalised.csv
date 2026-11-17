@@ -1,0 +1,110 @@
+row_id,page,record_no,date_iso,groom_forename,groom_surname,bride_forename,bride_surname,witness1,witness2,priest,raw_status,confidence,rules_applied
+TAW-M-p037-r1,37,1,1873-01-09,Patrick,Griffith,Margaret,Cassidy,Bryan Meehan,Ellen Meehan,P. Kelly,agreed,,groom_forename: Patk. > Patrick; bride_forename: Margt. > Margaret
+TAW-M-p037-r2,37,2,1873-01-19,Daniel,Martin,Anne,Tinney,Peter Slevin,Mary Gallagher,P.K.,agreed,,groom_forename: Danl. > Daniel
+TAW-M-p037-r3,37,3,1873-02-06,James,McCormick,Anne,McAnaw,James Deane,Margaret Hanaghy,P.K.,disputed,,witness1: Jas. > James; witness2: Margt. > Margaret
+TAW-M-p037-r4,37,4,1873-02-06,Charles,McNulty,Hannah,Flood,Charles Callaghan,Susan McMenamin,P.K.,agreed,,witness1: Chas. > Charles
+TAW-M-p037-r5,37,5,1873-02-11,Patrick,Mullin,Mary,McGinty,John Brogan,Anne McNamee,P.K.,agreed,,groom_forename: Patt. > Patrick
+TAW-M-p037-r6,37,6,1873-02-18,William,McGinty,Mary,Quigley,Denis Gildea,Alice Carr,P.K.,agreed,,groom_forename: Wm. > William
+TAW-M-p037-r7,37,7,1873-02-20,Edward,Kennedy,Margaret,Gallagher,Denis O'Donnell,Cassie Slevin,P.K.,agreed,,groom_forename: Edwd. > Edward
+TAW-M-p037-r8,37,8,1873-02-22,James,McGinty,Anne,Martin,Peter Slevin,Sarah McLoughlan,P.K.,disputed,,
+TAW-M-p037-r9,37,9,1873-02-22,Michael,McGinty,Brigid,Martin,Neil Sharkey,Mary Anne McGinty,P.K.,agreed,,groom_forename: Mich. > Michael
+TAW-M-p037-r10,37,10,1873-02-23,David,Lytte,Anne,Lawn,Patrick McGlynn,Hannah Walsh,P.K.,agreed,,witness1: Patt. > Patrick
+TAW-M-p037-r11,37,11,1873-02-25,William,McGinty,Sarah,Gildea,Owen Kelly,Mary Gildea,P.K.,agreed,,groom_forename: Wm. > William
+TAW-M-p037-r12,37,12,1873-02-25,Patrick,McGinty,Margaret,Dunlevy,Charles Dunnion,Brigid Dunlevy,P.K.,agreed,,groom_forename: Patt. > Patrick; witness1: Chas. > Charles
+TAW-M-p038-r13,38,13,1873-06-21,Phelim,Gildea,Anne,McGinty,Edward Gildea,Mary Gildea,P.K.,agreed,,witness1: Edwd. > Edward
+TAW-M-p038-r14,38,14,1873-10-13,Murty,Doogan,Frances,McCrudden,John McCrudden,Anne McCrudden,P.K.,agreed,,
+TAW-M-p038-r15,38,15,1873-11-29,Peter,Callaghan,Brigid,McGlynn,Peter Callaghan,Catherine Devlin,P.K.,agreed,,witness2: Cath. > Catherine
+TAW-M-p038-r16,38,16,1873-12-11,Charles,Thomas,Brigid,Cassidy,Edward Gildea,Margaret Harvey,P.K.,agreed,,groom_forename: Chas. > Charles; witness1: Ed. > Edward; witness2: Margt. > Margaret
+TAW-M-p038-r17,38,17,1874-01-18,Edward,McGinty,Brigid,Dunlevy,Patrick Travers,Ellen Dunlevy,P.K.,agreed,,groom_forename: Edwd. > Edward; witness1: Patt. > Patrick; witness1: Trower > Travers
+TAW-M-p038-r18,38,18,1874-01-21,John,McCaffrie,Agnes,McGowan,James Campbell,Brigid McGowan,P.K.,agreed,,
+TAW-M-p038-r19,38,19,1874-02-07,Michael,Quigley,Alice,McElhair,Edward Dunnion,Margaret Gallagher,P.K.,disputed,,witness1: Ed. > Edward; witness2: Margt. > Margaret
+TAW-M-p038-r20,38,20,1874-02-08,Tully,Slevin,Catherine,Tinny,Maurice Craig,Brigid Hilferty,P.K.,agreed,,bride_forename: Cath. > Catherine
+TAW-M-p038-r21,38,21,1874-02-17,Francis,Cassidy,Brigid,Reilly,John Logue,Mary Logue,P.K.,agreed,,
+TAW-M-p038-r22,38,22,1874-04-06,Bernard,McGoldrick,Catherine,Cunney,John McKinney,Kate Quinn,P.K.,agreed,,groom_forename: Bern. > Bernard; groom_surname: McGolrick > McGoldrick
+TAW-M-p038-r23,38,23,1874-04-11,Edward,Martin,Margaret,McDermott,James Walker,Maryanne Weir,P.K.,agreed,,groom_forename: Edwd. > Edward; bride_forename: Margt. > Margaret
+TAW-M-p038-r24,38,24,1874-04-25,Charles,Cooney,Margaret,Connolly,Michael Travers,Margaret Mulreany,P.K.,agreed,,groom_forename: Chas. > Charles; bride_forename: Margt. > Margaret; witness1: Mich. > Michael; witness1: Trower > Travers; witness2: Margt. > Margaret
+TAW-M-p038-r25,38,25,1874-07-07,Francis,Martin,Catherine,Callaghan,William Martin,Margaret Boyle,P.K.,agreed,,witness1: Wm. > William; witness2: Margt. > Margaret
+TAW-M-p038-r26,38,26,1874-08-23,William,Gallinagh,Anne,Gallagher,Patrick Gallagher,Catherine Martin,P.K.,agreed,,groom_forename: Wm. > William; groom_surname: Gallanagh > Gallinagh; witness1: Patt. > Patrick; witness2: Cath. > Catherine
+TAW-M-p038-r27,38,27,1874-09-13,John,Harding,Isabella,McGrory,Patrick Slevin,Mary Deery,P.K.,agreed,,witness1: Patt. > Patrick
+TAW-M-p038-r28,38,28,1874-11-15,Thomas,McGlynn,Catherine,Cassidy,John Logue,Mary Brogan,P.K.,agreed,,groom_forename: Thos. > Thomas; bride_forename: Cath. > Catherine
+TAW-M-p038-r29,38,29,1874-11-22,Bernard,Boyle,Anne,McGinty,Charles Callaghan,Anne Martin,P.K.,agreed,,groom_forename: Bern. > Bernard; witness1: Chas. > Charles
+TAW-M-p038-r30,38,30,1874-11-15,Thomas,McGlynn,Catherine,Cassidy,John Logue,Mary Brogan,P.K.,agreed,,groom_forename: Thos. > Thomas; bride_forename: Cath. > Catherine
+TAW-M-p038-r31,38,31,1875-01-21,Hugh,Cassidy,Cecilia,Gallagher,Anthony McGinty,Mary Cassidy,P.K.,agreed,,witness1: Anty. > Anthony
+TAW-M-p038-r32,38,32,1875-01-29,Patrick,Gallagher,Catherine,Gallagher,Teague McGee,Catherine Ward,P.K.,agreed,,groom_forename: Patt. > Patrick; bride_forename: Cath. > Catherine; witness2: Cath. > Catherine
+TAW-M-p038-r33,38,33,1875-01-31,William,Kerrigan,Anne,Kennedy,Edward Deery,Maggie Furey,P.K.,agreed,,groom_forename: Wm. > William; witness1: Edwd. > Edward; witness2: Fury > Furey
+TAW-M-p038-r34,38,34,1875-01-31,Edward,Travers,Brigid,Boyle,John Travers,Catherine Cassidy,P.K.,agreed,,groom_forename: Edwd. > Edward; groom_surname: Trower > Travers; witness1: Trower > Travers; witness2: Cath. > Catherine
+TAW-M-p039-r35,39,35,1875-02-09,Edward,Dunnion,Margaret,Callaghan,Patrick McElhar,Isabella McElhar,P.K.,agreed,,groom_forename: Edwd. > Edward; bride_forename: Margt. > Margaret; witness1: Patt. > Patrick
+TAW-M-p039-r36,39,36,1875-02-09,Patrick,McCrudden,Catherine,Sweeney,Michael Sweeney,Catherine McGinty,P.K.,agreed,,groom_forename: Patt. > Patrick; bride_forename: Cath. > Catherine; witness1: Mich. > Michael; witness2: Cath. > Catherine
+TAW-M-p039-r37,39,37,1875-02-09,Hugh,Britton,Anne,Cahill,Timothy McMullin,Mary Martin,P.K.,agreed,,
+TAW-M-p039-r38,39,38,1875-02-09,John,Doherty,Mary,Sweeney,Michael Dunnion,Catherine Dunlevy,P.K.,disputed,,witness1: Mich. > Michael; witness2: Cath. > Catherine
+TAW-M-p039-r39,39,39,1875-04-04,William,McGarrigle,Margaret,Sheeran,Edward Gildea,Mary Melly,P.K.,agreed,,groom_forename: Wm. > William; bride_forename: Margt. > Margaret; witness1: Edwd. > Edward
+TAW-M-p039-r40,39,40,1875-05-30,James,Brogan,Brigid,McCafferty,Bernard Meehan,Anne Doherty,P.K.,agreed,,witness1: Bern. > Bernard
+TAW-M-p039-r41,39,41,1875-07-03,Thomas,McDonough,Mary Anne,McGinty,Patrick McGoldrick,Catherine McCloskey,P. Kelly,agreed,,groom_forename: Thos. > Thomas; witness1: Patt. > Patrick; witness1: McGolrick > McGoldrick; witness2: Cath. > Catherine
+TAW-M-p039-r42,39,42,1875-07-22,Edward,Slevin,Sarah,Doherty,Edward McGinty,Kate Quinn,P.K.,agreed,,groom_forename: Edwd. > Edward; witness1: Edwd. > Edward
+TAW-M-p039-r43,39,43,1875-08-16,William,Martin,Mary,Cunney,Edward Breslin,Mary McMenamin,P.K.,agreed,,groom_forename: Wm. > William; witness1: Edwd. > Edward
+TAW-M-p039-r44,39,44,1875-09-05,Edward,McAnagh,Catherine,Martin,Laurence Gillespie,Mary Bogan,J. Doherty,agreed,,
+TAW-M-p039-r45,39,45,1875-11-13,John,Cassidy,Bridget,McGinty,Francis Harvey,Rose Thomas,J. Doherty,agreed,,
+TAW-M-p039-r46,39,46,1875-11-13,James,Hilly,Mary,Gildea,Francis Gillespie,Mary Gildea,J. Doherty,agreed,,bride_surname: Gilday > Gildea; witness2: Gilday > Gildea
+TAW-M-p039-r47,39,47,1876-01-10,Daniel,Martin,Nola,Tinney,Michael Hilferty,Tully Slevin,J. Doherty,agreed,,
+TAW-M-p039-r48,39,48,1876-01-30,James,Hone,Bridget,McCoole,John McCoole,Andrew Kennedy,,agreed,,
+TAW-M-p039-r49,39,49,1876-02-26,Bernard,Mehan,Sarah Anne,Cassidy,Charles Flanon,Ellen Flanagan,,disputed,,bride_forename: Sera Anne > Sarah Anne
+TAW-M-p040-r50,40,50,1876-02-29,Daniel,Dunnion,Margaret,Dunnion,Connell McGinty,Anne McGinty,John Doherty,agreed,,
+TAW-M-p040-r51,40,51,1876-05-27,George,Mulreany,Mary,McGlynn,John Thomas,Margaret Downey,John Doherty,agreed,,
+TAW-M-p040-r52,40,52,1877-01-04,Francis,McGoldrick,Anne,McBriarty,Andrew McDermott,Mary Travers,John Doherty,agreed,,groom_surname: McGolrick > McGoldrick; witness2: Trower > Travers
+TAW-M-p040-r53,40,53,1877-01-06,Peter,Cassidy,Rose,Murphy,Charles McGinty,Nancy McGinty,,agreed,,
+TAW-M-p040-r54,40,54,1877-01-07,James,Gillan,Mary Anne,Reilly,Daniel Scanlan,Kate Mulreany,Joannis Doherty,agreed,,
+TAW-M-p040-r55,40,55,1877-01-09,John,McBriarty,Annie,Griffith,James McGoldrick,Sarah Griffith,John Doherty,agreed,,witness1: McGolrick > McGoldrick; witness2: Sera > Sarah
+TAW-M-p040-r56,40,56,1877-02-10,Edward,Gildea,Margaret,Gildea,Edward McGettigan,Anne Thomas,John Doherty,agreed,,groom_surname: Gilday > Gildea; bride_surname: Gilday > Gildea
+TAW-M-p040-r57,40,57,1877-02-12,Edward,Murphy,Sarah,Cassidy,Patrick Gallagher,John Slevin,J. Doherty,agreed,,groom_forename: Edwd. > Edward; bride_forename: Sera > Sarah
+TAW-M-p040-r58,40,58,1877-02-12,James,Gallagher,Fannie,Cassidy,Francis Brogan,Maggie Brogan,John Doherty pp.,agreed,,
+TAW-M-p040-r59,40,59,1877-02-13,Timothy,McMullin,Bridget,McGowan,Teague McGee,Kate Keerans,Joannis Doherty,agreed,,
+TAW-M-p040-r60,40,60,1877-08-16,John,Gillen,Catherine,Walsh,Hugh McGowan,Anne Walsh,,agreed,,
+TAW-M-p040-r61,40,61,1877-11-11,Daniel,Doherty,Ellen,Doherty,John Hilley,Mrs. J. McMullie,,disputed,,
+TAW-M-p040-r62,40,62,1877-11-10,Denis,O'Donnell,Catherine,Callaghan,James McGoldrick,Isabella Kerr,,agreed,,witness1: McGolrick > McGoldrick
+TAW-M-p040-r63,40,63,1877-11-28,Michael,Sweeney,Anne,Kelly,John Kelly,John McCrudden,,agreed,,
+TAW-M-p040-r64,40,64,1877-11-30,William,Thomas,Mary,McCrudden,Patrick McCrudden,Catherine Quinn,,agreed,,
+TAW-M-p041-r65,41,65,1878-01-13,John,McGinty,Bridget,Mulreany,Laughlin O'Donnell,Edward Gillespie,,agreed,,witness2: Edwd. > Edward
+TAW-M-p041-r66,41,66,1878-01-17,Peter,Quigly,Margaret,Gildea,Patrick McAnaw,Bridget McAnaw,J. Doherty,agreed,,bride_surname: Gilday > Gildea
+TAW-M-p041-r67,41,67,1878-01-24,Edward,Slevin,Margaret,Martin,Thomas Martin,Catherine Brown,J. Doherty,agreed,,
+TAW-M-p041-r68,41,68,1878-01-27,Daniel,Coyce,Catherine,McClosky,Neal Sharkey,Margaret Brown,J. Doherty,agreed,,
+TAW-M-p041-r69,41,69,1878-01-28,Patrick,Gallagher,Anne,Gallagher,James Martin,Anne Morrow,H. Devine C.C.,agreed,,
+TAW-M-p041-r70,41,70,1878-02-18,Daniel,McMenamin,Mary,Brogan,Daniel Kelly,Maggie Brogan,H. Devine C.C.,agreed,,
+TAW-M-p041-r70b,41,70b,1878-03-02,John,Brien,Mary,McNulty,John Brien,Eliza Brien,J. Doherty,single_reader,,
+TAW-M-p041-r71,41,71,1878-04-10,Thomas,Hamilton,Mary,McIntyre,George Diver,,,agreed,,
+TAW-M-p041-r71b,41,71b,1878-05-04,Patrick,McDevitt,Mary,Tinney,James McDevitt,Susan McDevitt,John Doherty,single_reader,,
+TAW-M-p041-r72,41,72,1878-05-18,John,McClosky,Eliza,McClosky,James Gillespie,Kate McClosky,John Doherty pp.,agreed,,
+TAW-M-p041-r73,41,73,1879-01,James,Carr,Mary,Barrow,Hugh Mulreany,Margaret Mulreany,H. Devine C.C.,single_reader,,witness1: Mulrine > Mulreany; witness2: Mulrine > Mulreany
+TAW-M-p041-r74,41,74,1879-02-09,John,Martin,Bridget,Martin,William Martin,Ellen Martin,John Doherty pp.,agreed,,
+TAW-M-p041-r75,41,75,1879-02-16,Patrick,McAdam,Bridget,Gillespie,Denis McAdam,Patrick McAnaw,John Doherty pp.,agreed,,
+TAW-M-p041-r76,41,76,1879-02-16,John,Boyle,Bridget,Gillespie,Patrick McAdam,Edward Mulreany,J. Doherty pp.,agreed,,witness2: Edwd. > Edward
+TAW-M-p041-r77,41,77,1879-02-17,James,Murphy,Mary Anne,McGinty,James Brogan,John Brogan,J. Doherty pp.,agreed,,
+TAW-M-p041-r78,41,78,1879-02-20,James,Cassidy,Cat.,McGettigan,John McCaffrey,Hugh McGettigan,J. Doherty pp.,agreed,,
+TAW-M-p042-r79,42,79,1879-02-20,James,Farrely,Margaret,Gillespie,Thomas Doherty,Winifred Doherty,John Doherty pp.,agreed,,
+TAW-M-p042-r80,42,80,1879-04-30,Patrick,Doherty,Ellen,Flanagan,John McGoldrick,Mary McGoldrick,J. Doherty pp.,agreed,,witness1: McGolrick > McGoldrick; witness2: McGolrick > McGoldrick
+TAW-M-p042-r81,42,81,1879-05-17,Francis,Kelly,Anne,Haslett,Patrick Slevin,Catherine Weir,John Doherty pp.,agreed,probable,override bride_surname: Hazlito > Haslett
+TAW-M-p042-r82,42,82,1879-07-17,Thomas,Gillespie,Ellen,McMullin,Charles McNulty,Winifred McNulty,J. Doherty pp.,agreed,,
+TAW-M-p042-r83,42,83,1879-10-11,Daniel,Scallan,Catherine,Weir,Eugene Deery,Catie Ward,H. Devine C.C.,agreed,probable,override groom_surname: LeCallan > Scallan
+TAW-M-p042-r84,42,84,1879-10-12,John,Murphy,Mary,Travers,Patrick Walsh,George Walsh,H. Devine C.C.,agreed,,bride_surname: Trower > Travers; witness1: Patt. > Patrick
+TAW-M-p042-r85,42,85,1880-01-21,Thomas,Cassidy,Mary,Dunlevy,Neal O'Donnell,Mary Hurley,H. Devine C.C.,disputed,,
+TAW-M-p042-r86,42,86,1880-01-08,Arthur,McHugh,Mary,Conolly,John Timoney,John Conolly,J. Doherty pp.,agreed,,witness1: Timmony > Timoney
+TAW-M-p042-r87,42,87,1880-01-13,Neal,McFadden,Rose,McGinty,Patrick Gallagher,Bridget Callaghan,J. Doherty pp.,agreed,,
+TAW-M-p042-r88,42,88,1880-01-31,Henry,Doherty,Elizabeth,Bogan,Britton,,John Doherty,agreed,,
+TAW-M-p042-r89,42,89,1880-01-31,Hugh,McGettigan,Mary,McCoole,Charles Quinn,Mary Quinn,J. Doherty pp.,disputed,,
+TAW-M-p042-r90,42,90,1880-01-31,John,McCaffrey,Mary,Cassidy,John McGinty,Anne Gildea,J. Doherty pp.,agreed,,
+TAW-M-p042-r91,42,91,1880-02-05,Michael,Cunningham,Mary,McGroarty,Anne Hegarty,Sara Perry,John Doherty pp.,agreed,,
+TAW-M-p042-r92,42,92,1880-02-07,John,Martin,Mary,Callaghan,John Martin,Bridy Callaghan,H. Devine C.C.,agreed,,
+TAW-M-p042-r93,42,93,1880-02-07,John,Doherty,Mary,Gallagher,Connell Cassidy,Anne Carbin,H. Devine C.C.,agreed,probable,witness2: Corbin > Carbin; override witness2: Anne Carbin > Anne Carbin
+TAW-M-p043-r94,43,94,1880-10-02,John,Carr,Mary A.,Quinn,Michael Harkin,Mary Mulreany,H. Devine C.C.,agreed,,
+TAW-M-p043-r95,43,95,1880-10,John,Mulhern,Margaret,McCafferty,John Mulhern,Michael McNamara,John Doherty pp.,agreed,,
+TAW-M-p043-r96,43,96,1881-02,Anthony,Mulhern,Margaret,McCormick,Charles Kearney,Ellen Mulhern,,agreed,,
+TAW-M-p043-r97,43,97,1881-02-19,Peter,Callaghan,Bridget,O'Donnell,Thomas Bolan,Michael Callaghan,John Doherty pp.,agreed,,
+TAW-M-p043-r98,43,98,1881-02-22,Patrick,Gallagher,Catherine,McGenty,James Harvey,Mary Callaghan,John Doherty pp.,agreed,,
+TAW-M-p043-r99,43,99,1881-02-22,Patrick,Martin,Margaret,McNulty,Michael Martin,Sarah M. McLoughlin,John Doherty pp.,agreed,,witness2: Sera M. > Sarah M.
+TAW-M-p043-r100,43,100,1881-02-26,Thomas,Martin,Anne,Timoney,James Brown,Anne Timoney,John Doherty pp.,agreed,,bride_surname: Timmony > Timoney; witness2: Timmony > Timoney
+TAW-M-p043-r101,43,101,1881-03-01,Edward,McKay,Bridget,Cassidy,Thomas Meehan,Bridget Martin,John Doherty pp.,agreed,,
+TAW-M-p043-r102,43,102,1881-03-01,Edward,Martin,Mary,McCollin,Bryan Martin,Eliza Scott,John Doherty pp.,agreed,,
+TAW-M-p043-r103,43,103,1881-08-28,Michael,Dunnion,Alice,Brady,Francis Callaghan,Margaret Cassidy,John Doherty pp.,agreed,,groom_surname: Dunngan > Dunnion
+TAW-M-p043-rU_43,43,U_43,1881-10-14,James,Gilday,Anne,McMenamin,Edward Conolly,Mary McGoldrick,J. Doherty pp.,single_reader,probable,witness1: Edwd > Edward; witness2: McGolrick > McGoldrick; override groom_surname: Gelday > Gilday
+TAW-M-p043-r104,43,104,1881-09,Edward,Callaghan,Hannah,McMenamin,Patrick Doherty,Margaret McNulty,H. Devine Adm.,agreed,,witness1: Patt. > Patrick; witness2: Margt. > Margaret
+TAW-M-p043-r105,43,105,1881-09,Michael,Nugent,Hannah,Bradley,Jerome Boyce,Charles Bradley,H. Devine Adm.,agreed,,
+TAW-M-p043-r106,43,106,1881-09-27,Samuel,Hirandy,Margaret,Bradley,Patrick Devine,Mary A. Bradley,H. Devine,disputed,,witness1: Patt. > Patrick
