@@ -87,6 +87,18 @@ class BaptismTests(unittest.TestCase):
         self.assertEqual(events, [])
         self.assertIn('100 years', skipped[0][1])
 
+    def test_title_carries_the_fathers_surname(self):
+        events, _ = events_from([row('A', GOOD)])
+        self.assertEqual(events[0]['title'], 'Baptism of Joseph Kelly')
+
+    def test_title_without_a_father_names_the_mother_and_gives_no_surname(self):
+        events, _ = events_from([row('N', GOOD.replace('F: Thomas Kelly', 'F:'))])
+        self.assertEqual(events[0]['title'], 'Baptism of Joseph, child of Margaret Carr')
+
+    def test_every_event_has_a_media_list(self):
+        events, _ = events_from([row('A', GOOD)])
+        self.assertEqual(events[0]['media'], [])
+
     def test_inexact_date_is_not_placed(self):
         events, skipped = events_from([row('X', GOOD.replace('11 Jun 1875', 'Jun 1875'))])
         self.assertEqual(events, [])
@@ -104,6 +116,12 @@ class RealCaseTests(unittest.TestCase):
             self.assertTrue(e['id'] and e['source']['label'] and e['association']['basis'])
             self.assertNotIn('person_id', e)
             self.assertNotIn('family', e)
+
+    def test_every_real_event_has_a_media_field_and_nothing_undated(self):
+        feed = bt.events_for('cullionboy', TODAY)
+        for e in feed['events']:
+            self.assertIn('media', e)
+            self.assertTrue(e['date']['label'])
 
     def test_valuation_is_approximate(self):
         feed = bt.events_for('cullionboy', TODAY)

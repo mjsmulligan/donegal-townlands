@@ -70,6 +70,7 @@ docs/<name>/media/<image files>          build output, never edited by hand
 | `date` | no | Free text, for example "c. 1930s" or "unknown". |
 | `people_shown` | no | Names, free text. |
 | `link` | no | URL of the original (for example a shared album or archive page). Shown as "View original". |
+| `event` | no | Timeline only (`tools/build_timeline.py`): the id of the timeline event the photograph belongs to, for example `cullionboy:census:1911`. The photograph is shown on that event's card. A photograph with no `event` is not on the timeline, because the timeline never shows undated material. The first header image is the timeline's page background. |
 
 Row order in the file is display order within a family's Photos tab.
 

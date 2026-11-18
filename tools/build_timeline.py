@@ -17,8 +17,9 @@ Events collected:
   baptism     a register baptism whose own place field reads exactly the townland name and whose
               reading is agreed or resolved. A disputed row is left out and reported. A row whose
               place is noted as blotted or doubtful is kept and marked, not hidden.
-  media       a townland-scope photograph with no date is shown as undated context, never placed in
-              the chronology
+  media       every event carries a `media` list. The first header image is the page background.
+              Another photograph is attached to an event by the optional `event` column in media.csv.
+              Nothing undated is shown: a photograph with no event is left off the timeline
 
 Marriages are never collected: the register records no townland for them.
 
@@ -74,6 +75,19 @@ def parse_baptism(reading):
             'place': place, 'sponsors': [s.strip() for s in strip(sponsors, 'S:').split(';') if s.strip()]}
 
 
+def baptism_title(parsed):
+    """The card title. The register writes only the child's first name, so the surname shown is the
+    father's recorded surname (his last word as written). With no father recorded the title names
+    the mother in full instead, and never invents a surname for the child."""
+    child = parsed['child']
+    words = parsed['father'].split()
+    if words:
+        return f"Baptism of {child} {words[-1].rstrip('.,;')}"
+    if parsed['mother'].strip():
+        return f"Baptism of {child}, child of {parsed['mother'].strip()}"
+    return f'Baptism of {child}'
+
+
 def place_doubtful(row, parsed):
     note = row.get('comment', '')
     return bool(re.search(r'place\s+(blotted|illegible|unclear|doubtful)', note, re.I) or '[?]' in parsed['place'])
@@ -125,9 +139,10 @@ def baptism_events(name, today, register=None):
                 'type': 'baptism',
                 'date': {'kind': 'exact', 'label': long_date(day), 'iso': day.isoformat()},
                 'sort': day.isoformat(),
-                'title': 'Baptism of ' + parsed['child'],
+                'title': baptism_title(parsed),
                 'text': ' '.join(bits),
                 'people': people,
+                'media': [],
                 'association': {
                     'basis': 'page_place_doubtful' if doubt else 'page_place',
                     'label': ('The place is blotted on the page and reads as ' if doubt else 'The page gives the place as ')
@@ -157,6 +172,7 @@ def valuation_event(base, name):
         'title': "Griffith's Valuation",
         'text': f'The land and its occupiers were valued and listed. {len(rows)} occupiers are named for the townland.',
         'people': [],
+        'media': [],
         'association': {'basis': 'townland_entry', 'label': 'A valuation entry for the townland.'},
         'source': {'label': "Griffith's Valuation, askaboutireland.ie index", 'url': rows[0].get('listing_url', ''),
                    'reference': f"index place {data.get('askaboutireland_place_id', '')}"},
@@ -185,6 +201,7 @@ def census_events(base, name, spellings):
             'title': f'The {year} census',
             'text': f'{len(people)} people in {houses} households were recorded in the townland.',
             'people': [],
+            'media': [],
             'association': {'basis': 'return_for_townland',
                             'label': ('The return names the townland as ' + spelled + '.'
                                       if spelled != name else 'A return for the townland.')},
@@ -194,18 +211,32 @@ def census_events(base, name, spellings):
 
 
 def media_items(name):
+    """Return (found, background, rows_by_event, unplaced). The first header image is the page
+    background. Any other photograph appears only on an event: media.csv has an optional `event`
+    column holding an event id. A photograph with no event is not on the timeline (an undated
+    photograph is never placed), and is listed in `unplaced` so it is not lost silently."""
     found = build.media_for(name)
-    header, undated = None, []
+    sheet = ROOT / 'townlands' / name / 'media' / 'media.csv'
+    event_of = {}
+    if sheet.is_file():
+        with sheet.open(encoding='utf-8-sig', newline='') as h:
+            for r in csv.DictReader(h):
+                row = {(k or '').strip().lower(): (v or '').strip() for k, v in r.items() if k is not None}
+                if row.get('event'):
+                    event_of[row.get('file', '')] = row['event']
+    background, by_event, unplaced = None, {}, []
     for r in found['rows']:
-        if r.get('scope') == 'townland' and header is None:
-            header = r
-        elif r.get('scope') == 'family' and not r.get('date'):
-            undated.append(r)
-    return found, header, undated
+        if r.get('scope') == 'townland' and background is None:
+            background = r
+        elif r['file'] in event_of:
+            by_event.setdefault(event_of[r['file']], []).append(r)
+        else:
+            unplaced.append(r['file'])
+    return found, background, by_event, unplaced
 
 
 def events_for(name, today=None):
-    """The event feed for one case: {'events': [...], 'skipped': [...], 'undated': [...]}"""
+    """The event feed for one case: {'events': [...], 'skipped': [...], 'town': {...}}"""
     today = today or datetime.date.today()
     base = ROOT / 'townlands' / name
     town = json.loads((base / 'townland.json').read_text(encoding='utf-8'))
@@ -222,19 +253,17 @@ def events_for(name, today=None):
     return {'events': events, 'skipped': skipped, 'town': town}
 
 
-def media_payload(name, found, header, undated):
-    def item(r):
-        url = (found['base_url'] + r['file']) if found['base_url'] else 'media/' + r['file']
-        return {'file': r['file'], 'url': url, 'caption': r['caption'], 'alt': r.get('alt') or r['caption'],
-                'source': r['source']}
-    return {'header': item(header) if header else None, 'undated': [item(r) for r in undated]}
+def media_item(found, r):
+    url = (found['base_url'] + r['file']) if found['base_url'] else 'media/' + r['file']
+    return {'file': r['file'], 'url': url, 'caption': r['caption'], 'alt': r.get('alt') or r['caption'],
+            'source': r['source'], 'date': r.get('date', '')}
 
 
 def build_timeline(name, today=None):
     base = ROOT / 'townlands' / name
     if not (base / 'townland.json').is_file():
         sys.exit('No townland.json for ' + name + ': a timeline needs an authored case.')
-    found, header, undated = media_items(name)
+    found, background, by_event, unplaced = media_items(name)
     if found['errors']:
         print(name + ': media problems, timeline not built:')
         for e in found['errors']:
@@ -244,6 +273,14 @@ def build_timeline(name, today=None):
     if not feed['events']:
         print(name + ': no source events, timeline not built.')
         return 1
+    known = {e['id'] for e in feed['events']}
+    for event_id, rows in by_event.items():
+        if event_id not in known:
+            print(name + ': media.csv names an event that does not exist, not placed: ' + event_id)
+            continue
+        for e in feed['events']:
+            if e['id'] == event_id:
+                e['media'] = [media_item(found, r) for r in rows]
     (base / 'records').mkdir(exist_ok=True)
     out_json = {'townland': feed['town']['name'], 'generated_by': 'tools/build_timeline.py',
                 'events': feed['events']}
@@ -253,7 +290,7 @@ def build_timeline(name, today=None):
     payload = {
         'townland': feed['town']['name'],
         'events': feed['events'],
-        'media': media_payload(name, found, header, undated),
+        'background': media_item(found, background) if background else None,
         'walk': 'index.html' if walk.is_file() else '',
         'credit': CENSUS_CREDIT,
     }
@@ -266,6 +303,8 @@ def build_timeline(name, today=None):
     dest.parent.mkdir(parents=True, exist_ok=True)
     dest.write_text(page, encoding='utf-8')
     build.copy_media(name, found)
+    for f in unplaced:
+        print('  not on the timeline (no event named in media.csv): ' + f)
     counts = {}
     for e in feed['events']:
         counts[e['type']] = counts.get(e['type'], 0) + 1

@@ -16,6 +16,7 @@
    "title": "Griffith's Valuation",
    "text": "The land and its occupiers were valued and listed. 25 occupiers are named for the townland.",
    "people": [],
+   "media": [],
    "association": {
     "basis": "townland_entry",
     "label": "A valuation entry for the townland."
@@ -35,7 +36,7 @@
     "iso": "1874-10-05"
    },
    "sort": "1874-10-05",
-   "title": "Baptism of James",
+   "title": "Baptism of James Bradley",
    "text": "Father: Dan. Bradley. Mother: Ellen Callaghan. Sponsors: Condy Callaghan and Mary Callaghan.",
    "people": [
     {
@@ -59,6 +60,7 @@
      "role": "sponsor"
     }
    ],
+   "media": [],
    "association": {
     "basis": "page_place",
     "label": "The page gives the place as Cullionboy."
@@ -79,7 +81,7 @@
     "iso": "1875-03-31"
    },
    "sort": "1875-03-31",
-   "title": "Baptism of Edward",
+   "title": "Baptism of Edward Harraghy",
    "text": "Father: Francis Harraghy. Mother: Mary McGinty. Sponsors: Mich. Dunion and Brigid Dunion.",
    "people": [
     {
@@ -103,6 +105,7 @@
      "role": "sponsor"
     }
    ],
+   "media": [],
    "association": {
     "basis": "page_place",
     "label": "The page gives the place as Cullionboy."
@@ -123,7 +126,7 @@
     "iso": "1875-06-11"
    },
    "sort": "1875-06-11",
-   "title": "Baptism of Joseph",
+   "title": "Baptism of Joseph Kelly",
    "text": "Father: Thomas Kelly. Mother: Margaret Carr. Sponsors: James Hone and Bridgt. Harvey.",
    "people": [
     {
@@ -147,6 +150,7 @@
      "role": "sponsor"
     }
    ],
+   "media": [],
    "association": {
     "basis": "page_place_doubtful",
     "label": "The place is blotted on the page and reads as Cullionboy."
@@ -167,7 +171,7 @@
     "iso": "1875-07-10"
    },
    "sort": "1875-07-10",
-   "title": "Baptism of Margaret",
+   "title": "Baptism of Margaret McGinty",
    "text": "Father: Edwd. McGinty. Mother: Brigid Dunleavy. Sponsors: Wm. McDade and Margt. Dunnion.",
    "people": [
     {
@@ -191,6 +195,7 @@
      "role": "sponsor"
     }
    ],
+   "media": [],
    "association": {
     "basis": "page_place",
     "label": "The page gives the place as Cullionboy."
@@ -216,6 +221,7 @@
    "title": "The 1901 census",
    "text": "93 people in 18 households were recorded in the townland.",
    "people": [],
+   "media": [],
    "association": {
     "basis": "return_for_townland",
     "label": "A return for the townland."
@@ -240,6 +246,7 @@
    "title": "The 1911 census",
    "text": "72 people in 16 households were recorded in the townland.",
    "people": [],
+   "media": [],
    "association": {
     "basis": "return_for_townland",
     "label": "A return for the townland."
@@ -264,6 +271,7 @@
    "title": "The 1926 census",
    "text": "79 people in 15 households were recorded in the townland.",
    "people": [],
+   "media": [],
    "association": {
     "basis": "return_for_townland",
     "label": "The return names the townland as Collinboy."

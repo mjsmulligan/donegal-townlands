@@ -18,7 +18,7 @@
   color-scheme: light;
 }
 *{box-sizing:border-box}
-body{margin:0;background:var(--wall);color:var(--ink);font:400 17px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--wall);position:relative;color:var(--ink);font:400 17px/1.6 var(--body);-webkit-font-smoothing:antialiased}
 a{color:var(--ink);text-decoration-color:var(--hill);text-underline-offset:3px}
 :focus-visible{outline:3px solid var(--ink);outline-offset:2px;border-radius:3px}
 h1,h2,h3,p,ol,ul,figure{margin:0}
@@ -26,6 +26,10 @@ h1,h2,h3,p,ol,ul,figure{margin:0}
 .small{font-size:14px;color:var(--ink2);line-height:1.5}
 .skip{position:absolute;left:-999px;top:0;background:var(--paper);padding:8px 12px;z-index:10}
 .skip:focus{left:8px;top:8px}
+
+/* the landscape photograph is the page background, fixed behind everything, under a pale wash so text stays readable */
+.bg{position:fixed;inset:0;z-index:-2;background-color:var(--wall);background-size:cover;background-position:center}
+.bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(243,246,244,.80) 0%,rgba(243,246,244,.55) 45%,rgba(243,246,244,.35) 100%)}
 
 /* masthead */
 .mast{padding:calc(18px + env(safe-area-inset-top,0px)) 0 8px}
@@ -35,7 +39,6 @@ h1,h2,h3,p,ol,ul,figure{margin:0}
 h1{font:300 clamp(48px,9vw,96px)/1 var(--display);letter-spacing:-.015em;margin:28px 0 10px}
 .lede{font:italic 300 clamp(20px,3vw,28px)/1.3 var(--display);color:var(--ink2);max-width:36em}
 .honest{max-width:40em;margin-top:14px}
-.hero{margin:22px 0 8px;max-width:760px}
 .frame{background:var(--paper);border:1px solid var(--rule);border-radius:10px;padding:10px}
 .frame img{display:block;width:100%;height:auto;border-radius:4px}
 .frame figcaption{padding:8px 4px 0;font-size:14px;color:var(--ink2)}
@@ -49,15 +52,15 @@ h1{font:300 clamp(48px,9vw,96px)/1 var(--display);letter-spacing:-.015em;margin:
 .spacer{flex:1}
 
 /* the chronology */
-.track{list-style:none;padding:0;margin:0;display:flex;align-items:stretch;gap:0;overflow-x:auto;scroll-snap-type:x mandatory;
+.track{list-style:none;padding:0;margin:0;display:flex;align-items:flex-start;gap:0;overflow-x:auto;scroll-snap-type:x mandatory;
   scroll-padding-inline:18px;padding-bottom:22px;-webkit-overflow-scrolling:touch}
 .track:focus-visible{outline-offset:6px}
 .ev{flex:0 0 min(330px,82vw);scroll-snap-align:center;position:relative;padding:44px 12px 0}
 .ev::before{content:"";position:absolute;left:0;right:0;top:20px;height:2px;background:var(--rule)}
 .ev::after{content:"";position:absolute;left:12px;top:13px;width:16px;height:16px;border-radius:50%;background:var(--hill-d);border:3px solid var(--wall)}
 .ev.milestone::after{background:var(--gorse);box-shadow:0 0 0 2px var(--ink)}
-.year{position:absolute;left:36px;top:-2px;font:300 26px/1 var(--display);background:var(--wall);padding:0 8px 0 0}
-.card{background:var(--paper);border:1px solid var(--rule);border-radius:12px;padding:16px 18px 14px;height:100%;display:flex;flex-direction:column;gap:8px}
+.year{position:absolute;left:36px;top:-2px;font:300 26px/1 var(--display);background:var(--paper);padding:2px 10px;border-radius:999px;border:1px solid var(--rule)}
+.card{background:var(--paper);border:1px solid var(--rule);border-radius:12px;padding:16px 18px 14px;display:flex;flex-direction:column;gap:8px}
 .milestone .card{background:#F7F2D8;border-color:#E3D79A}
 .kind{font:500 12px var(--body);letter-spacing:.09em;text-transform:uppercase;color:var(--ink2)}
 .card h2{font:400 26px/1.1 var(--display)}
@@ -70,7 +73,7 @@ details{font-size:14px}
 summary{cursor:pointer;color:var(--ink2);padding:6px 0;min-height:32px}
 details p{margin:4px 0}
 .gap{flex:0 0 auto;align-self:flex-start;margin-top:12px;padding:0 4px;font-size:13px;color:var(--ink2);white-space:nowrap;position:relative;z-index:1}
-.gap span{background:var(--wall);padding:0 6px;display:inline-block;border:1px solid var(--rule);border-radius:999px}
+.gap span{background:var(--paper);padding:0 6px;display:inline-block;border:1px solid var(--rule);border-radius:999px}
 .gate{display:inline-block;font:500 14px var(--body);margin-top:2px}
 
 /* list view: the same events, one under another */
@@ -81,23 +84,19 @@ details p{margin:4px 0}
 .track.list .year{position:static;display:block;margin-bottom:6px;padding:0}
 .track.list .gap{display:block;margin:0 0 18px 10px;padding-left:22px;border-left:2px dashed var(--rule)}
 
-/* undated */
-.undated{margin:30px 0 10px}
-.undated h2{font:300 34px var(--display);margin-bottom:6px}
-.undated .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:16px;margin-top:14px}
 footer{margin:38px 0 60px;padding-top:16px;border-top:1px solid var(--rule)}
 footer p+p{margin-top:6px}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
+<div class="bg" id="bg" aria-hidden="true"></div>
 <a class="skip" href="#timeline">Skip to the timeline</a>
 <header class="mast"><div class="wrap">
   <div class="row"><a class="brand" href="../">Donegal Townlands</a><nav class="nav" id="nav" aria-label="Related pages"></nav></div>
   <h1>__BRAND__</h1>
   <p class="lede">A timeline of the records that name this townland.</p>
   <p class="small honest">Each event comes from one record and is shown as that record wrote it. Names are spelled as written. A record is placed here only when the source ties it to the townland, so gaps in the timeline are gaps in the surviving records, not in the life of the place.</p>
-  <figure class="hero frame" id="hero" hidden></figure>
 </div></header>
 <main class="wrap" id="timeline">
   <div class="controls" role="group" aria-label="Move through the timeline">
@@ -108,11 +107,6 @@ footer p+p{margin-top:6px}
     <button class="btn" id="mode" type="button" aria-pressed="false">Show as a list</button>
   </div>
   <ol class="track" id="track" tabindex="0" aria-label="Events in date order. Use the left and right arrow keys, or swipe."></ol>
-  <section class="undated" id="undated" hidden aria-labelledby="und-h">
-    <h2 id="und-h">Undated</h2>
-    <p class="small">These photographs have no reliable date, so they are not placed in the chronology.</p>
-    <div class="grid" id="und"></div>
-  </section>
   <footer><p class="small" id="credit"></p><p class="small">Baptism records come from our own transcription of the register images held by the National Library of Ireland. Griffith's Valuation names come from the askaboutireland.ie index.</p></footer>
 </main>
 <script>
@@ -137,6 +131,7 @@ var D=__DATA__;
     li.append(h('span',{class:'year',text:e.date.kind==='range'?'1850s':e.date.label.split(' ').pop()}));
     var c=h('div',{class:'card'});
     c.append(h('span',{class:'kind',text:KIND[e.type]||e.type}), h('h2',{text:e.title}), h('p',{class:'when',text:e.date.label}));
+    (e.media||[]).forEach(function(m){var f=h('figure',{class:'frame'}); f.append(h('img',{src:m.url,alt:m.alt,loading:'lazy'}),h('figcaption',{text:m.caption+(m.date?' ('+m.date+')':'')+'. '+m.source+'.'})); c.append(f);});
     if(e.text) c.append(h('p',{class:'people',text:e.text}));
     if(e.milestone && D.walk) c.append(h('a',{class:'gate',href:D.walk,text:'Explore the townland page'}));
     c.append(h('p',{class:'assoc'+(e.association.basis.indexOf('doubt')>=0?' doubt':''),text:e.association.label}));
@@ -183,11 +178,7 @@ var D=__DATA__;
   window.addEventListener('resize',update);
   update();
 
-  var M=D.media||{};
-  if(M.header){var hero=document.getElementById('hero'); hero.hidden=false;
-    hero.append(h('img',{src:M.header.url,alt:M.header.alt}),h('figcaption',{text:M.header.caption+'. '+M.header.source+'.'}));}
-  if(M.undated&&M.undated.length){document.getElementById('undated').hidden=false; var g=document.getElementById('und');
-    M.undated.forEach(function(m){var f=h('figure',{class:'frame'}); f.append(h('img',{src:m.url,alt:m.alt}),h('figcaption',{text:m.caption+'. '+m.source+'.'})); g.append(f);});}
+  if(D.background){document.getElementById('bg').style.backgroundImage='url("'+D.background.url.replace(/"/g,'%22')+'")';}
   if(D.walk) document.getElementById('nav').append(h('a',{href:D.walk,text:'Townland page'}));
   document.getElementById('credit').textContent=D.credit;
 })();
