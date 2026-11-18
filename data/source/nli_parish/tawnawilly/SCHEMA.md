@@ -82,22 +82,21 @@ Notes:
 
 ## 4. Normalised file columns (stage 2)
 
-Existing columns are kept so current tools keep working:
+Built by `normalised/build_normalised.py`. One row per raw row, same order, same `row_id`.
 
-`row_id, page, record_no, date_iso, child_forename, father_forename, father_surname, mother_forename, mother_surname, townland, townland_status, sponsor1..sponsor4, priest` (baptisms; marriages use the groom, bride, witness1, witness2 layout).
+Baptisms: `row_id, page, record_no, date_iso, child_forename, father_forename, father_surname, mother_forename, mother_surname, townland, townland_status, sponsor1..sponsor4, priest, raw_status, confidence, rules_applied`.
 
-Added or changed:
+Marriages: `row_id, page, record_no, date_iso, groom_forename, groom_surname, bride_forename, bride_surname, witness1, witness2, priest, raw_status, confidence, rules_applied`.
 
 | Column | Meaning |
 |---|---|
-| `rules_applied` | Which variant, forename or townland rules fired, e.g. `father_surname: Trower > Travers` |
-| `interpretation_basis` | Evidence used where a choice was made beyond rules, e.g. `census 1901; sponsor p40 rec 54` |
-| `confidence` | certain, probable, possible. Blank when the page is clear and only rules were applied |
-| `built_from` | Raw file version (git commit or tag) and generated-at date |
+| `date_iso` | `YYYY-MM-DD`, or `YYYY-MM` where the day is not known |
+| `townland_status` | From `rules.csv`: verified, dictionary, probable, possible, ambiguous, unresolved, unmapped, institution. Blank when no place is written |
+| `raw_status` | The raw row's status. A row that is not `agreed` or `resolved` is built from `reading_1` as a working value and is not settled |
+| `confidence` | certain, probable, possible. Blank when only rules were applied. Comes from `overrides.csv` (lowest on the row) |
+| `rules_applied` | Every change made to the written form, e.g. `father_surname: Trower > Travers; override sponsor1: Patt. Mall > Patrick Moss` |
 
-Derived in stage 2 only: parsing into roles, Do. expansion (Do. = same surname as the first person named in the group), date conversion to ISO, Latin to English forenames, surname variants, townland spelling, priest recorded as written (empty if no signature).
-
-`comment` and the two raw reading columns move out of the normalised file. They live only in raw.
+The text used is `resolved_reading` where it exists, otherwise `reading_1`. Derived in stage 2 only: parsing into roles, date to ISO, forename expansion, surname variants, townland spelling. Priest is carried as written (empty if no signature). `comment` and the two reading columns stay in raw.
 
 ## 5. Status values (raw)
 
@@ -125,27 +124,31 @@ Not allowed as a basis in stage 1: census, surname dictionary, civil records, GR
 
 DECIDED (B): civil records are stage 2 only. They need their own stage 1 capture first, because the current transcriptions do not record all of their data. So each external source (civil BMD lookups, and later others) gets its own raw file in the same pattern (verbatim strings, readings, status, resolution), and `overrides.csv` cites those rows by id in `interpretation_basis` rather than pasting values.
 
-## 7. Reference and override files (stage 2)
+## 7. Rules and override files (stage 2)
 
-Shared reference, already in the repo (see the top of this file): the surname dictionary, the given-name variants and the Logainm place layer. This register adds no reference files of its own. Variants found here are proposed into the shared files and verified by Mike, and the family rows record this register in `observed_in`.
+In `normalised/`, next to the build script, and read by it.
 
-Source-scoped:
-- `overrides.csv`: `row_id, field, value, basis, confidence, decided_by, decided_on`. For one-off, evidence-based choices that are not rules (for example a surname chosen because it appears elsewhere in the census). Overrides never change the raw layer.
+`rules.csv` (`kind, as_written, normalised, status, basis`) applies to every occurrence:
+- `forename`: abbreviation or variant expansion (Patt. to Patrick), matched on the whole forename text, then word by word. Status `abbreviation`.
+- `surname`: variant mapping on the whole surname text (Trower to Travers). Status `proposed`: they were marked verified in the earlier normalised file, but nothing here is in the shared dictionary until Mike verifies it in `data/reference/surname_variants.csv`. This file adds nothing there.
+- `townland`: written place to Logainm spelling, with `status` becoming `townland_status` and `basis` saying why. A blank `normalised` means the place is unresolved or unmapped and is kept out of the output rather than guessed.
+
+`overrides.csv` (`row_id, field, as_read, value, basis, confidence, decided_by`) is one row per evidence-based or adjudicated choice that is not a rule, for example Mall to Moss or a partial adjudication from the raw file. `field` is a normalised column. The basis says what the choice rested on. Overrides never change the raw layer.
+
+Shared reference data (surname dictionary, given-name variants, Logainm place layer) is in `data/reference/` and `data/processed/places/`. Promoting a rule from here to there is Mike's decision.
 
 ## 8. Build and versioning
 
-- `scripts/build_normalised.py` reads raw, reference and overrides, and writes the normalised files. Deterministic: same inputs, same output.
-- Regenerate the normalised files whenever raw, reference or overrides change. Do not hand edit them.
-- CSV hygiene for clean diffs: fixed column order, rows sorted by page then record_no, UTF-8, LF line endings, no newlines inside cells, consistent quoting.
-- One commit per review batch, message naming pages and row counts, e.g. `tawnawilly raw: adjudicate p5-p12 disputes (26 rows)`.
-- Tag snapshots at the end of each phase (for example `tawnawilly-raw-2026-11`).
+- Rebuild after any change to raw, `rules.csv` or `overrides.csv`: `python data/source/nli_parish/tawnawilly/normalised/build_normalised.py`. `--check` fails if the committed outputs differ from a rebuild. `tests/test_tawnawilly_normalised.py` runs that check, so a stale output fails the tests.
+- Never edit a normalised file by hand.
+- Review commit recipe: enter the adjudications in raw (`resolved_reading`, basis, by, date, note), rebuild, run `python tools/source_manifest.py register-update`, run `python tools/validate.py` and `python -m pytest -q tests`, commit.
+- CSV hygiene for clean diffs: fixed column order, rows in page order, UTF-8, LF line endings, no newlines inside cells.
+- One commit per review batch, message naming pages and row counts.
+- Tag snapshots at the end of each phase.
 
-## 9. Test before trusting
+## 9. Round trip (done 2026-11-17)
 
-1. Build the raw files from the current CSVs and judgments workbook.
-2. Run the build script.
-3. Diff the output against `Tawnawilly_Baptisms_normalised_v2.csv` and the marriages equivalent.
-4. Every difference points to a missing rule, override or raw reading. Fix those until the diff is explained.
+The first build was checked against the earlier normalised files (baptisms with the 2026-11-17 judgments applied, and marriages). Every field in all 677 rows matches, with one explained exception. `TAW-B-p012-r146` lists Rose Kelly twice in reading 1. The earlier file put the second one in `sponsor4` and left `sponsor3` blank, which was a fault in that pipeline. The build puts her in `sponsor3`. Reading 2 has her once, so the repeat in reading 1 is probably a slip, to check on the image.
 
 ## 10. Open decisions
 
