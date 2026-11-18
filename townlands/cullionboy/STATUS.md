@@ -20,6 +20,11 @@ Page: `docs/cullionboy/index.html`, built from `engine/walk.html` and `records/c
 ## Story voice pilot (2026-11-07, branch story-voice-kelly)
 - The Kellys plate is the pilot for the plain, lay-person voice (DECISIONS.md, 2026-11-07). Its text is one account drawn from the census, Griffith's and the family tree, with no citations, IDs, speculation or open questions. Other families still carry the earlier census-report text and are to be rewritten once Mike approves the register.
 
+## Timeline (2026-11-18)
+- `docs/cullionboy/timeline.html`, built by `tools/build_timeline.py cullionboy` from `records/timeline_events.json`: Griffith's (1850s), the 1901, 1911 and 1926 returns, and the register baptisms that name Cullionboy with an agreed or resolved reading and an exact date. Baptisms whose readings are still disputed are left out and listed by the build.
+- A baptism whose place is noted as blotted on the page is shown with that doubt marked.
+- Register baptisms from p19 on have no townland written, so they are not placed. The register marriages never give one.
+
 ## Missing
 - Tithe Applotment, valuation revision books, civil BMD from 1864, parish records
 
