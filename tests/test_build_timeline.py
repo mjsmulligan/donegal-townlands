@@ -123,6 +123,20 @@ class RealCaseTests(unittest.TestCase):
             self.assertIn('media', e)
             self.assertTrue(e['date']['label'])
 
+    def test_clogher_valuation_comes_from_the_authored_transcription(self):
+        feed = bt.events_for('clogher', TODAY)
+        val = [e for e in feed['events'] if e['type'] == 'valuation'][0]
+        self.assertIn('Parish of Donegal', val['source']['label'])
+        self.assertEqual(val['date']['label'], 'The 1850s')
+
+    def test_clogher_baptisms_are_only_those_whose_place_is_clogher(self):
+        feed = bt.events_for('clogher', TODAY)
+        bap = [e for e in feed['events'] if e['type'] == 'baptism']
+        self.assertTrue(bap)
+        for e in bap:
+            self.assertIn('Clogher.', e['association']['label'])
+            self.assertTrue(e['title'].startswith('Baptism of '))
+
     def test_valuation_is_approximate(self):
         feed = bt.events_for('cullionboy', TODAY)
         val = [e for e in feed['events'] if e['type'] == 'valuation'][0]

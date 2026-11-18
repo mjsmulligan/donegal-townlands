@@ -8,6 +8,10 @@ Page: `docs/clogher/index.html`, built from `engine/walk.html`, `townland.json`,
 - townlands.ie for area, Irish name and neighbours.
 - Tawnawilly registers: only a page index exists (held by Mike outside the repository), no names, so no Clogher baptisms or marriages yet.
 
+## Timeline (2026-11-18)
+- `docs/clogher/timeline.html`, built by `tools/build_timeline.py clogher` from `records/timeline_events.json`: Griffith's (the 1850s, from our transcription in `content.json`), the 1901, 1911 and 1926 returns, and 6 register baptisms whose place is written Clogher (1873-75). One more (TAW-B-p015-r180) is left out because its reading is still disputed. "Cloghan" (TAW-B-p013-r164) is a different place name on the page and is not included.
+- `media/clogher-landscape.jpg` (Mike's personal photo, 2026-11-18) is the header photograph and the timeline's page background. The Clogher walk page has not been rebuilt, so it does not show it yet.
+
 ## Missing
 - Tithe Applotment, valuation revision books, civil BMD from 1864, parish register entries.
 - Land and buildings split of each Griffith's valuation (the transcription holds totals only). Those two columns are blank.
