@@ -92,7 +92,7 @@ class ReferenceTests(unittest.TestCase):
         self.assertEqual(vr.warnings(), [])
         verified = [r["family_id"] for r in vr.load() if r["status"] == "verified"]
         self.assertEqual(verified, [r["family_id"] for r in vr.load()])
-        self.assertEqual(len(verified), 10)
+        self.assertEqual(len(verified), 17)
         self.assertEqual([r["family_id"] for r in vr.lookup("McKenna")], ["mcanaw"])
 
 

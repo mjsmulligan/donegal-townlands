@@ -163,6 +163,51 @@
    "recorded": "15 Feb 1874 | John | F: Mich. Flanaghan | M: Margt. Breen | Clogher | S: Connell Dealin; Sarah Dealin | P.K."
   },
   {
+   "id": "clogher:baptism:TAW-B-p015-r180",
+   "type": "baptism",
+   "date": {
+    "kind": "exact",
+    "label": "26 January 1875",
+    "iso": "1875-01-26"
+   },
+   "sort": "1875-01-26",
+   "title": "Baptism of James Bresland",
+   "text": "Father: Patrick Bresland. Mother: Catherine McCool. Sponsors: Patrick O'Donnell and Brigid O'Donnell.",
+   "people": [
+    {
+     "name": "James",
+     "role": "child baptised"
+    },
+    {
+     "name": "Patrick Bresland",
+     "role": "father"
+    },
+    {
+     "name": "Catherine McCool",
+     "role": "mother"
+    },
+    {
+     "name": "Patrick O'Donnell",
+     "role": "sponsor"
+    },
+    {
+     "name": "Brigid O'Donnell",
+     "role": "sponsor"
+    }
+   ],
+   "media": [],
+   "association": {
+    "basis": "page_place",
+    "label": "The page gives the place as Clogher."
+   },
+   "source": {
+    "label": "Tawnawilly parish register (Raphoe), NLI microfilm 04599/04, page 15",
+    "url": "https://registers.nli.ie/pages/vtls000631954_015",
+    "reference": "TAW-B-p015-r180"
+   },
+   "recorded": "26 Jan 1875 | James | F: Patrick Bresland | M: Catherine McCool | Clogher | S: Patrick O'Donnell; Brigid O'Donnell | James Walker"
+  },
+  {
    "id": "clogher:baptism:TAW-B-p018-r229",
    "type": "baptism",
    "date": {
