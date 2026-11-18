@@ -155,12 +155,27 @@ def baptism_events(name, today, register=None):
 
 
 def valuation_event(base, name):
+    """Griffith's as one milestone. Taken from the askaboutireland index when the case has one,
+    otherwise from the authored transcription in content.json."""
+    label, url, ref, count, noun = "Griffith's Valuation", '', '', 0, 'occupiers are named for the townland'
     idx = base / 'records' / 'griffiths_index.json'
-    if not idx.is_file():
-        return None
-    data = json.loads(idx.read_text(encoding='utf-8'))
-    rows = [r for r in data.get('rows', []) if r.get('role') == 'occupier']
-    if not rows:
+    content = base / 'content.json'
+    if idx.is_file():
+        data = json.loads(idx.read_text(encoding='utf-8'))
+        rows = [r for r in data.get('rows', []) if r.get('role') == 'occupier']
+        count = len(rows)
+        if rows:
+            label, url = "Griffith's Valuation, askaboutireland.ie index", rows[0].get('listing_url', '')
+            ref = f"index place {data.get('askaboutireland_place_id', '')}"
+    elif content.is_file():
+        g = json.loads(content.read_text(encoding='utf-8')).get('griffiths') or {}
+        count = len([r for r in g.get('rows', []) if (r.get('occ') or '').strip()])
+        noun = 'entries name an occupier (a person may appear in more than one)'
+        sub = (g.get('sheet') or {}).get('sub', '')
+        where = sub.split('. Ord')[0].strip().rstrip('.') if sub else ''
+        label = "Griffith's Valuation" + (', ' + where if where else '') + ', our transcription'
+        ref = 'content.json griffiths.rows'
+    if not count:
         return None
     return {
         'id': f'{name.lower()}:valuation:griffiths',
@@ -170,12 +185,11 @@ def valuation_event(base, name):
         'sort': '1855-07-01',
         'approximate_sort': True,
         'title': "Griffith's Valuation",
-        'text': f'The land and its occupiers were valued and listed. {len(rows)} occupiers are named for the townland.',
+        'text': f'The land and its occupiers were valued and listed. {count} {noun}.',
         'people': [],
         'media': [],
         'association': {'basis': 'townland_entry', 'label': 'A valuation entry for the townland.'},
-        'source': {'label': "Griffith's Valuation, askaboutireland.ie index", 'url': rows[0].get('listing_url', ''),
-                   'reference': f"index place {data.get('askaboutireland_place_id', '')}"},
+        'source': {'label': label, 'url': url, 'reference': ref},
     }
 
 
