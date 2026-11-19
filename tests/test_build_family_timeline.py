@@ -39,5 +39,25 @@ class FamilyTests(unittest.TestCase):
                 self.assertGreaterEqual(TODAY.year - int(e['sort'][:4]), 75)
 
 
+class LinkTests(unittest.TestCase):
+    def test_surname_relation(self):
+        sp = ['Gildea', 'Guildea']
+        self.assertEqual(bf.surname_relation('Hilly', 'hilly', sp), 'same')
+        self.assertEqual(bf.surname_relation('Gildea', 'Guildea', sp), 'family')
+        self.assertEqual(bf.surname_relation('Quigly', 'Quigley', sp), 'similar')
+        self.assertIsNone(bf.surname_relation('Kelly', 'Carr', sp))
+
+    def test_gildea_links_are_forward_and_labelled(self):
+        feed = bf.events_for('Gildea', TODAY)
+        ids = {e['id']: e for e in feed['events']}
+        self.assertEqual({l['kind'] for l in feed['links']}, {'names', 'accepted'})
+        for l in feed['links']:
+            self.assertLess(ids[l['from']]['sort'], ids[l['to']]['sort'])
+            self.assertTrue(l['note'])
+        for l in feed['links']:
+            if l['kind'] == 'names':
+                self.assertEqual((ids[l['from']]['type'], ids[l['to']]['type']), ('marriage', 'baptism'))
+
+
 if __name__ == '__main__':
     unittest.main()
