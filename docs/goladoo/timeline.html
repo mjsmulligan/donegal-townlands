@@ -48,7 +48,6 @@ h1{font:300 clamp(48px,9vw,96px)/1 var(--display);letter-spacing:-.015em;margin:
 .btn{appearance:none;border:1px solid var(--ink);background:var(--paper);color:var(--ink);font:500 14px var(--body);padding:9px 16px;min-height:44px;border-radius:999px;cursor:pointer}
 .btn:hover{background:var(--ink);color:#fff}
 .btn[disabled]{opacity:.35;cursor:default;background:var(--paper);color:var(--ink)}
-.pos{font:500 15px var(--body);color:var(--ink2);min-width:7em}
 .spacer{flex:1}
 
 /* the chronology */
@@ -59,17 +58,17 @@ h1{font:300 clamp(48px,9vw,96px)/1 var(--display);letter-spacing:-.015em;margin:
 .linknote{font-size:13px;color:var(--ink2)}
 .linknote a{color:var(--ink);font-weight:500}
 
-.ev{flex:0 0 min(330px,82vw);scroll-snap-align:center;position:relative;padding:44px 12px 0}
+.ev{flex:0 0 min(330px,82vw);scroll-snap-align:center;position:relative;padding:52px 12px 0}
 .ev::before{content:"";position:absolute;left:0;right:0;top:20px;height:2px;background:var(--rule)}
 .ev::after{content:"";position:absolute;left:12px;top:13px;width:16px;height:16px;border-radius:50%;background:var(--hill-d);border:3px solid var(--wall)}
 .ev.milestone::after{background:var(--gorse);box-shadow:0 0 0 2px var(--ink)}
-.year{position:absolute;left:36px;top:-2px;font:300 26px/1 var(--display);background:var(--paper);padding:2px 10px;border-radius:999px;border:1px solid var(--rule)}
+.year{position:absolute;left:36px;top:0;font:300 26px/1 var(--display);background:var(--paper);padding:6px 16px 7px;border-radius:999px;border:1px solid var(--rule)}
 .card{background:var(--paper);border:1px solid var(--rule);border-radius:12px;padding:16px 18px 14px;display:flex;flex-direction:column;gap:8px}
 .milestone .card{background:#F7F2D8;border-color:#E3D79A}
 .kind{font:500 12px var(--body);letter-spacing:.09em;text-transform:uppercase;color:var(--ink2)}
 .card h2{font:400 26px/1.1 var(--display)}
 .when{font-size:14px;color:var(--ink2)}
-.people{font-size:15px;color:var(--ink)}
+.people{font-size:15px;color:var(--ink);white-space:pre-line}
 .people b{font-weight:500}
 .assoc{font-size:13px;color:var(--ink2);border-top:1px solid var(--rule);padding-top:8px;margin-top:auto}
 .assoc.doubt{color:var(--ink);font-weight:500}
@@ -85,7 +84,7 @@ details p{margin:4px 0}
 .track.list .ev{padding:0 0 18px 34px;border-left:2px solid var(--rule);margin-left:10px}
 .track.list .ev::before{display:none}
 .track.list .ev::after{left:-10px;top:4px}
-.track.list .year{position:static;display:block;margin-bottom:6px;padding:0}
+.track.list .year{position:static;display:inline-block;margin-bottom:10px}
 .track.list .gap{display:block;margin:0 0 18px 10px;padding-left:22px;border-left:2px dashed var(--rule)}
 
 footer{margin:38px 0 60px;padding:14px 18px;background:var(--paper);border:1px solid var(--rule);border-radius:12px}
@@ -104,9 +103,6 @@ footer p+p{margin-top:6px}
 </div></header>
 <main class="wrap" id="timeline">
   <div class="controls" role="group" aria-label="Move through the timeline">
-    <button class="btn" id="prev" type="button" aria-label="Earlier event">Earlier</button>
-    <button class="btn" id="next" type="button" aria-label="Later event">Later</button>
-    <span class="pos" id="pos" aria-live="polite"></span>
     <span class="spacer"></span>
     <button class="btn" id="mode" type="button" aria-pressed="false">Show as a list</button>
   </div>
@@ -121,7 +117,7 @@ var D={"townland":"Goladoo","events":[{"id":"goladoo:baptism:TAW-B-p006-r29","ty
     for(var i=2;i<arguments.length;i++){var c=arguments[i]; if(c==null) continue; e.append(c.nodeType?c:document.createTextNode(c));}
     return e;}
   var KIND={valuation:"Valuation",census:"Census",baptism:"Baptism",marriage:"Marriage"};
-  var track=document.getElementById('track'), pos=document.getElementById('pos');
+  var track=document.getElementById('track');
   var evs=D.events, items=[], reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches;
 
   function yearOf(e){return parseInt(e.sort.slice(0,4),10)}
@@ -149,6 +145,7 @@ var D={"townland":"Goladoo","events":[{"id":"goladoo:baptism:TAW-B-p006-r29","ty
     if(e.recorded) d.append(h('p',{text:'As written: '+e.recorded}));
     var s=h('p'); if(e.source.url){s.append('Source: ',h('a',{href:e.source.url,target:'_blank',rel:'noopener',text:e.source.label}))} else s.append('Source: '+e.source.label);
     d.append(s);
+    ((e.source&&e.source.more)||[]).forEach(function(m){var q=h('p'); if(m.url){q.append(h('a',{href:m.url,target:'_blank',rel:'noopener',text:m.label}))} else q.append(m.label); d.append(q);});
     c.append(d); li.append(c); return li;
   }
   evs.forEach(function(e,i){
@@ -167,26 +164,15 @@ var D={"townland":"Goladoo","events":[{"id":"goladoo:baptism:TAW-B-p006-r29","ty
     i=Math.max(0,Math.min(items.length-1,i));
     items[i].scrollIntoView({behavior:reduce?'auto':'smooth',inline:'center',block:'nearest'});
   }
-  function update(){
-    var i=current(), list=track.classList.contains('list');
-    pos.textContent=list?items.length+' events':(i+1)+' of '+items.length;
-    document.getElementById('prev').disabled=list||i<=0;
-    document.getElementById('next').disabled=list||i>=items.length-1;
-  }
-  document.getElementById('prev').addEventListener('click',function(){show(current()-1)});
-  document.getElementById('next').addEventListener('click',function(){show(current()+1)});
-  track.addEventListener('scroll',function(){window.requestAnimationFrame(update)},{passive:true});
-  track.addEventListener('keydown',function(ev){
+    track.addEventListener('keydown',function(ev){
     if(track.classList.contains('list')) return;
     if(ev.key==='ArrowRight'){ev.preventDefault();show(current()+1)} else if(ev.key==='ArrowLeft'){ev.preventDefault();show(current()-1)}
   });
   var mode=document.getElementById('mode');
   mode.addEventListener('click',function(){
     var on=track.classList.toggle('list'); mode.setAttribute('aria-pressed',on?'true':'false');
-    mode.textContent=on?'Show as a strip':'Show as a list'; update();
+    mode.textContent=on?'Show as a strip':'Show as a list';
   });
-  window.addEventListener('resize',update);
-  update();
   track.addEventListener('click',function(ev){
     var a=ev.target.closest&&ev.target.closest('a[data-go]'); if(!a) return;
     ev.preventDefault();
