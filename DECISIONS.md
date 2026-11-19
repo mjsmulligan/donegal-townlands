@@ -145,3 +145,7 @@ An experiment beside the townland timeline: `python tools/build_family_timeline.
 ## 2026-11-19: Links on the family timeline
 
 The family timeline links related cards with a note on each card, not with arcs (arcs were tried and looked cluttered, Mike 2026-11-19). A card says "Followed by" or "Follows" with a link that jumps to and highlights the related card, in the strip and in the list view. Marriage to later baptism (within 15 years): the groom and bride are written as the father and mother, forenames equal and surnames equal, in the same dictionary family, or similar in spelling (stated on the card). That asserts only that the names match, not that the people are the same. Census years are linked only for people whose links Mike has accepted in `census_links.csv`. No census to baptism or marriage links until Mike decides them. The rule is in `tools/build_family_timeline.py`.
+
+## 2026-11-19: Timeline presentation (Mike)
+
+The Earlier and Later buttons are removed from the timelines (swipe, scroll and the arrow keys still work, and the list toggle stays). The year label has more padding. On a family timeline, Griffith's Valuation is one card listing every townland where the surname is an occupier, with a source link for each townland under "About this record".

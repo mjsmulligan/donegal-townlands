@@ -161,7 +161,8 @@ def title_case(name):
 
 
 def valuation_events(slug_, spellings):
-    events, indexed = [], set()
+    """One card for Griffith's Valuation: every townland where the surname is an occupier, in name order."""
+    found, indexed = {}, set()
     for path in sorted(glob.glob(str(ROOT / 'data' / 'source' / 'griffiths' / '*_individuals.csv'))):
         rows = read_csv(path)
         if not rows:
@@ -169,8 +170,8 @@ def valuation_events(slug_, spellings):
         town = rows[0]['townland']; indexed.add(town.lower())
         hit = [r for r in rows if matches([r['occupier_surname_as_indexed']], spellings)]
         if hit:
-            events.append(valuation_event(slug_, town, [f"{title_case(r['occupier_forename_as_indexed'])} {title_case(r['occupier_surname_as_indexed'])}".strip() for r in hit],
-                                          "Griffith's Valuation, askaboutireland.ie index", hit[0].get('details_url', '')))
+            found[town] = ([f"{title_case(r['occupier_forename_as_indexed'])} {title_case(r['occupier_surname_as_indexed'])}".strip() for r in hit],
+                           "askaboutireland.ie index", hit[0].get('details_url', ''))
     for content in sorted(glob.glob(str(ROOT / 'townlands' / '*' / 'content.json'))):
         case = pathlib.Path(content).parent
         town = json.loads((case / 'townland.json').read_text(encoding='utf-8')).get('name', case.name.title()) \
@@ -180,18 +181,19 @@ def valuation_events(slug_, spellings):
         rows = (json.loads(pathlib.Path(content).read_text(encoding='utf-8')).get('griffiths') or {}).get('rows', [])
         hit = [r['occ'] for r in rows if (r.get('occ') or '').strip() and matches([surname_of(r['occ'])], spellings)]
         if hit:
-            events.append(valuation_event(slug_, town, hit, "Griffith's Valuation, our transcription", ''))
-    return events
-
-
-def valuation_event(slug_, town, names, source, url):
-    names = sorted(set(names))
-    return {'id': f'{slug_}:valuation:{slug(town)}', 'type': 'valuation',
-            'date': {'kind': 'range', 'label': 'The 1850s', 'iso': '1850/1859'}, 'sort': '1855-07-01',
-            'approximate_sort': True, 'title': "Griffith's Valuation, " + town,
-            'text': 'Named as occupiers: ' + '; '.join(names) + '.', 'place': town, 'people': [], 'media': [],
-            'association': {'basis': 'surname', 'label': 'The occupier surname is written to match the family.'},
-            'source': {'label': source, 'url': url, 'reference': town}}
+            found[town] = (hit, 'our transcription', '')
+    if not found:
+        return []
+    towns = sorted(found)
+    lines = [f"{t}: " + '; '.join(sorted(set(found[t][0]))) + '.' for t in towns]
+    more = [{'label': f'{t}, {found[t][1]}', 'url': found[t][2]} for t in towns]
+    return [{'id': f'{slug_}:valuation', 'type': 'valuation',
+             'date': {'kind': 'range', 'label': 'The 1850s', 'iso': '1850/1859'}, 'sort': '1855-07-01',
+             'approximate_sort': True, 'title': "Griffith's Valuation",
+             'text': f"Named as occupiers in {len(towns)} townland{'s' if len(towns) != 1 else ''}:\n" + '\n'.join(lines),
+             'place': '', 'people': [], 'media': [],
+             'association': {'basis': 'surname', 'label': 'The occupier surname is written to match the family.'},
+             'source': {'label': "Griffith's Valuation", 'url': '', 'reference': ', '.join(towns), 'more': more}}]
 
 
 def census_events(slug_, spellings):
@@ -321,7 +323,7 @@ def build_family(surname, today=None):
         'townland': feed['label'], 'events': feed['events'], 'links': feed['links'], 'background': None, 'walk': '',
         'lede': f'A timeline of the records that name {feed["label"]}, across every townland held.',
         'honest': f'Each event is a record where the surname is written {spell}. It is the surname that is matched, not a person: '
-                  'nothing here says the people named are related. The only joins are the arcs, each labelled with its basis. '
+                  'nothing here says the people named are related. The only joins are the "Followed by" and "Follows" notes, each with its basis. '
                   'Names are spelled as written. Sponsors and witnesses are not counted.',
         'sources': 'Baptisms and marriages come from our own transcription of the register images held by the National Library of Ireland. '
                    "Griffith's Valuation details come from the askaboutireland.ie index or from our own transcription of the page, as each event says.",

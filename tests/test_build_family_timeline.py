@@ -27,6 +27,7 @@ class FamilyTests(unittest.TestCase):
         self.assertEqual(keys, sorted(keys))
         types = {e['type'] for e in ev}
         self.assertTrue({'baptism', 'marriage', 'valuation', 'census'} <= types)
+        self.assertEqual(len([e for e in ev if e['type'] == 'valuation']), 1)
         for e in ev:
             self.assertEqual(e['association']['basis'], 'surname')
             self.assertTrue(e['source']['label'])

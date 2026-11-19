@@ -7,7 +7,7 @@
  "generated_by": "tools/build_family_timeline.py",
  "events": [
   {
-   "id": "gildea:valuation:clogher",
+   "id": "gildea:valuation",
    "type": "valuation",
    "date": {
     "kind": "range",
@@ -16,9 +16,9 @@
    },
    "sort": "1855-07-01",
    "approximate_sort": true,
-   "title": "Griffith's Valuation, Clogher",
-   "text": "Named as occupiers: Phelim Gildea.",
-   "place": "Clogher",
+   "title": "Griffith's Valuation",
+   "text": "Named as occupiers in 3 townlands:\nClogher: Phelim Gildea.\nCullionboy: Jeremiah Gildea; Patrick Gildea.\nDruminnin: Edward Gildea; Jeremiah Gildea; Patrick Gildea; Phelim Gildea.",
+   "place": "",
    "people": [],
    "media": [],
    "association": {
@@ -26,59 +26,23 @@
     "label": "The occupier surname is written to match the family."
    },
    "source": {
-    "label": "Griffith's Valuation, our transcription",
+    "label": "Griffith's Valuation",
     "url": "",
-    "reference": "Clogher"
-   }
-  },
-  {
-   "id": "gildea:valuation:cullionboy",
-   "type": "valuation",
-   "date": {
-    "kind": "range",
-    "label": "The 1850s",
-    "iso": "1850/1859"
-   },
-   "sort": "1855-07-01",
-   "approximate_sort": true,
-   "title": "Griffith's Valuation, Cullionboy",
-   "text": "Named as occupiers: Jeremiah Gildea; Patrick Gildea.",
-   "place": "Cullionboy",
-   "people": [],
-   "media": [],
-   "association": {
-    "basis": "surname",
-    "label": "The occupier surname is written to match the family."
-   },
-   "source": {
-    "label": "Griffith's Valuation, askaboutireland.ie index",
-    "url": "https://www.askaboutireland.ie/griffith-valuation/details.xml?action=showDetails&mysession=3053060933468&ID=1489657&la=",
-    "reference": "Cullionboy"
-   }
-  },
-  {
-   "id": "gildea:valuation:druminnin",
-   "type": "valuation",
-   "date": {
-    "kind": "range",
-    "label": "The 1850s",
-    "iso": "1850/1859"
-   },
-   "sort": "1855-07-01",
-   "approximate_sort": true,
-   "title": "Griffith's Valuation, Druminnin",
-   "text": "Named as occupiers: Edward Gildea; Jeremiah Gildea; Patrick Gildea; Phelim Gildea.",
-   "place": "Druminnin",
-   "people": [],
-   "media": [],
-   "association": {
-    "basis": "surname",
-    "label": "The occupier surname is written to match the family."
-   },
-   "source": {
-    "label": "Griffith's Valuation, askaboutireland.ie index",
-    "url": "https://www.askaboutireland.ie/griffith-valuation/details.xml?action=showDetails&mysession=3053086831100&ID=1489585&la=",
-    "reference": "Druminnin"
+    "reference": "Clogher, Cullionboy, Druminnin",
+    "more": [
+     {
+      "label": "Clogher, our transcription",
+      "url": ""
+     },
+     {
+      "label": "Cullionboy, askaboutireland.ie index",
+      "url": "https://www.askaboutireland.ie/griffith-valuation/details.xml?action=showDetails&mysession=3053060933468&ID=1489657&la="
+     },
+     {
+      "label": "Druminnin, askaboutireland.ie index",
+      "url": "https://www.askaboutireland.ie/griffith-valuation/details.xml?action=showDetails&mysession=3053086831100&ID=1489585&la="
+     }
+    ]
    }
   },
   {
