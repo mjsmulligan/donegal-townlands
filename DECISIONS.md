@@ -160,3 +160,7 @@ Mike asked on 2026-11-19 to integrate and link the census more closely on the fa
 4. Held open. A household is linked only when it is the one candidate in that return. Where two households fit, none is linked and the case is listed in `held_open` in `data/processed/family_timelines/<slug>.json` for Mike. These links assert that the names match, not that the people are the same.
 5. Not done. The townland pages do not link to the family timelines, and the family timelines do not link back (Mike, step 3).
 6. Gildea result: 38 census cards, 9 links of which 2 are reviewed census links, 5 marriage to baptism, and 2 marriage to household. The window of 30 years finds no baptism to household link for Gildea. Other surnames find a few (Gallagher, Kelly).
+
+## 2026-11-19: Griffith's page image tiles, parked (Mike)
+
+Mike asked about showing the level 0 tile of the page image as a thumbnail on the Griffith's card. The tiles are on a separate image host and need no session, but nothing in our data leads from a record to its page image id, so the ids would have to be collected by hand. Mike decided not to pursue it. The address pattern and tile naming are recorded in `docs/GRIFFITH_VALUATION.md` section 11, marked as untested from the build environment. No code changed.

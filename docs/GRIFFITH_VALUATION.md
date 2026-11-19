@@ -140,4 +140,14 @@ Map acquisition is not a dependency for completing this initial milestone.
 - Transcription strategy: manual, assisted or automated.
 - Archive reuse and bulk-download conditions.
 
+11. Findings on page images (2026-11-19, from Mike's own experiment; not tested from the build environment)
+
+Page images are served as tiles from a separate image host, not through the askaboutireland search session.
+
+- Folder address: `https://griffiths.askaboutireland.ie/gv4/z/pix/066/066105/`. One folder holds one page image. The example is `066105`, in the sub-folder `066`, and the sub-folder looks like the first three digits of the id. Which townland, sheet or record that example belongs to was not recorded.
+- Tile names: `level-column-row.jpg`, for example `1-0-0.jpg` and `1-0-1.jpg`. This matches the Zoomify layout, which is a guess and unconfirmed. Level 0 is the single tile `0-0-0.jpg`, the whole page at thumbnail size. Level 1 is one tile wide and two tall, so a tile is likely 256 pixels and the pages are portrait. A larger view is made by pasting each tile at column times tile width and row times tile height, and Mike's experiment did this for level 1 with Pillow.
+- Not confirmed: that `ImageProperties.xml` exists in the folder, the tile size, and the number of levels. The build environment cannot reach the host (the shell is refused by the allowlist and the web fetch tool fails), so none of this has been fetched from here.
+- Why it is parked: nothing in our data leads from a record to its page image id. The index CSVs hold the record id, place id, map sheet and page position (`rs`), and the `sheet` column is the map sheet, not the book page, so `066105` cannot be derived from it. The id would have to be collected by hand in a browser, a row or a page at a time, as the saved results pages were.
+- Decision (Mike, 2026-11-19): not pursued. The Griffith's cards keep the link to the townland's results list. If it is taken up, collect the page image id for each record or page in a separate file (record id or page to image id), keep the tiles as retrieved, and show the level 0 tile as the thumbnail on the card with the results list link as the source.
+
 Design principle: Preserve the documentary source first. Extract and interpret its contents separately. Every derived observation must remain traceable to the original evidence.
