@@ -48,7 +48,6 @@ h1{font:300 clamp(48px,9vw,96px)/1 var(--display);letter-spacing:-.015em;margin:
 .btn{appearance:none;border:1px solid var(--ink);background:var(--paper);color:var(--ink);font:500 14px var(--body);padding:9px 16px;min-height:44px;border-radius:999px;cursor:pointer}
 .btn:hover{background:var(--ink);color:#fff}
 .btn[disabled]{opacity:.35;cursor:default;background:var(--paper);color:var(--ink)}
-.pos{font:500 15px var(--body);color:var(--ink2);min-width:7em}
 .spacer{flex:1}
 
 /* the chronology */
@@ -104,7 +103,6 @@ footer p+p{margin-top:6px}
 </div></header>
 <main class="wrap" id="timeline">
   <div class="controls" role="group" aria-label="Move through the timeline">
-    <span class="pos" id="pos" aria-live="polite"></span>
     <span class="spacer"></span>
     <button class="btn" id="mode" type="button" aria-pressed="false">Show as a list</button>
   </div>
@@ -119,7 +117,7 @@ var D=__DATA__;
     for(var i=2;i<arguments.length;i++){var c=arguments[i]; if(c==null) continue; e.append(c.nodeType?c:document.createTextNode(c));}
     return e;}
   var KIND={valuation:"Valuation",census:"Census",baptism:"Baptism",marriage:"Marriage"};
-  var track=document.getElementById('track'), pos=document.getElementById('pos');
+  var track=document.getElementById('track');
   var evs=D.events, items=[], reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches;
 
   function yearOf(e){return parseInt(e.sort.slice(0,4),10)}
@@ -166,22 +164,15 @@ var D=__DATA__;
     i=Math.max(0,Math.min(items.length-1,i));
     items[i].scrollIntoView({behavior:reduce?'auto':'smooth',inline:'center',block:'nearest'});
   }
-  function update(){
-    var i=current(), list=track.classList.contains('list');
-    pos.textContent=list?items.length+' events':(i+1)+' of '+items.length;
-  }
-  track.addEventListener('scroll',function(){window.requestAnimationFrame(update)},{passive:true});
-  track.addEventListener('keydown',function(ev){
+    track.addEventListener('keydown',function(ev){
     if(track.classList.contains('list')) return;
     if(ev.key==='ArrowRight'){ev.preventDefault();show(current()+1)} else if(ev.key==='ArrowLeft'){ev.preventDefault();show(current()-1)}
   });
   var mode=document.getElementById('mode');
   mode.addEventListener('click',function(){
     var on=track.classList.toggle('list'); mode.setAttribute('aria-pressed',on?'true':'false');
-    mode.textContent=on?'Show as a strip':'Show as a list'; update();
+    mode.textContent=on?'Show as a strip':'Show as a list';
   });
-  window.addEventListener('resize',update);
-  update();
   track.addEventListener('click',function(ev){
     var a=ev.target.closest&&ev.target.closest('a[data-go]'); if(!a) return;
     ev.preventDefault();
