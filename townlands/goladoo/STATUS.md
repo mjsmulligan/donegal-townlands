@@ -12,7 +12,13 @@ historical records.
 
 ## Research status
 
-No historical evidence has yet been added to this case.
+No authored study has been added to this case.
+
+## Timeline (2026-11-19)
+- `docs/goladoo/timeline.html`, built by `python tools/build_timeline.py goladoo` from `records/timeline_events.json`: the 1901, 1911 and 1926 returns (Tawnawully DED) and 7 register baptisms whose place is written Goladoo (1873-75).
+- Left out: two baptisms with no exact date (TAW-B-p008-r71, TAW-B-p010-r100) and two whose readings are still disputed (TAW-B-p015-r186, TAW-B-p015-r190).
+- No Griffith's event: we hold no Griffith's data for this townland yet.
+- No header photograph, so the page has the plain background.
 
 This is an initial state, not a conclusion about the history of the
 townland. Evidence can be added incrementally as sources are researched.
