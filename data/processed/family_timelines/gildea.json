@@ -421,7 +421,7 @@
    "recorded": "8 Jul 1880 | Patrick | F: William McGinty | M: Sarah Gildea |  | S: Felix Gildea; Nancy Gildea | H. Devine C.C."
   },
   {
-   "id": "gildea:census:1901",
+   "id": "gildea:census:1901:clogher:clogher",
    "type": "census",
    "milestone": true,
    "date": {
@@ -429,16 +429,163 @@
     "label": "1901",
     "iso": "1901"
    },
-   "sort": "1901-01-01",
-   "approximate_sort": true,
-   "title": "The 1901 census",
-   "text": "80 people in 20 households across 14 townlands, written as Gildea. By townland: Druminnin 13, Aberna Dorney 12, Clogher 10, Ardinawark 8, Cullionboy 6, Keadew Upper 6, Mullinasole 5, Bridge Street 4, Drumkeehan 4, Main Street 4, Meenadreen 4, Altidoo 2, Drumark 1, Whitehill 1.",
-   "place": "14 townlands",
+   "sort": "1901-03-31",
+   "title": "The 1901 census: Clogher",
+   "text": "10 people written as Gildea in 1 household, among 10 recorded.",
+   "place": "Clogher DED",
    "people": [],
    "media": [],
+   "households": [
+    {
+     "label": "House 19",
+     "url": "https://nationalarchives.ie/collections/search-the-census/view-pdf/?doc=nai000647881",
+     "people": [
+      {
+       "obs": "census1901:clogher:6384796",
+       "name": "Patrick Gildea",
+       "age": 40,
+       "relation": "Head of Family",
+       "marital": "Married",
+       "occupation": "Farmer",
+       "language": "",
+       "birthplace": "County Donegal",
+       "match": true,
+       "line": "Patrick Gildea, age 40, Head of Family, Farmer",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:clogher:6384797",
+       "name": "Mary Anne Gildea",
+       "age": 39,
+       "relation": "Wife",
+       "marital": "Married",
+       "occupation": "Seamstress",
+       "language": "",
+       "birthplace": "County Donegal",
+       "match": true,
+       "line": "Mary Anne Gildea, age 39, Wife, Seamstress",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:clogher:6384798",
+       "name": "Bridget Maria Gildea",
+       "age": 18,
+       "relation": "Daughter",
+       "marital": "Not Married",
+       "occupation": "Seamstress",
+       "language": "",
+       "birthplace": "County Donegal",
+       "match": true,
+       "line": "Bridget Maria Gildea, age 18, Daughter, Seamstress",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:clogher:6384799",
+       "name": "Patrick Gildea",
+       "age": 16,
+       "relation": "Son",
+       "marital": "Not Married",
+       "occupation": "Farmer's Son",
+       "language": "",
+       "birthplace": "County Donegal",
+       "match": true,
+       "line": "Patrick Gildea, age 16, Son, Farmer's Son",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:clogher:6384800",
+       "name": "Edward James Gildea",
+       "age": 13,
+       "relation": "Son",
+       "marital": "Not Married",
+       "occupation": "Scholar",
+       "language": "",
+       "birthplace": "County Donegal",
+       "match": true,
+       "line": "Edward James Gildea, age 13, Son, Scholar",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:clogher:6384801",
+       "name": "Francis Joseph Gildea",
+       "age": 9,
+       "relation": "Son",
+       "marital": "Not Married",
+       "occupation": "Scholar",
+       "language": "",
+       "birthplace": "County Donegal",
+       "match": true,
+       "line": "Francis Joseph Gildea, age 9, Son, Scholar",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:clogher:6384802",
+       "name": "Sarah Jane Gildea",
+       "age": 6,
+       "relation": "Daughter",
+       "marital": "Not Married",
+       "occupation": "Scholar",
+       "language": "",
+       "birthplace": "County Donegal",
+       "match": true,
+       "line": "Sarah Jane Gildea, age 6, Daughter, Scholar",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:clogher:6384803",
+       "name": "Etta Gildea",
+       "age": 4,
+       "relation": "Daughter",
+       "marital": "Not Married",
+       "occupation": "Scholar",
+       "language": "",
+       "birthplace": "County Donegal",
+       "match": true,
+       "line": "Etta Gildea, age 4, Daughter, Scholar",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:clogher:6384804",
+       "name": "John Gildea",
+       "age": 2,
+       "relation": "Son",
+       "marital": "Not Married",
+       "occupation": "Farmer's Son",
+       "language": "",
+       "birthplace": "County Donegal",
+       "match": true,
+       "line": "John Gildea, age 2, Son, Farmer's Son",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:clogher:6384805",
+       "name": "Neil Gildea",
+       "age": 0,
+       "relation": "Son",
+       "marital": "Not Married",
+       "occupation": "Farmer's Son",
+       "language": "",
+       "birthplace": "County Donegal",
+       "match": true,
+       "line": "Neil Gildea, age 0, Son, Farmer's Son",
+       "prev": [],
+       "next": []
+      }
+     ]
+    }
+   ],
    "association": {
     "basis": "surname",
-    "label": "Counted from the surname as written on the return, in the five DEDs held."
+    "label": "Each household listed has at least one person whose surname is written to match. Names, ages and townland are as the return recorded them."
    },
    "source": {
     "label": "National Archives of Ireland, census of Ireland, 1901",
@@ -447,7 +594,1691 @@
    }
   },
   {
-   "id": "gildea:census:1911",
+   "id": "gildea:census:1901:clogher:cullionboy",
+   "type": "census",
+   "milestone": true,
+   "date": {
+    "kind": "year",
+    "label": "1901",
+    "iso": "1901"
+   },
+   "sort": "1901-03-31",
+   "title": "The 1901 census: Cullionboy",
+   "text": "6 people written as Gildea in 2 households, among 6 recorded.",
+   "place": "Clogher DED",
+   "people": [],
+   "media": [],
+   "households": [
+    {
+     "label": "House 17",
+     "url": "https://nationalarchives.ie/collections/search-the-census/view-pdf/?doc=nai000647928",
+     "people": [
+      {
+       "obs": "census1901:clogher:6384979",
+       "name": "Edward Gildea",
+       "age": 78,
+       "relation": "Head of Family",
+       "marital": "Married",
+       "occupation": "Farmer",
+       "language": "Irish and English",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Edward Gildea, age 78, Head of Family, Farmer, Irish and English",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:clogher:6384980",
+       "name": "Bridget Gildea",
+       "age": 74,
+       "relation": "Wife",
+       "marital": "Married",
+       "occupation": "",
+       "language": "Irish and English",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Bridget Gildea, age 74, Wife, Irish and English",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:clogher:6384981",
+       "name": "Mary Gildea",
+       "age": 28,
+       "relation": "Daughter",
+       "marital": "Not Married",
+       "occupation": "Seamstress",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Mary Gildea, age 28, Daughter, Seamstress",
+       "prev": [],
+       "next": []
+      }
+     ]
+    },
+    {
+     "label": "House 19",
+     "url": "https://nationalarchives.ie/collections/search-the-census/view-pdf/?doc=nai000647929",
+     "people": [
+      {
+       "obs": "census1901:clogher:6384982",
+       "name": "James Gildea",
+       "age": 40,
+       "relation": "Head of Family",
+       "marital": "Not Married",
+       "occupation": "Farmer",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "James Gildea, age 40, Head of Family, Farmer",
+       "prev": [],
+       "next": [
+        {
+         "event": "gildea:census:1911:clogher:cullionboy",
+         "text": "1911: James Gildea (age 52)"
+        }
+       ]
+      },
+      {
+       "obs": "census1901:clogher:6384983",
+       "name": "Ellen Gildea",
+       "age": 44,
+       "relation": "Sister",
+       "marital": "Not Married",
+       "occupation": "Seamstress",
+       "language": "Irish and English",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Ellen Gildea, age 44, Sister, Seamstress, Irish and English",
+       "prev": [],
+       "next": [
+        {
+         "event": "gildea:census:1911:clogher:cullionboy",
+         "text": "1911: Ellen Gildea (age 56)"
+        }
+       ]
+      },
+      {
+       "obs": "census1901:clogher:6384984",
+       "name": "Mary Gildea",
+       "age": 42,
+       "relation": "Sister",
+       "marital": "Not Married",
+       "occupation": "Seamstress",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Mary Gildea, age 42, Sister, Seamstress",
+       "prev": [],
+       "next": [
+        {
+         "event": "gildea:census:1911:clogher:cullionboy",
+         "text": "1911: Mary Gildea (age 54)"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "association": {
+    "basis": "surname",
+    "label": "Each household listed has at least one person whose surname is written to match. Names, ages and townland are as the return recorded them."
+   },
+   "source": {
+    "label": "National Archives of Ireland, census of Ireland, 1901",
+    "url": "https://www.census.nationalarchives.ie/",
+    "reference": "1901"
+   }
+  },
+  {
+   "id": "gildea:census:1901:clogher:druminnin",
+   "type": "census",
+   "milestone": true,
+   "date": {
+    "kind": "year",
+    "label": "1901",
+    "iso": "1901"
+   },
+   "sort": "1901-03-31",
+   "title": "The 1901 census: Druminnin",
+   "text": "13 people written as Gildea in 3 households, among 18 recorded.",
+   "place": "Clogher DED",
+   "people": [],
+   "media": [],
+   "households": [
+    {
+     "label": "House 3",
+     "url": "https://nationalarchives.ie/collections/search-the-census/view-pdf/?doc=nai000647943",
+     "people": [
+      {
+       "obs": "census1901:clogher:6385006",
+       "name": "Edward Gildea",
+       "age": 50,
+       "relation": "Head of Family",
+       "marital": "Married",
+       "occupation": "Farmer",
+       "language": "Irish and English",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Edward Gildea, age 50, Head of Family, Farmer, Irish and English",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:clogher:6385007",
+       "name": "Margaret Gildea",
+       "age": 46,
+       "relation": "Wife",
+       "marital": "Married",
+       "occupation": "Farmer's Wife",
+       "language": "Irish and English",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Margaret Gildea, age 46, Wife, Farmer's Wife, Irish and English",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:clogher:6385008",
+       "name": "Edward Gildea",
+       "age": 22,
+       "relation": "Son",
+       "marital": "Not Married",
+       "occupation": "Farmer's Son",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Edward Gildea, age 22, Son, Farmer's Son",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:clogher:6385009",
+       "name": "Joseph Gildea",
+       "age": 19,
+       "relation": "Son",
+       "marital": "Not Married",
+       "occupation": "Farmer's Son",
+       "language": "Irish and English",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Joseph Gildea, age 19, Son, Farmer's Son, Irish and English",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:clogher:6385010",
+       "name": "Katie Gildea",
+       "age": 17,
+       "relation": "Daughter",
+       "marital": "Not Married",
+       "occupation": "Seamstress",
+       "language": "Irish and English",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Katie Gildea, age 17, Daughter, Seamstress, Irish and English",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:clogher:6385011",
+       "name": "Jerry Gildea",
+       "age": 14,
+       "relation": "Son",
+       "marital": "Not Married",
+       "occupation": "Scholar",
+       "language": "Irish and English",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Jerry Gildea, age 14, Son, Scholar, Irish and English",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:clogher:6385012",
+       "name": "Mary Anne Gildea",
+       "age": 11,
+       "relation": "Daughter",
+       "marital": "Not Married",
+       "occupation": "Scholar",
+       "language": "Irish and English",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Mary Anne Gildea, age 11, Daughter, Scholar, Irish and English",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:clogher:6385013",
+       "name": "Maggie Gildea",
+       "age": 9,
+       "relation": "Daughter",
+       "marital": "Not Married",
+       "occupation": "Scholar",
+       "language": "Irish and English",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Maggie Gildea, age 9, Daughter, Scholar, Irish and English",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:clogher:6385014",
+       "name": "Bernard Gildea",
+       "age": 4,
+       "relation": "Son",
+       "marital": "Not Married",
+       "occupation": "",
+       "language": "Irish and English",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Bernard Gildea, age 4, Son, Irish and English",
+       "prev": [],
+       "next": []
+      }
+     ]
+    },
+    {
+     "label": "House 4",
+     "url": "https://nationalarchives.ie/collections/search-the-census/view-pdf/?doc=nai000647944",
+     "people": [
+      {
+       "obs": "census1901:clogher:6385015",
+       "name": "Anne Gildea",
+       "age": 71,
+       "relation": "Head of Family",
+       "marital": "Widow",
+       "occupation": "House Keeper",
+       "language": "Irish and English",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Anne Gildea, age 71, Head of Family, House Keeper, Irish and English",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:clogher:6385016",
+       "name": "John McGinty",
+       "age": 39,
+       "relation": "Son in Law",
+       "marital": "Married",
+       "occupation": "Labourer",
+       "language": "Irish and English",
+       "birthplace": "Co Donegal",
+       "match": false,
+       "line": "John McGinty, age 39, Son in Law, Labourer, Irish and English",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:clogher:6385017",
+       "name": "Mary McGinty",
+       "age": 35,
+       "relation": "Wife",
+       "marital": "Married",
+       "occupation": "Seamstress",
+       "language": "Irish and English",
+       "birthplace": "Co Donegal",
+       "match": false,
+       "line": "Mary McGinty, age 35, Wife, Seamstress, Irish and English",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:clogher:6385018",
+       "name": "Isabella McGinty",
+       "age": 6,
+       "relation": "Daughter",
+       "marital": "Not Married",
+       "occupation": "Scholar",
+       "language": "Irish and English",
+       "birthplace": "Co Donegal",
+       "match": false,
+       "line": "Isabella McGinty, age 6, Daughter, Scholar, Irish and English",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:clogher:6385019",
+       "name": "Bernard McGinty",
+       "age": 4,
+       "relation": "Son",
+       "marital": "Not Married",
+       "occupation": "Scholar",
+       "language": "English Only",
+       "birthplace": "Co Donegal",
+       "match": false,
+       "line": "Bernard McGinty, age 4, Son, Scholar, English Only",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:clogher:6385020",
+       "name": "Maggie Anne McGinty",
+       "age": 2,
+       "relation": "Daughter",
+       "marital": "Not Married",
+       "occupation": "Scholar",
+       "language": "English Only",
+       "birthplace": "Co Donegal",
+       "match": false,
+       "line": "Maggie Anne McGinty, age 2, Daughter, Scholar, English Only",
+       "prev": [],
+       "next": []
+      }
+     ]
+    },
+    {
+     "label": "House 7",
+     "url": "https://nationalarchives.ie/collections/search-the-census/view-pdf/?doc=nai000647947",
+     "people": [
+      {
+       "obs": "census1901:clogher:6385042",
+       "name": "James Gildea",
+       "age": 72,
+       "relation": "Head of Family",
+       "marital": "Not Married",
+       "occupation": "Farmer",
+       "language": "Irish and English",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "James Gildea, age 72, Head of Family, Farmer, Irish and English",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:clogher:6385043",
+       "name": "Phelim Gildea",
+       "age": 61,
+       "relation": "Brother",
+       "marital": "Married",
+       "occupation": "Farmer's Brother",
+       "language": "Irish and English",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Phelim Gildea, age 61, Brother, Farmer's Brother, Irish and English",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:clogher:6385044",
+       "name": "Anne Gildea",
+       "age": 50,
+       "relation": "Brothers Wife",
+       "marital": "Married",
+       "occupation": "House Keeper",
+       "language": "Irish and English",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Anne Gildea, age 50, Brothers Wife, House Keeper, Irish and English",
+       "prev": [],
+       "next": []
+      }
+     ]
+    }
+   ],
+   "association": {
+    "basis": "surname",
+    "label": "Each household listed has at least one person whose surname is written to match. Names, ages and townland are as the return recorded them."
+   },
+   "source": {
+    "label": "National Archives of Ireland, census of Ireland, 1901",
+    "url": "https://www.census.nationalarchives.ie/",
+    "reference": "1901"
+   }
+  },
+  {
+   "id": "gildea:census:1901:clogher:keadew-upper",
+   "type": "census",
+   "milestone": true,
+   "date": {
+    "kind": "year",
+    "label": "1901",
+    "iso": "1901"
+   },
+   "sort": "1901-03-31",
+   "title": "The 1901 census: Keadew Upper",
+   "text": "6 people written as Gildea in 1 household, among 7 recorded.",
+   "place": "Clogher DED",
+   "people": [],
+   "media": [],
+   "households": [
+    {
+     "label": "House 8",
+     "url": "https://nationalarchives.ie/collections/search-the-census/view-pdf/?doc=nai000648016",
+     "people": [
+      {
+       "obs": "census1901:clogher:6385273",
+       "name": "Patrick Gildea",
+       "age": 37,
+       "relation": "Head of Family",
+       "marital": "Married",
+       "occupation": "Farmer",
+       "language": "Irish and English",
+       "birthplace": "Donegal",
+       "match": true,
+       "line": "Patrick Gildea, age 37, Head of Family, Farmer, Irish and English",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:clogher:6385274",
+       "name": "Sarah Gildea",
+       "age": 36,
+       "relation": "Wife",
+       "marital": "Married",
+       "occupation": "",
+       "language": "Irish and English",
+       "birthplace": "Tyrone",
+       "match": true,
+       "line": "Sarah Gildea, age 36, Wife, Irish and English",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:clogher:6385275",
+       "name": "John Gildea",
+       "age": 6,
+       "relation": "Son",
+       "marital": "Not Married",
+       "occupation": "Scholar",
+       "language": "English",
+       "birthplace": "Donegal",
+       "match": true,
+       "line": "John Gildea, age 6, Son, Scholar, English",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:clogher:6385276",
+       "name": "Mary Alice Gildea",
+       "age": 5,
+       "relation": "Daughter",
+       "marital": "Not Married",
+       "occupation": "Scholar",
+       "language": "English Only",
+       "birthplace": "Donegal",
+       "match": true,
+       "line": "Mary Alice Gildea, age 5, Daughter, Scholar, English Only",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:clogher:6385277",
+       "name": "Patrick Gildea",
+       "age": 3,
+       "relation": "Son",
+       "marital": "Not Married",
+       "occupation": "",
+       "language": "Irish and English",
+       "birthplace": "Donegal",
+       "match": true,
+       "line": "Patrick Gildea, age 3, Son, Irish and English",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:clogher:6385278",
+       "name": "Joseph Gildea",
+       "age": 1,
+       "relation": "Son",
+       "marital": "Not Married",
+       "occupation": "",
+       "language": "",
+       "birthplace": "Donegal",
+       "match": true,
+       "line": "Joseph Gildea, age 1, Son",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:clogher:6385279",
+       "name": "Susan Moss",
+       "age": 49,
+       "relation": "Servant",
+       "marital": "Not Married",
+       "occupation": "Sewer",
+       "language": "Irish and English",
+       "birthplace": "Tyrone",
+       "match": false,
+       "line": "Susan Moss, age 49, Servant, Sewer, Irish and English",
+       "prev": [],
+       "next": []
+      }
+     ]
+    }
+   ],
+   "association": {
+    "basis": "surname",
+    "label": "Each household listed has at least one person whose surname is written to match. Names, ages and townland are as the return recorded them."
+   },
+   "source": {
+    "label": "National Archives of Ireland, census of Ireland, 1901",
+    "url": "https://www.census.nationalarchives.ie/",
+    "reference": "1901"
+   }
+  },
+  {
+   "id": "gildea:census:1901:donegal:aberna-dorney",
+   "type": "census",
+   "milestone": true,
+   "date": {
+    "kind": "year",
+    "label": "1901",
+    "iso": "1901"
+   },
+   "sort": "1901-03-31",
+   "title": "The 1901 census: Aberna Dorney",
+   "text": "12 people written as Gildea in 2 households, among 12 recorded.",
+   "place": "Donegal DED",
+   "people": [],
+   "media": [],
+   "households": [
+    {
+     "label": "House 4",
+     "url": "https://nationalarchives.ie/collections/search-the-census/view-pdf/?doc=nai000648073",
+     "people": [
+      {
+       "obs": "census1901:donegal:6385440",
+       "name": "Denis Gildea",
+       "age": 48,
+       "relation": "Head of Family",
+       "marital": "Married",
+       "occupation": "Farmer",
+       "language": "Irish and English",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Denis Gildea, age 48, Head of Family, Farmer, Irish and English",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:donegal:6385441",
+       "name": "Nancy Gildea",
+       "age": 52,
+       "relation": "Wife",
+       "marital": "Married",
+       "occupation": "",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Nancy Gildea, age 52, Wife",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:donegal:6385442",
+       "name": "Jane Gildea",
+       "age": 22,
+       "relation": "Daughter",
+       "marital": "Not Married",
+       "occupation": "Farmer's Daughter",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Jane Gildea, age 22, Daughter, Farmer's Daughter",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:donegal:6385443",
+       "name": "Annie Gildea",
+       "age": 20,
+       "relation": "Daughter",
+       "marital": "Not Married",
+       "occupation": "Farmer's Daughter",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Annie Gildea, age 20, Daughter, Farmer's Daughter",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:donegal:6385444",
+       "name": "Connell Gildea",
+       "age": 18,
+       "relation": "Son",
+       "marital": "Not Married",
+       "occupation": "Farmer's Son",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Connell Gildea, age 18, Son, Farmer's Son",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:donegal:6385445",
+       "name": "Cassie Gildea",
+       "age": 55,
+       "relation": "Sister",
+       "marital": "Not Married",
+       "occupation": "",
+       "language": "Irish and English",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Cassie Gildea, age 55, Sister, Irish and English",
+       "prev": [],
+       "next": []
+      }
+     ]
+    },
+    {
+     "label": "House 5",
+     "url": "https://nationalarchives.ie/collections/search-the-census/view-pdf/?doc=nai000648074",
+     "people": [
+      {
+       "obs": "census1901:donegal:6385446",
+       "name": "Patrick Gildea",
+       "age": 53,
+       "relation": "Head of Family",
+       "marital": "Married",
+       "occupation": "Farmer",
+       "language": "Irish and English",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Patrick Gildea, age 53, Head of Family, Farmer, Irish and English",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:donegal:6385447",
+       "name": "Sophia Gildea",
+       "age": 50,
+       "relation": "Wife",
+       "marital": "Married",
+       "occupation": "",
+       "language": "Irish and English",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Sophia Gildea, age 50, Wife, Irish and English",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:donegal:6385448",
+       "name": "Mary Gildea",
+       "age": 21,
+       "relation": "Daughter",
+       "marital": "Not Married",
+       "occupation": "Farmer's Daughter",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Mary Gildea, age 21, Daughter, Farmer's Daughter",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:donegal:6385449",
+       "name": "Winnie Gildea",
+       "age": 20,
+       "relation": "Daughter",
+       "marital": "Not Married",
+       "occupation": "Farmer's Daughter",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Winnie Gildea, age 20, Daughter, Farmer's Daughter",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:donegal:6385450",
+       "name": "William James Gildea",
+       "age": 13,
+       "relation": "Son",
+       "marital": "Not Married",
+       "occupation": "Scholar",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "William James Gildea, age 13, Son, Scholar",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:donegal:6385451",
+       "name": "Jerome Gildea",
+       "age": 12,
+       "relation": "Son",
+       "marital": "Not Married",
+       "occupation": "Farm Labourer",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Jerome Gildea, age 12, Son, Farm Labourer",
+       "prev": [],
+       "next": []
+      }
+     ]
+    }
+   ],
+   "association": {
+    "basis": "surname",
+    "label": "Each household listed has at least one person whose surname is written to match. Names, ages and townland are as the return recorded them."
+   },
+   "source": {
+    "label": "National Archives of Ireland, census of Ireland, 1901",
+    "url": "https://www.census.nationalarchives.ie/",
+    "reference": "1901"
+   }
+  },
+  {
+   "id": "gildea:census:1901:donegal:altidoo",
+   "type": "census",
+   "milestone": true,
+   "date": {
+    "kind": "year",
+    "label": "1901",
+    "iso": "1901"
+   },
+   "sort": "1901-03-31",
+   "title": "The 1901 census: Altidoo",
+   "text": "2 people written as Gildea in 1 household, among 2 recorded.",
+   "place": "Donegal DED",
+   "people": [],
+   "media": [],
+   "households": [
+    {
+     "label": "House 3",
+     "url": "https://nationalarchives.ie/collections/search-the-census/view-pdf/?doc=nai000648134",
+     "people": [
+      {
+       "obs": "census1901:donegal:6385655",
+       "name": "Mary Gildea",
+       "age": 38,
+       "relation": "Head of Family",
+       "marital": "Not Married",
+       "occupation": "Sprigging",
+       "language": "Irish and English",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Mary Gildea, age 38, Head of Family, Sprigging, Irish and English",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:donegal:6385656",
+       "name": "Bridget Gildea",
+       "age": 50,
+       "relation": "Sister",
+       "marital": "Not Married",
+       "occupation": "Sprigging",
+       "language": "Irish and English",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Bridget Gildea, age 50, Sister, Sprigging, Irish and English",
+       "prev": [],
+       "next": []
+      }
+     ]
+    }
+   ],
+   "association": {
+    "basis": "surname",
+    "label": "Each household listed has at least one person whose surname is written to match. Names, ages and townland are as the return recorded them."
+   },
+   "source": {
+    "label": "National Archives of Ireland, census of Ireland, 1901",
+    "url": "https://www.census.nationalarchives.ie/",
+    "reference": "1901"
+   }
+  },
+  {
+   "id": "gildea:census:1901:donegal:bridge-street",
+   "type": "census",
+   "milestone": true,
+   "date": {
+    "kind": "year",
+    "label": "1901",
+    "iso": "1901"
+   },
+   "sort": "1901-03-31",
+   "title": "The 1901 census: Bridge Street",
+   "text": "4 people written as Gildea in 1 household, among 7 recorded.",
+   "place": "Donegal DED",
+   "people": [],
+   "media": [],
+   "households": [
+    {
+     "label": "House 11",
+     "url": "https://nationalarchives.ie/collections/search-the-census/view-pdf/?doc=nai000648634",
+     "people": [
+      {
+       "obs": "census1901:donegal:6387314",
+       "name": "Denis Gildea",
+       "age": 29,
+       "relation": "Head of Family",
+       "marital": "Married",
+       "occupation": "Licenced Publican",
+       "language": "Irish and English",
+       "birthplace": "Donegal",
+       "match": true,
+       "line": "Denis Gildea, age 29, Head of Family, Licenced Publican, Irish and English",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:donegal:6387315",
+       "name": "Margt Mary Gildea",
+       "age": 28,
+       "relation": "Wife",
+       "marital": "",
+       "occupation": "",
+       "language": "",
+       "birthplace": "",
+       "match": true,
+       "line": "Margt Mary Gildea, age 28, Wife",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:donegal:6387316",
+       "name": "Mary Bridget Gildea",
+       "age": 2,
+       "relation": "Daughter",
+       "marital": "",
+       "occupation": "",
+       "language": "",
+       "birthplace": "",
+       "match": true,
+       "line": "Mary Bridget Gildea, age 2, Daughter",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:donegal:6387317",
+       "name": "Maggie Jane Gildea",
+       "age": 0,
+       "relation": "Daughter",
+       "marital": "",
+       "occupation": "",
+       "language": "",
+       "birthplace": "",
+       "match": true,
+       "line": "Maggie Jane Gildea, age 0, Daughter",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:donegal:6387318",
+       "name": "Ellen Carriban",
+       "age": 22,
+       "relation": "Servant",
+       "marital": "Single",
+       "occupation": "Servant",
+       "language": "Irish and English",
+       "birthplace": "",
+       "match": false,
+       "line": "Ellen Carriban, age 22, Servant, Servant, Irish and English",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:donegal:6387319",
+       "name": "Agnes Muldson",
+       "age": 19,
+       "relation": "Servant",
+       "marital": "Single",
+       "occupation": "Nurse",
+       "language": "",
+       "birthplace": "",
+       "match": false,
+       "line": "Agnes Muldson, age 19, Servant, Nurse",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:donegal:6387320",
+       "name": "Joseph Byrne",
+       "age": 20,
+       "relation": "Servant",
+       "marital": "Single",
+       "occupation": "Yard Man",
+       "language": "Irish and English",
+       "birthplace": "",
+       "match": false,
+       "line": "Joseph Byrne, age 20, Servant, Yard Man, Irish and English",
+       "prev": [],
+       "next": []
+      }
+     ]
+    }
+   ],
+   "association": {
+    "basis": "surname",
+    "label": "Each household listed has at least one person whose surname is written to match. Names, ages and townland are as the return recorded them."
+   },
+   "source": {
+    "label": "National Archives of Ireland, census of Ireland, 1901",
+    "url": "https://www.census.nationalarchives.ie/",
+    "reference": "1901"
+   }
+  },
+  {
+   "id": "gildea:census:1901:donegal:drumark",
+   "type": "census",
+   "milestone": true,
+   "date": {
+    "kind": "year",
+    "label": "1901",
+    "iso": "1901"
+   },
+   "sort": "1901-03-31",
+   "title": "The 1901 census: Drumark",
+   "text": "1 person written as Gildea in 1 household, among 5 recorded.",
+   "place": "Donegal DED",
+   "people": [],
+   "media": [],
+   "households": [
+    {
+     "label": "House 6",
+     "url": "https://nationalarchives.ie/collections/search-the-census/view-pdf/?doc=nai000648272",
+     "people": [
+      {
+       "obs": "census1901:donegal:6386121",
+       "name": "John Kennedy",
+       "age": 70,
+       "relation": "Head of Family",
+       "marital": "Married",
+       "occupation": "Rate Collector and Farmer",
+       "language": "Irish and English",
+       "birthplace": "Co Donegal",
+       "match": false,
+       "line": "John Kennedy, age 70, Head of Family, Rate Collector and Farmer, Irish and English",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:donegal:6386122",
+       "name": "Margaret Kennedy",
+       "age": 67,
+       "relation": "Wife",
+       "marital": "Married",
+       "occupation": "",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": false,
+       "line": "Margaret Kennedy, age 67, Wife",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:donegal:6386123",
+       "name": "John Kennedy",
+       "age": 33,
+       "relation": "Son",
+       "marital": "Not Married",
+       "occupation": "Farmer's Son",
+       "language": "Irish and English",
+       "birthplace": "Co Donegal",
+       "match": false,
+       "line": "John Kennedy, age 33, Son, Farmer's Son, Irish and English",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:donegal:6386124",
+       "name": "Catherine Kennedy",
+       "age": 22,
+       "relation": "Daughter",
+       "marital": "Not Married",
+       "occupation": "Farmer's Daughter",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": false,
+       "line": "Catherine Kennedy, age 22, Daughter, Farmer's Daughter",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:donegal:6386125",
+       "name": "John Gildea",
+       "age": 18,
+       "relation": "Servant",
+       "marital": "Not Married",
+       "occupation": "Farm Servant",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "John Gildea, age 18, Servant, Farm Servant",
+       "prev": [],
+       "next": []
+      }
+     ]
+    }
+   ],
+   "association": {
+    "basis": "surname",
+    "label": "Each household listed has at least one person whose surname is written to match. Names, ages and townland are as the return recorded them."
+   },
+   "source": {
+    "label": "National Archives of Ireland, census of Ireland, 1901",
+    "url": "https://www.census.nationalarchives.ie/",
+    "reference": "1901"
+   }
+  },
+  {
+   "id": "gildea:census:1901:donegal:drumkeehan",
+   "type": "census",
+   "milestone": true,
+   "date": {
+    "kind": "year",
+    "label": "1901",
+    "iso": "1901"
+   },
+   "sort": "1901-03-31",
+   "title": "The 1901 census: Drumkeehan",
+   "text": "4 people written as Gildea in 1 household, among 4 recorded.",
+   "place": "Donegal DED",
+   "people": [],
+   "media": [],
+   "households": [
+    {
+     "label": "House 12",
+     "url": "https://nationalarchives.ie/collections/search-the-census/view-pdf/?doc=nai000648311",
+     "people": [
+      {
+       "obs": "census1901:donegal:6386241",
+       "name": "Denis Gildea",
+       "age": 55,
+       "relation": "Head of Family",
+       "marital": "Married",
+       "occupation": "Farmer",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Denis Gildea, age 55, Head of Family, Farmer",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:donegal:6386242",
+       "name": "Susan Gildea",
+       "age": 60,
+       "relation": "Wife",
+       "marital": "Married",
+       "occupation": "",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Susan Gildea, age 60, Wife",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:donegal:6386243",
+       "name": "Maggie Gildea",
+       "age": 20,
+       "relation": "Daughter",
+       "marital": "Not Married",
+       "occupation": "",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Maggie Gildea, age 20, Daughter",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:donegal:6386244",
+       "name": "Denis Gildea",
+       "age": 18,
+       "relation": "Son",
+       "marital": "Not Married",
+       "occupation": "Farm Labourer",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Denis Gildea, age 18, Son, Farm Labourer",
+       "prev": [],
+       "next": []
+      }
+     ]
+    }
+   ],
+   "association": {
+    "basis": "surname",
+    "label": "Each household listed has at least one person whose surname is written to match. Names, ages and townland are as the return recorded them."
+   },
+   "source": {
+    "label": "National Archives of Ireland, census of Ireland, 1901",
+    "url": "https://www.census.nationalarchives.ie/",
+    "reference": "1901"
+   }
+  },
+  {
+   "id": "gildea:census:1901:donegal:main-street",
+   "type": "census",
+   "milestone": true,
+   "date": {
+    "kind": "year",
+    "label": "1901",
+    "iso": "1901"
+   },
+   "sort": "1901-03-31",
+   "title": "The 1901 census: Main Street",
+   "text": "4 people written as Gildea in 2 households, among 4 recorded.",
+   "place": "Donegal DED",
+   "people": [],
+   "media": [],
+   "households": [
+    {
+     "label": "House 37",
+     "url": "https://nationalarchives.ie/collections/search-the-census/view-pdf/?doc=nai000648757",
+     "people": [
+      {
+       "obs": "census1901:donegal:6387766",
+       "name": "John Gildea",
+       "age": 48,
+       "relation": "Head of Family",
+       "marital": "Married",
+       "occupation": "Cattle Dealer",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "John Gildea, age 48, Head of Family, Cattle Dealer",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:donegal:6387767",
+       "name": "Maggie Gildea",
+       "age": 40,
+       "relation": "Wife",
+       "marital": "Married",
+       "occupation": "Sewer",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Maggie Gildea, age 40, Wife, Sewer",
+       "prev": [],
+       "next": []
+      }
+     ]
+    },
+    {
+     "label": "House 78",
+     "url": "https://nationalarchives.ie/collections/search-the-census/view-pdf/?doc=nai000648798",
+     "people": [
+      {
+       "obs": "census1901:donegal:6387945",
+       "name": "Margaret Gildea",
+       "age": 70,
+       "relation": "Daughter",
+       "marital": "Not Married",
+       "occupation": "Dressmaker",
+       "language": "",
+       "birthplace": "Donegal",
+       "match": true,
+       "line": "Margaret Gildea, age 70, Daughter, Dressmaker",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:donegal:6387946",
+       "name": "Bell Gildea",
+       "age": 60,
+       "relation": "Daughter",
+       "marital": "Not Married",
+       "occupation": "Dressmaker",
+       "language": "",
+       "birthplace": "Donegal",
+       "match": true,
+       "line": "Bell Gildea, age 60, Daughter, Dressmaker",
+       "prev": [],
+       "next": []
+      }
+     ]
+    }
+   ],
+   "association": {
+    "basis": "surname",
+    "label": "Each household listed has at least one person whose surname is written to match. Names, ages and townland are as the return recorded them."
+   },
+   "source": {
+    "label": "National Archives of Ireland, census of Ireland, 1901",
+    "url": "https://www.census.nationalarchives.ie/",
+    "reference": "1901"
+   }
+  },
+  {
+   "id": "gildea:census:1901:laghy:mullinasole",
+   "type": "census",
+   "milestone": true,
+   "date": {
+    "kind": "year",
+    "label": "1901",
+    "iso": "1901"
+   },
+   "sort": "1901-03-31",
+   "title": "The 1901 census: Mullinasole",
+   "text": "5 people written as Gildea in 1 household, among 5 recorded.",
+   "place": "Laghy DED",
+   "people": [],
+   "media": [],
+   "households": [
+    {
+     "label": "House 23",
+     "url": "https://nationalarchives.ie/collections/search-the-census/view-pdf/?doc=nai000651003",
+     "people": [
+      {
+       "obs": "census1901:laghy:6039827",
+       "name": "Mary Gildea",
+       "age": 85,
+       "relation": "Head of Family",
+       "marital": "Widow",
+       "occupation": "",
+       "language": "English Only",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Mary Gildea, age 85, Head of Family, English Only",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:laghy:6039828",
+       "name": "Edward Gildea",
+       "age": 64,
+       "relation": "Son",
+       "marital": "Widower",
+       "occupation": "S. Mason",
+       "language": "English Only",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Edward Gildea, age 64, Son, S. Mason, English Only",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:laghy:6039829",
+       "name": "Emma Gildea",
+       "age": 50,
+       "relation": "Daughter",
+       "marital": "Not Married",
+       "occupation": "House Keeper",
+       "language": "English Only",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Emma Gildea, age 50, Daughter, House Keeper, English Only",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:laghy:6039830",
+       "name": "Mary Gildea",
+       "age": 14,
+       "relation": "Grand Daughter",
+       "marital": "Not Married",
+       "occupation": "Seamstress",
+       "language": "English Only",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Mary Gildea, age 14, Grand Daughter, Seamstress, English Only",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:laghy:6039831",
+       "name": "Joseph Gildea",
+       "age": 29,
+       "relation": "Grand Son",
+       "marital": "Not Married",
+       "occupation": "Coach Painter",
+       "language": "English",
+       "birthplace": "Co Monaghan",
+       "match": true,
+       "line": "Joseph Gildea, age 29, Grand Son, Coach Painter, English",
+       "prev": [],
+       "next": []
+      }
+     ]
+    }
+   ],
+   "association": {
+    "basis": "surname",
+    "label": "Each household listed has at least one person whose surname is written to match. Names, ages and townland are as the return recorded them."
+   },
+   "source": {
+    "label": "National Archives of Ireland, census of Ireland, 1901",
+    "url": "https://www.census.nationalarchives.ie/",
+    "reference": "1901"
+   }
+  },
+  {
+   "id": "gildea:census:1901:tawnawully:ardinawark",
+   "type": "census",
+   "milestone": true,
+   "date": {
+    "kind": "year",
+    "label": "1901",
+    "iso": "1901"
+   },
+   "sort": "1901-03-31",
+   "title": "The 1901 census: Ardinawark",
+   "text": "8 people written as Gildea in 1 household, among 9 recorded.",
+   "place": "Tawnawully DED",
+   "people": [],
+   "media": [],
+   "households": [
+    {
+     "label": "House 6",
+     "url": "https://nationalarchives.ie/collections/search-the-census/view-pdf/?doc=nai000649183",
+     "people": [
+      {
+       "obs": "census1901:tawnawully:6033541",
+       "name": "Denis Gildea",
+       "age": 98,
+       "relation": "Head of Family",
+       "marital": "Widower",
+       "occupation": "Farmer",
+       "language": "Irish and English",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Denis Gildea, age 98, Head of Family, Farmer, Irish and English",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:tawnawully:6033542",
+       "name": "Denis Gildea",
+       "age": 49,
+       "relation": "Son",
+       "marital": "Married",
+       "occupation": "Farmer's Son",
+       "language": "Irish and English",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Denis Gildea, age 49, Son, Farmer's Son, Irish and English",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:tawnawully:6033543",
+       "name": "Ellen Gildea",
+       "age": 36,
+       "relation": "Daughter in Law",
+       "marital": "Married",
+       "occupation": "Sewer",
+       "language": "Irish and English",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Ellen Gildea, age 36, Daughter in Law, Sewer, Irish and English",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:tawnawully:6033544",
+       "name": "Charles Slevin",
+       "age": 32,
+       "relation": "Nephew",
+       "marital": "Not Married",
+       "occupation": "Farm Servant",
+       "language": "Irish and English",
+       "birthplace": "Co Donegal",
+       "match": false,
+       "line": "Charles Slevin, age 32, Nephew, Farm Servant, Irish and English",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:tawnawully:6033545",
+       "name": "Denis Joseph Gildea",
+       "age": 10,
+       "relation": "Grand Son",
+       "marital": "Not Married",
+       "occupation": "Scholar",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Denis Joseph Gildea, age 10, Grand Son, Scholar",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:tawnawully:6033546",
+       "name": "Mary Ann Gildea",
+       "age": 9,
+       "relation": "Grand Son",
+       "marital": "Not Married",
+       "occupation": "Scholar",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Mary Ann Gildea, age 9, Grand Son, Scholar",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:tawnawully:6033547",
+       "name": "John Patk Gildea",
+       "age": 7,
+       "relation": "Grand Son",
+       "marital": "Not Married",
+       "occupation": "Scholar",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "John Patk Gildea, age 7, Grand Son, Scholar",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:tawnawully:6033548",
+       "name": "Maggie Gildea",
+       "age": 5,
+       "relation": "Grand Daughter",
+       "marital": "Not Married",
+       "occupation": "",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Maggie Gildea, age 5, Grand Daughter",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:tawnawully:6033549",
+       "name": "Ellen Gildea",
+       "age": 3,
+       "relation": "Grand Daughter",
+       "marital": "Not Married",
+       "occupation": "",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Ellen Gildea, age 3, Grand Daughter",
+       "prev": [],
+       "next": []
+      }
+     ]
+    }
+   ],
+   "association": {
+    "basis": "surname",
+    "label": "Each household listed has at least one person whose surname is written to match. Names, ages and townland are as the return recorded them."
+   },
+   "source": {
+    "label": "National Archives of Ireland, census of Ireland, 1901",
+    "url": "https://www.census.nationalarchives.ie/",
+    "reference": "1901"
+   }
+  },
+  {
+   "id": "gildea:census:1901:tullynaught:meenadreen",
+   "type": "census",
+   "milestone": true,
+   "date": {
+    "kind": "year",
+    "label": "1901",
+    "iso": "1901"
+   },
+   "sort": "1901-03-31",
+   "title": "The 1901 census: Meenadreen",
+   "text": "4 people written as Gildea in 2 households, among 5 recorded.",
+   "place": "Tullynaught DED",
+   "people": [],
+   "media": [],
+   "households": [
+    {
+     "label": "House 4",
+     "url": "https://nationalarchives.ie/collections/search-the-census/view-pdf/?doc=nai000651472",
+     "people": [
+      {
+       "obs": "census1901:tullynaught:6041020",
+       "name": "Michael Gildea",
+       "age": 47,
+       "relation": "Head of Family",
+       "marital": "Not Married",
+       "occupation": "Farmer",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Michael Gildea, age 47, Head of Family, Farmer",
+       "prev": [],
+       "next": []
+      }
+     ]
+    },
+    {
+     "label": "House 12",
+     "url": "https://nationalarchives.ie/collections/search-the-census/view-pdf/?doc=nai000651479",
+     "people": [
+      {
+       "obs": "census1901:tullynaught:6041060",
+       "name": "Grace Gildea",
+       "age": 62,
+       "relation": "Head of Family",
+       "marital": "Widow",
+       "occupation": "Farmer",
+       "language": "Irish and English",
+       "birthplace": "Donegal",
+       "match": true,
+       "line": "Grace Gildea, age 62, Head of Family, Farmer, Irish and English",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:tullynaught:6041061",
+       "name": "James Gildea",
+       "age": 30,
+       "relation": "Son",
+       "marital": "Not Married",
+       "occupation": "Farmer's Son",
+       "language": "",
+       "birthplace": "Donegal",
+       "match": true,
+       "line": "James Gildea, age 30, Son, Farmer's Son",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:tullynaught:6041062",
+       "name": "Bridget Gildea",
+       "age": 25,
+       "relation": "Daughter",
+       "marital": "Not Married",
+       "occupation": "Farmer's Daughter",
+       "language": "",
+       "birthplace": "Donegal",
+       "match": true,
+       "line": "Bridget Gildea, age 25, Daughter, Farmer's Daughter",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:tullynaught:6041063",
+       "name": "Grace A Slevin",
+       "age": 10,
+       "relation": "Grand Daughter",
+       "marital": "Not Married",
+       "occupation": "Scholar",
+       "language": "",
+       "birthplace": "Donegal",
+       "match": false,
+       "line": "Grace A Slevin, age 10, Grand Daughter, Scholar",
+       "prev": [],
+       "next": []
+      }
+     ]
+    }
+   ],
+   "association": {
+    "basis": "surname",
+    "label": "Each household listed has at least one person whose surname is written to match. Names, ages and townland are as the return recorded them."
+   },
+   "source": {
+    "label": "National Archives of Ireland, census of Ireland, 1901",
+    "url": "https://www.census.nationalarchives.ie/",
+    "reference": "1901"
+   }
+  },
+  {
+   "id": "gildea:census:1901:tullynaught:whitehill",
+   "type": "census",
+   "milestone": true,
+   "date": {
+    "kind": "year",
+    "label": "1901",
+    "iso": "1901"
+   },
+   "sort": "1901-03-31",
+   "title": "The 1901 census: Whitehill",
+   "text": "1 person written as Gildea in 1 household, among 2 recorded.",
+   "place": "Tullynaught DED",
+   "people": [],
+   "media": [],
+   "households": [
+    {
+     "label": "House 3",
+     "url": "https://nationalarchives.ie/collections/search-the-census/view-pdf/?doc=nai000651510",
+     "people": [
+      {
+       "obs": "census1901:tullynaught:6041147",
+       "name": "Anne Jane Gildea",
+       "age": 54,
+       "relation": "Head of Family",
+       "marital": "Not Married",
+       "occupation": "Farmer",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Anne Jane Gildea, age 54, Head of Family, Farmer",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1901:tullynaught:6041148",
+       "name": "Bridget Begley",
+       "age": 24,
+       "relation": "Niece",
+       "marital": "Not Married",
+       "occupation": "HouseKeeper",
+       "language": "",
+       "birthplace": "America",
+       "match": false,
+       "line": "Bridget Begley, age 24, Niece, HouseKeeper",
+       "prev": [],
+       "next": []
+      }
+     ]
+    }
+   ],
+   "association": {
+    "basis": "surname",
+    "label": "Each household listed has at least one person whose surname is written to match. Names, ages and townland are as the return recorded them."
+   },
+   "source": {
+    "label": "National Archives of Ireland, census of Ireland, 1901",
+    "url": "https://www.census.nationalarchives.ie/",
+    "reference": "1901"
+   }
+  },
+  {
+   "id": "gildea:census:1911:clogher:clogher",
    "type": "census",
    "milestone": true,
    "date": {
@@ -455,16 +2286,135 @@
     "label": "1911",
     "iso": "1911"
    },
-   "sort": "1911-01-01",
-   "approximate_sort": true,
-   "title": "The 1911 census",
-   "text": "60 people in 17 households across 12 townlands, written as Gildea. By townland: Abbernadoorny 9, Clogher 8, Druminnin 8, Keadew Upper 8, Ardinawark 7, Cullionboy 6, Donegal Town: Main Street (part of) 3, Drumkeeghan 3, Meenadreen 3, Altadoo 2, Mullanasole 2, Whitehill 1.",
-   "place": "12 townlands",
+   "sort": "1911-04-02",
+   "title": "The 1911 census: Clogher",
+   "text": "8 people written as Gildea in 1 household, among 8 recorded.",
+   "place": "Clogher DED",
    "people": [],
    "media": [],
+   "households": [
+    {
+     "label": "House 8",
+     "url": "https://nationalarchives.ie/collections/search-the-census/view-pdf/?doc=nai002044770",
+     "people": [
+      {
+       "obs": "census1911:clogher:2239167",
+       "name": "Patrick Gildea",
+       "age": 56,
+       "relation": "Head of Family",
+       "marital": "Married",
+       "occupation": "Farmer",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Patrick Gildea, age 56, Head of Family, Farmer",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1911:clogher:2239168",
+       "name": "Maryanne Gildea",
+       "age": 49,
+       "relation": "Wife",
+       "marital": "Married",
+       "occupation": "",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Maryanne Gildea, age 49, Wife",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1911:clogher:2239169",
+       "name": "Francis Gildea",
+       "age": 19,
+       "relation": "Son",
+       "marital": "Single",
+       "occupation": "Farmer's Son",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Francis Gildea, age 19, Son, Farmer's Son",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1911:clogher:2239170",
+       "name": "Sarah Gildea",
+       "age": 17,
+       "relation": "Daughter",
+       "marital": "Single",
+       "occupation": "Seamstress",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Sarah Gildea, age 17, Daughter, Seamstress",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1911:clogher:2239171",
+       "name": "Etta Gildea",
+       "age": 15,
+       "relation": "Daughter",
+       "marital": "Single",
+       "occupation": "Scholar",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Etta Gildea, age 15, Daughter, Scholar",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1911:clogher:2239172",
+       "name": "John Gildea",
+       "age": 13,
+       "relation": "Son",
+       "marital": "Single",
+       "occupation": "Scholar",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "John Gildea, age 13, Son, Scholar",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1911:clogher:2239173",
+       "name": "Neil Gildea",
+       "age": 11,
+       "relation": "Son",
+       "marital": "Single",
+       "occupation": "Scholar",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Neil Gildea, age 11, Son, Scholar",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1911:clogher:2239174",
+       "name": "Alphonsus Gildea",
+       "age": 8,
+       "relation": "Son",
+       "marital": "Single",
+       "occupation": "Scholar",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Alphonsus Gildea, age 8, Son, Scholar",
+       "prev": [],
+       "next": []
+      }
+     ]
+    }
+   ],
    "association": {
     "basis": "surname",
-    "label": "Counted from the surname as written on the return, in the five DEDs held."
+    "label": "Each household listed has at least one person whose surname is written to match. Names, ages and townland are as the return recorded them."
    },
    "source": {
     "label": "National Archives of Ireland, census of Ireland, 1911",
@@ -473,7 +2423,1270 @@
    }
   },
   {
-   "id": "gildea:census:1926",
+   "id": "gildea:census:1911:clogher:cullionboy",
+   "type": "census",
+   "milestone": true,
+   "date": {
+    "kind": "year",
+    "label": "1911",
+    "iso": "1911"
+   },
+   "sort": "1911-04-02",
+   "title": "The 1911 census: Cullionboy",
+   "text": "6 people written as Gildea in 2 households, among 6 recorded.",
+   "place": "Clogher DED",
+   "people": [],
+   "media": [],
+   "households": [
+    {
+     "label": "House 17",
+     "url": "https://nationalarchives.ie/collections/search-the-census/view-pdf/?doc=nai002044872",
+     "people": [
+      {
+       "obs": "census1911:clogher:2239348",
+       "name": "Mary Gildea",
+       "age": 40,
+       "relation": "Head of Family",
+       "marital": "Single",
+       "occupation": "Sprigger",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Mary Gildea, age 40, Head of Family, Sprigger",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1911:clogher:2239349",
+       "name": "Maggie Gildea",
+       "age": 19,
+       "relation": "Visitor",
+       "marital": "Single",
+       "occupation": "Sprigger",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Maggie Gildea, age 19, Visitor, Sprigger",
+       "prev": [],
+       "next": []
+      }
+     ]
+    },
+    {
+     "label": "House 18",
+     "url": "https://nationalarchives.ie/collections/search-the-census/view-pdf/?doc=nai002044874",
+     "people": [
+      {
+       "obs": "census1911:clogher:2239350",
+       "name": "James Gildea",
+       "age": 52,
+       "relation": "Head of Family",
+       "marital": "Single",
+       "occupation": "Farmer",
+       "language": "Irish and English",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "James Gildea, age 52, Head of Family, Farmer, Irish and English",
+       "prev": [
+        {
+         "event": "gildea:census:1901:clogher:cullionboy",
+         "text": "1901: James Gildea (age 40)"
+        }
+       ],
+       "next": []
+      },
+      {
+       "obs": "census1911:clogher:2239351",
+       "name": "Ellen Gildea",
+       "age": 56,
+       "relation": "Sister",
+       "marital": "Single",
+       "occupation": "Sprigging",
+       "language": "Irish and English",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Ellen Gildea, age 56, Sister, Sprigging, Irish and English",
+       "prev": [
+        {
+         "event": "gildea:census:1901:clogher:cullionboy",
+         "text": "1901: Ellen Gildea (age 44)"
+        }
+       ],
+       "next": [
+        {
+         "event": "gildea:census:1926:clogher:collinboy",
+         "text": "1926: Ellen Gildea (age 72)"
+        }
+       ]
+      },
+      {
+       "obs": "census1911:clogher:2239352",
+       "name": "Mary Gildea",
+       "age": 54,
+       "relation": "Sister",
+       "marital": "Single",
+       "occupation": "Sprigging",
+       "language": "Irish and English",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Mary Gildea, age 54, Sister, Sprigging, Irish and English",
+       "prev": [
+        {
+         "event": "gildea:census:1901:clogher:cullionboy",
+         "text": "1901: Mary Gildea (age 42)"
+        }
+       ],
+       "next": [
+        {
+         "event": "gildea:census:1926:clogher:collinboy",
+         "text": "1926: Mary Gildea (age 76)"
+        }
+       ]
+      },
+      {
+       "obs": "census1911:clogher:2239353",
+       "name": "Patrick Gildea",
+       "age": 60,
+       "relation": "Brother",
+       "marital": "Widower",
+       "occupation": "Farmer",
+       "language": "Irish and English",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Patrick Gildea, age 60, Brother, Farmer, Irish and English",
+       "prev": [],
+       "next": [
+        {
+         "event": "gildea:census:1926:clogher:collinboy",
+         "text": "1926: Patrick Gildea (age 75)"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "association": {
+    "basis": "surname",
+    "label": "Each household listed has at least one person whose surname is written to match. Names, ages and townland are as the return recorded them."
+   },
+   "source": {
+    "label": "National Archives of Ireland, census of Ireland, 1911",
+    "url": "https://www.census.nationalarchives.ie/",
+    "reference": "1911"
+   }
+  },
+  {
+   "id": "gildea:census:1911:clogher:druminnin",
+   "type": "census",
+   "milestone": true,
+   "date": {
+    "kind": "year",
+    "label": "1911",
+    "iso": "1911"
+   },
+   "sort": "1911-04-02",
+   "title": "The 1911 census: Druminnin",
+   "text": "8 people written as Gildea in 3 households, among 11 recorded.",
+   "place": "Clogher DED",
+   "people": [],
+   "media": [],
+   "households": [
+    {
+     "label": "House 9",
+     "url": "https://nationalarchives.ie/collections/search-the-census/view-pdf/?doc=nai002044910",
+     "people": [
+      {
+       "obs": "census1911:clogher:2239426",
+       "name": "Edward Gildea",
+       "age": 63,
+       "relation": "Head of Family",
+       "marital": "Married",
+       "occupation": "Farmer",
+       "language": "English and Irish",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Edward Gildea, age 63, Head of Family, Farmer, English and Irish",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1911:clogher:2239427",
+       "name": "Margaret Gildea",
+       "age": 56,
+       "relation": "Wife",
+       "marital": "Married",
+       "occupation": "",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Margaret Gildea, age 56, Wife",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1911:clogher:2239428",
+       "name": "Edward Gildea",
+       "age": 31,
+       "relation": "Son",
+       "marital": "Single",
+       "occupation": "Farmer's Son",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Edward Gildea, age 31, Son, Farmer's Son",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1911:clogher:2239429",
+       "name": "Joseph Gildea",
+       "age": 29,
+       "relation": "Son",
+       "marital": "Single",
+       "occupation": "Farmer's Son",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Joseph Gildea, age 29, Son, Farmer's Son",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1911:clogher:2239430",
+       "name": "Bernard Gildea",
+       "age": 14,
+       "relation": "Son",
+       "marital": "Single",
+       "occupation": "Scholar",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Bernard Gildea, age 14, Son, Scholar",
+       "prev": [],
+       "next": []
+      }
+     ]
+    },
+    {
+     "label": "House 11",
+     "url": "https://nationalarchives.ie/collections/search-the-census/view-pdf/?doc=nai002044914",
+     "people": [
+      {
+       "obs": "census1911:clogher:2239438",
+       "name": "Anne Gildea",
+       "age": 68,
+       "relation": "Head of Family",
+       "marital": "Widow",
+       "occupation": "Farmer",
+       "language": "Irish and English",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Anne Gildea, age 68, Head of Family, Farmer, Irish and English",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1911:clogher:2239439",
+       "name": "Patrick Cassidy",
+       "age": 8,
+       "relation": "Boarder",
+       "marital": "Single",
+       "occupation": "Scholar",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": false,
+       "line": "Patrick Cassidy, age 8, Boarder, Scholar",
+       "prev": [],
+       "next": []
+      }
+     ]
+    },
+    {
+     "label": "House 20",
+     "url": "https://nationalarchives.ie/collections/search-the-census/view-pdf/?doc=nai002044932",
+     "people": [
+      {
+       "obs": "census1911:clogher:2239485",
+       "name": "Patrick Gildea",
+       "age": 84,
+       "relation": "Head of Family",
+       "marital": "Widower",
+       "occupation": "Farmer",
+       "language": "Irish and English",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Patrick Gildea, age 84, Head of Family, Farmer, Irish and English",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1911:clogher:2239486",
+       "name": "Bridget Gildea",
+       "age": 49,
+       "relation": "Daughter",
+       "marital": "Single",
+       "occupation": "",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Bridget Gildea, age 49, Daughter",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1911:clogher:2239487",
+       "name": "Patrick Thomas",
+       "age": 21,
+       "relation": "Grand Son",
+       "marital": "Single",
+       "occupation": "Farm Labourer",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": false,
+       "line": "Patrick Thomas, age 21, Grand Son, Farm Labourer",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1911:clogher:2239488",
+       "name": "Annie Thomas",
+       "age": 9,
+       "relation": "Grand Daughter",
+       "marital": "Single",
+       "occupation": "Scholar",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": false,
+       "line": "Annie Thomas, age 9, Grand Daughter, Scholar",
+       "prev": [],
+       "next": []
+      }
+     ]
+    }
+   ],
+   "association": {
+    "basis": "surname",
+    "label": "Each household listed has at least one person whose surname is written to match. Names, ages and townland are as the return recorded them."
+   },
+   "source": {
+    "label": "National Archives of Ireland, census of Ireland, 1911",
+    "url": "https://www.census.nationalarchives.ie/",
+    "reference": "1911"
+   }
+  },
+  {
+   "id": "gildea:census:1911:clogher:keadew-upper",
+   "type": "census",
+   "milestone": true,
+   "date": {
+    "kind": "year",
+    "label": "1911",
+    "iso": "1911"
+   },
+   "sort": "1911-04-02",
+   "title": "The 1911 census: Keadew Upper",
+   "text": "8 people written as Gildea in 1 household, among 8 recorded.",
+   "place": "Clogher DED",
+   "people": [],
+   "media": [],
+   "households": [
+    {
+     "label": "House 4",
+     "url": "https://nationalarchives.ie/collections/search-the-census/view-pdf/?doc=nai002045028",
+     "people": [
+      {
+       "obs": "census1911:clogher:2239622",
+       "name": "Sarah Gildea",
+       "age": 46,
+       "relation": "Head of Family",
+       "marital": "Married",
+       "occupation": "Farmer",
+       "language": "",
+       "birthplace": "Co Tyrone",
+       "match": true,
+       "line": "Sarah Gildea, age 46, Head of Family, Farmer",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1911:clogher:2239623",
+       "name": "John Gildea",
+       "age": 16,
+       "relation": "Son",
+       "marital": "Single",
+       "occupation": "Farmer's Son",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "John Gildea, age 16, Son, Farmer's Son",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1911:clogher:2239624",
+       "name": "Mary Alice Gildea",
+       "age": 15,
+       "relation": "Daughter",
+       "marital": "Single",
+       "occupation": "Seamstress",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Mary Alice Gildea, age 15, Daughter, Seamstress",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1911:clogher:2239625",
+       "name": "Patrick Gildea",
+       "age": 13,
+       "relation": "Son",
+       "marital": "Single",
+       "occupation": "Scholar",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Patrick Gildea, age 13, Son, Scholar",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1911:clogher:2239626",
+       "name": "Joseph Gildea",
+       "age": 11,
+       "relation": "Son",
+       "marital": "Single",
+       "occupation": "Scholar",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Joseph Gildea, age 11, Son, Scholar",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1911:clogher:2239627",
+       "name": "Bridget Gildea",
+       "age": 9,
+       "relation": "Daughter",
+       "marital": "Single",
+       "occupation": "Scholar",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Bridget Gildea, age 9, Daughter, Scholar",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1911:clogher:2239628",
+       "name": "Sarah anne Gildea",
+       "age": 7,
+       "relation": "Daughter",
+       "marital": "Single",
+       "occupation": "Scholar",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Sarah anne Gildea, age 7, Daughter, Scholar",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1911:clogher:2239629",
+       "name": "Maggie Ellen Gildea",
+       "age": 4,
+       "relation": "Daughter",
+       "marital": "Single",
+       "occupation": "Scholar",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Maggie Ellen Gildea, age 4, Daughter, Scholar",
+       "prev": [],
+       "next": []
+      }
+     ]
+    }
+   ],
+   "association": {
+    "basis": "surname",
+    "label": "Each household listed has at least one person whose surname is written to match. Names, ages and townland are as the return recorded them."
+   },
+   "source": {
+    "label": "National Archives of Ireland, census of Ireland, 1911",
+    "url": "https://www.census.nationalarchives.ie/",
+    "reference": "1911"
+   }
+  },
+  {
+   "id": "gildea:census:1911:donegal:abbernadoorny",
+   "type": "census",
+   "milestone": true,
+   "date": {
+    "kind": "year",
+    "label": "1911",
+    "iso": "1911"
+   },
+   "sort": "1911-04-02",
+   "title": "The 1911 census: Abbernadoorny",
+   "text": "9 people written as Gildea in 2 households, among 9 recorded.",
+   "place": "Donegal DED",
+   "people": [],
+   "media": [],
+   "households": [
+    {
+     "label": "House 1",
+     "url": "https://nationalarchives.ie/collections/search-the-census/view-pdf/?doc=nai002045137",
+     "people": [
+      {
+       "obs": "census1911:donegal:2239767",
+       "name": "Denis Gildea",
+       "age": 60,
+       "relation": "Head of Family Husband",
+       "marital": "Married",
+       "occupation": "Farmer",
+       "language": "Irish and English",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Denis Gildea, age 60, Head of Family Husband, Farmer, Irish and English",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1911:donegal:2239768",
+       "name": "Anne Gildea",
+       "age": 70,
+       "relation": "Wife",
+       "marital": "Married",
+       "occupation": "",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Anne Gildea, age 70, Wife",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1911:donegal:2239769",
+       "name": "Annie Gildea",
+       "age": 27,
+       "relation": "Daughter",
+       "marital": "Single",
+       "occupation": "",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Annie Gildea, age 27, Daughter",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1911:donegal:2239770",
+       "name": "Connell Gildea",
+       "age": 25,
+       "relation": "Son",
+       "marital": "Single",
+       "occupation": "Farmer's Son",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Connell Gildea, age 25, Son, Farmer's Son",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1911:donegal:2239771",
+       "name": "Catherine Gildea",
+       "age": 74,
+       "relation": "Sister",
+       "marital": "Single",
+       "occupation": "",
+       "language": "Irish and English",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Catherine Gildea, age 74, Sister, Irish and English",
+       "prev": [],
+       "next": []
+      }
+     ]
+    },
+    {
+     "label": "House 2",
+     "url": "https://nationalarchives.ie/collections/search-the-census/view-pdf/?doc=nai002045139",
+     "people": [
+      {
+       "obs": "census1911:donegal:2239772",
+       "name": "Patrick Gildea",
+       "age": 67,
+       "relation": "Head of Family Husband",
+       "marital": "Married",
+       "occupation": "Farmer",
+       "language": "Irish and English",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Patrick Gildea, age 67, Head of Family Husband, Farmer, Irish and English",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1911:donegal:2239773",
+       "name": "Sophia Gildea",
+       "age": 66,
+       "relation": "Wife",
+       "marital": "Married",
+       "occupation": "",
+       "language": "Irish and English",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Sophia Gildea, age 66, Wife, Irish and English",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1911:donegal:2239774",
+       "name": "Mary Gildea",
+       "age": 32,
+       "relation": "Daughter",
+       "marital": "Single",
+       "occupation": "",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Mary Gildea, age 32, Daughter",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1911:donegal:2239775",
+       "name": "Jerome Gildea",
+       "age": 25,
+       "relation": "Son",
+       "marital": "Single",
+       "occupation": "Farmer's Son",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Jerome Gildea, age 25, Son, Farmer's Son",
+       "prev": [],
+       "next": []
+      }
+     ]
+    }
+   ],
+   "association": {
+    "basis": "surname",
+    "label": "Each household listed has at least one person whose surname is written to match. Names, ages and townland are as the return recorded them."
+   },
+   "source": {
+    "label": "National Archives of Ireland, census of Ireland, 1911",
+    "url": "https://www.census.nationalarchives.ie/",
+    "reference": "1911"
+   }
+  },
+  {
+   "id": "gildea:census:1911:donegal:altadoo",
+   "type": "census",
+   "milestone": true,
+   "date": {
+    "kind": "year",
+    "label": "1911",
+    "iso": "1911"
+   },
+   "sort": "1911-04-02",
+   "title": "The 1911 census: Altadoo",
+   "text": "2 people written as Gildea in 1 household, among 2 recorded.",
+   "place": "Donegal DED",
+   "people": [],
+   "media": [],
+   "households": [
+    {
+     "label": "House 20",
+     "url": "https://nationalarchives.ie/collections/search-the-census/view-pdf/?doc=nai002045193",
+     "people": [
+      {
+       "obs": "census1911:donegal:2239874",
+       "name": "Mary Gildea",
+       "age": 68,
+       "relation": "Head of Family",
+       "marital": "Single",
+       "occupation": "Farmer",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Mary Gildea, age 68, Head of Family, Farmer",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1911:donegal:2239875",
+       "name": "Bridget Gildea",
+       "age": 70,
+       "relation": "Sister",
+       "marital": "Single",
+       "occupation": "",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Bridget Gildea, age 70, Sister",
+       "prev": [],
+       "next": []
+      }
+     ]
+    }
+   ],
+   "association": {
+    "basis": "surname",
+    "label": "Each household listed has at least one person whose surname is written to match. Names, ages and townland are as the return recorded them."
+   },
+   "source": {
+    "label": "National Archives of Ireland, census of Ireland, 1911",
+    "url": "https://www.census.nationalarchives.ie/",
+    "reference": "1911"
+   }
+  },
+  {
+   "id": "gildea:census:1911:donegal:donegal-town-main-street-part-of",
+   "type": "census",
+   "milestone": true,
+   "date": {
+    "kind": "year",
+    "label": "1911",
+    "iso": "1911"
+   },
+   "sort": "1911-04-02",
+   "title": "The 1911 census: Donegal Town: Main Street (part of)",
+   "text": "3 people written as Gildea in 2 households, among 5 recorded.",
+   "place": "Donegal DED",
+   "people": [],
+   "media": [],
+   "households": [
+    {
+     "label": "House 39",
+     "url": "https://nationalarchives.ie/collections/search-the-census/view-pdf/?doc=nai002046700",
+     "people": [
+      {
+       "obs": "census1911:donegal:1426824",
+       "name": "John Gildea",
+       "age": 60,
+       "relation": "Head of Family",
+       "marital": "Married",
+       "occupation": "Cattle Dealer",
+       "language": "",
+       "birthplace": "Donegal",
+       "match": true,
+       "line": "John Gildea, age 60, Head of Family, Cattle Dealer",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1911:donegal:1426825",
+       "name": "Maggie Gildea",
+       "age": 56,
+       "relation": "Wife",
+       "marital": "Married",
+       "occupation": "",
+       "language": "",
+       "birthplace": "Donegal",
+       "match": true,
+       "line": "Maggie Gildea, age 56, Wife",
+       "prev": [],
+       "next": []
+      }
+     ]
+    },
+    {
+     "label": "House 78",
+     "url": "https://nationalarchives.ie/collections/search-the-census/view-pdf/?doc=nai002046780",
+     "people": [
+      {
+       "obs": "census1911:donegal:1427013",
+       "name": "Annie Gildea",
+       "age": 60,
+       "relation": "Head of Family",
+       "marital": "Single",
+       "occupation": "Shop Keeper",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Annie Gildea, age 60, Head of Family, Shop Keeper",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1911:donegal:1427014",
+       "name": "Mary Thomas",
+       "age": 75,
+       "relation": "Boarder",
+       "marital": "Single",
+       "occupation": "",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": false,
+       "line": "Mary Thomas, age 75, Boarder",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1911:donegal:1427015",
+       "name": "James Gallagher",
+       "age": 56,
+       "relation": "Boarder",
+       "marital": "Single",
+       "occupation": "Cooper",
+       "language": "",
+       "birthplace": "Co Tyrone",
+       "match": false,
+       "line": "James Gallagher, age 56, Boarder, Cooper",
+       "prev": [],
+       "next": []
+      }
+     ]
+    }
+   ],
+   "association": {
+    "basis": "surname",
+    "label": "Each household listed has at least one person whose surname is written to match. Names, ages and townland are as the return recorded them."
+   },
+   "source": {
+    "label": "National Archives of Ireland, census of Ireland, 1911",
+    "url": "https://www.census.nationalarchives.ie/",
+    "reference": "1911"
+   }
+  },
+  {
+   "id": "gildea:census:1911:donegal:drumkeeghan",
+   "type": "census",
+   "milestone": true,
+   "date": {
+    "kind": "year",
+    "label": "1911",
+    "iso": "1911"
+   },
+   "sort": "1911-04-02",
+   "title": "The 1911 census: Drumkeeghan",
+   "text": "3 people written as Gildea in 1 household, among 3 recorded.",
+   "place": "Donegal DED",
+   "people": [],
+   "media": [],
+   "households": [
+    {
+     "label": "House 10",
+     "url": "https://nationalarchives.ie/collections/search-the-census/view-pdf/?doc=nai002045574",
+     "people": [
+      {
+       "obs": "census1911:donegal:1948359",
+       "name": "Denis Gildea",
+       "age": 65,
+       "relation": "Head of Family",
+       "marital": "Married",
+       "occupation": "Farmer",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Denis Gildea, age 65, Head of Family, Farmer",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1911:donegal:1948360",
+       "name": "Susan Gildea",
+       "age": 71,
+       "relation": "Wife",
+       "marital": "Married",
+       "occupation": "",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Susan Gildea, age 71, Wife",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1911:donegal:1948361",
+       "name": "Margaret Gildea",
+       "age": 30,
+       "relation": "Daughter",
+       "marital": "Single",
+       "occupation": "",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Margaret Gildea, age 30, Daughter",
+       "prev": [],
+       "next": []
+      }
+     ]
+    }
+   ],
+   "association": {
+    "basis": "surname",
+    "label": "Each household listed has at least one person whose surname is written to match. Names, ages and townland are as the return recorded them."
+   },
+   "source": {
+    "label": "National Archives of Ireland, census of Ireland, 1911",
+    "url": "https://www.census.nationalarchives.ie/",
+    "reference": "1911"
+   }
+  },
+  {
+   "id": "gildea:census:1911:laghy:mullanasole",
+   "type": "census",
+   "milestone": true,
+   "date": {
+    "kind": "year",
+    "label": "1911",
+    "iso": "1911"
+   },
+   "sort": "1911-04-02",
+   "title": "The 1911 census: Mullanasole",
+   "text": "2 people written as Gildea in 1 household, among 2 recorded.",
+   "place": "Laghy DED",
+   "people": [],
+   "media": [],
+   "households": [
+    {
+     "label": "House 2",
+     "url": "https://nationalarchives.ie/collections/search-the-census/view-pdf/?doc=nai002051335",
+     "people": [
+      {
+       "obs": "census1911:laghy:1440385",
+       "name": "Edward Gildea",
+       "age": 74,
+       "relation": "Head of Family",
+       "marital": "Widower",
+       "occupation": "Stone Mason",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Edward Gildea, age 74, Head of Family, Stone Mason",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1911:laghy:1440386",
+       "name": "Emma Gildea",
+       "age": 70,
+       "relation": "Sister",
+       "marital": "Single",
+       "occupation": "",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Emma Gildea, age 70, Sister",
+       "prev": [],
+       "next": []
+      }
+     ]
+    }
+   ],
+   "association": {
+    "basis": "surname",
+    "label": "Each household listed has at least one person whose surname is written to match. Names, ages and townland are as the return recorded them."
+   },
+   "source": {
+    "label": "National Archives of Ireland, census of Ireland, 1911",
+    "url": "https://www.census.nationalarchives.ie/",
+    "reference": "1911"
+   }
+  },
+  {
+   "id": "gildea:census:1911:tawnawully:ardinawark",
+   "type": "census",
+   "milestone": true,
+   "date": {
+    "kind": "year",
+    "label": "1911",
+    "iso": "1911"
+   },
+   "sort": "1911-04-02",
+   "title": "The 1911 census: Ardinawark",
+   "text": "7 people written as Gildea in 1 household, among 7 recorded.",
+   "place": "Tawnawully DED",
+   "people": [],
+   "media": [],
+   "households": [
+    {
+     "label": "House 16",
+     "url": "https://nationalarchives.ie/collections/search-the-census/view-pdf/?doc=nai002047602",
+     "people": [
+      {
+       "obs": "census1911:tawnawully:1428262",
+       "name": "Denis Gildea",
+       "age": 61,
+       "relation": "Head of Family",
+       "marital": "Married",
+       "occupation": "Farmer",
+       "language": "Irish and English",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Denis Gildea, age 61, Head of Family, Farmer, Irish and English",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1911:tawnawully:1428263",
+       "name": "Ellen Gildea",
+       "age": 48,
+       "relation": "Wife",
+       "marital": "Married",
+       "occupation": "",
+       "language": "Irish and English",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Ellen Gildea, age 48, Wife, Irish and English",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1911:tawnawully:1428264",
+       "name": "John Patrick Gildea",
+       "age": 16,
+       "relation": "Son",
+       "marital": "Single",
+       "occupation": "Farmer's Son",
+       "language": "Irish and English",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "John Patrick Gildea, age 16, Son, Farmer's Son, Irish and English",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1911:tawnawully:1428265",
+       "name": "Maggie Ellen Gildea",
+       "age": 14,
+       "relation": "Daughter",
+       "marital": "Single",
+       "occupation": "",
+       "language": "Irish and English",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Maggie Ellen Gildea, age 14, Daughter, Irish and English",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1911:tawnawully:1428266",
+       "name": "Ellen Gildea",
+       "age": 12,
+       "relation": "Daughter",
+       "marital": "Single",
+       "occupation": "Scholar",
+       "language": "Irish and English",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Ellen Gildea, age 12, Daughter, Scholar, Irish and English",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1911:tawnawully:1428267",
+       "name": "Bridget Agnes Gildea",
+       "age": 9,
+       "relation": "Daughter",
+       "marital": "Single",
+       "occupation": "Scholar",
+       "language": "Irish and English",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Bridget Agnes Gildea, age 9, Daughter, Scholar, Irish and English",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1911:tawnawully:1428268",
+       "name": "Susan Gildea",
+       "age": 6,
+       "relation": "Daughter",
+       "marital": "Single",
+       "occupation": "Scholar",
+       "language": "Irish and English",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Susan Gildea, age 6, Daughter, Scholar, Irish and English",
+       "prev": [],
+       "next": []
+      }
+     ]
+    }
+   ],
+   "association": {
+    "basis": "surname",
+    "label": "Each household listed has at least one person whose surname is written to match. Names, ages and townland are as the return recorded them."
+   },
+   "source": {
+    "label": "National Archives of Ireland, census of Ireland, 1911",
+    "url": "https://www.census.nationalarchives.ie/",
+    "reference": "1911"
+   }
+  },
+  {
+   "id": "gildea:census:1911:tullynaught:meenadreen",
+   "type": "census",
+   "milestone": true,
+   "date": {
+    "kind": "year",
+    "label": "1911",
+    "iso": "1911"
+   },
+   "sort": "1911-04-02",
+   "title": "The 1911 census: Meenadreen",
+   "text": "3 people written as Gildea in 1 household, among 3 recorded.",
+   "place": "Tullynaught DED",
+   "people": [],
+   "media": [],
+   "households": [
+    {
+     "label": "House 4",
+     "url": "https://nationalarchives.ie/collections/search-the-census/view-pdf/?doc=nai002052134",
+     "people": [
+      {
+       "obs": "census1911:tullynaught:1441562",
+       "name": "Grace Gildea",
+       "age": 75,
+       "relation": "Head of Family",
+       "marital": "Widow",
+       "occupation": "",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Grace Gildea, age 75, Head of Family",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1911:tullynaught:1441563",
+       "name": "James Gildea",
+       "age": 40,
+       "relation": "Son",
+       "marital": "Married",
+       "occupation": "Farmer",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "James Gildea, age 40, Son, Farmer",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1911:tullynaught:1441564",
+       "name": "Kate Gildea",
+       "age": 40,
+       "relation": "Daughter in Law",
+       "marital": "Married",
+       "occupation": "",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Kate Gildea, age 40, Daughter in Law",
+       "prev": [],
+       "next": []
+      }
+     ]
+    }
+   ],
+   "association": {
+    "basis": "surname",
+    "label": "Each household listed has at least one person whose surname is written to match. Names, ages and townland are as the return recorded them."
+   },
+   "source": {
+    "label": "National Archives of Ireland, census of Ireland, 1911",
+    "url": "https://www.census.nationalarchives.ie/",
+    "reference": "1911"
+   }
+  },
+  {
+   "id": "gildea:census:1911:tullynaught:whitehill",
+   "type": "census",
+   "milestone": true,
+   "date": {
+    "kind": "year",
+    "label": "1911",
+    "iso": "1911"
+   },
+   "sort": "1911-04-02",
+   "title": "The 1911 census: Whitehill",
+   "text": "1 person written as Gildea in 1 household, among 4 recorded.",
+   "place": "Tullynaught DED",
+   "people": [],
+   "media": [],
+   "households": [
+    {
+     "label": "House 5",
+     "url": "https://nationalarchives.ie/collections/search-the-census/view-pdf/?doc=nai002052215",
+     "people": [
+      {
+       "obs": "census1911:tullynaught:1441696",
+       "name": "Anne Jane Gildea",
+       "age": 65,
+       "relation": "Head of Family",
+       "marital": "Single",
+       "occupation": "Farmer",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": true,
+       "line": "Anne Jane Gildea, age 65, Head of Family, Farmer",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1911:tullynaught:1441697",
+       "name": "Bridget Begley",
+       "age": 35,
+       "relation": "Niece",
+       "marital": "Single",
+       "occupation": "",
+       "language": "",
+       "birthplace": "America",
+       "match": false,
+       "line": "Bridget Begley, age 35, Niece",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1911:tullynaught:1441698",
+       "name": "Sarah Cassidy",
+       "age": 23,
+       "relation": "Visitor",
+       "marital": "Married",
+       "occupation": "",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": false,
+       "line": "Sarah Cassidy, age 23, Visitor",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1911:tullynaught:1441699",
+       "name": "Maggie Cassidy",
+       "age": 0,
+       "relation": "Visitor",
+       "marital": "Single",
+       "occupation": "",
+       "language": "",
+       "birthplace": "Co Donegal",
+       "match": false,
+       "line": "Maggie Cassidy, age 0, Visitor",
+       "prev": [],
+       "next": []
+      }
+     ]
+    }
+   ],
+   "association": {
+    "basis": "surname",
+    "label": "Each household listed has at least one person whose surname is written to match. Names, ages and townland are as the return recorded them."
+   },
+   "source": {
+    "label": "National Archives of Ireland, census of Ireland, 1911",
+    "url": "https://www.census.nationalarchives.ie/",
+    "reference": "1911"
+   }
+  },
+  {
+   "id": "gildea:census:1926:clogher:clogher",
    "type": "census",
    "milestone": true,
    "date": {
@@ -481,16 +3694,1161 @@
     "label": "1926",
     "iso": "1926"
    },
-   "sort": "1926-01-01",
-   "approximate_sort": true,
-   "title": "The 1926 census",
-   "text": "40 people in 15 households across 12 townlands, written as Gildea, Guildea. By townland: Meenadreen 9, Keadue Upper 7, Meetinghouse Row 5, Abbernadoorney 4, Collinboy 3, Main Street 3, Clogher 2, Druminin 2, Drumkeeghan 2, Bridge Street 1, Lunniagh 1, The Diamond 1.",
-   "place": "12 townlands",
+   "sort": "1926-04-18",
+   "title": "The 1926 census: Clogher",
+   "text": "2 people written as Gildea in 1 household, among 2 recorded.",
+   "place": "Clogher DED",
    "people": [],
    "media": [],
+   "households": [
+    {
+     "label": "Household 1",
+     "url": "https://nationalarchives.ie/collections/search-the-1926-census/view-1926-pdf/?doc=Clogher_0352_0008_0008_0_00009.pdf",
+     "people": [
+      {
+       "obs": "census1926:clogher:2887121",
+       "name": "Francis J Gildea",
+       "age": 34,
+       "relation": "Head",
+       "marital": "Single",
+       "occupation": "",
+       "language": "English Only",
+       "birthplace": "",
+       "match": true,
+       "line": "Francis J Gildea, age 34, Head, English Only",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1926:clogher:2887122",
+       "name": "John Gildea",
+       "age": 26,
+       "relation": "Brother",
+       "marital": "Single",
+       "occupation": "",
+       "language": "English Only",
+       "birthplace": "",
+       "match": true,
+       "line": "John Gildea, age 26, Brother, English Only",
+       "prev": [],
+       "next": []
+      }
+     ]
+    }
+   ],
    "association": {
     "basis": "surname",
-    "label": "Counted from the surname as written on the return, in the five DEDs held."
+    "label": "Each household listed has at least one person whose surname is written to match. Names, ages and townland are as the return recorded them."
+   },
+   "source": {
+    "label": "National Archives of Ireland, census of Ireland, 1926",
+    "url": "https://www.census.nationalarchives.ie/",
+    "reference": "1926"
+   }
+  },
+  {
+   "id": "gildea:census:1926:clogher:collinboy",
+   "type": "census",
+   "milestone": true,
+   "date": {
+    "kind": "year",
+    "label": "1926",
+    "iso": "1926"
+   },
+   "sort": "1926-04-18",
+   "title": "The 1926 census: Collinboy",
+   "text": "3 people written as Gildea in 1 household, among 4 recorded.",
+   "place": "Clogher DED",
+   "people": [],
+   "media": [],
+   "households": [
+    {
+     "label": "Household 1",
+     "url": "https://nationalarchives.ie/collections/search-the-1926-census/view-1926-pdf/?doc=Collinboy_0352_0011_0007_0_00008.pdf",
+     "people": [
+      {
+       "obs": "census1926:clogher:2887202",
+       "name": "Patrick Gildea",
+       "age": 75,
+       "relation": "Head",
+       "marital": "Widower",
+       "occupation": "",
+       "language": "English Only",
+       "birthplace": "",
+       "match": true,
+       "line": "Patrick Gildea, age 75, Head, English Only",
+       "prev": [
+        {
+         "event": "gildea:census:1911:clogher:cullionboy",
+         "text": "1911: Patrick Gildea (age 60)"
+        }
+       ],
+       "next": []
+      },
+      {
+       "obs": "census1926:clogher:2887203",
+       "name": "Ellen Gildea",
+       "age": 72,
+       "relation": "Sister",
+       "marital": "Single",
+       "occupation": "",
+       "language": "English Only",
+       "birthplace": "",
+       "match": true,
+       "line": "Ellen Gildea, age 72, Sister, English Only",
+       "prev": [
+        {
+         "event": "gildea:census:1911:clogher:cullionboy",
+         "text": "1911: Ellen Gildea (age 56)"
+        }
+       ],
+       "next": []
+      },
+      {
+       "obs": "census1926:clogher:2887204",
+       "name": "Mary Gildea",
+       "age": 76,
+       "relation": "Sister",
+       "marital": "Single",
+       "occupation": "",
+       "language": "English Only",
+       "birthplace": "",
+       "match": true,
+       "line": "Mary Gildea, age 76, Sister, English Only",
+       "prev": [
+        {
+         "event": "gildea:census:1911:clogher:cullionboy",
+         "text": "1911: Mary Gildea (age 54)"
+        }
+       ],
+       "next": []
+      },
+      {
+       "obs": "census1926:clogher:2887205",
+       "name": "Patrick O'Sullivan",
+       "age": 13,
+       "relation": "Grandson",
+       "marital": "Both Parents Alive",
+       "occupation": "",
+       "language": "English Only",
+       "birthplace": "Scotland",
+       "match": false,
+       "line": "Patrick O'Sullivan, age 13, Grandson, English Only",
+       "prev": [],
+       "next": []
+      }
+     ]
+    }
+   ],
+   "association": {
+    "basis": "surname",
+    "label": "Each household listed has at least one person whose surname is written to match. Names, ages and townland are as the return recorded them."
+   },
+   "source": {
+    "label": "National Archives of Ireland, census of Ireland, 1926",
+    "url": "https://www.census.nationalarchives.ie/",
+    "reference": "1926"
+   }
+  },
+  {
+   "id": "gildea:census:1926:clogher:druminin",
+   "type": "census",
+   "milestone": true,
+   "date": {
+    "kind": "year",
+    "label": "1926",
+    "iso": "1926"
+   },
+   "sort": "1926-04-18",
+   "title": "The 1926 census: Druminin",
+   "text": "2 people written as Guildea in 1 household, among 2 recorded.",
+   "place": "Clogher DED",
+   "people": [],
+   "media": [],
+   "households": [
+    {
+     "label": "Household 1",
+     "url": "https://nationalarchives.ie/collections/search-the-1926-census/view-1926-pdf/?doc=Druminin_0352_0013_0004_0_00005.pdf",
+     "people": [
+      {
+       "obs": "census1926:clogher:2887280",
+       "name": "Margaret Guildea",
+       "age": 72,
+       "relation": "Head",
+       "marital": "Widow",
+       "occupation": "",
+       "language": "English and Irish",
+       "birthplace": "",
+       "match": true,
+       "line": "Margaret Guildea, age 72, Head, English and Irish",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1926:clogher:2887281",
+       "name": "Mary Guildea",
+       "age": 59,
+       "relation": "Sister",
+       "marital": "Single",
+       "occupation": "",
+       "language": "English Only",
+       "birthplace": "",
+       "match": true,
+       "line": "Mary Guildea, age 59, Sister, English Only",
+       "prev": [],
+       "next": []
+      }
+     ]
+    }
+   ],
+   "association": {
+    "basis": "surname",
+    "label": "Each household listed has at least one person whose surname is written to match. Names, ages and townland are as the return recorded them."
+   },
+   "source": {
+    "label": "National Archives of Ireland, census of Ireland, 1926",
+    "url": "https://www.census.nationalarchives.ie/",
+    "reference": "1926"
+   }
+  },
+  {
+   "id": "gildea:census:1926:clogher:keadue-upper",
+   "type": "census",
+   "milestone": true,
+   "date": {
+    "kind": "year",
+    "label": "1926",
+    "iso": "1926"
+   },
+   "sort": "1926-04-18",
+   "title": "The 1926 census: Keadue Upper",
+   "text": "7 people written as Gildea in 1 household, among 7 recorded.",
+   "place": "Clogher DED",
+   "people": [],
+   "media": [],
+   "households": [
+    {
+     "label": "Household 1",
+     "url": "https://nationalarchives.ie/collections/search-the-1926-census/view-1926-pdf/?doc=Keadue Upper_0352_0017_0009_0_00011.pdf",
+     "people": [
+      {
+       "obs": "census1926:clogher:2887442",
+       "name": "John Gildea",
+       "age": 31,
+       "relation": "Head",
+       "marital": "Married",
+       "occupation": "",
+       "language": "English Only",
+       "birthplace": "",
+       "match": true,
+       "line": "John Gildea, age 31, Head, English Only",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1926:clogher:2887443",
+       "name": "Mary Josephin Gildea",
+       "age": 26,
+       "relation": "Wife",
+       "marital": "Married",
+       "occupation": "",
+       "language": "English Only",
+       "birthplace": "",
+       "match": true,
+       "line": "Mary Josephin Gildea, age 26, Wife, English Only",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1926:clogher:2887444",
+       "name": "Mary Elizabeth Gildea",
+       "age": 6,
+       "relation": "Daughter",
+       "marital": "Both Parents Alive",
+       "occupation": "",
+       "language": "English Only",
+       "birthplace": "",
+       "match": true,
+       "line": "Mary Elizabeth Gildea, age 6, Daughter, English Only",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1926:clogher:2887445",
+       "name": "Sarah Josephin Gildea",
+       "age": 5,
+       "relation": "Daughter",
+       "marital": "Both Parents Alive",
+       "occupation": "",
+       "language": "English Only",
+       "birthplace": "",
+       "match": true,
+       "line": "Sarah Josephin Gildea, age 5, Daughter, English Only",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1926:clogher:2887446",
+       "name": "Veronica Ana Christina Gildea",
+       "age": 4,
+       "relation": "Daughter",
+       "marital": "Both Parents Alive",
+       "occupation": "",
+       "language": "English Only",
+       "birthplace": "",
+       "match": true,
+       "line": "Veronica Ana Christina Gildea, age 4, Daughter, English Only",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1926:clogher:2887447",
+       "name": "Margaret Patricia Gildea",
+       "age": 2,
+       "relation": "Daughter",
+       "marital": "Both Parents Alive",
+       "occupation": "",
+       "language": "English Only",
+       "birthplace": "",
+       "match": true,
+       "line": "Margaret Patricia Gildea, age 2, Daughter, English Only",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1926:clogher:2887448",
+       "name": "Cornelius Patrick Gildea",
+       "age": 0,
+       "relation": "",
+       "marital": "Both Parents Alive",
+       "occupation": "",
+       "language": "English Only",
+       "birthplace": "",
+       "match": true,
+       "line": "Cornelius Patrick Gildea, age 0, English Only",
+       "prev": [],
+       "next": []
+      }
+     ]
+    }
+   ],
+   "association": {
+    "basis": "surname",
+    "label": "Each household listed has at least one person whose surname is written to match. Names, ages and townland are as the return recorded them."
+   },
+   "source": {
+    "label": "National Archives of Ireland, census of Ireland, 1926",
+    "url": "https://www.census.nationalarchives.ie/",
+    "reference": "1926"
+   }
+  },
+  {
+   "id": "gildea:census:1926:donegal:abbernadoorney",
+   "type": "census",
+   "milestone": true,
+   "date": {
+    "kind": "year",
+    "label": "1926",
+    "iso": "1926"
+   },
+   "sort": "1926-04-18",
+   "title": "The 1926 census: Abbernadoorney",
+   "text": "4 people written as Gildea in 1 household, among 4 recorded.",
+   "place": "Donegal DED",
+   "people": [],
+   "media": [],
+   "households": [
+    {
+     "label": "Household 1",
+     "url": "https://nationalarchives.ie/collections/search-the-1926-census/view-1926-pdf/?doc=Abbernadoorney_0499_0059_0004_0_00007.pdf",
+     "people": [
+      {
+       "obs": "census1926:donegal:2945906",
+       "name": "William Gildea",
+       "age": 40,
+       "relation": "Head",
+       "marital": "Married",
+       "occupation": "",
+       "language": "English and Irish",
+       "birthplace": "",
+       "match": true,
+       "line": "William Gildea, age 40, Head, English and Irish",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1926:donegal:2945907",
+       "name": "Mary Rose Gildea",
+       "age": 35,
+       "relation": "Wife",
+       "marital": "Married",
+       "occupation": "",
+       "language": "Irish and English",
+       "birthplace": "",
+       "match": true,
+       "line": "Mary Rose Gildea, age 35, Wife, Irish and English",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1926:donegal:2945908",
+       "name": "Mary Gildea",
+       "age": 47,
+       "relation": "Sister",
+       "marital": "Single",
+       "occupation": "",
+       "language": "English and Irish",
+       "birthplace": "",
+       "match": true,
+       "line": "Mary Gildea, age 47, Sister, English and Irish",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1926:donegal:2945909",
+       "name": "Jerry Gildea",
+       "age": 42,
+       "relation": "Brother",
+       "marital": "Single",
+       "occupation": "",
+       "language": "English and Irish",
+       "birthplace": "",
+       "match": true,
+       "line": "Jerry Gildea, age 42, Brother, English and Irish",
+       "prev": [],
+       "next": []
+      }
+     ]
+    }
+   ],
+   "association": {
+    "basis": "surname",
+    "label": "Each household listed has at least one person whose surname is written to match. Names, ages and townland are as the return recorded them."
+   },
+   "source": {
+    "label": "National Archives of Ireland, census of Ireland, 1926",
+    "url": "https://www.census.nationalarchives.ie/",
+    "reference": "1926"
+   }
+  },
+  {
+   "id": "gildea:census:1926:donegal:bridge-street",
+   "type": "census",
+   "milestone": true,
+   "date": {
+    "kind": "year",
+    "label": "1926",
+    "iso": "1926"
+   },
+   "sort": "1926-04-18",
+   "title": "The 1926 census: Bridge Street",
+   "text": "1 person written as Gildea in 1 household, among 9 recorded.",
+   "place": "Donegal DED",
+   "people": [],
+   "media": [],
+   "households": [
+    {
+     "label": "Household 1",
+     "url": "https://nationalarchives.ie/collections/search-the-1926-census/view-1926-pdf/?doc=Bridge Street _0499_0030_0010_0_00019.pdf",
+     "people": [
+      {
+       "obs": "census1926:donegal:2946050",
+       "name": "Alexander Scarffe",
+       "age": 77,
+       "relation": "Head",
+       "marital": "Married",
+       "occupation": "",
+       "language": "English Only",
+       "birthplace": "",
+       "match": false,
+       "line": "Alexander Scarffe, age 77, Head, English Only",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1926:donegal:2946051",
+       "name": "Sarah Scarffe",
+       "age": 37,
+       "relation": "Wife",
+       "marital": "Married",
+       "occupation": "",
+       "language": "English Only",
+       "birthplace": "",
+       "match": false,
+       "line": "Sarah Scarffe, age 37, Wife, English Only",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1926:donegal:2946052",
+       "name": "Lizzie Scarffe",
+       "age": 13,
+       "relation": "Daughter",
+       "marital": "Both Parents Alive",
+       "occupation": "",
+       "language": "English Only",
+       "birthplace": "",
+       "match": false,
+       "line": "Lizzie Scarffe, age 13, Daughter, English Only",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1926:donegal:2946053",
+       "name": "Alex Scarffe",
+       "age": 12,
+       "relation": "Son",
+       "marital": "Both Parents Alive",
+       "occupation": "",
+       "language": "English Only",
+       "birthplace": "",
+       "match": false,
+       "line": "Alex Scarffe, age 12, Son, English Only",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1926:donegal:2946054",
+       "name": "Frances Scarffe",
+       "age": 11,
+       "relation": "Daughter",
+       "marital": "Both Parents Alive",
+       "occupation": "",
+       "language": "English Only",
+       "birthplace": "",
+       "match": false,
+       "line": "Frances Scarffe, age 11, Daughter, English Only",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1926:donegal:2946055",
+       "name": "Chares John Scarffe",
+       "age": 10,
+       "relation": "Son",
+       "marital": "Both Parents Alive",
+       "occupation": "",
+       "language": "English Only",
+       "birthplace": "",
+       "match": false,
+       "line": "Chares John Scarffe, age 10, Son, English Only",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1926:donegal:2946056",
+       "name": "Wiliam Scarffe",
+       "age": 8,
+       "relation": "Son",
+       "marital": "Both Parents Alive",
+       "occupation": "",
+       "language": "English Only",
+       "birthplace": "",
+       "match": false,
+       "line": "Wiliam Scarffe, age 8, Son, English Only",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1926:donegal:2946057",
+       "name": "Hugh Michael Scarffe",
+       "age": 4,
+       "relation": "Son",
+       "marital": "Both Parents Alive",
+       "occupation": "",
+       "language": "English Only",
+       "birthplace": "",
+       "match": false,
+       "line": "Hugh Michael Scarffe, age 4, Son, English Only",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1926:donegal:2946058",
+       "name": "Charles Gildea",
+       "age": 22,
+       "relation": "Boarder",
+       "marital": "Single",
+       "occupation": "",
+       "language": "English Only",
+       "birthplace": "",
+       "match": true,
+       "line": "Charles Gildea, age 22, Boarder, English Only",
+       "prev": [],
+       "next": []
+      }
+     ]
+    }
+   ],
+   "association": {
+    "basis": "surname",
+    "label": "Each household listed has at least one person whose surname is written to match. Names, ages and townland are as the return recorded them."
+   },
+   "source": {
+    "label": "National Archives of Ireland, census of Ireland, 1926",
+    "url": "https://www.census.nationalarchives.ie/",
+    "reference": "1926"
+   }
+  },
+  {
+   "id": "gildea:census:1926:donegal:drumkeeghan",
+   "type": "census",
+   "milestone": true,
+   "date": {
+    "kind": "year",
+    "label": "1926",
+    "iso": "1926"
+   },
+   "sort": "1926-04-18",
+   "title": "The 1926 census: Drumkeeghan",
+   "text": "2 people written as Gildea in 1 household, among 2 recorded.",
+   "place": "Donegal DED",
+   "people": [],
+   "media": [],
+   "households": [
+    {
+     "label": "Household 1",
+     "url": "https://nationalarchives.ie/collections/search-the-1926-census/view-1926-pdf/?doc=Drumkeeghan_0499_0047_0002_0_00003.pdf",
+     "people": [
+      {
+       "obs": "census1926:donegal:2943423",
+       "name": "Denis Gildea",
+       "age": 80,
+       "relation": "Head",
+       "marital": "Widower",
+       "occupation": "",
+       "language": "English Only",
+       "birthplace": "Donegal",
+       "match": true,
+       "line": "Denis Gildea, age 80, Head, English Only",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1926:donegal:2943424",
+       "name": "Maggie Gildea",
+       "age": 42,
+       "relation": "Daughter",
+       "marital": "Single",
+       "occupation": "",
+       "language": "English Only",
+       "birthplace": "Donegal",
+       "match": true,
+       "line": "Maggie Gildea, age 42, Daughter, English Only",
+       "prev": [],
+       "next": []
+      }
+     ]
+    }
+   ],
+   "association": {
+    "basis": "surname",
+    "label": "Each household listed has at least one person whose surname is written to match. Names, ages and townland are as the return recorded them."
+   },
+   "source": {
+    "label": "National Archives of Ireland, census of Ireland, 1926",
+    "url": "https://www.census.nationalarchives.ie/",
+    "reference": "1926"
+   }
+  },
+  {
+   "id": "gildea:census:1926:donegal:main-street",
+   "type": "census",
+   "milestone": true,
+   "date": {
+    "kind": "year",
+    "label": "1926",
+    "iso": "1926"
+   },
+   "sort": "1926-04-18",
+   "title": "The 1926 census: Main Street",
+   "text": "3 people written as Gildea in 2 households, among 5 recorded.",
+   "place": "Donegal DED",
+   "people": [],
+   "media": [],
+   "households": [
+    {
+     "label": "Household 1",
+     "url": "https://nationalarchives.ie/collections/search-the-1926-census/view-1926-pdf/?doc=Main Street_0499_0026_0019_0_00037.pdf",
+     "people": [
+      {
+       "obs": "census1926:donegal:2946727",
+       "name": "Ellen Gildea",
+       "age": 65,
+       "relation": "Head",
+       "marital": "Widow",
+       "occupation": "",
+       "language": "Irish and English",
+       "birthplace": "",
+       "match": true,
+       "line": "Ellen Gildea, age 65, Head, Irish and English",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1926:donegal:2946728",
+       "name": "Susan Gildea",
+       "age": 21,
+       "relation": "Daughter",
+       "marital": "Single",
+       "occupation": "",
+       "language": "English Only",
+       "birthplace": "",
+       "match": true,
+       "line": "Susan Gildea, age 21, Daughter, English Only",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1926:donegal:2946729",
+       "name": "Bridget Hilferty",
+       "age": 73,
+       "relation": "Sister",
+       "marital": "Single",
+       "occupation": "",
+       "language": "Irish and English",
+       "birthplace": "",
+       "match": false,
+       "line": "Bridget Hilferty, age 73, Sister, Irish and English",
+       "prev": [],
+       "next": []
+      }
+     ]
+    },
+    {
+     "label": "Household 2",
+     "url": "https://nationalarchives.ie/collections/search-the-1926-census/view-1926-pdf/?doc=Main Street_0499_0026_0042_0_00083.pdf",
+     "people": [
+      {
+       "obs": "census1926:donegal:2946802",
+       "name": "Mary Gildea",
+       "age": 60,
+       "relation": "Head",
+       "marital": "Widow",
+       "occupation": "",
+       "language": "English Only",
+       "birthplace": "",
+       "match": true,
+       "line": "Mary Gildea, age 60, Head, English Only",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1926:donegal:2946803",
+       "name": "Sarah Tunney",
+       "age": 58,
+       "relation": "Sister",
+       "marital": "Single",
+       "occupation": "",
+       "language": "English Only",
+       "birthplace": "",
+       "match": false,
+       "line": "Sarah Tunney, age 58, Sister, English Only",
+       "prev": [],
+       "next": []
+      }
+     ]
+    }
+   ],
+   "association": {
+    "basis": "surname",
+    "label": "Each household listed has at least one person whose surname is written to match. Names, ages and townland are as the return recorded them."
+   },
+   "source": {
+    "label": "National Archives of Ireland, census of Ireland, 1926",
+    "url": "https://www.census.nationalarchives.ie/",
+    "reference": "1926"
+   }
+  },
+  {
+   "id": "gildea:census:1926:donegal:meetinghouse-row",
+   "type": "census",
+   "milestone": true,
+   "date": {
+    "kind": "year",
+    "label": "1926",
+    "iso": "1926"
+   },
+   "sort": "1926-04-18",
+   "title": "The 1926 census: Meetinghouse Row",
+   "text": "5 people written as Gildea in 1 household, among 5 recorded.",
+   "place": "Donegal DED",
+   "people": [],
+   "media": [],
+   "households": [
+    {
+     "label": "Household 1",
+     "url": "https://nationalarchives.ie/collections/search-the-1926-census/view-1926-pdf/?doc=Meetinghouse Row_0499_0025_0004_0_00007.pdf",
+     "people": [
+      {
+       "obs": "census1926:donegal:2949053",
+       "name": "James Gildea",
+       "age": 36,
+       "relation": "Head",
+       "marital": "Married",
+       "occupation": "",
+       "language": "Irish and English",
+       "birthplace": "",
+       "match": true,
+       "line": "James Gildea, age 36, Head, Irish and English",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1926:donegal:2949054",
+       "name": "Mary Gildea",
+       "age": 30,
+       "relation": "Wife",
+       "marital": "Married",
+       "occupation": "",
+       "language": "Irish and English",
+       "birthplace": "",
+       "match": true,
+       "line": "Mary Gildea, age 30, Wife, Irish and English",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1926:donegal:2949055",
+       "name": "Mary Francis Theresa Gildea",
+       "age": 4,
+       "relation": "Daughter",
+       "marital": "Both Parents Alive",
+       "occupation": "",
+       "language": "English Only",
+       "birthplace": "",
+       "match": true,
+       "line": "Mary Francis Theresa Gildea, age 4, Daughter, English Only",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1926:donegal:2949056",
+       "name": "James Gildea",
+       "age": 3,
+       "relation": "Son",
+       "marital": "Both Parents Alive",
+       "occupation": "",
+       "language": "English Only",
+       "birthplace": "",
+       "match": true,
+       "line": "James Gildea, age 3, Son, English Only",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1926:donegal:2949057",
+       "name": "Peter Frances Gildea",
+       "age": 1,
+       "relation": "Son",
+       "marital": "Both Parents Alive",
+       "occupation": "",
+       "language": "English Only",
+       "birthplace": "",
+       "match": true,
+       "line": "Peter Frances Gildea, age 1, Son, English Only",
+       "prev": [],
+       "next": []
+      }
+     ]
+    }
+   ],
+   "association": {
+    "basis": "surname",
+    "label": "Each household listed has at least one person whose surname is written to match. Names, ages and townland are as the return recorded them."
+   },
+   "source": {
+    "label": "National Archives of Ireland, census of Ireland, 1926",
+    "url": "https://www.census.nationalarchives.ie/",
+    "reference": "1926"
+   }
+  },
+  {
+   "id": "gildea:census:1926:donegal:the-diamond",
+   "type": "census",
+   "milestone": true,
+   "date": {
+    "kind": "year",
+    "label": "1926",
+    "iso": "1926"
+   },
+   "sort": "1926-04-18",
+   "title": "The 1926 census: The Diamond",
+   "text": "1 person written as Gildea in 1 household, among 1 recorded.",
+   "place": "Donegal DED",
+   "people": [],
+   "media": [],
+   "households": [
+    {
+     "label": "Household 1",
+     "url": "https://nationalarchives.ie/collections/search-the-1926-census/view-1926-pdf/?doc=The Diamond _0499_0027_0004_0_00007.pdf",
+     "people": [
+      {
+       "obs": "census1926:donegal:2949265",
+       "name": "Mary B Gildea",
+       "age": 26,
+       "relation": "Head",
+       "marital": "Single",
+       "occupation": "",
+       "language": "English Only",
+       "birthplace": "",
+       "match": true,
+       "line": "Mary B Gildea, age 26, Head, English Only",
+       "prev": [],
+       "next": []
+      }
+     ]
+    }
+   ],
+   "association": {
+    "basis": "surname",
+    "label": "Each household listed has at least one person whose surname is written to match. Names, ages and townland are as the return recorded them."
+   },
+   "source": {
+    "label": "National Archives of Ireland, census of Ireland, 1926",
+    "url": "https://www.census.nationalarchives.ie/",
+    "reference": "1926"
+   }
+  },
+  {
+   "id": "gildea:census:1926:magheraclogher:lunniagh",
+   "type": "census",
+   "milestone": true,
+   "date": {
+    "kind": "year",
+    "label": "1926",
+    "iso": "1926"
+   },
+   "sort": "1926-04-18",
+   "title": "The 1926 census: Lunniagh",
+   "text": "1 person written as Gildea in 1 household, among 3 recorded.",
+   "place": "Magheraclogher DED",
+   "people": [],
+   "media": [],
+   "households": [
+    {
+     "label": "Household 1",
+     "url": "https://nationalarchives.ie/collections/search-the-1926-census/view-1926-pdf/?doc=Lunniagh_0447_0012_0027_0_00031.pdf",
+     "people": [
+      {
+       "obs": "census1926:magheraclogher:2648500",
+       "name": "Sheela McFadden",
+       "age": 84,
+       "relation": "Daughter",
+       "marital": "Widow",
+       "occupation": "",
+       "language": "Irish Only",
+       "birthplace": "",
+       "match": false,
+       "line": "Sheela McFadden, age 84, Daughter, Irish Only",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1926:magheraclogher:2648501",
+       "name": "Joseph McFadden",
+       "age": 44,
+       "relation": "Son",
+       "marital": "Single",
+       "occupation": "",
+       "language": "Irish and English",
+       "birthplace": "",
+       "match": false,
+       "line": "Joseph McFadden, age 44, Son, Irish and English",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1926:magheraclogher:2648502",
+       "name": "Dan Gildea",
+       "age": 16,
+       "relation": "Head",
+       "marital": "Both Parents Alive",
+       "occupation": "",
+       "language": "English Only",
+       "birthplace": "",
+       "match": true,
+       "line": "Dan Gildea, age 16, Head, English Only",
+       "prev": [],
+       "next": []
+      }
+     ]
+    }
+   ],
+   "association": {
+    "basis": "surname",
+    "label": "Each household listed has at least one person whose surname is written to match. Names, ages and townland are as the return recorded them."
+   },
+   "source": {
+    "label": "National Archives of Ireland, census of Ireland, 1926",
+    "url": "https://www.census.nationalarchives.ie/",
+    "reference": "1926"
+   }
+  },
+  {
+   "id": "gildea:census:1926:tullynaught:meenadreen",
+   "type": "census",
+   "milestone": true,
+   "date": {
+    "kind": "year",
+    "label": "1926",
+    "iso": "1926"
+   },
+   "sort": "1926-04-18",
+   "title": "The 1926 census: Meenadreen",
+   "text": "9 people written as Gildea in 3 households, among 9 recorded.",
+   "place": "Tullynaught DED",
+   "people": [],
+   "media": [],
+   "households": [
+    {
+     "label": "Household 1",
+     "url": "https://nationalarchives.ie/collections/search-the-1926-census/view-1926-pdf/?doc=Meenadreen_0508_0014_0005_0_00009.pdf",
+     "people": [
+      {
+       "obs": "census1926:tullynaught:2775779",
+       "name": "James Gildea",
+       "age": 55,
+       "relation": "Daughter",
+       "marital": "Married",
+       "occupation": "",
+       "language": "English Only",
+       "birthplace": "",
+       "match": true,
+       "line": "James Gildea, age 55, Daughter, English Only",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1926:tullynaught:2775780",
+       "name": "Kate Gildea",
+       "age": 6,
+       "relation": "Head",
+       "marital": "Married",
+       "occupation": "",
+       "language": "English Only",
+       "birthplace": "",
+       "match": true,
+       "line": "Kate Gildea, age 6, Head, English Only",
+       "prev": [],
+       "next": []
+      }
+     ]
+    },
+    {
+     "label": "Household 2",
+     "url": "https://nationalarchives.ie/collections/search-the-1926-census/view-1926-pdf/?doc=Meenadreen_0508_0014_0011_0_00021.pdf",
+     "people": [
+      {
+       "obs": "census1926:tullynaught:2775793",
+       "name": "Patrick Gildea",
+       "age": 48,
+       "relation": "Sister",
+       "marital": "Married",
+       "occupation": "",
+       "language": "English Only",
+       "birthplace": "",
+       "match": true,
+       "line": "Patrick Gildea, age 48, Sister, English Only",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1926:tullynaught:2775794",
+       "name": "Joseph Gildea",
+       "age": 20,
+       "relation": "Head",
+       "marital": "Single",
+       "occupation": "",
+       "language": "English Only",
+       "birthplace": "",
+       "match": true,
+       "line": "Joseph Gildea, age 20, Head, English Only",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1926:tullynaught:2775795",
+       "name": "Grace Gildea",
+       "age": 18,
+       "relation": "Wife",
+       "marital": "Single",
+       "occupation": "",
+       "language": "English Only",
+       "birthplace": "",
+       "match": true,
+       "line": "Grace Gildea, age 18, Wife, English Only",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1926:tullynaught:2775796",
+       "name": "Roland Gildea",
+       "age": 16,
+       "relation": "Daughter",
+       "marital": "Single",
+       "occupation": "",
+       "language": "English Only",
+       "birthplace": "",
+       "match": true,
+       "line": "Roland Gildea, age 16, Daughter, English Only",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1926:tullynaught:2775797",
+       "name": "Kathleen Gildea",
+       "age": 12,
+       "relation": "Daughter",
+       "marital": "Both Parents Alive",
+       "occupation": "",
+       "language": "English Only",
+       "birthplace": "",
+       "match": true,
+       "line": "Kathleen Gildea, age 12, Daughter, English Only",
+       "prev": [],
+       "next": []
+      },
+      {
+       "obs": "census1926:tullynaught:2775798",
+       "name": "Susan Gildea",
+       "age": 48,
+       "relation": "Son",
+       "marital": "Married",
+       "occupation": "",
+       "language": "English Only",
+       "birthplace": "",
+       "match": true,
+       "line": "Susan Gildea, age 48, Son, English Only",
+       "prev": [],
+       "next": []
+      }
+     ]
+    },
+    {
+     "label": "Household 3",
+     "url": "https://nationalarchives.ie/collections/search-the-1926-census/view-1926-pdf/?doc=Meenadreen_0508_0014_0012_0_00023.pdf",
+     "people": [
+      {
+       "obs": "census1926:tullynaught:2775799",
+       "name": "Michael Gildea",
+       "age": 75,
+       "relation": "Daughter",
+       "marital": "Single",
+       "occupation": "",
+       "language": "English Only",
+       "birthplace": "",
+       "match": true,
+       "line": "Michael Gildea, age 75, Daughter, English Only",
+       "prev": [],
+       "next": []
+      }
+     ]
+    }
+   ],
+   "association": {
+    "basis": "surname",
+    "label": "Each household listed has at least one person whose surname is written to match. Names, ages and townland are as the return recorded them."
    },
    "source": {
     "label": "National Archives of Ireland, census of Ireland, 1926",
@@ -536,18 +4894,33 @@
    "note": "The groom and bride are written as the father and mother. Surnames differ in spelling: Quigly and Quigley."
   },
   {
-   "from": "gildea:census:1901",
-   "to": "gildea:census:1911",
+   "from": "gildea:census:1901:clogher:cullionboy",
+   "to": "gildea:census:1911:clogher:cullionboy",
    "kind": "accepted",
-   "label": "3 reviewed",
-   "note": "3 people linked between these returns in the review: James Gildea; Ellen Gildea; Mary Gildea."
+   "label": "Reviewed link",
+   "note": "3 people linked between these returns in the review: James Gildea (age 40) and James Gildea (age 52); Ellen Gildea (age 44) and Ellen Gildea (age 56); Mary Gildea (age 42) and Mary Gildea (age 54)."
   },
   {
-   "from": "gildea:census:1911",
-   "to": "gildea:census:1926",
+   "from": "gildea:census:1911:clogher:cullionboy",
+   "to": "gildea:census:1926:clogher:collinboy",
    "kind": "accepted",
-   "label": "3 reviewed",
-   "note": "3 people linked between these returns in the review: Ellen Gildea; Mary Gildea; Patrick Gildea."
+   "label": "Reviewed link",
+   "note": "3 people linked between these returns in the review: Ellen Gildea (age 56) and Ellen Gildea (age 72); Mary Gildea (age 54) and Mary Gildea (age 76); Patrick Gildea (age 60) and Patrick Gildea (age 75)."
+  },
+  {
+   "from": "gildea:marriage:TAW-M-p040-r56",
+   "to": "gildea:census:1901:clogher:druminnin",
+   "kind": "household",
+   "label": "Couple in household",
+   "note": "The groom and bride are written as the head and wife of this household. The return gives no years married. Matched on names only, not reviewed."
+  },
+  {
+   "from": "gildea:marriage:TAW-M-p040-r56",
+   "to": "gildea:census:1911:clogher:druminnin",
+   "kind": "household",
+   "label": "Couple in household",
+   "note": "The groom and bride are written as the head and wife of this household. The return gives 34 years married, which fits the marriage date. Matched on names only, not reviewed."
   }
- ]
+ ],
+ "held_open": []
 }

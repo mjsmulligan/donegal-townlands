@@ -199,6 +199,7 @@ def load_census(directory: Path) -> list[dict]:
                         "born": _int(r["children_born_alive"]), "loc": r["a_id"],
                         "marital_raw": _clean(r["updated_marriage"]), "occ": "",
                         "birth": _clean(r["birthplace_county"]), "ref": r["aform_name"],
+                        "lang": _clean(r.get("updated_irish_language")),
                     }
                 else:
                     row = {
@@ -214,6 +215,7 @@ def load_census(directory: Path) -> list[dict]:
                         "marital_raw": _clean(r["marriage_status"]),
                         "occ": _clean(r.get("occupation_updated")) or _clean(r.get("occupation")),
                         "birth": _clean(r.get("birthplace")), "ref": _first_image(r.get("images")),
+                        "lang": _clean(r.get("language_updated")) or _clean(r.get("language")),
                     }
                 row["obs"] = f"census{row['year']}:{row['ded'].lower()}:{row['loc']}"
                 if row["obs"] in seen:
