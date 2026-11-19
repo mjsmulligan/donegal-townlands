@@ -57,6 +57,14 @@ h1{font:300 clamp(48px,9vw,96px)/1 var(--display);letter-spacing:-.015em;margin:
 .ev.linked .card{border-color:var(--hill-d);box-shadow:0 0 0 2px var(--hill-d)}
 .linknote{font-size:13px;color:var(--ink2)}
 .linknote a{color:var(--ink);font-weight:500}
+.hh{margin-top:2px}
+.hh h3{font:500 14px var(--body);margin:12px 0 4px;color:var(--ink)}
+.hh h3 a{font-weight:400;font-size:13px}
+.hh ul{list-style:none;padding:0;margin:0}
+.hh li{font-size:14px;line-height:1.4;padding:5px 0;border-top:1px solid var(--rule);color:var(--ink2)}
+.hh li.match{color:var(--ink);font-weight:500}
+.hh .jump{display:block;font-size:13px;font-weight:400;color:var(--ink2);margin-top:2px}
+.hh .jump a{color:var(--ink);font-weight:500}
 
 .ev{flex:0 0 min(330px,82vw);scroll-snap-align:center;position:relative;padding:52px 12px 0}
 .ev::before{content:"";position:absolute;left:0;right:0;top:20px;height:2px;background:var(--rule)}
@@ -121,6 +129,7 @@ var D={"townland":"Cullionboy","events":[{"id":"cullionboy:valuation:griffiths",
   var evs=D.events, items=[], reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches;
 
   function yearOf(e){return parseInt(e.sort.slice(0,4),10)}
+  function indexOfId(id){for(var i=0;i<evs.length;i++){if(evs[i].id===id) return i;} return -1;}
   function gapLabel(a,b){
     var n=yearOf(b)-yearOf(a), approx=a.approximate_sort||b.approximate_sort;
     if(n<2) return null;
@@ -134,12 +143,31 @@ var D={"townland":"Cullionboy","events":[{"id":"cullionboy:valuation:griffiths",
     (e.media||[]).forEach(function(m){var f=h('figure',{class:'frame'}); f.append(h('img',{src:m.url,alt:m.alt,loading:'lazy'}),h('figcaption',{text:m.caption+(m.date?' ('+m.date+')':'')+'. '+m.source+'.'})); c.append(f);});
     if(e.text) c.append(h('p',{class:'people',text:e.text}));
     if(e.milestone && D.walk) c.append(h('a',{class:'gate',href:D.walk,text:'Explore the townland page'}));
+    if(e.households&&e.households.length){
+      var np=0; e.households.forEach(function(x){np+=x.people.length});
+      var hd=h('details',{class:'hh'}); hd.append(h('summary',{text:'Who was recorded ('+np+(np===1?' person':' people')+' in '+e.households.length+(e.households.length===1?' household':' households')+')'}));
+      e.households.forEach(function(x){
+        var t=h('h3',{text:x.label}); if(x.url){t.append(' ',h('a',{href:x.url,target:'_blank',rel:'noopener',text:'(the return)'}))}
+        hd.append(t);
+        var ul=h('ul');
+        x.people.forEach(function(p){
+          var pl=h('li',{class:p.match?'match':''},p.line);
+          (p.prev||[]).forEach(function(r){var i=indexOfId(r.event); if(i>=0) pl.append(h('span',{class:'jump'},'Earlier return: ',h('a',{href:'#ev-'+i,'data-go':i,text:r.text})));});
+          (p.next||[]).forEach(function(r){var i=indexOfId(r.event); if(i>=0) pl.append(h('span',{class:'jump'},'Later return: ',h('a',{href:'#ev-'+i,'data-go':i,text:r.text})));});
+          ul.append(pl);
+        });
+        hd.append(ul);
+      });
+      c.append(hd);
+    }
+    var notes=[];
     (D.links||[]).forEach(function(l){
       var other=l.from===e.id?l.to:(l.to===e.id?l.from:null); if(!other) return;
-      var o=evs.filter(function(x){return x.id===other})[0]; if(!o) return;
-      var oi=evs.indexOf(o);
-      c.append(h('p',{class:'linknote'},(l.from===e.id?'Followed by: ':'Follows: '),h('a',{href:'#ev-'+oi,'data-go':oi,text:o.title+' ('+o.date.label+')'}),'. '+l.note));
+      var oi=indexOfId(other); if(oi<0) return; var o=evs[oi];
+      notes.push(h('p',{class:'linknote'},(l.from===e.id?'Followed by: ':'Follows: '),h('a',{href:'#ev-'+oi,'data-go':oi,text:o.title+' ('+o.date.label+')'}),'. '+(l.label?l.label+'. ':'')+l.note));
     });
+    notes.slice(0,3).forEach(function(n){c.append(n)});
+    if(notes.length>3){var more=h('details'); more.append(h('summary',{text:(notes.length-3)+' more link'+(notes.length-3===1?'':'s')})); notes.slice(3).forEach(function(n){more.append(n)}); c.append(more);}
     c.append(h('p',{class:'assoc'+(e.association.basis.indexOf('doubt')>=0?' doubt':''),text:e.association.label}));
     var d=h('details'); d.append(h('summary',{text:'About this record'}));
     if(e.recorded) d.append(h('p',{text:'As written: '+e.recorded}));
