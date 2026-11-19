@@ -137,6 +137,17 @@ class RealCaseTests(unittest.TestCase):
             self.assertIn('Clogher.', e['association']['label'])
             self.assertTrue(e['title'].startswith('Baptism of '))
 
+    def test_goladoo_is_a_place_only_case_with_no_valuation_and_no_photo(self):
+        feed = bt.events_for('goladoo', TODAY)
+        types = [e['type'] for e in feed['events']]
+        self.assertEqual(feed['town']['name'], 'Goladoo')
+        self.assertNotIn('valuation', types)
+        self.assertEqual(types.count('census'), 3)
+        self.assertEqual(types.count('baptism'), 7)
+        for e in feed['events']:
+            if e['type'] == 'baptism':
+                self.assertIn('Goladoo.', e['association']['label'])
+
     def test_valuation_is_approximate(self):
         feed = bt.events_for('cullionboy', TODAY)
         val = [e for e in feed['events'] if e['type'] == 'valuation'][0]

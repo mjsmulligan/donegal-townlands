@@ -249,11 +249,22 @@ def media_items(name):
     return found, background, by_event, unplaced
 
 
+def case_identity(base):
+    """The case's name and census spellings. An authored townland.json wins. A case that is only a
+    Logainm place record (no authored files) takes its name from place.json, so every case can have
+    a timeline from the records it holds."""
+    authored = base / 'townland.json'
+    if authored.is_file():
+        return json.loads(authored.read_text(encoding='utf-8'))
+    place = json.loads((base / 'place.json').read_text(encoding='utf-8'))
+    return {'name': place['name_en'], 'census_spelling': {}}
+
+
 def events_for(name, today=None):
     """The event feed for one case: {'events': [...], 'skipped': [...], 'town': {...}}"""
     today = today or datetime.date.today()
     base = ROOT / 'townlands' / name
-    town = json.loads((base / 'townland.json').read_text(encoding='utf-8'))
+    town = case_identity(base)
     spell = town.get('census_spelling', {})
     display = town.get('name', name.title())
     events = []
@@ -275,8 +286,8 @@ def media_item(found, r):
 
 def build_timeline(name, today=None):
     base = ROOT / 'townlands' / name
-    if not (base / 'townland.json').is_file():
-        sys.exit('No townland.json for ' + name + ': a timeline needs an authored case.')
+    if not ((base / 'townland.json').is_file() or (base / 'place.json').is_file()):
+        sys.exit('No townland.json or place.json for ' + name + ': a timeline needs a case.')
     found, background, by_event, unplaced = media_items(name)
     if found['errors']:
         print(name + ': media problems, timeline not built:')
