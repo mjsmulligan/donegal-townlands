@@ -54,20 +54,11 @@ h1{font:300 clamp(48px,9vw,96px)/1 var(--display);letter-spacing:-.015em;margin:
 /* the chronology */
 .track{list-style:none;padding:0;margin:0;display:flex;align-items:flex-start;gap:0;overflow-x:auto;scroll-snap-type:x mandatory;
   scroll-padding-inline:18px;padding-bottom:22px;-webkit-overflow-scrolling:touch}
-.track{position:relative}
-.track.has-links{padding-top:52px}
 .track:focus-visible{outline-offset:6px}
-.links{position:absolute;left:0;top:0;pointer-events:none;overflow:visible}
-.links path.arc{fill:none;stroke:var(--hill-d);stroke-width:2.5}
-.links path.arc.names{stroke-dasharray:6 5}
-.links path.hit{fill:none;stroke:transparent;stroke-width:16;pointer-events:stroke;cursor:help}
-.links g.lk:hover path.arc,.links g.lk:focus path.arc{stroke-width:4}
-.links text{font:500 12px var(--body);fill:var(--ink2);text-anchor:middle;paint-order:stroke;stroke:var(--paper);stroke-width:5px}
 .ev.linked .card{border-color:var(--hill-d);box-shadow:0 0 0 2px var(--hill-d)}
 .linknote{font-size:13px;color:var(--ink2)}
-.legend{font-size:13px;color:var(--ink2);margin:0 0 8px}
-.track.list .links{display:none}
-.track.list.has-links{padding-top:0}
+.linknote a{color:var(--ink);font-weight:500}
+
 .ev{flex:0 0 min(330px,82vw);scroll-snap-align:center;position:relative;padding:44px 12px 0}
 .ev::before{content:"";position:absolute;left:0;right:0;top:20px;height:2px;background:var(--rule)}
 .ev::after{content:"";position:absolute;left:12px;top:13px;width:16px;height:16px;border-radius:50%;background:var(--hill-d);border:3px solid var(--wall)}
@@ -119,7 +110,6 @@ footer p+p{margin-top:6px}
     <span class="spacer"></span>
     <button class="btn" id="mode" type="button" aria-pressed="false">Show as a list</button>
   </div>
-  <p class="legend" id="legend" hidden></p>
   <ol class="track" id="track" tabindex="0" aria-label="Events in date order. Use the left and right arrow keys, or swipe."></ol>
   <footer><p class="small" id="credit"></p><p class="small" id="srcnote">Baptism records come from our own transcription of the register images held by the National Library of Ireland.</p></footer>
 </main>
@@ -141,7 +131,7 @@ var D=__DATA__;
     return (approx?'about ':'')+n+' years';
   }
   function card(e){
-    var li=h('li',{class:'ev'+(e.milestone?' milestone':''),'data-id':e.id});
+    var li=h('li',{class:'ev'+(e.milestone?' milestone':''),'data-id':e.id,id:'ev-'+evs.indexOf(e)});
     li.append(h('span',{class:'year',text:e.date.kind==='range'?'1850s':e.date.label.split(' ').pop()}));
     var c=h('div',{class:'card'});
     c.append(h('span',{class:'kind',text:KIND[e.type]||e.type}), h('h2',{text:e.title}), h('p',{class:'when',text:e.date.label+(e.place?', '+e.place:'')}));
@@ -151,7 +141,8 @@ var D=__DATA__;
     (D.links||[]).forEach(function(l){
       var other=l.from===e.id?l.to:(l.to===e.id?l.from:null); if(!other) return;
       var o=evs.filter(function(x){return x.id===other})[0]; if(!o) return;
-      c.append(h('p',{class:'linknote',text:(l.from===e.id?'Followed by: ':'Follows: ')+o.title+' ('+o.date.label+'). '+l.note}));
+      var oi=evs.indexOf(o);
+      c.append(h('p',{class:'linknote'},(l.from===e.id?'Followed by: ':'Follows: '),h('a',{href:'#ev-'+oi,'data-go':oi,text:o.title+' ('+o.date.label+')'}),'. '+l.note));
     });
     c.append(h('p',{class:'assoc'+(e.association.basis.indexOf('doubt')>=0?' doubt':''),text:e.association.label}));
     var d=h('details'); d.append(h('summary',{text:'About this record'}));
@@ -165,29 +156,6 @@ var D=__DATA__;
     var li=card(e); track.append(li); items.push(li);
   });
 
-  function drawLinks(){
-    var old=track.querySelector('svg.links'); if(old) old.remove();
-    var L=D.links||[]; if(!L.length||track.classList.contains('list')){track.classList.remove('has-links');return;}
-    track.classList.add('has-links');
-    var NS='http://www.w3.org/2000/svg', svg=document.createElementNS(NS,'svg'); svg.setAttribute('class','links');
-    svg.setAttribute('width',track.scrollWidth); svg.setAttribute('height',60);
-    var idx={}; items.forEach(function(li,i){idx[evs[i].id]=li;});
-    L.forEach(function(l){
-      var a=idx[l.from], b=idx[l.to]; if(!a||!b) return;
-      var x1=a.offsetLeft+20, x2=b.offsetLeft+20, y=73, span=Math.abs(x2-x1), top=Math.max(8,52-Math.min(44,span/40));
-      var g=document.createElementNS(NS,'g'); g.setAttribute('class','lk'); g.setAttribute('tabindex','0');
-      var d='M'+x1+','+y+' C'+x1+','+top+' '+x2+','+top+' '+x2+','+y;
-      var t=document.createElementNS(NS,'title'); t.textContent=l.label+'. '+l.note; g.append(t);
-      var arc=document.createElementNS(NS,'path'); arc.setAttribute('d',d); arc.setAttribute('class','arc '+l.kind);
-      var hit=document.createElementNS(NS,'path'); hit.setAttribute('d',d); hit.setAttribute('class','hit');
-      var tx=document.createElementNS(NS,'text'); tx.setAttribute('x',(x1+x2)/2); tx.setAttribute('y',Math.max(14,top*0.75+10)); tx.textContent=l.label;
-      g.append(arc,hit,tx);
-      function on(){a.classList.add('linked');b.classList.add('linked')} function off(){a.classList.remove('linked');b.classList.remove('linked')}
-      g.addEventListener('mouseenter',on);g.addEventListener('mouseleave',off);g.addEventListener('focus',on);g.addEventListener('blur',off);
-      svg.append(g);
-    });
-    track.prepend(svg);
-  }
   function current(){
     if(track.scrollLeft<=2) return 0;
     if(track.scrollLeft+track.clientWidth>=track.scrollWidth-2) return items.length-1;
@@ -215,13 +183,18 @@ var D=__DATA__;
   var mode=document.getElementById('mode');
   mode.addEventListener('click',function(){
     var on=track.classList.toggle('list'); mode.setAttribute('aria-pressed',on?'true':'false');
-    mode.textContent=on?'Show as a strip':'Show as a list'; update(); drawLinks(); document.getElementById('legend').hidden=on||!(D.links||[]).length;
+    mode.textContent=on?'Show as a strip':'Show as a list'; update();
   });
-  window.addEventListener('resize',function(){update();drawLinks()});
+  window.addEventListener('resize',update);
   update();
-  if((D.links||[]).length){var lg=document.getElementById('legend'); lg.hidden=false;
-    lg.textContent='Arcs join records that belong together. Dashed: the names match as written, nothing more. Solid: links you have reviewed and accepted.';
-    drawLinks(); window.addEventListener('load',drawLinks);}
+  track.addEventListener('click',function(ev){
+    var a=ev.target.closest&&ev.target.closest('a[data-go]'); if(!a) return;
+    ev.preventDefault();
+    var li=items[parseInt(a.getAttribute('data-go'),10)]; if(!li) return;
+    li.scrollIntoView({behavior:reduce?'auto':'smooth',inline:'center',block:'center'});
+    li.classList.add('linked'); setTimeout(function(){li.classList.remove('linked')},2200);
+    var f=li.querySelector('summary'); if(f&&li.querySelector('.card')) li.querySelector('.card').setAttribute('tabindex','-1'), li.querySelector('.card').focus({preventScroll:true});
+  });
 
   if(D.background){document.getElementById('bg').style.backgroundImage='url("'+D.background.url.replace(/"/g,'%22')+'")';}
   if(D.lede) document.getElementById('lede').textContent=D.lede;
