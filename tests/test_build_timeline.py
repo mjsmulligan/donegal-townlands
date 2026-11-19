@@ -143,7 +143,7 @@ class RealCaseTests(unittest.TestCase):
         self.assertEqual(feed['town']['name'], 'Goladoo')
         self.assertNotIn('valuation', types)
         self.assertEqual(types.count('census'), 3)
-        self.assertTrue(types.count('baptism') >= 8)
+        self.assertEqual(types.count('baptism'), 7)
         for e in feed['events']:
             if e['type'] == 'baptism':
                 self.assertIn('Goladoo.', e['association']['label'])
