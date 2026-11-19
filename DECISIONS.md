@@ -141,3 +141,7 @@
 ## 2026-11-19: Family timeline experiment (Gildea)
 
 An experiment beside the townland timeline: `python tools/build_family_timeline.py <Surname>` builds `docs/families/<slug>.html` from the same template, with the event feed in `data/processed/family_timelines/<slug>.json`. The unit is a surname across every townland held, not a person. Events: register baptisms (parent surname, 100+ years) and marriages (groom or bride surname, 75+ years, no townland shown), Griffith's Valuation per townland, and one census event per year with counts by townland. Sponsors and witnesses are not matched. The page states that a surname match does not mean the people are related. Pilot: Gildea (verified family Gildea, Guildea). Census townland names are shown as recorded, so spelling variants of one townland appear separately. Not linked from the townland pages. Mike to judge whether to keep it.
+
+## 2026-11-19: Links on the family timeline
+
+The family timeline draws arcs between cards. Dashed arcs join a marriage to a later baptism (within 15 years) where the groom and bride are written as the father and mother: forenames equal and surnames equal, in the same dictionary family, or similar in spelling (stated on the card). They assert only that the names match, not that the people are the same. Solid arcs join census years for people whose links Mike has accepted in `census_links.csv`; nothing else is drawn for census. No census to baptism or marriage links until Mike decides them. The marriage to baptism rule is in `tools/build_family_timeline.py`.

@@ -534,5 +534,56 @@
     "reference": "1926"
    }
   }
+ ],
+ "links": [
+  {
+   "from": "gildea:marriage:TAW-M-p037-r11",
+   "to": "gildea:baptism:TAW-B-p023-r1904",
+   "kind": "names",
+   "label": "Same parents' names",
+   "note": "The groom and bride are written as the father and mother."
+  },
+  {
+   "from": "gildea:marriage:TAW-M-p037-r11",
+   "to": "gildea:baptism:TAW-B-p035-r103b",
+   "kind": "names",
+   "label": "Same parents' names",
+   "note": "The groom and bride are written as the father and mother."
+  },
+  {
+   "from": "gildea:marriage:TAW-M-p039-r46",
+   "to": "gildea:baptism:TAW-B-p034-r93",
+   "kind": "names",
+   "label": "Same parents' names",
+   "note": "The groom and bride are written as the father and mother."
+  },
+  {
+   "from": "gildea:marriage:TAW-M-p040-r56",
+   "to": "gildea:baptism:TAW-B-p029-r2014",
+   "kind": "names",
+   "label": "Same parents' names",
+   "note": "The groom and bride are written as the father and mother."
+  },
+  {
+   "from": "gildea:marriage:TAW-M-p041-r66",
+   "to": "gildea:baptism:TAW-B-p029-r2015",
+   "kind": "names",
+   "label": "Same parents' names",
+   "note": "The groom and bride are written as the father and mother. Surnames differ in spelling: Quigly and Quigley."
+  },
+  {
+   "from": "gildea:census:1901",
+   "to": "gildea:census:1911",
+   "kind": "accepted",
+   "label": "3 reviewed",
+   "note": "3 people linked between these returns in the review: James Gildea; Ellen Gildea; Mary Gildea."
+  },
+  {
+   "from": "gildea:census:1911",
+   "to": "gildea:census:1926",
+   "kind": "accepted",
+   "label": "3 reviewed",
+   "note": "3 people linked between these returns in the review: Ellen Gildea; Mary Gildea; Patrick Gildea."
+  }
  ]
 }

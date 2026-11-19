@@ -25,7 +25,7 @@ interpreted beyond that.
 
 Writes data/processed/family_timelines/<slug>.json (the event feed) and docs/families/<slug>.html.
 """
-import csv, datetime, glob, json, pathlib, re, sys
+import csv, datetime, difflib, glob, json, pathlib, re, sys
 try:
     from tools import build, build_timeline as bt
 except ImportError:                  # run as a script: python tools/build_family_timeline.py
@@ -221,6 +221,80 @@ def census_events(slug_, spellings):
     return events
 
 
+def surname_relation(a, b, spellings):
+    """How two surnames as normalised compare: 'same', 'family' (both in the dictionary family studied),
+    'similar' (spelling differs slightly, same first letter) or None."""
+    a, b = (a or '').strip().lower(), (b or '').strip().lower()
+    if not a or not b:
+        return None
+    if a == b:
+        return 'same'
+    fam = {x.lower() for x in spellings}
+    if a in fam and b in fam:
+        return 'family'
+    if a[0] == b[0] and difflib.SequenceMatcher(None, a, b).ratio() >= 0.85:
+        return 'similar'
+    return None
+
+
+def _first(forename):
+    return (forename or '').strip().lower().split(' ')[0]
+
+
+def marriage_baptism_links(events, spellings, register_dir=None, max_years=15):
+    """A marriage and a later baptism where the groom and bride are written as the father and mother.
+    The match is on forenames and surnames as normalised by the project, nothing more."""
+    base = pathlib.Path(register_dir) if register_dir else REG / 'normalised'
+    mar = {r['row_id']: r for r in read_csv(base / 'tawnawilly_marriages_normalised.csv')}
+    bap = {r['row_id']: r for r in read_csv(base / 'tawnawilly_baptisms_normalised.csv')}
+    links = []
+    for m in (e for e in events if e['type'] == 'marriage'):
+        mr = mar.get(m['id'].split(':')[-1])
+        if not mr:
+            continue
+        for b in (e for e in events if e['type'] == 'baptism'):
+            br = bap.get(b['id'].split(':')[-1])
+            if not br or not (0 < int(b['sort'][:4]) - int(m['sort'][:4]) + 0.5 <= max_years + 1) or b['sort'] <= m['sort']:
+                continue
+            if _first(mr['groom_forename']) != _first(br['father_forename']) or _first(mr['bride_forename']) != _first(br['mother_forename']):
+                continue
+            g = surname_relation(mr['groom_surname'], br['father_surname'], spellings)
+            w = surname_relation(mr['bride_surname'], br['mother_surname'], spellings)
+            if not g or not w:
+                continue
+            note = "The groom and bride are written as the father and mother."
+            diff = [f"{x} and {y}" for x, y, r in ((mr['groom_surname'], br['father_surname'], g), (mr['bride_surname'], br['mother_surname'], w)) if x.lower() != y.lower()]
+            if diff:
+                note += ' Surnames differ in spelling: ' + '; '.join(diff) + '.'
+            links.append({'from': m['id'], 'to': b['id'], 'kind': 'names', 'label': 'Same parents\' names', 'note': note})
+    return links
+
+
+def census_accepted_links(events, spellings, path=None):
+    """Census links Mike has accepted (data/research/associations/census_links.csv), counted per pair of
+    census years for people whose surname belongs to the family. Only accepted links are drawn."""
+    path = pathlib.Path(path) if path else ROOT / 'data' / 'research' / 'associations' / 'census_links.csv'
+    if not path.is_file():
+        return []
+    ids = {e['id']: e for e in events if e['type'] == 'census'}
+    pairs = {}
+    for r in read_csv(path):
+        if r.get('status') != 'accepted':
+            continue
+        if not matches([surname_of(r['from_name']), surname_of(r['to_name'])], spellings):
+            continue
+        y1, y2 = r['from_obs'][6:10], r['to_obs'][6:10]
+        pairs.setdefault((y1, y2), []).append(r['from_name'] if r['from_name'] == r['to_name'] else r['from_name'] + ' / ' + r['to_name'])
+    links = []
+    for (y1, y2), names in sorted(pairs.items()):
+        a = next((i for i in ids if i.endswith(':census:' + y1)), None)
+        b = next((i for i in ids if i.endswith(':census:' + y2)), None)
+        if a and b:
+            links.append({'from': a, 'to': b, 'kind': 'accepted', 'label': f'{len(names)} reviewed',
+                          'note': f'{len(names)} people linked between these returns in the review: ' + '; '.join(names) + '.'})
+    return links
+
+
 def events_for(surname, today=None):
     today = today or datetime.date.today()
     label, spellings = family_for(surname)
@@ -228,7 +302,8 @@ def events_for(surname, today=None):
     events = (baptism_events(s, spellings, today) + marriage_events(s, spellings, today)
               + valuation_events(s, spellings) + census_events(s, spellings))
     events.sort(key=lambda e: (e['sort'], TYPE_ORDER.get(e['type'], 9), e['id']))
-    return {'label': label, 'slug': s, 'spellings': spellings, 'events': events}
+    links = marriage_baptism_links(events, spellings) + census_accepted_links(events, spellings)
+    return {'label': label, 'slug': s, 'spellings': spellings, 'events': events, 'links': links}
 
 
 def build_family(surname, today=None):
@@ -240,13 +315,13 @@ def build_family(surname, today=None):
     out.mkdir(parents=True, exist_ok=True)
     (out / (feed['slug'] + '.json')).write_text(json.dumps(
         {'family': feed['label'], 'spellings': feed['spellings'], 'generated_by': 'tools/build_family_timeline.py',
-         'events': feed['events']}, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
+         'events': feed['events'], 'links': feed['links']}, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
     spell = ' or '.join(feed['spellings']) if len(feed['spellings']) < 3 else ', '.join(feed['spellings'][:-1]) + ' or ' + feed['spellings'][-1]
     payload = {
-        'townland': feed['label'], 'events': feed['events'], 'background': None, 'walk': '',
+        'townland': feed['label'], 'events': feed['events'], 'links': feed['links'], 'background': None, 'walk': '',
         'lede': f'A timeline of the records that name {feed["label"]}, across every townland held.',
         'honest': f'Each event is a record where the surname is written {spell}. It is the surname that is matched, not a person: '
-                  'nothing here says the people named are related, and none has been linked to another. '
+                  'nothing here says the people named are related. The only joins are the arcs, each labelled with its basis. '
                   'Names are spelled as written. Sponsors and witnesses are not counted.',
         'sources': 'Baptisms and marriages come from our own transcription of the register images held by the National Library of Ireland. '
                    "Griffith's Valuation details come from the askaboutireland.ie index or from our own transcription of the page, as each event says.",
@@ -261,7 +336,7 @@ def build_family(surname, today=None):
     counts = {}
     for e in feed['events']:
         counts[e['type']] = counts.get(e['type'], 0) + 1
-    print(feed['label'] + ' (' + ', '.join(feed['spellings']) + '): ' + ', '.join(f'{n} {t}' for t, n in sorted(counts.items())) + '.')
+    print(f"{len(feed['links'])} links."); print(feed['label'] + ' (' + ', '.join(feed['spellings']) + '): ' + ', '.join(f'{n} {t}' for t, n in sorted(counts.items())) + '.')
     return 0
 
 
