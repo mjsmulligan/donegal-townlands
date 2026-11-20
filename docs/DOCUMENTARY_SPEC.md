@@ -305,7 +305,7 @@ Order: DP1, DP2, DP3, then DP4 and DP5, then DP6, DP7, then DP9. DP8 any time af
 
 | ID | Item | Default until decided |
 |---|---|---|
-| O1 | Decided 2026-11-20 (D9): the documentary replaces the walk. Still open: whether the standalone townland timeline pages stay as their own pages or become only the paused view inside the documentary. | Timeline pages stay as they are. |
+| O1 | Closed 2026-11-20. The documentary replaces the walk (D9). The standalone townland timeline pages stay as they are. | Decided |
 | O2 | Narration voice: synthetic, or recordings in Mike's own voice for key chapters. | Captions only. |
 | O3 | Music: own recordings, public domain traditional airs, or licensed tracks. | No music. |
 | O4 | Whether the townland pages link to the family timelines now that the documentary is the shared home. This was held on 2026-11-19 until the big picture was settled. | Still held. Family thread only inside the documentary. |
