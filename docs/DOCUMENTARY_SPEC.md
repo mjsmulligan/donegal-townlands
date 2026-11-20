@@ -20,7 +20,8 @@ In scope:
 - Captions as the first form of narration, written in the story voice of `docs/STORY_SPEC.md`.
 - A "follow this family" thread inside a townland chapter.
 - Phone first, with a desktop layout of the same stage.
-- A Cullionboy pilot, then a rollout to every case that has enough records.
+- A Cullionboy pilot, then a rollout to every case.
+- Replacing the townland walk as the main page of every townland (D9). Nothing the walk shows today may be lost in the move (DOC-25).
 
 Out of scope for the first release:
 - Recorded or synthetic audio narration, and background music. The schema reserves room for both (section 3.4).
@@ -40,6 +41,7 @@ Out of scope for the first release:
 | D6 | The generator never invents a story for a gap in the record. Absence from a return is not told as a departure (STORY_SPEC, "Absence and departure"). | Proposed |
 | D7 | Sound is off by default. Captions are always available. Audio is never the only carrier of any fact. | Proposed |
 | D8 | Work is on branch `feature/documentary` and reviewed before merging to main. | Proposed |
+| D9 | The documentary replaces the townland walk as the main page of every townland. The walk's plates, painted scenes, Griffith's, census and Photos content stay reachable inside the documentary in Explore mode. The walk is retired only at a cutover that Mike approves, after parity is shown (DP9). Nothing is deleted without being asked (`CLAUDE.md`). | Agreed 2026-11-20 |
 
 Note on D5. The standing story rule allows no hedges on the page. Mike agreed on 2026-11-20 that this was too rigid for the documentary, and that "possibly" suits better than "probably". The rule is:
 
@@ -224,7 +226,9 @@ The 100/75/50 rule applies to every beat built from information the project hold
 | DOC-18 | At 375 px the page has no horizontal scroll and controls are reachable. At 1440 px the map sits beside the cards. | M | Render tests at both widths. |
 | DOC-19 | With reduced motion the camera cuts and nothing auto-advances. | M | Render test with the media query forced. |
 | DOC-20 | Space, arrows and Escape work. Every image has alt text. | M | Keyboard and alt text render tests. |
-| DOC-21 | A townland page built without a documentary is unchanged. | M | Rebuild shows no diff for those pages. |
+| DOC-21 | Before cutover, every existing walk page is unchanged by this work. | M | Rebuild shows no diff for walk pages. |
+| DOC-25 | Parity. Every plate and tab the walk offers for a townland (title, Griffith's, census years, family plates with their year tabs and Photos tab, the media enlarge view, the records panel) is reachable in Explore mode with the same content. | M | A render test compares the walk's plate and tab list to the documentary's for Cullionboy, Clogher and a Logainm only case. |
+| DOC-26 | After cutover `docs/<name>/index.html` is the documentary, and every old `#` link into a walk plate lands on the matching card. | M | Render test over a set of old fragment links. |
 
 ### 5.3 Governance
 
@@ -278,7 +282,7 @@ The 100/75/50 rule applies to every beat built from information the project hold
 ### DP7 Rollout
 - **Goal:** build a documentary for every case with enough records and update status notes.
 - **Outputs:** `python tools/build_documentary.py --all`, committed separately from the code.
-- **Requirements:** DOC-10, DOC-21, DOC-23, DOC-24.
+- **Requirements:** DOC-10, DOC-21, DOC-23, DOC-24. Documentaries are built beside the walk pages, not in place of them.
 - **Size:** S.
 - **Acceptance:** pages without a documentary are unchanged.
 
@@ -288,13 +292,20 @@ The 100/75/50 rule applies to every beat built from information the project hold
 - **Size:** M.
 - **Acceptance:** not started until Mike chooses.
 
-Order: DP1, DP2, DP3, then DP4 and DP5, then DP6, DP7. DP8 any time after DP4.
+### DP9 Cutover
+- **Goal:** make the documentary the main page and retire the walk from the build, once parity is shown.
+- **Outputs:** `tools/build.py` writes the documentary to `docs/<name>/index.html`, `docs/index.html` map cards link to it, `CLAUDE.md` layout section updated, a short note in `DECISIONS.md`. Walk template and old pages are kept in git history. Nothing is deleted without Mike's say so.
+- **Requirements:** DOC-22, DOC-25, DOC-26.
+- **Size:** M.
+- **Acceptance:** DOC-25 passes for every case, Mike has played Cullionboy and one thin case on his phone and approves the switch.
+
+Order: DP1, DP2, DP3, then DP4 and DP5, then DP6, DP7, then DP9. DP8 any time after DP4. DP4 must be built to reuse the walk's scenes and plates so DP9 is a switch, not a rewrite.
 
 ## 7. Open items
 
 | ID | Item | Default until decided |
 |---|---|---|
-| O1 | Whether the documentary replaces the townland walk as the main page, sits beside it, or only links to it. The concept paper suggests the walk becomes the arrival scene. | Sits beside the walk and timeline, linked from both. Nothing existing changes. |
+| O1 | Decided 2026-11-20 (D9): the documentary replaces the walk. Still open: whether the standalone townland timeline pages stay as their own pages or become only the paused view inside the documentary. | Timeline pages stay as they are. |
 | O2 | Narration voice: synthetic, or recordings in Mike's own voice for key chapters. | Captions only. |
 | O3 | Music: own recordings, public domain traditional airs, or licensed tracks. | No music. |
 | O4 | Whether the townland pages link to the family timelines now that the documentary is the shared home. This was held on 2026-11-19 until the big picture was settled. | Still held. Family thread only inside the documentary. |
@@ -314,3 +325,4 @@ Order: DP1, DP2, DP3, then DP4 and DP5, then DP6, DP7. DP8 any time after DP4.
 | DP6 Family thread | Not started | |
 | DP7 Rollout | Not started | |
 | DP8 Sound | Deferred (O2, O3) | |
+| DP9 Cutover | Not started, needs Mike's approval after parity | |
