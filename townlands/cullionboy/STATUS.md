@@ -41,3 +41,6 @@ Claude Doc 845ed338-9fd0-41b6-9388-c94ad29267d4 still says "six children" for Be
 ## Kelly fact sheet conflicts (2026-11-09, WP21)
 - Joseph Kelly: a tree note gives age 47 at death, but the birth (8 Jun 1875) and death (27 Dec 1925) dates give 50. Held open. The Kellys story does not state his age at death.
 - Thomas Kelly: aged 60 in 1901 and 74 in 1911, a drift of 4 years against the 10 between returns. Held open. The story says "about sixty" in 1901.
+
+## Documentary (2026-11-20, DP2)
+`python tools/build_documentary.py cullionboy` writes `records/documentary.json` (10 beats: title, Griffith's, two baptism beats, three censuses, two change beats, closing). Generated, never edited by hand. Two baptism rows (TAW-B-p010-r115, TAW-B-p011-r123) are left out because their readings are disputed. The 1875 baptism beat says "possibly" for Joseph Kelly because the page place is blotted. Captions wait for Mike to read them aloud and sign off. Spec: `docs/DOCUMENTARY_SPEC.md`.
