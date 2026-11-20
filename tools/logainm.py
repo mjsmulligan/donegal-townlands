@@ -3,7 +3,7 @@
 
 Provenance: the response parsing and the child-townland query are adapted from
 GRA `src/ingest/fetch_places.py` (mjsmulligan/irish-genealogy-research, commit
-1dab647, PolyForm Noncommercial; Mike is the copyright holder). The database
+1dab647, PolyForm Noncommercial; the user is the copyright holder). The database
 code, the person-matching context and the CSV schema were not carried over.
 
 Commands:
@@ -319,7 +319,7 @@ def check(date: str) -> int:
         print(f"{len(flagged)} raw files hold fields that may be notes or citations (outside CC BY 4.0):")
         for key in keys:
             print(f"  {key}")
-        print("Do not commit raw files until Mike has decided.")
+        print("Do not commit raw files until the user has decided.")
     elif not errors:
         print("snapshot ok: checksums match, no note or citation fields found")
     return 1 if errors else 0

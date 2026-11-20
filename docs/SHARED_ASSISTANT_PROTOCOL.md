@@ -2,7 +2,7 @@
 
 **Sections 1 to 8 and 10 are the shared core.** Each repository keeps its own copy at `docs/SHARED_ASSISTANT_PROTOCOL.md`. The copies need not be byte-for-byte identical (see section 9), but neither may weaken the core.
 
-This protocol governs collaboration between AI assistants working with Mike across the Donegal Townlands and Grá repositories. It supplements, and never overrides, each repository's `AGENTS.md`, project documentation, source licences, privacy rules, or Mike's explicit instructions.
+This protocol governs collaboration between AI assistants working with the user across the Donegal Townlands and Grá repositories. It supplements, and never overrides, each repository's `AGENTS.md`, project documentation, source licences, privacy rules, or the user's explicit instructions.
 
 ## 1. Shared source of truth
 
@@ -23,7 +23,7 @@ This protocol governs collaboration between AI assistants working with Mike acro
 - For Donegal Townlands, Griffith's Valuation is foundational because it records land and occupation within townland boundaries. Census records, maps, church and civil records, and other historical sources add further dimensions to the history of the place.
 - For Donegal Townlands, present direct documentary evidence distinctly from analysis and interpretation, and distinguish both from conclusions. Preserve original recorded details, source provenance, uncertainty, and contradictory evidence. Identity matching can support family histories but must not become the primary purpose or organising structure of the project.
 - Donegal Townlands may inform Grá's research priorities and expose gaps. Neither repository depends on the other, and nothing here authorises automatic schema, scoring, or architecture changes in Grá.
-- There is no export contract between the repositories and no required data flow. Any code, data or design taken from one repository into the other is copied or referenced explicitly, with provenance and licence checked. Any future interface between the two needs design discussion and Mike's approval before implementation.
+- There is no export contract between the repositories and no required data flow. Any code, data or design taken from one repository into the other is copied or referenced explicitly, with provenance and licence checked. Any future interface between the two needs design discussion and the user's approval before implementation.
 - Preserve the evidence/conclusion boundary and all project-specific architecture rules. A presentation need must not weaken research integrity.
 
 ## 3. Start every task deliberately
@@ -42,7 +42,7 @@ Do not broaden a task because adjacent improvements seem attractive. Record foll
 - Prefer small, coherent changes that can be reviewed independently.
 - Preserve source provenance and uncertainty. Never silently turn a hypothesis into a fact or a candidate match into a confirmed identity.
 - Do not overwrite another assistant's unreviewed work. Inspect current diffs and repository state before editing or committing.
-- Do not delete files, history, published material, or source data unless Mike explicitly asks.
+- Do not delete files, history, published material, or source data unless the user explicitly asks.
 - Check provenance and redistribution rights before adding data, using the relevant repository's source register.
 - Follow all privacy and living-person restrictions in the relevant repository.
 - Never commit credentials, tokens, private configuration, or other secrets.
@@ -53,8 +53,8 @@ Do not broaden a task because adjacent improvements seem attractive. Record foll
 - Where practical, ask a different assistant to review independently. The reviewer should inspect the diff and relevant context, not simply endorse the implementer's summary.
 - Review correctness, scope, evidence quality, licensing, privacy, architectural boundaries, regressions, and fit to the request.
 - Report specific findings, with file and line references where possible. Distinguish blocking defects from suggestions.
-- The implementer should respond to each substantive finding. If assistants disagree, preserve the disagreement and present alternatives and consequences to Mike.
-- Mike decides unresolved questions and whether a change is accepted. Assistant approval is not a substitute for his approval where required.
+- The implementer should respond to each substantive finding. If assistants disagree, preserve the disagreement and present alternatives and consequences to the user.
+- The user decides unresolved questions and whether a change is accepted. Assistant approval is not a substitute for his approval where required.
 
 ## 6. Tests and validation
 
@@ -84,7 +84,7 @@ Keep durable project facts in repository documentation, not only in chat or assi
 - Before editing, check whether another assistant has changed relevant files or recorded in-progress work.
 - Use branches or clearly separated commits where possible. Avoid concurrent edits to the same files.
 - If assistants work in parallel, agree file ownership and interfaces first.
-- If a conflict occurs, do not silently choose a version. Preserve both proposals, explain the trade-off, and ask Mike.
+- If a conflict occurs, do not silently choose a version. Preserve both proposals, explain the trade-off, and ask the user.
 - A push is a transfer of work, not proof of review or acceptance. Include a handover with every push intended for another assistant.
 - Never assume assistants can see one another's conversations, private workspaces, or unpushed changes.
 
@@ -94,12 +94,12 @@ Keep durable project facts in repository documentation, not only in chat or assi
 - A repository may add project-specific wording to its copy, provided it supplements the shared core and does not contradict or weaken it, or the order of authority in section 10.
 - When the shared core itself changes, make the same change in the other repository as a follow-up, in its own pull request and in its own time. Say in the pull request that the other copy still needs updating.
 - Update each `AGENTS.md` only to link to this protocol and explain that it supplements repository-specific rules. Do not paraphrase the protocol in either `AGENTS.md`.
-- If the two copies differ in a way that matters to the task, follow the copy in the repository you are working in, and tell Mike about the difference.
+- If the two copies differ in a way that matters to the task, follow the copy in the repository you are working in, and tell the user about the difference.
 
 ## 10. Authority and escalation
 
 The order of authority is:
-1. Mike's explicit instructions and decisions.
+1. The user's explicit instructions and decisions.
 2. The current repository's project-specific rules and recorded decisions.
 3. This shared collaboration protocol.
 4. An assistant's proposed approach or preference.

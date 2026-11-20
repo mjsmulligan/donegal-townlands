@@ -289,7 +289,7 @@ function render(){
   const today = new Date().toISOString().slice(0, 10);
   const q = s => '"' + String(s).replace(/"/g, '""') + '"';
   document.getElementById("csv").value = "status,confidence,from_obs,to_obs,from_name,to_name,reviewer,date\n" +
-    out.map(r => [dec[r.k], r.conf, r.from.obs, r.to.obs, q(r.from.name), q(r.to.name), "Mike", today].join(",")).join("\n");
+    out.map(r => [dec[r.k], r.conf, r.from.obs, r.to.obs, q(r.from.name), q(r.to.name), "user", today].join(",")).join("\n");
 }
 document.addEventListener("click", e => {
   const t = e.target.closest("button"); if (!t) return;

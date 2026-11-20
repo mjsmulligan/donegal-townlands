@@ -2,8 +2,8 @@
 """Propose links between one person's rows in consecutive census returns (WP18).
 
 A census row is an observation. This tool proposes that a row in one return and a row in
-the next are the same person, with a method and a confidence, so that Mike can review the
-proposals. It decides nothing: every link is a proposal until Mike accepts it (WP19), and
+the next are the same person, with a method and a confidence, so that the user can review the
+proposals. It decides nothing: every link is a proposal until the user accepts it (WP19), and
 no inference is drawn from absence. See docs/CENSUS_GEDCOM_SPEC.md.
 
 Usage:
@@ -14,14 +14,14 @@ Usage:
     python tools/census_links.py calibrate [--census-dir DIR] [--records FILE] [--config FILE]
 
 `propose` writes one review CSV per DED to data/processed/census_links/ (not committed).
-`accept` records the decisions Mike copied from the review page (or an edited review CSV) in
+`accept` records the decisions the user copied from the review page (or an edited review CSV) in
 data/research/associations/census_links.csv (WP19). Only accepted and rejected rows are kept.
 Later runs of `propose` keep accepted links, never propose a rejected pair again, and do not
 let an accepted row compete for another link.
 `calibrate` reports, from the reviewed decisions, how often each confidence band, flag and pair of
 returns was accepted, with a cautious lower bound, and how many more error-free decisions a band
 needs before bulk accepting could be considered (WP23). It changes nothing and recommends nothing.
-`check` runs the matcher against the links Mike accepted between the tree and the census
+`check` runs the matcher against the links the user accepted between the tree and the census
 (data/research/associations/tree_census_links.csv) and reports how many it recovers and at what
 confidence, and whether any known link is replaced by a wrong one.
 
@@ -107,7 +107,7 @@ _VARIANTS: dict = {}
 
 
 def _variant_map(path: Path = CONFIG) -> dict:
-    """Spelling to canonical base spelling, from "place_variants" in the config (groups Mike verified)."""
+    """Spelling to canonical base spelling, from "place_variants" in the config (groups the user verified)."""
     key = str(path)
     if key not in _VARIANTS:
         out = {}
@@ -390,7 +390,7 @@ def add_support(cands, hh_size, cfg, accepted=()):
     households can still count, because a household is exactly what separates cousins with the same
     names, but then its rivals in the same pair of households gain nothing from it.
 
-    `accepted` is the links Mike has already accepted for the same pair of returns, as (earlier row, later
+    `accepted` is the links the user has already accepted for the same pair of returns, as (earlier row, later
     row). A reviewed link is sound by definition, so it counts as one of the agreeing members for its
     household pair, whatever its confidence was. Without this a household's links lose their corroboration
     one by one as they are accepted, because an accepted row leaves the candidate pool (2026-11-12).
@@ -581,7 +581,7 @@ def method_text(c: dict) -> str:
 # ------------------------------------------------------------------ one DED
 
 def propose_ded(rows: list[dict], names: Names, cfg: dict, decisions: dict | None = None):
-    """Links for the rows of one DED. Returns (links, stats). Decisions are Mike's reviewed
+    """Links for the rows of one DED. Returns (links, stats). Decisions are the user's reviewed
     links: an accepted link is kept as it is and its rows do not compete for other links, and a
     rejected pair is never proposed again."""
     by_year = collections.defaultdict(list)
@@ -800,7 +800,7 @@ def run_accept(text: str, path: Path = DECISIONS, census_dir: Path = CENSUS_DIR,
     """Record decisions pasted from the review page. Only accepted and rejected rows are kept; a later
     decision on the same pair replaces the earlier one. Nothing is written if any row is unsound."""
     import io
-    reviewer = reviewer or "Mike"
+    reviewer = reviewer or "user"
     date = date or datetime.date.today().isoformat()
     incoming = {}
     for r in csv.DictReader(io.StringIO(text.lstrip("\ufeff"))):
@@ -878,7 +878,7 @@ def _flag_kind(flag: str) -> str:
 
 def calibrate(census_dir: Path, cfg: dict, records: Path = DECISIONS, names=None) -> dict:
     """Counts of accepted and rejected decisions by band, flag, pair of returns and DED. The band is the
-    one Mike saw when he decided. Flags are recomputed by proposing again with no decisions, because a
+    one the user saw when he decided. Flags are recomputed by proposing again with no decisions, because a
     decided link is stored without its flags; a decision the matcher no longer proposes is counted apart."""
     names = names or Names(given_names_reference.load(GIVEN), variants_reference.load(), False)
     return calibrate_rows(load_census(census_dir), cfg, load_decisions(records), names)
@@ -956,7 +956,7 @@ def run_calibrate(census_dir: Path, cfg: dict, records: Path = DECISIONS, out=sy
     if res["unmatched"]:
         w("%d decisions are for pairs the matcher no longer proposes on its own, so they are left out of the flag and "
           "DED tables.\n" % res["unmatched"])
-    w("Caution: these links are the households Mike chose to review, so they are not a random sample of the proposals.\n"
+    w("Caution: these links are the households the user chose to review, so they are not a random sample of the proposals.\n"
       "Rates from a few decisions say little; the 'more' columns show how much more evidence a band needs.\n")
     return res
 
@@ -1027,7 +1027,7 @@ def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     sub = ap.add_subparsers(dest="cmd", required=True)
     p1 = sub.add_parser("propose", help="write review CSVs of proposed links")
-    p2 = sub.add_parser("check", help="compare the matcher with the links Mike accepted in the tree")
+    p2 = sub.add_parser("check", help="compare the matcher with the links the user accepted in the tree")
     p3 = sub.add_parser("accept", help="record decisions copied from the review page")
     p3.add_argument("file", help="CSV of decisions, or - to read from standard input")
     p3.add_argument("--reviewer", default="")

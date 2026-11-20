@@ -16,7 +16,7 @@ data/source/nli_parish/tawnawilly/
 ```
 
 Shared reference data already exists in the repo and is used as is, not duplicated here:
-- `data/reference/surname_variants.csv`: the single surname dictionary (DECISIONS.md, 2026-11-06). Family rows, not as-written pairs. Only Mike verifies a row. A new family or spelling from this register is added as `proposed`, which changes nothing until Mike verifies it.
+- `data/reference/surname_variants.csv`: the single surname dictionary (DECISIONS.md, 2026-11-06). Family rows, not as-written pairs. Only the user verifies a row. A new family or spelling from this register is added as `proposed`, which changes nothing until the user verifies it.
 - `data/reference/given_name_variants.csv`: the given-name equivalents (Sera = Sarah, Cath. = Catherine and so on, once verified).
 - Place spellings go through the Logainm place layer (`data/processed/places/`, `census_spelling_review.csv`). A suffix such as Lower, Middle or Upper is part of the name and is never merged.
 
@@ -57,7 +57,7 @@ Rule of thumb: stage 1 is a reading task, stage 2 is an interpretation task. Che
 | `status` | See section 5 |
 | `resolved_reading` | The single adopted string. Blank until status is agreed or resolved |
 | `resolution_basis` | See section 6 |
-| `resolution_by` | Who adjudicated, e.g. mike |
+| `resolution_by` | Who adjudicated, e.g. user |
 | `resolution_date` | ISO date |
 | `resolution_note` | Which part was decided and why, in a sentence |
 | `comment` | Transcription notes: ink, damage, margin notes, binding, clerk slips, no priest signature |
@@ -117,7 +117,7 @@ Combine with `;` where needed.
 - `image`: re-read the page image
 - `hand`: compared with the clerk's letterforms elsewhere on the page or register
 - `register`: same name or entry written elsewhere in this register
-- `local`: local knowledge (Mike)
+- `local`: local knowledge (the user)
 - `ditto_rule`: Do. resolved under the standing rule
 
 Not allowed as a basis in stage 1: census, surname dictionary, civil records, GRO indexes, family trees. Those go in stage 2 (`overrides.csv`).
@@ -130,12 +130,12 @@ In `normalised/`, next to the build script, and read by it.
 
 `rules.csv` (`kind, as_written, normalised, status, basis`) applies to every occurrence:
 - `forename`: abbreviation or variant expansion (Patt. to Patrick), matched on the whole forename text, then word by word. Status `abbreviation`.
-- `surname`: variant mapping on the whole surname text (Trower to Travers). Status `proposed`: they were marked verified in the earlier normalised file, but nothing here is in the shared dictionary until Mike verifies it in `data/reference/surname_variants.csv`. This file adds nothing there.
+- `surname`: variant mapping on the whole surname text (Trower to Travers). Status `proposed`: they were marked verified in the earlier normalised file, but nothing here is in the shared dictionary until the user verifies it in `data/reference/surname_variants.csv`. This file adds nothing there.
 - `townland`: written place to Logainm spelling, with `status` becoming `townland_status` and `basis` saying why. A blank `normalised` means the place is unresolved or unmapped and is kept out of the output rather than guessed.
 
 `overrides.csv` (`row_id, field, as_read, value, basis, confidence, decided_by`) is one row per evidence-based or adjudicated choice that is not a rule, for example Mall to Moss or a partial adjudication from the raw file. `field` is a normalised column. The basis says what the choice rested on. Overrides never change the raw layer.
 
-Shared reference data (surname dictionary, given-name variants, Logainm place layer) is in `data/reference/` and `data/processed/places/`. Promoting a rule from here to there is Mike's decision.
+Shared reference data (surname dictionary, given-name variants, Logainm place layer) is in `data/reference/` and `data/processed/places/`. Promoting a rule from here to there is the user's decision.
 
 ## 8. Build and versioning
 

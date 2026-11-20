@@ -1,0 +1,406 @@
+{
+ "schema": 1,
+ "townland": "Cullionboy",
+ "slug": "cullionboy",
+ "generated_by": "donegal-townlands.build_documentary",
+ "title": "Cullionboy",
+ "span": {
+  "from": "the 1850s",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "cullionboy:ch:intro",
+   "title": "Cullionboy",
+   "beats": [
+    {
+     "id": "cullionboy:beat:title:title",
+     "kind": "title",
+     "chapter": "cullionboy:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1855-07-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Cullionboy, in Irish Cuilleann Buí. Its story here runs from the 1850s to 1926.",
+     "people": [],
+     "media": [
+      "cullionboy-panorama.jpg"
+     ],
+     "evidence": {
+      "events": [
+       "cullionboy:valuation:griffiths",
+       "cullionboy:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6600,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "cullionboy:ch:1850s",
+   "title": "The land",
+   "beats": [
+    {
+     "id": "cullionboy:beat:valuation:griffiths",
+     "kind": "valuation",
+     "chapter": "cullionboy:ch:1850s",
+     "time": {
+      "label": "The 1850s",
+      "iso": "1850/1859",
+      "sort": "1855-07-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:valuation:griffiths"
+     },
+     "caption": "In the 1850s the land was valued and its occupiers listed. In all, 25 occupiers are named for Cullionboy.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:valuation:griffiths"
+      ],
+      "basis": "townland_entry",
+      "certainty": "stated"
+     },
+     "duration_ms": 7600,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "cullionboy:ch:baptisms",
+   "title": "Baptisms, 1874 to 1875",
+   "beats": [
+    {
+     "id": "cullionboy:beat:baptism:1874-10-05-TAW-B-p012-r152",
+     "kind": "baptism",
+     "chapter": "cullionboy:ch:baptisms",
+     "time": {
+      "label": "5 October 1874",
+      "iso": "1874-10-05",
+      "sort": "1874-10-05",
+      "approximate": false
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:baptism:TAW-B-p012-r152"
+     },
+     "caption": "James Bradley was baptised on 5 October 1874. Dan. Bradley and Ellen Callaghan were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:baptism:TAW-B-p012-r152"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null
+    },
+    {
+     "id": "cullionboy:beat:baptism:1875",
+     "kind": "baptism",
+     "chapter": "cullionboy:ch:baptisms",
+     "time": {
+      "label": "31 March 1875",
+      "iso": "1875-03-31",
+      "sort": "1875-03-31",
+      "approximate": false
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:baptism:TAW-B-p016-r199"
+     },
+     "caption": "Three children were baptised in 1875: Edward Harraghy on 31 March, Joseph Kelly on 11 June and Margaret McGinty on 10 July.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:baptism:TAW-B-p016-r199",
+       "cullionboy:baptism:TAW-B-p017-r219",
+       "cullionboy:baptism:TAW-B-p018-r230"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 8800,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "cullionboy:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "cullionboy:beat:census:1901",
+     "kind": "census",
+     "chapter": "cullionboy:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:census:1901"
+     },
+     "caption": "In 1901, 93 people in eighteen households lived in Cullionboy.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "cullionboy:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "cullionboy:beat:census:1911",
+     "kind": "census",
+     "chapter": "cullionboy:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:census:1911"
+     },
+     "caption": "Cullionboy had 72 people in sixteen households in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null
+    },
+    {
+     "id": "cullionboy:beat:change:1901-1911",
+     "kind": "change",
+     "chapter": "cullionboy:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:census:1901"
+     },
+     "caption": "By 1911 Cullionboy had 72 people, down from 93 in 1901. It had sixteen households, against eighteen.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:census:1901",
+       "cullionboy:census:1911"
+      ],
+      "basis": "counts_between_returns",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "cullionboy:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "cullionboy:beat:census:1926",
+     "kind": "census",
+     "chapter": "cullionboy:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:census:1926"
+     },
+     "caption": "Cullionboy had 79 people in fifteen households in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null
+    },
+    {
+     "id": "cullionboy:beat:change:1911-1926",
+     "kind": "change",
+     "chapter": "cullionboy:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:census:1911"
+     },
+     "caption": "By 1926 Cullionboy had 79 people, up from 72 in 1911. It had fifteen households, against sixteen.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:census:1911",
+       "cullionboy:census:1926"
+      ],
+      "basis": "counts_between_returns",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null
+    },
+    {
+     "id": "cullionboy:beat:closing:end",
+     "kind": "closing",
+     "chapter": "cullionboy:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with fifteen households in Cullionboy.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

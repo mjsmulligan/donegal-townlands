@@ -37,7 +37,7 @@ Out of scope for this feature:
 | M5 | Each photo is shown whole, never cropped, in a light frame with a mat, whatever its shape or resolution. Frame colours are light, never brown. | Agreed 2026-11-03 |
 | M6 | Originals are not resized by the project. Files are committed as supplied. Typical scans are a few hundred KB. | Agreed 2026-11-03 |
 | M7 | Each townland has `townlands/<name>/media/` holding the image files and `media.csv`. An optional `townlands/media_config.json` holds a CDN base address so images can later be served from a CDN without editing any CSV. | Agreed 2026-11-03 (CDN route optional) |
-| M8 | No automated privacy check on photographs. Mike checks each photograph himself before adding it. The validator does not apply the 100/75/50 rule to media. | Agreed 2026-11-03 |
+| M8 | No automated privacy check on photographs. The user checks each photograph himself before adding it. The validator does not apply the 100/75/50 rule to media. | Agreed 2026-11-03 |
 | M9 | `date` and `people_shown` are optional. When `people_shown` is filled it names only people already in the project datasets. The validator does not check this. | Agreed 2026-11-03 |
 | M10 | Work is on branch `feature/media` and reviewed before merging to main. | Agreed 2026-11-03 |
 | M11 | Header photographs should be landscape (wider than tall). This is guidance, checked with a warning, not a failure. Household photos can be any shape. | Agreed 2026-11-03 |
@@ -144,7 +144,7 @@ Empty or absent: images are copied from the townland `media/` folder into `docs/
 - **Goal:** this document agreed, decisions logged, `CLAUDE.md` image rule updated.
 - **Requirements:** MED-23.
 - **Size:** S.
-- **Acceptance:** Mike approves the specification. `python tools/validate.py` passes.
+- **Acceptance:** the user approves the specification. `python tools/validate.py` passes.
 
 ### MP2 Media loader and validation
 - **Goal:** a standalone module that reads `media.csv` and `media_config.json` and reports problems, called by `tools/validate.py` and `tools/build.py`.
@@ -165,21 +165,21 @@ Empty or absent: images are copied from the townland `media/` folder into `docs/
 - **Outputs:** changes in `engine/walk.html` and render tests in `tools/test_walk_render.py`.
 - **Requirements:** MED-15, MED-17, MED-19, MED-20, MED-21.
 - **Size:** M.
-- **Acceptance:** render tests pass. Mike views one page on his phone.
+- **Acceptance:** render tests pass. The user views one page on his phone.
 
 ### MP5 Family Photos tab
 - **Goal:** the Photos tab on family plates with the painted landscape and framed photos.
 - **Outputs:** changes in `engine/walk.html` and render tests.
 - **Requirements:** MED-16, MED-17 to MED-20, MED-22.
 - **Size:** M.
-- **Acceptance:** render tests pass. Mike views one family plate on his phone.
+- **Acceptance:** render tests pass. The user views one family plate on his phone.
 
 ### MP6 Cullionboy pilot
 - **Goal:** real use. Add the sample photo and any others with a filled `media.csv`, rebuild Cullionboy, and record what needs adjusting.
-- **Needs from Mike:** the family, caption and source for each photo.
+- **Needs from the user:** the family, caption and source for each photo.
 - **Requirements:** MED-13, MED-15, MED-16.
 - **Size:** S.
-- **Acceptance:** the Cullionboy page shows the photos as intended and Mike accepts it.
+- **Acceptance:** the Cullionboy page shows the photos as intended and the user accepts it.
 
 ### MP7 Rollout
 - **Goal:** rebuild all pages with the new engine and update the status notes.
@@ -192,7 +192,7 @@ Empty or absent: images are copied from the townland `media/` folder into `docs/
 - **Goal:** a tested `base_url` path and a short note on adding images to a CDN by hand.
 - **Requirements:** MED-12.
 - **Size:** S.
-- **Acceptance:** build with `base_url` references the CDN and copies nothing. Not started until Mike chooses a provider.
+- **Acceptance:** build with `base_url` references the CDN and copies nothing. Not started until the user chooses a provider.
 
 Order: MP1, MP2, MP3, then MP4 and MP5, then MP6, MP7. MP8 any time after MP3.
 
@@ -213,9 +213,9 @@ Order: MP1, MP2, MP3, then MP4 and MP5, then MP6, MP7. MP8 any time after MP3.
 | MP1 Specification and decisions | Done 2026-11-03 | Commit `eddbaff` |
 | MP2 Media loader and validation | Done 2026-11-03 | `tools/media.py`, `tools/test_media.py`, `tools/validate.py` |
 | MP3 Build integration | Done 2026-11-03 | `tools/build.py`, `tools/test_build.py` |
-| MP4 Header photos on the title plate | Done 2026-11-03, awaiting Mike's phone check | `engine/walk.html`, `tools/test_walk_render.py` |
-| MP5 Family Photos tab | Done 2026-11-03, awaiting Mike's phone check | `engine/walk.html`, `tools/test_walk_render.py` |
-| MP6 Cullionboy pilot | Done 2026-11-03, awaiting Mike's acceptance | Header panorama and The Kellys photograph in `townlands/cullionboy/media/`, `docs/cullionboy/` rebuilt, both show |
+| MP4 Header photos on the title plate | Done 2026-11-03, awaiting the user's phone check | `engine/walk.html`, `tools/test_walk_render.py` |
+| MP5 Family Photos tab | Done 2026-11-03, awaiting the user's phone check | `engine/walk.html`, `tools/test_walk_render.py` |
+| MP6 Cullionboy pilot | Done 2026-11-03, awaiting the user's acceptance | Header panorama and The Kellys photograph in `townlands/cullionboy/media/`, `docs/cullionboy/` rebuilt, both show |
 | MP7 Rollout | Done 2026-11-03 | All 55 pages rebuilt with the new engine, separate commit |
 | MP8 CDN route | Deferred (O1) | The `base_url` path is built and tested in MP2 and MP3; only the provider choice and an upload note remain |
 
@@ -227,7 +227,7 @@ Order: MP1, MP2, MP3, then MP4 and MP5, then MP6, MP7. MP8 any time after MP3.
 - **Validation:** `python -m unittest` over all `tools/test_*.py` modules, 115 tests, all pass. `python tools/build.py --all` rewrote all 55 pages with no change in `docs/`, so townlands without media build as before (MED-13). `python tools/validate.py` fails only on the missing `data/source/manifest.csv`, which also fails on main and is not part of this work.
 - **Review:** no independent review yet.
 - **Git state:** branch `feature/media`, see the latest commit.
-- **Next step:** MP4, the header strip in `engine/walk.html`. Mike views one page on his phone before MP5.
+- **Next step:** MP4, the header strip in `engine/walk.html`. The user views one page on his phone before MP5.
 
 ### Handover: MP4 (2026-11-03)
 
@@ -237,12 +237,12 @@ Order: MP1, MP2, MP3, then MP4 and MP5, then MP6, MP7. MP8 any time after MP3.
 - **Not done:** the family Photos tab (MP5). The built pages in `docs/` have not been rebuilt, so they do not carry the new engine until MP7.
 - **Validation:** all `tools/test_*.py` modules pass. Render tests cover 0, 1 and 3 photographs, shape at 375 px and 1440 px, no overlap at 1280 x 720, alt text, keyboard operation including Tab, and a failed image. I also looked at screenshots at 360 px to 1920 px wide.
 - **Found while testing:** the focus trap first listed buttons out of page order and let Tab escape the enlarged view. Fixed and covered by a test.
-- **Review:** no independent review yet. Mike to view one page on his phone.
+- **Review:** no independent review yet. The user to view one page on his phone.
 - **Next step:** MP5, the family Photos tab.
 
 ### Update: landscape guidance and frame fit (2026-11-03)
 
-- **Landscape:** header photographs should be landscape (decision M11, requirement MED-25). A portrait or square header gives a warning from `validate.py` and `build.py` and still builds. A rotated phone photo is judged by the shape it shows. Household photographs are not checked for shape. Mike's Cullionboy panorama (2576 x 886, about 2.9 to 1) was tried as the header: it fills a desktop frame and fits a phone frame with an even mat.
+- **Landscape:** header photographs should be landscape (decision M11, requirement MED-25). A portrait or square header gives a warning from `validate.py` and `build.py` and still builds. A rotated phone photo is judged by the shape it shows. Household photographs are not checked for shape. The user's Cullionboy panorama (2576 x 886, about 2.9 to 1) was tried as the header: it fills a desktop frame and fits a phone frame with an even mat.
 - **Frame fit:** the first MP4 layout left extra white mat above and below a wide photograph on a phone, where the frame width is capped by the screen. The frame now takes its height from the picture, so the mat is even at any width.
 - **Found while testing:** the page already had a `.frame` class (4:5, dashed) for the "Not yet hung" plate, and the photograph frame was inheriting its shape. Photographs now use `.pframe`, and a test checks the mat is even and the border solid.
 - **Validation:** all `tools/test_*.py` modules pass, 126 tests.
@@ -253,9 +253,9 @@ Order: MP1, MP2, MP3, then MP4 and MP5, then MP6, MP7. MP8 any time after MP3.
 - **Files:** `engine/walk.html` (`hangRow` takes a label, `yearTabs` takes an optional lead tab, `famPlate`), `tools/test_walk_render.py` (new family fixture and five tests), `docs/cullionboy/` rebuilt, `townlands/cullionboy/STATUS.md`.
 - **Decisions and assumptions:** photographs sit in one row that scrolls sideways inside itself when there are more than fit, not a wrapping grid as first sketched, so any number of photographs fits a fixed-height plate and phone scrolling stays predictable. The family art area is taller than usual when a family has photographs, and stays that height on every tab so the page does not jump when switching. The tab label box reads "Photographs, and landscape by era" for those families.
 - **Validation:** 131 tests pass across all `tools/test_*.py` modules. New browser tests check the tab order and default, a family without photographs, a photograph shared by two families, that cottages are absent on Photos and return on the year tabs (by hovering a grid of points on the scene), whole photographs at 375 px and 1440 px, and that the enlarged view holds only that family's photographs. I looked at screenshots of The Kellys plate on both tabs. `validate.py` still fails only on the missing `data/source/manifest.csv`.
-- **Review:** no independent review yet. Mike to view The Kellys plate on his phone.
+- **Review:** no independent review yet. The user to view The Kellys plate on his phone.
 - **Not done:** MP7 (rebuild all other pages with the new engine) and MP8 (CDN). Other built pages in `docs/` still carry the old engine, which behaves the same for them because they have no media.
-- **Next step:** Mike checks Cullionboy on his phone. Then MP7, and a pull request for review.
+- **Next step:** the user checks Cullionboy on his phone. Then MP7, and a pull request for review.
 
 ### Handover: MP7 (2026-11-03)
 
@@ -264,4 +264,4 @@ Order: MP1, MP2, MP3, then MP4 and MP5, then MP6, MP7. MP8 any time after MP3.
 - **Not checked:** the painted scenes themselves (canvas pictures) are not part of rendered text, so they were not compared. The scene code is unchanged apart from the new class names and the Photos tab.
 - **Validation:** all `tools/test_*.py` modules pass. `validate.py` still fails only on the missing `data/source/manifest.csv`.
 - **Review:** no independent review yet. The branch is ready for a pull request.
-- **Next step:** Mike's decision on the pull request. MP8 (CDN) waits for a provider choice.
+- **Next step:** the user's decision on the pull request. MP8 (CDN) waits for a provider choice.

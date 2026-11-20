@@ -18,7 +18,7 @@ Source integrity (docs/DATA_ARCHITECTURE.md, "preserve the original unchanged"):
     census_year column. Each year's file is the rows of that year, each copied byte for
     byte from the response (a selection of whole rows, nothing rewritten).
 
-What is replaced (Mike, 2026-11-10):
+What is replaced (the user, 2026-11-10):
     data/source/census/<DED>_<year>.csv   the manifest-covered original
     data/source/manifest.csv              rows for the refreshed files only
 
@@ -28,7 +28,7 @@ of the replacement fails, every file is restored from backup.
 
 Reference: the pagination, retry and endpoint approach is adapted from GRA
 `src/ingest/fetch_census.py` (mjsmulligan/irish-genealogy-research, commit 1dab647;
-Mike is the copyright holder). Its database and place_authority code, its pandas
+The user is the copyright holder). Its database and place_authority code, its pandas
 re-serialisation, its *_clean columns and its census_year filtering by dataframe were
 not carried over, because they would alter the file as supplied.
 
@@ -393,7 +393,7 @@ def validate_download(dl: Download, ds: Dataset, previous: bytes, allow_shrink: 
     if header != old_rows[0] and not diff["expected"] and not allow_schema_change:
         raise RefreshError(
             "NAI column names or order differ from the preserved snapshot. This is a schema change that "
-            "affects downstream code and must be reported to Mike before any file is replaced. "
+            "affects downstream code and must be reported to the user before any file is replaced. "
             f"Columns only in the old file: {diff['removed']}. Columns only in NAI's file: {diff['added']}. "
             f"Order changed: {diff['reordered']}. Re-run with --allow-schema-change once reported.")
     for column in (*REQUIRED_COLUMNS, locator):
@@ -848,7 +848,7 @@ def main(argv: list[str] | None = None) -> int:
                         help="census year to refresh (repeatable: --year 1901 --year 1911)")
     parser.add_argument("--all", action="store_true", help="every existing DED file for the chosen years")
     parser.add_argument("--allow-schema-change", action="store_true",
-                        help="accept NAI column names or order that differ from the preserved file (report to Mike first). "
+                        help="accept NAI column names or order that differ from the preserved file (report to the user first). "
                              "The absence of GRA's townland_clean and ded_clean columns is expected and needs no flag.")
     parser.add_argument("--ded-id", action="append", metavar="LOGAINM_ID",
                         help="one DED by Logainm ID (repeatable). Stages and reports only.")

@@ -1,10 +1,10 @@
 # Census GEDCOM spec
 
-Status: agreed in principle by Mike on 2026-11-07 (see the settled list at the end). Nothing here is built. Read with `docs/DATA_ARCHITECTURE.md` (sections 3, 5, 6.2, 7), `docs/RESEARCH_PRINCIPLES.md` and `docs/STORY_SPEC.md`.
+Status: agreed in principle by the user on 2026-11-07 (see the settled list at the end). Nothing here is built. Read with `docs/DATA_ARCHITECTURE.md` (sections 3, 5, 6.2, 7), `docs/RESEARCH_PRINCIPLES.md` and `docs/STORY_SPEC.md`.
 
 ## 1. Purpose
 
-The 1901, 1911 and 1926 returns are close enough to follow the same person from one to the next. A census-only family can then be told as a sequence ("Ellen was twelve in 1901, twenty-two in 1911 and still at home in 1926") without a tree. The method is an automated pass that proposes links with a confidence, then Mike's review. Only accepted links are used.
+The 1901, 1911 and 1926 returns are close enough to follow the same person from one to the next. A census-only family can then be told as a sequence ("Ellen was twelve in 1901, twenty-two in 1911 and still at home in 1926") without a tree. The method is an automated pass that proposes links with a confidence, then the user's review. Only accepted links are used.
 
 This is a supporting layer for stories. Identity matching is not the purpose of the project (`docs/RESEARCH_PRINCIPLES.md`), so every link stays a reviewed proposal about the evidence, never a conclusion that replaces it.
 
@@ -12,8 +12,8 @@ This is a supporting layer for stories. Identity matching is not the purpose of 
 
 - A census row is an observation with a deterministic ID such as `census1901:clogher:6040537`. Rows are never edited.
 - A link between two rows is an association (DATA_ARCHITECTURE 6.2), with a new type, `same-person-across-returns`. It carries method, signals, confidence, status, reviewer and date, and it keys on the two observation IDs, so it survives reprocessing.
-- A chain is the set of rows joined by accepted links. Its working ID is `chain:` plus the earliest observation ID. It is not a research entity and gets no UUID until it is promoted, for example when it joins a person in Mike's tree.
-- The census GEDCOM is generated from accepted chains. It is a source-like input to the project GEDCOM, in the way Mike's own GEDCOM is (DECISIONS 2026-11-05). It is not a townland-specific master, so "one master GEDCOM" (DATA_ARCHITECTURE 7) stands. Merging the two into the project GEDCOM belongs to the incorporation work that WP16 and WP17 began, and is out of scope here.
+- A chain is the set of rows joined by accepted links. Its working ID is `chain:` plus the earliest observation ID. It is not a research entity and gets no UUID until it is promoted, for example when it joins a person in the user's tree.
+- The census GEDCOM is generated from accepted chains. It is a source-like input to the project GEDCOM, in the way the user's own GEDCOM is (DECISIONS 2026-11-05). It is not a townland-specific master, so "one master GEDCOM" (DATA_ARCHITECTURE 7) stands. Merging the two into the project GEDCOM belongs to the incorporation work that WP16 and WP17 began, and is out of scope here.
 
 ## 3. Inputs
 
@@ -30,13 +30,13 @@ Scope is within one DED. A person who moves between townlands inside the DED can
 
 1. **Candidates.** Pair rows in consecutive returns (1901 to 1911, 1911 to 1926) and 1901 to 1926 for people the 1911 return does not show. Candidates must share a DED and sex, and a surname that is identical or a verified spelling family in `data/reference/surname_variants.csv`. Unverified spellings are never combined.
 2. **Signals.**
-   - Given name: identical, or a verified equivalent from a new reference, `data/reference/given_name_variants.csv`, kept like the surname dictionary (Bella and Isabella, Maggie and Margaret, Minnie, Packie). Only Mike verifies a row.
+   - Given name: identical, or a verified equivalent from a new reference, `data/reference/given_name_variants.csv`, kept like the surname dictionary (Bella and Isabella, Maggie and Margaret, Minnie, Packie). Only the user verifies a row.
    - Age: the gap should equal the years between the returns. Allow 3 years of drift, widening to 6 where the implied birth is before 1864, since those ages were estimates (DECISIONS 2026-11-06).
    - Household: same townland and house, same head, and corroboration from other household members who also have sound candidates (section 13).
    - Relationship: whether the change is plausible (Son to Head, Single to Married, Daughter to Wife).
    - Marriage and children: `marriage_years` should fit the gap. Children counts should not fall.
    - Birthplace and language, where recorded.
-3. **Women who marry.** A daughter in 1901 is usually a wife under another surname by 1911 or 1926, and the returns do not give the maiden name. These links rest on given name, age, townland and the husband's household, so they cap at low confidence unless Mike's tree supplies the maiden name.
+3. **Women who marry.** A daughter in 1901 is usually a wife under another surname by 1911 or 1926, and the returns do not give the maiden name. These links rest on given name, age, townland and the husband's household, so they cap at low confidence unless the user's tree supplies the maiden name.
 4. **Assignment.** Each row links to at most one row in each other return. Where two rows compete for one candidate, the better pair wins only if it is clearly better. Otherwise both stay ambiguous.
 5. **Confidence.** Config values, not code, tuned against the test below.
    - High: one clear candidate, identical or verified name, age within 3, same household continuity.
@@ -47,9 +47,9 @@ Scope is within one DED. A person who moves between townlands inside the DED can
 ## 5. Review
 
 - The tool writes a review report, not decisions, to `data/processed/` (not committed, like the WP16 reports).
-- The report is grouped by household and sorted by confidence, so Mike can accept a whole household chain in one step when every link in it is high.
-- Mike edits the status column, and an `accept` command writes only accepted and rejected rows to `data/research/associations/census_links.csv`, with reviewer and date, as WP16 does.
-- Review policy (agreed 2026-11-07): Mike reviews medium and low links and audits a random sample of high links. The tool can also list everything if he wants it.
+- The report is grouped by household and sorted by confidence, so the user can accept a whole household chain in one step when every link in it is high.
+- The user edits the status column, and an `accept` command writes only accepted and rejected rows to `data/research/associations/census_links.csv`, with reviewer and date, as WP16 does.
+- Review policy (agreed 2026-11-07): the user reviews medium and low links and audits a random sample of high links. The tool can also list everything if he wants it.
 - Review is done in pieces. First a townland, with every household in it, then one family at a time inside that townland. The report can be cut by townland or by family surname group, and the first full run is Cullionboy.
 
 ## 6. The census GEDCOM
@@ -60,11 +60,11 @@ Generated from accepted chains, one file per DED, never edited by hand.
 - A `BIRT` with an `ABT` year from the age in the earliest return, tagged as derived, with a note naming the return it came from (agreed 2026-11-07). The ages as recorded stay on the census events.
 - One census event per return, with the place (townland, DED, county), the age as recorded and a source citation to the observation ID. Nothing else is stated as an event. No marriages or deaths are inferred.
 - Families only where the return states the relationship in one household: a Head and Wife make a `FAM`, and a Son or Daughter of the Head is a child of the head. A child joins the wife in the `FAM` only if `years_married` and the children counts allow it, which covers a head who had married before. Sons-in-law, servants and visitors get no family.
-- Mike's tree anchors the result. The 75 accepted GEDCOM-to-census links are fixed. A row used by an anchor is never reassigned. If the matcher disagrees with an anchor it is shown as a conflict for review and the anchor stands until Mike says otherwise.
+- The user's tree anchors the result. The 75 accepted GEDCOM-to-census links are fixed. A row used by an anchor is never reassigned. If the matcher disagrees with an anchor it is shown as a conflict for review and the anchor stands until the user says otherwise.
 - Persons in both files appear once, tied by the person pointer.
 - **Years married are carried along the wife's chain (2026-11-09).** Only the 1911 return records years married and children born alive. A wife's figure from another return in her chain is moved by the years between the returns and used for the return being read, so children in 1901 or 1926 can join the wife and no wife-less second family is made for the head. Children born alive from a later return act as a cap, never one from an earlier return. Each use is listed in the report.
 - **Household shapes and conflicts (2026-11-09).** A wife or husband row is not paired with a head recorded as widowed or single, since it may belong to another member (a son's wife, say). A household with two heads gives no child to either, and pairs the wife or husband row only with the head of the opposite sex. Both are listed in the report as `household:` items. The report also lists `conflict:` items: a parent whose age does not fit a child (under 15, a mother over 50, a father over 70), and a husband with two wives of the same first name, which may be one woman recorded with different ages. Nothing is merged or corrected.
-- **Tentative test files (2026-11-09).** With `--tentative` the writer also joins rows by matcher links Mike has not reviewed, strongest first, after tree anchors and accepted links, which always win a clash. Ambiguous links are left out. The header, each joined person and the report say TENTATIVE LINK with the matcher's confidence, and the file is named `*_tentative.ged`. Nothing is written to `census_links.csv`. These files exist to test links in Ancestry before review, and are never a source for stories.
+- **Tentative test files (2026-11-09).** With `--tentative` the writer also joins rows by matcher links the user has not reviewed, strongest first, after tree anchors and accepted links, which always win a clash. Ambiguous links are left out. The header, each joined person and the report say TENTATIVE LINK with the matcher's confidence, and the file is named `*_tentative.ged`. Nothing is written to `census_links.csv`. These files exist to test links in Ancestry before review, and are never a source for stories.
 
 ## 7. Using it in stories
 
@@ -73,18 +73,18 @@ Each family gets a fact sheet. Each fact in it is marked as coming from an accep
 ## 8. Privacy
 
 - Census files up to 1926 are custodian-published and are not withheld a second time (CLAUDE.md, decided 2026-11-02). The validator still refuses census files after 1926.
-- The generated GEDCOM adds no event the returns do not state. Anyone with later data comes from Mike's tree under his own privacy check.
+- The generated GEDCOM adds no event the returns do not state. Anyone with later data comes from the user's tree under his own privacy check.
 - A person aged under one in 1926 turns 100 in 2026, so no one in the returns is under the limit this year.
 - The generated GEDCOM is regenerated when needed and is not committed (agreed 2026-11-07). The decisions file and the tools are.
 
 ## 9. Test plan
 
-The only independent check is Mike's tree. It is small: of the 56 tree people with accepted census rows, 12 have rows in more than one return, giving 19 consecutive pairs (18 within one DED).
+The only independent check is the user's tree. It is small: of the 56 tree people with accepted census rows, 12 have rows in more than one return, giving 19 consecutive pairs (18 within one DED).
 
 1. **Recovery.** Run the matcher on the Clogher and Tullynaught DEDs. Report how many of the 19 pairs it finds, at what confidence, and any it links wrongly.
 2. **Distribution.** For Cullionboy and Clogher, count proposed links by confidence, and count ambiguous rows.
 3. **Known hard cases.** The two John Cassidys in Cullionboy must not reach high confidence.
-4. **Audit.** A sample is too small to prove precision, so Mike audits 50 random high links per DED before any high-confidence bulk accept is trusted.
+4. **Audit.** A sample is too small to prove precision, so the user audits 50 random high links per DED before any high-confidence bulk accept is trusted.
 
 ## 10. Proposed work packages
 
@@ -101,21 +101,21 @@ Not yet added to `docs/WORK_PACKAGES.md`.
 2. The GEDCOM carries a derived `BIRT` with `ABT`, because it suits the stories.
 3. The generated GEDCOM is regenerated, not committed.
 4. The census GEDCOM is a generated input layer and not a townland-specific master, for now.
-5. Mike verifies the given-name reference.
-6. Linking across DEDs is a second phase. Mike expects something larger then, including hyperlinking between people in the presentation, so the chain IDs and links should be designed to support it.
+5. The user verifies the given-name reference.
+6. Linking across DEDs is a second phase. The user expects something larger then, including hyperlinking between people in the presentation, so the chain IDs and links should be designed to support it.
 
 ## 12. Added 2026-11-08
 
-1. **Review page.** Review is done on a generated page with one row per person across the three returns (section 5). It replaces editing the CSV. The page records nothing in the project; Mike sends his decisions back and WP19 records them.
-2. **Smaller GEDCOM scopes.** Besides one file per DED, the writer can produce a file for one townland or one family (section 6), so Mike can load a small tree into Ancestry and test it against other records. This follows his plan to look at civil records and to build test trees. Whole households are included for each return a chain touches, so the relationships in the file match the returns.
+1. **Review page.** Review is done on a generated page with one row per person across the three returns (section 5). It replaces editing the CSV. The page records nothing in the project; the user sends his decisions back and WP19 records them.
+2. **Smaller GEDCOM scopes.** Besides one file per DED, the writer can produce a file for one townland or one family (section 6), so the user can load a small tree into Ancestry and test it against other records. This follows his plan to look at civil records and to build test trees. Whole households are included for each return a chain touches, so the relationships in the file match the returns.
 3. **Order of work.** Review, then accepted links recorded (WP19), then GEDCOM output (WP20). The GEDCOM adds nothing the returns do not state, and still carries only accepted links.
-4. **Built choices (WP20), for Mike to confirm.** A person's tree link is written as a `REFN` of type "Tree person" and joins that person's rows across returns even before a census link is accepted. A census link that would join two people the tree keeps apart is not used and is listed in the report. A child is attached to the wife only where `years_married` allows it (and the wife's children born alive is not smaller than the number of children shown), so 1901 households, which record no years married, show children under the head alone unless `--wife-parent assume` is used. A son's wife (Daughter in Law) gets no family. Census events carry the year only, the townland as returned, the DED and the county, the age as recorded, and a note with the relation, marital status, occupation and birthplace as recorded.
+4. **Built choices (WP20), for the user to confirm.** A person's tree link is written as a `REFN` of type "Tree person" and joins that person's rows across returns even before a census link is accepted. A census link that would join two people the tree keeps apart is not used and is listed in the report. A child is attached to the wife only where `years_married` allows it (and the wife's children born alive is not smaller than the number of children shown), so 1901 households, which record no years married, show children under the head alone unless `--wife-parent assume` is used. A son's wife (Daughter in Law) gets no family. Census events carry the year only, the townland as returned, the DED and the county, the age as recorded, and a note with the relation, marital status, occupation and birthplace as recorded.
 
 ## 13. Added 2026-11-11
 
-1. **Townland identity.** Matching and household identity use the original `townland` value, never `townland_clean`, which folded Keadew Lower into Keadew Upper. The key is the name with its suffix kept: only the base name is mapped through the verified spelling groups (the groups in `tools/tree_census_links.py` plus those in `data/reference/census_link_config.json`, which now holds Keadew and Keadue, confirmed by Mike 2026-11-11). Upper, Lower, Middle, East, West and the other suffixes are never merged, swapped or dropped, so Keadew Upper in 1901 matches Keadue Upper in 1926 and never Keadue Lower. The GEDCOM place keeps the townland as returned.
+1. **Townland identity.** Matching and household identity use the original `townland` value, never `townland_clean`, which folded Keadew Lower into Keadew Upper. The key is the name with its suffix kept: only the base name is mapped through the verified spelling groups (the groups in `tools/tree_census_links.py` plus those in `data/reference/census_link_config.json`, which now holds Keadew and Keadue, confirmed by the user 2026-11-11). Upper, Lower, Middle, East, West and the other suffixes are never merged, swapped or dropped, so Keadew Upper in 1901 matches Keadue Upper in 1926 and never Keadue Lower. The GEDCOM place keeps the townland as returned.
 2. **Household corroboration.** Individual links are made first. A link can corroborate others in its household pair only when it is sound on its own: not a surname change, no unlikely relationship or marital regress, and at least medium confidence before any household term is added. A household pair counts as continuing only when two or more distinct members agree on it (`household_min_supporters`), and one later person cannot corroborate two earlier ones. Weak and low links therefore never prop each other up, and support is worked out from individual evidence only, so it cannot feed back on itself. A link that is ambiguous against rivals in other households can still count, because a household is what separates cousins with the same names. A link with an unlikely relationship can receive support but never gives it, and it stays low for review. Members who left, arrived, married or died are not counted and do not count against the household.
 3. **Household contradictions.** Two things count against a link. (a) A head or spouse whose other members continue together into a different household, while the head's own household pair does not continue: severe, so low. (b) In a household that otherwise continues, another member's best link reverses a relationship or marital status: a weak flag on the others, so a reviewer looks. Weights are in the config (`household_conflict_each`, `household_conflict_max`).
 4. **Review rationale.** The `method` text keeps the two kinds of evidence apart: `Individual: ...` for the person's own match and `Household: ...` for the corroboration (who continues, with ages) or why there is none, and any contradiction. The tentative GEDCOM carries this text in each `TENTATIVE LINK` note, and a family that includes a tentatively joined person carries a `TENTATIVE` note.
-5. **Given names.** Joseph and Joe are a verified equivalence (`data/reference/given_name_variants.csv`, Mike 2026-11-11, common usage and not drawn from the census files). Josephine, Josie and Jo are not included. A name variant alone grades medium, so Joseph to Joe is assessed with the household and shown with its household support.
+5. **Given names.** Joseph and Joe are a verified equivalence (`data/reference/given_name_variants.csv`, the user 2026-11-11, common usage and not drawn from the census files). Josephine, Josie and Jo are not included. A name variant alone grades medium, so Joseph to Joe is assessed with the household and shown with its household support.
 6. **GitHub Actions.** `.github/workflows/census-gedcom.yml` runs the writer and offers the files as downloadable artifacts: normal always, tentative only when ticked. It never commits or publishes. See [`CENSUS_GEDCOM_WORKFLOW.md`](CENSUS_GEDCOM_WORKFLOW.md).

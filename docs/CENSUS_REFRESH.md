@@ -29,7 +29,7 @@ Local (needs `pip install requests`):
     python tools/refresh_census.py --year 1901 --year 1911 --all --apply   # replace everything, or nothing
     python tools/refresh_census.py --year 1926 --ded-id 1372439            # stage and report one DED (never replaces)
 
-GitHub: Actions, "Refresh census from NAI", Run workflow. Choose the years, and leave "apply" ticked to replace and commit, or untick it for a dry run. "allow_schema_change" stays unticked unless Mike has seen a dry run that reports a column difference. On success the workflow pushes a branch named `census-refresh-<years>-<UTC stamp>` for review (the Logainm snapshot convention). It fails with nothing changed if any DED fails. The manifest and comparison report are attached to the run as an artifact. No secret is needed.
+GitHub: Actions, "Refresh census from NAI", Run workflow. Choose the years, and leave "apply" ticked to replace and commit, or untick it for a dry run. "allow_schema_change" stays unticked unless the user has seen a dry run that reports a column difference. On success the workflow pushes a branch named `census-refresh-<years>-<UTC stamp>` for review (the Logainm snapshot convention). It fails with nothing changed if any DED fails. The manifest and comparison report are attached to the run as an artifact. No secret is needed.
 
 Both paths run `python tools/validate.py` after replacing. The workflow also fails if any file outside the list above would change.
 
@@ -39,7 +39,7 @@ Every DED is staged outside the repository and checked before anything is replac
 
 - Complete: an empty page ends the data, and the pages must add up to the rows in the file. A short page does not end it, so a server that caps the page size is still read in full. A page that repeats the previous one stops the run.
 - Valid CSV: UTF-8, every row has the header's field count.
-- Same schema: column names and order equal the existing file. Any change stops the run and must be reported to Mike, who can then allow it with `--allow-schema-change`. The one exception: for 1901 and 1911 the absence of `townland_clean` and `ded_clean` (columns GRA added, not NAI's) is expected and is only reported.
+- Same schema: column names and order equal the existing file. Any change stops the run and must be reported to the user, who can then allow it with `--allow-schema-change`. The one exception: for 1901 and 1911 the absence of `townland_clean` and `ded_clean` (columns GRA added, not NAI's) is expected and is only reported.
 - Expected DED and county are present. Any other DED value must contain the query name (as Magheraclogher does for Clogher). The record id (`a_id` for 1926, `id` for 1901 and 1911) is present and unique.
 - Not suspiciously small: more than 10% fewer records than before is treated as incomplete. Use `--allow-shrink` once checked.
 - Retries with backoff on network errors, 429 and 5xx. 60 second timeout. One second between requests.
@@ -80,7 +80,7 @@ Nearly every row differs, and almost none of that is formatting. The earlier fil
 
 Downstream effect: the code reads `updated_relationship_to_head` first, and `tools/validate.py` and the test suite pass. The derived `townlands/*/records/census.json` files were not regenerated. When they are, expect the 1926 relationship, religion and marriage fields to fill in and the `years_married` and `children_*` values to thin out, so census link proposals may change. Review that diff before accepting it.
 
-Clogher: an older file, `data/census/1926_Clogher.csv`, was removed on 2026-11-10. It was thought to hold researcher-filled relationship values. Mike confirmed there were never any researcher annotations in it, so the difference from NAI's release was a misreading of NAI data, not project work. NAI's release in `data/source/census/Clogher_1926.csv` is the only 1926 Clogher source.
+Clogher: an older file, `data/census/1926_Clogher.csv`, was removed on 2026-11-10. It was thought to hold researcher-filled relationship values. The user confirmed there were never any researcher annotations in it, so the difference from NAI's release was a misreading of NAI data, not project work. NAI's release in `data/source/census/Clogher_1926.csv` is the only 1926 Clogher source.
 
 ## Live service behaviour (confirmed 2026-11-10)
 

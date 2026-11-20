@@ -40,7 +40,7 @@ The report lists the items to review: household shapes, age conflicts, and any a
 
 - It never commits, pushes, opens a pull request or publishes anything. Its token is read-only.
 - It never writes to `data/research/associations/census_links.csv` (the accepted decisions), the master GEDCOM or any other file in the repository. A guard step fails the run if anything in the repository changed.
-- It never turns a tentative link into an accepted one. Accepting a link is still done only by Mike, through `tools/census_links.py accept`.
+- It never turns a tentative link into an accepted one. Accepting a link is still done only by the user, through `tools/census_links.py accept`.
 
 ## Checking a file in Ancestry (manual, not yet done)
 

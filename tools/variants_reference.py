@@ -6,14 +6,14 @@ variants recur across records and geography. One row is one family:
     family_id    short slug, unique
     label        the name a family plate would carry. A handle, not a correction
     spellings    the spellings as recorded, separated by |  (at least two)
-    status       verified (Mike confirmed), proposed (a lead) or rejected (Mike said no)
+    status       verified (the user confirmed), proposed (a lead) or rejected (the user said no)
     authority    who confirmed it. Required for a verified row
     basis        why. Required for a verified row
     observed_in  where it was seen. Required for a verified row
     added        the date the row was added
     notes        anything else
 
-This file is the single surname dictionary (DECISIONS.md, 2026-11-06). Mike verifies a row
+This file is the single surname dictionary (DECISIONS.md, 2026-11-06). The user verifies a row
 using local knowledge and a verified row applies to every townland: the build gives each
 page the verified families whose spellings it holds. A proposed row is a lead and never
 changes a page. An assistant adds rows only as proposed. A spelling may sit in only one
@@ -109,7 +109,7 @@ def page_families(present, rows=None):
 
 
 def lookup(spelling, rows=None):
-    """Families that list this spelling, rejected ones left out. Leads for Mike, never a rule."""
+    """Families that list this spelling, rejected ones left out. Leads for the user, never a rule."""
     rows = load() if rows is None else rows
     k = key(spelling)
     return [r for r in rows if r['status'] != 'rejected' and k in {key(s) for s in r['spellings']}]

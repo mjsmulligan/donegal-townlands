@@ -152,8 +152,8 @@
    ],
    "media": [],
    "association": {
-    "basis": "page_place_doubtful",
-    "label": "The place is blotted on the page and reads as Cullionboy."
+    "basis": "page_place",
+    "label": "The page gives the place as Cullionboy."
    },
    "source": {
     "label": "Tawnawilly parish register (Raphoe), NLI microfilm 04599/04, page 17",

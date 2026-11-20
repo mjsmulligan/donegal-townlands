@@ -41,16 +41,16 @@ Out of scope for the first release:
 | D6 | The generator never invents a story for a gap in the record. Absence from a return is not told as a departure (STORY_SPEC, "Absence and departure"). | Proposed |
 | D7 | Sound is off by default. Captions are always available. Audio is never the only carrier of any fact. | Proposed |
 | D8 | Work is on branch `feature/documentary` and reviewed before merging to main. | Proposed |
-| D9 | The documentary replaces the townland walk as the main page of every townland. The walk's plates, painted scenes, Griffith's, census and Photos content stay reachable inside the documentary in Explore mode. The walk is retired only at a cutover that Mike approves, after parity is shown (DP9). Nothing is deleted without being asked (`CLAUDE.md`). | Agreed 2026-11-20 |
+| D9 | The documentary replaces the townland walk as the main page of every townland. The walk's plates, painted scenes, Griffith's, census and Photos content stay reachable inside the documentary in Explore mode. The walk is retired only at a cutover that the user approves, after parity is shown (DP9). Nothing is deleted without being asked (`CLAUDE.md`). | Agreed 2026-11-20 |
 
-Note on D5. The standing story rule allows no hedges on the page. Mike agreed on 2026-11-20 that this was too rigid for the documentary, and that "possibly" suits better than "probably". The rule is:
+Note on D5. The standing story rule allows no hedges on the page. The user agreed on 2026-11-20 that this was too rigid for the documentary, and that "possibly" suits better than "probably". The rule is:
 
-- **Certain.** A fact stated by a source, or a link Mike has accepted, is told plainly with no hedge.
+- **Certain.** A fact stated by a source, or a link the user has accepted, is told plainly with no hedge.
 - **Possible.** A link that is not accepted, or where only names match, may be told with the single word "possibly" at the link, for example "A household of the same name in 1911 possibly followed." The caption states only what the names say, as the family timeline already does (DECISIONS.md, 2026-11-19).
 - **Not told.** Where two households fit equally, the case stays in `held_open` and no beat is built.
 - Every beat records its `certainty` (`stated`, `accepted` or `possible`) so a caption's wording can be checked against it.
 
-This applies to the documentary only. `docs/STORY_SPEC.md` and the family stories are unchanged until Mike says otherwise (O5).
+This applies to the documentary only. `docs/STORY_SPEC.md` and the family stories are unchanged until the user says otherwise (O5).
 
 ## 3. Data model
 
@@ -185,7 +185,7 @@ Marriages are not a beat kind in the first release because the register records 
 
 ### 4.5 Privacy
 
-The 100/75/50 rule applies to every beat built from information the project holds that is not taken unchanged from a published source. Census returns to 1926 are exempt, as in `CLAUDE.md`. Baptisms must be 100 or more years old. Photographs are checked by Mike (MEDIA_SPEC M8). The generator refuses a beat that fails the rule and lists it, rather than dropping it silently.
+The 100/75/50 rule applies to every beat built from information the project holds that is not taken unchanged from a published source. Census returns to 1926 are exempt, as in `CLAUDE.md`. Baptisms must be 100 or more years old. Photographs are checked by the user (MEDIA_SPEC M8). The generator refuses a beat that fails the rule and lists it, rather than dropping it silently.
 
 ### 4.6 Accessibility and motion
 
@@ -244,14 +244,14 @@ The 100/75/50 rule applies to every beat built from information the project hold
 - **Goal:** this document agreed, D1 to D8 logged, `CLAUDE.md` updated.
 - **Requirements:** DOC-22.
 - **Size:** S.
-- **Acceptance:** Mike approves. `python tools/validate.py` passes.
+- **Acceptance:** the user approves. `python tools/validate.py` passes.
 
 ### DP2 Beat generator
 - **Goal:** `build_documentary.py` produces `documentary.json` for Cullionboy.
 - **Outputs:** `tools/build_documentary.py`, `tests/test_build_documentary.py`.
 - **Requirements:** DOC-01 to DOC-11.
 - **Size:** M.
-- **Acceptance:** tests pass. Mike reads the Cullionboy captions aloud and signs them off.
+- **Acceptance:** tests pass. The user reads the Cullionboy captions aloud and signs them off.
 
 ### DP3 Validation and privacy
 - **Goal:** the caption checks and the 100/75/50 filter are enforced by `tools/validate.py`.
@@ -264,17 +264,17 @@ The 100/75/50 rule applies to every beat built from information the project hold
 - **Outputs:** `engine/documentary.html`, render tests.
 - **Requirements:** DOC-12 to DOC-17, DOC-20.
 - **Size:** L.
-- **Acceptance:** render tests pass. Mike plays Cullionboy on his phone.
+- **Acceptance:** render tests pass. The user plays Cullionboy on his phone.
 
 ### DP5 Layouts, accessibility and motion
 - **Goal:** phone and desktop layouts of the same stage, reduced motion, keyboard.
 - **Requirements:** DOC-18, DOC-19.
 - **Size:** M.
-- **Acceptance:** render tests pass. Mike confirms or revises D3 after trying it on a phone.
+- **Acceptance:** render tests pass. The user confirms or revises D3 after trying it on a phone.
 
 ### DP6 Family thread
 - **Goal:** one family followed across a townland chapter, drawing on authored stories that pass `check_story.py` and on accepted census links.
-- **Needs from Mike:** the first family to follow (suggested: the Kellys in Cullionboy, since the fact sheet exists).
+- **Needs from the user:** the first family to follow (suggested: the Kellys in Cullionboy, since the fact sheet exists).
 - **Requirements:** DOC-07, DOC-08.
 - **Size:** M.
 - **Acceptance:** the Kellys thread reads as one story and passes `check_story.py`.
@@ -288,16 +288,16 @@ The 100/75/50 rule applies to every beat built from information the project hold
 
 ### DP8 Sound (later)
 - **Goal:** pre-generated narration and an optional music track.
-- **Needs from Mike:** the voice choice and the music rights decision (O2, O3).
+- **Needs from the user:** the voice choice and the music rights decision (O2, O3).
 - **Size:** M.
-- **Acceptance:** not started until Mike chooses.
+- **Acceptance:** not started until the user chooses.
 
 ### DP9 Cutover
 - **Goal:** make the documentary the main page and retire the walk from the build, once parity is shown.
-- **Outputs:** `tools/build.py` writes the documentary to `docs/<name>/index.html`, `docs/index.html` map cards link to it, `CLAUDE.md` layout section updated, a short note in `DECISIONS.md`. Walk template and old pages are kept in git history. Nothing is deleted without Mike's say so.
+- **Outputs:** `tools/build.py` writes the documentary to `docs/<name>/index.html`, `docs/index.html` map cards link to it, `CLAUDE.md` layout section updated, a short note in `DECISIONS.md`. Walk template and old pages are kept in git history. Nothing is deleted without the user's say so.
 - **Requirements:** DOC-22, DOC-25, DOC-26.
 - **Size:** M.
-- **Acceptance:** DOC-25 passes for every case, Mike has played Cullionboy and one thin case on his phone and approves the switch.
+- **Acceptance:** DOC-25 passes for every case, the user has played Cullionboy and one thin case on his phone and approves the switch.
 
 Order: DP1, DP2, DP3, then DP4 and DP5, then DP6, DP7, then DP9. DP8 any time after DP4. DP4 must be built to reuse the walk's scenes and plates so DP9 is a switch, not a rewrite.
 
@@ -306,7 +306,7 @@ Order: DP1, DP2, DP3, then DP4 and DP5, then DP6, DP7, then DP9. DP8 any time af
 | ID | Item | Default until decided |
 |---|---|---|
 | O1 | Closed 2026-11-20. The documentary replaces the walk (D9). The standalone townland timeline pages stay as they are. | Decided |
-| O2 | Narration voice: synthetic, or recordings in Mike's own voice for key chapters. | Captions only. |
+| O2 | Narration voice: synthetic, or recordings in the user's own voice for key chapters. | Captions only. |
 | O3 | Music: own recordings, public domain traditional airs, or licensed tracks. | No music. |
 | O4 | Whether the townland pages link to the family timelines now that the documentary is the shared home. This was held on 2026-11-19 until the big picture was settled. | Still held. Family thread only inside the documentary. |
 | O5 | Whether the softening in D5 ("possibly" for possible links) should also apply to the family stories in `docs/STORY_SPEC.md`. | Documentary only. STORY_SPEC unchanged. |
@@ -317,12 +317,12 @@ Order: DP1, DP2, DP3, then DP4 and DP5, then DP6, DP7, then DP9. DP8 any time af
 
 | Package | Status | Where |
 |---|---|---|
-| DP1 Specification and decisions | Draft written 2026-11-20, awaiting Mike's review | This file, branch `feature/documentary` |
-| DP2 Beat generator | Not started | |
-| DP3 Validation and privacy | Not started | |
+| DP1 Specification and decisions | Draft written 2026-11-20, awaiting the user's review | This file, branch `feature/documentary` |
+| DP2 Beat generator | Built 2026-11-20, awaiting the user's sign-off of the Cullionboy captions | `tools/build_documentary.py`, `tests/test_build_documentary.py`, `townlands/cullionboy/records/documentary.json` |
+| DP3 Validation and privacy | Partly done: the generator checks every beat (DOC-02, 05, 06, 06a, 07, 08, 09) and stops on a failure. Still to do: have `tools/validate.py` check committed `documentary.json` files | |
 | DP4 Player core | Not started | |
 | DP5 Layouts, accessibility and motion | Not started | |
 | DP6 Family thread | Not started | |
 | DP7 Rollout | Not started | |
 | DP8 Sound | Deferred (O2, O3) | |
-| DP9 Cutover | Not started, needs Mike's approval after parity | |
+| DP9 Cutover | Not started, needs the user's approval after parity | |

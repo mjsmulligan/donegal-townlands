@@ -31,7 +31,7 @@ on:
         default: true
         type: boolean
       allow_schema_change:
-        description: "Accept NAI column changes beyond the absent townland_clean and ded_clean. Only after Mike has seen the dry run."
+        description: "Accept NAI column changes beyond the absent townland_clean and ded_clean. Only after the user has seen the dry run."
         required: true
         default: false
         type: boolean

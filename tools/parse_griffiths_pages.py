@@ -24,7 +24,7 @@ Checks, all reported on screen and any failure stops the run:
 - the "of N" total on the pages equals the rows found
 - a record id appears once
 Gaps in the run of record ids are reported, not hidden: they may be entries the search
-does not show, and they are left for Mike to look at. Rows are written in record id order.
+does not show, and they are left for the user to look at. Rows are written in record id order.
 The session id in the saved links expires. It is kept in this CSV only because the file is
 a record of what was retrieved. attach_griffiths.py never uses it."""
 import csv, html, pathlib, re, sys

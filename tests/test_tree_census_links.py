@@ -197,7 +197,7 @@ class DecisionTests(Fixture):
 
     def row(self, **kw):
         base = {"person_ptr": "@I1@", "person_name": "Hugh Example", "person_birth": "ABT 1850",
-                "obs_id": "census1901:testded:100", "status": "accepted", "reviewer": "Mike",
+                "obs_id": "census1901:testded:100", "status": "accepted", "reviewer": "user",
                 "date": "2026-11-06", "method": "m", "proposed_confidence": "high", "note": ""}
         base.update(kw)
         return base

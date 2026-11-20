@@ -323,7 +323,7 @@ def _who(p):
 
 
 def census_accepted_links(events, path=None):
-    """Census links Mike has accepted (data/research/associations/census_links.csv). A link is used only
+    """Census links the user has accepted (data/research/associations/census_links.csv). A link is used only
     when both rows are on this page, in a household that is listed. Each person gets a pointer to the
     other return, and each pair of cards one note naming the people linked between them."""
     path = pathlib.Path(path) if path else ROOT / 'data' / 'research' / 'associations' / 'census_links.csv'
