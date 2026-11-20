@@ -33,7 +33,7 @@ class ReferenceTests(unittest.TestCase):
             w.writerows(rows)
 
     def test_a_good_file_has_no_problems_and_an_absent_file_is_empty(self):
-        self.write([row(), row(family_id="c-d", label="Cd", spellings="Cd|Dc", status="verified", authority="Mike",
+        self.write([row(), row(family_id="c-d", label="Cd", spellings="Cd|Dc", status="verified", authority="user",
                               basis="x", observed_in="y")])
         self.assertEqual(vr.check(self.path), [])
         self.assertEqual(vr.check(self.path.with_name("none.csv")), [])
@@ -50,8 +50,8 @@ class ReferenceTests(unittest.TestCase):
             "two different spellings": row(spellings="Ab|ab"),
             "label": row(label="Zz"),
             "needs authority": row(status="verified", basis="x", observed_in="y"),
-            "needs basis": row(status="verified", authority="Mike", observed_in="y"),
-            "needs observed_in": row(status="verified", authority="Mike", basis="x"),
+            "needs basis": row(status="verified", authority="user", observed_in="y"),
+            "needs observed_in": row(status="verified", authority="user", basis="x"),
         }
         for words, bad in cases.items():
             self.write([bad])
@@ -70,7 +70,7 @@ class ReferenceTests(unittest.TestCase):
         self.assertEqual(vr.lookup("unknown", rows), [])
 
     def test_overlap_with_a_verified_row_fails_and_between_proposed_rows_only_warns(self):
-        ver = dict(status="verified", authority="Mike", basis="x", observed_in="y")
+        ver = dict(status="verified", authority="user", basis="x", observed_in="y")
         self.write([row(), row(family_id="c-d", label="Cd", spellings="Cd|Ba")])
         self.assertEqual(vr.check(self.path), [])
         self.assertEqual(len(vr.warnings(self.path)), 1)
@@ -79,7 +79,7 @@ class ReferenceTests(unittest.TestCase):
         self.assertEqual(vr.warnings(self.path), [])
 
     def test_a_page_gets_only_verified_families_with_a_spelling_it_holds(self):
-        ver = dict(status="verified", authority="Mike", basis="x", observed_in="y")
+        ver = dict(status="verified", authority="user", basis="x", observed_in="y")
         self.write([row(**ver), row(family_id="c-d", label="Cd", spellings="Cd|Dc"),
                     row(family_id="e-f", label="Ef", spellings="Ef|Fe", **ver)])
         rows = vr.load(self.path)

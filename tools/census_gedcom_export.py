@@ -4,7 +4,7 @@
     python tools/census_gedcom_export.py --family Kelly
     python tools/census_gedcom_export.py --ded Clogher
 
-The file is built from the census returns, the census links Mike accepted (WP19,
+The file is built from the census returns, the census links the user accepted (WP19,
 `data/research/associations/census_links.csv`) and the links he accepted from his own tree
 (`data/research/associations/tree_census_links.csv`). Nothing is stated that the returns do not state:
 one person per chain of accepted links, every recorded spelling as a name, one census event per
@@ -95,7 +95,7 @@ class Chains:
 
 
 def load_anchors(path: Path = cl.TREE) -> dict[str, str]:
-    """Census row to tree person pointer, from the links Mike accepted in his tree."""
+    """Census row to tree person pointer, from the links the user accepted in his tree."""
     out = {}
     if Path(path).is_file():
         for r in tree_census_links.read_decisions(path):
@@ -107,7 +107,7 @@ def load_anchors(path: Path = cl.TREE) -> dict[str, str]:
 def build_chains(rows, accepted_pairs, anchors, tentative=(), tent_used=None):
     """Returns (chain id to member rows, row to chain id, report lines, accepted links used).
 
-    `tentative` is a list of matcher links Mike has not reviewed, each a dict with fo, to,
+    `tentative` is a list of matcher links the user has not reviewed, each a dict with fo, to,
     confidence and flags. They are joined last, strongest first, so tree anchors and accepted
     links always win a clash. The ones that join are appended to `tent_used`."""
     present = {r["obs"] for r in rows}
@@ -463,7 +463,7 @@ def derived_birth(members):
 
 
 def family_conflicts(fams, kids_of, groups) -> list[str]:
-    """Things in the finished families that cannot all be right, for Mike. Nothing is changed or resolved."""
+    """Things in the finished families that cannot all be right, for the user. Nothing is changed or resolved."""
     out = []
     nm = lambda c: clean_name("%s %s" % (groups[c][0]["first"], groups[c][0]["surname"]))
     for k in sorted(fams, key=lambda k: (str(k[0]), str(k[1]))):
@@ -542,7 +542,7 @@ def slug(s: str) -> str:
 
 
 def tentative_links(rows, names, decisions: Path, min_confidence: str = "low"):
-    """Links the matcher proposes that Mike has not reviewed, for a test file. Ambiguous links and
+    """Links the matcher proposes that the user has not reviewed, for a test file. Ambiguous links and
     rejected pairs are left out, and nothing here is written to the decisions file. Returns
     (links, number of ambiguous links left out)."""
     cfg = cl.load_config()
@@ -623,7 +623,7 @@ def main(argv=None) -> int:
                     help="evidence: a child is attached to the wife only where years married allow it (default). "
                          "assume: attach unless the return contradicts it")
     ap.add_argument("--tentative", action="store_true",
-                    help="also join returns by matcher links Mike has not reviewed (ambiguous ones are left out), so the file can be "
+                    help="also join returns by matcher links the user has not reviewed (ambiguous ones are left out), so the file can be "
                          "tried in Ancestry. Nothing is written to the decisions file, and the output is named *_tentative.ged")
     ap.add_argument("--min-confidence", choices=tuple(cl.RANK), default="low",
                     help="with --tentative, the weakest matcher confidence to use (default low, which means all)")

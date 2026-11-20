@@ -5,16 +5,16 @@
 
 Writes townlands/<townland>/records/facts/<family>.json. Every fact carries a tier that says
 how firmly it stands, and a `usable` flag. A story may rest only on usable facts
-(docs/STORY_SPEC.md: "Use only links Mike has accepted").
+(docs/STORY_SPEC.md: "Use only links the user has accepted").
 
 Tiers:
-  tree      Mike's family tree (secondary source, research). Already filtered by 100/75/50.
+  tree      the user's family tree (secondary source, research). Already filtered by 100/75/50.
   census    a census return as recorded, one return at a time (custodian published).
   griffiths a row of Griffith's Valuation as transcribed for the townland.
-  accepted  a census link Mike accepted (WP19), or a census row he tied to a tree person.
+  accepted  a census link the user accepted (WP19), or a census row he tied to a tree person.
   derived   worked out from usable facts above (an age at a wedding, a count of children).
   media     a caption in media.csv.
-  proposed  a census link the matcher proposes and Mike has not accepted. NOT usable. It carries
+  proposed  a census link the matcher proposes and the user has not accepted. NOT usable. It carries
             the matcher's confidence (high, medium, low, ambiguous) so the weight is visible.
 
 Conflicts between records (an age that drifts, an age at death that does not fit the dates) are
@@ -239,7 +239,7 @@ def build(townland: str, family: str, root: Path = ROOT, census_dir: Path = cl.C
         if len(who) > 1:
             sh.add("count", "derived", "%d children in the tree were born at %s: %s" % (len(who), pl, ", ".join(who)),
                    who=who, count=len(who), place=pl)
-    # tree census entries are rows Mike tied to the person (accepted anchors)
+    # tree census entries are rows the user tied to the person (accepted anchors)
     for ptr, p in tree.items():
         seen = []
         for c in p.get("census", []):

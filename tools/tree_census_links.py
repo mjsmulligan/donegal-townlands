@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Propose and check associations between GEDCOM people and census rows (WP16).
 
-The GEDCOM is a secondary source: it records Mike's research. Census rows are
+The GEDCOM is a secondary source: it records the user's research. Census rows are
 the primary evidence. This tool reads the census citations on each GEDCOM
 person, proposes the census row each one refers to, and audits the tree's
 birth years against the census ages. Nothing is accepted by the tool. Accepted

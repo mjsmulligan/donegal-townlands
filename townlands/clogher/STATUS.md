@@ -6,11 +6,11 @@ Page: `docs/clogher/index.html`, built from `engine/walk.html`, `townland.json`,
 - Griffith's Valuation (mid 1850s), Parish of Donegal, page 96, transcribed from an image into `content.json` (`griffiths.rows`). Areas (with the water entry) and total valuations add exactly to the printed totals.
 - Census 1901, 1911, 1926 (`data/source/census/`, extracted to `records/census.json`). Clogher townland rows only: 125, 112 and 89 people in 27, 23 and 20 households.
 - townlands.ie for area, Irish name and neighbours.
-- Tawnawilly registers: only a page index exists (held by Mike outside the repository), no names, so no Clogher baptisms or marriages yet.
+- Tawnawilly registers: only a page index exists (held by the user outside the repository), no names, so no Clogher baptisms or marriages yet.
 
 ## Timeline (2026-11-18)
-- `docs/clogher/timeline.html`, built by `tools/build_timeline.py clogher` from `records/timeline_events.json`: Griffith's (the 1850s, from our transcription in `content.json`), the 1901, 1911 and 1926 returns, and 7 register baptisms whose place is written Clogher (1873-75). TAW-B-p015-r180 was resolved by Mike on 2026-11-18 (26 Jan 1875, father Patrick Bresland, a rarer variant of Breslin) and is now included. "Cloghan" (TAW-B-p013-r164) is a different place name on the page and is not included.
-- `media/clogher-landscape.jpg` (Mike's personal photo, 2026-11-18) is the header photograph and the timeline's page background. The Clogher walk page has not been rebuilt, so it does not show it yet.
+- `docs/clogher/timeline.html`, built by `tools/build_timeline.py clogher` from `records/timeline_events.json`: Griffith's (the 1850s, from our transcription in `content.json`), the 1901, 1911 and 1926 returns, and 7 register baptisms whose place is written Clogher (1873-75). TAW-B-p015-r180 was resolved by the user on 2026-11-18 (26 Jan 1875, father Patrick Bresland, a rarer variant of Breslin) and is now included. "Cloghan" (TAW-B-p013-r164) is a different place name on the page and is not included.
+- `media/clogher-landscape.jpg` (the user's personal photo, 2026-11-18) is the header photograph and the timeline's page background. The Clogher walk page has not been rebuilt, so it does not show it yet.
 
 ## Missing
 - Tithe Applotment, valuation revision books, civil BMD from 1864, parish register entries.
@@ -32,4 +32,4 @@ Page: `docs/clogher/index.html`, built from `engine/walk.html`, `townland.json`,
 - Outcome: Clogher page built on the per-townland engine, with the Griffith's transcription, 11 family plates and a smaller-families plate.
 - Validation: `python tools/validate.py` ok; page renders with 20 plates and no script errors.
 - Review: no independent review yet.
-- Next step: Mike to confirm publishing, then add the Griffith's land and buildings split and the original-record links.
+- Next step: the user to confirm publishing, then add the Griffith's land and buildings split and the original-record links.

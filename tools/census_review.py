@@ -3,13 +3,13 @@
     python tools/census_review.py cullionboy [--include-proposed-given-names] [--out PATH]
 
 Runs the linker for the townland and writes an HTML page with accept and reject buttons.
-The page does not change the project. It produces a list of decisions that Mike downloads (or
+The page does not change the project. It produces a list of decisions that the user downloads (or
 copies) and sends back, and `census_links.py accept` records them. Output goes to
 data/processed/census_links/ (not committed).
 
 Every link is in one of three queues (WP23):
   clean   high confidence and not ambiguous: needs only the audit sample
-  review  everything else Mike should look at
+  review  everything else the user should look at
   hidden  low confidence, across townlands, no household support, no surname change. These are
           the likeliest coincidences of a name and an age elsewhere in the DED. They are shown as
           a count and in their own tab. Nothing is rejected or recorded for them.

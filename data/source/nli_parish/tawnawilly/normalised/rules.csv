@@ -51,14 +51,14 @@ surname,Mulrine,Mulreany,proposed,"'variant family, verified' in the earlier nor
 surname,Timmony,Timoney,proposed,"'variant family, verified' in the earlier normalised file; confirm before it goes in data/reference/surname_variants.csv"
 surname,Timony,Timoney,proposed,"'variant family, verified' in the earlier normalised file; confirm before it goes in data/reference/surname_variants.csv"
 surname,Trower,Travers,proposed,"'variant family, verified' in the earlier normalised file; confirm before it goes in data/reference/surname_variants.csv"
-townland,Ardatole,Ardatowel,verified,"verified, Mike place evidence (Ardatowel / Ardnatowel)"
+townland,Ardatole,Ardatowel,verified,"verified, the user place evidence (Ardatowel / Ardnatowel)"
 townland,Ardatowel,Ardatowel,dictionary,
-townland,Ardevin,Ardeevin,verified,"verified, Mike place evidence (Ardevrin 1926 form); dictionary Ardeevin"
+townland,Ardevin,Ardeevin,verified,"verified, the user place evidence (Ardevrin 1926 form); dictionary Ardeevin"
 townland,Ardnableask,Ardnableask,dictionary,
 townland,Ardnagassan,Ardnagassan,dictionary,
 townland,Ardnawark,Ardinawark,dictionary,"dictionary, Project dictionary spelling; 1901 Ardinawark, 1926 Ardnawark"
-townland,Aughlim,Aghlem,verified,"verified, Mike: Aughlin is a variant of Aghlem"
-townland,Aughlin,Aghlem,verified,"verified, Mike"
+townland,Aughlim,Aghlem,verified,"verified, the user: Aughlin is a variant of Aghlem"
+townland,Aughlin,Aghlem,verified,"verified, the user"
 townland,B. Hill,Birchhill,dictionary,"dictionary, Project dictionary"
 townland,Ballykillowen,Ballykillowen,verified,
 townland,Barnagh,,unresolved,
@@ -67,7 +67,7 @@ townland,Birchhill,Birchhill,dictionary,
 townland,Carnbeagh,Carnbeagh (North/South unresolved),ambiguous,"North/South unresolved) (ambiguous, Dictionary has North and South"
 townland,Clar Drumbarron,Clardrumbarren,probable,"probable, Project dictionary (Clardrumbarren)"
 townland,Clarcam,Clarcam,dictionary,
-townland,Clarlough-Eske,Clarlougheask,verified,"verified, Mike place evidence"
+townland,Clarlough-Eske,Clarlougheask,verified,"verified, the user place evidence"
 townland,Clarloughask,Clarlougheask,dictionary,"dictionary, as Clarlougheask"
 townland,Clarlougheask,Clarlougheask,dictionary,
 townland,Cloghan,,unmapped,
@@ -76,14 +76,14 @@ townland,Corracramph,Corracramph,verified,
 townland,Creigh-Kyn,,unmapped,
 townland,Cullionboy,Cullionboy,dictionary,
 townland,Donegal,Donegal Town,probable,"probable, Probable: same place as Town"
-townland,Donegal town,Donegal Town,verified,"verified, Mike"
+townland,Donegal town,Donegal Town,verified,"verified, the user"
 townland,Drimark,,unmapped,
 townland,Drimenny,Drummenny (Lower/Middle/Upper unresolved),ambiguous,"Lower/Middle/Upper unresolved) (ambiguous, as Drumenny"
 townland,Drumadoney,Drumadoney,verified,
 townland,Drumbar,Drumbar,dictionary,
-townland,Drumenny,Drummenny (Lower/Middle/Upper unresolved),ambiguous,"Lower/Middle/Upper unresolved) (ambiguous, Mike: three townlands, register does not say which; never merge"
+townland,Drumenny,Drummenny (Lower/Middle/Upper unresolved),ambiguous,"Lower/Middle/Upper unresolved) (ambiguous, the user: three townlands, register does not say which; never merge"
 townland,Druminardagh,Druminardagh,verified,
-townland,Drumminin,Druminnin,verified,"verified, Mike: Druminnin primary, Drumminin variant"
+townland,Drumminin,Druminnin,verified,"verified, the user: Druminnin primary, Drumminin variant"
 townland,Drumnagahan,Drumnagahan,dictionary,
 townland,Drumnamardagh,Druminardagh,possible,"possible, Possible variant; check"
 townland,Drumroak,,unmapped,
@@ -92,11 +92,11 @@ townland,Finnabanes,Finnabanes,dictionary,
 townland,Finnadoos,Finnadoos,dictionary,
 townland,Garvagh,Garvagh,dictionary,
 townland,Goladoo,Goladoo,dictionary,
-townland,Gragstown,Brookfield,verified,"verified, Mike: Gregstown aka Brookfield"
-townland,Gregstown,Brookfield,verified,"verified, Mike"
+townland,Gragstown,Brookfield,verified,"verified, the user: Gregstown aka Brookfield"
+townland,Gregstown,Brookfield,verified,"verified, the user"
 townland,Laughkippe,Loughkip,dictionary,"dictionary, Project dictionary (Loughkip)"
 townland,Leghawny,Leghawny,dictionary,
-townland,Leghowney,Leghawny,verified,"verified, Mike confirmed spelling Leghowney; dictionary Leghawny"
+townland,Leghowney,Leghawny,verified,"verified, the user confirmed spelling Leghowney; dictionary Leghawny"
 townland,Loughkippe,Loughkip,dictionary,"dictionary, Project dictionary (Loughkip)"
 townland,Meenadreen,Meenadreen,verified,
 townland,Mullanalamphry,Mullanalamphry,dictionary,
@@ -105,13 +105,13 @@ townland,Raforker,Raforker,dictionary,
 townland,Readen,,unmapped,
 townland,Skreen,Skreen,verified,
 townland,Stranass,,unmapped,
-townland,Tawnagorm,Tawnaghgorm,verified,"verified, Mike place evidence"
+townland,Tawnagorm,Tawnaghgorm,verified,"verified, the user place evidence"
 townland,Tawnawully,Tawnawully,dictionary,
 townland,"The Moor, Donegal",,unresolved,
 townland,Tomnagorm,Tawnaghgorm,probable,"probable, as Tawnagorm"
-townland,Town,Donegal Town,verified,"verified, Mike (local knowledge); 22 baptism notes"
+townland,Town,Donegal Town,verified,"verified, the user (local knowledge); 22 baptism notes"
 townland,Town (Constabulary),Donegal Town,probable,"probable, Entry notes Constabulary; same place"
-townland,Townagorm,Tawnaghgorm,verified,"verified, Mike place evidence"
+townland,Townagorm,Tawnaghgorm,verified,"verified, the user place evidence"
 townland,Tully,Tully,dictionary,
 townland,Tullyearl,,unmapped,
 townland,Tullyloskan,Tullyloskan,dictionary,

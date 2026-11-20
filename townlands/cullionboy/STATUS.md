@@ -8,9 +8,9 @@ Page: `docs/cullionboy/index.html`, built from `engine/walk.html` and `records/c
 - townlands.ie for area and neighbours (Clogher is to the south)
 
 ## Media
-- `media/media.csv` lists two photographs, both from Mike's personal photos: the header panorama (caption "Cullionboy") and a family photograph on The Kellys plate (caption "Bella, Rose & Mary Kate Kelly").
+- `media/media.csv` lists two photographs, both from the user's personal photos: the header panorama (caption "Cullionboy") and a family photograph on The Kellys plate (caption "Bella, Rose & Mary Kate Kelly").
 - The header shows under the title. The family photograph shows on the Photos tab of The Kellys plate, which is the first tab (docs/MEDIA_SPEC.md).
-- Caption spelling is Mike's. The 1926 census records the daughters as Mary Katie (13) and Rose Anne (12) in Bella Kelly's household (form 0002). Kept as captioned, noted here and not resolved.
+- Caption spelling is the user's. The 1926 census records the daughters as Mary Katie (13) and Rose Anne (12) in Bella Kelly's household (form 0002). Kept as captioned, noted here and not resolved.
 - Which woman is which is not recorded, so `people_shown` is left blank.
 
 ## Griffith's index check (2026-11-04)
@@ -18,7 +18,7 @@ Page: `docs/cullionboy/index.html`, built from `engine/walk.html` and `records/c
 - The index supports the readings Dimon, Hallaghy, Mulrenin and Phideas, but it is itself a transcription, so this is corroboration and not proof.
 
 ## Story voice pilot (2026-11-07, branch story-voice-kelly)
-- The Kellys plate is the pilot for the plain, lay-person voice (DECISIONS.md, 2026-11-07). Its text is one account drawn from the census, Griffith's and the family tree, with no citations, IDs, speculation or open questions. Other families still carry the earlier census-report text and are to be rewritten once Mike approves the register.
+- The Kellys plate is the pilot for the plain, lay-person voice (DECISIONS.md, 2026-11-07). Its text is one account drawn from the census, Griffith's and the family tree, with no citations, IDs, speculation or open questions. Other families still carry the earlier census-report text and are to be rewritten once the user approves the register.
 
 ## Timeline (2026-11-18)
 - `docs/cullionboy/timeline.html`, built by `tools/build_timeline.py cullionboy` from `records/timeline_events.json`: Griffith's (1850s), the 1901, 1911 and 1926 returns, and the register baptisms that name Cullionboy with an agreed or resolved reading and an exact date. Baptisms whose readings are still disputed are left out and listed by the build.
@@ -43,4 +43,4 @@ Claude Doc 845ed338-9fd0-41b6-9388-c94ad29267d4 still says "six children" for Be
 - Thomas Kelly: aged 60 in 1901 and 74 in 1911, a drift of 4 years against the 10 between returns. Held open. The story says "about sixty" in 1901.
 
 ## Documentary (2026-11-20, DP2)
-`python tools/build_documentary.py cullionboy` writes `records/documentary.json` (10 beats: title, Griffith's, two baptism beats, three censuses, two change beats, closing). Generated, never edited by hand. Two baptism rows (TAW-B-p010-r115, TAW-B-p011-r123) are left out because their readings are disputed. The 1875 baptism of Joseph Kelly (TAW-B-p017-r219) was confirmed as Cullionboy by the user from the page image on 2026-11-20, so its beat is stated plainly. Captions wait for Mike to read them aloud and sign off. Spec: `docs/DOCUMENTARY_SPEC.md`.
+`python tools/build_documentary.py cullionboy` writes `records/documentary.json` (10 beats: title, Griffith's, two baptism beats, three censuses, two change beats, closing). Generated, never edited by hand. Two baptism rows (TAW-B-p010-r115, TAW-B-p011-r123) are left out because their readings are disputed. The 1875 baptism of Joseph Kelly (TAW-B-p017-r219) was confirmed as Cullionboy by the user from the page image on 2026-11-20, so its beat is stated plainly. Captions wait for the user to read them aloud and sign off. Spec: `docs/DOCUMENTARY_SPEC.md`.

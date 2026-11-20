@@ -18,7 +18,7 @@ Family stories are written in a plain, lay person's tone, as one account that dr
 
 ## Owner and working style
 
-- Owner: Mike (genealogist, limited Python, relies on you for implementation).
+- Owner: the user (genealogist, limited Python, relies on you for implementation).
 - No em dashes anywhere, in any file. `tools/validate.py` fails the commit if it finds one.
 - Metric units. Keep spelling as in the sources (Cullionboy, Collinboy, Dimon, Dunnion).
 - Light, non-heavy palettes. No brown.
@@ -31,7 +31,7 @@ Family stories are written in a plain, lay person's tone, as one account that dr
 
 ## Source data principles
 
-Decided by Mike, 2026-11-10 (DECISIONS.md). They apply to every source, 1926 included.
+Decided by the user, 2026-11-10 (DECISIONS.md). They apply to every source, 1926 included.
 
 1. Source data is ingested as supplied. It is not changed or annotated: no values edited, no columns added, removed, renamed or reordered, no metadata altered. Acquisition facts go in a separate manifest. Corrections, interpretations and researcher-filled values live in separate downstream files, never in the source file.
 2. The custodian is the authority. For census data the National Archives of Ireland (NAI) is the source, so its latest published files are correct, and the project adjusts to them. When a refresh changes a value, a field or a column's content, derived data and code are updated to follow it. The source is not bent to fit the project, and an older local copy does not outrank the custodian's current release.
@@ -50,13 +50,13 @@ The central working specification is [`docs/DATA_ARCHITECTURE.md`](docs/DATA_ARC
 - Always distinguish a source that is specified in a catalogue from one whose ingestion is implemented and one for which records have actually been ingested.
 - Check `docs/repositories.md` in GRA for a source's licence before committing anything from it. Never commit Historic Graves data.
 - Do not treat any GRA person match as a confirmed Townlands identity.
-- Any code, data or design taken from GRA is copied or referenced explicitly, with provenance and licence checked. Any future interface between the two projects needs design discussion and Mike's approval.
+- Any code, data or design taken from GRA is copied or referenced explicitly, with provenance and licence checked. Any future interface between the two projects needs design discussion and the user's approval.
 
 ## Method
 
 - Baseline source is Griffith's Valuation (mid 1850s). Tithe Applotment before it, then revision books, civil BMD (1864 on), parish records, censuses 1901, 1911, 1926.
 - GRA `src/genealogy/names.py` is a reference for surname and name variant rules, not a dependency. Working groups so far (Gildea/Guildea, Colhoun/Coulhoun, Sweeny/Sweeney/McSwyne, Dunleavy/Dunlevy). Dimon to Dunnion is a working hypothesis, Hallaghy possibly Gallagher.
-- Surname spelling variants are common and no spelling is the correct one. `data/reference/surname_variants.csv` is the single surname dictionary (DECISIONS.md, 2026-11-06). Only Mike verifies a row, using local knowledge, and a verified row applies to every townland and puts the family on its page under one label. Never group spellings on a page on your own: add a family as `proposed`, which changes nothing, and tell Mike. Evidence rows always keep the spelling as recorded. Review with `python tools/variants_report.py` and `--unassigned`.
+- Surname spelling variants are common and no spelling is the correct one. `data/reference/surname_variants.csv` is the single surname dictionary (DECISIONS.md, 2026-11-06). Only the user verifies a row, using local knowledge, and a verified row applies to every townland and puts the family on its page under one label. Never group spellings on a page on your own: add a family as `proposed`, which changes nothing, and tell the user. Evidence rows always keep the spelling as recorded. Review with `python tools/variants_report.py` and `--unassigned`.
 - Tolerate age drift between censuses. Hold discrepancies open and record them in the townland STATUS.md. Never resolve a conflict silently.
 - Separate documents from oral tradition and say which is which.
 - Report numbers that do not add up (for example the Griffith's area sum one acre over the printed total in Cullionboy) and keep them open.
@@ -78,8 +78,8 @@ The rule applies to information the project holds that is not itself taken from 
 - `data/reference/surname_variants.csv`: the surname dictionary, checked by `tools/variants_reference.py` and `tools/validate.py` (DECISIONS.md, 2026-11-05).
 - `tools/build.py <name>` (or `--all`) builds every case the same way, `tools/validate.py` checks before commit. `tools/extract_census.py` was removed on 2026-11-11 (superseded by `tools/attach_census.py`).
 - `tests/`: every test module (moved from `tools/` on 2026-11-11). Run `python -m pytest -q tests`. The "Tests" workflow runs them and `tools/validate.py` on every pull request and push to main.
-- `tools/create_townland_cases.py` makes a case for every Logainm townland. `tools/attach_census.py` attaches census returns to every case in each DED that is in the place layer (all five held DEDs since 2026-11-09), including Clogher and Cullionboy, by identical name or an accepted spelling, applies `records/corrections.json`, writes `records/census.json` and `records/census_match.json`, and lists other spellings in `data/processed/places/census_spelling_review.csv` for Mike's review.
-- `tools/census_links.py` proposes links between the 1901, 1911 and 1926 returns (`propose`), compares them with the tree (`check`), records Mike's decisions (`accept`) and reports how often each band and flag was accepted (`calibrate`, read-only) in `data/research/associations/census_links.csv`. `tools/census_review.py <townland>` builds the review page. `tools/census_gedcom_export.py` writes a GEDCOM test file for a townland, family or DED from accepted links to `data/processed/census_gedcom/` (not committed). Specified in `docs/CENSUS_GEDCOM_SPEC.md`. The manual workflow "Census to GEDCOM" (`.github/workflows/census-gedcom.yml`) builds the same files as downloadable artifacts, the tentative one only when ticked, and never commits or publishes (`docs/CENSUS_GEDCOM_WORKFLOW.md`).
+- `tools/create_townland_cases.py` makes a case for every Logainm townland. `tools/attach_census.py` attaches census returns to every case in each DED that is in the place layer (all five held DEDs since 2026-11-09), including Clogher and Cullionboy, by identical name or an accepted spelling, applies `records/corrections.json`, writes `records/census.json` and `records/census_match.json`, and lists other spellings in `data/processed/places/census_spelling_review.csv` for the user's review.
+- `tools/census_links.py` proposes links between the 1901, 1911 and 1926 returns (`propose`), compares them with the tree (`check`), records the user's decisions (`accept`) and reports how often each band and flag was accepted (`calibrate`, read-only) in `data/research/associations/census_links.csv`. `tools/census_review.py <townland>` builds the review page. `tools/census_gedcom_export.py` writes a GEDCOM test file for a townland, family or DED from accepted links to `data/processed/census_gedcom/` (not committed). Specified in `docs/CENSUS_GEDCOM_SPEC.md`. The manual workflow "Census to GEDCOM" (`.github/workflows/census-gedcom.yml`) builds the same files as downloadable artifacts, the tentative one only when ticked, and never commits or publishes (`docs/CENSUS_GEDCOM_WORKFLOW.md`).
 - `tools/family_facts.py <townland> <family>` writes the family fact sheet (`townlands/<name>/records/facts/<family>.json`, committed) with a tier and `usable` flag on every fact. `tools/check_story.py <townland> <family>` fails any name, place, date, age, number or relationship in the family story that is not in a usable fact (WP21). Run it before a story is accepted.
 - `engine/index.html`: the template for the map index (`docs/index.html`): a Leaflet map and one card per case, in name order, tagged Townland Study, Census Returns or Townland Record by the case's state. Placeholders: `__MARK__`, `__COUNT__`, `__FOOTER__`, `__GEOJSON__`, `__CARDS__`. Change the layout there, never in `docs/index.html`. Only cases appear, so a place with no case folder has no card (DECISIONS.md, 2026-11-08).
 - `docs/<name>/index.html`: built output, served by GitHub Pages from /docs. Never edit by hand; run build. Every recognised place has a gallery walk page that grows as records are added. `docs/index.html` lists them all, is regenerated by every build and is never edited by hand.
@@ -90,5 +90,5 @@ Family stories, the Griffith's transcription and plate copy live in `townlands/<
 
 ## Standing rules for images
 
-Specified in [`docs/MEDIA_SPEC.md`](docs/MEDIA_SPEC.md) (draft, decided 2026-11-03). Images are committed as supplied, not resized, in `townlands/<name>/media/`, with a row for each in that folder's `media.csv`. Required per image: file, scope, caption, source. Date, reference, people shown and original link are optional. Photographs are shown whole in a frame, never cropped. Mike checks each photograph for privacy himself before adding it; the validator applies no 100/75/50 test to media.
+Specified in [`docs/MEDIA_SPEC.md`](docs/MEDIA_SPEC.md) (draft, decided 2026-11-03). Images are committed as supplied, not resized, in `townlands/<name>/media/`, with a row for each in that folder's `media.csv`. Required per image: file, scope, caption, source. Date, reference, people shown and original link are optional. Photographs are shown whole in a frame, never cropped. The user checks each photograph for privacy himself before adding it; the validator applies no 100/75/50 test to media.
 

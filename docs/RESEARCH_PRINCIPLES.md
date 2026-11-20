@@ -56,7 +56,7 @@ In short: **Grá tells us what the sources contain. Donegal Townlands investigat
 
 ## The GEDCOM is a secondary source
 
-Primary sources are the evidence. The GEDCOM records Mike's research from them and is a secondary source. Use only GEDCOM data of high quality. Where an error is found, flag it and review it with Mike. If he is not satisfied with a claim, it is not used. Removing a weak entry from the GEDCOM is preferred to keeping a suspected one (2026-11-06, Owen McCadden).
+Primary sources are the evidence. The GEDCOM records the user's research from them and is a secondary source. Use only GEDCOM data of high quality. Where an error is found, flag it and review it with the user. If he is not satisfied with a claim, it is not used. Removing a weak entry from the GEDCOM is preferred to keeping a suspected one (2026-11-06, Owen McCadden).
 
 Birth was not registered systematically before 1864, so people born earlier estimated their own ages in census returns. Age drift between returns is expected for those births and is recorded, not treated as an error. A civil birth record outranks census ages where one exists.
 

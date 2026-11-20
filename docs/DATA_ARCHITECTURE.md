@@ -217,7 +217,7 @@ to the presentation and research requirements.
 - GEDCOM pointers are not Donegal Townlands identifiers.
 - Citations support individual facts, not a general bibliography.
 - A source observation does not establish identity. Person matching is subject to human review.
-- The GEDCOM is a secondary source, derived from Mike's research. Only high quality claims are used; errors are flagged for review and unsatisfactory claims are not used (see `docs/RESEARCH_PRINCIPLES.md`).
+- The GEDCOM is a secondary source, derived from the user's research. Only high quality claims are used; errors are flagged for review and unsatisfactory claims are not used (see `docs/RESEARCH_PRINCIPLES.md`).
 - GEDCOM people are linked to census observations by reviewed associations (WP16), not by editing the census rows. Links are keyed on the observation ID and the GEDCOM person pointer, with the person's name and birth kept as a guard.
 - Tested 2026-11-06 with Ancestry exports: person pointers (`@I...@`) stayed stable across a re-download and across deleting three people. Family pointers (`@F...@`) were renumbered. Key anything durable on people, never on family pointers.
 
@@ -368,7 +368,7 @@ The requirements are in `docs/REQUIREMENTS.md` and the work packages in `docs/WO
 - Accept and reject decisions are made in a review CSV and applied by script.
 - Code from GRA is copied and adapted, with a provenance header, not imported. Person-linking pipelines are not reused.
 - Logainm is the place authority and its ID is the place key. The project builds no full gazetteer, only name variants, manual places and associations. The project dictionary is a cross-check.
-- Corrections and curated values are kept in overlay files so source files stay unchanged (proposed). The 1926 files hold no researcher annotations (Mike, 2026-11-10). Source files are never annotated, and the custodian's latest release is the authority (CLAUDE.md, Source data principles, decided 2026-11-10).
+- Corrections and curated values are kept in overlay files so source files stay unchanged (proposed). The 1926 files hold no researcher annotations (the user, 2026-11-10). Source files are never annotated, and the custodian's latest release is the authority (CLAUDE.md, Source data principles, decided 2026-11-10).
 - Open: whether the public repository may hold processed research layers and the GEDCOM, whether the GEDCOM is ever edited in genealogy software, which genealogy software is used, and a Logainm API key.
 - Townland cases are generated from the Logainm place register, independently
   of historical source availability. Case generation is repeatable and

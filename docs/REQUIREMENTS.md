@@ -126,7 +126,7 @@ Every requirement has an acceptance test. A work package is finished when the te
 | GOV-04 | The licence of the Townlands repository is checked against GRA's PolyForm Noncommercial licence before adapted code is committed. | S | The check is recorded in `DECISIONS.md`. |
 | GOV-05 | Each work package ends with a handover and a `DECISIONS.md` update, as the shared protocol requires. | M | The handover exists. |
 | GOV-06 | Existing rules continue: metric units, no em dashes, light palettes with no brown, original spellings kept. | M | The validator and review pass. |
-| GOV-07 | Every pipeline step runs from one documented command, written for a user with limited Python. | M | Mike can run each step from the README. |
+| GOV-07 | Every pipeline step runs from one documented command, written for a user with limited Python. | M | The user can run each step from the README. |
 
 ## 11. Open items
 

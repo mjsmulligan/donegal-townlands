@@ -118,7 +118,7 @@ class AcceptedSupportTests(unittest.TestCase):
         out = {}
         for ra, rb in zip(a, b):
             if ra["first"] in names:
-                out[(ra["obs"], rb["obs"])] = {"status": "accepted", "confidence": "high", "reviewer": "Mike",
+                out[(ra["obs"], rb["obs"])] = {"status": "accepted", "confidence": "high", "reviewer": "user",
                                                "date": "2026-11-12", "from_obs": ra["obs"], "to_obs": rb["obs"],
                                                "from_name": "", "to_name": "", "note": ""}
         return out
@@ -188,7 +188,7 @@ class CalibrateTests(unittest.TestCase):
         return a, b
 
     def decision(self, ra, rb, status, band):
-        return {"status": status, "confidence": band, "reviewer": "Mike", "date": "2026-11-13", "from_obs": ra["obs"],
+        return {"status": status, "confidence": band, "reviewer": "user", "date": "2026-11-13", "from_obs": ra["obs"],
                 "to_obs": rb["obs"], "from_name": "", "to_name": "", "note": ""}
 
     def test_counts_by_band_pair_and_flag(self):
@@ -280,7 +280,7 @@ class ReviewTests(unittest.TestCase):
             return list(csv.DictReader(fh))
 
     def test_accepting_twice_changes_nothing(self):
-        line = "accepted,high,census1901:test:100,census1911:test:200,Thomas Kelly,Thomas Kelly,Mike,2026-11-08"
+        line = "accepted,high,census1901:test:100,census1911:test:200,Thomas Kelly,Thomas Kelly,user,2026-11-08"
         self.assertEqual(self.accept([line])[0], 0)
         first = self.records.read_bytes()
         code, msg = self.accept([line])
@@ -289,49 +289,49 @@ class ReviewTests(unittest.TestCase):
         self.assertEqual(self.records.read_bytes(), first)
 
     def test_accepted_link_is_kept_with_reviewer_and_date(self):
-        self.accept(["accepted,high,census1901:test:100,census1911:test:200,Thomas Kelly,Thomas Kelly,Mike,2026-11-08"])
+        self.accept(["accepted,high,census1901:test:100,census1911:test:200,Thomas Kelly,Thomas Kelly,user,2026-11-08"])
         rows = {(r["from_obs"], r["to_obs"]): r for r in self.proposed()}
         r = rows[("census1901:test:100", "census1911:test:200")]
-        self.assertEqual((r["status"], r["reviewer"], r["date"]), ("accepted", "Mike", "2026-11-08"))
+        self.assertEqual((r["status"], r["reviewer"], r["date"]), ("accepted", "user", "2026-11-08"))
 
     def test_rejected_pair_is_never_proposed_again(self):
         self.assertIn(("census1901:test:100", "census1911:test:200"),
                       {(r["from_obs"], r["to_obs"]) for r in self.proposed()})
-        self.accept(["rejected,low,census1901:test:100,census1911:test:200,Thomas Kelly,Thomas Kelly,Mike,2026-11-08"])
+        self.accept(["rejected,low,census1901:test:100,census1911:test:200,Thomas Kelly,Thomas Kelly,user,2026-11-08"])
         after = {(r["from_obs"], r["to_obs"]) for r in self.proposed()}
         self.assertNotIn(("census1901:test:100", "census1911:test:200"), after)
 
     def test_accepted_row_does_not_compete(self):
         before = [r for r in self.proposed() if r["from_obs"] == "census1901:test:110"]
         self.assertEqual(len(before), 2)                       # two Johns, so both stay open
-        self.accept(["accepted,low,census1901:test:110,census1911:test:211,John Doe,John Doe,Mike,2026-11-08"])
+        self.accept(["accepted,low,census1901:test:110,census1911:test:211,John Doe,John Doe,user,2026-11-08"])
         after = [r for r in self.proposed() if r["from_obs"] == "census1901:test:110"]
         self.assertEqual([(r["to_obs"], r["status"]) for r in after], [("census1911:test:211", "accepted")])
 
     def test_unsound_decisions_write_nothing(self):
         bad = [
-            "accepted,high,census1901:test:100,census1911:test:999,A,B,Mike,2026-11-08",
-            "accepted,high,census1911:test:200,census1901:test:100,A,B,Mike,2026-11-08",
+            "accepted,high,census1901:test:100,census1911:test:999,A,B,user,2026-11-08",
+            "accepted,high,census1911:test:200,census1901:test:100,A,B,user,2026-11-08",
         ]
         for line in bad:
             code, msg = self.accept([line])
             self.assertEqual(code, 1)
             self.assertFalse(self.records.exists())
-        code, msg = self.accept(["accepted,high,census1901:test:110,census1911:test:210,A,B,Mike,2026-11-08",
-                                 "accepted,high,census1901:test:110,census1911:test:211,A,B,Mike,2026-11-08"])
+        code, msg = self.accept(["accepted,high,census1901:test:110,census1911:test:210,A,B,user,2026-11-08",
+                                 "accepted,high,census1901:test:110,census1911:test:211,A,B,user,2026-11-08"])
         self.assertEqual(code, 1)
         self.assertIn("already linked", msg)
         self.assertFalse(self.records.exists())
 
     def test_changed_mind_replaces_earlier_decision(self):
-        a = "census1901:test:100,census1911:test:200,Thomas Kelly,Thomas Kelly,Mike,2026-11-08"
+        a = "census1901:test:100,census1911:test:200,Thomas Kelly,Thomas Kelly,user,2026-11-08"
         self.accept(["accepted,high," + a])
         code, msg = self.accept(["rejected,high," + a])
         self.assertIn("1 changed", msg)
         self.assertEqual(cl.load_decisions(self.records)[("census1901:test:100", "census1911:test:200")]["status"], "rejected")
 
     def test_validator_check_reports_a_stale_id(self):
-        self.accept(["accepted,high,census1901:test:100,census1911:test:200,A,B,Mike,2026-11-08"])
+        self.accept(["accepted,high,census1901:test:100,census1911:test:200,A,B,user,2026-11-08"])
         self.assertEqual(cl.check_decisions(self.records, self.census), [])
         (self.census / "1911_Test.csv").write_text(",".join(H1) + "\n", encoding="utf-8")
         self.assertTrue(cl.check_decisions(self.records, self.census))
@@ -366,7 +366,7 @@ class AcceptTests(unittest.TestCase):
     def text(self, *decisions):
         out = ["status,confidence,from_obs,to_obs,from_name,to_name,reviewer,date"]
         for status, f, t in decisions:
-            out.append("%s,high,%s,%s,A,B,Mike,2026-11-08" % (status, f["obs"], t["obs"]))
+            out.append("%s,high,%s,%s,A,B,user,2026-11-08" % (status, f["obs"], t["obs"]))
         return "\n".join(out) + "\n"
 
     def accept(self, *d, **kw):
@@ -377,7 +377,7 @@ class AcceptTests(unittest.TestCase):
         d = cl.load_decisions(self.path)
         self.assertEqual(d[(self.a["obs"], self.b["obs"])]["status"], "accepted")
         self.assertEqual(d[(self.a["obs"], self.c["obs"])]["status"], "rejected")
-        self.assertEqual(d[(self.a["obs"], self.b["obs"])]["reviewer"], "Mike")
+        self.assertEqual(d[(self.a["obs"], self.b["obs"])]["reviewer"], "user")
         self.assertEqual(d[(self.a["obs"], self.b["obs"])]["date"], "2026-11-08")
 
     def test_accepting_the_same_decisions_twice_changes_nothing(self):

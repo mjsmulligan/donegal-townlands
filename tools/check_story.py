@@ -17,7 +17,7 @@ What it checks (FAIL):
   privacy           a tree person not cleared by 100/75/50 is named
   death causes      "died of X" uses words the sheet holds
 What it does NOT check: whether a sentence is true in sense, whether the order of events is
-right, or whether an unaccepted link is implied in prose. Mike's read of the story stays the
+right, or whether an unaccepted link is implied in prose. The user's read of the story stays the
 last check. Items marked WARN need a look but do not fail.
 """
 

@@ -26,14 +26,14 @@ transcription in content.json counts as tier 3 whatever the status columns say.
 
 Rules.
 - The CSVs carry session ids in their URLs. These expire, and askaboutireland's record and
-  page-image links do not work without a live session (Mike tried them, 2026-11-05: "your
+  page-image links do not work without a live session (the user tried them, 2026-11-05: "your
   session has timed out"). So no per-record link is made. Each row instead carries the
   address of the townland's results list, at the offset of the page it is on, and the
   reader opens the details or page icon from there. Only the record id is kept for a row.
   These listing addresses are copied from the form of the saved pages and have not been
-  opened from the build environment (network access is restricted). Mike to spot-check.
+  opened from the build environment (network access is restricted). The user to spot-check.
 - Index entries that are not occupiers are kept and labelled as a proposed reading for
-  Mike to confirm: "blank_entry" (no name) or "title_entry" (a title such as EARL OF ARRAN
+  The user to confirm: "blank_entry" (no name) or "title_entry" (a title such as EARL OF ARRAN
   in the forename field). They are never counted as households. Corrected 2026-11-04: the
   Earl is second to last in Cullionboy but fourth to last in Druminnin, so he is not
   assumed to be a foot-of-page line.

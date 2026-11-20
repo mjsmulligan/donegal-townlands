@@ -184,7 +184,7 @@ Matching always runs on the original `townland` value, which is preserved. The c
 
 | Item | Notes |
 |---|---|
-| Logainm API key | Needed before anything can be fetched. Obtained by creating an account on the Gaois Developer Hub (docs.gaois.ie). Mike to register. |
+| Logainm API key | Needed before anything can be fetched. Obtained by creating an account on the Gaois Developer Hub (docs.gaois.ie). The user to register. |
 | Raw responses in the repository | Licence found: CC BY 4.0, except Logainm's explanatory notes and collected citations. Decide after seeing a real response whether raw files can be committed. |
 | Logainm coverage | Unknown until fetched: historical spellings, town parts, and places such as Keadew Lower. Gaps become manual places. |
 | Retired or merged Logainm IDs | Proposed: record the change in the registry and migrate associations by a documented decision. |

@@ -164,7 +164,7 @@ def register_metadata(path: Path, acquired: str) -> dict[str, str]:
         "upstream_generation_commit": "not applicable (own transcription)",
         "retrieval_method": (
             f"{OWN_TRANSCRIPTION} from the NLI page images: first reading by Claude, second reading by "
-            "Gemini, differences adjudicated by Mike. Changed only by reviewed adjudication commits; "
+            "Gemini, differences adjudicated by the user. Changed only by reviewed adjudication commits; "
             "run register-update after each one. See data/source/nli_parish/tawnawilly/SCHEMA.md."
         ),
         "date_acquired": acquired,

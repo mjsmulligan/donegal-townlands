@@ -25,7 +25,7 @@ Matching rule. A census townland string is attached to a Logainm townland only
 when the two names are identical apart from case, accents and spacing. Every
 such match is recorded as PROPOSED, never as confirmed. Any other spelling
 (Collinboy, Druminin, Finny Cahill and so on) is attached to nothing. It is
-listed in the review CSV for Mike to decide. To accept a spelling, set its
+listed in the review CSV for the user to decide. To accept a spelling, set its
 status to accepted and fill accepted_logainm_id, then run this script again.
 Decisions made in the review CSV are never overwritten.
 

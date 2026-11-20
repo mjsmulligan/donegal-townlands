@@ -4,7 +4,7 @@
     python tools/variants_report.py --unassigned   surnames in the records that are in no row
 
 Counts come from every case's records/census.json (household heads and members, by return year)
-and records/griffiths_index.json (occupiers). It reads data and writes nothing, so Mike can
+and records/griffiths_index.json (occupiers). It reads data and writes nothing, so the user can
 verify or reject rows with the evidence in front of him."""
 import collections
 import json

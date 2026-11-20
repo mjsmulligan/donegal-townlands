@@ -7,14 +7,14 @@ dictionary (tools/variants_reference.py). One row is one family:
     family_id    short slug, unique
     label        the name the family is known by. A handle, not a correction
     names        the names as recorded, separated by |  (at least two)
-    status       verified (Mike confirmed), proposed (a lead) or rejected (Mike said no)
+    status       verified (the user confirmed), proposed (a lead) or rejected (the user said no)
     authority    who confirmed it. Required for a verified row
     basis        why. Required for a verified row
     observed_in  where it was seen. Required for a verified row
     added        the date the row was added
     notes        anything else
 
-Only Mike verifies a row. An assistant adds rows only as proposed. The census linker uses
+Only the user verifies a row. An assistant adds rows only as proposed. The census linker uses
 verified rows. It uses proposed rows only when it is asked to, and then caps the link at
 medium confidence. A name may sit in only one verified family and a verified name may not
 appear in any other row. Matching ignores case, spaces and punctuation."""

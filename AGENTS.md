@@ -14,7 +14,7 @@ The townland is the primary unit of research and presentation. Family histories 
 
 ## Owner and working style
 
-- Owner: Mike (genealogist, limited Python, relies on you for implementation).
+- Owner: the user (genealogist, limited Python, relies on you for implementation).
 - No em dashes anywhere, in any file. `tools/validate.py` fails the commit if it finds one.
 - Metric units. Keep spelling as in the sources (Cullionboy, Collinboy, Dimon, Dunnion).
 - Light, non-heavy palettes. No brown.
@@ -39,7 +39,7 @@ The central working specification is [`docs/DATA_ARCHITECTURE.md`](docs/DATA_ARC
 - Always distinguish a source that is specified in a catalogue from one whose ingestion is implemented and one for which records have actually been ingested.
 - Check `docs/repositories.md` in GRA for a source's licence before committing anything from it. Never commit Historic Graves data.
 - Do not treat any GRA person match as a confirmed Townlands identity.
-- Any code, data or design taken from GRA is copied or referenced explicitly, with provenance and licence checked. Any future interface between the two projects needs design discussion and Mike's approval.
+- Any code, data or design taken from GRA is copied or referenced explicitly, with provenance and licence checked. Any future interface between the two projects needs design discussion and the user's approval.
 
 ## Method
 

@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """Export the GEDCOM people who appear in a townland's census returns (WP17).
 
-Reads Mike's private GEDCOM (kept outside the repository) and the reviewed links in
+Reads the user's private GEDCOM (kept outside the repository) and the reviewed links in
 data/research/associations/tree_census_links.csv, and writes
 townlands/<case>/records/people.json for every case that holds a linked census row:
-dates, relationships and Mike's research notes, filtered by the 100/75/50 rule.
+dates, relationships and the user's research notes, filtered by the 100/75/50 rule.
 The page builder reads only that file. The GEDCOM is a secondary source: the page
 labels it as research, apart from the census returns, which are the evidence.
 
@@ -252,7 +252,7 @@ def build(tree: dict, decisions: list[dict], rows: list[dict], root: Path, this_
         people.sort(key=lambda x: ((tree["people"][x["ptr"]]["birth"] or {}).get("year") or 9999, x["name"]))
         out[case] = {
             "_generated_by": "tools/gedcom_people.py",
-            "source": "Mike's family tree (GEDCOM), a secondary source built from research. Census returns are the evidence.",
+            "source": "The user's family tree (GEDCOM), a secondary source built from research. Census returns are the evidence.",
             "privacy": "100/75/50 rule applied (CLAUDE.md). Generated for year %d." % this_year,
             "people": people, "refs": refs, "family_notes": family_notes,
         }
