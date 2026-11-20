@@ -36,12 +36,19 @@ Out of scope for the first release:
 | D2 | Beats are generated automatically from records so the feature scales over 100+ townlands. No beat needs hand authoring. Hand additions, mainly media, may be allowed later as an optional layer on top. | Agreed 2026-11-20 |
 | D3 | Phones are the main audience, desktop is also supported. One player and one script, drawn in two layouts of the same stage, not two templates. Provisional until Cullionboy is tried on a phone. | Agreed in principle 2026-11-20, to confirm after DP5 |
 | D4 | Watch and Explore are two modes of one player built from the same pages. Pause or any tap moves to Explore. Resume returns to the beat that was playing. | Proposed |
-| D5 | Captions follow `docs/STORY_SPEC.md` exactly: third person, past tense, plain words, evidence only, silence over guessing, no hedges on the page. Uncertainty lives in the records behind the beat, not in the caption. | Proposed. See note below. |
+| D5 | Captions follow `docs/STORY_SPEC.md` (third person, past tense, plain words, evidence only, silence over guessing) with one softening. Where a link between records is possible but not certain, the caption may say "possibly", once, at the point of the link. Nothing else is hedged. "Probably", "seems", "it is tempting to think" and similar stay out. | Agreed 2026-11-20 for the documentary. See note below. |
 | D6 | The generator never invents a story for a gap in the record. Absence from a return is not told as a departure (STORY_SPEC, "Absence and departure"). | Proposed |
 | D7 | Sound is off by default. Captions are always available. Audio is never the only carrier of any fact. | Proposed |
 | D8 | Work is on branch `feature/documentary` and reviewed before merging to main. | Proposed |
 
-Note on D5. The concept paper suggested the narration might say "probably" or "the register records" where interpretation is uncertain. That conflicts with the standing story rule that the page carries no hedges and no source talk. This specification follows the standing rule. Where a link between records is not accepted, or only names match, the generator either leaves the beat out or states only what the names say, as the family timeline already does (DECISIONS.md, 2026-11-19). Mike to confirm.
+Note on D5. The standing story rule allows no hedges on the page. Mike agreed on 2026-11-20 that this was too rigid for the documentary, and that "possibly" suits better than "probably". The rule is:
+
+- **Certain.** A fact stated by a source, or a link Mike has accepted, is told plainly with no hedge.
+- **Possible.** A link that is not accepted, or where only names match, may be told with the single word "possibly" at the link, for example "A household of the same name in 1911 possibly followed." The caption states only what the names say, as the family timeline already does (DECISIONS.md, 2026-11-19).
+- **Not told.** Where two households fit equally, the case stays in `held_open` and no beat is built.
+- Every beat records its `certainty` (`stated`, `accepted` or `possible`) so a caption's wording can be checked against it.
+
+This applies to the documentary only. `docs/STORY_SPEC.md` and the family stories are unchanged until Mike says otherwise (O5).
 
 ## 3. Data model
 
@@ -123,7 +130,7 @@ A chapter is a run of beats under one title. Chapters follow the evidence: the v
 | `caption` | M | Plain text, one to three short sentences, written for the ear. No em dashes. |
 | `people` | no | Person or household references for a family thread. Names only as recorded. |
 | `media` | no | File names from the townland's `media/` folder, shown whole in a frame (MEDIA_SPEC M5). |
-| `evidence` | M | The source event ids behind the beat and the association basis. This is what Explore mode opens on "The records behind this". |
+| `evidence` | M | The source event ids behind the beat, the association basis and the `certainty` (`stated`, `accepted` or `possible`). This is what Explore mode opens on "The records behind this". |
 | `duration_ms` | M | Derived from caption length (section 4.3). Never hand set. |
 | `audio` | reserved | `null` in the first release. Later a file name or address for a pre-generated narration. |
 
@@ -196,7 +203,8 @@ The 100/75/50 rule applies to every beat built from information the project hold
 | DOC-03 | Output is deterministic. Rebuilding with no change gives identical files. | M | Two builds compare equal. |
 | DOC-04 | Beats are in `time.sort` order, chapters follow beats, and an empty chapter is not written. | M | Order and emptiness checks on three cases. |
 | DOC-05 | Every beat's `evidence.events` ids exist in the townland's `timeline_events.json` or in an accepted family link. | M | A beat citing a missing id fails. |
-| DOC-06 | Captions contain no em dash, no hedge word from the STORY_SPEC "What stays out" list, and no source talk ("the records show", "is recorded as"). | M | A caption with each fails validation. |
+| DOC-06 | Captions contain no em dash, no source talk ("the records show", "is recorded as"), and no hedge word from the STORY_SPEC "What stays out" list except "possibly". | M | A caption with each fails validation. |
+| DOC-06a | "Possibly" appears only in a beat whose `certainty` is `possible`, at most once per caption. A `possible` beat without it, or a `stated` or `accepted` beat with it, fails. | M | Fixtures for each of the four cases. |
 | DOC-07 | Every name, number, place and date in a caption appears in the beat's evidence. A `family` beat also passes `tools/check_story.py`. | M | A number not in the source event fails. |
 | DOC-08 | A `change` beat states counts only. It never names a cause or a departure. | M | A fixture with a household missing in 1911 produces a counts-only beat. |
 | DOC-09 | The 100/75/50 rule is applied (section 4.5). A refused beat is listed in the build output. | M | A baptism under 100 years old is refused and listed. |
@@ -290,7 +298,7 @@ Order: DP1, DP2, DP3, then DP4 and DP5, then DP6, DP7. DP8 any time after DP4.
 | O2 | Narration voice: synthetic, or recordings in Mike's own voice for key chapters. | Captions only. |
 | O3 | Music: own recordings, public domain traditional airs, or licensed tracks. | No music. |
 | O4 | Whether the townland pages link to the family timelines now that the documentary is the shared home. This was held on 2026-11-19 until the big picture was settled. | Still held. Family thread only inside the documentary. |
-| O5 | Confirm D5: captions follow the no hedge story rule, not the "probably" wording suggested in the concept paper. | Story rule. |
+| O5 | Whether the softening in D5 ("possibly" for possible links) should also apply to the family stories in `docs/STORY_SPEC.md`. | Documentary only. STORY_SPEC unchanged. |
 | O6 | Default playback speed and whether chapters have a short title card. | 1.0 and no title cards. |
 | O7 | Whether `documentary.html` is a new page per townland or a mode of the existing timeline page. | New page per townland, reusing timeline card code. |
 
