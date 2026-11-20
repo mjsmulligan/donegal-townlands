@@ -320,7 +320,7 @@ Order: DP1, DP2, DP3, then DP4 and DP5, then DP6, DP7, then DP9. DP8 any time af
 | DP1 Specification and decisions | Draft written 2026-11-20, awaiting the user's review | This file, branch `feature/documentary` |
 | DP2 Beat generator | Built 2026-11-20, awaiting the user's sign-off of the Cullionboy captions | `tools/build_documentary.py`, `tests/test_build_documentary.py`, `townlands/cullionboy/records/documentary.json` |
 | DP3 Validation and privacy | Partly done: the generator checks every beat (DOC-02, 05, 06, 06a, 07, 08, 09) and stops on a failure. Still to do: have `tools/validate.py` check committed `documentary.json` files | |
-| DP4 Player core | Not started | |
+| DP4 Player core | First version built | engine/documentary.html, docs/cullionboy/documentary.html. Map stage, caption, play and pause, scrub bar, deep links, reduced motion. Awaiting the user's phone trial. |
 | DP5 Layouts, accessibility and motion | Not started | |
 | DP6 Family thread | Not started | |
 | DP7 Rollout | Not started | |
