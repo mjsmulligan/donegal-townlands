@@ -79,13 +79,13 @@ class BaptismTests(unittest.TestCase):
 
     def test_blotted_place_confirmed_by_a_person_is_no_longer_doubtful(self):
         r = row('K', GOOD, status='resolved', comment='Page notes: Place blotted, reads Cullionboy or similar')
-        r.update(resolution_by='mike', resolution_note='Place confirmed as Cullionboy from the page image')
+        r.update(resolution_by='user', resolution_note='Place confirmed as Cullionboy by the user from the page image')
         events, _ = events_from([r])
         self.assertEqual(events[0]['association']['basis'], 'page_place')
 
     def test_resolved_for_another_reason_stays_doubtful(self):
         r = row('K', GOOD, status='resolved', comment='Page notes: Place blotted, reads Cullionboy or similar')
-        r.update(resolution_by='mike', resolution_note='Date settled from the image')
+        r.update(resolution_by='user', resolution_note='Date settled from the image')
         events, _ = events_from([r])
         self.assertEqual(events[0]['association']['basis'], 'page_place_doubtful')
 
