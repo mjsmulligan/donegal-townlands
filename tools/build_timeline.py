@@ -90,6 +90,9 @@ def baptism_title(parsed):
 
 def place_doubtful(row, parsed):
     note = row.get('comment', '')
+    if row.get('status') == 'resolved' and (row.get('resolution_by') or '').strip() and \
+            re.search(r'place', row.get('resolution_note', ''), re.I):
+        return False          # a person has adjudicated the place against the page image
     return bool(re.search(r'place\s+(blotted|illegible|unclear|doubtful)', note, re.I) or '[?]' in parsed['place'])
 
 
