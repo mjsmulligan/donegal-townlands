@@ -464,31 +464,46 @@ def write_page(name, doc, found):
     bt.build.copy_media(name, found)
 
 
-def build_documentary(name, today=None):
-    today = today or datetime.date.today()
+def collect(name, today):
+    """Gather everything `generate` needs for one case, reading files and writing none.
+    Returns (inputs, problems). `inputs` is None when the case cannot be built, and `problems` says why.
+    The survey in tools/documentary_report.py uses this too, so it predicts exactly what a build does."""
     base = ROOT / 'townlands' / name
     if not ((base / 'townland.json').is_file() or (base / 'place.json').is_file()):
-        print(name + ': no townland.json or place.json, not built.')
-        return 1
+        return None, [name + ': no townland.json or place.json, not built.']
     found, _background, by_event, unplaced = bt.media_items(name)
     if found['errors']:
-        print(name + ': media problems, documentary not built:')
-        for e in found['errors']:
-            print('  ' + e)
-        return 1
+        return None, [name + ': media problems, documentary not built:'] + ['  ' + e for e in found['errors']]
     feed = bt.events_for(name, today)
     place_file = base / 'place.json'
     place = json.loads(place_file.read_text(encoding='utf-8')) if place_file.is_file() else {}
     display = feed['town'].get('name', name.title())
     header = sorted([r for r in found['rows'] if r.get('scope') == 'townland'], key=lambda r: int(r.get('slot') or 0))
     known = {e['id'] for e in feed['events']}
-    for event_id in sorted(set(by_event) - known):
-        print(name + ': media.csv names an event that does not exist, no photo beat: ' + event_id)
+    notes = [name + ': media.csv names an event that does not exist, no photo beat: ' + event_id
+             for event_id in sorted(set(by_event) - known)]
+    inputs = {
+        'found': found, 'feed': feed, 'display': display, 'place': place, 'notes': notes,
+        'args': (display, name, place, feed['events'], by_event, header, today,
+                 [r for r in found['rows'] if r['file'] in unplaced and r.get('scope') == 'family'],
+                 [r['file'] for r in found['rows'] if r.get('scope') == 'parish'],
+                 [r['file'] for r in found['rows'] if r.get('scope') == 'griffiths']),
+    }
+    return inputs, []
+
+
+def build_documentary(name, today=None):
+    today = today or datetime.date.today()
+    base = ROOT / 'townlands' / name
+    inputs, problems = collect(name, today)
+    if inputs is None:
+        print('\n'.join(problems))
+        return 1
+    found, feed = inputs['found'], inputs['feed']
+    for line in inputs['notes']:
+        print(line)
     try:
-        dated = [r for r in found['rows'] if r['file'] in unplaced and r.get('scope') == 'family']
-        parish = [r['file'] for r in found['rows'] if r.get('scope') == 'parish']
-        doc, refused = generate(display, name, place, feed['events'], by_event, header, today, dated, parish,
-                                 [r['file'] for r in found['rows'] if r.get('scope') == 'griffiths'])
+        doc, refused = generate(*inputs['args'])
     except ValueError as e:
         print(name + ': documentary not built. ' + str(e))
         return 1

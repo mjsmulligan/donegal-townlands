@@ -323,6 +323,6 @@ Order: DP1, DP2, DP3, then DP4 and DP5, then DP6, DP7, then DP9. DP8 any time af
 | DP4 Player core | Built and tried on a phone 2026-11-21 | engine/documentary.html, docs/cullionboy/documentary.html. Satellite opening and backdrop, travelling cards, year ribbon, people dots, dissolves, deep links, reduced motion. Further changes follow the rollout comparison. |
 | DP5 Layouts, accessibility and motion | Not started | |
 | DP6 Family thread | Not started | |
-| DP7 Rollout | Specified 2026-11-21 | `docs/DOCUMENTARY_ROLLOUT_SPEC.md`: sample set of six townlands, index restyle, comparison review, open questions |
+| DP7 Rollout | Specified 2026-11-21. WP-R1 survey done 2026-11-21, sample of eight confirmed | `docs/DOCUMENTARY_ROLLOUT_SPEC.md` (section 3.1), `tools/documentary_report.py`, `tests/test_documentary_report.py` |
 | DP8 Sound | Deferred (O2, O3) | |
 | DP9 Cutover | Not started, needs the user's approval after parity | |
