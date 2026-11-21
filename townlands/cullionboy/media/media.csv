@@ -1,3 +1,4 @@
-file,scope,slot,family,caption,alt,source,reference,date,people_shown,link
-cullionboy-panorama.jpg,townland,1,,Cullionboy,A panoramic view across the green fields and hills of Cullionboy under a blue sky,Personal photo,,,,
-kelly-bella-rose-mary-kate.jpg,family,,The Kellys,"Bella, Rose & Mary Kate Kelly on the Kelly family farm in Cullionboy",,Personal photo,,1954,,
+file,scope,slot,family,caption,alt,source,reference,date,people_shown,link,lat,lon
+cullionboy-panorama.jpg,townland,1,,Cullionboy,A panoramic view across the green fields and hills of Cullionboy under a blue sky,Personal photo,,,,,,
+kelly-bella-rose-mary-kate.jpg,family,,The Kellys,"Bella, Rose & Mary Kate Kelly on the Kelly family farm in Cullionboy",,Personal photo,,1954,,,,
+st-agathas-church-donegal.jpg,parish,,,"St. Agatha's Church, Donegal parish, where these baptisms were held","St. Agatha's Church, a stone church with a slate roof and a graveyard in the foreground",Personal photo,,,,,54.668104,-8.062019

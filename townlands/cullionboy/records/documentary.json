@@ -122,7 +122,9 @@
      },
      "caption": "James Bradley was baptised on 5 October 1874. Dan. Bradley and Ellen Callaghan were the parents.",
      "people": [],
-     "media": [],
+     "media": [
+      "st-agathas-church-donegal.jpg"
+     ],
      "evidence": {
       "events": [
        "cullionboy:baptism:TAW-B-p012-r152"
@@ -130,7 +132,7 @@
       "basis": "page_place",
       "certainty": "stated"
      },
-     "duration_ms": 6400,
+     "duration_ms": 7400,
      "audio": null
     },
     {
@@ -157,7 +159,9 @@
      },
      "caption": "Three children were baptised in 1875: Edward Harraghy on 31 March, Joseph Kelly on 11 June and Margaret McGinty on 10 July.",
      "people": [],
-     "media": [],
+     "media": [
+      "st-agathas-church-donegal.jpg"
+     ],
      "evidence": {
       "events": [
        "cullionboy:baptism:TAW-B-p016-r199",
@@ -167,7 +171,7 @@
       "basis": "page_place",
       "certainty": "stated"
      },
-     "duration_ms": 8800,
+     "duration_ms": 9800,
      "audio": null
     }
    ]
