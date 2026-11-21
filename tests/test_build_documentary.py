@@ -218,6 +218,35 @@ class MediaTests(unittest.TestCase):
         self.assertEqual(photos[0]['duration_ms'], bd.duration_ms(photos[0]['caption'], False) + bd.PHOTO_MS)
 
 
+class DatedPhotoAndCountTests(unittest.TestCase):
+    ROW = {'file': 'k.jpg', 'caption': 'Visitors on the farm', 'alt': '', 'source': 'Personal photo',
+           'date': '1954', 'scope': 'family'}
+
+    def test_dated_photo_is_placed_by_its_year_and_closing_follows(self):
+        doc, _ = bd.generate('Cullionboy', 'cullionboy', PLACE, FULL, today=TODAY, dated=[self.ROW])
+        bs = beats_of(doc)
+        ph = [b for b in bs if b['kind'] == 'photo']
+        self.assertEqual(len(ph), 1)
+        self.assertEqual(ph[0]['time']['label'], '1954')
+        self.assertEqual(ph[0]['evidence']['certainty'], 'stated')
+        self.assertEqual(bs[-1]['kind'], 'closing')
+        self.assertIn('1954', bs[-1]['caption'])
+        self.assertIn('1954', bs[0]['caption'])
+
+    def test_undated_or_loose_dates_are_not_placed(self):
+        row = dict(self.ROW, date='c. 1950s')
+        doc, _ = bd.generate('Cullionboy', 'cullionboy', PLACE, FULL, today=TODAY, dated=[row])
+        self.assertFalse([b for b in beats_of(doc) if b['kind'] == 'photo'])
+
+    def test_census_and_change_beats_carry_counts(self):
+        doc, _ = build(FULL)
+        bs = beats_of(doc)
+        c = next(b for b in bs if b['id'].endswith('census:1911'))
+        self.assertEqual(c['counts'], {'people': 72, 'households': 16})
+        ch = next(b for b in bs if b['kind'] == 'change')
+        self.assertEqual(ch['counts']['from_people'], 93)
+
+
 class TimingTests(unittest.TestCase):
     def test_duration_has_a_floor_and_a_ceiling(self):
         self.assertEqual(bd.duration_ms('Short.', False), bd.MIN_MS)

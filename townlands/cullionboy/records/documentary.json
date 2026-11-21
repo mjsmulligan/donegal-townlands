@@ -35,7 +35,7 @@
       "stage": "map",
       "open_card": ""
      },
-     "caption": "Cullionboy, in Irish Cuilleann Buí. Its story here runs from the 1850s to 1926.",
+     "caption": "Cullionboy, in Irish Cuilleann Buí. Its story here runs from the 1850s to 1954.",
      "people": [],
      "media": [
       "cullionboy-panorama.jpg"
@@ -209,7 +209,11 @@
       "certainty": "stated"
      },
      "duration_ms": 4000,
-     "audio": null
+     "audio": null,
+     "counts": {
+      "people": 93,
+      "households": 18
+     }
     }
    ]
   },
@@ -250,7 +254,11 @@
       "certainty": "stated"
      },
      "duration_ms": 4000,
-     "audio": null
+     "audio": null,
+     "counts": {
+      "people": 72,
+      "households": 16
+     }
     },
     {
      "id": "cullionboy:beat:change:1901-1911",
@@ -286,7 +294,13 @@
       "certainty": "stated"
      },
      "duration_ms": 6800,
-     "audio": null
+     "audio": null,
+     "counts": {
+      "people": 72,
+      "households": 16,
+      "from_people": 93,
+      "from_households": 18
+     }
     }
    ]
   },
@@ -327,7 +341,11 @@
       "certainty": "stated"
      },
      "duration_ms": 4000,
-     "audio": null
+     "audio": null,
+     "counts": {
+      "people": 79,
+      "households": 15
+     }
     },
     {
      "id": "cullionboy:beat:change:1911-1926",
@@ -363,16 +381,63 @@
       "certainty": "stated"
      },
      "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 79,
+      "households": 15,
+      "from_people": 72,
+      "from_households": 16
+     }
+    }
+   ]
+  },
+  {
+   "id": "cullionboy:ch:1954",
+   "title": "1954",
+   "beats": [
+    {
+     "id": "cullionboy:beat:photo:kelly-bella-rose-mary-kate.jpg",
+     "kind": "photo",
+     "chapter": "cullionboy:ch:1954",
+     "time": {
+      "label": "1954",
+      "iso": "1954",
+      "sort": "1954-07-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "A photograph from 1954: Bella, Rose & Mary Kate Kelly on the Kelly family farm in Cullionboy.",
+     "people": [],
+     "media": [
+      "kelly-bella-rose-mary-kate.jpg"
+     ],
+     "evidence": {
+      "events": [],
+      "basis": "dated_photograph",
+      "certainty": "stated"
+     },
+     "duration_ms": 7800,
      "audio": null
     },
     {
      "id": "cullionboy:beat:closing:end",
      "kind": "closing",
-     "chapter": "cullionboy:ch:1926",
+     "chapter": "cullionboy:ch:1954",
      "time": {
-      "label": "1926",
-      "iso": "1926",
-      "sort": "1926-01-01",
+      "label": "1954",
+      "iso": "1954",
+      "sort": "1954-07-01",
       "approximate": true
      },
      "place": {
@@ -387,7 +452,7 @@
       "stage": "map",
       "open_card": "cullionboy:census:1926"
      },
-     "caption": "The story reaches 1926 here, with fifteen households in Cullionboy.",
+     "caption": "The story reaches 1954 here. In 1926, Cullionboy had fifteen households.",
      "people": [],
      "media": [],
      "evidence": {
@@ -397,7 +462,7 @@
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 4000,
+     "duration_ms": 4400,
      "audio": null
     }
    ]
