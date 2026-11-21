@@ -81,7 +81,9 @@
      },
      "caption": "In the 1850s the land was valued and its occupiers listed. In all, 25 occupiers are named for Cullionboy.",
      "people": [],
-     "media": [],
+     "media": [
+      "griffiths-donegal-p095-cullionboy.jpg"
+     ],
      "evidence": {
       "events": [
        "cullionboy:valuation:griffiths"
@@ -89,7 +91,7 @@
       "basis": "townland_entry",
       "certainty": "stated"
      },
-     "duration_ms": 7600,
+     "duration_ms": 8600,
      "audio": null
     }
    ]

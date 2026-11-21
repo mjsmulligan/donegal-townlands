@@ -132,7 +132,7 @@ details p{margin:4px 0;overflow-wrap:anywhere}
   <section class="stage" aria-label="Map of the townland">
     <div id="map"></div>
     <div class="dots" id="dots" aria-hidden="true"><div class="dotnum" id="dotnum"></div><div class="dotgrid" id="dotgrid"></div></div>
-    <div class="photo" id="photo"><figure><img id="photoimg" alt=""><figcaption id="photocap"></figcaption></figure></div>
+    <div class="photo" id="photo"><figure><a id="photolink" href="#" target="_blank" rel="noopener" style="display:flex;flex:1 1 auto;min-height:0" title="Open the full size image"><img id="photoimg" alt=""></a><figcaption id="photocap"></figcaption></figure></div>
   </section>
   <section class="cards" aria-label="The story, in order"><div class="track" id="track"></div></section>
   <div class="ribbon" id="ribbon" role="group" aria-label="Time, from the first moment to the last">
@@ -243,9 +243,10 @@ var D=__DATA__;
     var p=$('photo'), f=b.media&&b.media[0];
     if(f&&!isHero(b)){
       var m=(D.media||{})[f]||{};
-      $('photoimg').src='media/'+f; $('photoimg').alt=m.alt||m.caption||'';
+      $('photoimg').src='media/'+f; $('photolink').href='media/'+f; $('photoimg').alt=m.alt||m.caption||'';
       var pc=$('photocap'); pc.textContent=(m.caption||'')+(m.source?'. '+m.source+'.':'');
       if(m.lat&&m.lon){var a=document.createElement('a'); a.href='https://www.openstreetmap.org/?mlat='+m.lat+'&mlon='+m.lon+'#map=17/'+m.lat+'/'+m.lon; a.target='_blank'; a.rel='noopener'; a.textContent='See it on the map'; pc.append(' '); pc.append(a)}
+      pc.append(document.createTextNode(' Tap the picture to see it full size.'))
       p.classList.add('on');
     } else p.classList.remove('on');
   }
