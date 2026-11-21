@@ -143,7 +143,7 @@ def title_beat(display, name_ga, events, place, header, end_label=''):
     return b
 
 
-def valuation_beat(ev, place):
+def valuation_beat(ev, place, media=()):
     town = place['name']
     parts = ev['text'].split('. ', 1)
     tail = re.sub(r'\s*\([^)]*\)', '', parts[1]).rstrip('.').replace('the townland', town) if len(parts) == 2 else ''
@@ -151,7 +151,7 @@ def valuation_beat(ev, place):
                 f"Griffith's Valuation listed the land and its occupiers in the 1850s. Here, {tail}."]
     cap = patterns[pick(ev['id'], len(patterns))] if tail else "In the 1850s the land was valued and its occupiers listed."
     return beat('valuation', 'griffiths', f"{place['townland']}:ch:1850s", ev, cap, place,
-                basis=ev['association']['basis'], events=[ev['id']])
+                basis=ev['association']['basis'], events=[ev['id']], media=media)
 
 
 def baptism_beats(events, place, media=()):
@@ -371,7 +371,7 @@ def chapter_title(key, beats, display):
     return key
 
 
-def generate(display, slug, place_record, events, by_event=None, header=None, today=None, dated=None, parish_files=None):
+def generate(display, slug, place_record, events, by_event=None, header=None, today=None, dated=None, parish_files=None, griffiths_files=None):
     """Pure: build the documentary dict and the list of refused items from already collected inputs."""
     today = today or datetime.date.today()
     by_event = by_event or {}
@@ -396,7 +396,7 @@ def generate(display, slug, place_record, events, by_event=None, header=None, to
         vals = [e for e in events if e['type'] == 'valuation']
         baps = [e for e in events if e['type'] == 'baptism']
         cens = [e for e in events if e['type'] == 'census']
-        beats += [valuation_beat(e, place) for e in vals]
+        beats += [valuation_beat(e, place, griffiths_files or ()) for e in vals]
         beats += baptism_beats(baps, place, parish_files or ())
         for i, e in enumerate(cens):
             beats.append(census_beat(e, place))
@@ -487,7 +487,8 @@ def build_documentary(name, today=None):
     try:
         dated = [r for r in found['rows'] if r['file'] in unplaced and r.get('scope') == 'family']
         parish = [r['file'] for r in found['rows'] if r.get('scope') == 'parish']
-        doc, refused = generate(display, name, place, feed['events'], by_event, header, today, dated, parish)
+        doc, refused = generate(display, name, place, feed['events'], by_event, header, today, dated, parish,
+                                 [r['file'] for r in found['rows'] if r.get('scope') == 'griffiths'])
     except ValueError as e:
         print(name + ': documentary not built. ' + str(e))
         return 1

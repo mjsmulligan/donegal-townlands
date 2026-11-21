@@ -60,7 +60,7 @@ docs/<name>/media/<image files>          build output, never edited by hand
 | Column | Required | Meaning |
 |---|---|---|
 | `file` | M | File name inside the townland's `media/` folder. |
-| `scope` | M | `townland` (header image), `family` (household photo) or `parish` (a photograph of the parish, such as its church, shown beside the baptism moments of the documentary only; no slot or family needed). |
+| `scope` | M | `townland` (header image), `family` (household photo) `griffiths` (the original Griffith's Valuation page image for the townland, shown on the valuation moment of the documentary; no slot or family needed), or `parish` (a photograph of the parish, such as its church, shown beside the baptism moments of the documentary only; no slot or family needed). |
 | `slot` | for `townland` | 1, 2 or 3. Order across the header. Unique within the townland. Header images should be landscape (M11). |
 | `family` | for `family` | One or more family names exactly as in `content.json` `families[].name`, separated by semicolons. |
 | `caption` | M | Text shown with the image. |

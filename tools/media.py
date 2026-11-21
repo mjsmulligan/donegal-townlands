@@ -18,7 +18,7 @@ import struct
 from urllib.parse import quote
 
 ALLOWED = ('.jpg', '.jpeg', '.png', '.webp')
-SCOPES = ('townland', 'family', 'parish')
+SCOPES = ('townland', 'family', 'parish', 'griffiths')
 MAX_SLOTS = 3
 REQUIRED = ('file', 'scope', 'caption', 'source')
 WARN_FILE_BYTES = 8 * 1024 * 1024
@@ -127,7 +127,7 @@ def load_case(case_dir, base_url='', families=()):
                     out['warnings'].append(label + ' media.csv row ' + str(row_no) + ': could not read the size of '
                                            + name + ', so it will show at its natural size')
             if scope and scope not in SCOPES:
-                bad(row_no, "scope must be 'townland', 'family' or 'parish', not '" + row.get('scope', '') + "'")
+                bad(row_no, "scope must be 'townland', 'family', 'parish' or 'griffiths', not '" + row.get('scope', '') + "'")
                 ok = False
             slot = None
             if scope == 'townland' and name and (media_dir / name).is_file():
