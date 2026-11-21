@@ -359,7 +359,7 @@ var D={"schema":1,"townland":"Cullionboy","slug":"cullionboy","generated_by":"do
   window.addEventListener('resize',function(){place(true)});
   if(hasMap){$('replay').hidden=false; $('replay').addEventListener('click',function(){go(0); intro(true)})}
   backdrop();
-  if(start===0&&!m) intro();
+  if(start===0) intro();
   if(document.fonts&&document.fonts.ready) document.fonts.ready.then(function(){place(true)});
 })();
 </script>
