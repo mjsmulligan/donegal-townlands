@@ -154,7 +154,7 @@ def valuation_beat(ev, place):
                 basis=ev['association']['basis'], events=[ev['id']])
 
 
-def baptism_beats(events, place):
+def baptism_beats(events, place, media=()):
     out = []
     by_year = {}
     for ev in events:
@@ -177,7 +177,7 @@ def baptism_beats(events, place):
                 cap += f" {parents} were the parents." if father and mother else f" {parents} was the parent."
             if doubtful:
                 cap += f' The family was possibly from {town}.'
-            out.append(beat('baptism', e['sort'] + '-' + e['id'].split(':')[-1], chapter, e, cap, place,
+            out.append(beat('baptism', e['sort'] + '-' + e['id'].split(':')[-1], chapter, e, cap, place, media=media,
                             certainty=cert, basis=e['association']['basis'], events=ids))
         else:
             shown = group[:4]
@@ -196,7 +196,7 @@ def baptism_beats(events, place):
                          for e in doubtful]
                 who = ' and '.join(names) if len(names) < 3 else ', '.join(names[:-1]) + ' and ' + names[-1]
                 cap += f' {who} {"was" if len(names) == 1 else "were"} possibly from {town}.'
-            out.append(beat('baptism', f'{year}', chapter, group[0], cap, place, certainty=cert,
+            out.append(beat('baptism', f'{year}', chapter, group[0], cap, place, certainty=cert, media=media,
                             basis=group[0]['association']['basis'], events=ids))
     return out
 
@@ -371,7 +371,7 @@ def chapter_title(key, beats, display):
     return key
 
 
-def generate(display, slug, place_record, events, by_event=None, header=None, today=None, dated=None):
+def generate(display, slug, place_record, events, by_event=None, header=None, today=None, dated=None, parish_files=None):
     """Pure: build the documentary dict and the list of refused items from already collected inputs."""
     today = today or datetime.date.today()
     by_event = by_event or {}
@@ -397,7 +397,7 @@ def generate(display, slug, place_record, events, by_event=None, header=None, to
         baps = [e for e in events if e['type'] == 'baptism']
         cens = [e for e in events if e['type'] == 'census']
         beats += [valuation_beat(e, place) for e in vals]
-        beats += baptism_beats(baps, place)
+        beats += baptism_beats(baps, place, parish_files or ())
         for i, e in enumerate(cens):
             beats.append(census_beat(e, place))
             if i:
@@ -486,7 +486,8 @@ def build_documentary(name, today=None):
         print(name + ': media.csv names an event that does not exist, no photo beat: ' + event_id)
     try:
         dated = [r for r in found['rows'] if r['file'] in unplaced and r.get('scope') == 'family']
-        doc, refused = generate(display, name, place, feed['events'], by_event, header, today, dated)
+        parish = [r['file'] for r in found['rows'] if r.get('scope') == 'parish']
+        doc, refused = generate(display, name, place, feed['events'], by_event, header, today, dated, parish)
     except ValueError as e:
         print(name + ': documentary not built. ' + str(e))
         return 1

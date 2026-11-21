@@ -247,6 +247,14 @@ class DatedPhotoAndCountTests(unittest.TestCase):
         self.assertEqual(ch['counts']['from_people'], 93)
 
 
+class ParishPhotoTests(unittest.TestCase):
+    def test_parish_photograph_rides_on_baptism_beats_only(self):
+        evs = FULL + [baptism('A', '1875-06-11', 'Joseph Kelly', 'Thomas Kelly', 'Margaret Carr')]
+        doc, _ = bd.generate('Cullionboy', 'cullionboy', PLACE, evs, today=TODAY, parish_files=['church.jpg'])
+        for b in beats_of(doc):
+            self.assertEqual(b['media'], ['church.jpg'] if b['kind'] == 'baptism' else [] if b['kind'] != 'title' else b['media'])
+
+
 class TimingTests(unittest.TestCase):
     def test_duration_has_a_floor_and_a_ceiling(self):
         self.assertEqual(bd.duration_ms('Short.', False), bd.MIN_MS)

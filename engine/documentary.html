@@ -241,7 +241,7 @@ var D=__DATA__;
 
   function photo(b){
     var p=$('photo'), f=b.media&&b.media[0];
-    if(b.kind==='photo'&&f){
+    if(f&&!isHero(b)){
       var m=(D.media||{})[f]||{};
       $('photoimg').src='media/'+f; $('photoimg').alt=m.alt||m.caption||'';
       $('photocap').textContent=(m.caption||'')+(m.source?'. '+m.source+'.':'');
@@ -273,7 +273,7 @@ var D=__DATA__;
     i=Math.max(0,Math.min(N-1,n)); cur=i;
     var b=beats[i];
     $('app').classList.toggle('hero',isHero(b));
-    $('app').classList.toggle('pic',b.kind==='photo');
+    $('app').classList.toggle('pic',!!(b.media&&b.media.length)&&!isHero(b));
     cardEls.forEach(function(c,k){c.classList.toggle('cur',k===i); c.setAttribute('aria-hidden',k===i?'false':'true')});
     stopEls.forEach(function(s,k){s.classList.toggle('cur',k===i); s.classList.toggle('past',k<i)});
     place(fromHash);
