@@ -38,19 +38,17 @@ a{color:var(--ink);text-decoration-color:var(--hill);text-underline-offset:3px}
 .top{display:flex;gap:8px;align-items:center;flex:0 0 auto}
 .top a,.top span{background:rgba(251,252,250,.88);border:1px solid var(--rule);border-radius:999px;padding:5px 12px;font-size:13px;text-decoration:none;backdrop-filter:blur(6px)}
 
-/* the map is an inset window that opens when the story reaches the ground, and closes for the opening and the end */
-.stage{position:relative;flex:0 0 34%;min-height:0;border-radius:16px;overflow:hidden;background:#DCE6E2;border:1px solid var(--rule);transition:flex-basis .9s var(--ease),opacity .6s,margin .9s var(--ease)}
+/* the stage is a window that opens for a photograph or the people dots, and closes for the opening, the end and any moment with neither */
+.stage{position:relative;flex:0 0 34%;min-height:0;border-radius:16px;overflow:hidden;background:rgba(251,252,250,.9);border:1px solid var(--rule);transition:flex-basis .9s var(--ease),opacity .6s,margin .9s var(--ease)}
 .app.pic .stage{flex-basis:46%}
-.leaflet-top,.leaflet-bottom{z-index:800!important}
 .app.hero .stage{flex-basis:0;opacity:0;border-width:0;margin-top:-8px;pointer-events:none;visibility:hidden;transition:flex-basis .9s var(--ease),opacity .6s,margin .9s var(--ease),visibility 0s .9s}
-#map{position:absolute;inset:0}
 .photo{position:absolute;inset:0;z-index:900;background:rgba(243,246,244,.97);display:flex;align-items:center;justify-content:center;padding:10px;opacity:0;pointer-events:none;transition:opacity .6s}
 .photo.on{opacity:1}
 .photo figure{width:100%;height:100%;display:flex;flex-direction:column;background:var(--paper);border:1px solid var(--rule);border-radius:10px;padding:8px}
 .photo img{display:block;flex:1 1 auto;min-height:0;width:100%;object-fit:contain;border-radius:4px}
 .photo figcaption{font-size:13px;color:var(--ink2);padding:6px 2px 0}
 
-/* the people: one dot for every person counted, over the map */
+/* the people: one dot for every person counted */
 .dots{position:absolute;inset:0;z-index:850;background:rgba(243,246,244,.86);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:14px;opacity:0;pointer-events:none;transition:opacity .6s}
 .dots.on{opacity:1}
 .dotgrid{display:flex;flex-wrap:wrap;justify-content:center;gap:5px;max-width:min(100%,430px)}
@@ -96,10 +94,14 @@ details p{margin:4px 0;overflow-wrap:anywhere}
 .foot:empty{display:none}
 .foot{font-size:11px;color:var(--ink);flex:0 0 auto;text-align:center;background:rgba(251,252,250,.8);border-radius:999px;padding:1px 10px;align-self:center}
 
-.pin{position:relative;width:18px;height:18px;border-radius:50%;background:var(--hill-d);border:3px solid #fff;box-shadow:0 0 0 2px var(--ink)}
-.pin.possible{background:#fff;box-shadow:0 0 0 2px var(--hill-d)}
-.pin:after{content:"";position:absolute;inset:-9px;border-radius:50%;border:2px solid var(--hill-d);animation:ping 2.4s ease-out infinite}
-@keyframes ping{from{transform:scale(.5);opacity:.9}to{transform:scale(1.6);opacity:0}}
+/* the opening: a satellite view that falls from far above Ireland to the townland, then lifts away */
+#intro{position:fixed;inset:0;z-index:3000;background:#0e2a36;transition:opacity 1.4s}
+#intro.out{opacity:0;pointer-events:none}
+#intro[hidden]{display:none}
+#imap{position:absolute;inset:0;background:#0e2a36}
+.iname{position:absolute;left:0;right:0;bottom:22%;text-align:center;color:#fff;font:300 clamp(40px,12vw,84px)/1 var(--display);text-shadow:0 2px 18px rgba(0,0,0,.55);opacity:0;transition:opacity 1.6s;pointer-events:none;z-index:1200}
+.iname.on{opacity:1}
+.iskip{position:absolute;left:50%;bottom:calc(18px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:1300;background:rgba(14,42,54,.7);color:#fff;border:1px solid rgba(255,255,255,.6);border-radius:999px;min-height:44px;padding:0 20px;font:500 14px var(--body);cursor:pointer}
 
 /* desktop: the window beside the cards, both over the same landscape */
 @media (min-width:900px){
@@ -121,7 +123,7 @@ details p{margin:4px 0;overflow-wrap:anywhere}
   .app.hero .cards,.app.hero .ribbon,.app.hero .controls,.app.hero .foot{grid-column:1;justify-self:center;width:min(560px,100%)}
 }
 @media (prefers-reduced-motion:reduce){
-  .bg{animation:none}.track,.card,.stage,.stop,.photo,.dots,.dotgrid i{transition:none}.pin:after{animation:none}
+  .bg{animation:none}.track,.card,.stage,.stop,.photo,.dots,.dotgrid i,#intro,.iname{transition:none}
 }
 </style>
 </head>
@@ -129,8 +131,7 @@ details p{margin:4px 0;overflow-wrap:anywhere}
 <a class="skip" href="#live">Skip to the story</a>
 <div class="app hero" id="app">
   <div class="top"><a href="../">Donegal Townlands</a><span id="place">Cullionboy</span></div>
-  <section class="stage" aria-label="Map of the townland">
-    <div id="map"></div>
+  <section class="stage" aria-label="Photographs and people">
     <div class="dots" id="dots" aria-hidden="true"><div class="dotnum" id="dotnum"></div><div class="dotgrid" id="dotgrid"></div></div>
     <div class="photo" id="photo"><figure><a id="photolink" href="#" target="_blank" rel="noopener" style="display:flex;flex:1 1 auto;min-height:0" title="Open the full size image"><img id="photoimg" alt=""></a><figcaption id="photocap"></figcaption></figure></div>
   </section>
@@ -148,6 +149,7 @@ details p{margin:4px 0;overflow-wrap:anywhere}
   <p class="sr" id="live" aria-live="polite" tabindex="-1"></p>
 </div>
 <div class="bg" id="bg" aria-hidden="true"></div>
+<div id="intro" hidden aria-hidden="true"><div id="imap"></div><div class="iname" id="iname"></div><button class="iskip" id="iskip" type="button">Skip</button></div>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
 var D={"schema":1,"townland":"Cullionboy","slug":"cullionboy","generated_by":"donegal-townlands.build_documentary","title":"Cullionboy","span":{"from":"the 1850s","to":"1926"},"chapters":[{"id":"cullionboy:ch:intro","title":"Cullionboy","beats":[{"id":"cullionboy:beat:title:title","kind":"title","chapter":"cullionboy:ch:intro","time":{"label":"","iso":"","sort":"1855-07-01","approximate":true},"place":{"townland":"cullionboy","name":"Cullionboy","logainm_id":"13967","lat":54.685502,"lon":-7.975892,"camera":"parish"},"scene":{"stage":"map","open_card":""},"caption":"Cullionboy, in Irish Cuilleann Buí. Its story here runs from the 1850s to 1954.","people":[],"media":["cullionboy-panorama.jpg"],"evidence":{"events":["cullionboy:valuation:griffiths","cullionboy:census:1926"],"basis":"place_record","certainty":"stated"},"duration_ms":6600,"audio":null}]},{"id":"cullionboy:ch:1850s","title":"The land","beats":[{"id":"cullionboy:beat:valuation:griffiths","kind":"valuation","chapter":"cullionboy:ch:1850s","time":{"label":"The 1850s","iso":"1850/1859","sort":"1855-07-01","approximate":true},"place":{"townland":"cullionboy","name":"Cullionboy","logainm_id":"13967","lat":54.685502,"lon":-7.975892,"camera":"townland"},"scene":{"stage":"map","open_card":"cullionboy:valuation:griffiths"},"caption":"In the 1850s the land was valued and its occupiers listed. In all, 25 occupiers are named for Cullionboy.","people":[],"media":["griffiths-donegal-p095-cullionboy.jpg"],"evidence":{"events":["cullionboy:valuation:griffiths"],"basis":"townland_entry","certainty":"stated"},"duration_ms":8600,"audio":null}]},{"id":"cullionboy:ch:baptisms","title":"Baptisms, 1874 to 1875","beats":[{"id":"cullionboy:beat:baptism:1874-10-05-TAW-B-p012-r152","kind":"baptism","chapter":"cullionboy:ch:baptisms","time":{"label":"5 October 1874","iso":"1874-10-05","sort":"1874-10-05","approximate":false},"place":{"townland":"cullionboy","name":"Cullionboy","logainm_id":"13967","lat":54.685502,"lon":-7.975892,"camera":"townland"},"scene":{"stage":"map","open_card":"cullionboy:baptism:TAW-B-p012-r152"},"caption":"James Bradley was baptised on 5 October 1874. Dan. Bradley and Ellen Callaghan were the parents.","people":[],"media":["st-agathas-church-donegal.jpg"],"evidence":{"events":["cullionboy:baptism:TAW-B-p012-r152"],"basis":"page_place","certainty":"stated"},"duration_ms":7400,"audio":null},{"id":"cullionboy:beat:baptism:1875","kind":"baptism","chapter":"cullionboy:ch:baptisms","time":{"label":"31 March 1875","iso":"1875-03-31","sort":"1875-03-31","approximate":false},"place":{"townland":"cullionboy","name":"Cullionboy","logainm_id":"13967","lat":54.685502,"lon":-7.975892,"camera":"townland"},"scene":{"stage":"map","open_card":"cullionboy:baptism:TAW-B-p016-r199"},"caption":"Three children were baptised in 1875: Edward Harraghy on 31 March, Joseph Kelly on 11 June and Margaret McGinty on 10 July.","people":[],"media":["st-agathas-church-donegal.jpg"],"evidence":{"events":["cullionboy:baptism:TAW-B-p016-r199","cullionboy:baptism:TAW-B-p017-r219","cullionboy:baptism:TAW-B-p018-r230"],"basis":"page_place","certainty":"stated"},"duration_ms":9800,"audio":null}]},{"id":"cullionboy:ch:1901","title":"1901","beats":[{"id":"cullionboy:beat:census:1901","kind":"census","chapter":"cullionboy:ch:1901","time":{"label":"1901","iso":"1901","sort":"1901-01-01","approximate":true},"place":{"townland":"cullionboy","name":"Cullionboy","logainm_id":"13967","lat":54.685502,"lon":-7.975892,"camera":"townland"},"scene":{"stage":"map","open_card":"cullionboy:census:1901"},"caption":"In 1901, 93 people in eighteen households lived in Cullionboy.","people":[],"media":[],"evidence":{"events":["cullionboy:census:1901"],"basis":"return_for_townland","certainty":"stated"},"duration_ms":4000,"audio":null,"counts":{"people":93,"households":18}}]},{"id":"cullionboy:ch:1911","title":"1911","beats":[{"id":"cullionboy:beat:census:1911","kind":"census","chapter":"cullionboy:ch:1911","time":{"label":"1911","iso":"1911","sort":"1911-01-01","approximate":true},"place":{"townland":"cullionboy","name":"Cullionboy","logainm_id":"13967","lat":54.685502,"lon":-7.975892,"camera":"townland"},"scene":{"stage":"map","open_card":"cullionboy:census:1911"},"caption":"Cullionboy had 72 people in sixteen households in 1911.","people":[],"media":[],"evidence":{"events":["cullionboy:census:1911"],"basis":"return_for_townland","certainty":"stated"},"duration_ms":4000,"audio":null,"counts":{"people":72,"households":16}},{"id":"cullionboy:beat:change:1901-1911","kind":"change","chapter":"cullionboy:ch:1911","time":{"label":"1911","iso":"1911","sort":"1911-01-01","approximate":true},"place":{"townland":"cullionboy","name":"Cullionboy","logainm_id":"13967","lat":54.685502,"lon":-7.975892,"camera":"townland"},"scene":{"stage":"map","open_card":"cullionboy:census:1901"},"caption":"By 1911 Cullionboy had 72 people, down from 93 in 1901. It had sixteen households, against eighteen.","people":[],"media":[],"evidence":{"events":["cullionboy:census:1901","cullionboy:census:1911"],"basis":"counts_between_returns","certainty":"stated"},"duration_ms":6800,"audio":null,"counts":{"people":72,"households":16,"from_people":93,"from_households":18}}]},{"id":"cullionboy:ch:1926","title":"1926","beats":[{"id":"cullionboy:beat:census:1926","kind":"census","chapter":"cullionboy:ch:1926","time":{"label":"1926","iso":"1926","sort":"1926-01-01","approximate":true},"place":{"townland":"cullionboy","name":"Cullionboy","logainm_id":"13967","lat":54.685502,"lon":-7.975892,"camera":"townland"},"scene":{"stage":"map","open_card":"cullionboy:census:1926"},"caption":"Cullionboy had 79 people in fifteen households in 1926.","people":[],"media":[],"evidence":{"events":["cullionboy:census:1926"],"basis":"return_for_townland","certainty":"stated"},"duration_ms":4000,"audio":null,"counts":{"people":79,"households":15}},{"id":"cullionboy:beat:change:1911-1926","kind":"change","chapter":"cullionboy:ch:1926","time":{"label":"1926","iso":"1926","sort":"1926-01-01","approximate":true},"place":{"townland":"cullionboy","name":"Cullionboy","logainm_id":"13967","lat":54.685502,"lon":-7.975892,"camera":"townland"},"scene":{"stage":"map","open_card":"cullionboy:census:1911"},"caption":"By 1926 Cullionboy had 79 people, up from 72 in 1911. It had fifteen households, against sixteen.","people":[],"media":[],"evidence":{"events":["cullionboy:census:1911","cullionboy:census:1926"],"basis":"counts_between_returns","certainty":"stated"},"duration_ms":6800,"audio":null,"counts":{"people":79,"households":15,"from_people":72,"from_households":16}}]},{"id":"cullionboy:ch:1954","title":"1954","beats":[{"id":"cullionboy:beat:photo:kelly-bella-rose-mary-kate.jpg","kind":"photo","chapter":"cullionboy:ch:1954","time":{"label":"1954","iso":"1954","sort":"1954-07-01","approximate":true},"place":{"townland":"cullionboy","name":"Cullionboy","logainm_id":"13967","lat":54.685502,"lon":-7.975892,"camera":"townland"},"scene":{"stage":"map","open_card":""},"caption":"A photograph from 1954: Bella, Rose & Mary Kate Kelly on the Kelly family farm in Cullionboy.","people":[],"media":["kelly-bella-rose-mary-kate.jpg"],"evidence":{"events":[],"basis":"dated_photograph","certainty":"stated"},"duration_ms":7800,"audio":null},{"id":"cullionboy:beat:closing:end","kind":"closing","chapter":"cullionboy:ch:1954","time":{"label":"1954","iso":"1954","sort":"1954-07-01","approximate":true},"place":{"townland":"cullionboy","name":"Cullionboy","logainm_id":"13967","lat":54.685502,"lon":-7.975892,"camera":"townland"},"scene":{"stage":"map","open_card":"cullionboy:census:1926"},"caption":"The story reaches 1954 here. In 1926, Cullionboy had fifteen households.","people":[],"media":[],"evidence":{"events":["cullionboy:census:1926"],"basis":"return_for_townland","certainty":"stated"},"duration_ms":4400,"audio":null}]}],"media":{"cullionboy-panorama.jpg":{"caption":"Cullionboy","alt":"A panoramic view across the green fields and hills of Cullionboy under a blue sky","source":"Personal photo","lat":"","lon":""},"kelly-bella-rose-mary-kate.jpg":{"caption":"Bella, Rose & Mary Kate Kelly on the Kelly family farm in Cullionboy","alt":"Bella, Rose & Mary Kate Kelly on the Kelly family farm in Cullionboy","source":"Personal photo","lat":"","lon":""},"st-agathas-church-donegal.jpg":{"caption":"St. Agatha's Church, Donegal parish, where these baptisms were held","alt":"St. Agatha's Church, a stone church with a slate roof and a graveyard in the foreground","source":"Personal photo","lat":"54.668104","lon":"-8.062019"},"griffiths-donegal-p095-cullionboy.jpg":{"caption":"Griffith's Valuation, Parish of Donegal, page 95, with Cullionboy","alt":"A printed page of Griffith's Valuation listing the occupiers of Birchill, Corveen and Cullionboy","source":"Griffith's Valuation, original page image","lat":"","lon":""}},"foot":""};
@@ -157,8 +159,7 @@ var D={"schema":1,"townland":"Cullionboy","slug":"cullionboy","generated_by":"do
   D.chapters.forEach(function(c){chapters[c.id]=c.title; c.beats.forEach(function(b){beats.push(b)})});
   var N=beats.length;
   var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches;
-  var ZOOM={parish:13,townland:15,household:17};
-  var i=0, playing=false, timer=null, started=0, remaining=0, raf=0, map=null, pin=null, pinEl=null, mapReady=false, cur=null;
+  var i=0, playing=false, timer=null, started=0, remaining=0, raf=0, cur=null;
 
   function el(tag,cls,text){var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e}
   function year(b){return parseInt(b.time.sort.slice(0,4),10)}
@@ -210,33 +211,20 @@ var D={"schema":1,"townland":"Cullionboy","slug":"cullionboy","generated_by":"do
     if(instant){t.offsetWidth; t.style.transition=''}
   }
 
-  /* the map: Leaflet is optional, the story plays without it */
-  if(window.L){
-    map=L.map('map',{zoomControl:true,attributionControl:true,zoomAnimation:false,fadeAnimation:false,tap:true,inertia:false});
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
-    var b0=beats[0]; map.setView([b0.place.lat,b0.place.lon],ZOOM[b0.place.camera]||14,{animate:false});
-    ['mousedown','touchstart'].forEach(function(t){$('map').addEventListener(t,function(){pause()},{passive:true})});
-  } else {
-    var nm=el('p','note','The map could not load. The story still plays.'); nm.style.cssText='position:absolute;left:12px;bottom:12px;right:12px;margin:0'; $('map').append(nm);
-  }
-  /* the camera moves only when it must: a change of zoom, or of place. Nothing is rebuilt between beats. */
-  function camera(b,wasHero){
-    if(!map) return;
-    var ll=[b.place.lat,b.place.lon], z=ZOOM[b.place.camera]||14;
-    var apply=function(){
-      map.invalidateSize({animate:false});
-      if(!pin){
-        pin=L.marker(ll,{keyboard:false,interactive:false,icon:L.divIcon({className:'',html:'<div class="pin" id="pinel"></div>',iconSize:[18,18],iconAnchor:[9,9]})}).addTo(map);
-      } else pin.setLatLng(ll);
-      var pe=document.getElementById('pinel'); if(pe) pe.className='pin'+(b.evidence.certainty==='possible'?' possible':'');
-      var c=map.getCenter();
-      var moved=Math.abs(c.lat-ll[0])>1e-5||Math.abs(c.lng-ll[1])>1e-5||map.getZoom()!==z;
-      if(!moved) return;
-      if(wasHero||reduce) map.setView(ll,z,{animate:false});
-      else map.setView(ll,z,{animate:true,duration:1.2});
-    };
-    /* when the window is still opening, wait for it, then set the view once with no animation */
-    if(wasHero){setTimeout(apply,reduce?0:950)} else apply();
+  /* the opening. Leaflet is optional: without it, or with reduced motion, or on a link to a later moment, the story just starts. */
+  function intro(){
+    var b0=beats[0], box=$('intro'), ended=false, ll=[b0.place.lat,b0.place.lon];
+    if(!window.L||reduce||!ll[0]) return;
+    box.hidden=false;
+    var m=L.map('imap',{zoomControl:false,attributionControl:true,zoomAnimation:true,fadeAnimation:true,dragging:false,touchZoom:false,scrollWheelZoom:false,doubleClickZoom:false,boxZoom:false,keyboard:false,tap:false});
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{maxZoom:18,maxNativeZoom:17,attribution:'Imagery: Esri, Maxar, Earthstar Geographics'}).addTo(m);
+    m.setView(ll,3,{animate:false});
+    $('iname').textContent=b0.place.name||D.townland||'';
+    function end(){ if(ended) return; ended=true; box.classList.add('out'); setTimeout(function(){try{m.remove()}catch(e){} box.hidden=true},1500) }
+    setTimeout(function(){ m.flyTo(ll,16,{duration:9}); m.once('moveend',function(){setTimeout(end,900)}) },700);
+    setTimeout(function(){$('iname').classList.add('on')},7600);
+    setTimeout(end,12500);
+    box.addEventListener('click',end); $('iskip').addEventListener('click',end);
   }
 
   function photo(b){
@@ -246,7 +234,7 @@ var D={"schema":1,"townland":"Cullionboy","slug":"cullionboy","generated_by":"do
       $('photoimg').src='media/'+f; $('photolink').href='media/'+f; $('photoimg').alt=m.alt||m.caption||'';
       var pc=$('photocap'); pc.textContent=(m.caption||'')+(m.source?'. '+m.source+'.':'');
       if(m.lat&&m.lon){var a=document.createElement('a'); a.href='https://www.openstreetmap.org/?mlat='+m.lat+'&mlon='+m.lon+'#map=17/'+m.lat+'/'+m.lon; a.target='_blank'; a.rel='noopener'; a.textContent='See it on the map'; pc.append(' '); pc.append(a)}
-      pc.append(document.createTextNode(' Tap the picture to see it full size.'))
+      pc.append(document.createTextNode('. Tap the picture to see it full size.'))
       p.classList.add('on');
     } else p.classList.remove('on');
   }
@@ -271,10 +259,10 @@ var D={"schema":1,"townland":"Cullionboy","slug":"cullionboy","generated_by":"do
   }
 
   function show(n,fromHash){
-    var prevHero=cur===null?true:isHero(beats[cur]);
     i=Math.max(0,Math.min(N-1,n)); cur=i;
     var b=beats[i];
-    $('app').classList.toggle('hero',isHero(b));
+    var shows=!isHero(b)&&((b.media&&b.media.length)||b.counts);
+    $('app').classList.toggle('hero',!shows);
     $('app').classList.toggle('pic',!!(b.media&&b.media.length)&&!isHero(b));
     cardEls.forEach(function(c,k){c.classList.toggle('cur',k===i); c.setAttribute('aria-hidden',k===i?'false':'true')});
     stopEls.forEach(function(s,k){s.classList.toggle('cur',k===i); s.classList.toggle('past',k<i)});
@@ -283,7 +271,6 @@ var D={"schema":1,"townland":"Cullionboy","slug":"cullionboy","generated_by":"do
     $('live').textContent=(b.time.label?b.time.label+'. ':'')+b.caption;
     $('prev').disabled=i===0; $('next').disabled=i===N-1;
     photo(b); dots(b);
-    if(!isHero(b)) camera(b,prevHero);
     if(!fromHash){try{history.replaceState(null,'','#beat='+encodeURIComponent(b.id))}catch(e){}}
   }
 
@@ -348,7 +335,8 @@ var D={"schema":1,"townland":"Cullionboy","slug":"cullionboy","generated_by":"do
   var start=0, m=/#beat=([^&]+)/.exec(location.hash||'');
   if(m){var id=decodeURIComponent(m[1]); beats.forEach(function(b,k){if(b.id===id) start=k})}
   show(start,true); remaining=beats[start].duration_ms; setMode();
-  window.addEventListener('resize',function(){place(true); if(map) map.invalidateSize()});
+  window.addEventListener('resize',function(){place(true)});
+  if(start===0&&!m) intro();
   if(document.fonts&&document.fonts.ready) document.fonts.ready.then(function(){place(true)});
 })();
 </script>

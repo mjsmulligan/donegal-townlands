@@ -38,19 +38,17 @@ a{color:var(--ink);text-decoration-color:var(--hill);text-underline-offset:3px}
 .top{display:flex;gap:8px;align-items:center;flex:0 0 auto}
 .top a,.top span{background:rgba(251,252,250,.88);border:1px solid var(--rule);border-radius:999px;padding:5px 12px;font-size:13px;text-decoration:none;backdrop-filter:blur(6px)}
 
-/* the map is an inset window that opens when the story reaches the ground, and closes for the opening and the end */
-.stage{position:relative;flex:0 0 34%;min-height:0;border-radius:16px;overflow:hidden;background:#DCE6E2;border:1px solid var(--rule);transition:flex-basis .9s var(--ease),opacity .6s,margin .9s var(--ease)}
+/* the stage is a window that opens for a photograph or the people dots, and closes for the opening, the end and any moment with neither */
+.stage{position:relative;flex:0 0 34%;min-height:0;border-radius:16px;overflow:hidden;background:rgba(251,252,250,.9);border:1px solid var(--rule);transition:flex-basis .9s var(--ease),opacity .6s,margin .9s var(--ease)}
 .app.pic .stage{flex-basis:46%}
-.leaflet-top,.leaflet-bottom{z-index:800!important}
 .app.hero .stage{flex-basis:0;opacity:0;border-width:0;margin-top:-8px;pointer-events:none;visibility:hidden;transition:flex-basis .9s var(--ease),opacity .6s,margin .9s var(--ease),visibility 0s .9s}
-#map{position:absolute;inset:0}
 .photo{position:absolute;inset:0;z-index:900;background:rgba(243,246,244,.97);display:flex;align-items:center;justify-content:center;padding:10px;opacity:0;pointer-events:none;transition:opacity .6s}
 .photo.on{opacity:1}
 .photo figure{width:100%;height:100%;display:flex;flex-direction:column;background:var(--paper);border:1px solid var(--rule);border-radius:10px;padding:8px}
 .photo img{display:block;flex:1 1 auto;min-height:0;width:100%;object-fit:contain;border-radius:4px}
 .photo figcaption{font-size:13px;color:var(--ink2);padding:6px 2px 0}
 
-/* the people: one dot for every person counted, over the map */
+/* the people: one dot for every person counted */
 .dots{position:absolute;inset:0;z-index:850;background:rgba(243,246,244,.86);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:14px;opacity:0;pointer-events:none;transition:opacity .6s}
 .dots.on{opacity:1}
 .dotgrid{display:flex;flex-wrap:wrap;justify-content:center;gap:5px;max-width:min(100%,430px)}
@@ -96,10 +94,14 @@ details p{margin:4px 0;overflow-wrap:anywhere}
 .foot:empty{display:none}
 .foot{font-size:11px;color:var(--ink);flex:0 0 auto;text-align:center;background:rgba(251,252,250,.8);border-radius:999px;padding:1px 10px;align-self:center}
 
-.pin{position:relative;width:18px;height:18px;border-radius:50%;background:var(--hill-d);border:3px solid #fff;box-shadow:0 0 0 2px var(--ink)}
-.pin.possible{background:#fff;box-shadow:0 0 0 2px var(--hill-d)}
-.pin:after{content:"";position:absolute;inset:-9px;border-radius:50%;border:2px solid var(--hill-d);animation:ping 2.4s ease-out infinite}
-@keyframes ping{from{transform:scale(.5);opacity:.9}to{transform:scale(1.6);opacity:0}}
+/* the opening: a satellite view that falls from far above Ireland to the townland, then lifts away */
+#intro{position:fixed;inset:0;z-index:3000;background:#0e2a36;transition:opacity 1.4s}
+#intro.out{opacity:0;pointer-events:none}
+#intro[hidden]{display:none}
+#imap{position:absolute;inset:0;background:#0e2a36}
+.iname{position:absolute;left:0;right:0;bottom:22%;text-align:center;color:#fff;font:300 clamp(40px,12vw,84px)/1 var(--display);text-shadow:0 2px 18px rgba(0,0,0,.55);opacity:0;transition:opacity 1.6s;pointer-events:none;z-index:1200}
+.iname.on{opacity:1}
+.iskip{position:absolute;left:50%;bottom:calc(18px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:1300;background:rgba(14,42,54,.7);color:#fff;border:1px solid rgba(255,255,255,.6);border-radius:999px;min-height:44px;padding:0 20px;font:500 14px var(--body);cursor:pointer}
 
 /* desktop: the window beside the cards, both over the same landscape */
 @media (min-width:900px){
@@ -121,7 +123,7 @@ details p{margin:4px 0;overflow-wrap:anywhere}
   .app.hero .cards,.app.hero .ribbon,.app.hero .controls,.app.hero .foot{grid-column:1;justify-self:center;width:min(560px,100%)}
 }
 @media (prefers-reduced-motion:reduce){
-  .bg{animation:none}.track,.card,.stage,.stop,.photo,.dots,.dotgrid i{transition:none}.pin:after{animation:none}
+  .bg{animation:none}.track,.card,.stage,.stop,.photo,.dots,.dotgrid i,#intro,.iname{transition:none}
 }
 </style>
 </head>
@@ -129,8 +131,7 @@ details p{margin:4px 0;overflow-wrap:anywhere}
 <a class="skip" href="#live">Skip to the story</a>
 <div class="app hero" id="app">
   <div class="top"><a href="../">Donegal Townlands</a><span id="place">__BRAND__</span></div>
-  <section class="stage" aria-label="Map of the townland">
-    <div id="map"></div>
+  <section class="stage" aria-label="Photographs and people">
     <div class="dots" id="dots" aria-hidden="true"><div class="dotnum" id="dotnum"></div><div class="dotgrid" id="dotgrid"></div></div>
     <div class="photo" id="photo"><figure><a id="photolink" href="#" target="_blank" rel="noopener" style="display:flex;flex:1 1 auto;min-height:0" title="Open the full size image"><img id="photoimg" alt=""></a><figcaption id="photocap"></figcaption></figure></div>
   </section>
@@ -148,6 +149,7 @@ details p{margin:4px 0;overflow-wrap:anywhere}
   <p class="sr" id="live" aria-live="polite" tabindex="-1"></p>
 </div>
 <div class="bg" id="bg" aria-hidden="true"></div>
+<div id="intro" hidden aria-hidden="true"><div id="imap"></div><div class="iname" id="iname"></div><button class="iskip" id="iskip" type="button">Skip</button></div>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
 var D=__DATA__;
@@ -157,8 +159,7 @@ var D=__DATA__;
   D.chapters.forEach(function(c){chapters[c.id]=c.title; c.beats.forEach(function(b){beats.push(b)})});
   var N=beats.length;
   var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches;
-  var ZOOM={parish:13,townland:15,household:17};
-  var i=0, playing=false, timer=null, started=0, remaining=0, raf=0, map=null, pin=null, pinEl=null, mapReady=false, cur=null;
+  var i=0, playing=false, timer=null, started=0, remaining=0, raf=0, cur=null;
 
   function el(tag,cls,text){var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e}
   function year(b){return parseInt(b.time.sort.slice(0,4),10)}
@@ -210,33 +211,20 @@ var D=__DATA__;
     if(instant){t.offsetWidth; t.style.transition=''}
   }
 
-  /* the map: Leaflet is optional, the story plays without it */
-  if(window.L){
-    map=L.map('map',{zoomControl:true,attributionControl:true,zoomAnimation:false,fadeAnimation:false,tap:true,inertia:false});
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
-    var b0=beats[0]; map.setView([b0.place.lat,b0.place.lon],ZOOM[b0.place.camera]||14,{animate:false});
-    ['mousedown','touchstart'].forEach(function(t){$('map').addEventListener(t,function(){pause()},{passive:true})});
-  } else {
-    var nm=el('p','note','The map could not load. The story still plays.'); nm.style.cssText='position:absolute;left:12px;bottom:12px;right:12px;margin:0'; $('map').append(nm);
-  }
-  /* the camera moves only when it must: a change of zoom, or of place. Nothing is rebuilt between beats. */
-  function camera(b,wasHero){
-    if(!map) return;
-    var ll=[b.place.lat,b.place.lon], z=ZOOM[b.place.camera]||14;
-    var apply=function(){
-      map.invalidateSize({animate:false});
-      if(!pin){
-        pin=L.marker(ll,{keyboard:false,interactive:false,icon:L.divIcon({className:'',html:'<div class="pin" id="pinel"></div>',iconSize:[18,18],iconAnchor:[9,9]})}).addTo(map);
-      } else pin.setLatLng(ll);
-      var pe=document.getElementById('pinel'); if(pe) pe.className='pin'+(b.evidence.certainty==='possible'?' possible':'');
-      var c=map.getCenter();
-      var moved=Math.abs(c.lat-ll[0])>1e-5||Math.abs(c.lng-ll[1])>1e-5||map.getZoom()!==z;
-      if(!moved) return;
-      if(wasHero||reduce) map.setView(ll,z,{animate:false});
-      else map.setView(ll,z,{animate:true,duration:1.2});
-    };
-    /* when the window is still opening, wait for it, then set the view once with no animation */
-    if(wasHero){setTimeout(apply,reduce?0:950)} else apply();
+  /* the opening. Leaflet is optional: without it, or with reduced motion, or on a link to a later moment, the story just starts. */
+  function intro(){
+    var b0=beats[0], box=$('intro'), ended=false, ll=[b0.place.lat,b0.place.lon];
+    if(!window.L||reduce||!ll[0]) return;
+    box.hidden=false;
+    var m=L.map('imap',{zoomControl:false,attributionControl:true,zoomAnimation:true,fadeAnimation:true,dragging:false,touchZoom:false,scrollWheelZoom:false,doubleClickZoom:false,boxZoom:false,keyboard:false,tap:false});
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{maxZoom:18,maxNativeZoom:17,attribution:'Imagery: Esri, Maxar, Earthstar Geographics'}).addTo(m);
+    m.setView(ll,3,{animate:false});
+    $('iname').textContent=b0.place.name||D.townland||'';
+    function end(){ if(ended) return; ended=true; box.classList.add('out'); setTimeout(function(){try{m.remove()}catch(e){} box.hidden=true},1500) }
+    setTimeout(function(){ m.flyTo(ll,16,{duration:9}); m.once('moveend',function(){setTimeout(end,900)}) },700);
+    setTimeout(function(){$('iname').classList.add('on')},7600);
+    setTimeout(end,12500);
+    box.addEventListener('click',end); $('iskip').addEventListener('click',end);
   }
 
   function photo(b){
@@ -246,7 +234,7 @@ var D=__DATA__;
       $('photoimg').src='media/'+f; $('photolink').href='media/'+f; $('photoimg').alt=m.alt||m.caption||'';
       var pc=$('photocap'); pc.textContent=(m.caption||'')+(m.source?'. '+m.source+'.':'');
       if(m.lat&&m.lon){var a=document.createElement('a'); a.href='https://www.openstreetmap.org/?mlat='+m.lat+'&mlon='+m.lon+'#map=17/'+m.lat+'/'+m.lon; a.target='_blank'; a.rel='noopener'; a.textContent='See it on the map'; pc.append(' '); pc.append(a)}
-      pc.append(document.createTextNode(' Tap the picture to see it full size.'))
+      pc.append(document.createTextNode('. Tap the picture to see it full size.'))
       p.classList.add('on');
     } else p.classList.remove('on');
   }
@@ -271,10 +259,10 @@ var D=__DATA__;
   }
 
   function show(n,fromHash){
-    var prevHero=cur===null?true:isHero(beats[cur]);
     i=Math.max(0,Math.min(N-1,n)); cur=i;
     var b=beats[i];
-    $('app').classList.toggle('hero',isHero(b));
+    var shows=!isHero(b)&&((b.media&&b.media.length)||b.counts);
+    $('app').classList.toggle('hero',!shows);
     $('app').classList.toggle('pic',!!(b.media&&b.media.length)&&!isHero(b));
     cardEls.forEach(function(c,k){c.classList.toggle('cur',k===i); c.setAttribute('aria-hidden',k===i?'false':'true')});
     stopEls.forEach(function(s,k){s.classList.toggle('cur',k===i); s.classList.toggle('past',k<i)});
@@ -283,7 +271,6 @@ var D=__DATA__;
     $('live').textContent=(b.time.label?b.time.label+'. ':'')+b.caption;
     $('prev').disabled=i===0; $('next').disabled=i===N-1;
     photo(b); dots(b);
-    if(!isHero(b)) camera(b,prevHero);
     if(!fromHash){try{history.replaceState(null,'','#beat='+encodeURIComponent(b.id))}catch(e){}}
   }
 
@@ -348,7 +335,8 @@ var D=__DATA__;
   var start=0, m=/#beat=([^&]+)/.exec(location.hash||'');
   if(m){var id=decodeURIComponent(m[1]); beats.forEach(function(b,k){if(b.id===id) start=k})}
   show(start,true); remaining=beats[start].duration_ms; setMode();
-  window.addEventListener('resize',function(){place(true); if(map) map.invalidateSize()});
+  window.addEventListener('resize',function(){place(true)});
+  if(start===0&&!m) intro();
   if(document.fonts&&document.fonts.ready) document.fonts.ready.then(function(){place(true)});
 })();
 </script>
