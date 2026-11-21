@@ -36,6 +36,7 @@ a{color:var(--ink);text-decoration-color:var(--hill);text-underline-offset:3px}
 
 .app{display:flex;flex-direction:column;height:100vh;height:100dvh;padding:calc(8px + env(safe-area-inset-top,0px)) 10px calc(8px + env(safe-area-inset-bottom,0px));gap:8px}
 .top{display:flex;gap:8px;align-items:center;flex:0 0 auto}
+.top .replay{background:rgba(251,252,250,.88);border:1px solid var(--rule);border-radius:999px;padding:5px 12px;font:400 13px var(--body);color:var(--ink);cursor:pointer;min-height:32px}
 .top a,.top span{background:rgba(251,252,250,.88);border:1px solid var(--rule);border-radius:999px;padding:5px 12px;font-size:13px;text-decoration:none;backdrop-filter:blur(6px)}
 
 /* the stage is a window that opens for a photograph or the people dots, and closes for the opening, the end and any moment with neither */
@@ -130,7 +131,7 @@ details p{margin:4px 0;overflow-wrap:anywhere}
 <body>
 <a class="skip" href="#live">Skip to the story</a>
 <div class="app hero" id="app">
-  <div class="top"><a href="../">Donegal Townlands</a><span id="place">__BRAND__</span></div>
+  <div class="top"><a href="../">Donegal Townlands</a><span id="place">__BRAND__</span><button class="replay" id="replay" type="button" hidden>Replay opening</button></div>
   <section class="stage" aria-label="Photographs and people">
     <div class="dots" id="dots" aria-hidden="true"><div class="dotnum" id="dotnum"></div><div class="dotgrid" id="dotgrid"></div></div>
     <div class="photo" id="photo"><figure><a id="photolink" href="#" target="_blank" rel="noopener" style="display:flex;flex:1 1 auto;min-height:0" title="Open the full size image"><img id="photoimg" alt=""></a><figcaption id="photocap"></figcaption></figure></div>
@@ -212,10 +213,10 @@ var D=__DATA__;
   }
 
   /* the opening. Leaflet is optional: without it, or with reduced motion, or on a link to a later moment, the story just starts. */
-  function intro(){
+  function intro(asked){
     var b0=beats[0], box=$('intro'), ended=false, ll=[b0.place.lat,b0.place.lon];
-    if(!window.L||reduce||!ll[0]) return;
-    box.hidden=false;
+    if(!window.L||(reduce&&!asked)||!ll[0]) return;
+    box.classList.remove('out'); $('iname').classList.remove('on'); box.hidden=false;
     var m=L.map('imap',{zoomControl:false,attributionControl:true,zoomAnimation:true,fadeAnimation:true,dragging:false,touchZoom:false,scrollWheelZoom:false,doubleClickZoom:false,boxZoom:false,keyboard:false,tap:false});
     L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{maxZoom:18,maxNativeZoom:17,attribution:'Imagery: Esri, Maxar, Earthstar Geographics'}).addTo(m);
     m.setView(ll,3,{animate:false});
@@ -224,7 +225,7 @@ var D=__DATA__;
     setTimeout(function(){ m.flyTo(ll,16,{duration:9}); m.once('moveend',function(){setTimeout(end,900)}) },700);
     setTimeout(function(){$('iname').classList.add('on')},7600);
     setTimeout(end,12500);
-    box.addEventListener('click',end); $('iskip').addEventListener('click',end);
+    box.onclick=end; $('iskip').onclick=end;
   }
 
   function photo(b){
@@ -336,6 +337,7 @@ var D=__DATA__;
   if(m){var id=decodeURIComponent(m[1]); beats.forEach(function(b,k){if(b.id===id) start=k})}
   show(start,true); remaining=beats[start].duration_ms; setMode();
   window.addEventListener('resize',function(){place(true)});
+  if(window.L&&beats[0].place.lat){$('replay').hidden=false; $('replay').addEventListener('click',function(){go(0); intro(true)})}
   if(start===0&&!m) intro();
   if(document.fonts&&document.fonts.ready) document.fonts.ready.then(function(){place(true)});
 })();
