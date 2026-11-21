@@ -452,7 +452,7 @@ def write_page(name, doc, found):
     for r in found['rows']:
         media[r['file']] = {'caption': r.get('caption', ''), 'alt': r.get('alt', ''),
                             'source': r.get('source', '')}
-    payload = dict(doc, media=media, foot='Photographs and text from the project records. Map: OpenStreetMap contributors.')
+    payload = dict(doc, media=media, foot='')
     data = json.dumps(payload, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
     html = (ROOT / 'engine' / 'documentary.html').read_text(encoding='utf-8')
     page = (html.replace('__TITLE__', bt.build.esc(doc['townland'] + ' documentary'))
