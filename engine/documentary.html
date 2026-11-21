@@ -52,7 +52,6 @@ body.introing .app,body.introing .bg{opacity:0}
 .photo figure>*{transition:opacity .7s}
 .photo.swap figure>*{opacity:0}
 .photo img{display:block;flex:1 1 auto;min-height:0;width:100%;object-fit:contain;border-radius:4px}
-.photo figcaption{font-size:13px;color:var(--ink2);padding:6px 2px 0}
 
 /* the people: one dot for every person counted */
 .dots{position:absolute;inset:0;z-index:850;background:rgba(243,246,244,.86);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:14px;opacity:0;pointer-events:none;transition:opacity .9s}
@@ -142,7 +141,7 @@ details p{margin:4px 0;overflow-wrap:anywhere}
   <div class="top"><a href="../">Donegal Townlands</a><span id="place">__BRAND__</span><button class="replay" id="replay" type="button" hidden>Replay opening</button></div>
   <section class="stage" aria-label="Photographs and people">
     <div class="dots" id="dots" aria-hidden="true"><div class="dotnum" id="dotnum"></div><div class="dotgrid" id="dotgrid"></div></div>
-    <div class="photo" id="photo"><figure><a id="photolink" href="#" target="_blank" rel="noopener" style="display:flex;flex:1 1 auto;min-height:0" title="Open the full size image"><img id="photoimg" alt=""></a><figcaption id="photocap"></figcaption></figure></div>
+    <div class="photo" id="photo"><figure><a id="photolink" href="#" target="_blank" rel="noopener" style="display:flex;flex:1 1 auto;min-height:0" title="Open the full size image"><img id="photoimg" alt=""></a></figure></div>
   </section>
   <section class="cards" aria-label="The story, in order"><div class="track" id="track"></div></section>
   <div class="ribbon" id="ribbon" role="group" aria-label="Time, from the first moment to the last">
@@ -150,7 +149,7 @@ details p{margin:4px 0;overflow-wrap:anywhere}
   </div>
   <div class="controls">
     <button class="btn" id="prev" type="button" aria-label="Previous">&#8592;</button>
-    <button class="btn main" id="play" type="button">Watch</button>
+    <button class="btn main" id="play" type="button">Play</button>
     <button class="btn" id="next" type="button" aria-label="Next">&#8594;</button>
     <span class="mode" id="mode">Explore</span>
   </div>
@@ -256,9 +255,6 @@ var D=__DATA__;
   function fillPhoto(f){
     var m=(D.media||{})[f]||{};
     $('photoimg').src='media/'+f; $('photolink').href='media/'+f; $('photoimg').alt=m.alt||m.caption||'';
-    var pc=$('photocap'); pc.textContent=(m.caption||'')+(m.source?'. '+m.source+'.':'');
-    if(m.lat&&m.lon){var a=document.createElement('a'); a.href='https://www.openstreetmap.org/?mlat='+m.lat+'&mlon='+m.lon+'#map=17/'+m.lat+'/'+m.lon; a.target='_blank'; a.rel='noopener'; a.textContent='See it on the map'; pc.append(' '); pc.append(a)}
-    pc.append(document.createTextNode('. Tap the picture to see it full size.'));
     shownPhoto=f;
   }
   var swapTimer=null;
@@ -311,9 +307,9 @@ var D=__DATA__;
   }
 
   function setMode(){
-    $('play').textContent=playing?'Pause':(i>=N-1&&remaining<=0?'Watch again':(started?'Resume':'Watch'));
+    $('play').textContent=playing?'Pause':(i>=N-1&&remaining<=0?'Play again':(started?'Resume':'Play'));
     $('play').setAttribute('aria-pressed',playing?'true':'false');
-    $('mode').textContent=reduce?'Explore':(playing?'Watching':'Explore');
+    $('mode').textContent=reduce?'Explore':(playing?'Playing':'Explore');
   }
 
   /* the clock: stay on a moment for most of its time, then let the years run on to the next one */
