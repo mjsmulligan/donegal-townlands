@@ -16,7 +16,7 @@ Bring the map, the townland walk, the townland timeline and the family timeline 
 In scope:
 - A **beat** format: one small record per moment in the story, generated from data the repo already holds.
 - A generator that writes a townland's beats from its records, with no hand authoring.
-- A player with two modes, Watch and Explore, sharing one clock, one stage and one script.
+- A player with two modes, Play and Explore, sharing one clock, one stage and one script.
 - Captions as the first form of narration, written in the story voice of `docs/STORY_SPEC.md`.
 - A "follow this family" thread inside a townland chapter.
 - Phone first, with a desktop layout of the same stage.
@@ -36,7 +36,7 @@ Out of scope for the first release:
 | D1 | The townland is the primary unit. A family appears as a "follow this family" thread inside a townland chapter, not as the main frame. | Agreed 2026-11-20 |
 | D2 | Beats are generated automatically from records so the feature scales over 100+ townlands. No beat needs hand authoring. Hand additions, mainly media, may be allowed later as an optional layer on top. | Agreed 2026-11-20 |
 | D3 | Phones are the main audience, desktop is also supported. One player and one script, drawn in two layouts of the same stage, not two templates. Provisional until Cullionboy is tried on a phone. | Agreed in principle 2026-11-20, to confirm after DP5 |
-| D4 | Watch and Explore are two modes of one player built from the same pages. Pause or any tap moves to Explore. Resume returns to the beat that was playing. | Proposed |
+| D4 | Play and Explore are two modes of one player built from the same pages. Pause or any tap moves to Explore. Resume returns to the beat that was playing. | Proposed |
 | D5 | Captions follow `docs/STORY_SPEC.md` (third person, past tense, plain words, evidence only, silence over guessing) with one softening. Where a link between records is possible but not certain, the caption may say "possibly", once, at the point of the link. Nothing else is hedged. "Probably", "seems", "it is tempting to think" and similar stay out. | Agreed 2026-11-20 for the documentary. See note below. |
 | D6 | The generator never invents a story for a gap in the record. Absence from a return is not told as a departure (STORY_SPEC, "Absence and departure"). | Proposed |
 | D7 | Sound is off by default. Captions are always available. Audio is never the only carrier of any fact. | Proposed |
@@ -162,7 +162,7 @@ Marriages are not a beat kind in the first release because the register records 
 - **One clock.** A playhead over `time.sort`. Pressing play advances beat by beat. Scrubbing moves the whole experience. The timeline strip is the control, so the existing timeline view becomes the paused view.
 - **One stage.** The map is the stage. The camera moves parish, then townland, then household level, according to each beat's `place.camera`.
 - **One script.** The beats in order. The player holds no townland content of its own (same rule as `engine/walk.html`).
-- **Watch mode.** Auto-advance, captions shown, the open card follows the beat, chapter list and skip at the edge.
+- **Play mode.** Auto-advance, captions shown, the open card follows the beat, chapter list and skip at the edge.
 - **Explore mode.** Entered by pause or by tapping anything. The viewer has the ordinary interactive page. Resume returns to the beat that was playing.
 - **Deep links.** `#beat=<id>` opens paused on that beat. This is also how the timeline, walk and map link into the documentary.
 
