@@ -40,13 +40,24 @@ a{color:var(--ink);text-decoration-color:var(--hill);text-underline-offset:3px}
 
 /* the map is an inset window that opens when the story reaches the ground, and closes for the opening and the end */
 .stage{position:relative;flex:0 0 34%;min-height:0;border-radius:16px;overflow:hidden;background:#DCE6E2;border:1px solid var(--rule);transition:flex-basis .9s var(--ease),opacity .6s,margin .9s var(--ease)}
+.app.pic .stage{flex-basis:52%}
 .app.hero .stage{flex-basis:0;opacity:0;border-width:0;margin-top:-8px;pointer-events:none;visibility:hidden;transition:flex-basis .9s var(--ease),opacity .6s,margin .9s var(--ease),visibility 0s .9s}
 #map{position:absolute;inset:0}
 .photo{position:absolute;inset:0;z-index:900;background:rgba(243,246,244,.97);display:flex;align-items:center;justify-content:center;padding:10px;opacity:0;pointer-events:none;transition:opacity .6s}
 .photo.on{opacity:1}
-.photo figure{max-width:100%;max-height:100%;display:flex;flex-direction:column;background:var(--paper);border:1px solid var(--rule);border-radius:10px;padding:8px}
-.photo img{display:block;max-width:100%;max-height:calc(100% - 40px);object-fit:contain;border-radius:4px;margin:auto}
+.photo figure{width:100%;height:100%;display:flex;flex-direction:column;background:var(--paper);border:1px solid var(--rule);border-radius:10px;padding:8px}
+.photo img{display:block;flex:1 1 auto;min-height:0;width:100%;object-fit:contain;border-radius:4px}
 .photo figcaption{font-size:13px;color:var(--ink2);padding:6px 2px 0}
+
+/* the people: one dot for every person counted, over the map */
+.dots{position:absolute;inset:0;z-index:850;background:rgba(243,246,244,.86);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:14px;opacity:0;pointer-events:none;transition:opacity .6s}
+.dots.on{opacity:1}
+.dotgrid{display:flex;flex-wrap:wrap;justify-content:center;gap:5px;max-width:min(100%,430px)}
+.dotgrid i{width:11px;height:11px;border-radius:50%;background:var(--hill-d);transform:scale(0);opacity:0;transition:transform .5s var(--ease),opacity .5s,background .5s}
+.dotgrid i.on{transform:none;opacity:1}
+.dotgrid i.off{transform:scale(.8);opacity:.5;background:transparent;box-shadow:inset 0 0 0 2px var(--hill-d)}
+.dotnum{font:300 clamp(40px,11vw,64px)/1 var(--display);font-variant-numeric:tabular-nums}
+.dotnum small{font:400 15px var(--body);color:var(--ink2);margin-left:8px}
 
 /* cards travel along a track; the one in view is clear, the ones either side wait in the haze */
 .cards{position:relative;flex:1 1 auto;min-height:0;overflow:hidden;display:flex;align-items:center;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 6%,#000 94%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 6%,#000 94%,transparent 100%)}
@@ -108,7 +119,7 @@ details p{margin:4px 0;overflow-wrap:anywhere}
   .app.hero .cards,.app.hero .ribbon,.app.hero .controls,.app.hero .foot{grid-column:1;justify-self:center;width:min(560px,100%)}
 }
 @media (prefers-reduced-motion:reduce){
-  .bg{animation:none}.track,.card,.stage,.stop,.photo{transition:none}.pin:after{animation:none}
+  .bg{animation:none}.track,.card,.stage,.stop,.photo,.dots,.dotgrid i{transition:none}.pin:after{animation:none}
 }
 </style>
 </head>
@@ -118,6 +129,7 @@ details p{margin:4px 0;overflow-wrap:anywhere}
   <div class="top"><a href="../">Donegal Townlands</a><span id="place">__BRAND__</span></div>
   <section class="stage" aria-label="Map of the townland">
     <div id="map"></div>
+    <div class="dots" id="dots" aria-hidden="true"><div class="dotnum" id="dotnum"></div><div class="dotgrid" id="dotgrid"></div></div>
     <div class="photo" id="photo"><figure><img id="photoimg" alt=""><figcaption id="photocap"></figcaption></figure></div>
   </section>
   <section class="cards" aria-label="The story, in order"><div class="track" id="track"></div></section>
@@ -180,7 +192,7 @@ var D=__DATA__;
   var cardEls=[];
   beats.forEach(function(b,k){
     var c=el('article','card'); c.setAttribute('aria-hidden','true');
-    c.append(el('div','ch',chapters[b.chapter]||''),el('h2','when',b.time.label||D.title),el('p','caption',b.caption));
+    if((chapters[b.chapter]||'')!==(b.time.label||D.title)) c.append(el('div','ch',chapters[b.chapter]||'')); c.append(el('h2','when',b.time.label||D.title),el('p','caption',b.caption));
     var d=el('details',null); d.append(el('summary',null,'The records behind this'));
     d.append(el('p',null,'Basis: '+b.evidence.basis.replace(/_/g,' ')+'. '+b.evidence.certainty+'.'));
     b.evidence.events.forEach(function(id){d.append(el('p',null,id))});
@@ -235,18 +247,38 @@ var D=__DATA__;
     } else p.classList.remove('on');
   }
 
+  /* dots: a census beat fills in one dot for each person counted. A change beat starts from the earlier count
+     and settles on the new one, the dots that are no longer there showing as empty rings. Counts only. */
+  var dotTimer=null;
+  function dots(b){
+    var box=$('dots'), grid=$('dotgrid'), c=b.counts;
+    clearTimeout(dotTimer);
+    if(!c||!c.people){box.classList.remove('on'); return}
+    var from=b.kind==='change'?c.from_people:0, total=Math.max(c.people,from||0), is=[];
+    grid.textContent='';
+    for(var k=0;k<total;k++){var d=document.createElement('i'); d.style.transitionDelay=reduce?'0s':Math.min(k*9,900)+'ms'; if(k<from) d.className='on'; grid.append(d); is.push(d)}
+    $('dotnum').textContent=''; $('dotnum').append(String(b.kind==='change'?from:c.people)); var sm=document.createElement('small'); sm.textContent='people in '+(b.kind==='change'?c.from_households:c.households)+' households'; $('dotnum').append(sm);
+    box.classList.add('on');
+    var settle=function(){
+      is.forEach(function(d,k){d.className=k<c.people?'on':'off'});
+      $('dotnum').textContent=''; $('dotnum').append(String(c.people)); var s2=document.createElement('small'); s2.textContent='people in '+c.households+' households'; $('dotnum').append(s2);
+    };
+    if(b.kind==='change'&&!reduce){dotTimer=setTimeout(settle,1400)} else {dotTimer=setTimeout(settle,reduce?0:120)}
+  }
+
   function show(n,fromHash){
     var prevHero=cur===null?true:isHero(beats[cur]);
     i=Math.max(0,Math.min(N-1,n)); cur=i;
     var b=beats[i];
     $('app').classList.toggle('hero',isHero(b));
+    $('app').classList.toggle('pic',b.kind==='photo');
     cardEls.forEach(function(c,k){c.classList.toggle('cur',k===i); c.setAttribute('aria-hidden',k===i?'false':'true')});
     stopEls.forEach(function(s,k){s.classList.toggle('cur',k===i); s.classList.toggle('past',k<i)});
     place(fromHash);
     setHead(pos[i],year(b));
     $('live').textContent=(b.time.label?b.time.label+'. ':'')+b.caption;
     $('prev').disabled=i===0; $('next').disabled=i===N-1;
-    photo(b);
+    photo(b); dots(b);
     if(!isHero(b)) camera(b,prevHero);
     if(!fromHash){try{history.replaceState(null,'','#beat='+encodeURIComponent(b.id))}catch(e){}}
   }

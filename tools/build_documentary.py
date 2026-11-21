@@ -102,7 +102,7 @@ def span_label(event):
     return label.split()[-1] if event['date']['kind'] == 'exact' else label
 
 
-def beat(kind, key, chapter, event_ref, caption, place, certainty='stated', basis='', events=(), media=(), camera='townland'):
+def beat(kind, key, chapter, event_ref, caption, place, certainty='stated', basis='', events=(), media=(), camera='townland', counts=None):
     """event_ref: the event (or events) whose date places the beat. `events` are the evidence ids."""
     first = event_ref[0] if isinstance(event_ref, (list, tuple)) else event_ref
     last = event_ref[-1] if isinstance(event_ref, (list, tuple)) else event_ref
@@ -111,7 +111,7 @@ def beat(kind, key, chapter, event_ref, caption, place, certainty='stated', basi
     time = {'label': when['date']['label'], 'iso': when['date']['iso'], 'sort': when['sort'],
             'approximate': bool(when.get('approximate_sort'))}
     card = events[0] if events else ''
-    return {
+    out = {
         'id': bid, 'kind': kind, 'chapter': chapter, 'time': time,
         'place': dict(place, camera=camera),
         'scene': {'stage': 'map', 'open_card': card},
@@ -121,11 +121,14 @@ def beat(kind, key, chapter, event_ref, caption, place, certainty='stated', basi
         'duration_ms': duration_ms(caption, bool(media)),
         'audio': None,
     }
+    if counts:
+        out['counts'] = counts
+    return out
 
 
-def title_beat(display, name_ga, events, place, header):
+def title_beat(display, name_ga, events, place, header, end_label=''):
     if events:
-        a, b = span_label(events[0]), span_label(events[-1])
+        a, b = span_label(events[0]), end_label or span_label(events[-1])
         runs = f'Its story here runs from {a} to {b}.' if a != b else f'Its story here is {a}.'
     else:
         runs = ''
@@ -213,8 +216,9 @@ def census_beat(ev, place):
         patterns = [f"In {y}, {people} people in {plural(houses, 'household', 'households')} lived in {town}.",
                     f"{town} had {people} people in {plural(houses, 'household', 'households')} in {y}."]
         cap = patterns[pick(ev['id'], len(patterns))]
+    counts = {'people': people, 'households': houses} if people is not None else None
     return beat('census', y, f"{place['townland']}:ch:{y}", ev, cap, place,
-                basis=ev['association']['basis'], events=[ev['id']])
+                basis=ev['association']['basis'], events=[ev['id']], counts=counts)
 
 
 def change_beat(prev, ev, place):
@@ -231,7 +235,8 @@ def change_beat(prev, ev, place):
         move = f'the same as the {pp} in {y0}'
     cap = f"By {y1} {place['name']} had {cp} people, {move}. It had {plural(ch, 'household', 'households')}, against {num(ph)}."
     return beat('change', f'{y0}-{y1}', f"{place['townland']}:ch:{y1}", [prev, ev], cap, place,
-                basis='counts_between_returns', events=[prev['id'], ev['id']])
+                basis='counts_between_returns', events=[prev['id'], ev['id']],
+                counts={'people': cp, 'households': ch, 'from_people': pp, 'from_households': ph})
 
 
 def photo_beats(feed_events, by_event, place):
@@ -246,12 +251,33 @@ def photo_beats(feed_events, by_event, place):
     return out
 
 
-def closing_beat(events, place):
+def dated_photo_beats(rows, place):
+    """A photograph with a plain four figure year in its `date` and no event is placed by that year.
+    The year is the one the user gave, so the beat is stated. The caption is the media.csv caption."""
+    out = []
+    for r in rows:
+        y = (r.get('date') or '').strip()
+        if not re.fullmatch(r'\d{4}', y):
+            continue
+        ref = {'date': {'kind': 'year', 'label': y, 'iso': y}, 'sort': f'{y}-07-01', 'approximate_sort': True}
+        cap = f"A photograph from {y}: {r['caption'].rstrip('.')}."
+        out.append(beat('photo', r['file'], f"{place['townland']}:ch:{y}", ref, cap, place,
+                        basis='dated_photograph', media=[r['file']]))
+    return out
+
+
+def closing_beat(events, place, later=None):
     last = events[-1]
     people, houses = census_counts(last) if last['type'] == 'census' else (None, None)
     y = span_label(last)
     cap = (f"The story reaches {y} here, with {plural(houses, 'household', 'households')} in {place['name']}."
            if houses else f'The story reaches {y} here.')
+    if later:
+        ly = later['date']['label']
+        cap = (f"The story reaches {ly} here. In {y}, {place['name']} had {plural(houses, 'household', 'households')}."
+               if houses else f'The story reaches {ly} here.')
+        return beat('closing', 'end', f"{place['townland']}:ch:{ly}", later, cap, place,
+                    basis=last['association']['basis'], events=[last['id']])
     return beat('closing', 'end', f"{place['townland']}:ch:" + (last['date']['label'] if last['type'] == 'census' else
                                                  '1850s' if last['type'] == 'valuation' else 'baptisms'),
                 last, cap, place, basis=last['association']['basis'], events=[last['id']])
@@ -275,7 +301,7 @@ def evidence_numbers(b, by_id):
     return allowed
 
 
-def check_beat(b, by_id, known_ids):
+def check_beat(b, by_id, known_ids, extra=frozenset()):
     """Return a list of problems for one beat. Empty means it passes DOC-02, 05, 06, 06a, 07 and 08."""
     problems = []
     for f in REQUIRED:
@@ -313,9 +339,9 @@ def check_beat(b, by_id, known_ids):
         for phrase in CHANGE_BANNED:
             if phrase in low:
                 problems.append('change beat says more than counts: ' + phrase)
-    extra = numbers_in(cap) - evidence_numbers(b, by_id)
-    if extra:
-        problems.append('number not in the evidence: ' + ', '.join(str(x) for x in sorted(extra)))
+    loose = numbers_in(cap) - evidence_numbers(b, by_id) - set(extra)
+    if loose:
+        problems.append('number not in the evidence: ' + ', '.join(str(x) for x in sorted(loose)))
     return problems
 
 
@@ -345,7 +371,7 @@ def chapter_title(key, beats, display):
     return key
 
 
-def generate(display, slug, place_record, events, by_event=None, header=None, today=None):
+def generate(display, slug, place_record, events, by_event=None, header=None, today=None, dated=None):
     """Pure: build the documentary dict and the list of refused items from already collected inputs."""
     today = today or datetime.date.today()
     by_event = by_event or {}
@@ -354,7 +380,15 @@ def generate(display, slug, place_record, events, by_event=None, header=None, to
     events = sorted(events, key=lambda e: (e['sort'], bt.TYPE_ORDER.get(e['type'], 9), e['id']))
     place = {'townland': slug, 'name': display, 'logainm_id': str(place_record.get('logainm_id', '')),
              'lat': _num(place_record.get('latitude')), 'lon': _num(place_record.get('longitude'))}
-    beats = [title_beat(display, place_record.get('name_ga', ''), events, place, header)]
+    dated_beats = dated_photo_beats(dated or [], place) if len(events) >= 2 else []
+    later = None
+    if dated_beats:
+        top = max(dated_beats, key=lambda b: b['time']['sort'])
+        if top['time']['sort'] > events[-1]['sort']:
+            later = {'date': {'kind': 'year', 'label': top['time']['label'], 'iso': top['time']['iso']},
+                     'sort': top['time']['sort'], 'approximate_sort': True}
+    beats = [title_beat(display, place_record.get('name_ga', ''), events, place, header,
+                        later['date']['label'] if later else '')]
     note = ''
     if len(events) < 2:
         note = 'Fewer than two events are held, so there is no story to play yet.'
@@ -371,12 +405,14 @@ def generate(display, slug, place_record, events, by_event=None, header=None, to
                 if c:
                     beats.append(c)
         beats += photo_beats(events, by_event, place)
-        beats.append(closing_beat(events, place))
+        beats += dated_beats
+        beats.append(closing_beat(events, place, later))
     beats.sort(key=lambda b: (b['time']['sort'], KIND_ORDER[b['kind']], b['id']))
     by_id = {e['id']: e for e in events}
     known = set(by_id)
+    years = {int(b['time']['sort'][:4]) for b in dated_beats}
     for b in beats:
-        problems = check_beat(b, by_id, known)
+        problems = check_beat(b, by_id, known, years if b['kind'] == 'title' else ())
         if problems:
             raise ValueError(b.get('id', '?') + ': ' + '; '.join(problems))
     ids = [b['id'] for b in beats]
@@ -434,7 +470,7 @@ def build_documentary(name, today=None):
     if not ((base / 'townland.json').is_file() or (base / 'place.json').is_file()):
         print(name + ': no townland.json or place.json, not built.')
         return 1
-    found, _background, by_event, _unplaced = bt.media_items(name)
+    found, _background, by_event, unplaced = bt.media_items(name)
     if found['errors']:
         print(name + ': media problems, documentary not built:')
         for e in found['errors']:
@@ -449,7 +485,8 @@ def build_documentary(name, today=None):
     for event_id in sorted(set(by_event) - known):
         print(name + ': media.csv names an event that does not exist, no photo beat: ' + event_id)
     try:
-        doc, refused = generate(display, name, place, feed['events'], by_event, header, today)
+        dated = [r for r in found['rows'] if r['file'] in unplaced and r.get('scope') == 'family']
+        doc, refused = generate(display, name, place, feed['events'], by_event, header, today, dated)
     except ValueError as e:
         print(name + ': documentary not built. ' + str(e))
         return 1
