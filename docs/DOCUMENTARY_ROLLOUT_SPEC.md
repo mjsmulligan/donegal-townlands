@@ -36,6 +36,24 @@ The data richness varies a lot. The survey of the repository on 2026-11-21 found
 
 Add one townland with exactly one or two census years if the report in WP-R1 finds one, and one with a very large census population (to stress the people dots and the card text).
 
+### 3.1 Sample confirmed by the survey (WP-R1, 2026-11-21)
+
+`python tools/documentary_report.py` surveyed all 143 cases with no errors. Census years held: three in 127 cases, two in 6, one in 3, none in 7. Tiers by what the generator can use today: 2 full (Cullionboy, Clogher), 3 valuation and census, 21 census and baptisms, 110 census only (3 of them have a single return and so get a title beat and the note), 7 thin. No coordinate is outside Donegal or far from the others, so RO-08 has nothing to flag yet.
+
+One finding changes the set. The generator reads the raw register and matches the townland by the clerk's exact spelling (`tools/build_timeline.py`, `baptism_events`). The normalised file resolves variants (Aughlin and Aughlim to Aghlem, Mullinalamphrey to Mullanalamphry), which is where the counts of 4 and 3 in the table above came from. Today Aghlem shows no baptisms and Mullanalamphry shows none (its one exact match is disputed and left out). Whether documentaries should use the normalised file is Q3, and it also changes the timeline pages, so it is left for the user to decide.
+
+| Tier | Townland | Decision | Reason |
+|---|---|---|---|
+| A | Cullionboy | Kept | Full case, 11 beats. |
+| B | Clogher | Kept | Authored study, 11 beats. It holds 7 baptisms and a landscape photograph. |
+| C | Mullanalamphry | Kept | Valuation from a names only index (18 occupiers), three census years. It has no baptism beat under exact matching. |
+| D | Goladoo | Swapped in for Aghlem | Seven baptisms match by exact name, the most of any case, so the baptism beat is tested. |
+| E | Straness | Kept | Census only, three returns, 7 beats. |
+| F | Meenabrock | Kept | Logainm record only, title beat and note. |
+| extra | Tawnalary | Added | Two census years (1911 and 1926), the common short case, 5 beats. |
+| extra | Druminnin | Added | Largest population (148 people in one return), with a valuation of 36 occupiers. Stresses the people dots and card text. |
+| Q3 probe | Aghlem | Not generated | Kept in the report as the clearest case of the baptism spelling gap. Revisit after Q3. |
+
 ## 4. Requirements
 
 Numbering continues the documentary spec's style. RO means rollout.
