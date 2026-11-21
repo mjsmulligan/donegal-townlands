@@ -28,10 +28,13 @@ a{color:var(--ink);text-decoration-color:var(--hill);text-underline-offset:3px}
 .skip:focus{left:8px;top:8px}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
-/* the landscape is the whole backdrop, full bleed, drifting very slowly under a pale wash */
-.bg{position:fixed;inset:-4%;z-index:-2;background:var(--wall) center/cover no-repeat;animation:drift 70s ease-in-out infinite alternate}
-.bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(243,246,244,.55) 0%,rgba(243,246,244,.30) 40%,rgba(243,246,244,.72) 100%);transition:opacity 1s}
-.app.hero ~ .bg::after,.bg.clear::after{opacity:.35}
+/* the backdrop is a satellite view of the townland, full bleed, under a pale wash. If the map cannot load, the first photograph or plain colour stands in. */
+.bg{position:fixed;inset:0;z-index:-1;background:transparent}
+.bg.photo{inset:-4%;background:var(--wall) center/cover no-repeat;animation:drift 70s ease-in-out infinite alternate}
+.bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(243,246,244,.50) 0%,rgba(243,246,244,.26) 40%,rgba(243,246,244,.70) 100%);transition:opacity 1s}
+.app.hero ~ .bg::after{opacity:.4}
+body.introing .app,body.introing .bg{opacity:0}
+.app,.bg{transition:opacity 1.6s}
 @keyframes drift{from{transform:scale(1.02) translate3d(-1.2%,0,0)}to{transform:scale(1.08) translate3d(1.2%,-.8%,0)}}
 
 .app{display:flex;flex-direction:column;height:100vh;height:100dvh;padding:calc(8px + env(safe-area-inset-top,0px)) 10px calc(8px + env(safe-area-inset-bottom,0px));gap:8px}
@@ -96,9 +99,11 @@ details p{margin:4px 0;overflow-wrap:anywhere}
 .foot{font-size:11px;color:var(--ink);flex:0 0 auto;text-align:center;background:rgba(251,252,250,.8);border-radius:999px;padding:1px 10px;align-self:center}
 
 /* the opening: a satellite view that falls from far above Ireland to the townland, then lifts away */
-#intro{position:fixed;inset:0;z-index:3000;background:#0e2a36;transition:opacity 1.4s}
-#intro.out{opacity:0;pointer-events:none}
+#intro{position:fixed;inset:0;z-index:3000;background:#0e2a36}
 #intro[hidden]{display:none}
+#intro.bgmode{z-index:-2;pointer-events:none;background:var(--wall)}
+#intro.bgmode .iname,#intro.bgmode .iskip,#intro.bgmode .leaflet-control-container{display:none}
+#intro.bgmode #imap{animation:drift 90s ease-in-out infinite alternate}
 #imap{position:absolute;inset:0;background:#0e2a36}
 .iname{position:absolute;left:0;right:0;bottom:22%;text-align:center;color:#fff;font:300 clamp(40px,12vw,84px)/1 var(--display);text-shadow:0 2px 18px rgba(0,0,0,.55);opacity:0;transition:opacity 1.6s;pointer-events:none;z-index:1200}
 .iname.on{opacity:1}
@@ -124,7 +129,7 @@ details p{margin:4px 0;overflow-wrap:anywhere}
   .app.hero .cards,.app.hero .ribbon,.app.hero .controls,.app.hero .foot{grid-column:1;justify-self:center;width:min(560px,100%)}
 }
 @media (prefers-reduced-motion:reduce){
-  .bg{animation:none}.track,.card,.stage,.stop,.photo,.dots,.dotgrid i,#intro,.iname{transition:none}
+  .bg{animation:none}.track,.card,.stage,.stop,.photo,.dots,.dotgrid i,#intro,.iname,.app,.bg{transition:none}.bg.photo,#intro.bgmode #imap{animation:none}
 }
 </style>
 </head>
@@ -146,7 +151,7 @@ details p{margin:4px 0;overflow-wrap:anywhere}
     <button class="btn" id="next" type="button" aria-label="Next">&#8594;</button>
     <span class="mode" id="mode">Explore</span>
   </div>
-  <p class="foot" id="foot"></p>
+  <p class="foot" id="foot">Imagery: Esri, Maxar, Earthstar Geographics</p>
   <p class="sr" id="live" aria-live="polite" tabindex="-1"></p>
 </div>
 <div class="bg" id="bg" aria-hidden="true"></div>
@@ -167,8 +172,11 @@ var D={"schema":1,"townland":"Cullionboy","slug":"cullionboy","generated_by":"do
   function isHero(b){return b.kind==='title'||b.kind==='closing'}
 
   /* the landscape: the first beat's photograph, full bleed behind everything */
-  var first=beats[0]&&beats[0].media&&beats[0].media[0];
-  if(first) $('bg').style.backgroundImage='url("media/'+first.replace(/"/g,'%22')+'")';
+  var first=beats[0]&&beats[0].media&&beats[0].media[0], here=beats[0].place||{}, ll0=[here.lat,here.lon], hasMap=!!(window.L&&ll0[0]);
+  if(!hasMap){
+    $('foot').hidden=true;
+    if(first){$('bg').classList.add('photo'); $('bg').style.backgroundImage='url("media/'+first.replace(/"/g,'%22')+'")'}
+  }
 
   /* the ribbon: a stop for every beat, spaced half by time and half evenly so close moments stay apart */
   var y0=year(beats[0]), y1=year(beats[N-1]), span=Math.max(1,y1-y0), pos=[];
@@ -212,18 +220,31 @@ var D={"schema":1,"townland":"Cullionboy","slug":"cullionboy","generated_by":"do
     if(instant){t.offsetWidth; t.style.transition=''}
   }
 
-  /* the opening. Leaflet is optional: without it, or with reduced motion, or on a link to a later moment, the story just starts. */
+  /* the backdrop and the opening are one map. It sits behind the story, full bleed. On a fresh visit it first
+     falls from far above Ireland to the townland, then settles as the backdrop. Without Leaflet, or with reduced
+     motion, or on a link to a later moment, it simply starts settled. */
+  var bmap=null, run=0;
+  function backdrop(){
+    if(bmap||!hasMap) return bmap;
+    var box=$('intro'); box.hidden=false; box.classList.add('bgmode');
+    bmap=L.map('imap',{zoomControl:false,attributionControl:true,zoomAnimation:true,fadeAnimation:true,dragging:false,touchZoom:false,scrollWheelZoom:false,doubleClickZoom:false,boxZoom:false,keyboard:false,tap:false});
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{maxZoom:18,maxNativeZoom:17,attribution:'Imagery: Esri, Maxar, Earthstar Geographics'}).addTo(bmap);
+    bmap.setView(ll0,16,{animate:false});
+    return bmap;
+  }
   function intro(asked){
-    var b0=beats[0], box=$('intro'), ended=false, ll=[b0.place.lat,b0.place.lon];
-    if(!window.L||(reduce&&!asked)||!ll[0]) return;
-    box.classList.remove('out'); $('iname').classList.remove('on'); box.hidden=false;
-    var m=L.map('imap',{zoomControl:false,attributionControl:true,zoomAnimation:true,fadeAnimation:true,dragging:false,touchZoom:false,scrollWheelZoom:false,doubleClickZoom:false,boxZoom:false,keyboard:false,tap:false});
-    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{maxZoom:18,maxNativeZoom:17,attribution:'Imagery: Esri, Maxar, Earthstar Geographics'}).addTo(m);
-    m.setView(ll,3,{animate:false});
-    $('iname').textContent=b0.place.name||D.townland||'';
-    function end(){ if(ended) return; ended=true; box.classList.add('out'); setTimeout(function(){try{m.remove()}catch(e){} box.hidden=true},1500) }
-    setTimeout(function(){ m.flyTo(ll,16,{duration:9}); m.once('moveend',function(){setTimeout(end,900)}) },700);
-    setTimeout(function(){$('iname').classList.add('on')},7600);
+    if(!hasMap||(reduce&&!asked)) return;
+    var m=backdrop(), box=$('intro'), me=++run, over=false;
+    document.body.classList.add('introing'); box.classList.remove('bgmode'); $('iname').classList.remove('on');
+    $('iname').textContent=here.name||D.townland||'';
+    m.invalidateSize({animate:false}); m.setView(ll0,3,{animate:false});
+    function end(){
+      if(over||me!==run) return; over=true;
+      try{m.stop()}catch(e){} m.setView(ll0,16,{animate:false});
+      box.classList.add('bgmode'); document.body.classList.remove('introing');
+    }
+    setTimeout(function(){ if(me!==run) return; m.flyTo(ll0,16,{duration:9}); m.once('moveend',function(){setTimeout(end,900)}) },700);
+    setTimeout(function(){ if(me===run) $('iname').classList.add('on')},7600);
     setTimeout(end,12500);
     box.onclick=end; $('iskip').onclick=end;
   }
@@ -331,13 +352,13 @@ var D={"schema":1,"townland":"Cullionboy","slug":"cullionboy","generated_by":"do
     c.addEventListener('touchend',function(e){ if(x0===null) return; var dx=e.changedTouches[0].clientX-x0; x0=null; if(Math.abs(dx)>50) go(i+(dx<0?1:-1)) },{passive:true});
   })();
 
-  $('foot').textContent=D.foot||'';
   if(reduce){$('play').disabled=true; $('play').textContent='Step through'}
   var start=0, m=/#beat=([^&]+)/.exec(location.hash||'');
   if(m){var id=decodeURIComponent(m[1]); beats.forEach(function(b,k){if(b.id===id) start=k})}
   show(start,true); remaining=beats[start].duration_ms; setMode();
   window.addEventListener('resize',function(){place(true)});
-  if(window.L&&beats[0].place.lat){$('replay').hidden=false; $('replay').addEventListener('click',function(){go(0); intro(true)})}
+  if(hasMap){$('replay').hidden=false; $('replay').addEventListener('click',function(){go(0); intro(true)})}
+  backdrop();
   if(start===0&&!m) intro();
   if(document.fonts&&document.fonts.ready) document.fonts.ready.then(function(){place(true)});
 })();
