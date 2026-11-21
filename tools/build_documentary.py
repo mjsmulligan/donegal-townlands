@@ -409,6 +409,25 @@ def _num(v):
         return None
 
 
+def write_page(name, doc, found):
+    """Render engine/documentary.html to docs/<name>/documentary.html, a page beside the walk and the
+    timeline. It does not replace either (docs/DOCUMENTARY_SPEC.md, DP9)."""
+    media = {}
+    for r in found['rows']:
+        media[r['file']] = {'caption': r.get('caption', ''), 'alt': r.get('alt', ''),
+                            'source': r.get('source', '')}
+    payload = dict(doc, media=media, foot='Photographs and text from the project records. Map: OpenStreetMap contributors.')
+    data = json.dumps(payload, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
+    html = (ROOT / 'engine' / 'documentary.html').read_text(encoding='utf-8')
+    page = (html.replace('__TITLE__', bt.build.esc(doc['townland'] + ' documentary'))
+                .replace('__BRAND__', bt.build.esc(doc['townland']))
+                .replace('__DATA__', data))
+    dest = ROOT / 'docs' / name / 'documentary.html'
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    dest.write_text(page, encoding='utf-8')
+    bt.build.copy_media(name, found)
+
+
 def build_documentary(name, today=None):
     today = today or datetime.date.today()
     base = ROOT / 'townlands' / name
@@ -445,6 +464,7 @@ def build_documentary(name, today=None):
           ', '.join(f'{n} {k}' for k, n in sorted(counts.items())) + ').')
     if doc.get('note'):
         print('  ' + doc['note'])
+    write_page(name, doc, found)
     for row_id, why in refused + [(r, w) for r, w in feed['skipped']]:
         print('  left out ' + row_id + ': ' + why)
     return 0
