@@ -67,6 +67,7 @@ docs/<name>/media/<image files>          build output, never edited by hand
 | `source` | M | Where the image came from, for example "Family collection". |
 | `alt` | no | Alternative text. If blank, the caption is used. |
 | `reference` | no | Archive or collection reference. |
+| `lat`, `lon` | no | Where the photograph was taken or what it shows, in decimal degrees. The documentary links the photograph to that point on the map. |
 | `date` | no | Free text, for example "c. 1930s" or "unknown". |
 | `people_shown` | no | Names, free text. |
 | `link` | no | URL of the original (for example a shared album or archive page). Shown as "View original". |

@@ -451,7 +451,7 @@ def write_page(name, doc, found):
     media = {}
     for r in found['rows']:
         media[r['file']] = {'caption': r.get('caption', ''), 'alt': r.get('alt', ''),
-                            'source': r.get('source', '')}
+                            'source': r.get('source', ''), 'lat': r.get('lat', ''), 'lon': r.get('lon', '')}
     payload = dict(doc, media=media, foot='')
     data = json.dumps(payload, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
     html = (ROOT / 'engine' / 'documentary.html').read_text(encoding='utf-8')

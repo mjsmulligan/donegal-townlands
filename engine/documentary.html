@@ -244,7 +244,8 @@ var D=__DATA__;
     if(f&&!isHero(b)){
       var m=(D.media||{})[f]||{};
       $('photoimg').src='media/'+f; $('photoimg').alt=m.alt||m.caption||'';
-      $('photocap').textContent=(m.caption||'')+(m.source?'. '+m.source+'.':'');
+      var pc=$('photocap'); pc.textContent=(m.caption||'')+(m.source?'. '+m.source+'.':'');
+      if(m.lat&&m.lon){var a=document.createElement('a'); a.href='https://www.openstreetmap.org/?mlat='+m.lat+'&mlon='+m.lon+'#map=17/'+m.lat+'/'+m.lon; a.target='_blank'; a.rel='noopener'; a.textContent='See it on the map'; pc.append(' '); pc.append(a)}
       p.classList.add('on');
     } else p.classList.remove('on');
   }

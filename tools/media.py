@@ -159,6 +159,14 @@ def load_case(case_dir, base_url='', families=()):
                     valid = ', '.join(families) if families else 'none (content.json has no families)'
                     bad(row_no, 'unknown family ' + '; '.join(unknown) + '. Valid names: ' + valid)
                     ok = False
+            for col, lim in (('lat', 90), ('lon', 180)):
+                if row.get(col):
+                    try:
+                        if abs(float(row[col])) > lim:
+                            raise ValueError
+                    except ValueError:
+                        bad(row_no, col + ' must be a number in degrees')
+                        ok = False
             link = row.get('link', '')
             if link and not link.startswith(('http://', 'https://')):
                 bad(row_no, 'link must start with http:// or https://')
@@ -170,7 +178,7 @@ def load_case(case_dir, base_url='', families=()):
                 'file': name, 'scope': scope, 'slot': slot, 'families': names,
                 'caption': row['caption'], 'alt': row.get('alt') or row['caption'], 'source': row['source'],
                 'reference': row.get('reference', ''), 'date': row.get('date', ''),
-                'people': row.get('people_shown', ''), 'link': link,
+                'people': row.get('people_shown', ''), 'link': link, 'lat': row.get('lat', ''), 'lon': row.get('lon', ''),
             })
     for name in out['files']:
         if name not in used and not any(label + ' media.csv row' in e and name in e for e in out['errors']):
