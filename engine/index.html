@@ -138,10 +138,21 @@ __CARDS__    </div>
     map.setView([54.665,-8.03],11);
     L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{maxZoom:18,maxNativeZoom:17,attribution:'Imagery: Esri, Maxar, Earthstar Geographics'}).addTo(map);
     group=L.featureGroup().addTo(map);
+    if(data.attribution) map.attributionControl.addAttribution(data.attribution);
     data.features.forEach(function(f){
       var p=f.properties, c=f.geometry.coordinates;
-      var m=L.circleMarker([c[1],c[0]],{radius:p.doc?9:7,fillColor:FILL[p.kind]||FILL.record,color:'#1D2F33',weight:p.doc?3:2,fillOpacity:.95});
-      m.bindTooltip(p.name_ga?p.name+' ('+p.name_ga+')':p.name,{direction:'top',offset:[0,-6],className:'townland-label'});
+      var m, label=p.name_ga?p.name+' ('+p.name_ga+')':p.name;
+      if(p.outline){
+        /* the townland's own outline (Tailte Eireann). A dot is drawn only where there is no outline. */
+        var col=FILL[p.kind]||FILL.record, base={color:'#FBFCFA',weight:p.doc?3:2,dashArray:'2 6',lineCap:'round',fillColor:col,fillOpacity:.22};
+        m=L.geoJSON({type:'Feature',properties:{},geometry:p.outline},{style:function(){return base}});
+        m.on('mouseover',function(){ m.setStyle({fillOpacity:.45,weight:base.weight+1}) });
+        m.on('mouseout',function(){ m.setStyle(base) });
+        m.bindTooltip(label,{sticky:true,direction:'top',className:'townland-label'});
+      } else {
+        m=L.circleMarker([c[1],c[0]],{radius:p.doc?9:7,fillColor:FILL[p.kind]||FILL.record,color:'#1D2F33',weight:p.doc?3:2,fillOpacity:.95});
+        m.bindTooltip(label,{direction:'top',offset:[0,-6],className:'townland-label'});
+      }
       m.on('click',function(){ if(p.doc) leave(c[1],c[0],p.href); else window.location.href=p.href; });
       m.addTo(group); markers[p.name.toLowerCase()]=m;
     });

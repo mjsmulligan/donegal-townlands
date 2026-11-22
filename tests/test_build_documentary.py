@@ -322,6 +322,17 @@ class HardeningTests(unittest.TestCase):
         self.assertEqual(bd.render_page(a, {'rows': []}), bd.render_page(b, {'rows': []}))
         self.assertEqual(json.dumps(a, ensure_ascii=False, indent=1), json.dumps(b, ensure_ascii=False, indent=1))
 
+    def test_the_outline_goes_into_the_page_and_never_into_the_documentary(self):
+        doc, _ = build(FULL)
+        outline = {'type': 'Polygon', 'coordinates': [[[-8.0, 54.6], [-7.9, 54.6], [-7.9, 54.7], [-8.0, 54.6]]]}
+        plain = bd.render_page(doc, {'rows': []})
+        drawn = bd.render_page(doc, {'rows': []}, outline)
+        self.assertNotIn('"outline_credit"', plain)
+        self.assertIn('"outline":{"type":"Polygon"', drawn)
+        self.assertIn('"outline_credit":"Townland boundaries', drawn)
+        self.assertNotIn('outline', json.dumps(doc))
+        self.assertEqual(drawn, bd.render_page(doc, {'rows': []}, outline))      # still deterministic
+
 
 class CheckDocumentTests(unittest.TestCase):
     """RO-04: the checks that tools/validate.py applies to every committed documentary.json."""

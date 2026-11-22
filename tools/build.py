@@ -353,6 +353,17 @@ def build(name):
 
 INDEX_TAGS = {'ready': 'Townland Study', 'partial': 'Census Returns', 'empty': 'Townland Record'}
 INDEX_FOOTER = 'Placename data sourced from Logainm (Government of Ireland) & historical cartographic surveys. ' + LOGAINM_CREDIT
+BOUNDARY_FILE = ROOT / 'data' / 'processed' / 'places' / 'townland_boundaries.geojson'
+BOUNDARY_CREDIT = 'Townland boundaries \u00a9 Tailte \u00c9ireann, CC BY 4.0'
+
+
+def load_outlines():
+    """Townland outlines from tools/fetch_townland_boundaries.py, as {logainm_id: geometry}. An empty dict when the
+    file is absent, so a checkout without it builds exactly as before (DECISIONS.md, 2026-11-22)."""
+    if not BOUNDARY_FILE.is_file():
+        return {}
+    gj = json.loads(BOUNDARY_FILE.read_text(encoding='utf-8'))
+    return {str(f['properties']['logainm_id']): f['geometry'] for f in gj.get('features', []) if f.get('geometry')}
 
 
 KIND = {'ready': 'study', 'partial': 'census', 'empty': 'record'}
@@ -384,13 +395,21 @@ def index_page(entries, template):
             '                %s\n'
             '            </div>\n'
             '        </article>\n' % (q(e['slug']), q(e['name']), where, main, q(e['name']), ga, INDEX_TAGS[e['state']], links))
-    features = [{'type': 'Feature',
-                 'properties': {'name': e['name'], 'name_ga': e['name_ga'], 'slug': e['slug'], 'kind': KIND[e['state']],
-                                'doc': bool(e.get('doc')),
-                                'href': './%s/documentary.html' % e['slug'] if e.get('doc') else './%s/' % e['slug']},
-                 'geometry': {'type': 'Point', 'coordinates': [float(e['lng']), float(e['lat'])]}}
-                for e in entries if e['lat'] and e['lng'] and e['state'] != 'empty']
-    geo = json.dumps({'type': 'FeatureCollection', 'features': features}, ensure_ascii=False).replace('</', '<\\/')
+    features = []
+    for e in entries:
+        if not (e['lat'] and e['lng']) or e['state'] == 'empty':
+            continue
+        props = {'name': e['name'], 'name_ga': e['name_ga'], 'slug': e['slug'], 'kind': KIND[e['state']],
+                 'doc': bool(e.get('doc')),
+                 'href': './%s/documentary.html' % e['slug'] if e.get('doc') else './%s/' % e['slug']}
+        if e.get('outline'):
+            props['outline'] = e['outline']          # drawn instead of the dot; the point stays as the centre
+        features.append({'type': 'Feature', 'properties': props,
+                         'geometry': {'type': 'Point', 'coordinates': [float(e['lng']), float(e['lat'])]}})
+    collection = {'type': 'FeatureCollection', 'features': features}
+    if any(f['properties'].get('outline') for f in features):
+        collection['attribution'] = BOUNDARY_CREDIT
+    geo = json.dumps(collection, ensure_ascii=False).replace('</', '<\\/')
     return (template.replace('__MARK__', INDEX_MARK).replace('__COUNT__', str(len(entries)))
                     .replace('__FOOTER__', q(INDEX_FOOTER))
                     .replace('__GEOJSON__', geo).replace('__CARDS__', ''.join(cards)))
@@ -408,6 +427,7 @@ def write_index(entries):
 def index_entries():
     """One dict for every case that has a name to show."""
     entries = []
+    outlines = load_outlines()
     for base in sorted((ROOT / 'townlands').iterdir()):
         if not base.is_dir():
             continue
@@ -421,6 +441,7 @@ def index_entries():
             continue
         entries.append({'slug': base.name, 'name': label, 'state': state, 'name_ga': place.get('name_ga', ''),
                         'lat': place.get('latitude', ''), 'lng': place.get('longitude', ''),
+                        'outline': outlines.get(str(place.get('logainm_id', ''))),
                         'doc': (ROOT / 'docs' / base.name / 'documentary.html').is_file()})
     return entries
 

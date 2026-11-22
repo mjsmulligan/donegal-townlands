@@ -415,13 +415,18 @@ def _num(v):
         return None
 
 
-def render_page(doc, found):
-    """The page text for one documentary. Pure: the same inputs give the same bytes (RO-03)."""
+def render_page(doc, found, outline=None):
+    """The page text for one documentary. Pure: the same inputs give the same bytes (RO-03). `outline` is the
+    townland's boundary geometry (WGS84), drawn on the map and used to frame it; with none the page frames the
+    place point at zoom 16 as before. It goes into the page only, never into documentary.json."""
     media = {}
     for r in found['rows']:
         media[r['file']] = {'caption': r.get('caption', ''), 'alt': r.get('alt', ''),
                             'source': r.get('source', ''), 'lat': r.get('lat', ''), 'lon': r.get('lon', '')}
     payload = dict(doc, media=media, foot='')
+    if outline:
+        payload['outline'] = outline
+        payload['outline_credit'] = bt.build.BOUNDARY_CREDIT
     data = json.dumps(payload, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
     html = (ROOT / 'engine' / 'documentary.html').read_text(encoding='utf-8')
     return (html.replace('__TITLE__', bt.build.esc(doc['townland'] + ' documentary'))
@@ -434,7 +439,10 @@ def write_page(name, doc, found):
     timeline. It does not replace either (docs/DOCUMENTARY_SPEC.md, DP9). Returns the path written."""
     dest = ROOT / 'docs' / name / 'documentary.html'
     dest.parent.mkdir(parents=True, exist_ok=True)
-    dest.write_text(render_page(doc, found), encoding='utf-8')
+    place_file = ROOT / 'townlands' / name / 'place.json'
+    place = json.loads(place_file.read_text(encoding='utf-8')) if place_file.is_file() else {}
+    outline = bt.build.load_outlines().get(str(place.get('logainm_id', '')))
+    dest.write_text(render_page(doc, found, outline), encoding='utf-8')
     bt.build.copy_media(name, found)
     return dest
 
