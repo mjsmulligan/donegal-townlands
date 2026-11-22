@@ -1,0 +1,97 @@
+name: Townland boundaries
+
+# Manual run only. Fetches townland outlines from Tailte Eireann's public map service for
+# every townland in data/processed/places/places.csv, checks each against its Logainm point,
+# and (unless this is a dry run) pushes the outline file and a review CSV to a new branch
+# for review, the same convention as the Logainm snapshot workflow.
+#
+# No secret is needed: the Tailte Eireann map service is public.
+# The job fails, and nothing is pushed, if fewer than half of the townlands get an outline,
+# which means the service or the field names have changed.
+# Open townland_boundaries_review.csv before merging: every row not marked ok needs a look.
+# See tools/fetch_townland_boundaries.py for the checks.
+
+on:
+  workflow_dispatch:
+    inputs:
+      apply:
+        description: "Commit a review branch. Untick for a dry run that only reports."
+        required: true
+        default: true
+        type: boolean
+
+# Least privilege: contents write is needed only to push the review branch.
+permissions:
+  contents: write
+
+concurrency:
+  group: townland-boundaries
+  cancel-in-progress: false
+
+jobs:
+  boundaries:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch outlines and check them
+        run: python tools/fetch_townland_boundaries.py | tee boundaries.txt
+
+      - name: Guard against an empty or broken result
+        run: |
+          python - <<'EOF'
+          import csv, sys
+          rows = list(csv.DictReader(open("data/processed/places/townland_boundaries_review.csv", encoding="utf-8")))
+          found = [r for r in rows if r["status"] != "id_not_found"]
+          print(f"{len(found)} of {len(rows)} townlands have an outline")
+          if len(found) * 2 < len(rows):
+              sys.exit("Fewer than half the townlands got an outline. Service or field names may have changed. Nothing pushed.")
+          EOF
+
+      - name: Summarise for the run page
+        run: |
+          {
+            echo "## Townland boundaries"
+            echo
+            echo '```'
+            cat boundaries.txt
+            echo '```'
+            echo
+            echo "### Rows that need a look"
+            echo
+            python - <<'EOF'
+          import csv
+          rows = [r for r in csv.DictReader(open("data/processed/places/townland_boundaries_review.csv", encoding="utf-8")) if r["status"] != "ok"]
+          if not rows:
+              print("None. Every townland matched.")
+          else:
+              print("| Logainm ID | Name | Tailte name | Status | Detail |")
+              print("|---|---|---|---|---|")
+              for r in rows:
+                  print("| {logainm_id} | {name_en} | {osi_name} | {status} | {detail} |".format(**r))
+          EOF
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: townland-boundaries
+          path: |
+            data/processed/places/townland_boundaries.geojson
+            data/processed/places/townland_boundaries_review.csv
+          retention-days: 30
+
+      - name: Push outlines and review file to a review branch
+        if: ${{ inputs.apply }}
+        run: |
+          b="townland-boundaries-$(date -u +%F)-${{ github.run_number }}"
+          git config user.name "github-actions"
+          git config user.email "actions@users.noreply.github.com"
+          git checkout -b "$b"
+          git add data/processed/places/townland_boundaries.geojson data/processed/places/townland_boundaries_review.csv
+          git commit -m "Townland boundaries from Tailte Eireann: outlines and review file"
+          git push origin "$b"
+          echo "Pushed branch $b" >> "$GITHUB_STEP_SUMMARY"
