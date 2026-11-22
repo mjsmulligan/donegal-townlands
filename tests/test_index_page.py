@@ -27,6 +27,12 @@ class IndexTests(unittest.TestCase):
         self.assertIn('data-name="Beta"', p)
         self.assertEqual(p.count('"type": "Point"'), 1)
 
+    def test_case_with_no_records_has_a_card_and_no_pin(self):
+        empty = dict(E2, lat='54.7', lng='-8.1')
+        p = build.index_page([E1, empty], TEMPLATE)
+        self.assertIn('data-name="Beta"', p)
+        self.assertEqual(p.count('"type": "Point"'), 1)
+
     def test_no_placeholder_left_and_credit_present(self):
         p = self.page()
         for ph in ('__MARK__', '__COUNT__', '__FOOTER__', '__GEOJSON__', '__CARDS__'):
