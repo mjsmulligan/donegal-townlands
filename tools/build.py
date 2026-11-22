@@ -361,7 +361,7 @@ KIND = {'ready': 'study', 'partial': 'census', 'empty': 'record'}
 def index_page(entries, template):
     """The index page: a satellite map and a card for each case, from engine/index.html. entries are dicts with
     slug, name, state, name_ga, lat, lng and doc (True when docs/<slug>/documentary.html exists). A case with no
-    coordinates gets a card and no map pin. A case with a documentary opens it first and keeps the walk as a
+    coordinates, or with no records (state empty, a Logainm place record only), gets a card and no map pin. A case with a documentary opens it first and keeps the walk as a
     second link (RO-12, RO-14); a case without one opens the walk as before."""
     entries = sorted(entries, key=lambda e: e['name'].casefold())
     cards = []
@@ -389,7 +389,7 @@ def index_page(entries, template):
                                 'doc': bool(e.get('doc')),
                                 'href': './%s/documentary.html' % e['slug'] if e.get('doc') else './%s/' % e['slug']},
                  'geometry': {'type': 'Point', 'coordinates': [float(e['lng']), float(e['lat'])]}}
-                for e in entries if e['lat'] and e['lng']]
+                for e in entries if e['lat'] and e['lng'] and e['state'] != 'empty']
     geo = json.dumps({'type': 'FeatureCollection', 'features': features}, ensure_ascii=False).replace('</', '<\\/')
     return (template.replace('__MARK__', INDEX_MARK).replace('__COUNT__', str(len(entries)))
                     .replace('__FOOTER__', q(INDEX_FOOTER))

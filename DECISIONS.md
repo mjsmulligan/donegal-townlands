@@ -205,3 +205,9 @@ The user also asked for `Edw.` to be added to the normalised given-name rules. `
 - **Q6 opening length.** Full fall on the first visit in a browser, a brief one after that, and a Replay button always available. Not yet built.
 - **Q7 mobile data.** Leave as is: no tile cap and no notice.
 
+
+
+## 2026-11-22: Cases with no records are not pinned on the index map (the user)
+
+On reviewing the restyled index, the user decided that townlands without records (state Townland Record: a Logainm place record only) should not be shown on the map. They keep their cards in the list and their walk pages. The map key no longer lists Townland Record. This narrows RO-13, which said the map shows all cases.
+\n
