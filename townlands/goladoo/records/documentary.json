@@ -253,48 +253,6 @@
       "people": 81,
       "households": 17
      }
-    },
-    {
-     "id": "goladoo:beat:change:1901-1911",
-     "kind": "change",
-     "chapter": "goladoo:ch:1911",
-     "time": {
-      "label": "1911",
-      "iso": "1911",
-      "sort": "1911-01-01",
-      "approximate": true
-     },
-     "place": {
-      "townland": "goladoo",
-      "name": "Goladoo",
-      "logainm_id": "14243",
-      "lat": 54.717584,
-      "lon": -8.032827,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "goladoo:census:1901"
-     },
-     "caption": "By 1911 Goladoo had 81 people, down from 90 in 1901. It had seventeen households, against sixteen.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "goladoo:census:1901",
-       "goladoo:census:1911"
-      ],
-      "basis": "counts_between_returns",
-      "certainty": "stated"
-     },
-     "duration_ms": 6800,
-     "audio": null,
-     "counts": {
-      "people": 81,
-      "households": 17,
-      "from_people": 90,
-      "from_households": 16
-     }
     }
    ]
   },
@@ -339,48 +297,6 @@
      "counts": {
       "people": 59,
       "households": 15
-     }
-    },
-    {
-     "id": "goladoo:beat:change:1911-1926",
-     "kind": "change",
-     "chapter": "goladoo:ch:1926",
-     "time": {
-      "label": "1926",
-      "iso": "1926",
-      "sort": "1926-01-01",
-      "approximate": true
-     },
-     "place": {
-      "townland": "goladoo",
-      "name": "Goladoo",
-      "logainm_id": "14243",
-      "lat": 54.717584,
-      "lon": -8.032827,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "goladoo:census:1911"
-     },
-     "caption": "By 1926 Goladoo had 59 people, down from 81 in 1911. It had fifteen households, against seventeen.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "goladoo:census:1911",
-       "goladoo:census:1926"
-      ],
-      "basis": "counts_between_returns",
-      "certainty": "stated"
-     },
-     "duration_ms": 6800,
-     "audio": null,
-     "counts": {
-      "people": 59,
-      "households": 15,
-      "from_people": 81,
-      "from_households": 17
      }
     },
     {

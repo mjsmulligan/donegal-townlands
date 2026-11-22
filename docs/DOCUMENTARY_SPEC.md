@@ -147,7 +147,7 @@ A chapter is a run of beats under one title. Chapters follow the evidence: the v
 | `title` | place record, span | The townland, its parish, and the years covered. One per townland. |
 | `valuation` | Griffith's event | That the land and its occupiers were valued, and how many occupiers are named. |
 | `census` | census events | How many people in how many households, by return, as recorded. |
-| `change` | two consecutive census events | Counts only: "By 1911 the townland had seventy-two people, down from ninety-three." Never a cause and never a departure (D6). |
+| `change` | Retired 2026-11-22 | The user dropped it: it told each census year a second time and was confusing. The schema and checker still accept the kind, but the generator writes none. A comparison between returns may return later as part of the census beat or the records panel. |
 | `baptism` | register baptism events | A single baptism, or a short run in one year, with the family names as recorded. 100 year rule applies. |
 | `photo` | media with an `event`, or a header image | A photograph at its date. The caption is the media caption. Never a person tag beyond the caption (STORY_SPEC, Photographs). |
 | `family` | authored family story that passes `check_story.py`, or accepted census links | A "follow this family" thread: one or two beats in the family's own words, with a jump to its plate or family timeline. |
@@ -179,7 +179,8 @@ Marriages are not a beat kind in the first release because the register records 
 ### 4.4 Wording
 
 - The caption generator is rule based and fully deterministic. Variety comes from a fixed set of sentence patterns per kind, chosen by a stable hash of the beat id, so a rebuild changes nothing.
-- Numbers up to twenty are written in words inside sentences and figures are kept for dates (STORY_SPEC, Names, dates and numbers).
+- Numbers up to twenty are written in words inside sentences and figures are kept for dates (STORY_SPEC, Names, dates and numbers). This covers people as well as households ("six people in two households", "93 people in eighteen households").
+- A closing beat that follows a later photograph says only that the story reaches that year. It does not repeat a census figure.
 - Names and spellings are as recorded. Townland names are as the source spells them.
 - A thin townland gets a short documentary, not padding (D2, and STORY_SPEC, Shape of a family story).
 
@@ -208,7 +209,7 @@ The 100/75/50 rule applies to every beat built from information the project hold
 | DOC-06 | Captions contain no em dash, no source talk ("the records show", "is recorded as"), and no hedge word from the STORY_SPEC "What stays out" list except "possibly". | M | A caption with each fails validation. |
 | DOC-06a | "Possibly" appears only in a beat whose `certainty` is `possible`, at most once per caption. A `possible` beat without it, or a `stated` or `accepted` beat with it, fails. | M | Fixtures for each of the four cases. |
 | DOC-07 | Every name, number, place and date in a caption appears in the beat's evidence. A `family` beat also passes `tools/check_story.py`. | M | A number not in the source event fails. |
-| DOC-08 | A `change` beat states counts only. It never names a cause or a departure. | M | A fixture with a household missing in 1911 produces a counts-only beat. |
+| DOC-08 | Retired 2026-11-22 with the `change` beat. No beat may name a cause or a departure: census captions state counts only. | M | The generator writes no `change` beat, and census captions hold counts only. |
 | DOC-09 | The 100/75/50 rule is applied (section 4.5). A refused beat is listed in the build output. | M | A baptism under 100 years old is refused and listed. |
 | DOC-10 | A case with fewer than two events gets a title beat and a short note, not a documentary. It builds without error. | M | A Logainm only case builds. |
 | DOC-11 | A townland with no `media.csv` builds a documentary without photograph beats and is otherwise unchanged. | M | Build Cullionboy with and without media. |

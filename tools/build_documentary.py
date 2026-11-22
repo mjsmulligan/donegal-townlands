@@ -24,7 +24,7 @@ except ImportError:                  # run as a script: python tools/build_docum
 ROOT = bt.ROOT
 SCHEMA = 1
 BAPTISM_MIN_AGE = bt.BAPTISM_MIN_AGE
-KIND_ORDER = {'title': 0, 'valuation': 1, 'baptism': 2, 'census': 3, 'change': 4, 'photo': 5, 'closing': 9}
+KIND_ORDER = {'title': 0, 'valuation': 1, 'baptism': 2, 'census': 3, 'photo': 5, 'closing': 9}
 CERTAINTY = ('stated', 'accepted', 'possible')
 CAMERAS = ('parish', 'townland', 'household')
 STAGES = ('map', 'walk', 'timeline')
@@ -38,8 +38,6 @@ SOURCE_TALK = ('the records show', 'is recorded as', 'are recorded as', 'was rec
                'according to', 'the census taker', 'the register records', 'on the register')
 HEDGES = ('probably', 'perhaps', 'maybe', 'presumably', 'likely', 'it seems', 'seems to', 'tempting to think',
           'one imagines', 'must have')
-CHANGE_BANNED = ('left', 'leave', 'leaving', 'moved', 'emigrat', 'depart', 'died', 'death', 'because', 'after the',
-                 'fled', 'lost', 'gone', 'vanish')
 
 ONES = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve',
         'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen', 'twenty']
@@ -107,7 +105,7 @@ def beat(kind, key, chapter, event_ref, caption, place, certainty='stated', basi
     first = event_ref[0] if isinstance(event_ref, (list, tuple)) else event_ref
     last = event_ref[-1] if isinstance(event_ref, (list, tuple)) else event_ref
     bid = f"{place['townland']}:beat:{kind}:{key}"
-    when = last if kind in ('change', 'closing') else first
+    when = last if kind == 'closing' else first
     time = {'label': when['date']['label'], 'iso': when['date']['iso'], 'sort': when['sort'],
             'approximate': bool(when.get('approximate_sort'))}
     card = events[0] if events else ''
@@ -213,30 +211,12 @@ def census_beat(ev, place):
     if people is None:
         cap = f'{town} had a return in {y}.'
     else:
-        patterns = [f"In {y}, {people} people in {plural(houses, 'household', 'households')} lived in {town}.",
-                    f"{town} had {people} people in {plural(houses, 'household', 'households')} in {y}."]
+        patterns = [f"In {y}, {num(people)} people in {plural(houses, 'household', 'households')} lived in {town}.",
+                    f"{town} had {num(people)} people in {plural(houses, 'household', 'households')} in {y}."]
         cap = patterns[pick(ev['id'], len(patterns))]
     counts = {'people': people, 'households': houses} if people is not None else None
     return beat('census', y, f"{place['townland']}:ch:{y}", ev, cap, place,
                 basis=ev['association']['basis'], events=[ev['id']], counts=counts)
-
-
-def change_beat(prev, ev, place):
-    pp, ph = census_counts(prev)
-    cp, ch = census_counts(ev)
-    if None in (pp, cp):
-        return None
-    y0, y1 = prev['date']['label'], ev['date']['label']
-    if cp > pp:
-        move = f'up from {pp} in {y0}'
-    elif cp < pp:
-        move = f'down from {pp} in {y0}'
-    else:
-        move = f'the same as the {pp} in {y0}'
-    cap = f"By {y1} {place['name']} had {cp} people, {move}. It had {plural(ch, 'household', 'households')}, against {num(ph)}."
-    return beat('change', f'{y0}-{y1}', f"{place['townland']}:ch:{y1}", [prev, ev], cap, place,
-                basis='counts_between_returns', events=[prev['id'], ev['id']],
-                counts={'people': cp, 'households': ch, 'from_people': pp, 'from_households': ph})
 
 
 def photo_beats(feed_events, by_event, place):
@@ -274,8 +254,7 @@ def closing_beat(events, place, later=None):
            if houses else f'The story reaches {y} here.')
     if later:
         ly = later['date']['label']
-        cap = (f"The story reaches {ly} here. In {y}, {place['name']} had {plural(houses, 'household', 'households')}."
-               if houses else f'The story reaches {ly} here.')
+        cap = f'The story reaches {ly} here.'
         return beat('closing', 'end', f"{place['townland']}:ch:{ly}", later, cap, place,
                     basis=last['association']['basis'], events=[last['id']])
     return beat('closing', 'end', f"{place['townland']}:ch:" + (last['date']['label'] if last['type'] == 'census' else
@@ -335,10 +314,6 @@ def check_beat(b, by_id, known_ids, extra=frozenset()):
         problems.append('a possible beat must say "possibly" once')
     if cert != 'possible' and count:
         problems.append('"possibly" on a beat that is not possible')
-    if b['kind'] == 'change':
-        for phrase in CHANGE_BANNED:
-            if phrase in low:
-                problems.append('change beat says more than counts: ' + phrase)
     loose = numbers_in(cap) - evidence_numbers(b, by_id) - set(extra)
     if loose:
         problems.append('number not in the evidence: ' + ', '.join(str(x) for x in sorted(loose)))
@@ -398,12 +373,7 @@ def generate(display, slug, place_record, events, by_event=None, header=None, to
         cens = [e for e in events if e['type'] == 'census']
         beats += [valuation_beat(e, place, griffiths_files or ()) for e in vals]
         beats += baptism_beats(baps, place, parish_files or ())
-        for i, e in enumerate(cens):
-            beats.append(census_beat(e, place))
-            if i:
-                c = change_beat(cens[i - 1], e, place)
-                if c:
-                    beats.append(c)
+        beats += [census_beat(e, place) for e in cens]
         beats += photo_beats(events, by_event, place)
         beats += dated_beats
         beats.append(closing_beat(events, place, later))

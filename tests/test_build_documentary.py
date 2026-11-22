@@ -144,22 +144,23 @@ class CaptionTests(unittest.TestCase):
         self.assertEqual(bd.num(93), '93')
 
 
-class ChangeTests(unittest.TestCase):
-    def test_change_states_counts_only(self):  # DOC-08
-        doc, _ = build(FULL)
-        changes = [b for b in beats_of(doc) if b['kind'] == 'change']
-        self.assertEqual(len(changes), 2)
-        self.assertIn('down from 93 in 1901', changes[0]['caption'])
-        for c in changes:
-            for word in bd.CHANGE_BANNED:
-                self.assertNotIn(word, c['caption'].lower())
+class NoChangeBeatTests(unittest.TestCase):
+    """The user chose on 2026-11-22 to drop the second telling of each census year."""
 
-    def test_a_cause_is_refused(self):  # DOC-08
+    def test_each_census_year_is_told_once(self):
         doc, _ = build(FULL)
-        b = dict(next(x for x in beats_of(doc) if x['kind'] == 'change'),
-                 caption='By 1911 Cullionboy had 72 people, down from 93 in 1901, because many left.')
-        by = {e['id']: e for e in FULL}
-        self.assertTrue(any('more than counts' in p for p in bd.check_beat(b, by, set(by))))
+        kinds = [b['kind'] for b in beats_of(doc)]
+        self.assertEqual(kinds.count('census'), 3)
+        self.assertNotIn('change', kinds)
+        self.assertFalse(hasattr(bd, 'change_beat'))
+
+    def test_people_are_written_like_households(self):
+        doc, _ = build([census(1911, 6, 2), census(1926, 3, 2)])
+        caps = [b['caption'] for b in beats_of(doc) if b['kind'] == 'census']
+        self.assertTrue(any('six people in two households' in c for c in caps), caps)
+        self.assertTrue(any('three people in two households' in c for c in caps), caps)
+        doc, _ = build(FULL)
+        self.assertTrue(any('93 people in eighteen households' in b['caption'] for b in beats_of(doc)))
 
 
 class PrivacyTests(unittest.TestCase):
@@ -240,19 +241,17 @@ class DatedPhotoAndCountTests(unittest.TestCase):
         self.assertEqual(bs[-1]['kind'], 'closing')
         self.assertIn('1954', bs[-1]['caption'])
         self.assertIn('1954', bs[0]['caption'])
+        self.assertEqual(bs[-1]['caption'], 'The story reaches 1954 here.')   # no repeated census figure after a later photograph
 
     def test_undated_or_loose_dates_are_not_placed(self):
         row = dict(self.ROW, date='c. 1950s')
         doc, _ = bd.generate('Cullionboy', 'cullionboy', PLACE, FULL, today=TODAY, dated=[row])
         self.assertFalse([b for b in beats_of(doc) if b['kind'] == 'photo'])
 
-    def test_census_and_change_beats_carry_counts(self):
+    def test_census_beats_carry_counts(self):
         doc, _ = build(FULL)
-        bs = beats_of(doc)
-        c = next(b for b in bs if b['id'].endswith('census:1911'))
+        c = next(b for b in beats_of(doc) if b['id'].endswith('census:1911'))
         self.assertEqual(c['counts'], {'people': 72, 'households': 16})
-        ch = next(b for b in bs if b['kind'] == 'change')
-        self.assertEqual(ch['counts']['from_people'], 93)
 
 
 class ParishPhotoTests(unittest.TestCase):
@@ -393,11 +392,11 @@ class CheckDocumentTests(unittest.TestCase):
 class CensusShapeTests(unittest.TestCase):
     """WP-R2: cases with few census years and cases with a very large population."""
 
-    def test_two_census_years_make_one_change_beat(self):
+    def test_two_census_years_make_two_census_beats(self):
         doc, _ = build([census(1911, 72, 16), census(1926, 79, 15)])
         kinds = [b['kind'] for b in beats_of(doc)]
         self.assertEqual(kinds.count('census'), 2)
-        self.assertEqual(kinds.count('change'), 1)
+        self.assertNotIn('change', kinds)
         self.assertNotIn('note', doc)
 
     def test_a_large_population_passes_every_check(self):

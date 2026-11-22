@@ -138,48 +138,6 @@
       "people": 47,
       "households": 7
      }
-    },
-    {
-     "id": "straness:beat:change:1901-1911",
-     "kind": "change",
-     "chapter": "straness:ch:1911",
-     "time": {
-      "label": "1911",
-      "iso": "1911",
-      "sort": "1911-01-01",
-      "approximate": true
-     },
-     "place": {
-      "townland": "straness",
-      "name": "Straness",
-      "logainm_id": "14300",
-      "lat": 54.66389,
-      "lon": -7.979409,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "straness:census:1901"
-     },
-     "caption": "By 1911 Straness had 47 people, up from 34 in 1901. It had seven households, against seven.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "straness:census:1901",
-       "straness:census:1911"
-      ],
-      "basis": "counts_between_returns",
-      "certainty": "stated"
-     },
-     "duration_ms": 6800,
-     "audio": null,
-     "counts": {
-      "people": 47,
-      "households": 7,
-      "from_people": 34,
-      "from_households": 7
-     }
     }
    ]
   },
@@ -224,48 +182,6 @@
      "counts": {
       "people": 31,
       "households": 7
-     }
-    },
-    {
-     "id": "straness:beat:change:1911-1926",
-     "kind": "change",
-     "chapter": "straness:ch:1926",
-     "time": {
-      "label": "1926",
-      "iso": "1926",
-      "sort": "1926-01-01",
-      "approximate": true
-     },
-     "place": {
-      "townland": "straness",
-      "name": "Straness",
-      "logainm_id": "14300",
-      "lat": 54.66389,
-      "lon": -7.979409,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "straness:census:1911"
-     },
-     "caption": "By 1926 Straness had 31 people, down from 47 in 1911. It had seven households, against seven.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "straness:census:1911",
-       "straness:census:1926"
-      ],
-      "basis": "counts_between_returns",
-      "certainty": "stated"
-     },
-     "duration_ms": 6800,
-     "audio": null,
-     "counts": {
-      "people": 31,
-      "households": 7,
-      "from_people": 47,
-      "from_households": 7
      }
     },
     {

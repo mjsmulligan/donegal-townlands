@@ -221,48 +221,6 @@
       "people": 35,
       "households": 8
      }
-    },
-    {
-     "id": "mullanalamphry:beat:change:1901-1911",
-     "kind": "change",
-     "chapter": "mullanalamphry:ch:1911",
-     "time": {
-      "label": "1911",
-      "iso": "1911",
-      "sort": "1911-01-01",
-      "approximate": true
-     },
-     "place": {
-      "townland": "mullanalamphry",
-      "name": "Mullanalamphry",
-      "logainm_id": "13976",
-      "lat": 54.687714,
-      "lon": -8.020136,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "mullanalamphry:census:1901"
-     },
-     "caption": "By 1911 Mullanalamphry had 35 people, down from 47 in 1901. It had eight households, against ten.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "mullanalamphry:census:1901",
-       "mullanalamphry:census:1911"
-      ],
-      "basis": "counts_between_returns",
-      "certainty": "stated"
-     },
-     "duration_ms": 6800,
-     "audio": null,
-     "counts": {
-      "people": 35,
-      "households": 8,
-      "from_people": 47,
-      "from_households": 10
-     }
     }
    ]
   },
@@ -307,48 +265,6 @@
      "counts": {
       "people": 23,
       "households": 7
-     }
-    },
-    {
-     "id": "mullanalamphry:beat:change:1911-1926",
-     "kind": "change",
-     "chapter": "mullanalamphry:ch:1926",
-     "time": {
-      "label": "1926",
-      "iso": "1926",
-      "sort": "1926-01-01",
-      "approximate": true
-     },
-     "place": {
-      "townland": "mullanalamphry",
-      "name": "Mullanalamphry",
-      "logainm_id": "13976",
-      "lat": 54.687714,
-      "lon": -8.020136,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "mullanalamphry:census:1911"
-     },
-     "caption": "By 1926 Mullanalamphry had 23 people, down from 35 in 1911. It had seven households, against eight.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "mullanalamphry:census:1911",
-       "mullanalamphry:census:1926"
-      ],
-      "basis": "counts_between_returns",
-      "certainty": "stated"
-     },
-     "duration_ms": 6800,
-     "audio": null,
-     "counts": {
-      "people": 23,
-      "households": 7,
-      "from_people": 35,
-      "from_households": 8
      }
     },
     {
