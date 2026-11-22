@@ -37,14 +37,14 @@
    },
    "sort": "1874-10-05",
    "title": "Baptism of James Bradley",
-   "text": "Father: Dan. Bradley. Mother: Ellen Callaghan. Sponsors: Condy Callaghan and Mary Callaghan.",
+   "text": "Father: Daniel Bradley. Mother: Ellen Callaghan. Sponsors: Condy Callaghan and Mary Callaghan.",
    "people": [
     {
      "name": "James",
      "role": "child baptised"
     },
     {
-     "name": "Dan. Bradley",
+     "name": "Daniel Bradley",
      "role": "father"
     },
     {
@@ -82,7 +82,7 @@
    },
    "sort": "1875-03-31",
    "title": "Baptism of Edward Harraghy",
-   "text": "Father: Francis Harraghy. Mother: Mary McGinty. Sponsors: Mich. Dunion and Brigid Dunion.",
+   "text": "Father: Francis Harraghy. Mother: Mary McGinty. Sponsors: Michael Dunnion and Brigid Dunnion.",
    "people": [
     {
      "name": "Edward",
@@ -97,11 +97,11 @@
      "role": "mother"
     },
     {
-     "name": "Mich. Dunion",
+     "name": "Michael Dunnion",
      "role": "sponsor"
     },
     {
-     "name": "Brigid Dunion",
+     "name": "Brigid Dunnion",
      "role": "sponsor"
     }
    ],
@@ -172,26 +172,26 @@
    },
    "sort": "1875-07-10",
    "title": "Baptism of Margaret McGinty",
-   "text": "Father: Edwd. McGinty. Mother: Brigid Dunleavy. Sponsors: Wm. McDade and Margt. Dunnion.",
+   "text": "Father: Edward McGinty. Mother: Brigid Dunlevy. Sponsors: William McDade and Margaret Dunnion.",
    "people": [
     {
      "name": "Margaret",
      "role": "child baptised"
     },
     {
-     "name": "Edwd. McGinty",
+     "name": "Edward McGinty",
      "role": "father"
     },
     {
-     "name": "Brigid Dunleavy",
+     "name": "Brigid Dunlevy",
      "role": "mother"
     },
     {
-     "name": "Wm. McDade",
+     "name": "William McDade",
      "role": "sponsor"
     },
     {
-     "name": "Margt. Dunnion",
+     "name": "Margaret Dunnion",
      "role": "sponsor"
     }
    ],

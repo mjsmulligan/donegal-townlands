@@ -35,6 +35,9 @@ except ImportError:                  # run as a script: python tools/build_timel
 
 ROOT = build.ROOT
 REGISTER = ROOT / 'data' / 'source' / 'nli_parish' / 'tawnawilly' / 'raw' / 'tawnawilly_baptisms_raw.csv'
+NORMALISED = ROOT / 'data' / 'source' / 'nli_parish' / 'tawnawilly' / 'normalised' / 'tawnawilly_baptisms_normalised.csv'
+PLACE_STATED = ('verified', 'dictionary')
+PLACE_DOUBTFUL = ('probable', 'possible')
 REGISTER_LABEL = 'Tawnawilly parish register (Raphoe), NLI microfilm 04599/04'
 CENSUS_SOURCE = 'National Archives of Ireland, census of Ireland'
 CENSUS_CREDIT = ('Census returns: National Archives of Ireland. The 1926 census is licensed CC BY 4.0. '
@@ -96,64 +99,89 @@ def place_doubtful(row, parsed):
     return bool(re.search(r'place\s+(blotted|illegible|unclear|doubtful)', note, re.I) or '[?]' in parsed['place'])
 
 
-def baptism_events(name, today, register=None):
-    """Return (events, skipped). skipped lists rows that name the townland but are not published,
-    with the reason, so nothing disappears silently."""
-    path = pathlib.Path(register) if register else REGISTER
+def read_rows(path):
+    with pathlib.Path(path).open(encoding='utf-8-sig', newline='') as h:
+        return list(csv.DictReader(h))
+
+
+def join_name(first, last):
+    return ' '.join(x for x in ((first or '').strip(), (last or '').strip()) if x)
+
+
+def baptism_events(name, today, register=None, normalised=None):
+    """Return (events, skipped). Baptisms are read from the normalised register (DECISIONS.md,
+    2026-11-21): the place, date, names and sponsors are the normalised spellings, and a baptism is
+    attached to a townland only when its normalised place is that townland. The raw file is joined by
+    row_id for the page image, the reading status and the clerk's place notes, and its string stays
+    on the event as `recorded`. A place that is verified or from the dictionary is stated; a probable
+    place is kept and marked doubtful, so it is told with 'possibly'. Ambiguous, unresolved and
+    unmapped places are never attributed. skipped lists rows that name the townland but are not
+    published, with the reason, so nothing disappears silently."""
+    raw_path = pathlib.Path(register) if register else REGISTER
+    nor_path = pathlib.Path(normalised) if normalised else NORMALISED
     events, skipped = [], []
-    if not path.is_file():
+    if not nor_path.is_file():
         return events, skipped
-    with path.open(encoding='utf-8', newline='') as h:
-        for row in csv.DictReader(h):
-            if row.get('record_type') != 'baptism':
-                continue
-            seen = ' '.join([row.get('reading_1', ''), row.get('reading_2', ''), row.get('resolved_reading', '')])
-            if name.casefold() not in seen.casefold():
-                continue
-            if row.get('status') not in ('agreed', 'resolved'):
-                skipped.append((row['row_id'], 'reading ' + (row.get('status') or 'unset') + ', not published'))
-                continue
-            parsed = parse_baptism(row.get('resolved_reading') or '')
-            if not parsed or parsed['place'].rstrip('?[] ').casefold() != name.casefold():
-                continue
-            day = parse_date(parsed['date'])
-            if not day:
-                skipped.append((row['row_id'], 'no exact date, not placed'))
-                continue
-            if today.year - day.year < BAPTISM_MIN_AGE:
-                skipped.append((row['row_id'], 'under 100 years old, not published'))
-                continue
-            doubt = place_doubtful(row, parsed)
-            people = [{'name': parsed['child'], 'role': 'child baptised'}]
-            if parsed['father']:
-                people.append({'name': parsed['father'], 'role': 'father'})
-            if parsed['mother']:
-                people.append({'name': parsed['mother'], 'role': 'mother'})
-            people += [{'name': s, 'role': 'sponsor'} for s in parsed['sponsors']]
-            bits = []
-            if parsed['father']:
-                bits.append('Father: ' + parsed['father'] + '.')
-            if parsed['mother']:
-                bits.append('Mother: ' + parsed['mother'] + '.')
-            if parsed['sponsors']:
-                bits.append('Sponsors: ' + ' and '.join(parsed['sponsors']) + '.')
-            events.append({
-                'id': f'{name.lower()}:baptism:{row["row_id"]}',
-                'type': 'baptism',
-                'date': {'kind': 'exact', 'label': long_date(day), 'iso': day.isoformat()},
-                'sort': day.isoformat(),
-                'title': baptism_title(parsed),
-                'text': ' '.join(bits),
-                'people': people,
-                'media': [],
-                'association': {
-                    'basis': 'page_place_doubtful' if doubt else 'page_place',
-                    'label': ('The place is blotted on the page and reads as ' if doubt else 'The page gives the place as ')
-                             + name + '.'},
-                'source': {'label': REGISTER_LABEL + ', page ' + str(row['page']),
-                           'url': row.get('image_url', ''), 'reference': row['row_id']},
-                'recorded': row['resolved_reading'],
-            })
+    raw = {r['row_id']: r for r in read_rows(raw_path)} if raw_path.is_file() else {}
+    for n in read_rows(nor_path):
+        if (n.get('townland') or '').strip().casefold() != name.casefold():
+            continue
+        status = (n.get('townland_status') or '').strip()
+        if status not in PLACE_STATED + PLACE_DOUBTFUL:
+            continue
+        row = raw.get(n['row_id'], {})
+        if (n.get('raw_status') or row.get('status')) not in ('agreed', 'resolved'):
+            skipped.append((n['row_id'], 'reading ' + (n.get('raw_status') or 'unset') + ', not published'))
+            continue
+        iso = (n.get('date_iso') or '').strip()
+        try:
+            day = datetime.date.fromisoformat(iso)
+        except ValueError:
+            skipped.append((n['row_id'], 'no exact date, not placed'))
+            continue
+        if today.year - day.year < BAPTISM_MIN_AGE:
+            skipped.append((n['row_id'], 'under 100 years old, not published'))
+            continue
+        raw_parsed = parse_baptism(row.get('resolved_reading') or '') or {'place': ''}
+        doubt = status in PLACE_DOUBTFUL or place_doubtful(row, raw_parsed)
+        parsed = {'child': (n.get('child_forename') or '').strip(),
+                  'father': join_name(n.get('father_forename'), n.get('father_surname')),
+                  'mother': join_name(n.get('mother_forename'), n.get('mother_surname')),
+                  'sponsors': [n[k].strip() for k in ('sponsor1', 'sponsor2', 'sponsor3', 'sponsor4') if (n.get(k) or '').strip()]}
+        people = [{'name': parsed['child'], 'role': 'child baptised'}]
+        if parsed['father']:
+            people.append({'name': parsed['father'], 'role': 'father'})
+        if parsed['mother']:
+            people.append({'name': parsed['mother'], 'role': 'mother'})
+        people += [{'name': s, 'role': 'sponsor'} for s in parsed['sponsors']]
+        bits = []
+        if parsed['father']:
+            bits.append('Father: ' + parsed['father'] + '.')
+        if parsed['mother']:
+            bits.append('Mother: ' + parsed['mother'] + '.')
+        if parsed['sponsors']:
+            bits.append('Sponsors: ' + ' and '.join(parsed['sponsors']) + '.')
+        written = raw_parsed['place'].rstrip('?[] ').strip()
+        if written and written.casefold() != name.casefold():
+            label = f'The page writes the place as {written}, read as {name}.'
+        elif doubt:
+            label = 'The place is blotted on the page and reads as ' + name + '.'
+        else:
+            label = 'The page gives the place as ' + name + '.'
+        events.append({
+            'id': f'{name.lower()}:baptism:{n["row_id"]}',
+            'type': 'baptism',
+            'date': {'kind': 'exact', 'label': long_date(day), 'iso': day.isoformat()},
+            'sort': day.isoformat(),
+            'title': baptism_title(parsed),
+            'text': ' '.join(bits),
+            'people': people,
+            'media': [],
+            'association': {'basis': 'page_place_doubtful' if doubt else 'page_place', 'label': label},
+            'source': {'label': REGISTER_LABEL + ', page ' + str(n['page']),
+                       'url': row.get('image_url', ''), 'reference': n['row_id']},
+            'recorded': row.get('resolved_reading', ''),
+        })
     return events, skipped
 
 
