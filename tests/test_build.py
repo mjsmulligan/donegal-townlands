@@ -338,7 +338,7 @@ class BuildTests(unittest.TestCase):
         self.assertEqual(pos, sorted(pos))    # one list, in name order
         for slug, tag in (("alpha", "Townland Study"), ("two", "Census Returns"), ("one", "Townland Record")):
             card = index[index.index('data-slug="%s"' % slug):]
-            self.assertIn(tag, card[:card.index("</a>")])
+            self.assertIn(tag, card[:card.index("</article>")])
         self.assertIn("3 Records", index)
         self.assertIn("generated: donegal-townlands index", index)
         self.assertIn("Logainm, Government of Ireland", index)

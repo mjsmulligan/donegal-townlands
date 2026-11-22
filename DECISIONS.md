@@ -191,3 +191,7 @@ After the comparison review of the eight sample pages, the user decided three th
 
 The user also asked for `Edw.` to be added to the normalised given-name rules. `data/source/nli_parish/tawnawilly/normalised/rules.csv` now maps `Edw.` and `Edw` to Edward, like `Edwd` and `Edwd.`. The normalised baptisms were rebuilt: 9 rows changed (7 father forenames and 2 sponsors) and the marriages are unchanged. Clogher's timeline was regenerated. `Edwt.` (2 baptisms) is not covered and was left for the user to look at. Effect: Cullionboy's documentary runs 56 seconds (was 70), Clogher's 53 (was 67).
 
+## 2026-11-22: Map index restyle (WP-R5)
+
+`engine/index.html` now matches the documentary: Esri satellite imagery with the credit in the footer and on the map, the light palette with no brown, Newsreader and Instrument Sans. A card for a case with a documentary opens it first and offers "Gallery walk" as a second link, so the walk stays reachable until DP9. A card for any other case opens the walk as before. The documentary link is added by `tools/build.py` when `docs/<slug>/documentary.html` exists, so the index follows the rollout with no list to maintain. The imagery terms (Q1) are still open.
+
