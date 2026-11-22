@@ -120,7 +120,7 @@
       "stage": "map",
       "open_card": "clogher:baptism:TAW-B-p004-r7"
      },
-     "caption": "Mary Gallagher was baptised on 15 January 1873. Edw. Gallagher and Brigid Devlin were the parents.",
+     "caption": "Mary Gallagher was baptised on 15 January 1873. Edward Gallagher and Brigid Devlin were the parents.",
      "people": [],
      "media": [],
      "evidence": {
@@ -296,48 +296,6 @@
       "people": 112,
       "households": 23
      }
-    },
-    {
-     "id": "clogher:beat:change:1901-1911",
-     "kind": "change",
-     "chapter": "clogher:ch:1911",
-     "time": {
-      "label": "1911",
-      "iso": "1911",
-      "sort": "1911-01-01",
-      "approximate": true
-     },
-     "place": {
-      "townland": "clogher",
-      "name": "Clogher",
-      "logainm_id": "13964",
-      "lat": 54.677864,
-      "lon": -7.976911,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "clogher:census:1901"
-     },
-     "caption": "By 1911 Clogher had 112 people, down from 125 in 1901. It had 23 households, against 27.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "clogher:census:1901",
-       "clogher:census:1911"
-      ],
-      "basis": "counts_between_returns",
-      "certainty": "stated"
-     },
-     "duration_ms": 6800,
-     "audio": null,
-     "counts": {
-      "people": 112,
-      "households": 23,
-      "from_people": 125,
-      "from_households": 27
-     }
     }
    ]
   },
@@ -382,48 +340,6 @@
      "counts": {
       "people": 89,
       "households": 20
-     }
-    },
-    {
-     "id": "clogher:beat:change:1911-1926",
-     "kind": "change",
-     "chapter": "clogher:ch:1926",
-     "time": {
-      "label": "1926",
-      "iso": "1926",
-      "sort": "1926-01-01",
-      "approximate": true
-     },
-     "place": {
-      "townland": "clogher",
-      "name": "Clogher",
-      "logainm_id": "13964",
-      "lat": 54.677864,
-      "lon": -7.976911,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "clogher:census:1911"
-     },
-     "caption": "By 1926 Clogher had 89 people, down from 112 in 1911. It had twenty households, against 23.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "clogher:census:1911",
-       "clogher:census:1926"
-      ],
-      "basis": "counts_between_returns",
-      "certainty": "stated"
-     },
-     "duration_ms": 6800,
-     "audio": null,
-     "counts": {
-      "people": 89,
-      "households": 20,
-      "from_people": 112,
-      "from_households": 23
      }
     },
     {

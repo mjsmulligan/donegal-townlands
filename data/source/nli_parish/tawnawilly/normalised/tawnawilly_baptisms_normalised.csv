@@ -4,8 +4,8 @@ TAW-B-p004-r2,4,2,1872-12,Patrick,,,,,,,,,,,,agreed,,
 TAW-B-p004-r3,4,3,1873-01,James Michael,James,Timoney,Harriet,Mulreany,Donegal Town,verified,P. Kelly,Kate McBrearty,,,P.K.,resolved,,townland: Town > Donegal Town; father_forename: Jas. > James; father_surname: Timmony > Timoney
 TAW-B-p004-r4,4,4,1873-01,Winifred Mary,John,McKinney,Anne,Kenny,Donegal Town,verified,Bernard McGoldrick,Mary McGoldrick,,,P.K.,resolved,,townland: Town > Donegal Town; sponsor1: Bernd. > Bernard; sponsor1: McGolrick > McGoldrick; sponsor2: McGolrick > McGoldrick
 TAW-B-p004-r5,4,5,1873-01,Charles,Charles,Gallagher,Mary,Doherty,Ardinawark,dictionary,Anne Callaghan,Mary Callaghan,,,P.K.,agreed,,townland: Ardnawark > Ardinawark; father_forename: Chas. > Charles
-TAW-B-p004-r6,4,6,1873-01,Sarah,Owen,Travers,Mary,Thomas,Finnadoos,dictionary,Edw. Thomas,Fanny Thomas,,,P.K.,agreed,,father_surname: Trower > Travers
-TAW-B-p004-r7,4,7,1873-01-15,Mary,Edw.,Gallagher,Brigid,Devlin,Clogher,dictionary,James Devlin,Margaret Gallagher,,,P.K.,agreed,,sponsor1: Jas. > James; sponsor2: Margt. > Margaret
+TAW-B-p004-r6,4,6,1873-01,Sarah,Owen,Travers,Mary,Thomas,Finnadoos,dictionary,Edward Thomas,Fanny Thomas,,,P.K.,agreed,,father_surname: Trower > Travers; sponsor1: Edw. > Edward
+TAW-B-p004-r7,4,7,1873-01-15,Mary,Edward,Gallagher,Brigid,Devlin,Clogher,dictionary,James Devlin,Margaret Gallagher,,,P.K.,agreed,,father_forename: Edw. > Edward; sponsor1: Jas. > James; sponsor2: Margt. > Margaret
 TAW-B-p004-r8,4,8,1873-01-17,John,William,Harkin,Mary,Mulhany,Donegal Town,probable,John McGinty,Mary Harkin,,,P.K.,agreed,,townland: Donegal > Donegal Town; father_forename: Wm. > William
 TAW-B-p004-r9,4,9,1873-01-21,Denis,Denis,McGroarty,Jane,Travers,Tullyloskan,dictionary,Ellen Thomas,,,,P.K.,resolved,,mother_surname: Trower > Travers
 TAW-B-p004-r10,4,10,1873-01-23,Mary,Patrick,Cassidy,Anne,Dickie,Donegal Town,verified,Brigid Carr,,,,P.K.,agreed,,townland: Town > Donegal Town; father_forename: Patt. > Patrick
@@ -22,7 +22,7 @@ TAW-B-p005-r20,5,20,1873-02-25,Anne,Cornelius,Gittens,Mary,Kelly,,unmapped,John 
 TAW-B-p005-r21,5,21,1873-02-25,Patrick,Laurena,Gillespie,Susan,Moohan,Donegal Town,verified,Patrick Lyons,Elizabeth Lyons,,,P.K.,agreed,,townland: Town > Donegal Town; sponsor1: Patt. > Patrick
 TAW-B-p005-r22,5,22,1873-03-09,Nancy,John,Craig,Mary,Martin,Tawnawully,dictionary,John Gallinagh,Mary Gallinagh,,,P.K.,resolved,,sponsor1: Gallanagh > Gallinagh; sponsor2: Gallanagh > Gallinagh
 TAW-B-p005-r23,5,23,1873-03-09,Anne,Patrick,Brogan,Ellen,Timoney,,,Hugh Travers,Anne Travers,,,P.K.,agreed,,father_forename: Patt. > Patrick; mother_surname: Timmony > Timoney; sponsor1: Trower > Travers; sponsor2: Trower > Travers
-TAW-B-p005-r24,5,24,1873-03-10,John,Edw.,McKelvey,Mary,Glancy,,,Hugh McKelvey,Eliza McKelvey,,,P.K.,resolved,,
+TAW-B-p005-r24,5,24,1873-03-10,John,Edward,McKelvey,Mary,Glancy,,,Hugh McKelvey,Eliza McKelvey,,,P.K.,resolved,,father_forename: Edw. > Edward
 TAW-B-p006-r25,6,25,1873-03,Thomas,John,Kelly,Margaret,Kennedy,,,Patrick Kennedy,Margaret McKilhenny,,,P.K.,agreed,,mother_forename: Margt. > Margaret; sponsor1: Patt. > Patrick; sponsor2: Margt. > Margaret
 TAW-B-p006-r26,6,26,1873-03,Mary Anne,Connell,McGinty,Anne,Martin,Tawnaghgorm,verified,Michael McGinty,Mary McGinty,,,P.K.,agreed,,townland: Tawnagorm > Tawnaghgorm; sponsor1: Mich. > Michael
 TAW-B-p006-r27,6,27,1873-03,Margaret,John,Martin,Mary,McGinty,Corracramph,verified,Patrick Timoney,Anne Timoney,,,P.K.,agreed,,sponsor1: Patt. > Patrick; sponsor1: Timmony > Timoney; sponsor2: Timmony > Timoney
@@ -84,11 +84,11 @@ TAW-B-p009-r82,9,82,1873-11-23,Michael,John,Martin,Betty,Martin,,,Cornelius Boyl
 TAW-B-p009-r83,9,83,1873-11-25,James,Patrick,Murphy,Mary,Kennedy,,,James Walsh,Anne Walsh,,,P.B.,agreed,,father_forename: Patt. > Patrick; sponsor1: Jas. > James
 TAW-B-p009-r84,9,84,1873-10-24,Edward,Edward,Slevin,Mary,McGee,,,Denis Callaghan,Mary Callaghan,,,P.B.,resolved,,father_forename: Ed. > Edward
 TAW-B-p009-r85,9,85,1873-12,Michael,Michael,Kenny[?],Mary,Davis,Donegal Town,verified,Mary McNelis,,,,P.K.,resolved,,townland: Town > Donegal Town; father_forename: Mich. > Michael
-TAW-B-p009-r86,9,86,1873-12-06,James,Patrick,McBrearty,Mary,Gillespie,Raforker,dictionary,Edw. O'Donnell,Susan O'Donnell,,,P.K.,agreed,,father_forename: Patt. > Patrick
+TAW-B-p009-r86,9,86,1873-12-06,James,Patrick,McBrearty,Mary,Gillespie,Raforker,dictionary,Edward O'Donnell,Susan O'Donnell,,,P.K.,agreed,,father_forename: Patt. > Patrick; sponsor1: Edw. > Edward
 TAW-B-p009-r87,9,87,1873-12-06,Bell,Patrick,Cannon,Nelly,Brennan,Donegal Town,verified,Peter McCallion,Ellen Flynn,,,P.K.,agreed,,townland: Town > Donegal Town; father_forename: Patt. > Patrick
 TAW-B-p009-r88,9,88,1873-12-17,Mary,John,McBrearty,Mary,Breslin,Donegal Town,verified,John McBrearty,Mary McBrearty,,,P.K.,agreed,,townland: Town > Donegal Town; mother_surname: Breslan > Breslin
 TAW-B-p009-r89,9,89,1873-12-17,James,Michael,Barron,Catherine,McFaggart,Finnadoos,dictionary,John Travers,Mary Meehan,,,P.K.,disputed,,father_forename: Mich. > Michael; mother_forename: Cath. > Catherine; sponsor1: Trower > Travers; override date_iso: 1873-12-07 > 1873-12-17
-TAW-B-p009-r90,9,90,1873-12-26,Mary Anne,Edw.,McDermott,Brigid,Kelly,Clarlougheask,dictionary,Thomas Meehan,Unity Gallagher,,,P.K.,resolved,,sponsor1: Thos. > Thomas
+TAW-B-p009-r90,9,90,1873-12-26,Mary Anne,Edward,McDermott,Brigid,Kelly,Clarlougheask,dictionary,Thomas Meehan,Unity Gallagher,,,P.K.,resolved,,father_forename: Edw. > Edward; sponsor1: Thos. > Thomas
 TAW-B-p009-r91,9,91,1873-12,Mary Anne,John,Cunningham,Margaret,Cassidy,Skreen,verified,Denis Cunningham,Mary Hane,,,P.K.,resolved,,mother_forename: Margt. > Margaret
 TAW-B-p009-r92,9,92,1874-01,James,William,Weir,Letty,Cassidy,Brookfield,verified,William Cassidy,Catherine Cassidy,,,P.K.,agreed,,townland: Gragstown > Brookfield; father_forename: Wm. > William; sponsor1: Wm. > William; sponsor2: Cath. > Catherine
 TAW-B-p009-r93,9,93,1874-01,John,James,Dunlevy,Unity,Malloy,Donegal Town,verified,Patrick Dunlevy,Unity Doherty,,,P.K.,agreed,,townland: Town > Donegal Town; sponsor1: Patt. > Patrick
@@ -126,7 +126,7 @@ TAW-B-p011-r124,11,124,1874-05-28,Mary Anne,Patrick,Byrne,Mary,Gildea,Donegal To
 TAW-B-p011-r125,11,125,1874-05-31,Brigid,Patrick,Ward,Rose,Quigley,Donegal Town,verified,William Quigley,Bell Mullin,,,P.K.,agreed,,townland: Town > Donegal Town; father_forename: Patt. > Patrick; sponsor1: Wm. > William
 TAW-B-p011-r126,11,126,1874-06-04,Bernard,Thomas,Gallagher,Mary,McGinty,Ardnableask,dictionary,Connell McGinty,Anne McGinty,,,J.W.,agreed,,
 TAW-B-p011-r127,11,127,1874-06-07,Brigid,James,Walsh,Margaret,Murphy,Corracramph,verified,John Murphy,Hannah Murphy,,,P.K.,agreed,,mother_forename: Margt. > Margaret
-TAW-B-p011-r128,11,128,1874-06-07,John,Connell,McGinty,Mary,Martin,Garvagh,dictionary,Edw. McGinty,Catherine McGinty,,,P.K.,agreed,,sponsor2: Cath. > Catherine
+TAW-B-p011-r128,11,128,1874-06-07,John,Connell,McGinty,Mary,Martin,Garvagh,dictionary,Edward McGinty,Catherine McGinty,,,P.K.,agreed,,sponsor1: Edw. > Edward; sponsor2: Cath. > Catherine
 TAW-B-p011-r129,11,129,1874-06-07,Mary Anne,Charles,McGinty,Mary,McGlinchy,Drummenny (Lower/Middle/Upper unresolved),ambiguous,Andy McGinty,Ellen Friel,,,P.K.,disputed,,townland: Drumenny > Drummenny (Lower/Middle/Upper unresolved); father_forename: Chas. > Charles
 TAW-B-p011-r130,11,130,1874-06-14,Catherine,John,McGinty,Catherine,Quigley,Donegal Town,verified,James McGinty,Ellen Jane McGinty,,,P.K.,agreed,,townland: Town > Donegal Town; mother_forename: Cath. > Catherine; sponsor1: Jas. > James
 TAW-B-p011-r131,11,131,1874-06,Ellen,Hugh,Mulreany,Margaret,Moran,Donegal Town,verified,Francis Mulreany,Agnes O'Connell,,,J.W.,disputed,,townland: Town > Donegal Town; father_surname: Mulrine > Mulreany; mother_forename: Margt. > Margaret; sponsor1: Mulrine > Mulreany
@@ -164,7 +164,7 @@ TAW-B-p013-r162,13,162,1874-11-01,Brigid,John,Meehan,Mary,Harkin,Finnadoos,dicti
 TAW-B-p013-r163,13,163,1874-11-09,John,James,Carbin,Mary,Cassidy,Skreen,verified,Edward Begley,Anne Carbin,,,P.K.,agreed,,father_forename: Jas. > James; father_surname: Carabine > Carbin; sponsor1: Edwd. > Edward; sponsor2: Carabine > Carbin
 TAW-B-p013-r164,13,164,1874-11-08,John,John,Browne,Biddy,McGettigan,,unmapped,Hugh Browne,Kitty Browne,,,P.K.,agreed,,townland: Cloghan > 
 TAW-B-p013-r165a,13,165a,1874-11-12,James,Charles,McMullin,Anne,McGinty,Corracramph,verified,Edward McGinty,Catherine McGinty,,,P.K.,agreed,,father_forename: Chas. > Charles; father_surname: McMullen > McMullin; sponsor1: Edwd. > Edward; sponsor2: Cath. > Catherine
-TAW-B-p013-r165b,13,165b,1874-11-25,Hugh,Edw.,Kelly,Mary,Harvey,Clarcam,dictionary,Hugh McKelvey,Anne McCollum,,,J. Walker,agreed,,
+TAW-B-p013-r165b,13,165b,1874-11-25,Hugh,Edward,Kelly,Mary,Harvey,Clarcam,dictionary,Hugh McKelvey,Anne McCollum,,,J. Walker,agreed,,father_forename: Edw. > Edward
 TAW-B-p013-r166,13,166,1874-12-03,Ellen,Neil,Gallagher,Brigid,McCool,Finmore,verified,Hugh McCool,Margaret McCool,,,P.K.,agreed,,sponsor2: Margt. > Margaret
 TAW-B-p013-r167,13,167,1874-12-06,Brigid,Michael,Boyle,Margaret,McGinty,Ardinawark,dictionary,Charles Callaghan,Mary Callaghan,,,P.K.,agreed,,townland: Ardnawark > Ardinawark; father_forename: Mich. > Michael; mother_forename: Margt. > Margaret; sponsor1: Chas. > Charles
 TAW-B-p014-r168,14,168,1874-12-21,James,,,Peggy,Byrne,Donegal Town,verified,John McBrearty,Mary Breslin,,,P. Kelly,agreed,,townland: Town > Donegal Town; sponsor2: Breslan > Breslin
@@ -181,8 +181,8 @@ TAW-B-p015-r178,15,178,1875-01-05,Bernard,John,Furey,Biddy,Kelly,Donegal Town,ve
 TAW-B-p015-r179,15,179,1875-01-17,Brigid Mary,Bernard,McGoldrick,Catherine,Cunney,Donegal Town,verified,James McGoldrick,Maggie McGoldrick,,,P.K.,agreed,,townland: Town > Donegal Town; father_forename: Bern. > Bernard; father_surname: McGolrick > McGoldrick; mother_forename: Cath. > Catherine; sponsor1: Jas. > James; sponsor1: McGolrick > McGoldrick; sponsor2: McGolrick > McGoldrick
 TAW-B-p015-r180,15,180,1875-01-26,James,Patrick,Bresland,Catherine,McCool,Clogher,dictionary,Patrick O'Donnell,Brigid O'Donnell,,,James Walker,resolved,,
 TAW-B-p015-r181,15,181,1875-01-30,Brigid,Patrick,Gildea,Grace,Hanaghy,Meenadreen,verified,Laurence McGinty,Margaret McGinty,,,P.K.,agreed,,father_forename: Patt. > Patrick; sponsor2: Margt. > Margaret
-TAW-B-p015-r182,15,182,1875-01-31,Brigid,Anthony,Gallagher,Mary,Hagerty,Finmore,verified,Edw. McGoldrick,Mary McGoldrick,,,P.K.,agreed,,father_forename: Anty. > Anthony; sponsor1: McGolrick > McGoldrick; sponsor2: McGolrick > McGoldrick
-TAW-B-p015-r183,15,183,1875-01-31,Catherine,Edw.,McGinty,Mary,O'Donnell,Clarcam,dictionary,Edward O'Donnell,Ellen O'Donnell,,,P.K.,agreed,,sponsor1: Edwd. > Edward
+TAW-B-p015-r182,15,182,1875-01-31,Brigid,Anthony,Gallagher,Mary,Hagerty,Finmore,verified,Edward McGoldrick,Mary McGoldrick,,,P.K.,agreed,,father_forename: Anty. > Anthony; sponsor1: Edw. > Edward; sponsor1: McGolrick > McGoldrick; sponsor2: McGolrick > McGoldrick
+TAW-B-p015-r183,15,183,1875-01-31,Catherine,Edward,McGinty,Mary,O'Donnell,Clarcam,dictionary,Edward O'Donnell,Ellen O'Donnell,,,P.K.,agreed,,father_forename: Edw. > Edward; sponsor1: Edwd. > Edward
 TAW-B-p015-r184,15,184,1875-01-31,John,Patrick,Murphy,Mary,Kennedy,Drumadoney,verified,John Murphy,Catherine Slevin,,,P.K.,agreed,,father_forename: Patt. > Patrick; sponsor2: Cath. > Catherine
 TAW-B-p015-r185,15,185,1875-01-31,Thomas,Michael,Martin,Mary,Martin,Garvagh,dictionary,Daniel Martin,Mary Callaghan,,,P.K.,agreed,,father_forename: Mich. > Michael; sponsor1: Dan. > Daniel
 TAW-B-p015-r186,15,186,1875-02-03,Mary,James,Martin,Ellen,Kearn,Goladoo,dictionary,Patrick Mahon,Catherine Kearn,,,James Walker,disputed,,

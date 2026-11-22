@@ -290,48 +290,6 @@
       "people": 148,
       "households": 23
      }
-    },
-    {
-     "id": "druminnin:beat:change:1901-1911",
-     "kind": "change",
-     "chapter": "druminnin:ch:1911",
-     "time": {
-      "label": "1911",
-      "iso": "1911",
-      "sort": "1911-01-01",
-      "approximate": true
-     },
-     "place": {
-      "townland": "druminnin",
-      "name": "Druminnin",
-      "logainm_id": "13969",
-      "lat": 54.682253,
-      "lon": -8.020767,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "druminnin:census:1901"
-     },
-     "caption": "By 1911 Druminnin had 148 people, up from 132 in 1901. It had 23 households, against 24.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "druminnin:census:1901",
-       "druminnin:census:1911"
-      ],
-      "basis": "counts_between_returns",
-      "certainty": "stated"
-     },
-     "duration_ms": 6800,
-     "audio": null,
-     "counts": {
-      "people": 148,
-      "households": 23,
-      "from_people": 132,
-      "from_households": 24
-     }
     }
    ]
   },
@@ -376,48 +334,6 @@
      "counts": {
       "people": 91,
       "households": 20
-     }
-    },
-    {
-     "id": "druminnin:beat:change:1911-1926",
-     "kind": "change",
-     "chapter": "druminnin:ch:1926",
-     "time": {
-      "label": "1926",
-      "iso": "1926",
-      "sort": "1926-01-01",
-      "approximate": true
-     },
-     "place": {
-      "townland": "druminnin",
-      "name": "Druminnin",
-      "logainm_id": "13969",
-      "lat": 54.682253,
-      "lon": -8.020767,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "druminnin:census:1911"
-     },
-     "caption": "By 1926 Druminnin had 91 people, down from 148 in 1911. It had twenty households, against 23.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "druminnin:census:1911",
-       "druminnin:census:1926"
-      ],
-      "basis": "counts_between_returns",
-      "certainty": "stated"
-     },
-     "duration_ms": 6800,
-     "audio": null,
-     "counts": {
-      "people": 91,
-      "households": 20,
-      "from_people": 148,
-      "from_households": 23
      }
     },
     {

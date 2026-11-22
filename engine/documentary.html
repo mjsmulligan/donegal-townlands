@@ -274,23 +274,22 @@ var D=__DATA__;
     } else p.classList.remove('on');
   }
 
-  /* dots: a census beat fills in one dot for each person counted. A change beat starts from the earlier count
-     and settles on the new one, the dots that are no longer there showing as empty rings. Counts only. */
+  /* dots: a census beat fills in one dot for each person counted. Counts only. */
   var dotTimer=null;
   function dots(b){
     var box=$('dots'), grid=$('dotgrid'), c=b.counts;
     clearTimeout(dotTimer);
     if(!c||!c.people){box.classList.remove('on'); return}
-    var from=b.kind==='change'?c.from_people:0, total=Math.max(c.people,from||0), is=[];
+    var total=c.people, is=[];
     grid.textContent='';
-    for(var k=0;k<total;k++){var d=document.createElement('i'); d.style.transitionDelay=reduce?'0s':Math.min(k*9,900)+'ms'; if(k<from) d.className='on'; grid.append(d); is.push(d)}
-    $('dotnum').textContent=''; $('dotnum').append(String(b.kind==='change'?from:c.people)); var sm=document.createElement('small'); sm.textContent='people in '+(b.kind==='change'?c.from_households:c.households)+' households'; $('dotnum').append(sm);
+    for(var k=0;k<total;k++){var d=document.createElement('i'); d.style.transitionDelay=reduce?'0s':Math.min(k*9,900)+'ms'; grid.append(d); is.push(d)}
+    $('dotnum').textContent=''; $('dotnum').append(String(c.people)); var sm=document.createElement('small'); sm.textContent='people in '+c.households+' households'; $('dotnum').append(sm);
     box.classList.add('on');
     var settle=function(){
       is.forEach(function(d,k){d.className=k<c.people?'on':'off'});
       $('dotnum').textContent=''; $('dotnum').append(String(c.people)); var s2=document.createElement('small'); s2.textContent='people in '+c.households+' households'; $('dotnum').append(s2);
     };
-    if(b.kind==='change'&&!reduce){dotTimer=setTimeout(settle,1400)} else {dotTimer=setTimeout(settle,reduce?0:120)}
+    dotTimer=setTimeout(settle,reduce?0:120);
   }
 
   function show(n,fromHash){
