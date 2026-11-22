@@ -24,27 +24,35 @@ a{color:var(--ink);text-decoration-color:var(--hill);text-underline-offset:3px}
 :focus-visible{outline:3px solid var(--ink);outline-offset:2px;border-radius:3px}
 .skip{position:absolute;left:-999px;top:0;background:var(--paper);padding:8px 12px;z-index:2000}
 .skip:focus{left:8px;top:8px}
-.wrap{max-width:1140px;margin:0 auto;padding:0 16px}
-header{padding:36px 0 20px}
-.eyebrow{font:500 12px var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--ink2);margin:0 0 6px}
-h1{font:300 clamp(34px,7vw,56px)/1.05 var(--display);margin:0 0 10px;letter-spacing:-.01em}
-.intro{font:italic 300 clamp(18px,3.4vw,22px)/1.4 var(--display);color:var(--ink2);max-width:46ch;margin:0}
-.mapwrap{position:relative;max-width:1140px;margin:0 auto;padding:0 16px}
-#map-container{width:100%;height:min(62vh,560px);min-height:320px;border-radius:14px;border:1px solid var(--rule);background:var(--rule);overflow:hidden;z-index:1}
-.key{display:flex;flex-wrap:wrap;gap:6px 16px;margin:10px 2px 0;font-size:13px;color:var(--ink2)}
-.key span:before{content:"";display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:6px;vertical-align:-1px;border:2px solid var(--ink)}
-.key .k-study:before{background:var(--gorse)}
-.key .k-census:before{background:var(--hill)}
-.key .k-record:before{background:var(--paper)}
+html,body{height:100%;overflow:hidden}
+#map-container{position:fixed;inset:0;background:#0e2a36;z-index:0}
 .leaflet-container{font-family:var(--body)}
 .townland-label{background:rgba(251,252,250,.94)!important;border:1px solid var(--rule)!important;border-radius:999px!important;padding:2px 10px!important;font:500 13px var(--body);color:var(--ink)!important;box-shadow:none!important}
 .leaflet-tooltip-top:before{display:none}
-.controls{margin:26px 0 8px}
-.search-input{width:100%;max-width:520px;min-height:48px;padding:0 20px;font:400 16px var(--body);border:1px solid var(--ink);border-radius:999px;background:var(--paper);color:var(--ink);outline-offset:2px}
-.sechead{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:22px 0 14px;padding-bottom:8px;border-bottom:1px solid var(--rule)}
-h2{font:400 26px var(--display);margin:0}
-.count{font-size:13px;color:var(--ink2)}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+.titlecard{position:fixed;left:12px;top:12px;z-index:500;max-width:min(360px,calc(100vw - 150px));background:rgba(251,252,250,.92);border:1px solid var(--rule);border-radius:16px;padding:10px 16px}
+.eyebrow{font:500 11px var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--ink2);margin:0 0 2px}
+h1{font:300 clamp(24px,5vw,34px)/1.05 var(--display);margin:0;letter-spacing:-.01em}
+.intro{font:italic 300 15px/1.3 var(--display);color:var(--ink2);margin:4px 0 0}
+.pill{display:inline-flex;align-items:center;justify-content:center;min-height:48px;min-width:48px;padding:0 16px;border-radius:999px;border:1px solid var(--ink);background:rgba(251,252,250,.94);color:var(--ink);font:500 15px var(--body);text-decoration:none;cursor:pointer}
+.pill:hover{background:var(--ink);color:#fff}
+.pill.main{background:var(--ink);color:#fff}
+.pill.main:hover{background:var(--hill-d);border-color:var(--hill-d)}
+#seelist{position:fixed;right:12px;top:12px;z-index:500}
+.key{position:fixed;left:12px;bottom:28px;z-index:500;display:flex;flex-wrap:wrap;gap:4px 14px;max-width:calc(100vw - 24px);background:rgba(251,252,250,.88);border-radius:999px;padding:5px 14px;font-size:13px;color:var(--ink2)}
+.key span:before{content:"";display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:6px;vertical-align:-1px;border:2px solid var(--ink)}
+.key .k-study:before{background:var(--gorse)}
+.key .k-census:before{background:var(--hill)}
+.leaflet-bottom{bottom:0}
+#listpanel{position:fixed;z-index:1000;top:0;bottom:0;left:0;width:min(520px,100vw);background:var(--wall);border-right:1px solid var(--rule);display:flex;flex-direction:column;transform:translateX(0);transition:transform .35s cubic-bezier(.22,.8,.24,1)}
+#listpanel[hidden]{display:none}
+#listpanel.off{transform:translateX(-102%)}
+.panelhead{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 16px;border-bottom:1px solid var(--rule)}
+.panelhead h2{font:400 26px var(--display);margin:0}
+.panelhead .count{font-size:13px;color:var(--ink2);margin-left:8px}
+.search-input{display:block;width:calc(100% - 32px);margin:12px 16px 4px;min-height:48px;padding:0 20px;font:400 16px var(--body);border:1px solid var(--ink);border-radius:999px;background:var(--paper);color:var(--ink)}
+.no-results{display:none;margin:12px 16px;padding:20px;text-align:center;background:var(--paper);border:1px dashed var(--rule);border-radius:14px;color:var(--ink2);font:italic 300 20px var(--display)}
+.scroller{flex:1;overflow-y:auto;padding:12px 16px 24px;-webkit-overflow-scrolling:touch}
+.grid{display:grid;grid-template-columns:1fr;gap:12px}
 .townland-card{display:flex;flex-direction:column;gap:6px;padding:16px 18px;background:var(--paper);border:1px solid var(--rule);border-radius:14px;min-height:120px}
 .townland-card:hover{border-color:var(--hill-d)}
 .card-en{font:400 22px/1.15 var(--display);color:var(--ink);text-decoration:none}
@@ -52,63 +60,94 @@ h2{font:400 26px var(--display);margin:0}
 .card-ga{font:italic 300 16px var(--display);color:var(--ink2)}
 .card-foot{margin-top:auto;padding-top:10px;display:flex;flex-wrap:wrap;align-items:center;gap:8px}
 .card-tag{font:500 11px var(--body);letter-spacing:.09em;text-transform:uppercase;color:var(--ink2);margin-right:auto}
-.pill{display:inline-flex;align-items:center;justify-content:center;min-height:48px;min-width:48px;padding:0 16px;border-radius:999px;border:1px solid var(--ink);background:var(--paper);color:var(--ink);font:500 15px var(--body);text-decoration:none}
-.pill:hover{background:var(--ink);color:#fff}
-.pill.main{background:var(--ink);color:#fff}
-.pill.main:hover{background:var(--hill-d);border-color:var(--hill-d)}
-.no-results{display:none;padding:32px;text-align:center;background:var(--paper);border:1px dashed var(--rule);border-radius:14px;color:var(--ink2);font:italic 300 20px var(--display)}
-footer{margin:48px 0 40px;padding-top:18px;border-top:1px solid var(--rule);font-size:13px;color:var(--ink2)}
-footer p{margin:0 0 6px}
+.card-foot .pill{background:var(--paper)}
+.card-foot .pill:hover{background:var(--ink)}
+.card-foot .pill.main{background:var(--ink)}
+.panelfoot{padding:10px 16px 14px;border-top:1px solid var(--rule);font-size:12px;color:var(--ink2)}
+.panelfoot p{margin:0 0 4px}
+#fade{position:fixed;inset:0;z-index:2000;background:var(--wall);opacity:0;pointer-events:none}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 </head>
 <body>
 <a class="skip" href="#townlandGrid">Skip to the list</a>
-<div class="wrap">
-  <header>
-    <p class="eyebrow">Donegal Historical Placename Study</p>
-    <h1>Donegal Townlands</h1>
-    <p class="intro">An index of the townlands of County Donegal, with a short documentary for each one that has a story.</p>
-  </header>
+<div id="map-container" role="region" aria-label="Map of the townlands"></div>
+<div class="titlecard">
+  <p class="eyebrow">Donegal Historical Placename Study</p>
+  <h1>Donegal Townlands</h1>
+  <p class="intro">Choose a townland on the map to play its documentary.</p>
 </div>
-<div class="mapwrap">
-  <div id="map-container" role="region" aria-label="Map of the townlands"></div>
-  <div class="key" aria-label="Map key"><span class="k-study">Townland Study</span><span class="k-census">Census Returns</span></div>
-</div>
-<div class="wrap">
-  <div class="controls"><input type="search" id="searchInput" class="search-input" placeholder="Search townland or Irish placename" aria-label="Search townlands"></div>
+<button type="button" class="pill" id="seelist" aria-expanded="false" aria-controls="listpanel">See list</button>
+<div class="key" aria-label="Map key"><span class="k-study">Townland Study</span><span class="k-census">Census Returns</span></div>
+<div id="listpanel" class="off" role="dialog" aria-label="List of townlands" hidden>
+  <div class="panelhead"><div><h2 style="display:inline">Townland Index</h2><span class="count">__COUNT__ Records</span></div><button type="button" class="pill" id="closelist">Close</button></div>
+  <input type="search" id="searchInput" class="search-input" placeholder="Search townland or Irish placename" aria-label="Search townlands">
   <div id="noResults" class="no-results">No townlands match your search.</div>
-  <section>
-    <div class="sechead"><h2>Townland Index</h2><span class="count">__COUNT__ Records</span></div>
+  <div class="scroller">
     <div class="grid" id="townlandGrid">
 __CARDS__    </div>
-  </section>
-  <footer>
-    <p>__FOOTER__</p>
-    <p>Imagery: Esri, Maxar, Earthstar Geographics.</p>
-  </footer>
+  </div>
+  <div class="panelfoot"><p>__FOOTER__</p><p>Imagery: Esri, Maxar, Earthstar Geographics.</p></div>
 </div>
+<div id="fade"></div>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
 (function(){
   var cards=[].slice.call(document.querySelectorAll('.townland-card'));
   var input=document.getElementById('searchInput'), none=document.getElementById('noResults');
-  var markers={}, group=null;
+  var panel=document.getElementById('listpanel'), openBtn=document.getElementById('seelist'), closeBtn=document.getElementById('closelist');
+  var markers={}, group=null, map=null, leaving=false;
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches;
   var FILL={study:'#EBC94B',census:'#7FAEA5',record:'#FBFCFA'};
+  var KEY='dt-view';
+
+  /* the list lives behind a button. Without the map library it opens at once, so the page still works. */
+  function showList(on){
+    if(on){ panel.hidden=false; panel.offsetWidth; panel.classList.remove('off'); openBtn.setAttribute('aria-expanded','true'); input.focus({preventScroll:true}); }
+    else { panel.classList.add('off'); openBtn.setAttribute('aria-expanded','false'); setTimeout(function(){ if(panel.classList.contains('off')) panel.hidden=true; },reduce?0:360); openBtn.focus({preventScroll:true}); }
+  }
+  openBtn.addEventListener('click',function(){showList(panel.hidden||panel.classList.contains('off'))});
+  closeBtn.addEventListener('click',function(){showList(false)});
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&!panel.hidden) showList(false) });
+
+  /* leaving for a documentary: centre on the townland at the current zoom, hand that view over, then go. The
+     documentary starts from exactly this view and zooms in, so the two pages read as one movement. */
+  function leave(lat,lng,href){
+    if(leaving) return; leaving=true;
+    function go(){
+      try{ sessionStorage.setItem(KEY,JSON.stringify({lat:lat,lng:lng,zoom:map?map.getZoom():null,t:Date.now()})) }catch(e){}
+      window.location.href=href;
+    }
+    if(!map||reduce){ go(); return }
+    if(!panel.hidden) panel.classList.add('off');
+    map.once('moveend',function(){ setTimeout(go,60) });
+    map.panTo([lat,lng],{animate:true,duration:.7,easeLinearity:.4});
+    setTimeout(go,1500);
+  }
+  cards.forEach(function(card){
+    var main=card.querySelector('a.pill.main');
+    if(!main||!card.dataset.lat) return;
+    [main,card.querySelector('a.card-en')].forEach(function(a){
+      a.addEventListener('click',function(ev){ if(ev.metaKey||ev.ctrlKey||ev.shiftKey||ev.button) return; ev.preventDefault(); leave(parseFloat(card.dataset.lat),parseFloat(card.dataset.lng),a.getAttribute('href')) });
+    });
+  });
+
   if(typeof L!=='undefined'){
     var data=__GEOJSON__;
-    var map=L.map('map-container',{preferCanvas:true,zoomControl:true}).setView([54.665,-8.03],11);
+    map=L.map('map-container',{preferCanvas:true,zoomControl:false,zoomSnap:0.25,attributionControl:true});
+    map.setView([54.665,-8.03],11);
     L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{maxZoom:18,maxNativeZoom:17,attribution:'Imagery: Esri, Maxar, Earthstar Geographics'}).addTo(map);
     group=L.featureGroup().addTo(map);
     data.features.forEach(function(f){
       var p=f.properties, c=f.geometry.coordinates;
-      var m=L.circleMarker([c[1],c[0]],{radius:p.doc?8:6,fillColor:FILL[p.kind]||FILL.record,color:'#1D2F33',weight:p.doc?3:2,fillOpacity:.95});
+      var m=L.circleMarker([c[1],c[0]],{radius:p.doc?9:7,fillColor:FILL[p.kind]||FILL.record,color:'#1D2F33',weight:p.doc?3:2,fillOpacity:.95});
       m.bindTooltip(p.name_ga?p.name+' ('+p.name_ga+')':p.name,{direction:'top',offset:[0,-6],className:'townland-label'});
-      m.on('click',function(){window.location.href=p.href;});
+      m.on('click',function(){ if(p.doc) leave(c[1],c[0],p.href); else window.location.href=p.href; });
       m.addTo(group); markers[p.name.toLowerCase()]=m;
     });
-    if(data.features.length>1){ map.fitBounds(group.getBounds().pad(.05)); }
-  }
+    if(data.features.length>1){ map.fitBounds(group.getBounds().pad(.08)); }
+  } else { showList(true); }
+
   input.addEventListener('input',function(e){
     var q=e.target.value.toLowerCase().trim(), shown=0;
     cards.forEach(function(card){
@@ -119,6 +158,7 @@ __CARDS__    </div>
     });
     none.style.display=(shown===0&&q!=='')?'block':'none';
   });
+  window.addEventListener('pageshow',function(e){ if(e.persisted) leaving=false });
 })();
 </script>
 </body>

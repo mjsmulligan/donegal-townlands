@@ -45,6 +45,18 @@ class IndexTests(unittest.TestCase):
         self.assertIn('Newsreader', TEMPLATE)
         self.assertIn('Instrument Sans', TEMPLATE)
 
+    def test_map_is_primary_and_list_is_behind_a_button(self):
+        self.assertIn('id="seelist"', TEMPLATE)
+        self.assertIn('id="listpanel"', TEMPLATE)
+        self.assertIn('class="off" role="dialog" aria-label="List of townlands" hidden', TEMPLATE)
+        self.assertIn('#map-container{position:fixed;inset:0', TEMPLATE)
+
+    def test_index_and_documentary_share_the_view_handoff(self):
+        doc = (build.ROOT / 'engine' / 'documentary.html').read_text(encoding='utf-8')
+        self.assertIn("var KEY='dt-view'", TEMPLATE)
+        self.assertIn("sessionStorage.getItem('dt-view')", doc)
+        self.assertNotIn('m.setView(ll0,3,', doc)           # no more fall from the globe
+
 
 if __name__ == '__main__':
     unittest.main()
