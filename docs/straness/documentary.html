@@ -237,20 +237,35 @@ var D={"schema":1,"townland":"Straness","slug":"straness","generated_by":"donega
     bmap.setView(ll0,16,{animate:false});
     return bmap;
   }
+  /* The opening continues the index map. The index hands over the view it was showing (the townland centred, at
+     its zoom) through sessionStorage; the opening starts there and zooms in, so looking at every townland and
+     looking at this one is one movement. With no handoff (a direct link, a replay, a refresh) it starts from the
+     same wide Donegal view the index opens on. */
+  var HOME_ZOOM=11, HAND=null;
+  try{
+    var raw=sessionStorage.getItem('dt-view'); sessionStorage.removeItem('dt-view');
+    var h=raw&&JSON.parse(raw);
+    if(h&&typeof h.zoom==='number'&&isFinite(h.zoom)&&Date.now()-h.t<120000) HAND=h;
+  }catch(e){}
+  function startZoom(){
+    var z=HAND?HAND.zoom:HOME_ZOOM;
+    return Math.max(5,Math.min(z,14));
+  }
   function intro(asked){
     if(!hasMap||(reduce&&!asked)) return;
     var m=backdrop(), box=$('intro'), me=++run, over=false;
+    var z0=startZoom(), secs=Math.max(3,Math.min(6,2+(16-z0)*0.6));
     document.body.classList.add('introing'); box.classList.remove('bgmode'); $('iname').classList.remove('on');
     $('iname').textContent=here.name||D.townland||'';
-    m.invalidateSize({animate:false}); m.setView(ll0,3,{animate:false});
+    m.invalidateSize({animate:false}); m.setView(ll0,z0,{animate:false});
     function end(){
       if(over||me!==run) return; over=true;
       try{m.stop()}catch(e){} m.setView(ll0,16,{animate:false});
       box.classList.add('bgmode'); document.body.classList.remove('introing');
     }
-    setTimeout(function(){ if(me!==run) return; m.flyTo(ll0,16,{duration:9}); m.once('moveend',function(){setTimeout(end,900)}) },700);
-    setTimeout(function(){ if(me===run) $('iname').classList.add('on')},7600);
-    setTimeout(end,12500);
+    setTimeout(function(){ if(me!==run) return; m.flyTo(ll0,16,{duration:secs}); m.once('moveend',function(){setTimeout(end,900)}) },250);
+    setTimeout(function(){ if(me===run) $('iname').classList.add('on')},Math.round((secs-1.2)*1000));
+    setTimeout(end,Math.round((secs+4)*1000));
     box.onclick=end; $('iskip').onclick=end;
   }
 

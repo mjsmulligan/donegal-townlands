@@ -210,4 +210,9 @@ The user also asked for `Edw.` to be added to the normalised given-name rules. `
 ## 2026-11-22: Cases with no records are not pinned on the index map (the user)
 
 On reviewing the restyled index, the user decided that townlands without records (state Townland Record: a Logainm place record only) should not be shown on the map. They keep their cards in the list and their walk pages. The map key no longer lists Townland Record. This narrows RO-13, which said the map shows all cases.
+
+
+## 2026-11-22: The index is a full bleed map and the opening continues it (the user)
+
+The user asked for the index to use the same full bleed satellite view as the townland pages. The map is now the primary view and the cards sit behind a "See list" button. Choosing a townland with a documentary recentres the map on it at the current zoom, then the documentary opens at that same centre and zoom and flies in, so the step from all the townlands to one is a single movement. This replaces the fall from the globe. The documentary reads the handoff from `sessionStorage` (`dt-view`, valid for two minutes); with none (a direct link, a refresh, Replay) it starts from the wide Donegal view the index opens on. The opening is shorter (3 to 6 seconds, set by the zoom distance, where the fall was nine), which also eases Q6. The user will pan and zoom the index map themselves, and carrying that view across, is left for later.
 \n
