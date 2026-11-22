@@ -355,6 +355,7 @@ INDEX_TAGS = {'ready': 'Townland Study', 'partial': 'Census Returns', 'empty': '
 INDEX_FOOTER = 'Placename data sourced from Logainm (Government of Ireland) & historical cartographic surveys. ' + LOGAINM_CREDIT
 BOUNDARY_FILE = ROOT / 'data' / 'processed' / 'places' / 'townland_boundaries.geojson'
 BOUNDARY_CREDIT = 'Townland boundaries \u00a9 Tailte \u00c9ireann, CC BY 4.0'
+DED_FILE = ROOT / 'data' / 'processed' / 'places' / 'ded_boundaries.geojson'
 
 
 def load_outlines():
@@ -366,14 +367,27 @@ def load_outlines():
     return {str(f['properties']['logainm_id']): f['geometry'] for f in gj.get('features', []) if f.get('geometry')}
 
 
+def load_ded_outlines():
+    """DED outlines from tools/build_ded_boundaries.py, as a list of GeoJSON features (empty when the file is absent)."""
+    if not DED_FILE.is_file():
+        return []
+    gj = json.loads(DED_FILE.read_text(encoding='utf-8'))
+    return [{'type': 'Feature',
+             'properties': {'ded_id': f['properties']['ded_id'], 'name': f['properties']['name_en'],
+                            'name_ga': f['properties'].get('name_ga', ''), 'townlands': f['properties']['townlands']},
+             'geometry': f['geometry']} for f in gj.get('features', []) if f.get('geometry')]
+
+
 KIND = {'ready': 'study', 'partial': 'census', 'empty': 'record'}
 
 
-def index_page(entries, template):
+def index_page(entries, template, deds=None):
     """The index page: a satellite map and a card for each case, from engine/index.html. entries are dicts with
     slug, name, state, name_ga, lat, lng and doc (True when docs/<slug>/documentary.html exists). A case with no
     coordinates, or with no records (state empty, a Logainm place record only), gets a card and no map pin. A case with a documentary opens it first and keeps the walk as a
-    second link (RO-12, RO-14); a case without one opens the walk as before."""
+    second link (RO-12, RO-14); a case without one opens the walk as before. deds is a list of DED outline features:
+    with them the map opens on the DEDs and shows the townlands once the view is close enough (DECISIONS.md,
+    2026-11-22); without them it shows every townland at once."""
     entries = sorted(entries, key=lambda e: e['name'].casefold())
     cards = []
     for e in entries:
@@ -400,14 +414,16 @@ def index_page(entries, template):
         if not (e['lat'] and e['lng']) or e['state'] == 'empty':
             continue
         props = {'name': e['name'], 'name_ga': e['name_ga'], 'slug': e['slug'], 'kind': KIND[e['state']],
-                 'doc': bool(e.get('doc')),
+                 'doc': bool(e.get('doc')), 'ded': str(e.get('ded', '')),
                  'href': './%s/documentary.html' % e['slug'] if e.get('doc') else './%s/' % e['slug']}
         if e.get('outline'):
             props['outline'] = e['outline']          # drawn instead of the dot; the point stays as the centre
         features.append({'type': 'Feature', 'properties': props,
                          'geometry': {'type': 'Point', 'coordinates': [float(e['lng']), float(e['lat'])]}})
     collection = {'type': 'FeatureCollection', 'features': features}
-    if any(f['properties'].get('outline') for f in features):
+    if deds:
+        collection['deds'] = deds
+    if deds or any(f['properties'].get('outline') for f in features):
         collection['attribution'] = BOUNDARY_CREDIT
     geo = json.dumps(collection, ensure_ascii=False).replace('</', '<\\/')
     return (template.replace('__MARK__', INDEX_MARK).replace('__COUNT__', str(len(entries)))
@@ -417,7 +433,7 @@ def index_page(entries, template):
 
 def write_index(entries):
     """Rewrite docs/index.html from engine/index.html. Never edit docs/index.html by hand."""
-    page = index_page(entries, (ROOT / 'engine' / 'index.html').read_text(encoding='utf-8'))
+    page = index_page(entries, (ROOT / 'engine' / 'index.html').read_text(encoding='utf-8'), load_ded_outlines())
     (ROOT / 'docs' / 'index.html').write_text(page, encoding='utf-8')
     states = [e['state'] for e in entries]
     print('wrote docs/index.html:', len(entries), 'places on the map index (%d studies, %d with census, %d place records)'
@@ -441,7 +457,7 @@ def index_entries():
             continue
         entries.append({'slug': base.name, 'name': label, 'state': state, 'name_ga': place.get('name_ga', ''),
                         'lat': place.get('latitude', ''), 'lng': place.get('longitude', ''),
-                        'outline': outlines.get(str(place.get('logainm_id', ''))),
+                        'outline': outlines.get(str(place.get('logainm_id', ''))), 'ded': place.get('ded_id', ''),
                         'doc': (ROOT / 'docs' / base.name / 'documentary.html').is_file()})
     return entries
 
