@@ -195,3 +195,13 @@ The user also asked for `Edw.` to be added to the normalised given-name rules. `
 
 `engine/index.html` now matches the documentary: Esri satellite imagery with the credit in the footer and on the map, the light palette with no brown, Newsreader and Instrument Sans. A card for a case with a documentary opens it first and offers "Gallery walk" as a second link, so the walk stays reachable until DP9. A card for any other case opens the walk as before. The documentary link is added by `tools/build.py` when `docs/<slug>/documentary.html` exists, so the index follows the rollout with no list to maintain. The imagery terms (Q1) are still open.
 
+## 2026-11-22: Rollout decisions Q1 to Q7 (WP-R6, the user)
+
+- **Q1 imagery.** Keep the Esri World Imagery tile URL and the credit as they are for now. The terms found (a free ArcGIS developer account, credit, no revenue, under 1 million tiles a month) do not clearly cover a public site using the URL with no account. Revisit before the site is publicised more widely; the options are an Esri key or Tailte Eireann. The tile URL is one line in `engine/documentary.html` and `engine/index.html`.
+- **Q2 parish photographs.** One folder and one media sheet per parish, read by the generator for every case in that parish. Not yet built. St. Agatha's stays in Cullionboy's media folder until it is.
+- **Q3 baptisms.** Decided earlier (2026-11-22): the normalised register is used everywhere.
+- **Q4 Griffith's page image.** Not decided. The user is still collecting the images.
+- **Q5 thin cases.** Deferred. Nothing is done for the ten cases with no story; the user may take another approach.
+- **Q6 opening length.** Full fall on the first visit in a browser, a brief one after that, and a Replay button always available. Not yet built.
+- **Q7 mobile data.** Leave as is: no tile cap and no notice.
+
