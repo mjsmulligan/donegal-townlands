@@ -37,7 +37,7 @@
    },
    "sort": "1873-01-15",
    "title": "Baptism of Mary Gallagher",
-   "text": "Father: Edw. Gallagher. Mother: Brigid Devlin. Sponsors: Jas. Devlin and Margt. Gallagher.",
+   "text": "Father: Edw. Gallagher. Mother: Brigid Devlin. Sponsors: James Devlin and Margaret Gallagher.",
    "people": [
     {
      "name": "Mary",
@@ -52,11 +52,11 @@
      "role": "mother"
     },
     {
-     "name": "Jas. Devlin",
+     "name": "James Devlin",
      "role": "sponsor"
     },
     {
-     "name": "Margt. Gallagher",
+     "name": "Margaret Gallagher",
      "role": "sponsor"
     }
    ],
@@ -82,26 +82,26 @@
    },
    "sort": "1874-01-29",
    "title": "Baptism of Anne Hone",
-   "text": "Father: Patt. Hone. Mother: Margt. Magy. Sponsors: Patt. Breslan and Cath. Breslan.",
+   "text": "Father: Patrick Hone. Mother: Margaret Magy. Sponsors: Patrick Breslin and Catherine Breslin.",
    "people": [
     {
      "name": "Anne",
      "role": "child baptised"
     },
     {
-     "name": "Patt. Hone",
+     "name": "Patrick Hone",
      "role": "father"
     },
     {
-     "name": "Margt. Magy",
+     "name": "Margaret Magy",
      "role": "mother"
     },
     {
-     "name": "Patt. Breslan",
+     "name": "Patrick Breslin",
      "role": "sponsor"
     },
     {
-     "name": "Cath. Breslan",
+     "name": "Catherine Breslin",
      "role": "sponsor"
     }
    ],
@@ -127,26 +127,26 @@
    },
    "sort": "1874-02-15",
    "title": "Baptism of John Flanaghan",
-   "text": "Father: Mich. Flanaghan. Mother: Margt. Breen. Sponsors: Connell Dealin and Sarah Dealin.",
+   "text": "Father: Michael Flanaghan. Mother: Margaret Breen. Sponsors: Connell Devlin and Sarah Devlin.",
    "people": [
     {
      "name": "John",
      "role": "child baptised"
     },
     {
-     "name": "Mich. Flanaghan",
+     "name": "Michael Flanaghan",
      "role": "father"
     },
     {
-     "name": "Margt. Breen",
+     "name": "Margaret Breen",
      "role": "mother"
     },
     {
-     "name": "Connell Dealin",
+     "name": "Connell Devlin",
      "role": "sponsor"
     },
     {
-     "name": "Sarah Dealin",
+     "name": "Sarah Devlin",
      "role": "sponsor"
     }
    ],
@@ -216,15 +216,15 @@
     "iso": "1875-07-06"
    },
    "sort": "1875-07-06",
-   "title": "Baptism of Catherine Dougan",
-   "text": "Father: Patk. Dougan. Mother: Unity Hilly. Sponsors: John Howe and Ellen Flanagan.",
+   "title": "Baptism of Catherine Doogan",
+   "text": "Father: Patrick Doogan. Mother: Unity Hilly. Sponsors: John Howe and Ellen Flanagan.",
    "people": [
     {
      "name": "Catherine",
      "role": "child baptised"
     },
     {
-     "name": "Patk. Dougan",
+     "name": "Patrick Doogan",
      "role": "father"
     },
     {
@@ -262,7 +262,7 @@
    },
    "sort": "1875-07-30",
    "title": "Baptism of Patrick O'Donnell",
-   "text": "Father: Connell O'Donnell. Mother: Margt. Flanaghan. Sponsors: Joseph O'Donnell and Brigid O'Donnell.",
+   "text": "Father: Connell O'Donnell. Mother: Margaret Flanaghan. Sponsors: Joseph O'Donnell and Brigid O'Donnell.",
    "people": [
     {
      "name": "Patrick",
@@ -273,7 +273,7 @@
      "role": "father"
     },
     {
-     "name": "Margt. Flanaghan",
+     "name": "Margaret Flanaghan",
      "role": "mother"
     },
     {
@@ -307,14 +307,14 @@
    },
    "sort": "1875-08-01",
    "title": "Baptism of Edward Gallagher",
-   "text": "Father: Edwd. Gallagher. Mother: Biddy Devlin. Sponsors: James Cassidy and Biddy Cassidy.",
+   "text": "Father: Edward Gallagher. Mother: Biddy Devlin. Sponsors: James Cassidy and Biddy Cassidy.",
    "people": [
     {
      "name": "Edward",
      "role": "child baptised"
     },
     {
-     "name": "Edwd. Gallagher",
+     "name": "Edward Gallagher",
      "role": "father"
     },
     {

@@ -12,14 +12,14 @@
    },
    "sort": "1873-03-27",
    "title": "Baptism of Peter Slevin",
-   "text": "Father: Ed. Slevin. Mother: Susan Dunnion. Sponsors: Wm. Thomas and Brigid Brisland.",
+   "text": "Father: Edward Slevin. Mother: Susan Dunnion. Sponsors: William Thomas and Brigid Breslin.",
    "people": [
     {
      "name": "Peter",
      "role": "child baptised"
     },
     {
-     "name": "Ed. Slevin",
+     "name": "Edward Slevin",
      "role": "father"
     },
     {
@@ -27,11 +27,11 @@
      "role": "mother"
     },
     {
-     "name": "Wm. Thomas",
+     "name": "William Thomas",
      "role": "sponsor"
     },
     {
-     "name": "Brigid Brisland",
+     "name": "Brigid Breslin",
      "role": "sponsor"
     }
    ],
@@ -57,7 +57,7 @@
    },
    "sort": "1873-08-24",
    "title": "Baptism of Ellen Boyle",
-   "text": "Father: Owen Boyle. Mother: Ellen Martin. Sponsors: Wm. Boyle and Cath. Boyle.",
+   "text": "Father: Owen Boyle. Mother: Ellen Martin. Sponsors: William Boyle and Catherine Boyle.",
    "people": [
     {
      "name": "Ellen",
@@ -72,11 +72,11 @@
      "role": "mother"
     },
     {
-     "name": "Wm. Boyle",
+     "name": "William Boyle",
      "role": "sponsor"
     },
     {
-     "name": "Cath. Boyle",
+     "name": "Catherine Boyle",
      "role": "sponsor"
     }
    ],
@@ -102,7 +102,7 @@
    },
    "sort": "1874-02-22",
    "title": "Baptism of Denis Martin",
-   "text": "Father: Denis Martin. Mother: Anne Timony. Sponsors: John Martin and Anne Martin.",
+   "text": "Father: Denis Martin. Mother: Anne Timoney. Sponsors: John Martin and Anne Martin.",
    "people": [
     {
      "name": "Denis",
@@ -113,7 +113,7 @@
      "role": "father"
     },
     {
-     "name": "Anne Timony",
+     "name": "Anne Timoney",
      "role": "mother"
     },
     {
@@ -146,27 +146,27 @@
     "iso": "1874-04-26"
    },
    "sort": "1874-04-26",
-   "title": "Baptism of John Timmony",
-   "text": "Father: Paddy Timmony. Mother: Margt. Martin. Sponsors: Denis Timmony and Anne Timmony.",
+   "title": "Baptism of John Timoney",
+   "text": "Father: Paddy Timoney. Mother: Margaret Martin. Sponsors: Denis Timoney and Anne Timoney.",
    "people": [
     {
      "name": "John",
      "role": "child baptised"
     },
     {
-     "name": "Paddy Timmony",
+     "name": "Paddy Timoney",
      "role": "father"
     },
     {
-     "name": "Margt. Martin",
+     "name": "Margaret Martin",
      "role": "mother"
     },
     {
-     "name": "Denis Timmony",
+     "name": "Denis Timoney",
      "role": "sponsor"
     },
     {
-     "name": "Anne Timmony",
+     "name": "Anne Timoney",
      "role": "sponsor"
     }
    ],
@@ -192,7 +192,7 @@
    },
    "sort": "1874-05-03",
    "title": "Baptism of Bernard Slevin",
-   "text": "Father: Bryan Slevin. Mother: Margt. Clarke. Sponsors: Tully Slevin and Cath. Slevin.",
+   "text": "Father: Bryan Slevin. Mother: Margaret Clarke. Sponsors: Tully Slevin and Catherine Slevin.",
    "people": [
     {
      "name": "Bernard",
@@ -203,7 +203,7 @@
      "role": "father"
     },
     {
-     "name": "Margt. Clarke",
+     "name": "Margaret Clarke",
      "role": "mother"
     },
     {
@@ -211,7 +211,7 @@
      "role": "sponsor"
     },
     {
-     "name": "Cath. Slevin",
+     "name": "Catherine Slevin",
      "role": "sponsor"
     }
    ],
@@ -237,26 +237,26 @@
    },
    "sort": "1875-06-08",
    "title": "Baptism of Mary Anne Slevin",
-   "text": "Father: Ed. Slevin. Mother: Susan Dunion. Sponsors: Patk. Timony and Anne Timony.",
+   "text": "Father: Edward Slevin. Mother: Susan Dunnion. Sponsors: Patrick Timoney and Anne Timoney.",
    "people": [
     {
      "name": "Mary Anne",
      "role": "child baptised"
     },
     {
-     "name": "Ed. Slevin",
+     "name": "Edward Slevin",
      "role": "father"
     },
     {
-     "name": "Susan Dunion",
+     "name": "Susan Dunnion",
      "role": "mother"
     },
     {
-     "name": "Patk. Timony",
+     "name": "Patrick Timoney",
      "role": "sponsor"
     },
     {
-     "name": "Anne Timony",
+     "name": "Anne Timoney",
      "role": "sponsor"
     }
    ],

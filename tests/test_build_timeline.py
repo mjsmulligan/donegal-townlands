@@ -26,14 +26,43 @@ def row(row_id, reading, status='agreed', comment='', rtype='baptism'):
     return r
 
 
-def events_from(rows):
+NCOLS = ['row_id', 'page', 'record_no', 'date_iso', 'child_forename', 'father_forename', 'father_surname',
+         'mother_forename', 'mother_surname', 'townland', 'townland_status', 'sponsor1', 'sponsor2', 'sponsor3',
+         'sponsor4', 'priest', 'raw_status', 'confidence', 'rules_applied']
+
+
+def norm(r, townland=None, status='verified', **over):
+    """The normalised row for a raw test row, read from the raw string the way the real rules would."""
+    parts = [x.strip() for x in r['resolved_reading'].split(' | ')] if r['resolved_reading'] else []
+    n = {c: '' for c in NCOLS}
+    n.update(row_id=r['row_id'], page='10', record_no='1', raw_status=r['status'])
+    if len(parts) >= 6:
+        day = bt.parse_date(parts[0])
+        words = lambda t: t[2:].strip().rsplit(' ', 1) if t[2:].strip() else ['', '']
+        f, m = words(parts[2]), words(parts[3])
+        n.update(date_iso=day.isoformat() if day else '1875-06', child_forename=parts[1],
+                 father_forename=f[0] if len(f) > 1 else '', father_surname=f[-1],
+                 mother_forename=m[0] if len(m) > 1 else '', mother_surname=m[-1])
+        for i, sp in enumerate([x.strip() for x in parts[5][2:].split(';') if x.strip()][:4], 1):
+            n['sponsor%d' % i] = sp
+        place = parts[4].rstrip('?[] ')
+        n.update(townland=place if townland is None else townland, townland_status=status if (place or townland) else '')
+    n.update(over)
+    return n
+
+
+def events_from(rows, norm_rows=None):
     with tempfile.TemporaryDirectory() as tmp:
-        path = Path(tmp) / 'b.csv'
+        path, npath = Path(tmp) / 'b.csv', Path(tmp) / 'n.csv'
         with path.open('w', encoding='utf-8', newline='') as h:
             w = csv.DictWriter(h, fieldnames=COLS)
             w.writeheader()
             w.writerows(rows)
-        return bt.baptism_events('Cullionboy', TODAY, register=path)
+        with npath.open('w', encoding='utf-8', newline='') as h:
+            w = csv.DictWriter(h, fieldnames=NCOLS)
+            w.writeheader()
+            w.writerows(norm_rows if norm_rows is not None else [norm(r) for r in rows if r['record_type'] == 'baptism'])
+        return bt.baptism_events('Cullionboy', TODAY, register=path, normalised=npath)
 
 
 GOOD = '11 Jun 1875 | Joseph | F: Thomas Kelly | M: Margaret Carr | Cullionboy | S: James Hone; Bridgt. Harvey | J. W.'
@@ -59,7 +88,8 @@ class BaptismTests(unittest.TestCase):
         self.assertEqual(skipped, [])
 
     def test_disputed_reading_is_left_out_and_reported(self):
-        events, skipped = events_from([row('D', GOOD, status='disputed')])
+        r = row('D', GOOD, status='disputed')
+        events, skipped = events_from([r], [norm(row('D', GOOD), raw_status='disputed')])
         self.assertEqual(events, [])
         self.assertEqual(skipped[0][0], 'D')
 
@@ -115,6 +145,39 @@ class BaptismTests(unittest.TestCase):
         events, skipped = events_from([row('X', GOOD.replace('11 Jun 1875', 'Jun 1875'))])
         self.assertEqual(events, [])
         self.assertIn('no exact date', skipped[0][1])
+
+class NormalisedBaptismTests(unittest.TestCase):
+    """DECISIONS.md, 2026-11-21: baptisms are attached by the normalised place and shown with the
+    normalised spellings."""
+    WRITTEN = '11 Jun 1875 | Margt. | F: Thomas Kelly | M: Margaret Carr | Cullyboy | S: James Hone | J. W.'
+
+    def run_case(self, status, townland='Cullionboy'):
+        r = row('V', self.WRITTEN)
+        return events_from([r], [norm(r, townland=townland, status=status, child_forename='Margaret')])
+
+    def test_a_variant_spelling_resolves_to_the_townland_and_says_so(self):
+        events, _ = self.run_case('dictionary')
+        self.assertEqual(len(events), 1)
+        self.assertEqual(events[0]['association']['basis'], 'page_place')
+        self.assertIn('writes the place as Cullyboy, read as Cullionboy', events[0]['association']['label'])
+        self.assertEqual(events[0]['recorded'], self.WRITTEN)
+
+    def test_normalised_names_are_shown_not_the_abbreviation(self):
+        events, _ = self.run_case('verified')
+        self.assertEqual(events[0]['title'], 'Baptism of Margaret Kelly')
+        self.assertEqual(events[0]['people'][0]['name'], 'Margaret')
+
+    def test_a_probable_place_is_kept_and_doubtful(self):
+        events, _ = self.run_case('probable')
+        self.assertEqual(events[0]['association']['basis'], 'page_place_doubtful')
+
+    def test_unresolved_ambiguous_and_unmapped_places_are_never_attributed(self):
+        for status in ('ambiguous', 'unresolved', 'unmapped', 'institution', ''):
+            events, skipped = self.run_case(status)
+            self.assertEqual((events, skipped), ([], []), status)
+
+    def test_a_place_resolved_to_another_townland_is_not_collected(self):
+        self.assertEqual(self.run_case('verified', townland='Clogher'), ([], []))
 
 
 class RealCaseTests(unittest.TestCase):
