@@ -8,9 +8,17 @@ repository file is read or written."""
 
 import datetime
 import json
+import tempfile
 import unittest
+from pathlib import Path
+from unittest import mock
 
 from tools import build_documentary as bd
+
+try:
+    from playwright.sync_api import sync_playwright
+except ImportError:  # pragma: no cover
+    sync_playwright = None
 
 TODAY = datetime.date(2026, 11, 20)
 PLACE = {'logainm_id': 13967, 'latitude': 54.68, 'longitude': -7.97, 'name_ga': 'Cuilleann Buí'}
@@ -262,6 +270,207 @@ class TimingTests(unittest.TestCase):
 
     def test_duration_follows_word_count(self):
         self.assertEqual(bd.duration_ms(' '.join(['w'] * 20), False), 8000)
+
+
+class HardeningTests(unittest.TestCase):
+    """docs/DOCUMENTARY_ROLLOUT_SPEC.md, RO-01 to RO-05."""
+
+    def inputs(self, events, place=PLACE):
+        return {'found': {'rows': [], 'errors': []}, 'notes': [], 'feed': {'skipped': [], 'events': events},
+                'args': ('Cullionboy', 'cullionboy', place, events, {}, [], TODAY, [], [], [])}
+
+    def run_build(self, events, place=PLACE, only_story=False, collect=None):
+        written = []
+        with tempfile.TemporaryDirectory() as tmp, mock.patch.object(bd, 'ROOT', Path(tmp)), \
+                mock.patch.object(bd, 'collect', collect or (lambda n, t: (self.inputs(events, place), []))), \
+                mock.patch.object(bd, 'write_page', mock.Mock(return_value=Path(tmp) / 'docs' / 'x.html')) as page:
+            code = bd.build_documentary('cullionboy', TODAY, only_story=only_story, written=written)
+            return code, written, page, (Path(tmp) / 'townlands' / 'cullionboy' / 'records' / 'documentary.json').is_file()
+
+    def test_a_failure_is_printed_and_never_raised(self):  # RO-01
+        def boom(n, t):
+            raise KeyError('x')
+        code, written, _, _ = self.run_build([], collect=boom)
+        self.assertEqual((code, written), (1, []))
+
+    def test_no_coordinates_builds_the_data_but_no_page(self):  # RO-01
+        code, written, page, wrote_json = self.run_build(FULL, place={'logainm_id': 1})
+        self.assertEqual(code, 0)
+        self.assertTrue(wrote_json)
+        page.assert_not_called()
+        self.assertEqual(len(written), 1)
+
+    def test_with_coordinates_the_page_is_built(self):
+        code, written, page, _ = self.run_build(FULL)
+        page.assert_called_once()
+        self.assertEqual(len(written), 2)
+
+    def test_only_story_writes_nothing_for_a_thin_case(self):  # RO-05
+        code, written, page, wrote_json = self.run_build([census(1901, 93, 18)], only_story=True)
+        self.assertEqual((code, written, wrote_json), (0, [], False))
+        page.assert_not_called()
+
+    def test_only_story_still_writes_a_case_with_a_story(self):  # RO-05
+        code, written, _, wrote_json = self.run_build(FULL, only_story=True)
+        self.assertTrue(wrote_json)
+
+    def test_a_missing_case_is_reported_not_raised(self):  # RO-01
+        self.assertEqual(bd.build_documentary('no-such-townland', TODAY), 1)
+
+    def test_the_page_is_byte_identical_on_a_rebuild(self):  # RO-03
+        a, _ = build(FULL)
+        b, _ = build(list(reversed(FULL)))
+        self.assertEqual(bd.render_page(a, {'rows': []}), bd.render_page(b, {'rows': []}))
+        self.assertEqual(json.dumps(a, ensure_ascii=False, indent=1), json.dumps(b, ensure_ascii=False, indent=1))
+
+
+class CheckDocumentTests(unittest.TestCase):
+    """RO-04: the checks that tools/validate.py applies to every committed documentary.json."""
+
+    def good(self):
+        doc, _ = build(FULL)
+        return json.loads(json.dumps(doc))
+
+    def problems(self, doc, events=FULL):
+        return bd.check_document(doc, events)
+
+    def first(self, doc, kind):
+        return next(b for c in doc['chapters'] for b in c['beats'] if b['kind'] == kind)
+
+    def test_a_generated_document_passes(self):
+        self.assertEqual(self.problems(self.good()), [])
+
+    def test_wrong_schema_and_missing_keys(self):
+        doc = self.good()
+        doc['schema'] = 2
+        del doc['span']
+        got = self.problems(doc)
+        self.assertTrue(any('schema' in p for p in got))
+        self.assertIn('missing span', got)
+
+    def test_duplicate_ids(self):
+        doc = self.good()
+        doc['chapters'][-1]['beats'].append(dict(self.first(doc, 'census')))
+        self.assertTrue(any('duplicate beat id' in p for p in self.problems(doc)))
+
+    def test_evidence_that_does_not_exist(self):
+        doc = self.good()
+        self.first(doc, 'census')['evidence']['events'] = ['cullionboy:census:1999']
+        self.assertTrue(any('evidence event not found' in p for p in self.problems(doc)))
+
+    def test_a_dash_a_hedge_and_a_loose_number(self):
+        doc = self.good()
+        b = self.first(doc, 'census')
+        for caption, word in ((b['caption'] + ' ' + chr(0x2014), 'dash'), ('There were probably 93 people.', 'hedge'),
+                              ('There were 94 people in 1901.', 'not in the evidence')):
+            b['caption'] = caption
+            self.assertTrue(any(word in p for p in self.problems(doc)), word)
+
+    def test_possibly_only_on_a_possible_beat(self):
+        doc = self.good()
+        self.first(doc, 'census')['caption'] = 'In 1911, possibly 72 people lived in Cullionboy.'
+        self.assertTrue(any('not possible' in p for p in self.problems(doc)))
+
+    def test_beats_out_of_time_order(self):
+        doc = self.good()
+        doc['chapters'][0]['beats'], doc['chapters'][-1]['beats'] = doc['chapters'][-1]['beats'], doc['chapters'][0]['beats']
+        self.assertTrue(any('time order' in p for p in self.problems(doc)))
+
+    def test_an_empty_chapter(self):
+        doc = self.good()
+        doc['chapters'].append({'id': 'x:ch:y', 'title': 'Y', 'beats': []})
+        self.assertTrue(any('empty chapter' in p for p in self.problems(doc)))
+
+    def test_a_thin_case_is_title_and_note_only(self):  # RO-02
+        thin, _ = build([census(1901, 93, 18)])
+        self.assertEqual(self.problems(thin, [census(1901, 93, 18)]), [])
+        del thin['note']
+        self.assertTrue(any('needs its note' in p for p in self.problems(thin, [census(1901, 93, 18)])))
+        story = self.good()
+        self.assertTrue(any('only the title beat' in p for p in self.problems(story, [census(1901, 93, 18)])))
+
+
+class CensusShapeTests(unittest.TestCase):
+    """WP-R2: cases with few census years and cases with a very large population."""
+
+    def test_two_census_years_make_one_change_beat(self):
+        doc, _ = build([census(1911, 72, 16), census(1926, 79, 15)])
+        kinds = [b['kind'] for b in beats_of(doc)]
+        self.assertEqual(kinds.count('census'), 2)
+        self.assertEqual(kinds.count('change'), 1)
+        self.assertNotIn('note', doc)
+
+    def test_a_large_population_passes_every_check(self):
+        events = [census(1901, 148, 31), census(1911, 139, 29), census(1926, 147, 30)]
+        doc, _ = build(events)
+        self.assertEqual(bd.check_document(doc, events), [])
+        first = next(b for b in beats_of(doc) if b['kind'] == 'census')
+        self.assertIn('148', first['caption'])
+        self.assertEqual(first['counts'], {'people': 148, 'households': 31})
+        self.assertLessEqual(first['duration_ms'], bd.MAX_MS)
+
+
+@unittest.skipIf(sync_playwright is None, 'Playwright is not installed')
+class LargePopulationPlayerTests(unittest.TestCase):
+    def test_every_person_is_a_dot_and_the_card_stays_inside_the_screen(self):
+        events = [census(1901, 148, 31), census(1911, 139, 29), census(1926, 147, 30)]
+        doc, _ = build(events)
+        target = next(b for b in beats_of(doc) if b['kind'] == 'census')['id']
+        with tempfile.TemporaryDirectory() as tmp, sync_playwright() as pw:
+            f = Path(tmp) / 'documentary.html'
+            f.write_text(bd.render_page(doc, {'rows': []}), encoding='utf-8')
+            browser = pw.chromium.launch()
+            for width in (360, 375, 1440):
+                pg = browser.new_page(viewport={'width': width, 'height': 740})
+                pg.route('**/*', lambda r: r.abort() if r.request.url.startswith('http') else r.continue_())
+                pg.goto(f.as_uri() + '#beat=' + target)
+                pg.wait_for_timeout(500)
+                self.assertEqual(pg.locator('#dotgrid i').count(), 148, width)
+                self.assertLessEqual(pg.evaluate('document.documentElement.scrollWidth'), width, width)
+                pg.close()
+            browser.close()
+
+
+@unittest.skipIf(sync_playwright is None, 'Playwright is not installed')
+class ThinPlayerTests(unittest.TestCase):
+    """RO-02: for a case with no story the player shows the title card and the note and nothing to play."""
+
+    def page(self, doc):
+        errors = []
+        with tempfile.TemporaryDirectory() as tmp, sync_playwright() as pw:
+            f = Path(tmp) / 'documentary.html'
+            f.write_text(bd.render_page(doc, {'rows': []}), encoding='utf-8')
+            browser = pw.chromium.launch()
+            pg = browser.new_page(viewport={'width': 375, 'height': 700})
+            pg.on('pageerror', lambda e: errors.append(str(e)))
+            pg.route('**/*', lambda r: r.abort() if r.request.url.startswith('http') else r.continue_())
+            pg.goto(f.as_uri())
+            pg.wait_for_timeout(300)
+            seen = {'note': pg.locator('.card.cur .note').count(), 'caption': pg.locator('.card.cur .caption').inner_text(),
+                    'controls': pg.locator('.controls').is_visible(), 'ribbon': pg.locator('#ribbon').is_visible()}
+            browser.close()
+        return seen, errors
+
+    def test_a_thin_case_shows_the_note_and_no_controls(self):
+        doc, _ = build([census(1901, 93, 18)])
+        seen, errors = self.page(doc)
+        self.assertEqual(errors, [])
+        self.assertEqual(seen['note'], 1)
+        self.assertFalse(seen['controls'])
+        self.assertFalse(seen['ribbon'])
+
+    def test_a_case_with_no_events_at_all_shows_the_title(self):
+        doc, _ = build([])
+        seen, errors = self.page(doc)
+        self.assertEqual(errors, [])
+        self.assertIn('Cullionboy', seen['caption'])
+        self.assertEqual(seen['note'], 1)
+
+    def test_a_case_with_a_story_keeps_its_controls(self):
+        seen, errors = self.page(build(FULL)[0])
+        self.assertEqual(errors, [])
+        self.assertEqual(seen['note'], 0)
+        self.assertTrue(seen['controls'])
 
 
 if __name__ == '__main__':

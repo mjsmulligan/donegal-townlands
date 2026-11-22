@@ -8,6 +8,8 @@
 6. Surname variant reference: data/reference/surname_variants.csv (DECISIONS.md, 2026-11-05).
 7. Media: townlands/<name>/media/media.csv rows and files (docs/MEDIA_SPEC.md). Warnings
    are printed but do not fail. No 100/75/50 test is applied to media (DECISIONS.md, 2026-11-03).
+8. Documentaries: every committed townlands/<name>/records/documentary.json is checked for schema, unique
+   ids, evidence ids, dashes, hedge words and numbers (docs/DOCUMENTARY_ROLLOUT_SPEC.md, RO-04).
 Exit code 1 on any failure.
 """
 import csv
@@ -23,6 +25,7 @@ import given_names_reference
 import census_links
 import tree_census_links
 import gedcom_people
+import build_documentary
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 THIS = datetime.date.today().year
@@ -73,6 +76,8 @@ bad += given_names_reference.check()
 bad += census_links.check_decisions()
 # Family tree research on the pages (WP17): 100/75/50 applied again to every people.json.
 bad += gedcom_people.check_repo()
+
+bad += build_documentary.check_repo()
 
 media_errors, media_warnings, media_summary = media.check_repo(ROOT)
 bad += media_errors

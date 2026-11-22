@@ -117,3 +117,12 @@ Order: WP-R1, WP-R2, WP-R3, WP-R4, WP-R5, WP-R6. WP-R5 can start once WP-R3 has 
 - The sandbox cannot load Leaflet, tiles or Google Fonts. Test the player with a stub for the map library and screenshots with Playwright. The real look is only seen on the user's phone, so ask for a phone trial.
 - Work in small pull requests: report, generator hardening, sample pages, index restyle. Do not run `tools/build.py --all` casually.
 - Read these before starting: `docs/DOCUMENTARY_SPEC.md`, this file, `docs/MEDIA_SPEC.md`, `tools/build_documentary.py`, `tests/test_build_documentary.py`, `engine/documentary.html`, `engine/index.html`, `townlands/cullionboy/STATUS.md`.
+
+## 8. Progress
+
+| Package | Status |
+|---|---|
+| WP-R1 Survey and report | Done 2026-11-21 (pull request 108). Sample confirmed in section 3.1. |
+| Q3 baptism spellings | Decided 2026-11-22 (pull request 109): documentaries and timelines use the normalised register. |
+| WP-R2 Generator hardening | Done 2026-11-22. RO-01 never throws and builds no page without coordinates. RO-02 a case with no story is the opening, the title card and the note, and the player hides the ribbon and controls. RO-03 the page and the JSON are byte identical on a rebuild. RO-04 `tools/validate.py` checks every committed `documentary.json`. RO-05 `--all` writes only cases with a story and does not run `tools/build.py --all`. RO-06 `--all` writes the survey report with the files written. Tried once on the real repo and then discarded: 133 cases with a story, 10 without, all 133 pass the validator, 1.5 seconds. |
+| WP-R3 Generate the sample | Next. |
