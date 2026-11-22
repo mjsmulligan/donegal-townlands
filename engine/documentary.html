@@ -29,8 +29,9 @@ a{color:var(--ink);text-decoration-color:var(--hill);text-underline-offset:3px}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
 /* the backdrop is a satellite view of the townland, full bleed, under a pale wash. If the map cannot load, the first photograph or plain colour stands in. */
-.bg{position:fixed;inset:0;z-index:-1;background:transparent}
-.bg.photo{inset:-4%;background:var(--wall) center/cover no-repeat;animation:drift 70s ease-in-out infinite alternate}
+.bg{position:fixed;inset:0;z-index:-1;background:transparent;overflow:hidden}
+.bg.photo{background:var(--wall)}
+.bg.photo::before{content:"";position:absolute;inset:-4%;background:var(--photo) center/cover no-repeat;animation:drift 70s ease-in-out infinite alternate}
 .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(243,246,244,.50) 0%,rgba(243,246,244,.26) 40%,rgba(243,246,244,.70) 100%);transition:opacity 1s}
 .app.hero ~ .bg::after{opacity:.4}
 body.introing .app,body.introing .bg{opacity:0}
@@ -102,7 +103,7 @@ details p{margin:4px 0;overflow-wrap:anywhere}
 .foot{font-size:11px;color:var(--ink);flex:0 0 auto;text-align:center;background:rgba(251,252,250,.8);border-radius:999px;padding:1px 10px;align-self:center}
 
 /* the opening: a satellite view that falls from far above Ireland to the townland, then lifts away */
-#intro{position:fixed;inset:0;z-index:3000;background:#0e2a36}
+#intro{position:fixed;inset:0;z-index:3000;background:#0e2a36;overflow:hidden}
 #intro[hidden]{display:none}
 #intro.bgmode{z-index:-2;pointer-events:none;background:var(--wall)}
 #intro.bgmode .iname,#intro.bgmode .iskip,#intro.bgmode .leaflet-control-container{display:none}
@@ -132,7 +133,7 @@ details p{margin:4px 0;overflow-wrap:anywhere}
   .app.hero .cards,.app.hero .ribbon,.app.hero .controls,.app.hero .foot{grid-column:1;justify-self:center;width:min(560px,100%)}
 }
 @media (prefers-reduced-motion:reduce){
-  .bg{animation:none}.track,.card,.card.cur,.stage,.stop,.photo,.photo figure>*,.dots,.dotgrid i,#intro,.iname,.app,.bg{transition:none}.bg.photo,#intro.bgmode #imap{animation:none}
+  .bg{animation:none}.track,.card,.card.cur,.stage,.stop,.photo,.photo figure>*,.dots,.dotgrid i,#intro,.iname,.app,.bg{transition:none}.bg.photo::before,#intro.bgmode #imap{animation:none}
 }
 </style>
 </head>
@@ -178,7 +179,7 @@ var D=__DATA__;
   var first=beats[0]&&beats[0].media&&beats[0].media[0], here=beats[0].place||{}, ll0=[here.lat,here.lon], hasMap=!!(window.L&&ll0[0]);
   if(!hasMap){
     $('foot').hidden=true;
-    if(first){$('bg').classList.add('photo'); $('bg').style.backgroundImage='url("media/'+first.replace(/"/g,'%22')+'")'}
+    if(first){$('bg').classList.add('photo'); $('bg').style.setProperty('--photo','url("media/'+first.replace(/"/g,'%22')+'")')}
   }
 
   /* the ribbon: a stop for every beat, spaced half by time and half evenly so close moments stay apart */
@@ -309,7 +310,7 @@ var D=__DATA__;
   }
 
   function setMode(){
-    $('play').textContent=playing?'Pause':(i>=N-1&&remaining<=0?'Play again':(started?'Resume':'Play'));
+    $('play').textContent=reduce?'Step through':(playing?'Pause':(i>=N-1&&remaining<=0?'Play again':(started?'Resume':'Play')));
     $('play').setAttribute('aria-pressed',playing?'true':'false');
     $('mode').textContent=reduce?'Explore':(playing?'Playing':'Explore');
   }

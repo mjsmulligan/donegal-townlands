@@ -432,6 +432,41 @@ class LargePopulationPlayerTests(unittest.TestCase):
 
 
 @unittest.skipIf(sync_playwright is None, 'Playwright is not installed')
+class PhoneRegressionTests(unittest.TestCase):
+    """Faults found by the sample page checks (docs/DOCUMENTARY_ROLLOUT_SPEC.md, RO-10)."""
+
+    PNG = bytes.fromhex('89504e470d0a1a0a0000000d49484452000000010000000108060000001f15c4890000000d49444154789c6360f8cfc0000003010100c9fe92ef0000000049454e44ae426082')
+
+    def load(self, doc, reduced=False, width=375):
+        with tempfile.TemporaryDirectory() as tmp, sync_playwright() as pw:
+            folder = Path(tmp)
+            (folder / 'media').mkdir()
+            (folder / 'media' / 'view.png').write_bytes(self.PNG)
+            (folder / 'documentary.html').write_text(bd.render_page(doc, {'rows': []}), encoding='utf-8')
+            browser = pw.chromium.launch()
+            ctx = browser.new_context(viewport={'width': width, 'height': 740},
+                                      reduced_motion='reduce' if reduced else 'no-preference')
+            pg = ctx.new_page()
+            pg.route('**/*', lambda r: r.abort() if r.request.url.startswith('http') else r.continue_())
+            pg.goto((folder / 'documentary.html').as_uri())
+            pg.wait_for_timeout(300)
+            pg.evaluate('window.scrollTo(200, 0)')
+            seen = {'scrollX': pg.evaluate('window.scrollX'), 'play': pg.locator('#play').inner_text(),
+                    'disabled': pg.locator('#play').is_disabled()}
+            browser.close()
+        return seen
+
+    def test_a_background_photograph_adds_no_horizontal_scroll(self):
+        doc, _ = build(FULL, header=[{'file': 'view.png'}])
+        for width in (360, 375, 1440):
+            self.assertEqual(self.load(doc, width=width)['scrollX'], 0, width)
+
+    def test_reduced_motion_keeps_the_step_through_label(self):
+        seen = self.load(build(FULL)[0], reduced=True)
+        self.assertEqual((seen['play'], seen['disabled']), ('Step through', True))
+
+
+@unittest.skipIf(sync_playwright is None, 'Playwright is not installed')
 class ThinPlayerTests(unittest.TestCase):
     """RO-02: for a case with no story the player shows the title card and the note and nothing to play."""
 

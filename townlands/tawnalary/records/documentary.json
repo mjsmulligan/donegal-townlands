@@ -1,0 +1,222 @@
+{
+ "schema": 1,
+ "townland": "Tawnalary",
+ "slug": "tawnalary",
+ "generated_by": "donegal-townlands.build_documentary",
+ "title": "Tawnalary",
+ "span": {
+  "from": "1911",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "tawnalary:ch:intro",
+   "title": "Tawnalary",
+   "beats": [
+    {
+     "id": "tawnalary:beat:title:title",
+     "kind": "title",
+     "chapter": "tawnalary:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tawnalary",
+      "name": "Tawnalary",
+      "logainm_id": "14041",
+      "lat": 54.637679,
+      "lon": -8.106871,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Tawnalary. Its story here runs from 1911 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tawnalary:census:1911",
+       "tawnalary:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "tawnalary:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "tawnalary:beat:census:1911",
+     "kind": "census",
+     "chapter": "tawnalary:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tawnalary",
+      "name": "Tawnalary",
+      "logainm_id": "14041",
+      "lat": 54.637679,
+      "lon": -8.106871,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tawnalary:census:1911"
+     },
+     "caption": "Tawnalary had 6 people in two households in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tawnalary:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "counts": {
+      "people": 6,
+      "households": 2
+     }
+    }
+   ]
+  },
+  {
+   "id": "tawnalary:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "tawnalary:beat:census:1926",
+     "kind": "census",
+     "chapter": "tawnalary:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tawnalary",
+      "name": "Tawnalary",
+      "logainm_id": "14041",
+      "lat": 54.637679,
+      "lon": -8.106871,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tawnalary:census:1926"
+     },
+     "caption": "Tawnalary had 3 people in two households in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tawnalary:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "counts": {
+      "people": 3,
+      "households": 2
+     }
+    },
+    {
+     "id": "tawnalary:beat:change:1911-1926",
+     "kind": "change",
+     "chapter": "tawnalary:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tawnalary",
+      "name": "Tawnalary",
+      "logainm_id": "14041",
+      "lat": 54.637679,
+      "lon": -8.106871,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tawnalary:census:1911"
+     },
+     "caption": "By 1926 Tawnalary had 3 people, down from 6 in 1911. It had two households, against two.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tawnalary:census:1911",
+       "tawnalary:census:1926"
+      ],
+      "basis": "counts_between_returns",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 3,
+      "households": 2,
+      "from_people": 6,
+      "from_households": 2
+     }
+    },
+    {
+     "id": "tawnalary:beat:closing:end",
+     "kind": "closing",
+     "chapter": "tawnalary:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tawnalary",
+      "name": "Tawnalary",
+      "logainm_id": "14041",
+      "lat": 54.637679,
+      "lon": -8.106871,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tawnalary:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with two households in Tawnalary.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tawnalary:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}
