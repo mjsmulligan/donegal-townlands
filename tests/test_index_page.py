@@ -68,6 +68,25 @@ class IndexTests(unittest.TestCase):
         self.assertIn('if(p.outline){', TEMPLATE)               # outline drawn, otherwise the circle marker
         self.assertIn('L.circleMarker', TEMPLATE)
 
+    DED = {'type': 'Feature', 'properties': {'ded_id': '1', 'name': 'Alphaville', 'name_ga': '', 'townlands': 3},
+           'geometry': {'type': 'Polygon', 'coordinates': [[[-8.1, 54.5], [-7.9, 54.5], [-7.9, 54.8], [-8.1, 54.5]]]}}
+
+    def test_deds_open_the_map_and_townlands_come_in_on_zoom(self):
+        p = build.index_page([E1], TEMPLATE, [self.DED])
+        self.assertIn('"deds": [', p)
+        self.assertIn('Alphaville', p)
+        self.assertIn(build.BOUNDARY_CREDIT, p)
+        self.assertIn('function dedLevel(deds)', TEMPLATE)
+        self.assertIn("map.on('zoomend',sync)", TEMPLATE)         # zooming out hides the townlands again
+        self.assertIn('map.fitBounds(group.getBounds()', TEMPLATE)  # no DEDs: every townland at once, as before
+
+    def test_without_deds_the_page_is_unchanged_in_kind(self):
+        self.assertNotIn('"deds"', self.page())
+
+    def test_townland_records_which_ded_they_are_in(self):
+        p = build.index_page([dict(E1, ded='1372439')], TEMPLATE)
+        self.assertIn('"ded": "1372439"', p)
+
     def test_no_outline_no_credit(self):
         p = self.page()
         self.assertNotIn(build.BOUNDARY_CREDIT, p)
