@@ -323,6 +323,62 @@ Order: DP1, DP2, DP3, then DP4 and DP5, then DP6, DP7, then DP9. DP8 any time af
 | DP4 Player core | Built and tried on a phone 2026-11-21 | engine/documentary.html, docs/cullionboy/documentary.html. Satellite opening and backdrop, travelling cards, year ribbon, people dots, dissolves, deep links, reduced motion. Further changes follow the rollout comparison. |
 | DP5 Layouts, accessibility and motion | Not started | |
 | DP6 Family thread | Not started | |
-| DP7 Rollout | Specified 2026-11-21. WP-R1 survey done 2026-11-21, sample of eight confirmed | `docs/DOCUMENTARY_ROLLOUT_SPEC.md` (section 3.1), `tools/documentary_report.py`, `tests/test_documentary_report.py` |
+| DP7 Rollout | Specified 2026-11-21. WP-R1 to WP-R3 done 2026-11-22, review of the eight pages in section 9 | `docs/DOCUMENTARY_ROLLOUT_SPEC.md` (section 3.1), `tools/documentary_report.py`, `tests/test_documentary_report.py` |
 | DP8 Sound | Deferred (O2, O3) | |
 | DP9 Cutover | Not started, needs the user's approval after parity | |
+
+## 9. Comparison review of the eight sample pages (WP-R4, 2026-11-22)
+
+Written from the committed `documentary.json` files and from stepping each page through in a browser. The satellite opening and backdrop could not be seen without a network, so imagery is not reviewed here. Running times are the sum of the beat durations, before the opening.
+
+### 9.1 What each tier looks like
+
+| Tier | Townland | Beats | Runs | What the viewer gets |
+|---|---|---|---|---|
+| A full | Cullionboy | 11 | 70 s | Valuation, two baptism groups, three census years with two change beats, the 1954 photograph, a closing beat. The only page with a photograph and the richest. |
+| A full | Clogher | 11 | 67 s | The same shape with three baptism groups and no photograph. The authored study is not used. |
+| C valuation and census | Mullanalamphry | 9 | 48 s | A names only valuation, one baptism group, census. |
+| D census and baptisms | Goladoo | 10 | 56 s | No valuation, three baptism groups, census. The title says the story runs from 1873. |
+| D census and baptisms | Druminnin | 11 | 61 s | Valuation of 36 occupiers, three baptisms, the largest population (148 in 1911). |
+| E census only | Straness | 7 | 34 s | Three returns and two changes. Nothing else. |
+| E census, two years | Tawnalary | 5 | 23 s | Two returns and one change. |
+| F thin | Meenabrock | 1 | 4 s | The title card and a note. The ribbon and controls are hidden. |
+
+The shape is honest and consistent: a page grows as records are added, and no page invents anything. The weakest cases are the middle ones, where the census beats repeat what the change beats then say again.
+
+### 9.2 What felt thin or repetitive
+
+1. **Each census year is told twice.** A census beat gives the people and households, and the change beat that follows gives the same figures again as a comparison ("Cullionboy had 72 people in sixteen households in 1911." then "By 1911 Cullionboy had 72 people, down from 93 in 1901."). In a case with only census data this is 60 percent of the page. Option: let the change beat carry the comparison only ("72 people, down from 93") and drop the repeated count, or fold the change into the census beat from 1911 on.
+2. **Equal counts read awkwardly.** "It had seven households, against seven." (Straness, twice, and Tawnalary). Option: when the count is unchanged, say "It had seven households again."
+3. **People are figures, households are words.** "6 people in two households" but "sixteen households". STORY_SPEC writes numbers in words inside sentences. Option: write people as words up to twenty as well, or write both as figures when a sentence holds two counts.
+4. **The census beat opens three different ways** ("In 1901, 93 people...", "Cullionboy had 72 people...", "In 1926, 89 people..."). The variety is deliberate, to avoid a drumbeat, but a viewer who reads two in a row may not see the pattern as intended.
+5. **Thin pages end quickly.** Tawnalary runs 23 seconds. That is accurate for two returns, but the opening alone is nine seconds of satellite, so the opening may be longer than the story (see 9.4).
+6. **Baptism groups are by year, not by family.** Goladoo and Druminnin each get three groups of unrelated names. The viewer cannot tell which are from one family. This is what the family thread (DP6) is for.
+
+### 9.3 Wording and data points to change
+
+- **"Edw. Gallagher"** (Clogher). The normalised given-name rules (`data/source/nli_parish/tawnawilly/normalised/rules.csv`) have `Ed.`, `Edwd` and `Edwd.` for Edward but no `Edw.`. Adding the rule is a change to the normalised file, so it is for the user to approve. Other abbreviations may be in the same state: worth running the rules over all given names and listing those with a trailing full stop.
+- **Mullanalamphry's "Catherine Thomas"** is correct: the father is Charles Thomas. No change.
+- **Cullionboy's closing beat** says "The story reaches 1954 here. In 1926, Cullionboy had fifteen households." The second sentence repeats a figure shown two beats earlier and sits oddly after a 1954 photograph. Option: drop it when the last event is not a census.
+- **Title beat span.** "runs from the 1850s to 1954" and "runs from 1873 to 1926" are accurate. Straness, "runs from 1901 to 1926", is right but flat. No change proposed.
+
+### 9.4 Timing, opening and imagery (for a phone trial)
+
+- Running times are 23 to 70 seconds for pages with a story. That is a good length for a phone. The longest, Cullionboy at 70 seconds, would be shortened by item 9.2.1: its two change beats take 13.6 seconds, so dropping the repeated counts could bring it near 57 seconds.
+- The nine second satellite opening is longer than the whole of Tawnalary. Options (Q6): play the full fall only on a first visit in a session, a shorter fall for the thinner pages, or an option to skip.
+- Imagery cannot be judged from here. The trial should look at Druminnin, Straness and Tawnalary first, which are the most remote, and say whether the final zoom should stop earlier (RO-09).
+- Data use on mobile (Q7) grows with the size of the opening, not the page. The eight pages are each under 60 KB without media.
+
+### 9.5 What to change before wider rollout
+
+In suggested order. Items 1 to 3 are small, change only the wording code and can go in one pull request. Item 4 changes source rules and so needs the user's approval.
+
+1. Drop the repeated counts in change beats and fold them into the census beat or shorten them (9.2.1, 9.2.2).
+2. Write counts as words consistently (9.2.3).
+3. Drop the second sentence of the closing beat when the last event is not a census (9.3).
+4. Add the `Edw.` rule, and check other abbreviations (9.3).
+5. Decide Q5 for thin cases (Meenabrock's page is a title card with a note: it is honest but a viewer arriving from the index gets nothing to play, so the index may do better to link the walk for these ten).
+6. Phone trial of the opening and backdrop, then decide RO-09 and Q6.
+
+Nothing in this review has been changed in the code.
+
