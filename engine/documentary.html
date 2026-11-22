@@ -234,8 +234,23 @@ var D=__DATA__;
     var box=$('intro'); box.hidden=false; box.classList.add('bgmode');
     bmap=L.map('imap',{zoomControl:false,attributionControl:true,zoomAnimation:true,fadeAnimation:true,dragging:false,touchZoom:false,scrollWheelZoom:false,doubleClickZoom:false,boxZoom:false,keyboard:false,tap:false});
     L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{maxZoom:18,maxNativeZoom:17,attribution:'Imagery: Esri, Maxar, Earthstar Geographics'}).addTo(bmap);
-    bmap.setView(ll0,16,{animate:false});
+    if(D.outline){
+      /* the townland's own outline (Tailte Eireann), dotted and lightly filled */
+      outline=L.geoJSON({type:'Feature',properties:{},geometry:D.outline},{style:function(){return {color:'#FBFCFA',weight:3,dashArray:'2 7',lineCap:'round',fillColor:'#EBC94B',fillOpacity:.14,interactive:false}}}).addTo(bmap);
+      if(D.outline_credit) $('foot').textContent+=' \u00b7 '+D.outline_credit;
+    }
+    var v=finalView(bmap); bmap.setView(v.c,v.z,{animate:false});
     return bmap;
+  }
+  /* where the map settles: the whole outline in frame (never closer than zoom 16), or the place point at 16 */
+  var outline=null;
+  function finalView(m){
+    if(outline){
+      m.invalidateSize({animate:false});
+      var b=outline.getBounds(), z=m.getBoundsZoom(b,false,L.point(60,60));
+      if(isFinite(z)) return {c:b.getCenter(),z:Math.min(16,Math.floor(z*4)/4)};
+    }
+    return {c:ll0,z:16};
   }
   /* The opening continues the index map. The index hands over the view it was showing (the townland centred, at
      its zoom) through sessionStorage; the opening starts there and zooms in, so looking at every townland and
@@ -254,16 +269,16 @@ var D=__DATA__;
   function intro(asked){
     if(!hasMap||(reduce&&!asked)) return;
     var m=backdrop(), box=$('intro'), me=++run, over=false;
-    var z0=startZoom(), secs=Math.max(3,Math.min(6,2+(16-z0)*0.6));
+    var fv=finalView(m), z0=Math.min(startZoom(),fv.z), secs=Math.max(3,Math.min(6,2+(fv.z-z0)*0.6));
     document.body.classList.add('introing'); box.classList.remove('bgmode'); $('iname').classList.remove('on');
     $('iname').textContent=here.name||D.townland||'';
-    m.invalidateSize({animate:false}); m.setView(ll0,z0,{animate:false});
+    m.invalidateSize({animate:false}); m.setView(HAND||!outline?ll0:fv.c,z0,{animate:false});
     function end(){
       if(over||me!==run) return; over=true;
-      try{m.stop()}catch(e){} m.setView(ll0,16,{animate:false});
+      try{m.stop()}catch(e){} m.setView(fv.c,fv.z,{animate:false});
       box.classList.add('bgmode'); document.body.classList.remove('introing');
     }
-    setTimeout(function(){ if(me!==run) return; m.flyTo(ll0,16,{duration:secs}); m.once('moveend',function(){setTimeout(end,900)}) },250);
+    setTimeout(function(){ if(me!==run) return; m.flyTo(fv.c,fv.z,{duration:secs}); m.once('moveend',function(){setTimeout(end,900)}) },250);
     setTimeout(function(){ if(me===run) $('iname').classList.add('on')},Math.round((secs-1.2)*1000));
     setTimeout(end,Math.round((secs+4)*1000));
     box.onclick=end; $('iskip').onclick=end;

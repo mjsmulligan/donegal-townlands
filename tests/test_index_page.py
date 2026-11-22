@@ -57,6 +57,36 @@ class IndexTests(unittest.TestCase):
         self.assertIn("sessionStorage.getItem('dt-view')", doc)
         self.assertNotIn('m.setView(ll0,3,', doc)           # no more fall from the globe
 
+    OUTLINE = {'type': 'Polygon', 'coordinates': [[[-8.01, 54.68], [-7.97, 54.68], [-7.97, 54.70], [-8.01, 54.70], [-8.01, 54.68]]]}
+
+    def test_outline_travels_with_its_credit_and_the_dot_is_the_fallback(self):
+        p = build.index_page([E1, dict(E1, slug='gamma', name='Gamma', outline=self.OUTLINE)], TEMPLATE)
+        self.assertEqual(p.count('"type": "Polygon"'), 1)       # only Gamma has an outline
+        self.assertEqual(p.count('"type": "Point"'), 2)         # both keep a centre point
+        self.assertIn(build.BOUNDARY_CREDIT, p)
+        self.assertIn('Tailte \u00c9ireann, CC BY 4.0', p)
+        self.assertIn('if(p.outline){', TEMPLATE)               # outline drawn, otherwise the circle marker
+        self.assertIn('L.circleMarker', TEMPLATE)
+
+    def test_no_outline_no_credit(self):
+        p = self.page()
+        self.assertNotIn(build.BOUNDARY_CREDIT, p)
+        self.assertNotIn('"attribution"', p)
+        self.assertNotIn('"type": "Polygon"', p)
+
+    def test_outline_loader_is_empty_without_the_file(self):
+        saved = build.BOUNDARY_FILE
+        try:
+            build.BOUNDARY_FILE = build.ROOT / 'data' / 'processed' / 'places' / 'no_such_file.geojson'
+            self.assertEqual(build.load_outlines(), {})
+        finally:
+            build.BOUNDARY_FILE = saved
+
+    def test_committed_outlines_are_keyed_by_logainm_id(self):
+        o = build.load_outlines()
+        self.assertIn('13967', o)                                # Cullionboy
+        self.assertIn(o['13967']['type'], ('Polygon', 'MultiPolygon'))
+
 
 if __name__ == '__main__':
     unittest.main()
