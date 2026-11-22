@@ -24,7 +24,7 @@ OUT = ROOT / 'data' / 'processed' / 'documentary_report.csv'
 KINDS = ('title', 'valuation', 'baptism', 'census', 'change', 'photo', 'closing')
 FIELDS = ['townland', 'name', 'tier', 'census_years', 'census_people_max', 'baptisms', 'baptisms_left_out',
           'griffiths_occupiers', 'authored_content', 'media_files', 'people_json', 'lat', 'lon', 'coords',
-          'events', 'has_story', 'beats'] + ['beats_' + k for k in KINDS] + ['duration_s', 'refused', 'note']
+          'events', 'has_story', 'beats'] + ['beats_' + k for k in KINDS] + ['duration_s', 'refused', 'files_written', 'note']
 # Donegal sits roughly inside this box. A point outside it is a data error, not a judgement call.
 DONEGAL_BOX = (54.4, 55.5, -8.9, -7.0)
 OUTLIER_KM = 12.0
@@ -162,17 +162,24 @@ def summary(rows):
     return '\n'.join(lines)
 
 
+def report(names, today, files=None, csv_out=True):
+    """Survey `names`, flag coordinates, optionally record the files a build wrote, write the CSV and print
+    the summary (RO-06). Returns the rows."""
+    rows = [survey_case(n, today) for n in names]
+    for r in rows:
+        r['files_written'] = '; '.join((files or {}).get(r['townland'], []))
+    flag_coordinates(rows)
+    if csv_out:
+        write_csv(rows)
+    print(summary(rows))
+    return rows
+
+
 def main(argv):
     args = [a for a in argv[1:] if not a.startswith('--')]
     if any(a.startswith('--') and a != '--no-csv' for a in argv[1:]):
         sys.exit(__doc__)
-    names = args or bd.all_cases()
-    today = datetime.date.today()
-    rows = [survey_case(n, today) for n in names]
-    flag_coordinates(rows)
-    if '--no-csv' not in argv:
-        write_csv(rows)
-    print(summary(rows))
+    report(args or bd.all_cases(), datetime.date.today(), csv_out='--no-csv' not in argv)
     return 0
 
 

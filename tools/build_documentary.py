@@ -1,7 +1,7 @@
 """Build a townland's documentary beats (docs/DOCUMENTARY_SPEC.md).
 Usage:
     python tools/build_documentary.py cullionboy
-    python tools/build_documentary.py --all
+    python tools/build_documentary.py --all     only cases that have a story; also writes the survey report
 
 Reads the case's records through tools/build_timeline.py (Griffith's, census and baptism events,
 media) and place.json, and writes townlands/<name>/records/documentary.json. Nothing else is written.
@@ -445,9 +445,8 @@ def _num(v):
         return None
 
 
-def write_page(name, doc, found):
-    """Render engine/documentary.html to docs/<name>/documentary.html, a page beside the walk and the
-    timeline. It does not replace either (docs/DOCUMENTARY_SPEC.md, DP9)."""
+def render_page(doc, found):
+    """The page text for one documentary. Pure: the same inputs give the same bytes (RO-03)."""
     media = {}
     for r in found['rows']:
         media[r['file']] = {'caption': r.get('caption', ''), 'alt': r.get('alt', ''),
@@ -455,13 +454,19 @@ def write_page(name, doc, found):
     payload = dict(doc, media=media, foot='')
     data = json.dumps(payload, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
     html = (ROOT / 'engine' / 'documentary.html').read_text(encoding='utf-8')
-    page = (html.replace('__TITLE__', bt.build.esc(doc['townland'] + ' documentary'))
+    return (html.replace('__TITLE__', bt.build.esc(doc['townland'] + ' documentary'))
                 .replace('__BRAND__', bt.build.esc(doc['townland']))
                 .replace('__DATA__', data))
+
+
+def write_page(name, doc, found):
+    """Render engine/documentary.html to docs/<name>/documentary.html, a page beside the walk and the
+    timeline. It does not replace either (docs/DOCUMENTARY_SPEC.md, DP9). Returns the path written."""
     dest = ROOT / 'docs' / name / 'documentary.html'
     dest.parent.mkdir(parents=True, exist_ok=True)
-    dest.write_text(page, encoding='utf-8')
+    dest.write_text(render_page(doc, found), encoding='utf-8')
     bt.build.copy_media(name, found)
+    return dest
 
 
 def collect(name, today):
@@ -492,8 +497,17 @@ def collect(name, today):
     return inputs, []
 
 
-def build_documentary(name, today=None):
-    today = today or datetime.date.today()
+def build_documentary(name, today=None, only_story=False, written=None):
+    """Build one case. Never raises (RO-01): a failure is printed and returns 1. With `only_story` a case
+    that has no story writes nothing (RO-05). `written` is an optional list that receives the paths written."""
+    try:
+        return _build(name, today or datetime.date.today(), only_story, written if written is not None else [])
+    except Exception as e:
+        print(f'{name}: documentary not built. {type(e).__name__}: {e}')
+        return 1
+
+
+def _build(name, today, only_story, written):
     base = ROOT / 'townlands' / name
     inputs, problems = collect(name, today)
     if inputs is None:
@@ -507,9 +521,13 @@ def build_documentary(name, today=None):
     except ValueError as e:
         print(name + ': documentary not built. ' + str(e))
         return 1
-    (base / 'records').mkdir(exist_ok=True)
-    (base / 'records' / 'documentary.json').write_text(
-        json.dumps(doc, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
+    if only_story and doc.get('note'):
+        print(name + ': no story, nothing written. ' + doc['note'])
+        return 0
+    (base / 'records').mkdir(parents=True, exist_ok=True)
+    out = base / 'records' / 'documentary.json'
+    out.write_text(json.dumps(doc, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
+    written.append(str(out.relative_to(ROOT)))
     beats = [b for c in doc['chapters'] for b in c['beats']]
     counts = {}
     for b in beats:
@@ -518,10 +536,71 @@ def build_documentary(name, today=None):
           ', '.join(f'{n} {k}' for k, n in sorted(counts.items())) + ').')
     if doc.get('note'):
         print('  ' + doc['note'])
-    write_page(name, doc, found)
+    place = inputs['args'][2]
+    if _num(place.get('latitude')) is None or _num(place.get('longitude')) is None:
+        print('  no usable coordinates, so no page was built.')      # RO-01
+    else:
+        written.append(str(write_page(name, doc, found).relative_to(ROOT)))
     for row_id, why in refused + [(r, w) for r, w in feed['skipped']]:
         print('  left out ' + row_id + ': ' + why)
     return 0
+
+
+# ---------------------------------------------------------------- committed files (RO-04)
+
+TOP_KEYS = ('schema', 'townland', 'slug', 'generated_by', 'title', 'span', 'chapters')
+
+
+def check_document(doc, events):
+    """Problems with one committed documentary.json, given the case's current events. Empty means it
+    passes: schema, unique ids, beats in time order, evidence ids that exist, no dashes, no source talk,
+    hedges or loose numbers, "possibly" only on possible beats, and the thin case rule (RO-02)."""
+    problems = []
+    if not isinstance(doc, dict):
+        return ['not a JSON object']
+    if doc.get('schema') != SCHEMA:
+        problems.append(f'schema is {doc.get("schema")!r}, expected {SCHEMA}')
+    problems += [f'missing {k}' for k in TOP_KEYS if k not in doc]
+    beats = []
+    for c in doc.get('chapters') or []:
+        if not c.get('beats'):
+            problems.append('empty chapter ' + str(c.get('id')))
+        beats += c.get('beats') or []
+    if not beats:
+        return problems + ['no beats']
+    ids = [b.get('id') for b in beats]
+    problems += ['duplicate beat id ' + i for i in sorted({i for i in ids if ids.count(i) > 1})]
+    sorts = [(b.get('time') or {}).get('sort', '') for b in beats]
+    if sorts != sorted(sorts):
+        problems.append('beats are not in time order')
+    by_id = {e['id']: e for e in events}
+    years = {int(b['time']['sort'][:4]) for b in beats
+             if b.get('kind') == 'photo' and (b.get('evidence') or {}).get('basis') == 'dated_photograph'}
+    for b in beats:
+        problems += [f"{b.get('id', '?')}: {p}" for p in
+                     check_beat(b, by_id, set(by_id), years if b.get('kind') == 'title' else ())]
+    if len(events) < 2:
+        if len(beats) > 1:
+            problems.append('a case with fewer than two events may hold only the title beat')
+        if not doc.get('note'):
+            problems.append('a case with no story needs its note')
+    return problems
+
+
+def check_repo(today=None):
+    """RO-04, called by tools/validate.py: check every committed documentary.json."""
+    today = today or datetime.date.today()
+    problems = []
+    for path in sorted((ROOT / 'townlands').glob('*/records/documentary.json')):
+        name = path.parent.parent.name
+        try:
+            doc = json.loads(path.read_text(encoding='utf-8'))
+            events = bt.events_for(name, today)['events']
+        except (ValueError, OSError) as e:
+            problems.append(f'{name}: documentary.json cannot be checked: {e}')
+            continue
+        problems += [f'{name}: documentary.json: {p}' for p in check_document(doc, events)]
+    return problems
 
 
 def all_cases():
@@ -532,8 +611,20 @@ def all_cases():
 def main(argv):
     if len(argv) != 2 or (argv[1].startswith('-') and argv[1] != '--all'):
         sys.exit(__doc__)
-    names = all_cases() if argv[1] == '--all' else [argv[1]]
-    return max([build_documentary(n) for n in names] or [0])
+    if argv[1] != '--all':
+        return build_documentary(argv[1])
+    try:
+        from tools import documentary_report as dr
+    except ImportError:
+        import documentary_report as dr
+    today = datetime.date.today()
+    names, files, codes = all_cases(), {}, []
+    for n in names:
+        got = []
+        codes.append(build_documentary(n, today, only_story=True, written=got))
+        files[n] = got
+    dr.report(names, today, files)       # RO-06: one row per case, a summary, and the CSV
+    return max(codes or [0])
 
 
 if __name__ == '__main__':

@@ -97,6 +97,7 @@ details p{margin:4px 0;overflow-wrap:anywhere}
 .btn.main:hover{background:var(--hill-d);border-color:var(--hill-d)}
 .mode{font-size:13px;color:var(--ink2);margin-left:auto;white-space:nowrap;background:rgba(251,252,250,.88);border-radius:999px;padding:3px 10px}
 .note{font-size:14px;color:var(--ink2)}
+.controls[hidden],.ribbon[hidden]{display:none}
 .foot:empty{display:none}
 .foot{font-size:11px;color:var(--ink);flex:0 0 auto;text-align:center;background:rgba(251,252,250,.8);border-radius:999px;padding:1px 10px;align-self:center}
 
@@ -207,6 +208,7 @@ var D=__DATA__;
   beats.forEach(function(b,k){
     var c=el('article','card'); c.setAttribute('aria-hidden','true');
     if((chapters[b.chapter]||'')!==(b.time.label||D.title)) c.append(el('div','ch',chapters[b.chapter]||'')); c.append(el('h2','when',b.time.label||D.title),el('p','caption',b.caption));
+    if(b.kind==='title'&&D.note) c.append(el('p','note',D.note));   /* a case with no story says so, and offers nothing else */
     var d=el('details',null); d.append(el('summary',null,'The records behind this'));
     d.append(el('p',null,'Basis: '+b.evidence.basis.replace(/_/g,' ')+'. '+b.evidence.certainty+'.'));
     b.evidence.events.forEach(function(id){d.append(el('p',null,id))});
@@ -362,6 +364,7 @@ var D=__DATA__;
     c.addEventListener('touchend',function(e){ if(x0===null) return; var dx=e.changedTouches[0].clientX-x0; x0=null; if(Math.abs(dx)>50) go(i+(dx<0?1:-1)) },{passive:true});
   })();
 
+  if(N<2){$('ribbon').hidden=true; document.querySelector('.controls').hidden=true}   /* nothing to play: the opening, the title card and the note */
   if(reduce){$('play').disabled=true; $('play').textContent='Step through'}
   var start=0, m=/#beat=([^&]+)/.exec(location.hash||'');
   if(m){var id=decodeURIComponent(m[1]); beats.forEach(function(b,k){if(b.id===id) start=k})}
