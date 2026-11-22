@@ -355,31 +355,44 @@ INDEX_TAGS = {'ready': 'Townland Study', 'partial': 'Census Returns', 'empty': '
 INDEX_FOOTER = 'Placename data sourced from Logainm (Government of Ireland) & historical cartographic surveys. ' + LOGAINM_CREDIT
 
 
+KIND = {'ready': 'study', 'partial': 'census', 'empty': 'record'}
+
+
 def index_page(entries, template):
-    """The index page: a map and a card for each case, from engine/index.html. entries are dicts with
-    slug, name, state, name_ga, lat and lng. A case with no coordinates gets a card and no map pin."""
+    """The index page: a satellite map and a card for each case, from engine/index.html. entries are dicts with
+    slug, name, state, name_ga, lat, lng and doc (True when docs/<slug>/documentary.html exists). A case with no
+    coordinates gets a card and no map pin. A case with a documentary opens it first and keeps the walk as a
+    second link (RO-12, RO-14); a case without one opens the walk as before."""
     entries = sorted(entries, key=lambda e: e['name'].casefold())
     cards = []
     for e in entries:
+        walk = './%s/' % q(e['slug'])
+        main = './%s/documentary.html' % q(e['slug']) if e.get('doc') else walk
         where = (' data-lat="%s" data-lng="%s"' % (q(e['lat']), q(e['lng']))) if e['lat'] and e['lng'] else ''
         ga = '<div class="card-ga">%s</div>' % q(e['name_ga']) if e['name_ga'] else ''
+        if e.get('doc'):
+            links = ('<a class="pill main" href="%s">Play the documentary</a>'
+                     '<a class="pill" href="%s">Gallery walk</a>' % (main, walk))
+        else:
+            links = '<a class="pill" href="%s">Open the walk</a>' % walk
         cards.append(
-            '        <a class="townland-card" href="./%s/"%s data-slug="%s" data-name="%s">\n'
-            '            <div class="card-header">\n'
-            '                <span class="card-en">%s</span>\n'
-            '                <span class="card-arrow">&rarr;</span>\n'
-            '            </div>\n'
+            '        <article class="townland-card" data-slug="%s" data-name="%s"%s>\n'
+            '            <a class="card-en" href="%s">%s</a>\n'
             '            %s\n'
-            '            <div class="card-footer">\n'
+            '            <div class="card-foot">\n'
             '                <span class="card-tag">%s</span>\n'
+            '                %s\n'
             '            </div>\n'
-            '        </a>\n' % (q(e['slug']), where, q(e['slug']), q(e['name']), q(e['name']), ga, INDEX_TAGS[e['state']]))
-    features = [{'type': 'Feature', 'properties': {'name': e['name'], 'name_ga': e['name_ga'], 'slug': e['slug']},
+            '        </article>\n' % (q(e['slug']), q(e['name']), where, main, q(e['name']), ga, INDEX_TAGS[e['state']], links))
+    features = [{'type': 'Feature',
+                 'properties': {'name': e['name'], 'name_ga': e['name_ga'], 'slug': e['slug'], 'kind': KIND[e['state']],
+                                'doc': bool(e.get('doc')),
+                                'href': './%s/documentary.html' % e['slug'] if e.get('doc') else './%s/' % e['slug']},
                  'geometry': {'type': 'Point', 'coordinates': [float(e['lng']), float(e['lat'])]}}
                 for e in entries if e['lat'] and e['lng']]
     geo = json.dumps({'type': 'FeatureCollection', 'features': features}, ensure_ascii=False).replace('</', '<\\/')
     return (template.replace('__MARK__', INDEX_MARK).replace('__COUNT__', str(len(entries)))
-                    .replace('__FOOTER__', q(INDEX_FOOTER).replace('&amp;', '&amp;'))
+                    .replace('__FOOTER__', q(INDEX_FOOTER))
                     .replace('__GEOJSON__', geo).replace('__CARDS__', ''.join(cards)))
 
 
@@ -407,7 +420,8 @@ def index_entries():
         else:
             continue
         entries.append({'slug': base.name, 'name': label, 'state': state, 'name_ga': place.get('name_ga', ''),
-                        'lat': place.get('latitude', ''), 'lng': place.get('longitude', '')})
+                        'lat': place.get('latitude', ''), 'lng': place.get('longitude', ''),
+                        'doc': (ROOT / 'docs' / base.name / 'documentary.html').is_file()})
     return entries
 
 
