@@ -1,0 +1,424 @@
+{
+ "schema": 1,
+ "townland": "Goladoo",
+ "slug": "goladoo",
+ "generated_by": "donegal-townlands.build_documentary",
+ "title": "Goladoo",
+ "span": {
+  "from": "1873",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "goladoo:ch:intro",
+   "title": "Goladoo",
+   "beats": [
+    {
+     "id": "goladoo:beat:title:title",
+     "kind": "title",
+     "chapter": "goladoo:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1873-03-27",
+      "approximate": true
+     },
+     "place": {
+      "townland": "goladoo",
+      "name": "Goladoo",
+      "logainm_id": "14243",
+      "lat": 54.717584,
+      "lon": -8.032827,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Goladoo. Its story here runs from 1873 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "goladoo:baptism:TAW-B-p006-r29",
+       "goladoo:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "goladoo:ch:baptisms",
+   "title": "Baptisms, 1873 to 1875",
+   "beats": [
+    {
+     "id": "goladoo:beat:baptism:1873",
+     "kind": "baptism",
+     "chapter": "goladoo:ch:baptisms",
+     "time": {
+      "label": "27 March 1873",
+      "iso": "1873-03-27",
+      "sort": "1873-03-27",
+      "approximate": false
+     },
+     "place": {
+      "townland": "goladoo",
+      "name": "Goladoo",
+      "logainm_id": "14243",
+      "lat": 54.717584,
+      "lon": -8.032827,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "goladoo:baptism:TAW-B-p006-r29"
+     },
+     "caption": "Two children were baptised in 1873: Peter Slevin on 27 March and Ellen Boyle on 24 August.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "goladoo:baptism:TAW-B-p006-r29",
+       "goladoo:baptism:TAW-B-p008-r65"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null
+    },
+    {
+     "id": "goladoo:beat:baptism:1874",
+     "kind": "baptism",
+     "chapter": "goladoo:ch:baptisms",
+     "time": {
+      "label": "22 February 1874",
+      "iso": "1874-02-22",
+      "sort": "1874-02-22",
+      "approximate": false
+     },
+     "place": {
+      "townland": "goladoo",
+      "name": "Goladoo",
+      "logainm_id": "14243",
+      "lat": 54.717584,
+      "lon": -8.032827,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "goladoo:baptism:TAW-B-p010-r110"
+     },
+     "caption": "Three children were baptised in 1874: Denis Martin on 22 February, John Timoney on 26 April and Bernard Slevin on 3 May.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "goladoo:baptism:TAW-B-p010-r110",
+       "goladoo:baptism:TAW-B-p010-r118",
+       "goladoo:baptism:TAW-B-p010-r119"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 8800,
+     "audio": null
+    },
+    {
+     "id": "goladoo:beat:baptism:1875",
+     "kind": "baptism",
+     "chapter": "goladoo:ch:baptisms",
+     "time": {
+      "label": "8 June 1875",
+      "iso": "1875-06-08",
+      "sort": "1875-06-08",
+      "approximate": false
+     },
+     "place": {
+      "townland": "goladoo",
+      "name": "Goladoo",
+      "logainm_id": "14243",
+      "lat": 54.717584,
+      "lon": -8.032827,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "goladoo:baptism:TAW-B-p017-r220"
+     },
+     "caption": "Two children were baptised in 1875: Mary Anne Slevin on 8 June and Michael Boyle on 3 October.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "goladoo:baptism:TAW-B-p017-r220",
+       "goladoo:baptism:TAW-B-p019-r344"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "goladoo:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "goladoo:beat:census:1901",
+     "kind": "census",
+     "chapter": "goladoo:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "goladoo",
+      "name": "Goladoo",
+      "logainm_id": "14243",
+      "lat": 54.717584,
+      "lon": -8.032827,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "goladoo:census:1901"
+     },
+     "caption": "In 1901, 90 people in sixteen households lived in Goladoo.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "goladoo:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "counts": {
+      "people": 90,
+      "households": 16
+     }
+    }
+   ]
+  },
+  {
+   "id": "goladoo:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "goladoo:beat:census:1911",
+     "kind": "census",
+     "chapter": "goladoo:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "goladoo",
+      "name": "Goladoo",
+      "logainm_id": "14243",
+      "lat": 54.717584,
+      "lon": -8.032827,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "goladoo:census:1911"
+     },
+     "caption": "In 1911, 81 people in seventeen households lived in Goladoo.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "goladoo:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "counts": {
+      "people": 81,
+      "households": 17
+     }
+    },
+    {
+     "id": "goladoo:beat:change:1901-1911",
+     "kind": "change",
+     "chapter": "goladoo:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "goladoo",
+      "name": "Goladoo",
+      "logainm_id": "14243",
+      "lat": 54.717584,
+      "lon": -8.032827,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "goladoo:census:1901"
+     },
+     "caption": "By 1911 Goladoo had 81 people, down from 90 in 1901. It had seventeen households, against sixteen.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "goladoo:census:1901",
+       "goladoo:census:1911"
+      ],
+      "basis": "counts_between_returns",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 81,
+      "households": 17,
+      "from_people": 90,
+      "from_households": 16
+     }
+    }
+   ]
+  },
+  {
+   "id": "goladoo:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "goladoo:beat:census:1926",
+     "kind": "census",
+     "chapter": "goladoo:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "goladoo",
+      "name": "Goladoo",
+      "logainm_id": "14243",
+      "lat": 54.717584,
+      "lon": -8.032827,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "goladoo:census:1926"
+     },
+     "caption": "In 1926, 59 people in fifteen households lived in Goladoo.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "goladoo:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "counts": {
+      "people": 59,
+      "households": 15
+     }
+    },
+    {
+     "id": "goladoo:beat:change:1911-1926",
+     "kind": "change",
+     "chapter": "goladoo:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "goladoo",
+      "name": "Goladoo",
+      "logainm_id": "14243",
+      "lat": 54.717584,
+      "lon": -8.032827,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "goladoo:census:1911"
+     },
+     "caption": "By 1926 Goladoo had 59 people, down from 81 in 1911. It had fifteen households, against seventeen.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "goladoo:census:1911",
+       "goladoo:census:1926"
+      ],
+      "basis": "counts_between_returns",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 59,
+      "households": 15,
+      "from_people": 81,
+      "from_households": 17
+     }
+    },
+    {
+     "id": "goladoo:beat:closing:end",
+     "kind": "closing",
+     "chapter": "goladoo:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "goladoo",
+      "name": "Goladoo",
+      "logainm_id": "14243",
+      "lat": 54.717584,
+      "lon": -8.032827,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "goladoo:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with fifteen households in Goladoo.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "goladoo:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

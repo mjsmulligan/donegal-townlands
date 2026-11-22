@@ -1,0 +1,467 @@
+{
+ "schema": 1,
+ "townland": "Clogher",
+ "slug": "clogher",
+ "generated_by": "donegal-townlands.build_documentary",
+ "title": "Clogher",
+ "span": {
+  "from": "the 1850s",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "clogher:ch:intro",
+   "title": "Clogher",
+   "beats": [
+    {
+     "id": "clogher:beat:title:title",
+     "kind": "title",
+     "chapter": "clogher:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1855-07-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Clogher, in Irish An Clochar. Its story here runs from the 1850s to 1926.",
+     "people": [],
+     "media": [
+      "clogher-landscape.jpg"
+     ],
+     "evidence": {
+      "events": [
+       "clogher:valuation:griffiths",
+       "clogher:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6600,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "clogher:ch:1850s",
+   "title": "The land",
+   "beats": [
+    {
+     "id": "clogher:beat:valuation:griffiths",
+     "kind": "valuation",
+     "chapter": "clogher:ch:1850s",
+     "time": {
+      "label": "The 1850s",
+      "iso": "1850/1859",
+      "sort": "1855-07-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:valuation:griffiths"
+     },
+     "caption": "Griffith's Valuation listed the land and its occupiers in the 1850s. Here, 42 entries name an occupier.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:valuation:griffiths"
+      ],
+      "basis": "townland_entry",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "clogher:ch:baptisms",
+   "title": "Baptisms, 1873 to 1875",
+   "beats": [
+    {
+     "id": "clogher:beat:baptism:1873-01-15-TAW-B-p004-r7",
+     "kind": "baptism",
+     "chapter": "clogher:ch:baptisms",
+     "time": {
+      "label": "15 January 1873",
+      "iso": "1873-01-15",
+      "sort": "1873-01-15",
+      "approximate": false
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:baptism:TAW-B-p004-r7"
+     },
+     "caption": "Mary Gallagher was baptised on 15 January 1873. Edw. Gallagher and Brigid Devlin were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:baptism:TAW-B-p004-r7"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null
+    },
+    {
+     "id": "clogher:beat:baptism:1874",
+     "kind": "baptism",
+     "chapter": "clogher:ch:baptisms",
+     "time": {
+      "label": "29 January 1874",
+      "iso": "1874-01-29",
+      "sort": "1874-01-29",
+      "approximate": false
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:baptism:TAW-B-p010-r102"
+     },
+     "caption": "Two children were baptised in 1874: Anne Hone on 29 January and John Flanaghan on 15 February.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:baptism:TAW-B-p010-r102",
+       "clogher:baptism:TAW-B-p010-r107"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null
+    },
+    {
+     "id": "clogher:beat:baptism:1875",
+     "kind": "baptism",
+     "chapter": "clogher:ch:baptisms",
+     "time": {
+      "label": "26 January 1875",
+      "iso": "1875-01-26",
+      "sort": "1875-01-26",
+      "approximate": false
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:baptism:TAW-B-p015-r180"
+     },
+     "caption": "Four children were baptised in 1875: James Bresland on 26 January, Catherine Doogan on 6 July, Patrick O'Donnell on 30 July and Edward Gallagher on 1 August.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:baptism:TAW-B-p015-r180",
+       "clogher:baptism:TAW-B-p018-r229",
+       "clogher:baptism:TAW-B-p018-r231",
+       "clogher:baptism:TAW-B-p018-r232"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 10800,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "clogher:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "clogher:beat:census:1901",
+     "kind": "census",
+     "chapter": "clogher:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:census:1901"
+     },
+     "caption": "Clogher had 125 people in 27 households in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "counts": {
+      "people": 125,
+      "households": 27
+     }
+    }
+   ]
+  },
+  {
+   "id": "clogher:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "clogher:beat:census:1911",
+     "kind": "census",
+     "chapter": "clogher:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:census:1911"
+     },
+     "caption": "Clogher had 112 people in 23 households in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "counts": {
+      "people": 112,
+      "households": 23
+     }
+    },
+    {
+     "id": "clogher:beat:change:1901-1911",
+     "kind": "change",
+     "chapter": "clogher:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:census:1901"
+     },
+     "caption": "By 1911 Clogher had 112 people, down from 125 in 1901. It had 23 households, against 27.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:census:1901",
+       "clogher:census:1911"
+      ],
+      "basis": "counts_between_returns",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 112,
+      "households": 23,
+      "from_people": 125,
+      "from_households": 27
+     }
+    }
+   ]
+  },
+  {
+   "id": "clogher:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "clogher:beat:census:1926",
+     "kind": "census",
+     "chapter": "clogher:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:census:1926"
+     },
+     "caption": "In 1926, 89 people in twenty households lived in Clogher.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "counts": {
+      "people": 89,
+      "households": 20
+     }
+    },
+    {
+     "id": "clogher:beat:change:1911-1926",
+     "kind": "change",
+     "chapter": "clogher:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:census:1911"
+     },
+     "caption": "By 1926 Clogher had 89 people, down from 112 in 1911. It had twenty households, against 23.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:census:1911",
+       "clogher:census:1926"
+      ],
+      "basis": "counts_between_returns",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 89,
+      "households": 20,
+      "from_people": 112,
+      "from_households": 23
+     }
+    },
+    {
+     "id": "clogher:beat:closing:end",
+     "kind": "closing",
+     "chapter": "clogher:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with twenty households in Clogher.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

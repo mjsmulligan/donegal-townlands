@@ -1,0 +1,53 @@
+{
+ "schema": 1,
+ "townland": "Meenabrock",
+ "slug": "meenabrock",
+ "generated_by": "donegal-townlands.build_documentary",
+ "title": "Meenabrock",
+ "span": {
+  "from": "",
+  "to": ""
+ },
+ "chapters": [
+  {
+   "id": "meenabrock:ch:intro",
+   "title": "Meenabrock",
+   "beats": [
+    {
+     "id": "meenabrock:beat:title:title",
+     "kind": "title",
+     "chapter": "meenabrock:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "0000-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "meenabrock",
+      "name": "Meenabrock",
+      "logainm_id": "13975",
+      "lat": 54.681306,
+      "lon": -7.9212,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "This is Meenabrock, in Irish Mín na mBroc.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null
+    }
+   ]
+  }
+ ],
+ "note": "Fewer than two events are held, so there is no story to play yet."
+}

@@ -1,0 +1,392 @@
+{
+ "schema": 1,
+ "townland": "Mullanalamphry",
+ "slug": "mullanalamphry",
+ "generated_by": "donegal-townlands.build_documentary",
+ "title": "Mullanalamphry",
+ "span": {
+  "from": "the 1850s",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "mullanalamphry:ch:intro",
+   "title": "Mullanalamphry",
+   "beats": [
+    {
+     "id": "mullanalamphry:beat:title:title",
+     "kind": "title",
+     "chapter": "mullanalamphry:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1855-07-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "mullanalamphry",
+      "name": "Mullanalamphry",
+      "logainm_id": "13976",
+      "lat": 54.687714,
+      "lon": -8.020136,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Mullanalamphry. Its story here runs from the 1850s to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "mullanalamphry:valuation:griffiths",
+       "mullanalamphry:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "mullanalamphry:ch:1850s",
+   "title": "The land",
+   "beats": [
+    {
+     "id": "mullanalamphry:beat:valuation:griffiths",
+     "kind": "valuation",
+     "chapter": "mullanalamphry:ch:1850s",
+     "time": {
+      "label": "The 1850s",
+      "iso": "1850/1859",
+      "sort": "1855-07-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "mullanalamphry",
+      "name": "Mullanalamphry",
+      "logainm_id": "13976",
+      "lat": 54.687714,
+      "lon": -8.020136,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "mullanalamphry:valuation:griffiths"
+     },
+     "caption": "Griffith's Valuation listed the land and its occupiers in the 1850s. Here, 18 occupiers are named for Mullanalamphry.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "mullanalamphry:valuation:griffiths"
+      ],
+      "basis": "townland_entry",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "mullanalamphry:ch:baptisms",
+   "title": "Baptisms, 1875",
+   "beats": [
+    {
+     "id": "mullanalamphry:beat:baptism:1875",
+     "kind": "baptism",
+     "chapter": "mullanalamphry:ch:baptisms",
+     "time": {
+      "label": "14 January 1875",
+      "iso": "1875-01-14",
+      "sort": "1875-01-14",
+      "approximate": false
+     },
+     "place": {
+      "townland": "mullanalamphry",
+      "name": "Mullanalamphry",
+      "logainm_id": "13976",
+      "lat": 54.687714,
+      "lon": -8.020136,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "mullanalamphry:baptism:TAW-B-p015-r176"
+     },
+     "caption": "Two children were baptised in 1875: James McGinty on 14 January and Catherine Thomas on 11 April.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "mullanalamphry:baptism:TAW-B-p015-r176",
+       "mullanalamphry:baptism:TAW-B-p016-r203"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "mullanalamphry:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "mullanalamphry:beat:census:1901",
+     "kind": "census",
+     "chapter": "mullanalamphry:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "mullanalamphry",
+      "name": "Mullanalamphry",
+      "logainm_id": "13976",
+      "lat": 54.687714,
+      "lon": -8.020136,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "mullanalamphry:census:1901"
+     },
+     "caption": "In 1901, 47 people in ten households lived in Mullanalamphry.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "mullanalamphry:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "counts": {
+      "people": 47,
+      "households": 10
+     }
+    }
+   ]
+  },
+  {
+   "id": "mullanalamphry:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "mullanalamphry:beat:census:1911",
+     "kind": "census",
+     "chapter": "mullanalamphry:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "mullanalamphry",
+      "name": "Mullanalamphry",
+      "logainm_id": "13976",
+      "lat": 54.687714,
+      "lon": -8.020136,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "mullanalamphry:census:1911"
+     },
+     "caption": "Mullanalamphry had 35 people in eight households in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "mullanalamphry:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "counts": {
+      "people": 35,
+      "households": 8
+     }
+    },
+    {
+     "id": "mullanalamphry:beat:change:1901-1911",
+     "kind": "change",
+     "chapter": "mullanalamphry:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "mullanalamphry",
+      "name": "Mullanalamphry",
+      "logainm_id": "13976",
+      "lat": 54.687714,
+      "lon": -8.020136,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "mullanalamphry:census:1901"
+     },
+     "caption": "By 1911 Mullanalamphry had 35 people, down from 47 in 1901. It had eight households, against ten.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "mullanalamphry:census:1901",
+       "mullanalamphry:census:1911"
+      ],
+      "basis": "counts_between_returns",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 35,
+      "households": 8,
+      "from_people": 47,
+      "from_households": 10
+     }
+    }
+   ]
+  },
+  {
+   "id": "mullanalamphry:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "mullanalamphry:beat:census:1926",
+     "kind": "census",
+     "chapter": "mullanalamphry:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "mullanalamphry",
+      "name": "Mullanalamphry",
+      "logainm_id": "13976",
+      "lat": 54.687714,
+      "lon": -8.020136,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "mullanalamphry:census:1926"
+     },
+     "caption": "In 1926, 23 people in seven households lived in Mullanalamphry.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "mullanalamphry:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "counts": {
+      "people": 23,
+      "households": 7
+     }
+    },
+    {
+     "id": "mullanalamphry:beat:change:1911-1926",
+     "kind": "change",
+     "chapter": "mullanalamphry:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "mullanalamphry",
+      "name": "Mullanalamphry",
+      "logainm_id": "13976",
+      "lat": 54.687714,
+      "lon": -8.020136,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "mullanalamphry:census:1911"
+     },
+     "caption": "By 1926 Mullanalamphry had 23 people, down from 35 in 1911. It had seven households, against eight.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "mullanalamphry:census:1911",
+       "mullanalamphry:census:1926"
+      ],
+      "basis": "counts_between_returns",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 23,
+      "households": 7,
+      "from_people": 35,
+      "from_households": 8
+     }
+    },
+    {
+     "id": "mullanalamphry:beat:closing:end",
+     "kind": "closing",
+     "chapter": "mullanalamphry:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "mullanalamphry",
+      "name": "Mullanalamphry",
+      "logainm_id": "13976",
+      "lat": 54.687714,
+      "lon": -8.020136,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "mullanalamphry:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with seven households in Mullanalamphry.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "mullanalamphry:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}
