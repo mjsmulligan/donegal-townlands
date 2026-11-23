@@ -25,7 +25,7 @@ and empty (place record only). All three build.
 Building never replaces a page it did not generate, never deletes a page and never
 changes a case folder. Every build regenerates docs/index.html, the list of every place,
 so the index is never edited by hand (its layout is engine/index.html). Only a name with no case folder is an error."""
-import collections, csv, html as htmllib, json, re, shutil, sys, pathlib
+import collections, csv, datetime, html as htmllib, json, re, shutil, sys, pathlib
 try:
     from tools import media, variants_reference
 except ImportError:                  # run as a script: python tools/build.py
@@ -400,15 +400,21 @@ def index_page(entries, template, deds=None):
                      '<a class="pill" href="%s">Gallery walk</a>' % (main, walk))
         else:
             links = '<a class="pill" href="%s">Open the walk</a>' % walk
+        if e.get('summary'):
+            held = '<ul class="card-sum">%s</ul>' % ''.join(
+                '<li><b>%s</b> %s</li>' % (q(k), q(v)) for k, v in e['summary'])
+        else:
+            held = '<p class="card-sum none">No records held yet, only the place name from Logainm.</p>'
         cards.append(
             '        <article class="townland-card" data-slug="%s" data-name="%s"%s>\n'
             '            <a class="card-en" href="%s">%s</a>\n'
+            '            %s\n'
             '            %s\n'
             '            <div class="card-foot">\n'
             '                <span class="card-tag">%s</span>\n'
             '                %s\n'
             '            </div>\n'
-            '        </article>\n' % (q(e['slug']), q(e['name']), where, main, q(e['name']), ga, INDEX_TAGS[e['state']], links))
+            '        </article>\n' % (q(e['slug']), q(e['name']), where, main, q(e['name']), ga, held, INDEX_TAGS[e['state']], links))
     features = []
     for e in entries:
         if not (e['lat'] and e['lng']) or e['state'] == 'empty':
@@ -440,6 +446,47 @@ def write_index(entries):
           % (states.count('ready'), states.count('partial'), states.count('empty')))
 
 
+def case_summary(base, label, today=None):
+    """What the project holds for one case, as (source, detail) pairs for the index card. Counts only, taken from
+    the same files the pages are built from: the census returns, the Griffith's transcription or index, the
+    published baptisms (so the 100-year rule has already been applied), the family tree people and the images.
+    A case with only a Logainm place record returns an empty list."""
+    out = []
+    rec = base / 'records'
+    census = load(rec / 'census.json') if (rec / 'census.json').is_file() else {}
+    held = [(y, len(census[y])) for y in sorted(census) if census[y]]
+    if held:
+        out.append(('Census', ', '.join('%s (%d %s)' % (y, n, 'person' if n == 1 else 'people') if i == 0
+                                        else '%s (%d)' % (y, n) for i, (y, n) in enumerate(held))))
+    rows = 0
+    if (base / 'content.json').is_file():
+        rows = len((load(base / 'content.json').get('griffiths') or {}).get('rows') or [])
+    if rows:
+        out.append(("Griffith's Valuation", '%d entries transcribed' % rows))
+    elif (rec / 'griffiths_index.json').is_file():
+        n = len(load(rec / 'griffiths_index.json').get('rows') or [])
+        if n:
+            out.append(("Griffith's Valuation", '%d entries in the index' % n))
+    try:
+        from tools import build_timeline as bt
+    except ImportError:                  # run as a script: python tools/build.py
+        import build_timeline as bt
+    n = len(bt.baptism_events(label, today or datetime.date.today())[0])
+    if n:
+        out.append(('Parish register', '%d %s, Tawnawilly (NLI)' % (n, 'baptism' if n == 1 else 'baptisms')))
+    if (rec / 'people.json').is_file():
+        n = len(load(rec / 'people.json').get('people') or [])
+        if n:
+            out.append(('Family tree', '%d %s' % (n, 'person' if n == 1 else 'people')))
+    media = base / 'media' / 'media.csv'
+    if media.is_file():
+        with media.open(encoding='utf-8-sig', newline='') as h:
+            n = sum(1 for r in csv.DictReader(h) if (r.get('file') or '').strip())
+        if n:
+            out.append(('Images', '%d' % n))
+    return out
+
+
 def index_entries():
     """One dict for every case that has a name to show."""
     entries = []
@@ -458,7 +505,8 @@ def index_entries():
         entries.append({'slug': base.name, 'name': label, 'state': state, 'name_ga': place.get('name_ga', ''),
                         'lat': place.get('latitude', ''), 'lng': place.get('longitude', ''),
                         'outline': outlines.get(str(place.get('logainm_id', ''))), 'ded': place.get('ded_id', ''),
-                        'doc': (ROOT / 'docs' / base.name / 'documentary.html').is_file()})
+                        'doc': (ROOT / 'docs' / base.name / 'documentary.html').is_file(),
+                        'summary': case_summary(base, label)})
     return entries
 
 

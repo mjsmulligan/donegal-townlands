@@ -66,6 +66,16 @@ h1{font:300 clamp(24px,5vw,34px)/1.05 var(--display);margin:0;letter-spacing:-.0
 .card-foot .pill{background:var(--paper)}
 .card-foot .pill:hover{background:var(--ink)}
 .card-foot .pill.main{background:var(--ink)}
+.card-sum{list-style:none;margin:2px 0 0;padding:0;font-size:13px;line-height:1.5;color:var(--ink2)}
+.card-sum b{font-weight:500;color:var(--ink);margin-right:2px}
+.card-sum.none{font-style:italic}
+#sheet{position:fixed;z-index:900;left:50%;bottom:30px;transform:translateX(-50%);width:min(440px,calc(100vw - 24px));max-height:calc(100vh - 150px);overflow-y:auto;border-radius:14px}
+#sheet[hidden]{display:none}
+#sheet .townland-card{min-height:0;padding-right:48px;border-color:var(--hill-d);box-shadow:0 8px 28px rgba(14,42,54,.3)}
+.sheet-close{position:absolute;right:8px;top:8px;width:44px;height:44px;border:0;border-radius:50%;background:transparent;color:var(--ink);font:300 28px/1 var(--body);cursor:pointer}
+.sheet-close:hover{background:var(--wall)}
+#sheet .card-tag{flex-basis:100%}
+body.sheet-open .key{display:none}
 .panelfoot{padding:10px 16px 14px;border-top:1px solid var(--rule);font-size:12px;color:var(--ink2)}
 .panelfoot p{margin:0 0 4px}
 #fade{position:fixed;inset:0;z-index:2000;background:var(--wall);opacity:0;pointer-events:none}
@@ -81,6 +91,7 @@ h1{font:300 clamp(24px,5vw,34px)/1.05 var(--display);margin:0;letter-spacing:-.0
   <p class="intro">Choose a district on the map, then a townland to play its documentary.</p>
 </div>
 <button type="button" class="pill" id="seelist" aria-expanded="false" aria-controls="listpanel">See list</button>
+<div id="sheet" role="dialog" aria-label="Townland details" hidden></div>
 <div class="key" aria-label="Map key"><span class="k-study">Townland Study</span><span class="k-census">Census Returns</span></div>
 <div id="listpanel" class="off" role="dialog" aria-label="List of townlands" hidden>
   <div class="panelhead"><div><h2 style="display:inline">Townland Index</h2><span class="count">__COUNT__ Records</span></div><button type="button" class="pill" id="closelist">Close</button></div>
@@ -106,12 +117,12 @@ __CARDS__    </div>
 
   /* the list lives behind a button. Without the map library it opens at once, so the page still works. */
   function showList(on){
-    if(on){ panel.hidden=false; panel.offsetWidth; panel.classList.remove('off'); openBtn.setAttribute('aria-expanded','true'); input.focus({preventScroll:true}); }
+    if(on){ closeSheet(); panel.hidden=false; panel.offsetWidth; panel.classList.remove('off'); openBtn.setAttribute('aria-expanded','true'); input.focus({preventScroll:true}); }
     else { panel.classList.add('off'); openBtn.setAttribute('aria-expanded','false'); setTimeout(function(){ if(panel.classList.contains('off')) panel.hidden=true; },reduce?0:360); openBtn.focus({preventScroll:true}); }
   }
   openBtn.addEventListener('click',function(){showList(panel.hidden||panel.classList.contains('off'))});
   closeBtn.addEventListener('click',function(){showList(false)});
-  document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&!panel.hidden) showList(false) });
+  document.addEventListener('keydown',function(e){ if(e.key!=='Escape') return; if(!sheet.hidden) closeSheet(); else if(!panel.hidden) showList(false) });
 
   /* leaving for a documentary: centre on the townland at the current zoom, hand that view over, then go. The
      documentary starts from exactly this view and zooms in, so the two pages read as one movement. */
@@ -127,13 +138,37 @@ __CARDS__    </div>
     map.panTo([lat,lng],{animate:true,duration:.7,easeLinearity:.4});
     setTimeout(go,1500);
   }
-  cards.forEach(function(card){
+  function bindCard(card){
     var main=card.querySelector('a.pill.main');
     if(!main||!card.dataset.lat) return;
     [main,card.querySelector('a.card-en')].forEach(function(a){
       a.addEventListener('click',function(ev){ if(ev.metaKey||ev.ctrlKey||ev.shiftKey||ev.button) return; ev.preventDefault(); leave(parseFloat(card.dataset.lat),parseFloat(card.dataset.lng),a.getAttribute('href')) });
     });
-  });
+  }
+  cards.forEach(bindCard);
+
+  /* A tap on the map selects a townland and opens its card, the same card as in the list. Nothing is opened until
+     a button on the card is pressed, so a wrong tap costs nothing. */
+  var sheet=document.getElementById('sheet'), selected=null;
+  function closeSheet(){
+    if(sheet.hidden) return;
+    sheet.hidden=true; sheet.textContent=''; document.body.classList.remove('sheet-open');
+    if(selected){ selected.paint(false); selected=null; }
+  }
+  function openSheet(slug,m,lat,lng){
+    var src=null; cards.forEach(function(c){ if(c.dataset.slug===slug) src=c });
+    if(!src) return;
+    if(selected&&selected!==m) selected.paint(false);
+    selected=m; m.paint(true);
+    var card=src.cloneNode(true); card.style.display='';
+    var x=document.createElement('button'); x.type='button'; x.className='sheet-close'; x.setAttribute('aria-label','Close'); x.textContent='\u00d7';
+    x.addEventListener('click',closeSheet);
+    sheet.textContent=''; sheet.appendChild(card); sheet.appendChild(x); bindCard(card);
+    sheet.hidden=false; document.body.classList.add('sheet-open');
+    x.focus({preventScroll:true});
+    if(map){ var room=window.innerHeight-sheet.offsetHeight-60, y=map.latLngToContainerPoint([lat,lng]).y;
+      if(y>room) map.panBy([0,y-room],{animate:!reduce}); }
+  }
 
   if(typeof L!=='undefined'){
     var data=__GEOJSON__;
@@ -148,20 +183,22 @@ __CARDS__    </div>
       if(p.outline){
         /* the townland's own outline (Tailte Eireann). A dot is drawn only where there is no outline. */
         var col=FILL[p.kind]||FILL.record, base={color:'#FBFCFA',weight:p.doc?3:2,dashArray:'2 6',lineCap:'round',fillColor:col,fillOpacity:.22};
-        m=L.geoJSON({type:'Feature',properties:{},geometry:p.outline},{style:function(){return base}});
-        m.on('mouseover',function(){ m.setStyle({fillOpacity:.45,weight:base.weight+1}) });
-        m.on('mouseout',function(){ m.setStyle(base) });
+        m=L.geoJSON({type:'Feature',properties:{},geometry:p.outline},{style:function(){return base},bubblingMouseEvents:false});
+        m.paint=function(on){ m.setStyle(on?{fillOpacity:.55,weight:base.weight+2,dashArray:null}:base) };
+        m.on('mouseover',function(){ if(selected!==m) m.setStyle({fillOpacity:.45,weight:base.weight+1}) });
+        m.on('mouseout',function(){ m.paint(selected===m) });
         m.bindTooltip(label,{sticky:true,direction:'top',className:'townland-label'});
       } else {
-        m=L.circleMarker([c[1],c[0]],{radius:p.doc?9:7,fillColor:FILL[p.kind]||FILL.record,color:'#1D2F33',weight:p.doc?3:2,fillOpacity:.95});
+        m=L.circleMarker([c[1],c[0]],{radius:p.doc?9:7,fillColor:FILL[p.kind]||FILL.record,color:'#1D2F33',weight:p.doc?3:2,fillOpacity:.95,bubblingMouseEvents:false});
+        m.paint=function(on){ m.setStyle({weight:on?5:(p.doc?3:2)}); m.setRadius(on?(p.doc?12:10):(p.doc?9:7)) };
         m.bindTooltip(label,{direction:'top',offset:[0,-6],className:'townland-label'});
       }
-      m.on('click',function(){ if(p.doc) leave(c[1],c[0],p.href); else window.location.href=p.href; });
+      m.on('click',function(){ openSheet(p.slug,m,c[1],c[0]) });
       m.addTo(group); markers[p.name.toLowerCase()]=m;
     });
     var deds=data.deds||[];
     if(deds.length){ dedLevel(deds); }
-    else { group.addTo(map); if(data.features.length>1){ map.fitBounds(group.getBounds().pad(.08)); } }
+    else { group.addTo(map); map.on('click',closeSheet); if(data.features.length>1){ map.fitBounds(group.getBounds().pad(.08)); } }
   } else { showList(true); }
 
   /* The map opens on the DEDs. A tap on one flies in to it, and the townlands appear once the view is close
@@ -189,10 +226,12 @@ __CARDS__    </div>
       close=map.getZoom()>reveal+.001;
       if(close&&!map.hasLayer(group)) group.addTo(map);
       if(!close&&map.hasLayer(group)) map.removeLayer(group);
+      if(!close) closeSheet();
       map.getContainer().classList.toggle('deds-off',close);
       layers.forEach(function(l){ l.setStyle(close?{fillOpacity:0,weight:4,dashArray:null,opacity:.95}:dedStyle) });
     }
     map.on('zoomend',sync); sync();
+    map.on('click',closeSheet);
   }
 
   input.addEventListener('input',function(e){
