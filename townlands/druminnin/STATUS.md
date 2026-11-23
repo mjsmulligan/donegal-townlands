@@ -27,7 +27,7 @@ The household identifier for these sources is the holding number. See that folde
 - John in the 1831 dated rental page reads McNamee, the undated pages read McArea at the same line and rent. Held open.
 - The 1825 plots have no holding id yet.
 - Harraghy (the user's label) is read Kirraghy in 1825 and Hanaghey in 1831. No Harraghy appears later. Corrigan holds three plots in the Griffith's map holdings. Whether Corrigan took over that ground is not tested.
-- Gethins in the Griffith's map holdings is a McGettigan variant (the user). Proposed in the surname dictionary, not yet verified.
+- Gethins in the Griffith's map holdings is a McGettigan variant (the user). Verified by the user on 2026-11-23.
 - Confirm historical spellings and any relevant variations.
 - Establish historical place relationships where the evidence permits.
 - Add historical records with references to their original sources.

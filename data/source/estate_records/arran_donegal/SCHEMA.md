@@ -4,7 +4,7 @@ Sources, all for the Earl of Arran's Donegal estate:
 - Maps of part of the Manor of Donegal by James Lough, made in summer 1825. National Library of Ireland, MS L 441 (Manuscripts Reading Room). One volume of 32 hand drawn, hand coloured maps, each with a facing reference page naming the land and its tenants. Map 15 (Raforker) is missing, cut out. Reproduction rights are owned by the NLI and the volume exists only as a physical copy. The date is taken from the title page, so it is an inferred date for the maps and reference pages.
 - Rental of the Earl of Arran's Donegal estate for the year ending November 1831. The date is written on the page heading. The other rental pages supplied show no year of their own and are not used in these files.
 
-Location in the repo: `data/source/estate_records/arran_donegal/`. The first townland is Druminnin.
+Location in the repo: `data/source/estate_records/arran_donegal/` (agreed by the user, 2026-11-23). The first townland is Druminnin.
 
 ```
 raw/
@@ -47,9 +47,9 @@ Source layer. Names and numbers are as written, with no expansion and no correct
 
 ## Open items
 
-1. Registration in `data/source/manifest.csv`: `tools/source_manifest.py` knows only the census files and the NLI parish registers, so these files are not in the manifest. Extending it needs the user's agreement.
+1. Manifest: `tools/source_manifest.py` knows only the census files and the NLI parish registers, so these files are not in `data/source/manifest.csv`. The user decided on 2026-11-23 not to extend it.
 2. The exact year of the Griffith's valuation for Druminnin is not yet filled in.
 3. The 1825 plots need a holding id. A flat photograph of the right-hand half of the reference sheet, or a holding column in the user's sheet, would settle it.
 4. John McNamee in the 1831 dated page against John McArea in the undated pages.
-5. Surname spellings from these sources are listed as proposals in `data/research/associations/druminnin_surname_proposals.csv`, not in `data/reference/surname_variants.csv`, because the reference file holds verified rows only (a test enforces it). They change nothing until the user verifies them and they are moved into the reference file.
+5. Surname spellings from these sources were verified by the user on 2026-11-23 and are in `data/reference/surname_variants.csv`: Kildea added to Gildea, McArea and McArrea added to McAnaw, and new families McGettigan (Gethins), Monaghan (Meaghan), Mullen (Mullin) and Harraghy (Hanaghey, Kirraghy).
 6. A map of Druminnin dated 1811, of unknown source, was used by the user only as a guide to reading names. It is not citable and is not in these files.
