@@ -87,6 +87,26 @@ class IndexTests(unittest.TestCase):
         p = build.index_page([dict(E1, ded='1372439')], TEMPLATE)
         self.assertIn('"ded": "1372439"', p)
 
+    def test_cards_carry_a_summary_of_what_is_held(self):
+        e = dict(E1, summary=[('Census', '1901 (93 people), 1911 (72)'), ("Griffith's Valuation", '25 entries transcribed')])
+        p = build.index_page([e], TEMPLATE)
+        self.assertIn('<ul class="card-sum">', p)
+        self.assertIn('<li><b>Census</b> 1901 (93 people), 1911 (72)</li>', p)
+        self.assertIn("<b>Griffith&#x27;s Valuation</b> 25 entries transcribed", p)
+
+    def test_a_case_with_nothing_says_so(self):
+        p = build.index_page([dict(E1, summary=[])], TEMPLATE)
+        self.assertIn('No records held yet', p)
+        self.assertNotIn('<ul class="card-sum">', p)
+
+    def test_a_tap_on_the_map_opens_a_card_and_does_not_leave(self):
+        self.assertIn('function openSheet(', TEMPLATE)
+        self.assertIn("m.on('click',function(){ openSheet(", TEMPLATE)
+        self.assertNotIn("if(p.doc) leave(c[1],c[0],p.href); else window.location.href=p.href;", TEMPLATE)
+        self.assertEqual(TEMPLATE.count('bubblingMouseEvents:false'), 2)   # outline and dot, so a tap does not also close it
+        self.assertIn('id="sheet"', TEMPLATE)
+        self.assertIn("map.on('click',closeSheet)", TEMPLATE)
+
     def test_no_outline_no_credit(self):
         p = self.page()
         self.assertNotIn(build.BOUNDARY_CREDIT, p)
