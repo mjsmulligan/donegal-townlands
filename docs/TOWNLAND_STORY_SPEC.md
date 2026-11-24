@@ -151,7 +151,7 @@ A chapter is a run of beats under one title. Chapters follow the evidence: the v
 | `change` | Retired 2026-11-22 | The user dropped it: it told each census year a second time and was confusing. The schema and checker still accept the kind, but the generator writes none. A comparison between returns may return later as part of the census beat or the records panel. |
 | `baptism` | register baptism events | A single baptism, or a short run in one year, with the family names as recorded. 100 year rule applies. |
 | `photo` | media with an `event`, or a header image | A photograph at its date. The caption is the media caption. Never a person tag beyond the caption (STORY_SPEC, Photographs). |
-| `family` | authored family story that passes `check_story.py`, or accepted census links | A "follow this family" thread: one or two beats in the family's own words, with a jump to its plate or family timeline. |
+| `family` | (Druminnin, 2026-11-24) authored caption from an accepted holdings crosswalk row, `data/research/associations/<slug>_family_beats.csv`; or authored family story that passes `check_story.py`, or accepted census links | A "follow this family" thread: one or two beats in the family's own words, with a jump to its plate or family timeline. |
 | `closing` | last return held | The latest evidence, ending on a plain fact. |
 
 Marriages are not a beat kind in the first release because the register records no townland for them (DECISIONS.md, 2026-11-18). They enter only through the family thread.

@@ -24,7 +24,7 @@ except ImportError:                  # run as a script: python tools/build_story
 ROOT = bt.ROOT
 SCHEMA = 1
 BAPTISM_MIN_AGE = bt.BAPTISM_MIN_AGE
-KIND_ORDER = {'title': 0, 'estate': 1, 'valuation': 1, 'baptism': 2, 'census': 3, 'photo': 5, 'closing': 9}
+KIND_ORDER = {'title': 0, 'estate': 1, 'valuation': 1, 'family': 2, 'baptism': 2, 'census': 3, 'photo': 5, 'closing': 9}
 CERTAINTY = ('stated', 'accepted', 'possible')
 CAMERAS = ('parish', 'townland', 'household')
 STAGES = ('map', 'walk', 'timeline')
@@ -152,6 +152,12 @@ def estate_beat(ev, place):
     cap = f"{lead} In all, {num(t)} tenants were named." if t != 1 else f"{lead} One tenant was named."
     return beat('estate', y, f"{place['townland']}:ch:{y}", ev, cap, place,
                 basis=ev['association']['basis'], events=[ev['id']], counts={'holdings': h, 'tenants': t})
+
+
+def family_beat(ev, place):
+    key = ev['id'].rsplit(':', 1)[1]
+    return beat('family', key, f"{place['townland']}:ch:families", ev, ev['text'], place, certainty='accepted',
+                basis=ev['association']['basis'], events=[ev['id']])
 
 
 def valuation_beat(ev, place, media=()):
@@ -351,6 +357,8 @@ def chapter_title(key, beats, display):
         return display
     if key == '1850s':
         return 'The land'
+    if key == 'families':
+        return 'The families on the land'
     if key == 'baptisms':
         years = sorted({b['time']['sort'][:4] for b in beats if b['kind'] == 'baptism'})
         if not years:
@@ -386,6 +394,7 @@ def generate(display, slug, place_record, events, by_event=None, header=None, to
         cens = [e for e in events if e['type'] == 'census']
         beats += [estate_beat(e, place) for e in events if e['type'] == 'estate']
         beats += [valuation_beat(e, place, griffiths_files or ()) for e in vals]
+        beats += [family_beat(e, place) for e in events if e['type'] == 'family']
         beats += baptism_beats(baps, place, parish_files or ())
         beats += [census_beat(e, place) for e in cens]
         beats += photo_beats(events, by_event, place)
