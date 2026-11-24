@@ -250,3 +250,7 @@ The Druminnin townland story now begins with the 1825 and 1831 estate records. A
 ## 2026-11-24: The holdings crosswalk is accepted for the Druminnin story (the user)
 
 The user said the crosswalk is good enough to go in the story. Its rows are `accepted`, except the two marked Open (Harraghy, Gillespie), which stay `proposed` and are not told. A new `family` event type and beat kind, certainty `accepted`, tells each accepted family in the lay voice. The captions are authored in `data/research/associations/druminnin_family_beats.csv`, and the builder uses a row only while the crosswalk rows it names are accepted. Facts still held open (the 1831 John line, plots 20 and 21) are left out of the captions.
+
+## 2026-11-24: Druminnin becomes an authored study; the walk tolerates a plots-and-names Griffith's page (the user asked for the full study)
+
+Druminnin has authored `townland.json` and `content.json`, with the printed Griffith's page as its Griffith's plate (plots and occupiers only, 51 plots, plot 51 blank). The walk drops any Griffith's column that is empty on every row and omits the printed total when there is none, so a page transcribed in stages needs no engine change as columns arrive. A new walk plate, "Before the valuation", shows the dated estate records of a case (`data/source/estate_records/arran_donegal/normalised/<slug>_holdings_observations.csv`) with names as written. A Griffith's row may carry `nofamily` to keep a lessor named as an occupier out of the family plates. Family stories are not yet authored.
