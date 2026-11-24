@@ -145,6 +145,7 @@ A chapter is a run of beats under one title. Chapters follow the evidence: the v
 | Kind | Source | What it says |
 |---|---|---|
 | `title` | place record, span | The townland, its parish, and the years covered. One per townland. |
+| `estate` | An estate record event (Lough 1825 map, Arran rental 1831) | That an estate record laid out or listed the townland, and how many holdings and tenants it names. Built from `data/source/estate_records/arran_donegal/normalised/<slug>_holdings_observations.csv`. Added 2026-11-24, Druminnin first. Counts only: no surname grouping and no person-level claims. |
 | `valuation` | Griffith's event | That the land and its occupiers were valued, and how many occupiers are named. |
 | `census` | census events | How many people in how many households, by return, as recorded. |
 | `change` | Retired 2026-11-22 | The user dropped it: it told each census year a second time and was confusing. The schema and checker still accept the kind, but the generator writes none. A comparison between returns may return later as part of the census beat or the records panel. |
