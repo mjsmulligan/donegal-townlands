@@ -57,6 +57,12 @@ class LinkTests(unittest.TestCase):
         links = run([row(1901, "Joe", "Kelly", 30), row(1911, "Joe", "Kelly", 40, "F")])
         self.assertEqual(links, [])
 
+    def test_spacing_in_a_given_name_is_not_a_difference(self):
+        links = run([row(1901, "Maryanne", "Kelly", 30, "F", marital="Married", rel="Wife"),
+                     row(1911, "Mary Anne", "Kelly", 38, "F", marital="Married", rel="Wife")])
+        self.assertEqual(len(links), 1)
+        self.assertEqual(links[0]["given"], "exact")
+
     def test_age_drift_beyond_limit_is_not_linked(self):
         links = run([row(1901, "Joe", "Kelly", 30), row(1911, "Joe", "Kelly", 52)])
         self.assertEqual(links, [])
