@@ -250,3 +250,7 @@ The Druminnin townland story now begins with the 1825 and 1831 estate records. A
 ## 2026-11-24: The holdings crosswalk is accepted for the Druminnin story (the user)
 
 The user said the crosswalk is good enough to go in the story. Its rows are `accepted`, except the two marked Open (Harraghy, Gillespie), which stay `proposed` and are not told. A new `family` event type and beat kind, certainty `accepted`, tells each accepted family in the lay voice. The captions are authored in `data/research/associations/druminnin_family_beats.csv`, and the builder uses a row only while the crosswalk rows it names are accepted. Facts still held open (the 1831 John line, plots 20 and 21) are left out of the captions.
+
+## 2026-11-24: Isabella McAna (1 in 1901) accepted as Lizzie McNaw (10 in 1911) (the user)
+
+The user judged the 1901 daughter Isabella and the 1911 daughter Lizzie in the McAnaw house to be the same child, ten years on. The matcher does not propose it, since Lizzie belongs to the Elizabeth given-name family and Isabella to a separate one. The link is recorded as a single accepted decision (confidence `manual`) and the given-name dictionary is not changed. Whether Lizzie should be added to the Isabella family for every townland is the user's to decide.
