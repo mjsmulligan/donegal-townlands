@@ -271,12 +271,32 @@ def payload_for(name):
     families = variants_reference.page_families(names)
     if families:                      # verified dictionary families the case holds: the label and spellings only
         payload['name_families'] = families
+    estate = estate_for(name)
+    if estate:                        # estate records before Griffith's, as written (DECISIONS.md, 2026-11-24)
+        payload['estate'] = estate
     people = maybe('records/people.json')
     if people.get('people'):          # family tree research for people in the returns (tools/gedcom_people.py)
         payload['people'] = people
     if shown:                         # a case with no media builds exactly as before
         payload['media'] = shown
     return payload
+
+
+def estate_for(name):
+    """Estate records for a case, from data/source/estate_records/arran_donegal/normalised/<slug>_holdings_observations.csv.
+    Dated sources only (rows dated to a decade are Griffith's and are left to its plate). Names are as written."""
+    path = ROOT / 'data' / 'source' / 'estate_records' / 'arran_donegal' / 'normalised' / (name + '_holdings_observations.csv')
+    if not path.is_file():
+        return []
+    groups = {}
+    with path.open(encoding='utf-8-sig', newline='') as h:
+        for r in csv.DictReader(h):
+            year = (r.get('source_date') or '').strip()
+            if year.isdigit():
+                groups.setdefault((year, r['source']), []).append(
+                    {'holding': r['holding_id'], 'tenant': ' '.join(x for x in (r['forename_as_written'], r['surname_as_written']) if x),
+                     'rent': r['yearly_rent'], 'note': r['notes']})
+    return [{'year': y, 'source': s, 'rows': rows} for (y, s), rows in sorted(groups.items())]
 
 
 def media_for(name):
