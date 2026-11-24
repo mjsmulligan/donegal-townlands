@@ -11,7 +11,7 @@ __MARK__
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&display=swap">
 <style>
 :root{
-  /* The map index. Template only: cards, count and map points arrive through the placeholders. Same light greens and charcoal as the documentary player. */
+  /* The map index. Template only: cards, count and map points arrive through the placeholders. Same light greens and charcoal as the story player. */
   --wall:#F3F6F4; --paper:#FBFCFA; --ink:#1D2F33; --ink2:#53686D; --rule:#D3DDD9;
   --hill:#7FAEA5; --hill-d:#4F8A86; --gorse:#EBC94B;
   --display:'Newsreader', Georgia, 'Times New Roman', serif;
@@ -88,7 +88,7 @@ body.sheet-open .key{display:none}
 <div class="titlecard">
   <p class="eyebrow">Donegal Historical Placename Study</p>
   <h1>Donegal Townlands</h1>
-  <p class="intro">Choose a district on the map, then a townland to play its documentary.</p>
+  <p class="intro">Choose a district on the map, then a townland to play its story.</p>
 </div>
 <button type="button" class="pill" id="seelist" aria-expanded="false" aria-controls="listpanel">See list</button>
 <div id="sheet" role="dialog" aria-label="Townland details" hidden></div>
@@ -124,8 +124,8 @@ __CARDS__    </div>
   closeBtn.addEventListener('click',function(){showList(false)});
   document.addEventListener('keydown',function(e){ if(e.key!=='Escape') return; if(!sheet.hidden) closeSheet(); else if(!panel.hidden) showList(false) });
 
-  /* leaving for a documentary: centre on the townland at the current zoom, hand that view over, then go. The
-     documentary starts from exactly this view and zooms in, so the two pages read as one movement. */
+  /* leaving for a story: centre on the townland at the current zoom, hand that view over, then go. The
+     story starts from exactly this view and zooms in, so the two pages read as one movement. */
   function leave(lat,lng,href){
     if(leaving) return; leaving=true;
     function go(){

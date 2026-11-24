@@ -1,26 +1,26 @@
-"""Survey every townland case and report how rich its data is and what documentary it would get
-(docs/DOCUMENTARY_ROLLOUT_SPEC.md, WP-R1 and RO-06).
+"""Survey every townland case and report how rich its data is and what story it would get
+(docs/TOWNLAND_STORY_ROLLOUT_SPEC.md, WP-R1 and RO-06).
 
 Usage:
-    python tools/documentary_report.py                 print the summary, write the CSV
-    python tools/documentary_report.py cullionboy ...  only the named cases
-    python tools/documentary_report.py --no-csv        print only
+    python tools/story_report.py                 print the summary, write the CSV
+    python tools/story_report.py cullionboy ...  only the named cases
+    python tools/story_report.py --no-csv        print only
 
-The report is read only. It runs the generator's own pure logic (`build_documentary.generate`) in
+The report is read only. It runs the generator's own pure logic (`build_story.generate`) in
 memory, so the beats it counts are the beats a build would write, and it writes nothing to
-`townlands/` or `docs/`. The one file it writes is `data/processed/documentary_report.csv`, which is
+`townlands/` or `docs/`. The one file it writes is `data/processed/story_report.csv`, which is
 not committed (see .gitignore). A case that fails is reported with its error and never stops the run.
 """
 import csv, datetime, json, math, statistics, sys
 
 try:
-    from tools import build_documentary as bd, build_timeline as bt
-except ImportError:                  # run as a script: python tools/documentary_report.py
-    import build_documentary as bd
+    from tools import build_story as bd, build_timeline as bt
+except ImportError:                  # run as a script: python tools/story_report.py
+    import build_story as bd
     import build_timeline as bt
 
 ROOT = bt.ROOT
-OUT = ROOT / 'data' / 'processed' / 'documentary_report.csv'
+OUT = ROOT / 'data' / 'processed' / 'story_report.csv'
 KINDS = ('title', 'valuation', 'baptism', 'census', 'photo', 'closing')
 FIELDS = ['townland', 'name', 'tier', 'census_years', 'census_people_max', 'baptisms', 'baptisms_left_out',
           'griffiths_occupiers', 'authored_content', 'media_files', 'people_json', 'lat', 'lon', 'coords',
