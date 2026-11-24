@@ -31,3 +31,15 @@ The household identifier for these sources is the holding number. See that folde
 - Confirm historical spellings and any relevant variations.
 - Establish historical place relationships where the evidence permits.
 - Add historical records with references to their original sources.
+
+## Townland story (2026-11-24)
+`python tools/build_story.py druminnin` now opens with two estate beats, the Lough 1825 map (seventeen holdings, 22 tenants) and the 1831 Arran rental (22 tenants), before Griffith's. Counts only, taken from `data/source/estate_records/arran_donegal/normalised/druminnin_holdings_observations.csv`.
+Open: the Griffith's beat says 36 occupiers (askaboutireland index), while the user's own transcription of the Griffith's map has 50 plots. The two are different counts (index entries against map plots) and are held open, not reconciled.
+Open: the story does not yet follow families across 1825, 1831 and Griffith's; the crosswalk (`data/research/associations/druminnin_holdings_crosswalk.csv`) is still `proposed`.
+
+## Griffith's printed page (2026-11-24)
+The printed Griffith's page for Druminnin numbers 51 plots (1 to 51), plot 51 with no occupier. The user's sheet has 50, leaving 51 out for want of a name. The left column of the page is now held in `data/source/estate_records/arran_donegal/raw/griffiths_valuation_druminnin_page94_scan_left_column.csv`. Differences from the sheet are held open in `data/research/associations/druminnin_griffiths_sheet_vs_printed_page.csv`: plots 20 and 21 (Hugh McGinty on the sheet, Hugh Cassidy on the page), plot 1 spelling, and the layout of plots 3, 18 and 43. The 36 occupiers in the askaboutireland index remain a different count (index entries, not plots). Lessor, description and valuation columns to be added later.
+
+## Family beats (2026-11-24)
+The user accepted the holdings crosswalk as good enough for the story. Eleven of its thirteen rows are now `accepted`. Harraghy and Gillespie stay `proposed` (Open: Harraghy absent from Griffith's and every census, the Corrigan link is a hypothesis; Gillespie has no earlier record) and are not in the story. The story has eight family beats, authored in plain voice in `data/research/associations/druminnin_family_beats.csv` and used only while every crosswalk row they draw on is `accepted`.
+Held out of the captions on purpose: the 1831 John line (McNamee on the dated page, McArea on the undated ones), plot counts for Cassidy and McGinty in Griffith's (plots 20 and 21 are Hugh McGinty on the user's sheet and Hugh Cassidy on the printed page), and the cause of the Gethins form.

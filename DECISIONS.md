@@ -242,3 +242,11 @@ Decided later the same day: the folder `data/source/estate_records/arran_donegal
 ## 2026-11-24: "Documentary" is renamed "townland story" (the user)
 
 The user asked for the word "documentary" to be replaced by "story", as more apt for the play mode of a townland page. The play mode is now called the townland story. Files follow: `tools/build_story.py`, `tools/story_report.py`, `engine/story.html`, `records/story.json`, `docs/<name>/story.html`, `docs/TOWNLAND_STORY_SPEC.md` and `docs/TOWNLAND_STORY_ROLLOUT_SPEC.md`, with `data/processed/story_report.csv` for the survey. The authored text of a family remains the "family story" (`docs/STORY_SPEC.md`, `tools/check_story.py`); the two are different things. "Documentary evidence" in the research principles is unchanged, because it means evidence, not the play mode. Earlier entries in this file keep the old word as history. The old `docs/<name>/documentary.html` addresses stay as small pages that forward to `story.html`, so existing links keep working.
+
+## 2026-11-24: Estate records are story beats, counts only (the user asked for the new Druminnin story)
+
+The Druminnin townland story now begins with the 1825 and 1831 estate records. A new event type `estate` and a new beat kind `estate` carry only the numbers of holdings and tenants, so the story states no family continuity yet and groups no surnames. Continuity beats from the holdings crosswalk wait until its rows are accepted. Other cases get estate beats if they gain a `<slug>_holdings_observations.csv` in the same folder.
+
+## 2026-11-24: The holdings crosswalk is accepted for the Druminnin story (the user)
+
+The user said the crosswalk is good enough to go in the story. Its rows are `accepted`, except the two marked Open (Harraghy, Gillespie), which stay `proposed` and are not told. A new `family` event type and beat kind, certainty `accepted`, tells each accepted family in the lay voice. The captions are authored in `data/research/associations/druminnin_family_beats.csv`, and the builder uses a row only while the crosswalk rows it names are accepted. Facts still held open (the 1831 John line, plots 20 and 21) are left out of the captions.

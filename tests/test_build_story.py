@@ -42,6 +42,24 @@ def valuation(count=25):
             'source': {'label': "Griffith's", 'url': '', 'reference': ''}}
 
 
+def estate(year, holdings, tenants):
+    return {'id': f'cullionboy:estate:{year}', 'type': 'estate', 'milestone': True,
+            'date': {'kind': 'year', 'label': str(year), 'iso': str(year)}, 'sort': f'{year}-01-01',
+            'approximate_sort': True, 'title': f'The estate record of {year}',
+            'text': f'{tenants} tenants are named in {holdings} holdings.',
+            'estate': {'holdings': holdings, 'tenants': tenants},
+            'people': [], 'media': [], 'association': {'basis': 'townland_entry', 'label': ''},
+            'source': {'label': 'Estate', 'url': '', 'reference': ''}}
+
+
+def family(n, text='Patrick Gildea held land in 1825 and in 1831.'):
+    return {'id': f'cullionboy:family:{n:02d}', 'type': 'family', 'milestone': True,
+            'date': {'kind': 'range', 'label': 'From 1825', 'iso': ''}, 'sort': f'1855-07-0{n + 1}',
+            'approximate_sort': True, 'title': 'The Gildea family', 'text': text,
+            'people': [], 'media': [], 'association': {'basis': 'accepted_crosswalk', 'label': ''},
+            'source': {'label': 'Crosswalk', 'url': '', 'reference': ''}}
+
+
 def baptism(row, iso, child, father='', mother='', doubt=False):
     y, m, d = iso.split('-')
     months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September',
@@ -142,6 +160,27 @@ class CaptionTests(unittest.TestCase):
     def test_numbers_up_to_twenty_are_words(self):
         self.assertEqual(bd.num(16), 'sixteen')
         self.assertEqual(bd.num(93), '93')
+
+
+class EstateBeatTests(unittest.TestCase):
+    """Estate records before Griffith's (the user, 2026-11-24): one beat per dated estate source."""
+
+    def test_estate_beats_come_first_and_say_the_numbers(self):
+        doc, _ = build([estate(1825, 17, 22), estate(1831, 22, 22)] + FULL)
+        beats = beats_of(doc)
+        kinds = [b['kind'] for b in beats]
+        self.assertEqual(kinds[:4], ['title', 'estate', 'estate', 'valuation'])
+        caps = [b['caption'] for b in beats if b['kind'] == 'estate']
+        self.assertIn('seventeen holdings', caps[0])
+        self.assertIn('22 tenants', caps[0])
+        self.assertIn('1831', caps[1])
+        self.assertEqual(beats[0]['caption'].split('. ')[1][:23], 'Its story here runs fro')
+        self.assertIn('from 1825', beats[0]['caption'])
+
+    def test_estate_counts_are_carried(self):
+        doc, _ = build([estate(1825, 17, 22)] + FULL)
+        b = [b for b in beats_of(doc) if b['kind'] == 'estate'][0]
+        self.assertEqual(b['counts'], {'holdings': 17, 'tenants': 22})
 
 
 class NoChangeBeatTests(unittest.TestCase):
@@ -520,3 +559,44 @@ class ThinPlayerTests(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class EstateEventTests(unittest.TestCase):
+    """build_timeline.estate_events reads the normalised estate observations for a case."""
+
+    def test_druminnin_has_the_1825_and_1831_events(self):
+        from tools import build_timeline as bt
+        evs = bt.estate_events(bt.ROOT / 'townlands' / 'druminnin', 'Druminnin')
+        self.assertEqual([e['date']['label'] for e in evs], ['1825', '1831'])
+        self.assertEqual(evs[0]['estate'], {'holdings': 17, 'tenants': 22})
+        self.assertEqual(evs[1]['estate'], {'holdings': 22, 'tenants': 22})
+
+    def test_a_case_without_estate_records_has_none(self):
+        from tools import build_timeline as bt
+        self.assertEqual(bt.estate_events(bt.ROOT / 'townlands' / 'cullionboy', 'Cullionboy'), [])
+
+
+class FamilyBeatTests(unittest.TestCase):
+    """Family beats come from accepted crosswalk rows only (the user, 2026-11-24)."""
+
+    def test_family_beats_follow_the_valuation_and_are_accepted(self):
+        doc, _ = build([estate(1825, 17, 22), family(1), family(2, 'The Thomas family held ground in 1825.')] + FULL)
+        beats = beats_of(doc)
+        fams = [b for b in beats if b['kind'] == 'family']
+        self.assertEqual(len(fams), 2)
+        self.assertTrue(all(b['evidence']['certainty'] == 'accepted' for b in fams))
+        kinds = [b['kind'] for b in beats]
+        self.assertLess(kinds.index('valuation'), kinds.index('family'))
+        self.assertEqual(doc['chapters'][[c['id'] for c in doc['chapters']].index('cullionboy:ch:families')]['title'],
+                         'The families on the land')
+
+    def test_only_accepted_crosswalk_rows_make_events(self):
+        from tools import build_timeline as bt
+        evs = bt.family_events(bt.ROOT / 'townlands' / 'druminnin', 'Druminnin')
+        self.assertEqual(len(evs), 8)
+        self.assertNotIn('Harraghy', ' '.join(e['title'] for e in evs))
+        self.assertNotIn('Gillespie', ' '.join(e['title'] for e in evs))
+
+    def test_a_case_without_a_crosswalk_has_none(self):
+        from tools import build_timeline as bt
+        self.assertEqual(bt.family_events(bt.ROOT / 'townlands' / 'cullionboy', 'Cullionboy'), [])

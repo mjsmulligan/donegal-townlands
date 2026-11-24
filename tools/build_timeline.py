@@ -47,7 +47,9 @@ MONTHS = {m: i for i, m in enumerate(
 MONTH_NAMES = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August',
                'September', 'October', 'November', 'December']
 BAPTISM_MIN_AGE = 100
-TYPE_ORDER = {'valuation': 0, 'baptism': 1, 'census': 2}
+ASSOC_DIR = ROOT / 'data' / 'research' / 'associations'
+TYPE_ORDER = {'family': 0, 'estate': -1, 'valuation': 0, 'baptism': 1, 'census': 2}
+ESTATE_DIR = ROOT / 'data' / 'source' / 'estate_records' / 'arran_donegal' / 'normalised'
 
 
 def parse_date(text):
@@ -224,6 +226,73 @@ def valuation_event(base, name):
     }
 
 
+def estate_events(base, name):
+    """Estate records before Griffith's (the Lough 1825 map, the 1831 Arran rental), one event per dated
+    source. Read from data/source/estate_records/arran_donegal/normalised/<slug>_holdings_observations.csv
+    when the case has one. Rows dated to a decade (Griffith's) are left to the valuation event."""
+    path = ESTATE_DIR / (base.name + '_holdings_observations.csv')
+    if not path.is_file():
+        return []
+    groups = {}
+    for row in read_rows(path):
+        year = (row.get('source_date') or '').strip()
+        if year.isdigit():
+            groups.setdefault((year, row['source']), []).append(row)
+    out = []
+    for (year, source), rows in sorted(groups.items()):
+        holdings = len({r['holding_id'] for r in rows})
+        tenants = len(rows)
+        text = f'{tenants} tenants are named in {holdings} holdings.' if holdings != tenants else f'{tenants} tenants are named.'
+        out.append({
+            'id': f'{name.lower()}:estate:{year}',
+            'type': 'estate',
+            'milestone': True,
+            'date': {'kind': 'year', 'label': year, 'iso': year},
+            'sort': f'{year}-01-01',
+            'approximate_sort': True,
+            'title': f'The estate record of {year}',
+            'text': text,
+            'estate': {'holdings': holdings, 'tenants': tenants},
+            'people': [],
+            'media': [],
+            'association': {'basis': 'townland_entry', 'label': 'An estate record for the townland.'},
+            'source': {'label': source, 'url': '', 'reference': path.name},
+        })
+    return out
+
+
+def family_events(base, name):
+    """Family beats for the story, from `<slug>_family_beats.csv` in data/research/associations. Each row
+    names the crosswalk families it draws on, and is used only when every one of those crosswalk rows is
+    `accepted` by the user (`<slug>_holdings_crosswalk.csv`). Captions are authored in plain voice."""
+    beats = ASSOC_DIR / (base.name + '_family_beats.csv')
+    cross = ASSOC_DIR / (base.name + '_holdings_crosswalk.csv')
+    if not (beats.is_file() and cross.is_file()):
+        return []
+    status = {r['family']: r['status'] for r in read_rows(cross)}
+    out = []
+    for i, row in enumerate(read_rows(beats), start=1):
+        fams = [f.strip() for f in row['crosswalk_families'].split(';')]
+        if any(status.get(f) != 'accepted' for f in fams):
+            continue
+        out.append({
+            'id': f'{name.lower()}:family:{i:02d}',
+            'type': 'family',
+            'milestone': True,
+            'date': {'kind': 'range', 'label': 'From 1825', 'iso': ''},
+            'sort': row['sort'],
+            'approximate_sort': True,
+            'title': 'The ' + ' and '.join(fams) + (' family' if len(fams) == 1 else ' families'),
+            'text': row['caption'],
+            'people': [],
+            'media': [],
+            'association': {'basis': 'accepted_crosswalk', 'label': 'A holdings link the user has accepted.'},
+            'source': {'label': 'Estate records and Griffith\'s Valuation, holdings crosswalk',
+                       'url': '', 'reference': beats.name},
+        })
+    return out
+
+
 def census_events(base, name, spellings):
     path = base / 'records' / 'census.json'
     if not path.is_file():
@@ -302,6 +371,8 @@ def events_for(name, today=None):
     val = valuation_event(base, display)
     if val:
         events.append(val)
+    events += estate_events(base, display)
+    events += family_events(base, display)
     events += census_events(base, display, spell)
     bap, skipped = baptism_events(display, today)
     events += bap

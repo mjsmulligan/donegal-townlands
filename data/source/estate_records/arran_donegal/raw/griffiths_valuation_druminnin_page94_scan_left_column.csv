@@ -1,0 +1,39 @@
+line,plots_as_printed,occupier_as_printed,reading,notes
+1,1,John McNamee,probable,"Print reads close to ""McNance""; the user's sheet reads McNamee"
+2,2,Peter Cassidy,certain,
+3,3,Peter Cassidy,certain,Bracketed with plot 3 a
+4,3 a,John Cassidy,certain,
+5,4;5;6,Michael Cassidy,probable,Right edge cut; surname partly cut
+6,7,Owen Cassidy,certain,
+7,8;9,Michael McGinty,probable,Right edge cut
+8,10,Mary McGinty,certain,
+9,11;12,John McGinty,certain,
+10,13;14,Hugh McGinty,certain,
+11,15,Edward McGinty,probable,Right edge cut
+12,16,Manus McGinty,probable,Right edge cut
+13,17,James Mullen,certain,
+14,18,James Mullen,probable,Second line of the same bracket; alignment with plot 18 read from a low resolution scan
+15,18,Patrick Gildea,probable,Same bracket as the line above
+16,19,Owen McGinty,probable,Right edge cut
+17,20;21,Hugh Cassidy,probable,"The user's sheet has Hugh McGinty here. Held open, see the comparison file"
+18,22;23,Michael McKenna,probable,"Right edge cut after ""McKen"""
+19,24,James McKenna,probable,Right edge cut
+20,25,Edward McKenna,probable,Right edge cut
+21,26,Anne McKenna,probable,Right edge cut
+22,27,James McKenna,probable,Right edge cut
+23,28;29;30,Hugh Corrigan,certain,
+24,31,John McKenna,probable,Right edge cut
+25,32;33;34;35;36,Edward Gildea,certain,
+26,37;38,Phelim Gildea,certain,
+27,39;40,Jeremiah Gildea,probable,Right edge cut
+28,41;41 a,Patrick Gildea,probable,"Printed ""41 a"" sits beside the bracket; which plot each name holds is not clear in the scan"
+29,41;42,Hugh Gethins,probable,Printed Gethins. Number 42 is partly cut at the top of its image
+30,43 a,Thomas Mullen,certain,
+31,43 b,Hugh Monaghan,certain,
+32,44;45;46,Catherine Thomas,certain,
+33,- a,Connell Thomas,certain,Printed with a dash for the plot number and the letter a
+34,47,Bryan McGinty,certain,
+35,48,Earl of Arran,certain,
+36,49,Connell Harvey,certain,
+37,50,Charles McGinty,certain,
+38,51,,certain,"Plot number printed with no occupier; the row shows dots only. Left out of the user's sheet for want of a name, included here for completeness"

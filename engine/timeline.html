@@ -124,7 +124,7 @@ var D=__DATA__;
     for(var k in (attrs||{})){ if(k==='text') e.textContent=attrs[k]; else if(k==='class') e.className=attrs[k]; else e.setAttribute(k,attrs[k]); }
     for(var i=2;i<arguments.length;i++){var c=arguments[i]; if(c==null) continue; e.append(c.nodeType?c:document.createTextNode(c));}
     return e;}
-  var KIND={valuation:"Valuation",census:"Census",baptism:"Baptism",marriage:"Marriage"};
+  var KIND={family:"Family",estate:"Estate record",valuation:"Valuation",census:"Census",baptism:"Baptism",marriage:"Marriage"};
   var track=document.getElementById('track');
   var evs=D.events, items=[], reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches;
 

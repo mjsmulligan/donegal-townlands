@@ -1,0 +1,8 @@
+plot,user_sheet_occupier,printed_page_occupier,difference,status
+1,John McNamee,John McNamee,Print reads near McNance; sheet has McNamee,open
+3,Peter/John Cassidy,"Peter Cassidy (3), John Cassidy (3 a)",Sheet joins the two names with a slash; page prints 3 and 3 a,open
+18,Patrick Gildea / James Mullen,"James Mullen, Patrick Gildea","Same two names, different order",open
+20,Hugh McGinty,Hugh Cassidy,"Surname differs (McGinty on the sheet, Cassidy on the page)",open
+21,Hugh McGinty,Hugh Cassidy,"Surname differs (McGinty on the sheet, Cassidy on the page)",open
+43,Hugh Monaghan / Thomas Mullen,"Thomas Mullen (43 a), Hugh Monaghan (43 b)","Same two names, page gives the sub plots a and b",open
+51,(not on the sheet),(no occupier printed),Plot 51 is printed with no name,open
