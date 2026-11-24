@@ -1,9 +1,9 @@
-# Donegal Townlands: Documentary Specification
+# Donegal Townlands: Story Specification
 
 Status: Draft 1, open for review
 Date: 2026-11-20
 Parent documents: `CLAUDE.md`, `docs/RESEARCH_PRINCIPLES.md`, `docs/STORY_SPEC.md`, `docs/MEDIA_SPEC.md`, `docs/DATA_ARCHITECTURE.md`
-Concept paper: Claude Doc "Townland Documentary: Design Concept" (2026-11-20)
+Concept paper: Claude Doc "Townland Story: Design Concept" (2026-11-20)
 
 Priority: **M** must, **S** should, **L** later.
 Size: **S** under a day of assistant work, **M** one to three days, **L** more.
@@ -37,32 +37,32 @@ Out of scope for the first release:
 | D2 | Beats are generated automatically from records so the feature scales over 100+ townlands. No beat needs hand authoring. Hand additions, mainly media, may be allowed later as an optional layer on top. | Agreed 2026-11-20 |
 | D3 | Phones are the main audience, desktop is also supported. One player and one script, drawn in two layouts of the same stage, not two templates. Provisional until Cullionboy is tried on a phone. | Agreed in principle 2026-11-20, to confirm after DP5 |
 | D4 | Play and Explore are two modes of one player built from the same pages. Pause or any tap moves to Explore. Resume returns to the beat that was playing. | Proposed |
-| D5 | Captions follow `docs/STORY_SPEC.md` (third person, past tense, plain words, evidence only, silence over guessing) with one softening. Where a link between records is possible but not certain, the caption may say "possibly", once, at the point of the link. Nothing else is hedged. "Probably", "seems", "it is tempting to think" and similar stay out. | Agreed 2026-11-20 for the documentary. See note below. |
+| D5 | Captions follow `docs/STORY_SPEC.md` (third person, past tense, plain words, evidence only, silence over guessing) with one softening. Where a link between records is possible but not certain, the caption may say "possibly", once, at the point of the link. Nothing else is hedged. "Probably", "seems", "it is tempting to think" and similar stay out. | Agreed 2026-11-20 for the story. See note below. |
 | D6 | The generator never invents a story for a gap in the record. Absence from a return is not told as a departure (STORY_SPEC, "Absence and departure"). | Proposed |
 | D7 | Sound is off by default. Captions are always available. Audio is never the only carrier of any fact. | Proposed |
-| D8 | Work is on branch `feature/documentary` and reviewed before merging to main. | Proposed |
-| D9 | The documentary replaces the townland walk as the main page of every townland. The walk's plates, painted scenes, Griffith's, census and Photos content stay reachable inside the documentary in Explore mode. The walk is retired only at a cutover that the user approves, after parity is shown (DP9). Nothing is deleted without being asked (`CLAUDE.md`). | Agreed 2026-11-20 |
+| D8 | Work is on branch `feature/story` and reviewed before merging to main. | Proposed |
+| D9 | The story replaces the townland walk as the main page of every townland. The walk's plates, painted scenes, Griffith's, census and Photos content stay reachable inside the story in Explore mode. The walk is retired only at a cutover that the user approves, after parity is shown (DP9). Nothing is deleted without being asked (`CLAUDE.md`). | Agreed 2026-11-20 |
 
-Note on D5. The standing story rule allows no hedges on the page. The user agreed on 2026-11-20 that this was too rigid for the documentary, and that "possibly" suits better than "probably". The rule is:
+Note on D5. The standing story rule allows no hedges on the page. The user agreed on 2026-11-20 that this was too rigid for the story, and that "possibly" suits better than "probably". The rule is:
 
 - **Certain.** A fact stated by a source, or a link the user has accepted, is told plainly with no hedge.
 - **Possible.** A link that is not accepted, or where only names match, may be told with the single word "possibly" at the link, for example "A household of the same name in 1911 possibly followed." The caption states only what the names say, as the family timeline already does (DECISIONS.md, 2026-11-19).
 - **Not told.** Where two households fit equally, the case stays in `held_open` and no beat is built.
 - Every beat records its `certainty` (`stated`, `accepted` or `possible`) so a caption's wording can be checked against it.
 
-This applies to the documentary only. `docs/STORY_SPEC.md` and the family stories are unchanged until the user says otherwise (O5).
+This applies to the story only. `docs/STORY_SPEC.md` and the family stories are unchanged until the user says otherwise (O5).
 
 ## 3. Data model
 
 ### 3.1 Files
 
 ```
-townlands/<name>/records/documentary.json     generated, never edited by hand
-tools/build_documentary.py                    the generator
-engine/documentary.html                       the player template
-docs/<name>/documentary.html                  build output, never edited by hand
-townlands/documentary_config.json             optional, repo wide (music, audio base address)
-townlands/<name>/documentary_extras.csv       reserved, optional later (section 3.5)
+townlands/<name>/records/story.json     generated, never edited by hand
+tools/build_story.py                    the generator
+engine/story.html                       the player template
+docs/<name>/story.html                  build output, never edited by hand
+townlands/story_config.json             optional, repo wide (music, audio base address)
+townlands/<name>/story_extras.csv       reserved, optional later (section 3.5)
 ```
 
 The feed is derived and regenerated on every run, in the same way as `records/timeline_events.json`.
@@ -81,13 +81,13 @@ The feed is derived and regenerated on every run, in the same way as `records/ti
 
 The generator reads these and writes nothing back to them.
 
-### 3.3 documentary.json
+### 3.3 story.json
 
 ```json
 {
   "schema": 1,
   "townland": "cullionboy",
-  "generated_by": "donegal-townlands.build_documentary",
+  "generated_by": "donegal-townlands.build_story",
   "title": "Cullionboy",
   "span": { "from": "1850s", "to": "1926" },
   "chapters": [
@@ -138,7 +138,7 @@ A chapter is a run of beats under one title. Chapters follow the evidence: the v
 
 ### 3.5 Reserved: hand additions
 
-`documentary_extras.csv` is reserved so hand additions, mainly photographs and the odd authored beat, can be merged after generation without changing the generator's output. It is not built in the first release. A hand-added beat must carry the same required fields and goes through the same validation.
+`story_extras.csv` is reserved so hand additions, mainly photographs and the odd authored beat, can be merged after generation without changing the generator's output. It is not built in the first release. A hand-added beat must carry the same required fields and goes through the same validation.
 
 ### 3.6 Beat kinds
 
@@ -164,13 +164,13 @@ Marriages are not a beat kind in the first release because the register records 
 - **One script.** The beats in order. The player holds no townland content of its own (same rule as `engine/walk.html`).
 - **Play mode.** Auto-advance, captions shown, the open card follows the beat, chapter list and skip at the edge.
 - **Explore mode.** Entered by pause or by tapping anything. The viewer has the ordinary interactive page. Resume returns to the beat that was playing.
-- **Deep links.** `#beat=<id>` opens paused on that beat. This is also how the timeline, walk and map link into the documentary.
+- **Deep links.** `#beat=<id>` opens paused on that beat. This is also how the timeline, walk and map link into the story.
 
 ### 4.2 Layouts (D3)
 
 - **Phone, portrait.** Map above, card and caption below, controls at the bottom within thumb reach. No horizontal page scroll.
 - **Desktop.** Map beside the cards, caption under the map.
-- The layout is chosen in the browser from the viewport. The script is identical. Nothing in `documentary.json` mentions layout.
+- The layout is chosen in the browser from the viewport. The script is identical. Nothing in `story.json` mentions layout.
 
 ### 4.3 Timing
 
@@ -182,7 +182,7 @@ Marriages are not a beat kind in the first release because the register records 
 - Numbers up to twenty are written in words inside sentences and figures are kept for dates (STORY_SPEC, Names, dates and numbers). This covers people as well as households ("six people in two households", "93 people in eighteen households").
 - A closing beat that follows a later photograph says only that the story reaches that year. It does not repeat a census figure.
 - Names and spellings are as recorded. Townland names are as the source spells them.
-- A thin townland gets a short documentary, not padding (D2, and STORY_SPEC, Shape of a family story).
+- A thin townland gets a short story, not padding (D2, and STORY_SPEC, Shape of a family story).
 
 ### 4.5 Privacy
 
@@ -201,7 +201,7 @@ The 100/75/50 rule applies to every beat built from information the project hold
 
 | ID | Requirement | Pri | Test |
 |---|---|---|---|
-| DOC-01 | `tools/build_documentary.py <name>` writes `records/documentary.json` from the inputs in section 3.2 and writes nothing else. | M | Run on Cullionboy. Only that file and the page change. |
+| DOC-01 | `tools/build_story.py <name>` writes `records/story.json` from the inputs in section 3.2 and writes nothing else. | M | Run on Cullionboy. Only that file and the page change. |
 | DOC-02 | Every beat has the required fields in section 3.4 and a unique id. A beat that fails fails the build and the message names it. | M | A beat missing `caption` fails with its id. |
 | DOC-03 | Output is deterministic. Rebuilding with no change gives identical files. | M | Two builds compare equal. |
 | DOC-04 | Beats are in `time.sort` order, chapters follow beats, and an empty chapter is not written. | M | Order and emptiness checks on three cases. |
@@ -211,8 +211,8 @@ The 100/75/50 rule applies to every beat built from information the project hold
 | DOC-07 | Every name, number, place and date in a caption appears in the beat's evidence. A `family` beat also passes `tools/check_story.py`. | M | A number not in the source event fails. |
 | DOC-08 | Retired 2026-11-22 with the `change` beat. No beat may name a cause or a departure: census captions state counts only. | M | The generator writes no `change` beat, and census captions hold counts only. |
 | DOC-09 | The 100/75/50 rule is applied (section 4.5). A refused beat is listed in the build output. | M | A baptism under 100 years old is refused and listed. |
-| DOC-10 | A case with fewer than two events gets a title beat and a short note, not a documentary. It builds without error. | M | A Logainm only case builds. |
-| DOC-11 | A townland with no `media.csv` builds a documentary without photograph beats and is otherwise unchanged. | M | Build Cullionboy with and without media. |
+| DOC-10 | A case with fewer than two events gets a title beat and a short note, not a story. It builds without error. | M | A Logainm only case builds. |
+| DOC-11 | A townland with no `media.csv` builds a story without photograph beats and is otherwise unchanged. | M | Build Cullionboy with and without media. |
 
 ### 5.2 Player
 
@@ -228,8 +228,8 @@ The 100/75/50 rule applies to every beat built from information the project hold
 | DOC-19 | With reduced motion the camera cuts and nothing auto-advances. | M | Render test with the media query forced. |
 | DOC-20 | Space, arrows and Escape work. Every image has alt text. | M | Keyboard and alt text render tests. |
 | DOC-21 | Before cutover, every existing walk page is unchanged by this work. | M | Rebuild shows no diff for walk pages. |
-| DOC-25 | Parity. Every plate and tab the walk offers for a townland (title, Griffith's, census years, family plates with their year tabs and Photos tab, the media enlarge view, the records panel) is reachable in Explore mode with the same content. | M | A render test compares the walk's plate and tab list to the documentary's for Cullionboy, Clogher and a Logainm only case. |
-| DOC-26 | After cutover `docs/<name>/index.html` is the documentary, and every old `#` link into a walk plate lands on the matching card. | M | Render test over a set of old fragment links. |
+| DOC-25 | Parity. Every plate and tab the walk offers for a townland (title, Griffith's, census years, family plates with their year tabs and Photos tab, the media enlarge view, the records panel) is reachable in Explore mode with the same content. | M | A render test compares the walk's plate and tab list to the story's for Cullionboy, Clogher and a Logainm only case. |
+| DOC-26 | After cutover `docs/<name>/index.html` is the story, and every old `#` link into a walk plate lands on the matching card. | M | Render test over a set of old fragment links. |
 
 ### 5.3 Governance
 
@@ -248,8 +248,8 @@ The 100/75/50 rule applies to every beat built from information the project hold
 - **Acceptance:** the user approves. `python tools/validate.py` passes.
 
 ### DP2 Beat generator
-- **Goal:** `build_documentary.py` produces `documentary.json` for Cullionboy.
-- **Outputs:** `tools/build_documentary.py`, `tests/test_build_documentary.py`.
+- **Goal:** `build_story.py` produces `story.json` for Cullionboy.
+- **Outputs:** `tools/build_story.py`, `tests/test_build_story.py`.
 - **Requirements:** DOC-01 to DOC-11.
 - **Size:** M.
 - **Acceptance:** tests pass. The user reads the Cullionboy captions aloud and signs them off.
@@ -262,7 +262,7 @@ The 100/75/50 rule applies to every beat built from information the project hold
 
 ### DP4 Player core
 - **Goal:** a player that plays, pauses and steps through beats using the existing map, timeline cards and walk plates, with captions and no sound.
-- **Outputs:** `engine/documentary.html`, render tests.
+- **Outputs:** `engine/story.html`, render tests.
 - **Requirements:** DOC-12 to DOC-17, DOC-20.
 - **Size:** L.
 - **Acceptance:** render tests pass. The user plays Cullionboy on his phone.
@@ -281,11 +281,11 @@ The 100/75/50 rule applies to every beat built from information the project hold
 - **Acceptance:** the Kellys thread reads as one story and passes `check_story.py`.
 
 ### DP7 Rollout
-- **Goal:** build a documentary for every case with enough records and update status notes.
-- **Outputs:** `python tools/build_documentary.py --all`, committed separately from the code.
-- **Requirements:** DOC-10, DOC-21, DOC-23, DOC-24. Documentaries are built beside the walk pages, not in place of them.
+- **Goal:** build a story for every case with enough records and update status notes.
+- **Outputs:** `python tools/build_story.py --all`, committed separately from the code.
+- **Requirements:** DOC-10, DOC-21, DOC-23, DOC-24. Stories are built beside the walk pages, not in place of them.
 - **Size:** S.
-- **Acceptance:** pages without a documentary are unchanged.
+- **Acceptance:** pages without a story are unchanged.
 
 ### DP8 Sound (later)
 - **Goal:** pre-generated narration and an optional music track.
@@ -294,8 +294,8 @@ The 100/75/50 rule applies to every beat built from information the project hold
 - **Acceptance:** not started until the user chooses.
 
 ### DP9 Cutover
-- **Goal:** make the documentary the main page and retire the walk from the build, once parity is shown.
-- **Outputs:** `tools/build.py` writes the documentary to `docs/<name>/index.html`, `docs/index.html` map cards link to it, `CLAUDE.md` layout section updated, a short note in `DECISIONS.md`. Walk template and old pages are kept in git history. Nothing is deleted without the user's say so.
+- **Goal:** make the story the main page and retire the walk from the build, once parity is shown.
+- **Outputs:** `tools/build.py` writes the story to `docs/<name>/index.html`, `docs/index.html` map cards link to it, `CLAUDE.md` layout section updated, a short note in `DECISIONS.md`. Walk template and old pages are kept in git history. Nothing is deleted without the user's say so.
 - **Requirements:** DOC-22, DOC-25, DOC-26.
 - **Size:** M.
 - **Acceptance:** DOC-25 passes for every case, the user has played Cullionboy and one thin case on his phone and approves the switch.
@@ -306,31 +306,31 @@ Order: DP1, DP2, DP3, then DP4 and DP5, then DP6, DP7, then DP9. DP8 any time af
 
 | ID | Item | Default until decided |
 |---|---|---|
-| O1 | Closed 2026-11-20. The documentary replaces the walk (D9). The standalone townland timeline pages stay as they are. | Decided |
+| O1 | Closed 2026-11-20. The story replaces the walk (D9). The standalone townland timeline pages stay as they are. | Decided |
 | O2 | Narration voice: synthetic, or recordings in the user's own voice for key chapters. | Captions only. |
 | O3 | Music: own recordings, public domain traditional airs, or licensed tracks. | No music. |
-| O4 | Whether the townland pages link to the family timelines now that the documentary is the shared home. This was held on 2026-11-19 until the big picture was settled. | Still held. Family thread only inside the documentary. |
-| O5 | Whether the softening in D5 ("possibly" for possible links) should also apply to the family stories in `docs/STORY_SPEC.md`. | Documentary only. STORY_SPEC unchanged. |
+| O4 | Whether the townland pages link to the family timelines now that the story is the shared home. This was held on 2026-11-19 until the big picture was settled. | Still held. Family thread only inside the story. |
+| O5 | Whether the softening in D5 ("possibly" for possible links) should also apply to the family stories in `docs/STORY_SPEC.md`. | Story only. STORY_SPEC unchanged. |
 | O6 | Default playback speed and whether chapters have a short title card. | 1.0 and no title cards. |
-| O7 | Whether `documentary.html` is a new page per townland or a mode of the existing timeline page. | New page per townland, reusing timeline card code. |
+| O7 | Whether `story.html` is a new page per townland or a mode of the existing timeline page. | New page per townland, reusing timeline card code. |
 
 ## 8. Progress and handovers
 
 | Package | Status | Where |
 |---|---|---|
-| DP1 Specification and decisions | Draft written 2026-11-20, awaiting the user's review | This file, branch `feature/documentary` |
-| DP2 Beat generator | Built 2026-11-20, awaiting the user's sign-off of the Cullionboy captions | `tools/build_documentary.py`, `tests/test_build_documentary.py`, `townlands/cullionboy/records/documentary.json` |
-| DP3 Validation and privacy | Done 2026-11-22: the generator checks every beat (DOC-02, 05, 06, 06a, 07, 08, 09) and stops on a failure, and `tools/validate.py` checks every committed `documentary.json` (`build_documentary.check_repo`) | `tools/build_documentary.py`, `tools/validate.py`, `tests/test_build_documentary.py` |
-| DP4 Player core | Built and tried on a phone 2026-11-21 | engine/documentary.html, docs/cullionboy/documentary.html. Satellite opening and backdrop, travelling cards, year ribbon, people dots, dissolves, deep links, reduced motion. Further changes follow the rollout comparison. |
+| DP1 Specification and decisions | Draft written 2026-11-20, awaiting the user's review | This file, branch `feature/story` |
+| DP2 Beat generator | Built 2026-11-20, awaiting the user's sign-off of the Cullionboy captions | `tools/build_story.py`, `tests/test_build_story.py`, `townlands/cullionboy/records/story.json` |
+| DP3 Validation and privacy | Done 2026-11-22: the generator checks every beat (DOC-02, 05, 06, 06a, 07, 08, 09) and stops on a failure, and `tools/validate.py` checks every committed `story.json` (`build_story.check_repo`) | `tools/build_story.py`, `tools/validate.py`, `tests/test_build_story.py` |
+| DP4 Player core | Built and tried on a phone 2026-11-21 | engine/story.html, docs/cullionboy/story.html. Satellite opening and backdrop, travelling cards, year ribbon, people dots, dissolves, deep links, reduced motion. Further changes follow the rollout comparison. |
 | DP5 Layouts, accessibility and motion | Not started | |
 | DP6 Family thread | Not started | |
-| DP7 Rollout | Specified 2026-11-21. WP-R1 to WP-R3 done 2026-11-22, review of the eight pages in section 9 | `docs/DOCUMENTARY_ROLLOUT_SPEC.md` (section 3.1), `tools/documentary_report.py`, `tests/test_documentary_report.py` |
+| DP7 Rollout | Specified 2026-11-21. WP-R1 to WP-R3 done 2026-11-22, review of the eight pages in section 9 | `docs/TOWNLAND_STORY_ROLLOUT_SPEC.md` (section 3.1), `tools/story_report.py`, `tests/test_story_report.py` |
 | DP8 Sound | Deferred (O2, O3) | |
 | DP9 Cutover | Not started, needs the user's approval after parity | |
 
 ## 9. Comparison review of the eight sample pages (WP-R4, 2026-11-22)
 
-Written from the committed `documentary.json` files and from stepping each page through in a browser. The satellite opening and backdrop could not be seen without a network, so imagery is not reviewed here. Running times are the sum of the beat durations, before the opening.
+Written from the committed `story.json` files and from stepping each page through in a browser. The satellite opening and backdrop could not be seen without a network, so imagery is not reviewed here. Running times are the sum of the beat durations, before the opening.
 
 ### 9.1 What each tier looks like
 

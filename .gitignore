@@ -16,5 +16,5 @@ data/processed/census_links/
 # Generated census GEDCOM test files (WP20). Regenerate with python tools/census_gedcom_export.py.
 data/processed/census_gedcom/
 
-# Generated documentary survey (WP-R1, RO-06). Regenerate with python tools/documentary_report.py.
-data/processed/documentary_report.csv
+# Generated story survey (WP-R1, RO-06). Regenerate with python tools/story_report.py.
+data/processed/story_report.csv

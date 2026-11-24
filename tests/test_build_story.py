@@ -1,7 +1,7 @@
-"""Tests for tools/build_documentary.py (docs/DOCUMENTARY_SPEC.md, DOC-01 to DOC-11 and DOC-06a).
+"""Tests for tools/build_story.py (docs/TOWNLAND_STORY_SPEC.md, DOC-01 to DOC-11 and DOC-06a).
 Run from the repo root:
 
-    python -m pytest -q tests/test_build_documentary.py
+    python -m pytest -q tests/test_build_story.py
 
 The generator is tested through `generate`, which takes already collected events, so no real
 repository file is read or written."""
@@ -13,7 +13,7 @@ import unittest
 from pathlib import Path
 from unittest import mock
 
-from tools import build_documentary as bd
+from tools import build_story as bd
 
 try:
     from playwright.sync_api import sync_playwright
@@ -109,7 +109,7 @@ class GenerationTests(unittest.TestCase):
         doc, refused = build(FULL)
         self.assertEqual(refused, [])
         self.assertEqual(doc['schema'], 1)
-        self.assertEqual(doc['generated_by'], 'donegal-townlands.build_documentary')
+        self.assertEqual(doc['generated_by'], 'donegal-townlands.build_story')
 
 
 class CaptionTests(unittest.TestCase):
@@ -272,7 +272,7 @@ class TimingTests(unittest.TestCase):
 
 
 class HardeningTests(unittest.TestCase):
-    """docs/DOCUMENTARY_ROLLOUT_SPEC.md, RO-01 to RO-05."""
+    """docs/TOWNLAND_STORY_ROLLOUT_SPEC.md, RO-01 to RO-05."""
 
     def inputs(self, events, place=PLACE):
         return {'found': {'rows': [], 'errors': []}, 'notes': [], 'feed': {'skipped': [], 'events': events},
@@ -283,8 +283,8 @@ class HardeningTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp, mock.patch.object(bd, 'ROOT', Path(tmp)), \
                 mock.patch.object(bd, 'collect', collect or (lambda n, t: (self.inputs(events, place), []))), \
                 mock.patch.object(bd, 'write_page', mock.Mock(return_value=Path(tmp) / 'docs' / 'x.html')) as page:
-            code = bd.build_documentary('cullionboy', TODAY, only_story=only_story, written=written)
-            return code, written, page, (Path(tmp) / 'townlands' / 'cullionboy' / 'records' / 'documentary.json').is_file()
+            code = bd.build_story('cullionboy', TODAY, only_story=only_story, written=written)
+            return code, written, page, (Path(tmp) / 'townlands' / 'cullionboy' / 'records' / 'story.json').is_file()
 
     def test_a_failure_is_printed_and_never_raised(self):  # RO-01
         def boom(n, t):
@@ -314,7 +314,7 @@ class HardeningTests(unittest.TestCase):
         self.assertTrue(wrote_json)
 
     def test_a_missing_case_is_reported_not_raised(self):  # RO-01
-        self.assertEqual(bd.build_documentary('no-such-townland', TODAY), 1)
+        self.assertEqual(bd.build_story('no-such-townland', TODAY), 1)
 
     def test_the_page_is_byte_identical_on_a_rebuild(self):  # RO-03
         a, _ = build(FULL)
@@ -322,7 +322,7 @@ class HardeningTests(unittest.TestCase):
         self.assertEqual(bd.render_page(a, {'rows': []}), bd.render_page(b, {'rows': []}))
         self.assertEqual(json.dumps(a, ensure_ascii=False, indent=1), json.dumps(b, ensure_ascii=False, indent=1))
 
-    def test_the_outline_goes_into_the_page_and_never_into_the_documentary(self):
+    def test_the_outline_goes_into_the_page_and_never_into_the_story(self):
         doc, _ = build(FULL)
         outline = {'type': 'Polygon', 'coordinates': [[[-8.0, 54.6], [-7.9, 54.6], [-7.9, 54.7], [-8.0, 54.6]]]}
         plain = bd.render_page(doc, {'rows': []})
@@ -335,7 +335,7 @@ class HardeningTests(unittest.TestCase):
 
 
 class CheckDocumentTests(unittest.TestCase):
-    """RO-04: the checks that tools/validate.py applies to every committed documentary.json."""
+    """RO-04: the checks that tools/validate.py applies to every committed story.json."""
 
     def good(self):
         doc, _ = build(FULL)
@@ -427,7 +427,7 @@ class LargePopulationPlayerTests(unittest.TestCase):
         doc, _ = build(events)
         target = next(b for b in beats_of(doc) if b['kind'] == 'census')['id']
         with tempfile.TemporaryDirectory() as tmp, sync_playwright() as pw:
-            f = Path(tmp) / 'documentary.html'
+            f = Path(tmp) / 'story.html'
             f.write_text(bd.render_page(doc, {'rows': []}), encoding='utf-8')
             browser = pw.chromium.launch()
             for width in (360, 375, 1440):
@@ -443,7 +443,7 @@ class LargePopulationPlayerTests(unittest.TestCase):
 
 @unittest.skipIf(sync_playwright is None, 'Playwright is not installed')
 class PhoneRegressionTests(unittest.TestCase):
-    """Faults found by the sample page checks (docs/DOCUMENTARY_ROLLOUT_SPEC.md, RO-10)."""
+    """Faults found by the sample page checks (docs/TOWNLAND_STORY_ROLLOUT_SPEC.md, RO-10)."""
 
     PNG = bytes.fromhex('89504e470d0a1a0a0000000d49484452000000010000000108060000001f15c4890000000d49444154789c6360f8cfc0000003010100c9fe92ef0000000049454e44ae426082')
 
@@ -452,13 +452,13 @@ class PhoneRegressionTests(unittest.TestCase):
             folder = Path(tmp)
             (folder / 'media').mkdir()
             (folder / 'media' / 'view.png').write_bytes(self.PNG)
-            (folder / 'documentary.html').write_text(bd.render_page(doc, {'rows': []}), encoding='utf-8')
+            (folder / 'story.html').write_text(bd.render_page(doc, {'rows': []}), encoding='utf-8')
             browser = pw.chromium.launch()
             ctx = browser.new_context(viewport={'width': width, 'height': 740},
                                       reduced_motion='reduce' if reduced else 'no-preference')
             pg = ctx.new_page()
             pg.route('**/*', lambda r: r.abort() if r.request.url.startswith('http') else r.continue_())
-            pg.goto((folder / 'documentary.html').as_uri())
+            pg.goto((folder / 'story.html').as_uri())
             pg.wait_for_timeout(300)
             pg.evaluate('window.scrollTo(200, 0)')
             seen = {'scrollX': pg.evaluate('window.scrollX'), 'play': pg.locator('#play').inner_text(),
@@ -483,7 +483,7 @@ class ThinPlayerTests(unittest.TestCase):
     def page(self, doc):
         errors = []
         with tempfile.TemporaryDirectory() as tmp, sync_playwright() as pw:
-            f = Path(tmp) / 'documentary.html'
+            f = Path(tmp) / 'story.html'
             f.write_text(bd.render_page(doc, {'rows': []}), encoding='utf-8')
             browser = pw.chromium.launch()
             pg = browser.new_page(viewport={'width': 375, 'height': 700})

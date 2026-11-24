@@ -1,13 +1,13 @@
-"""Tests for tools/documentary_report.py (docs/DOCUMENTARY_ROLLOUT_SPEC.md, WP-R1 and RO-06).
+"""Tests for tools/story_report.py (docs/TOWNLAND_STORY_ROLLOUT_SPEC.md, WP-R1 and RO-06).
 Run from the repo root:
 
-    python -m pytest -q tests/test_documentary_report.py
+    python -m pytest -q tests/test_story_report.py
 """
 
 import datetime
 import unittest
 
-from tools import documentary_report as dr
+from tools import story_report as dr
 
 TODAY = datetime.date(2026, 11, 21)
 

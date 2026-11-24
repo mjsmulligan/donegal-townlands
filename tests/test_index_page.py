@@ -1,4 +1,4 @@
-"""The map index (RO-11 to RO-14): documentary links, walk fallback, no brown, credit."""
+"""The map index (RO-11 to RO-14): story links, walk fallback, no brown, credit."""
 import unittest
 from tools import build
 
@@ -11,16 +11,16 @@ class IndexTests(unittest.TestCase):
     def page(self):
         return build.index_page([E2, E1], TEMPLATE)
 
-    def test_documentary_card_plays_first_and_keeps_the_walk(self):
+    def test_story_card_plays_first_and_keeps_the_walk(self):
         p = self.page()
-        self.assertIn('<a class="pill main" href="./alpha/documentary.html">Play the documentary</a>', p)
+        self.assertIn('<a class="pill main" href="./alpha/story.html">Play the story</a>', p)
         self.assertIn('<a class="pill" href="./alpha/">Gallery walk</a>', p)
-        self.assertIn('<a class="card-en" href="./alpha/documentary.html">Alpha</a>', p)
+        self.assertIn('<a class="card-en" href="./alpha/story.html">Alpha</a>', p)
 
-    def test_card_without_documentary_opens_the_walk(self):
+    def test_card_without_story_opens_the_walk(self):
         p = self.page()
         self.assertIn('<a class="card-en" href="./beta/">Beta</a>', p)
-        self.assertNotIn('beta/documentary.html', p)
+        self.assertNotIn('beta/story.html', p)
 
     def test_case_without_coordinates_has_a_card_and_no_pin(self):
         p = self.page()
@@ -51,8 +51,8 @@ class IndexTests(unittest.TestCase):
         self.assertIn('class="off" role="dialog" aria-label="List of townlands" hidden', TEMPLATE)
         self.assertIn('#map-container{position:fixed;inset:0', TEMPLATE)
 
-    def test_index_and_documentary_share_the_view_handoff(self):
-        doc = (build.ROOT / 'engine' / 'documentary.html').read_text(encoding='utf-8')
+    def test_index_and_story_share_the_view_handoff(self):
+        doc = (build.ROOT / 'engine' / 'story.html').read_text(encoding='utf-8')
         self.assertIn("var KEY='dt-view'", TEMPLATE)
         self.assertIn("sessionStorage.getItem('dt-view')", doc)
         self.assertNotIn('m.setView(ll0,3,', doc)           # no more fall from the globe
