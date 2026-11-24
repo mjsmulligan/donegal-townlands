@@ -5,7 +5,7 @@
  "generated_by": "donegal-townlands.build_story",
  "title": "Druminnin",
  "span": {
-  "from": "the 1850s",
+  "from": "1825",
   "to": "1926"
  },
  "chapters": [
@@ -20,7 +20,7 @@
      "time": {
       "label": "",
       "iso": "",
-      "sort": "1855-07-01",
+      "sort": "1825-01-01",
       "approximate": true
      },
      "place": {
@@ -35,12 +35,12 @@
       "stage": "map",
       "open_card": ""
      },
-     "caption": "Druminnin. Its story here runs from the 1850s to 1926.",
+     "caption": "Druminnin. Its story here runs from 1825 to 1926.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "druminnin:valuation:griffiths",
+       "druminnin:estate:1825",
        "druminnin:census:1926"
       ],
       "basis": "place_record",
@@ -48,6 +48,96 @@
      },
      "duration_ms": 4000,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "druminnin:ch:1825",
+   "title": "1825",
+   "beats": [
+    {
+     "id": "druminnin:beat:estate:1825",
+     "kind": "estate",
+     "chapter": "druminnin:ch:1825",
+     "time": {
+      "label": "1825",
+      "iso": "1825",
+      "sort": "1825-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminnin",
+      "name": "Druminnin",
+      "logainm_id": "13969",
+      "lat": 54.682253,
+      "lon": -8.020767,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminnin:estate:1825"
+     },
+     "caption": "In 1825 a map of the Arran estate laid out Druminnin in seventeen holdings. In all, 22 tenants were named.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminnin:estate:1825"
+      ],
+      "basis": "townland_entry",
+      "certainty": "stated"
+     },
+     "duration_ms": 8000,
+     "audio": null,
+     "counts": {
+      "holdings": 17,
+      "tenants": 22
+     }
+    }
+   ]
+  },
+  {
+   "id": "druminnin:ch:1831",
+   "title": "1831",
+   "beats": [
+    {
+     "id": "druminnin:beat:estate:1831",
+     "kind": "estate",
+     "chapter": "druminnin:ch:1831",
+     "time": {
+      "label": "1831",
+      "iso": "1831",
+      "sort": "1831-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminnin",
+      "name": "Druminnin",
+      "logainm_id": "13969",
+      "lat": 54.682253,
+      "lon": -8.020767,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminnin:estate:1831"
+     },
+     "caption": "In 1831 the Arran estate rental listed Druminnin. In all, 22 tenants were named.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminnin:estate:1831"
+      ],
+      "basis": "townland_entry",
+      "certainty": "stated"
+     },
+     "duration_ms": 5600,
+     "audio": null,
+     "counts": {
+      "holdings": 22,
+      "tenants": 22
+     }
     }
    ]
   },

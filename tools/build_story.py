@@ -24,7 +24,7 @@ except ImportError:                  # run as a script: python tools/build_story
 ROOT = bt.ROOT
 SCHEMA = 1
 BAPTISM_MIN_AGE = bt.BAPTISM_MIN_AGE
-KIND_ORDER = {'title': 0, 'valuation': 1, 'baptism': 2, 'census': 3, 'photo': 5, 'closing': 9}
+KIND_ORDER = {'title': 0, 'estate': 1, 'valuation': 1, 'baptism': 2, 'census': 3, 'photo': 5, 'closing': 9}
 CERTAINTY = ('stated', 'accepted', 'possible')
 CAMERAS = ('parish', 'townland', 'household')
 STAGES = ('map', 'walk', 'timeline')
@@ -139,6 +139,19 @@ def title_beat(display, name_ga, events, place, header, end_label=''):
     b['scene']['open_card'] = ''
     b['time'] = {'label': '', 'iso': '', 'sort': first['sort'], 'approximate': True}
     return b
+
+
+def estate_beat(ev, place):
+    y = ev['date']['label']
+    town = place['name']
+    h, t = ev['estate']['holdings'], ev['estate']['tenants']
+    if y == '1825':
+        lead = f"In {y} a map of the Arran estate laid out {town} in {plural(h, 'holding', 'holdings')}."
+    else:
+        lead = f"In {y} the Arran estate rental listed {town}."
+    cap = f"{lead} In all, {num(t)} tenants were named." if t != 1 else f"{lead} One tenant was named."
+    return beat('estate', y, f"{place['townland']}:ch:{y}", ev, cap, place,
+                basis=ev['association']['basis'], events=[ev['id']], counts={'holdings': h, 'tenants': t})
 
 
 def valuation_beat(ev, place, media=()):
@@ -371,6 +384,7 @@ def generate(display, slug, place_record, events, by_event=None, header=None, to
         vals = [e for e in events if e['type'] == 'valuation']
         baps = [e for e in events if e['type'] == 'baptism']
         cens = [e for e in events if e['type'] == 'census']
+        beats += [estate_beat(e, place) for e in events if e['type'] == 'estate']
         beats += [valuation_beat(e, place, griffiths_files or ()) for e in vals]
         beats += baptism_beats(baps, place, parish_files or ())
         beats += [census_beat(e, place) for e in cens]

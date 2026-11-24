@@ -31,3 +31,8 @@ The household identifier for these sources is the holding number. See that folde
 - Confirm historical spellings and any relevant variations.
 - Establish historical place relationships where the evidence permits.
 - Add historical records with references to their original sources.
+
+## Townland story (2026-11-24)
+`python tools/build_story.py druminnin` now opens with two estate beats, the Lough 1825 map (seventeen holdings, 22 tenants) and the 1831 Arran rental (22 tenants), before Griffith's. Counts only, taken from `data/source/estate_records/arran_donegal/normalised/druminnin_holdings_observations.csv`.
+Open: the Griffith's beat says 36 occupiers (askaboutireland index), while the user's own transcription of the Griffith's map has 50 plots. The two are different counts (index entries against map plots) and are held open, not reconciled.
+Open: the story does not yet follow families across 1825, 1831 and Griffith's; the crosswalk (`data/research/associations/druminnin_holdings_crosswalk.csv`) is still `proposed`.

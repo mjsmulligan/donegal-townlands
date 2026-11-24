@@ -21,7 +21,7 @@ except ImportError:                  # run as a script: python tools/story_repor
 
 ROOT = bt.ROOT
 OUT = ROOT / 'data' / 'processed' / 'story_report.csv'
-KINDS = ('title', 'valuation', 'baptism', 'census', 'photo', 'closing')
+KINDS = ('title', 'estate', 'valuation', 'baptism', 'census', 'photo', 'closing')
 FIELDS = ['townland', 'name', 'tier', 'census_years', 'census_people_max', 'baptisms', 'baptisms_left_out',
           'griffiths_occupiers', 'authored_content', 'media_files', 'people_json', 'lat', 'lon', 'coords',
           'events', 'has_story', 'beats'] + ['beats_' + k for k in KINDS] + ['duration_s', 'refused', 'files_written', 'note']
