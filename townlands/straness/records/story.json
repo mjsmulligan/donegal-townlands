@@ -35,7 +35,7 @@
       "stage": "map",
       "open_card": ""
      },
-     "caption": "Straness. Its story here runs from 1901 to 1926.",
+     "caption": "Straness. Here is the story of Straness and its four families, from 1901 to 1926.",
      "people": [],
      "media": [],
      "evidence": {
@@ -46,7 +46,7 @@
       "basis": "place_record",
       "certainty": "stated"
      },
-     "duration_ms": 4000,
+     "duration_ms": 6000,
      "audio": null
     }
    ]
@@ -77,7 +77,7 @@
       "stage": "map",
       "open_card": "straness:census:1901"
      },
-     "caption": "Straness had 34 people in seven households in 1901.",
+     "caption": "Straness had 34 people in seven households in 1901. Heads of household included Quinn, McCadden and Cassidy.",
      "people": [],
      "media": [],
      "evidence": {
@@ -87,7 +87,7 @@
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 4000,
+     "duration_ms": 6800,
      "audio": null,
      "counts": {
       "people": 34,
@@ -122,7 +122,7 @@
       "stage": "map",
       "open_card": "straness:census:1911"
      },
-     "caption": "Straness had 47 people in seven households in 1911.",
+     "caption": "Straness had 47 people in seven households in 1911. Heads of household included Quinn, McCadden and Cassidy.",
      "people": [],
      "media": [],
      "evidence": {
@@ -132,7 +132,7 @@
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 4000,
+     "duration_ms": 6800,
      "audio": null,
      "counts": {
       "people": 47,
@@ -167,7 +167,7 @@
       "stage": "map",
       "open_card": "straness:census:1926"
      },
-     "caption": "Straness had 31 people in seven households in 1926.",
+     "caption": "Straness had 31 people in seven households in 1926. Heads of household included McCadden, Quinn and Cassidy.",
      "people": [],
      "media": [],
      "evidence": {
@@ -177,7 +177,7 @@
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 4000,
+     "duration_ms": 6800,
      "audio": null,
      "counts": {
       "people": 31,

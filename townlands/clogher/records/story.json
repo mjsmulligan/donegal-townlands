@@ -35,7 +35,7 @@
       "stage": "map",
       "open_card": ""
      },
-     "caption": "Clogher, in Irish An Clochar. Its story here runs from the 1850s to 1926.",
+     "caption": "Clogher, in Irish An Clochar, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Clogher and its 24 families, from the 1850s to 1926.",
      "people": [],
      "media": [
       "clogher-landscape.jpg"
@@ -48,7 +48,7 @@
       "basis": "place_record",
       "certainty": "stated"
      },
-     "duration_ms": 6600,
+     "duration_ms": 13400,
      "audio": null
     }
    ]
@@ -235,7 +235,7 @@
       "stage": "map",
       "open_card": "clogher:census:1901"
      },
-     "caption": "Clogher had 125 people in 27 households in 1901.",
+     "caption": "Clogher had 125 people in 27 households in 1901. Heads of household included Flanagan, Hone and Cassidy.",
      "people": [],
      "media": [],
      "evidence": {
@@ -245,7 +245,7 @@
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 4000,
+     "duration_ms": 6800,
      "audio": null,
      "counts": {
       "people": 125,
@@ -280,7 +280,7 @@
       "stage": "map",
       "open_card": "clogher:census:1911"
      },
-     "caption": "Clogher had 112 people in 23 households in 1911.",
+     "caption": "Clogher had 112 people in 23 households in 1911. Heads of household included Flanagan, Gallagher and Cassidy.",
      "people": [],
      "media": [],
      "evidence": {
@@ -290,7 +290,7 @@
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 4000,
+     "duration_ms": 6800,
      "audio": null,
      "counts": {
       "people": 112,
@@ -325,7 +325,7 @@
       "stage": "map",
       "open_card": "clogher:census:1926"
      },
-     "caption": "In 1926, 89 people in twenty households lived in Clogher.",
+     "caption": "In 1926, 89 people in twenty households lived in Clogher. Heads of household included Gallagher, Hone and Breslin.",
      "people": [],
      "media": [],
      "evidence": {
@@ -335,7 +335,7 @@
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 4000,
+     "duration_ms": 7200,
      "audio": null,
      "counts": {
       "people": 89,
