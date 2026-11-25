@@ -251,6 +251,10 @@ The Druminnin townland story now begins with the 1825 and 1831 estate records. A
 
 The user said the crosswalk is good enough to go in the story. Its rows are `accepted`, except the two marked Open (Harraghy, Gillespie), which stay `proposed` and are not told. A new `family` event type and beat kind, certainty `accepted`, tells each accepted family in the lay voice. The captions are authored in `data/research/associations/druminnin_family_beats.csv`, and the builder uses a row only while the crosswalk rows it names are accepted. Facts still held open (the 1831 John line, plots 20 and 21) are left out of the captions.
 
+## 2026-11-24: Isabella McAna (1 in 1901) accepted as Lizzie McNaw (10 in 1911) (the user)
+
+The user judged the 1901 daughter Isabella and the 1911 daughter Lizzie in the McAnaw house to be the same child, ten years on. The matcher does not propose it, since Lizzie belongs to the Elizabeth given-name family and Isabella to a separate one. The link is recorded as a single accepted decision (confidence `manual`) and the given-name dictionary is not changed. Whether Lizzie should be added to the Isabella family for every townland is the user's to decide.
+
 ## 2026-11-24: Spacing in a given name is not a difference when linking censuses (found on the Druminnin review)
 
 On the Druminnin review the user found that James McAnaw's wife in 1901 (Maryanne, 30) was not linked to his wife in 1911 (Mary Anne, 38). The matcher compared only the first word of a given name, so Maryanne and Mary Anne did not match. It now also treats names that are equal once spaces and punctuation are removed as an exact given-name match. Across all five DEDs this adds seven proposed links (four high, two medium, one low) and two weaker proposals are replaced by the better same-name link. Nothing is accepted by this change, and recorded decisions are untouched.
