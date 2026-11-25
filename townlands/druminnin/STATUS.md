@@ -56,3 +56,5 @@ The footnotes now name third-party sources only, and the Explore button opens a 
 The story now rewinds the clock for each family (DECISIONS.md, 2026-11-25). Highlights by rule: McGinty and Cassidy.
 
 Open, not resolved: authored captions in `data/research/associations/druminnin_family_beats.csv` disagree with the census in two places. Thomas says "four Thomas households in 1901 and three in 1911"; the census has four and three Thomas people in two households each year. McNamee says "one in 1911"; the 1911 McNamee is a boarder (household 2), not a household head. The captions are kept as authored, and no generated census beat is made for those years.
+
+The story's Griffith's caption now says 51 plots (the printed page), not 36 (index entries). The 36 and the 51 are different counts and stay open (2026-11-25).

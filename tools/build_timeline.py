@@ -187,13 +187,40 @@ def baptism_events(name, today, register=None, normalised=None):
     return events, skipped
 
 
+def printed_plots(rows):
+    """The plot numbers a printed Griffith's page carries: '4 to 6', '8, 9', '41 a' and the like, as a set."""
+    out = set()
+    for r in rows:
+        t = str(r.get('lot', '')).strip()
+        for a, b in re.findall(r'(\d+)\s*to\s*(\d+)', t):
+            out |= set(range(int(a), int(b) + 1))
+        out |= {int(x) for x in re.findall(r'\d+', re.sub(r'\d+\s*to\s*\d+', '', t))}
+    return out
+
+
 def valuation_event(base, name):
     """Griffith's as one milestone. Taken from the askaboutireland index when the case has one,
     otherwise from the authored transcription in content.json."""
     label, url, ref, count, noun = "Griffith's Valuation", '', '', 0, 'occupiers are named for the townland'
     idx = base / 'records' / 'griffiths_index.json'
     content = base / 'content.json'
-    if idx.is_file():
+    printed = []
+    if content.is_file():
+        printed = (json.loads(content.read_text(encoding='utf-8')).get('griffiths') or {}).get('rows', [])
+    plots = printed_plots(printed)
+    if plots and plots == set(range(1, max(plots) + 1)):
+        # the printed page, as the user transcribed it, is the count: its numbered plots, not index entries
+        count, noun = len(plots), 'plots are numbered for the townland'
+        sub = ((json.loads(content.read_text(encoding='utf-8')).get('griffiths') or {}).get('sheet') or {}).get('sub', '')
+        where = sub.split('. Ord')[0].strip().rstrip('.') if sub else ''
+        label = "Griffith's Valuation" + (', ' + where if where else '') + ', our transcription'
+        ref = 'content.json griffiths.rows'
+        if idx.is_file():
+            idata = json.loads(idx.read_text(encoding='utf-8'))
+            irows = [r for r in idata.get('rows', []) if r.get('role') == 'occupier']
+            if irows:
+                label, url = label + ', and the askaboutireland.ie index', irows[0].get('listing_url', '')
+    elif idx.is_file():
         data = json.loads(idx.read_text(encoding='utf-8'))
         rows = [r for r in data.get('rows', []) if r.get('role') == 'occupier']
         count = len(rows)

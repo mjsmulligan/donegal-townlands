@@ -75,6 +75,14 @@ def _estate_rows(base):
 
 
 def _griffiths_rows(base):
+    """The occupiers of Griffith's, as {'surname', 'forename'}. The printed page transcribed in content.json is
+    the count the story uses (see build_timeline.valuation_event); the askaboutireland index is the fallback."""
+    content = base / 'content.json'
+    if content.is_file():
+        rows = (json.loads(content.read_text(encoding='utf-8')).get('griffiths') or {}).get('rows', [])
+        if bt.printed_plots(rows):
+            return [{'surname': r['occ'].split()[-1], 'forename': ' '.join(r['occ'].split()[:-1]), 'role': 'occupier'}
+                    for r in rows if (r.get('occ') or '').strip() and not r.get('nofamily')]
     path = base / 'records' / 'griffiths_index.json'
     if not path.is_file():
         return []
