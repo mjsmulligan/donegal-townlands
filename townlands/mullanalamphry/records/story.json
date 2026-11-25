@@ -35,7 +35,7 @@
       "stage": "map",
       "open_card": ""
      },
-     "caption": "Mullanalamphry. Its story here runs from the 1850s to 1926.",
+     "caption": "Mullanalamphry, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Mullanalamphry and its twelve families, from the 1850s to 1926.",
      "people": [],
      "media": [],
      "evidence": {
@@ -46,7 +46,7 @@
       "basis": "place_record",
       "certainty": "stated"
      },
-     "duration_ms": 4000,
+     "duration_ms": 10800,
      "audio": null
     }
    ]
@@ -77,7 +77,7 @@
       "stage": "map",
       "open_card": "mullanalamphry:valuation:griffiths"
      },
-     "caption": "Griffith's Valuation listed the land and its occupiers in the 1850s. Here, 18 occupiers are named for Mullanalamphry.",
+     "caption": "Griffith's Valuation listed the land and its occupiers in the 1850s. Here, 18 occupiers are named for Mullanalamphry. The occupiers included Thomas, Devlin and McGinty.",
      "people": [],
      "media": [],
      "evidence": {
@@ -87,7 +87,7 @@
       "basis": "townland_entry",
       "certainty": "stated"
      },
-     "duration_ms": 7200,
+     "duration_ms": 10000,
      "audio": null
     }
    ]
@@ -160,7 +160,7 @@
       "stage": "map",
       "open_card": "mullanalamphry:census:1901"
      },
-     "caption": "In 1901, 47 people in ten households lived in Mullanalamphry.",
+     "caption": "In 1901, 47 people in ten households lived in Mullanalamphry. Heads of household included Thomas, McGettigan and Devlin.",
      "people": [],
      "media": [],
      "evidence": {
@@ -170,7 +170,7 @@
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 4000,
+     "duration_ms": 7200,
      "audio": null,
      "counts": {
       "people": 47,
@@ -205,7 +205,7 @@
       "stage": "map",
       "open_card": "mullanalamphry:census:1911"
      },
-     "caption": "Mullanalamphry had 35 people in eight households in 1911.",
+     "caption": "Mullanalamphry had 35 people in eight households in 1911. Heads of household included McGettigan, Thomas and Davis.",
      "people": [],
      "media": [],
      "evidence": {
@@ -215,7 +215,7 @@
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 4000,
+     "duration_ms": 6800,
      "audio": null,
      "counts": {
       "people": 35,
@@ -250,7 +250,7 @@
       "stage": "map",
       "open_card": "mullanalamphry:census:1926"
      },
-     "caption": "In 1926, 23 people in seven households lived in Mullanalamphry.",
+     "caption": "In 1926, 23 people in seven households lived in Mullanalamphry. Heads of household included McGettigan, Thomas and Heron.",
      "people": [],
      "media": [],
      "evidence": {
@@ -260,7 +260,7 @@
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 4000,
+     "duration_ms": 7200,
      "audio": null,
      "counts": {
       "people": 23,

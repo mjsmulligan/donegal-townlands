@@ -35,7 +35,7 @@
       "stage": "map",
       "open_card": ""
      },
-     "caption": "Goladoo. Its story here runs from 1873 to 1926.",
+     "caption": "Goladoo, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Goladoo and its sixteen families, from 1873 to 1926.",
      "people": [],
      "media": [],
      "evidence": {
@@ -46,7 +46,7 @@
       "basis": "place_record",
       "certainty": "stated"
      },
-     "duration_ms": 4000,
+     "duration_ms": 10400,
      "audio": null
     }
    ]
@@ -192,7 +192,7 @@
       "stage": "map",
       "open_card": "goladoo:census:1901"
      },
-     "caption": "In 1901, 90 people in sixteen households lived in Goladoo.",
+     "caption": "In 1901, 90 people in sixteen households lived in Goladoo. Heads of household included Martin, Slevin and Timoney.",
      "people": [],
      "media": [],
      "evidence": {
@@ -202,7 +202,7 @@
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 4000,
+     "duration_ms": 7200,
      "audio": null,
      "counts": {
       "people": 90,
@@ -237,7 +237,7 @@
       "stage": "map",
       "open_card": "goladoo:census:1911"
      },
-     "caption": "In 1911, 81 people in seventeen households lived in Goladoo.",
+     "caption": "In 1911, 81 people in seventeen households lived in Goladoo. Heads of household included Martin, Timoney and Slevin.",
      "people": [],
      "media": [],
      "evidence": {
@@ -247,7 +247,7 @@
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 4000,
+     "duration_ms": 7200,
      "audio": null,
      "counts": {
       "people": 81,
@@ -282,7 +282,7 @@
       "stage": "map",
       "open_card": "goladoo:census:1926"
      },
-     "caption": "In 1926, 59 people in fifteen households lived in Goladoo.",
+     "caption": "In 1926, 59 people in fifteen households lived in Goladoo. Heads of household included Herron, Timmoney and Martain.",
      "people": [],
      "media": [],
      "evidence": {
@@ -292,7 +292,7 @@
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 4000,
+     "duration_ms": 7200,
      "audio": null,
      "counts": {
       "people": 59,

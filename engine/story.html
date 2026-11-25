@@ -81,6 +81,7 @@ details p{margin:4px 0;overflow-wrap:anywhere}
 .ribbon{position:relative;flex:0 0 auto;height:74px;margin:0 6px;touch-action:pan-y}
 .ribbon .line{position:absolute;left:0;right:0;top:34px;height:3px;background:rgba(83,104,109,.35);border-radius:2px}
 .ribbon .done{position:absolute;left:0;top:34px;height:3px;background:var(--hill-d);border-radius:2px;width:0}
+.stop[hidden],.lab[hidden]{display:none!important}
 .stop{position:absolute;top:26px;width:20px;height:20px;margin-left:-10px;border-radius:50%;border:3px solid var(--wall);background:var(--ink2);padding:0;cursor:pointer;transition:transform .4s var(--ease),background .4s}
 .stop.past{background:var(--hill-d)}
 .stop.cur{transform:scale(1.35);background:var(--gorse);box-shadow:0 0 0 2px var(--ink)}
@@ -207,26 +208,40 @@ var D=__DATA__;
     if(first){$('bg').classList.add('photo'); $('bg').style.setProperty('--photo','url("media/'+first.replace(/"/g,'%22')+'")')}
   }
 
-  /* the ribbon: a stop for every beat, spaced half by time and half evenly so close moments stay apart */
-  var y0=year(beats[0]), y1=year(beats[N-1]), span=Math.max(1,y1-y0), pos=[];
-  beats.forEach(function(b,k){pos.push(0.5*(N>1?k/(N-1):0)+0.5*((year(b)-y0)/span))});
-  var stopEls=[], PAD=0.09;
+  /* the ribbon: one track for the townland and one for each family. A family rewinds the clock to its own first year,
+     so a track holds only its own moments, spaced half by time and half evenly so close moments stay apart. */
+  function track(b){return b.thread?b.thread.id:'main'}
+  var tracks={}, pos=[], tk=[], stopEls=[], labEls=[], PAD=0.09;
+  beats.forEach(function(b,k){var t=track(b); (tracks[t]=tracks[t]||[]).push(k)});
+  Object.keys(tracks).forEach(function(t){
+    var m=tracks[t], n=m.length, a=year(beats[m[0]]), z=year(beats[m[n-1]]), sp=Math.max(1,z-a);
+    m.forEach(function(k,j){pos[k]=0.5*(n>1?j/(n-1):0.5)+0.5*((year(beats[k])-a)/sp); tk[k]=t});
+  });
   function px(p){return (PAD+(1-2*PAD)*p)*100}
   beats.forEach(function(b,k){
-    var s=el('button','stop'+(b.evidence.certainty==='possible'?' possible':''));
+    var m=tracks[tk[k]], s=el('button','stop'+(b.evidence.certainty==='possible'?' possible':''));
     s.type='button'; s.style.left=px(pos[k])+'%';
-    s.setAttribute('aria-label',(b.time.label||D.title)+': '+(chapters[b.chapter]||'')+', moment '+(k+1)+' of '+N);
+    s.setAttribute('aria-label',(b.time.label||D.title)+': '+(chapters[b.chapter]||'')+', moment '+(m.indexOf(k)+1)+' of '+m.length);
     s.addEventListener('click',function(){go(k)});
     $('stops').append(s); stopEls.push(s);
   });
-  /* year labels, only where there is room */
+  /* year labels, only where there is room, a track at a time */
   (function(){
-    var w=Math.max(280,Math.min(window.innerWidth-32,440)), last=-99;
-    beats.forEach(function(b,k){
-      var x=px(pos[k])/100*w; if(k===0||x-last<46) return;
-      var l=el('span','lab',String(year(b))); l.style.left=px(pos[k])+'%'; $('ribbon').append(l); last=x;
+    var w=Math.max(280,Math.min(window.innerWidth-32,440));
+    beats.forEach(function(b,k){labEls.push(null)});
+    Object.keys(tracks).forEach(function(t){
+      var last=-99;
+      tracks[t].forEach(function(k,j){
+        var x=px(pos[k])/100*w; if(j>0&&x-last<46) return;
+        var l=el('span','lab',String(year(beats[k]))); l.style.left=px(pos[k])+'%'; $('ribbon').append(l); labEls[k]=l; last=x;
+      });
     });
   })();
+  var showing=null;
+  function showTrack(t){
+    if(t===showing) return; showing=t;
+    stopEls.forEach(function(s,k){s.hidden=tk[k]!==t; if(labEls[k]) labEls[k].hidden=tk[k]!==t});
+  }
   function setHead(p,y){ $('head').style.left=px(p)+'%'; $('head').textContent=String(Math.round(y)); $('done').style.width=px(p)+'%'; }
 
   /* the explore hub: families and record sources, each a beat to jump to */
@@ -240,7 +255,7 @@ var D=__DATA__;
     /* the records behind a beat: the named sources, as links where the source has a page of its own. Nothing about how we
        linked or checked them appears here. */
     var srcs=[], seenSrc={};
-    b.evidence.events.forEach(function(id){((D.sources||{})[id]||[]).forEach(function(r){ if(!seenSrc[r.label]){seenSrc[r.label]=1; srcs.push(r)} })});
+    b.evidence.events.concat([b.id]).forEach(function(id){((D.sources||{})[id]||[]).forEach(function(r){ if(!seenSrc[r.label]){seenSrc[r.label]=1; srcs.push(r)} })});
     if(srcs.length){
       var d=el('details',null); d.append(el('summary',null,'The records behind this'));
       srcs.forEach(function(r){
@@ -367,7 +382,7 @@ var D=__DATA__;
     $('app').classList.toggle('hero',!shows);
     $('app').classList.toggle('pic',!!(b.media&&b.media.length)&&!isHero(b));
     cardEls.forEach(function(c,k){c.classList.toggle('cur',k===i); c.setAttribute('aria-hidden',k===i?'false':'true')});
-    stopEls.forEach(function(s,k){s.classList.toggle('cur',k===i); s.classList.toggle('past',k<i)});
+    showTrack(tk[i]); stopEls.forEach(function(s,k){s.classList.toggle('cur',k===i); s.classList.toggle('past',tk[k]===tk[i]&&k<i)});
     place(fromHash);
     setHead(pos[i],year(b));
     $('live').textContent=(b.time.label?b.time.label+'. ':'')+b.caption;
@@ -377,7 +392,7 @@ var D=__DATA__;
   }
 
   function setMode(){
-    $('play').textContent=reduce?'Step through':(playing?'Pause':(i>=N-1&&remaining<=0?'Play again':(started?'Resume':'Play')));
+    $('play').textContent=reduce?'Step through':(playing?'Pause':(isEnd(i)&&remaining<=0?'Play again':(started?'Resume':'Play')));
     $('play').setAttribute('aria-pressed',playing?'true':'false');
     $('mode').textContent=playing?'Playing':'Paused';
   }
@@ -385,25 +400,29 @@ var D=__DATA__;
   /* the clock: stay on a moment for most of its time, then let the years run on to the next one */
   function ease(t){return t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2}
   function tick(){
-    if(i<N-1){
+    if(i<N-1&&tk[i+1]===tk[i]){
       var left=remaining-(Date.now()-started), p=1-left/beats[i].duration_ms;
       var q=p<.6?0:ease(Math.min(1,(p-.6)/.4));
       setHead(pos[i]+(pos[i+1]-pos[i])*q, year(beats[i])+(year(beats[i+1])-year(beats[i]))*q);
     }
     if(playing) raf=requestAnimationFrame(tick);
   }
+  var closeIdx=N-1, solo=null;
+  beats.forEach(function(b,k){if(b.kind==='closing') closeIdx=k});
+  /* the run ends at the closing card, or, when a viewer chose one family, where that family's own moments end */
+  function isEnd(k){return k>=N-1||beats[k].kind==='closing'||((solo||k>closeIdx)&&tk[k+1]!==tk[k])}
   function schedule(){
     clearTimeout(timer); cancelAnimationFrame(raf);
     started=Date.now();
     timer=setTimeout(function(){
-      if(i>=N-1){playing=false; remaining=0; setMode(); return}
+      if(isEnd(i)){playing=false; remaining=0; setMode(); if(!$('hub').hidden||!hasHub) return; if(solo||i>closeIdx) openHub(); return}
       show(i+1); remaining=beats[i].duration_ms; schedule();
     },remaining);
     raf=requestAnimationFrame(tick); setMode();
   }
   function play(){
     if(reduce) return;
-    if(i>=N-1&&remaining<=0){show(0)}
+    if(isEnd(i)&&remaining<=0){solo=null; show(0)}
     if(!remaining||remaining>beats[i].duration_ms) remaining=beats[i].duration_ms;
     playing=true; schedule();
   }
@@ -414,14 +433,18 @@ var D=__DATA__;
     setHead(pos[i],year(beats[i]));
   }
   function go(n){ /* any move by hand is Explore: stop, then stay where the viewer chose */
-    pause(); show(n); remaining=beats[i].duration_ms; setMode();
+    solo=null; pause(); show(n); remaining=beats[i].duration_ms; setMode();
   }
 
   var byId={}; beats.forEach(function(b,k){byId[b.id]=k});
   function chips(box,list){
     list.forEach(function(r){
       var c=el('button','chip',r.label); c.type='button';
-      c.addEventListener('click',function(){closeHub(true); go(byId[r.beat])});
+      c.addEventListener('click',function(){
+        closeHub(true); var n=byId[r.beat]; go(n);
+        if(r.thread){solo=r.thread}   /* a family plays its own moments, then the hub comes back */
+        if(!reduce){remaining=beats[i].duration_ms; play()}
+      });
       $(box).append(c);
     });
     $(box+'-box').hidden=!list.length;

@@ -51,3 +51,8 @@ Open: plots 20 and 21 (Cassidy on the printed page, McGinty on the user's sheet)
 ## Story review (2026-11-25)
 The footnotes now name third-party sources only, and the Explore button opens a hub of the eight families and the record sources (DECISIONS.md, 2026-11-25; spec section 10). Not yet built: the two-part spine, the opening caption with its fact and family count, and highlight families. Open: the eight family beats still sit together at 1855 on the ribbon, which is the timeline problem the user named.
 
+
+## Story families (2026-11-25)
+The story now rewinds the clock for each family (DECISIONS.md, 2026-11-25). Highlights by rule: McGinty and Cassidy.
+
+Open, not resolved: authored captions in `data/research/associations/druminnin_family_beats.csv` disagree with the census in two places. Thomas says "four Thomas households in 1901 and three in 1911"; the census has four and three Thomas people in two households each year. McNamee says "one in 1911"; the 1911 McNamee is a boarder (household 2), not a household head. The captions are kept as authored, and no generated census beat is made for those years.

@@ -35,7 +35,7 @@
       "stage": "map",
       "open_card": ""
      },
-     "caption": "Tawnalary. Its story here runs from 1911 to 1926.",
+     "caption": "Tawnalary, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Tawnalary and its four families, from 1911 to 1926.",
      "people": [],
      "media": [],
      "evidence": {
@@ -46,7 +46,7 @@
       "basis": "place_record",
       "certainty": "stated"
      },
-     "duration_ms": 4000,
+     "duration_ms": 10400,
      "audio": null
     }
    ]
@@ -77,7 +77,7 @@
       "stage": "map",
       "open_card": "tawnalary:census:1911"
      },
-     "caption": "Tawnalary had six people in two households in 1911.",
+     "caption": "Tawnalary had six people in two households in 1911. Heads of household included Elliott and Freebourn.",
      "people": [],
      "media": [],
      "evidence": {
@@ -87,7 +87,7 @@
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 4000,
+     "duration_ms": 6400,
      "audio": null,
      "counts": {
       "people": 6,
@@ -122,7 +122,7 @@
       "stage": "map",
       "open_card": "tawnalary:census:1926"
      },
-     "caption": "Tawnalary had three people in two households in 1926.",
+     "caption": "Tawnalary had three people in two households in 1926. Heads of household included Elliot and Freeborn.",
      "people": [],
      "media": [],
      "evidence": {
@@ -132,7 +132,7 @@
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 4000,
+     "duration_ms": 6400,
      "audio": null,
      "counts": {
       "people": 3,

@@ -681,3 +681,66 @@ class ExplorePlayerTests(unittest.TestCase):
             self.assertEqual(page.locator('#hubfam .chip').count(), 0)
             self.assertEqual(page.locator('#hubsrc .chip').all_inner_texts(), ['Census returns'])
             browser.close()
+
+
+class FamilyThreadTests(unittest.TestCase):
+    """The per-family rewind (TOWNLAND_STORY_SPEC section 10.3)."""
+
+    def fam_event(self, n, year=1855):
+        return {'id': f'cullionboy:family:{n:02d}', 'type': 'family', 'milestone': False,
+                'date': {'kind': 'year', 'label': str(year), 'iso': str(year)}, 'sort': f'{year}-01-01',
+                'approximate_sort': True, 'title': 'The Kelly family', 'text': 'The Kellys held land in 1825.',
+                'people': [], 'media': [], 'association': {'basis': 'accepted_crosswalk', 'label': ''}}
+
+    def thread(self, n, label, years):
+        fid = f'cullionboy:family:{n:02d}'
+        evs = [{'id': f'cullionboy:familycensus:{n:02d}:{y}', 'type': 'family_census', 'milestone': False,
+                'date': {'kind': 'year', 'label': str(y), 'iso': str(y)}, 'sort': f'{y}-01-01',
+                'approximate_sort': True, 'title': 'x', 'text': f'1 {label} household, headed by Hugh.',
+                'people': [], 'media': [], 'groups': [(label, ['Hugh'])],
+                'association': {'basis': 'census_surname', 'label': ''},
+                'source': {'label': 'Census', 'url': '', 'reference': str(y)}} for y in years]
+        return {'id': fid, 'label': label, 'labels': [label], 'start_sort': '1825-01-01', 'span': 100,
+                'sources': 3, 'households': len(years), 'events': evs}
+
+    def make(self):
+        events = [census(1901, 93, 18), census(1911, 72, 16), self.fam_event(1), self.fam_event(2)]
+        fam = {'names': {'families': 5, 'census': {'1901': ['Kelly', 'Sweeny']}},
+               'threads': [self.thread(1, 'Kelly', [1901, 1911]), self.thread(2, 'Sweeny', [1911])],
+               'highlights': ['cullionboy:family:01']}
+        doc, _ = bd.generate('Cullionboy', 'cullionboy', PLACE, events, today=TODAY, fam=fam)
+        return doc, [b for c in doc['chapters'] for b in c['beats']], events, fam
+
+    def test_the_run_is_townland_then_highlights_then_closing_then_the_rest(self):
+        _, beats, _, _ = self.make()
+        kinds = [(b['kind'], (b.get('thread') or {}).get('id', '')[-2:]) for b in beats]
+        close = [k for k, _ in kinds].index('closing')
+        self.assertTrue(all(t in ('', '01') for _, t in kinds[:close]))
+        self.assertTrue(all(t == '02' for _, t in kinds[close + 1:]))
+        self.assertTrue(any(t == '01' for _, t in kinds[:close]))
+
+    def test_each_family_has_its_own_chapter_and_time_order_holds_per_track(self):
+        doc, beats, events, fam = self.make()
+        self.assertIn('The Kelly family', [c['title'] for c in doc['chapters']])
+        extra = [e for t in fam['threads'] for e in t['events']]
+        self.assertEqual(bd.check_document(doc, events + extra, 5), [])
+
+    def test_a_thread_out_of_order_is_caught(self):
+        doc, beats, events, fam = self.make()
+        mine = [b for b in beats if (b.get('thread') or {}).get('id', '').endswith('01')]
+        mine[0]['time']['sort'], mine[-1]['time']['sort'] = '1926-01-01', '1855-01-01'
+        extra = [e for t in fam['threads'] for e in t['events']]
+        self.assertTrue(any('time order' in p for p in bd.check_document(doc, events + extra, 5)))
+
+    def test_the_title_names_the_families_and_the_milestones_name_surnames(self):
+        _, beats, _, _ = self.make()
+        self.assertIn('its five families', beats[0]['caption'])
+        census_beat = next(b for b in beats if b['kind'] == 'census' and b['time']['label'] == '1901')
+        self.assertIn('Heads of household included Kelly and Sweeny.', census_beat['caption'])
+
+    def test_the_hub_lists_the_families_by_thread(self):
+        doc, _, events, fam = self.make()
+        extra = [e for t in fam['threads'] for e in t['events']]
+        ex = bd.explore_block(doc)
+        self.assertEqual([f['label'] for f in ex['families']], ['Kelly', 'Sweeny'])
+        self.assertTrue(all(f['thread'] for f in ex['families']))

@@ -1,0 +1,218 @@
+"""Families for the townland story (docs/TOWNLAND_STORY_SPEC.md, section 10).
+
+For the story a family is a surname (DECISIONS.md, 2026-11-25). Spellings group only through verified rows of
+data/reference/surname_variants.csv, as everywhere else in the project. This module reads the records a case
+holds and gives the story four things:
+
+  names      the family names each source carries, for the milestone captions, and the number of families
+  threads    one thread for each told family: its census households by year, as events the story can cite,
+             and where the family appears, which is what the highlight rule ranks
+  highlights the threads the lean-back run tells, chosen by rule or by the user's list
+  the rule   longest presence first (first source to last), then the most sources, then the most census households
+
+Nothing here changes a source or a variant row. A family with no census household in a year gets no beat for
+that year: absence from a return is not told as a departure (TOWNLAND_STORY_SPEC D6)."""
+import csv
+import json
+import re
+
+try:
+    from tools import build, build_timeline as bt, variants_reference as vr
+except ImportError:                  # run as a script from tools/
+    import build, build_timeline as bt, variants_reference as vr
+
+HIGHLIGHTS = 2
+CERTAINTY_NOTE = 'Households headed by the surname.'
+
+
+def _read(path):
+    with open(path, encoding='utf-8-sig', newline='') as h:
+        return list(csv.DictReader(h))
+
+
+def _head(row):
+    return str(row.get('r', '')).lower().startswith('head')
+
+
+class Labels:
+    """Spelling to family label. A verified row gives its label; otherwise the spelling as recorded, in the
+    mixed case a source gave it (Griffith's index is in capitals, so the case comes from another source)."""
+
+    def __init__(self, mixed_case_spellings):
+        self.verified = {}
+        for r in vr.load():
+            if r['status'] == 'verified':
+                for s in r['spellings']:
+                    self.verified[vr.key(s)] = r['label']
+        self.shown = {}
+        for s in mixed_case_spellings:
+            if s and s != s.upper():
+                self.shown.setdefault(vr.key(s), s)
+
+    def __call__(self, spelling):
+        k = vr.key(spelling)
+        return self.verified.get(k) or self.shown.get(k) or str(spelling).strip().title()
+
+    def spellings_of(self, label):
+        """Every spelling a label stands for: the verified row's list, or the label itself. A label like
+        'Gethins (McGettigan)' stands for each name in it."""
+        out = set()
+        for token in re.split(r'[()]', label):
+            token = token.strip()
+            if not token:
+                continue
+            k = vr.key(token)
+            out.add(k)
+            for r in vr.load():
+                if r['status'] == 'verified' and k in {vr.key(s) for s in r['spellings']}:
+                    out |= {vr.key(s) for s in r['spellings']}
+        return out
+
+
+def _estate_rows(base):
+    path = bt.ESTATE_DIR / (base.name + '_holdings_observations.csv')
+    return [r for r in _read(path) if (r.get('source_date') or '').strip().isdigit()] if path.is_file() else []
+
+
+def _griffiths_rows(base):
+    path = base / 'records' / 'griffiths_index.json'
+    if not path.is_file():
+        return []
+    return [r for r in json.loads(path.read_text(encoding='utf-8')).get('rows', []) if r.get('role') == 'occupier']
+
+
+def _census(base):
+    path = base / 'records' / 'census.json'
+    return json.loads(path.read_text(encoding='utf-8')) if path.is_file() else {}
+
+
+def _top(counter, n=3):
+    return [k for k, _ in sorted(counter.items(), key=lambda kv: (-kv[1], kv[0].casefold()))[:n]]
+
+
+def names(base):
+    """{'labels': Labels, 'estate': {year: [label]}, 'valuation': [label], 'census': {year: [label]},
+    'families': int}. The lists are the most common family names in each source, for the milestone captions.
+    `families` counts the distinct family names across every source the case holds."""
+    estate, grif, census = _estate_rows(base), _griffiths_rows(base), _census(base)
+    labels = Labels([r.get('interpreted_surname', '') for r in estate] + [p.get('s', '') for y in census for p in census[y]])
+    every = set()
+    out = {'labels': labels, 'estate': {}, 'valuation': [], 'census': {}}
+    by_year = {}
+    for r in estate:
+        by_year.setdefault(r['source_date'].strip(), {}).setdefault(labels(r.get('interpreted_surname', '')), 0)
+        by_year[r['source_date'].strip()][labels(r.get('interpreted_surname', ''))] += 1
+    for year, c in by_year.items():
+        out['estate'][year] = _top(c)
+        every |= set(c)
+    c = {}
+    for r in grif:
+        lab = labels(r.get('surname', ''))
+        c[lab] = c.get(lab, 0) + 1
+    out['valuation'] = _top(c)
+    every |= set(c)
+    for year, people in census.items():
+        c = {}
+        for p in people:
+            if _head(p):
+                lab = labels(p.get('s', ''))
+                c[lab] = c.get(lab, 0) + 1
+        out['census'][year] = _top(c)
+        every |= set(c)
+    out['families'] = len({vr.key(x) for x in every})
+    return out
+
+
+def _heads_phrase(forenames):
+    """Hugh, two named Patrick and Neil: a forename that repeats is counted, so nobody is listed twice."""
+    seen = []
+    for f in forenames:
+        if f not in [s for s, _ in seen]:
+            seen.append((f, forenames.count(f)))
+    bits = [f if n == 1 else f'{n_word(n)} named {f}' for f, n in seen]
+    return bits[0] if len(bits) == 1 else ', '.join(bits[:-1]) + ' and ' + bits[-1]
+
+
+def n_word(n):
+    words = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten']
+    return words[n] if n < len(words) else str(n)
+
+
+def threads(base, name):
+    """One thread for each told family (an accepted row of the family beats file), in file order.
+    {'id', 'label', 'labels', 'start_sort', 'years', 'sources', 'households', 'events'} where `events` are
+    the census households of the family, one event for each census year it appears in."""
+    beats_file = bt.ASSOC_DIR / (base.name + '_family_beats.csv')
+    cross = bt.ASSOC_DIR / (base.name + '_holdings_crosswalk.csv')
+    if not (beats_file.is_file() and cross.is_file()):
+        return []
+    status = {r['family']: r['status'] for r in _read(cross)}
+    census, estate, grif = _census(base), _estate_rows(base), _griffiths_rows(base)
+    labels = Labels([r.get('interpreted_surname', '') for r in estate] + [p.get('s', '') for y in census for p in census[y]])
+    out = []
+    for i, row in enumerate(_read(beats_file), start=1):
+        fams = [f.strip() for f in row['crosswalk_families'].split(';')]
+        if any(status.get(f) != 'accepted' for f in fams):
+            continue
+        spell = {f: labels.spellings_of(f) for f in fams}
+        every = set().union(*spell.values())
+        years, sources = [], 0
+        for y in sorted({r['source_date'].strip() for r in estate}):
+            if any(vr.key(r.get('interpreted_surname', '')) in every for r in estate if r['source_date'].strip() == y):
+                years.append(int(y)); sources += 1
+        if any(vr.key(r.get('surname', '')) in every for r in grif):
+            years.append(1855); sources += 1
+        events, houses = [], 0
+        fid = f'{name.lower()}:family:{i:02d}'
+        for y in sorted(census):
+            heads = [p for p in census[y] if _head(p) and vr.key(p.get('s', '')) in every]
+            if not heads:
+                continue
+            years.append(int(y)); sources += 1; houses += len(heads)
+            if re.search(r'\b' + y + r'\b', row['caption']):
+                continue        # the user's own caption already speaks of this census year, so no second account of it
+            groups = []
+            for f in fams:
+                fh = [p for p in heads if vr.key(p.get('s', '')) in spell[f]]
+                if fh:
+                    groups.append((f, [p.get('f', '').strip() for p in fh]))
+            events.append(census_event(name, fid, i, y, groups))
+        out.append({'id': fid, 'label': ' and '.join(fams), 'labels': fams, 'start_sort': f'{min(years)}-01-01' if years else row['sort'],
+                    'span': (max(years) - min(years)) if years else 0, 'sources': sources, 'households': houses,
+                    'events': events})
+    return out
+
+
+def census_event(name, fid, n, year, groups):
+    """The households of one family in one census year, as an event the story cites. The numbers and the
+    forenames of the heads are in `text`, so a caption built from it can be checked against it."""
+    parts = []
+    for label, forenames in groups:
+        count = len(forenames)
+        part = f'{count} {label} household' + ('' if count == 1 else 's')
+        named = [f for f in forenames if f]
+        if len(groups) == 1 and named:
+            part += ', headed by ' + _heads_phrase(named)
+        parts.append(part)
+    return {
+        'id': f'{name.lower()}:familycensus:{n:02d}:{year}', 'type': 'family_census', 'milestone': False,
+        'date': {'kind': 'year', 'label': year, 'iso': year}, 'sort': f'{year}-01-01', 'approximate_sort': True,
+        'title': f'The {" and ".join(g[0] for g in groups)} households in {year}',
+        'text': ' and '.join(parts) + '.', 'people': [], 'media': [], 'family': fid, 'groups': groups,
+        'association': {'basis': 'census_surname', 'label': CERTAINTY_NOTE},
+        'source': {'label': bt.CENSUS_SOURCE + ', ' + year, 'url': build.NAT_ARCHIVES, 'reference': year},
+    }
+
+
+def highlights(found, base):
+    """The ids of the threads the lean-back run tells. A file `<slug>_story_highlights.csv` in
+    data/research/associations, with a `family` column, is the user's own list and replaces the rule.
+    Without it: longest presence, then most sources, then most census households, then name."""
+    mine = bt.ASSOC_DIR / (base.name + '_story_highlights.csv')
+    if mine.is_file():
+        wanted = [r['family'].strip().casefold() for r in _read(mine)]
+        picked = [t['id'] for w in wanted for t in found if w in {x.casefold() for x in [t['label']] + t['labels']}]
+        if picked:
+            return picked
+    ranked = sorted(found, key=lambda t: (-t['span'], -t['sources'], -t['households'], t['label'].casefold()))
+    return [t['id'] for t in ranked[:HIGHLIGHTS]]

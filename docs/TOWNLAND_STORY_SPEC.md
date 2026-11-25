@@ -396,7 +396,7 @@ Decisions are in DECISIONS.md, 2026-11-25. This section holds the rules the buil
 
 The pause pill reads Paused. An Explore button beside it, and an "Explore more" button on the closing card, open a hub of the families the story tells and the record sources it draws on (`explore_block`, page data). Choosing one moves the story to the first beat that tells it. The button is shown only when the hub has something in it.
 
-### 10.3 The two-part spine (agreed, not built)
+### 10.3 The two-part spine (built 2026-11-25)
 
 - **Part 1, the townland.** The records on the table: the estate records, Griffith's and the census years, with captions much as now. Each milestone caption names a few surnames from that record, so the milestone keeps a family in it.
 - **Part 2, the families.** One or two highlight families, told in date order and pinned to the same milestones. The parts are not labelled.
@@ -405,5 +405,9 @@ The pause pill reads Paused. An Explore button beside it, and an "Explore more" 
 - **Family means surname.** N is the count of distinct surnames after verified variants only (DECISIONS.md, 2026-11-06).
 - **Highlights.** By rule: presence across the most sources, a span covering the whole story, and the family the viewer arrived from, with a manual override. Longest presence is the working default for "richest".
 
-Open for the build: how the ribbon clock behaves when Part 2 returns to 1825 (the family beats now sit at 1855 in a block of eight, which is what felt off); how Part 2 draws a family's census years from the records; and whether surnames with no told story appear in the hub as plain names.
+- **Rewind (decided).** Each family is a thread with its own ribbon track starting at its first year. A beat carries `thread: {id, label, run}`. Beats order as the townland's moments, the highlight threads, the closing card, then the other threads. `check_document` checks time order per track.
+- **Family census beats.** Kind `familycensus`, generated from household heads of the surname for each census year the authored family caption does not already name. Evidence ids look like `<slug>:familycensus:NN:YYYY` and are rebuilt from the census on every check.
+- **Hub.** Choosing a family plays that family's moments and returns to the hub. Choosing a record source plays on from its first beat.
+
+Still open: whether "richest" should mean longest presence (the default) or most records; whether surnames with no told story appear in the hub as plain names (only the told families do now); the Irish name or meaning for the opening caption; the "arrive via a family" entry point.
 
