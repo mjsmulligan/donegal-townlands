@@ -1,0 +1,11 @@
+{
+  "name": "Druminnin",
+  "ded": "Clogher",
+  "page_title": "Druminnin Townland Study",
+  "storage_key": "druminnin-q",
+  "census_spelling": {
+    "1901": "Druminnin",
+    "1911": "Druminnin",
+    "1926": "Druminin"
+  }
+}

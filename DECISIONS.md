@@ -254,3 +254,7 @@ The user said the crosswalk is good enough to go in the story. Its rows are `acc
 ## 2026-11-24: Isabella McAna (1 in 1901) accepted as Lizzie McNaw (10 in 1911) (the user)
 
 The user judged the 1901 daughter Isabella and the 1911 daughter Lizzie in the McAnaw house to be the same child, ten years on. The matcher does not propose it, since Lizzie belongs to the Elizabeth given-name family and Isabella to a separate one. The link is recorded as a single accepted decision (confidence `manual`) and the given-name dictionary is not changed. Whether Lizzie should be added to the Isabella family for every townland is the user's to decide.
+
+## 2026-11-24: Druminnin becomes an authored study; the walk tolerates a plots-and-names Griffith's page (the user asked for the full study)
+
+Druminnin has authored `townland.json` and `content.json`, with the printed Griffith's page as its Griffith's plate (plots and occupiers only, 51 plots, plot 51 blank). The walk drops any Griffith's column that is empty on every row and omits the printed total when there is none, so a page transcribed in stages needs no engine change as columns arrive. A new walk plate, "Before the valuation", shows the dated estate records of a case (`data/source/estate_records/arran_donegal/normalised/<slug>_holdings_observations.csv`) with names as written. A Griffith's row may carry `nofamily` to keep a lessor named as an occupier out of the family plates. Family stories are not yet authored.
