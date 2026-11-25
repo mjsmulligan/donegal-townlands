@@ -10,6 +10,47 @@
  },
  "chapters": [
   {
+   "id": "goladoo:ch:register",
+   "title": "The parish register",
+   "beats": [
+    {
+     "id": "goladoo:beat:register:tawnawilly",
+     "kind": "register",
+     "chapter": "goladoo:ch:register",
+     "time": {
+      "label": "1873 to 1875",
+      "iso": "1873",
+      "sort": "1873-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "goladoo",
+      "name": "Goladoo",
+      "logainm_id": "14243",
+      "lat": 54.717584,
+      "lon": -8.032827,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "goladoo:register:tawnawilly"
+     },
+     "caption": "The parish register of Tawnawilly records nine baptisms at Goladoo between 1873 and 1875. Its marriage entries give no townland, so none are placed here.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "goladoo:register:tawnawilly"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 10000,
+     "audio": null
+    }
+   ]
+  },
+  {
    "id": "goladoo:ch:intro",
    "title": "Goladoo",
    "beats": [

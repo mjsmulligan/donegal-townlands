@@ -24,7 +24,7 @@ except ImportError:                  # run as a script: python tools/build_story
 ROOT = bt.ROOT
 SCHEMA = 1
 BAPTISM_MIN_AGE = bt.BAPTISM_MIN_AGE
-KIND_ORDER = {'title': 0, 'estate': 1, 'valuation': 1, 'family': 2, 'baptism': 2, 'census': 3, 'familycensus': 3, 'photo': 5, 'closing': 9}
+KIND_ORDER = {'title': 0, 'estate': 1, 'valuation': 1, 'family': 2, 'baptism': 2, 'register': 2, 'census': 3, 'familycensus': 3, 'photo': 5, 'closing': 9}
 CERTAINTY = ('stated', 'accepted', 'possible')
 CAMERAS = ('parish', 'townland', 'household')
 STAGES = ('map', 'walk', 'timeline')
@@ -122,6 +122,10 @@ def beat(kind, key, chapter, event_ref, caption, place, certainty='stated', basi
     if counts:
         out['counts'] = counts
     return out
+
+
+def vr_key(spelling):
+    return sf.vr.key(spelling)
 
 
 def name_list(labels):
@@ -270,6 +274,42 @@ def census_beat(ev, place, names=()):
                 basis=ev['association']['basis'], events=[ev['id']], counts=counts)
 
 
+def census_returns_beat(cens, place, names=()):
+    """All the census returns in one milestone, so the townland section lays the sources out briefly. The
+    individual years come back in each family's own thread."""
+    counts = [census_counts(e) for e in cens]
+    town = place['name']
+    years = [e['date']['label'] for e in cens]
+    when = ', '.join(years[:-1]) + ' and ' + years[-1]
+    if any(p is None for p, _ in counts):
+        cap = f'{town} had returns in {when}.'
+    else:
+        ppl = ', '.join(str(p) for p, _ in counts[:-1]) + ' and ' + str(counts[-1][0])
+        hh = ', '.join(str(h) for _, h in counts[:-1]) + ' and ' + str(counts[-1][1])
+        cap = f'The censuses of {when} counted {ppl} people in {town}, in {hh} households.'
+        if names:
+            cap += f' Heads of household included {name_list(names)}.'
+    b = beat('census', 'returns', f"{place['townland']}:ch:census", cens[0], cap, place,
+             basis=cens[0]['association']['basis'], events=[e['id'] for e in cens])
+    b['time']['label'] = f'{years[0]} to {years[-1]}'
+    return b
+
+
+def register_beat(ev, place, names=()):
+    """The parish register as one milestone: how many baptisms and marriages it holds for the townland."""
+    town = place['name']
+    n, m = ev['baptisms'], ev['marriages']
+    cap = f"The parish register of Tawnawilly records {num(n)} {'baptism' if n == 1 else 'baptisms'}"
+    lab = ev['date']['label']
+    when = 'between ' + lab.replace(' to ', ' and ') if ' to ' in lab else 'in ' + lab
+    if ev['marriages_placed']:
+        cap += f" and {num(m)} {'marriage' if m == 1 else 'marriages'} at {town} {when}."
+    else:
+        cap += f" at {town} {when}. Its marriage entries give no townland, so none are placed here."
+    return beat('register', 'tawnawilly', f"{place['townland']}:ch:register", ev, cap, place,
+                basis=ev['association']['basis'], events=[ev['id']])
+
+
 def family_census_beat(ev, place, thread):
     """One family's households in one census year, told in the family's own thread."""
     y, town = ev['date']['label'], place['name']
@@ -277,7 +317,7 @@ def family_census_beat(ev, place, thread):
     counts = [len(fn) for _, fn in groups]
     total = sum(counts)
     bits = [f"{num(c)} {lab} " + ('household' if c == 1 else 'households') for (lab, _), c in zip(groups, counts)]
-    cap = f"In {y} there {'was' if total == 1 else 'were'} {' and '.join(bits)} in {town}"
+    cap = f"{town} had {' and '.join(bits)} in {y}"
     named = [f for f in groups[0][1] if f] if len(groups) == 1 else []
     cap += f', headed by {sf._heads_phrase(named)}.' if named else '.'
     key = ev['id'].split(':familycensus:')[1].replace(':', '-')
@@ -408,6 +448,10 @@ def chapter_title(key, beats, display, threads=None):
         return 'The land'
     if key == 'families':
         return 'The families on the land'
+    if key == 'register':
+        return 'The parish register'
+    if key == 'census':
+        return beats[0]['time']['label']
     if key == 'baptisms':
         years = sorted({b['time']['sort'][:4] for b in beats if b['kind'] == 'baptism'})
         if not years:
@@ -461,8 +505,27 @@ def generate(display, slug, place_record, events, by_event=None, header=None, to
                 tbeats[t['id']] = [fb] + [family_census_beat(x, place, t) for x in t['events']]
             elif e['type'] == 'family':
                 beats.append(family_beat(e, place))
-        beats += baptism_beats(baps, place, parish_files or ())
-        beats += [census_beat(e, place, (nm.get('census') or {}).get(e['date']['label'], ())) for e in cens]
+        # a baptism joins the thread of the family named by the father's surname; the rest stay in the townland story
+        left = []
+        for e in baps:
+            father = next((p['name'] for p in e['people'] if p['role'] == 'father'), '')
+            home = next((t for t in threads if t['id'] in tbeats and father and
+                         vr_key(father.split()[-1]) in set(t.get('spellings', ()))), None)
+            if home:
+                for bb in baptism_beats([e], place, parish_files or ()):
+                    bb['chapter'] = f"{slug}:ch:{home['key']}"
+                    tbeats[home['id']].append(bb)
+            else:
+                left.append(e)
+        reg = fam.get('register')
+        if reg:
+            beats.append(register_beat(reg, place))
+        beats += baptism_beats(left, place, parish_files or ())
+        if len(cens) > 1 and threads:
+            seen = list(dict.fromkeys(x for e in cens for x in (nm.get('census') or {}).get(e['date']['label'], ())))
+            beats.append(census_returns_beat(cens, place, seen[:3]))
+        else:
+            beats += [census_beat(e, place, (nm.get('census') or {}).get(e['date']['label'], ())) for e in cens]
         beats += photo_beats(events, by_event, place)
         beats += dated_beats
         beats.append(closing_beat(events, place, later))
@@ -482,7 +545,7 @@ def generate(display, slug, place_record, events, by_event=None, header=None, to
     for group in (told, rest):
         group.sort(key=lambda tb: order(tb[0]))
     beats = beats + [b for tb in told for b in tb] + closing + [b for tb in rest for b in tb]
-    extra_events = [x for t in threads for x in t['events']]
+    extra_events = [x for t in threads for x in t['events']] + ([fam['register']] if fam.get('register') else [])
     by_id = {e['id']: e for e in events + extra_events}
     known = set(by_id)
     years = {int(b['time']['sort'][:4]) for b in dated_beats} | {nm.get('families', 0)}
@@ -567,8 +630,8 @@ def explore_block(doc):
     """The explore hub the player opens from the Explore button and the closing card: the families the story
     tells and the record sources it draws on, each pointing at the first beat that tells it."""
     families, sources, seen = [], [], set()
-    names = {'estate': 'Estate records', 'valuation': "Griffith's Valuation", 'baptism': 'Parish baptisms',
-             'census': 'Census returns'}
+    names = {'estate': 'Estate records', 'valuation': "Griffith's Valuation", 'register': 'Parish register',
+             'baptism': 'Parish baptisms', 'census': 'Census returns'}
     for c in doc['chapters']:
         for b in c['beats']:
             if b['kind'] == 'family':
@@ -622,15 +685,18 @@ def write_page(name, doc, found, events=None):
     return dest
 
 
-def family_inputs(base, name):
+def family_inputs(base, name, today=None, display=None):
     """The families of a case for the story (tools/story_families.py): names for the milestone captions, one thread
     for each told family, and the threads the lean-back run tells."""
     found = sf.threads(base, name)
-    return {'names': sf.names(base), 'threads': found, 'highlights': sf.highlights(found, base) if found else []}
+    reg = sf.register_event(name, today or datetime.date.today(), display or name.title())
+    return {'names': sf.names(base), 'threads': found, 'highlights': sf.highlights(found, base) if found else [],
+            'register': reg}
 
 
-def thread_events(name):
-    return [e for t in sf.threads(ROOT / 'townlands' / name, name) for e in t['events']]
+def thread_events(name, today=None, display=None):
+    reg = sf.register_event(name, today or datetime.date.today(), display or name.title())
+    return [e for t in sf.threads(ROOT / 'townlands' / name, name) for e in t['events']] + ([reg] if reg else [])
 
 
 def collect(name, today):
@@ -656,7 +722,7 @@ def collect(name, today):
         'args': (display, name, place, feed['events'], by_event, header, today,
                  [r for r in found['rows'] if r['file'] in unplaced and r.get('scope') == 'family'],
                  [r['file'] for r in found['rows'] if r.get('scope') == 'parish'],
-                 [r['file'] for r in found['rows'] if r.get('scope') == 'griffiths'], family_inputs(base, name)),
+                 [r['file'] for r in found['rows'] if r.get('scope') == 'griffiths'], family_inputs(base, name, today, display)),
     }
     return inputs, []
 
@@ -704,7 +770,7 @@ def _build(name, today, only_story, written):
     if _num(place.get('latitude')) is None or _num(place.get('longitude')) is None:
         print('  no usable coordinates, so no page was built.')      # RO-01
     else:
-        written.append(str(write_page(name, doc, found, feed['events'] + [e for t in (inputs['args'][10] if len(inputs['args']) > 10 else {}).get('threads', []) for e in t['events']]).relative_to(ROOT)))
+        written.append(str(write_page(name, doc, found, feed['events'] + [e for t in (inputs['args'][10] if len(inputs['args']) > 10 else {}).get('threads', []) for e in t['events']] + [r for r in [(inputs['args'][10] if len(inputs['args']) > 10 else {}).get('register')] if r]).relative_to(ROOT)))
     for row_id, why in refused + [(r, w) for r, w in feed['skipped']]:
         print('  left out ' + row_id + ': ' + why)
     return 0
@@ -762,7 +828,7 @@ def check_repo(today=None):
         name = path.parent.parent.name
         try:
             doc = json.loads(path.read_text(encoding='utf-8'))
-            events = bt.events_for(name, today)['events'] + thread_events(name)
+            events = bt.events_for(name, today)['events'] + thread_events(name, today)
             families = sf.names(ROOT / 'townlands' / name)['families']
         except (ValueError, OSError) as e:
             problems.append(f'{name}: story.json cannot be checked: {e}')

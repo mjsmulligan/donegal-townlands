@@ -735,8 +735,35 @@ class FamilyThreadTests(unittest.TestCase):
     def test_the_title_names_the_families_and_the_milestones_name_surnames(self):
         _, beats, _, _ = self.make()
         self.assertIn('its five families', beats[0]['caption'])
-        census_beat = next(b for b in beats if b['kind'] == 'census' and b['time']['label'] == '1901')
+        census_beat = next(b for b in beats if b['kind'] == 'census')
+        self.assertEqual(census_beat['time']['label'], '1901 to 1911')
+        self.assertIn('The censuses of 1901 and 1911 counted 93 and 72 people', census_beat['caption'])
         self.assertIn('Heads of household included Kelly and Sweeny.', census_beat['caption'])
+        self.assertEqual(sum(1 for x in beats if x['kind'] == 'census'), 1)
+
+    def test_the_register_is_one_milestone_and_its_baptisms_join_their_family(self):
+        bap = {'id': 'cullionboy:baptism:B1', 'type': 'baptism', 'milestone': False,
+               'date': {'kind': 'exact', 'label': '9 June 1873', 'iso': '1873-06-09'}, 'sort': '1873-06-09',
+               'title': 'Baptism of Anne Kelly', 'text': 'Father: Hugh Kelly.', 'media': [],
+               'people': [{'name': 'Anne Kelly', 'role': 'child baptised'}, {'name': 'Hugh Kelly', 'role': 'father'}],
+               'association': {'basis': 'page_place', 'label': ''},
+               'source': {'label': 'Register', 'url': '', 'reference': 'B1'}}
+        reg = {'id': 'cullionboy:register:x', 'type': 'register', 'milestone': False, 'baptisms': 4, 'marriages': 0,
+               'marriages_placed': False, 'date': {'kind': 'range', 'label': '1873 to 1876', 'iso': '1873'},
+               'sort': '1873-01-01', 'title': 'Register', 'text': '4 baptisms naming Cullionboy, 1873 to 1876.',
+               'people': [], 'media': [], 'association': {'basis': 'page_place', 'label': ''},
+               'source': {'label': 'Register', 'url': '', 'reference': 'x'}}
+        events = [census(1901, 93, 18), census(1911, 72, 16), self.fam_event(1), bap]
+        t = self.thread(1, 'Kelly', [1901]); t['spellings'] = ['kelly']
+        fam = {'names': {'families': 5}, 'threads': [t], 'highlights': [t['id']], 'register': reg}
+        doc, _ = bd.generate('Cullionboy', 'cullionboy', PLACE, events, today=TODAY, fam=fam)
+        beats = [x for c in doc['chapters'] for x in c['beats']]
+        r = next(x for x in beats if x['kind'] == 'register')
+        self.assertIn('four baptisms at Cullionboy between 1873 and 1876', r['caption'])
+        self.assertIn('marriage entries give no townland', r['caption'])
+        self.assertIsNone(r.get('thread'))
+        mine = next(x for x in beats if x['kind'] == 'baptism')
+        self.assertEqual(mine['thread']['label'], 'Kelly')
 
     def test_the_hub_lists_the_families_by_thread(self):
         doc, _, events, fam = self.make()

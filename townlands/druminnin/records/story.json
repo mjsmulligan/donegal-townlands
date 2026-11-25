@@ -183,18 +183,18 @@
    ]
   },
   {
-   "id": "druminnin:ch:baptisms",
-   "title": "Baptisms, 1873 to 1876",
+   "id": "druminnin:ch:register",
+   "title": "The parish register",
    "beats": [
     {
-     "id": "druminnin:beat:baptism:1873-06-09-TAW-B-p007-r51",
-     "kind": "baptism",
-     "chapter": "druminnin:ch:baptisms",
+     "id": "druminnin:beat:register:tawnawilly",
+     "kind": "register",
+     "chapter": "druminnin:ch:register",
      "time": {
-      "label": "9 June 1873",
-      "iso": "1873-06-09",
-      "sort": "1873-06-09",
-      "approximate": false
+      "label": "1873 to 1876",
+      "iso": "1873",
+      "sort": "1873-01-01",
+      "approximate": true
      },
      "place": {
       "townland": "druminnin",
@@ -206,103 +206,33 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "druminnin:baptism:TAW-B-p007-r51"
+      "open_card": "druminnin:register:tawnawilly"
      },
-     "caption": "Patrick Cassidy was baptised on 9 June 1873. John Cassidy and Brigid Thomas were the parents.",
+     "caption": "The parish register of Tawnawilly records four baptisms at Druminnin between 1873 and 1876. Its marriage entries give no townland, so none are placed here.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "druminnin:baptism:TAW-B-p007-r51"
+       "druminnin:register:tawnawilly"
       ],
       "basis": "page_place",
       "certainty": "stated"
      },
-     "duration_ms": 6400,
-     "audio": null
-    },
-    {
-     "id": "druminnin:beat:baptism:1875-06-23-TAW-B-p018-r227",
-     "kind": "baptism",
-     "chapter": "druminnin:ch:baptisms",
-     "time": {
-      "label": "23 June 1875",
-      "iso": "1875-06-23",
-      "sort": "1875-06-23",
-      "approximate": false
-     },
-     "place": {
-      "townland": "druminnin",
-      "name": "Druminnin",
-      "logainm_id": "13969",
-      "lat": 54.682253,
-      "lon": -8.020767,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "druminnin:baptism:TAW-B-p018-r227"
-     },
-     "caption": "Mary Ellen Cassidy was baptised on 23 June 1875. Hugh Cassidy and Bell Boyle were the parents.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "druminnin:baptism:TAW-B-p018-r227"
-      ],
-      "basis": "page_place",
-      "certainty": "stated"
-     },
-     "duration_ms": 6800,
-     "audio": null
-    },
-    {
-     "id": "druminnin:beat:baptism:1876-08-21-TAW-B-p022-r1877",
-     "kind": "baptism",
-     "chapter": "druminnin:ch:baptisms",
-     "time": {
-      "label": "21 August 1876",
-      "iso": "1876-08-21",
-      "sort": "1876-08-21",
-      "approximate": false
-     },
-     "place": {
-      "townland": "druminnin",
-      "name": "Druminnin",
-      "logainm_id": "13969",
-      "lat": 54.682253,
-      "lon": -8.020767,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "druminnin:baptism:TAW-B-p022-r1877"
-     },
-     "caption": "Bridget Cassidy was baptised on 21 August 1876. John Cassidy and Bridget McGinty were the parents.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "druminnin:baptism:TAW-B-p022-r1877"
-      ],
-      "basis": "page_place",
-      "certainty": "stated"
-     },
-     "duration_ms": 6400,
+     "duration_ms": 10000,
      "audio": null
     }
    ]
   },
   {
-   "id": "druminnin:ch:1901",
-   "title": "1901",
+   "id": "druminnin:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "druminnin:beat:census:1901",
+     "id": "druminnin:beat:census:returns",
      "kind": "census",
-     "chapter": "druminnin:ch:1901",
+     "chapter": "druminnin:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1926",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -319,112 +249,20 @@
       "stage": "map",
       "open_card": "druminnin:census:1901"
      },
-     "caption": "Druminnin had 132 people in 24 households in 1901. Heads of household included McGinty, Cassidy and Gildea.",
+     "caption": "The censuses of 1901, 1911 and 1926 counted 132, 148 and 91 people in Druminnin, in 24, 23 and 20 households. Heads of household included McGinty, Cassidy and Gildea.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "druminnin:census:1901"
-      ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
-     },
-     "duration_ms": 6800,
-     "audio": null,
-     "counts": {
-      "people": 132,
-      "households": 24
-     }
-    }
-   ]
-  },
-  {
-   "id": "druminnin:ch:1911",
-   "title": "1911",
-   "beats": [
-    {
-     "id": "druminnin:beat:census:1911",
-     "kind": "census",
-     "chapter": "druminnin:ch:1911",
-     "time": {
-      "label": "1911",
-      "iso": "1911",
-      "sort": "1911-01-01",
-      "approximate": true
-     },
-     "place": {
-      "townland": "druminnin",
-      "name": "Druminnin",
-      "logainm_id": "13969",
-      "lat": 54.682253,
-      "lon": -8.020767,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "druminnin:census:1911"
-     },
-     "caption": "In 1911, 148 people in 23 households lived in Druminnin. Heads of household included McGinty, Cassidy and Gildea.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "druminnin:census:1911"
-      ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
-     },
-     "duration_ms": 7200,
-     "audio": null,
-     "counts": {
-      "people": 148,
-      "households": 23
-     }
-    }
-   ]
-  },
-  {
-   "id": "druminnin:ch:1926",
-   "title": "1926",
-   "beats": [
-    {
-     "id": "druminnin:beat:census:1926",
-     "kind": "census",
-     "chapter": "druminnin:ch:1926",
-     "time": {
-      "label": "1926",
-      "iso": "1926",
-      "sort": "1926-01-01",
-      "approximate": true
-     },
-     "place": {
-      "townland": "druminnin",
-      "name": "Druminnin",
-      "logainm_id": "13969",
-      "lat": 54.682253,
-      "lon": -8.020767,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "druminnin:census:1926"
-     },
-     "caption": "Druminnin had 91 people in twenty households in 1926. Heads of household included McGinty, Cassidy and Gillespie.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
+       "druminnin:census:1901",
+       "druminnin:census:1911",
        "druminnin:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 6800,
-     "audio": null,
-     "counts": {
-      "people": 91,
-      "households": 20
-     }
+     "duration_ms": 11600,
+     "audio": null
     }
    ]
   },
@@ -473,6 +311,126 @@
      }
     },
     {
+     "id": "druminnin:beat:baptism:1873-06-09-TAW-B-p007-r51",
+     "kind": "baptism",
+     "chapter": "druminnin:ch:family-02",
+     "time": {
+      "label": "9 June 1873",
+      "iso": "1873-06-09",
+      "sort": "1873-06-09",
+      "approximate": false
+     },
+     "place": {
+      "townland": "druminnin",
+      "name": "Druminnin",
+      "logainm_id": "13969",
+      "lat": 54.682253,
+      "lon": -8.020767,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminnin:baptism:TAW-B-p007-r51"
+     },
+     "caption": "Patrick Cassidy was baptised on 9 June 1873. John Cassidy and Brigid Thomas were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminnin:baptism:TAW-B-p007-r51"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "druminnin:family:02",
+      "label": "Cassidy",
+      "run": true
+     }
+    },
+    {
+     "id": "druminnin:beat:baptism:1875-06-23-TAW-B-p018-r227",
+     "kind": "baptism",
+     "chapter": "druminnin:ch:family-02",
+     "time": {
+      "label": "23 June 1875",
+      "iso": "1875-06-23",
+      "sort": "1875-06-23",
+      "approximate": false
+     },
+     "place": {
+      "townland": "druminnin",
+      "name": "Druminnin",
+      "logainm_id": "13969",
+      "lat": 54.682253,
+      "lon": -8.020767,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminnin:baptism:TAW-B-p018-r227"
+     },
+     "caption": "Mary Ellen Cassidy was baptised on 23 June 1875. Hugh Cassidy and Bell Boyle were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminnin:baptism:TAW-B-p018-r227"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "thread": {
+      "id": "druminnin:family:02",
+      "label": "Cassidy",
+      "run": true
+     }
+    },
+    {
+     "id": "druminnin:beat:baptism:1876-08-21-TAW-B-p022-r1877",
+     "kind": "baptism",
+     "chapter": "druminnin:ch:family-02",
+     "time": {
+      "label": "21 August 1876",
+      "iso": "1876-08-21",
+      "sort": "1876-08-21",
+      "approximate": false
+     },
+     "place": {
+      "townland": "druminnin",
+      "name": "Druminnin",
+      "logainm_id": "13969",
+      "lat": 54.682253,
+      "lon": -8.020767,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminnin:baptism:TAW-B-p022-r1877"
+     },
+     "caption": "Bridget Cassidy was baptised on 21 August 1876. John Cassidy and Bridget McGinty were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminnin:baptism:TAW-B-p022-r1877"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "druminnin:family:02",
+      "label": "Cassidy",
+      "run": true
+     }
+    },
+    {
      "id": "druminnin:beat:familycensus:02-1901",
      "kind": "familycensus",
      "chapter": "druminnin:ch:family-02",
@@ -494,7 +452,7 @@
       "stage": "map",
       "open_card": "druminnin:familycensus:02:1901"
      },
-     "caption": "In 1901 there were three Cassidy households in Druminnin, headed by Hugh, Michael and John.",
+     "caption": "Druminnin had three Cassidy households in 1901, headed by Hugh, Michael and John.",
      "people": [],
      "media": [],
      "evidence": {
@@ -504,7 +462,7 @@
       "basis": "census_surname",
       "certainty": "accepted"
      },
-     "duration_ms": 6000,
+     "duration_ms": 5200,
      "audio": null,
      "thread": {
       "id": "druminnin:family:02",
@@ -534,7 +492,7 @@
       "stage": "map",
       "open_card": "druminnin:familycensus:02:1911"
      },
-     "caption": "In 1911 there were three Cassidy households in Druminnin, headed by John, Michael and James.",
+     "caption": "Druminnin had three Cassidy households in 1911, headed by John, Michael and James.",
      "people": [],
      "media": [],
      "evidence": {
@@ -544,7 +502,7 @@
       "basis": "census_surname",
       "certainty": "accepted"
      },
-     "duration_ms": 6000,
+     "duration_ms": 5200,
      "audio": null,
      "thread": {
       "id": "druminnin:family:02",
@@ -574,7 +532,7 @@
       "stage": "map",
       "open_card": "druminnin:familycensus:02:1926"
      },
-     "caption": "In 1926 there were three Cassidy households in Druminnin, headed by Michael, Edward and Sarah.",
+     "caption": "Druminnin had three Cassidy households in 1926, headed by Michael, Edward and Sarah.",
      "people": [],
      "media": [],
      "evidence": {
@@ -584,7 +542,7 @@
       "basis": "census_surname",
       "certainty": "accepted"
      },
-     "duration_ms": 6000,
+     "duration_ms": 5200,
      "audio": null,
      "thread": {
       "id": "druminnin:family:02",
@@ -660,7 +618,7 @@
       "stage": "map",
       "open_card": "druminnin:familycensus:03:1901"
      },
-     "caption": "In 1901 there were five McGinty households in Druminnin, headed by Thomas, Bernard, Patrick, John and James.",
+     "caption": "Druminnin had five McGinty households in 1901, headed by Thomas, Bernard, Patrick, John and James.",
      "people": [],
      "media": [],
      "evidence": {
@@ -670,7 +628,7 @@
       "basis": "census_surname",
       "certainty": "accepted"
      },
-     "duration_ms": 6800,
+     "duration_ms": 6000,
      "audio": null,
      "thread": {
       "id": "druminnin:family:03",
@@ -700,7 +658,7 @@
       "stage": "map",
       "open_card": "druminnin:familycensus:03:1911"
      },
-     "caption": "In 1911 there were four McGinty households in Druminnin, headed by Patrick, John, Mary and Thomas.",
+     "caption": "Druminnin had four McGinty households in 1911, headed by Patrick, John, Mary and Thomas.",
      "people": [],
      "media": [],
      "evidence": {
@@ -710,7 +668,7 @@
       "basis": "census_surname",
       "certainty": "accepted"
      },
-     "duration_ms": 6400,
+     "duration_ms": 5600,
      "audio": null,
      "thread": {
       "id": "druminnin:family:03",
@@ -740,7 +698,7 @@
       "stage": "map",
       "open_card": "druminnin:familycensus:03:1926"
      },
-     "caption": "In 1926 there were five McGinty households in Druminnin, headed by John, Hannah, Ellen, Annie and Mary.",
+     "caption": "Druminnin had five McGinty households in 1926, headed by John, Hannah, Ellen, Annie and Mary.",
      "people": [],
      "media": [],
      "evidence": {
@@ -750,7 +708,7 @@
       "basis": "census_surname",
       "certainty": "accepted"
      },
-     "duration_ms": 6800,
+     "duration_ms": 6000,
      "audio": null,
      "thread": {
       "id": "druminnin:family:03",
@@ -761,13 +719,13 @@
    ]
   },
   {
-   "id": "druminnin:ch:1926-2",
+   "id": "druminnin:ch:1926",
    "title": "1926",
    "beats": [
     {
      "id": "druminnin:beat:closing:end",
      "kind": "closing",
-     "chapter": "druminnin:ch:1926-2",
+     "chapter": "druminnin:ch:1926",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -913,7 +871,7 @@
       "stage": "map",
       "open_card": "druminnin:familycensus:04:1901"
      },
-     "caption": "In 1901 there were three Gildea households in Druminnin, headed by Edward, Anne and James.",
+     "caption": "Druminnin had three Gildea households in 1901, headed by Edward, Anne and James.",
      "people": [],
      "media": [],
      "evidence": {
@@ -923,7 +881,7 @@
       "basis": "census_surname",
       "certainty": "accepted"
      },
-     "duration_ms": 6000,
+     "duration_ms": 5200,
      "audio": null,
      "thread": {
       "id": "druminnin:family:04",
@@ -953,7 +911,7 @@
       "stage": "map",
       "open_card": "druminnin:familycensus:04:1911"
      },
-     "caption": "In 1911 there were three Gildea households in Druminnin, headed by Edward, Anne and Patrick.",
+     "caption": "Druminnin had three Gildea households in 1911, headed by Edward, Anne and Patrick.",
      "people": [],
      "media": [],
      "evidence": {
@@ -963,7 +921,7 @@
       "basis": "census_surname",
       "certainty": "accepted"
      },
-     "duration_ms": 6000,
+     "duration_ms": 5200,
      "audio": null,
      "thread": {
       "id": "druminnin:family:04",
@@ -993,7 +951,7 @@
       "stage": "map",
       "open_card": "druminnin:familycensus:04:1926"
      },
-     "caption": "In 1926 there was one Gildea household in Druminnin, headed by Margaret.",
+     "caption": "Druminnin had one Gildea household in 1926, headed by Margaret.",
      "people": [],
      "media": [],
      "evidence": {
@@ -1003,7 +961,7 @@
       "basis": "census_surname",
       "certainty": "accepted"
      },
-     "duration_ms": 4800,
+     "duration_ms": 4000,
      "audio": null,
      "thread": {
       "id": "druminnin:family:04",
@@ -1079,7 +1037,7 @@
       "stage": "map",
       "open_card": "druminnin:familycensus:05:1901"
      },
-     "caption": "In 1901 there were three McAnaw households in Druminnin, headed by James, Edward and Catherine.",
+     "caption": "Druminnin had three McAnaw households in 1901, headed by James, Edward and Catherine.",
      "people": [],
      "media": [],
      "evidence": {
@@ -1089,7 +1047,7 @@
       "basis": "census_surname",
       "certainty": "accepted"
      },
-     "duration_ms": 6000,
+     "duration_ms": 5200,
      "audio": null,
      "thread": {
       "id": "druminnin:family:05",
@@ -1119,7 +1077,7 @@
       "stage": "map",
       "open_card": "druminnin:familycensus:05:1911"
      },
-     "caption": "In 1911 there were three McAnaw households in Druminnin, headed by James, Ellen and Michael.",
+     "caption": "Druminnin had three McAnaw households in 1911, headed by James, Ellen and Michael.",
      "people": [],
      "media": [],
      "evidence": {
@@ -1129,7 +1087,7 @@
       "basis": "census_surname",
       "certainty": "accepted"
      },
-     "duration_ms": 6000,
+     "duration_ms": 5200,
      "audio": null,
      "thread": {
       "id": "druminnin:family:05",
@@ -1159,7 +1117,7 @@
       "stage": "map",
       "open_card": "druminnin:familycensus:05:1926"
      },
-     "caption": "In 1926 there were two McAnaw households in Druminnin, headed by James and Michael.",
+     "caption": "Druminnin had two McAnaw households in 1926, headed by James and Michael.",
      "people": [],
      "media": [],
      "evidence": {
@@ -1169,7 +1127,7 @@
       "basis": "census_surname",
       "certainty": "accepted"
      },
-     "duration_ms": 5600,
+     "duration_ms": 4800,
      "audio": null,
      "thread": {
       "id": "druminnin:family:05",
@@ -1245,7 +1203,7 @@
       "stage": "map",
       "open_card": "druminnin:familycensus:06:1901"
      },
-     "caption": "In 1901 there were two Mullen households in Druminnin, headed by William and James.",
+     "caption": "Druminnin had two Mullen households in 1901, headed by William and James.",
      "people": [],
      "media": [],
      "evidence": {
@@ -1255,7 +1213,7 @@
       "basis": "census_surname",
       "certainty": "accepted"
      },
-     "duration_ms": 5600,
+     "duration_ms": 4800,
      "audio": null,
      "thread": {
       "id": "druminnin:family:06",
@@ -1285,7 +1243,7 @@
       "stage": "map",
       "open_card": "druminnin:familycensus:06:1911"
      },
-     "caption": "In 1911 there were two Mullen households in Druminnin, headed by William and Patrick.",
+     "caption": "Druminnin had two Mullen households in 1911, headed by William and Patrick.",
      "people": [],
      "media": [],
      "evidence": {
@@ -1295,7 +1253,7 @@
       "basis": "census_surname",
       "certainty": "accepted"
      },
-     "duration_ms": 5600,
+     "duration_ms": 4800,
      "audio": null,
      "thread": {
       "id": "druminnin:family:06",
@@ -1325,7 +1283,7 @@
       "stage": "map",
       "open_card": "druminnin:familycensus:06:1926"
      },
-     "caption": "In 1926 there were two Mullen households in Druminnin, headed by William and Patrick.",
+     "caption": "Druminnin had two Mullen households in 1926, headed by William and Patrick.",
      "people": [],
      "media": [],
      "evidence": {
@@ -1335,7 +1293,7 @@
       "basis": "census_surname",
       "certainty": "accepted"
      },
-     "duration_ms": 5600,
+     "duration_ms": 4800,
      "audio": null,
      "thread": {
       "id": "druminnin:family:06",
@@ -1457,7 +1415,7 @@
       "stage": "map",
       "open_card": "druminnin:familycensus:08:1926"
      },
-     "caption": "In 1926 there were one Harvey household and one Gethins (McGettigan) household in Druminnin.",
+     "caption": "Druminnin had one Harvey household and one Gethins (McGettigan) household in 1926.",
      "people": [],
      "media": [],
      "evidence": {
@@ -1467,7 +1425,7 @@
       "basis": "census_surname",
       "certainty": "accepted"
      },
-     "duration_ms": 5600,
+     "duration_ms": 4800,
      "audio": null,
      "thread": {
       "id": "druminnin:family:08",

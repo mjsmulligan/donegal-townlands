@@ -93,6 +93,47 @@
    ]
   },
   {
+   "id": "mullanalamphry:ch:register",
+   "title": "The parish register",
+   "beats": [
+    {
+     "id": "mullanalamphry:beat:register:tawnawilly",
+     "kind": "register",
+     "chapter": "mullanalamphry:ch:register",
+     "time": {
+      "label": "1875",
+      "iso": "1875",
+      "sort": "1875-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "mullanalamphry",
+      "name": "Mullanalamphry",
+      "logainm_id": "13976",
+      "lat": 54.687714,
+      "lon": -8.020136,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "mullanalamphry:register:tawnawilly"
+     },
+     "caption": "The parish register of Tawnawilly records two baptisms at Mullanalamphry in 1875. Its marriage entries give no townland, so none are placed here.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "mullanalamphry:register:tawnawilly"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 9200,
+     "audio": null
+    }
+   ]
+  },
+  {
    "id": "mullanalamphry:ch:baptisms",
    "title": "Baptisms, 1875",
    "beats": [

@@ -179,8 +179,52 @@ def threads(base, name):
             events.append(census_event(name, fid, i, y, groups))
         out.append({'id': fid, 'label': ' and '.join(fams), 'labels': fams, 'start_sort': f'{min(years)}-01-01' if years else row['sort'],
                     'span': (max(years) - min(years)) if years else 0, 'sources': sources, 'households': houses,
-                    'events': events})
+                    'events': events, 'spellings': sorted(every)})
     return out
+
+
+MARRIAGES = bt.NORMALISED.parent / 'tawnawilly_marriages_normalised.csv'
+
+
+def register_event(name, today, display=None):
+    """The parish register as one milestone: how many baptisms and marriages it holds for the townland.
+    Counts the same rows the baptism events are made from (place stated or doubtful, reading agreed, 100 years
+    old), but also the one with only a month, which the timeline cannot place on a day. A marriage entry has no
+    townland column, so marriages are counted only if the file gains one; until then none can be placed."""
+    if not bt.NORMALISED.is_file():
+        return None
+    raw = {r['row_id']: r for r in bt.read_rows(bt.REGISTER)} if bt.REGISTER.is_file() else {}
+    years = []
+    for n in bt.read_rows(bt.NORMALISED):
+        if (n.get('townland') or '').strip().casefold() != name.casefold():
+            continue
+        if (n.get('townland_status') or '').strip() not in bt.PLACE_STATED + bt.PLACE_DOUBTFUL:
+            continue
+        if (n.get('raw_status') or raw.get(n['row_id'], {}).get('status')) not in ('agreed', 'resolved'):
+            continue
+        y = (n.get('date_iso') or '')[:4]
+        if y.isdigit() and today.year - int(y) >= bt.BAPTISM_MIN_AGE:
+            years.append(int(y))
+    if not years:
+        return None
+    marriages = 0
+    placed = False
+    if MARRIAGES.is_file():
+        rows = bt.read_rows(MARRIAGES)
+        placed = bool(rows) and 'townland' in rows[0]
+        if placed:
+            marriages = sum(1 for r in rows if (r.get('townland') or '').strip().casefold() == name.casefold())
+    a, z = min(years), max(years)
+    label = str(a) if a == z else f'{a} to {z}'
+    text = f'{len(years)} baptisms' + (f' and {marriages} marriages' if placed else '') + f' naming {display or name}, {label}.'
+    return {
+        'id': f'{name.lower()}:register:tawnawilly', 'type': 'register', 'milestone': False,
+        'date': {'kind': 'range', 'label': label, 'iso': str(a)}, 'sort': f'{a}-01-01', 'approximate_sort': True,
+        'title': 'The Tawnawilly parish register', 'text': text, 'people': [], 'media': [],
+        'baptisms': len(years), 'marriages': marriages, 'marriages_placed': placed,
+        'association': {'basis': 'page_place', 'label': 'The place is written on the page.'},
+        'source': {'label': bt.REGISTER_LABEL, 'url': 'https://registers.nli.ie/registers/vtls000631954', 'reference': 'baptisms'},
+    }
 
 
 def census_event(name, fid, n, year, groups):
