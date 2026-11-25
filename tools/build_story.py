@@ -438,15 +438,73 @@ def _num(v):
         return None
 
 
-def render_page(doc, found, outline=None):
+def page_sources(doc, events):
+    """What the footnotes name: for each event a beat cites, the third-party sources behind it, as
+    {label, url}. Internal process (association basis, crosswalk status, event ids) is never shown.
+    A family beat is built from our own crosswalk, so it names the records the crosswalk joins: the estate
+    records and Griffith's, and a census year only where the caption speaks of it."""
+    by_id = {e['id']: e for e in events}
+
+    def one(ev):
+        src = ev.get('source') or {}
+        return {'label': src.get('label', ''), 'url': src.get('url', '')} if src.get('label') else None
+
+    out = {}
+    for c in doc['chapters']:
+        for b in c['beats']:
+            for eid in b['evidence']['events']:
+                ev = by_id.get(eid)
+                if not ev or eid in out:
+                    continue
+                if ev['type'] == 'family':
+                    pool = [e for e in events if e['type'] in ('estate', 'valuation')]
+                    pool += [e for e in events if e['type'] == 'census' and e['date']['label'] in ev['text']]
+                else:
+                    pool = [ev]
+                seen, rows = set(), []
+                for e in pool:
+                    row = one(e)
+                    if row and row['label'] not in seen:
+                        seen.add(row['label'])
+                        rows.append(row)
+                out[eid] = rows
+    return out
+
+
+def explore_block(doc):
+    """The explore hub the player opens from the Explore button and the closing card: the families the story
+    tells and the record sources it draws on, each pointing at the first beat that tells it."""
+    families, sources, seen = [], [], set()
+    names = {'estate': 'Estate records', 'valuation': "Griffith's Valuation", 'baptism': 'Parish baptisms',
+             'census': 'Census returns'}
+    for c in doc['chapters']:
+        for b in c['beats']:
+            if b['kind'] == 'family':
+                families.append({'beat': b['id'], 'label': ''})
+            elif b['kind'] in names and b['kind'] not in seen:
+                seen.add(b['kind'])
+                sources.append({'beat': b['id'], 'label': names[b['kind']]})
+    return {'families': families, 'sources': sources}
+
+
+def render_page(doc, found, outline=None, events=None):
     """The page text for one story. Pure: the same inputs give the same bytes (RO-03). `outline` is the
     townland's boundary geometry (WGS84), drawn on the map and used to frame it; with none the page frames the
-    place point at zoom 16 as before. It goes into the page only, never into story.json."""
+    place point at zoom 16 as before. It goes into the page only, never into story.json. `events` are the
+    case's events, from which the footnote sources are named (page only, also never in story.json)."""
     media = {}
     for r in found['rows']:
         media[r['file']] = {'caption': r.get('caption', ''), 'alt': r.get('alt', ''),
                             'source': r.get('source', ''), 'lat': r.get('lat', ''), 'lon': r.get('lon', '')}
     payload = dict(doc, media=media, foot='')
+    if events is not None:
+        payload['sources'] = page_sources(doc, events)
+        titles = {e['id']: e['title'] for e in events if e['type'] == 'family'}
+        ex = explore_block(doc)
+        for f in ex['families']:
+            eid = next(b['evidence']['events'][0] for c in doc['chapters'] for b in c['beats'] if b['id'] == f['beat'])
+            f['label'] = re.sub(r'\s+(family|families)$', '', re.sub(r'^The ', '', titles.get(eid, '')))
+        payload['explore'] = ex
     if outline:
         payload['outline'] = outline
         payload['outline_credit'] = bt.build.BOUNDARY_CREDIT
@@ -457,7 +515,7 @@ def render_page(doc, found, outline=None):
                 .replace('__DATA__', data))
 
 
-def write_page(name, doc, found):
+def write_page(name, doc, found, events=None):
     """Render engine/story.html to docs/<name>/story.html, a page beside the walk and the
     timeline. It does not replace either (docs/TOWNLAND_STORY_SPEC.md, DP9). Returns the path written."""
     dest = ROOT / 'docs' / name / 'story.html'
@@ -465,7 +523,7 @@ def write_page(name, doc, found):
     place_file = ROOT / 'townlands' / name / 'place.json'
     place = json.loads(place_file.read_text(encoding='utf-8')) if place_file.is_file() else {}
     outline = bt.build.load_outlines().get(str(place.get('logainm_id', '')))
-    dest.write_text(render_page(doc, found, outline), encoding='utf-8')
+    dest.write_text(render_page(doc, found, outline, events), encoding='utf-8')
     bt.build.copy_media(name, found)
     return dest
 
@@ -541,7 +599,7 @@ def _build(name, today, only_story, written):
     if _num(place.get('latitude')) is None or _num(place.get('longitude')) is None:
         print('  no usable coordinates, so no page was built.')      # RO-01
     else:
-        written.append(str(write_page(name, doc, found).relative_to(ROOT)))
+        written.append(str(write_page(name, doc, found, feed['events']).relative_to(ROOT)))
     for row_id, why in refused + [(r, w) for r, w in feed['skipped']]:
         print('  left out ' + row_id + ': ' + why)
     return 0

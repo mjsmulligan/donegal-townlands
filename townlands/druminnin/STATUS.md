@@ -47,3 +47,7 @@ Held out of the captions on purpose: the 1831 John line (McNamee on the dated pa
 ## Authored study (2026-11-24)
 Druminnin now has `townland.json` and `content.json`, so it builds as a ready study. Griffith's is the printed page: 38 occupier lines covering 51 plots, plots and occupiers only (lessor, description, area and valuation are blank and the walk leaves those columns out until they are filled). Plot 51 is printed with no occupier and is kept as a blank row. The Earl of Arran row carries `nofamily` so it makes no family plate. A new "Before the valuation" plate shows the 1825 and 1831 tenants as written. No authored family stories yet, so family plates are still generated from the census and Griffith's names.
 Open: plots 20 and 21 (Cassidy on the printed page, McGinty on the user's sheet).
+
+## Story review (2026-11-25)
+The footnotes now name third-party sources only, and the Explore button opens a hub of the eight families and the record sources (DECISIONS.md, 2026-11-25; spec section 10). Not yet built: the two-part spine, the opening caption with its fact and family count, and highlight families. Open: the eight family beats still sit together at 1855 on the ribbon, which is the timeline problem the user named.
+

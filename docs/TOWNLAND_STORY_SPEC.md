@@ -36,7 +36,7 @@ Out of scope for the first release:
 | D1 | The townland is the primary unit. A family appears as a "follow this family" thread inside a townland chapter, not as the main frame. | Agreed 2026-11-20 |
 | D2 | Beats are generated automatically from records so the feature scales over 100+ townlands. No beat needs hand authoring. Hand additions, mainly media, may be allowed later as an optional layer on top. | Agreed 2026-11-20 |
 | D3 | Phones are the main audience, desktop is also supported. One player and one script, drawn in two layouts of the same stage, not two templates. Provisional until Cullionboy is tried on a phone. | Agreed in principle 2026-11-20, to confirm after DP5 |
-| D4 | Play and Explore are two modes of one player built from the same pages. Pause or any tap moves to Explore. Resume returns to the beat that was playing. | Proposed |
+| D4 | Play and Explore are two modes of one player built from the same pages. Pause or any tap moves to Explore. Resume returns to the beat that was playing. From 2026-11-25 the pause pill reads Paused and a real Explore button opens the explore hub (section 10). | Proposed |
 | D5 | Captions follow `docs/STORY_SPEC.md` (third person, past tense, plain words, evidence only, silence over guessing) with one softening. Where a link between records is possible but not certain, the caption may say "possibly", once, at the point of the link. Nothing else is hedged. "Probably", "seems", "it is tempting to think" and similar stay out. | Agreed 2026-11-20 for the story. See note below. |
 | D6 | The generator never invents a story for a gap in the record. Absence from a return is not told as a departure (STORY_SPEC, "Absence and departure"). | Proposed |
 | D7 | Sound is off by default. Captions are always available. Audio is never the only carrier of any fact. | Proposed |
@@ -132,7 +132,7 @@ A chapter is a run of beats under one title. Chapters follow the evidence: the v
 | `caption` | M | Plain text, one to three short sentences, written for the ear. No em dashes. |
 | `people` | no | Person or household references for a family thread. Names only as recorded. |
 | `media` | no | File names from the townland's `media/` folder, shown whole in a frame (MEDIA_SPEC M5). |
-| `evidence` | M | The source event ids behind the beat, the association basis and the `certainty` (`stated`, `accepted` or `possible`). This is what Explore mode opens on "The records behind this". |
+| `evidence` | M | The source event ids behind the beat, the association basis and the `certainty` (`stated`, `accepted` or `possible`). The page shows the named sources behind these events under "The records behind this" (section 10.1), never the basis or the certainty band. |
 | `duration_ms` | M | Derived from caption length (section 4.3). Never hand set. |
 | `audio` | reserved | `null` in the first release. Later a file name or address for a pre-generated narration. |
 
@@ -383,4 +383,27 @@ In suggested order. Items 1 to 3 are small, change only the wording code and can
 6. Phone trial of the opening and backdrop, then decide RO-09 and Q6.
 
 Nothing in this review has been changed in the code.
+
+## 10. Druminnin storytelling review (2026-11-25)
+
+Decisions are in DECISIONS.md, 2026-11-25. This section holds the rules the build follows.
+
+### 10.1 Footnotes (built)
+
+"The records behind this" lists third-party sources only. For each beat the page names the source of every event the beat cites, as a link where the source has a page of its own. A family beat names the estate records and Griffith's, and a census year only where its caption speaks of that year. A possible link adds one plain sentence saying so. The basis, the certainty band, crosswalk status and event ids are never shown. The sources are page data (`tools/build_story.py`, `page_sources`) and are not written to `story.json`.
+
+### 10.2 Explore hub (built)
+
+The pause pill reads Paused. An Explore button beside it, and an "Explore more" button on the closing card, open a hub of the families the story tells and the record sources it draws on (`explore_block`, page data). Choosing one moves the story to the first beat that tells it. The button is shown only when the hub has something in it.
+
+### 10.3 The two-part spine (agreed, not built)
+
+- **Part 1, the townland.** The records on the table: the estate records, Griffith's and the census years, with captions much as now. Each milestone caption names a few surnames from that record, so the milestone keeps a family in it.
+- **Part 2, the families.** One or two highlight families, told in date order and pinned to the same milestones. The parts are not labelled.
+- **Ending.** The story ends in the explore hub, where the viewer chooses a family or a record source.
+- **Opening caption.** "Here is the story of [townland], [one fact from Logainm or townlands.ie], and its N families."
+- **Family means surname.** N is the count of distinct surnames after verified variants only (DECISIONS.md, 2026-11-06).
+- **Highlights.** By rule: presence across the most sources, a span covering the whole story, and the family the viewer arrived from, with a manual override. Longest presence is the working default for "richest".
+
+Open for the build: how the ribbon clock behaves when Part 2 returns to 1825 (the family beats now sit at 1855 in a block of eight, which is what felt off); how Part 2 draws a family's census years from the records; and whether surnames with no told story appear in the hub as plain names.
 
