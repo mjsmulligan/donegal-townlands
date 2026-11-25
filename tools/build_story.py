@@ -17,14 +17,14 @@ fails, naming the beat.
 import datetime, hashlib, json, pathlib, re, sys
 
 try:
-    from tools import build_timeline as bt
+    from tools import build_timeline as bt, story_families as sf
 except ImportError:                  # run as a script: python tools/build_story.py
-    import build_timeline as bt
+    import build_timeline as bt, story_families as sf
 
 ROOT = bt.ROOT
 SCHEMA = 1
 BAPTISM_MIN_AGE = bt.BAPTISM_MIN_AGE
-KIND_ORDER = {'title': 0, 'estate': 1, 'valuation': 1, 'family': 2, 'baptism': 2, 'census': 3, 'photo': 5, 'closing': 9}
+KIND_ORDER = {'title': 0, 'estate': 1, 'valuation': 1, 'family': 2, 'baptism': 2, 'census': 3, 'familycensus': 3, 'photo': 5, 'closing': 9}
 CERTAINTY = ('stated', 'accepted', 'possible')
 CAMERAS = ('parish', 'townland', 'household')
 STAGES = ('map', 'walk', 'timeline')
@@ -124,14 +124,40 @@ def beat(kind, key, chapter, event_ref, caption, place, certainty='stated', basi
     return out
 
 
-def title_beat(display, name_ga, events, place, header, end_label=''):
+def name_list(labels):
+    labels = [x for x in labels if x]
+    return labels[0] if len(labels) == 1 else ', '.join(labels[:-1]) + ' and ' + labels[-1] if labels else ''
+
+
+def place_names(record):
+    """The civil parish and barony of a case, from the hand kept place_names.csv, by the ids on its place record."""
+    path = ROOT / 'data' / 'processed' / 'places' / 'place_names.csv'
+    if not path.is_file():
+        return '', ''
+    import csv
+    with open(path, encoding='utf-8-sig', newline='') as h:
+        by_id = {r['logainm_id']: r['name_en'] for r in csv.DictReader(h)}
+    return by_id.get(str(record.get('civil_parish_id', '')), ''), by_id.get(str(record.get('barony_id', '')), '')
+
+
+def title_beat(display, name_ga, events, place, header, end_label='', families=0, parish='', barony=''):
     if events:
         a, b = span_label(events[0]), end_label or span_label(events[-1])
         runs = f'Its story here runs from {a} to {b}.' if a != b else f'Its story here is {a}.'
     else:
         runs = ''
     irish = f', in Irish {name_ga}' if name_ga else ''
-    caption = (f'{display}{irish}. {runs}').strip() if runs else f'This is {display}{irish}.'
+    where = ''
+    if parish and barony:
+        where = f', in the civil parish of {parish} and the barony of {barony}'
+    elif parish:
+        where = f', in the civil parish of {parish}'
+    if events and families > 1:
+        a, b = span_label(events[0]), end_label or span_label(events[-1])
+        tail = f'from {a} to {b}.' if a != b else f'in {a}.'
+        caption = f'{display}{irish}{where}. Here is the story of {display} and its {num(families)} families, {tail}'
+    else:
+        caption = (f'{display}{irish}{where}. {runs}').strip() if runs else f'This is {display}{irish}{where}.'
     first = events[0] if events else {'date': {'label': '', 'iso': ''}, 'sort': '0000-01-01'}
     ids = [events[0]['id'], events[-1]['id']] if events else []
     b = beat('title', 'title', f"{place['townland']}:ch:intro", first, caption, place,
@@ -141,7 +167,7 @@ def title_beat(display, name_ga, events, place, header, end_label=''):
     return b
 
 
-def estate_beat(ev, place):
+def estate_beat(ev, place, names=()):
     y = ev['date']['label']
     town = place['name']
     h, t = ev['estate']['holdings'], ev['estate']['tenants']
@@ -150,6 +176,8 @@ def estate_beat(ev, place):
     else:
         lead = f"In {y} the Arran estate rental listed {town}."
     cap = f"{lead} In all, {num(t)} tenants were named." if t != 1 else f"{lead} One tenant was named."
+    if names:
+        cap += f' They included {name_list(names)}.'
     return beat('estate', y, f"{place['townland']}:ch:{y}", ev, cap, place,
                 basis=ev['association']['basis'], events=[ev['id']], counts={'holdings': h, 'tenants': t})
 
@@ -160,13 +188,15 @@ def family_beat(ev, place):
                 basis=ev['association']['basis'], events=[ev['id']])
 
 
-def valuation_beat(ev, place, media=()):
+def valuation_beat(ev, place, media=(), names=()):
     town = place['name']
     parts = ev['text'].split('. ', 1)
     tail = re.sub(r'\s*\([^)]*\)', '', parts[1]).rstrip('.').replace('the townland', town) if len(parts) == 2 else ''
     patterns = [f"In the 1850s the land was valued and its occupiers listed. In all, {tail}.",
                 f"Griffith's Valuation listed the land and its occupiers in the 1850s. Here, {tail}."]
     cap = patterns[pick(ev['id'], len(patterns))] if tail else "In the 1850s the land was valued and its occupiers listed."
+    if names:
+        cap += f' The occupiers included {name_list(names)}.'
     return beat('valuation', 'griffiths', f"{place['townland']}:ch:1850s", ev, cap, place,
                 basis=ev['association']['basis'], events=[ev['id']], media=media)
 
@@ -223,7 +253,7 @@ def census_counts(ev):
     return (int(m.group(1)), int(m.group(2))) if m else (None, None)
 
 
-def census_beat(ev, place):
+def census_beat(ev, place, names=()):
     y = ev['date']['label']
     people, houses = census_counts(ev)
     town = place['name']
@@ -233,9 +263,26 @@ def census_beat(ev, place):
         patterns = [f"In {y}, {num(people)} people in {plural(houses, 'household', 'households')} lived in {town}.",
                     f"{town} had {num(people)} people in {plural(houses, 'household', 'households')} in {y}."]
         cap = patterns[pick(ev['id'], len(patterns))]
+    if names and people is not None:
+        cap += f' Heads of household included {name_list(names)}.'
     counts = {'people': people, 'households': houses} if people is not None else None
     return beat('census', y, f"{place['townland']}:ch:{y}", ev, cap, place,
                 basis=ev['association']['basis'], events=[ev['id']], counts=counts)
+
+
+def family_census_beat(ev, place, thread):
+    """One family's households in one census year, told in the family's own thread."""
+    y, town = ev['date']['label'], place['name']
+    groups = ev['groups']
+    counts = [len(fn) for _, fn in groups]
+    total = sum(counts)
+    bits = [f"{num(c)} {lab} " + ('household' if c == 1 else 'households') for (lab, _), c in zip(groups, counts)]
+    cap = f"In {y} there {'was' if total == 1 else 'were'} {' and '.join(bits)} in {town}"
+    named = [f for f in groups[0][1] if f] if len(groups) == 1 else []
+    cap += f', headed by {sf._heads_phrase(named)}.' if named else '.'
+    key = ev['id'].split(':familycensus:')[1].replace(':', '-')
+    return beat('familycensus', key, f"{place['townland']}:ch:{thread['key']}", ev, cap, place, certainty='accepted',
+                basis=ev['association']['basis'], events=[ev['id']])
 
 
 def photo_beats(feed_events, by_event, place):
@@ -352,7 +399,9 @@ def privacy_refusals(events, today):
 
 # ---------------------------------------------------------------- assembly
 
-def chapter_title(key, beats, display):
+def chapter_title(key, beats, display, threads=None):
+    if threads and key in threads:
+        return f'The {threads[key]} family'
     if key == 'intro':
         return display
     if key == '1850s':
@@ -367,7 +416,7 @@ def chapter_title(key, beats, display):
     return key
 
 
-def generate(display, slug, place_record, events, by_event=None, header=None, today=None, dated=None, parish_files=None, griffiths_files=None):
+def generate(display, slug, place_record, events, by_event=None, header=None, today=None, dated=None, parish_files=None, griffiths_files=None, fam=None):
     """Pure: build the story dict and the list of refused items from already collected inputs."""
     today = today or datetime.date.today()
     by_event = by_event or {}
@@ -383,8 +432,15 @@ def generate(display, slug, place_record, events, by_event=None, header=None, to
         if top['time']['sort'] > events[-1]['sort']:
             later = {'date': {'kind': 'year', 'label': top['time']['label'], 'iso': top['time']['iso']},
                      'sort': top['time']['sort'], 'approximate_sort': True}
+    fam = fam or {}
+    nm = fam.get('names') or {}
+    threads = fam.get('threads') or []
+    for t in threads:
+        t['key'] = 'family-' + t['id'].rsplit(':', 1)[1]
+    parish, barony = place_names(place_record)
     beats = [title_beat(display, place_record.get('name_ga', ''), events, place, header,
-                        later['date']['label'] if later else '')]
+                        later['date']['label'] if later else '', nm.get('families', 0), parish, barony)]
+    tbeats = {}
     note = ''
     if len(events) < 2:
         note = 'Fewer than two events are held, so there is no story to play yet.'
@@ -392,18 +448,45 @@ def generate(display, slug, place_record, events, by_event=None, header=None, to
         vals = [e for e in events if e['type'] == 'valuation']
         baps = [e for e in events if e['type'] == 'baptism']
         cens = [e for e in events if e['type'] == 'census']
-        beats += [estate_beat(e, place) for e in events if e['type'] == 'estate']
-        beats += [valuation_beat(e, place, griffiths_files or ()) for e in vals]
-        beats += [family_beat(e, place) for e in events if e['type'] == 'family']
+        beats += [estate_beat(e, place, (nm.get('estate') or {}).get(e['date']['label'], ())) for e in events if e['type'] == 'estate']
+        beats += [valuation_beat(e, place, griffiths_files or (), nm.get('valuation') or ()) for e in vals]
+        by_thread = {t['id']: t for t in threads}
+        for e in events:
+            if e['type'] == 'family' and e['id'] in by_thread:
+                t = by_thread[e['id']]
+                fb = family_beat(e, place)
+                fb['chapter'] = f"{slug}:ch:{t['key']}"
+                if t['start_sort'] < fb['time']['sort']:
+                    fb['time']['sort'] = t['start_sort']
+                tbeats[t['id']] = [fb] + [family_census_beat(x, place, t) for x in t['events']]
+            elif e['type'] == 'family':
+                beats.append(family_beat(e, place))
         beats += baptism_beats(baps, place, parish_files or ())
-        beats += [census_beat(e, place) for e in cens]
+        beats += [census_beat(e, place, (nm.get('census') or {}).get(e['date']['label'], ())) for e in cens]
         beats += photo_beats(events, by_event, place)
         beats += dated_beats
         beats.append(closing_beat(events, place, later))
-    beats.sort(key=lambda b: (b['time']['sort'], KIND_ORDER[b['kind']], b['id']))
-    by_id = {e['id']: e for e in events}
+    order = lambda b: (b['time']['sort'], KIND_ORDER[b['kind']], b['id'])
+    beats.sort(key=order)
+    closing = [b for b in beats if b['kind'] == 'closing']
+    beats = [b for b in beats if b['kind'] != 'closing']
+    picked = set(fam.get('highlights') or [])
+    told, rest = [], []
+    for t in threads:
+        if t['id'] not in tbeats:
+            continue
+        tb = sorted(tbeats[t['id']], key=order)
+        for b in tb:
+            b['thread'] = {'id': t['id'], 'label': t['label'], 'run': t['id'] in picked}
+        (told if t['id'] in picked else rest).append(tb)
+    for group in (told, rest):
+        group.sort(key=lambda tb: order(tb[0]))
+    beats = beats + [b for tb in told for b in tb] + closing + [b for tb in rest for b in tb]
+    extra_events = [x for t in threads for x in t['events']]
+    by_id = {e['id']: e for e in events + extra_events}
     known = set(by_id)
-    years = {int(b['time']['sort'][:4]) for b in dated_beats}
+    years = {int(b['time']['sort'][:4]) for b in dated_beats} | {nm.get('families', 0)}
+    known |= set(by_id)
     for b in beats:
         problems = check_beat(b, by_id, known, years if b['kind'] == 'title' else ())
         if problems:
@@ -411,20 +494,26 @@ def generate(display, slug, place_record, events, by_event=None, header=None, to
     ids = [b['id'] for b in beats]
     if len(ids) != len(set(ids)):
         raise ValueError('duplicate beat ids')
-    chapters, order = {}, []
+    chapters, order, seen_keys = {}, [], {}
     for b in beats:
         key = b['chapter'].split(':ch:')[1]
-        if key not in chapters:
-            chapters[key] = []
-            order.append(key)
-        chapters[key].append(b)
+        if order and order[-1][0] == key:
+            chapters[order[-1][1]].append(b)
+            b['chapter'] = f'{slug}:ch:{order[-1][1]}'
+            continue
+        n = seen_keys.get(key, 0)
+        seen_keys[key] = n + 1
+        cid = key if n == 0 else f'{key}-{n + 1}'      # a moment that comes back to a chapter (the closing card) is its own chapter
+        order.append((key, cid))
+        chapters[cid] = [b]
+        b['chapter'] = f'{slug}:ch:{cid}'
     doc = {
         'schema': SCHEMA, 'townland': display, 'slug': slug,
         'generated_by': 'donegal-townlands.build_story',
         'title': display,
         'span': {'from': span_label(events[0]) if events else '', 'to': span_label(events[-1]) if events else ''},
-        'chapters': [{'id': f'{slug}:ch:{k}', 'title': chapter_title(k, chapters[k], display), 'beats': chapters[k]}
-                     for k in order],
+        'chapters': [{'id': f'{slug}:ch:{cid}', 'title': chapter_title(k, chapters[cid], display, {t['key']: t['label'] for t in threads}), 'beats': chapters[cid]}
+                     for k, cid in order],
     }
     if note:
         doc['note'] = note
@@ -438,15 +527,78 @@ def _num(v):
         return None
 
 
-def render_page(doc, found, outline=None):
+def page_sources(doc, events):
+    """What the footnotes name: for each event a beat cites, the third-party sources behind it, as
+    {label, url}. Internal process (association basis, crosswalk status, event ids) is never shown.
+    A family beat is built from our own crosswalk, so it names the records the crosswalk joins: the estate
+    records and Griffith's, and a census year only where the caption speaks of it."""
+    by_id = {e['id']: e for e in events}
+
+    def one(ev):
+        src = ev.get('source') or {}
+        return {'label': src.get('label', ''), 'url': src.get('url', '')} if src.get('label') else None
+
+    out = {}
+    for c in doc['chapters']:
+        for b in c['beats']:
+            if b['kind'] == 'title' and b['place'].get('logainm_id'):
+                out[b['id']] = [{'label': 'Logainm, the placenames database of Ireland',
+                                 'url': 'https://www.logainm.ie/en/' + b['place']['logainm_id']}]
+            for eid in b['evidence']['events']:
+                ev = by_id.get(eid)
+                if not ev or eid in out:
+                    continue
+                if ev['type'] == 'family':
+                    pool = [e for e in events if e['type'] in ('estate', 'valuation')]
+                    pool += [e for e in events if e['type'] == 'census' and e['date']['label'] in ev['text']]
+                else:
+                    pool = [ev]
+                seen, rows = set(), []
+                for e in pool:
+                    row = one(e)
+                    if row and row['label'] not in seen:
+                        seen.add(row['label'])
+                        rows.append(row)
+                out[eid] = rows
+    return out
+
+
+def explore_block(doc):
+    """The explore hub the player opens from the Explore button and the closing card: the families the story
+    tells and the record sources it draws on, each pointing at the first beat that tells it."""
+    families, sources, seen = [], [], set()
+    names = {'estate': 'Estate records', 'valuation': "Griffith's Valuation", 'baptism': 'Parish baptisms',
+             'census': 'Census returns'}
+    for c in doc['chapters']:
+        for b in c['beats']:
+            if b['kind'] == 'family':
+                t = b.get('thread') or {}
+                families.append({'beat': b['id'], 'label': t.get('label', ''), 'thread': t.get('id', '')})
+            elif b['kind'] in names and b['kind'] not in seen:
+                seen.add(b['kind'])
+                sources.append({'beat': b['id'], 'label': names[b['kind']]})
+    return {'families': families, 'sources': sources}
+
+
+def render_page(doc, found, outline=None, events=None):
     """The page text for one story. Pure: the same inputs give the same bytes (RO-03). `outline` is the
     townland's boundary geometry (WGS84), drawn on the map and used to frame it; with none the page frames the
-    place point at zoom 16 as before. It goes into the page only, never into story.json."""
+    place point at zoom 16 as before. It goes into the page only, never into story.json. `events` are the
+    case's events, from which the footnote sources are named (page only, also never in story.json)."""
     media = {}
     for r in found['rows']:
         media[r['file']] = {'caption': r.get('caption', ''), 'alt': r.get('alt', ''),
                             'source': r.get('source', ''), 'lat': r.get('lat', ''), 'lon': r.get('lon', '')}
     payload = dict(doc, media=media, foot='')
+    if events is not None:
+        payload['sources'] = page_sources(doc, events)
+        titles = {e['id']: e['title'] for e in events if e['type'] == 'family'}
+        ex = explore_block(doc)
+        for f in ex['families']:
+            if not f['label']:
+                eid = next(b['evidence']['events'][0] for c in doc['chapters'] for b in c['beats'] if b['id'] == f['beat'])
+                f['label'] = re.sub(r'\s+(family|families)$', '', re.sub(r'^The ', '', titles.get(eid, '')))
+        payload['explore'] = ex
     if outline:
         payload['outline'] = outline
         payload['outline_credit'] = bt.build.BOUNDARY_CREDIT
@@ -457,7 +609,7 @@ def render_page(doc, found, outline=None):
                 .replace('__DATA__', data))
 
 
-def write_page(name, doc, found):
+def write_page(name, doc, found, events=None):
     """Render engine/story.html to docs/<name>/story.html, a page beside the walk and the
     timeline. It does not replace either (docs/TOWNLAND_STORY_SPEC.md, DP9). Returns the path written."""
     dest = ROOT / 'docs' / name / 'story.html'
@@ -465,9 +617,20 @@ def write_page(name, doc, found):
     place_file = ROOT / 'townlands' / name / 'place.json'
     place = json.loads(place_file.read_text(encoding='utf-8')) if place_file.is_file() else {}
     outline = bt.build.load_outlines().get(str(place.get('logainm_id', '')))
-    dest.write_text(render_page(doc, found, outline), encoding='utf-8')
+    dest.write_text(render_page(doc, found, outline, events), encoding='utf-8')
     bt.build.copy_media(name, found)
     return dest
+
+
+def family_inputs(base, name):
+    """The families of a case for the story (tools/story_families.py): names for the milestone captions, one thread
+    for each told family, and the threads the lean-back run tells."""
+    found = sf.threads(base, name)
+    return {'names': sf.names(base), 'threads': found, 'highlights': sf.highlights(found, base) if found else []}
+
+
+def thread_events(name):
+    return [e for t in sf.threads(ROOT / 'townlands' / name, name) for e in t['events']]
 
 
 def collect(name, today):
@@ -493,7 +656,7 @@ def collect(name, today):
         'args': (display, name, place, feed['events'], by_event, header, today,
                  [r for r in found['rows'] if r['file'] in unplaced and r.get('scope') == 'family'],
                  [r['file'] for r in found['rows'] if r.get('scope') == 'parish'],
-                 [r['file'] for r in found['rows'] if r.get('scope') == 'griffiths']),
+                 [r['file'] for r in found['rows'] if r.get('scope') == 'griffiths'], family_inputs(base, name)),
     }
     return inputs, []
 
@@ -541,7 +704,7 @@ def _build(name, today, only_story, written):
     if _num(place.get('latitude')) is None or _num(place.get('longitude')) is None:
         print('  no usable coordinates, so no page was built.')      # RO-01
     else:
-        written.append(str(write_page(name, doc, found).relative_to(ROOT)))
+        written.append(str(write_page(name, doc, found, feed['events'] + [e for t in (inputs['args'][10] if len(inputs['args']) > 10 else {}).get('threads', []) for e in t['events']]).relative_to(ROOT)))
     for row_id, why in refused + [(r, w) for r, w in feed['skipped']]:
         print('  left out ' + row_id + ': ' + why)
     return 0
@@ -552,7 +715,7 @@ def _build(name, today, only_story, written):
 TOP_KEYS = ('schema', 'townland', 'slug', 'generated_by', 'title', 'span', 'chapters')
 
 
-def check_document(doc, events):
+def check_document(doc, events, families=0):
     """Problems with one committed story.json, given the case's current events. Empty means it
     passes: schema, unique ids, beats in time order, evidence ids that exist, no dashes, no source talk,
     hedges or loose numbers, "possibly" only on possible beats, and the thin case rule (RO-02)."""
@@ -571,12 +734,15 @@ def check_document(doc, events):
         return problems + ['no beats']
     ids = [b.get('id') for b in beats]
     problems += ['duplicate beat id ' + i for i in sorted({i for i in ids if ids.count(i) > 1})]
-    sorts = [(b.get('time') or {}).get('sort', '') for b in beats]
-    if sorts != sorted(sorts):
-        problems.append('beats are not in time order')
+    tracks = {}
+    for b in beats:      # the townland's moments run in time order, and so do the moments of each family (each rewinds)
+        tracks.setdefault((b.get('thread') or {}).get('id', ''), []).append((b.get('time') or {}).get('sort', ''))
+    for t, sorts in tracks.items():
+        if sorts != sorted(sorts):
+            problems.append('beats are not in time order' + (f' in thread {t}' if t else ''))
     by_id = {e['id']: e for e in events}
     years = {int(b['time']['sort'][:4]) for b in beats
-             if b.get('kind') == 'photo' and (b.get('evidence') or {}).get('basis') == 'dated_photograph'}
+             if b.get('kind') == 'photo' and (b.get('evidence') or {}).get('basis') == 'dated_photograph'} | {families}
     for b in beats:
         problems += [f"{b.get('id', '?')}: {p}" for p in
                      check_beat(b, by_id, set(by_id), years if b.get('kind') == 'title' else ())]
@@ -596,11 +762,12 @@ def check_repo(today=None):
         name = path.parent.parent.name
         try:
             doc = json.loads(path.read_text(encoding='utf-8'))
-            events = bt.events_for(name, today)['events']
+            events = bt.events_for(name, today)['events'] + thread_events(name)
+            families = sf.names(ROOT / 'townlands' / name)['families']
         except (ValueError, OSError) as e:
             problems.append(f'{name}: story.json cannot be checked: {e}')
             continue
-        problems += [f'{name}: story.json: {p}' for p in check_document(doc, events)]
+        problems += [f'{name}: story.json: {p}' for p in check_document(doc, events, families)]
     return problems
 
 

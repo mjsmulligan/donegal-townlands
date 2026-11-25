@@ -35,7 +35,7 @@
       "stage": "map",
       "open_card": ""
      },
-     "caption": "Druminnin. Its story here runs from 1825 to 1926.",
+     "caption": "Druminnin, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Druminnin and its 23 families, from 1825 to 1926.",
      "people": [],
      "media": [],
      "evidence": {
@@ -46,7 +46,7 @@
       "basis": "place_record",
       "certainty": "stated"
      },
-     "duration_ms": 4000,
+     "duration_ms": 10400,
      "audio": null
     }
    ]
@@ -77,7 +77,7 @@
       "stage": "map",
       "open_card": "druminnin:estate:1825"
      },
-     "caption": "In 1825 a map of the Arran estate laid out Druminnin in seventeen holdings. In all, 22 tenants were named.",
+     "caption": "In 1825 a map of the Arran estate laid out Druminnin in seventeen holdings. In all, 22 tenants were named. They included McGinty, Cassidy and Gildea.",
      "people": [],
      "media": [],
      "evidence": {
@@ -87,7 +87,7 @@
       "basis": "townland_entry",
       "certainty": "stated"
      },
-     "duration_ms": 8000,
+     "duration_ms": 10400,
      "audio": null,
      "counts": {
       "holdings": 17,
@@ -122,7 +122,7 @@
       "stage": "map",
       "open_card": "druminnin:estate:1831"
      },
-     "caption": "In 1831 the Arran estate rental listed Druminnin. In all, 22 tenants were named.",
+     "caption": "In 1831 the Arran estate rental listed Druminnin. In all, 22 tenants were named. They included McGinty, Cassidy and Gildea.",
      "people": [],
      "media": [],
      "evidence": {
@@ -132,7 +132,7 @@
       "basis": "townland_entry",
       "certainty": "stated"
      },
-     "duration_ms": 5600,
+     "duration_ms": 8000,
      "audio": null,
      "counts": {
       "holdings": 22,
@@ -167,7 +167,7 @@
       "stage": "map",
       "open_card": "druminnin:valuation:griffiths"
      },
-     "caption": "In the 1850s the land was valued and its occupiers listed. In all, 36 occupiers are named for Druminnin.",
+     "caption": "In the 1850s the land was valued and its occupiers listed. In all, 36 occupiers are named for Druminnin. The occupiers included McGinty, Cassidy and McAnaw.",
      "people": [],
      "media": [],
      "evidence": {
@@ -177,293 +177,7 @@
       "basis": "townland_entry",
       "certainty": "stated"
      },
-     "duration_ms": 7600,
-     "audio": null
-    }
-   ]
-  },
-  {
-   "id": "druminnin:ch:families",
-   "title": "The families on the land",
-   "beats": [
-    {
-     "id": "druminnin:beat:family:01",
-     "kind": "family",
-     "chapter": "druminnin:ch:families",
-     "time": {
-      "label": "From 1825",
-      "iso": "",
-      "sort": "1855-07-02",
-      "approximate": true
-     },
-     "place": {
-      "townland": "druminnin",
-      "name": "Druminnin",
-      "logainm_id": "13969",
-      "lat": 54.682253,
-      "lon": -8.020767,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "druminnin:family:01"
-     },
-     "caption": "The north west tip belonged to the McNamees. Connel McNamee held it in 1825, and John McNamee in 1831 and again in the 1850s. The McNamees had one household in 1901 and one in 1911, and none in 1926.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "druminnin:family:01"
-      ],
-      "basis": "accepted_crosswalk",
-      "certainty": "accepted"
-     },
-     "duration_ms": 14000,
-     "audio": null
-    },
-    {
-     "id": "druminnin:beat:family:02",
-     "kind": "family",
-     "chapter": "druminnin:ch:families",
-     "time": {
-      "label": "From 1825",
-      "iso": "",
-      "sort": "1855-07-03",
-      "approximate": true
-     },
-     "place": {
-      "townland": "druminnin",
-      "name": "Druminnin",
-      "logainm_id": "13969",
-      "lat": 54.682253,
-      "lon": -8.020767,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "druminnin:family:02"
-     },
-     "caption": "In 1825 James, Owen, Hugh and Daniel Cassidy held 21 plots between them. James, Daniel and Hugh were still there in 1831, with Peter, and Cassidys held land in the 1850s.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "druminnin:family:02"
-      ],
-      "basis": "accepted_crosswalk",
-      "certainty": "accepted"
-     },
-     "duration_ms": 12400,
-     "audio": null
-    },
-    {
-     "id": "druminnin:beat:family:03",
-     "kind": "family",
-     "chapter": "druminnin:ch:families",
-     "time": {
-      "label": "From 1825",
-      "iso": "",
-      "sort": "1855-07-04",
-      "approximate": true
-     },
-     "place": {
-      "townland": "druminnin",
-      "name": "Druminnin",
-      "logainm_id": "13969",
-      "lat": 54.682253,
-      "lon": -8.020767,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "druminnin:family:03"
-     },
-     "caption": "The McGintys were the largest family on the land. In 1825 Neil, Hugh, Owen, James and Edward McGinty held plots, and Hugh, Edward and Owen were still there in 1831 and in the 1850s.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "druminnin:family:03"
-      ],
-      "basis": "accepted_crosswalk",
-      "certainty": "accepted"
-     },
-     "duration_ms": 13600,
-     "audio": null
-    },
-    {
-     "id": "druminnin:beat:family:04",
-     "kind": "family",
-     "chapter": "druminnin:ch:families",
-     "time": {
-      "label": "From 1825",
-      "iso": "",
-      "sort": "1855-07-05",
-      "approximate": true
-     },
-     "place": {
-      "townland": "druminnin",
-      "name": "Druminnin",
-      "logainm_id": "13969",
-      "lat": 54.682253,
-      "lon": -8.020767,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "druminnin:family:04"
-     },
-     "caption": "Patrick, Edward and Felim Gildea were on the land in 1825, in 1831 and in the 1850s. The clerks wrote the name Kildea in the first two. Jeremiah Gildea appears in the 1850s.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "druminnin:family:04"
-      ],
-      "basis": "accepted_crosswalk",
-      "certainty": "accepted"
-     },
-     "duration_ms": 13200,
-     "audio": null
-    },
-    {
-     "id": "druminnin:beat:family:05",
-     "kind": "family",
-     "chapter": "druminnin:ch:families",
-     "time": {
-      "label": "From 1825",
-      "iso": "",
-      "sort": "1855-07-06",
-      "approximate": true
-     },
-     "place": {
-      "townland": "druminnin",
-      "name": "Druminnin",
-      "logainm_id": "13969",
-      "lat": 54.682253,
-      "lon": -8.020767,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "druminnin:family:05"
-     },
-     "caption": "The McAnaw homestead is the fixed point. Michael and James were there in 1825, 1831 and the 1850s, and the name was written McAna, then McArea, then McKenna.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "druminnin:family:05"
-      ],
-      "basis": "accepted_crosswalk",
-      "certainty": "accepted"
-     },
-     "duration_ms": 11200,
-     "audio": null
-    },
-    {
-     "id": "druminnin:beat:family:06",
-     "kind": "family",
-     "chapter": "druminnin:ch:families",
-     "time": {
-      "label": "From 1825",
-      "iso": "",
-      "sort": "1855-07-07",
-      "approximate": true
-     },
-     "place": {
-      "townland": "druminnin",
-      "name": "Druminnin",
-      "logainm_id": "13969",
-      "lat": 54.682253,
-      "lon": -8.020767,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "druminnin:family:06"
-     },
-     "caption": "The Mullens shared ground with the Gildeas and with the Monaghans in 1825, and again in the 1850s. The Monaghans were written Meaghan in 1825. Hugh Monaghan was named in 1831 and in the 1850s.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "druminnin:family:06"
-      ],
-      "basis": "accepted_crosswalk",
-      "certainty": "accepted"
-     },
-     "duration_ms": 14000,
-     "audio": null
-    },
-    {
-     "id": "druminnin:beat:family:07",
-     "kind": "family",
-     "chapter": "druminnin:ch:families",
-     "time": {
-      "label": "From 1825",
-      "iso": "",
-      "sort": "1855-07-08",
-      "approximate": true
-     },
-     "place": {
-      "townland": "druminnin",
-      "name": "Druminnin",
-      "logainm_id": "13969",
-      "lat": 54.682253,
-      "lon": -8.020767,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "druminnin:family:07"
-     },
-     "caption": "A widow named Thomas held ground in 1825, Patrick Thomas in 1831 and Catherine Thomas in the 1850s. There were four Thomas households in 1901 and three in 1911.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "druminnin:family:07"
-      ],
-      "basis": "accepted_crosswalk",
-      "certainty": "accepted"
-     },
-     "duration_ms": 11600,
-     "audio": null
-    },
-    {
-     "id": "druminnin:beat:family:08",
-     "kind": "family",
-     "chapter": "druminnin:ch:families",
-     "time": {
-      "label": "From 1825",
-      "iso": "",
-      "sort": "1855-07-09",
-      "approximate": true
-     },
-     "place": {
-      "townland": "druminnin",
-      "name": "Druminnin",
-      "logainm_id": "13969",
-      "lat": 54.682253,
-      "lon": -8.020767,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "druminnin:family:08"
-     },
-     "caption": "Three names are new in the 1850s: Connell Harvey, Hugh Gethins and Hugh Corrigan. None of them is named in 1825 or 1831. The Harveys were still in the townland in 1901 and 1911.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "druminnin:family:08"
-      ],
-      "basis": "accepted_crosswalk",
-      "certainty": "accepted"
-     },
-     "duration_ms": 13600,
+     "duration_ms": 10400,
      "audio": null
     }
    ]
@@ -605,7 +319,7 @@
       "stage": "map",
       "open_card": "druminnin:census:1901"
      },
-     "caption": "Druminnin had 132 people in 24 households in 1901.",
+     "caption": "Druminnin had 132 people in 24 households in 1901. Heads of household included McGinty, Cassidy and Gildea.",
      "people": [],
      "media": [],
      "evidence": {
@@ -615,7 +329,7 @@
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 4000,
+     "duration_ms": 6800,
      "audio": null,
      "counts": {
       "people": 132,
@@ -650,7 +364,7 @@
       "stage": "map",
       "open_card": "druminnin:census:1911"
      },
-     "caption": "In 1911, 148 people in 23 households lived in Druminnin.",
+     "caption": "In 1911, 148 people in 23 households lived in Druminnin. Heads of household included McGinty, Cassidy and Gildea.",
      "people": [],
      "media": [],
      "evidence": {
@@ -660,7 +374,7 @@
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 4000,
+     "duration_ms": 7200,
      "audio": null,
      "counts": {
       "people": 148,
@@ -695,7 +409,7 @@
       "stage": "map",
       "open_card": "druminnin:census:1926"
      },
-     "caption": "Druminnin had 91 people in twenty households in 1926.",
+     "caption": "Druminnin had 91 people in twenty households in 1926. Heads of household included McGinty, Cassidy and Gillespie.",
      "people": [],
      "media": [],
      "evidence": {
@@ -705,17 +419,355 @@
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 4000,
+     "duration_ms": 6800,
      "audio": null,
      "counts": {
       "people": 91,
       "households": 20
      }
+    }
+   ]
+  },
+  {
+   "id": "druminnin:ch:family-02",
+   "title": "The Cassidy family",
+   "beats": [
+    {
+     "id": "druminnin:beat:family:02",
+     "kind": "family",
+     "chapter": "druminnin:ch:family-02",
+     "time": {
+      "label": "From 1825",
+      "iso": "",
+      "sort": "1825-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminnin",
+      "name": "Druminnin",
+      "logainm_id": "13969",
+      "lat": 54.682253,
+      "lon": -8.020767,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminnin:family:02"
+     },
+     "caption": "In 1825 James, Owen, Hugh and Daniel Cassidy held 21 plots between them. James, Daniel and Hugh were still there in 1831, with Peter, and Cassidys held land in the 1850s.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminnin:family:02"
+      ],
+      "basis": "accepted_crosswalk",
+      "certainty": "accepted"
+     },
+     "duration_ms": 12400,
+     "audio": null,
+     "thread": {
+      "id": "druminnin:family:02",
+      "label": "Cassidy",
+      "run": true
+     }
     },
+    {
+     "id": "druminnin:beat:familycensus:02-1901",
+     "kind": "familycensus",
+     "chapter": "druminnin:ch:family-02",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminnin",
+      "name": "Druminnin",
+      "logainm_id": "13969",
+      "lat": 54.682253,
+      "lon": -8.020767,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminnin:familycensus:02:1901"
+     },
+     "caption": "In 1901 there were three Cassidy households in Druminnin, headed by Hugh, Michael and John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminnin:familycensus:02:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 6000,
+     "audio": null,
+     "thread": {
+      "id": "druminnin:family:02",
+      "label": "Cassidy",
+      "run": true
+     }
+    },
+    {
+     "id": "druminnin:beat:familycensus:02-1911",
+     "kind": "familycensus",
+     "chapter": "druminnin:ch:family-02",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminnin",
+      "name": "Druminnin",
+      "logainm_id": "13969",
+      "lat": 54.682253,
+      "lon": -8.020767,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminnin:familycensus:02:1911"
+     },
+     "caption": "In 1911 there were three Cassidy households in Druminnin, headed by John, Michael and James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminnin:familycensus:02:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 6000,
+     "audio": null,
+     "thread": {
+      "id": "druminnin:family:02",
+      "label": "Cassidy",
+      "run": true
+     }
+    },
+    {
+     "id": "druminnin:beat:familycensus:02-1926",
+     "kind": "familycensus",
+     "chapter": "druminnin:ch:family-02",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminnin",
+      "name": "Druminnin",
+      "logainm_id": "13969",
+      "lat": 54.682253,
+      "lon": -8.020767,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminnin:familycensus:02:1926"
+     },
+     "caption": "In 1926 there were three Cassidy households in Druminnin, headed by Michael, Edward and Sarah.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminnin:familycensus:02:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 6000,
+     "audio": null,
+     "thread": {
+      "id": "druminnin:family:02",
+      "label": "Cassidy",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "druminnin:ch:family-03",
+   "title": "The McGinty family",
+   "beats": [
+    {
+     "id": "druminnin:beat:family:03",
+     "kind": "family",
+     "chapter": "druminnin:ch:family-03",
+     "time": {
+      "label": "From 1825",
+      "iso": "",
+      "sort": "1825-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminnin",
+      "name": "Druminnin",
+      "logainm_id": "13969",
+      "lat": 54.682253,
+      "lon": -8.020767,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminnin:family:03"
+     },
+     "caption": "The McGintys were the largest family on the land. In 1825 Neil, Hugh, Owen, James and Edward McGinty held plots, and Hugh, Edward and Owen were still there in 1831 and in the 1850s.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminnin:family:03"
+      ],
+      "basis": "accepted_crosswalk",
+      "certainty": "accepted"
+     },
+     "duration_ms": 13600,
+     "audio": null,
+     "thread": {
+      "id": "druminnin:family:03",
+      "label": "McGinty",
+      "run": true
+     }
+    },
+    {
+     "id": "druminnin:beat:familycensus:03-1901",
+     "kind": "familycensus",
+     "chapter": "druminnin:ch:family-03",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminnin",
+      "name": "Druminnin",
+      "logainm_id": "13969",
+      "lat": 54.682253,
+      "lon": -8.020767,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminnin:familycensus:03:1901"
+     },
+     "caption": "In 1901 there were five McGinty households in Druminnin, headed by Thomas, Bernard, Patrick, John and James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminnin:familycensus:03:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "thread": {
+      "id": "druminnin:family:03",
+      "label": "McGinty",
+      "run": true
+     }
+    },
+    {
+     "id": "druminnin:beat:familycensus:03-1911",
+     "kind": "familycensus",
+     "chapter": "druminnin:ch:family-03",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminnin",
+      "name": "Druminnin",
+      "logainm_id": "13969",
+      "lat": 54.682253,
+      "lon": -8.020767,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminnin:familycensus:03:1911"
+     },
+     "caption": "In 1911 there were four McGinty households in Druminnin, headed by Patrick, John, Mary and Thomas.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminnin:familycensus:03:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "druminnin:family:03",
+      "label": "McGinty",
+      "run": true
+     }
+    },
+    {
+     "id": "druminnin:beat:familycensus:03-1926",
+     "kind": "familycensus",
+     "chapter": "druminnin:ch:family-03",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminnin",
+      "name": "Druminnin",
+      "logainm_id": "13969",
+      "lat": 54.682253,
+      "lon": -8.020767,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminnin:familycensus:03:1926"
+     },
+     "caption": "In 1926 there were five McGinty households in Druminnin, headed by John, Hannah, Ellen, Annie and Mary.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminnin:familycensus:03:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "thread": {
+      "id": "druminnin:family:03",
+      "label": "McGinty",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "druminnin:ch:1926-2",
+   "title": "1926",
+   "beats": [
     {
      "id": "druminnin:beat:closing:end",
      "kind": "closing",
-     "chapter": "druminnin:ch:1926",
+     "chapter": "druminnin:ch:1926-2",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -746,6 +798,682 @@
      },
      "duration_ms": 4000,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "druminnin:ch:family-01",
+   "title": "The McNamee family",
+   "beats": [
+    {
+     "id": "druminnin:beat:family:01",
+     "kind": "family",
+     "chapter": "druminnin:ch:family-01",
+     "time": {
+      "label": "From 1825",
+      "iso": "",
+      "sort": "1825-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminnin",
+      "name": "Druminnin",
+      "logainm_id": "13969",
+      "lat": 54.682253,
+      "lon": -8.020767,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminnin:family:01"
+     },
+     "caption": "The north west tip belonged to the McNamees. Connel McNamee held it in 1825, and John McNamee in 1831 and again in the 1850s. The McNamees had one household in 1901 and one in 1911, and none in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminnin:family:01"
+      ],
+      "basis": "accepted_crosswalk",
+      "certainty": "accepted"
+     },
+     "duration_ms": 14000,
+     "audio": null,
+     "thread": {
+      "id": "druminnin:family:01",
+      "label": "McNamee",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "druminnin:ch:family-04",
+   "title": "The Gildea family",
+   "beats": [
+    {
+     "id": "druminnin:beat:family:04",
+     "kind": "family",
+     "chapter": "druminnin:ch:family-04",
+     "time": {
+      "label": "From 1825",
+      "iso": "",
+      "sort": "1825-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminnin",
+      "name": "Druminnin",
+      "logainm_id": "13969",
+      "lat": 54.682253,
+      "lon": -8.020767,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminnin:family:04"
+     },
+     "caption": "Patrick, Edward and Felim Gildea were on the land in 1825, in 1831 and in the 1850s. The clerks wrote the name Kildea in the first two. Jeremiah Gildea appears in the 1850s.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminnin:family:04"
+      ],
+      "basis": "accepted_crosswalk",
+      "certainty": "accepted"
+     },
+     "duration_ms": 13200,
+     "audio": null,
+     "thread": {
+      "id": "druminnin:family:04",
+      "label": "Gildea",
+      "run": false
+     }
+    },
+    {
+     "id": "druminnin:beat:familycensus:04-1901",
+     "kind": "familycensus",
+     "chapter": "druminnin:ch:family-04",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminnin",
+      "name": "Druminnin",
+      "logainm_id": "13969",
+      "lat": 54.682253,
+      "lon": -8.020767,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminnin:familycensus:04:1901"
+     },
+     "caption": "In 1901 there were three Gildea households in Druminnin, headed by Edward, Anne and James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminnin:familycensus:04:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 6000,
+     "audio": null,
+     "thread": {
+      "id": "druminnin:family:04",
+      "label": "Gildea",
+      "run": false
+     }
+    },
+    {
+     "id": "druminnin:beat:familycensus:04-1911",
+     "kind": "familycensus",
+     "chapter": "druminnin:ch:family-04",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminnin",
+      "name": "Druminnin",
+      "logainm_id": "13969",
+      "lat": 54.682253,
+      "lon": -8.020767,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminnin:familycensus:04:1911"
+     },
+     "caption": "In 1911 there were three Gildea households in Druminnin, headed by Edward, Anne and Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminnin:familycensus:04:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 6000,
+     "audio": null,
+     "thread": {
+      "id": "druminnin:family:04",
+      "label": "Gildea",
+      "run": false
+     }
+    },
+    {
+     "id": "druminnin:beat:familycensus:04-1926",
+     "kind": "familycensus",
+     "chapter": "druminnin:ch:family-04",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminnin",
+      "name": "Druminnin",
+      "logainm_id": "13969",
+      "lat": 54.682253,
+      "lon": -8.020767,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminnin:familycensus:04:1926"
+     },
+     "caption": "In 1926 there was one Gildea household in Druminnin, headed by Margaret.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminnin:familycensus:04:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "druminnin:family:04",
+      "label": "Gildea",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "druminnin:ch:family-05",
+   "title": "The McAnaw family",
+   "beats": [
+    {
+     "id": "druminnin:beat:family:05",
+     "kind": "family",
+     "chapter": "druminnin:ch:family-05",
+     "time": {
+      "label": "From 1825",
+      "iso": "",
+      "sort": "1825-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminnin",
+      "name": "Druminnin",
+      "logainm_id": "13969",
+      "lat": 54.682253,
+      "lon": -8.020767,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminnin:family:05"
+     },
+     "caption": "The McAnaw homestead is the fixed point. Michael and James were there in 1825, 1831 and the 1850s, and the name was written McAna, then McArea, then McKenna.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminnin:family:05"
+      ],
+      "basis": "accepted_crosswalk",
+      "certainty": "accepted"
+     },
+     "duration_ms": 11200,
+     "audio": null,
+     "thread": {
+      "id": "druminnin:family:05",
+      "label": "McAnaw",
+      "run": false
+     }
+    },
+    {
+     "id": "druminnin:beat:familycensus:05-1901",
+     "kind": "familycensus",
+     "chapter": "druminnin:ch:family-05",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminnin",
+      "name": "Druminnin",
+      "logainm_id": "13969",
+      "lat": 54.682253,
+      "lon": -8.020767,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminnin:familycensus:05:1901"
+     },
+     "caption": "In 1901 there were three McAnaw households in Druminnin, headed by James, Edward and Catherine.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminnin:familycensus:05:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 6000,
+     "audio": null,
+     "thread": {
+      "id": "druminnin:family:05",
+      "label": "McAnaw",
+      "run": false
+     }
+    },
+    {
+     "id": "druminnin:beat:familycensus:05-1911",
+     "kind": "familycensus",
+     "chapter": "druminnin:ch:family-05",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminnin",
+      "name": "Druminnin",
+      "logainm_id": "13969",
+      "lat": 54.682253,
+      "lon": -8.020767,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminnin:familycensus:05:1911"
+     },
+     "caption": "In 1911 there were three McAnaw households in Druminnin, headed by James, Ellen and Michael.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminnin:familycensus:05:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 6000,
+     "audio": null,
+     "thread": {
+      "id": "druminnin:family:05",
+      "label": "McAnaw",
+      "run": false
+     }
+    },
+    {
+     "id": "druminnin:beat:familycensus:05-1926",
+     "kind": "familycensus",
+     "chapter": "druminnin:ch:family-05",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminnin",
+      "name": "Druminnin",
+      "logainm_id": "13969",
+      "lat": 54.682253,
+      "lon": -8.020767,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminnin:familycensus:05:1926"
+     },
+     "caption": "In 1926 there were two McAnaw households in Druminnin, headed by James and Michael.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminnin:familycensus:05:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5600,
+     "audio": null,
+     "thread": {
+      "id": "druminnin:family:05",
+      "label": "McAnaw",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "druminnin:ch:family-06",
+   "title": "The Mullen and Monaghan family",
+   "beats": [
+    {
+     "id": "druminnin:beat:family:06",
+     "kind": "family",
+     "chapter": "druminnin:ch:family-06",
+     "time": {
+      "label": "From 1825",
+      "iso": "",
+      "sort": "1825-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminnin",
+      "name": "Druminnin",
+      "logainm_id": "13969",
+      "lat": 54.682253,
+      "lon": -8.020767,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminnin:family:06"
+     },
+     "caption": "The Mullens shared ground with the Gildeas and with the Monaghans in 1825, and again in the 1850s. The Monaghans were written Meaghan in 1825. Hugh Monaghan was named in 1831 and in the 1850s.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminnin:family:06"
+      ],
+      "basis": "accepted_crosswalk",
+      "certainty": "accepted"
+     },
+     "duration_ms": 14000,
+     "audio": null,
+     "thread": {
+      "id": "druminnin:family:06",
+      "label": "Mullen and Monaghan",
+      "run": false
+     }
+    },
+    {
+     "id": "druminnin:beat:familycensus:06-1901",
+     "kind": "familycensus",
+     "chapter": "druminnin:ch:family-06",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminnin",
+      "name": "Druminnin",
+      "logainm_id": "13969",
+      "lat": 54.682253,
+      "lon": -8.020767,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminnin:familycensus:06:1901"
+     },
+     "caption": "In 1901 there were two Mullen households in Druminnin, headed by William and James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminnin:familycensus:06:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5600,
+     "audio": null,
+     "thread": {
+      "id": "druminnin:family:06",
+      "label": "Mullen and Monaghan",
+      "run": false
+     }
+    },
+    {
+     "id": "druminnin:beat:familycensus:06-1911",
+     "kind": "familycensus",
+     "chapter": "druminnin:ch:family-06",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminnin",
+      "name": "Druminnin",
+      "logainm_id": "13969",
+      "lat": 54.682253,
+      "lon": -8.020767,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminnin:familycensus:06:1911"
+     },
+     "caption": "In 1911 there were two Mullen households in Druminnin, headed by William and Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminnin:familycensus:06:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5600,
+     "audio": null,
+     "thread": {
+      "id": "druminnin:family:06",
+      "label": "Mullen and Monaghan",
+      "run": false
+     }
+    },
+    {
+     "id": "druminnin:beat:familycensus:06-1926",
+     "kind": "familycensus",
+     "chapter": "druminnin:ch:family-06",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminnin",
+      "name": "Druminnin",
+      "logainm_id": "13969",
+      "lat": 54.682253,
+      "lon": -8.020767,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminnin:familycensus:06:1926"
+     },
+     "caption": "In 1926 there were two Mullen households in Druminnin, headed by William and Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminnin:familycensus:06:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5600,
+     "audio": null,
+     "thread": {
+      "id": "druminnin:family:06",
+      "label": "Mullen and Monaghan",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "druminnin:ch:family-07",
+   "title": "The Thomas family",
+   "beats": [
+    {
+     "id": "druminnin:beat:family:07",
+     "kind": "family",
+     "chapter": "druminnin:ch:family-07",
+     "time": {
+      "label": "From 1825",
+      "iso": "",
+      "sort": "1825-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminnin",
+      "name": "Druminnin",
+      "logainm_id": "13969",
+      "lat": 54.682253,
+      "lon": -8.020767,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminnin:family:07"
+     },
+     "caption": "A widow named Thomas held ground in 1825, Patrick Thomas in 1831 and Catherine Thomas in the 1850s. There were four Thomas households in 1901 and three in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminnin:family:07"
+      ],
+      "basis": "accepted_crosswalk",
+      "certainty": "accepted"
+     },
+     "duration_ms": 11600,
+     "audio": null,
+     "thread": {
+      "id": "druminnin:family:07",
+      "label": "Thomas",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "druminnin:ch:family-08",
+   "title": "The Harvey and Gethins (McGettigan) and Corrigan family",
+   "beats": [
+    {
+     "id": "druminnin:beat:family:08",
+     "kind": "family",
+     "chapter": "druminnin:ch:family-08",
+     "time": {
+      "label": "From 1825",
+      "iso": "",
+      "sort": "1855-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminnin",
+      "name": "Druminnin",
+      "logainm_id": "13969",
+      "lat": 54.682253,
+      "lon": -8.020767,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminnin:family:08"
+     },
+     "caption": "Three names are new in the 1850s: Connell Harvey, Hugh Gethins and Hugh Corrigan. None of them is named in 1825 or 1831. The Harveys were still in the townland in 1901 and 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminnin:family:08"
+      ],
+      "basis": "accepted_crosswalk",
+      "certainty": "accepted"
+     },
+     "duration_ms": 13600,
+     "audio": null,
+     "thread": {
+      "id": "druminnin:family:08",
+      "label": "Harvey and Gethins (McGettigan) and Corrigan",
+      "run": false
+     }
+    },
+    {
+     "id": "druminnin:beat:familycensus:08-1926",
+     "kind": "familycensus",
+     "chapter": "druminnin:ch:family-08",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminnin",
+      "name": "Druminnin",
+      "logainm_id": "13969",
+      "lat": 54.682253,
+      "lon": -8.020767,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminnin:familycensus:08:1926"
+     },
+     "caption": "In 1926 there were one Harvey household and one Gethins (McGettigan) household in Druminnin.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminnin:familycensus:08:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5600,
+     "audio": null,
+     "thread": {
+      "id": "druminnin:family:08",
+      "label": "Harvey and Gethins (McGettigan) and Corrigan",
+      "run": false
+     }
     }
    ]
   }

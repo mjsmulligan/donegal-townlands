@@ -231,6 +231,11 @@ def load_census(directory: Path) -> list[dict]:
 
 # ------------------------------------------------------------------ name comparison
 
+def _collapsed(first: str) -> str:
+    """The whole given name with spaces and punctuation removed, so Maryanne equals Mary Anne."""
+    return re.sub(r"[^a-z]", "", (first or "").lower())
+
+
 def first_key(first: str) -> str:
     parts = re.sub(r"[^a-z ]", "", (first or "").lower()).split()
     return parts[0] if parts else ""
@@ -254,8 +259,8 @@ class Names:
         ka, kb = first_key(a), first_key(b)
         if not ka or not kb:
             return ""
-        if ka == kb:
-            return "exact"
+        if ka == kb or _collapsed(a) == _collapsed(b):
+            return "exact"           # includes a spacing difference: Maryanne and Mary Anne
         fa = self.given_map.get(ka)
         if fa and fa == self.given_map.get(kb):
             return "proposed" if fa in self.given_proposed else "verified"
