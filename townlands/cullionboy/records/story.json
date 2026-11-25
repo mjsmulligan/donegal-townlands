@@ -97,6 +97,47 @@
    ]
   },
   {
+   "id": "cullionboy:ch:register",
+   "title": "The parish register",
+   "beats": [
+    {
+     "id": "cullionboy:beat:register:tawnawilly",
+     "kind": "register",
+     "chapter": "cullionboy:ch:register",
+     "time": {
+      "label": "1874 to 1875",
+      "iso": "1874",
+      "sort": "1874-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:register:tawnawilly"
+     },
+     "caption": "The parish register of Tawnawilly records four baptisms at Cullionboy between 1874 and 1875. Its marriage entries give no townland, so none are placed here.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:register:tawnawilly"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 10000,
+     "audio": null
+    }
+   ]
+  },
+  {
    "id": "cullionboy:ch:baptisms",
    "title": "Baptisms, 1874 to 1875",
    "beats": [

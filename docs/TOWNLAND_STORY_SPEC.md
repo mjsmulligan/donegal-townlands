@@ -405,6 +405,7 @@ The pause pill reads Paused. An Explore button beside it, and an "Explore more" 
 - **Family means surname.** N is the count of distinct surnames after verified variants only (DECISIONS.md, 2026-11-06).
 - **Highlights.** By rule: presence across the most sources, a span covering the whole story, and the family the viewer arrived from, with a manual override. Longest presence is the working default for "richest".
 
+- **Part 1 is tight.** Title, estate records, Griffith's, one register milestone (baptisms and marriages held for the townland) and one milestone for all the census returns. Baptisms are told in the thread of the family named by the father's surname.
 - **Rewind (decided).** Each family is a thread with its own ribbon track starting at its first year. A beat carries `thread: {id, label, run}`. Beats order as the townland's moments, the highlight threads, the closing card, then the other threads. `check_document` checks time order per track.
 - **Family census beats.** Kind `familycensus`, generated from household heads of the surname for each census year the authored family caption does not already name. Evidence ids look like `<slug>:familycensus:NN:YYYY` and are rebuilt from the census on every check.
 - **Hub.** Choosing a family plays that family's moments and returns to the hub. Choosing a record source plays on from its first beat.

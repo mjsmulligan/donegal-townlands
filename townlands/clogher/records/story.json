@@ -95,6 +95,47 @@
    ]
   },
   {
+   "id": "clogher:ch:register",
+   "title": "The parish register",
+   "beats": [
+    {
+     "id": "clogher:beat:register:tawnawilly",
+     "kind": "register",
+     "chapter": "clogher:ch:register",
+     "time": {
+      "label": "1873 to 1875",
+      "iso": "1873",
+      "sort": "1873-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:register:tawnawilly"
+     },
+     "caption": "The parish register of Tawnawilly records seven baptisms at Clogher between 1873 and 1875. Its marriage entries give no townland, so none are placed here.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:register:tawnawilly"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 10000,
+     "audio": null
+    }
+   ]
+  },
+  {
    "id": "clogher:ch:baptisms",
    "title": "Baptisms, 1873 to 1875",
    "beats": [
