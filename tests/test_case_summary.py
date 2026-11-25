@@ -29,7 +29,10 @@ class CaseSummaryTests(unittest.TestCase):
         self.assertIn('1926 (%d)' % len(census['1926']), s['Census'])
 
     def test_a_case_with_only_an_index_says_index_not_transcribed(self):
-        self.assertIn('in the index', self.summary('druminnin', 'Druminnin')["Griffith's Valuation"])
+        self.assertIn('in the index', self.summary('carnbeagh-north', 'Carnbeagh North')["Griffith's Valuation"])
+
+    def test_a_transcribed_case_does_not_say_index(self):
+        self.assertNotIn('in the index', self.summary('druminnin', 'Druminnin')["Griffith's Valuation"])
 
     def test_baptisms_are_the_published_ones(self):
         from tools import build_timeline as bt
@@ -51,3 +54,18 @@ class CaseSummaryTests(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class DruminninStudyTests(unittest.TestCase):
+    """Druminnin is an authored study (2026-11-24): printed-page plots and the estate records."""
+
+    def test_payload_holds_the_printed_plots_and_estate_records(self):
+        payload = build.payload_for('druminnin')
+        rows = payload['content']['griffiths']['rows']
+        self.assertEqual(len(rows), 38)
+        self.assertIn('51', [r['lot'] for r in rows])
+        self.assertEqual([e['year'] for e in payload['estate']], ['1825', '1831'])
+        self.assertEqual([len(e['rows']) for e in payload['estate']], [22, 22])
+
+    def test_a_case_without_estate_records_has_no_estate_key(self):
+        self.assertNotIn('estate', build.payload_for('cullionboy'))
