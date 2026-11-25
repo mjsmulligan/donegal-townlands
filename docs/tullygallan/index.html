@@ -379,7 +379,7 @@ function censusHH(y){
 }
 function griffHH(){
   var map={}, order=[];
-  GR.forEach(function(r){if(!map[r.hd]){map[r.hd]=[];order.push(r.hd)} map[r.hd].push(r)});
+  GR.forEach(function(r){if(!r.occ||r.nofamily) return; if(!map[r.hd]){map[r.hd]=[];order.push(r.hd)} map[r.hd].push(r)});
   return order.map(function(k){
     var m=map[k], first=m[0];
     return {key:k,year:'1850s',head:{f:'',s:surOf(first.occ)},hname:first.names||first.occ,grp:GEN?surKey(surOf(first.occ)):T(G(surOf(first.occ))),lot:first.lot,members:m};
@@ -579,7 +579,7 @@ function famRows(keys){
   YEARS.forEach(function(y,si){
     hhFor(y,keys).forEach(function(hh){
       hh.members.forEach(function(r){
-        if(si===0) out.push(['1850s','lot '+r.lot,r.occ,'','Occupier',r.area==='shared'?'shared area':r.area,'£'+r.tot]);
+        if(si===0) out.push(['1850s','lot '+r.lot,r.occ,'','Occupier',r.area==='shared'?'shared area':r.area,r.tot?'£'+r.tot:'']);
         else out.push([y,retCell(y,r,y==='1926'?r.fo:String(r.h)),r.f+' '+r.s,r.a==null?'':String(r.a),y==='1926'?(r===hh.head?'Head':'in the household of '+hh.hname):r.r,(r.m||'')+(r.o?'; '+r.o:''),'']);
       });
     });
@@ -707,15 +707,40 @@ if(PL.mountain) plate(0,PL.mountain.title,function(num){
   return sec;
 });
 
+/* Plate: estate records before Griffith's (only for a case that holds them). Names are as written. */
+var EST=DATA.estate||[];
+if(EST.length) plate(0,'Before the valuation',function(num){
+  var art=h('div',{class:'art sheetart'}); makeScene(art,{seed:2,ph:0,kind:'mist',gorse:false});
+  var holder=h('div'), box=h('div',{class:'yrs',role:'tablist','aria-label':'Choose an estate record'});
+  function show(i){
+    var e=EST[i], cols=['Holding','Tenant, as written'], hasRent=e.rows.some(function(r){return r.rent}), hasNote=e.rows.some(function(r){return r.note});
+    if(hasRent) cols.push('Yearly rent'); if(hasNote) cols.push('Note');
+    var rows=e.rows.map(function(r){var o=[r.holding,r.tenant]; if(hasRent) o.push(r.rent); if(hasNote) o.push(r.note); return o});
+    holder.replaceChildren(h('div',{class:'sheet'},h('h3',{text:e.year}),h('p',{class:'sub',text:e.source+'. '+e.rows.length+' tenants named.'}),table(cols,rows,-1)));
+    Array.prototype.forEach.call(box.children,function(b,j){b.setAttribute('aria-selected',j===i?'true':'false')});
+  }
+  EST.forEach(function(e,i){box.append(h('button',{class:'yr',role:'tab','aria-selected':i===0?'true':'false',onclick:function(){show(i)}},e.year))});
+  show(0);
+  art.append(h('div',{class:'wrap',style:{position:'relative',width:'100%'}},box,holder));
+  return h('section',{class:'plate',id:'p'+pad(num)},art,labelBlock(pad(num),'Before the valuation','Estate records, names as written',
+    ['Estate records name who held the land before Griffith\'s. Each lists the tenants of '+TOWN.name+'.','Names are shown as the clerk wrote them, and the spelling changes from record to record.'],null));
+});
+
 /* Plate 3: the page */
 if(HAS_GR) plate(0,PL.griffiths.title,function(num){
   var art=h('div',{class:'art sheetart'}); makeScene(art,{seed:2,ph:0,kind:'mist',gorse:false});
   var S=C.griffiths.sheet;
-  var rows=GR.map(function(r){return [r.lot,r.occ,r.les,r.desc,r.area,r.land,r.bld,r.tot]});
-  rows.push(S.printed_total.slice());
-  var t=table(['Lot','Occupier','Immediate lessor','Description','Area (A R P)','Land','Buildings','Total'],rows,-1);
-  Array.prototype.forEach.call(t.querySelectorAll('tbody tr'),function(tr,i){if(i===rows.length-1) tr.className='tot'; Array.prototype.forEach.call(tr.children,function(td,j){if(j>=4)td.className='n'}); });
-  Array.prototype.forEach.call(t.querySelectorAll('thead th'),function(th,j){if(j>=4)th.className='n'});
+  var heads=['Lot','Occupier','Immediate lessor','Description','Area (A R P)','Land','Buildings','Total'];
+  var full=GR.map(function(r){return [r.lot,r.occ,r.les,r.desc,r.area,r.land,r.bld,r.tot]});
+  var tot=(S.printed_total||[]).slice(), hasTot=tot.some(function(c){return c});
+  if(hasTot) full.push(tot);
+  /* a column that is empty on every row is left out, so a page that holds only plots and occupiers shows just those */
+  var keep=heads.map(function(_,j){return j<2||full.some(function(r){return r[j]})});
+  var rows=full.map(function(r){return r.filter(function(_,j){return keep[j]})});
+  var t=table(heads.filter(function(_,j){return keep[j]}),rows,-1);
+  var numAt=heads.map(function(_,j){return j>=4}).filter(function(_,j){return keep[j]});
+  Array.prototype.forEach.call(t.querySelectorAll('tbody tr'),function(tr,i){if(hasTot&&i===rows.length-1) tr.className='tot'; Array.prototype.forEach.call(tr.children,function(td,j){if(numAt[j])td.className='n'}); });
+  Array.prototype.forEach.call(t.querySelectorAll('thead th'),function(th,j){if(numAt[j])th.className='n'});
   var sheet=h('div',{class:'sheet'},h('h3',{text:S.heading}),h('p',{class:'sub',text:S.sub}),t,h('p',{class:'foot',text:S.foot}));
   art.append(h('div',{class:'wrap',style:{position:'relative',width:'100%'}},sheet));
   return h('section',{class:'plate',id:'p'+pad(num)},art,labelBlock(pad(num),PL.griffiths.title,PL.griffiths.medium,PL.griffiths.story,null));
@@ -897,9 +922,10 @@ if(SRC.length) plate(3,'The records',function(num){
   function render(){
     var q=inp.value.trim().toLowerCase(), n=0; thead.replaceChildren(); tbody.replaceChildren();
     if(SRC[act].k==='gr'){
-      thead.append(h('tr',null,['Lot','Occupier','Immediate lessor','Description','Area (A R P)','Land','Buildings','Total'].map(function(c,i){return h('th',{class:i>=4?'n':'',text:c})})));
+      var gh=['Lot','Occupier','Immediate lessor','Description','Area (A R P)','Land','Buildings','Total'], gk=gh.map(function(_,j){return j<2||GR.some(function(r){return [r.lot,r.occ,r.les,r.desc,r.area,r.land,r.bld,r.tot][j]})});
+      thead.append(h('tr',null,gh.map(function(c,i){return gk[i]?h('th',{class:i>=4?'n':'',text:c}):null}).filter(Boolean)));
       GR.forEach(function(r){if(q&&(r.occ+' '+r.lot).toLowerCase().indexOf(q)<0) return; n++;
-        tbody.append(h('tr',null,[r.lot,r.occ,r.les,r.desc,r.area,r.land,r.bld,r.tot].map(function(c,i){return h('td',{class:i>=4?'n':'',text:c})})))});
+        tbody.append(h('tr',null,[r.lot,r.occ,r.les,r.desc,r.area,r.land,r.bld,r.tot].map(function(c,i){return gk[i]?h('td',{class:i>=4?'n':'',text:c}):null}).filter(Boolean)))});
       cnt.textContent=n+' of '+GR.length+' rows.';
     }else{
       var y=SRC[act].k, rows=CEN[y];
