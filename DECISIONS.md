@@ -251,6 +251,10 @@ The Druminnin townland story now begins with the 1825 and 1831 estate records. A
 
 The user said the crosswalk is good enough to go in the story. Its rows are `accepted`, except the two marked Open (Harraghy, Gillespie), which stay `proposed` and are not told. A new `family` event type and beat kind, certainty `accepted`, tells each accepted family in the lay voice. The captions are authored in `data/research/associations/druminnin_family_beats.csv`, and the builder uses a row only while the crosswalk rows it names are accepted. Facts still held open (the 1831 John line, plots 20 and 21) are left out of the captions.
 
+## 2026-11-24: Spacing in a given name is not a difference when linking censuses (found on the Druminnin review)
+
+On the Druminnin review the user found that James McAnaw's wife in 1901 (Maryanne, 30) was not linked to his wife in 1911 (Mary Anne, 38). The matcher compared only the first word of a given name, so Maryanne and Mary Anne did not match. It now also treats names that are equal once spaces and punctuation are removed as an exact given-name match. Across all five DEDs this adds seven proposed links (four high, two medium, one low) and two weaker proposals are replaced by the better same-name link. Nothing is accepted by this change, and recorded decisions are untouched.
+
 ## 2026-11-24: Druminnin becomes an authored study; the walk tolerates a plots-and-names Griffith's page (the user asked for the full study)
 
 Druminnin has authored `townland.json` and `content.json`, with the printed Griffith's page as its Griffith's plate (plots and occupiers only, 51 plots, plot 51 blank). The walk drops any Griffith's column that is empty on every row and omits the printed total when there is none, so a page transcribed in stages needs no engine change as columns arrive. A new walk plate, "Before the valuation", shows the dated estate records of a case (`data/source/estate_records/arran_donegal/normalised/<slug>_holdings_observations.csv`) with names as written. A Griffith's row may carry `nofamily` to keep a lessor named as an occupier out of the family plates. Family stories are not yet authored.
