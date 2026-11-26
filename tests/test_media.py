@@ -362,5 +362,44 @@ class RepoTests(unittest.TestCase):
         self.assertIn('media totals', media.check_repo(self.root)[1][0])
 
 
+class CensusScopeTests(CaseTests):
+    """Scope `census`: the record forms of a census year (docs/MEDIA_SPEC.md)."""
+    HEAD = HEADER.strip() + ',year,credit,focus\n'
+
+    def census_sheet(self, *rows):
+        self.sheet(*rows, header=self.HEAD)
+
+    def test_a_census_row_loads_with_year_credit_and_focus(self):
+        self.image('f1.jpg')
+        self.census_sheet('f1.jpg,census,,,Page 1,,NAI,STAT/1/8/36/DRUMININ/B/1,12 May 1926,,,1926,nai1926,"0.7,0.5"')
+        res = self.load()
+        self.assertEqual(res['errors'], [])
+        row = res['rows'][0]
+        self.assertEqual((row['scope'], row['year'], row['credit'], row['focus']), ('census', '1926', 'nai1926', '0.7,0.5'))
+
+    def test_a_census_row_needs_a_known_year(self):
+        self.image('f1.jpg')
+        self.census_sheet('f1.jpg,census,,,Page 1,,NAI,,,,,1927,nai1926,')
+        self.assertIn('year', str(self.load()['errors']))
+
+    def test_an_unknown_credit_is_refused(self):
+        self.image('f1.jpg')
+        self.census_sheet('f1.jpg,census,,,Page 1,,NAI,,,,,1926,nai1900,')
+        self.assertIn('unknown credit', str(self.load()['errors']))
+
+    def test_a_bad_focus_is_refused(self):
+        self.image('f1.jpg')
+        for bad in ('1.5,0.5', '0.5', 'left,top'):
+            self.census_sheet(f'f1.jpg,census,,,Page 1,,NAI,,,,,1926,nai1926,"{bad}"')
+            self.assertIn('focus', str(self.load()['errors']), bad)
+
+    def test_a_sheet_without_the_new_columns_still_loads(self):
+        self.image('a.jpg')
+        self.sheet('a.jpg,family,,The Dunnions,Cap,,Src,,,,')
+        res = self.load()
+        self.assertEqual(res['errors'], [])
+        self.assertEqual((res['rows'][0]['year'], res['rows'][0]['credit'], res['rows'][0]['focus']), ('', '', ''))
+
+
 if __name__ == '__main__':
     unittest.main()

@@ -501,7 +501,7 @@ def case_summary(base, label, today=None):
     media = base / 'media' / 'media.csv'
     if media.is_file():
         with media.open(encoding='utf-8-sig', newline='') as h:
-            n = sum(1 for r in csv.DictReader(h) if (r.get('file') or '').strip())
+            n = sum(1 for r in csv.DictReader(h) if (r.get('file') or '').strip() and (r.get('scope') or '').strip() != 'census')   # census forms are records, not photographs
         if n:
             out.append(('Images', '%d' % n))
     return out

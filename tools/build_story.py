@@ -17,9 +17,9 @@ fails, naming the beat.
 import datetime, hashlib, json, pathlib, re, sys
 
 try:
-    from tools import build_timeline as bt, story_families as sf
+    from tools import build_timeline as bt, story_families as sf, credits
 except ImportError:                  # run as a script: python tools/build_story.py
-    import build_timeline as bt, story_families as sf
+    import build_timeline as bt, story_families as sf, credits
 
 ROOT = bt.ROOT
 SCHEMA = 1
@@ -257,7 +257,7 @@ def census_counts(ev):
     return (int(m.group(1)), int(m.group(2))) if m else (None, None)
 
 
-def census_beat(ev, place, names=()):
+def census_beat(ev, place, names=(), media=()):
     y = ev['date']['label']
     people, houses = census_counts(ev)
     town = place['name']
@@ -271,10 +271,10 @@ def census_beat(ev, place, names=()):
         cap += f' Heads of household included {name_list(names)}.'
     counts = {'people': people, 'households': houses} if people is not None else None
     return beat('census', y, f"{place['townland']}:ch:{y}", ev, cap, place,
-                basis=ev['association']['basis'], events=[ev['id']], counts=counts)
+                basis=ev['association']['basis'], events=[ev['id']], counts=counts, media=media)
 
 
-def census_returns_beat(cens, place, names=()):
+def census_returns_beat(cens, place, names=(), media=()):
     """All the census returns in one milestone, so the townland section lays the sources out briefly. The
     individual years come back in each family's own thread."""
     counts = [census_counts(e) for e in cens]
@@ -290,7 +290,7 @@ def census_returns_beat(cens, place, names=()):
         if names:
             cap += f' Heads of household included {name_list(names)}.'
     b = beat('census', 'returns', f"{place['townland']}:ch:census", cens[0], cap, place,
-             basis=cens[0]['association']['basis'], events=[e['id'] for e in cens])
+             basis=cens[0]['association']['basis'], events=[e['id'] for e in cens], media=media)
     b['time']['label'] = f'{years[0]} to {years[-1]}'
     return b
 
@@ -484,7 +484,7 @@ def chapter_title(key, beats, display, threads=None):
     return key
 
 
-def generate(display, slug, place_record, events, by_event=None, header=None, today=None, dated=None, parish_files=None, griffiths_files=None, fam=None):
+def generate(display, slug, place_record, events, by_event=None, header=None, today=None, dated=None, parish_files=None, griffiths_files=None, fam=None, census_files=None):
     """Pure: build the story dict and the list of refused items from already collected inputs."""
     today = today or datetime.date.today()
     by_event = by_event or {}
@@ -549,9 +549,12 @@ def generate(display, slug, place_record, events, by_event=None, header=None, to
         beats += baptism_beats(left, place, parish_files or ())
         if len(cens) > 1 and threads:
             seen = list(dict.fromkeys(x for e in cens for x in (nm.get('census') or {}).get(e['date']['label'], ())))
-            beats.append(census_returns_beat(cens, place, seen[:3]))
+            # the milestone for all the returns shows the forms of the latest return that has them
+            latest = max((y for y in (census_files or {})), default=None)
+            beats.append(census_returns_beat(cens, place, seen[:3], (census_files or {}).get(latest, ())))
         else:
-            beats += [census_beat(e, place, (nm.get('census') or {}).get(e['date']['label'], ())) for e in cens]
+            beats += [census_beat(e, place, (nm.get('census') or {}).get(e['date']['label'], ()),
+                                  (census_files or {}).get(e['date']['label'], ())) for e in cens]
         beats += photo_beats(events, by_event, place)
         beats += dated_beats
         beats.append(closing_beat(events, place, later))
@@ -684,7 +687,13 @@ def render_page(doc, found, outline=None, events=None):
     for r in found['rows']:
         media[r['file']] = {'caption': r.get('caption', ''), 'alt': r.get('alt', ''),
                             'source': r.get('source', ''), 'lat': r.get('lat', ''), 'lon': r.get('lon', '')}
-    payload = dict(doc, media=media, foot='')
+        for key in ('credit', 'focus', 'reference', 'date'):
+            if r.get(key):
+                media[r['file']][key] = r[key]
+    # the credits the page must show: only those of images a beat actually uses
+    used = {f for c in doc['chapters'] for b in c['beats'] for f in b.get('media', [])}
+    keys = sorted({m['credit'] for f, m in media.items() if f in used and m.get('credit')})
+    payload = dict(doc, media=media, foot='', credits={k: credits.credit_block(k) for k in keys})
     if events is not None:
         payload['sources'] = page_sources(doc, events)
         titles = {e['id']: e['title'] for e in events if e['type'] == 'family'}
@@ -731,6 +740,14 @@ def thread_events(name, today=None, display=None):
     return [e for t in sf.threads(ROOT / 'townlands' / name, name) for e in t['events'] + ([t['presence']] if t.get('presence') else [])] + ([reg] if reg else [])
 
 
+def census_files_by_year(rows):
+    """The census form images of a case, by census year, each year's pages in page order (file name order)."""
+    out = {}
+    for r in sorted((r for r in rows if r.get('scope') == 'census'), key=lambda r: r['file']):
+        out.setdefault(r['year'], []).append(r['file'])
+    return out
+
+
 def collect(name, today):
     """Gather everything `generate` needs for one case, reading files and writing none.
     Returns (inputs, problems). `inputs` is None when the case cannot be built, and `problems` says why.
@@ -754,7 +771,8 @@ def collect(name, today):
         'args': (display, name, place, feed['events'], by_event, header, today,
                  [r for r in found['rows'] if r['file'] in unplaced and r.get('scope') == 'family'],
                  [r['file'] for r in found['rows'] if r.get('scope') == 'parish'],
-                 [r['file'] for r in found['rows'] if r.get('scope') == 'griffiths'], family_inputs(base, name, today, display)),
+                 [r['file'] for r in found['rows'] if r.get('scope') == 'griffiths'], family_inputs(base, name, today, display),
+                 census_files_by_year(found['rows'])),
     }
     return inputs, []
 
