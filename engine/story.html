@@ -53,6 +53,25 @@ body.introing .app,body.introing .bg{opacity:0}
 .photo figure>*{transition:opacity .7s}
 .photo.swap figure>*{opacity:0}
 .photo img{display:block;flex:1 1 auto;min-height:0;width:100%;object-fit:contain;border-radius:4px}
+/* record forms: a page pager, a zoom button and the credit line under the image. Only these take taps. */
+.pbar{display:flex;align-items:center;justify-content:center;gap:8px;padding-top:6px;flex-wrap:wrap}
+.pbar[hidden],.pcredit[hidden],.pbar [hidden]{display:none}
+.pbtn{appearance:none;border:1px solid var(--ink);background:var(--paper);color:var(--ink);font:500 15px var(--body);min-height:44px;min-width:44px;padding:0 14px;border-radius:999px;cursor:pointer}
+.pbtn:disabled{opacity:.35;cursor:default}
+#pnum{font-size:13px;color:var(--ink2);min-width:84px;text-align:center}
+.pcredit{font-size:11px;color:var(--ink2);text-align:center;padding-top:4px}
+.linkbtn{appearance:none;border:0;background:none;color:var(--ink);font:inherit;text-decoration:underline;cursor:pointer;padding:6px 4px}
+.photo.on .pctl,.photo.on a.zoomable{pointer-events:auto}
+a.zoomable{cursor:zoom-in}
+/* the zoom view: the form at its own size, scrolled to the names, and panned by hand */
+.zoom{position:fixed;inset:0;z-index:2600;background:rgba(29,47,51,.92);display:flex;flex-direction:column}
+.zoom[hidden]{display:none}
+.zbar{display:flex;align-items:center;gap:12px;padding:10px 12px;color:#fff;font-size:14px}
+.zbar span{flex:1 1 auto;min-width:0}
+.zscroll{flex:1 1 auto;min-height:0;overflow:auto;-webkit-overflow-scrolling:touch;background:#0e2a36}
+.zscroll img{display:block;max-width:none;width:auto;min-width:1200px}
+.credit{font-size:14px;margin:0 0 12px}
+.credit a{overflow-wrap:anywhere}
 
 /* the people: one dot for every person counted */
 .dots{position:absolute;inset:0;z-index:850;background:rgba(243,246,244,.86);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:14px;opacity:0;pointer-events:none;transition:opacity .9s}
@@ -117,6 +136,7 @@ details a{overflow-wrap:anywhere}
 .controls[hidden],.ribbon[hidden]{display:none}
 .foot:empty{display:none}
 .foot{font-size:11px;color:var(--ink);flex:0 0 auto;text-align:center;background:rgba(251,252,250,.8);border-radius:999px;padding:1px 10px;align-self:center}
+.foot .linkbtn{font-size:11px;padding:6px 2px}
 
 /* the opening: a satellite view that falls from far above Ireland to the townland, then lifts away */
 #intro{position:fixed;inset:0;z-index:3000;background:#0e2a36;overflow:hidden}
@@ -159,7 +179,15 @@ details a{overflow-wrap:anywhere}
   <div class="top"><a href="../">Donegal Townlands</a><span id="place">__BRAND__</span><button class="replay" id="replay" type="button" hidden>Replay opening</button></div>
   <section class="stage" aria-label="Photographs and people">
     <div class="dots" id="dots" aria-hidden="true"><div class="dotnum" id="dotnum"></div><div class="dotgrid" id="dotgrid"></div></div>
-    <div class="photo" id="photo"><figure><a id="photolink" href="#" target="_blank" rel="noopener" style="display:flex;flex:1 1 auto;min-height:0" title="Open the full size image"><img id="photoimg" alt=""></a></figure></div>
+    <div class="photo" id="photo"><figure><a id="photolink" href="#" target="_blank" rel="noopener" style="display:flex;flex:1 1 auto;min-height:0" title="Open the full size image"><img id="photoimg" alt=""></a>
+      <div class="pbar pctl" id="pbar" hidden>
+        <button class="pbtn" id="pprev" type="button" aria-label="Previous page">&#8249;</button>
+        <span id="pnum" aria-live="polite"></span>
+        <button class="pbtn" id="pnext" type="button" aria-label="Next page">&#8250;</button>
+        <button class="pbtn" id="pzoom" type="button">Zoom in</button>
+      </div>
+      <p class="pcredit pctl" id="pcredit" hidden><span id="pcredtext"></span> <button class="linkbtn" id="pcredbtn" type="button">Credits and licences</button></p>
+    </figure></div>
   </section>
   <section class="cards" aria-label="The story, in order"><div class="track" id="track"></div></section>
   <div class="ribbon" id="ribbon" role="group" aria-label="Time, from the first moment to the last">
@@ -172,7 +200,7 @@ details a{overflow-wrap:anywhere}
     <button class="btn explore" id="explore" type="button" hidden>Explore</button>
     <span class="mode" id="mode">Paused</span>
   </div>
-  <p class="foot" id="foot">Imagery: Esri, Maxar, Earthstar Geographics</p>
+  <p class="foot" id="foot"><span id="footc">Imagery: Esri, Maxar, Earthstar Geographics</span> <button class="linkbtn" id="footbtn" type="button">Credits and licences</button></p>
   <p class="sr" id="live" aria-live="polite" tabindex="-1"></p>
 </div>
 <div class="hub" id="hub" role="dialog" aria-modal="true" aria-labelledby="hubtitle" hidden>
@@ -183,6 +211,17 @@ details a{overflow-wrap:anywhere}
     <div id="hubsrc-box"><h3>Records</h3><div class="chips" id="hubsrc"></div></div>
     <button class="btn close" id="hubclose" type="button">Close</button>
   </div>
+</div>
+<div class="hub" id="credits" role="dialog" aria-modal="true" aria-labelledby="credtitle" hidden>
+  <div class="hubbox">
+    <h2 id="credtitle">Credits and licences</h2>
+    <div id="credlist"></div>
+    <button class="btn close" id="credclose" type="button">Close</button>
+  </div>
+</div>
+<div class="zoom" id="zoom" role="dialog" aria-modal="true" aria-label="Zoomed view of the form" hidden>
+  <div class="zbar"><span id="zcap"></span><button class="btn" id="zclose" type="button">Close</button></div>
+  <div class="zscroll" id="zscroll" tabindex="0"><img id="zimg" alt=""></div>
 </div>
 <div class="bg" id="bg" aria-hidden="true"></div>
 <div id="intro" hidden aria-hidden="true"><div id="imap"></div><div class="iname" id="iname"></div><button class="iskip" id="iskip" type="button">Skip</button></div>
@@ -290,7 +329,7 @@ var D=__DATA__;
     if(D.outline){
       /* the townland's own outline (Tailte Eireann), dotted and lightly filled */
       outline=L.geoJSON({type:'Feature',properties:{},geometry:D.outline},{style:function(){return {color:'#FBFCFA',weight:3,dashArray:'2 7',lineCap:'round',fillColor:'#EBC94B',fillOpacity:.14,interactive:false}}}).addTo(bmap);
-      if(D.outline_credit) $('foot').textContent+=' \u00b7 '+D.outline_credit;
+      if(D.outline_credit) $('footc').textContent+=' \u00b7 '+D.outline_credit;
     }
     var v=finalView(bmap); bmap.setView(v.c,v.z,{animate:false});
     return bmap;
@@ -337,16 +376,58 @@ var D=__DATA__;
     box.onclick=end; $('iskip').onclick=end;
   }
 
-  var shownPhoto=null;
+  var shownPhoto=null, curFiles=[], pageIdx=0, zoomFrom=null, credFrom=null;
   function fillPhoto(f){
-    var m=(D.media||{})[f]||{};
-    $('photoimg').src='media/'+f; $('photolink').href='media/'+f; $('photoimg').alt=m.alt||m.caption||'';
+    var m=(D.media||{})[f]||{}, a=$('photolink'), multi=curFiles.length>1, cr=m.credit&&D.credits&&D.credits[m.credit];
+    $('photoimg').src='media/'+f; a.href='media/'+f; $('photoimg').alt=m.alt||m.caption||'';
+    a.classList.toggle('zoomable',!!m.focus);
+    /* a record form: the pages, a zoom, and the custodian's credit line under the image */
+    $('pbar').hidden=!(multi||m.focus);
+    $('pprev').hidden=$('pnext').hidden=$('pnum').hidden=!multi;
+    if(multi){$('pnum').textContent='Page '+(pageIdx+1)+' of '+curFiles.length; $('pprev').disabled=pageIdx===0; $('pnext').disabled=pageIdx===curFiles.length-1}
+    $('pzoom').hidden=!m.focus;
+    $('pcredit').hidden=!cr;
+    if(cr) $('pcredtext').textContent=cr.short+(m.reference?' \u00b7 '+m.reference:'');
     shownPhoto=f;
   }
+  function setPage(n){ pause(); pageIdx=Math.max(0,Math.min(curFiles.length-1,n)); fillPhoto(curFiles[pageIdx]) }
+  function openZoom(){
+    var f=curFiles[pageIdx]||shownPhoto, m=(D.media||{})[f]||{};
+    if(!m.focus) return;
+    pause(); zoomFrom=document.activeElement;
+    var img=$('zimg'), p=m.focus.split(','), fx=parseFloat(p[0]), fy=parseFloat(p[1]);
+    var aim=function(){var s=$('zscroll'); s.scrollLeft=Math.max(0,fx*img.offsetWidth-s.clientWidth/2); s.scrollTop=Math.max(0,fy*img.offsetHeight-s.clientHeight/2)};
+    img.alt=m.alt||m.caption||''; $('zcap').textContent=m.caption||'';
+    $('zoom').hidden=false; img.onload=aim; img.src='media/'+f; if(img.complete) aim();
+    $('zclose').focus();
+  }
+  function closeZoom(){ $('zoom').hidden=true; if(zoomFrom&&zoomFrom.focus) zoomFrom.focus() }
+  function openCredits(){ pause(); credFrom=document.activeElement; $('credits').hidden=false; $('credclose').focus() }
+  function closeCredits(){ $('credits').hidden=true; if(credFrom&&credFrom.focus) credFrom.focus() }
+  /* every credit the page owes: the map imagery, the boundaries, and the custodian's own words for each image used */
+  (function(){
+    var box=$('credlist'), add=function(t){box.append(el('p','credit',t))};
+    if(hasMap){ add('Imagery: Esri, Maxar, Earthstar Geographics'); if(D.outline_credit) add(D.outline_credit) }
+    Object.keys(D.credits||{}).forEach(function(k){
+      var c=D.credits[k], p=el('p','credit'), a=el('a',null,c.link_word);
+      a.href=c.link; a.target='_blank'; a.rel='noopener';
+      p.append(c.text+' ',a,'. '+(c.modified||'')); box.append(p);
+    });
+    if(!box.childNodes.length){ $('foot').hidden=true }
+    $('footbtn').addEventListener('click',openCredits); $('pcredbtn').addEventListener('click',openCredits);
+    $('credclose').addEventListener('click',closeCredits);
+    $('credits').addEventListener('click',function(e){ if(e.target===$('credits')) closeCredits() });
+    $('pprev').addEventListener('click',function(){setPage(pageIdx-1)});
+    $('pnext').addEventListener('click',function(){setPage(pageIdx+1)});
+    $('pzoom').addEventListener('click',openZoom);
+    $('photolink').addEventListener('click',function(e){ if($('photolink').classList.contains('zoomable')){e.preventDefault(); openZoom()} });
+    $('zclose').addEventListener('click',closeZoom);
+  })();
   var swapTimer=null;
   function photo(b){
     var p=$('photo'), f=b.media&&b.media[0];
     clearTimeout(swapTimer);
+    curFiles=b.media||[]; pageIdx=0;
     if(f&&!isHero(b)){
       if(shownPhoto&&shownPhoto!==f&&p.classList.contains('on')&&!reduce){
         /* one photograph dissolves into the next */
@@ -462,6 +543,10 @@ var D=__DATA__;
   $('prev').addEventListener('click',function(){go(i-1)});
   document.addEventListener('keydown',function(e){
     var t=e.target&&e.target.tagName;
+    if(!$('zoom').hidden||!$('credits').hidden){   /* a dialog is open: Escape closes it, nothing else moves the story */
+      if(e.key==='Escape'){ if(!$('zoom').hidden) closeZoom(); else closeCredits() }
+      return;
+    }
     if(e.key===' '&&t!=='BUTTON'&&t!=='SUMMARY'){e.preventDefault(); playing?pause():play()}
     else if(e.key==='ArrowRight'){go(i+1)} else if(e.key==='ArrowLeft'){go(i-1)}
     else if(e.key==='Escape'){ if(!$('hub').hidden) closeHub(); else pause() }

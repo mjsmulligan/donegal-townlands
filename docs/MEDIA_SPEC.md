@@ -60,7 +60,7 @@ docs/<name>/media/<image files>          build output, never edited by hand
 | Column | Required | Meaning |
 |---|---|---|
 | `file` | M | File name inside the townland's `media/` folder. |
-| `scope` | M | `townland` (header image), `family` (household photo) `griffiths` (the original Griffith's Valuation page image for the townland, shown on the valuation moment of the story; no slot or family needed), or `parish` (a photograph of the parish, such as its church, shown beside the baptism moments of the story only; no slot or family needed). |
+| `scope` | M | `townland` (header image), `family` (household photo) `griffiths` (the original Griffith's Valuation page image for the townland, shown on the valuation moment of the story; no slot or family needed), or `parish` (a photograph of the parish, such as its church, shown beside the baptism moments of the story only; no slot or family needed), or `census` (a page of a census form for the townland, shown on the census moment of the story; see section 3.4). |
 | `slot` | for `townland` | 1, 2 or 3. Order across the header. Unique within the townland. Header images should be landscape (M11). |
 | `family` | for `family` | One or more family names exactly as in `content.json` `families[].name`, separated by semicolons. |
 | `caption` | M | Text shown with the image. |
@@ -71,9 +71,22 @@ docs/<name>/media/<image files>          build output, never edited by hand
 | `date` | no | Free text, for example "c. 1930s" or "unknown". |
 | `people_shown` | no | Names, free text. |
 | `link` | no | URL of the original (for example a shared album or archive page). Shown as "View original". |
+| `year` | for `census` | The census year the form belongs to: 1901, 1911 or 1926. |
+| `credit` | no | A key from `tools/credits.py` (so far `nai1926`). The page then shows the custodian's own credit words under "Credits and licences", and a short credit line under the image. |
+| `focus` | no | Where the zoom view opens, as two fractions from 0 to 1, across then down, for example `0.7,0.5`. An image with a focus can be tapped to zoom. |
 | `event` | no | Timeline only (`tools/build_timeline.py`): the id of the timeline event the photograph belongs to, for example `cullionboy:census:1911`. The photograph is shown on that event's card. A photograph with no `event` is not on the timeline, because the timeline never shows undated material. The first header image is the timeline's page background. |
 
 Row order in the file is display order within a family's Photos tab.
+
+### 3.4 Census forms (scope `census`, 2026-11-26)
+
+The census moment of the story shows the townland's own census form, for example the 1926 Form B (house and building return), which names the heads of household. Decided with the user on 2026-11-26 (DECISIONS.md).
+
+- **Originals are kept as supplied** in `data/source/census_images/<year>/<townland>/` with a `manifest.csv` (SHA-256, archive reference, licence note), as the source data principles require. The web images are derived from them by `tools/census_form_images.py` and are converted and resized (1600 px wide JPEG), never cropped. The originals are PDFs of 1 to 1.3 MB.
+- **A new townland** is two commands: `python tools/census_form_images.py add <townland> <year> <form> <page 1 pdf> <page 2 pdf> --archive-ref "STAT/1/8/36/NAME/B/{page}" --date "12 May 1926"` and `python tools/census_form_images.py build <townland>`, then `python tools/build_story.py <townland>`. `check` verifies every original against its hash.
+- **Where it shows:** a census moment shows its own year's forms. The single milestone for all the returns shows the forms of the latest year that has them. Pages are one swipe or tap apart ("Page 1 of 2"), and a tap on the image opens the form at its own size, scrolled to the names (`focus`).
+- **Credits:** the credit text is generated from the `credit` key and never typed per image. 1926 is CC BY 4.0 from the National Archives of Ireland, and the wording is theirs. A short credit line sits under each image and opens the "Credits and licences" panel, which the footer also opens and which lists only what the page uses. Only 1926 has credit wording so far. 1901, 1911 and the parish register register images need their own wording before `add` accepts them.
+- **Licence conditions to keep:** attribution, a statement that the images were changed, the archive reference, and no paywall.
 
 ### 3.3 media_config.json
 

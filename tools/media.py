@@ -17,8 +17,14 @@ import pathlib
 import struct
 from urllib.parse import quote
 
+try:
+    from tools import credits
+except ImportError:                  # run as a script from tools/
+    import credits
+
 ALLOWED = ('.jpg', '.jpeg', '.png', '.webp')
-SCOPES = ('townland', 'family', 'parish', 'griffiths')
+SCOPES = ('townland', 'family', 'parish', 'griffiths', 'census')
+CENSUS_YEARS = ('1901', '1911', '1926')
 MAX_SLOTS = 3
 REQUIRED = ('file', 'scope', 'caption', 'source')
 WARN_FILE_BYTES = 8 * 1024 * 1024
@@ -127,7 +133,7 @@ def load_case(case_dir, base_url='', families=()):
                     out['warnings'].append(label + ' media.csv row ' + str(row_no) + ': could not read the size of '
                                            + name + ', so it will show at its natural size')
             if scope and scope not in SCOPES:
-                bad(row_no, "scope must be 'townland', 'family', 'parish' or 'griffiths', not '" + row.get('scope', '') + "'")
+                bad(row_no, "scope must be 'townland', 'family', 'parish', 'griffiths' or 'census', not '" + row.get('scope', '') + "'")
                 ok = False
             slot = None
             if scope == 'townland' and name and (media_dir / name).is_file():
@@ -167,6 +173,21 @@ def load_case(case_dir, base_url='', families=()):
                     except ValueError:
                         bad(row_no, col + ' must be a number in degrees')
                         ok = False
+            if scope == 'census' and row.get('year', '') not in CENSUS_YEARS:
+                bad(row_no, 'a census row needs year ' + ', '.join(CENSUS_YEARS) + ", not '" + row.get('year', '') + "'")
+                ok = False
+            if row.get('credit') and row['credit'] not in credits.CREDITS:
+                bad(row_no, 'unknown credit ' + row['credit'] + '. Valid keys: ' + ', '.join(sorted(credits.CREDITS)))
+                ok = False
+            focus = row.get('focus', '')
+            if focus:
+                try:
+                    fx, fy = (float(v) for v in focus.split(','))
+                    if not (0 <= fx <= 1 and 0 <= fy <= 1):
+                        raise ValueError
+                except ValueError:
+                    bad(row_no, "focus must be two fractions from 0 to 1, for example '0.7,0.5' (across, down)")
+                    ok = False
             link = row.get('link', '')
             if link and not link.startswith(('http://', 'https://')):
                 bad(row_no, 'link must start with http:// or https://')
@@ -179,6 +200,7 @@ def load_case(case_dir, base_url='', families=()):
                 'caption': row['caption'], 'alt': row.get('alt') or row['caption'], 'source': row['source'],
                 'reference': row.get('reference', ''), 'date': row.get('date', ''),
                 'people': row.get('people_shown', ''), 'link': link, 'lat': row.get('lat', ''), 'lon': row.get('lon', ''),
+                'year': row.get('year', ''), 'credit': row.get('credit', ''), 'focus': focus,
             })
     for name in out['files']:
         if name not in used and not any(label + ' media.csv row' in e and name in e for e in out['errors']):

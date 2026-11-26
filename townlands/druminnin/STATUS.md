@@ -58,3 +58,6 @@ The story now rewinds the clock for each family (DECISIONS.md, 2026-11-25). High
 Open, not resolved: authored captions in `data/research/associations/druminnin_family_beats.csv` disagree with the census in two places. Thomas says "four Thomas households in 1901 and three in 1911"; the census has four and three Thomas people in two households each year. McNamee says "one in 1911"; the 1911 McNamee is a boarder (household 2), not a household head. The captions are kept as authored, and no generated census beat is made for those years.
 
 The story's Griffith's caption now says 51 plots (the printed page), not 36 (index entries). The 36 and the 51 are different counts and stay open (2026-11-25).
+
+## Census form image (2026-11-26)
+The story's census milestone shows the 1926 Form B (house and building return, two pages, stamped STAT/1/8/36/DRUMININ/B/1 and B/2), kept as supplied in `data/source/census_images/1926/druminnin/`. The 1901 and 1911 forms are not added yet; they need NAI credit wording first. NAI credit wording is in the "Credits and licences" panel. Awaiting the user's phone check of the pager, the zoom and the panel.

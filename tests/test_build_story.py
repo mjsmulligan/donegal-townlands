@@ -515,6 +515,114 @@ class PhoneRegressionTests(unittest.TestCase):
         self.assertEqual((seen['play'], seen['disabled']), ('Step through', True))
 
 
+CENSUS_ROWS = [
+    {'file': 'f1.png', 'scope': 'census', 'year': '1926', 'caption': 'Cullionboy, 1926 census, Form B, page 1 of 2', 'alt': '',
+     'source': 'NAI', 'reference': 'STAT/1/8/36/CULLIONBOY/B/1', 'date': '12 May 1926', 'credit': 'nai1926', 'focus': '0.7,0.5'},
+    {'file': 'f2.png', 'scope': 'census', 'year': '1926', 'caption': 'Cullionboy, 1926 census, Form B, page 2 of 2', 'alt': '',
+     'source': 'NAI', 'reference': 'STAT/1/8/36/CULLIONBOY/B/2', 'date': '12 May 1926', 'credit': 'nai1926', 'focus': '0.7,0.5'},
+]
+
+
+class CensusFormImageTests(unittest.TestCase):
+    """The census milestone shows the townland's own census forms and carries the custodian's credit."""
+
+    def test_each_census_year_shows_its_own_forms_when_the_returns_stand_alone(self):
+        doc, _ = build(FULL, census_files={'1911': ['old.png'], '1926': ['f1.png', 'f2.png']})
+        by_year = {b['time']['label']: b['media'] for b in beats_of(doc) if b['kind'] == 'census'}
+        self.assertEqual(by_year['1911'], ['old.png'])
+        self.assertEqual(by_year['1926'], ['f1.png', 'f2.png'])
+        self.assertEqual(by_year['1901'], [])
+        self.assertEqual(bd.check_document(doc, FULL), [])
+
+    def test_the_single_census_milestone_shows_the_forms_of_the_latest_year(self):
+        fam = FamilyThreadTests()
+        events = [census(1901, 93, 18), census(1911, 72, 16), census(1926, 79, 15), fam.fam_event(1)]
+        threads = {'names': {'families': 5, 'census': {}}, 'threads': [fam.thread(1, 'Kelly', [1901, 1911])],
+                   'highlights': ['cullionboy:family:01']}
+        doc, _ = bd.generate('Cullionboy', 'cullionboy', PLACE, events, today=TODAY, fam=threads,
+                             census_files={'1911': ['old.png'], '1926': ['f1.png', 'f2.png']})
+        returns = [b for b in beats_of(doc) if b['kind'] == 'census']
+        self.assertEqual(len(returns), 1)
+        self.assertEqual(returns[0]['media'], ['f1.png', 'f2.png'])
+
+    def test_a_townland_without_forms_is_unchanged(self):
+        with_none, _ = build(FULL, census_files={})
+        without, _ = build(FULL)
+        self.assertEqual(with_none, without)
+
+    def test_the_page_lists_the_credit_of_images_it_uses_and_only_those(self):
+        doc, _ = build(FULL, census_files={'1926': ['f1.png', 'f2.png']})
+        page = bd.render_page(doc, {'rows': CENSUS_ROWS})
+        data = json.loads(page.split('var D=')[1].split(';\n')[0])
+        self.assertEqual(list(data['credits']), ['nai1926'])
+        self.assertIn('Creative Commons Attribution 4.0 International (CC BY 4.0) licence. Please see further',
+                      data['credits']['nai1926']['text'])
+        self.assertEqual(data['media']['f1.png']['focus'], '0.7,0.5')
+        plain, _ = build(FULL)
+        data = json.loads(bd.render_page(plain, {'rows': CENSUS_ROWS}).split('var D=')[1].split(';\n')[0])
+        self.assertEqual(data['credits'], {})
+
+    def test_census_files_are_grouped_by_year_in_page_order(self):
+        rows = [dict(CENSUS_ROWS[1]), dict(CENSUS_ROWS[0]), {'file': 'x.jpg', 'scope': 'family'}]
+        self.assertEqual(bd.census_files_by_year(rows), {'1926': ['f1.png', 'f2.png']})
+
+
+@unittest.skipIf(sync_playwright is None, 'Playwright is not installed')
+class CensusFormPlayerTests(unittest.TestCase):
+    PNG = PhoneRegressionTests.PNG
+
+    def run_page(self, width, script):
+        doc, _ = build(FULL, census_files={'1926': ['f1.png', 'f2.png']})
+        target = next(b['id'] for b in beats_of(doc) if b['kind'] == 'census' and b.get('media'))
+        errors = []
+        with tempfile.TemporaryDirectory() as tmp, sync_playwright() as pw:
+            folder = Path(tmp)
+            (folder / 'media').mkdir()
+            for f in ('f1.png', 'f2.png'):
+                (folder / 'media' / f).write_bytes(self.PNG)
+            (folder / 'story.html').write_text(bd.render_page(doc, {'rows': CENSUS_ROWS}), encoding='utf-8')
+            browser = pw.chromium.launch()
+            pg = browser.new_page(viewport={'width': width, 'height': 740})
+            pg.on('pageerror', lambda e: errors.append(str(e)))
+            pg.route('**/*', lambda r: r.abort() if r.request.url.startswith('http') else r.continue_())
+            pg.goto((folder / 'story.html').as_uri() + '#beat=' + target)
+            pg.wait_for_timeout(1500)
+            out = script(pg)
+            browser.close()
+        self.assertEqual(errors, [])
+        return out
+
+    def test_pages_zoom_and_credits_work_and_the_page_never_scrolls_sideways(self):
+        def script(pg):
+            seen = {'num': pg.locator('#pnum').inner_text(), 'credit': pg.locator('#pcredtext').inner_text(),
+                    'prev_off': pg.locator('#pprev').is_disabled()}
+            pg.click('#pnext')
+            seen['num2'] = pg.locator('#pnum').inner_text()
+            seen['src2'] = pg.get_attribute('#photoimg', 'src')
+            seen['next_off'] = pg.locator('#pnext').is_disabled()
+            pg.click('#photolink')                              # a tap on the form opens the zoom, not a new tab
+            seen['zoom'] = pg.locator('#zoom').is_visible()
+            pg.keyboard.press('Escape')
+            seen['zoom_closed'] = pg.locator('#zoom').is_hidden()
+            pg.click('#pcredbtn')
+            seen['credits'] = pg.locator('#credlist').inner_text()
+            seen['credits_open'] = pg.locator('#credits').is_visible()
+            pg.keyboard.press('Escape')
+            seen['credits_closed'] = pg.locator('#credits').is_hidden()
+            seen['scrollW'] = pg.evaluate('document.documentElement.scrollWidth')
+            return seen
+        for width in (360, 1440):
+            s = self.run_page(width, script)
+            self.assertEqual((s['num'], s['num2']), ('Page 1 of 2', 'Page 2 of 2'), width)
+            self.assertTrue(s['prev_off'] is True and s['next_off'] is True, width)
+            self.assertEqual(s['src2'], 'media/f2.png', width)
+            self.assertIn('CC BY 4.0', s['credit'], width)
+            self.assertTrue(s['zoom'] and s['zoom_closed'] and s['credits_open'] and s['credits_closed'], width)
+            self.assertIn('Please see further here.', s['credits'], width)
+            self.assertIn('Images converted and resized for display.', s['credits'], width)
+            self.assertLessEqual(s['scrollW'], width, width)
+
+
 @unittest.skipIf(sync_playwright is None, 'Playwright is not installed')
 class ThinPlayerTests(unittest.TestCase):
     """RO-02: for a case with no story the player shows the title card and the note and nothing to play."""
