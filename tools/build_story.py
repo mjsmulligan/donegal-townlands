@@ -24,7 +24,7 @@ except ImportError:                  # run as a script: python tools/build_story
 ROOT = bt.ROOT
 SCHEMA = 1
 BAPTISM_MIN_AGE = bt.BAPTISM_MIN_AGE
-KIND_ORDER = {'title': 0, 'estate': 1, 'valuation': 1, 'family': 2, 'baptism': 2, 'register': 2, 'census': 3, 'familycensus': 3, 'photo': 5, 'closing': 9}
+KIND_ORDER = {'title': 0, 'estate': 1, 'valuation': 1, 'familyintro': 0, 'familyhead': 1, 'family': 2, 'baptism': 2, 'register': 2, 'census': 3, 'familycensus': 3, 'photo': 5, 'closing': 9}
 CERTAINTY = ('stated', 'accepted', 'possible')
 CAMERAS = ('parish', 'townland', 'household')
 STAGES = ('map', 'walk', 'timeline')
@@ -310,6 +310,30 @@ def register_beat(ev, place, names=()):
                 basis=ev['association']['basis'], events=[ev['id']])
 
 
+def family_head_beat(t, place):
+    """The header slide of a family: where it appears in the records, from first to last."""
+    pe = t['presence']
+    first, last = pe['first'], pe['last']
+    span = f'from {first} to {last}' if first != last else f'in {first}'
+    b = beat('familyhead', t['id'].rsplit(':', 1)[1], f"{place['townland']}:ch:{t['key']}", pe,
+             f"The {t['label']} family appear in the records {span}.", place, certainty='accepted',
+             basis='census_surname', events=[pe['id']])
+    b['time']['label'] = f"The {t['label']} family"
+    return b
+
+
+def families_intro_beat(display, place, events, end_label, names, sort):
+    """Opens the families section: the families of the townland over the span of the story."""
+    a, z = span_label(events[0]), end_label or span_label(events[-1])
+    span = f'from {a} to {z}' if a != z else f'in {a}'
+    who = name_list(names)
+    cap = f'Here are the families of {display}, {span}.' + (f' First, the {who} {"family" if len(names) == 1 else "families"}.' if who else '')
+    b = beat('familyintro', 'families', f"{place['townland']}:ch:families", events[0], cap, place,
+             basis='place_record', events=[events[0]['id'], events[-1]['id']])
+    b['time'] = {'label': f'The families of {display}', 'iso': events[0]['date']['iso'], 'sort': sort, 'approximate': True}
+    return b
+
+
 def family_census_beat(ev, place, thread):
     """One family's households in one census year, told in the family's own thread."""
     y, town = ev['date']['label'], place['name']
@@ -447,7 +471,7 @@ def chapter_title(key, beats, display, threads=None):
     if key == '1850s':
         return 'The land'
     if key == 'families':
-        return 'The families on the land'
+        return f'The families of {display}'
     if key == 'register':
         return 'The parish register'
     if key == 'census':
@@ -500,9 +524,11 @@ def generate(display, slug, place_record, events, by_event=None, header=None, to
                 t = by_thread[e['id']]
                 fb = family_beat(e, place)
                 fb['chapter'] = f"{slug}:ch:{t['key']}"
+                fb['time']['label'] = f"The {t['label']} family"
                 if t['start_sort'] < fb['time']['sort']:
                     fb['time']['sort'] = t['start_sort']
-                tbeats[t['id']] = [fb] + [family_census_beat(x, place, t) for x in t['events']]
+                head = [family_head_beat(t, place)] if t.get('presence') else []
+                tbeats[t['id']] = head + [fb] + [family_census_beat(x, place, t) for x in t['events']]
             elif e['type'] == 'family':
                 beats.append(family_beat(e, place))
         # a baptism joins the thread of the family named by the father's surname; the rest stay in the townland story
@@ -544,8 +570,14 @@ def generate(display, slug, place_record, events, by_event=None, header=None, to
         (told if t['id'] in picked else rest).append(tb)
     for group in (told, rest):
         group.sort(key=lambda tb: order(tb[0]))
+    if told and events:
+        first = told[0][0]
+        intro = families_intro_beat(display, place, events, later['date']['label'] if later else '',
+                                    [t['label'] for t in threads if t['id'] in picked and t['id'] in tbeats], first['time']['sort'])
+        intro['thread'] = dict(first['thread'])
+        told[0].insert(0, intro)
     beats = beats + [b for tb in told for b in tb] + closing + [b for tb in rest for b in tb]
-    extra_events = [x for t in threads for x in t['events']] + ([fam['register']] if fam.get('register') else [])
+    extra_events = [x for t in threads for x in t['events'] + ([t['presence']] if t.get('presence') else [])] + ([fam['register']] if fam.get('register') else [])
     by_id = {e['id']: e for e in events + extra_events}
     known = set(by_id)
     years = {int(b['time']['sort'][:4]) for b in dated_beats} | {nm.get('families', 0)}
@@ -634,7 +666,7 @@ def explore_block(doc):
              'baptism': 'Parish baptisms', 'census': 'Census returns'}
     for c in doc['chapters']:
         for b in c['beats']:
-            if b['kind'] == 'family':
+            if b['kind'] in ('familyhead', 'family') and (b.get('thread') or {}).get('id') not in {f['thread'] for f in families}:
                 t = b.get('thread') or {}
                 families.append({'beat': b['id'], 'label': t.get('label', ''), 'thread': t.get('id', '')})
             elif b['kind'] in names and b['kind'] not in seen:
@@ -696,7 +728,7 @@ def family_inputs(base, name, today=None, display=None):
 
 def thread_events(name, today=None, display=None):
     reg = sf.register_event(name, today or datetime.date.today(), display or name.title())
-    return [e for t in sf.threads(ROOT / 'townlands' / name, name) for e in t['events']] + ([reg] if reg else [])
+    return [e for t in sf.threads(ROOT / 'townlands' / name, name) for e in t['events'] + ([t['presence']] if t.get('presence') else [])] + ([reg] if reg else [])
 
 
 def collect(name, today):
@@ -770,7 +802,7 @@ def _build(name, today, only_story, written):
     if _num(place.get('latitude')) is None or _num(place.get('longitude')) is None:
         print('  no usable coordinates, so no page was built.')      # RO-01
     else:
-        written.append(str(write_page(name, doc, found, feed['events'] + [e for t in (inputs['args'][10] if len(inputs['args']) > 10 else {}).get('threads', []) for e in t['events']] + [r for r in [(inputs['args'][10] if len(inputs['args']) > 10 else {}).get('register')] if r]).relative_to(ROOT)))
+        written.append(str(write_page(name, doc, found, feed['events'] + [e for t in (inputs['args'][10] if len(inputs['args']) > 10 else {}).get('threads', []) for e in t['events'] + ([t['presence']] if t.get('presence') else [])] + [r for r in [(inputs['args'][10] if len(inputs['args']) > 10 else {}).get('register')] if r]).relative_to(ROOT)))
     for row_id, why in refused + [(r, w) for r, w in feed['skipped']]:
         print('  left out ' + row_id + ': ' + why)
     return 0

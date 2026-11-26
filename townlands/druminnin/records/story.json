@@ -167,7 +167,7 @@
       "stage": "map",
       "open_card": "druminnin:valuation:griffiths"
      },
-     "caption": "In the 1850s the land was valued and its occupiers listed. In all, 36 occupiers are named for Druminnin. The occupiers included McGinty, Cassidy and McAnaw.",
+     "caption": "In the 1850s the land was valued and its occupiers listed. In all, 51 plots are numbered for Druminnin. The occupiers included McGinty, Cassidy and McAnaw.",
      "people": [],
      "media": [],
      "evidence": {
@@ -267,15 +267,102 @@
    ]
   },
   {
+   "id": "druminnin:ch:families",
+   "title": "The families of Druminnin",
+   "beats": [
+    {
+     "id": "druminnin:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "druminnin:ch:families",
+     "time": {
+      "label": "The families of Druminnin",
+      "iso": "1825",
+      "sort": "1825-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminnin",
+      "name": "Druminnin",
+      "logainm_id": "13969",
+      "lat": 54.682253,
+      "lon": -8.020767,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminnin:estate:1825"
+     },
+     "caption": "Here are the families of Druminnin, from 1825 to 1926. First, the Cassidy and McGinty families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminnin:estate:1825",
+       "druminnin:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "druminnin:family:02",
+      "label": "Cassidy",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
    "id": "druminnin:ch:family-02",
    "title": "The Cassidy family",
    "beats": [
+    {
+     "id": "druminnin:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "druminnin:ch:family-02",
+     "time": {
+      "label": "The Cassidy family",
+      "iso": "1825",
+      "sort": "1825-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminnin",
+      "name": "Druminnin",
+      "logainm_id": "13969",
+      "lat": 54.682253,
+      "lon": -8.020767,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminnin:familypresence:02"
+     },
+     "caption": "The Cassidy family appear in the records from 1825 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminnin:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "druminnin:family:02",
+      "label": "Cassidy",
+      "run": true
+     }
+    },
     {
      "id": "druminnin:beat:family:02",
      "kind": "family",
      "chapter": "druminnin:ch:family-02",
      "time": {
-      "label": "From 1825",
+      "label": "The Cassidy family",
       "iso": "",
       "sort": "1825-01-01",
       "approximate": true
@@ -557,11 +644,51 @@
    "title": "The McGinty family",
    "beats": [
     {
+     "id": "druminnin:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "druminnin:ch:family-03",
+     "time": {
+      "label": "The McGinty family",
+      "iso": "1825",
+      "sort": "1825-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminnin",
+      "name": "Druminnin",
+      "logainm_id": "13969",
+      "lat": 54.682253,
+      "lon": -8.020767,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminnin:familypresence:03"
+     },
+     "caption": "The McGinty family appear in the records from 1825 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminnin:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "druminnin:family:03",
+      "label": "McGinty",
+      "run": true
+     }
+    },
+    {
      "id": "druminnin:beat:family:03",
      "kind": "family",
      "chapter": "druminnin:ch:family-03",
      "time": {
-      "label": "From 1825",
+      "label": "The McGinty family",
       "iso": "",
       "sort": "1825-01-01",
       "approximate": true
@@ -764,11 +891,51 @@
    "title": "The McNamee family",
    "beats": [
     {
+     "id": "druminnin:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "druminnin:ch:family-01",
+     "time": {
+      "label": "The McNamee family",
+      "iso": "1825",
+      "sort": "1825-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminnin",
+      "name": "Druminnin",
+      "logainm_id": "13969",
+      "lat": 54.682253,
+      "lon": -8.020767,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminnin:familypresence:01"
+     },
+     "caption": "The McNamee family appear in the records from 1825 to 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminnin:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "druminnin:family:01",
+      "label": "McNamee",
+      "run": false
+     }
+    },
+    {
      "id": "druminnin:beat:family:01",
      "kind": "family",
      "chapter": "druminnin:ch:family-01",
      "time": {
-      "label": "From 1825",
+      "label": "The McNamee family",
       "iso": "",
       "sort": "1825-01-01",
       "approximate": true
@@ -810,11 +977,51 @@
    "title": "The Gildea family",
    "beats": [
     {
+     "id": "druminnin:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "druminnin:ch:family-04",
+     "time": {
+      "label": "The Gildea family",
+      "iso": "1825",
+      "sort": "1825-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminnin",
+      "name": "Druminnin",
+      "logainm_id": "13969",
+      "lat": 54.682253,
+      "lon": -8.020767,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminnin:familypresence:04"
+     },
+     "caption": "The Gildea family appear in the records from 1825 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminnin:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "druminnin:family:04",
+      "label": "Gildea",
+      "run": false
+     }
+    },
+    {
      "id": "druminnin:beat:family:04",
      "kind": "family",
      "chapter": "druminnin:ch:family-04",
      "time": {
-      "label": "From 1825",
+      "label": "The Gildea family",
       "iso": "",
       "sort": "1825-01-01",
       "approximate": true
@@ -976,11 +1183,51 @@
    "title": "The McAnaw family",
    "beats": [
     {
+     "id": "druminnin:beat:familyhead:05",
+     "kind": "familyhead",
+     "chapter": "druminnin:ch:family-05",
+     "time": {
+      "label": "The McAnaw family",
+      "iso": "1825",
+      "sort": "1825-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminnin",
+      "name": "Druminnin",
+      "logainm_id": "13969",
+      "lat": 54.682253,
+      "lon": -8.020767,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminnin:familypresence:05"
+     },
+     "caption": "The McAnaw family appear in the records from 1825 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminnin:familypresence:05"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "druminnin:family:05",
+      "label": "McAnaw",
+      "run": false
+     }
+    },
+    {
      "id": "druminnin:beat:family:05",
      "kind": "family",
      "chapter": "druminnin:ch:family-05",
      "time": {
-      "label": "From 1825",
+      "label": "The McAnaw family",
       "iso": "",
       "sort": "1825-01-01",
       "approximate": true
@@ -1142,11 +1389,51 @@
    "title": "The Mullen and Monaghan family",
    "beats": [
     {
+     "id": "druminnin:beat:familyhead:06",
+     "kind": "familyhead",
+     "chapter": "druminnin:ch:family-06",
+     "time": {
+      "label": "The Mullen and Monaghan family",
+      "iso": "1825",
+      "sort": "1825-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminnin",
+      "name": "Druminnin",
+      "logainm_id": "13969",
+      "lat": 54.682253,
+      "lon": -8.020767,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminnin:familypresence:06"
+     },
+     "caption": "The Mullen and Monaghan family appear in the records from 1825 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminnin:familypresence:06"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "druminnin:family:06",
+      "label": "Mullen and Monaghan",
+      "run": false
+     }
+    },
+    {
      "id": "druminnin:beat:family:06",
      "kind": "family",
      "chapter": "druminnin:ch:family-06",
      "time": {
-      "label": "From 1825",
+      "label": "The Mullen and Monaghan family",
       "iso": "",
       "sort": "1825-01-01",
       "approximate": true
@@ -1308,11 +1595,51 @@
    "title": "The Thomas family",
    "beats": [
     {
+     "id": "druminnin:beat:familyhead:07",
+     "kind": "familyhead",
+     "chapter": "druminnin:ch:family-07",
+     "time": {
+      "label": "The Thomas family",
+      "iso": "1825",
+      "sort": "1825-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminnin",
+      "name": "Druminnin",
+      "logainm_id": "13969",
+      "lat": 54.682253,
+      "lon": -8.020767,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminnin:familypresence:07"
+     },
+     "caption": "The Thomas family appear in the records from 1825 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminnin:familypresence:07"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "druminnin:family:07",
+      "label": "Thomas",
+      "run": false
+     }
+    },
+    {
      "id": "druminnin:beat:family:07",
      "kind": "family",
      "chapter": "druminnin:ch:family-07",
      "time": {
-      "label": "From 1825",
+      "label": "The Thomas family",
       "iso": "",
       "sort": "1825-01-01",
       "approximate": true
@@ -1354,11 +1681,51 @@
    "title": "The Harvey and Gethins (McGettigan) and Corrigan family",
    "beats": [
     {
+     "id": "druminnin:beat:familyhead:08",
+     "kind": "familyhead",
+     "chapter": "druminnin:ch:family-08",
+     "time": {
+      "label": "The Harvey and Gethins (McGettigan) and Corrigan family",
+      "iso": "1855",
+      "sort": "1855-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminnin",
+      "name": "Druminnin",
+      "logainm_id": "13969",
+      "lat": 54.682253,
+      "lon": -8.020767,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminnin:familypresence:08"
+     },
+     "caption": "The Harvey and Gethins (McGettigan) and Corrigan family appear in the records from 1855 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminnin:familypresence:08"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "druminnin:family:08",
+      "label": "Harvey and Gethins (McGettigan) and Corrigan",
+      "run": false
+     }
+    },
+    {
      "id": "druminnin:beat:family:08",
      "kind": "family",
      "chapter": "druminnin:ch:family-08",
      "time": {
-      "label": "From 1825",
+      "label": "The Harvey and Gethins (McGettigan) and Corrigan family",
       "iso": "",
       "sort": "1855-01-01",
       "approximate": true

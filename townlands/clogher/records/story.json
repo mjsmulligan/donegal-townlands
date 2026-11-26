@@ -35,7 +35,7 @@
       "stage": "map",
       "open_card": ""
      },
-     "caption": "Clogher, in Irish An Clochar, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Clogher and its 24 families, from the 1850s to 1926.",
+     "caption": "Clogher, in Irish An Clochar, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Clogher and its 32 families, from the 1850s to 1926.",
      "people": [],
      "media": [
       "clogher-landscape.jpg"
@@ -79,7 +79,7 @@
       "stage": "map",
       "open_card": "clogher:valuation:griffiths"
      },
-     "caption": "Griffith's Valuation listed the land and its occupiers in the 1850s. Here, 42 entries name an occupier.",
+     "caption": "Griffith's Valuation listed the land and its occupiers in the 1850s. Here, 54 plots are numbered for Clogher. The occupiers included Flanagan, Gallagher and Hone.",
      "people": [],
      "media": [],
      "evidence": {
@@ -89,7 +89,7 @@
       "basis": "townland_entry",
       "certainty": "stated"
      },
-     "duration_ms": 6800,
+     "duration_ms": 10000,
      "audio": null
     }
    ]
