@@ -185,7 +185,15 @@ def threads(base, name):
                 if fh:
                     groups.append((f, [p.get('f', '').strip() for p in fh]))
             events.append(census_event(name, fid, i, y, groups))
-        out.append({'id': fid, 'label': ' and '.join(fams), 'labels': fams, 'start_sort': f'{min(years)}-01-01' if years else row['sort'],
+        presence = None
+        if years:
+            a, z = min(years), max(years)
+            lab = str(a) if a == z else f'{a} to {z}'
+            presence = {'id': f'{name.lower()}:familypresence:{i:02d}', 'type': 'family_presence', 'milestone': False,
+                        'date': {'kind': 'range', 'label': lab, 'iso': str(a)}, 'sort': f'{a}-01-01',
+                        'approximate_sort': True, 'title': f'The {" and ".join(fams)} family in the records',
+                        'text': f'In the records from {lab}.', 'people': [], 'media': [], 'first': a, 'last': z}
+        out.append({'id': fid, 'label': ' and '.join(fams), 'presence': presence, 'labels': fams, 'start_sort': f'{min(years)}-01-01' if years else row['sort'],
                     'span': (max(years) - min(years)) if years else 0, 'sources': sources, 'households': houses,
                     'events': events, 'spellings': sorted(every)})
     return out

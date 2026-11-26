@@ -588,7 +588,7 @@ class FamilyBeatTests(unittest.TestCase):
         kinds = [b['kind'] for b in beats]
         self.assertLess(kinds.index('valuation'), kinds.index('family'))
         self.assertEqual(doc['chapters'][[c['id'] for c in doc['chapters']].index('cullionboy:ch:families')]['title'],
-                         'The families on the land')
+                         'The families of Cullionboy')
 
     def test_only_accepted_crosswalk_rows_make_events(self):
         from tools import build_timeline as bt
@@ -700,7 +700,11 @@ class FamilyThreadTests(unittest.TestCase):
                 'people': [], 'media': [], 'groups': [(label, ['Hugh'])],
                 'association': {'basis': 'census_surname', 'label': ''},
                 'source': {'label': 'Census', 'url': '', 'reference': str(y)}} for y in years]
-        return {'id': fid, 'label': label, 'labels': [label], 'start_sort': '1825-01-01', 'span': 100,
+        pres = {'id': f'cullionboy:familypresence:{n:02d}', 'type': 'family_presence', 'milestone': False,
+                'date': {'kind': 'range', 'label': '1825 to 1911', 'iso': '1825'}, 'sort': '1825-01-01',
+                'approximate_sort': True, 'title': f'The {label} family in the records', 'text': 'In the records from 1825 to 1911.',
+                'people': [], 'media': [], 'first': 1825, 'last': 1911}
+        return {'id': fid, 'label': label, 'labels': [label], 'presence': pres, 'start_sort': '1825-01-01', 'span': 100,
                 'sources': 3, 'households': len(years), 'events': evs}
 
     def make(self):
@@ -722,14 +726,14 @@ class FamilyThreadTests(unittest.TestCase):
     def test_each_family_has_its_own_chapter_and_time_order_holds_per_track(self):
         doc, beats, events, fam = self.make()
         self.assertIn('The Kelly family', [c['title'] for c in doc['chapters']])
-        extra = [e for t in fam['threads'] for e in t['events']]
+        extra = [e for t in fam['threads'] for e in t['events'] + [t['presence']]]
         self.assertEqual(bd.check_document(doc, events + extra, 5), [])
 
     def test_a_thread_out_of_order_is_caught(self):
         doc, beats, events, fam = self.make()
         mine = [b for b in beats if (b.get('thread') or {}).get('id', '').endswith('01')]
         mine[0]['time']['sort'], mine[-1]['time']['sort'] = '1926-01-01', '1855-01-01'
-        extra = [e for t in fam['threads'] for e in t['events']]
+        extra = [e for t in fam['threads'] for e in t['events'] + [t['presence']]]
         self.assertTrue(any('time order' in p for p in bd.check_document(doc, events + extra, 5)))
 
     def test_the_title_names_the_families_and_the_milestones_name_surnames(self):
@@ -767,7 +771,24 @@ class FamilyThreadTests(unittest.TestCase):
 
     def test_the_hub_lists_the_families_by_thread(self):
         doc, _, events, fam = self.make()
-        extra = [e for t in fam['threads'] for e in t['events']]
+        extra = [e for t in fam['threads'] for e in t['events'] + [t['presence']]]
         ex = bd.explore_block(doc)
         self.assertEqual([f['label'] for f in ex['families']], ['Kelly', 'Sweeny'])
         self.assertTrue(all(f['thread'] for f in ex['families']))
+
+    def test_part_two_opens_with_an_intro_and_each_family_with_a_header_slide(self):
+        doc, beats, events, fam = self.make()
+        kinds = [b['kind'] for b in beats]
+        close = kinds.index('closing')
+        intro = beats[kinds.index('familyintro')]
+        self.assertEqual(intro['time']['label'], 'The families of Cullionboy')
+        self.assertLess(kinds.index('familyintro'), close)
+        self.assertEqual(kinds[kinds.index('familyintro') + 1], 'familyhead')
+        heads = [b for b in beats if b['kind'] == 'familyhead']
+        self.assertEqual(len(heads), 2)
+        self.assertEqual(heads[0]['caption'], 'The Kelly family appear in the records from 1825 to 1911.')
+        self.assertEqual(heads[0]['time']['label'], 'The Kelly family')
+        story = next(b for b in beats if b['kind'] == 'family' and b['thread']['label'] == 'Kelly')
+        self.assertEqual(story['time']['label'], 'The Kelly family')
+        extra = [e for t in fam['threads'] for e in t['events'] + [t['presence']]]
+        self.assertEqual(bd.check_document(doc, events + extra, 5), [])
