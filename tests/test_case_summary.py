@@ -35,7 +35,7 @@ class CaseSummaryTests(unittest.TestCase):
         self.assertNotIn('in the index', self.summary('druminnin', 'Druminnin')["Griffith's Valuation"])
 
     def test_baptisms_are_the_published_ones(self):
-        from tools import build_timeline as bt
+        from tools import events as bt
         n = len(bt.baptism_events('Cullionboy', TODAY)[0])
         self.assertEqual(self.summary('cullionboy', 'Cullionboy')['Parish register'], '%d baptisms, Tawnawilly (NLI)' % n)
 
@@ -54,18 +54,3 @@ class CaseSummaryTests(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-
-
-class DruminninStudyTests(unittest.TestCase):
-    """Druminnin is an authored study (2026-11-24): printed-page plots and the estate records."""
-
-    def test_payload_holds_the_printed_plots_and_estate_records(self):
-        payload = build.payload_for('druminnin')
-        rows = payload['content']['griffiths']['rows']
-        self.assertEqual(len(rows), 38)
-        self.assertIn('51', [r['lot'] for r in rows])
-        self.assertEqual([e['year'] for e in payload['estate']], ['1825', '1831'])
-        self.assertEqual([len(e['rows']) for e in payload['estate']], [22, 22])
-
-    def test_a_case_without_estate_records_has_no_estate_key(self):
-        self.assertNotIn('estate', build.payload_for('cullionboy'))

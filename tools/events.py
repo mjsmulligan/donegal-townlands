@@ -1,36 +1,27 @@
-"""Build a townland timeline page.  Separate from the gallery walk (tools/build.py).
-Usage:
-    python tools/build_timeline.py cullionboy
-
-Two steps, both derived and regenerated every run:
-
-  1. Collect the source events that genuinely name or belong to the townland and write them to
-     townlands/<name>/records/timeline_events.json (one event per source record, never edited by hand).
-  2. Render engine/timeline.html with that feed into docs/<name>/timeline.html.
-
-The page is an event-led chronology (docs/TIMELINE_SPEC.md). An event never needs a person or
-family link to appear, and nothing is attributed to the townland unless the source says so.
+"""The event feed behind the townland story (tools/build_story.py, tools/story_families.py).
+Not run on its own. It collects the source events that genuinely name or belong to a townland, one event
+per source record, and nothing is attributed to the townland unless the source says so.
 
 Events collected:
   valuation   Griffith's Valuation, from the askaboutireland index (an approximate date, the 1850s)
+  estate      the 1825 and 1831 estate records, counts only
   census      the 1901, 1911 and 1926 returns for the townland, from records/census.json
   baptism     a register baptism whose own place field reads exactly the townland name and whose
               reading is agreed or resolved. A disputed row is left out and reported. A row whose
               place is noted as blotted or doubtful is kept and marked, not hidden.
-  media       every event carries a `media` list. The first header image is the page background.
-              Another photograph is attached to an event by the optional `event` column in media.csv.
-              Nothing undated is shown: a photograph with no event is left off the timeline
+  media       a photograph is attached to an event by the optional `event` column in media.csv.
 
 Marriages are never collected: the register records no townland for them.
 
 Privacy (CLAUDE.md, 100/75/50): a baptism is published only when it is 100 or more years old.
 Census returns are published as the custodian released them.
 
-This module reads files and writes only the two outputs above. Nothing is ever deleted."""
-import csv, datetime, json, pathlib, re, sys
+This module reads files and writes nothing. Until 2026-11-26 it also rendered a timeline page; the
+timeline was removed when the story became the only townland page (DECISIONS.md, 2026-11-26)."""
+import csv, datetime, json, pathlib, re
 try:
     from tools import build, media
-except ImportError:                  # run as a script: python tools/build_timeline.py
+except ImportError:                  # run from the tools folder
     import build, media
 
 ROOT = build.ROOT
@@ -40,8 +31,6 @@ PLACE_STATED = ('verified', 'dictionary')
 PLACE_DOUBTFUL = ('probable', 'possible')
 REGISTER_LABEL = 'Tawnawilly parish register (Raphoe), NLI microfilm 04599/04'
 CENSUS_SOURCE = 'National Archives of Ireland, census of Ireland'
-CENSUS_CREDIT = ('Census returns: National Archives of Ireland. The 1926 census is licensed CC BY 4.0. '
-                 'Names are given as the census recorded them.')
 MONTHS = {m: i for i, m in enumerate(
     ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'], start=1)}
 MONTH_NAMES = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August',
@@ -405,74 +394,3 @@ def events_for(name, today=None):
     events += bap
     events.sort(key=lambda e: (e['sort'], TYPE_ORDER.get(e['type'], 9), e['id']))
     return {'events': events, 'skipped': skipped, 'town': town}
-
-
-def media_item(found, r):
-    url = (found['base_url'] + r['file']) if found['base_url'] else 'media/' + r['file']
-    return {'file': r['file'], 'url': url, 'caption': r['caption'], 'alt': r.get('alt') or r['caption'],
-            'source': r['source'], 'date': r.get('date', '')}
-
-
-def build_timeline(name, today=None):
-    base = ROOT / 'townlands' / name
-    if not ((base / 'townland.json').is_file() or (base / 'place.json').is_file()):
-        sys.exit('No townland.json or place.json for ' + name + ': a timeline needs a case.')
-    found, background, by_event, unplaced = media_items(name)
-    if found['errors']:
-        print(name + ': media problems, timeline not built:')
-        for e in found['errors']:
-            print('  ' + e)
-        return 1
-    feed = events_for(name, today)
-    if not feed['events']:
-        print(name + ': no source events, timeline not built.')
-        return 1
-    known = {e['id'] for e in feed['events']}
-    for event_id, rows in by_event.items():
-        if event_id not in known:
-            print(name + ': media.csv names an event that does not exist, not placed: ' + event_id)
-            continue
-        for e in feed['events']:
-            if e['id'] == event_id:
-                e['media'] = [media_item(found, r) for r in rows]
-    (base / 'records').mkdir(exist_ok=True)
-    out_json = {'townland': feed['town']['name'], 'generated_by': 'tools/build_timeline.py',
-                'events': feed['events']}
-    (base / 'records' / 'timeline_events.json').write_text(
-        json.dumps(out_json, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
-    walk = ROOT / 'docs' / name / 'index.html'
-    payload = {
-        'townland': feed['town']['name'],
-        'events': feed['events'],
-        'background': media_item(found, background) if background else None,
-        'walk': 'index.html' if walk.is_file() else '',
-        'credit': CENSUS_CREDIT,
-    }
-    html = (ROOT / 'engine' / 'timeline.html').read_text(encoding='utf-8')
-    data = json.dumps(payload, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
-    page = (html.replace('__TITLE__', build.esc(feed['town']['name'] + ' timeline'))
-                .replace('__BRAND__', build.esc(feed['town']['name']))
-                .replace('__DATA__', data))
-    dest = ROOT / 'docs' / name / 'timeline.html'
-    dest.parent.mkdir(parents=True, exist_ok=True)
-    dest.write_text(page, encoding='utf-8')
-    build.copy_media(name, found)
-    for f in unplaced:
-        print('  not on the timeline (no event named in media.csv): ' + f)
-    counts = {}
-    for e in feed['events']:
-        counts[e['type']] = counts.get(e['type'], 0) + 1
-    print(name + ': timeline built, ' + ', '.join(f'{n} {t}' for t, n in sorted(counts.items())) + '.')
-    for row_id, why in feed['skipped']:
-        print('  left out ' + row_id + ': ' + why)
-    return 0
-
-
-def main(argv):
-    if len(argv) != 2 or argv[1].startswith('-'):
-        sys.exit(__doc__)
-    return build_timeline(argv[1])
-
-
-if __name__ == '__main__':
-    sys.exit(main(sys.argv))

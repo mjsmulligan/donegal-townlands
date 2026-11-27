@@ -1,30 +1,17 @@
-"""Build townland pages.  Every case is built the same way.
+"""Build the map index (docs/index.html) and hold the helpers the story builder shares.
 Usage:
-    python tools/build.py cullionboy     build one case
-    python tools/build.py --all          build every case
+    python tools/build.py        rewrite docs/index.html from engine/index.html
 
-Each page is a gallery walk from engine/walk.html, written to docs/<name>/index.html
-(served by GitHub Pages from /docs). The page shows whatever the case holds:
-
-  place record     townlands/<name>/place.json (Logainm, a source as well as the place authority)
-  census returns   townlands/<name>/records/census.json and census_match.json
-  authored study   townlands/<name>/townland.json and content.json (Griffith's rows,
-                   family stories, plate copy, open questions)
-  media            townlands/<name>/media/media.csv and the images it lists (docs/MEDIA_SPEC.md).
-                   Images are copied unchanged to docs/<name>/media/. A case with media errors
-                   is reported and not built.
-
-Anything the case does not hold is generated honestly from what it does hold, or left
-out. Authored content always wins over generated content. Nothing is invented: a case
-with only a place record gets a short walk that says so. Adding records to a case adds
-plates to the same page at the same address.
+The townland pages are the stories written by tools/build_story.py (docs/<name>/story.html). This script
+only lists them: one card per case, tagged Townland Study, Census Returns or Townland Record by the
+case's state, and a link to its story where one exists. A case with too few records for a story gets a
+card and no link. The walk and the timeline pages were removed on 2026-11-26 (DECISIONS.md).
 
 States, used for the index: ready (authored study with census), partial (some evidence)
-and empty (place record only). All three build.
+and empty (place record only).
 
-Building never replaces a page it did not generate, never deletes a page and never
-changes a case folder. Every build regenerates docs/index.html, the list of every place,
-so the index is never edited by hand (its layout is engine/index.html). Only a name with no case folder is an error."""
+Building never deletes a page and never changes a case folder. docs/index.html is never edited by
+hand (its layout is engine/index.html). To rebuild everything: python tools/build_story.py --all, then this."""
 import collections, csv, datetime, html as htmllib, json, re, shutil, sys, pathlib
 try:
     from tools import media, variants_reference
@@ -36,9 +23,6 @@ EVIDENCE = NEEDED + ('records/events.csv', 'records/corrections.json')
 CENSUS_YEARS = ('1901', '1911', '1926')
 LOGAINM_CREDIT = 'Irish-language placename data by Logainm, Government of Ireland, licensed under CC BY 4.0.'
 NAT_ARCHIVES = 'https://www.census.nationalarchives.ie/'
-OTHER_COLOUR = '#A9B7B3'
-PLACE_MARK = '<!-- generated: donegal-townlands place page -->'   # earlier plain pages, replaced by the walk
-GALLERY_SIGNATURE = 'id="walk"'
 INDEX_MARK = '<!-- generated: donegal-townlands index -->'
 
 
@@ -51,8 +35,6 @@ def esc(t): return t.replace('&', '&amp;').replace('<', '&lt;')
 def q(t): return htmllib.escape(str(t), quote=True)
 
 
-def slug(text):
-    return re.sub(r'[^a-z0-9]+', '-', text.casefold()).strip('-') or 'townland'
 
 
 def case_state(base):
@@ -65,164 +47,18 @@ def case_state(base):
     return 'empty', missing
 
 
-def read_names():
-    """(logainm_id -> name) for places.csv DED rows plus the hand-kept place_names.csv."""
-    names = {}
-    for path, only_ded in ((ROOT / 'data' / 'processed' / 'places' / 'places.csv', True),
-                           (ROOT / 'data' / 'processed' / 'places' / 'place_names.csv', False)):
-        if path.is_file():
-            with path.open(encoding='utf-8-sig', newline='') as h:
-                for r in csv.DictReader(h):
-                    if not only_ded or r.get('place_type') == 'ded':
-                        names[r['logainm_id']] = r['name_en']
-    return names
 
 
-def join_words(items):
-    items = list(items)
-    return items[0] if len(items) == 1 else ', '.join(items[:-1]) + ' and ' + items[-1]
 
 
-def count_word(n, is_are=True):
-    words = ['None', 'One', 'Two', 'Three', 'Four', 'Five', 'Six']
-    return words[n] + (' is' if n < 2 else ' are') + ' filled'
 
 
-def place_facts(place, names):
-    """Place record fields for the page. Names are looked up, never guessed."""
-    if not place:
-        return {}
-    lid = str(place.get('logainm_id', ''))
-    out = {
-        'logainm_id': lid,
-        'name_en': place.get('name_en', ''),
-        'name_ga': place.get('name_ga', ''),
-        'ded': names.get(str(place.get('ded_id', '')), ''),
-        'civil_parish': names.get(str(place.get('civil_parish_id', '')), ''),
-        'barony': names.get(str(place.get('barony_id', '')), ''),
-        'county': names.get(str(place.get('county_id', '')), ''),
-        'latitude': place.get('latitude', ''),
-        'longitude': place.get('longitude', ''),
-        'snapshot_date': place.get('snapshot_date', ''),
-        'logainm_url': 'https://www.logainm.ie/en/' + lid if lid else '',
-        'credit': LOGAINM_CREDIT,
-    }
-    if out['latitude'] and out['longitude']:
-        out['osm_url'] = ('https://www.openstreetmap.org/?mlat=' + out['latitude']
-                          + '&mlon=' + out['longitude'] + '&zoom=15')
-    return out
 
 
-def census_spellings(match):
-    """year -> spelling(s) recorded in that census, from census_match.json."""
-    out = {}
-    for y, info in (match.get('years') or {}).items():
-        out[y] = ' and '.join(sorted({s['spelling'] for s in info.get('spellings', [])}))
-    return out
 
 
-def spelling_phrase(spell, name):
-    """'Druminnin in 1901 and 1911 and Druminin in 1926', or '' when all agree with the name."""
-    by = collections.OrderedDict()
-    for y in sorted(spell):
-        by.setdefault(spell[y], []).append(y)
-    if all(s == name for s in by):
-        return ''
-    return join_words([s + ' in ' + join_words(ys) for s, ys in by.items()])
 
 
-def default_content(name, place, census, match, has_griffiths, townland_name, names_only=False):
-    """Honest generated content for whatever the case holds. Authored content overrides it."""
-    years = [y for y in CENSUS_YEARS if census.get(y)]
-    spell = census_spellings(match)
-    checked = match.get('status') == 'checked'
-    ded = place.get('ded', '')
-    medium = 'A townland'
-    if ded: medium += ' in ' + ded + ' electoral division'
-    if place.get('civil_parish'): medium += ', ' + place['civil_parish'] + ' civil parish'
-    if place.get('barony'): medium += ', ' + place['barony'] + ' barony'
-
-    story = ['%s is a townland recognised by Logainm, the placenames database of the Government of Ireland.%s'
-             % (name, (' Its Irish name is %s.' % place['name_ga']) if place.get('name_ga') else '')]
-    if years:
-        story.append('The census returns for %s are held for this townland. Every scene here is drawn from them. '
-                     'Cottages stand for households and are not placed on a map.' % join_words(years))
-    else:
-        story.append('No historical records have been added yet. This page is a starting point, not a finding '
-                     'about the history of the townland. It grows as records are added.')
-
-    held = [False, has_griffiths, False, False, False, bool(years)]
-    frames = [
-        ['Tithe Applotment Books', '1820s and 1830s', 'Not yet added.', False],
-        ["Griffith's Valuation", 'Mid 1850s',
-         'Held.' if has_griffiths else ('Names only.' if names_only else 'Not yet added.'), has_griffiths or names_only],
-        ['Valuation revision books', 'After the 1850s', 'Not yet added.', False],
-        ['Civil births, marriages and deaths', 'From 1864', 'Not yet added.', False],
-        ['Parish records', 'Various dates', 'Not yet added.', False],
-        ['Census returns', '1901, 1911 and 1926',
-         ('Held for ' + join_words(years) + '.') if years else
-         ('Checked. No return found.' if checked else 'Not yet added.'), bool(years)],
-    ]
-    filled = sum(1 for f in frames if f[3])
-
-    paras = [{'before': 'Place details come from ', 'link': {'href': place.get('logainm_url', 'https://www.logainm.ie/'), 'text': 'Logainm'},
-              'after': ', the placenames database of the Government of Ireland (CC BY 4.0).'
-                       + (' The record number is %s.' % place['logainm_id'] if place.get('logainm_id') else '')}]
-    if years:
-        text = ('The census tables are the %s rows of the census files for %s electoral division, which also hold other '
-                'townlands. A household is the set of people on one house number in 1901 and 1911, or on one form number in '
-                '1926. Names are shown as spelled in the files. Some values, such as relationships and Irish language, were '
-                'filled in or corrected by the researcher in columns marked updated, so they are not always a straight copy '
-                'of the printed return.' % (name, ded or 'the'))
-        ph = spelling_phrase(spell, name)
-        if ph:
-            text += ' The townland is spelled %s in the census files.' % ph
-        paras.append(text)
-        paras.append({'before': 'Census returns are held by the ', 'link': {'href': NAT_ARCHIVES, 'text': 'National Archives of Ireland'}, 'after': '.'})
-    else:
-        paras.append('No other source has been added for this townland yet.')
-    numbers = ''
-    if years:
-        parts = ['{n%s} %sin %s' % (y, 'people ' if i == 0 else '', y) for i, y in enumerate(years)]
-        numbers = 'The census files record ' + join_words(parts) + '.'
-
-    surnames = collections.Counter(r['s'] for y in years for r in census[y] if r.get('s'))
-    placeholder = 'for example ' + (surnames.most_common(1)[0][0] if surnames else 'Gallagher')
-
-    qs = []
-    ph = spelling_phrase(spell, name)
-    if ph:
-        qs.append('The census spells this townland %s. Both spellings were accepted as the same place on review. Do other records spell it differently?' % ph)
-    if not years and checked:
-        qs.append('No census return is linked to this townland for %s. Was it unoccupied then, or is it recorded under a name not yet matched?' % join_words(CENSUS_YEARS))
-    elif not years:
-        qs.append('Census returns have not yet been attached to this townland.')
-    elif len(years) < 3:
-        missing = [y for y in CENSUS_YEARS if y not in years]
-        qs.append('No census return is linked to this townland for %s. Was it unoccupied then, or is it recorded under a name not yet matched?' % join_words(missing))
-    if names_only:
-        qs.append("Griffith's Valuation holds only the askaboutireland index for this townland: names and page positions. "
-                  "Holding numbers, lessors, areas and valuations have not yet been added.")
-    elif not has_griffiths:
-        qs.append("Griffith's Valuation, the mid 1850s baseline, has not yet been added for this townland.")
-    qs.append('The Tithe Applotment Books, valuation revision books, civil records from 1864 and parish registers have not yet been added'
-              + (', so no census household can yet be linked to an earlier record.' if years else '.'))
-
-    return {
-        'groups': {'colours': {'Other': OTHER_COLOUR}, 'territory': ['Other'], 'map': {}},
-        'families': [],
-        'questions': qs,
-        'plates': {
-            'title': {'title': place.get('name_ga') or name, 'irish': place.get('name_ga', ''), 'heading': name,
-                      'medium': medium, 'story': story},
-            'not_yet_hung': {'title': 'Not yet hung', 'medium': 'Six frames for six kinds of record. ' + count_word(filled),
-                             'story': ['Each frame is a kind of record that can be hung here. A dashed frame is empty. A frame with a gold edge holds records for this townland.',
-                                       'Records are added one source at a time, and each new source adds to this page instead of replacing it.'],
-                             'frames': frames},
-            'method': {'paras': paras, 'numbers_intro': numbers},
-            'records': {'placeholder': placeholder},
-        },
-    }
 
 
 # Where each published census return can be opened. The patterns are the National
@@ -236,67 +72,8 @@ CENSUS_URLS = {
 }
 
 
-def payload_for(name):
-    """Everything the page needs for one case. Pure: reads the case, writes nothing."""
-    base = ROOT / 'townlands' / name
-    def maybe(rel):
-        return load(base / rel) if (base / rel).is_file() else {}
-    place = place_facts(maybe('place.json'), read_names())
-    meta, authored = maybe('townland.json'), maybe('content.json')
-    census, match = maybe('records/census.json'), maybe('records/census_match.json')
-    display = meta.get('name') or place.get('name_en') or name
-    townland = {
-        'name': display,
-        'page_title': display + ' | Donegal Townlands',
-        'storage_key': slug(display) + '-q',
-        'census_spelling': census_spellings(match),
-    }
-    townland.update({k: v for k, v in meta.items() if v not in (None, '')})
-    gindex = maybe('records/griffiths_index.json')
-    names_only = bool(gindex.get('rows')) and not authored.get('griffiths')
-    content = default_content(display, place, census, match, bool(authored.get('griffiths')), display, names_only)
-    plates = dict(content['plates'])
-    plates.update(authored.get('plates', {}))
-    content.update({k: v for k, v in authored.items() if k != 'plates'})
-    content['plates'] = plates
-    urls = {y: u for y, u in CENSUS_URLS.items() if (census.get('years') or census).get(y)}
-    payload = {'census': census, 'content': content, 'townland': townland, 'place': place,
-               'census_urls': urls}
-    found = media_for(name)
-    shown = media.describe(found['rows'], base, found['base_url'])
-    if names_only:                    # tier 1: the index only. A case with a transcription uses that instead
-        payload['griffiths_index'] = {k: gindex[k] for k in ('townland', 'rows') if k in gindex}
-    names = [r.get('s', '') for rows in (census.get('years') or census).values() if isinstance(rows, list) for r in rows]
-    names += [r.get('surname', '') for r in gindex.get('rows', [])]
-    families = variants_reference.page_families(names)
-    if families:                      # verified dictionary families the case holds: the label and spellings only
-        payload['name_families'] = families
-    estate = estate_for(name)
-    if estate:                        # estate records before Griffith's, as written (DECISIONS.md, 2026-11-24)
-        payload['estate'] = estate
-    people = maybe('records/people.json')
-    if people.get('people'):          # family tree research for people in the returns (tools/gedcom_people.py)
-        payload['people'] = people
-    if shown:                         # a case with no media builds exactly as before
-        payload['media'] = shown
-    return payload
 
 
-def estate_for(name):
-    """Estate records for a case, from data/source/estate_records/arran_donegal/normalised/<slug>_holdings_observations.csv.
-    Dated sources only (rows dated to a decade are Griffith's and are left to its plate). Names are as written."""
-    path = ROOT / 'data' / 'source' / 'estate_records' / 'arran_donegal' / 'normalised' / (name + '_holdings_observations.csv')
-    if not path.is_file():
-        return []
-    groups = {}
-    with path.open(encoding='utf-8-sig', newline='') as h:
-        for r in csv.DictReader(h):
-            year = (r.get('source_date') or '').strip()
-            if year.isdigit():
-                groups.setdefault((year, r['source']), []).append(
-                    {'holding': r['holding_id'], 'tenant': ' '.join(x for x in (r['forename_as_written'], r['surname_as_written']) if x),
-                     'rent': r['yearly_rent'], 'note': r['notes']})
-    return [{'year': y, 'source': s, 'rows': rows} for (y, s), rows in sorted(groups.items())]
 
 
 def media_for(name):
@@ -326,49 +103,6 @@ def copy_media(name, found):
     return copied
 
 
-def build(name):
-    """Build one case. Returns its state."""
-    base = ROOT / 'townlands' / name
-    if not base.is_dir():
-        sys.exit('No case folder townlands/' + name)
-    state = case_state(base)[0]
-    if not (base / 'place.json').is_file() and not (base / 'townland.json').is_file():
-        print(name + ': no place.json or townland.json. Run tools/create_townland_cases.py. Not built.')
-        return state
-    dest = ROOT / 'docs' / name / 'index.html'
-    if dest.exists():
-        old = dest.read_text(encoding='utf-8')
-        if GALLERY_SIGNATURE not in old and PLACE_MARK not in old:
-            print(name + ': docs/' + name + '/index.html was not generated by this tool. Left untouched.')
-            return state
-    found = media_for(name)
-    for warning in found['warnings']:
-        print(name + ': warning: ' + warning)
-    if found['errors']:
-        print(name + ': media problems, not built (python tools/validate.py lists them):')
-        for error in found['errors']:
-            print('  ' + error)
-        return state
-    family_errors = variants_reference.check()
-    if family_errors:
-        print(name + ': surname dictionary problems, not built:')
-        for error in family_errors:
-            print('  ' + error)
-        return state
-    payload = payload_for(name)
-    html = (ROOT / 'engine' / 'walk.html').read_text(encoding='utf-8')
-    data = json.dumps(payload, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
-    out = (html.replace('__TITLE__', esc(payload['townland']['page_title']))
-               .replace('__BRAND__', esc(payload['townland']['name']))
-               .replace('__DATA__', data))
-    dest.parent.mkdir(parents=True, exist_ok=True)
-    dest.write_text(out, encoding='utf-8')
-    print(name + ': ' + state + ' case. Wrote ' + str(dest.relative_to(ROOT)) + ' (' + str(len(out)) + ' bytes).')
-    if found['rows']:
-        copied = copy_media(name, found)
-        print(name + ': media ' + str(len(found['rows'])) + ' rows, '
-              + ('served from ' + found['base_url'] if found['base_url'] else str(copied) + ' files copied') + '.')
-    return state
 
 
 INDEX_TAGS = {'ready': 'Townland Study', 'partial': 'Census Returns', 'empty': 'Townland Record'}
@@ -404,22 +138,17 @@ KIND = {'ready': 'study', 'partial': 'census', 'empty': 'record'}
 def index_page(entries, template, deds=None):
     """The index page: a satellite map and a card for each case, from engine/index.html. entries are dicts with
     slug, name, state, name_ga, lat, lng and doc (True when docs/<slug>/story.html exists). A case with no
-    coordinates, or with no records (state empty, a Logainm place record only), gets a card and no map pin. A case with a story opens it first and keeps the walk as a
-    second link (RO-12, RO-14); a case without one opens the walk as before. deds is a list of DED outline features:
+    coordinates, or with no records (state empty, a Logainm place record only), gets a card and no map pin. A case with a story opens it; a case without one has a card and no link. deds is a list of DED outline features:
     with them the map opens on the DEDs and shows the townlands once the view is close enough (DECISIONS.md,
     2026-11-22); without them it shows every townland at once."""
     entries = sorted(entries, key=lambda e: e['name'].casefold())
     cards = []
     for e in entries:
-        walk = './%s/' % q(e['slug'])
-        main = './%s/story.html' % q(e['slug']) if e.get('doc') else walk
+        main = './%s/story.html' % q(e['slug']) if e.get('doc') else ''
         where = (' data-lat="%s" data-lng="%s"' % (q(e['lat']), q(e['lng']))) if e['lat'] and e['lng'] else ''
         ga = '<div class="card-ga">%s</div>' % q(e['name_ga']) if e['name_ga'] else ''
-        if e.get('doc'):
-            links = ('<a class="pill main" href="%s">Play the story</a>'
-                     '<a class="pill" href="%s">Gallery walk</a>' % (main, walk))
-        else:
-            links = '<a class="pill" href="%s">Open the walk</a>' % walk
+        links = '<a class="pill main" href="%s">Play the story</a>' % main if main else ''
+        name_link = ('<a class="card-en" href="%s">%s</a>' % (main, q(e['name']))) if main else '<span class="card-en">%s</span>' % q(e['name'])
         if e.get('summary'):
             held = '<ul class="card-sum">%s</ul>' % ''.join(
                 '<li><b>%s</b> %s</li>' % (q(k), q(v)) for k, v in e['summary'])
@@ -427,21 +156,21 @@ def index_page(entries, template, deds=None):
             held = '<p class="card-sum none">No records held yet, only the place name from Logainm.</p>'
         cards.append(
             '        <article class="townland-card" data-slug="%s" data-name="%s"%s>\n'
-            '            <a class="card-en" href="%s">%s</a>\n'
+            '            %s\n'
             '            %s\n'
             '            %s\n'
             '            <div class="card-foot">\n'
             '                <span class="card-tag">%s</span>\n'
             '                %s\n'
             '            </div>\n'
-            '        </article>\n' % (q(e['slug']), q(e['name']), where, main, q(e['name']), ga, held, INDEX_TAGS[e['state']], links))
+            '        </article>\n' % (q(e['slug']), q(e['name']), where, name_link, ga, held, INDEX_TAGS[e['state']], links))
     features = []
     for e in entries:
         if not (e['lat'] and e['lng']) or e['state'] == 'empty':
             continue
         props = {'name': e['name'], 'name_ga': e['name_ga'], 'slug': e['slug'], 'kind': KIND[e['state']],
                  'doc': bool(e.get('doc')), 'ded': str(e.get('ded', '')),
-                 'href': './%s/story.html' % e['slug'] if e.get('doc') else './%s/' % e['slug']}
+                 'href': './%s/story.html' % e['slug'] if e.get('doc') else ''}
         if e.get('outline'):
             props['outline'] = e['outline']          # drawn instead of the dot; the point stays as the centre
         features.append({'type': 'Feature', 'properties': props,
@@ -460,6 +189,7 @@ def index_page(entries, template, deds=None):
 def write_index(entries):
     """Rewrite docs/index.html from engine/index.html. Never edit docs/index.html by hand."""
     page = index_page(entries, (ROOT / 'engine' / 'index.html').read_text(encoding='utf-8'), load_ded_outlines())
+    (ROOT / 'docs').mkdir(exist_ok=True)
     (ROOT / 'docs' / 'index.html').write_text(page, encoding='utf-8')
     states = [e['state'] for e in entries]
     print('wrote docs/index.html:', len(entries), 'places on the map index (%d studies, %d with census, %d place records)'
@@ -488,9 +218,9 @@ def case_summary(base, label, today=None):
         if n:
             out.append(("Griffith's Valuation", '%d entries in the index' % n))
     try:
-        from tools import build_timeline as bt
+        from tools import events as bt
     except ImportError:                  # run as a script: python tools/build.py
-        import build_timeline as bt
+        import events as bt
     n = len(bt.baptism_events(label, today or datetime.date.today())[0])
     if n:
         out.append(('Parish register', '%d %s, Tawnawilly (NLI)' % (n, 'baptism' if n == 1 else 'baptisms')))
@@ -531,17 +261,11 @@ def index_entries():
 
 
 def main(argv):
-    if len(argv) != 1:
+    if argv:
         sys.exit(__doc__)
-    if argv[0] != '--all':
-        build(argv[0])
-    else:
-        counts = {'ready': 0, 'partial': 0, 'empty': 0}
-        for base in sorted((ROOT / 'townlands').iterdir()):
-            if base.is_dir():
-                counts[build(base.name)] += 1
-        print('Cases: %(ready)d studies, %(partial)d partial, %(empty)d empty. Every case with a place record has a page.' % counts)
-    write_index(index_entries())
+    entries = index_entries()
+    write_index(entries)
+    print('%d of %d places have a story page.' % (sum(1 for e in entries if e.get('doc')), len(entries)))
 
 
 if __name__ == '__main__':

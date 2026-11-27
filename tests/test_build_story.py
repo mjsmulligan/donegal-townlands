@@ -665,22 +665,19 @@ class ThinPlayerTests(unittest.TestCase):
         self.assertTrue(seen['controls'])
 
 
-if __name__ == '__main__':
-    unittest.main()
-
 
 class EstateEventTests(unittest.TestCase):
-    """build_timeline.estate_events reads the normalised estate observations for a case."""
+    """events.estate_events reads the normalised estate observations for a case."""
 
     def test_druminnin_has_the_1825_and_1831_events(self):
-        from tools import build_timeline as bt
+        from tools import events as bt
         evs = bt.estate_events(bt.ROOT / 'townlands' / 'druminnin', 'Druminnin')
         self.assertEqual([e['date']['label'] for e in evs], ['1825', '1831'])
         self.assertEqual(evs[0]['estate'], {'holdings': 17, 'tenants': 22})
         self.assertEqual(evs[1]['estate'], {'holdings': 22, 'tenants': 22})
 
     def test_a_case_without_estate_records_has_none(self):
-        from tools import build_timeline as bt
+        from tools import events as bt
         self.assertEqual(bt.estate_events(bt.ROOT / 'townlands' / 'cullionboy', 'Cullionboy'), [])
 
 
@@ -699,14 +696,14 @@ class FamilyBeatTests(unittest.TestCase):
                          'The families of Cullionboy')
 
     def test_only_accepted_crosswalk_rows_make_events(self):
-        from tools import build_timeline as bt
+        from tools import events as bt
         evs = bt.family_events(bt.ROOT / 'townlands' / 'druminnin', 'Druminnin')
         self.assertEqual(len(evs), 8)
         self.assertNotIn('Harraghy', ' '.join(e['title'] for e in evs))
         self.assertNotIn('Gillespie', ' '.join(e['title'] for e in evs))
 
     def test_a_case_without_a_crosswalk_has_none(self):
-        from tools import build_timeline as bt
+        from tools import events as bt
         self.assertEqual(bt.family_events(bt.ROOT / 'townlands' / 'cullionboy', 'Cullionboy'), [])
 
 
@@ -900,3 +897,18 @@ class FamilyThreadTests(unittest.TestCase):
         self.assertEqual(story['time']['label'], 'The Kelly family')
         extra = [e for t in fam['threads'] for e in t['events'] + [t['presence']]]
         self.assertEqual(bd.check_document(doc, events + extra, 5), [])
+
+
+class HedgeCheckTests(unittest.TestCase):
+    def test_a_surname_is_not_a_hedge(self):
+        self.assertFalse(bd.hedge_in('The Likelys and the Likely family lived here.', 'likely'))
+        self.assertFalse(bd.hedge_in('Mary Likely was 40.', 'likely'))
+
+    def test_a_hedge_is_still_caught_in_the_middle_or_the_start_of_a_sentence(self):
+        self.assertTrue(bd.hedge_in('They were probably cousins.', 'probably'))
+        self.assertTrue(bd.hedge_in('It is likely they were cousins.', 'likely'))
+        self.assertTrue(bd.hedge_in('Two families lived here. Perhaps they were cousins.', 'perhaps'))
+
+
+if __name__ == '__main__':
+    unittest.main()

@@ -1,4 +1,4 @@
-"""The map index (RO-11 to RO-14): story links, walk fallback, no brown, credit."""
+"""The map index (RO-11 to RO-14): story links, no link without a story, no brown, credit."""
 import unittest
 from tools import build
 
@@ -11,16 +11,16 @@ class IndexTests(unittest.TestCase):
     def page(self):
         return build.index_page([E2, E1], TEMPLATE)
 
-    def test_story_card_plays_first_and_keeps_the_walk(self):
+    def test_story_card_plays_the_story(self):
         p = self.page()
         self.assertIn('<a class="pill main" href="./alpha/story.html">Play the story</a>', p)
-        self.assertIn('<a class="pill" href="./alpha/">Gallery walk</a>', p)
         self.assertIn('<a class="card-en" href="./alpha/story.html">Alpha</a>', p)
+        self.assertNotIn('Gallery walk', p)
 
-    def test_card_without_story_opens_the_walk(self):
+    def test_card_without_story_has_a_name_and_no_link(self):
         p = self.page()
-        self.assertIn('<a class="card-en" href="./beta/">Beta</a>', p)
-        self.assertNotIn('beta/story.html', p)
+        self.assertIn('<span class="card-en">Beta</span>', p)
+        self.assertNotIn('./beta/', p)
 
     def test_case_without_coordinates_has_a_card_and_no_pin(self):
         p = self.page()

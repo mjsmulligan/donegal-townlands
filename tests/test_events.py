@@ -1,6 +1,6 @@
-"""Tests for tools/build_timeline.py. Run from the repo root:
+"""Tests for tools/events.py. Run from the repo root:
 
-    python -m unittest tests.test_build_timeline -v
+    python -m unittest tests.test_events -v
 
 The register tests use a temporary CSV. The real repository is not written to."""
 
@@ -10,7 +10,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from tools import build_timeline as bt
+from tools import events as bt
 
 TODAY = datetime.date(2026, 11, 17)
 COLS = ['row_id', 'record_type', 'page', 'record_no', 'image_url', 'reading_1_source', 'reading_1',

@@ -1,4 +1,4 @@
-"""Tests for tools/attach_griffiths.py and the names-only Griffith's plate. Run from the repo root:
+"""Tests for tools/attach_griffiths.py. Run from the repo root:
 
     python -m unittest tests.test_attach_griffiths -v
 
@@ -15,8 +15,6 @@ import unittest
 from pathlib import Path
 
 from tools import attach_griffiths as ag
-from tools import build
-from tests.test_build import BuildTests as _B
 
 FIELDS = ["townland", "civil_parish", "county", "barony", "askaboutireland_place_id", "askaboutireland_record_id",
           "occupier_surname_as_indexed", "occupier_forename_as_indexed", "original_page_position_rs",
@@ -131,40 +129,6 @@ class AttachTests(unittest.TestCase):
         (self.root / "townlands" / "testland" / "content.json").write_text(json.dumps(authored))
         n, out = self.run_it()
         self.assertEqual(n, 2)
-
-
-class NamesOnlyPlateTests(_B):
-    """Build a case that holds only the index, and one that also has a transcription."""
-
-    def index_payload(self):
-        return {"townland": "Druminnin", "rows": [
-            {"record_id": 1, "position": 3, "surname": "GILDEA", "forename": "PATRICK", "role": "occupier", "tier": 1,
-             "listing_url": "https://x/l", "listing_page": 1},
-            {"record_id": 2, "position": 4, "surname": "", "forename": "", "role": "blank_entry", "tier": 1,
-             "listing_url": "https://x/l", "listing_page": 1}]}
-
-    def test_index_only_case_carries_names_and_says_so(self):
-        self.case("druminnin", {"place.json": {**__import__("tests.test_build", fromlist=["PLACE"]).PLACE},
-                                "records/griffiths_index.json": self.index_payload()})
-        self.run_build("druminnin")
-        d = self.data_of("druminnin")
-        self.assertEqual(d["griffiths_index"]["rows"][0]["surname"], "GILDEA")
-        frames = {f[0]: f for f in d["content"]["plates"]["not_yet_hung"]["frames"]}
-        self.assertEqual(frames["Griffith's Valuation"][2:], ["Names only.", True])
-        self.assertTrue(any("only the askaboutireland index" in q for q in d["content"]["questions"]))
-        self.assertIn("Griffith's, the names", self.page("druminnin"))
-
-    def test_a_transcription_wins_over_the_index(self):
-        P = __import__("tests.test_build", fromlist=["PLACE"]).PLACE
-        self.case("druminnin", {"place.json": {**P}, "records/griffiths_index.json": self.index_payload(),
-                                "townland.json": {"name": "Druminnin"},
-                                "content.json": {"griffiths": {"rows": [{"lot": "1", "hd": "1", "occ": "Patrick Gildea"}],
-                                                                "sheet": {"heading": "X", "sub": "", "printed_total": [], "foot": ""}}}})
-        self.run_build("druminnin")
-        d = self.data_of("druminnin")
-        self.assertNotIn("griffiths_index", d)
-        frames = {f[0]: f for f in d["content"]["plates"]["not_yet_hung"]["frames"]}
-        self.assertEqual(frames["Griffith's Valuation"][2], "Held.")
 
 
 if __name__ == "__main__":
