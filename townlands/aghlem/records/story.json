@@ -10,6 +10,48 @@
  },
  "chapters": [
   {
+   "id": "aghlem:ch:intro",
+   "title": "Aghlem",
+   "beats": [
+    {
+     "id": "aghlem:beat:title:title",
+     "kind": "title",
+     "chapter": "aghlem:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1874-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "aghlem",
+      "name": "Aghlem",
+      "logainm_id": "14271",
+      "lat": 54.65671,
+      "lon": -8.021811,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Aghlem, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Aghlem and its eleven families, from 1874 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "aghlem:baptism:TAW-B-p010-r103",
+       "aghlem:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 10400,
+     "audio": null
+    }
+   ]
+  },
+  {
    "id": "aghlem:ch:register",
    "title": "The parish register",
    "beats": [
@@ -46,48 +88,6 @@
       "certainty": "stated"
      },
      "duration_ms": 10000,
-     "audio": null
-    }
-   ]
-  },
-  {
-   "id": "aghlem:ch:intro",
-   "title": "Aghlem",
-   "beats": [
-    {
-     "id": "aghlem:beat:title:title",
-     "kind": "title",
-     "chapter": "aghlem:ch:intro",
-     "time": {
-      "label": "",
-      "iso": "",
-      "sort": "1874-02-01",
-      "approximate": true
-     },
-     "place": {
-      "townland": "aghlem",
-      "name": "Aghlem",
-      "logainm_id": "14271",
-      "lat": 54.65671,
-      "lon": -8.021811,
-      "camera": "parish"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": ""
-     },
-     "caption": "Aghlem, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Aghlem and its eleven families, from 1874 to 1926.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "aghlem:baptism:TAW-B-p010-r103",
-       "aghlem:census:1926"
-      ],
-      "basis": "place_record",
-      "certainty": "stated"
-     },
-     "duration_ms": 10400,
      "audio": null
     }
    ]

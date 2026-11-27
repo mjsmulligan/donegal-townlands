@@ -10,6 +10,48 @@
  },
  "chapters": [
   {
+   "id": "clardrumbarren:ch:intro",
+   "title": "Clardrumbarren",
+   "beats": [
+    {
+     "id": "clardrumbarren:beat:title:title",
+     "kind": "title",
+     "chapter": "clardrumbarren:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1874-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clardrumbarren",
+      "name": "Clardrumbarren",
+      "logainm_id": "13961",
+      "lat": 54.673269,
+      "lon": -8.071599,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Clardrumbarren, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Clardrumbarren and its two families, from 1874 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clardrumbarren:baptism:TAW-B-p012-r146",
+       "clardrumbarren:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 10400,
+     "audio": null
+    }
+   ]
+  },
+  {
    "id": "clardrumbarren:ch:register",
    "title": "The parish register",
    "beats": [
@@ -46,48 +88,6 @@
       "certainty": "stated"
      },
      "duration_ms": 9200,
-     "audio": null
-    }
-   ]
-  },
-  {
-   "id": "clardrumbarren:ch:intro",
-   "title": "Clardrumbarren",
-   "beats": [
-    {
-     "id": "clardrumbarren:beat:title:title",
-     "kind": "title",
-     "chapter": "clardrumbarren:ch:intro",
-     "time": {
-      "label": "",
-      "iso": "",
-      "sort": "1874-08-30",
-      "approximate": true
-     },
-     "place": {
-      "townland": "clardrumbarren",
-      "name": "Clardrumbarren",
-      "logainm_id": "13961",
-      "lat": 54.673269,
-      "lon": -8.071599,
-      "camera": "parish"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": ""
-     },
-     "caption": "Clardrumbarren, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Clardrumbarren and its two families, from 1874 to 1926.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "clardrumbarren:baptism:TAW-B-p012-r146",
-       "clardrumbarren:census:1926"
-      ],
-      "basis": "place_record",
-      "certainty": "stated"
-     },
-     "duration_ms": 10400,
      "audio": null
     }
    ]

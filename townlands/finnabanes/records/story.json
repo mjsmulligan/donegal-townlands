@@ -10,6 +10,48 @@
  },
  "chapters": [
   {
+   "id": "finnabanes:ch:intro",
+   "title": "Finnabanes",
+   "beats": [
+    {
+     "id": "finnabanes:beat:title:title",
+     "kind": "title",
+     "chapter": "finnabanes:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1874-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "finnabanes",
+      "name": "Finnabanes",
+      "logainm_id": "13971",
+      "lat": 54.671751,
+      "lon": -8.037353,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Finnabanes, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Finnabanes and its fifteen families, from 1874 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "finnabanes:baptism:TAW-B-p010-r114",
+       "finnabanes:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 10400,
+     "audio": null
+    }
+   ]
+  },
+  {
    "id": "finnabanes:ch:register",
    "title": "The parish register",
    "beats": [
@@ -46,48 +88,6 @@
       "certainty": "stated"
      },
      "duration_ms": 9200,
-     "audio": null
-    }
-   ]
-  },
-  {
-   "id": "finnabanes:ch:intro",
-   "title": "Finnabanes",
-   "beats": [
-    {
-     "id": "finnabanes:beat:title:title",
-     "kind": "title",
-     "chapter": "finnabanes:ch:intro",
-     "time": {
-      "label": "",
-      "iso": "",
-      "sort": "1874-05-05",
-      "approximate": true
-     },
-     "place": {
-      "townland": "finnabanes",
-      "name": "Finnabanes",
-      "logainm_id": "13971",
-      "lat": 54.671751,
-      "lon": -8.037353,
-      "camera": "parish"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": ""
-     },
-     "caption": "Finnabanes, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Finnabanes and its fifteen families, from 1874 to 1926.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "finnabanes:baptism:TAW-B-p010-r114",
-       "finnabanes:census:1926"
-      ],
-      "basis": "place_record",
-      "certainty": "stated"
-     },
-     "duration_ms": 10400,
      "audio": null
     }
    ]

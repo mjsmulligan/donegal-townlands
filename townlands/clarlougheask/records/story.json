@@ -10,6 +10,48 @@
  },
  "chapters": [
   {
+   "id": "clarlougheask:ch:intro",
+   "title": "Clarlougheask",
+   "beats": [
+    {
+     "id": "clarlougheask:beat:title:title",
+     "kind": "title",
+     "chapter": "clarlougheask:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1873-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarlougheask",
+      "name": "Clarlougheask",
+      "logainm_id": "13963",
+      "lat": 54.678353,
+      "lon": -8.054077,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Clarlougheask, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Clarlougheask and its fifteen families, from 1873 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarlougheask:baptism:TAW-B-p005-r18",
+       "clarlougheask:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 10400,
+     "audio": null
+    }
+   ]
+  },
+  {
    "id": "clarlougheask:ch:register",
    "title": "The parish register",
    "beats": [
@@ -46,48 +88,6 @@
       "certainty": "stated"
      },
      "duration_ms": 10000,
-     "audio": null
-    }
-   ]
-  },
-  {
-   "id": "clarlougheask:ch:intro",
-   "title": "Clarlougheask",
-   "beats": [
-    {
-     "id": "clarlougheask:beat:title:title",
-     "kind": "title",
-     "chapter": "clarlougheask:ch:intro",
-     "time": {
-      "label": "",
-      "iso": "",
-      "sort": "1873-02-16",
-      "approximate": true
-     },
-     "place": {
-      "townland": "clarlougheask",
-      "name": "Clarlougheask",
-      "logainm_id": "13963",
-      "lat": 54.678353,
-      "lon": -8.054077,
-      "camera": "parish"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": ""
-     },
-     "caption": "Clarlougheask, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Clarlougheask and its fifteen families, from 1873 to 1926.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "clarlougheask:baptism:TAW-B-p005-r18",
-       "clarlougheask:census:1926"
-      ],
-      "basis": "place_record",
-      "certainty": "stated"
-     },
-     "duration_ms": 10400,
      "audio": null
     }
    ]

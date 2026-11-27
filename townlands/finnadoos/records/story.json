@@ -10,6 +10,48 @@
  },
  "chapters": [
   {
+   "id": "finnadoos:ch:intro",
+   "title": "Finnadoos",
+   "beats": [
+    {
+     "id": "finnadoos:beat:title:title",
+     "kind": "title",
+     "chapter": "finnadoos:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1873-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "finnadoos",
+      "name": "Finnadoos",
+      "logainm_id": "14280",
+      "lat": 54.666055,
+      "lon": -8.026379,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Finnadoos, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Finnadoos and its thirteen families, from 1873 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "finnadoos:baptism:TAW-B-p005-r19",
+       "finnadoos:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 10400,
+     "audio": null
+    }
+   ]
+  },
+  {
    "id": "finnadoos:ch:register",
    "title": "The parish register",
    "beats": [
@@ -46,48 +88,6 @@
       "certainty": "stated"
      },
      "duration_ms": 10000,
-     "audio": null
-    }
-   ]
-  },
-  {
-   "id": "finnadoos:ch:intro",
-   "title": "Finnadoos",
-   "beats": [
-    {
-     "id": "finnadoos:beat:title:title",
-     "kind": "title",
-     "chapter": "finnadoos:ch:intro",
-     "time": {
-      "label": "",
-      "iso": "",
-      "sort": "1873-02-23",
-      "approximate": true
-     },
-     "place": {
-      "townland": "finnadoos",
-      "name": "Finnadoos",
-      "logainm_id": "14280",
-      "lat": 54.666055,
-      "lon": -8.026379,
-      "camera": "parish"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": ""
-     },
-     "caption": "Finnadoos, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Finnadoos and its thirteen families, from 1873 to 1926.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "finnadoos:baptism:TAW-B-p005-r19",
-       "finnadoos:census:1926"
-      ],
-      "basis": "place_record",
-      "certainty": "stated"
-     },
-     "duration_ms": 10400,
      "audio": null
     }
    ]

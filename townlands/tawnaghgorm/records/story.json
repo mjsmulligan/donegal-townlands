@@ -10,6 +10,48 @@
  },
  "chapters": [
   {
+   "id": "tawnaghgorm:ch:intro",
+   "title": "Tawnaghgorm",
+   "beats": [
+    {
+     "id": "tawnaghgorm:beat:title:title",
+     "kind": "title",
+     "chapter": "tawnaghgorm:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1873-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tawnaghgorm",
+      "name": "Tawnaghgorm",
+      "logainm_id": "14246",
+      "lat": 54.702174,
+      "lon": -8.024602,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Tawnaghgorm, in Irish Tamhnach Ghorm, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Tawnaghgorm and its fifteen families, from 1873 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tawnaghgorm:baptism:TAW-B-p006-r31",
+       "tawnaghgorm:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 12000,
+     "audio": null
+    }
+   ]
+  },
+  {
    "id": "tawnaghgorm:ch:register",
    "title": "The parish register",
    "beats": [
@@ -46,48 +88,6 @@
       "certainty": "stated"
      },
      "duration_ms": 10000,
-     "audio": null
-    }
-   ]
-  },
-  {
-   "id": "tawnaghgorm:ch:intro",
-   "title": "Tawnaghgorm",
-   "beats": [
-    {
-     "id": "tawnaghgorm:beat:title:title",
-     "kind": "title",
-     "chapter": "tawnaghgorm:ch:intro",
-     "time": {
-      "label": "",
-      "iso": "",
-      "sort": "1873-03-27",
-      "approximate": true
-     },
-     "place": {
-      "townland": "tawnaghgorm",
-      "name": "Tawnaghgorm",
-      "logainm_id": "14246",
-      "lat": 54.702174,
-      "lon": -8.024602,
-      "camera": "parish"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": ""
-     },
-     "caption": "Tawnaghgorm, in Irish Tamhnach Ghorm, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Tawnaghgorm and its fifteen families, from 1873 to 1926.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "tawnaghgorm:baptism:TAW-B-p006-r31",
-       "tawnaghgorm:census:1926"
-      ],
-      "basis": "place_record",
-      "certainty": "stated"
-     },
-     "duration_ms": 12000,
      "audio": null
     }
    ]

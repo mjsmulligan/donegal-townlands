@@ -10,6 +10,48 @@
  },
  "chapters": [
   {
+   "id": "corracramph:ch:intro",
+   "title": "Corracramph",
+   "beats": [
+    {
+     "id": "corracramph:beat:title:title",
+     "kind": "title",
+     "chapter": "corracramph:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1873-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "corracramph",
+      "name": "Corracramph",
+      "logainm_id": "14240",
+      "lat": 54.715615,
+      "lon": -8.026325,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Corracramph, in Irish Corr an Chreamha, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Corracramph and its sixteen families, from 1873 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "corracramph:baptism:TAW-B-p008-r64",
+       "corracramph:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 12400,
+     "audio": null
+    }
+   ]
+  },
+  {
    "id": "corracramph:ch:register",
    "title": "The parish register",
    "beats": [
@@ -46,48 +88,6 @@
       "certainty": "stated"
      },
      "duration_ms": 10000,
-     "audio": null
-    }
-   ]
-  },
-  {
-   "id": "corracramph:ch:intro",
-   "title": "Corracramph",
-   "beats": [
-    {
-     "id": "corracramph:beat:title:title",
-     "kind": "title",
-     "chapter": "corracramph:ch:intro",
-     "time": {
-      "label": "",
-      "iso": "",
-      "sort": "1873-08-24",
-      "approximate": true
-     },
-     "place": {
-      "townland": "corracramph",
-      "name": "Corracramph",
-      "logainm_id": "14240",
-      "lat": 54.715615,
-      "lon": -8.026325,
-      "camera": "parish"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": ""
-     },
-     "caption": "Corracramph, in Irish Corr an Chreamha, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Corracramph and its sixteen families, from 1873 to 1926.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "corracramph:baptism:TAW-B-p008-r64",
-       "corracramph:census:1926"
-      ],
-      "basis": "place_record",
-      "certainty": "stated"
-     },
-     "duration_ms": 12400,
      "audio": null
     }
    ]

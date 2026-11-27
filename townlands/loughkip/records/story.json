@@ -10,6 +10,48 @@
  },
  "chapters": [
   {
+   "id": "loughkip:ch:intro",
+   "title": "Loughkip",
+   "beats": [
+    {
+     "id": "loughkip:beat:title:title",
+     "kind": "title",
+     "chapter": "loughkip:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1873-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "loughkip",
+      "name": "Loughkip",
+      "logainm_id": "14283",
+      "lat": 54.649977,
+      "lon": -7.995207,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Loughkip, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Loughkip and its eight families, from 1873 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "loughkip:baptism:TAW-B-p004-r12",
+       "loughkip:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 10400,
+     "audio": null
+    }
+   ]
+  },
+  {
    "id": "loughkip:ch:register",
    "title": "The parish register",
    "beats": [
@@ -46,48 +88,6 @@
       "certainty": "stated"
      },
      "duration_ms": 10000,
-     "audio": null
-    }
-   ]
-  },
-  {
-   "id": "loughkip:ch:intro",
-   "title": "Loughkip",
-   "beats": [
-    {
-     "id": "loughkip:beat:title:title",
-     "kind": "title",
-     "chapter": "loughkip:ch:intro",
-     "time": {
-      "label": "",
-      "iso": "",
-      "sort": "1873-01-28",
-      "approximate": true
-     },
-     "place": {
-      "townland": "loughkip",
-      "name": "Loughkip",
-      "logainm_id": "14283",
-      "lat": 54.649977,
-      "lon": -7.995207,
-      "camera": "parish"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": ""
-     },
-     "caption": "Loughkip, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Loughkip and its eight families, from 1873 to 1926.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "loughkip:baptism:TAW-B-p004-r12",
-       "loughkip:census:1926"
-      ],
-      "basis": "place_record",
-      "certainty": "stated"
-     },
-     "duration_ms": 10400,
      "audio": null
     }
    ]

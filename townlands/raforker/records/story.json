@@ -10,6 +10,48 @@
  },
  "chapters": [
   {
+   "id": "raforker:ch:intro",
+   "title": "Raforker",
+   "beats": [
+    {
+     "id": "raforker:beat:title:title",
+     "kind": "title",
+     "chapter": "raforker:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1873-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "raforker",
+      "name": "Raforker",
+      "logainm_id": "14039",
+      "lat": 54.647635,
+      "lon": -8.105515,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Raforker, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Raforker and its four families, from 1873 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "raforker:baptism:TAW-B-p009-r86",
+       "raforker:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 10400,
+     "audio": null
+    }
+   ]
+  },
+  {
    "id": "raforker:ch:register",
    "title": "The parish register",
    "beats": [
@@ -46,48 +88,6 @@
       "certainty": "stated"
      },
      "duration_ms": 9200,
-     "audio": null
-    }
-   ]
-  },
-  {
-   "id": "raforker:ch:intro",
-   "title": "Raforker",
-   "beats": [
-    {
-     "id": "raforker:beat:title:title",
-     "kind": "title",
-     "chapter": "raforker:ch:intro",
-     "time": {
-      "label": "",
-      "iso": "",
-      "sort": "1873-12-06",
-      "approximate": true
-     },
-     "place": {
-      "townland": "raforker",
-      "name": "Raforker",
-      "logainm_id": "14039",
-      "lat": 54.647635,
-      "lon": -8.105515,
-      "camera": "parish"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": ""
-     },
-     "caption": "Raforker, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Raforker and its four families, from 1873 to 1926.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "raforker:baptism:TAW-B-p009-r86",
-       "raforker:census:1926"
-      ],
-      "basis": "place_record",
-      "certainty": "stated"
-     },
-     "duration_ms": 10400,
      "audio": null
     }
    ]

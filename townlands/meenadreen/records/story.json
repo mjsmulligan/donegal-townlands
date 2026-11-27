@@ -10,6 +10,48 @@
  },
  "chapters": [
   {
+   "id": "meenadreen:ch:intro",
+   "title": "Meenadreen",
+   "beats": [
+    {
+     "id": "meenadreen:beat:title:title",
+     "kind": "title",
+     "chapter": "meenadreen:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1873-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "meenadreen",
+      "name": "Meenadreen",
+      "logainm_id": "14284",
+      "lat": 54.658474,
+      "lon": -7.983221,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Meenadreen, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Meenadreen and its fifteen families, from 1873 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "meenadreen:baptism:TAW-B-p008-r77",
+       "meenadreen:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 10400,
+     "audio": null
+    }
+   ]
+  },
+  {
    "id": "meenadreen:ch:register",
    "title": "The parish register",
    "beats": [
@@ -46,48 +88,6 @@
       "certainty": "stated"
      },
      "duration_ms": 10000,
-     "audio": null
-    }
-   ]
-  },
-  {
-   "id": "meenadreen:ch:intro",
-   "title": "Meenadreen",
-   "beats": [
-    {
-     "id": "meenadreen:beat:title:title",
-     "kind": "title",
-     "chapter": "meenadreen:ch:intro",
-     "time": {
-      "label": "",
-      "iso": "",
-      "sort": "1873-11-01",
-      "approximate": true
-     },
-     "place": {
-      "townland": "meenadreen",
-      "name": "Meenadreen",
-      "logainm_id": "14284",
-      "lat": 54.658474,
-      "lon": -7.983221,
-      "camera": "parish"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": ""
-     },
-     "caption": "Meenadreen, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Meenadreen and its fifteen families, from 1873 to 1926.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "meenadreen:baptism:TAW-B-p008-r77",
-       "meenadreen:census:1926"
-      ],
-      "basis": "place_record",
-      "certainty": "stated"
-     },
-     "duration_ms": 10400,
      "audio": null
     }
    ]

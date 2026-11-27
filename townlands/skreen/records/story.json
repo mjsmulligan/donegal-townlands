@@ -10,6 +10,48 @@
  },
  "chapters": [
   {
+   "id": "skreen:ch:intro",
+   "title": "Skreen",
+   "beats": [
+    {
+     "id": "skreen:beat:title:title",
+     "kind": "title",
+     "chapter": "skreen:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1873-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "skreen",
+      "name": "Skreen",
+      "logainm_id": "14299",
+      "lat": 54.643906,
+      "lon": -8.00866,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Skreen. Here is the story of Skreen and its sixteen families, from 1874 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "skreen:baptism:TAW-B-p013-r163",
+       "skreen:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6000,
+     "audio": null
+    }
+   ]
+  },
+  {
    "id": "skreen:ch:register",
    "title": "The parish register",
    "beats": [
@@ -46,48 +88,6 @@
       "certainty": "stated"
      },
      "duration_ms": 10000,
-     "audio": null
-    }
-   ]
-  },
-  {
-   "id": "skreen:ch:intro",
-   "title": "Skreen",
-   "beats": [
-    {
-     "id": "skreen:beat:title:title",
-     "kind": "title",
-     "chapter": "skreen:ch:intro",
-     "time": {
-      "label": "",
-      "iso": "",
-      "sort": "1874-11-09",
-      "approximate": true
-     },
-     "place": {
-      "townland": "skreen",
-      "name": "Skreen",
-      "logainm_id": "14299",
-      "lat": 54.643906,
-      "lon": -8.00866,
-      "camera": "parish"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": ""
-     },
-     "caption": "Skreen. Here is the story of Skreen and its sixteen families, from 1874 to 1926.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "skreen:baptism:TAW-B-p013-r163",
-       "skreen:census:1926"
-      ],
-      "basis": "place_record",
-      "certainty": "stated"
-     },
-     "duration_ms": 6000,
      "audio": null
     }
    ]

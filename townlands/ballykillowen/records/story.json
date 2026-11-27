@@ -10,6 +10,48 @@
  },
  "chapters": [
   {
+   "id": "ballykillowen:ch:intro",
+   "title": "Ballykillowen",
+   "beats": [
+    {
+     "id": "ballykillowen:beat:title:title",
+     "kind": "title",
+     "chapter": "ballykillowen:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1875-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Ballykillowen. Here is the story of Ballykillowen and its twenty families, from 1875 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:baptism:TAW-B-p016-r207",
+       "ballykillowen:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6000,
+     "audio": null
+    }
+   ]
+  },
+  {
    "id": "ballykillowen:ch:register",
    "title": "The parish register",
    "beats": [
@@ -46,48 +88,6 @@
       "certainty": "stated"
      },
      "duration_ms": 9200,
-     "audio": null
-    }
-   ]
-  },
-  {
-   "id": "ballykillowen:ch:intro",
-   "title": "Ballykillowen",
-   "beats": [
-    {
-     "id": "ballykillowen:beat:title:title",
-     "kind": "title",
-     "chapter": "ballykillowen:ch:intro",
-     "time": {
-      "label": "",
-      "iso": "",
-      "sort": "1875-05-02",
-      "approximate": true
-     },
-     "place": {
-      "townland": "ballykillowen",
-      "name": "Ballykillowen",
-      "logainm_id": "14133",
-      "lat": 54.636841,
-      "lon": -8.023426,
-      "camera": "parish"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": ""
-     },
-     "caption": "Ballykillowen. Here is the story of Ballykillowen and its twenty families, from 1875 to 1926.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "ballykillowen:baptism:TAW-B-p016-r207",
-       "ballykillowen:census:1926"
-      ],
-      "basis": "place_record",
-      "certainty": "stated"
-     },
-     "duration_ms": 6000,
      "audio": null
     }
    ]

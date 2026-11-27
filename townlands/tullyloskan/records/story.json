@@ -10,6 +10,48 @@
  },
  "chapters": [
   {
+   "id": "tullyloskan:ch:intro",
+   "title": "Tullyloskan",
+   "beats": [
+    {
+     "id": "tullyloskan:beat:title:title",
+     "kind": "title",
+     "chapter": "tullyloskan:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1873-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullyloskan",
+      "name": "Tullyloskan",
+      "logainm_id": "14286",
+      "lat": 54.644115,
+      "lon": -8.07139,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Tullyloskan, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Tullyloskan and its eight families, from 1873 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullyloskan:baptism:TAW-B-p004-r9",
+       "tullyloskan:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 10400,
+     "audio": null
+    }
+   ]
+  },
+  {
    "id": "tullyloskan:ch:register",
    "title": "The parish register",
    "beats": [
@@ -46,48 +88,6 @@
       "certainty": "stated"
      },
      "duration_ms": 9200,
-     "audio": null
-    }
-   ]
-  },
-  {
-   "id": "tullyloskan:ch:intro",
-   "title": "Tullyloskan",
-   "beats": [
-    {
-     "id": "tullyloskan:beat:title:title",
-     "kind": "title",
-     "chapter": "tullyloskan:ch:intro",
-     "time": {
-      "label": "",
-      "iso": "",
-      "sort": "1873-01-21",
-      "approximate": true
-     },
-     "place": {
-      "townland": "tullyloskan",
-      "name": "Tullyloskan",
-      "logainm_id": "14286",
-      "lat": 54.644115,
-      "lon": -8.07139,
-      "camera": "parish"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": ""
-     },
-     "caption": "Tullyloskan, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Tullyloskan and its eight families, from 1873 to 1926.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "tullyloskan:baptism:TAW-B-p004-r9",
-       "tullyloskan:census:1926"
-      ],
-      "basis": "place_record",
-      "certainty": "stated"
-     },
-     "duration_ms": 10400,
      "audio": null
     }
    ]
