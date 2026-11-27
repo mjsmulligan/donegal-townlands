@@ -52,15 +52,15 @@
    ]
   },
   {
-   "id": "drumnahoul:ch:1901",
-   "title": "1901",
+   "id": "drumnahoul:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "drumnahoul:beat:census:1901",
+     "id": "drumnahoul:beat:census:returns",
      "kind": "census",
-     "chapter": "drumnahoul:ch:1901",
+     "chapter": "drumnahoul:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1926",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -77,33 +77,177 @@
       "stage": "map",
       "open_card": "drumnahoul:census:1901"
      },
-     "caption": "Drumnahoul had 31 people in six households in 1901. Heads of household included Cassidy, Corr and Hammond.",
+     "caption": "The censuses of 1901, 1911 and 1926 counted 31, 29 and 17 people in Drumnahoul, in 6, 7 and 1 households. Heads of household included Cassidy, Corr and Hammond.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "drumnahoul:census:1901"
+       "drumnahoul:census:1901",
+       "drumnahoul:census:1911",
+       "drumnahoul:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 6800,
+     "duration_ms": 11600,
      "audio": null,
      "counts": {
-      "people": 31,
-      "households": 6
+      "returns": [
+       {
+        "year": "1901",
+        "people": 31,
+        "households": 6
+       },
+       {
+        "year": "1911",
+        "people": 29,
+        "households": 7
+       },
+       {
+        "year": "1926",
+        "people": 17,
+        "households": 1
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "drumnahoul:ch:1911",
-   "title": "1911",
+   "id": "drumnahoul:ch:families",
+   "title": "The families of Drumnahoul",
    "beats": [
     {
-     "id": "drumnahoul:beat:census:1911",
-     "kind": "census",
-     "chapter": "drumnahoul:ch:1911",
+     "id": "drumnahoul:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "drumnahoul:ch:families",
+     "time": {
+      "label": "The families of Drumnahoul",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumnahoul",
+      "name": "Drumnahoul",
+      "logainm_id": "14279",
+      "lat": 54.655672,
+      "lon": -8.046802,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumnahoul:census:1901"
+     },
+     "caption": "Here are the families of Drumnahoul, from 1901 to 1926. First, the Corr and Gallagher families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumnahoul:census:1901",
+       "drumnahoul:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "drumnahoul:family:02",
+      "label": "Corr",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumnahoul:ch:family-02",
+   "title": "The Corr family",
+   "beats": [
+    {
+     "id": "drumnahoul:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "drumnahoul:ch:family-02",
+     "time": {
+      "label": "The Corr family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumnahoul",
+      "name": "Drumnahoul",
+      "logainm_id": "14279",
+      "lat": 54.655672,
+      "lon": -8.046802,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumnahoul:familypresence:02"
+     },
+     "caption": "The Corr family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumnahoul:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drumnahoul:family:02",
+      "label": "Corr",
+      "run": true
+     }
+    },
+    {
+     "id": "drumnahoul:beat:familycensus:02-1901",
+     "kind": "familycensus",
+     "chapter": "drumnahoul:ch:family-02",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumnahoul",
+      "name": "Drumnahoul",
+      "logainm_id": "14279",
+      "lat": 54.655672,
+      "lon": -8.046802,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumnahoul:familycensus:02:1901"
+     },
+     "caption": "Drumnahoul had one Corr household in 1901, headed by Lawrence.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumnahoul:familycensus:02:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumnahoul:family:02",
+      "label": "Corr",
+      "run": true
+     }
+    },
+    {
+     "id": "drumnahoul:beat:familycensus:02-1911",
+     "kind": "familycensus",
+     "chapter": "drumnahoul:ch:family-02",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -120,35 +264,30 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "drumnahoul:census:1911"
+      "open_card": "drumnahoul:familycensus:02:1911"
      },
-     "caption": "Drumnahoul had 29 people in seven households in 1911. Heads of household included Hammond, Lawn and Cassidy.",
+     "caption": "Drumnahoul had one Corr household in 1911, headed by Lawrence.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "drumnahoul:census:1911"
+       "drumnahoul:familycensus:02:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6800,
+     "duration_ms": 4000,
      "audio": null,
-     "counts": {
-      "people": 29,
-      "households": 7
+     "thread": {
+      "id": "drumnahoul:family:02",
+      "label": "Corr",
+      "run": true
      }
-    }
-   ]
-  },
-  {
-   "id": "drumnahoul:ch:1926",
-   "title": "1926",
-   "beats": [
+    },
     {
-     "id": "drumnahoul:beat:census:1926",
-     "kind": "census",
-     "chapter": "drumnahoul:ch:1926",
+     "id": "drumnahoul:beat:familycensus:02-1926",
+     "kind": "familycensus",
+     "chapter": "drumnahoul:ch:family-02",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -165,25 +304,158 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "drumnahoul:census:1926"
+      "open_card": "drumnahoul:familycensus:02:1926"
      },
-     "caption": "Drumnahoul had seventeen people in one household in 1926. Heads of household included Corr, Gallagher and McMullin.",
+     "caption": "Drumnahoul had one Corr household in 1926, headed by Catherine.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "drumnahoul:census:1926"
+       "drumnahoul:familycensus:02:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6800,
+     "duration_ms": 4000,
      "audio": null,
-     "counts": {
-      "people": 17,
-      "households": 1
+     "thread": {
+      "id": "drumnahoul:family:02",
+      "label": "Corr",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumnahoul:ch:family-03",
+   "title": "The Gallagher family",
+   "beats": [
+    {
+     "id": "drumnahoul:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "drumnahoul:ch:family-03",
+     "time": {
+      "label": "The Gallagher family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumnahoul",
+      "name": "Drumnahoul",
+      "logainm_id": "14279",
+      "lat": 54.655672,
+      "lon": -8.046802,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumnahoul:familypresence:03"
+     },
+     "caption": "The Gallagher family appear in the records from 1911 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumnahoul:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drumnahoul:family:03",
+      "label": "Gallagher",
+      "run": true
      }
     },
+    {
+     "id": "drumnahoul:beat:familycensus:03-1911",
+     "kind": "familycensus",
+     "chapter": "drumnahoul:ch:family-03",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumnahoul",
+      "name": "Drumnahoul",
+      "logainm_id": "14279",
+      "lat": 54.655672,
+      "lon": -8.046802,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumnahoul:familycensus:03:1911"
+     },
+     "caption": "Drumnahoul had one Gallagher household in 1911, headed by Catherine.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumnahoul:familycensus:03:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumnahoul:family:03",
+      "label": "Gallagher",
+      "run": true
+     }
+    },
+    {
+     "id": "drumnahoul:beat:familycensus:03-1926",
+     "kind": "familycensus",
+     "chapter": "drumnahoul:ch:family-03",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumnahoul",
+      "name": "Drumnahoul",
+      "logainm_id": "14279",
+      "lat": 54.655672,
+      "lon": -8.046802,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumnahoul:familycensus:03:1926"
+     },
+     "caption": "Drumnahoul had one Gallagher household in 1926, headed by Annie M.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumnahoul:familycensus:03:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drumnahoul:family:03",
+      "label": "Gallagher",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumnahoul:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "drumnahoul:beat:closing:end",
      "kind": "closing",
@@ -218,6 +490,728 @@
      },
      "duration_ms": 4000,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "drumnahoul:ch:family-01",
+   "title": "The Cassidy family",
+   "beats": [
+    {
+     "id": "drumnahoul:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "drumnahoul:ch:family-01",
+     "time": {
+      "label": "The Cassidy family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumnahoul",
+      "name": "Drumnahoul",
+      "logainm_id": "14279",
+      "lat": 54.655672,
+      "lon": -8.046802,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumnahoul:familypresence:01"
+     },
+     "caption": "The Cassidy family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumnahoul:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drumnahoul:family:01",
+      "label": "Cassidy",
+      "run": false
+     }
+    },
+    {
+     "id": "drumnahoul:beat:familycensus:01-1901",
+     "kind": "familycensus",
+     "chapter": "drumnahoul:ch:family-01",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumnahoul",
+      "name": "Drumnahoul",
+      "logainm_id": "14279",
+      "lat": 54.655672,
+      "lon": -8.046802,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumnahoul:familycensus:01:1901"
+     },
+     "caption": "Drumnahoul had one Cassidy household in 1901, headed by Wm.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumnahoul:familycensus:01:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumnahoul:family:01",
+      "label": "Cassidy",
+      "run": false
+     }
+    },
+    {
+     "id": "drumnahoul:beat:familycensus:01-1911",
+     "kind": "familycensus",
+     "chapter": "drumnahoul:ch:family-01",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumnahoul",
+      "name": "Drumnahoul",
+      "logainm_id": "14279",
+      "lat": 54.655672,
+      "lon": -8.046802,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumnahoul:familycensus:01:1911"
+     },
+     "caption": "Drumnahoul had one Cassidy household in 1911, headed by William.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumnahoul:familycensus:01:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumnahoul:family:01",
+      "label": "Cassidy",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumnahoul:ch:family-04",
+   "title": "The Hammond family",
+   "beats": [
+    {
+     "id": "drumnahoul:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "drumnahoul:ch:family-04",
+     "time": {
+      "label": "The Hammond family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumnahoul",
+      "name": "Drumnahoul",
+      "logainm_id": "14279",
+      "lat": 54.655672,
+      "lon": -8.046802,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumnahoul:familypresence:04"
+     },
+     "caption": "The Hammond family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumnahoul:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drumnahoul:family:04",
+      "label": "Hammond",
+      "run": false
+     }
+    },
+    {
+     "id": "drumnahoul:beat:familycensus:04-1901",
+     "kind": "familycensus",
+     "chapter": "drumnahoul:ch:family-04",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumnahoul",
+      "name": "Drumnahoul",
+      "logainm_id": "14279",
+      "lat": 54.655672,
+      "lon": -8.046802,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumnahoul:familycensus:04:1901"
+     },
+     "caption": "Drumnahoul had one Hammond household in 1901, headed by Andrew.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumnahoul:familycensus:04:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumnahoul:family:04",
+      "label": "Hammond",
+      "run": false
+     }
+    },
+    {
+     "id": "drumnahoul:beat:familycensus:04-1911",
+     "kind": "familycensus",
+     "chapter": "drumnahoul:ch:family-04",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumnahoul",
+      "name": "Drumnahoul",
+      "logainm_id": "14279",
+      "lat": 54.655672,
+      "lon": -8.046802,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumnahoul:familycensus:04:1911"
+     },
+     "caption": "Drumnahoul had two Hammond households in 1911, headed by Andrew and Mary.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumnahoul:familycensus:04:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "drumnahoul:family:04",
+      "label": "Hammond",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumnahoul:ch:family-05",
+   "title": "The Lawn family",
+   "beats": [
+    {
+     "id": "drumnahoul:beat:familyhead:05",
+     "kind": "familyhead",
+     "chapter": "drumnahoul:ch:family-05",
+     "time": {
+      "label": "The Lawn family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumnahoul",
+      "name": "Drumnahoul",
+      "logainm_id": "14279",
+      "lat": 54.655672,
+      "lon": -8.046802,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumnahoul:familypresence:05"
+     },
+     "caption": "The Lawn family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumnahoul:familypresence:05"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drumnahoul:family:05",
+      "label": "Lawn",
+      "run": false
+     }
+    },
+    {
+     "id": "drumnahoul:beat:familycensus:05-1901",
+     "kind": "familycensus",
+     "chapter": "drumnahoul:ch:family-05",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumnahoul",
+      "name": "Drumnahoul",
+      "logainm_id": "14279",
+      "lat": 54.655672,
+      "lon": -8.046802,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumnahoul:familycensus:05:1901"
+     },
+     "caption": "Drumnahoul had one Lawn household in 1901, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumnahoul:familycensus:05:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumnahoul:family:05",
+      "label": "Lawn",
+      "run": false
+     }
+    },
+    {
+     "id": "drumnahoul:beat:familycensus:05-1911",
+     "kind": "familycensus",
+     "chapter": "drumnahoul:ch:family-05",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumnahoul",
+      "name": "Drumnahoul",
+      "logainm_id": "14279",
+      "lat": 54.655672,
+      "lon": -8.046802,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumnahoul:familycensus:05:1911"
+     },
+     "caption": "Drumnahoul had two Lawn households in 1911, headed by Robert and James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumnahoul:familycensus:05:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "drumnahoul:family:05",
+      "label": "Lawn",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumnahoul:ch:family-06",
+   "title": "The Lawn Sane family",
+   "beats": [
+    {
+     "id": "drumnahoul:beat:familyhead:06",
+     "kind": "familyhead",
+     "chapter": "drumnahoul:ch:family-06",
+     "time": {
+      "label": "The Lawn Sane family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumnahoul",
+      "name": "Drumnahoul",
+      "logainm_id": "14279",
+      "lat": 54.655672,
+      "lon": -8.046802,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumnahoul:familypresence:06"
+     },
+     "caption": "The Lawn Sane family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumnahoul:familypresence:06"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumnahoul:family:06",
+      "label": "Lawn Sane",
+      "run": false
+     }
+    },
+    {
+     "id": "drumnahoul:beat:familycensus:06-1901",
+     "kind": "familycensus",
+     "chapter": "drumnahoul:ch:family-06",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumnahoul",
+      "name": "Drumnahoul",
+      "logainm_id": "14279",
+      "lat": 54.655672,
+      "lon": -8.046802,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumnahoul:familycensus:06:1901"
+     },
+     "caption": "Drumnahoul had one Lawn Sane household in 1901, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumnahoul:familycensus:06:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drumnahoul:family:06",
+      "label": "Lawn Sane",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumnahoul:ch:family-07",
+   "title": "The Little family",
+   "beats": [
+    {
+     "id": "drumnahoul:beat:familyhead:07",
+     "kind": "familyhead",
+     "chapter": "drumnahoul:ch:family-07",
+     "time": {
+      "label": "The Little family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumnahoul",
+      "name": "Drumnahoul",
+      "logainm_id": "14279",
+      "lat": 54.655672,
+      "lon": -8.046802,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumnahoul:familypresence:07"
+     },
+     "caption": "The Little family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumnahoul:familypresence:07"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumnahoul:family:07",
+      "label": "Little",
+      "run": false
+     }
+    },
+    {
+     "id": "drumnahoul:beat:familycensus:07-1901",
+     "kind": "familycensus",
+     "chapter": "drumnahoul:ch:family-07",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumnahoul",
+      "name": "Drumnahoul",
+      "logainm_id": "14279",
+      "lat": 54.655672,
+      "lon": -8.046802,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumnahoul:familycensus:07:1901"
+     },
+     "caption": "Drumnahoul had one Little household in 1901, headed by David.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumnahoul:familycensus:07:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumnahoul:family:07",
+      "label": "Little",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumnahoul:ch:family-08",
+   "title": "The McGinty family",
+   "beats": [
+    {
+     "id": "drumnahoul:beat:familyhead:08",
+     "kind": "familyhead",
+     "chapter": "drumnahoul:ch:family-08",
+     "time": {
+      "label": "The McGinty family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumnahoul",
+      "name": "Drumnahoul",
+      "logainm_id": "14279",
+      "lat": 54.655672,
+      "lon": -8.046802,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumnahoul:familypresence:08"
+     },
+     "caption": "The McGinty family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumnahoul:familypresence:08"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumnahoul:family:08",
+      "label": "McGinty",
+      "run": false
+     }
+    },
+    {
+     "id": "drumnahoul:beat:familycensus:08-1911",
+     "kind": "familycensus",
+     "chapter": "drumnahoul:ch:family-08",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumnahoul",
+      "name": "Drumnahoul",
+      "logainm_id": "14279",
+      "lat": 54.655672,
+      "lon": -8.046802,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumnahoul:familycensus:08:1911"
+     },
+     "caption": "Drumnahoul had one McGinty household in 1911, headed by Edward.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumnahoul:familycensus:08:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumnahoul:family:08",
+      "label": "McGinty",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumnahoul:ch:family-09",
+   "title": "The McMullin family",
+   "beats": [
+    {
+     "id": "drumnahoul:beat:familyhead:09",
+     "kind": "familyhead",
+     "chapter": "drumnahoul:ch:family-09",
+     "time": {
+      "label": "The McMullin family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumnahoul",
+      "name": "Drumnahoul",
+      "logainm_id": "14279",
+      "lat": 54.655672,
+      "lon": -8.046802,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumnahoul:familypresence:09"
+     },
+     "caption": "The McMullin family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumnahoul:familypresence:09"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumnahoul:family:09",
+      "label": "McMullin",
+      "run": false
+     }
+    },
+    {
+     "id": "drumnahoul:beat:familycensus:09-1926",
+     "kind": "familycensus",
+     "chapter": "drumnahoul:ch:family-09",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumnahoul",
+      "name": "Drumnahoul",
+      "logainm_id": "14279",
+      "lat": 54.655672,
+      "lon": -8.046802,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumnahoul:familycensus:09:1926"
+     },
+     "caption": "Drumnahoul had one McMullin household in 1926, headed by Catherine.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumnahoul:familycensus:09:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumnahoul:family:09",
+      "label": "McMullin",
+      "run": false
+     }
     }
    ]
   }

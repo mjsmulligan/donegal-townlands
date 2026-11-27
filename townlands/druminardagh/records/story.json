@@ -99,7 +99,7 @@
    "title": "Baptisms, 1874",
    "beats": [
     {
-     "id": "druminardagh:beat:baptism:1874",
+     "id": "druminardagh:beat:baptism:1874-07-19-TAW-B-p011-r138",
      "kind": "baptism",
      "chapter": "druminardagh:ch:baptisms",
      "time": {
@@ -120,32 +120,31 @@
       "stage": "map",
       "open_card": "druminardagh:baptism:TAW-B-p011-r138"
      },
-     "caption": "Two children were baptised in 1874: Thomas McGinty on 19 July and Thomas McGlinchey on 19 July. Thomas McGlinchey was possibly from Druminardagh.",
+     "caption": "Thomas McGinty was baptised on 19 July 1874. John McGinty and Anne Furey were the parents.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "druminardagh:baptism:TAW-B-p011-r138",
-       "druminardagh:baptism:TAW-B-p012-r145"
+       "druminardagh:baptism:TAW-B-p011-r138"
       ],
       "basis": "page_place",
-      "certainty": "possible"
+      "certainty": "stated"
      },
-     "duration_ms": 9200,
+     "duration_ms": 6400,
      "audio": null
     }
    ]
   },
   {
-   "id": "druminardagh:ch:1901",
-   "title": "1901",
+   "id": "druminardagh:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "druminardagh:beat:census:1901",
+     "id": "druminardagh:beat:census:returns",
      "kind": "census",
-     "chapter": "druminardagh:ch:1901",
+     "chapter": "druminardagh:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1926",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -162,33 +161,177 @@
       "stage": "map",
       "open_card": "druminardagh:census:1901"
      },
-     "caption": "Druminardagh had 59 people in twelve households in 1901. Heads of household included Cunningham, Graham and Abraham.",
+     "caption": "The censuses of 1901, 1911 and 1926 counted 59, 42 and 36 people in Druminardagh, in 12, 11 and 11 households. Heads of household included Cunningham, Graham and Abraham.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "druminardagh:census:1901"
+       "druminardagh:census:1901",
+       "druminardagh:census:1911",
+       "druminardagh:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 6800,
+     "duration_ms": 11600,
      "audio": null,
      "counts": {
-      "people": 59,
-      "households": 12
+      "returns": [
+       {
+        "year": "1901",
+        "people": 59,
+        "households": 12
+       },
+       {
+        "year": "1911",
+        "people": 42,
+        "households": 11
+       },
+       {
+        "year": "1926",
+        "people": 36,
+        "households": 11
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "druminardagh:ch:1911",
-   "title": "1911",
+   "id": "druminardagh:ch:families",
+   "title": "The families of Druminardagh",
    "beats": [
     {
-     "id": "druminardagh:beat:census:1911",
-     "kind": "census",
-     "chapter": "druminardagh:ch:1911",
+     "id": "druminardagh:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "druminardagh:ch:families",
+     "time": {
+      "label": "The families of Druminardagh",
+      "iso": "1874-07-19",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminardagh",
+      "name": "Druminardagh",
+      "logainm_id": "14275",
+      "lat": 54.644538,
+      "lon": -8.024656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminardagh:baptism:TAW-B-p011-r138"
+     },
+     "caption": "Here are the families of Druminardagh, from 1874 to 1926. First, the Abraham and Graham families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminardagh:baptism:TAW-B-p011-r138",
+       "druminardagh:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "druminardagh:family:01",
+      "label": "Abraham",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "druminardagh:ch:family-01",
+   "title": "The Abraham family",
+   "beats": [
+    {
+     "id": "druminardagh:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "druminardagh:ch:family-01",
+     "time": {
+      "label": "The Abraham family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminardagh",
+      "name": "Druminardagh",
+      "logainm_id": "14275",
+      "lat": 54.644538,
+      "lon": -8.024656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminardagh:familypresence:01"
+     },
+     "caption": "The Abraham family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminardagh:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "druminardagh:family:01",
+      "label": "Abraham",
+      "run": true
+     }
+    },
+    {
+     "id": "druminardagh:beat:familycensus:01-1901",
+     "kind": "familycensus",
+     "chapter": "druminardagh:ch:family-01",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminardagh",
+      "name": "Druminardagh",
+      "logainm_id": "14275",
+      "lat": 54.644538,
+      "lon": -8.024656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminardagh:familycensus:01:1901"
+     },
+     "caption": "Druminardagh had one Abraham household in 1901, headed by Margaret.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminardagh:familycensus:01:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "druminardagh:family:01",
+      "label": "Abraham",
+      "run": true
+     }
+    },
+    {
+     "id": "druminardagh:beat:familycensus:01-1911",
+     "kind": "familycensus",
+     "chapter": "druminardagh:ch:family-01",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -205,35 +348,30 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "druminardagh:census:1911"
+      "open_card": "druminardagh:familycensus:01:1911"
      },
-     "caption": "Druminardagh had 42 people in eleven households in 1911. Heads of household included Cunningham, Abraham and Corrigan.",
+     "caption": "Druminardagh had one Abraham household in 1911, headed by Robert.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "druminardagh:census:1911"
+       "druminardagh:familycensus:01:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6800,
+     "duration_ms": 4000,
      "audio": null,
-     "counts": {
-      "people": 42,
-      "households": 11
+     "thread": {
+      "id": "druminardagh:family:01",
+      "label": "Abraham",
+      "run": true
      }
-    }
-   ]
-  },
-  {
-   "id": "druminardagh:ch:1926",
-   "title": "1926",
-   "beats": [
+    },
     {
-     "id": "druminardagh:beat:census:1926",
-     "kind": "census",
-     "chapter": "druminardagh:ch:1926",
+     "id": "druminardagh:beat:familycensus:01-1926",
+     "kind": "familycensus",
+     "chapter": "druminardagh:ch:family-01",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -250,25 +388,198 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "druminardagh:census:1926"
+      "open_card": "druminardagh:familycensus:01:1926"
      },
-     "caption": "Druminardagh had 36 people in eleven households in 1926. Heads of household included Conaghan, McGlinchey and Abraham.",
+     "caption": "Druminardagh had one Abraham household in 1926, headed by Jennie.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "druminardagh:census:1926"
+       "druminardagh:familycensus:01:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6800,
+     "duration_ms": 4000,
      "audio": null,
-     "counts": {
-      "people": 36,
-      "households": 11
+     "thread": {
+      "id": "druminardagh:family:01",
+      "label": "Abraham",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "druminardagh:ch:family-07",
+   "title": "The Graham family",
+   "beats": [
+    {
+     "id": "druminardagh:beat:familyhead:07",
+     "kind": "familyhead",
+     "chapter": "druminardagh:ch:family-07",
+     "time": {
+      "label": "The Graham family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminardagh",
+      "name": "Druminardagh",
+      "logainm_id": "14275",
+      "lat": 54.644538,
+      "lon": -8.024656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminardagh:familypresence:07"
+     },
+     "caption": "The Graham family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminardagh:familypresence:07"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "druminardagh:family:07",
+      "label": "Graham",
+      "run": true
      }
     },
+    {
+     "id": "druminardagh:beat:familycensus:07-1901",
+     "kind": "familycensus",
+     "chapter": "druminardagh:ch:family-07",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminardagh",
+      "name": "Druminardagh",
+      "logainm_id": "14275",
+      "lat": 54.644538,
+      "lon": -8.024656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminardagh:familycensus:07:1901"
+     },
+     "caption": "Druminardagh had two Graham households in 1901, headed by James and Isabella.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminardagh:familycensus:07:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "druminardagh:family:07",
+      "label": "Graham",
+      "run": true
+     }
+    },
+    {
+     "id": "druminardagh:beat:familycensus:07-1911",
+     "kind": "familycensus",
+     "chapter": "druminardagh:ch:family-07",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminardagh",
+      "name": "Druminardagh",
+      "logainm_id": "14275",
+      "lat": 54.644538,
+      "lon": -8.024656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminardagh:familycensus:07:1911"
+     },
+     "caption": "Druminardagh had one Graham household in 1911, headed by Isabella.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminardagh:familycensus:07:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "druminardagh:family:07",
+      "label": "Graham",
+      "run": true
+     }
+    },
+    {
+     "id": "druminardagh:beat:familycensus:07-1926",
+     "kind": "familycensus",
+     "chapter": "druminardagh:ch:family-07",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminardagh",
+      "name": "Druminardagh",
+      "logainm_id": "14275",
+      "lat": 54.644538,
+      "lon": -8.024656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminardagh:familycensus:07:1926"
+     },
+     "caption": "Druminardagh had one Graham household in 1926, headed by Robert.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminardagh:familycensus:07:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "druminardagh:family:07",
+      "label": "Graham",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "druminardagh:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "druminardagh:beat:closing:end",
      "kind": "closing",
@@ -303,6 +614,1266 @@
      },
      "duration_ms": 4000,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "druminardagh:ch:family-09",
+   "title": "The McGlinchey family",
+   "beats": [
+    {
+     "id": "druminardagh:beat:baptism:1874-07-19-TAW-B-p012-r145",
+     "kind": "baptism",
+     "chapter": "druminardagh:ch:family-09",
+     "time": {
+      "label": "19 July 1874",
+      "iso": "1874-07-19",
+      "sort": "1874-07-19",
+      "approximate": false
+     },
+     "place": {
+      "townland": "druminardagh",
+      "name": "Druminardagh",
+      "logainm_id": "14275",
+      "lat": 54.644538,
+      "lon": -8.024656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminardagh:baptism:TAW-B-p012-r145"
+     },
+     "caption": "Thomas McGlinchey was baptised on 19 July 1874. John McGlinchey and Anne Furey were the parents. The family was possibly from Druminardagh.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminardagh:baptism:TAW-B-p012-r145"
+      ],
+      "basis": "page_place_doubtful",
+      "certainty": "possible"
+     },
+     "duration_ms": 8800,
+     "audio": null,
+     "thread": {
+      "id": "druminardagh:family:09",
+      "label": "McGlinchey",
+      "run": false
+     }
+    },
+    {
+     "id": "druminardagh:beat:familyhead:09",
+     "kind": "familyhead",
+     "chapter": "druminardagh:ch:family-09",
+     "time": {
+      "label": "The McGlinchey family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminardagh",
+      "name": "Druminardagh",
+      "logainm_id": "14275",
+      "lat": 54.644538,
+      "lon": -8.024656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminardagh:familypresence:09"
+     },
+     "caption": "The McGlinchey family appear in the records from 1911 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminardagh:familypresence:09"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "druminardagh:family:09",
+      "label": "McGlinchey",
+      "run": false
+     }
+    },
+    {
+     "id": "druminardagh:beat:familycensus:09-1911",
+     "kind": "familycensus",
+     "chapter": "druminardagh:ch:family-09",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminardagh",
+      "name": "Druminardagh",
+      "logainm_id": "14275",
+      "lat": 54.644538,
+      "lon": -8.024656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminardagh:familycensus:09:1911"
+     },
+     "caption": "Druminardagh had one McGlinchey household in 1911, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminardagh:familycensus:09:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "druminardagh:family:09",
+      "label": "McGlinchey",
+      "run": false
+     }
+    },
+    {
+     "id": "druminardagh:beat:familycensus:09-1926",
+     "kind": "familycensus",
+     "chapter": "druminardagh:ch:family-09",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminardagh",
+      "name": "Druminardagh",
+      "logainm_id": "14275",
+      "lat": 54.644538,
+      "lon": -8.024656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminardagh:familycensus:09:1926"
+     },
+     "caption": "Druminardagh had two McGlinchey households in 1926, headed by Maggie and Nora Gertrude.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminardagh:familycensus:09:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "druminardagh:family:09",
+      "label": "McGlinchey",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "druminardagh:ch:family-03",
+   "title": "The Corrigan family",
+   "beats": [
+    {
+     "id": "druminardagh:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "druminardagh:ch:family-03",
+     "time": {
+      "label": "The Corrigan family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminardagh",
+      "name": "Druminardagh",
+      "logainm_id": "14275",
+      "lat": 54.644538,
+      "lon": -8.024656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminardagh:familypresence:03"
+     },
+     "caption": "The Corrigan family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminardagh:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "druminardagh:family:03",
+      "label": "Corrigan",
+      "run": false
+     }
+    },
+    {
+     "id": "druminardagh:beat:familycensus:03-1901",
+     "kind": "familycensus",
+     "chapter": "druminardagh:ch:family-03",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminardagh",
+      "name": "Druminardagh",
+      "logainm_id": "14275",
+      "lat": 54.644538,
+      "lon": -8.024656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminardagh:familycensus:03:1901"
+     },
+     "caption": "Druminardagh had one Corrigan household in 1901, headed by Hannah.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminardagh:familycensus:03:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "druminardagh:family:03",
+      "label": "Corrigan",
+      "run": false
+     }
+    },
+    {
+     "id": "druminardagh:beat:familycensus:03-1911",
+     "kind": "familycensus",
+     "chapter": "druminardagh:ch:family-03",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminardagh",
+      "name": "Druminardagh",
+      "logainm_id": "14275",
+      "lat": 54.644538,
+      "lon": -8.024656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminardagh:familycensus:03:1911"
+     },
+     "caption": "Druminardagh had one Corrigan household in 1911, headed by Hannagh.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminardagh:familycensus:03:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "druminardagh:family:03",
+      "label": "Corrigan",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "druminardagh:ch:family-04",
+   "title": "The Cunningham family",
+   "beats": [
+    {
+     "id": "druminardagh:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "druminardagh:ch:family-04",
+     "time": {
+      "label": "The Cunningham family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminardagh",
+      "name": "Druminardagh",
+      "logainm_id": "14275",
+      "lat": 54.644538,
+      "lon": -8.024656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminardagh:familypresence:04"
+     },
+     "caption": "The Cunningham family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminardagh:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "druminardagh:family:04",
+      "label": "Cunningham",
+      "run": false
+     }
+    },
+    {
+     "id": "druminardagh:beat:familycensus:04-1901",
+     "kind": "familycensus",
+     "chapter": "druminardagh:ch:family-04",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminardagh",
+      "name": "Druminardagh",
+      "logainm_id": "14275",
+      "lat": 54.644538,
+      "lon": -8.024656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminardagh:familycensus:04:1901"
+     },
+     "caption": "Druminardagh had two Cunningham households in 1901, headed by Mary Ann and Catharine.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminardagh:familycensus:04:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "druminardagh:family:04",
+      "label": "Cunningham",
+      "run": false
+     }
+    },
+    {
+     "id": "druminardagh:beat:familycensus:04-1911",
+     "kind": "familycensus",
+     "chapter": "druminardagh:ch:family-04",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminardagh",
+      "name": "Druminardagh",
+      "logainm_id": "14275",
+      "lat": 54.644538,
+      "lon": -8.024656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminardagh:familycensus:04:1911"
+     },
+     "caption": "Druminardagh had two Cunningham households in 1911, headed by Mary Anne and Anne.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminardagh:familycensus:04:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "druminardagh:family:04",
+      "label": "Cunningham",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "druminardagh:ch:family-05",
+   "title": "The Farrell family",
+   "beats": [
+    {
+     "id": "druminardagh:beat:familyhead:05",
+     "kind": "familyhead",
+     "chapter": "druminardagh:ch:family-05",
+     "time": {
+      "label": "The Farrell family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminardagh",
+      "name": "Druminardagh",
+      "logainm_id": "14275",
+      "lat": 54.644538,
+      "lon": -8.024656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminardagh:familypresence:05"
+     },
+     "caption": "The Farrell family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminardagh:familypresence:05"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "druminardagh:family:05",
+      "label": "Farrell",
+      "run": false
+     }
+    },
+    {
+     "id": "druminardagh:beat:familycensus:05-1901",
+     "kind": "familycensus",
+     "chapter": "druminardagh:ch:family-05",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminardagh",
+      "name": "Druminardagh",
+      "logainm_id": "14275",
+      "lat": 54.644538,
+      "lon": -8.024656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminardagh:familycensus:05:1901"
+     },
+     "caption": "Druminardagh had one Farrell household in 1901, headed by Thomas.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminardagh:familycensus:05:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "druminardagh:family:05",
+      "label": "Farrell",
+      "run": false
+     }
+    },
+    {
+     "id": "druminardagh:beat:familycensus:05-1911",
+     "kind": "familycensus",
+     "chapter": "druminardagh:ch:family-05",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminardagh",
+      "name": "Druminardagh",
+      "logainm_id": "14275",
+      "lat": 54.644538,
+      "lon": -8.024656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminardagh:familycensus:05:1911"
+     },
+     "caption": "Druminardagh had one Farrell household in 1911, headed by Thomas.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminardagh:familycensus:05:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "druminardagh:family:05",
+      "label": "Farrell",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "druminardagh:ch:family-06",
+   "title": "The Gillespie family",
+   "beats": [
+    {
+     "id": "druminardagh:beat:familyhead:06",
+     "kind": "familyhead",
+     "chapter": "druminardagh:ch:family-06",
+     "time": {
+      "label": "The Gillespie family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminardagh",
+      "name": "Druminardagh",
+      "logainm_id": "14275",
+      "lat": 54.644538,
+      "lon": -8.024656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminardagh:familypresence:06"
+     },
+     "caption": "The Gillespie family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminardagh:familypresence:06"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "druminardagh:family:06",
+      "label": "Gillespie",
+      "run": false
+     }
+    },
+    {
+     "id": "druminardagh:beat:familycensus:06-1901",
+     "kind": "familycensus",
+     "chapter": "druminardagh:ch:family-06",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminardagh",
+      "name": "Druminardagh",
+      "logainm_id": "14275",
+      "lat": 54.644538,
+      "lon": -8.024656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminardagh:familycensus:06:1901"
+     },
+     "caption": "Druminardagh had one Gillespie household in 1901, headed by Andrew.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminardagh:familycensus:06:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "druminardagh:family:06",
+      "label": "Gillespie",
+      "run": false
+     }
+    },
+    {
+     "id": "druminardagh:beat:familycensus:06-1911",
+     "kind": "familycensus",
+     "chapter": "druminardagh:ch:family-06",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminardagh",
+      "name": "Druminardagh",
+      "logainm_id": "14275",
+      "lat": 54.644538,
+      "lon": -8.024656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminardagh:familycensus:06:1911"
+     },
+     "caption": "Druminardagh had one Gillespie household in 1911, headed by Edward.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminardagh:familycensus:06:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "druminardagh:family:06",
+      "label": "Gillespie",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "druminardagh:ch:family-08",
+   "title": "The Lowery family",
+   "beats": [
+    {
+     "id": "druminardagh:beat:familyhead:08",
+     "kind": "familyhead",
+     "chapter": "druminardagh:ch:family-08",
+     "time": {
+      "label": "The Lowery family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminardagh",
+      "name": "Druminardagh",
+      "logainm_id": "14275",
+      "lat": 54.644538,
+      "lon": -8.024656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminardagh:familypresence:08"
+     },
+     "caption": "The Lowery family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminardagh:familypresence:08"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "druminardagh:family:08",
+      "label": "Lowery",
+      "run": false
+     }
+    },
+    {
+     "id": "druminardagh:beat:familycensus:08-1901",
+     "kind": "familycensus",
+     "chapter": "druminardagh:ch:family-08",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminardagh",
+      "name": "Druminardagh",
+      "logainm_id": "14275",
+      "lat": 54.644538,
+      "lon": -8.024656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminardagh:familycensus:08:1901"
+     },
+     "caption": "Druminardagh had one Lowery household in 1901, headed by Robert.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminardagh:familycensus:08:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "druminardagh:family:08",
+      "label": "Lowery",
+      "run": false
+     }
+    },
+    {
+     "id": "druminardagh:beat:familycensus:08-1911",
+     "kind": "familycensus",
+     "chapter": "druminardagh:ch:family-08",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminardagh",
+      "name": "Druminardagh",
+      "logainm_id": "14275",
+      "lat": 54.644538,
+      "lon": -8.024656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminardagh:familycensus:08:1911"
+     },
+     "caption": "Druminardagh had one Lowery household in 1911, headed by Robert.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminardagh:familycensus:08:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "druminardagh:family:08",
+      "label": "Lowery",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "druminardagh:ch:family-10",
+   "title": "The McGlinchy family",
+   "beats": [
+    {
+     "id": "druminardagh:beat:familyhead:10",
+     "kind": "familyhead",
+     "chapter": "druminardagh:ch:family-10",
+     "time": {
+      "label": "The McGlinchy family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminardagh",
+      "name": "Druminardagh",
+      "logainm_id": "14275",
+      "lat": 54.644538,
+      "lon": -8.024656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminardagh:familypresence:10"
+     },
+     "caption": "The McGlinchy family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminardagh:familypresence:10"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "druminardagh:family:10",
+      "label": "McGlinchy",
+      "run": false
+     }
+    },
+    {
+     "id": "druminardagh:beat:familycensus:10-1901",
+     "kind": "familycensus",
+     "chapter": "druminardagh:ch:family-10",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminardagh",
+      "name": "Druminardagh",
+      "logainm_id": "14275",
+      "lat": 54.644538,
+      "lon": -8.024656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminardagh:familycensus:10:1901"
+     },
+     "caption": "Druminardagh had one McGlinchy household in 1901, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminardagh:familycensus:10:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "druminardagh:family:10",
+      "label": "McGlinchy",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "druminardagh:ch:family-11",
+   "title": "The Perry family",
+   "beats": [
+    {
+     "id": "druminardagh:beat:familyhead:11",
+     "kind": "familyhead",
+     "chapter": "druminardagh:ch:family-11",
+     "time": {
+      "label": "The Perry family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminardagh",
+      "name": "Druminardagh",
+      "logainm_id": "14275",
+      "lat": 54.644538,
+      "lon": -8.024656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminardagh:familypresence:11"
+     },
+     "caption": "The Perry family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminardagh:familypresence:11"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "druminardagh:family:11",
+      "label": "Perry",
+      "run": false
+     }
+    },
+    {
+     "id": "druminardagh:beat:familycensus:11-1901",
+     "kind": "familycensus",
+     "chapter": "druminardagh:ch:family-11",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminardagh",
+      "name": "Druminardagh",
+      "logainm_id": "14275",
+      "lat": 54.644538,
+      "lon": -8.024656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminardagh:familycensus:11:1901"
+     },
+     "caption": "Druminardagh had one Perry household in 1901, headed by Francis.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminardagh:familycensus:11:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "druminardagh:family:11",
+      "label": "Perry",
+      "run": false
+     }
+    },
+    {
+     "id": "druminardagh:beat:familycensus:11-1911",
+     "kind": "familycensus",
+     "chapter": "druminardagh:ch:family-11",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminardagh",
+      "name": "Druminardagh",
+      "logainm_id": "14275",
+      "lat": 54.644538,
+      "lon": -8.024656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminardagh:familycensus:11:1911"
+     },
+     "caption": "Druminardagh had one Perry household in 1911, headed by Francis.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminardagh:familycensus:11:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "druminardagh:family:11",
+      "label": "Perry",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "druminardagh:ch:family-12",
+   "title": "The White family",
+   "beats": [
+    {
+     "id": "druminardagh:beat:familyhead:12",
+     "kind": "familyhead",
+     "chapter": "druminardagh:ch:family-12",
+     "time": {
+      "label": "The White family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminardagh",
+      "name": "Druminardagh",
+      "logainm_id": "14275",
+      "lat": 54.644538,
+      "lon": -8.024656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminardagh:familypresence:12"
+     },
+     "caption": "The White family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminardagh:familypresence:12"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "druminardagh:family:12",
+      "label": "White",
+      "run": false
+     }
+    },
+    {
+     "id": "druminardagh:beat:familycensus:12-1901",
+     "kind": "familycensus",
+     "chapter": "druminardagh:ch:family-12",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminardagh",
+      "name": "Druminardagh",
+      "logainm_id": "14275",
+      "lat": 54.644538,
+      "lon": -8.024656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminardagh:familycensus:12:1901"
+     },
+     "caption": "Druminardagh had one White household in 1901, headed by Eliza.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminardagh:familycensus:12:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "druminardagh:family:12",
+      "label": "White",
+      "run": false
+     }
+    },
+    {
+     "id": "druminardagh:beat:familycensus:12-1911",
+     "kind": "familycensus",
+     "chapter": "druminardagh:ch:family-12",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminardagh",
+      "name": "Druminardagh",
+      "logainm_id": "14275",
+      "lat": 54.644538,
+      "lon": -8.024656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminardagh:familycensus:12:1911"
+     },
+     "caption": "Druminardagh had one White household in 1911, headed by Francis.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminardagh:familycensus:12:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "druminardagh:family:12",
+      "label": "White",
+      "run": false
+     }
+    },
+    {
+     "id": "druminardagh:beat:familycensus:12-1926",
+     "kind": "familycensus",
+     "chapter": "druminardagh:ch:family-12",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminardagh",
+      "name": "Druminardagh",
+      "logainm_id": "14275",
+      "lat": 54.644538,
+      "lon": -8.024656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminardagh:familycensus:12:1926"
+     },
+     "caption": "Druminardagh had one White household in 1926, headed by Dora Adelade.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminardagh:familycensus:12:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "druminardagh:family:12",
+      "label": "White",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "druminardagh:ch:family-02",
+   "title": "The Conaghan family",
+   "beats": [
+    {
+     "id": "druminardagh:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "druminardagh:ch:family-02",
+     "time": {
+      "label": "The Conaghan family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminardagh",
+      "name": "Druminardagh",
+      "logainm_id": "14275",
+      "lat": 54.644538,
+      "lon": -8.024656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminardagh:familypresence:02"
+     },
+     "caption": "The Conaghan family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminardagh:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "druminardagh:family:02",
+      "label": "Conaghan",
+      "run": false
+     }
+    },
+    {
+     "id": "druminardagh:beat:familycensus:02-1926",
+     "kind": "familycensus",
+     "chapter": "druminardagh:ch:family-02",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminardagh",
+      "name": "Druminardagh",
+      "logainm_id": "14275",
+      "lat": 54.644538,
+      "lon": -8.024656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminardagh:familycensus:02:1926"
+     },
+     "caption": "Druminardagh had two Conaghan households in 1926, headed by Mary A and Michael.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminardagh:familycensus:02:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "druminardagh:family:02",
+      "label": "Conaghan",
+      "run": false
+     }
     }
    ]
   }

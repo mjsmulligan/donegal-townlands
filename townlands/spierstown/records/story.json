@@ -52,15 +52,15 @@
    ]
   },
   {
-   "id": "spierstown:ch:1901",
-   "title": "1901",
+   "id": "spierstown:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "spierstown:beat:census:1901",
+     "id": "spierstown:beat:census:returns",
      "kind": "census",
-     "chapter": "spierstown:ch:1901",
+     "chapter": "spierstown:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1926",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -77,33 +77,177 @@
       "stage": "map",
       "open_card": "spierstown:census:1901"
      },
-     "caption": "Spierstown had 28 people in six households in 1901. Heads of household included Buchanan, Hannah and Irwin.",
+     "caption": "The censuses of 1901, 1911 and 1926 counted 28, 31 and 18 people in Spierstown, in 6, 6 and 5 households. Heads of household included Buchanan, Hannah and Irwin.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "spierstown:census:1901"
+       "spierstown:census:1901",
+       "spierstown:census:1911",
+       "spierstown:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 6800,
+     "duration_ms": 11600,
      "audio": null,
      "counts": {
-      "people": 28,
-      "households": 6
+      "returns": [
+       {
+        "year": "1901",
+        "people": 28,
+        "households": 6
+       },
+       {
+        "year": "1911",
+        "people": 31,
+        "households": 6
+       },
+       {
+        "year": "1926",
+        "people": 18,
+        "households": 5
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "spierstown:ch:1911",
-   "title": "1911",
+   "id": "spierstown:ch:families",
+   "title": "The families of Spierstown",
    "beats": [
     {
-     "id": "spierstown:beat:census:1911",
-     "kind": "census",
-     "chapter": "spierstown:ch:1911",
+     "id": "spierstown:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "spierstown:ch:families",
+     "time": {
+      "label": "The families of Spierstown",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "spierstown",
+      "name": "Spierstown",
+      "logainm_id": "13978",
+      "lat": 54.669498,
+      "lon": -8.06129,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "spierstown:census:1901"
+     },
+     "caption": "Here are the families of Spierstown, from 1901 to 1926. First, the Irwin and Knight families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "spierstown:census:1901",
+       "spierstown:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "spierstown:family:05",
+      "label": "Irwin",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "spierstown:ch:family-05",
+   "title": "The Irwin family",
+   "beats": [
+    {
+     "id": "spierstown:beat:familyhead:05",
+     "kind": "familyhead",
+     "chapter": "spierstown:ch:family-05",
+     "time": {
+      "label": "The Irwin family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "spierstown",
+      "name": "Spierstown",
+      "logainm_id": "13978",
+      "lat": 54.669498,
+      "lon": -8.06129,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "spierstown:familypresence:05"
+     },
+     "caption": "The Irwin family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "spierstown:familypresence:05"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "spierstown:family:05",
+      "label": "Irwin",
+      "run": true
+     }
+    },
+    {
+     "id": "spierstown:beat:familycensus:05-1901",
+     "kind": "familycensus",
+     "chapter": "spierstown:ch:family-05",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "spierstown",
+      "name": "Spierstown",
+      "logainm_id": "13978",
+      "lat": 54.669498,
+      "lon": -8.06129,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "spierstown:familycensus:05:1901"
+     },
+     "caption": "Spierstown had one Irwin household in 1901, headed by Samuel.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "spierstown:familycensus:05:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "spierstown:family:05",
+      "label": "Irwin",
+      "run": true
+     }
+    },
+    {
+     "id": "spierstown:beat:familycensus:05-1911",
+     "kind": "familycensus",
+     "chapter": "spierstown:ch:family-05",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -120,35 +264,30 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "spierstown:census:1911"
+      "open_card": "spierstown:familycensus:05:1911"
      },
-     "caption": "Spierstown had 31 people in six households in 1911. Heads of household included Buchanan, Cunningham and Hanna.",
+     "caption": "Spierstown had one Irwin household in 1911, headed by Samuel.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "spierstown:census:1911"
+       "spierstown:familycensus:05:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6800,
+     "duration_ms": 4000,
      "audio": null,
-     "counts": {
-      "people": 31,
-      "households": 6
+     "thread": {
+      "id": "spierstown:family:05",
+      "label": "Irwin",
+      "run": true
      }
-    }
-   ]
-  },
-  {
-   "id": "spierstown:ch:1926",
-   "title": "1926",
-   "beats": [
+    },
     {
-     "id": "spierstown:beat:census:1926",
-     "kind": "census",
-     "chapter": "spierstown:ch:1926",
+     "id": "spierstown:beat:familycensus:05-1926",
+     "kind": "familycensus",
+     "chapter": "spierstown:ch:family-05",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -165,25 +304,198 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "spierstown:census:1926"
+      "open_card": "spierstown:familycensus:05:1926"
      },
-     "caption": "In 1926, eighteen people in five households lived in Spierstown. Heads of household included Hanna, Irwin and Knight.",
+     "caption": "Spierstown had one Irwin household in 1926, headed by Samuel.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "spierstown:census:1926"
+       "spierstown:familycensus:05:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 7200,
+     "duration_ms": 4000,
      "audio": null,
-     "counts": {
-      "people": 18,
-      "households": 5
+     "thread": {
+      "id": "spierstown:family:05",
+      "label": "Irwin",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "spierstown:ch:family-06",
+   "title": "The Knight family",
+   "beats": [
+    {
+     "id": "spierstown:beat:familyhead:06",
+     "kind": "familyhead",
+     "chapter": "spierstown:ch:family-06",
+     "time": {
+      "label": "The Knight family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "spierstown",
+      "name": "Spierstown",
+      "logainm_id": "13978",
+      "lat": 54.669498,
+      "lon": -8.06129,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "spierstown:familypresence:06"
+     },
+     "caption": "The Knight family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "spierstown:familypresence:06"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "spierstown:family:06",
+      "label": "Knight",
+      "run": true
      }
     },
+    {
+     "id": "spierstown:beat:familycensus:06-1901",
+     "kind": "familycensus",
+     "chapter": "spierstown:ch:family-06",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "spierstown",
+      "name": "Spierstown",
+      "logainm_id": "13978",
+      "lat": 54.669498,
+      "lon": -8.06129,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "spierstown:familycensus:06:1901"
+     },
+     "caption": "Spierstown had one Knight household in 1901, headed by Samuel.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "spierstown:familycensus:06:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "spierstown:family:06",
+      "label": "Knight",
+      "run": true
+     }
+    },
+    {
+     "id": "spierstown:beat:familycensus:06-1911",
+     "kind": "familycensus",
+     "chapter": "spierstown:ch:family-06",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "spierstown",
+      "name": "Spierstown",
+      "logainm_id": "13978",
+      "lat": 54.669498,
+      "lon": -8.06129,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "spierstown:familycensus:06:1911"
+     },
+     "caption": "Spierstown had one Knight household in 1911, headed by Samuel.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "spierstown:familycensus:06:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "spierstown:family:06",
+      "label": "Knight",
+      "run": true
+     }
+    },
+    {
+     "id": "spierstown:beat:familycensus:06-1926",
+     "kind": "familycensus",
+     "chapter": "spierstown:ch:family-06",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "spierstown",
+      "name": "Spierstown",
+      "logainm_id": "13978",
+      "lat": 54.669498,
+      "lon": -8.06129,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "spierstown:familycensus:06:1926"
+     },
+     "caption": "Spierstown had one Knight household in 1926, headed by Eleanor.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "spierstown:familycensus:06:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "spierstown:family:06",
+      "label": "Knight",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "spierstown:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "spierstown:beat:closing:end",
      "kind": "closing",
@@ -218,6 +530,762 @@
      },
      "duration_ms": 4000,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "spierstown:ch:family-01",
+   "title": "The Buchanan family",
+   "beats": [
+    {
+     "id": "spierstown:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "spierstown:ch:family-01",
+     "time": {
+      "label": "The Buchanan family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "spierstown",
+      "name": "Spierstown",
+      "logainm_id": "13978",
+      "lat": 54.669498,
+      "lon": -8.06129,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "spierstown:familypresence:01"
+     },
+     "caption": "The Buchanan family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "spierstown:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "spierstown:family:01",
+      "label": "Buchanan",
+      "run": false
+     }
+    },
+    {
+     "id": "spierstown:beat:familycensus:01-1901",
+     "kind": "familycensus",
+     "chapter": "spierstown:ch:family-01",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "spierstown",
+      "name": "Spierstown",
+      "logainm_id": "13978",
+      "lat": 54.669498,
+      "lon": -8.06129,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "spierstown:familycensus:01:1901"
+     },
+     "caption": "Spierstown had one Buchanan household in 1901, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "spierstown:familycensus:01:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "spierstown:family:01",
+      "label": "Buchanan",
+      "run": false
+     }
+    },
+    {
+     "id": "spierstown:beat:familycensus:01-1911",
+     "kind": "familycensus",
+     "chapter": "spierstown:ch:family-01",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "spierstown",
+      "name": "Spierstown",
+      "logainm_id": "13978",
+      "lat": 54.669498,
+      "lon": -8.06129,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "spierstown:familycensus:01:1911"
+     },
+     "caption": "Spierstown had one Buchanan household in 1911, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "spierstown:familycensus:01:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "spierstown:family:01",
+      "label": "Buchanan",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "spierstown:ch:family-04",
+   "title": "The Hannah family",
+   "beats": [
+    {
+     "id": "spierstown:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "spierstown:ch:family-04",
+     "time": {
+      "label": "The Hannah family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "spierstown",
+      "name": "Spierstown",
+      "logainm_id": "13978",
+      "lat": 54.669498,
+      "lon": -8.06129,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "spierstown:familypresence:04"
+     },
+     "caption": "The Hannah family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "spierstown:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "spierstown:family:04",
+      "label": "Hannah",
+      "run": false
+     }
+    },
+    {
+     "id": "spierstown:beat:familycensus:04-1901",
+     "kind": "familycensus",
+     "chapter": "spierstown:ch:family-04",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "spierstown",
+      "name": "Spierstown",
+      "logainm_id": "13978",
+      "lat": 54.669498,
+      "lon": -8.06129,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "spierstown:familycensus:04:1901"
+     },
+     "caption": "Spierstown had one Hannah household in 1901, headed by William.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "spierstown:familycensus:04:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "spierstown:family:04",
+      "label": "Hannah",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "spierstown:ch:family-07",
+   "title": "The Lowry family",
+   "beats": [
+    {
+     "id": "spierstown:beat:familyhead:07",
+     "kind": "familyhead",
+     "chapter": "spierstown:ch:family-07",
+     "time": {
+      "label": "The Lowry family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "spierstown",
+      "name": "Spierstown",
+      "logainm_id": "13978",
+      "lat": 54.669498,
+      "lon": -8.06129,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "spierstown:familypresence:07"
+     },
+     "caption": "The Lowry family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "spierstown:familypresence:07"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "spierstown:family:07",
+      "label": "Lowry",
+      "run": false
+     }
+    },
+    {
+     "id": "spierstown:beat:familycensus:07-1901",
+     "kind": "familycensus",
+     "chapter": "spierstown:ch:family-07",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "spierstown",
+      "name": "Spierstown",
+      "logainm_id": "13978",
+      "lat": 54.669498,
+      "lon": -8.06129,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "spierstown:familycensus:07:1901"
+     },
+     "caption": "Spierstown had one Lowry household in 1901, headed by Robert.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "spierstown:familycensus:07:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "spierstown:family:07",
+      "label": "Lowry",
+      "run": false
+     }
+    },
+    {
+     "id": "spierstown:beat:familycensus:07-1911",
+     "kind": "familycensus",
+     "chapter": "spierstown:ch:family-07",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "spierstown",
+      "name": "Spierstown",
+      "logainm_id": "13978",
+      "lat": 54.669498,
+      "lon": -8.06129,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "spierstown:familycensus:07:1911"
+     },
+     "caption": "Spierstown had one Lowry household in 1911, headed by Robert.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "spierstown:familycensus:07:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "spierstown:family:07",
+      "label": "Lowry",
+      "run": false
+     }
+    },
+    {
+     "id": "spierstown:beat:familycensus:07-1926",
+     "kind": "familycensus",
+     "chapter": "spierstown:ch:family-07",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "spierstown",
+      "name": "Spierstown",
+      "logainm_id": "13978",
+      "lat": 54.669498,
+      "lon": -8.06129,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "spierstown:familycensus:07:1926"
+     },
+     "caption": "Spierstown had one Lowry household in 1926, headed by Robert.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "spierstown:familycensus:07:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "spierstown:family:07",
+      "label": "Lowry",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "spierstown:ch:family-08",
+   "title": "The Wray family",
+   "beats": [
+    {
+     "id": "spierstown:beat:familyhead:08",
+     "kind": "familyhead",
+     "chapter": "spierstown:ch:family-08",
+     "time": {
+      "label": "The Wray family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "spierstown",
+      "name": "Spierstown",
+      "logainm_id": "13978",
+      "lat": 54.669498,
+      "lon": -8.06129,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "spierstown:familypresence:08"
+     },
+     "caption": "The Wray family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "spierstown:familypresence:08"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "spierstown:family:08",
+      "label": "Wray",
+      "run": false
+     }
+    },
+    {
+     "id": "spierstown:beat:familycensus:08-1901",
+     "kind": "familycensus",
+     "chapter": "spierstown:ch:family-08",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "spierstown",
+      "name": "Spierstown",
+      "logainm_id": "13978",
+      "lat": 54.669498,
+      "lon": -8.06129,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "spierstown:familycensus:08:1901"
+     },
+     "caption": "Spierstown had one Wray household in 1901, headed by Alexander.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "spierstown:familycensus:08:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "spierstown:family:08",
+      "label": "Wray",
+      "run": false
+     }
+    },
+    {
+     "id": "spierstown:beat:familycensus:08-1911",
+     "kind": "familycensus",
+     "chapter": "spierstown:ch:family-08",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "spierstown",
+      "name": "Spierstown",
+      "logainm_id": "13978",
+      "lat": 54.669498,
+      "lon": -8.06129,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "spierstown:familycensus:08:1911"
+     },
+     "caption": "Spierstown had one Wray household in 1911, headed by Alexander.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "spierstown:familycensus:08:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "spierstown:family:08",
+      "label": "Wray",
+      "run": false
+     }
+    },
+    {
+     "id": "spierstown:beat:familycensus:08-1926",
+     "kind": "familycensus",
+     "chapter": "spierstown:ch:family-08",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "spierstown",
+      "name": "Spierstown",
+      "logainm_id": "13978",
+      "lat": 54.669498,
+      "lon": -8.06129,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "spierstown:familycensus:08:1926"
+     },
+     "caption": "Spierstown had one Wray household in 1926, headed by Alexander.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "spierstown:familycensus:08:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "spierstown:family:08",
+      "label": "Wray",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "spierstown:ch:family-02",
+   "title": "The Cunningham family",
+   "beats": [
+    {
+     "id": "spierstown:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "spierstown:ch:family-02",
+     "time": {
+      "label": "The Cunningham family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "spierstown",
+      "name": "Spierstown",
+      "logainm_id": "13978",
+      "lat": 54.669498,
+      "lon": -8.06129,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "spierstown:familypresence:02"
+     },
+     "caption": "The Cunningham family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "spierstown:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "spierstown:family:02",
+      "label": "Cunningham",
+      "run": false
+     }
+    },
+    {
+     "id": "spierstown:beat:familycensus:02-1911",
+     "kind": "familycensus",
+     "chapter": "spierstown:ch:family-02",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "spierstown",
+      "name": "Spierstown",
+      "logainm_id": "13978",
+      "lat": 54.669498,
+      "lon": -8.06129,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "spierstown:familycensus:02:1911"
+     },
+     "caption": "Spierstown had one Cunningham household in 1911, headed by Bernard.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "spierstown:familycensus:02:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "spierstown:family:02",
+      "label": "Cunningham",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "spierstown:ch:family-03",
+   "title": "The Hanna family",
+   "beats": [
+    {
+     "id": "spierstown:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "spierstown:ch:family-03",
+     "time": {
+      "label": "The Hanna family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "spierstown",
+      "name": "Spierstown",
+      "logainm_id": "13978",
+      "lat": 54.669498,
+      "lon": -8.06129,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "spierstown:familypresence:03"
+     },
+     "caption": "The Hanna family appear in the records from 1911 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "spierstown:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "spierstown:family:03",
+      "label": "Hanna",
+      "run": false
+     }
+    },
+    {
+     "id": "spierstown:beat:familycensus:03-1911",
+     "kind": "familycensus",
+     "chapter": "spierstown:ch:family-03",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "spierstown",
+      "name": "Spierstown",
+      "logainm_id": "13978",
+      "lat": 54.669498,
+      "lon": -8.06129,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "spierstown:familycensus:03:1911"
+     },
+     "caption": "Spierstown had one Hanna household in 1911, headed by Robert.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "spierstown:familycensus:03:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "spierstown:family:03",
+      "label": "Hanna",
+      "run": false
+     }
+    },
+    {
+     "id": "spierstown:beat:familycensus:03-1926",
+     "kind": "familycensus",
+     "chapter": "spierstown:ch:family-03",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "spierstown",
+      "name": "Spierstown",
+      "logainm_id": "13978",
+      "lat": 54.669498,
+      "lon": -8.06129,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "spierstown:familycensus:03:1926"
+     },
+     "caption": "Spierstown had one Hanna household in 1926, headed by Robert.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "spierstown:familycensus:03:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "spierstown:family:03",
+      "label": "Hanna",
+      "run": false
+     }
     }
    ]
   }

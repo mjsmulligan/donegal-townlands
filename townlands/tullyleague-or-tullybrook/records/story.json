@@ -52,15 +52,15 @@
    ]
   },
   {
-   "id": "tullyleague-or-tullybrook:ch:1901",
-   "title": "1901",
+   "id": "tullyleague-or-tullybrook:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "tullyleague-or-tullybrook:beat:census:1901",
+     "id": "tullyleague-or-tullybrook:beat:census:returns",
      "kind": "census",
-     "chapter": "tullyleague-or-tullybrook:ch:1901",
+     "chapter": "tullyleague-or-tullybrook:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1926",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -77,33 +77,177 @@
       "stage": "map",
       "open_card": "tullyleague or tullybrook:census:1901"
      },
-     "caption": "In 1901, 22 people in three households lived in Tullyleague or Tullybrook. Heads of household included Connolly, Fox and Harron.",
+     "caption": "The censuses of 1901, 1911 and 1926 counted 22, 17 and 18 people in Tullyleague or Tullybrook, in 3, 3 and 3 households. Heads of household included Connolly, Fox and Harron.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "tullyleague or tullybrook:census:1901"
+       "tullyleague or tullybrook:census:1901",
+       "tullyleague or tullybrook:census:1911",
+       "tullyleague or tullybrook:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 8000,
+     "duration_ms": 12400,
      "audio": null,
      "counts": {
-      "people": 22,
-      "households": 3
+      "returns": [
+       {
+        "year": "1901",
+        "people": 22,
+        "households": 3
+       },
+       {
+        "year": "1911",
+        "people": 17,
+        "households": 3
+       },
+       {
+        "year": "1926",
+        "people": 18,
+        "households": 3
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "tullyleague-or-tullybrook:ch:1911",
-   "title": "1911",
+   "id": "tullyleague-or-tullybrook:ch:families",
+   "title": "The families of Tullyleague or Tullybrook",
    "beats": [
     {
-     "id": "tullyleague-or-tullybrook:beat:census:1911",
-     "kind": "census",
-     "chapter": "tullyleague-or-tullybrook:ch:1911",
+     "id": "tullyleague-or-tullybrook:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "tullyleague-or-tullybrook:ch:families",
+     "time": {
+      "label": "The families of Tullyleague or Tullybrook",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullyleague-or-tullybrook",
+      "name": "Tullyleague or Tullybrook",
+      "logainm_id": "14302",
+      "lat": 54.630704,
+      "lon": -8.081413,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullyleague or tullybrook:census:1901"
+     },
+     "caption": "Here are the families of Tullyleague or Tullybrook, from 1901 to 1926. First, the Connolly and Harron families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullyleague or tullybrook:census:1901",
+       "tullyleague or tullybrook:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "thread": {
+      "id": "tullyleague-or-tullybrook:family:01",
+      "label": "Connolly",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "tullyleague-or-tullybrook:ch:family-01",
+   "title": "The Connolly family",
+   "beats": [
+    {
+     "id": "tullyleague-or-tullybrook:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "tullyleague-or-tullybrook:ch:family-01",
+     "time": {
+      "label": "The Connolly family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullyleague-or-tullybrook",
+      "name": "Tullyleague or Tullybrook",
+      "logainm_id": "14302",
+      "lat": 54.630704,
+      "lon": -8.081413,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullyleague-or-tullybrook:familypresence:01"
+     },
+     "caption": "The Connolly family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullyleague-or-tullybrook:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "tullyleague-or-tullybrook:family:01",
+      "label": "Connolly",
+      "run": true
+     }
+    },
+    {
+     "id": "tullyleague-or-tullybrook:beat:familycensus:01-1901",
+     "kind": "familycensus",
+     "chapter": "tullyleague-or-tullybrook:ch:family-01",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullyleague-or-tullybrook",
+      "name": "Tullyleague or Tullybrook",
+      "logainm_id": "14302",
+      "lat": 54.630704,
+      "lon": -8.081413,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullyleague-or-tullybrook:familycensus:01:1901"
+     },
+     "caption": "Tullyleague or Tullybrook had one Connolly household in 1901, headed by Mary Anne.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullyleague-or-tullybrook:familycensus:01:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "tullyleague-or-tullybrook:family:01",
+      "label": "Connolly",
+      "run": true
+     }
+    },
+    {
+     "id": "tullyleague-or-tullybrook:beat:familycensus:01-1911",
+     "kind": "familycensus",
+     "chapter": "tullyleague-or-tullybrook:ch:family-01",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -120,35 +264,30 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "tullyleague or tullybrook:census:1911"
+      "open_card": "tullyleague-or-tullybrook:familycensus:01:1911"
      },
-     "caption": "In 1911, seventeen people in three households lived in Tullyleague or Tullybrook. Heads of household included Connolly, Harron and Johnston.",
+     "caption": "Tullyleague or Tullybrook had one Connolly household in 1911, headed by John.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "tullyleague or tullybrook:census:1911"
+       "tullyleague-or-tullybrook:familycensus:01:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 8000,
+     "duration_ms": 4800,
      "audio": null,
-     "counts": {
-      "people": 17,
-      "households": 3
+     "thread": {
+      "id": "tullyleague-or-tullybrook:family:01",
+      "label": "Connolly",
+      "run": true
      }
-    }
-   ]
-  },
-  {
-   "id": "tullyleague-or-tullybrook:ch:1926",
-   "title": "1926",
-   "beats": [
+    },
     {
-     "id": "tullyleague-or-tullybrook:beat:census:1926",
-     "kind": "census",
-     "chapter": "tullyleague-or-tullybrook:ch:1926",
+     "id": "tullyleague-or-tullybrook:beat:familycensus:01-1926",
+     "kind": "familycensus",
+     "chapter": "tullyleague-or-tullybrook:ch:family-01",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -165,25 +304,198 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "tullyleague or tullybrook:census:1926"
+      "open_card": "tullyleague-or-tullybrook:familycensus:01:1926"
      },
-     "caption": "Tullyleague or Tullybrook had eighteen people in three households in 1926. Heads of household included Harron, Johnston and Connolly.",
+     "caption": "Tullyleague or Tullybrook had one Connolly household in 1926, headed by Maggie.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "tullyleague or tullybrook:census:1926"
+       "tullyleague-or-tullybrook:familycensus:01:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 7600,
+     "duration_ms": 4800,
      "audio": null,
-     "counts": {
-      "people": 18,
-      "households": 3
+     "thread": {
+      "id": "tullyleague-or-tullybrook:family:01",
+      "label": "Connolly",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "tullyleague-or-tullybrook:ch:family-03",
+   "title": "The Harron family",
+   "beats": [
+    {
+     "id": "tullyleague-or-tullybrook:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "tullyleague-or-tullybrook:ch:family-03",
+     "time": {
+      "label": "The Harron family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullyleague-or-tullybrook",
+      "name": "Tullyleague or Tullybrook",
+      "logainm_id": "14302",
+      "lat": 54.630704,
+      "lon": -8.081413,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullyleague-or-tullybrook:familypresence:03"
+     },
+     "caption": "The Harron family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullyleague-or-tullybrook:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "tullyleague-or-tullybrook:family:03",
+      "label": "Harron",
+      "run": true
      }
     },
+    {
+     "id": "tullyleague-or-tullybrook:beat:familycensus:03-1901",
+     "kind": "familycensus",
+     "chapter": "tullyleague-or-tullybrook:ch:family-03",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullyleague-or-tullybrook",
+      "name": "Tullyleague or Tullybrook",
+      "logainm_id": "14302",
+      "lat": 54.630704,
+      "lon": -8.081413,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullyleague-or-tullybrook:familycensus:03:1901"
+     },
+     "caption": "Tullyleague or Tullybrook had one Harron household in 1901, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullyleague-or-tullybrook:familycensus:03:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "tullyleague-or-tullybrook:family:03",
+      "label": "Harron",
+      "run": true
+     }
+    },
+    {
+     "id": "tullyleague-or-tullybrook:beat:familycensus:03-1911",
+     "kind": "familycensus",
+     "chapter": "tullyleague-or-tullybrook:ch:family-03",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullyleague-or-tullybrook",
+      "name": "Tullyleague or Tullybrook",
+      "logainm_id": "14302",
+      "lat": 54.630704,
+      "lon": -8.081413,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullyleague-or-tullybrook:familycensus:03:1911"
+     },
+     "caption": "Tullyleague or Tullybrook had one Harron household in 1911, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullyleague-or-tullybrook:familycensus:03:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "tullyleague-or-tullybrook:family:03",
+      "label": "Harron",
+      "run": true
+     }
+    },
+    {
+     "id": "tullyleague-or-tullybrook:beat:familycensus:03-1926",
+     "kind": "familycensus",
+     "chapter": "tullyleague-or-tullybrook:ch:family-03",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullyleague-or-tullybrook",
+      "name": "Tullyleague or Tullybrook",
+      "logainm_id": "14302",
+      "lat": 54.630704,
+      "lon": -8.081413,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullyleague-or-tullybrook:familycensus:03:1926"
+     },
+     "caption": "Tullyleague or Tullybrook had two Harron households in 1926, headed by Merven and Anne.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullyleague-or-tullybrook:familycensus:03:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5600,
+     "audio": null,
+     "thread": {
+      "id": "tullyleague-or-tullybrook:family:03",
+      "label": "Harron",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "tullyleague-or-tullybrook:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "tullyleague-or-tullybrook:beat:closing:end",
      "kind": "closing",
@@ -218,6 +530,304 @@
      },
      "duration_ms": 4800,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "tullyleague-or-tullybrook:ch:family-02",
+   "title": "The Fox family",
+   "beats": [
+    {
+     "id": "tullyleague-or-tullybrook:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "tullyleague-or-tullybrook:ch:family-02",
+     "time": {
+      "label": "The Fox family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullyleague-or-tullybrook",
+      "name": "Tullyleague or Tullybrook",
+      "logainm_id": "14302",
+      "lat": 54.630704,
+      "lon": -8.081413,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullyleague-or-tullybrook:familypresence:02"
+     },
+     "caption": "The Fox family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullyleague-or-tullybrook:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "tullyleague-or-tullybrook:family:02",
+      "label": "Fox",
+      "run": false
+     }
+    },
+    {
+     "id": "tullyleague-or-tullybrook:beat:familycensus:02-1901",
+     "kind": "familycensus",
+     "chapter": "tullyleague-or-tullybrook:ch:family-02",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullyleague-or-tullybrook",
+      "name": "Tullyleague or Tullybrook",
+      "logainm_id": "14302",
+      "lat": 54.630704,
+      "lon": -8.081413,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullyleague-or-tullybrook:familycensus:02:1901"
+     },
+     "caption": "Tullyleague or Tullybrook had one Fox household in 1901, headed by John Charles.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullyleague-or-tullybrook:familycensus:02:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "tullyleague-or-tullybrook:family:02",
+      "label": "Fox",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "tullyleague-or-tullybrook:ch:family-04",
+   "title": "The Johnston family",
+   "beats": [
+    {
+     "id": "tullyleague-or-tullybrook:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "tullyleague-or-tullybrook:ch:family-04",
+     "time": {
+      "label": "The Johnston family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullyleague-or-tullybrook",
+      "name": "Tullyleague or Tullybrook",
+      "logainm_id": "14302",
+      "lat": 54.630704,
+      "lon": -8.081413,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullyleague-or-tullybrook:familypresence:04"
+     },
+     "caption": "The Johnston family appear in the records from 1911 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullyleague-or-tullybrook:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "tullyleague-or-tullybrook:family:04",
+      "label": "Johnston",
+      "run": false
+     }
+    },
+    {
+     "id": "tullyleague-or-tullybrook:beat:familycensus:04-1911",
+     "kind": "familycensus",
+     "chapter": "tullyleague-or-tullybrook:ch:family-04",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullyleague-or-tullybrook",
+      "name": "Tullyleague or Tullybrook",
+      "logainm_id": "14302",
+      "lat": 54.630704,
+      "lon": -8.081413,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullyleague-or-tullybrook:familycensus:04:1911"
+     },
+     "caption": "Tullyleague or Tullybrook had one Johnston household in 1911, headed by Charles J.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullyleague-or-tullybrook:familycensus:04:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "tullyleague-or-tullybrook:family:04",
+      "label": "Johnston",
+      "run": false
+     }
+    },
+    {
+     "id": "tullyleague-or-tullybrook:beat:familycensus:04-1926",
+     "kind": "familycensus",
+     "chapter": "tullyleague-or-tullybrook:ch:family-04",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullyleague-or-tullybrook",
+      "name": "Tullyleague or Tullybrook",
+      "logainm_id": "14302",
+      "lat": 54.630704,
+      "lon": -8.081413,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullyleague-or-tullybrook:familycensus:04:1926"
+     },
+     "caption": "Tullyleague or Tullybrook had two Johnston households in 1926, headed by Constance A and Alfred Micahel D.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullyleague-or-tullybrook:familycensus:04:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "thread": {
+      "id": "tullyleague-or-tullybrook:family:04",
+      "label": "Johnston",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "tullyleague-or-tullybrook:ch:family-05",
+   "title": "The McHugh family",
+   "beats": [
+    {
+     "id": "tullyleague-or-tullybrook:beat:familyhead:05",
+     "kind": "familyhead",
+     "chapter": "tullyleague-or-tullybrook:ch:family-05",
+     "time": {
+      "label": "The McHugh family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullyleague-or-tullybrook",
+      "name": "Tullyleague or Tullybrook",
+      "logainm_id": "14302",
+      "lat": 54.630704,
+      "lon": -8.081413,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullyleague-or-tullybrook:familypresence:05"
+     },
+     "caption": "The McHugh family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullyleague-or-tullybrook:familypresence:05"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "tullyleague-or-tullybrook:family:05",
+      "label": "McHugh",
+      "run": false
+     }
+    },
+    {
+     "id": "tullyleague-or-tullybrook:beat:familycensus:05-1926",
+     "kind": "familycensus",
+     "chapter": "tullyleague-or-tullybrook:ch:family-05",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullyleague-or-tullybrook",
+      "name": "Tullyleague or Tullybrook",
+      "logainm_id": "14302",
+      "lat": 54.630704,
+      "lon": -8.081413,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullyleague-or-tullybrook:familycensus:05:1926"
+     },
+     "caption": "Tullyleague or Tullybrook had one McHugh household in 1926, headed by Sarah.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullyleague-or-tullybrook:familycensus:05:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "tullyleague-or-tullybrook:family:05",
+      "label": "McHugh",
+      "run": false
+     }
     }
    ]
   }

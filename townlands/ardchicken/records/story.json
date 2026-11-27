@@ -52,15 +52,15 @@
    ]
   },
   {
-   "id": "ardchicken:ch:1901",
-   "title": "1901",
+   "id": "ardchicken:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "ardchicken:beat:census:1901",
+     "id": "ardchicken:beat:census:returns",
      "kind": "census",
-     "chapter": "ardchicken:ch:1901",
+     "chapter": "ardchicken:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1926",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -77,33 +77,137 @@
       "stage": "map",
       "open_card": "ardchicken:census:1901"
      },
-     "caption": "In 1901, eight people in two households lived in Ardchicken. Heads of household included Kyle and Meehan.",
+     "caption": "The censuses of 1901, 1911 and 1926 counted 8, 9 and 3 people in Ardchicken, in 2, 2 and 1 households. Heads of household included Kyle, Meehan and Cook.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "ardchicken:census:1901"
+       "ardchicken:census:1901",
+       "ardchicken:census:1911",
+       "ardchicken:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 6800,
+     "duration_ms": 11600,
      "audio": null,
      "counts": {
-      "people": 8,
-      "households": 2
+      "returns": [
+       {
+        "year": "1901",
+        "people": 8,
+        "households": 2
+       },
+       {
+        "year": "1911",
+        "people": 9,
+        "households": 2
+       },
+       {
+        "year": "1926",
+        "people": 3,
+        "households": 1
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "ardchicken:ch:1911",
-   "title": "1911",
+   "id": "ardchicken:ch:families",
+   "title": "The families of Ardchicken",
    "beats": [
     {
-     "id": "ardchicken:beat:census:1911",
-     "kind": "census",
-     "chapter": "ardchicken:ch:1911",
+     "id": "ardchicken:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "ardchicken:ch:families",
+     "time": {
+      "label": "The families of Ardchicken",
+      "iso": "1901",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardchicken",
+      "name": "Ardchicken",
+      "logainm_id": "14025",
+      "lat": 54.642736,
+      "lon": -8.111924,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardchicken:census:1901"
+     },
+     "caption": "Here are the families of Ardchicken, from 1901 to 1926. First, the Cook and Hurst families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardchicken:census:1901",
+       "ardchicken:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "ardchicken:family:01",
+      "label": "Cook",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardchicken:ch:family-01",
+   "title": "The Cook family",
+   "beats": [
+    {
+     "id": "ardchicken:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "ardchicken:ch:family-01",
+     "time": {
+      "label": "The Cook family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardchicken",
+      "name": "Ardchicken",
+      "logainm_id": "14025",
+      "lat": 54.642736,
+      "lon": -8.111924,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardchicken:familypresence:01"
+     },
+     "caption": "The Cook family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardchicken:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardchicken:family:01",
+      "label": "Cook",
+      "run": true
+     }
+    },
+    {
+     "id": "ardchicken:beat:familycensus:01-1911",
+     "kind": "familycensus",
+     "chapter": "ardchicken:ch:family-01",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -120,35 +224,76 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "ardchicken:census:1911"
+      "open_card": "ardchicken:familycensus:01:1911"
      },
-     "caption": "Ardchicken had nine people in two households in 1911. Heads of household included Cook and Joyce.",
+     "caption": "Ardchicken had one Cook household in 1911, headed by Charles.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "ardchicken:census:1911"
+       "ardchicken:familycensus:01:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6400,
+     "duration_ms": 4000,
      "audio": null,
-     "counts": {
-      "people": 9,
-      "households": 2
+     "thread": {
+      "id": "ardchicken:family:01",
+      "label": "Cook",
+      "run": true
      }
     }
    ]
   },
   {
-   "id": "ardchicken:ch:1926",
-   "title": "1926",
+   "id": "ardchicken:ch:family-02",
+   "title": "The Hurst family",
    "beats": [
     {
-     "id": "ardchicken:beat:census:1926",
-     "kind": "census",
-     "chapter": "ardchicken:ch:1926",
+     "id": "ardchicken:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "ardchicken:ch:family-02",
+     "time": {
+      "label": "The Hurst family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardchicken",
+      "name": "Ardchicken",
+      "logainm_id": "14025",
+      "lat": 54.642736,
+      "lon": -8.111924,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardchicken:familypresence:02"
+     },
+     "caption": "The Hurst family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardchicken:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardchicken:family:02",
+      "label": "Hurst",
+      "run": true
+     }
+    },
+    {
+     "id": "ardchicken:beat:familycensus:02-1926",
+     "kind": "familycensus",
+     "chapter": "ardchicken:ch:family-02",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -165,25 +310,32 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "ardchicken:census:1926"
+      "open_card": "ardchicken:familycensus:02:1926"
      },
-     "caption": "In 1926, three people in one household lived in Ardchicken. Heads of household included Hurst.",
+     "caption": "Ardchicken had one Hurst household in 1926, headed by Charles.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "ardchicken:census:1926"
+       "ardchicken:familycensus:02:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6000,
+     "duration_ms": 4000,
      "audio": null,
-     "counts": {
-      "people": 3,
-      "households": 1
+     "thread": {
+      "id": "ardchicken:family:02",
+      "label": "Hurst",
+      "run": true
      }
-    },
+    }
+   ]
+  },
+  {
+   "id": "ardchicken:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "ardchicken:beat:closing:end",
      "kind": "closing",
@@ -218,6 +370,264 @@
      },
      "duration_ms": 4000,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "ardchicken:ch:family-04",
+   "title": "The Kyle family",
+   "beats": [
+    {
+     "id": "ardchicken:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "ardchicken:ch:family-04",
+     "time": {
+      "label": "The Kyle family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardchicken",
+      "name": "Ardchicken",
+      "logainm_id": "14025",
+      "lat": 54.642736,
+      "lon": -8.111924,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardchicken:familypresence:04"
+     },
+     "caption": "The Kyle family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardchicken:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardchicken:family:04",
+      "label": "Kyle",
+      "run": false
+     }
+    },
+    {
+     "id": "ardchicken:beat:familycensus:04-1901",
+     "kind": "familycensus",
+     "chapter": "ardchicken:ch:family-04",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardchicken",
+      "name": "Ardchicken",
+      "logainm_id": "14025",
+      "lat": 54.642736,
+      "lon": -8.111924,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardchicken:familycensus:04:1901"
+     },
+     "caption": "Ardchicken had one Kyle household in 1901, headed by Alexander.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardchicken:familycensus:04:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardchicken:family:04",
+      "label": "Kyle",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardchicken:ch:family-05",
+   "title": "The Meehan family",
+   "beats": [
+    {
+     "id": "ardchicken:beat:familyhead:05",
+     "kind": "familyhead",
+     "chapter": "ardchicken:ch:family-05",
+     "time": {
+      "label": "The Meehan family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardchicken",
+      "name": "Ardchicken",
+      "logainm_id": "14025",
+      "lat": 54.642736,
+      "lon": -8.111924,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardchicken:familypresence:05"
+     },
+     "caption": "The Meehan family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardchicken:familypresence:05"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardchicken:family:05",
+      "label": "Meehan",
+      "run": false
+     }
+    },
+    {
+     "id": "ardchicken:beat:familycensus:05-1901",
+     "kind": "familycensus",
+     "chapter": "ardchicken:ch:family-05",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardchicken",
+      "name": "Ardchicken",
+      "logainm_id": "14025",
+      "lat": 54.642736,
+      "lon": -8.111924,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardchicken:familycensus:05:1901"
+     },
+     "caption": "Ardchicken had one Meehan household in 1901, headed by Hugh.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardchicken:familycensus:05:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardchicken:family:05",
+      "label": "Meehan",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardchicken:ch:family-03",
+   "title": "The Joyce family",
+   "beats": [
+    {
+     "id": "ardchicken:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "ardchicken:ch:family-03",
+     "time": {
+      "label": "The Joyce family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardchicken",
+      "name": "Ardchicken",
+      "logainm_id": "14025",
+      "lat": 54.642736,
+      "lon": -8.111924,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardchicken:familypresence:03"
+     },
+     "caption": "The Joyce family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardchicken:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardchicken:family:03",
+      "label": "Joyce",
+      "run": false
+     }
+    },
+    {
+     "id": "ardchicken:beat:familycensus:03-1911",
+     "kind": "familycensus",
+     "chapter": "ardchicken:ch:family-03",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardchicken",
+      "name": "Ardchicken",
+      "logainm_id": "14025",
+      "lat": 54.642736,
+      "lon": -8.111924,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardchicken:familycensus:03:1911"
+     },
+     "caption": "Ardchicken had one Joyce household in 1911, headed by Elizabeth.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardchicken:familycensus:03:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardchicken:family:03",
+      "label": "Joyce",
+      "run": false
+     }
     }
    ]
   }

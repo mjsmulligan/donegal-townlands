@@ -52,15 +52,15 @@
    ]
   },
   {
-   "id": "drumlask:ch:1901",
-   "title": "1901",
+   "id": "drumlask:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "drumlask:beat:census:1901",
+     "id": "drumlask:beat:census:returns",
      "kind": "census",
-     "chapter": "drumlask:ch:1901",
+     "chapter": "drumlask:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1926",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -77,33 +77,177 @@
       "stage": "map",
       "open_card": "drumlask:census:1901"
      },
-     "caption": "Drumlask had 38 people in nine households in 1901. Heads of household included Farrell, Graham and Wray.",
+     "caption": "The censuses of 1901, 1911 and 1926 counted 38, 33 and 35 people in Drumlask, in 9, 7 and 9 households. Heads of household included Farrell, Graham and Wray.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "drumlask:census:1901"
+       "drumlask:census:1901",
+       "drumlask:census:1911",
+       "drumlask:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 6800,
+     "duration_ms": 11600,
      "audio": null,
      "counts": {
-      "people": 38,
-      "households": 9
+      "returns": [
+       {
+        "year": "1901",
+        "people": 38,
+        "households": 9
+       },
+       {
+        "year": "1911",
+        "people": 33,
+        "households": 7
+       },
+       {
+        "year": "1926",
+        "people": 35,
+        "households": 9
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "drumlask:ch:1911",
-   "title": "1911",
+   "id": "drumlask:ch:families",
+   "title": "The families of Drumlask",
    "beats": [
     {
-     "id": "drumlask:beat:census:1911",
-     "kind": "census",
-     "chapter": "drumlask:ch:1911",
+     "id": "drumlask:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "drumlask:ch:families",
+     "time": {
+      "label": "The families of Drumlask",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlask",
+      "name": "Drumlask",
+      "logainm_id": "14293",
+      "lat": 54.639148,
+      "lon": -8.065615,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlask:census:1901"
+     },
+     "caption": "Here are the families of Drumlask, from 1901 to 1926. First, the Farrell and Graham families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlask:census:1901",
+       "drumlask:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "drumlask:family:02",
+      "label": "Farrell",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumlask:ch:family-02",
+   "title": "The Farrell family",
+   "beats": [
+    {
+     "id": "drumlask:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "drumlask:ch:family-02",
+     "time": {
+      "label": "The Farrell family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlask",
+      "name": "Drumlask",
+      "logainm_id": "14293",
+      "lat": 54.639148,
+      "lon": -8.065615,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlask:familypresence:02"
+     },
+     "caption": "The Farrell family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlask:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drumlask:family:02",
+      "label": "Farrell",
+      "run": true
+     }
+    },
+    {
+     "id": "drumlask:beat:familycensus:02-1901",
+     "kind": "familycensus",
+     "chapter": "drumlask:ch:family-02",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlask",
+      "name": "Drumlask",
+      "logainm_id": "14293",
+      "lat": 54.639148,
+      "lon": -8.065615,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlask:familycensus:02:1901"
+     },
+     "caption": "Drumlask had three Farrell households in 1901, headed by Anne, Robert and Walter.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlask:familycensus:02:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "drumlask:family:02",
+      "label": "Farrell",
+      "run": true
+     }
+    },
+    {
+     "id": "drumlask:beat:familycensus:02-1911",
+     "kind": "familycensus",
+     "chapter": "drumlask:ch:family-02",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -120,35 +264,30 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "drumlask:census:1911"
+      "open_card": "drumlask:familycensus:02:1911"
      },
-     "caption": "Drumlask had 33 people in seven households in 1911. Heads of household included Farrell, Graham and Wray.",
+     "caption": "Drumlask had two Farrell households in 1911, headed by Sarah and Walter.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "drumlask:census:1911"
+       "drumlask:familycensus:02:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6800,
+     "duration_ms": 4800,
      "audio": null,
-     "counts": {
-      "people": 33,
-      "households": 7
+     "thread": {
+      "id": "drumlask:family:02",
+      "label": "Farrell",
+      "run": true
      }
-    }
-   ]
-  },
-  {
-   "id": "drumlask:ch:1926",
-   "title": "1926",
-   "beats": [
+    },
     {
-     "id": "drumlask:beat:census:1926",
-     "kind": "census",
-     "chapter": "drumlask:ch:1926",
+     "id": "drumlask:beat:familycensus:02-1926",
+     "kind": "familycensus",
+     "chapter": "drumlask:ch:family-02",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -165,25 +304,198 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "drumlask:census:1926"
+      "open_card": "drumlask:familycensus:02:1926"
      },
-     "caption": "Drumlask had 35 people in nine households in 1926. Heads of household included Graham, Wray and Farrell.",
+     "caption": "Drumlask had one Farrell household in 1926, headed by Fanny.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "drumlask:census:1926"
+       "drumlask:familycensus:02:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6800,
+     "duration_ms": 4000,
      "audio": null,
-     "counts": {
-      "people": 35,
-      "households": 9
+     "thread": {
+      "id": "drumlask:family:02",
+      "label": "Farrell",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumlask:ch:family-03",
+   "title": "The Graham family",
+   "beats": [
+    {
+     "id": "drumlask:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "drumlask:ch:family-03",
+     "time": {
+      "label": "The Graham family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlask",
+      "name": "Drumlask",
+      "logainm_id": "14293",
+      "lat": 54.639148,
+      "lon": -8.065615,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlask:familypresence:03"
+     },
+     "caption": "The Graham family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlask:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drumlask:family:03",
+      "label": "Graham",
+      "run": true
      }
     },
+    {
+     "id": "drumlask:beat:familycensus:03-1901",
+     "kind": "familycensus",
+     "chapter": "drumlask:ch:family-03",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlask",
+      "name": "Drumlask",
+      "logainm_id": "14293",
+      "lat": 54.639148,
+      "lon": -8.065615,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlask:familycensus:03:1901"
+     },
+     "caption": "Drumlask had three Graham households in 1901, headed by two named Arthur and Catherine.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlask:familycensus:03:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5600,
+     "audio": null,
+     "thread": {
+      "id": "drumlask:family:03",
+      "label": "Graham",
+      "run": true
+     }
+    },
+    {
+     "id": "drumlask:beat:familycensus:03-1911",
+     "kind": "familycensus",
+     "chapter": "drumlask:ch:family-03",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlask",
+      "name": "Drumlask",
+      "logainm_id": "14293",
+      "lat": 54.639148,
+      "lon": -8.065615,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlask:familycensus:03:1911"
+     },
+     "caption": "Drumlask had two Graham households in 1911, headed by Arthur and George.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlask:familycensus:03:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "drumlask:family:03",
+      "label": "Graham",
+      "run": true
+     }
+    },
+    {
+     "id": "drumlask:beat:familycensus:03-1926",
+     "kind": "familycensus",
+     "chapter": "drumlask:ch:family-03",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlask",
+      "name": "Drumlask",
+      "logainm_id": "14293",
+      "lat": 54.639148,
+      "lon": -8.065615,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlask:familycensus:03:1926"
+     },
+     "caption": "Drumlask had five Graham households in 1926, headed by John, Lilly, Jack, Maggie and Sarah.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlask:familycensus:03:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 6000,
+     "audio": null,
+     "thread": {
+      "id": "drumlask:family:03",
+      "label": "Graham",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumlask:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "drumlask:beat:closing:end",
      "kind": "closing",
@@ -218,6 +530,344 @@
      },
      "duration_ms": 4000,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "drumlask:ch:family-04",
+   "title": "The Perry family",
+   "beats": [
+    {
+     "id": "drumlask:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "drumlask:ch:family-04",
+     "time": {
+      "label": "The Perry family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlask",
+      "name": "Drumlask",
+      "logainm_id": "14293",
+      "lat": 54.639148,
+      "lon": -8.065615,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlask:familypresence:04"
+     },
+     "caption": "The Perry family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlask:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumlask:family:04",
+      "label": "Perry",
+      "run": false
+     }
+    },
+    {
+     "id": "drumlask:beat:familycensus:04-1901",
+     "kind": "familycensus",
+     "chapter": "drumlask:ch:family-04",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlask",
+      "name": "Drumlask",
+      "logainm_id": "14293",
+      "lat": 54.639148,
+      "lon": -8.065615,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlask:familycensus:04:1901"
+     },
+     "caption": "Drumlask had one Perry household in 1901, headed by Joseph.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlask:familycensus:04:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumlask:family:04",
+      "label": "Perry",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumlask:ch:family-05",
+   "title": "The Wray family",
+   "beats": [
+    {
+     "id": "drumlask:beat:familyhead:05",
+     "kind": "familyhead",
+     "chapter": "drumlask:ch:family-05",
+     "time": {
+      "label": "The Wray family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlask",
+      "name": "Drumlask",
+      "logainm_id": "14293",
+      "lat": 54.639148,
+      "lon": -8.065615,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlask:familypresence:05"
+     },
+     "caption": "The Wray family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlask:familypresence:05"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drumlask:family:05",
+      "label": "Wray",
+      "run": false
+     }
+    },
+    {
+     "id": "drumlask:beat:familycensus:05-1901",
+     "kind": "familycensus",
+     "chapter": "drumlask:ch:family-05",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlask",
+      "name": "Drumlask",
+      "logainm_id": "14293",
+      "lat": 54.639148,
+      "lon": -8.065615,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlask:familycensus:05:1901"
+     },
+     "caption": "Drumlask had two Wray households in 1901, headed by Elizabeth and David.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlask:familycensus:05:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "drumlask:family:05",
+      "label": "Wray",
+      "run": false
+     }
+    },
+    {
+     "id": "drumlask:beat:familycensus:05-1911",
+     "kind": "familycensus",
+     "chapter": "drumlask:ch:family-05",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlask",
+      "name": "Drumlask",
+      "logainm_id": "14293",
+      "lat": 54.639148,
+      "lon": -8.065615,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlask:familycensus:05:1911"
+     },
+     "caption": "Drumlask had two Wray households in 1911, headed by David and Jane.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlask:familycensus:05:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "drumlask:family:05",
+      "label": "Wray",
+      "run": false
+     }
+    },
+    {
+     "id": "drumlask:beat:familycensus:05-1926",
+     "kind": "familycensus",
+     "chapter": "drumlask:ch:family-05",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlask",
+      "name": "Drumlask",
+      "logainm_id": "14293",
+      "lat": 54.639148,
+      "lon": -8.065615,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlask:familycensus:05:1926"
+     },
+     "caption": "Drumlask had two Wray households in 1926, headed by Samuel and William.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlask:familycensus:05:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "drumlask:family:05",
+      "label": "Wray",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumlask:ch:family-01",
+   "title": "The Ellis family",
+   "beats": [
+    {
+     "id": "drumlask:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "drumlask:ch:family-01",
+     "time": {
+      "label": "The Ellis family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlask",
+      "name": "Drumlask",
+      "logainm_id": "14293",
+      "lat": 54.639148,
+      "lon": -8.065615,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlask:familypresence:01"
+     },
+     "caption": "The Ellis family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlask:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumlask:family:01",
+      "label": "Ellis",
+      "run": false
+     }
+    },
+    {
+     "id": "drumlask:beat:familycensus:01-1911",
+     "kind": "familycensus",
+     "chapter": "drumlask:ch:family-01",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlask",
+      "name": "Drumlask",
+      "logainm_id": "14293",
+      "lat": 54.639148,
+      "lon": -8.065615,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlask:familycensus:01:1911"
+     },
+     "caption": "Drumlask had one Ellis household in 1911, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlask:familycensus:01:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumlask:family:01",
+      "label": "Ellis",
+      "run": false
+     }
     }
    ]
   }

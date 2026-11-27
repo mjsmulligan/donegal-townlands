@@ -52,15 +52,15 @@
    ]
   },
   {
-   "id": "eddrim-glebe:ch:1901",
-   "title": "1901",
+   "id": "eddrim-glebe:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "eddrim-glebe:beat:census:1901",
+     "id": "eddrim-glebe:beat:census:returns",
      "kind": "census",
-     "chapter": "eddrim-glebe:ch:1901",
+     "chapter": "eddrim-glebe:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1926",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -77,33 +77,177 @@
       "stage": "map",
       "open_card": "eddrim glebe:census:1901"
      },
-     "caption": "Eddrim Glebe had 120 people in 24 households in 1901. Heads of household included Gallagher, Wilson and Carney.",
+     "caption": "The censuses of 1901, 1911 and 1926 counted 120, 108 and 67 people in Eddrim Glebe, in 24, 23 and 20 households. Heads of household included Gallagher, Wilson and Carney.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "eddrim glebe:census:1901"
+       "eddrim glebe:census:1901",
+       "eddrim glebe:census:1911",
+       "eddrim glebe:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 7200,
+     "duration_ms": 12000,
      "audio": null,
      "counts": {
-      "people": 120,
-      "households": 24
+      "returns": [
+       {
+        "year": "1901",
+        "people": 120,
+        "households": 24
+       },
+       {
+        "year": "1911",
+        "people": 108,
+        "households": 23
+       },
+       {
+        "year": "1926",
+        "people": 67,
+        "households": 20
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "eddrim-glebe:ch:1911",
-   "title": "1911",
+   "id": "eddrim-glebe:ch:families",
+   "title": "The families of Eddrim Glebe",
    "beats": [
     {
-     "id": "eddrim-glebe:beat:census:1911",
-     "kind": "census",
-     "chapter": "eddrim-glebe:ch:1911",
+     "id": "eddrim-glebe:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "eddrim-glebe:ch:families",
+     "time": {
+      "label": "The families of Eddrim Glebe",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim glebe:census:1901"
+     },
+     "caption": "Here are the families of Eddrim Glebe, from 1901 to 1926. First, the Gallagher and Wilson families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim glebe:census:1901",
+       "eddrim glebe:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:07",
+      "label": "Gallagher",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "eddrim-glebe:ch:family-07",
+   "title": "The Gallagher family",
+   "beats": [
+    {
+     "id": "eddrim-glebe:beat:familyhead:07",
+     "kind": "familyhead",
+     "chapter": "eddrim-glebe:ch:family-07",
+     "time": {
+      "label": "The Gallagher family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familypresence:07"
+     },
+     "caption": "The Gallagher family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familypresence:07"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:07",
+      "label": "Gallagher",
+      "run": true
+     }
+    },
+    {
+     "id": "eddrim-glebe:beat:familycensus:07-1901",
+     "kind": "familycensus",
+     "chapter": "eddrim-glebe:ch:family-07",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familycensus:07:1901"
+     },
+     "caption": "Eddrim Glebe had two Gallagher households in 1901, headed by Mary and Michael.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familycensus:07:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:07",
+      "label": "Gallagher",
+      "run": true
+     }
+    },
+    {
+     "id": "eddrim-glebe:beat:familycensus:07-1911",
+     "kind": "familycensus",
+     "chapter": "eddrim-glebe:ch:family-07",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -120,35 +264,30 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "eddrim glebe:census:1911"
+      "open_card": "eddrim-glebe:familycensus:07:1911"
      },
-     "caption": "In 1911, 108 people in 23 households lived in Eddrim Glebe. Heads of household included Gallagher, Ritchey and Wilson.",
+     "caption": "Eddrim Glebe had two Gallagher households in 1911, headed by Patrick and Michael.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "eddrim glebe:census:1911"
+       "eddrim-glebe:familycensus:07:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 7600,
+     "duration_ms": 5200,
      "audio": null,
-     "counts": {
-      "people": 108,
-      "households": 23
+     "thread": {
+      "id": "eddrim-glebe:family:07",
+      "label": "Gallagher",
+      "run": true
      }
-    }
-   ]
-  },
-  {
-   "id": "eddrim-glebe:ch:1926",
-   "title": "1926",
-   "beats": [
+    },
     {
-     "id": "eddrim-glebe:beat:census:1926",
-     "kind": "census",
-     "chapter": "eddrim-glebe:ch:1926",
+     "id": "eddrim-glebe:beat:familycensus:07-1926",
+     "kind": "familycensus",
+     "chapter": "eddrim-glebe:ch:family-07",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -165,25 +304,198 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "eddrim glebe:census:1926"
+      "open_card": "eddrim-glebe:familycensus:07:1926"
      },
-     "caption": "In 1926, 67 people in twenty households lived in Eddrim Glebe. Heads of household included Gallagher, Ritchie and Barret.",
+     "caption": "Eddrim Glebe had two Gallagher households in 1926, headed by Ellen and Michael.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "eddrim glebe:census:1926"
+       "eddrim-glebe:familycensus:07:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 7600,
+     "duration_ms": 5200,
      "audio": null,
-     "counts": {
-      "people": 67,
-      "households": 20
+     "thread": {
+      "id": "eddrim-glebe:family:07",
+      "label": "Gallagher",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "eddrim-glebe:ch:family-35",
+   "title": "The Wilson family",
+   "beats": [
+    {
+     "id": "eddrim-glebe:beat:familyhead:35",
+     "kind": "familyhead",
+     "chapter": "eddrim-glebe:ch:family-35",
+     "time": {
+      "label": "The Wilson family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familypresence:35"
+     },
+     "caption": "The Wilson family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familypresence:35"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:35",
+      "label": "Wilson",
+      "run": true
      }
     },
+    {
+     "id": "eddrim-glebe:beat:familycensus:35-1901",
+     "kind": "familycensus",
+     "chapter": "eddrim-glebe:ch:family-35",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familycensus:35:1901"
+     },
+     "caption": "Eddrim Glebe had two Wilson households in 1901, headed by Edward and Alex.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familycensus:35:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:35",
+      "label": "Wilson",
+      "run": true
+     }
+    },
+    {
+     "id": "eddrim-glebe:beat:familycensus:35-1911",
+     "kind": "familycensus",
+     "chapter": "eddrim-glebe:ch:family-35",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familycensus:35:1911"
+     },
+     "caption": "Eddrim Glebe had two Wilson households in 1911, headed by Alexander and Edward.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familycensus:35:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:35",
+      "label": "Wilson",
+      "run": true
+     }
+    },
+    {
+     "id": "eddrim-glebe:beat:familycensus:35-1926",
+     "kind": "familycensus",
+     "chapter": "eddrim-glebe:ch:family-35",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familycensus:35:1926"
+     },
+     "caption": "Eddrim Glebe had one Wilson household in 1926, headed by Robert.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familycensus:35:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:35",
+      "label": "Wilson",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "eddrim-glebe:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "eddrim-glebe:beat:closing:end",
      "kind": "closing",
@@ -218,6 +530,3730 @@
      },
      "duration_ms": 4400,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "eddrim-glebe:ch:family-02",
+   "title": "The Carney family",
+   "beats": [
+    {
+     "id": "eddrim-glebe:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "eddrim-glebe:ch:family-02",
+     "time": {
+      "label": "The Carney family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familypresence:02"
+     },
+     "caption": "The Carney family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:02",
+      "label": "Carney",
+      "run": false
+     }
+    },
+    {
+     "id": "eddrim-glebe:beat:familycensus:02-1901",
+     "kind": "familycensus",
+     "chapter": "eddrim-glebe:ch:family-02",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familycensus:02:1901"
+     },
+     "caption": "Eddrim Glebe had one Carney household in 1901, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familycensus:02:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:02",
+      "label": "Carney",
+      "run": false
+     }
+    },
+    {
+     "id": "eddrim-glebe:beat:familycensus:02-1911",
+     "kind": "familycensus",
+     "chapter": "eddrim-glebe:ch:family-02",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familycensus:02:1911"
+     },
+     "caption": "Eddrim Glebe had one Carney household in 1911, headed by Mary.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familycensus:02:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:02",
+      "label": "Carney",
+      "run": false
+     }
+    },
+    {
+     "id": "eddrim-glebe:beat:familycensus:02-1926",
+     "kind": "familycensus",
+     "chapter": "eddrim-glebe:ch:family-02",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familycensus:02:1926"
+     },
+     "caption": "Eddrim Glebe had one Carney household in 1926, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familycensus:02:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:02",
+      "label": "Carney",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "eddrim-glebe:ch:family-03",
+   "title": "The Conaghan family",
+   "beats": [
+    {
+     "id": "eddrim-glebe:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "eddrim-glebe:ch:family-03",
+     "time": {
+      "label": "The Conaghan family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familypresence:03"
+     },
+     "caption": "The Conaghan family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:03",
+      "label": "Conaghan",
+      "run": false
+     }
+    },
+    {
+     "id": "eddrim-glebe:beat:familycensus:03-1901",
+     "kind": "familycensus",
+     "chapter": "eddrim-glebe:ch:family-03",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familycensus:03:1901"
+     },
+     "caption": "Eddrim Glebe had one Conaghan household in 1901, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familycensus:03:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:03",
+      "label": "Conaghan",
+      "run": false
+     }
+    },
+    {
+     "id": "eddrim-glebe:beat:familycensus:03-1911",
+     "kind": "familycensus",
+     "chapter": "eddrim-glebe:ch:family-03",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familycensus:03:1911"
+     },
+     "caption": "Eddrim Glebe had one Conaghan household in 1911, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familycensus:03:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:03",
+      "label": "Conaghan",
+      "run": false
+     }
+    },
+    {
+     "id": "eddrim-glebe:beat:familycensus:03-1926",
+     "kind": "familycensus",
+     "chapter": "eddrim-glebe:ch:family-03",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familycensus:03:1926"
+     },
+     "caption": "Eddrim Glebe had one Conaghan household in 1926, headed by William.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familycensus:03:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:03",
+      "label": "Conaghan",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "eddrim-glebe:ch:family-06",
+   "title": "The Elvin family",
+   "beats": [
+    {
+     "id": "eddrim-glebe:beat:familyhead:06",
+     "kind": "familyhead",
+     "chapter": "eddrim-glebe:ch:family-06",
+     "time": {
+      "label": "The Elvin family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familypresence:06"
+     },
+     "caption": "The Elvin family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familypresence:06"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:06",
+      "label": "Elvin",
+      "run": false
+     }
+    },
+    {
+     "id": "eddrim-glebe:beat:familycensus:06-1901",
+     "kind": "familycensus",
+     "chapter": "eddrim-glebe:ch:family-06",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familycensus:06:1901"
+     },
+     "caption": "Eddrim Glebe had one Elvin household in 1901, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familycensus:06:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:06",
+      "label": "Elvin",
+      "run": false
+     }
+    },
+    {
+     "id": "eddrim-glebe:beat:familycensus:06-1911",
+     "kind": "familycensus",
+     "chapter": "eddrim-glebe:ch:family-06",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familycensus:06:1911"
+     },
+     "caption": "Eddrim Glebe had one Elvin household in 1911, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familycensus:06:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:06",
+      "label": "Elvin",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "eddrim-glebe:ch:family-09",
+   "title": "The Henderson family",
+   "beats": [
+    {
+     "id": "eddrim-glebe:beat:familyhead:09",
+     "kind": "familyhead",
+     "chapter": "eddrim-glebe:ch:family-09",
+     "time": {
+      "label": "The Henderson family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familypresence:09"
+     },
+     "caption": "The Henderson family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familypresence:09"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:09",
+      "label": "Henderson",
+      "run": false
+     }
+    },
+    {
+     "id": "eddrim-glebe:beat:familycensus:09-1901",
+     "kind": "familycensus",
+     "chapter": "eddrim-glebe:ch:family-09",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familycensus:09:1901"
+     },
+     "caption": "Eddrim Glebe had one Henderson household in 1901, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familycensus:09:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:09",
+      "label": "Henderson",
+      "run": false
+     }
+    },
+    {
+     "id": "eddrim-glebe:beat:familycensus:09-1911",
+     "kind": "familycensus",
+     "chapter": "eddrim-glebe:ch:family-09",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familycensus:09:1911"
+     },
+     "caption": "Eddrim Glebe had one Henderson household in 1911, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familycensus:09:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:09",
+      "label": "Henderson",
+      "run": false
+     }
+    },
+    {
+     "id": "eddrim-glebe:beat:familycensus:09-1926",
+     "kind": "familycensus",
+     "chapter": "eddrim-glebe:ch:family-09",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familycensus:09:1926"
+     },
+     "caption": "Eddrim Glebe had one Henderson household in 1926, headed by Mary.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familycensus:09:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:09",
+      "label": "Henderson",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "eddrim-glebe:ch:family-10",
+   "title": "The Keerin family",
+   "beats": [
+    {
+     "id": "eddrim-glebe:beat:familyhead:10",
+     "kind": "familyhead",
+     "chapter": "eddrim-glebe:ch:family-10",
+     "time": {
+      "label": "The Keerin family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familypresence:10"
+     },
+     "caption": "The Keerin family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familypresence:10"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:10",
+      "label": "Keerin",
+      "run": false
+     }
+    },
+    {
+     "id": "eddrim-glebe:beat:familycensus:10-1901",
+     "kind": "familycensus",
+     "chapter": "eddrim-glebe:ch:family-10",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familycensus:10:1901"
+     },
+     "caption": "Eddrim Glebe had one Keerin household in 1901, headed by Michael.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familycensus:10:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:10",
+      "label": "Keerin",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "eddrim-glebe:ch:family-13",
+   "title": "The Little family",
+   "beats": [
+    {
+     "id": "eddrim-glebe:beat:familyhead:13",
+     "kind": "familyhead",
+     "chapter": "eddrim-glebe:ch:family-13",
+     "time": {
+      "label": "The Little family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familypresence:13"
+     },
+     "caption": "The Little family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familypresence:13"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:13",
+      "label": "Little",
+      "run": false
+     }
+    },
+    {
+     "id": "eddrim-glebe:beat:familycensus:13-1901",
+     "kind": "familycensus",
+     "chapter": "eddrim-glebe:ch:family-13",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familycensus:13:1901"
+     },
+     "caption": "Eddrim Glebe had one Little household in 1901, headed by Rebecca.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familycensus:13:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:13",
+      "label": "Little",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "eddrim-glebe:ch:family-14",
+   "title": "The Logan family",
+   "beats": [
+    {
+     "id": "eddrim-glebe:beat:familyhead:14",
+     "kind": "familyhead",
+     "chapter": "eddrim-glebe:ch:family-14",
+     "time": {
+      "label": "The Logan family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familypresence:14"
+     },
+     "caption": "The Logan family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familypresence:14"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:14",
+      "label": "Logan",
+      "run": false
+     }
+    },
+    {
+     "id": "eddrim-glebe:beat:familycensus:14-1901",
+     "kind": "familycensus",
+     "chapter": "eddrim-glebe:ch:family-14",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familycensus:14:1901"
+     },
+     "caption": "Eddrim Glebe had one Logan household in 1901, headed by George.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familycensus:14:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:14",
+      "label": "Logan",
+      "run": false
+     }
+    },
+    {
+     "id": "eddrim-glebe:beat:familycensus:14-1911",
+     "kind": "familycensus",
+     "chapter": "eddrim-glebe:ch:family-14",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familycensus:14:1911"
+     },
+     "caption": "Eddrim Glebe had one Logan household in 1911, headed by George.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familycensus:14:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:14",
+      "label": "Logan",
+      "run": false
+     }
+    },
+    {
+     "id": "eddrim-glebe:beat:familycensus:14-1926",
+     "kind": "familycensus",
+     "chapter": "eddrim-glebe:ch:family-14",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familycensus:14:1926"
+     },
+     "caption": "Eddrim Glebe had one Logan household in 1926, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familycensus:14:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:14",
+      "label": "Logan",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "eddrim-glebe:ch:family-17",
+   "title": "The McCaffrey family",
+   "beats": [
+    {
+     "id": "eddrim-glebe:beat:familyhead:17",
+     "kind": "familyhead",
+     "chapter": "eddrim-glebe:ch:family-17",
+     "time": {
+      "label": "The McCaffrey family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familypresence:17"
+     },
+     "caption": "The McCaffrey family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familypresence:17"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:17",
+      "label": "McCaffrey",
+      "run": false
+     }
+    },
+    {
+     "id": "eddrim-glebe:beat:familycensus:17-1901",
+     "kind": "familycensus",
+     "chapter": "eddrim-glebe:ch:family-17",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familycensus:17:1901"
+     },
+     "caption": "Eddrim Glebe had one McCaffrey household in 1901, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familycensus:17:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:17",
+      "label": "McCaffrey",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "eddrim-glebe:ch:family-18",
+   "title": "The McCunningham family",
+   "beats": [
+    {
+     "id": "eddrim-glebe:beat:familyhead:18",
+     "kind": "familyhead",
+     "chapter": "eddrim-glebe:ch:family-18",
+     "time": {
+      "label": "The McCunningham family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familypresence:18"
+     },
+     "caption": "The McCunningham family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familypresence:18"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:18",
+      "label": "McCunningham",
+      "run": false
+     }
+    },
+    {
+     "id": "eddrim-glebe:beat:familycensus:18-1901",
+     "kind": "familycensus",
+     "chapter": "eddrim-glebe:ch:family-18",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familycensus:18:1901"
+     },
+     "caption": "Eddrim Glebe had one McCunningham household in 1901, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familycensus:18:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:18",
+      "label": "McCunningham",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "eddrim-glebe:ch:family-20",
+   "title": "The Mercer family",
+   "beats": [
+    {
+     "id": "eddrim-glebe:beat:familyhead:20",
+     "kind": "familyhead",
+     "chapter": "eddrim-glebe:ch:family-20",
+     "time": {
+      "label": "The Mercer family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familypresence:20"
+     },
+     "caption": "The Mercer family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familypresence:20"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:20",
+      "label": "Mercer",
+      "run": false
+     }
+    },
+    {
+     "id": "eddrim-glebe:beat:familycensus:20-1901",
+     "kind": "familycensus",
+     "chapter": "eddrim-glebe:ch:family-20",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familycensus:20:1901"
+     },
+     "caption": "Eddrim Glebe had one Mercer household in 1901, headed by William Wilson.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familycensus:20:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:20",
+      "label": "Mercer",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "eddrim-glebe:ch:family-21",
+   "title": "The Miller family",
+   "beats": [
+    {
+     "id": "eddrim-glebe:beat:familyhead:21",
+     "kind": "familyhead",
+     "chapter": "eddrim-glebe:ch:family-21",
+     "time": {
+      "label": "The Miller family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familypresence:21"
+     },
+     "caption": "The Miller family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familypresence:21"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:21",
+      "label": "Miller",
+      "run": false
+     }
+    },
+    {
+     "id": "eddrim-glebe:beat:familycensus:21-1901",
+     "kind": "familycensus",
+     "chapter": "eddrim-glebe:ch:family-21",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familycensus:21:1901"
+     },
+     "caption": "Eddrim Glebe had one Miller household in 1901, headed by Andrew.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familycensus:21:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:21",
+      "label": "Miller",
+      "run": false
+     }
+    },
+    {
+     "id": "eddrim-glebe:beat:familycensus:21-1911",
+     "kind": "familycensus",
+     "chapter": "eddrim-glebe:ch:family-21",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familycensus:21:1911"
+     },
+     "caption": "Eddrim Glebe had one Miller household in 1911, headed by Andrew.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familycensus:21:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:21",
+      "label": "Miller",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "eddrim-glebe:ch:family-22",
+   "title": "The Monaghan family",
+   "beats": [
+    {
+     "id": "eddrim-glebe:beat:familyhead:22",
+     "kind": "familyhead",
+     "chapter": "eddrim-glebe:ch:family-22",
+     "time": {
+      "label": "The Monaghan family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familypresence:22"
+     },
+     "caption": "The Monaghan family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familypresence:22"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:22",
+      "label": "Monaghan",
+      "run": false
+     }
+    },
+    {
+     "id": "eddrim-glebe:beat:familycensus:22-1901",
+     "kind": "familycensus",
+     "chapter": "eddrim-glebe:ch:family-22",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familycensus:22:1901"
+     },
+     "caption": "Eddrim Glebe had one Monaghan household in 1901, headed by Sarah.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familycensus:22:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:22",
+      "label": "Monaghan",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "eddrim-glebe:ch:family-23",
+   "title": "The Monteith family",
+   "beats": [
+    {
+     "id": "eddrim-glebe:beat:familyhead:23",
+     "kind": "familyhead",
+     "chapter": "eddrim-glebe:ch:family-23",
+     "time": {
+      "label": "The Monteith family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familypresence:23"
+     },
+     "caption": "The Monteith family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familypresence:23"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:23",
+      "label": "Monteith",
+      "run": false
+     }
+    },
+    {
+     "id": "eddrim-glebe:beat:familycensus:23-1901",
+     "kind": "familycensus",
+     "chapter": "eddrim-glebe:ch:family-23",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familycensus:23:1901"
+     },
+     "caption": "Eddrim Glebe had one Monteith household in 1901, headed by Catherine.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familycensus:23:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:23",
+      "label": "Monteith",
+      "run": false
+     }
+    },
+    {
+     "id": "eddrim-glebe:beat:familycensus:23-1911",
+     "kind": "familycensus",
+     "chapter": "eddrim-glebe:ch:family-23",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familycensus:23:1911"
+     },
+     "caption": "Eddrim Glebe had one Monteith household in 1911, headed by Catherine.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familycensus:23:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:23",
+      "label": "Monteith",
+      "run": false
+     }
+    },
+    {
+     "id": "eddrim-glebe:beat:familycensus:23-1926",
+     "kind": "familycensus",
+     "chapter": "eddrim-glebe:ch:family-23",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familycensus:23:1926"
+     },
+     "caption": "Eddrim Glebe had one Monteith household in 1926, headed by Lizzie.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familycensus:23:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:23",
+      "label": "Monteith",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "eddrim-glebe:ch:family-24",
+   "title": "The O Donnell family",
+   "beats": [
+    {
+     "id": "eddrim-glebe:beat:familyhead:24",
+     "kind": "familyhead",
+     "chapter": "eddrim-glebe:ch:family-24",
+     "time": {
+      "label": "The O Donnell family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familypresence:24"
+     },
+     "caption": "The O Donnell family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familypresence:24"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:24",
+      "label": "O Donnell",
+      "run": false
+     }
+    },
+    {
+     "id": "eddrim-glebe:beat:familycensus:24-1901",
+     "kind": "familycensus",
+     "chapter": "eddrim-glebe:ch:family-24",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familycensus:24:1901"
+     },
+     "caption": "Eddrim Glebe had one O Donnell household in 1901, headed by Connell.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familycensus:24:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:24",
+      "label": "O Donnell",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "eddrim-glebe:ch:family-26",
+   "title": "The Patterson family",
+   "beats": [
+    {
+     "id": "eddrim-glebe:beat:familyhead:26",
+     "kind": "familyhead",
+     "chapter": "eddrim-glebe:ch:family-26",
+     "time": {
+      "label": "The Patterson family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familypresence:26"
+     },
+     "caption": "The Patterson family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familypresence:26"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:26",
+      "label": "Patterson",
+      "run": false
+     }
+    },
+    {
+     "id": "eddrim-glebe:beat:familycensus:26-1901",
+     "kind": "familycensus",
+     "chapter": "eddrim-glebe:ch:family-26",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familycensus:26:1901"
+     },
+     "caption": "Eddrim Glebe had one Patterson household in 1901, headed by Jane.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familycensus:26:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:26",
+      "label": "Patterson",
+      "run": false
+     }
+    },
+    {
+     "id": "eddrim-glebe:beat:familycensus:26-1911",
+     "kind": "familycensus",
+     "chapter": "eddrim-glebe:ch:family-26",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familycensus:26:1911"
+     },
+     "caption": "Eddrim Glebe had one Patterson household in 1911, headed by Andrew.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familycensus:26:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:26",
+      "label": "Patterson",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "eddrim-glebe:ch:family-27",
+   "title": "The Pearson family",
+   "beats": [
+    {
+     "id": "eddrim-glebe:beat:familyhead:27",
+     "kind": "familyhead",
+     "chapter": "eddrim-glebe:ch:family-27",
+     "time": {
+      "label": "The Pearson family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familypresence:27"
+     },
+     "caption": "The Pearson family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familypresence:27"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:27",
+      "label": "Pearson",
+      "run": false
+     }
+    },
+    {
+     "id": "eddrim-glebe:beat:familycensus:27-1901",
+     "kind": "familycensus",
+     "chapter": "eddrim-glebe:ch:family-27",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familycensus:27:1901"
+     },
+     "caption": "Eddrim Glebe had one Pearson household in 1901, headed by Thomas.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familycensus:27:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:27",
+      "label": "Pearson",
+      "run": false
+     }
+    },
+    {
+     "id": "eddrim-glebe:beat:familycensus:27-1911",
+     "kind": "familycensus",
+     "chapter": "eddrim-glebe:ch:family-27",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familycensus:27:1911"
+     },
+     "caption": "Eddrim Glebe had one Pearson household in 1911, headed by Thomas.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familycensus:27:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:27",
+      "label": "Pearson",
+      "run": false
+     }
+    },
+    {
+     "id": "eddrim-glebe:beat:familycensus:27-1926",
+     "kind": "familycensus",
+     "chapter": "eddrim-glebe:ch:family-27",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familycensus:27:1926"
+     },
+     "caption": "Eddrim Glebe had one Pearson household in 1926, headed by Thomas.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familycensus:27:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:27",
+      "label": "Pearson",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "eddrim-glebe:ch:family-28",
+   "title": "The Richie family",
+   "beats": [
+    {
+     "id": "eddrim-glebe:beat:familyhead:28",
+     "kind": "familyhead",
+     "chapter": "eddrim-glebe:ch:family-28",
+     "time": {
+      "label": "The Richie family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familypresence:28"
+     },
+     "caption": "The Richie family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familypresence:28"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:28",
+      "label": "Richie",
+      "run": false
+     }
+    },
+    {
+     "id": "eddrim-glebe:beat:familycensus:28-1901",
+     "kind": "familycensus",
+     "chapter": "eddrim-glebe:ch:family-28",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familycensus:28:1901"
+     },
+     "caption": "Eddrim Glebe had one Richie household in 1901, headed by Francis.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familycensus:28:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:28",
+      "label": "Richie",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "eddrim-glebe:ch:family-32",
+   "title": "The Torrens family",
+   "beats": [
+    {
+     "id": "eddrim-glebe:beat:familyhead:32",
+     "kind": "familyhead",
+     "chapter": "eddrim-glebe:ch:family-32",
+     "time": {
+      "label": "The Torrens family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familypresence:32"
+     },
+     "caption": "The Torrens family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familypresence:32"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:32",
+      "label": "Torrens",
+      "run": false
+     }
+    },
+    {
+     "id": "eddrim-glebe:beat:familycensus:32-1901",
+     "kind": "familycensus",
+     "chapter": "eddrim-glebe:ch:family-32",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familycensus:32:1901"
+     },
+     "caption": "Eddrim Glebe had one Torrens household in 1901, headed by Margaret.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familycensus:32:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:32",
+      "label": "Torrens",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "eddrim-glebe:ch:family-33",
+   "title": "The Vance family",
+   "beats": [
+    {
+     "id": "eddrim-glebe:beat:familyhead:33",
+     "kind": "familyhead",
+     "chapter": "eddrim-glebe:ch:family-33",
+     "time": {
+      "label": "The Vance family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familypresence:33"
+     },
+     "caption": "The Vance family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familypresence:33"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:33",
+      "label": "Vance",
+      "run": false
+     }
+    },
+    {
+     "id": "eddrim-glebe:beat:familycensus:33-1901",
+     "kind": "familycensus",
+     "chapter": "eddrim-glebe:ch:family-33",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familycensus:33:1901"
+     },
+     "caption": "Eddrim Glebe had one Vance household in 1901, headed by Alex.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familycensus:33:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:33",
+      "label": "Vance",
+      "run": false
+     }
+    },
+    {
+     "id": "eddrim-glebe:beat:familycensus:33-1911",
+     "kind": "familycensus",
+     "chapter": "eddrim-glebe:ch:family-33",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familycensus:33:1911"
+     },
+     "caption": "Eddrim Glebe had one Vance household in 1911, headed by Alexander.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familycensus:33:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:33",
+      "label": "Vance",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "eddrim-glebe:ch:family-36",
+   "title": "The Wray family",
+   "beats": [
+    {
+     "id": "eddrim-glebe:beat:familyhead:36",
+     "kind": "familyhead",
+     "chapter": "eddrim-glebe:ch:family-36",
+     "time": {
+      "label": "The Wray family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familypresence:36"
+     },
+     "caption": "The Wray family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familypresence:36"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:36",
+      "label": "Wray",
+      "run": false
+     }
+    },
+    {
+     "id": "eddrim-glebe:beat:familycensus:36-1901",
+     "kind": "familycensus",
+     "chapter": "eddrim-glebe:ch:family-36",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familycensus:36:1901"
+     },
+     "caption": "Eddrim Glebe had one Wray household in 1901, headed by Joseph.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familycensus:36:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:36",
+      "label": "Wray",
+      "run": false
+     }
+    },
+    {
+     "id": "eddrim-glebe:beat:familycensus:36-1911",
+     "kind": "familycensus",
+     "chapter": "eddrim-glebe:ch:family-36",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familycensus:36:1911"
+     },
+     "caption": "Eddrim Glebe had one Wray household in 1911, headed by Hannah.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familycensus:36:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:36",
+      "label": "Wray",
+      "run": false
+     }
+    },
+    {
+     "id": "eddrim-glebe:beat:familycensus:36-1926",
+     "kind": "familycensus",
+     "chapter": "eddrim-glebe:ch:family-36",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familycensus:36:1926"
+     },
+     "caption": "Eddrim Glebe had one Wray household in 1926, headed by Joseph.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familycensus:36:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:36",
+      "label": "Wray",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "eddrim-glebe:ch:family-04",
+   "title": "The Cunningham family",
+   "beats": [
+    {
+     "id": "eddrim-glebe:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "eddrim-glebe:ch:family-04",
+     "time": {
+      "label": "The Cunningham family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familypresence:04"
+     },
+     "caption": "The Cunningham family appear in the records from 1911 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:04",
+      "label": "Cunningham",
+      "run": false
+     }
+    },
+    {
+     "id": "eddrim-glebe:beat:familycensus:04-1911",
+     "kind": "familycensus",
+     "chapter": "eddrim-glebe:ch:family-04",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familycensus:04:1911"
+     },
+     "caption": "Eddrim Glebe had one Cunningham household in 1911, headed by Mary.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familycensus:04:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:04",
+      "label": "Cunningham",
+      "run": false
+     }
+    },
+    {
+     "id": "eddrim-glebe:beat:familycensus:04-1926",
+     "kind": "familycensus",
+     "chapter": "eddrim-glebe:ch:family-04",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familycensus:04:1926"
+     },
+     "caption": "Eddrim Glebe had one Cunningham household in 1926, headed by Mary.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familycensus:04:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:04",
+      "label": "Cunningham",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "eddrim-glebe:ch:family-05",
+   "title": "The Ellis family",
+   "beats": [
+    {
+     "id": "eddrim-glebe:beat:familyhead:05",
+     "kind": "familyhead",
+     "chapter": "eddrim-glebe:ch:family-05",
+     "time": {
+      "label": "The Ellis family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familypresence:05"
+     },
+     "caption": "The Ellis family appear in the records from 1911 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familypresence:05"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:05",
+      "label": "Ellis",
+      "run": false
+     }
+    },
+    {
+     "id": "eddrim-glebe:beat:familycensus:05-1911",
+     "kind": "familycensus",
+     "chapter": "eddrim-glebe:ch:family-05",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familycensus:05:1911"
+     },
+     "caption": "Eddrim Glebe had one Ellis household in 1911, headed by Samuel.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familycensus:05:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:05",
+      "label": "Ellis",
+      "run": false
+     }
+    },
+    {
+     "id": "eddrim-glebe:beat:familycensus:05-1926",
+     "kind": "familycensus",
+     "chapter": "eddrim-glebe:ch:family-05",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familycensus:05:1926"
+     },
+     "caption": "Eddrim Glebe had one Ellis household in 1926, headed by Samuel.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familycensus:05:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:05",
+      "label": "Ellis",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "eddrim-glebe:ch:family-12",
+   "title": "The Kerin family",
+   "beats": [
+    {
+     "id": "eddrim-glebe:beat:familyhead:12",
+     "kind": "familyhead",
+     "chapter": "eddrim-glebe:ch:family-12",
+     "time": {
+      "label": "The Kerin family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familypresence:12"
+     },
+     "caption": "The Kerin family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familypresence:12"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:12",
+      "label": "Kerin",
+      "run": false
+     }
+    },
+    {
+     "id": "eddrim-glebe:beat:familycensus:12-1911",
+     "kind": "familycensus",
+     "chapter": "eddrim-glebe:ch:family-12",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familycensus:12:1911"
+     },
+     "caption": "Eddrim Glebe had one Kerin household in 1911, headed by Michael.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familycensus:12:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:12",
+      "label": "Kerin",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "eddrim-glebe:ch:family-16",
+   "title": "The McCafferty family",
+   "beats": [
+    {
+     "id": "eddrim-glebe:beat:familyhead:16",
+     "kind": "familyhead",
+     "chapter": "eddrim-glebe:ch:family-16",
+     "time": {
+      "label": "The McCafferty family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familypresence:16"
+     },
+     "caption": "The McCafferty family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familypresence:16"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:16",
+      "label": "McCafferty",
+      "run": false
+     }
+    },
+    {
+     "id": "eddrim-glebe:beat:familycensus:16-1911",
+     "kind": "familycensus",
+     "chapter": "eddrim-glebe:ch:family-16",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familycensus:16:1911"
+     },
+     "caption": "Eddrim Glebe had one McCafferty household in 1911, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familycensus:16:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:16",
+      "label": "McCafferty",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "eddrim-glebe:ch:family-19",
+   "title": "The Mcnern family",
+   "beats": [
+    {
+     "id": "eddrim-glebe:beat:familyhead:19",
+     "kind": "familyhead",
+     "chapter": "eddrim-glebe:ch:family-19",
+     "time": {
+      "label": "The Mcnern family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familypresence:19"
+     },
+     "caption": "The Mcnern family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familypresence:19"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:19",
+      "label": "Mcnern",
+      "run": false
+     }
+    },
+    {
+     "id": "eddrim-glebe:beat:familycensus:19-1911",
+     "kind": "familycensus",
+     "chapter": "eddrim-glebe:ch:family-19",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familycensus:19:1911"
+     },
+     "caption": "Eddrim Glebe had one Mcnern household in 1911, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familycensus:19:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:19",
+      "label": "Mcnern",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "eddrim-glebe:ch:family-29",
+   "title": "The Ritchey family",
+   "beats": [
+    {
+     "id": "eddrim-glebe:beat:familyhead:29",
+     "kind": "familyhead",
+     "chapter": "eddrim-glebe:ch:family-29",
+     "time": {
+      "label": "The Ritchey family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familypresence:29"
+     },
+     "caption": "The Ritchey family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familypresence:29"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:29",
+      "label": "Ritchey",
+      "run": false
+     }
+    },
+    {
+     "id": "eddrim-glebe:beat:familycensus:29-1911",
+     "kind": "familycensus",
+     "chapter": "eddrim-glebe:ch:family-29",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familycensus:29:1911"
+     },
+     "caption": "Eddrim Glebe had two Ritchey households in 1911, headed by Francis and Thomas.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familycensus:29:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:29",
+      "label": "Ritchey",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "eddrim-glebe:ch:family-34",
+   "title": "The Williams family",
+   "beats": [
+    {
+     "id": "eddrim-glebe:beat:familyhead:34",
+     "kind": "familyhead",
+     "chapter": "eddrim-glebe:ch:family-34",
+     "time": {
+      "label": "The Williams family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familypresence:34"
+     },
+     "caption": "The Williams family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familypresence:34"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:34",
+      "label": "Williams",
+      "run": false
+     }
+    },
+    {
+     "id": "eddrim-glebe:beat:familycensus:34-1911",
+     "kind": "familycensus",
+     "chapter": "eddrim-glebe:ch:family-34",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familycensus:34:1911"
+     },
+     "caption": "Eddrim Glebe had one Williams household in 1911, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familycensus:34:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:34",
+      "label": "Williams",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "eddrim-glebe:ch:family-01",
+   "title": "The Barret family",
+   "beats": [
+    {
+     "id": "eddrim-glebe:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "eddrim-glebe:ch:family-01",
+     "time": {
+      "label": "The Barret family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familypresence:01"
+     },
+     "caption": "The Barret family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:01",
+      "label": "Barret",
+      "run": false
+     }
+    },
+    {
+     "id": "eddrim-glebe:beat:familycensus:01-1926",
+     "kind": "familycensus",
+     "chapter": "eddrim-glebe:ch:family-01",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familycensus:01:1926"
+     },
+     "caption": "Eddrim Glebe had one Barret household in 1926, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familycensus:01:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:01",
+      "label": "Barret",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "eddrim-glebe:ch:family-08",
+   "title": "The Graham family",
+   "beats": [
+    {
+     "id": "eddrim-glebe:beat:familyhead:08",
+     "kind": "familyhead",
+     "chapter": "eddrim-glebe:ch:family-08",
+     "time": {
+      "label": "The Graham family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familypresence:08"
+     },
+     "caption": "The Graham family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familypresence:08"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:08",
+      "label": "Graham",
+      "run": false
+     }
+    },
+    {
+     "id": "eddrim-glebe:beat:familycensus:08-1926",
+     "kind": "familycensus",
+     "chapter": "eddrim-glebe:ch:family-08",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familycensus:08:1926"
+     },
+     "caption": "Eddrim Glebe had one Graham household in 1926, headed by Isaac.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familycensus:08:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:08",
+      "label": "Graham",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "eddrim-glebe:ch:family-11",
+   "title": "The Keerins family",
+   "beats": [
+    {
+     "id": "eddrim-glebe:beat:familyhead:11",
+     "kind": "familyhead",
+     "chapter": "eddrim-glebe:ch:family-11",
+     "time": {
+      "label": "The Keerins family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familypresence:11"
+     },
+     "caption": "The Keerins family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familypresence:11"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:11",
+      "label": "Keerins",
+      "run": false
+     }
+    },
+    {
+     "id": "eddrim-glebe:beat:familycensus:11-1926",
+     "kind": "familycensus",
+     "chapter": "eddrim-glebe:ch:family-11",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familycensus:11:1926"
+     },
+     "caption": "Eddrim Glebe had one Keerins household in 1926, headed by Michael.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familycensus:11:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:11",
+      "label": "Keerins",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "eddrim-glebe:ch:family-15",
+   "title": "The McAnurren family",
+   "beats": [
+    {
+     "id": "eddrim-glebe:beat:familyhead:15",
+     "kind": "familyhead",
+     "chapter": "eddrim-glebe:ch:family-15",
+     "time": {
+      "label": "The McAnurren family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familypresence:15"
+     },
+     "caption": "The McAnurren family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familypresence:15"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:15",
+      "label": "McAnurren",
+      "run": false
+     }
+    },
+    {
+     "id": "eddrim-glebe:beat:familycensus:15-1926",
+     "kind": "familycensus",
+     "chapter": "eddrim-glebe:ch:family-15",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familycensus:15:1926"
+     },
+     "caption": "Eddrim Glebe had one McAnurren household in 1926, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familycensus:15:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:15",
+      "label": "McAnurren",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "eddrim-glebe:ch:family-25",
+   "title": "The Paterson family",
+   "beats": [
+    {
+     "id": "eddrim-glebe:beat:familyhead:25",
+     "kind": "familyhead",
+     "chapter": "eddrim-glebe:ch:family-25",
+     "time": {
+      "label": "The Paterson family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familypresence:25"
+     },
+     "caption": "The Paterson family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familypresence:25"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:25",
+      "label": "Paterson",
+      "run": false
+     }
+    },
+    {
+     "id": "eddrim-glebe:beat:familycensus:25-1926",
+     "kind": "familycensus",
+     "chapter": "eddrim-glebe:ch:family-25",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familycensus:25:1926"
+     },
+     "caption": "Eddrim Glebe had one Paterson household in 1926, headed by Andrew.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familycensus:25:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:25",
+      "label": "Paterson",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "eddrim-glebe:ch:family-30",
+   "title": "The Ritchie family",
+   "beats": [
+    {
+     "id": "eddrim-glebe:beat:familyhead:30",
+     "kind": "familyhead",
+     "chapter": "eddrim-glebe:ch:family-30",
+     "time": {
+      "label": "The Ritchie family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familypresence:30"
+     },
+     "caption": "The Ritchie family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familypresence:30"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:30",
+      "label": "Ritchie",
+      "run": false
+     }
+    },
+    {
+     "id": "eddrim-glebe:beat:familycensus:30-1926",
+     "kind": "familycensus",
+     "chapter": "eddrim-glebe:ch:family-30",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familycensus:30:1926"
+     },
+     "caption": "Eddrim Glebe had two Ritchie households in 1926, headed by Francis and Maggie.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familycensus:30:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:30",
+      "label": "Ritchie",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "eddrim-glebe:ch:family-31",
+   "title": "The Stewart family",
+   "beats": [
+    {
+     "id": "eddrim-glebe:beat:familyhead:31",
+     "kind": "familyhead",
+     "chapter": "eddrim-glebe:ch:family-31",
+     "time": {
+      "label": "The Stewart family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familypresence:31"
+     },
+     "caption": "The Stewart family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familypresence:31"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:31",
+      "label": "Stewart",
+      "run": false
+     }
+    },
+    {
+     "id": "eddrim-glebe:beat:familycensus:31-1926",
+     "kind": "familycensus",
+     "chapter": "eddrim-glebe:ch:family-31",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "eddrim-glebe",
+      "name": "Eddrim Glebe",
+      "logainm_id": "14015",
+      "lat": 54.660401,
+      "lon": -8.169555,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "eddrim-glebe:familycensus:31:1926"
+     },
+     "caption": "Eddrim Glebe had one Stewart household in 1926, headed by Robert M.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "eddrim-glebe:familycensus:31:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "eddrim-glebe:family:31",
+      "label": "Stewart",
+      "run": false
+     }
     }
    ]
   }

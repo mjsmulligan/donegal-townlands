@@ -95,128 +95,15 @@
    ]
   },
   {
-   "id": "garvagh:ch:baptisms",
-   "title": "Baptisms, 1873 to 1875",
+   "id": "garvagh:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "garvagh:beat:baptism:1873-03-27-TAW-B-p006-r30",
-     "kind": "baptism",
-     "chapter": "garvagh:ch:baptisms",
-     "time": {
-      "label": "27 March 1873",
-      "iso": "1873-03-27",
-      "sort": "1873-03-27",
-      "approximate": false
-     },
-     "place": {
-      "townland": "garvagh",
-      "name": "Garvagh",
-      "logainm_id": "14242",
-      "lat": 54.707058,
-      "lon": -8.029315,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "garvagh:baptism:TAW-B-p006-r30"
-     },
-     "caption": "Connell Martin was baptised on 27 March 1873. Connell Martin and Kitty Martin were the parents.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "garvagh:baptism:TAW-B-p006-r30"
-      ],
-      "basis": "page_place",
-      "certainty": "stated"
-     },
-     "duration_ms": 6400,
-     "audio": null
-    },
-    {
-     "id": "garvagh:beat:baptism:1874",
-     "kind": "baptism",
-     "chapter": "garvagh:ch:baptisms",
-     "time": {
-      "label": "25 February 1874",
-      "iso": "1874-02-25",
-      "sort": "1874-02-25",
-      "approximate": false
-     },
-     "place": {
-      "townland": "garvagh",
-      "name": "Garvagh",
-      "logainm_id": "14242",
-      "lat": 54.707058,
-      "lon": -8.029315,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "garvagh:baptism:TAW-B-p010-r111"
-     },
-     "caption": "Two children were baptised in 1874: Patrick Martin on 25 February and John McGinty on 7 June.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "garvagh:baptism:TAW-B-p010-r111",
-       "garvagh:baptism:TAW-B-p011-r128"
-      ],
-      "basis": "page_place",
-      "certainty": "stated"
-     },
-     "duration_ms": 6800,
-     "audio": null
-    },
-    {
-     "id": "garvagh:beat:baptism:1875",
-     "kind": "baptism",
-     "chapter": "garvagh:ch:baptisms",
-     "time": {
-      "label": "31 January 1875",
-      "iso": "1875-01-31",
-      "sort": "1875-01-31",
-      "approximate": false
-     },
-     "place": {
-      "townland": "garvagh",
-      "name": "Garvagh",
-      "logainm_id": "14242",
-      "lat": 54.707058,
-      "lon": -8.029315,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "garvagh:baptism:TAW-B-p015-r185"
-     },
-     "caption": "Two children were baptised in 1875: Thomas Martin on 31 January and Michael Martin on 11 April.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "garvagh:baptism:TAW-B-p015-r185",
-       "garvagh:baptism:TAW-B-p016-r202"
-      ],
-      "basis": "page_place",
-      "certainty": "stated"
-     },
-     "duration_ms": 6800,
-     "audio": null
-    }
-   ]
-  },
-  {
-   "id": "garvagh:ch:1901",
-   "title": "1901",
-   "beats": [
-    {
-     "id": "garvagh:beat:census:1901",
+     "id": "garvagh:beat:census:returns",
      "kind": "census",
-     "chapter": "garvagh:ch:1901",
+     "chapter": "garvagh:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1926",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -233,33 +120,217 @@
       "stage": "map",
       "open_card": "garvagh:census:1901"
      },
-     "caption": "Garvagh had 86 people in fifteen households in 1901. Heads of household included Martin, McGinty and Slevin.",
+     "caption": "The censuses of 1901, 1911 and 1926 counted 86, 60 and 54 people in Garvagh, in 15, 13 and 13 households. Heads of household included Martin, McGinty and Slevin.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "garvagh:census:1901"
+       "garvagh:census:1901",
+       "garvagh:census:1911",
+       "garvagh:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 6800,
+     "duration_ms": 11600,
      "audio": null,
      "counts": {
-      "people": 86,
-      "households": 15
+      "returns": [
+       {
+        "year": "1901",
+        "people": 86,
+        "households": 15
+       },
+       {
+        "year": "1911",
+        "people": 60,
+        "households": 13
+       },
+       {
+        "year": "1926",
+        "people": 54,
+        "households": 13
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "garvagh:ch:1911",
-   "title": "1911",
+   "id": "garvagh:ch:families",
+   "title": "The families of Garvagh",
    "beats": [
     {
-     "id": "garvagh:beat:census:1911",
-     "kind": "census",
-     "chapter": "garvagh:ch:1911",
+     "id": "garvagh:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "garvagh:ch:families",
+     "time": {
+      "label": "The families of Garvagh",
+      "iso": "1873-03-27",
+      "sort": "1874-06-07",
+      "approximate": true
+     },
+     "place": {
+      "townland": "garvagh",
+      "name": "Garvagh",
+      "logainm_id": "14242",
+      "lat": 54.707058,
+      "lon": -8.029315,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "garvagh:baptism:TAW-B-p006-r30"
+     },
+     "caption": "Here are the families of Garvagh, from 1873 to 1926. First, the McGinty and Slevin families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "garvagh:baptism:TAW-B-p006-r30",
+       "garvagh:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "garvagh:family:06",
+      "label": "McGinty",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "garvagh:ch:family-06",
+   "title": "The McGinty family",
+   "beats": [
+    {
+     "id": "garvagh:beat:baptism:1874-06-07-TAW-B-p011-r128",
+     "kind": "baptism",
+     "chapter": "garvagh:ch:family-06",
+     "time": {
+      "label": "7 June 1874",
+      "iso": "1874-06-07",
+      "sort": "1874-06-07",
+      "approximate": false
+     },
+     "place": {
+      "townland": "garvagh",
+      "name": "Garvagh",
+      "logainm_id": "14242",
+      "lat": 54.707058,
+      "lon": -8.029315,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "garvagh:baptism:TAW-B-p011-r128"
+     },
+     "caption": "John McGinty was baptised on 7 June 1874. Connell McGinty and Mary Martin were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "garvagh:baptism:TAW-B-p011-r128"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "garvagh:family:06",
+      "label": "McGinty",
+      "run": true
+     }
+    },
+    {
+     "id": "garvagh:beat:familyhead:06",
+     "kind": "familyhead",
+     "chapter": "garvagh:ch:family-06",
+     "time": {
+      "label": "The McGinty family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "garvagh",
+      "name": "Garvagh",
+      "logainm_id": "14242",
+      "lat": 54.707058,
+      "lon": -8.029315,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "garvagh:familypresence:06"
+     },
+     "caption": "The McGinty family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "garvagh:familypresence:06"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "garvagh:family:06",
+      "label": "McGinty",
+      "run": true
+     }
+    },
+    {
+     "id": "garvagh:beat:familycensus:06-1901",
+     "kind": "familycensus",
+     "chapter": "garvagh:ch:family-06",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "garvagh",
+      "name": "Garvagh",
+      "logainm_id": "14242",
+      "lat": 54.707058,
+      "lon": -8.029315,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "garvagh:familycensus:06:1901"
+     },
+     "caption": "Garvagh had three McGinty households in 1901, headed by Edward, Charles and William.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "garvagh:familycensus:06:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "garvagh:family:06",
+      "label": "McGinty",
+      "run": true
+     }
+    },
+    {
+     "id": "garvagh:beat:familycensus:06-1911",
+     "kind": "familycensus",
+     "chapter": "garvagh:ch:family-06",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -276,35 +347,30 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "garvagh:census:1911"
+      "open_card": "garvagh:familycensus:06:1911"
      },
-     "caption": "In 1911, 60 people in thirteen households lived in Garvagh. Heads of household included Martin, McGinty and McLoughlin.",
+     "caption": "Garvagh had three McGinty households in 1911, headed by William, Charles and Edward.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "garvagh:census:1911"
+       "garvagh:familycensus:06:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 7200,
+     "duration_ms": 5200,
      "audio": null,
-     "counts": {
-      "people": 60,
-      "households": 13
+     "thread": {
+      "id": "garvagh:family:06",
+      "label": "McGinty",
+      "run": true
      }
-    }
-   ]
-  },
-  {
-   "id": "garvagh:ch:1926",
-   "title": "1926",
-   "beats": [
+    },
     {
-     "id": "garvagh:beat:census:1926",
-     "kind": "census",
-     "chapter": "garvagh:ch:1926",
+     "id": "garvagh:beat:familycensus:06-1926",
+     "kind": "familycensus",
+     "chapter": "garvagh:ch:family-06",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -321,25 +387,198 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "garvagh:census:1926"
+      "open_card": "garvagh:familycensus:06:1926"
      },
-     "caption": "In 1926, 54 people in thirteen households lived in Garvagh. Heads of household included Martain, Mac Fhionntaigh and McGinty.",
+     "caption": "Garvagh had one McGinty household in 1926, headed by Joseph.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "garvagh:census:1926"
+       "garvagh:familycensus:06:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 7600,
+     "duration_ms": 4000,
      "audio": null,
-     "counts": {
-      "people": 54,
-      "households": 13
+     "thread": {
+      "id": "garvagh:family:06",
+      "label": "McGinty",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "garvagh:ch:family-11",
+   "title": "The Slevin family",
+   "beats": [
+    {
+     "id": "garvagh:beat:familyhead:11",
+     "kind": "familyhead",
+     "chapter": "garvagh:ch:family-11",
+     "time": {
+      "label": "The Slevin family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "garvagh",
+      "name": "Garvagh",
+      "logainm_id": "14242",
+      "lat": 54.707058,
+      "lon": -8.029315,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "garvagh:familypresence:11"
+     },
+     "caption": "The Slevin family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "garvagh:familypresence:11"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "garvagh:family:11",
+      "label": "Slevin",
+      "run": true
      }
     },
+    {
+     "id": "garvagh:beat:familycensus:11-1901",
+     "kind": "familycensus",
+     "chapter": "garvagh:ch:family-11",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "garvagh",
+      "name": "Garvagh",
+      "logainm_id": "14242",
+      "lat": 54.707058,
+      "lon": -8.029315,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "garvagh:familycensus:11:1901"
+     },
+     "caption": "Garvagh had two Slevin households in 1901, headed by Patrick and Anne.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "garvagh:familycensus:11:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "garvagh:family:11",
+      "label": "Slevin",
+      "run": true
+     }
+    },
+    {
+     "id": "garvagh:beat:familycensus:11-1911",
+     "kind": "familycensus",
+     "chapter": "garvagh:ch:family-11",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "garvagh",
+      "name": "Garvagh",
+      "logainm_id": "14242",
+      "lat": 54.707058,
+      "lon": -8.029315,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "garvagh:familycensus:11:1911"
+     },
+     "caption": "Garvagh had one Slevin household in 1911, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "garvagh:familycensus:11:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "garvagh:family:11",
+      "label": "Slevin",
+      "run": true
+     }
+    },
+    {
+     "id": "garvagh:beat:familycensus:11-1926",
+     "kind": "familycensus",
+     "chapter": "garvagh:ch:family-11",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "garvagh",
+      "name": "Garvagh",
+      "logainm_id": "14242",
+      "lat": 54.707058,
+      "lon": -8.029315,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "garvagh:familycensus:11:1926"
+     },
+     "caption": "Garvagh had one Slevin household in 1926, headed by Bridget.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "garvagh:familycensus:11:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "garvagh:family:11",
+      "label": "Slevin",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "garvagh:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "garvagh:beat:closing:end",
      "kind": "closing",
@@ -374,6 +613,1020 @@
      },
      "duration_ms": 4000,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "garvagh:ch:family-05",
+   "title": "The Martin family",
+   "beats": [
+    {
+     "id": "garvagh:beat:baptism:1873-03-27-TAW-B-p006-r30",
+     "kind": "baptism",
+     "chapter": "garvagh:ch:family-05",
+     "time": {
+      "label": "27 March 1873",
+      "iso": "1873-03-27",
+      "sort": "1873-03-27",
+      "approximate": false
+     },
+     "place": {
+      "townland": "garvagh",
+      "name": "Garvagh",
+      "logainm_id": "14242",
+      "lat": 54.707058,
+      "lon": -8.029315,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "garvagh:baptism:TAW-B-p006-r30"
+     },
+     "caption": "Connell Martin was baptised on 27 March 1873. Connell Martin and Kitty Martin were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "garvagh:baptism:TAW-B-p006-r30"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "garvagh:family:05",
+      "label": "Martin",
+      "run": false
+     }
+    },
+    {
+     "id": "garvagh:beat:baptism:1874-02-25-TAW-B-p010-r111",
+     "kind": "baptism",
+     "chapter": "garvagh:ch:family-05",
+     "time": {
+      "label": "25 February 1874",
+      "iso": "1874-02-25",
+      "sort": "1874-02-25",
+      "approximate": false
+     },
+     "place": {
+      "townland": "garvagh",
+      "name": "Garvagh",
+      "logainm_id": "14242",
+      "lat": 54.707058,
+      "lon": -8.029315,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "garvagh:baptism:TAW-B-p010-r111"
+     },
+     "caption": "Patrick Martin was baptised on 25 February 1874. Owen Martin and Catherine O'Donnell were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "garvagh:baptism:TAW-B-p010-r111"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "garvagh:family:05",
+      "label": "Martin",
+      "run": false
+     }
+    },
+    {
+     "id": "garvagh:beat:baptism:1875-01-31-TAW-B-p015-r185",
+     "kind": "baptism",
+     "chapter": "garvagh:ch:family-05",
+     "time": {
+      "label": "31 January 1875",
+      "iso": "1875-01-31",
+      "sort": "1875-01-31",
+      "approximate": false
+     },
+     "place": {
+      "townland": "garvagh",
+      "name": "Garvagh",
+      "logainm_id": "14242",
+      "lat": 54.707058,
+      "lon": -8.029315,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "garvagh:baptism:TAW-B-p015-r185"
+     },
+     "caption": "Thomas Martin was baptised on 31 January 1875. Michael Martin and Mary Martin were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "garvagh:baptism:TAW-B-p015-r185"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "garvagh:family:05",
+      "label": "Martin",
+      "run": false
+     }
+    },
+    {
+     "id": "garvagh:beat:baptism:1875-04-11-TAW-B-p016-r202",
+     "kind": "baptism",
+     "chapter": "garvagh:ch:family-05",
+     "time": {
+      "label": "11 April 1875",
+      "iso": "1875-04-11",
+      "sort": "1875-04-11",
+      "approximate": false
+     },
+     "place": {
+      "townland": "garvagh",
+      "name": "Garvagh",
+      "logainm_id": "14242",
+      "lat": 54.707058,
+      "lon": -8.029315,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "garvagh:baptism:TAW-B-p016-r202"
+     },
+     "caption": "Michael Martin was baptised on 11 April 1875. Michael Martin and Anne McNulty were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "garvagh:baptism:TAW-B-p016-r202"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "garvagh:family:05",
+      "label": "Martin",
+      "run": false
+     }
+    },
+    {
+     "id": "garvagh:beat:familyhead:05",
+     "kind": "familyhead",
+     "chapter": "garvagh:ch:family-05",
+     "time": {
+      "label": "The Martin family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "garvagh",
+      "name": "Garvagh",
+      "logainm_id": "14242",
+      "lat": 54.707058,
+      "lon": -8.029315,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "garvagh:familypresence:05"
+     },
+     "caption": "The Martin family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "garvagh:familypresence:05"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "garvagh:family:05",
+      "label": "Martin",
+      "run": false
+     }
+    },
+    {
+     "id": "garvagh:beat:familycensus:05-1901",
+     "kind": "familycensus",
+     "chapter": "garvagh:ch:family-05",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "garvagh",
+      "name": "Garvagh",
+      "logainm_id": "14242",
+      "lat": 54.707058,
+      "lon": -8.029315,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "garvagh:familycensus:05:1901"
+     },
+     "caption": "Garvagh had seven Martin households in 1901, headed by Catherine, two named Patrick, Michael, Connell, Anne and Mary.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "garvagh:familycensus:05:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "thread": {
+      "id": "garvagh:family:05",
+      "label": "Martin",
+      "run": false
+     }
+    },
+    {
+     "id": "garvagh:beat:familycensus:05-1911",
+     "kind": "familycensus",
+     "chapter": "garvagh:ch:family-05",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "garvagh",
+      "name": "Garvagh",
+      "logainm_id": "14242",
+      "lat": 54.707058,
+      "lon": -8.029315,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "garvagh:familycensus:05:1911"
+     },
+     "caption": "Garvagh had six Martin households in 1911, headed by Catherine, two named Patrick, Hannah Mary, Owen and Michael.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "garvagh:familycensus:05:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "thread": {
+      "id": "garvagh:family:05",
+      "label": "Martin",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "garvagh:ch:family-01",
+   "title": "The Bonner family",
+   "beats": [
+    {
+     "id": "garvagh:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "garvagh:ch:family-01",
+     "time": {
+      "label": "The Bonner family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "garvagh",
+      "name": "Garvagh",
+      "logainm_id": "14242",
+      "lat": 54.707058,
+      "lon": -8.029315,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "garvagh:familypresence:01"
+     },
+     "caption": "The Bonner family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "garvagh:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "garvagh:family:01",
+      "label": "Bonner",
+      "run": false
+     }
+    },
+    {
+     "id": "garvagh:beat:familycensus:01-1901",
+     "kind": "familycensus",
+     "chapter": "garvagh:ch:family-01",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "garvagh",
+      "name": "Garvagh",
+      "logainm_id": "14242",
+      "lat": 54.707058,
+      "lon": -8.029315,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "garvagh:familycensus:01:1901"
+     },
+     "caption": "Garvagh had one Bonner household in 1901, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "garvagh:familycensus:01:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "garvagh:family:01",
+      "label": "Bonner",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "garvagh:ch:family-02",
+   "title": "The Breslin family",
+   "beats": [
+    {
+     "id": "garvagh:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "garvagh:ch:family-02",
+     "time": {
+      "label": "The Breslin family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "garvagh",
+      "name": "Garvagh",
+      "logainm_id": "14242",
+      "lat": 54.707058,
+      "lon": -8.029315,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "garvagh:familypresence:02"
+     },
+     "caption": "The Breslin family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "garvagh:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "garvagh:family:02",
+      "label": "Breslin",
+      "run": false
+     }
+    },
+    {
+     "id": "garvagh:beat:familycensus:02-1901",
+     "kind": "familycensus",
+     "chapter": "garvagh:ch:family-02",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "garvagh",
+      "name": "Garvagh",
+      "logainm_id": "14242",
+      "lat": 54.707058,
+      "lon": -8.029315,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "garvagh:familycensus:02:1901"
+     },
+     "caption": "Garvagh had one Breslin household in 1901, headed by Owen.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "garvagh:familycensus:02:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "garvagh:family:02",
+      "label": "Breslin",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "garvagh:ch:family-08",
+   "title": "The McLoughlin family",
+   "beats": [
+    {
+     "id": "garvagh:beat:familyhead:08",
+     "kind": "familyhead",
+     "chapter": "garvagh:ch:family-08",
+     "time": {
+      "label": "The McLoughlin family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "garvagh",
+      "name": "Garvagh",
+      "logainm_id": "14242",
+      "lat": 54.707058,
+      "lon": -8.029315,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "garvagh:familypresence:08"
+     },
+     "caption": "The McLoughlin family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "garvagh:familypresence:08"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "garvagh:family:08",
+      "label": "McLoughlin",
+      "run": false
+     }
+    },
+    {
+     "id": "garvagh:beat:familycensus:08-1901",
+     "kind": "familycensus",
+     "chapter": "garvagh:ch:family-08",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "garvagh",
+      "name": "Garvagh",
+      "logainm_id": "14242",
+      "lat": 54.707058,
+      "lon": -8.029315,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "garvagh:familycensus:08:1901"
+     },
+     "caption": "Garvagh had one McLoughlin household in 1901, headed by Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "garvagh:familycensus:08:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "garvagh:family:08",
+      "label": "McLoughlin",
+      "run": false
+     }
+    },
+    {
+     "id": "garvagh:beat:familycensus:08-1911",
+     "kind": "familycensus",
+     "chapter": "garvagh:ch:family-08",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "garvagh",
+      "name": "Garvagh",
+      "logainm_id": "14242",
+      "lat": 54.707058,
+      "lon": -8.029315,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "garvagh:familycensus:08:1911"
+     },
+     "caption": "Garvagh had one McLoughlin household in 1911, headed by Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "garvagh:familycensus:08:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "garvagh:family:08",
+      "label": "McLoughlin",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "garvagh:ch:family-09",
+   "title": "The McNelis family",
+   "beats": [
+    {
+     "id": "garvagh:beat:familyhead:09",
+     "kind": "familyhead",
+     "chapter": "garvagh:ch:family-09",
+     "time": {
+      "label": "The McNelis family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "garvagh",
+      "name": "Garvagh",
+      "logainm_id": "14242",
+      "lat": 54.707058,
+      "lon": -8.029315,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "garvagh:familypresence:09"
+     },
+     "caption": "The McNelis family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "garvagh:familypresence:09"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "garvagh:family:09",
+      "label": "McNelis",
+      "run": false
+     }
+    },
+    {
+     "id": "garvagh:beat:familycensus:09-1911",
+     "kind": "familycensus",
+     "chapter": "garvagh:ch:family-09",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "garvagh",
+      "name": "Garvagh",
+      "logainm_id": "14242",
+      "lat": 54.707058,
+      "lon": -8.029315,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "garvagh:familycensus:09:1911"
+     },
+     "caption": "Garvagh had one McNelis household in 1911, headed by Bernard.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "garvagh:familycensus:09:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "garvagh:family:09",
+      "label": "McNelis",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "garvagh:ch:family-10",
+   "title": "The Slaven family",
+   "beats": [
+    {
+     "id": "garvagh:beat:familyhead:10",
+     "kind": "familyhead",
+     "chapter": "garvagh:ch:family-10",
+     "time": {
+      "label": "The Slaven family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "garvagh",
+      "name": "Garvagh",
+      "logainm_id": "14242",
+      "lat": 54.707058,
+      "lon": -8.029315,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "garvagh:familypresence:10"
+     },
+     "caption": "The Slaven family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "garvagh:familypresence:10"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "garvagh:family:10",
+      "label": "Slaven",
+      "run": false
+     }
+    },
+    {
+     "id": "garvagh:beat:familycensus:10-1911",
+     "kind": "familycensus",
+     "chapter": "garvagh:ch:family-10",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "garvagh",
+      "name": "Garvagh",
+      "logainm_id": "14242",
+      "lat": 54.707058,
+      "lon": -8.029315,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "garvagh:familycensus:10:1911"
+     },
+     "caption": "Garvagh had one Slaven household in 1911, headed by Micheal.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "garvagh:familycensus:10:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "garvagh:family:10",
+      "label": "Slaven",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "garvagh:ch:family-03",
+   "title": "The Mac Fhionntaigh family",
+   "beats": [
+    {
+     "id": "garvagh:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "garvagh:ch:family-03",
+     "time": {
+      "label": "The Mac Fhionntaigh family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "garvagh",
+      "name": "Garvagh",
+      "logainm_id": "14242",
+      "lat": 54.707058,
+      "lon": -8.029315,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "garvagh:familypresence:03"
+     },
+     "caption": "The Mac Fhionntaigh family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "garvagh:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "garvagh:family:03",
+      "label": "Mac Fhionntaigh",
+      "run": false
+     }
+    },
+    {
+     "id": "garvagh:beat:familycensus:03-1926",
+     "kind": "familycensus",
+     "chapter": "garvagh:ch:family-03",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "garvagh",
+      "name": "Garvagh",
+      "logainm_id": "14242",
+      "lat": 54.707058,
+      "lon": -8.029315,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "garvagh:familycensus:03:1926"
+     },
+     "caption": "Garvagh had one Mac Fhionntaigh household in 1926, headed by Padraig.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "garvagh:familycensus:03:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "garvagh:family:03",
+      "label": "Mac Fhionntaigh",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "garvagh:ch:family-04",
+   "title": "The Martain family",
+   "beats": [
+    {
+     "id": "garvagh:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "garvagh:ch:family-04",
+     "time": {
+      "label": "The Martain family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "garvagh",
+      "name": "Garvagh",
+      "logainm_id": "14242",
+      "lat": 54.707058,
+      "lon": -8.029315,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "garvagh:familypresence:04"
+     },
+     "caption": "The Martain family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "garvagh:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "garvagh:family:04",
+      "label": "Martain",
+      "run": false
+     }
+    },
+    {
+     "id": "garvagh:beat:familycensus:04-1926",
+     "kind": "familycensus",
+     "chapter": "garvagh:ch:family-04",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "garvagh",
+      "name": "Garvagh",
+      "logainm_id": "14242",
+      "lat": 54.707058,
+      "lon": -8.029315,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "garvagh:familycensus:04:1926"
+     },
+     "caption": "Garvagh had four Martain households in 1926, headed by Denis, Sheela, Francis and Michael.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "garvagh:familycensus:04:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5600,
+     "audio": null,
+     "thread": {
+      "id": "garvagh:family:04",
+      "label": "Martain",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "garvagh:ch:family-07",
+   "title": "The McLoone family",
+   "beats": [
+    {
+     "id": "garvagh:beat:familyhead:07",
+     "kind": "familyhead",
+     "chapter": "garvagh:ch:family-07",
+     "time": {
+      "label": "The McLoone family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "garvagh",
+      "name": "Garvagh",
+      "logainm_id": "14242",
+      "lat": 54.707058,
+      "lon": -8.029315,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "garvagh:familypresence:07"
+     },
+     "caption": "The McLoone family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "garvagh:familypresence:07"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "garvagh:family:07",
+      "label": "McLoone",
+      "run": false
+     }
+    },
+    {
+     "id": "garvagh:beat:familycensus:07-1926",
+     "kind": "familycensus",
+     "chapter": "garvagh:ch:family-07",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "garvagh",
+      "name": "Garvagh",
+      "logainm_id": "14242",
+      "lat": 54.707058,
+      "lon": -8.029315,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "garvagh:familycensus:07:1926"
+     },
+     "caption": "Garvagh had one McLoone household in 1926, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "garvagh:familycensus:07:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "garvagh:family:07",
+      "label": "McLoone",
+      "run": false
+     }
     }
    ]
   }

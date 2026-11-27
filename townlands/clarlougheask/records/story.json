@@ -96,44 +96,8 @@
   },
   {
    "id": "clarlougheask:ch:baptisms",
-   "title": "Baptisms, 1873 to 1875",
+   "title": "Baptisms, 1874",
    "beats": [
-    {
-     "id": "clarlougheask:beat:baptism:1873",
-     "kind": "baptism",
-     "chapter": "clarlougheask:ch:baptisms",
-     "time": {
-      "label": "16 February 1873",
-      "iso": "1873-02-16",
-      "sort": "1873-02-16",
-      "approximate": false
-     },
-     "place": {
-      "townland": "clarlougheask",
-      "name": "Clarlougheask",
-      "logainm_id": "13963",
-      "lat": 54.678353,
-      "lon": -8.054077,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "clarlougheask:baptism:TAW-B-p005-r18"
-     },
-     "caption": "Two children were baptised in 1873: Joseph Breslin on 16 February and Mary Anne McDermott on 26 December.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "clarlougheask:baptism:TAW-B-p005-r18",
-       "clarlougheask:baptism:TAW-B-p009-r90"
-      ],
-      "basis": "page_place",
-      "certainty": "stated"
-     },
-     "duration_ms": 7200,
-     "audio": null
-    },
     {
      "id": "clarlougheask:beat:baptism:1874-06-21-TAW-B-p011-r132",
      "kind": "baptism",
@@ -168,11 +132,126 @@
      },
      "duration_ms": 6400,
      "audio": null
-    },
+    }
+   ]
+  },
+  {
+   "id": "clarlougheask:ch:census",
+   "title": "1901 to 1926",
+   "beats": [
+    {
+     "id": "clarlougheask:beat:census:returns",
+     "kind": "census",
+     "chapter": "clarlougheask:ch:census",
+     "time": {
+      "label": "1901 to 1926",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarlougheask",
+      "name": "Clarlougheask",
+      "logainm_id": "13963",
+      "lat": 54.678353,
+      "lon": -8.054077,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarlougheask:census:1901"
+     },
+     "caption": "The censuses of 1901, 1911 and 1926 counted 61, 48 and 37 people in Clarlougheask, in 12, 12 and 8 households. Heads of household included Martin, Boyce and Breslin.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarlougheask:census:1901",
+       "clarlougheask:census:1911",
+       "clarlougheask:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 11600,
+     "audio": null,
+     "counts": {
+      "returns": [
+       {
+        "year": "1901",
+        "people": 61,
+        "households": 12
+       },
+       {
+        "year": "1911",
+        "people": 48,
+        "households": 12
+       },
+       {
+        "year": "1926",
+        "people": 37,
+        "households": 8
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "clarlougheask:ch:families",
+   "title": "The families of Clarlougheask",
+   "beats": [
+    {
+     "id": "clarlougheask:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "clarlougheask:ch:families",
+     "time": {
+      "label": "The families of Clarlougheask",
+      "iso": "1873-02-16",
+      "sort": "1875-06-17",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarlougheask",
+      "name": "Clarlougheask",
+      "logainm_id": "13963",
+      "lat": 54.678353,
+      "lon": -8.054077,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarlougheask:baptism:TAW-B-p005-r18"
+     },
+     "caption": "Here are the families of Clarlougheask, from 1873 to 1926. First, the Boyce and Martin families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarlougheask:baptism:TAW-B-p005-r18",
+       "clarlougheask:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "clarlougheask:family:01",
+      "label": "Boyce",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "clarlougheask:ch:family-01",
+   "title": "The Boyce family",
+   "beats": [
     {
      "id": "clarlougheask:beat:baptism:1875-06-17-TAW-B-p017-r223",
      "kind": "baptism",
-     "chapter": "clarlougheask:ch:baptisms",
+     "chapter": "clarlougheask:ch:family-01",
      "time": {
       "label": "17 June 1875",
       "iso": "1875-06-17",
@@ -202,18 +281,57 @@
       "certainty": "stated"
      },
      "duration_ms": 6400,
-     "audio": null
-    }
-   ]
-  },
-  {
-   "id": "clarlougheask:ch:1901",
-   "title": "1901",
-   "beats": [
+     "audio": null,
+     "thread": {
+      "id": "clarlougheask:family:01",
+      "label": "Boyce",
+      "run": true
+     }
+    },
     {
-     "id": "clarlougheask:beat:census:1901",
-     "kind": "census",
-     "chapter": "clarlougheask:ch:1901",
+     "id": "clarlougheask:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "clarlougheask:ch:family-01",
+     "time": {
+      "label": "The Boyce family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarlougheask",
+      "name": "Clarlougheask",
+      "logainm_id": "13963",
+      "lat": 54.678353,
+      "lon": -8.054077,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarlougheask:familypresence:01"
+     },
+     "caption": "The Boyce family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarlougheask:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "clarlougheask:family:01",
+      "label": "Boyce",
+      "run": true
+     }
+    },
+    {
+     "id": "clarlougheask:beat:familycensus:01-1901",
+     "kind": "familycensus",
+     "chapter": "clarlougheask:ch:family-01",
      "time": {
       "label": "1901",
       "iso": "1901",
@@ -230,35 +348,30 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "clarlougheask:census:1901"
+      "open_card": "clarlougheask:familycensus:01:1901"
      },
-     "caption": "In 1901, 61 people in twelve households lived in Clarlougheask. Heads of household included Martin, Boyce and Breslin.",
+     "caption": "Clarlougheask had one Boyce household in 1901, headed by Bridget.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "clarlougheask:census:1901"
+       "clarlougheask:familycensus:01:1901"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 7200,
+     "duration_ms": 4000,
      "audio": null,
-     "counts": {
-      "people": 61,
-      "households": 12
+     "thread": {
+      "id": "clarlougheask:family:01",
+      "label": "Boyce",
+      "run": true
      }
-    }
-   ]
-  },
-  {
-   "id": "clarlougheask:ch:1911",
-   "title": "1911",
-   "beats": [
+    },
     {
-     "id": "clarlougheask:beat:census:1911",
-     "kind": "census",
-     "chapter": "clarlougheask:ch:1911",
+     "id": "clarlougheask:beat:familycensus:01-1911",
+     "kind": "familycensus",
+     "chapter": "clarlougheask:ch:family-01",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -275,35 +388,30 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "clarlougheask:census:1911"
+      "open_card": "clarlougheask:familycensus:01:1911"
      },
-     "caption": "Clarlougheask had 48 people in twelve households in 1911. Heads of household included Martin, McDermott and Boyce.",
+     "caption": "Clarlougheask had one Boyce household in 1911, headed by Patrick.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "clarlougheask:census:1911"
+       "clarlougheask:familycensus:01:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6800,
+     "duration_ms": 4000,
      "audio": null,
-     "counts": {
-      "people": 48,
-      "households": 12
+     "thread": {
+      "id": "clarlougheask:family:01",
+      "label": "Boyce",
+      "run": true
      }
-    }
-   ]
-  },
-  {
-   "id": "clarlougheask:ch:1926",
-   "title": "1926",
-   "beats": [
+    },
     {
-     "id": "clarlougheask:beat:census:1926",
-     "kind": "census",
-     "chapter": "clarlougheask:ch:1926",
+     "id": "clarlougheask:beat:familycensus:01-1926",
+     "kind": "familycensus",
+     "chapter": "clarlougheask:ch:family-01",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -320,25 +428,198 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "clarlougheask:census:1926"
+      "open_card": "clarlougheask:familycensus:01:1926"
      },
-     "caption": "Clarlougheask had 37 people in eight households in 1926. Heads of household included Boyce, Breslin and Judge.",
+     "caption": "Clarlougheask had one Boyce household in 1926, headed by Patrick.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "clarlougheask:census:1926"
+       "clarlougheask:familycensus:01:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6800,
+     "duration_ms": 4000,
      "audio": null,
-     "counts": {
-      "people": 37,
-      "households": 8
+     "thread": {
+      "id": "clarlougheask:family:01",
+      "label": "Boyce",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "clarlougheask:ch:family-09",
+   "title": "The Martin family",
+   "beats": [
+    {
+     "id": "clarlougheask:beat:familyhead:09",
+     "kind": "familyhead",
+     "chapter": "clarlougheask:ch:family-09",
+     "time": {
+      "label": "The Martin family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarlougheask",
+      "name": "Clarlougheask",
+      "logainm_id": "13963",
+      "lat": 54.678353,
+      "lon": -8.054077,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarlougheask:familypresence:09"
+     },
+     "caption": "The Martin family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarlougheask:familypresence:09"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "clarlougheask:family:09",
+      "label": "Martin",
+      "run": true
      }
     },
+    {
+     "id": "clarlougheask:beat:familycensus:09-1901",
+     "kind": "familycensus",
+     "chapter": "clarlougheask:ch:family-09",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarlougheask",
+      "name": "Clarlougheask",
+      "logainm_id": "13963",
+      "lat": 54.678353,
+      "lon": -8.054077,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarlougheask:familycensus:09:1901"
+     },
+     "caption": "Clarlougheask had two Martin households in 1901, headed by Sheelah and Bernard.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarlougheask:familycensus:09:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "clarlougheask:family:09",
+      "label": "Martin",
+      "run": true
+     }
+    },
+    {
+     "id": "clarlougheask:beat:familycensus:09-1911",
+     "kind": "familycensus",
+     "chapter": "clarlougheask:ch:family-09",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarlougheask",
+      "name": "Clarlougheask",
+      "logainm_id": "13963",
+      "lat": 54.678353,
+      "lon": -8.054077,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarlougheask:familycensus:09:1911"
+     },
+     "caption": "Clarlougheask had two Martin households in 1911, headed by James and Catherine.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarlougheask:familycensus:09:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "clarlougheask:family:09",
+      "label": "Martin",
+      "run": true
+     }
+    },
+    {
+     "id": "clarlougheask:beat:familycensus:09-1926",
+     "kind": "familycensus",
+     "chapter": "clarlougheask:ch:family-09",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarlougheask",
+      "name": "Clarlougheask",
+      "logainm_id": "13963",
+      "lat": 54.678353,
+      "lon": -8.054077,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarlougheask:familycensus:09:1926"
+     },
+     "caption": "Clarlougheask had one Martin household in 1926, headed by John Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarlougheask:familycensus:09:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "clarlougheask:family:09",
+      "label": "Martin",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "clarlougheask:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "clarlougheask:beat:closing:end",
      "kind": "closing",
@@ -373,6 +654,1604 @@
      },
      "duration_ms": 4000,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "clarlougheask:ch:family-02",
+   "title": "The Breslin family",
+   "beats": [
+    {
+     "id": "clarlougheask:beat:baptism:1873-02-16-TAW-B-p005-r18",
+     "kind": "baptism",
+     "chapter": "clarlougheask:ch:family-02",
+     "time": {
+      "label": "16 February 1873",
+      "iso": "1873-02-16",
+      "sort": "1873-02-16",
+      "approximate": false
+     },
+     "place": {
+      "townland": "clarlougheask",
+      "name": "Clarlougheask",
+      "logainm_id": "13963",
+      "lat": 54.678353,
+      "lon": -8.054077,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarlougheask:baptism:TAW-B-p005-r18"
+     },
+     "caption": "Joseph Breslin was baptised on 16 February 1873. Edward Breslin and Mary McGroarty were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarlougheask:baptism:TAW-B-p005-r18"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "clarlougheask:family:02",
+      "label": "Breslin",
+      "run": false
+     }
+    },
+    {
+     "id": "clarlougheask:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "clarlougheask:ch:family-02",
+     "time": {
+      "label": "The Breslin family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarlougheask",
+      "name": "Clarlougheask",
+      "logainm_id": "13963",
+      "lat": 54.678353,
+      "lon": -8.054077,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarlougheask:familypresence:02"
+     },
+     "caption": "The Breslin family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarlougheask:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "clarlougheask:family:02",
+      "label": "Breslin",
+      "run": false
+     }
+    },
+    {
+     "id": "clarlougheask:beat:familycensus:02-1901",
+     "kind": "familycensus",
+     "chapter": "clarlougheask:ch:family-02",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarlougheask",
+      "name": "Clarlougheask",
+      "logainm_id": "13963",
+      "lat": 54.678353,
+      "lon": -8.054077,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarlougheask:familycensus:02:1901"
+     },
+     "caption": "Clarlougheask had one Breslin household in 1901, headed by Edward.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarlougheask:familycensus:02:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarlougheask:family:02",
+      "label": "Breslin",
+      "run": false
+     }
+    },
+    {
+     "id": "clarlougheask:beat:familycensus:02-1911",
+     "kind": "familycensus",
+     "chapter": "clarlougheask:ch:family-02",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarlougheask",
+      "name": "Clarlougheask",
+      "logainm_id": "13963",
+      "lat": 54.678353,
+      "lon": -8.054077,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarlougheask:familycensus:02:1911"
+     },
+     "caption": "Clarlougheask had one Breslin household in 1911, headed by Michael.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarlougheask:familycensus:02:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarlougheask:family:02",
+      "label": "Breslin",
+      "run": false
+     }
+    },
+    {
+     "id": "clarlougheask:beat:familycensus:02-1926",
+     "kind": "familycensus",
+     "chapter": "clarlougheask:ch:family-02",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarlougheask",
+      "name": "Clarlougheask",
+      "logainm_id": "13963",
+      "lat": 54.678353,
+      "lon": -8.054077,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarlougheask:familycensus:02:1926"
+     },
+     "caption": "Clarlougheask had one Breslin household in 1926, headed by Michael.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarlougheask:familycensus:02:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarlougheask:family:02",
+      "label": "Breslin",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clarlougheask:ch:family-10",
+   "title": "The McDermott family",
+   "beats": [
+    {
+     "id": "clarlougheask:beat:baptism:1873-12-26-TAW-B-p009-r90",
+     "kind": "baptism",
+     "chapter": "clarlougheask:ch:family-10",
+     "time": {
+      "label": "26 December 1873",
+      "iso": "1873-12-26",
+      "sort": "1873-12-26",
+      "approximate": false
+     },
+     "place": {
+      "townland": "clarlougheask",
+      "name": "Clarlougheask",
+      "logainm_id": "13963",
+      "lat": 54.678353,
+      "lon": -8.054077,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarlougheask:baptism:TAW-B-p009-r90"
+     },
+     "caption": "Mary Anne McDermott was baptised on 26 December 1873. Edward McDermott and Brigid Kelly were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarlougheask:baptism:TAW-B-p009-r90"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "thread": {
+      "id": "clarlougheask:family:10",
+      "label": "McDermott",
+      "run": false
+     }
+    },
+    {
+     "id": "clarlougheask:beat:familyhead:10",
+     "kind": "familyhead",
+     "chapter": "clarlougheask:ch:family-10",
+     "time": {
+      "label": "The McDermott family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarlougheask",
+      "name": "Clarlougheask",
+      "logainm_id": "13963",
+      "lat": 54.678353,
+      "lon": -8.054077,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarlougheask:familypresence:10"
+     },
+     "caption": "The McDermott family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarlougheask:familypresence:10"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "clarlougheask:family:10",
+      "label": "McDermott",
+      "run": false
+     }
+    },
+    {
+     "id": "clarlougheask:beat:familycensus:10-1901",
+     "kind": "familycensus",
+     "chapter": "clarlougheask:ch:family-10",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarlougheask",
+      "name": "Clarlougheask",
+      "logainm_id": "13963",
+      "lat": 54.678353,
+      "lon": -8.054077,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarlougheask:familycensus:10:1901"
+     },
+     "caption": "Clarlougheask had one McDermott household in 1901, headed by Anne.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarlougheask:familycensus:10:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarlougheask:family:10",
+      "label": "McDermott",
+      "run": false
+     }
+    },
+    {
+     "id": "clarlougheask:beat:familycensus:10-1911",
+     "kind": "familycensus",
+     "chapter": "clarlougheask:ch:family-10",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarlougheask",
+      "name": "Clarlougheask",
+      "logainm_id": "13963",
+      "lat": 54.678353,
+      "lon": -8.054077,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarlougheask:familycensus:10:1911"
+     },
+     "caption": "Clarlougheask had two McDermott households in 1911, headed by Anne and Edward.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarlougheask:familycensus:10:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "clarlougheask:family:10",
+      "label": "McDermott",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clarlougheask:ch:family-03",
+   "title": "The Cunningham family",
+   "beats": [
+    {
+     "id": "clarlougheask:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "clarlougheask:ch:family-03",
+     "time": {
+      "label": "The Cunningham family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarlougheask",
+      "name": "Clarlougheask",
+      "logainm_id": "13963",
+      "lat": 54.678353,
+      "lon": -8.054077,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarlougheask:familypresence:03"
+     },
+     "caption": "The Cunningham family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarlougheask:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarlougheask:family:03",
+      "label": "Cunningham",
+      "run": false
+     }
+    },
+    {
+     "id": "clarlougheask:beat:familycensus:03-1901",
+     "kind": "familycensus",
+     "chapter": "clarlougheask:ch:family-03",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarlougheask",
+      "name": "Clarlougheask",
+      "logainm_id": "13963",
+      "lat": 54.678353,
+      "lon": -8.054077,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarlougheask:familycensus:03:1901"
+     },
+     "caption": "Clarlougheask had one Cunningham household in 1901, headed by Anne.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarlougheask:familycensus:03:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarlougheask:family:03",
+      "label": "Cunningham",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clarlougheask:ch:family-06",
+   "title": "The Jackson family",
+   "beats": [
+    {
+     "id": "clarlougheask:beat:familyhead:06",
+     "kind": "familyhead",
+     "chapter": "clarlougheask:ch:family-06",
+     "time": {
+      "label": "The Jackson family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarlougheask",
+      "name": "Clarlougheask",
+      "logainm_id": "13963",
+      "lat": 54.678353,
+      "lon": -8.054077,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarlougheask:familypresence:06"
+     },
+     "caption": "The Jackson family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarlougheask:familypresence:06"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "clarlougheask:family:06",
+      "label": "Jackson",
+      "run": false
+     }
+    },
+    {
+     "id": "clarlougheask:beat:familycensus:06-1901",
+     "kind": "familycensus",
+     "chapter": "clarlougheask:ch:family-06",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarlougheask",
+      "name": "Clarlougheask",
+      "logainm_id": "13963",
+      "lat": 54.678353,
+      "lon": -8.054077,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarlougheask:familycensus:06:1901"
+     },
+     "caption": "Clarlougheask had one Jackson household in 1901, headed by William.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarlougheask:familycensus:06:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarlougheask:family:06",
+      "label": "Jackson",
+      "run": false
+     }
+    },
+    {
+     "id": "clarlougheask:beat:familycensus:06-1911",
+     "kind": "familycensus",
+     "chapter": "clarlougheask:ch:family-06",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarlougheask",
+      "name": "Clarlougheask",
+      "logainm_id": "13963",
+      "lat": 54.678353,
+      "lon": -8.054077,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarlougheask:familycensus:06:1911"
+     },
+     "caption": "Clarlougheask had one Jackson household in 1911, headed by William.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarlougheask:familycensus:06:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarlougheask:family:06",
+      "label": "Jackson",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clarlougheask:ch:family-08",
+   "title": "The Lyttle family",
+   "beats": [
+    {
+     "id": "clarlougheask:beat:familyhead:08",
+     "kind": "familyhead",
+     "chapter": "clarlougheask:ch:family-08",
+     "time": {
+      "label": "The Lyttle family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarlougheask",
+      "name": "Clarlougheask",
+      "logainm_id": "13963",
+      "lat": 54.678353,
+      "lon": -8.054077,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarlougheask:familypresence:08"
+     },
+     "caption": "The Lyttle family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarlougheask:familypresence:08"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarlougheask:family:08",
+      "label": "Lyttle",
+      "run": false
+     }
+    },
+    {
+     "id": "clarlougheask:beat:familycensus:08-1901",
+     "kind": "familycensus",
+     "chapter": "clarlougheask:ch:family-08",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarlougheask",
+      "name": "Clarlougheask",
+      "logainm_id": "13963",
+      "lat": 54.678353,
+      "lon": -8.054077,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarlougheask:familycensus:08:1901"
+     },
+     "caption": "Clarlougheask had one Lyttle household in 1901, headed by Esther.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarlougheask:familycensus:08:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarlougheask:family:08",
+      "label": "Lyttle",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clarlougheask:ch:family-11",
+   "title": "The McDermott Roe family",
+   "beats": [
+    {
+     "id": "clarlougheask:beat:familyhead:11",
+     "kind": "familyhead",
+     "chapter": "clarlougheask:ch:family-11",
+     "time": {
+      "label": "The McDermott Roe family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarlougheask",
+      "name": "Clarlougheask",
+      "logainm_id": "13963",
+      "lat": 54.678353,
+      "lon": -8.054077,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarlougheask:familypresence:11"
+     },
+     "caption": "The McDermott Roe family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarlougheask:familypresence:11"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarlougheask:family:11",
+      "label": "McDermott Roe",
+      "run": false
+     }
+    },
+    {
+     "id": "clarlougheask:beat:familycensus:11-1901",
+     "kind": "familycensus",
+     "chapter": "clarlougheask:ch:family-11",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarlougheask",
+      "name": "Clarlougheask",
+      "logainm_id": "13963",
+      "lat": 54.678353,
+      "lon": -8.054077,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarlougheask:familycensus:11:1901"
+     },
+     "caption": "Clarlougheask had one McDermott Roe household in 1901, headed by Edward.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarlougheask:familycensus:11:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "clarlougheask:family:11",
+      "label": "McDermott Roe",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clarlougheask:ch:family-13",
+   "title": "The Pearson family",
+   "beats": [
+    {
+     "id": "clarlougheask:beat:familyhead:13",
+     "kind": "familyhead",
+     "chapter": "clarlougheask:ch:family-13",
+     "time": {
+      "label": "The Pearson family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarlougheask",
+      "name": "Clarlougheask",
+      "logainm_id": "13963",
+      "lat": 54.678353,
+      "lon": -8.054077,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarlougheask:familypresence:13"
+     },
+     "caption": "The Pearson family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarlougheask:familypresence:13"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "clarlougheask:family:13",
+      "label": "Pearson",
+      "run": false
+     }
+    },
+    {
+     "id": "clarlougheask:beat:familycensus:13-1901",
+     "kind": "familycensus",
+     "chapter": "clarlougheask:ch:family-13",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarlougheask",
+      "name": "Clarlougheask",
+      "logainm_id": "13963",
+      "lat": 54.678353,
+      "lon": -8.054077,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarlougheask:familycensus:13:1901"
+     },
+     "caption": "Clarlougheask had one Pearson household in 1901, headed by Robert.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarlougheask:familycensus:13:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarlougheask:family:13",
+      "label": "Pearson",
+      "run": false
+     }
+    },
+    {
+     "id": "clarlougheask:beat:familycensus:13-1911",
+     "kind": "familycensus",
+     "chapter": "clarlougheask:ch:family-13",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarlougheask",
+      "name": "Clarlougheask",
+      "logainm_id": "13963",
+      "lat": 54.678353,
+      "lon": -8.054077,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarlougheask:familycensus:13:1911"
+     },
+     "caption": "Clarlougheask had one Pearson household in 1911, headed by Robert.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarlougheask:familycensus:13:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarlougheask:family:13",
+      "label": "Pearson",
+      "run": false
+     }
+    },
+    {
+     "id": "clarlougheask:beat:familycensus:13-1926",
+     "kind": "familycensus",
+     "chapter": "clarlougheask:ch:family-13",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarlougheask",
+      "name": "Clarlougheask",
+      "logainm_id": "13963",
+      "lat": 54.678353,
+      "lon": -8.054077,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarlougheask:familycensus:13:1926"
+     },
+     "caption": "Clarlougheask had one Pearson household in 1926, headed by Robert.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarlougheask:familycensus:13:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarlougheask:family:13",
+      "label": "Pearson",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clarlougheask:ch:family-14",
+   "title": "The Scott family",
+   "beats": [
+    {
+     "id": "clarlougheask:beat:familyhead:14",
+     "kind": "familyhead",
+     "chapter": "clarlougheask:ch:family-14",
+     "time": {
+      "label": "The Scott family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarlougheask",
+      "name": "Clarlougheask",
+      "logainm_id": "13963",
+      "lat": 54.678353,
+      "lon": -8.054077,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarlougheask:familypresence:14"
+     },
+     "caption": "The Scott family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarlougheask:familypresence:14"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "clarlougheask:family:14",
+      "label": "Scott",
+      "run": false
+     }
+    },
+    {
+     "id": "clarlougheask:beat:familycensus:14-1901",
+     "kind": "familycensus",
+     "chapter": "clarlougheask:ch:family-14",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarlougheask",
+      "name": "Clarlougheask",
+      "logainm_id": "13963",
+      "lat": 54.678353,
+      "lon": -8.054077,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarlougheask:familycensus:14:1901"
+     },
+     "caption": "Clarlougheask had one Scott household in 1901, headed by William.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarlougheask:familycensus:14:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarlougheask:family:14",
+      "label": "Scott",
+      "run": false
+     }
+    },
+    {
+     "id": "clarlougheask:beat:familycensus:14-1911",
+     "kind": "familycensus",
+     "chapter": "clarlougheask:ch:family-14",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarlougheask",
+      "name": "Clarlougheask",
+      "logainm_id": "13963",
+      "lat": 54.678353,
+      "lon": -8.054077,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarlougheask:familycensus:14:1911"
+     },
+     "caption": "Clarlougheask had one Scott household in 1911, headed by William.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarlougheask:familycensus:14:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarlougheask:family:14",
+      "label": "Scott",
+      "run": false
+     }
+    },
+    {
+     "id": "clarlougheask:beat:familycensus:14-1926",
+     "kind": "familycensus",
+     "chapter": "clarlougheask:ch:family-14",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarlougheask",
+      "name": "Clarlougheask",
+      "logainm_id": "13963",
+      "lat": 54.678353,
+      "lon": -8.054077,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarlougheask:familycensus:14:1926"
+     },
+     "caption": "Clarlougheask had one Scott household in 1926, headed by William.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarlougheask:familycensus:14:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarlougheask:family:14",
+      "label": "Scott",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clarlougheask:ch:family-15",
+   "title": "The Stevenson family",
+   "beats": [
+    {
+     "id": "clarlougheask:beat:familyhead:15",
+     "kind": "familyhead",
+     "chapter": "clarlougheask:ch:family-15",
+     "time": {
+      "label": "The Stevenson family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarlougheask",
+      "name": "Clarlougheask",
+      "logainm_id": "13963",
+      "lat": 54.678353,
+      "lon": -8.054077,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarlougheask:familypresence:15"
+     },
+     "caption": "The Stevenson family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarlougheask:familypresence:15"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "clarlougheask:family:15",
+      "label": "Stevenson",
+      "run": false
+     }
+    },
+    {
+     "id": "clarlougheask:beat:familycensus:15-1901",
+     "kind": "familycensus",
+     "chapter": "clarlougheask:ch:family-15",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarlougheask",
+      "name": "Clarlougheask",
+      "logainm_id": "13963",
+      "lat": 54.678353,
+      "lon": -8.054077,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarlougheask:familycensus:15:1901"
+     },
+     "caption": "Clarlougheask had one Stevenson household in 1901, headed by Isabella.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarlougheask:familycensus:15:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarlougheask:family:15",
+      "label": "Stevenson",
+      "run": false
+     }
+    },
+    {
+     "id": "clarlougheask:beat:familycensus:15-1911",
+     "kind": "familycensus",
+     "chapter": "clarlougheask:ch:family-15",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarlougheask",
+      "name": "Clarlougheask",
+      "logainm_id": "13963",
+      "lat": 54.678353,
+      "lon": -8.054077,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarlougheask:familycensus:15:1911"
+     },
+     "caption": "Clarlougheask had one Stevenson household in 1911, headed by Isabella.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarlougheask:familycensus:15:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarlougheask:family:15",
+      "label": "Stevenson",
+      "run": false
+     }
+    },
+    {
+     "id": "clarlougheask:beat:familycensus:15-1926",
+     "kind": "familycensus",
+     "chapter": "clarlougheask:ch:family-15",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarlougheask",
+      "name": "Clarlougheask",
+      "logainm_id": "13963",
+      "lat": 54.678353,
+      "lon": -8.054077,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarlougheask:familycensus:15:1926"
+     },
+     "caption": "Clarlougheask had one Stevenson household in 1926, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarlougheask:familycensus:15:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarlougheask:family:15",
+      "label": "Stevenson",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clarlougheask:ch:family-04",
+   "title": "The Cunyngham family",
+   "beats": [
+    {
+     "id": "clarlougheask:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "clarlougheask:ch:family-04",
+     "time": {
+      "label": "The Cunyngham family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarlougheask",
+      "name": "Clarlougheask",
+      "logainm_id": "13963",
+      "lat": 54.678353,
+      "lon": -8.054077,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarlougheask:familypresence:04"
+     },
+     "caption": "The Cunyngham family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarlougheask:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarlougheask:family:04",
+      "label": "Cunyngham",
+      "run": false
+     }
+    },
+    {
+     "id": "clarlougheask:beat:familycensus:04-1911",
+     "kind": "familycensus",
+     "chapter": "clarlougheask:ch:family-04",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarlougheask",
+      "name": "Clarlougheask",
+      "logainm_id": "13963",
+      "lat": 54.678353,
+      "lon": -8.054077,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarlougheask:familycensus:04:1911"
+     },
+     "caption": "Clarlougheask had one Cunyngham household in 1911, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarlougheask:familycensus:04:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarlougheask:family:04",
+      "label": "Cunyngham",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clarlougheask:ch:family-05",
+   "title": "The Hanna family",
+   "beats": [
+    {
+     "id": "clarlougheask:beat:familyhead:05",
+     "kind": "familyhead",
+     "chapter": "clarlougheask:ch:family-05",
+     "time": {
+      "label": "The Hanna family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarlougheask",
+      "name": "Clarlougheask",
+      "logainm_id": "13963",
+      "lat": 54.678353,
+      "lon": -8.054077,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarlougheask:familypresence:05"
+     },
+     "caption": "The Hanna family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarlougheask:familypresence:05"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarlougheask:family:05",
+      "label": "Hanna",
+      "run": false
+     }
+    },
+    {
+     "id": "clarlougheask:beat:familycensus:05-1911",
+     "kind": "familycensus",
+     "chapter": "clarlougheask:ch:family-05",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarlougheask",
+      "name": "Clarlougheask",
+      "logainm_id": "13963",
+      "lat": 54.678353,
+      "lon": -8.054077,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarlougheask:familycensus:05:1911"
+     },
+     "caption": "Clarlougheask had one Hanna household in 1911, headed by William.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarlougheask:familycensus:05:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarlougheask:family:05",
+      "label": "Hanna",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clarlougheask:ch:family-07",
+   "title": "The Judge family",
+   "beats": [
+    {
+     "id": "clarlougheask:beat:familyhead:07",
+     "kind": "familyhead",
+     "chapter": "clarlougheask:ch:family-07",
+     "time": {
+      "label": "The Judge family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarlougheask",
+      "name": "Clarlougheask",
+      "logainm_id": "13963",
+      "lat": 54.678353,
+      "lon": -8.054077,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarlougheask:familypresence:07"
+     },
+     "caption": "The Judge family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarlougheask:familypresence:07"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarlougheask:family:07",
+      "label": "Judge",
+      "run": false
+     }
+    },
+    {
+     "id": "clarlougheask:beat:familycensus:07-1926",
+     "kind": "familycensus",
+     "chapter": "clarlougheask:ch:family-07",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarlougheask",
+      "name": "Clarlougheask",
+      "logainm_id": "13963",
+      "lat": 54.678353,
+      "lon": -8.054077,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarlougheask:familycensus:07:1926"
+     },
+     "caption": "Clarlougheask had one Judge household in 1926, headed by Denis.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarlougheask:familycensus:07:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarlougheask:family:07",
+      "label": "Judge",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clarlougheask:ch:family-12",
+   "title": "The McMurray family",
+   "beats": [
+    {
+     "id": "clarlougheask:beat:familyhead:12",
+     "kind": "familyhead",
+     "chapter": "clarlougheask:ch:family-12",
+     "time": {
+      "label": "The McMurray family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarlougheask",
+      "name": "Clarlougheask",
+      "logainm_id": "13963",
+      "lat": 54.678353,
+      "lon": -8.054077,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarlougheask:familypresence:12"
+     },
+     "caption": "The McMurray family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarlougheask:familypresence:12"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarlougheask:family:12",
+      "label": "McMurray",
+      "run": false
+     }
+    },
+    {
+     "id": "clarlougheask:beat:familycensus:12-1926",
+     "kind": "familycensus",
+     "chapter": "clarlougheask:ch:family-12",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarlougheask",
+      "name": "Clarlougheask",
+      "logainm_id": "13963",
+      "lat": 54.678353,
+      "lon": -8.054077,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarlougheask:familycensus:12:1926"
+     },
+     "caption": "Clarlougheask had one McMurray household in 1926, headed by Robert.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarlougheask:familycensus:12:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarlougheask:family:12",
+      "label": "McMurray",
+      "run": false
+     }
     }
    ]
   }

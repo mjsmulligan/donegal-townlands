@@ -52,15 +52,15 @@
    ]
   },
   {
-   "id": "clarcarricknagun:ch:1901",
-   "title": "1901",
+   "id": "clarcarricknagun:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "clarcarricknagun:beat:census:1901",
+     "id": "clarcarricknagun:beat:census:returns",
      "kind": "census",
-     "chapter": "clarcarricknagun:ch:1901",
+     "chapter": "clarcarricknagun:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1926",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -77,33 +77,177 @@
       "stage": "map",
       "open_card": "clarcarricknagun:census:1901"
      },
-     "caption": "In 1901, 23 people in four households lived in Clarcarricknagun. Heads of household included Stevenson, Gillespie and Ingram.",
+     "caption": "The censuses of 1901, 1911 and 1926 counted 23, 7 and 18 people in Clarcarricknagun, in 4, 2 and 3 households. Heads of household included Stevenson, Gillespie and Ingram.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "clarcarricknagun:census:1901"
+       "clarcarricknagun:census:1901",
+       "clarcarricknagun:census:1911",
+       "clarcarricknagun:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 7200,
+     "duration_ms": 11600,
      "audio": null,
      "counts": {
-      "people": 23,
-      "households": 4
+      "returns": [
+       {
+        "year": "1901",
+        "people": 23,
+        "households": 4
+       },
+       {
+        "year": "1911",
+        "people": 7,
+        "households": 2
+       },
+       {
+        "year": "1926",
+        "people": 18,
+        "households": 3
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "clarcarricknagun:ch:1911",
-   "title": "1911",
+   "id": "clarcarricknagun:ch:families",
+   "title": "The families of Clarcarricknagun",
    "beats": [
     {
-     "id": "clarcarricknagun:beat:census:1911",
-     "kind": "census",
-     "chapter": "clarcarricknagun:ch:1911",
+     "id": "clarcarricknagun:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "clarcarricknagun:ch:families",
+     "time": {
+      "label": "The families of Clarcarricknagun",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcarricknagun",
+      "name": "Clarcarricknagun",
+      "logainm_id": "14029",
+      "lat": 54.657031,
+      "lon": -8.076536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcarricknagun:census:1901"
+     },
+     "caption": "Here are the families of Clarcarricknagun, from 1901 to 1926. First, the Ingram and Stevenson families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcarricknagun:census:1901",
+       "clarcarricknagun:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "clarcarricknagun:family:02",
+      "label": "Ingram",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "clarcarricknagun:ch:family-02",
+   "title": "The Ingram family",
+   "beats": [
+    {
+     "id": "clarcarricknagun:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "clarcarricknagun:ch:family-02",
+     "time": {
+      "label": "The Ingram family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcarricknagun",
+      "name": "Clarcarricknagun",
+      "logainm_id": "14029",
+      "lat": 54.657031,
+      "lon": -8.076536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcarricknagun:familypresence:02"
+     },
+     "caption": "The Ingram family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcarricknagun:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "clarcarricknagun:family:02",
+      "label": "Ingram",
+      "run": true
+     }
+    },
+    {
+     "id": "clarcarricknagun:beat:familycensus:02-1901",
+     "kind": "familycensus",
+     "chapter": "clarcarricknagun:ch:family-02",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcarricknagun",
+      "name": "Clarcarricknagun",
+      "logainm_id": "14029",
+      "lat": 54.657031,
+      "lon": -8.076536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcarricknagun:familycensus:02:1901"
+     },
+     "caption": "Clarcarricknagun had one Ingram household in 1901, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcarricknagun:familycensus:02:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarcarricknagun:family:02",
+      "label": "Ingram",
+      "run": true
+     }
+    },
+    {
+     "id": "clarcarricknagun:beat:familycensus:02-1911",
+     "kind": "familycensus",
+     "chapter": "clarcarricknagun:ch:family-02",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -120,35 +264,30 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "clarcarricknagun:census:1911"
+      "open_card": "clarcarricknagun:familycensus:02:1911"
      },
-     "caption": "In 1911, seven people in two households lived in Clarcarricknagun. Heads of household included Ingram and Stevenson.",
+     "caption": "Clarcarricknagun had one Ingram household in 1911, headed by James.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "clarcarricknagun:census:1911"
+       "clarcarricknagun:familycensus:02:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6800,
+     "duration_ms": 4000,
      "audio": null,
-     "counts": {
-      "people": 7,
-      "households": 2
+     "thread": {
+      "id": "clarcarricknagun:family:02",
+      "label": "Ingram",
+      "run": true
      }
-    }
-   ]
-  },
-  {
-   "id": "clarcarricknagun:ch:1926",
-   "title": "1926",
-   "beats": [
+    },
     {
-     "id": "clarcarricknagun:beat:census:1926",
-     "kind": "census",
-     "chapter": "clarcarricknagun:ch:1926",
+     "id": "clarcarricknagun:beat:familycensus:02-1926",
+     "kind": "familycensus",
+     "chapter": "clarcarricknagun:ch:family-02",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -165,25 +304,198 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "clarcarricknagun:census:1926"
+      "open_card": "clarcarricknagun:familycensus:02:1926"
      },
-     "caption": "In 1926, eighteen people in three households lived in Clarcarricknagun. Heads of household included Ingram, Murphy and Stevenson.",
+     "caption": "Clarcarricknagun had one Ingram household in 1926, headed by James.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "clarcarricknagun:census:1926"
+       "clarcarricknagun:familycensus:02:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 7200,
+     "duration_ms": 4000,
      "audio": null,
-     "counts": {
-      "people": 18,
-      "households": 3
+     "thread": {
+      "id": "clarcarricknagun:family:02",
+      "label": "Ingram",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "clarcarricknagun:ch:family-04",
+   "title": "The Stevenson family",
+   "beats": [
+    {
+     "id": "clarcarricknagun:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "clarcarricknagun:ch:family-04",
+     "time": {
+      "label": "The Stevenson family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcarricknagun",
+      "name": "Clarcarricknagun",
+      "logainm_id": "14029",
+      "lat": 54.657031,
+      "lon": -8.076536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcarricknagun:familypresence:04"
+     },
+     "caption": "The Stevenson family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcarricknagun:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "clarcarricknagun:family:04",
+      "label": "Stevenson",
+      "run": true
      }
     },
+    {
+     "id": "clarcarricknagun:beat:familycensus:04-1901",
+     "kind": "familycensus",
+     "chapter": "clarcarricknagun:ch:family-04",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcarricknagun",
+      "name": "Clarcarricknagun",
+      "logainm_id": "14029",
+      "lat": 54.657031,
+      "lon": -8.076536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcarricknagun:familycensus:04:1901"
+     },
+     "caption": "Clarcarricknagun had two Stevenson households in 1901, headed by Robert and Thomas.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcarricknagun:familycensus:04:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "clarcarricknagun:family:04",
+      "label": "Stevenson",
+      "run": true
+     }
+    },
+    {
+     "id": "clarcarricknagun:beat:familycensus:04-1911",
+     "kind": "familycensus",
+     "chapter": "clarcarricknagun:ch:family-04",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcarricknagun",
+      "name": "Clarcarricknagun",
+      "logainm_id": "14029",
+      "lat": 54.657031,
+      "lon": -8.076536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcarricknagun:familycensus:04:1911"
+     },
+     "caption": "Clarcarricknagun had one Stevenson household in 1911, headed by Robert.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcarricknagun:familycensus:04:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarcarricknagun:family:04",
+      "label": "Stevenson",
+      "run": true
+     }
+    },
+    {
+     "id": "clarcarricknagun:beat:familycensus:04-1926",
+     "kind": "familycensus",
+     "chapter": "clarcarricknagun:ch:family-04",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcarricknagun",
+      "name": "Clarcarricknagun",
+      "logainm_id": "14029",
+      "lat": 54.657031,
+      "lon": -8.076536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcarricknagun:familycensus:04:1926"
+     },
+     "caption": "Clarcarricknagun had one Stevenson household in 1926, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcarricknagun:familycensus:04:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarcarricknagun:family:04",
+      "label": "Stevenson",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "clarcarricknagun:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "clarcarricknagun:beat:closing:end",
      "kind": "closing",
@@ -218,6 +530,178 @@
      },
      "duration_ms": 4000,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "clarcarricknagun:ch:family-01",
+   "title": "The Gillespie family",
+   "beats": [
+    {
+     "id": "clarcarricknagun:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "clarcarricknagun:ch:family-01",
+     "time": {
+      "label": "The Gillespie family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcarricknagun",
+      "name": "Clarcarricknagun",
+      "logainm_id": "14029",
+      "lat": 54.657031,
+      "lon": -8.076536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcarricknagun:familypresence:01"
+     },
+     "caption": "The Gillespie family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcarricknagun:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarcarricknagun:family:01",
+      "label": "Gillespie",
+      "run": false
+     }
+    },
+    {
+     "id": "clarcarricknagun:beat:familycensus:01-1901",
+     "kind": "familycensus",
+     "chapter": "clarcarricknagun:ch:family-01",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcarricknagun",
+      "name": "Clarcarricknagun",
+      "logainm_id": "14029",
+      "lat": 54.657031,
+      "lon": -8.076536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcarricknagun:familycensus:01:1901"
+     },
+     "caption": "Clarcarricknagun had one Gillespie household in 1901, headed by Francis.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcarricknagun:familycensus:01:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarcarricknagun:family:01",
+      "label": "Gillespie",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clarcarricknagun:ch:family-03",
+   "title": "The Murphy family",
+   "beats": [
+    {
+     "id": "clarcarricknagun:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "clarcarricknagun:ch:family-03",
+     "time": {
+      "label": "The Murphy family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcarricknagun",
+      "name": "Clarcarricknagun",
+      "logainm_id": "14029",
+      "lat": 54.657031,
+      "lon": -8.076536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcarricknagun:familypresence:03"
+     },
+     "caption": "The Murphy family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcarricknagun:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarcarricknagun:family:03",
+      "label": "Murphy",
+      "run": false
+     }
+    },
+    {
+     "id": "clarcarricknagun:beat:familycensus:03-1926",
+     "kind": "familycensus",
+     "chapter": "clarcarricknagun:ch:family-03",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcarricknagun",
+      "name": "Clarcarricknagun",
+      "logainm_id": "14029",
+      "lat": 54.657031,
+      "lon": -8.076536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcarricknagun:familycensus:03:1926"
+     },
+     "caption": "Clarcarricknagun had one Murphy household in 1926, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcarricknagun:familycensus:03:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarcarricknagun:family:03",
+      "label": "Murphy",
+      "run": false
+     }
     }
    ]
   }

@@ -95,56 +95,15 @@
    ]
   },
   {
-   "id": "skreen:ch:baptisms",
-   "title": "Baptisms, 1874",
+   "id": "skreen:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "skreen:beat:baptism:1874-11-09-TAW-B-p013-r163",
-     "kind": "baptism",
-     "chapter": "skreen:ch:baptisms",
-     "time": {
-      "label": "9 November 1874",
-      "iso": "1874-11-09",
-      "sort": "1874-11-09",
-      "approximate": false
-     },
-     "place": {
-      "townland": "skreen",
-      "name": "Skreen",
-      "logainm_id": "14299",
-      "lat": 54.643906,
-      "lon": -8.00866,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "skreen:baptism:TAW-B-p013-r163"
-     },
-     "caption": "John Carbin was baptised on 9 November 1874. James Carbin and Mary Cassidy were the parents.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "skreen:baptism:TAW-B-p013-r163"
-      ],
-      "basis": "page_place",
-      "certainty": "stated"
-     },
-     "duration_ms": 6400,
-     "audio": null
-    }
-   ]
-  },
-  {
-   "id": "skreen:ch:1901",
-   "title": "1901",
-   "beats": [
-    {
-     "id": "skreen:beat:census:1901",
+     "id": "skreen:beat:census:returns",
      "kind": "census",
-     "chapter": "skreen:ch:1901",
+     "chapter": "skreen:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1926",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -161,33 +120,177 @@
       "stage": "map",
       "open_card": "skreen:census:1901"
      },
-     "caption": "In 1901, 73 people in thirteen households lived in Skreen. Heads of household included Carbine, Elliott and McGlinchy.",
+     "caption": "The censuses of 1901, 1911 and 1926 counted 73, 65 and 61 people in Skreen, in 13, 13 and 13 households. Heads of household included Carbine, Elliott and McGlinchy.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "skreen:census:1901"
+       "skreen:census:1901",
+       "skreen:census:1911",
+       "skreen:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 7200,
+     "duration_ms": 11600,
      "audio": null,
      "counts": {
-      "people": 73,
-      "households": 13
+      "returns": [
+       {
+        "year": "1901",
+        "people": 73,
+        "households": 13
+       },
+       {
+        "year": "1911",
+        "people": 65,
+        "households": 13
+       },
+       {
+        "year": "1926",
+        "people": 61,
+        "households": 13
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "skreen:ch:1911",
-   "title": "1911",
+   "id": "skreen:ch:families",
+   "title": "The families of Skreen",
    "beats": [
     {
-     "id": "skreen:beat:census:1911",
-     "kind": "census",
-     "chapter": "skreen:ch:1911",
+     "id": "skreen:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "skreen:ch:families",
+     "time": {
+      "label": "The families of Skreen",
+      "iso": "1874-11-09",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "skreen",
+      "name": "Skreen",
+      "logainm_id": "14299",
+      "lat": 54.643906,
+      "lon": -8.00866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "skreen:baptism:TAW-B-p013-r163"
+     },
+     "caption": "Here are the families of Skreen, from 1874 to 1926. First, the Graham and McCaffrey families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "skreen:baptism:TAW-B-p013-r163",
+       "skreen:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "skreen:family:10",
+      "label": "Graham",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "skreen:ch:family-10",
+   "title": "The Graham family",
+   "beats": [
+    {
+     "id": "skreen:beat:familyhead:10",
+     "kind": "familyhead",
+     "chapter": "skreen:ch:family-10",
+     "time": {
+      "label": "The Graham family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "skreen",
+      "name": "Skreen",
+      "logainm_id": "14299",
+      "lat": 54.643906,
+      "lon": -8.00866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "skreen:familypresence:10"
+     },
+     "caption": "The Graham family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "skreen:familypresence:10"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "skreen:family:10",
+      "label": "Graham",
+      "run": true
+     }
+    },
+    {
+     "id": "skreen:beat:familycensus:10-1901",
+     "kind": "familycensus",
+     "chapter": "skreen:ch:family-10",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "skreen",
+      "name": "Skreen",
+      "logainm_id": "14299",
+      "lat": 54.643906,
+      "lon": -8.00866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "skreen:familycensus:10:1901"
+     },
+     "caption": "Skreen had one Graham household in 1901, headed by Henry.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "skreen:familycensus:10:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "skreen:family:10",
+      "label": "Graham",
+      "run": true
+     }
+    },
+    {
+     "id": "skreen:beat:familycensus:10-1911",
+     "kind": "familycensus",
+     "chapter": "skreen:ch:family-10",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -204,35 +307,30 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "skreen:census:1911"
+      "open_card": "skreen:familycensus:10:1911"
      },
-     "caption": "Skreen had 65 people in thirteen households in 1911. Heads of household included Carbin, Elliott and McCaffrey.",
+     "caption": "Skreen had one Graham household in 1911, headed by Henry.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "skreen:census:1911"
+       "skreen:familycensus:10:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6800,
+     "duration_ms": 4000,
      "audio": null,
-     "counts": {
-      "people": 65,
-      "households": 13
+     "thread": {
+      "id": "skreen:family:10",
+      "label": "Graham",
+      "run": true
      }
-    }
-   ]
-  },
-  {
-   "id": "skreen:ch:1926",
-   "title": "1926",
-   "beats": [
+    },
     {
-     "id": "skreen:beat:census:1926",
-     "kind": "census",
-     "chapter": "skreen:ch:1926",
+     "id": "skreen:beat:familycensus:10-1926",
+     "kind": "familycensus",
+     "chapter": "skreen:ch:family-10",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -249,25 +347,198 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "skreen:census:1926"
+      "open_card": "skreen:familycensus:10:1926"
      },
-     "caption": "Skreen had 61 people in thirteen households in 1926. Heads of household included Elliot, Graham and McCaffrey.",
+     "caption": "Skreen had two Graham households in 1926, headed by James and Elizabeth.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "skreen:census:1926"
+       "skreen:familycensus:10:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6800,
+     "duration_ms": 4800,
      "audio": null,
-     "counts": {
-      "people": 61,
-      "households": 13
+     "thread": {
+      "id": "skreen:family:10",
+      "label": "Graham",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "skreen:ch:family-13",
+   "title": "The McCaffrey family",
+   "beats": [
+    {
+     "id": "skreen:beat:familyhead:13",
+     "kind": "familyhead",
+     "chapter": "skreen:ch:family-13",
+     "time": {
+      "label": "The McCaffrey family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "skreen",
+      "name": "Skreen",
+      "logainm_id": "14299",
+      "lat": 54.643906,
+      "lon": -8.00866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "skreen:familypresence:13"
+     },
+     "caption": "The McCaffrey family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "skreen:familypresence:13"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "skreen:family:13",
+      "label": "McCaffrey",
+      "run": true
      }
     },
+    {
+     "id": "skreen:beat:familycensus:13-1901",
+     "kind": "familycensus",
+     "chapter": "skreen:ch:family-13",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "skreen",
+      "name": "Skreen",
+      "logainm_id": "14299",
+      "lat": 54.643906,
+      "lon": -8.00866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "skreen:familycensus:13:1901"
+     },
+     "caption": "Skreen had one McCaffrey household in 1901, headed by Thomas.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "skreen:familycensus:13:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "skreen:family:13",
+      "label": "McCaffrey",
+      "run": true
+     }
+    },
+    {
+     "id": "skreen:beat:familycensus:13-1911",
+     "kind": "familycensus",
+     "chapter": "skreen:ch:family-13",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "skreen",
+      "name": "Skreen",
+      "logainm_id": "14299",
+      "lat": 54.643906,
+      "lon": -8.00866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "skreen:familycensus:13:1911"
+     },
+     "caption": "Skreen had two McCaffrey households in 1911, headed by James and Charles.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "skreen:familycensus:13:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "skreen:family:13",
+      "label": "McCaffrey",
+      "run": true
+     }
+    },
+    {
+     "id": "skreen:beat:familycensus:13-1926",
+     "kind": "familycensus",
+     "chapter": "skreen:ch:family-13",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "skreen",
+      "name": "Skreen",
+      "logainm_id": "14299",
+      "lat": 54.643906,
+      "lon": -8.00866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "skreen:familycensus:13:1926"
+     },
+     "caption": "Skreen had two McCaffrey households in 1926, headed by Bridget and Mary D.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "skreen:familycensus:13:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "skreen:family:13",
+      "label": "McCaffrey",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "skreen:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "skreen:beat:closing:end",
      "kind": "closing",
@@ -302,6 +573,1530 @@
      },
      "duration_ms": 4000,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "skreen:ch:family-02",
+   "title": "The Carbin family",
+   "beats": [
+    {
+     "id": "skreen:beat:baptism:1874-11-09-TAW-B-p013-r163",
+     "kind": "baptism",
+     "chapter": "skreen:ch:family-02",
+     "time": {
+      "label": "9 November 1874",
+      "iso": "1874-11-09",
+      "sort": "1874-11-09",
+      "approximate": false
+     },
+     "place": {
+      "townland": "skreen",
+      "name": "Skreen",
+      "logainm_id": "14299",
+      "lat": 54.643906,
+      "lon": -8.00866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "skreen:baptism:TAW-B-p013-r163"
+     },
+     "caption": "John Carbin was baptised on 9 November 1874. James Carbin and Mary Cassidy were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "skreen:baptism:TAW-B-p013-r163"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "skreen:family:02",
+      "label": "Carbin",
+      "run": false
+     }
+    },
+    {
+     "id": "skreen:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "skreen:ch:family-02",
+     "time": {
+      "label": "The Carbin family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "skreen",
+      "name": "Skreen",
+      "logainm_id": "14299",
+      "lat": 54.643906,
+      "lon": -8.00866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "skreen:familypresence:02"
+     },
+     "caption": "The Carbin family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "skreen:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "skreen:family:02",
+      "label": "Carbin",
+      "run": false
+     }
+    },
+    {
+     "id": "skreen:beat:familycensus:02-1911",
+     "kind": "familycensus",
+     "chapter": "skreen:ch:family-02",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "skreen",
+      "name": "Skreen",
+      "logainm_id": "14299",
+      "lat": 54.643906,
+      "lon": -8.00866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "skreen:familycensus:02:1911"
+     },
+     "caption": "Skreen had two Carbin households in 1911, headed by John and James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "skreen:familycensus:02:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "skreen:family:02",
+      "label": "Carbin",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "skreen:ch:family-03",
+   "title": "The Carbine family",
+   "beats": [
+    {
+     "id": "skreen:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "skreen:ch:family-03",
+     "time": {
+      "label": "The Carbine family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "skreen",
+      "name": "Skreen",
+      "logainm_id": "14299",
+      "lat": 54.643906,
+      "lon": -8.00866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "skreen:familypresence:03"
+     },
+     "caption": "The Carbine family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "skreen:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "skreen:family:03",
+      "label": "Carbine",
+      "run": false
+     }
+    },
+    {
+     "id": "skreen:beat:familycensus:03-1901",
+     "kind": "familycensus",
+     "chapter": "skreen:ch:family-03",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "skreen",
+      "name": "Skreen",
+      "logainm_id": "14299",
+      "lat": 54.643906,
+      "lon": -8.00866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "skreen:familycensus:03:1901"
+     },
+     "caption": "Skreen had two Carbine households in 1901, headed by John and James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "skreen:familycensus:03:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "skreen:family:03",
+      "label": "Carbine",
+      "run": false
+     }
+    },
+    {
+     "id": "skreen:beat:familycensus:03-1926",
+     "kind": "familycensus",
+     "chapter": "skreen:ch:family-03",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "skreen",
+      "name": "Skreen",
+      "logainm_id": "14299",
+      "lat": 54.643906,
+      "lon": -8.00866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "skreen:familycensus:03:1926"
+     },
+     "caption": "Skreen had one Carbine household in 1926, headed by Elizabeth.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "skreen:familycensus:03:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "skreen:family:03",
+      "label": "Carbine",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "skreen:ch:family-06",
+   "title": "The Curristin family",
+   "beats": [
+    {
+     "id": "skreen:beat:familyhead:06",
+     "kind": "familyhead",
+     "chapter": "skreen:ch:family-06",
+     "time": {
+      "label": "The Curristin family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "skreen",
+      "name": "Skreen",
+      "logainm_id": "14299",
+      "lat": 54.643906,
+      "lon": -8.00866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "skreen:familypresence:06"
+     },
+     "caption": "The Curristin family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "skreen:familypresence:06"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "skreen:family:06",
+      "label": "Curristin",
+      "run": false
+     }
+    },
+    {
+     "id": "skreen:beat:familycensus:06-1901",
+     "kind": "familycensus",
+     "chapter": "skreen:ch:family-06",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "skreen",
+      "name": "Skreen",
+      "logainm_id": "14299",
+      "lat": 54.643906,
+      "lon": -8.00866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "skreen:familycensus:06:1901"
+     },
+     "caption": "Skreen had one Curristin household in 1901, headed by Hugh.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "skreen:familycensus:06:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "skreen:family:06",
+      "label": "Curristin",
+      "run": false
+     }
+    },
+    {
+     "id": "skreen:beat:familycensus:06-1926",
+     "kind": "familycensus",
+     "chapter": "skreen:ch:family-06",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "skreen",
+      "name": "Skreen",
+      "logainm_id": "14299",
+      "lat": 54.643906,
+      "lon": -8.00866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "skreen:familycensus:06:1926"
+     },
+     "caption": "Skreen had one Curristin household in 1926, headed by Bernard.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "skreen:familycensus:06:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "skreen:family:06",
+      "label": "Curristin",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "skreen:ch:family-08",
+   "title": "The Elliott family",
+   "beats": [
+    {
+     "id": "skreen:beat:familyhead:08",
+     "kind": "familyhead",
+     "chapter": "skreen:ch:family-08",
+     "time": {
+      "label": "The Elliott family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "skreen",
+      "name": "Skreen",
+      "logainm_id": "14299",
+      "lat": 54.643906,
+      "lon": -8.00866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "skreen:familypresence:08"
+     },
+     "caption": "The Elliott family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "skreen:familypresence:08"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "skreen:family:08",
+      "label": "Elliott",
+      "run": false
+     }
+    },
+    {
+     "id": "skreen:beat:familycensus:08-1901",
+     "kind": "familycensus",
+     "chapter": "skreen:ch:family-08",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "skreen",
+      "name": "Skreen",
+      "logainm_id": "14299",
+      "lat": 54.643906,
+      "lon": -8.00866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "skreen:familycensus:08:1901"
+     },
+     "caption": "Skreen had two Elliott households in 1901, headed by Thomas and Isabella.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "skreen:familycensus:08:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "skreen:family:08",
+      "label": "Elliott",
+      "run": false
+     }
+    },
+    {
+     "id": "skreen:beat:familycensus:08-1911",
+     "kind": "familycensus",
+     "chapter": "skreen:ch:family-08",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "skreen",
+      "name": "Skreen",
+      "logainm_id": "14299",
+      "lat": 54.643906,
+      "lon": -8.00866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "skreen:familycensus:08:1911"
+     },
+     "caption": "Skreen had two Elliott households in 1911, headed by Thomas and Robert.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "skreen:familycensus:08:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "skreen:family:08",
+      "label": "Elliott",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "skreen:ch:family-09",
+   "title": "The Gallagher family",
+   "beats": [
+    {
+     "id": "skreen:beat:familyhead:09",
+     "kind": "familyhead",
+     "chapter": "skreen:ch:family-09",
+     "time": {
+      "label": "The Gallagher family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "skreen",
+      "name": "Skreen",
+      "logainm_id": "14299",
+      "lat": 54.643906,
+      "lon": -8.00866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "skreen:familypresence:09"
+     },
+     "caption": "The Gallagher family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "skreen:familypresence:09"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "skreen:family:09",
+      "label": "Gallagher",
+      "run": false
+     }
+    },
+    {
+     "id": "skreen:beat:familycensus:09-1901",
+     "kind": "familycensus",
+     "chapter": "skreen:ch:family-09",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "skreen",
+      "name": "Skreen",
+      "logainm_id": "14299",
+      "lat": 54.643906,
+      "lon": -8.00866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "skreen:familycensus:09:1901"
+     },
+     "caption": "Skreen had one Gallagher household in 1901, headed by Anthony.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "skreen:familycensus:09:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "skreen:family:09",
+      "label": "Gallagher",
+      "run": false
+     }
+    },
+    {
+     "id": "skreen:beat:familycensus:09-1911",
+     "kind": "familycensus",
+     "chapter": "skreen:ch:family-09",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "skreen",
+      "name": "Skreen",
+      "logainm_id": "14299",
+      "lat": 54.643906,
+      "lon": -8.00866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "skreen:familycensus:09:1911"
+     },
+     "caption": "Skreen had one Gallagher household in 1911, headed by Anthony.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "skreen:familycensus:09:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "skreen:family:09",
+      "label": "Gallagher",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "skreen:ch:family-11",
+   "title": "The Mahon family",
+   "beats": [
+    {
+     "id": "skreen:beat:familyhead:11",
+     "kind": "familyhead",
+     "chapter": "skreen:ch:family-11",
+     "time": {
+      "label": "The Mahon family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "skreen",
+      "name": "Skreen",
+      "logainm_id": "14299",
+      "lat": 54.643906,
+      "lon": -8.00866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "skreen:familypresence:11"
+     },
+     "caption": "The Mahon family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "skreen:familypresence:11"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "skreen:family:11",
+      "label": "Mahon",
+      "run": false
+     }
+    },
+    {
+     "id": "skreen:beat:familycensus:11-1901",
+     "kind": "familycensus",
+     "chapter": "skreen:ch:family-11",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "skreen",
+      "name": "Skreen",
+      "logainm_id": "14299",
+      "lat": 54.643906,
+      "lon": -8.00866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "skreen:familycensus:11:1901"
+     },
+     "caption": "Skreen had one Mahon household in 1901, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "skreen:familycensus:11:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "skreen:family:11",
+      "label": "Mahon",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "skreen:ch:family-12",
+   "title": "The McCafferty family",
+   "beats": [
+    {
+     "id": "skreen:beat:familyhead:12",
+     "kind": "familyhead",
+     "chapter": "skreen:ch:family-12",
+     "time": {
+      "label": "The McCafferty family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "skreen",
+      "name": "Skreen",
+      "logainm_id": "14299",
+      "lat": 54.643906,
+      "lon": -8.00866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "skreen:familypresence:12"
+     },
+     "caption": "The McCafferty family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "skreen:familypresence:12"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "skreen:family:12",
+      "label": "McCafferty",
+      "run": false
+     }
+    },
+    {
+     "id": "skreen:beat:familycensus:12-1901",
+     "kind": "familycensus",
+     "chapter": "skreen:ch:family-12",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "skreen",
+      "name": "Skreen",
+      "logainm_id": "14299",
+      "lat": 54.643906,
+      "lon": -8.00866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "skreen:familycensus:12:1901"
+     },
+     "caption": "Skreen had one McCafferty household in 1901, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "skreen:familycensus:12:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "skreen:family:12",
+      "label": "McCafferty",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "skreen:ch:family-15",
+   "title": "The McGlinchy family",
+   "beats": [
+    {
+     "id": "skreen:beat:familyhead:15",
+     "kind": "familyhead",
+     "chapter": "skreen:ch:family-15",
+     "time": {
+      "label": "The McGlinchy family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "skreen",
+      "name": "Skreen",
+      "logainm_id": "14299",
+      "lat": 54.643906,
+      "lon": -8.00866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "skreen:familypresence:15"
+     },
+     "caption": "The McGlinchy family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "skreen:familypresence:15"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "skreen:family:15",
+      "label": "McGlinchy",
+      "run": false
+     }
+    },
+    {
+     "id": "skreen:beat:familycensus:15-1901",
+     "kind": "familycensus",
+     "chapter": "skreen:ch:family-15",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "skreen",
+      "name": "Skreen",
+      "logainm_id": "14299",
+      "lat": 54.643906,
+      "lon": -8.00866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "skreen:familycensus:15:1901"
+     },
+     "caption": "Skreen had two McGlinchy households in 1901, headed by Anne and Bernard.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "skreen:familycensus:15:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "skreen:family:15",
+      "label": "McGlinchy",
+      "run": false
+     }
+    },
+    {
+     "id": "skreen:beat:familycensus:15-1911",
+     "kind": "familycensus",
+     "chapter": "skreen:ch:family-15",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "skreen",
+      "name": "Skreen",
+      "logainm_id": "14299",
+      "lat": 54.643906,
+      "lon": -8.00866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "skreen:familycensus:15:1911"
+     },
+     "caption": "Skreen had two McGlinchy households in 1911, headed by Anne and Bernard.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "skreen:familycensus:15:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "skreen:family:15",
+      "label": "McGlinchy",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "skreen:ch:family-16",
+   "title": "The Mulreany family",
+   "beats": [
+    {
+     "id": "skreen:beat:familyhead:16",
+     "kind": "familyhead",
+     "chapter": "skreen:ch:family-16",
+     "time": {
+      "label": "The Mulreany family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "skreen",
+      "name": "Skreen",
+      "logainm_id": "14299",
+      "lat": 54.643906,
+      "lon": -8.00866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "skreen:familypresence:16"
+     },
+     "caption": "The Mulreany family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "skreen:familypresence:16"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "skreen:family:16",
+      "label": "Mulreany",
+      "run": false
+     }
+    },
+    {
+     "id": "skreen:beat:familycensus:16-1901",
+     "kind": "familycensus",
+     "chapter": "skreen:ch:family-16",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "skreen",
+      "name": "Skreen",
+      "logainm_id": "14299",
+      "lat": 54.643906,
+      "lon": -8.00866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "skreen:familycensus:16:1901"
+     },
+     "caption": "Skreen had one Mulreany household in 1901, headed by Bridget.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "skreen:familycensus:16:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "skreen:family:16",
+      "label": "Mulreany",
+      "run": false
+     }
+    },
+    {
+     "id": "skreen:beat:familycensus:16-1911",
+     "kind": "familycensus",
+     "chapter": "skreen:ch:family-16",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "skreen",
+      "name": "Skreen",
+      "logainm_id": "14299",
+      "lat": 54.643906,
+      "lon": -8.00866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "skreen:familycensus:16:1911"
+     },
+     "caption": "Skreen had one Mulreany household in 1911, headed by Edward.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "skreen:familycensus:16:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "skreen:family:16",
+      "label": "Mulreany",
+      "run": false
+     }
+    },
+    {
+     "id": "skreen:beat:familycensus:16-1926",
+     "kind": "familycensus",
+     "chapter": "skreen:ch:family-16",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "skreen",
+      "name": "Skreen",
+      "logainm_id": "14299",
+      "lat": 54.643906,
+      "lon": -8.00866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "skreen:familycensus:16:1926"
+     },
+     "caption": "Skreen had two Mulreany households in 1926, headed by Rose and Hugh A.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "skreen:familycensus:16:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "skreen:family:16",
+      "label": "Mulreany",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "skreen:ch:family-01",
+   "title": "The Bustard family",
+   "beats": [
+    {
+     "id": "skreen:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "skreen:ch:family-01",
+     "time": {
+      "label": "The Bustard family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "skreen",
+      "name": "Skreen",
+      "logainm_id": "14299",
+      "lat": 54.643906,
+      "lon": -8.00866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "skreen:familypresence:01"
+     },
+     "caption": "The Bustard family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "skreen:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "skreen:family:01",
+      "label": "Bustard",
+      "run": false
+     }
+    },
+    {
+     "id": "skreen:beat:familycensus:01-1911",
+     "kind": "familycensus",
+     "chapter": "skreen:ch:family-01",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "skreen",
+      "name": "Skreen",
+      "logainm_id": "14299",
+      "lat": 54.643906,
+      "lon": -8.00866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "skreen:familycensus:01:1911"
+     },
+     "caption": "Skreen had one Bustard household in 1911, headed by Adam.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "skreen:familycensus:01:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "skreen:family:01",
+      "label": "Bustard",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "skreen:ch:family-05",
+   "title": "The Currestan family",
+   "beats": [
+    {
+     "id": "skreen:beat:familyhead:05",
+     "kind": "familyhead",
+     "chapter": "skreen:ch:family-05",
+     "time": {
+      "label": "The Currestan family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "skreen",
+      "name": "Skreen",
+      "logainm_id": "14299",
+      "lat": 54.643906,
+      "lon": -8.00866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "skreen:familypresence:05"
+     },
+     "caption": "The Currestan family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "skreen:familypresence:05"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "skreen:family:05",
+      "label": "Currestan",
+      "run": false
+     }
+    },
+    {
+     "id": "skreen:beat:familycensus:05-1911",
+     "kind": "familycensus",
+     "chapter": "skreen:ch:family-05",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "skreen",
+      "name": "Skreen",
+      "logainm_id": "14299",
+      "lat": 54.643906,
+      "lon": -8.00866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "skreen:familycensus:05:1911"
+     },
+     "caption": "Skreen had one Currestan household in 1911, headed by Hugh.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "skreen:familycensus:05:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "skreen:family:05",
+      "label": "Currestan",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "skreen:ch:family-04",
+   "title": "The Carlin family",
+   "beats": [
+    {
+     "id": "skreen:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "skreen:ch:family-04",
+     "time": {
+      "label": "The Carlin family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "skreen",
+      "name": "Skreen",
+      "logainm_id": "14299",
+      "lat": 54.643906,
+      "lon": -8.00866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "skreen:familypresence:04"
+     },
+     "caption": "The Carlin family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "skreen:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "skreen:family:04",
+      "label": "Carlin",
+      "run": false
+     }
+    },
+    {
+     "id": "skreen:beat:familycensus:04-1926",
+     "kind": "familycensus",
+     "chapter": "skreen:ch:family-04",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "skreen",
+      "name": "Skreen",
+      "logainm_id": "14299",
+      "lat": 54.643906,
+      "lon": -8.00866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "skreen:familycensus:04:1926"
+     },
+     "caption": "Skreen had one Carlin household in 1926, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "skreen:familycensus:04:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "skreen:family:04",
+      "label": "Carlin",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "skreen:ch:family-07",
+   "title": "The Elliot family",
+   "beats": [
+    {
+     "id": "skreen:beat:familyhead:07",
+     "kind": "familyhead",
+     "chapter": "skreen:ch:family-07",
+     "time": {
+      "label": "The Elliot family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "skreen",
+      "name": "Skreen",
+      "logainm_id": "14299",
+      "lat": 54.643906,
+      "lon": -8.00866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "skreen:familypresence:07"
+     },
+     "caption": "The Elliot family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "skreen:familypresence:07"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "skreen:family:07",
+      "label": "Elliot",
+      "run": false
+     }
+    },
+    {
+     "id": "skreen:beat:familycensus:07-1926",
+     "kind": "familycensus",
+     "chapter": "skreen:ch:family-07",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "skreen",
+      "name": "Skreen",
+      "logainm_id": "14299",
+      "lat": 54.643906,
+      "lon": -8.00866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "skreen:familycensus:07:1926"
+     },
+     "caption": "Skreen had four Elliot households in 1926, headed by Robert, Fanny, Thomas and William J.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "skreen:familycensus:07:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 6000,
+     "audio": null,
+     "thread": {
+      "id": "skreen:family:07",
+      "label": "Elliot",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "skreen:ch:family-14",
+   "title": "The McGlinchey family",
+   "beats": [
+    {
+     "id": "skreen:beat:familyhead:14",
+     "kind": "familyhead",
+     "chapter": "skreen:ch:family-14",
+     "time": {
+      "label": "The McGlinchey family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "skreen",
+      "name": "Skreen",
+      "logainm_id": "14299",
+      "lat": 54.643906,
+      "lon": -8.00866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "skreen:familypresence:14"
+     },
+     "caption": "The McGlinchey family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "skreen:familypresence:14"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "skreen:family:14",
+      "label": "McGlinchey",
+      "run": false
+     }
+    },
+    {
+     "id": "skreen:beat:familycensus:14-1926",
+     "kind": "familycensus",
+     "chapter": "skreen:ch:family-14",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "skreen",
+      "name": "Skreen",
+      "logainm_id": "14299",
+      "lat": 54.643906,
+      "lon": -8.00866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "skreen:familycensus:14:1926"
+     },
+     "caption": "Skreen had one McGlinchey household in 1926, headed by Joseph.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "skreen:familycensus:14:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "skreen:family:14",
+      "label": "McGlinchey",
+      "run": false
+     }
     }
    ]
   }

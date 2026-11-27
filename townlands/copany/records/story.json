@@ -52,15 +52,15 @@
    ]
   },
   {
-   "id": "copany:ch:1901",
-   "title": "1901",
+   "id": "copany:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "copany:beat:census:1901",
+     "id": "copany:beat:census:returns",
      "kind": "census",
-     "chapter": "copany:ch:1901",
+     "chapter": "copany:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1926",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -77,33 +77,177 @@
       "stage": "map",
       "open_card": "copany:census:1901"
      },
-     "caption": "Copany had 41 people in eleven households in 1901. Heads of household included Scott, Bonner and Graham.",
+     "caption": "The censuses of 1901, 1911 and 1926 counted 41, 35 and 22 people in Copany, in 11, 9 and 8 households. Heads of household included Scott, Bonner and Graham.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "copany:census:1901"
+       "copany:census:1901",
+       "copany:census:1911",
+       "copany:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 6800,
+     "duration_ms": 11600,
      "audio": null,
      "counts": {
-      "people": 41,
-      "households": 11
+      "returns": [
+       {
+        "year": "1901",
+        "people": 41,
+        "households": 11
+       },
+       {
+        "year": "1911",
+        "people": 35,
+        "households": 9
+       },
+       {
+        "year": "1926",
+        "people": 22,
+        "households": 8
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "copany:ch:1911",
-   "title": "1911",
+   "id": "copany:ch:families",
+   "title": "The families of Copany",
    "beats": [
     {
-     "id": "copany:beat:census:1911",
-     "kind": "census",
-     "chapter": "copany:ch:1911",
+     "id": "copany:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "copany:ch:families",
+     "time": {
+      "label": "The families of Copany",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "copany",
+      "name": "Copany",
+      "logainm_id": "14289",
+      "lat": 54.647858,
+      "lon": -8.031866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "copany:census:1901"
+     },
+     "caption": "Here are the families of Copany, from 1901 to 1926. First, the Kirkpatrick and Pearson families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "copany:census:1901",
+       "copany:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "copany:family:05",
+      "label": "Kirkpatrick",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "copany:ch:family-05",
+   "title": "The Kirkpatrick family",
+   "beats": [
+    {
+     "id": "copany:beat:familyhead:05",
+     "kind": "familyhead",
+     "chapter": "copany:ch:family-05",
+     "time": {
+      "label": "The Kirkpatrick family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "copany",
+      "name": "Copany",
+      "logainm_id": "14289",
+      "lat": 54.647858,
+      "lon": -8.031866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "copany:familypresence:05"
+     },
+     "caption": "The Kirkpatrick family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "copany:familypresence:05"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "copany:family:05",
+      "label": "Kirkpatrick",
+      "run": true
+     }
+    },
+    {
+     "id": "copany:beat:familycensus:05-1901",
+     "kind": "familycensus",
+     "chapter": "copany:ch:family-05",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "copany",
+      "name": "Copany",
+      "logainm_id": "14289",
+      "lat": 54.647858,
+      "lon": -8.031866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "copany:familycensus:05:1901"
+     },
+     "caption": "Copany had one Kirkpatrick household in 1901, headed by Andrew.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "copany:familycensus:05:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "copany:family:05",
+      "label": "Kirkpatrick",
+      "run": true
+     }
+    },
+    {
+     "id": "copany:beat:familycensus:05-1911",
+     "kind": "familycensus",
+     "chapter": "copany:ch:family-05",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -120,35 +264,30 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "copany:census:1911"
+      "open_card": "copany:familycensus:05:1911"
      },
-     "caption": "Copany had 35 people in nine households in 1911. Heads of household included Scott, Johnston and Graham.",
+     "caption": "Copany had one Kirkpatrick household in 1911, headed by Andrew.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "copany:census:1911"
+       "copany:familycensus:05:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6800,
+     "duration_ms": 4000,
      "audio": null,
-     "counts": {
-      "people": 35,
-      "households": 9
+     "thread": {
+      "id": "copany:family:05",
+      "label": "Kirkpatrick",
+      "run": true
      }
-    }
-   ]
-  },
-  {
-   "id": "copany:ch:1926",
-   "title": "1926",
-   "beats": [
+    },
     {
-     "id": "copany:beat:census:1926",
-     "kind": "census",
-     "chapter": "copany:ch:1926",
+     "id": "copany:beat:familycensus:05-1926",
+     "kind": "familycensus",
+     "chapter": "copany:ch:family-05",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -165,25 +304,198 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "copany:census:1926"
+      "open_card": "copany:familycensus:05:1926"
      },
-     "caption": "In 1926, 22 people in eight households lived in Copany. Heads of household included Johnson, Kirkpatrick and Pearson.",
+     "caption": "Copany had one Kirkpatrick household in 1926, headed by Joseph.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "copany:census:1926"
+       "copany:familycensus:05:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 7200,
+     "duration_ms": 4000,
      "audio": null,
-     "counts": {
-      "people": 22,
-      "households": 8
+     "thread": {
+      "id": "copany:family:05",
+      "label": "Kirkpatrick",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "copany:ch:family-06",
+   "title": "The Pearson family",
+   "beats": [
+    {
+     "id": "copany:beat:familyhead:06",
+     "kind": "familyhead",
+     "chapter": "copany:ch:family-06",
+     "time": {
+      "label": "The Pearson family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "copany",
+      "name": "Copany",
+      "logainm_id": "14289",
+      "lat": 54.647858,
+      "lon": -8.031866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "copany:familypresence:06"
+     },
+     "caption": "The Pearson family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "copany:familypresence:06"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "copany:family:06",
+      "label": "Pearson",
+      "run": true
      }
     },
+    {
+     "id": "copany:beat:familycensus:06-1901",
+     "kind": "familycensus",
+     "chapter": "copany:ch:family-06",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "copany",
+      "name": "Copany",
+      "logainm_id": "14289",
+      "lat": 54.647858,
+      "lon": -8.031866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "copany:familycensus:06:1901"
+     },
+     "caption": "Copany had one Pearson household in 1901, headed by Elizabeth.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "copany:familycensus:06:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "copany:family:06",
+      "label": "Pearson",
+      "run": true
+     }
+    },
+    {
+     "id": "copany:beat:familycensus:06-1911",
+     "kind": "familycensus",
+     "chapter": "copany:ch:family-06",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "copany",
+      "name": "Copany",
+      "logainm_id": "14289",
+      "lat": 54.647858,
+      "lon": -8.031866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "copany:familycensus:06:1911"
+     },
+     "caption": "Copany had one Pearson household in 1911, headed by Eliza.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "copany:familycensus:06:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "copany:family:06",
+      "label": "Pearson",
+      "run": true
+     }
+    },
+    {
+     "id": "copany:beat:familycensus:06-1926",
+     "kind": "familycensus",
+     "chapter": "copany:ch:family-06",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "copany",
+      "name": "Copany",
+      "logainm_id": "14289",
+      "lat": 54.647858,
+      "lon": -8.031866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "copany:familycensus:06:1926"
+     },
+     "caption": "Copany had one Pearson household in 1926, headed by Lizzie.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "copany:familycensus:06:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "copany:family:06",
+      "label": "Pearson",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "copany:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "copany:beat:closing:end",
      "kind": "closing",
@@ -218,6 +530,682 @@
      },
      "duration_ms": 4000,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "copany:ch:family-01",
+   "title": "The Bonner family",
+   "beats": [
+    {
+     "id": "copany:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "copany:ch:family-01",
+     "time": {
+      "label": "The Bonner family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "copany",
+      "name": "Copany",
+      "logainm_id": "14289",
+      "lat": 54.647858,
+      "lon": -8.031866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "copany:familypresence:01"
+     },
+     "caption": "The Bonner family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "copany:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "copany:family:01",
+      "label": "Bonner",
+      "run": false
+     }
+    },
+    {
+     "id": "copany:beat:familycensus:01-1901",
+     "kind": "familycensus",
+     "chapter": "copany:ch:family-01",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "copany",
+      "name": "Copany",
+      "logainm_id": "14289",
+      "lat": 54.647858,
+      "lon": -8.031866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "copany:familycensus:01:1901"
+     },
+     "caption": "Copany had one Bonner household in 1901, headed by Samuel.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "copany:familycensus:01:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "copany:family:01",
+      "label": "Bonner",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "copany:ch:family-02",
+   "title": "The Graham family",
+   "beats": [
+    {
+     "id": "copany:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "copany:ch:family-02",
+     "time": {
+      "label": "The Graham family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "copany",
+      "name": "Copany",
+      "logainm_id": "14289",
+      "lat": 54.647858,
+      "lon": -8.031866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "copany:familypresence:02"
+     },
+     "caption": "The Graham family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "copany:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "copany:family:02",
+      "label": "Graham",
+      "run": false
+     }
+    },
+    {
+     "id": "copany:beat:familycensus:02-1901",
+     "kind": "familycensus",
+     "chapter": "copany:ch:family-02",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "copany",
+      "name": "Copany",
+      "logainm_id": "14289",
+      "lat": 54.647858,
+      "lon": -8.031866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "copany:familycensus:02:1901"
+     },
+     "caption": "Copany had one Graham household in 1901, headed by Francis.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "copany:familycensus:02:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "copany:family:02",
+      "label": "Graham",
+      "run": false
+     }
+    },
+    {
+     "id": "copany:beat:familycensus:02-1911",
+     "kind": "familycensus",
+     "chapter": "copany:ch:family-02",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "copany",
+      "name": "Copany",
+      "logainm_id": "14289",
+      "lat": 54.647858,
+      "lon": -8.031866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "copany:familycensus:02:1911"
+     },
+     "caption": "Copany had one Graham household in 1911, headed by Francis.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "copany:familycensus:02:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "copany:family:02",
+      "label": "Graham",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "copany:ch:family-04",
+   "title": "The Johnston family",
+   "beats": [
+    {
+     "id": "copany:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "copany:ch:family-04",
+     "time": {
+      "label": "The Johnston family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "copany",
+      "name": "Copany",
+      "logainm_id": "14289",
+      "lat": 54.647858,
+      "lon": -8.031866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "copany:familypresence:04"
+     },
+     "caption": "The Johnston family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "copany:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "copany:family:04",
+      "label": "Johnston",
+      "run": false
+     }
+    },
+    {
+     "id": "copany:beat:familycensus:04-1901",
+     "kind": "familycensus",
+     "chapter": "copany:ch:family-04",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "copany",
+      "name": "Copany",
+      "logainm_id": "14289",
+      "lat": 54.647858,
+      "lon": -8.031866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "copany:familycensus:04:1901"
+     },
+     "caption": "Copany had one Johnston household in 1901, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "copany:familycensus:04:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "copany:family:04",
+      "label": "Johnston",
+      "run": false
+     }
+    },
+    {
+     "id": "copany:beat:familycensus:04-1911",
+     "kind": "familycensus",
+     "chapter": "copany:ch:family-04",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "copany",
+      "name": "Copany",
+      "logainm_id": "14289",
+      "lat": 54.647858,
+      "lon": -8.031866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "copany:familycensus:04:1911"
+     },
+     "caption": "Copany had two Johnston households in 1911, headed by David and James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "copany:familycensus:04:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "copany:family:04",
+      "label": "Johnston",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "copany:ch:family-07",
+   "title": "The Scott family",
+   "beats": [
+    {
+     "id": "copany:beat:familyhead:07",
+     "kind": "familyhead",
+     "chapter": "copany:ch:family-07",
+     "time": {
+      "label": "The Scott family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "copany",
+      "name": "Copany",
+      "logainm_id": "14289",
+      "lat": 54.647858,
+      "lon": -8.031866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "copany:familypresence:07"
+     },
+     "caption": "The Scott family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "copany:familypresence:07"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "copany:family:07",
+      "label": "Scott",
+      "run": false
+     }
+    },
+    {
+     "id": "copany:beat:familycensus:07-1901",
+     "kind": "familycensus",
+     "chapter": "copany:ch:family-07",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "copany",
+      "name": "Copany",
+      "logainm_id": "14289",
+      "lat": 54.647858,
+      "lon": -8.031866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "copany:familycensus:07:1901"
+     },
+     "caption": "Copany had five Scott households in 1901, headed by two named Andrew, William, Mary Ann and Robert.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "copany:familycensus:07:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "thread": {
+      "id": "copany:family:07",
+      "label": "Scott",
+      "run": false
+     }
+    },
+    {
+     "id": "copany:beat:familycensus:07-1911",
+     "kind": "familycensus",
+     "chapter": "copany:ch:family-07",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "copany",
+      "name": "Copany",
+      "logainm_id": "14289",
+      "lat": 54.647858,
+      "lon": -8.031866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "copany:familycensus:07:1911"
+     },
+     "caption": "Copany had three Scott households in 1911, headed by William and two named Robert.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "copany:familycensus:07:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5600,
+     "audio": null,
+     "thread": {
+      "id": "copany:family:07",
+      "label": "Scott",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "copany:ch:family-08",
+   "title": "The Walsh family",
+   "beats": [
+    {
+     "id": "copany:beat:familyhead:08",
+     "kind": "familyhead",
+     "chapter": "copany:ch:family-08",
+     "time": {
+      "label": "The Walsh family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "copany",
+      "name": "Copany",
+      "logainm_id": "14289",
+      "lat": 54.647858,
+      "lon": -8.031866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "copany:familypresence:08"
+     },
+     "caption": "The Walsh family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "copany:familypresence:08"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "copany:family:08",
+      "label": "Walsh",
+      "run": false
+     }
+    },
+    {
+     "id": "copany:beat:familycensus:08-1901",
+     "kind": "familycensus",
+     "chapter": "copany:ch:family-08",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "copany",
+      "name": "Copany",
+      "logainm_id": "14289",
+      "lat": 54.647858,
+      "lon": -8.031866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "copany:familycensus:08:1901"
+     },
+     "caption": "Copany had one Walsh household in 1901, headed by Bella.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "copany:familycensus:08:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "copany:family:08",
+      "label": "Walsh",
+      "run": false
+     }
+    },
+    {
+     "id": "copany:beat:familycensus:08-1911",
+     "kind": "familycensus",
+     "chapter": "copany:ch:family-08",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "copany",
+      "name": "Copany",
+      "logainm_id": "14289",
+      "lat": 54.647858,
+      "lon": -8.031866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "copany:familycensus:08:1911"
+     },
+     "caption": "Copany had one Walsh household in 1911, headed by Mary.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "copany:familycensus:08:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "copany:family:08",
+      "label": "Walsh",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "copany:ch:family-03",
+   "title": "The Johnson family",
+   "beats": [
+    {
+     "id": "copany:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "copany:ch:family-03",
+     "time": {
+      "label": "The Johnson family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "copany",
+      "name": "Copany",
+      "logainm_id": "14289",
+      "lat": 54.647858,
+      "lon": -8.031866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "copany:familypresence:03"
+     },
+     "caption": "The Johnson family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "copany:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "copany:family:03",
+      "label": "Johnson",
+      "run": false
+     }
+    },
+    {
+     "id": "copany:beat:familycensus:03-1926",
+     "kind": "familycensus",
+     "chapter": "copany:ch:family-03",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "copany",
+      "name": "Copany",
+      "logainm_id": "14289",
+      "lat": 54.647858,
+      "lon": -8.031866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "copany:familycensus:03:1926"
+     },
+     "caption": "Copany had one Johnson household in 1926, headed by Annabella.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "copany:familycensus:03:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "copany:family:03",
+      "label": "Johnson",
+      "run": false
+     }
     }
    ]
   }

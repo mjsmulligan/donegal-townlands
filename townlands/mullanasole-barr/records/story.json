@@ -52,15 +52,15 @@
    ]
   },
   {
-   "id": "mullanasole-barr:ch:1901",
-   "title": "1901",
+   "id": "mullanasole-barr:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "mullanasole-barr:beat:census:1901",
+     "id": "mullanasole-barr:beat:census:returns",
      "kind": "census",
-     "chapter": "mullanasole-barr:ch:1901",
+     "chapter": "mullanasole-barr:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1926",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -77,33 +77,177 @@
       "stage": "map",
       "open_card": "mullanasole barr:census:1901"
      },
-     "caption": "Mullanasole Barr had 27 people in three households in 1901. Heads of household included Barron and McGroary.",
+     "caption": "The censuses of 1901, 1911 and 1926 counted 27, 18 and 20 people in Mullanasole Barr, in 3, 3 and 3 households. Heads of household included Barron, McGroary and McGrory.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "mullanasole barr:census:1901"
+       "mullanasole barr:census:1901",
+       "mullanasole barr:census:1911",
+       "mullanasole barr:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 6800,
+     "duration_ms": 12000,
      "audio": null,
      "counts": {
-      "people": 27,
-      "households": 3
+      "returns": [
+       {
+        "year": "1901",
+        "people": 27,
+        "households": 3
+       },
+       {
+        "year": "1911",
+        "people": 18,
+        "households": 3
+       },
+       {
+        "year": "1926",
+        "people": 20,
+        "households": 3
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "mullanasole-barr:ch:1911",
-   "title": "1911",
+   "id": "mullanasole-barr:ch:families",
+   "title": "The families of Mullanasole Barr",
    "beats": [
     {
-     "id": "mullanasole-barr:beat:census:1911",
-     "kind": "census",
-     "chapter": "mullanasole-barr:ch:1911",
+     "id": "mullanasole-barr:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "mullanasole-barr:ch:families",
+     "time": {
+      "label": "The families of Mullanasole Barr",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "mullanasole-barr",
+      "name": "Mullanasole Barr",
+      "logainm_id": "14148",
+      "lat": 54.603653,
+      "lon": -8.007251,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "mullanasole barr:census:1901"
+     },
+     "caption": "Here are the families of Mullanasole Barr, from 1901 to 1926. First, the Barron and McGroary families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "mullanasole barr:census:1901",
+       "mullanasole barr:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "thread": {
+      "id": "mullanasole-barr:family:01",
+      "label": "Barron",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "mullanasole-barr:ch:family-01",
+   "title": "The Barron family",
+   "beats": [
+    {
+     "id": "mullanasole-barr:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "mullanasole-barr:ch:family-01",
+     "time": {
+      "label": "The Barron family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "mullanasole-barr",
+      "name": "Mullanasole Barr",
+      "logainm_id": "14148",
+      "lat": 54.603653,
+      "lon": -8.007251,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "mullanasole-barr:familypresence:01"
+     },
+     "caption": "The Barron family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "mullanasole-barr:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "mullanasole-barr:family:01",
+      "label": "Barron",
+      "run": true
+     }
+    },
+    {
+     "id": "mullanasole-barr:beat:familycensus:01-1901",
+     "kind": "familycensus",
+     "chapter": "mullanasole-barr:ch:family-01",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "mullanasole-barr",
+      "name": "Mullanasole Barr",
+      "logainm_id": "14148",
+      "lat": 54.603653,
+      "lon": -8.007251,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "mullanasole-barr:familycensus:01:1901"
+     },
+     "caption": "Mullanasole Barr had two Barron households in 1901, headed by Margaret and John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "mullanasole-barr:familycensus:01:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "mullanasole-barr:family:01",
+      "label": "Barron",
+      "run": true
+     }
+    },
+    {
+     "id": "mullanasole-barr:beat:familycensus:01-1911",
+     "kind": "familycensus",
+     "chapter": "mullanasole-barr:ch:family-01",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -120,35 +264,30 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "mullanasole barr:census:1911"
+      "open_card": "mullanasole-barr:familycensus:01:1911"
      },
-     "caption": "In 1911, eighteen people in three households lived in Mullanasole Barr. Heads of household included Barron and McGrory.",
+     "caption": "Mullanasole Barr had two Barron households in 1911, headed by Margaret and John.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "mullanasole barr:census:1911"
+       "mullanasole-barr:familycensus:01:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 7200,
+     "duration_ms": 5200,
      "audio": null,
-     "counts": {
-      "people": 18,
-      "households": 3
+     "thread": {
+      "id": "mullanasole-barr:family:01",
+      "label": "Barron",
+      "run": true
      }
-    }
-   ]
-  },
-  {
-   "id": "mullanasole-barr:ch:1926",
-   "title": "1926",
-   "beats": [
+    },
     {
-     "id": "mullanasole-barr:beat:census:1926",
-     "kind": "census",
-     "chapter": "mullanasole-barr:ch:1926",
+     "id": "mullanasole-barr:beat:familycensus:01-1926",
+     "kind": "familycensus",
+     "chapter": "mullanasole-barr:ch:family-01",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -165,25 +304,118 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "mullanasole barr:census:1926"
+      "open_card": "mullanasole-barr:familycensus:01:1926"
      },
-     "caption": "Mullanasole Barr had twenty people in three households in 1926. Heads of household included Barron.",
+     "caption": "Mullanasole Barr had five Barron households in 1926, headed by Rose, Patrick, Bridget Agnes, Francis Joseph and Joanna Cicelia.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "mullanasole barr:census:1926"
+       "mullanasole-barr:familycensus:01:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6000,
+     "duration_ms": 7600,
      "audio": null,
-     "counts": {
-      "people": 20,
-      "households": 3
+     "thread": {
+      "id": "mullanasole-barr:family:01",
+      "label": "Barron",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "mullanasole-barr:ch:family-02",
+   "title": "The McGroary family",
+   "beats": [
+    {
+     "id": "mullanasole-barr:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "mullanasole-barr:ch:family-02",
+     "time": {
+      "label": "The McGroary family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "mullanasole-barr",
+      "name": "Mullanasole Barr",
+      "logainm_id": "14148",
+      "lat": 54.603653,
+      "lon": -8.007251,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "mullanasole-barr:familypresence:02"
+     },
+     "caption": "The McGroary family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "mullanasole-barr:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "mullanasole-barr:family:02",
+      "label": "McGroary",
+      "run": true
      }
     },
+    {
+     "id": "mullanasole-barr:beat:familycensus:02-1901",
+     "kind": "familycensus",
+     "chapter": "mullanasole-barr:ch:family-02",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "mullanasole-barr",
+      "name": "Mullanasole Barr",
+      "logainm_id": "14148",
+      "lat": 54.603653,
+      "lon": -8.007251,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "mullanasole-barr:familycensus:02:1901"
+     },
+     "caption": "Mullanasole Barr had one McGroary household in 1901, headed by Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "mullanasole-barr:familycensus:02:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "mullanasole-barr:family:02",
+      "label": "McGroary",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "mullanasole-barr:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "mullanasole-barr:beat:closing:end",
      "kind": "closing",
@@ -218,6 +450,92 @@
      },
      "duration_ms": 4400,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "mullanasole-barr:ch:family-03",
+   "title": "The McGrory family",
+   "beats": [
+    {
+     "id": "mullanasole-barr:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "mullanasole-barr:ch:family-03",
+     "time": {
+      "label": "The McGrory family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "mullanasole-barr",
+      "name": "Mullanasole Barr",
+      "logainm_id": "14148",
+      "lat": 54.603653,
+      "lon": -8.007251,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "mullanasole-barr:familypresence:03"
+     },
+     "caption": "The McGrory family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "mullanasole-barr:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "mullanasole-barr:family:03",
+      "label": "McGrory",
+      "run": false
+     }
+    },
+    {
+     "id": "mullanasole-barr:beat:familycensus:03-1911",
+     "kind": "familycensus",
+     "chapter": "mullanasole-barr:ch:family-03",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "mullanasole-barr",
+      "name": "Mullanasole Barr",
+      "logainm_id": "14148",
+      "lat": 54.603653,
+      "lon": -8.007251,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "mullanasole-barr:familycensus:03:1911"
+     },
+     "caption": "Mullanasole Barr had one McGrory household in 1911, headed by Bridget.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "mullanasole-barr:familycensus:03:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "mullanasole-barr:family:03",
+      "label": "McGrory",
+      "run": false
+     }
     }
    ]
   }

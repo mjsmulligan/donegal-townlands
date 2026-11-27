@@ -52,15 +52,15 @@
    ]
   },
   {
-   "id": "straness:ch:1901",
-   "title": "1901",
+   "id": "straness:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "straness:beat:census:1901",
+     "id": "straness:beat:census:returns",
      "kind": "census",
-     "chapter": "straness:ch:1901",
+     "chapter": "straness:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1926",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -77,33 +77,177 @@
       "stage": "map",
       "open_card": "straness:census:1901"
      },
-     "caption": "Straness had 34 people in seven households in 1901. Heads of household included Quinn, McCadden and Cassidy.",
+     "caption": "The censuses of 1901, 1911 and 1926 counted 34, 47 and 31 people in Straness, in 7, 7 and 7 households. Heads of household included Quinn, McCadden and Cassidy.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "straness:census:1901"
+       "straness:census:1901",
+       "straness:census:1911",
+       "straness:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 6800,
+     "duration_ms": 11600,
      "audio": null,
      "counts": {
-      "people": 34,
-      "households": 7
+      "returns": [
+       {
+        "year": "1901",
+        "people": 34,
+        "households": 7
+       },
+       {
+        "year": "1911",
+        "people": 47,
+        "households": 7
+       },
+       {
+        "year": "1926",
+        "people": 31,
+        "households": 7
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "straness:ch:1911",
-   "title": "1911",
+   "id": "straness:ch:families",
+   "title": "The families of Straness",
    "beats": [
     {
-     "id": "straness:beat:census:1911",
-     "kind": "census",
-     "chapter": "straness:ch:1911",
+     "id": "straness:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "straness:ch:families",
+     "time": {
+      "label": "The families of Straness",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "straness",
+      "name": "Straness",
+      "logainm_id": "14300",
+      "lat": 54.66389,
+      "lon": -7.979409,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "straness:census:1901"
+     },
+     "caption": "Here are the families of Straness, from 1901 to 1926. First, the McCadden and Quinn families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "straness:census:1901",
+       "straness:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "straness:family:02",
+      "label": "McCadden",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "straness:ch:family-02",
+   "title": "The McCadden family",
+   "beats": [
+    {
+     "id": "straness:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "straness:ch:family-02",
+     "time": {
+      "label": "The McCadden family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "straness",
+      "name": "Straness",
+      "logainm_id": "14300",
+      "lat": 54.66389,
+      "lon": -7.979409,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "straness:familypresence:02"
+     },
+     "caption": "The McCadden family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "straness:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "straness:family:02",
+      "label": "McCadden",
+      "run": true
+     }
+    },
+    {
+     "id": "straness:beat:familycensus:02-1901",
+     "kind": "familycensus",
+     "chapter": "straness:ch:family-02",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "straness",
+      "name": "Straness",
+      "logainm_id": "14300",
+      "lat": 54.66389,
+      "lon": -7.979409,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "straness:familycensus:02:1901"
+     },
+     "caption": "Straness had two McCadden households in 1901, headed by two named Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "straness:familycensus:02:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "straness:family:02",
+      "label": "McCadden",
+      "run": true
+     }
+    },
+    {
+     "id": "straness:beat:familycensus:02-1911",
+     "kind": "familycensus",
+     "chapter": "straness:ch:family-02",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -120,35 +264,30 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "straness:census:1911"
+      "open_card": "straness:familycensus:02:1911"
      },
-     "caption": "Straness had 47 people in seven households in 1911. Heads of household included Quinn, McCadden and Cassidy.",
+     "caption": "Straness had two McCadden households in 1911, headed by John and Patrick.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "straness:census:1911"
+       "straness:familycensus:02:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6800,
+     "duration_ms": 4800,
      "audio": null,
-     "counts": {
-      "people": 47,
-      "households": 7
+     "thread": {
+      "id": "straness:family:02",
+      "label": "McCadden",
+      "run": true
      }
-    }
-   ]
-  },
-  {
-   "id": "straness:ch:1926",
-   "title": "1926",
-   "beats": [
+    },
     {
-     "id": "straness:beat:census:1926",
-     "kind": "census",
-     "chapter": "straness:ch:1926",
+     "id": "straness:beat:familycensus:02-1926",
+     "kind": "familycensus",
+     "chapter": "straness:ch:family-02",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -165,25 +304,198 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "straness:census:1926"
+      "open_card": "straness:familycensus:02:1926"
      },
-     "caption": "Straness had 31 people in seven households in 1926. Heads of household included McCadden, Quinn and Cassidy.",
+     "caption": "Straness had four McCadden households in 1926, headed by John, Anthony, Alice T and John J.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "straness:census:1926"
+       "straness:familycensus:02:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6800,
+     "duration_ms": 6400,
      "audio": null,
-     "counts": {
-      "people": 31,
-      "households": 7
+     "thread": {
+      "id": "straness:family:02",
+      "label": "McCadden",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "straness:ch:family-04",
+   "title": "The Quinn family",
+   "beats": [
+    {
+     "id": "straness:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "straness:ch:family-04",
+     "time": {
+      "label": "The Quinn family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "straness",
+      "name": "Straness",
+      "logainm_id": "14300",
+      "lat": 54.66389,
+      "lon": -7.979409,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "straness:familypresence:04"
+     },
+     "caption": "The Quinn family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "straness:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "straness:family:04",
+      "label": "Quinn",
+      "run": true
      }
     },
+    {
+     "id": "straness:beat:familycensus:04-1901",
+     "kind": "familycensus",
+     "chapter": "straness:ch:family-04",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "straness",
+      "name": "Straness",
+      "logainm_id": "14300",
+      "lat": 54.66389,
+      "lon": -7.979409,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "straness:familycensus:04:1901"
+     },
+     "caption": "Straness had four Quinn households in 1901, headed by Charles, John, Joseph and Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "straness:familycensus:04:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5600,
+     "audio": null,
+     "thread": {
+      "id": "straness:family:04",
+      "label": "Quinn",
+      "run": true
+     }
+    },
+    {
+     "id": "straness:beat:familycensus:04-1911",
+     "kind": "familycensus",
+     "chapter": "straness:ch:family-04",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "straness",
+      "name": "Straness",
+      "logainm_id": "14300",
+      "lat": 54.66389,
+      "lon": -7.979409,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "straness:familycensus:04:1911"
+     },
+     "caption": "Straness had four Quinn households in 1911, headed by John, Charles, Joseph and Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "straness:familycensus:04:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5600,
+     "audio": null,
+     "thread": {
+      "id": "straness:family:04",
+      "label": "Quinn",
+      "run": true
+     }
+    },
+    {
+     "id": "straness:beat:familycensus:04-1926",
+     "kind": "familycensus",
+     "chapter": "straness:ch:family-04",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "straness",
+      "name": "Straness",
+      "logainm_id": "14300",
+      "lat": 54.66389,
+      "lon": -7.979409,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "straness:familycensus:04:1926"
+     },
+     "caption": "Straness had two Quinn households in 1926, headed by Mary and Bridget.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "straness:familycensus:04:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "straness:family:04",
+      "label": "Quinn",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "straness:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "straness:beat:closing:end",
      "kind": "closing",
@@ -218,6 +530,258 @@
      },
      "duration_ms": 4000,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "straness:ch:family-01",
+   "title": "The Cassidy family",
+   "beats": [
+    {
+     "id": "straness:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "straness:ch:family-01",
+     "time": {
+      "label": "The Cassidy family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "straness",
+      "name": "Straness",
+      "logainm_id": "14300",
+      "lat": 54.66389,
+      "lon": -7.979409,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "straness:familypresence:01"
+     },
+     "caption": "The Cassidy family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "straness:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "straness:family:01",
+      "label": "Cassidy",
+      "run": false
+     }
+    },
+    {
+     "id": "straness:beat:familycensus:01-1901",
+     "kind": "familycensus",
+     "chapter": "straness:ch:family-01",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "straness",
+      "name": "Straness",
+      "logainm_id": "14300",
+      "lat": 54.66389,
+      "lon": -7.979409,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "straness:familycensus:01:1901"
+     },
+     "caption": "Straness had one Cassidy household in 1901, headed by Edward.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "straness:familycensus:01:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "straness:family:01",
+      "label": "Cassidy",
+      "run": false
+     }
+    },
+    {
+     "id": "straness:beat:familycensus:01-1911",
+     "kind": "familycensus",
+     "chapter": "straness:ch:family-01",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "straness",
+      "name": "Straness",
+      "logainm_id": "14300",
+      "lat": 54.66389,
+      "lon": -7.979409,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "straness:familycensus:01:1911"
+     },
+     "caption": "Straness had one Cassidy household in 1911, headed by Edward.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "straness:familycensus:01:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "straness:family:01",
+      "label": "Cassidy",
+      "run": false
+     }
+    },
+    {
+     "id": "straness:beat:familycensus:01-1926",
+     "kind": "familycensus",
+     "chapter": "straness:ch:family-01",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "straness",
+      "name": "Straness",
+      "logainm_id": "14300",
+      "lat": 54.66389,
+      "lon": -7.979409,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "straness:familycensus:01:1926"
+     },
+     "caption": "Straness had one Cassidy household in 1926, headed by Ellen.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "straness:familycensus:01:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "straness:family:01",
+      "label": "Cassidy",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "straness:ch:family-03",
+   "title": "The McGoldrick family",
+   "beats": [
+    {
+     "id": "straness:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "straness:ch:family-03",
+     "time": {
+      "label": "The McGoldrick family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "straness",
+      "name": "Straness",
+      "logainm_id": "14300",
+      "lat": 54.66389,
+      "lon": -7.979409,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "straness:familypresence:03"
+     },
+     "caption": "The McGoldrick family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "straness:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "straness:family:03",
+      "label": "McGoldrick",
+      "run": false
+     }
+    },
+    {
+     "id": "straness:beat:familycensus:03-1926",
+     "kind": "familycensus",
+     "chapter": "straness:ch:family-03",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "straness",
+      "name": "Straness",
+      "logainm_id": "14300",
+      "lat": 54.66389,
+      "lon": -7.979409,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "straness:familycensus:03:1926"
+     },
+     "caption": "Straness had one McGoldrick household in 1926, headed by Mary E.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "straness:familycensus:03:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "straness:family:03",
+      "label": "McGoldrick",
+      "run": false
+     }
     }
    ]
   }

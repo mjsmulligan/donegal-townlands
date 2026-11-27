@@ -52,15 +52,15 @@
    ]
   },
   {
-   "id": "lurganboy:ch:1901",
-   "title": "1901",
+   "id": "lurganboy:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "lurganboy:beat:census:1901",
+     "id": "lurganboy:beat:census:returns",
      "kind": "census",
-     "chapter": "lurganboy:ch:1901",
+     "chapter": "lurganboy:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1926",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -77,33 +77,223 @@
       "stage": "map",
       "open_card": "lurganboy:census:1901"
      },
-     "caption": "Lurganboy had eight people in two households in 1901. Heads of household included Crosbie and Kincaide.",
+     "caption": "The censuses of 1901, 1911 and 1926 counted 8, 23 and 18 people in Lurganboy, in 2, 5 and 4 households. Heads of household included Crosbie, Kincaide and Espey.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "lurganboy:census:1901"
+       "lurganboy:census:1901",
+       "lurganboy:census:1911",
+       "lurganboy:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 6400,
+     "duration_ms": 11600,
      "audio": null,
      "counts": {
-      "people": 8,
-      "households": 2
+      "returns": [
+       {
+        "year": "1901",
+        "people": 8,
+        "households": 2
+       },
+       {
+        "year": "1911",
+        "people": 23,
+        "households": 5
+       },
+       {
+        "year": "1926",
+        "people": 18,
+        "households": 4
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "lurganboy:ch:1911",
-   "title": "1911",
+   "id": "lurganboy:ch:families",
+   "title": "The families of Lurganboy",
    "beats": [
     {
-     "id": "lurganboy:beat:census:1911",
-     "kind": "census",
-     "chapter": "lurganboy:ch:1911",
+     "id": "lurganboy:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "lurganboy:ch:families",
+     "time": {
+      "label": "The families of Lurganboy",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "lurganboy",
+      "name": "Lurganboy",
+      "logainm_id": "14037",
+      "lat": 54.6386,
+      "lon": -8.117063,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "lurganboy:census:1901"
+     },
+     "caption": "Here are the families of Lurganboy, from 1901 to 1926. First, the Crosbie and Martin families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "lurganboy:census:1901",
+       "lurganboy:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "lurganboy:family:01",
+      "label": "Crosbie",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "lurganboy:ch:family-01",
+   "title": "The Crosbie family",
+   "beats": [
+    {
+     "id": "lurganboy:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "lurganboy:ch:family-01",
+     "time": {
+      "label": "The Crosbie family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "lurganboy",
+      "name": "Lurganboy",
+      "logainm_id": "14037",
+      "lat": 54.6386,
+      "lon": -8.117063,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "lurganboy:familypresence:01"
+     },
+     "caption": "The Crosbie family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "lurganboy:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "lurganboy:family:01",
+      "label": "Crosbie",
+      "run": true
+     }
+    },
+    {
+     "id": "lurganboy:beat:familycensus:01-1901",
+     "kind": "familycensus",
+     "chapter": "lurganboy:ch:family-01",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "lurganboy",
+      "name": "Lurganboy",
+      "logainm_id": "14037",
+      "lat": 54.6386,
+      "lon": -8.117063,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "lurganboy:familycensus:01:1901"
+     },
+     "caption": "Lurganboy had one Crosbie household in 1901, headed by Howard.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "lurganboy:familycensus:01:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "lurganboy:family:01",
+      "label": "Crosbie",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "lurganboy:ch:family-08",
+   "title": "The Martin family",
+   "beats": [
+    {
+     "id": "lurganboy:beat:familyhead:08",
+     "kind": "familyhead",
+     "chapter": "lurganboy:ch:family-08",
+     "time": {
+      "label": "The Martin family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "lurganboy",
+      "name": "Lurganboy",
+      "logainm_id": "14037",
+      "lat": 54.6386,
+      "lon": -8.117063,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "lurganboy:familypresence:08"
+     },
+     "caption": "The Martin family appear in the records from 1911 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "lurganboy:familypresence:08"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "lurganboy:family:08",
+      "label": "Martin",
+      "run": true
+     }
+    },
+    {
+     "id": "lurganboy:beat:familycensus:08-1911",
+     "kind": "familycensus",
+     "chapter": "lurganboy:ch:family-08",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -120,35 +310,30 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "lurganboy:census:1911"
+      "open_card": "lurganboy:familycensus:08:1911"
      },
-     "caption": "In 1911, 23 people in five households lived in Lurganboy. Heads of household included Espey, Hurst and Kenkode.",
+     "caption": "Lurganboy had one Martin household in 1911, headed by Thomas.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "lurganboy:census:1911"
+       "lurganboy:familycensus:08:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 7200,
+     "duration_ms": 4000,
      "audio": null,
-     "counts": {
-      "people": 23,
-      "households": 5
+     "thread": {
+      "id": "lurganboy:family:08",
+      "label": "Martin",
+      "run": true
      }
-    }
-   ]
-  },
-  {
-   "id": "lurganboy:ch:1926",
-   "title": "1926",
-   "beats": [
+    },
     {
-     "id": "lurganboy:beat:census:1926",
-     "kind": "census",
-     "chapter": "lurganboy:ch:1926",
+     "id": "lurganboy:beat:familycensus:08-1926",
+     "kind": "familycensus",
+     "chapter": "lurganboy:ch:family-08",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -165,25 +350,32 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "lurganboy:census:1926"
+      "open_card": "lurganboy:familycensus:08:1926"
      },
-     "caption": "Lurganboy had eighteen people in four households in 1926. Heads of household included Hughes, Kincaid and Martin.",
+     "caption": "Lurganboy had one Martin household in 1926, headed by Thomas.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "lurganboy:census:1926"
+       "lurganboy:familycensus:08:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6800,
+     "duration_ms": 4000,
      "audio": null,
-     "counts": {
-      "people": 18,
-      "households": 4
+     "thread": {
+      "id": "lurganboy:family:08",
+      "label": "Martin",
+      "run": true
      }
-    },
+    }
+   ]
+  },
+  {
+   "id": "lurganboy:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "lurganboy:beat:closing:end",
      "kind": "closing",
@@ -218,6 +410,694 @@
      },
      "duration_ms": 4000,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "lurganboy:ch:family-07",
+   "title": "The Kincaide family",
+   "beats": [
+    {
+     "id": "lurganboy:beat:familyhead:07",
+     "kind": "familyhead",
+     "chapter": "lurganboy:ch:family-07",
+     "time": {
+      "label": "The Kincaide family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "lurganboy",
+      "name": "Lurganboy",
+      "logainm_id": "14037",
+      "lat": 54.6386,
+      "lon": -8.117063,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "lurganboy:familypresence:07"
+     },
+     "caption": "The Kincaide family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "lurganboy:familypresence:07"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "lurganboy:family:07",
+      "label": "Kincaide",
+      "run": false
+     }
+    },
+    {
+     "id": "lurganboy:beat:familycensus:07-1901",
+     "kind": "familycensus",
+     "chapter": "lurganboy:ch:family-07",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "lurganboy",
+      "name": "Lurganboy",
+      "logainm_id": "14037",
+      "lat": 54.6386,
+      "lon": -8.117063,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "lurganboy:familycensus:07:1901"
+     },
+     "caption": "Lurganboy had one Kincaide household in 1901, headed by Thomas.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "lurganboy:familycensus:07:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "lurganboy:family:07",
+      "label": "Kincaide",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "lurganboy:ch:family-02",
+   "title": "The Espey family",
+   "beats": [
+    {
+     "id": "lurganboy:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "lurganboy:ch:family-02",
+     "time": {
+      "label": "The Espey family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "lurganboy",
+      "name": "Lurganboy",
+      "logainm_id": "14037",
+      "lat": 54.6386,
+      "lon": -8.117063,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "lurganboy:familypresence:02"
+     },
+     "caption": "The Espey family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "lurganboy:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "lurganboy:family:02",
+      "label": "Espey",
+      "run": false
+     }
+    },
+    {
+     "id": "lurganboy:beat:familycensus:02-1911",
+     "kind": "familycensus",
+     "chapter": "lurganboy:ch:family-02",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "lurganboy",
+      "name": "Lurganboy",
+      "logainm_id": "14037",
+      "lat": 54.6386,
+      "lon": -8.117063,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "lurganboy:familycensus:02:1911"
+     },
+     "caption": "Lurganboy had one Espey household in 1911, headed by Joseph Cowan.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "lurganboy:familycensus:02:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "lurganboy:family:02",
+      "label": "Espey",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "lurganboy:ch:family-04",
+   "title": "The Hurst family",
+   "beats": [
+    {
+     "id": "lurganboy:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "lurganboy:ch:family-04",
+     "time": {
+      "label": "The Hurst family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "lurganboy",
+      "name": "Lurganboy",
+      "logainm_id": "14037",
+      "lat": 54.6386,
+      "lon": -8.117063,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "lurganboy:familypresence:04"
+     },
+     "caption": "The Hurst family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "lurganboy:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "lurganboy:family:04",
+      "label": "Hurst",
+      "run": false
+     }
+    },
+    {
+     "id": "lurganboy:beat:familycensus:04-1911",
+     "kind": "familycensus",
+     "chapter": "lurganboy:ch:family-04",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "lurganboy",
+      "name": "Lurganboy",
+      "logainm_id": "14037",
+      "lat": 54.6386,
+      "lon": -8.117063,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "lurganboy:familycensus:04:1911"
+     },
+     "caption": "Lurganboy had one Hurst household in 1911, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "lurganboy:familycensus:04:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "lurganboy:family:04",
+      "label": "Hurst",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "lurganboy:ch:family-05",
+   "title": "The Kenkode family",
+   "beats": [
+    {
+     "id": "lurganboy:beat:familyhead:05",
+     "kind": "familyhead",
+     "chapter": "lurganboy:ch:family-05",
+     "time": {
+      "label": "The Kenkode family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "lurganboy",
+      "name": "Lurganboy",
+      "logainm_id": "14037",
+      "lat": 54.6386,
+      "lon": -8.117063,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "lurganboy:familypresence:05"
+     },
+     "caption": "The Kenkode family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "lurganboy:familypresence:05"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "lurganboy:family:05",
+      "label": "Kenkode",
+      "run": false
+     }
+    },
+    {
+     "id": "lurganboy:beat:familycensus:05-1911",
+     "kind": "familycensus",
+     "chapter": "lurganboy:ch:family-05",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "lurganboy",
+      "name": "Lurganboy",
+      "logainm_id": "14037",
+      "lat": 54.6386,
+      "lon": -8.117063,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "lurganboy:familycensus:05:1911"
+     },
+     "caption": "Lurganboy had one Kenkode household in 1911, headed by Thomas.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "lurganboy:familycensus:05:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "lurganboy:family:05",
+      "label": "Kenkode",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "lurganboy:ch:family-10",
+   "title": "The Steadman family",
+   "beats": [
+    {
+     "id": "lurganboy:beat:familyhead:10",
+     "kind": "familyhead",
+     "chapter": "lurganboy:ch:family-10",
+     "time": {
+      "label": "The Steadman family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "lurganboy",
+      "name": "Lurganboy",
+      "logainm_id": "14037",
+      "lat": 54.6386,
+      "lon": -8.117063,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "lurganboy:familypresence:10"
+     },
+     "caption": "The Steadman family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "lurganboy:familypresence:10"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "lurganboy:family:10",
+      "label": "Steadman",
+      "run": false
+     }
+    },
+    {
+     "id": "lurganboy:beat:familycensus:10-1911",
+     "kind": "familycensus",
+     "chapter": "lurganboy:ch:family-10",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "lurganboy",
+      "name": "Lurganboy",
+      "logainm_id": "14037",
+      "lat": 54.6386,
+      "lon": -8.117063,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "lurganboy:familycensus:10:1911"
+     },
+     "caption": "Lurganboy had one Steadman household in 1911, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "lurganboy:familycensus:10:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "lurganboy:family:10",
+      "label": "Steadman",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "lurganboy:ch:family-03",
+   "title": "The Hughes family",
+   "beats": [
+    {
+     "id": "lurganboy:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "lurganboy:ch:family-03",
+     "time": {
+      "label": "The Hughes family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "lurganboy",
+      "name": "Lurganboy",
+      "logainm_id": "14037",
+      "lat": 54.6386,
+      "lon": -8.117063,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "lurganboy:familypresence:03"
+     },
+     "caption": "The Hughes family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "lurganboy:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "lurganboy:family:03",
+      "label": "Hughes",
+      "run": false
+     }
+    },
+    {
+     "id": "lurganboy:beat:familycensus:03-1926",
+     "kind": "familycensus",
+     "chapter": "lurganboy:ch:family-03",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "lurganboy",
+      "name": "Lurganboy",
+      "logainm_id": "14037",
+      "lat": 54.6386,
+      "lon": -8.117063,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "lurganboy:familycensus:03:1926"
+     },
+     "caption": "Lurganboy had one Hughes household in 1926, headed by Joseph.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "lurganboy:familycensus:03:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "lurganboy:family:03",
+      "label": "Hughes",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "lurganboy:ch:family-06",
+   "title": "The Kincaid family",
+   "beats": [
+    {
+     "id": "lurganboy:beat:familyhead:06",
+     "kind": "familyhead",
+     "chapter": "lurganboy:ch:family-06",
+     "time": {
+      "label": "The Kincaid family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "lurganboy",
+      "name": "Lurganboy",
+      "logainm_id": "14037",
+      "lat": 54.6386,
+      "lon": -8.117063,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "lurganboy:familypresence:06"
+     },
+     "caption": "The Kincaid family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "lurganboy:familypresence:06"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "lurganboy:family:06",
+      "label": "Kincaid",
+      "run": false
+     }
+    },
+    {
+     "id": "lurganboy:beat:familycensus:06-1926",
+     "kind": "familycensus",
+     "chapter": "lurganboy:ch:family-06",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "lurganboy",
+      "name": "Lurganboy",
+      "logainm_id": "14037",
+      "lat": 54.6386,
+      "lon": -8.117063,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "lurganboy:familycensus:06:1926"
+     },
+     "caption": "Lurganboy had one Kincaid household in 1926, headed by Jane.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "lurganboy:familycensus:06:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "lurganboy:family:06",
+      "label": "Kincaid",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "lurganboy:ch:family-09",
+   "title": "The Murray family",
+   "beats": [
+    {
+     "id": "lurganboy:beat:familyhead:09",
+     "kind": "familyhead",
+     "chapter": "lurganboy:ch:family-09",
+     "time": {
+      "label": "The Murray family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "lurganboy",
+      "name": "Lurganboy",
+      "logainm_id": "14037",
+      "lat": 54.6386,
+      "lon": -8.117063,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "lurganboy:familypresence:09"
+     },
+     "caption": "The Murray family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "lurganboy:familypresence:09"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "lurganboy:family:09",
+      "label": "Murray",
+      "run": false
+     }
+    },
+    {
+     "id": "lurganboy:beat:familycensus:09-1926",
+     "kind": "familycensus",
+     "chapter": "lurganboy:ch:family-09",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "lurganboy",
+      "name": "Lurganboy",
+      "logainm_id": "14037",
+      "lat": 54.6386,
+      "lon": -8.117063,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "lurganboy:familycensus:09:1926"
+     },
+     "caption": "Lurganboy had one Murray household in 1926, headed by George.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "lurganboy:familycensus:09:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "lurganboy:family:09",
+      "label": "Murray",
+      "run": false
+     }
     }
    ]
   }

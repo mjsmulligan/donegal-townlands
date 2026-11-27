@@ -52,15 +52,15 @@
    ]
   },
   {
-   "id": "rarooey:ch:1901",
-   "title": "1901",
+   "id": "rarooey:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "rarooey:beat:census:1901",
+     "id": "rarooey:beat:census:returns",
      "kind": "census",
-     "chapter": "rarooey:ch:1901",
+     "chapter": "rarooey:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1926",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -77,33 +77,177 @@
       "stage": "map",
       "open_card": "rarooey:census:1901"
      },
-     "caption": "In 1901, four people in one household lived in Rarooey. Heads of household included Henderson.",
+     "caption": "The censuses of 1901, 1911 and 1926 counted 4, 3 and 6 people in Rarooey, in 1, 1 and 2 households. Heads of household included Henderson, Robinson and Wray.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "rarooey:census:1901"
+       "rarooey:census:1901",
+       "rarooey:census:1911",
+       "rarooey:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 6000,
+     "duration_ms": 11600,
      "audio": null,
      "counts": {
-      "people": 4,
-      "households": 1
+      "returns": [
+       {
+        "year": "1901",
+        "people": 4,
+        "households": 1
+       },
+       {
+        "year": "1911",
+        "people": 3,
+        "households": 1
+       },
+       {
+        "year": "1926",
+        "people": 6,
+        "households": 2
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "rarooey:ch:1911",
-   "title": "1911",
+   "id": "rarooey:ch:families",
+   "title": "The families of Rarooey",
    "beats": [
     {
-     "id": "rarooey:beat:census:1911",
-     "kind": "census",
-     "chapter": "rarooey:ch:1911",
+     "id": "rarooey:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "rarooey:ch:families",
+     "time": {
+      "label": "The families of Rarooey",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rarooey",
+      "name": "Rarooey",
+      "logainm_id": "14040",
+      "lat": 54.642163,
+      "lon": -8.105669,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rarooey:census:1901"
+     },
+     "caption": "Here are the families of Rarooey, from 1901 to 1926. First, the Henderson and Robinson families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rarooey:census:1901",
+       "rarooey:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "rarooey:family:01",
+      "label": "Henderson",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "rarooey:ch:family-01",
+   "title": "The Henderson family",
+   "beats": [
+    {
+     "id": "rarooey:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "rarooey:ch:family-01",
+     "time": {
+      "label": "The Henderson family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rarooey",
+      "name": "Rarooey",
+      "logainm_id": "14040",
+      "lat": 54.642163,
+      "lon": -8.105669,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rarooey:familypresence:01"
+     },
+     "caption": "The Henderson family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rarooey:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "rarooey:family:01",
+      "label": "Henderson",
+      "run": true
+     }
+    },
+    {
+     "id": "rarooey:beat:familycensus:01-1901",
+     "kind": "familycensus",
+     "chapter": "rarooey:ch:family-01",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rarooey",
+      "name": "Rarooey",
+      "logainm_id": "14040",
+      "lat": 54.642163,
+      "lon": -8.105669,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rarooey:familycensus:01:1901"
+     },
+     "caption": "Rarooey had one Henderson household in 1901, headed by Eliza.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rarooey:familycensus:01:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "rarooey:family:01",
+      "label": "Henderson",
+      "run": true
+     }
+    },
+    {
+     "id": "rarooey:beat:familycensus:01-1911",
+     "kind": "familycensus",
+     "chapter": "rarooey:ch:family-01",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -120,35 +264,76 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "rarooey:census:1911"
+      "open_card": "rarooey:familycensus:01:1911"
      },
-     "caption": "In 1911, three people in one household lived in Rarooey. Heads of household included Henderson.",
+     "caption": "Rarooey had one Henderson household in 1911, headed by Samuel.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "rarooey:census:1911"
+       "rarooey:familycensus:01:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6000,
+     "duration_ms": 4000,
      "audio": null,
-     "counts": {
-      "people": 3,
-      "households": 1
+     "thread": {
+      "id": "rarooey:family:01",
+      "label": "Henderson",
+      "run": true
      }
     }
    ]
   },
   {
-   "id": "rarooey:ch:1926",
-   "title": "1926",
+   "id": "rarooey:ch:family-02",
+   "title": "The Robinson family",
    "beats": [
     {
-     "id": "rarooey:beat:census:1926",
-     "kind": "census",
-     "chapter": "rarooey:ch:1926",
+     "id": "rarooey:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "rarooey:ch:family-02",
+     "time": {
+      "label": "The Robinson family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rarooey",
+      "name": "Rarooey",
+      "logainm_id": "14040",
+      "lat": 54.642163,
+      "lon": -8.105669,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rarooey:familypresence:02"
+     },
+     "caption": "The Robinson family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rarooey:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "rarooey:family:02",
+      "label": "Robinson",
+      "run": true
+     }
+    },
+    {
+     "id": "rarooey:beat:familycensus:02-1926",
+     "kind": "familycensus",
+     "chapter": "rarooey:ch:family-02",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -165,25 +350,32 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "rarooey:census:1926"
+      "open_card": "rarooey:familycensus:02:1926"
      },
-     "caption": "Rarooey had six people in two households in 1926. Heads of household included Robinson and Wray.",
+     "caption": "Rarooey had one Robinson household in 1926, headed by Lily.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "rarooey:census:1926"
+       "rarooey:familycensus:02:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6400,
+     "duration_ms": 4000,
      "audio": null,
-     "counts": {
-      "people": 6,
-      "households": 2
+     "thread": {
+      "id": "rarooey:family:02",
+      "label": "Robinson",
+      "run": true
      }
-    },
+    }
+   ]
+  },
+  {
+   "id": "rarooey:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "rarooey:beat:closing:end",
      "kind": "closing",
@@ -218,6 +410,92 @@
      },
      "duration_ms": 4000,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "rarooey:ch:family-03",
+   "title": "The Wray family",
+   "beats": [
+    {
+     "id": "rarooey:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "rarooey:ch:family-03",
+     "time": {
+      "label": "The Wray family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rarooey",
+      "name": "Rarooey",
+      "logainm_id": "14040",
+      "lat": 54.642163,
+      "lon": -8.105669,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rarooey:familypresence:03"
+     },
+     "caption": "The Wray family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rarooey:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "rarooey:family:03",
+      "label": "Wray",
+      "run": false
+     }
+    },
+    {
+     "id": "rarooey:beat:familycensus:03-1926",
+     "kind": "familycensus",
+     "chapter": "rarooey:ch:family-03",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rarooey",
+      "name": "Rarooey",
+      "logainm_id": "14040",
+      "lat": 54.642163,
+      "lon": -8.105669,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rarooey:familycensus:03:1926"
+     },
+     "caption": "Rarooey had one Wray household in 1926, headed by Robert.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rarooey:familycensus:03:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "rarooey:family:03",
+      "label": "Wray",
+      "run": false
+     }
     }
    ]
   }

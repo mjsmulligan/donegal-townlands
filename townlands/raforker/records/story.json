@@ -136,15 +136,15 @@
    ]
   },
   {
-   "id": "raforker:ch:1901",
-   "title": "1901",
+   "id": "raforker:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "raforker:beat:census:1901",
+     "id": "raforker:beat:census:returns",
      "kind": "census",
-     "chapter": "raforker:ch:1901",
+     "chapter": "raforker:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1926",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -161,37 +161,54 @@
       "stage": "map",
       "open_card": "raforker:census:1901"
      },
-     "caption": "Raforker had nine people in two households in 1901. Heads of household included Curry and David Crawford.",
+     "caption": "The censuses of 1901, 1911 and 1926 counted 9, 5 and 4 people in Raforker, in 2, 1 and 1 households. Heads of household included Curry, David Crawford and Pearson.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "raforker:census:1901"
+       "raforker:census:1901",
+       "raforker:census:1911",
+       "raforker:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 6800,
+     "duration_ms": 12000,
      "audio": null,
      "counts": {
-      "people": 9,
-      "households": 2
+      "returns": [
+       {
+        "year": "1901",
+        "people": 9,
+        "households": 2
+       },
+       {
+        "year": "1911",
+        "people": 5,
+        "households": 1
+       },
+       {
+        "year": "1926",
+        "people": 4,
+        "households": 1
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "raforker:ch:1911",
-   "title": "1911",
+   "id": "raforker:ch:families",
+   "title": "The families of Raforker",
    "beats": [
     {
-     "id": "raforker:beat:census:1911",
-     "kind": "census",
-     "chapter": "raforker:ch:1911",
+     "id": "raforker:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "raforker:ch:families",
      "time": {
-      "label": "1911",
-      "iso": "1911",
-      "sort": "1911-01-01",
+      "label": "The families of Raforker",
+      "iso": "1873-12-06",
+      "sort": "1901-01-01",
       "approximate": true
      },
      "place": {
@@ -204,23 +221,197 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "raforker:census:1911"
+      "open_card": "raforker:baptism:TAW-B-p009-r86"
      },
-     "caption": "In 1911, five people in one household lived in Raforker. Heads of household included Pearson.",
+     "caption": "Here are the families of Raforker, from 1873 to 1926. First, the Curry and David Crawford families.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "raforker:census:1911"
+       "raforker:baptism:TAW-B-p009-r86",
+       "raforker:census:1926"
       ],
-      "basis": "return_for_townland",
+      "basis": "place_record",
       "certainty": "stated"
      },
-     "duration_ms": 6000,
+     "duration_ms": 6800,
      "audio": null,
-     "counts": {
-      "people": 5,
-      "households": 1
+     "thread": {
+      "id": "raforker:family:01",
+      "label": "Curry",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "raforker:ch:family-01",
+   "title": "The Curry family",
+   "beats": [
+    {
+     "id": "raforker:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "raforker:ch:family-01",
+     "time": {
+      "label": "The Curry family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "raforker",
+      "name": "Raforker",
+      "logainm_id": "14039",
+      "lat": 54.647635,
+      "lon": -8.105515,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "raforker:familypresence:01"
+     },
+     "caption": "The Curry family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "raforker:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "raforker:family:01",
+      "label": "Curry",
+      "run": true
+     }
+    },
+    {
+     "id": "raforker:beat:familycensus:01-1901",
+     "kind": "familycensus",
+     "chapter": "raforker:ch:family-01",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "raforker",
+      "name": "Raforker",
+      "logainm_id": "14039",
+      "lat": 54.647635,
+      "lon": -8.105515,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "raforker:familycensus:01:1901"
+     },
+     "caption": "Raforker had one Curry household in 1901, headed by William.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "raforker:familycensus:01:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "raforker:family:01",
+      "label": "Curry",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "raforker:ch:family-02",
+   "title": "The David Crawford family",
+   "beats": [
+    {
+     "id": "raforker:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "raforker:ch:family-02",
+     "time": {
+      "label": "The David Crawford family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "raforker",
+      "name": "Raforker",
+      "logainm_id": "14039",
+      "lat": 54.647635,
+      "lon": -8.105515,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "raforker:familypresence:02"
+     },
+     "caption": "The David Crawford family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "raforker:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "raforker:family:02",
+      "label": "David Crawford",
+      "run": true
+     }
+    },
+    {
+     "id": "raforker:beat:familycensus:02-1901",
+     "kind": "familycensus",
+     "chapter": "raforker:ch:family-02",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "raforker",
+      "name": "Raforker",
+      "logainm_id": "14039",
+      "lat": 54.647635,
+      "lon": -8.105515,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "raforker:familycensus:02:1901"
+     },
+     "caption": "Raforker had one David Crawford household in 1901, headed by Pearson.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "raforker:familycensus:02:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "raforker:family:02",
+      "label": "David Crawford",
+      "run": true
      }
     }
    ]
@@ -229,45 +420,6 @@
    "id": "raforker:ch:1926",
    "title": "1926",
    "beats": [
-    {
-     "id": "raforker:beat:census:1926",
-     "kind": "census",
-     "chapter": "raforker:ch:1926",
-     "time": {
-      "label": "1926",
-      "iso": "1926",
-      "sort": "1926-01-01",
-      "approximate": true
-     },
-     "place": {
-      "townland": "raforker",
-      "name": "Raforker",
-      "logainm_id": "14039",
-      "lat": 54.647635,
-      "lon": -8.105515,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "raforker:census:1926"
-     },
-     "caption": "In 1926, four people in one household lived in Raforker. Heads of household included O'Donnell.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "raforker:census:1926"
-      ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
-     },
-     "duration_ms": 6000,
-     "audio": null,
-     "counts": {
-      "people": 4,
-      "households": 1
-     }
-    },
     {
      "id": "raforker:beat:closing:end",
      "kind": "closing",
@@ -302,6 +454,178 @@
      },
      "duration_ms": 4000,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "raforker:ch:family-04",
+   "title": "The Pearson family",
+   "beats": [
+    {
+     "id": "raforker:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "raforker:ch:family-04",
+     "time": {
+      "label": "The Pearson family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "raforker",
+      "name": "Raforker",
+      "logainm_id": "14039",
+      "lat": 54.647635,
+      "lon": -8.105515,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "raforker:familypresence:04"
+     },
+     "caption": "The Pearson family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "raforker:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "raforker:family:04",
+      "label": "Pearson",
+      "run": false
+     }
+    },
+    {
+     "id": "raforker:beat:familycensus:04-1911",
+     "kind": "familycensus",
+     "chapter": "raforker:ch:family-04",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "raforker",
+      "name": "Raforker",
+      "logainm_id": "14039",
+      "lat": 54.647635,
+      "lon": -8.105515,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "raforker:familycensus:04:1911"
+     },
+     "caption": "Raforker had one Pearson household in 1911, headed by Jane.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "raforker:familycensus:04:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "raforker:family:04",
+      "label": "Pearson",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "raforker:ch:family-03",
+   "title": "The O'Donnell family",
+   "beats": [
+    {
+     "id": "raforker:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "raforker:ch:family-03",
+     "time": {
+      "label": "The O'Donnell family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "raforker",
+      "name": "Raforker",
+      "logainm_id": "14039",
+      "lat": 54.647635,
+      "lon": -8.105515,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "raforker:familypresence:03"
+     },
+     "caption": "The O'Donnell family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "raforker:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "raforker:family:03",
+      "label": "O'Donnell",
+      "run": false
+     }
+    },
+    {
+     "id": "raforker:beat:familycensus:03-1926",
+     "kind": "familycensus",
+     "chapter": "raforker:ch:family-03",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "raforker",
+      "name": "Raforker",
+      "logainm_id": "14039",
+      "lat": 54.647635,
+      "lon": -8.105515,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "raforker:familycensus:03:1926"
+     },
+     "caption": "Raforker had one O'Donnell household in 1926, headed by John Bustard.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "raforker:familycensus:03:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "raforker:family:03",
+      "label": "O'Donnell",
+      "run": false
+     }
     }
    ]
   }

@@ -52,15 +52,15 @@
    ]
   },
   {
-   "id": "milltown:ch:1901",
-   "title": "1901",
+   "id": "milltown:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "milltown:beat:census:1901",
+     "id": "milltown:beat:census:returns",
      "kind": "census",
-     "chapter": "milltown:ch:1901",
+     "chapter": "milltown:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1926",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -77,33 +77,177 @@
       "stage": "map",
       "open_card": "milltown:census:1901"
      },
-     "caption": "In 1901, ten people in two households lived in Milltown. Heads of household included Hanlon and Watson.",
+     "caption": "The censuses of 1901, 1911 and 1926 counted 10, 6 and 17 people in Milltown, in 2, 2 and 2 households. Heads of household included Hanlon, Watson and Patton.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "milltown:census:1901"
+       "milltown:census:1901",
+       "milltown:census:1911",
+       "milltown:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 6800,
+     "duration_ms": 11600,
      "audio": null,
      "counts": {
-      "people": 10,
-      "households": 2
+      "returns": [
+       {
+        "year": "1901",
+        "people": 10,
+        "households": 2
+       },
+       {
+        "year": "1911",
+        "people": 6,
+        "households": 2
+       },
+       {
+        "year": "1926",
+        "people": 17,
+        "households": 2
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "milltown:ch:1911",
-   "title": "1911",
+   "id": "milltown:ch:families",
+   "title": "The families of Milltown",
    "beats": [
     {
-     "id": "milltown:beat:census:1911",
-     "kind": "census",
-     "chapter": "milltown:ch:1911",
+     "id": "milltown:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "milltown:ch:families",
+     "time": {
+      "label": "The families of Milltown",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "milltown",
+      "name": "Milltown",
+      "logainm_id": "14019",
+      "lat": 54.658116,
+      "lon": -8.101229,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "milltown:census:1901"
+     },
+     "caption": "Here are the families of Milltown, from 1901 to 1926. First, the Watson and Begley families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "milltown:census:1901",
+       "milltown:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "milltown:family:05",
+      "label": "Watson",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "milltown:ch:family-05",
+   "title": "The Watson family",
+   "beats": [
+    {
+     "id": "milltown:beat:familyhead:05",
+     "kind": "familyhead",
+     "chapter": "milltown:ch:family-05",
+     "time": {
+      "label": "The Watson family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "milltown",
+      "name": "Milltown",
+      "logainm_id": "14019",
+      "lat": 54.658116,
+      "lon": -8.101229,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "milltown:familypresence:05"
+     },
+     "caption": "The Watson family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "milltown:familypresence:05"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "milltown:family:05",
+      "label": "Watson",
+      "run": true
+     }
+    },
+    {
+     "id": "milltown:beat:familycensus:05-1901",
+     "kind": "familycensus",
+     "chapter": "milltown:ch:family-05",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "milltown",
+      "name": "Milltown",
+      "logainm_id": "14019",
+      "lat": 54.658116,
+      "lon": -8.101229,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "milltown:familycensus:05:1901"
+     },
+     "caption": "Milltown had one Watson household in 1901, headed by William Thomas.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "milltown:familycensus:05:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "milltown:family:05",
+      "label": "Watson",
+      "run": true
+     }
+    },
+    {
+     "id": "milltown:beat:familycensus:05-1911",
+     "kind": "familycensus",
+     "chapter": "milltown:ch:family-05",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -120,35 +264,76 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "milltown:census:1911"
+      "open_card": "milltown:familycensus:05:1911"
      },
-     "caption": "Milltown had six people in two households in 1911. Heads of household included Patton and Watson.",
+     "caption": "Milltown had one Watson household in 1911, headed by William.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "milltown:census:1911"
+       "milltown:familycensus:05:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6400,
+     "duration_ms": 4000,
      "audio": null,
-     "counts": {
-      "people": 6,
-      "households": 2
+     "thread": {
+      "id": "milltown:family:05",
+      "label": "Watson",
+      "run": true
      }
     }
    ]
   },
   {
-   "id": "milltown:ch:1926",
-   "title": "1926",
+   "id": "milltown:ch:family-01",
+   "title": "The Begley family",
    "beats": [
     {
-     "id": "milltown:beat:census:1926",
-     "kind": "census",
-     "chapter": "milltown:ch:1926",
+     "id": "milltown:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "milltown:ch:family-01",
+     "time": {
+      "label": "The Begley family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "milltown",
+      "name": "Milltown",
+      "logainm_id": "14019",
+      "lat": 54.658116,
+      "lon": -8.101229,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "milltown:familypresence:01"
+     },
+     "caption": "The Begley family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "milltown:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "milltown:family:01",
+      "label": "Begley",
+      "run": true
+     }
+    },
+    {
+     "id": "milltown:beat:familycensus:01-1926",
+     "kind": "familycensus",
+     "chapter": "milltown:ch:family-01",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -165,25 +350,32 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "milltown:census:1926"
+      "open_card": "milltown:familycensus:01:1926"
      },
-     "caption": "Milltown had seventeen people in two households in 1926. Heads of household included Begley and McGowan.",
+     "caption": "Milltown had one Begley household in 1926, headed by Stephen.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "milltown:census:1926"
+       "milltown:familycensus:01:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6400,
+     "duration_ms": 4000,
      "audio": null,
-     "counts": {
-      "people": 17,
-      "households": 2
+     "thread": {
+      "id": "milltown:family:01",
+      "label": "Begley",
+      "run": true
      }
-    },
+    }
+   ]
+  },
+  {
+   "id": "milltown:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "milltown:beat:closing:end",
      "kind": "closing",
@@ -218,6 +410,264 @@
      },
      "duration_ms": 4000,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "milltown:ch:family-02",
+   "title": "The Hanlon family",
+   "beats": [
+    {
+     "id": "milltown:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "milltown:ch:family-02",
+     "time": {
+      "label": "The Hanlon family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "milltown",
+      "name": "Milltown",
+      "logainm_id": "14019",
+      "lat": 54.658116,
+      "lon": -8.101229,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "milltown:familypresence:02"
+     },
+     "caption": "The Hanlon family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "milltown:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "milltown:family:02",
+      "label": "Hanlon",
+      "run": false
+     }
+    },
+    {
+     "id": "milltown:beat:familycensus:02-1901",
+     "kind": "familycensus",
+     "chapter": "milltown:ch:family-02",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "milltown",
+      "name": "Milltown",
+      "logainm_id": "14019",
+      "lat": 54.658116,
+      "lon": -8.101229,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "milltown:familycensus:02:1901"
+     },
+     "caption": "Milltown had one Hanlon household in 1901, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "milltown:familycensus:02:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "milltown:family:02",
+      "label": "Hanlon",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "milltown:ch:family-04",
+   "title": "The Patton family",
+   "beats": [
+    {
+     "id": "milltown:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "milltown:ch:family-04",
+     "time": {
+      "label": "The Patton family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "milltown",
+      "name": "Milltown",
+      "logainm_id": "14019",
+      "lat": 54.658116,
+      "lon": -8.101229,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "milltown:familypresence:04"
+     },
+     "caption": "The Patton family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "milltown:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "milltown:family:04",
+      "label": "Patton",
+      "run": false
+     }
+    },
+    {
+     "id": "milltown:beat:familycensus:04-1911",
+     "kind": "familycensus",
+     "chapter": "milltown:ch:family-04",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "milltown",
+      "name": "Milltown",
+      "logainm_id": "14019",
+      "lat": 54.658116,
+      "lon": -8.101229,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "milltown:familycensus:04:1911"
+     },
+     "caption": "Milltown had one Patton household in 1911, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "milltown:familycensus:04:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "milltown:family:04",
+      "label": "Patton",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "milltown:ch:family-03",
+   "title": "The McGowan family",
+   "beats": [
+    {
+     "id": "milltown:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "milltown:ch:family-03",
+     "time": {
+      "label": "The McGowan family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "milltown",
+      "name": "Milltown",
+      "logainm_id": "14019",
+      "lat": 54.658116,
+      "lon": -8.101229,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "milltown:familypresence:03"
+     },
+     "caption": "The McGowan family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "milltown:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "milltown:family:03",
+      "label": "McGowan",
+      "run": false
+     }
+    },
+    {
+     "id": "milltown:beat:familycensus:03-1926",
+     "kind": "familycensus",
+     "chapter": "milltown:ch:family-03",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "milltown",
+      "name": "Milltown",
+      "logainm_id": "14019",
+      "lat": 54.658116,
+      "lon": -8.101229,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "milltown:familycensus:03:1926"
+     },
+     "caption": "Milltown had one McGowan household in 1926, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "milltown:familycensus:03:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "milltown:family:03",
+      "label": "McGowan",
+      "run": false
+     }
     }
    ]
   }

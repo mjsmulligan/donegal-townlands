@@ -52,15 +52,15 @@
    ]
   },
   {
-   "id": "friarsbush:ch:1901",
-   "title": "1901",
+   "id": "friarsbush:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "friarsbush:beat:census:1901",
+     "id": "friarsbush:beat:census:returns",
      "kind": "census",
-     "chapter": "friarsbush:ch:1901",
+     "chapter": "friarsbush:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1926",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -77,33 +77,177 @@
       "stage": "map",
       "open_card": "friarsbush:census:1901"
      },
-     "caption": "Friarsbush had fifteen people in two households in 1901. Heads of household included Callaghan and Quigley.",
+     "caption": "The censuses of 1901, 1911 and 1926 counted 15, 17 and 5 people in Friarsbush, in 2, 2 and 1 households. Heads of household included Callaghan and Quigley.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "friarsbush:census:1901"
+       "friarsbush:census:1901",
+       "friarsbush:census:1911",
+       "friarsbush:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 6400,
+     "duration_ms": 11200,
      "audio": null,
      "counts": {
-      "people": 15,
-      "households": 2
+      "returns": [
+       {
+        "year": "1901",
+        "people": 15,
+        "households": 2
+       },
+       {
+        "year": "1911",
+        "people": 17,
+        "households": 2
+       },
+       {
+        "year": "1926",
+        "people": 5,
+        "households": 1
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "friarsbush:ch:1911",
-   "title": "1911",
+   "id": "friarsbush:ch:families",
+   "title": "The families of Friarsbush",
    "beats": [
     {
-     "id": "friarsbush:beat:census:1911",
-     "kind": "census",
-     "chapter": "friarsbush:ch:1911",
+     "id": "friarsbush:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "friarsbush:ch:families",
+     "time": {
+      "label": "The families of Friarsbush",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "friarsbush",
+      "name": "Friarsbush",
+      "logainm_id": "14241",
+      "lat": 54.712562,
+      "lon": -7.969439,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "friarsbush:census:1901"
+     },
+     "caption": "Here are the families of Friarsbush, from 1901 to 1926. First, the Callaghan and Quigley families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "friarsbush:census:1901",
+       "friarsbush:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "friarsbush:family:01",
+      "label": "Callaghan",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "friarsbush:ch:family-01",
+   "title": "The Callaghan family",
+   "beats": [
+    {
+     "id": "friarsbush:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "friarsbush:ch:family-01",
+     "time": {
+      "label": "The Callaghan family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "friarsbush",
+      "name": "Friarsbush",
+      "logainm_id": "14241",
+      "lat": 54.712562,
+      "lon": -7.969439,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "friarsbush:familypresence:01"
+     },
+     "caption": "The Callaghan family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "friarsbush:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "friarsbush:family:01",
+      "label": "Callaghan",
+      "run": true
+     }
+    },
+    {
+     "id": "friarsbush:beat:familycensus:01-1901",
+     "kind": "familycensus",
+     "chapter": "friarsbush:ch:family-01",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "friarsbush",
+      "name": "Friarsbush",
+      "logainm_id": "14241",
+      "lat": 54.712562,
+      "lon": -7.969439,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "friarsbush:familycensus:01:1901"
+     },
+     "caption": "Friarsbush had one Callaghan household in 1901, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "friarsbush:familycensus:01:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "friarsbush:family:01",
+      "label": "Callaghan",
+      "run": true
+     }
+    },
+    {
+     "id": "friarsbush:beat:familycensus:01-1911",
+     "kind": "familycensus",
+     "chapter": "friarsbush:ch:family-01",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -120,39 +264,40 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "friarsbush:census:1911"
+      "open_card": "friarsbush:familycensus:01:1911"
      },
-     "caption": "In 1911, seventeen people in two households lived in Friarsbush. Heads of household included Callaghan and Quigley.",
+     "caption": "Friarsbush had one Callaghan household in 1911, headed by John.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "friarsbush:census:1911"
+       "friarsbush:familycensus:01:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6800,
+     "duration_ms": 4000,
      "audio": null,
-     "counts": {
-      "people": 17,
-      "households": 2
+     "thread": {
+      "id": "friarsbush:family:01",
+      "label": "Callaghan",
+      "run": true
      }
     }
    ]
   },
   {
-   "id": "friarsbush:ch:1926",
-   "title": "1926",
+   "id": "friarsbush:ch:family-02",
+   "title": "The Quigley family",
    "beats": [
     {
-     "id": "friarsbush:beat:census:1926",
-     "kind": "census",
-     "chapter": "friarsbush:ch:1926",
+     "id": "friarsbush:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "friarsbush:ch:family-02",
      "time": {
-      "label": "1926",
-      "iso": "1926",
-      "sort": "1926-01-01",
+      "label": "The Quigley family",
+      "iso": "1901",
+      "sort": "1901-01-01",
       "approximate": true
      },
      "place": {
@@ -165,25 +310,112 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "friarsbush:census:1926"
+      "open_card": "friarsbush:familypresence:02"
      },
-     "caption": "Friarsbush had five people in one household in 1926.",
+     "caption": "The Quigley family appear in the records from 1901 to 1911.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "friarsbush:census:1926"
+       "friarsbush:familypresence:02"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "friarsbush:family:02",
+      "label": "Quigley",
+      "run": true
+     }
+    },
+    {
+     "id": "friarsbush:beat:familycensus:02-1901",
+     "kind": "familycensus",
+     "chapter": "friarsbush:ch:family-02",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "friarsbush",
+      "name": "Friarsbush",
+      "logainm_id": "14241",
+      "lat": 54.712562,
+      "lon": -7.969439,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "friarsbush:familycensus:02:1901"
+     },
+     "caption": "Friarsbush had one Quigley household in 1901, headed by Peter.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "friarsbush:familycensus:02:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
      "duration_ms": 4000,
      "audio": null,
-     "counts": {
-      "people": 5,
-      "households": 1
+     "thread": {
+      "id": "friarsbush:family:02",
+      "label": "Quigley",
+      "run": true
      }
     },
+    {
+     "id": "friarsbush:beat:familycensus:02-1911",
+     "kind": "familycensus",
+     "chapter": "friarsbush:ch:family-02",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "friarsbush",
+      "name": "Friarsbush",
+      "logainm_id": "14241",
+      "lat": 54.712562,
+      "lon": -7.969439,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "friarsbush:familycensus:02:1911"
+     },
+     "caption": "Friarsbush had one Quigley household in 1911, headed by Margaret.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "friarsbush:familycensus:02:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "friarsbush:family:02",
+      "label": "Quigley",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "friarsbush:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "friarsbush:beat:closing:end",
      "kind": "closing",

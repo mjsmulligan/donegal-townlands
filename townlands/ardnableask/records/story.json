@@ -95,56 +95,15 @@
    ]
   },
   {
-   "id": "ardnableask:ch:baptisms",
-   "title": "Baptisms, 1874",
+   "id": "ardnableask:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "ardnableask:beat:baptism:1874-06-04-TAW-B-p011-r126",
-     "kind": "baptism",
-     "chapter": "ardnableask:ch:baptisms",
-     "time": {
-      "label": "4 June 1874",
-      "iso": "1874-06-04",
-      "sort": "1874-06-04",
-      "approximate": false
-     },
-     "place": {
-      "townland": "ardnableask",
-      "name": "Ardnableask",
-      "logainm_id": "14238",
-      "lat": 54.696229,
-      "lon": -8.010488,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "ardnableask:baptism:TAW-B-p011-r126"
-     },
-     "caption": "Bernard Gallagher was baptised on 4 June 1874. Thomas Gallagher and Mary McGinty were the parents.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "ardnableask:baptism:TAW-B-p011-r126"
-      ],
-      "basis": "page_place",
-      "certainty": "stated"
-     },
-     "duration_ms": 6400,
-     "audio": null
-    }
-   ]
-  },
-  {
-   "id": "ardnableask:ch:1901",
-   "title": "1901",
-   "beats": [
-    {
-     "id": "ardnableask:beat:census:1901",
+     "id": "ardnableask:beat:census:returns",
      "kind": "census",
-     "chapter": "ardnableask:ch:1901",
+     "chapter": "ardnableask:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1926",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -161,33 +120,177 @@
       "stage": "map",
       "open_card": "ardnableask:census:1901"
      },
-     "caption": "Ardnableask had 67 people in ten households in 1901. Heads of household included Bartley, Gallagher and McNulty.",
+     "caption": "The censuses of 1901, 1911 and 1926 counted 67, 71 and 50 people in Ardnableask, in 10, 12 and 10 households. Heads of household included Bartley, Gallagher and McNulty.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "ardnableask:census:1901"
+       "ardnableask:census:1901",
+       "ardnableask:census:1911",
+       "ardnableask:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 6800,
+     "duration_ms": 11600,
      "audio": null,
      "counts": {
-      "people": 67,
-      "households": 10
+      "returns": [
+       {
+        "year": "1901",
+        "people": 67,
+        "households": 10
+       },
+       {
+        "year": "1911",
+        "people": 71,
+        "households": 12
+       },
+       {
+        "year": "1926",
+        "people": 50,
+        "households": 10
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "ardnableask:ch:1911",
-   "title": "1911",
+   "id": "ardnableask:ch:families",
+   "title": "The families of Ardnableask",
    "beats": [
     {
-     "id": "ardnableask:beat:census:1911",
-     "kind": "census",
-     "chapter": "ardnableask:ch:1911",
+     "id": "ardnableask:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "ardnableask:ch:families",
+     "time": {
+      "label": "The families of Ardnableask",
+      "iso": "1874-06-04",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnableask",
+      "name": "Ardnableask",
+      "logainm_id": "14238",
+      "lat": 54.696229,
+      "lon": -8.010488,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnableask:baptism:TAW-B-p011-r126"
+     },
+     "caption": "Here are the families of Ardnableask, from 1874 to 1926. First, the Bartley and McNulty families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnableask:baptism:TAW-B-p011-r126",
+       "ardnableask:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "ardnableask:family:01",
+      "label": "Bartley",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardnableask:ch:family-01",
+   "title": "The Bartley family",
+   "beats": [
+    {
+     "id": "ardnableask:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "ardnableask:ch:family-01",
+     "time": {
+      "label": "The Bartley family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnableask",
+      "name": "Ardnableask",
+      "logainm_id": "14238",
+      "lat": 54.696229,
+      "lon": -8.010488,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnableask:familypresence:01"
+     },
+     "caption": "The Bartley family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnableask:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ardnableask:family:01",
+      "label": "Bartley",
+      "run": true
+     }
+    },
+    {
+     "id": "ardnableask:beat:familycensus:01-1901",
+     "kind": "familycensus",
+     "chapter": "ardnableask:ch:family-01",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnableask",
+      "name": "Ardnableask",
+      "logainm_id": "14238",
+      "lat": 54.696229,
+      "lon": -8.010488,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnableask:familycensus:01:1901"
+     },
+     "caption": "Ardnableask had two Bartley households in 1901, headed by Thomas and Alexander.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnableask:familycensus:01:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "ardnableask:family:01",
+      "label": "Bartley",
+      "run": true
+     }
+    },
+    {
+     "id": "ardnableask:beat:familycensus:01-1911",
+     "kind": "familycensus",
+     "chapter": "ardnableask:ch:family-01",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -204,35 +307,30 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "ardnableask:census:1911"
+      "open_card": "ardnableask:familycensus:01:1911"
      },
-     "caption": "In 1911, 71 people in twelve households lived in Ardnableask. Heads of household included McNulty, Bartley and Gallagher.",
+     "caption": "Ardnableask had two Bartley households in 1911, headed by Alex and Thomas.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "ardnableask:census:1911"
+       "ardnableask:familycensus:01:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 7200,
+     "duration_ms": 4800,
      "audio": null,
-     "counts": {
-      "people": 71,
-      "households": 12
+     "thread": {
+      "id": "ardnableask:family:01",
+      "label": "Bartley",
+      "run": true
      }
-    }
-   ]
-  },
-  {
-   "id": "ardnableask:ch:1926",
-   "title": "1926",
-   "beats": [
+    },
     {
-     "id": "ardnableask:beat:census:1926",
-     "kind": "census",
-     "chapter": "ardnableask:ch:1926",
+     "id": "ardnableask:beat:familycensus:01-1926",
+     "kind": "familycensus",
+     "chapter": "ardnableask:ch:family-01",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -249,25 +347,198 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "ardnableask:census:1926"
+      "open_card": "ardnableask:familycensus:01:1926"
      },
-     "caption": "In 1926, 50 people in ten households lived in Ardnableask. Heads of household included Bartley, Callaghan and McNulty.",
+     "caption": "Ardnableask had two Bartley households in 1926, headed by James and Kathleen.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "ardnableask:census:1926"
+       "ardnableask:familycensus:01:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 7200,
+     "duration_ms": 4800,
      "audio": null,
-     "counts": {
-      "people": 50,
-      "households": 10
+     "thread": {
+      "id": "ardnableask:family:01",
+      "label": "Bartley",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardnableask:ch:family-09",
+   "title": "The McNulty family",
+   "beats": [
+    {
+     "id": "ardnableask:beat:familyhead:09",
+     "kind": "familyhead",
+     "chapter": "ardnableask:ch:family-09",
+     "time": {
+      "label": "The McNulty family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnableask",
+      "name": "Ardnableask",
+      "logainm_id": "14238",
+      "lat": 54.696229,
+      "lon": -8.010488,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnableask:familypresence:09"
+     },
+     "caption": "The McNulty family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnableask:familypresence:09"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ardnableask:family:09",
+      "label": "McNulty",
+      "run": true
      }
     },
+    {
+     "id": "ardnableask:beat:familycensus:09-1901",
+     "kind": "familycensus",
+     "chapter": "ardnableask:ch:family-09",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnableask",
+      "name": "Ardnableask",
+      "logainm_id": "14238",
+      "lat": 54.696229,
+      "lon": -8.010488,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnableask:familycensus:09:1901"
+     },
+     "caption": "Ardnableask had two McNulty households in 1901, headed by Edward and Charles.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnableask:familycensus:09:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "ardnableask:family:09",
+      "label": "McNulty",
+      "run": true
+     }
+    },
+    {
+     "id": "ardnableask:beat:familycensus:09-1911",
+     "kind": "familycensus",
+     "chapter": "ardnableask:ch:family-09",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnableask",
+      "name": "Ardnableask",
+      "logainm_id": "14238",
+      "lat": 54.696229,
+      "lon": -8.010488,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnableask:familycensus:09:1911"
+     },
+     "caption": "Ardnableask had three McNulty households in 1911, headed by Edward, Hugh and Charles.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnableask:familycensus:09:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "ardnableask:family:09",
+      "label": "McNulty",
+      "run": true
+     }
+    },
+    {
+     "id": "ardnableask:beat:familycensus:09-1926",
+     "kind": "familycensus",
+     "chapter": "ardnableask:ch:family-09",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnableask",
+      "name": "Ardnableask",
+      "logainm_id": "14238",
+      "lat": 54.696229,
+      "lon": -8.010488,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnableask:familycensus:09:1926"
+     },
+     "caption": "Ardnableask had two McNulty households in 1926, headed by Charles and Kathleen.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnableask:familycensus:09:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "ardnableask:family:09",
+      "label": "McNulty",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardnableask:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "ardnableask:beat:closing:end",
      "kind": "closing",
@@ -302,6 +573,1094 @@
      },
      "duration_ms": 4000,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "ardnableask:ch:family-06",
+   "title": "The Gallagher family",
+   "beats": [
+    {
+     "id": "ardnableask:beat:baptism:1874-06-04-TAW-B-p011-r126",
+     "kind": "baptism",
+     "chapter": "ardnableask:ch:family-06",
+     "time": {
+      "label": "4 June 1874",
+      "iso": "1874-06-04",
+      "sort": "1874-06-04",
+      "approximate": false
+     },
+     "place": {
+      "townland": "ardnableask",
+      "name": "Ardnableask",
+      "logainm_id": "14238",
+      "lat": 54.696229,
+      "lon": -8.010488,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnableask:baptism:TAW-B-p011-r126"
+     },
+     "caption": "Bernard Gallagher was baptised on 4 June 1874. Thomas Gallagher and Mary McGinty were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnableask:baptism:TAW-B-p011-r126"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "ardnableask:family:06",
+      "label": "Gallagher",
+      "run": false
+     }
+    },
+    {
+     "id": "ardnableask:beat:familyhead:06",
+     "kind": "familyhead",
+     "chapter": "ardnableask:ch:family-06",
+     "time": {
+      "label": "The Gallagher family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnableask",
+      "name": "Ardnableask",
+      "logainm_id": "14238",
+      "lat": 54.696229,
+      "lon": -8.010488,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnableask:familypresence:06"
+     },
+     "caption": "The Gallagher family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnableask:familypresence:06"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ardnableask:family:06",
+      "label": "Gallagher",
+      "run": false
+     }
+    },
+    {
+     "id": "ardnableask:beat:familycensus:06-1901",
+     "kind": "familycensus",
+     "chapter": "ardnableask:ch:family-06",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnableask",
+      "name": "Ardnableask",
+      "logainm_id": "14238",
+      "lat": 54.696229,
+      "lon": -8.010488,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnableask:familycensus:06:1901"
+     },
+     "caption": "Ardnableask had two Gallagher households in 1901, headed by Mary and Margaret.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnableask:familycensus:06:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "ardnableask:family:06",
+      "label": "Gallagher",
+      "run": false
+     }
+    },
+    {
+     "id": "ardnableask:beat:familycensus:06-1911",
+     "kind": "familycensus",
+     "chapter": "ardnableask:ch:family-06",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnableask",
+      "name": "Ardnableask",
+      "logainm_id": "14238",
+      "lat": 54.696229,
+      "lon": -8.010488,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnableask:familycensus:06:1911"
+     },
+     "caption": "Ardnableask had two Gallagher households in 1911, headed by Mary and Thomas.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnableask:familycensus:06:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "ardnableask:family:06",
+      "label": "Gallagher",
+      "run": false
+     }
+    },
+    {
+     "id": "ardnableask:beat:familycensus:06-1926",
+     "kind": "familycensus",
+     "chapter": "ardnableask:ch:family-06",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnableask",
+      "name": "Ardnableask",
+      "logainm_id": "14238",
+      "lat": 54.696229,
+      "lon": -8.010488,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnableask:familycensus:06:1926"
+     },
+     "caption": "Ardnableask had one Gallagher household in 1926, headed by Mary.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnableask:familycensus:06:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardnableask:family:06",
+      "label": "Gallagher",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardnableask:ch:family-03",
+   "title": "The Callaghan family",
+   "beats": [
+    {
+     "id": "ardnableask:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "ardnableask:ch:family-03",
+     "time": {
+      "label": "The Callaghan family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnableask",
+      "name": "Ardnableask",
+      "logainm_id": "14238",
+      "lat": 54.696229,
+      "lon": -8.010488,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnableask:familypresence:03"
+     },
+     "caption": "The Callaghan family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnableask:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ardnableask:family:03",
+      "label": "Callaghan",
+      "run": false
+     }
+    },
+    {
+     "id": "ardnableask:beat:familycensus:03-1901",
+     "kind": "familycensus",
+     "chapter": "ardnableask:ch:family-03",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnableask",
+      "name": "Ardnableask",
+      "logainm_id": "14238",
+      "lat": 54.696229,
+      "lon": -8.010488,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnableask:familycensus:03:1901"
+     },
+     "caption": "Ardnableask had one Callaghan household in 1901, headed by Conl.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnableask:familycensus:03:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardnableask:family:03",
+      "label": "Callaghan",
+      "run": false
+     }
+    },
+    {
+     "id": "ardnableask:beat:familycensus:03-1911",
+     "kind": "familycensus",
+     "chapter": "ardnableask:ch:family-03",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnableask",
+      "name": "Ardnableask",
+      "logainm_id": "14238",
+      "lat": 54.696229,
+      "lon": -8.010488,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnableask:familycensus:03:1911"
+     },
+     "caption": "Ardnableask had one Callaghan household in 1911, headed by Connell.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnableask:familycensus:03:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardnableask:family:03",
+      "label": "Callaghan",
+      "run": false
+     }
+    },
+    {
+     "id": "ardnableask:beat:familycensus:03-1926",
+     "kind": "familycensus",
+     "chapter": "ardnableask:ch:family-03",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnableask",
+      "name": "Ardnableask",
+      "logainm_id": "14238",
+      "lat": 54.696229,
+      "lon": -8.010488,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnableask:familycensus:03:1926"
+     },
+     "caption": "Ardnableask had two Callaghan households in 1926, headed by Thomas and Brigid.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnableask:familycensus:03:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "ardnableask:family:03",
+      "label": "Callaghan",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardnableask:ch:family-04",
+   "title": "The Dunnion family",
+   "beats": [
+    {
+     "id": "ardnableask:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "ardnableask:ch:family-04",
+     "time": {
+      "label": "The Dunnion family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnableask",
+      "name": "Ardnableask",
+      "logainm_id": "14238",
+      "lat": 54.696229,
+      "lon": -8.010488,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnableask:familypresence:04"
+     },
+     "caption": "The Dunnion family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnableask:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ardnableask:family:04",
+      "label": "Dunnion",
+      "run": false
+     }
+    },
+    {
+     "id": "ardnableask:beat:familycensus:04-1901",
+     "kind": "familycensus",
+     "chapter": "ardnableask:ch:family-04",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnableask",
+      "name": "Ardnableask",
+      "logainm_id": "14238",
+      "lat": 54.696229,
+      "lon": -8.010488,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnableask:familycensus:04:1901"
+     },
+     "caption": "Ardnableask had one Dunnion household in 1901, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnableask:familycensus:04:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardnableask:family:04",
+      "label": "Dunnion",
+      "run": false
+     }
+    },
+    {
+     "id": "ardnableask:beat:familycensus:04-1911",
+     "kind": "familycensus",
+     "chapter": "ardnableask:ch:family-04",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnableask",
+      "name": "Ardnableask",
+      "logainm_id": "14238",
+      "lat": 54.696229,
+      "lon": -8.010488,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnableask:familycensus:04:1911"
+     },
+     "caption": "Ardnableask had one Dunnion household in 1911, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnableask:familycensus:04:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardnableask:family:04",
+      "label": "Dunnion",
+      "run": false
+     }
+    },
+    {
+     "id": "ardnableask:beat:familycensus:04-1926",
+     "kind": "familycensus",
+     "chapter": "ardnableask:ch:family-04",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnableask",
+      "name": "Ardnableask",
+      "logainm_id": "14238",
+      "lat": 54.696229,
+      "lon": -8.010488,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnableask:familycensus:04:1926"
+     },
+     "caption": "Ardnableask had one Dunnion household in 1926, headed by Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnableask:familycensus:04:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardnableask:family:04",
+      "label": "Dunnion",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardnableask:ch:family-05",
+   "title": "The Flood family",
+   "beats": [
+    {
+     "id": "ardnableask:beat:familyhead:05",
+     "kind": "familyhead",
+     "chapter": "ardnableask:ch:family-05",
+     "time": {
+      "label": "The Flood family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnableask",
+      "name": "Ardnableask",
+      "logainm_id": "14238",
+      "lat": 54.696229,
+      "lon": -8.010488,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnableask:familypresence:05"
+     },
+     "caption": "The Flood family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnableask:familypresence:05"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ardnableask:family:05",
+      "label": "Flood",
+      "run": false
+     }
+    },
+    {
+     "id": "ardnableask:beat:familycensus:05-1901",
+     "kind": "familycensus",
+     "chapter": "ardnableask:ch:family-05",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnableask",
+      "name": "Ardnableask",
+      "logainm_id": "14238",
+      "lat": 54.696229,
+      "lon": -8.010488,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnableask:familycensus:05:1901"
+     },
+     "caption": "Ardnableask had one Flood household in 1901, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnableask:familycensus:05:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardnableask:family:05",
+      "label": "Flood",
+      "run": false
+     }
+    },
+    {
+     "id": "ardnableask:beat:familycensus:05-1911",
+     "kind": "familycensus",
+     "chapter": "ardnableask:ch:family-05",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnableask",
+      "name": "Ardnableask",
+      "logainm_id": "14238",
+      "lat": 54.696229,
+      "lon": -8.010488,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnableask:familycensus:05:1911"
+     },
+     "caption": "Ardnableask had one Flood household in 1911, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnableask:familycensus:05:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardnableask:family:05",
+      "label": "Flood",
+      "run": false
+     }
+    },
+    {
+     "id": "ardnableask:beat:familycensus:05-1926",
+     "kind": "familycensus",
+     "chapter": "ardnableask:ch:family-05",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnableask",
+      "name": "Ardnableask",
+      "logainm_id": "14238",
+      "lat": 54.696229,
+      "lon": -8.010488,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnableask:familycensus:05:1926"
+     },
+     "caption": "Ardnableask had one Flood household in 1926, headed by Charles.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnableask:familycensus:05:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardnableask:family:05",
+      "label": "Flood",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardnableask:ch:family-08",
+   "title": "The McGinty family",
+   "beats": [
+    {
+     "id": "ardnableask:beat:familyhead:08",
+     "kind": "familyhead",
+     "chapter": "ardnableask:ch:family-08",
+     "time": {
+      "label": "The McGinty family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnableask",
+      "name": "Ardnableask",
+      "logainm_id": "14238",
+      "lat": 54.696229,
+      "lon": -8.010488,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnableask:familypresence:08"
+     },
+     "caption": "The McGinty family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnableask:familypresence:08"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ardnableask:family:08",
+      "label": "McGinty",
+      "run": false
+     }
+    },
+    {
+     "id": "ardnableask:beat:familycensus:08-1901",
+     "kind": "familycensus",
+     "chapter": "ardnableask:ch:family-08",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnableask",
+      "name": "Ardnableask",
+      "logainm_id": "14238",
+      "lat": 54.696229,
+      "lon": -8.010488,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnableask:familycensus:08:1901"
+     },
+     "caption": "Ardnableask had one McGinty household in 1901, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnableask:familycensus:08:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardnableask:family:08",
+      "label": "McGinty",
+      "run": false
+     }
+    },
+    {
+     "id": "ardnableask:beat:familycensus:08-1911",
+     "kind": "familycensus",
+     "chapter": "ardnableask:ch:family-08",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnableask",
+      "name": "Ardnableask",
+      "logainm_id": "14238",
+      "lat": 54.696229,
+      "lon": -8.010488,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnableask:familycensus:08:1911"
+     },
+     "caption": "Ardnableask had one McGinty household in 1911, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnableask:familycensus:08:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardnableask:family:08",
+      "label": "McGinty",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardnableask:ch:family-02",
+   "title": "The Bustard family",
+   "beats": [
+    {
+     "id": "ardnableask:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "ardnableask:ch:family-02",
+     "time": {
+      "label": "The Bustard family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnableask",
+      "name": "Ardnableask",
+      "logainm_id": "14238",
+      "lat": 54.696229,
+      "lon": -8.010488,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnableask:familypresence:02"
+     },
+     "caption": "The Bustard family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnableask:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardnableask:family:02",
+      "label": "Bustard",
+      "run": false
+     }
+    },
+    {
+     "id": "ardnableask:beat:familycensus:02-1911",
+     "kind": "familycensus",
+     "chapter": "ardnableask:ch:family-02",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnableask",
+      "name": "Ardnableask",
+      "logainm_id": "14238",
+      "lat": 54.696229,
+      "lon": -8.010488,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnableask:familycensus:02:1911"
+     },
+     "caption": "Ardnableask had one Bustard household in 1911, headed by Adam.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnableask:familycensus:02:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardnableask:family:02",
+      "label": "Bustard",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardnableask:ch:family-07",
+   "title": "The Mac an Ultaigh family",
+   "beats": [
+    {
+     "id": "ardnableask:beat:familyhead:07",
+     "kind": "familyhead",
+     "chapter": "ardnableask:ch:family-07",
+     "time": {
+      "label": "The Mac an Ultaigh family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnableask",
+      "name": "Ardnableask",
+      "logainm_id": "14238",
+      "lat": 54.696229,
+      "lon": -8.010488,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnableask:familypresence:07"
+     },
+     "caption": "The Mac an Ultaigh family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnableask:familypresence:07"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ardnableask:family:07",
+      "label": "Mac an Ultaigh",
+      "run": false
+     }
+    },
+    {
+     "id": "ardnableask:beat:familycensus:07-1926",
+     "kind": "familycensus",
+     "chapter": "ardnableask:ch:family-07",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnableask",
+      "name": "Ardnableask",
+      "logainm_id": "14238",
+      "lat": 54.696229,
+      "lon": -8.010488,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnableask:familycensus:07:1926"
+     },
+     "caption": "Ardnableask had one Mac an Ultaigh household in 1926, headed by Torlach.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnableask:familycensus:07:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "ardnableask:family:07",
+      "label": "Mac an Ultaigh",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardnableask:ch:family-10",
+   "title": "The Nic an Ultaigh family",
+   "beats": [
+    {
+     "id": "ardnableask:beat:familyhead:10",
+     "kind": "familyhead",
+     "chapter": "ardnableask:ch:family-10",
+     "time": {
+      "label": "The Nic an Ultaigh family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnableask",
+      "name": "Ardnableask",
+      "logainm_id": "14238",
+      "lat": 54.696229,
+      "lon": -8.010488,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnableask:familypresence:10"
+     },
+     "caption": "The Nic an Ultaigh family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnableask:familypresence:10"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ardnableask:family:10",
+      "label": "Nic an Ultaigh",
+      "run": false
+     }
+    },
+    {
+     "id": "ardnableask:beat:familycensus:10-1926",
+     "kind": "familycensus",
+     "chapter": "ardnableask:ch:family-10",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnableask",
+      "name": "Ardnableask",
+      "logainm_id": "14238",
+      "lat": 54.696229,
+      "lon": -8.010488,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnableask:familycensus:10:1926"
+     },
+     "caption": "Ardnableask had one Nic an Ultaigh household in 1926, headed by Bríghid.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnableask:familycensus:10:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "ardnableask:family:10",
+      "label": "Nic an Ultaigh",
+      "run": false
+     }
     }
    ]
   }

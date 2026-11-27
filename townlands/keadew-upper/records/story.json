@@ -52,15 +52,15 @@
    ]
   },
   {
-   "id": "keadew-upper:ch:1901",
-   "title": "1901",
+   "id": "keadew-upper:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "keadew-upper:beat:census:1901",
+     "id": "keadew-upper:beat:census:returns",
      "kind": "census",
-     "chapter": "keadew-upper:ch:1901",
+     "chapter": "keadew-upper:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1926",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -77,33 +77,177 @@
       "stage": "map",
       "open_card": "keadew upper:census:1901"
      },
-     "caption": "Keadew Upper had 48 people in ten households in 1901. Heads of household included Cooney, Bradley and Callaghan.",
+     "caption": "The censuses of 1901, 1911 and 1926 counted 48, 49 and 38 people in Keadew Upper, in 10, 9 and 8 households. Heads of household included Cooney, Bradley and Callaghan.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "keadew upper:census:1901"
+       "keadew upper:census:1901",
+       "keadew upper:census:1911",
+       "keadew upper:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 7200,
+     "duration_ms": 12000,
      "audio": null,
      "counts": {
-      "people": 48,
-      "households": 10
+      "returns": [
+       {
+        "year": "1901",
+        "people": 48,
+        "households": 10
+       },
+       {
+        "year": "1911",
+        "people": 49,
+        "households": 9
+       },
+       {
+        "year": "1926",
+        "people": 38,
+        "households": 8
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "keadew-upper:ch:1911",
-   "title": "1911",
+   "id": "keadew-upper:ch:families",
+   "title": "The families of Keadew Upper",
    "beats": [
     {
-     "id": "keadew-upper:beat:census:1911",
-     "kind": "census",
-     "chapter": "keadew-upper:ch:1911",
+     "id": "keadew-upper:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "keadew-upper:ch:families",
+     "time": {
+      "label": "The families of Keadew Upper",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "keadew-upper",
+      "name": "Keadew Upper",
+      "logainm_id": "13973",
+      "lat": 54.705043,
+      "lon": -7.963424,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "keadew upper:census:1901"
+     },
+     "caption": "Here are the families of Keadew Upper, from 1901 to 1926. First, the Bradley and Callaghan families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "keadew upper:census:1901",
+       "keadew upper:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "thread": {
+      "id": "keadew-upper:family:01",
+      "label": "Bradley",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "keadew-upper:ch:family-01",
+   "title": "The Bradley family",
+   "beats": [
+    {
+     "id": "keadew-upper:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "keadew-upper:ch:family-01",
+     "time": {
+      "label": "The Bradley family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "keadew-upper",
+      "name": "Keadew Upper",
+      "logainm_id": "13973",
+      "lat": 54.705043,
+      "lon": -7.963424,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "keadew-upper:familypresence:01"
+     },
+     "caption": "The Bradley family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "keadew-upper:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "keadew-upper:family:01",
+      "label": "Bradley",
+      "run": true
+     }
+    },
+    {
+     "id": "keadew-upper:beat:familycensus:01-1901",
+     "kind": "familycensus",
+     "chapter": "keadew-upper:ch:family-01",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "keadew-upper",
+      "name": "Keadew Upper",
+      "logainm_id": "13973",
+      "lat": 54.705043,
+      "lon": -7.963424,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "keadew-upper:familycensus:01:1901"
+     },
+     "caption": "Keadew Upper had one Bradley household in 1901, headed by Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "keadew-upper:familycensus:01:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "keadew-upper:family:01",
+      "label": "Bradley",
+      "run": true
+     }
+    },
+    {
+     "id": "keadew-upper:beat:familycensus:01-1911",
+     "kind": "familycensus",
+     "chapter": "keadew-upper:ch:family-01",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -120,35 +264,30 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "keadew upper:census:1911"
+      "open_card": "keadew-upper:familycensus:01:1911"
      },
-     "caption": "In 1911, 49 people in nine households lived in Keadew Upper. Heads of household included Callaghan, Bradley and Elvin.",
+     "caption": "Keadew Upper had one Bradley household in 1911, headed by Mary.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "keadew upper:census:1911"
+       "keadew-upper:familycensus:01:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 7600,
+     "duration_ms": 4400,
      "audio": null,
-     "counts": {
-      "people": 49,
-      "households": 9
+     "thread": {
+      "id": "keadew-upper:family:01",
+      "label": "Bradley",
+      "run": true
      }
-    }
-   ]
-  },
-  {
-   "id": "keadew-upper:ch:1926",
-   "title": "1926",
-   "beats": [
+    },
     {
-     "id": "keadew-upper:beat:census:1926",
-     "kind": "census",
-     "chapter": "keadew-upper:ch:1926",
+     "id": "keadew-upper:beat:familycensus:01-1926",
+     "kind": "familycensus",
+     "chapter": "keadew-upper:ch:family-01",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -165,25 +304,198 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "keadew upper:census:1926"
+      "open_card": "keadew-upper:familycensus:01:1926"
      },
-     "caption": "Keadew Upper had 38 people in eight households in 1926. Heads of household included Bradley, Callaghan and Elvin.",
+     "caption": "Keadew Upper had one Bradley household in 1926, headed by Mary.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "keadew upper:census:1926"
+       "keadew-upper:familycensus:01:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 7200,
+     "duration_ms": 4400,
      "audio": null,
-     "counts": {
-      "people": 38,
-      "households": 8
+     "thread": {
+      "id": "keadew-upper:family:01",
+      "label": "Bradley",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "keadew-upper:ch:family-02",
+   "title": "The Callaghan family",
+   "beats": [
+    {
+     "id": "keadew-upper:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "keadew-upper:ch:family-02",
+     "time": {
+      "label": "The Callaghan family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "keadew-upper",
+      "name": "Keadew Upper",
+      "logainm_id": "13973",
+      "lat": 54.705043,
+      "lon": -7.963424,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "keadew-upper:familypresence:02"
+     },
+     "caption": "The Callaghan family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "keadew-upper:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "keadew-upper:family:02",
+      "label": "Callaghan",
+      "run": true
      }
     },
+    {
+     "id": "keadew-upper:beat:familycensus:02-1901",
+     "kind": "familycensus",
+     "chapter": "keadew-upper:ch:family-02",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "keadew-upper",
+      "name": "Keadew Upper",
+      "logainm_id": "13973",
+      "lat": 54.705043,
+      "lon": -7.963424,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "keadew-upper:familycensus:02:1901"
+     },
+     "caption": "Keadew Upper had one Callaghan household in 1901, headed by Denis.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "keadew-upper:familycensus:02:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "keadew-upper:family:02",
+      "label": "Callaghan",
+      "run": true
+     }
+    },
+    {
+     "id": "keadew-upper:beat:familycensus:02-1911",
+     "kind": "familycensus",
+     "chapter": "keadew-upper:ch:family-02",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "keadew-upper",
+      "name": "Keadew Upper",
+      "logainm_id": "13973",
+      "lat": 54.705043,
+      "lon": -7.963424,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "keadew-upper:familycensus:02:1911"
+     },
+     "caption": "Keadew Upper had two Callaghan households in 1911, headed by Joseph and Denis.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "keadew-upper:familycensus:02:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "keadew-upper:family:02",
+      "label": "Callaghan",
+      "run": true
+     }
+    },
+    {
+     "id": "keadew-upper:beat:familycensus:02-1926",
+     "kind": "familycensus",
+     "chapter": "keadew-upper:ch:family-02",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "keadew-upper",
+      "name": "Keadew Upper",
+      "logainm_id": "13973",
+      "lat": 54.705043,
+      "lon": -7.963424,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "keadew-upper:familycensus:02:1926"
+     },
+     "caption": "Keadew Upper had one Callaghan household in 1926, headed by Denis.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "keadew-upper:familycensus:02:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "keadew-upper:family:02",
+      "label": "Callaghan",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "keadew-upper:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "keadew-upper:beat:closing:end",
      "kind": "closing",
@@ -218,6 +530,1094 @@
      },
      "duration_ms": 4400,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "keadew-upper:ch:family-03",
+   "title": "The Cooney family",
+   "beats": [
+    {
+     "id": "keadew-upper:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "keadew-upper:ch:family-03",
+     "time": {
+      "label": "The Cooney family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "keadew-upper",
+      "name": "Keadew Upper",
+      "logainm_id": "13973",
+      "lat": 54.705043,
+      "lon": -7.963424,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "keadew-upper:familypresence:03"
+     },
+     "caption": "The Cooney family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "keadew-upper:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "keadew-upper:family:03",
+      "label": "Cooney",
+      "run": false
+     }
+    },
+    {
+     "id": "keadew-upper:beat:familycensus:03-1901",
+     "kind": "familycensus",
+     "chapter": "keadew-upper:ch:family-03",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "keadew-upper",
+      "name": "Keadew Upper",
+      "logainm_id": "13973",
+      "lat": 54.705043,
+      "lon": -7.963424,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "keadew-upper:familycensus:03:1901"
+     },
+     "caption": "Keadew Upper had two Cooney households in 1901, headed by Charles and Connell.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "keadew-upper:familycensus:03:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "keadew-upper:family:03",
+      "label": "Cooney",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "keadew-upper:ch:family-04",
+   "title": "The Elvin family",
+   "beats": [
+    {
+     "id": "keadew-upper:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "keadew-upper:ch:family-04",
+     "time": {
+      "label": "The Elvin family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "keadew-upper",
+      "name": "Keadew Upper",
+      "logainm_id": "13973",
+      "lat": 54.705043,
+      "lon": -7.963424,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "keadew-upper:familypresence:04"
+     },
+     "caption": "The Elvin family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "keadew-upper:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "keadew-upper:family:04",
+      "label": "Elvin",
+      "run": false
+     }
+    },
+    {
+     "id": "keadew-upper:beat:familycensus:04-1901",
+     "kind": "familycensus",
+     "chapter": "keadew-upper:ch:family-04",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "keadew-upper",
+      "name": "Keadew Upper",
+      "logainm_id": "13973",
+      "lat": 54.705043,
+      "lon": -7.963424,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "keadew-upper:familycensus:04:1901"
+     },
+     "caption": "Keadew Upper had one Elvin household in 1901, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "keadew-upper:familycensus:04:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "keadew-upper:family:04",
+      "label": "Elvin",
+      "run": false
+     }
+    },
+    {
+     "id": "keadew-upper:beat:familycensus:04-1911",
+     "kind": "familycensus",
+     "chapter": "keadew-upper:ch:family-04",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "keadew-upper",
+      "name": "Keadew Upper",
+      "logainm_id": "13973",
+      "lat": 54.705043,
+      "lon": -7.963424,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "keadew-upper:familycensus:04:1911"
+     },
+     "caption": "Keadew Upper had one Elvin household in 1911, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "keadew-upper:familycensus:04:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "keadew-upper:family:04",
+      "label": "Elvin",
+      "run": false
+     }
+    },
+    {
+     "id": "keadew-upper:beat:familycensus:04-1926",
+     "kind": "familycensus",
+     "chapter": "keadew-upper:ch:family-04",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "keadew-upper",
+      "name": "Keadew Upper",
+      "logainm_id": "13973",
+      "lat": 54.705043,
+      "lon": -7.963424,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "keadew-upper:familycensus:04:1926"
+     },
+     "caption": "Keadew Upper had one Elvin household in 1926, headed by William.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "keadew-upper:familycensus:04:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "keadew-upper:family:04",
+      "label": "Elvin",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "keadew-upper:ch:family-05",
+   "title": "The Gallagher family",
+   "beats": [
+    {
+     "id": "keadew-upper:beat:familyhead:05",
+     "kind": "familyhead",
+     "chapter": "keadew-upper:ch:family-05",
+     "time": {
+      "label": "The Gallagher family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "keadew-upper",
+      "name": "Keadew Upper",
+      "logainm_id": "13973",
+      "lat": 54.705043,
+      "lon": -7.963424,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "keadew-upper:familypresence:05"
+     },
+     "caption": "The Gallagher family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "keadew-upper:familypresence:05"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "keadew-upper:family:05",
+      "label": "Gallagher",
+      "run": false
+     }
+    },
+    {
+     "id": "keadew-upper:beat:familycensus:05-1901",
+     "kind": "familycensus",
+     "chapter": "keadew-upper:ch:family-05",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "keadew-upper",
+      "name": "Keadew Upper",
+      "logainm_id": "13973",
+      "lat": 54.705043,
+      "lon": -7.963424,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "keadew-upper:familycensus:05:1901"
+     },
+     "caption": "Keadew Upper had one Gallagher household in 1901, headed by Bee Joseph.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "keadew-upper:familycensus:05:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "keadew-upper:family:05",
+      "label": "Gallagher",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "keadew-upper:ch:family-06",
+   "title": "The Gildea family",
+   "beats": [
+    {
+     "id": "keadew-upper:beat:familyhead:06",
+     "kind": "familyhead",
+     "chapter": "keadew-upper:ch:family-06",
+     "time": {
+      "label": "The Gildea family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "keadew-upper",
+      "name": "Keadew Upper",
+      "logainm_id": "13973",
+      "lat": 54.705043,
+      "lon": -7.963424,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "keadew-upper:familypresence:06"
+     },
+     "caption": "The Gildea family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "keadew-upper:familypresence:06"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "keadew-upper:family:06",
+      "label": "Gildea",
+      "run": false
+     }
+    },
+    {
+     "id": "keadew-upper:beat:familycensus:06-1901",
+     "kind": "familycensus",
+     "chapter": "keadew-upper:ch:family-06",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "keadew-upper",
+      "name": "Keadew Upper",
+      "logainm_id": "13973",
+      "lat": 54.705043,
+      "lon": -7.963424,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "keadew-upper:familycensus:06:1901"
+     },
+     "caption": "Keadew Upper had one Gildea household in 1901, headed by Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "keadew-upper:familycensus:06:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "keadew-upper:family:06",
+      "label": "Gildea",
+      "run": false
+     }
+    },
+    {
+     "id": "keadew-upper:beat:familycensus:06-1911",
+     "kind": "familycensus",
+     "chapter": "keadew-upper:ch:family-06",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "keadew-upper",
+      "name": "Keadew Upper",
+      "logainm_id": "13973",
+      "lat": 54.705043,
+      "lon": -7.963424,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "keadew-upper:familycensus:06:1911"
+     },
+     "caption": "Keadew Upper had one Gildea household in 1911, headed by Sarah.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "keadew-upper:familycensus:06:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "keadew-upper:family:06",
+      "label": "Gildea",
+      "run": false
+     }
+    },
+    {
+     "id": "keadew-upper:beat:familycensus:06-1926",
+     "kind": "familycensus",
+     "chapter": "keadew-upper:ch:family-06",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "keadew-upper",
+      "name": "Keadew Upper",
+      "logainm_id": "13973",
+      "lat": 54.705043,
+      "lon": -7.963424,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "keadew-upper:familycensus:06:1926"
+     },
+     "caption": "Keadew Upper had one Gildea household in 1926, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "keadew-upper:familycensus:06:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "keadew-upper:family:06",
+      "label": "Gildea",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "keadew-upper:ch:family-07",
+   "title": "The Hone family",
+   "beats": [
+    {
+     "id": "keadew-upper:beat:familyhead:07",
+     "kind": "familyhead",
+     "chapter": "keadew-upper:ch:family-07",
+     "time": {
+      "label": "The Hone family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "keadew-upper",
+      "name": "Keadew Upper",
+      "logainm_id": "13973",
+      "lat": 54.705043,
+      "lon": -7.963424,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "keadew-upper:familypresence:07"
+     },
+     "caption": "The Hone family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "keadew-upper:familypresence:07"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "keadew-upper:family:07",
+      "label": "Hone",
+      "run": false
+     }
+    },
+    {
+     "id": "keadew-upper:beat:familycensus:07-1901",
+     "kind": "familycensus",
+     "chapter": "keadew-upper:ch:family-07",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "keadew-upper",
+      "name": "Keadew Upper",
+      "logainm_id": "13973",
+      "lat": 54.705043,
+      "lon": -7.963424,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "keadew-upper:familycensus:07:1901"
+     },
+     "caption": "Keadew Upper had one Hone household in 1901, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "keadew-upper:familycensus:07:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "keadew-upper:family:07",
+      "label": "Hone",
+      "run": false
+     }
+    },
+    {
+     "id": "keadew-upper:beat:familycensus:07-1911",
+     "kind": "familycensus",
+     "chapter": "keadew-upper:ch:family-07",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "keadew-upper",
+      "name": "Keadew Upper",
+      "logainm_id": "13973",
+      "lat": 54.705043,
+      "lon": -7.963424,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "keadew-upper:familycensus:07:1911"
+     },
+     "caption": "Keadew Upper had one Hone household in 1911, headed by Bridget.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "keadew-upper:familycensus:07:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "keadew-upper:family:07",
+      "label": "Hone",
+      "run": false
+     }
+    },
+    {
+     "id": "keadew-upper:beat:familycensus:07-1926",
+     "kind": "familycensus",
+     "chapter": "keadew-upper:ch:family-07",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "keadew-upper",
+      "name": "Keadew Upper",
+      "logainm_id": "13973",
+      "lat": 54.705043,
+      "lon": -7.963424,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "keadew-upper:familycensus:07:1926"
+     },
+     "caption": "Keadew Upper had one Hone household in 1926, headed by Hugh.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "keadew-upper:familycensus:07:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "keadew-upper:family:07",
+      "label": "Hone",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "keadew-upper:ch:family-09",
+   "title": "The McMenamin family",
+   "beats": [
+    {
+     "id": "keadew-upper:beat:familyhead:09",
+     "kind": "familyhead",
+     "chapter": "keadew-upper:ch:family-09",
+     "time": {
+      "label": "The McMenamin family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "keadew-upper",
+      "name": "Keadew Upper",
+      "logainm_id": "13973",
+      "lat": 54.705043,
+      "lon": -7.963424,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "keadew-upper:familypresence:09"
+     },
+     "caption": "The McMenamin family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "keadew-upper:familypresence:09"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "keadew-upper:family:09",
+      "label": "McMenamin",
+      "run": false
+     }
+    },
+    {
+     "id": "keadew-upper:beat:familycensus:09-1901",
+     "kind": "familycensus",
+     "chapter": "keadew-upper:ch:family-09",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "keadew-upper",
+      "name": "Keadew Upper",
+      "logainm_id": "13973",
+      "lat": 54.705043,
+      "lon": -7.963424,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "keadew-upper:familycensus:09:1901"
+     },
+     "caption": "Keadew Upper had one McMenamin household in 1901, headed by Edward.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "keadew-upper:familycensus:09:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "keadew-upper:family:09",
+      "label": "McMenamin",
+      "run": false
+     }
+    },
+    {
+     "id": "keadew-upper:beat:familycensus:09-1911",
+     "kind": "familycensus",
+     "chapter": "keadew-upper:ch:family-09",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "keadew-upper",
+      "name": "Keadew Upper",
+      "logainm_id": "13973",
+      "lat": 54.705043,
+      "lon": -7.963424,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "keadew-upper:familycensus:09:1911"
+     },
+     "caption": "Keadew Upper had one McMenamin household in 1911, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "keadew-upper:familycensus:09:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "keadew-upper:family:09",
+      "label": "McMenamin",
+      "run": false
+     }
+    },
+    {
+     "id": "keadew-upper:beat:familycensus:09-1926",
+     "kind": "familycensus",
+     "chapter": "keadew-upper:ch:family-09",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "keadew-upper",
+      "name": "Keadew Upper",
+      "logainm_id": "13973",
+      "lat": 54.705043,
+      "lon": -7.963424,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "keadew-upper:familycensus:09:1926"
+     },
+     "caption": "Keadew Upper had one McMenamin household in 1926, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "keadew-upper:familycensus:09:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "keadew-upper:family:09",
+      "label": "McMenamin",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "keadew-upper:ch:family-10",
+   "title": "The Ward family",
+   "beats": [
+    {
+     "id": "keadew-upper:beat:familyhead:10",
+     "kind": "familyhead",
+     "chapter": "keadew-upper:ch:family-10",
+     "time": {
+      "label": "The Ward family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "keadew-upper",
+      "name": "Keadew Upper",
+      "logainm_id": "13973",
+      "lat": 54.705043,
+      "lon": -7.963424,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "keadew-upper:familypresence:10"
+     },
+     "caption": "The Ward family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "keadew-upper:familypresence:10"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "keadew-upper:family:10",
+      "label": "Ward",
+      "run": false
+     }
+    },
+    {
+     "id": "keadew-upper:beat:familycensus:10-1901",
+     "kind": "familycensus",
+     "chapter": "keadew-upper:ch:family-10",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "keadew-upper",
+      "name": "Keadew Upper",
+      "logainm_id": "13973",
+      "lat": 54.705043,
+      "lon": -7.963424,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "keadew-upper:familycensus:10:1901"
+     },
+     "caption": "Keadew Upper had one Ward household in 1901, headed by Connell H.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "keadew-upper:familycensus:10:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "keadew-upper:family:10",
+      "label": "Ward",
+      "run": false
+     }
+    },
+    {
+     "id": "keadew-upper:beat:familycensus:10-1911",
+     "kind": "familycensus",
+     "chapter": "keadew-upper:ch:family-10",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "keadew-upper",
+      "name": "Keadew Upper",
+      "logainm_id": "13973",
+      "lat": 54.705043,
+      "lon": -7.963424,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "keadew-upper:familycensus:10:1911"
+     },
+     "caption": "Keadew Upper had one Ward household in 1911, headed by Connell H.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "keadew-upper:familycensus:10:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "keadew-upper:family:10",
+      "label": "Ward",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "keadew-upper:ch:family-08",
+   "title": "The McGettigan family",
+   "beats": [
+    {
+     "id": "keadew-upper:beat:familyhead:08",
+     "kind": "familyhead",
+     "chapter": "keadew-upper:ch:family-08",
+     "time": {
+      "label": "The McGettigan family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "keadew-upper",
+      "name": "Keadew Upper",
+      "logainm_id": "13973",
+      "lat": 54.705043,
+      "lon": -7.963424,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "keadew-upper:familypresence:08"
+     },
+     "caption": "The McGettigan family appear in the records from 1911 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "keadew-upper:familypresence:08"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "keadew-upper:family:08",
+      "label": "McGettigan",
+      "run": false
+     }
+    },
+    {
+     "id": "keadew-upper:beat:familycensus:08-1911",
+     "kind": "familycensus",
+     "chapter": "keadew-upper:ch:family-08",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "keadew-upper",
+      "name": "Keadew Upper",
+      "logainm_id": "13973",
+      "lat": 54.705043,
+      "lon": -7.963424,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "keadew-upper:familycensus:08:1911"
+     },
+     "caption": "Keadew Upper had one McGettigan household in 1911, headed by Michael.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "keadew-upper:familycensus:08:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "keadew-upper:family:08",
+      "label": "McGettigan",
+      "run": false
+     }
+    },
+    {
+     "id": "keadew-upper:beat:familycensus:08-1926",
+     "kind": "familycensus",
+     "chapter": "keadew-upper:ch:family-08",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "keadew-upper",
+      "name": "Keadew Upper",
+      "logainm_id": "13973",
+      "lat": 54.705043,
+      "lon": -7.963424,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "keadew-upper:familycensus:08:1926"
+     },
+     "caption": "Keadew Upper had one McGettigan household in 1926, headed by Michael.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "keadew-upper:familycensus:08:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "keadew-upper:family:08",
+      "label": "McGettigan",
+      "run": false
+     }
     }
    ]
   }

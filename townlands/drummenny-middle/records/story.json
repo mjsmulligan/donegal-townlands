@@ -52,15 +52,15 @@
    ]
   },
   {
-   "id": "drummenny-middle:ch:1901",
-   "title": "1901",
+   "id": "drummenny-middle:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "drummenny-middle:beat:census:1901",
+     "id": "drummenny-middle:beat:census:returns",
      "kind": "census",
-     "chapter": "drummenny-middle:ch:1901",
+     "chapter": "drummenny-middle:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1926",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -77,33 +77,177 @@
       "stage": "map",
       "open_card": "drummenny middle:census:1901"
      },
-     "caption": "Drummenny Middle had 34 people in eight households in 1901. Heads of household included Stevenson, Little and Freeborn.",
+     "caption": "The censuses of 1901, 1911 and 1926 counted 34, 32 and 24 people in Drummenny Middle, in 8, 7 and 8 households. Heads of household included Stevenson, Little and Freeborn.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "drummenny middle:census:1901"
+       "drummenny middle:census:1901",
+       "drummenny middle:census:1911",
+       "drummenny middle:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 7200,
+     "duration_ms": 12000,
      "audio": null,
      "counts": {
-      "people": 34,
-      "households": 8
+      "returns": [
+       {
+        "year": "1901",
+        "people": 34,
+        "households": 8
+       },
+       {
+        "year": "1911",
+        "people": 32,
+        "households": 7
+       },
+       {
+        "year": "1926",
+        "people": 24,
+        "households": 8
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "drummenny-middle:ch:1911",
-   "title": "1911",
+   "id": "drummenny-middle:ch:families",
+   "title": "The families of Drummenny Middle",
    "beats": [
     {
-     "id": "drummenny-middle:beat:census:1911",
-     "kind": "census",
-     "chapter": "drummenny-middle:ch:1911",
+     "id": "drummenny-middle:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "drummenny-middle:ch:families",
+     "time": {
+      "label": "The families of Drummenny Middle",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drummenny-middle",
+      "name": "Drummenny Middle",
+      "logainm_id": "14277",
+      "lat": 54.653392,
+      "lon": -8.065852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drummenny middle:census:1901"
+     },
+     "caption": "Here are the families of Drummenny Middle, from 1901 to 1926. First, the Little and Stevenson families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drummenny middle:census:1901",
+       "drummenny middle:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "thread": {
+      "id": "drummenny-middle:family:04",
+      "label": "Little",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "drummenny-middle:ch:family-04",
+   "title": "The Little family",
+   "beats": [
+    {
+     "id": "drummenny-middle:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "drummenny-middle:ch:family-04",
+     "time": {
+      "label": "The Little family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drummenny-middle",
+      "name": "Drummenny Middle",
+      "logainm_id": "14277",
+      "lat": 54.653392,
+      "lon": -8.065852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drummenny-middle:familypresence:04"
+     },
+     "caption": "The Little family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drummenny-middle:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drummenny-middle:family:04",
+      "label": "Little",
+      "run": true
+     }
+    },
+    {
+     "id": "drummenny-middle:beat:familycensus:04-1901",
+     "kind": "familycensus",
+     "chapter": "drummenny-middle:ch:family-04",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drummenny-middle",
+      "name": "Drummenny Middle",
+      "logainm_id": "14277",
+      "lat": 54.653392,
+      "lon": -8.065852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drummenny-middle:familycensus:04:1901"
+     },
+     "caption": "Drummenny Middle had two Little households in 1901, headed by Mary Jane and James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drummenny-middle:familycensus:04:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5600,
+     "audio": null,
+     "thread": {
+      "id": "drummenny-middle:family:04",
+      "label": "Little",
+      "run": true
+     }
+    },
+    {
+     "id": "drummenny-middle:beat:familycensus:04-1911",
+     "kind": "familycensus",
+     "chapter": "drummenny-middle:ch:family-04",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -120,35 +264,30 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "drummenny middle:census:1911"
+      "open_card": "drummenny-middle:familycensus:04:1911"
      },
-     "caption": "In 1911, 32 people in seven households lived in Drummenny Middle. Heads of household included Stevenson, Freeburn and Irwin.",
+     "caption": "Drummenny Middle had one Little household in 1911, headed by James.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "drummenny middle:census:1911"
+       "drummenny-middle:familycensus:04:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 7600,
+     "duration_ms": 4400,
      "audio": null,
-     "counts": {
-      "people": 32,
-      "households": 7
+     "thread": {
+      "id": "drummenny-middle:family:04",
+      "label": "Little",
+      "run": true
      }
-    }
-   ]
-  },
-  {
-   "id": "drummenny-middle:ch:1926",
-   "title": "1926",
-   "beats": [
+    },
     {
-     "id": "drummenny-middle:beat:census:1926",
-     "kind": "census",
-     "chapter": "drummenny-middle:ch:1926",
+     "id": "drummenny-middle:beat:familycensus:04-1926",
+     "kind": "familycensus",
+     "chapter": "drummenny-middle:ch:family-04",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -165,25 +304,198 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "drummenny middle:census:1926"
+      "open_card": "drummenny-middle:familycensus:04:1926"
      },
-     "caption": "In 1926, 24 people in eight households lived in Drummenny Middle. Heads of household included Little, Mulhern and Stevenson.",
+     "caption": "Drummenny Middle had one Little household in 1926, headed by Robert.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "drummenny middle:census:1926"
+       "drummenny-middle:familycensus:04:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 7600,
+     "duration_ms": 4400,
      "audio": null,
-     "counts": {
-      "people": 24,
-      "households": 8
+     "thread": {
+      "id": "drummenny-middle:family:04",
+      "label": "Little",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "drummenny-middle:ch:family-07",
+   "title": "The Stevenson family",
+   "beats": [
+    {
+     "id": "drummenny-middle:beat:familyhead:07",
+     "kind": "familyhead",
+     "chapter": "drummenny-middle:ch:family-07",
+     "time": {
+      "label": "The Stevenson family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drummenny-middle",
+      "name": "Drummenny Middle",
+      "logainm_id": "14277",
+      "lat": 54.653392,
+      "lon": -8.065852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drummenny-middle:familypresence:07"
+     },
+     "caption": "The Stevenson family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drummenny-middle:familypresence:07"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drummenny-middle:family:07",
+      "label": "Stevenson",
+      "run": true
      }
     },
+    {
+     "id": "drummenny-middle:beat:familycensus:07-1901",
+     "kind": "familycensus",
+     "chapter": "drummenny-middle:ch:family-07",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drummenny-middle",
+      "name": "Drummenny Middle",
+      "logainm_id": "14277",
+      "lat": 54.653392,
+      "lon": -8.065852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drummenny-middle:familycensus:07:1901"
+     },
+     "caption": "Drummenny Middle had three Stevenson households in 1901, headed by Charles, Andrew and Thomas.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drummenny-middle:familycensus:07:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5600,
+     "audio": null,
+     "thread": {
+      "id": "drummenny-middle:family:07",
+      "label": "Stevenson",
+      "run": true
+     }
+    },
+    {
+     "id": "drummenny-middle:beat:familycensus:07-1911",
+     "kind": "familycensus",
+     "chapter": "drummenny-middle:ch:family-07",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drummenny-middle",
+      "name": "Drummenny Middle",
+      "logainm_id": "14277",
+      "lat": 54.653392,
+      "lon": -8.065852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drummenny-middle:familycensus:07:1911"
+     },
+     "caption": "Drummenny Middle had three Stevenson households in 1911, headed by Andrew, Charles and Thomas.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drummenny-middle:familycensus:07:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5600,
+     "audio": null,
+     "thread": {
+      "id": "drummenny-middle:family:07",
+      "label": "Stevenson",
+      "run": true
+     }
+    },
+    {
+     "id": "drummenny-middle:beat:familycensus:07-1926",
+     "kind": "familycensus",
+     "chapter": "drummenny-middle:ch:family-07",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drummenny-middle",
+      "name": "Drummenny Middle",
+      "logainm_id": "14277",
+      "lat": 54.653392,
+      "lon": -8.065852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drummenny-middle:familycensus:07:1926"
+     },
+     "caption": "Drummenny Middle had one Stevenson household in 1926, headed by Jane.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drummenny-middle:familycensus:07:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drummenny-middle:family:07",
+      "label": "Stevenson",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "drummenny-middle:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "drummenny-middle:beat:closing:end",
      "kind": "closing",
@@ -218,6 +530,516 @@
      },
      "duration_ms": 4400,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "drummenny-middle:ch:family-01",
+   "title": "The Freeborn family",
+   "beats": [
+    {
+     "id": "drummenny-middle:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "drummenny-middle:ch:family-01",
+     "time": {
+      "label": "The Freeborn family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drummenny-middle",
+      "name": "Drummenny Middle",
+      "logainm_id": "14277",
+      "lat": 54.653392,
+      "lon": -8.065852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drummenny-middle:familypresence:01"
+     },
+     "caption": "The Freeborn family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drummenny-middle:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drummenny-middle:family:01",
+      "label": "Freeborn",
+      "run": false
+     }
+    },
+    {
+     "id": "drummenny-middle:beat:familycensus:01-1901",
+     "kind": "familycensus",
+     "chapter": "drummenny-middle:ch:family-01",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drummenny-middle",
+      "name": "Drummenny Middle",
+      "logainm_id": "14277",
+      "lat": 54.653392,
+      "lon": -8.065852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drummenny-middle:familycensus:01:1901"
+     },
+     "caption": "Drummenny Middle had one Freeborn household in 1901, headed by Richard.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drummenny-middle:familycensus:01:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drummenny-middle:family:01",
+      "label": "Freeborn",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "drummenny-middle:ch:family-03",
+   "title": "The Irwin family",
+   "beats": [
+    {
+     "id": "drummenny-middle:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "drummenny-middle:ch:family-03",
+     "time": {
+      "label": "The Irwin family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drummenny-middle",
+      "name": "Drummenny Middle",
+      "logainm_id": "14277",
+      "lat": 54.653392,
+      "lon": -8.065852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drummenny-middle:familypresence:03"
+     },
+     "caption": "The Irwin family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drummenny-middle:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drummenny-middle:family:03",
+      "label": "Irwin",
+      "run": false
+     }
+    },
+    {
+     "id": "drummenny-middle:beat:familycensus:03-1901",
+     "kind": "familycensus",
+     "chapter": "drummenny-middle:ch:family-03",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drummenny-middle",
+      "name": "Drummenny Middle",
+      "logainm_id": "14277",
+      "lat": 54.653392,
+      "lon": -8.065852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drummenny-middle:familycensus:03:1901"
+     },
+     "caption": "Drummenny Middle had one Irwin household in 1901, headed by Thomas.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drummenny-middle:familycensus:03:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drummenny-middle:family:03",
+      "label": "Irwin",
+      "run": false
+     }
+    },
+    {
+     "id": "drummenny-middle:beat:familycensus:03-1911",
+     "kind": "familycensus",
+     "chapter": "drummenny-middle:ch:family-03",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drummenny-middle",
+      "name": "Drummenny Middle",
+      "logainm_id": "14277",
+      "lat": 54.653392,
+      "lon": -8.065852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drummenny-middle:familycensus:03:1911"
+     },
+     "caption": "Drummenny Middle had one Irwin household in 1911, headed by Margaret.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drummenny-middle:familycensus:03:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drummenny-middle:family:03",
+      "label": "Irwin",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "drummenny-middle:ch:family-05",
+   "title": "The Lyttle family",
+   "beats": [
+    {
+     "id": "drummenny-middle:beat:familyhead:05",
+     "kind": "familyhead",
+     "chapter": "drummenny-middle:ch:family-05",
+     "time": {
+      "label": "The Lyttle family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drummenny-middle",
+      "name": "Drummenny Middle",
+      "logainm_id": "14277",
+      "lat": 54.653392,
+      "lon": -8.065852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drummenny-middle:familypresence:05"
+     },
+     "caption": "The Lyttle family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drummenny-middle:familypresence:05"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drummenny-middle:family:05",
+      "label": "Lyttle",
+      "run": false
+     }
+    },
+    {
+     "id": "drummenny-middle:beat:familycensus:05-1901",
+     "kind": "familycensus",
+     "chapter": "drummenny-middle:ch:family-05",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drummenny-middle",
+      "name": "Drummenny Middle",
+      "logainm_id": "14277",
+      "lat": 54.653392,
+      "lon": -8.065852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drummenny-middle:familycensus:05:1901"
+     },
+     "caption": "Drummenny Middle had one Lyttle household in 1901, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drummenny-middle:familycensus:05:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drummenny-middle:family:05",
+      "label": "Lyttle",
+      "run": false
+     }
+    },
+    {
+     "id": "drummenny-middle:beat:familycensus:05-1911",
+     "kind": "familycensus",
+     "chapter": "drummenny-middle:ch:family-05",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drummenny-middle",
+      "name": "Drummenny Middle",
+      "logainm_id": "14277",
+      "lat": 54.653392,
+      "lon": -8.065852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drummenny-middle:familycensus:05:1911"
+     },
+     "caption": "Drummenny Middle had one Lyttle household in 1911, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drummenny-middle:familycensus:05:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drummenny-middle:family:05",
+      "label": "Lyttle",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "drummenny-middle:ch:family-02",
+   "title": "The Freeburn family",
+   "beats": [
+    {
+     "id": "drummenny-middle:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "drummenny-middle:ch:family-02",
+     "time": {
+      "label": "The Freeburn family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drummenny-middle",
+      "name": "Drummenny Middle",
+      "logainm_id": "14277",
+      "lat": 54.653392,
+      "lon": -8.065852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drummenny-middle:familypresence:02"
+     },
+     "caption": "The Freeburn family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drummenny-middle:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drummenny-middle:family:02",
+      "label": "Freeburn",
+      "run": false
+     }
+    },
+    {
+     "id": "drummenny-middle:beat:familycensus:02-1911",
+     "kind": "familycensus",
+     "chapter": "drummenny-middle:ch:family-02",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drummenny-middle",
+      "name": "Drummenny Middle",
+      "logainm_id": "14277",
+      "lat": 54.653392,
+      "lon": -8.065852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drummenny-middle:familycensus:02:1911"
+     },
+     "caption": "Drummenny Middle had one Freeburn household in 1911, headed by Richard.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drummenny-middle:familycensus:02:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drummenny-middle:family:02",
+      "label": "Freeburn",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "drummenny-middle:ch:family-06",
+   "title": "The Mulhern family",
+   "beats": [
+    {
+     "id": "drummenny-middle:beat:familyhead:06",
+     "kind": "familyhead",
+     "chapter": "drummenny-middle:ch:family-06",
+     "time": {
+      "label": "The Mulhern family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drummenny-middle",
+      "name": "Drummenny Middle",
+      "logainm_id": "14277",
+      "lat": 54.653392,
+      "lon": -8.065852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drummenny-middle:familypresence:06"
+     },
+     "caption": "The Mulhern family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drummenny-middle:familypresence:06"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drummenny-middle:family:06",
+      "label": "Mulhern",
+      "run": false
+     }
+    },
+    {
+     "id": "drummenny-middle:beat:familycensus:06-1926",
+     "kind": "familycensus",
+     "chapter": "drummenny-middle:ch:family-06",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drummenny-middle",
+      "name": "Drummenny Middle",
+      "logainm_id": "14277",
+      "lat": 54.653392,
+      "lon": -8.065852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drummenny-middle:familycensus:06:1926"
+     },
+     "caption": "Drummenny Middle had one Mulhern household in 1926, headed by Con.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drummenny-middle:familycensus:06:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drummenny-middle:family:06",
+      "label": "Mulhern",
+      "run": false
+     }
     }
    ]
   }

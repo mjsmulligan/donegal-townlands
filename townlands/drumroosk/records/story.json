@@ -52,15 +52,15 @@
    ]
   },
   {
-   "id": "drumroosk:ch:1901",
-   "title": "1901",
+   "id": "drumroosk:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "drumroosk:beat:census:1901",
+     "id": "drumroosk:beat:census:returns",
      "kind": "census",
-     "chapter": "drumroosk:ch:1901",
+     "chapter": "drumroosk:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1926",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -77,33 +77,177 @@
       "stage": "map",
       "open_card": "drumroosk:census:1901"
      },
-     "caption": "Drumroosk had 21 people in four households in 1901. Heads of household included Glenn, McMullin and ODonnell.",
+     "caption": "The censuses of 1901, 1911 and 1926 counted 21, 20 and 12 people in Drumroosk, in 4, 4 and 3 households. Heads of household included Glenn, McMullin and ODonnell.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "drumroosk:census:1901"
+       "drumroosk:census:1901",
+       "drumroosk:census:1911",
+       "drumroosk:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 6800,
+     "duration_ms": 11600,
      "audio": null,
      "counts": {
-      "people": 21,
-      "households": 4
+      "returns": [
+       {
+        "year": "1901",
+        "people": 21,
+        "households": 4
+       },
+       {
+        "year": "1911",
+        "people": 20,
+        "households": 4
+       },
+       {
+        "year": "1926",
+        "people": 12,
+        "households": 3
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "drumroosk:ch:1911",
-   "title": "1911",
+   "id": "drumroosk:ch:families",
+   "title": "The families of Drumroosk",
    "beats": [
     {
-     "id": "drumroosk:beat:census:1911",
-     "kind": "census",
-     "chapter": "drumroosk:ch:1911",
+     "id": "drumroosk:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "drumroosk:ch:families",
+     "time": {
+      "label": "The families of Drumroosk",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumroosk",
+      "name": "Drumroosk",
+      "logainm_id": "14010",
+      "lat": 54.667496,
+      "lon": -8.114543,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumroosk:census:1901"
+     },
+     "caption": "Here are the families of Drumroosk, from 1901 to 1926. First, the McMullin and ODonnell families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumroosk:census:1901",
+       "drumroosk:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "drumroosk:family:06",
+      "label": "McMullin",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumroosk:ch:family-06",
+   "title": "The McMullin family",
+   "beats": [
+    {
+     "id": "drumroosk:beat:familyhead:06",
+     "kind": "familyhead",
+     "chapter": "drumroosk:ch:family-06",
+     "time": {
+      "label": "The McMullin family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumroosk",
+      "name": "Drumroosk",
+      "logainm_id": "14010",
+      "lat": 54.667496,
+      "lon": -8.114543,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumroosk:familypresence:06"
+     },
+     "caption": "The McMullin family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumroosk:familypresence:06"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drumroosk:family:06",
+      "label": "McMullin",
+      "run": true
+     }
+    },
+    {
+     "id": "drumroosk:beat:familycensus:06-1901",
+     "kind": "familycensus",
+     "chapter": "drumroosk:ch:family-06",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumroosk",
+      "name": "Drumroosk",
+      "logainm_id": "14010",
+      "lat": 54.667496,
+      "lon": -8.114543,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumroosk:familycensus:06:1901"
+     },
+     "caption": "Drumroosk had one McMullin household in 1901, headed by Timothy.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumroosk:familycensus:06:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumroosk:family:06",
+      "label": "McMullin",
+      "run": true
+     }
+    },
+    {
+     "id": "drumroosk:beat:familycensus:06-1911",
+     "kind": "familycensus",
+     "chapter": "drumroosk:ch:family-06",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -120,39 +264,40 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "drumroosk:census:1911"
+      "open_card": "drumroosk:familycensus:06:1911"
      },
-     "caption": "Drumroosk had twenty people in four households in 1911. Heads of household included McMullan, McMullin and ODonnell.",
+     "caption": "Drumroosk had one McMullin household in 1911, headed by John.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "drumroosk:census:1911"
+       "drumroosk:familycensus:06:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6800,
+     "duration_ms": 4000,
      "audio": null,
-     "counts": {
-      "people": 20,
-      "households": 4
+     "thread": {
+      "id": "drumroosk:family:06",
+      "label": "McMullin",
+      "run": true
      }
     }
    ]
   },
   {
-   "id": "drumroosk:ch:1926",
-   "title": "1926",
+   "id": "drumroosk:ch:family-07",
+   "title": "The ODonnell family",
    "beats": [
     {
-     "id": "drumroosk:beat:census:1926",
-     "kind": "census",
-     "chapter": "drumroosk:ch:1926",
+     "id": "drumroosk:beat:familyhead:07",
+     "kind": "familyhead",
+     "chapter": "drumroosk:ch:family-07",
      "time": {
-      "label": "1926",
-      "iso": "1926",
-      "sort": "1926-01-01",
+      "label": "The ODonnell family",
+      "iso": "1901",
+      "sort": "1901-01-01",
       "approximate": true
      },
      "place": {
@@ -165,25 +310,112 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "drumroosk:census:1926"
+      "open_card": "drumroosk:familypresence:07"
      },
-     "caption": "Drumroosk had twelve people in three households in 1926. Heads of household included Crommer, Doherty and Killeen.",
+     "caption": "The ODonnell family appear in the records from 1901 to 1911.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "drumroosk:census:1926"
+       "drumroosk:familypresence:07"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6800,
+     "duration_ms": 4400,
      "audio": null,
-     "counts": {
-      "people": 12,
-      "households": 3
+     "thread": {
+      "id": "drumroosk:family:07",
+      "label": "ODonnell",
+      "run": true
      }
     },
+    {
+     "id": "drumroosk:beat:familycensus:07-1901",
+     "kind": "familycensus",
+     "chapter": "drumroosk:ch:family-07",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumroosk",
+      "name": "Drumroosk",
+      "logainm_id": "14010",
+      "lat": 54.667496,
+      "lon": -8.114543,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumroosk:familycensus:07:1901"
+     },
+     "caption": "Drumroosk had one ODonnell household in 1901, headed by Isabella.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumroosk:familycensus:07:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumroosk:family:07",
+      "label": "ODonnell",
+      "run": true
+     }
+    },
+    {
+     "id": "drumroosk:beat:familycensus:07-1911",
+     "kind": "familycensus",
+     "chapter": "drumroosk:ch:family-07",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumroosk",
+      "name": "Drumroosk",
+      "logainm_id": "14010",
+      "lat": 54.667496,
+      "lon": -8.114543,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumroosk:familycensus:07:1911"
+     },
+     "caption": "Drumroosk had one ODonnell household in 1911, headed by Isaac.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumroosk:familycensus:07:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumroosk:family:07",
+      "label": "ODonnell",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumroosk:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "drumroosk:beat:closing:end",
      "kind": "closing",
@@ -218,6 +450,562 @@
      },
      "duration_ms": 4000,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "drumroosk:ch:family-03",
+   "title": "The Glenn family",
+   "beats": [
+    {
+     "id": "drumroosk:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "drumroosk:ch:family-03",
+     "time": {
+      "label": "The Glenn family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumroosk",
+      "name": "Drumroosk",
+      "logainm_id": "14010",
+      "lat": 54.667496,
+      "lon": -8.114543,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumroosk:familypresence:03"
+     },
+     "caption": "The Glenn family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumroosk:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumroosk:family:03",
+      "label": "Glenn",
+      "run": false
+     }
+    },
+    {
+     "id": "drumroosk:beat:familycensus:03-1901",
+     "kind": "familycensus",
+     "chapter": "drumroosk:ch:family-03",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumroosk",
+      "name": "Drumroosk",
+      "logainm_id": "14010",
+      "lat": 54.667496,
+      "lon": -8.114543,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumroosk:familycensus:03:1901"
+     },
+     "caption": "Drumroosk had one Glenn household in 1901, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumroosk:familycensus:03:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumroosk:family:03",
+      "label": "Glenn",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumroosk:ch:family-08",
+   "title": "The Perry family",
+   "beats": [
+    {
+     "id": "drumroosk:beat:familyhead:08",
+     "kind": "familyhead",
+     "chapter": "drumroosk:ch:family-08",
+     "time": {
+      "label": "The Perry family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumroosk",
+      "name": "Drumroosk",
+      "logainm_id": "14010",
+      "lat": 54.667496,
+      "lon": -8.114543,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumroosk:familypresence:08"
+     },
+     "caption": "The Perry family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumroosk:familypresence:08"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drumroosk:family:08",
+      "label": "Perry",
+      "run": false
+     }
+    },
+    {
+     "id": "drumroosk:beat:familycensus:08-1901",
+     "kind": "familycensus",
+     "chapter": "drumroosk:ch:family-08",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumroosk",
+      "name": "Drumroosk",
+      "logainm_id": "14010",
+      "lat": 54.667496,
+      "lon": -8.114543,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumroosk:familycensus:08:1901"
+     },
+     "caption": "Drumroosk had one Perry household in 1901, headed by Andrew.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumroosk:familycensus:08:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumroosk:family:08",
+      "label": "Perry",
+      "run": false
+     }
+    },
+    {
+     "id": "drumroosk:beat:familycensus:08-1911",
+     "kind": "familycensus",
+     "chapter": "drumroosk:ch:family-08",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumroosk",
+      "name": "Drumroosk",
+      "logainm_id": "14010",
+      "lat": 54.667496,
+      "lon": -8.114543,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumroosk:familycensus:08:1911"
+     },
+     "caption": "Drumroosk had one Perry household in 1911, headed by Andrew.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumroosk:familycensus:08:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumroosk:family:08",
+      "label": "Perry",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumroosk:ch:family-05",
+   "title": "The McMullan family",
+   "beats": [
+    {
+     "id": "drumroosk:beat:familyhead:05",
+     "kind": "familyhead",
+     "chapter": "drumroosk:ch:family-05",
+     "time": {
+      "label": "The McMullan family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumroosk",
+      "name": "Drumroosk",
+      "logainm_id": "14010",
+      "lat": 54.667496,
+      "lon": -8.114543,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumroosk:familypresence:05"
+     },
+     "caption": "The McMullan family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumroosk:familypresence:05"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumroosk:family:05",
+      "label": "McMullan",
+      "run": false
+     }
+    },
+    {
+     "id": "drumroosk:beat:familycensus:05-1911",
+     "kind": "familycensus",
+     "chapter": "drumroosk:ch:family-05",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumroosk",
+      "name": "Drumroosk",
+      "logainm_id": "14010",
+      "lat": 54.667496,
+      "lon": -8.114543,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumroosk:familycensus:05:1911"
+     },
+     "caption": "Drumroosk had one McMullan household in 1911, headed by Thimothy.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumroosk:familycensus:05:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumroosk:family:05",
+      "label": "McMullan",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumroosk:ch:family-01",
+   "title": "The Crommer family",
+   "beats": [
+    {
+     "id": "drumroosk:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "drumroosk:ch:family-01",
+     "time": {
+      "label": "The Crommer family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumroosk",
+      "name": "Drumroosk",
+      "logainm_id": "14010",
+      "lat": 54.667496,
+      "lon": -8.114543,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumroosk:familypresence:01"
+     },
+     "caption": "The Crommer family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumroosk:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumroosk:family:01",
+      "label": "Crommer",
+      "run": false
+     }
+    },
+    {
+     "id": "drumroosk:beat:familycensus:01-1926",
+     "kind": "familycensus",
+     "chapter": "drumroosk:ch:family-01",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumroosk",
+      "name": "Drumroosk",
+      "logainm_id": "14010",
+      "lat": 54.667496,
+      "lon": -8.114543,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumroosk:familycensus:01:1926"
+     },
+     "caption": "Drumroosk had one Crommer household in 1926, headed by Isabella.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumroosk:familycensus:01:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumroosk:family:01",
+      "label": "Crommer",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumroosk:ch:family-02",
+   "title": "The Doherty family",
+   "beats": [
+    {
+     "id": "drumroosk:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "drumroosk:ch:family-02",
+     "time": {
+      "label": "The Doherty family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumroosk",
+      "name": "Drumroosk",
+      "logainm_id": "14010",
+      "lat": 54.667496,
+      "lon": -8.114543,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumroosk:familypresence:02"
+     },
+     "caption": "The Doherty family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumroosk:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumroosk:family:02",
+      "label": "Doherty",
+      "run": false
+     }
+    },
+    {
+     "id": "drumroosk:beat:familycensus:02-1926",
+     "kind": "familycensus",
+     "chapter": "drumroosk:ch:family-02",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumroosk",
+      "name": "Drumroosk",
+      "logainm_id": "14010",
+      "lat": 54.667496,
+      "lon": -8.114543,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumroosk:familycensus:02:1926"
+     },
+     "caption": "Drumroosk had one Doherty household in 1926, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumroosk:familycensus:02:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumroosk:family:02",
+      "label": "Doherty",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumroosk:ch:family-04",
+   "title": "The Killeen family",
+   "beats": [
+    {
+     "id": "drumroosk:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "drumroosk:ch:family-04",
+     "time": {
+      "label": "The Killeen family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumroosk",
+      "name": "Drumroosk",
+      "logainm_id": "14010",
+      "lat": 54.667496,
+      "lon": -8.114543,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumroosk:familypresence:04"
+     },
+     "caption": "The Killeen family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumroosk:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumroosk:family:04",
+      "label": "Killeen",
+      "run": false
+     }
+    },
+    {
+     "id": "drumroosk:beat:familycensus:04-1926",
+     "kind": "familycensus",
+     "chapter": "drumroosk:ch:family-04",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumroosk",
+      "name": "Drumroosk",
+      "logainm_id": "14010",
+      "lat": 54.667496,
+      "lon": -8.114543,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumroosk:familycensus:04:1926"
+     },
+     "caption": "Drumroosk had one Killeen household in 1926, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumroosk:familycensus:04:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumroosk:family:04",
+      "label": "Killeen",
+      "run": false
+     }
     }
    ]
   }

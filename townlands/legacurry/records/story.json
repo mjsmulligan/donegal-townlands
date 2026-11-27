@@ -52,15 +52,15 @@
    ]
   },
   {
-   "id": "legacurry:ch:1901",
-   "title": "1901",
+   "id": "legacurry:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "legacurry:beat:census:1901",
+     "id": "legacurry:beat:census:returns",
      "kind": "census",
-     "chapter": "legacurry:ch:1901",
+     "chapter": "legacurry:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1926",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -77,33 +77,177 @@
       "stage": "map",
       "open_card": "legacurry:census:1901"
      },
-     "caption": "In 1901, eighteen people in five households lived in Legacurry. Heads of household included Graham, Hammond and Henry.",
+     "caption": "The censuses of 1901, 1911 and 1926 counted 18, 12 and 9 people in Legacurry, in 5, 5 and 3 households. Heads of household included Graham, Hammond and Henry.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "legacurry:census:1901"
+       "legacurry:census:1901",
+       "legacurry:census:1911",
+       "legacurry:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 7200,
+     "duration_ms": 11600,
      "audio": null,
      "counts": {
-      "people": 18,
-      "households": 5
+      "returns": [
+       {
+        "year": "1901",
+        "people": 18,
+        "households": 5
+       },
+       {
+        "year": "1911",
+        "people": 12,
+        "households": 5
+       },
+       {
+        "year": "1926",
+        "people": 9,
+        "households": 3
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "legacurry:ch:1911",
-   "title": "1911",
+   "id": "legacurry:ch:families",
+   "title": "The families of Legacurry",
    "beats": [
     {
-     "id": "legacurry:beat:census:1911",
-     "kind": "census",
-     "chapter": "legacurry:ch:1911",
+     "id": "legacurry:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "legacurry:ch:families",
+     "time": {
+      "label": "The families of Legacurry",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "legacurry",
+      "name": "Legacurry",
+      "logainm_id": "14294",
+      "lat": 54.624582,
+      "lon": -8.121674,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "legacurry:census:1901"
+     },
+     "caption": "Here are the families of Legacurry, from 1901 to 1926. First, the Graham and Hammond families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "legacurry:census:1901",
+       "legacurry:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "legacurry:family:01",
+      "label": "Graham",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "legacurry:ch:family-01",
+   "title": "The Graham family",
+   "beats": [
+    {
+     "id": "legacurry:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "legacurry:ch:family-01",
+     "time": {
+      "label": "The Graham family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "legacurry",
+      "name": "Legacurry",
+      "logainm_id": "14294",
+      "lat": 54.624582,
+      "lon": -8.121674,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "legacurry:familypresence:01"
+     },
+     "caption": "The Graham family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "legacurry:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "legacurry:family:01",
+      "label": "Graham",
+      "run": true
+     }
+    },
+    {
+     "id": "legacurry:beat:familycensus:01-1901",
+     "kind": "familycensus",
+     "chapter": "legacurry:ch:family-01",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "legacurry",
+      "name": "Legacurry",
+      "logainm_id": "14294",
+      "lat": 54.624582,
+      "lon": -8.121674,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "legacurry:familycensus:01:1901"
+     },
+     "caption": "Legacurry had two Graham households in 1901, headed by Jane and Lewis.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "legacurry:familycensus:01:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "legacurry:family:01",
+      "label": "Graham",
+      "run": true
+     }
+    },
+    {
+     "id": "legacurry:beat:familycensus:01-1911",
+     "kind": "familycensus",
+     "chapter": "legacurry:ch:family-01",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -120,35 +264,30 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "legacurry:census:1911"
+      "open_card": "legacurry:familycensus:01:1911"
      },
-     "caption": "In 1911, twelve people in five households lived in Legacurry. Heads of household included Graham, Hammond and Henry.",
+     "caption": "Legacurry had three Graham households in 1911, headed by Joseph, William J and Lewis.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "legacurry:census:1911"
+       "legacurry:familycensus:01:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 7200,
+     "duration_ms": 5600,
      "audio": null,
-     "counts": {
-      "people": 12,
-      "households": 5
+     "thread": {
+      "id": "legacurry:family:01",
+      "label": "Graham",
+      "run": true
      }
-    }
-   ]
-  },
-  {
-   "id": "legacurry:ch:1926",
-   "title": "1926",
-   "beats": [
+    },
     {
-     "id": "legacurry:beat:census:1926",
-     "kind": "census",
-     "chapter": "legacurry:ch:1926",
+     "id": "legacurry:beat:familycensus:01-1926",
+     "kind": "familycensus",
+     "chapter": "legacurry:ch:family-01",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -165,25 +304,158 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "legacurry:census:1926"
+      "open_card": "legacurry:familycensus:01:1926"
      },
-     "caption": "In 1926, nine people in three households lived in Legacurry. Heads of household included Graham and Walker.",
+     "caption": "Legacurry had two Graham households in 1926, headed by William John and Louis.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "legacurry:census:1926"
+       "legacurry:familycensus:01:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6800,
+     "duration_ms": 5200,
      "audio": null,
-     "counts": {
-      "people": 9,
-      "households": 3
+     "thread": {
+      "id": "legacurry:family:01",
+      "label": "Graham",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "legacurry:ch:family-02",
+   "title": "The Hammond family",
+   "beats": [
+    {
+     "id": "legacurry:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "legacurry:ch:family-02",
+     "time": {
+      "label": "The Hammond family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "legacurry",
+      "name": "Legacurry",
+      "logainm_id": "14294",
+      "lat": 54.624582,
+      "lon": -8.121674,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "legacurry:familypresence:02"
+     },
+     "caption": "The Hammond family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "legacurry:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "legacurry:family:02",
+      "label": "Hammond",
+      "run": true
      }
     },
+    {
+     "id": "legacurry:beat:familycensus:02-1901",
+     "kind": "familycensus",
+     "chapter": "legacurry:ch:family-02",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "legacurry",
+      "name": "Legacurry",
+      "logainm_id": "14294",
+      "lat": 54.624582,
+      "lon": -8.121674,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "legacurry:familycensus:02:1901"
+     },
+     "caption": "Legacurry had one Hammond household in 1901, headed by Thomas.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "legacurry:familycensus:02:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "legacurry:family:02",
+      "label": "Hammond",
+      "run": true
+     }
+    },
+    {
+     "id": "legacurry:beat:familycensus:02-1911",
+     "kind": "familycensus",
+     "chapter": "legacurry:ch:family-02",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "legacurry",
+      "name": "Legacurry",
+      "logainm_id": "14294",
+      "lat": 54.624582,
+      "lon": -8.121674,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "legacurry:familycensus:02:1911"
+     },
+     "caption": "Legacurry had one Hammond household in 1911, headed by Thomas.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "legacurry:familycensus:02:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "legacurry:family:02",
+      "label": "Hammond",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "legacurry:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "legacurry:beat:closing:end",
      "kind": "closing",
@@ -218,6 +490,304 @@
      },
      "duration_ms": 4000,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "legacurry:ch:family-03",
+   "title": "The Henry family",
+   "beats": [
+    {
+     "id": "legacurry:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "legacurry:ch:family-03",
+     "time": {
+      "label": "The Henry family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "legacurry",
+      "name": "Legacurry",
+      "logainm_id": "14294",
+      "lat": 54.624582,
+      "lon": -8.121674,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "legacurry:familypresence:03"
+     },
+     "caption": "The Henry family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "legacurry:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "legacurry:family:03",
+      "label": "Henry",
+      "run": false
+     }
+    },
+    {
+     "id": "legacurry:beat:familycensus:03-1901",
+     "kind": "familycensus",
+     "chapter": "legacurry:ch:family-03",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "legacurry",
+      "name": "Legacurry",
+      "logainm_id": "14294",
+      "lat": 54.624582,
+      "lon": -8.121674,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "legacurry:familycensus:03:1901"
+     },
+     "caption": "Legacurry had one Henry household in 1901, headed by Thomas.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "legacurry:familycensus:03:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "legacurry:family:03",
+      "label": "Henry",
+      "run": false
+     }
+    },
+    {
+     "id": "legacurry:beat:familycensus:03-1911",
+     "kind": "familycensus",
+     "chapter": "legacurry:ch:family-03",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "legacurry",
+      "name": "Legacurry",
+      "logainm_id": "14294",
+      "lat": 54.624582,
+      "lon": -8.121674,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "legacurry:familycensus:03:1911"
+     },
+     "caption": "Legacurry had one Henry household in 1911, headed by Thomas.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "legacurry:familycensus:03:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "legacurry:family:03",
+      "label": "Henry",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "legacurry:ch:family-05",
+   "title": "The White family",
+   "beats": [
+    {
+     "id": "legacurry:beat:familyhead:05",
+     "kind": "familyhead",
+     "chapter": "legacurry:ch:family-05",
+     "time": {
+      "label": "The White family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "legacurry",
+      "name": "Legacurry",
+      "logainm_id": "14294",
+      "lat": 54.624582,
+      "lon": -8.121674,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "legacurry:familypresence:05"
+     },
+     "caption": "The White family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "legacurry:familypresence:05"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "legacurry:family:05",
+      "label": "White",
+      "run": false
+     }
+    },
+    {
+     "id": "legacurry:beat:familycensus:05-1901",
+     "kind": "familycensus",
+     "chapter": "legacurry:ch:family-05",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "legacurry",
+      "name": "Legacurry",
+      "logainm_id": "14294",
+      "lat": 54.624582,
+      "lon": -8.121674,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "legacurry:familycensus:05:1901"
+     },
+     "caption": "Legacurry had one White household in 1901, headed by Mary Anne.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "legacurry:familycensus:05:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "legacurry:family:05",
+      "label": "White",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "legacurry:ch:family-04",
+   "title": "The Walker family",
+   "beats": [
+    {
+     "id": "legacurry:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "legacurry:ch:family-04",
+     "time": {
+      "label": "The Walker family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "legacurry",
+      "name": "Legacurry",
+      "logainm_id": "14294",
+      "lat": 54.624582,
+      "lon": -8.121674,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "legacurry:familypresence:04"
+     },
+     "caption": "The Walker family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "legacurry:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "legacurry:family:04",
+      "label": "Walker",
+      "run": false
+     }
+    },
+    {
+     "id": "legacurry:beat:familycensus:04-1926",
+     "kind": "familycensus",
+     "chapter": "legacurry:ch:family-04",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "legacurry",
+      "name": "Legacurry",
+      "logainm_id": "14294",
+      "lat": 54.624582,
+      "lon": -8.121674,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "legacurry:familycensus:04:1926"
+     },
+     "caption": "Legacurry had one Walker household in 1926, headed by Joseph.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "legacurry:familycensus:04:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "legacurry:family:04",
+      "label": "Walker",
+      "run": false
+     }
     }
    ]
   }

@@ -52,15 +52,15 @@
    ]
   },
   {
-   "id": "rossilly-barr:ch:1901",
-   "title": "1901",
+   "id": "rossilly-barr:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "rossilly-barr:beat:census:1901",
+     "id": "rossilly-barr:beat:census:returns",
      "kind": "census",
-     "chapter": "rossilly-barr:ch:1901",
+     "chapter": "rossilly-barr:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1926",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -77,33 +77,177 @@
       "stage": "map",
       "open_card": "rossilly barr:census:1901"
      },
-     "caption": "In 1901, 32 people in seven households lived in Rossilly Barr. Heads of household included Quinn, Gallagher and McDaid.",
+     "caption": "The censuses of 1901, 1911 and 1926 counted 32, 24 and 34 people in Rossilly Barr, in 7, 6 and 5 households. Heads of household included Quinn, Gallagher and McDaid.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "rossilly barr:census:1901"
+       "rossilly barr:census:1901",
+       "rossilly barr:census:1911",
+       "rossilly barr:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 7600,
+     "duration_ms": 12000,
      "audio": null,
      "counts": {
-      "people": 32,
-      "households": 7
+      "returns": [
+       {
+        "year": "1901",
+        "people": 32,
+        "households": 7
+       },
+       {
+        "year": "1911",
+        "people": 24,
+        "households": 6
+       },
+       {
+        "year": "1926",
+        "people": 34,
+        "households": 5
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "rossilly-barr:ch:1911",
-   "title": "1911",
+   "id": "rossilly-barr:ch:families",
+   "title": "The families of Rossilly Barr",
    "beats": [
     {
-     "id": "rossilly-barr:beat:census:1911",
-     "kind": "census",
-     "chapter": "rossilly-barr:ch:1911",
+     "id": "rossilly-barr:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "rossilly-barr:ch:families",
+     "time": {
+      "label": "The families of Rossilly Barr",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossilly-barr",
+      "name": "Rossilly Barr",
+      "logainm_id": "14154",
+      "lat": 54.601558,
+      "lon": -8.030052,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rossilly barr:census:1901"
+     },
+     "caption": "Here are the families of Rossilly Barr, from 1901 to 1926. First, the Quinn and Timmoney families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossilly barr:census:1901",
+       "rossilly barr:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "thread": {
+      "id": "rossilly-barr:family:04",
+      "label": "Quinn",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "rossilly-barr:ch:family-04",
+   "title": "The Quinn family",
+   "beats": [
+    {
+     "id": "rossilly-barr:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "rossilly-barr:ch:family-04",
+     "time": {
+      "label": "The Quinn family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossilly-barr",
+      "name": "Rossilly Barr",
+      "logainm_id": "14154",
+      "lat": 54.601558,
+      "lon": -8.030052,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rossilly-barr:familypresence:04"
+     },
+     "caption": "The Quinn family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossilly-barr:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "rossilly-barr:family:04",
+      "label": "Quinn",
+      "run": true
+     }
+    },
+    {
+     "id": "rossilly-barr:beat:familycensus:04-1901",
+     "kind": "familycensus",
+     "chapter": "rossilly-barr:ch:family-04",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossilly-barr",
+      "name": "Rossilly Barr",
+      "logainm_id": "14154",
+      "lat": 54.601558,
+      "lon": -8.030052,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rossilly-barr:familycensus:04:1901"
+     },
+     "caption": "Rossilly Barr had two Quinn households in 1901, headed by Edward and Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossilly-barr:familycensus:04:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "rossilly-barr:family:04",
+      "label": "Quinn",
+      "run": true
+     }
+    },
+    {
+     "id": "rossilly-barr:beat:familycensus:04-1911",
+     "kind": "familycensus",
+     "chapter": "rossilly-barr:ch:family-04",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -120,35 +264,30 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "rossilly barr:census:1911"
+      "open_card": "rossilly-barr:familycensus:04:1911"
      },
-     "caption": "Rossilly Barr had 24 people in six households in 1911. Heads of household included Quinn, Timmoney and Gallagher.",
+     "caption": "Rossilly Barr had two Quinn households in 1911, headed by two named Patrick.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "rossilly barr:census:1911"
+       "rossilly-barr:familycensus:04:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 7200,
+     "duration_ms": 5200,
      "audio": null,
-     "counts": {
-      "people": 24,
-      "households": 6
+     "thread": {
+      "id": "rossilly-barr:family:04",
+      "label": "Quinn",
+      "run": true
      }
-    }
-   ]
-  },
-  {
-   "id": "rossilly-barr:ch:1926",
-   "title": "1926",
-   "beats": [
+    },
     {
-     "id": "rossilly-barr:beat:census:1926",
-     "kind": "census",
-     "chapter": "rossilly-barr:ch:1926",
+     "id": "rossilly-barr:beat:familycensus:04-1926",
+     "kind": "familycensus",
+     "chapter": "rossilly-barr:ch:family-04",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -165,25 +304,198 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "rossilly barr:census:1926"
+      "open_card": "rossilly-barr:familycensus:04:1926"
      },
-     "caption": "Rossilly Barr had 34 people in five households in 1926. Heads of household included Quinn, Timmoney and Ward.",
+     "caption": "Rossilly Barr had four Quinn households in 1926, headed by Patrick, Susan, Patrick J and Edward.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "rossilly barr:census:1926"
+       "rossilly-barr:familycensus:04:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 7200,
+     "duration_ms": 6400,
      "audio": null,
-     "counts": {
-      "people": 34,
-      "households": 5
+     "thread": {
+      "id": "rossilly-barr:family:04",
+      "label": "Quinn",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "rossilly-barr:ch:family-05",
+   "title": "The Timmoney family",
+   "beats": [
+    {
+     "id": "rossilly-barr:beat:familyhead:05",
+     "kind": "familyhead",
+     "chapter": "rossilly-barr:ch:family-05",
+     "time": {
+      "label": "The Timmoney family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossilly-barr",
+      "name": "Rossilly Barr",
+      "logainm_id": "14154",
+      "lat": 54.601558,
+      "lon": -8.030052,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rossilly-barr:familypresence:05"
+     },
+     "caption": "The Timmoney family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossilly-barr:familypresence:05"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "rossilly-barr:family:05",
+      "label": "Timmoney",
+      "run": true
      }
     },
+    {
+     "id": "rossilly-barr:beat:familycensus:05-1901",
+     "kind": "familycensus",
+     "chapter": "rossilly-barr:ch:family-05",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossilly-barr",
+      "name": "Rossilly Barr",
+      "logainm_id": "14154",
+      "lat": 54.601558,
+      "lon": -8.030052,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rossilly-barr:familycensus:05:1901"
+     },
+     "caption": "Rossilly Barr had one Timmoney household in 1901, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossilly-barr:familycensus:05:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "rossilly-barr:family:05",
+      "label": "Timmoney",
+      "run": true
+     }
+    },
+    {
+     "id": "rossilly-barr:beat:familycensus:05-1911",
+     "kind": "familycensus",
+     "chapter": "rossilly-barr:ch:family-05",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossilly-barr",
+      "name": "Rossilly Barr",
+      "logainm_id": "14154",
+      "lat": 54.601558,
+      "lon": -8.030052,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rossilly-barr:familycensus:05:1911"
+     },
+     "caption": "Rossilly Barr had two Timmoney households in 1911, headed by Bridget and James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossilly-barr:familycensus:05:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "rossilly-barr:family:05",
+      "label": "Timmoney",
+      "run": true
+     }
+    },
+    {
+     "id": "rossilly-barr:beat:familycensus:05-1926",
+     "kind": "familycensus",
+     "chapter": "rossilly-barr:ch:family-05",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossilly-barr",
+      "name": "Rossilly Barr",
+      "logainm_id": "14154",
+      "lat": 54.601558,
+      "lon": -8.030052,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rossilly-barr:familycensus:05:1926"
+     },
+     "caption": "Rossilly Barr had three Timmoney households in 1926, headed by two named James and Michael Joseph.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossilly-barr:familycensus:05:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "rossilly-barr:family:05",
+      "label": "Timmoney",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "rossilly-barr:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "rossilly-barr:beat:closing:end",
      "kind": "closing",
@@ -218,6 +530,556 @@
      },
      "duration_ms": 4400,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "rossilly-barr:ch:family-01",
+   "title": "The Gallagher family",
+   "beats": [
+    {
+     "id": "rossilly-barr:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "rossilly-barr:ch:family-01",
+     "time": {
+      "label": "The Gallagher family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossilly-barr",
+      "name": "Rossilly Barr",
+      "logainm_id": "14154",
+      "lat": 54.601558,
+      "lon": -8.030052,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rossilly-barr:familypresence:01"
+     },
+     "caption": "The Gallagher family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossilly-barr:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "rossilly-barr:family:01",
+      "label": "Gallagher",
+      "run": false
+     }
+    },
+    {
+     "id": "rossilly-barr:beat:familycensus:01-1901",
+     "kind": "familycensus",
+     "chapter": "rossilly-barr:ch:family-01",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossilly-barr",
+      "name": "Rossilly Barr",
+      "logainm_id": "14154",
+      "lat": 54.601558,
+      "lon": -8.030052,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rossilly-barr:familycensus:01:1901"
+     },
+     "caption": "Rossilly Barr had one Gallagher household in 1901, headed by Jane.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossilly-barr:familycensus:01:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "rossilly-barr:family:01",
+      "label": "Gallagher",
+      "run": false
+     }
+    },
+    {
+     "id": "rossilly-barr:beat:familycensus:01-1911",
+     "kind": "familycensus",
+     "chapter": "rossilly-barr:ch:family-01",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossilly-barr",
+      "name": "Rossilly Barr",
+      "logainm_id": "14154",
+      "lat": 54.601558,
+      "lon": -8.030052,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rossilly-barr:familycensus:01:1911"
+     },
+     "caption": "Rossilly Barr had one Gallagher household in 1911, headed by Jane.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossilly-barr:familycensus:01:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "rossilly-barr:family:01",
+      "label": "Gallagher",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "rossilly-barr:ch:family-02",
+   "title": "The McDaid family",
+   "beats": [
+    {
+     "id": "rossilly-barr:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "rossilly-barr:ch:family-02",
+     "time": {
+      "label": "The McDaid family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossilly-barr",
+      "name": "Rossilly Barr",
+      "logainm_id": "14154",
+      "lat": 54.601558,
+      "lon": -8.030052,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rossilly-barr:familypresence:02"
+     },
+     "caption": "The McDaid family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossilly-barr:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "rossilly-barr:family:02",
+      "label": "McDaid",
+      "run": false
+     }
+    },
+    {
+     "id": "rossilly-barr:beat:familycensus:02-1901",
+     "kind": "familycensus",
+     "chapter": "rossilly-barr:ch:family-02",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossilly-barr",
+      "name": "Rossilly Barr",
+      "logainm_id": "14154",
+      "lat": 54.601558,
+      "lon": -8.030052,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rossilly-barr:familycensus:02:1901"
+     },
+     "caption": "Rossilly Barr had one McDaid household in 1901, headed by Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossilly-barr:familycensus:02:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "rossilly-barr:family:02",
+      "label": "McDaid",
+      "run": false
+     }
+    },
+    {
+     "id": "rossilly-barr:beat:familycensus:02-1911",
+     "kind": "familycensus",
+     "chapter": "rossilly-barr:ch:family-02",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossilly-barr",
+      "name": "Rossilly Barr",
+      "logainm_id": "14154",
+      "lat": 54.601558,
+      "lon": -8.030052,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rossilly-barr:familycensus:02:1911"
+     },
+     "caption": "Rossilly Barr had one McDaid household in 1911, headed by Mary.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossilly-barr:familycensus:02:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "rossilly-barr:family:02",
+      "label": "McDaid",
+      "run": false
+     }
+    },
+    {
+     "id": "rossilly-barr:beat:familycensus:02-1926",
+     "kind": "familycensus",
+     "chapter": "rossilly-barr:ch:family-02",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossilly-barr",
+      "name": "Rossilly Barr",
+      "logainm_id": "14154",
+      "lat": 54.601558,
+      "lon": -8.030052,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rossilly-barr:familycensus:02:1926"
+     },
+     "caption": "Rossilly Barr had one McDaid household in 1926, headed by Bridgit.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossilly-barr:familycensus:02:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "rossilly-barr:family:02",
+      "label": "McDaid",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "rossilly-barr:ch:family-03",
+   "title": "The McGarrigle family",
+   "beats": [
+    {
+     "id": "rossilly-barr:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "rossilly-barr:ch:family-03",
+     "time": {
+      "label": "The McGarrigle family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossilly-barr",
+      "name": "Rossilly Barr",
+      "logainm_id": "14154",
+      "lat": 54.601558,
+      "lon": -8.030052,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rossilly-barr:familypresence:03"
+     },
+     "caption": "The McGarrigle family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossilly-barr:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "rossilly-barr:family:03",
+      "label": "McGarrigle",
+      "run": false
+     }
+    },
+    {
+     "id": "rossilly-barr:beat:familycensus:03-1901",
+     "kind": "familycensus",
+     "chapter": "rossilly-barr:ch:family-03",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossilly-barr",
+      "name": "Rossilly Barr",
+      "logainm_id": "14154",
+      "lat": 54.601558,
+      "lon": -8.030052,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rossilly-barr:familycensus:03:1901"
+     },
+     "caption": "Rossilly Barr had one McGarrigle household in 1901, headed by Maurice.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossilly-barr:familycensus:03:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "rossilly-barr:family:03",
+      "label": "McGarrigle",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "rossilly-barr:ch:family-06",
+   "title": "The Timoney family",
+   "beats": [
+    {
+     "id": "rossilly-barr:beat:familyhead:06",
+     "kind": "familyhead",
+     "chapter": "rossilly-barr:ch:family-06",
+     "time": {
+      "label": "The Timoney family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossilly-barr",
+      "name": "Rossilly Barr",
+      "logainm_id": "14154",
+      "lat": 54.601558,
+      "lon": -8.030052,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rossilly-barr:familypresence:06"
+     },
+     "caption": "The Timoney family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossilly-barr:familypresence:06"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "rossilly-barr:family:06",
+      "label": "Timoney",
+      "run": false
+     }
+    },
+    {
+     "id": "rossilly-barr:beat:familycensus:06-1901",
+     "kind": "familycensus",
+     "chapter": "rossilly-barr:ch:family-06",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossilly-barr",
+      "name": "Rossilly Barr",
+      "logainm_id": "14154",
+      "lat": 54.601558,
+      "lon": -8.030052,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rossilly-barr:familycensus:06:1901"
+     },
+     "caption": "Rossilly Barr had one Timoney household in 1901, headed by Bridget.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossilly-barr:familycensus:06:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "rossilly-barr:family:06",
+      "label": "Timoney",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "rossilly-barr:ch:family-07",
+   "title": "The Ward family",
+   "beats": [
+    {
+     "id": "rossilly-barr:beat:familyhead:07",
+     "kind": "familyhead",
+     "chapter": "rossilly-barr:ch:family-07",
+     "time": {
+      "label": "The Ward family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossilly-barr",
+      "name": "Rossilly Barr",
+      "logainm_id": "14154",
+      "lat": 54.601558,
+      "lon": -8.030052,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rossilly-barr:familypresence:07"
+     },
+     "caption": "The Ward family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossilly-barr:familypresence:07"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "rossilly-barr:family:07",
+      "label": "Ward",
+      "run": false
+     }
+    },
+    {
+     "id": "rossilly-barr:beat:familycensus:07-1926",
+     "kind": "familycensus",
+     "chapter": "rossilly-barr:ch:family-07",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossilly-barr",
+      "name": "Rossilly Barr",
+      "logainm_id": "14154",
+      "lat": 54.601558,
+      "lon": -8.030052,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rossilly-barr:familycensus:07:1926"
+     },
+     "caption": "Rossilly Barr had two Ward households in 1926, headed by Peter and Many Anne.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossilly-barr:familycensus:07:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5600,
+     "audio": null,
+     "thread": {
+      "id": "rossilly-barr:family:07",
+      "label": "Ward",
+      "run": false
+     }
     }
    ]
   }

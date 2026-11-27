@@ -303,8 +303,11 @@ def census_returns_beat(cens, place, names=(), media=()):
         cap = f'The censuses of {when} counted {ppl} people in {town}, in {hh} households.'
         if names:
             cap += f' Heads of household included {name_list(names)}.'
+    # without form images the milestone shows the people of each return as dots; with images it shows them
+    returns = None if media or any(p is None for p, _ in counts) else \
+        {'returns': [{'year': y, 'people': p, 'households': h} for y, (p, h) in zip(years, counts)]}
     b = beat('census', 'returns', f"{place['townland']}:ch:census", cens[0], cap, place,
-             basis=cens[0]['association']['basis'], events=[e['id'] for e in cens], media=media)
+             basis=cens[0]['association']['basis'], events=[e['id'] for e in cens], media=media, counts=returns)
     b['time']['label'] = f'{years[0]} to {years[-1]}'
     return b
 
@@ -552,6 +555,9 @@ def generate(display, slug, place_record, events, by_event=None, header=None, to
                 tbeats[t['id']] = head + [fb] + [family_census_beat(x, place, t) for x in t['events']]
             elif e['type'] == 'family':
                 beats.append(family_beat(e, place))
+        for t in threads:       # a family told by the records alone (a surname), with no authored caption
+            if t.get('auto') and t.get('presence') and t['id'] not in tbeats:
+                tbeats[t['id']] = [family_head_beat(t, place)] + [family_census_beat(x, place, t) for x in t['events']]
         # a baptism joins the thread of the family named by the father's surname; the rest stay in the townland story
         left = []
         for e in baps:
@@ -600,7 +606,7 @@ def generate(display, slug, place_record, events, by_event=None, header=None, to
     if told and events:
         first = told[0][0]
         intro = families_intro_beat(display, place, events, later['date']['label'] if later else '',
-                                    [t['label'] for t in threads if t['id'] in picked and t['id'] in tbeats], first['time']['sort'])
+                                    [tb[0]['thread']['label'] for tb in told], first['time']['sort'])
         intro['thread'] = dict(first['thread'])
         told[0].insert(0, intro)
     beats = beats + [b for tb in told for b in tb] + closing + [b for tb in rest for b in tb]
@@ -610,7 +616,7 @@ def generate(display, slug, place_record, events, by_event=None, header=None, to
     years = {int(b['time']['sort'][:4]) for b in dated_beats} | {nm.get('families', 0)}
     known |= set(by_id)
     for b in beats:
-        problems = check_beat(b, by_id, known, years if b['kind'] == 'title' else ())
+        problems = check_beat(b, by_id, known, years if b['kind'] in ('title', 'familyintro') else ())
         if problems:
             raise ValueError(b.get('id', '?') + ': ' + '; '.join(problems))
     ids = [b['id'] for b in beats]
@@ -899,7 +905,7 @@ def check_document(doc, events, families=0):
              if b.get('kind') == 'photo' and (b.get('evidence') or {}).get('basis') == 'dated_photograph'} | {families}
     for b in beats:
         problems += [f"{b.get('id', '?')}: {p}" for p in
-                     check_beat(b, by_id, set(by_id), years if b.get('kind') == 'title' else ())]
+                     check_beat(b, by_id, set(by_id), years if b.get('kind') in ('title', 'familyintro') else ())]
     if len(events) < 2:
         if len(beats) > 1:
             problems.append('a case with fewer than two events may hold only the title beat')

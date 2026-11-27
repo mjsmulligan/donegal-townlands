@@ -52,15 +52,15 @@
    ]
   },
   {
-   "id": "rossyvolan:ch:1901",
-   "title": "1901",
+   "id": "rossyvolan:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "rossyvolan:beat:census:1901",
+     "id": "rossyvolan:beat:census:returns",
      "kind": "census",
-     "chapter": "rossyvolan:ch:1901",
+     "chapter": "rossyvolan:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1926",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -77,33 +77,263 @@
       "stage": "map",
       "open_card": "rossyvolan:census:1901"
      },
-     "caption": "In 1901, six people in two households lived in Rossyvolan. Heads of household included Graham and McIntyre.",
+     "caption": "The censuses of 1901, 1911 and 1926 counted 6, 3 and 3 people in Rossyvolan, in 2, 1 and 1 households. Heads of household included Graham, McIntyre and Shannon.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "rossyvolan:census:1901"
+       "rossyvolan:census:1901",
+       "rossyvolan:census:1911",
+       "rossyvolan:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 6800,
+     "duration_ms": 11600,
      "audio": null,
      "counts": {
-      "people": 6,
-      "households": 2
+      "returns": [
+       {
+        "year": "1901",
+        "people": 6,
+        "households": 2
+       },
+       {
+        "year": "1911",
+        "people": 3,
+        "households": 1
+       },
+       {
+        "year": "1926",
+        "people": 3,
+        "households": 1
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "rossyvolan:ch:1911",
-   "title": "1911",
+   "id": "rossyvolan:ch:families",
+   "title": "The families of Rossyvolan",
    "beats": [
     {
-     "id": "rossyvolan:beat:census:1911",
-     "kind": "census",
-     "chapter": "rossyvolan:ch:1911",
+     "id": "rossyvolan:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "rossyvolan:ch:families",
+     "time": {
+      "label": "The families of Rossyvolan",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossyvolan",
+      "name": "Rossyvolan",
+      "logainm_id": "14155",
+      "lat": 54.621989,
+      "lon": -8.108648,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rossyvolan:census:1901"
+     },
+     "caption": "Here are the families of Rossyvolan, from 1901 to 1926. First, the Graham and McIntyre families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossyvolan:census:1901",
+       "rossyvolan:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "rossyvolan:family:01",
+      "label": "Graham",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "rossyvolan:ch:family-01",
+   "title": "The Graham family",
+   "beats": [
+    {
+     "id": "rossyvolan:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "rossyvolan:ch:family-01",
+     "time": {
+      "label": "The Graham family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossyvolan",
+      "name": "Rossyvolan",
+      "logainm_id": "14155",
+      "lat": 54.621989,
+      "lon": -8.108648,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rossyvolan:familypresence:01"
+     },
+     "caption": "The Graham family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossyvolan:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "rossyvolan:family:01",
+      "label": "Graham",
+      "run": true
+     }
+    },
+    {
+     "id": "rossyvolan:beat:familycensus:01-1901",
+     "kind": "familycensus",
+     "chapter": "rossyvolan:ch:family-01",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossyvolan",
+      "name": "Rossyvolan",
+      "logainm_id": "14155",
+      "lat": 54.621989,
+      "lon": -8.108648,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rossyvolan:familycensus:01:1901"
+     },
+     "caption": "Rossyvolan had two Graham households in 1901, headed by Joseph and John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossyvolan:familycensus:01:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "rossyvolan:family:01",
+      "label": "Graham",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "rossyvolan:ch:family-02",
+   "title": "The McIntyre family",
+   "beats": [
+    {
+     "id": "rossyvolan:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "rossyvolan:ch:family-02",
+     "time": {
+      "label": "The McIntyre family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossyvolan",
+      "name": "Rossyvolan",
+      "logainm_id": "14155",
+      "lat": 54.621989,
+      "lon": -8.108648,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rossyvolan:familypresence:02"
+     },
+     "caption": "The McIntyre family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossyvolan:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "rossyvolan:family:02",
+      "label": "McIntyre",
+      "run": true
+     }
+    },
+    {
+     "id": "rossyvolan:beat:familycensus:02-1901",
+     "kind": "familycensus",
+     "chapter": "rossyvolan:ch:family-02",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossyvolan",
+      "name": "Rossyvolan",
+      "logainm_id": "14155",
+      "lat": 54.621989,
+      "lon": -8.108648,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rossyvolan:familycensus:02:1901"
+     },
+     "caption": "Rossyvolan had one McIntyre household in 1901, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossyvolan:familycensus:02:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "rossyvolan:family:02",
+      "label": "McIntyre",
+      "run": true
+     }
+    },
+    {
+     "id": "rossyvolan:beat:familycensus:02-1911",
+     "kind": "familycensus",
+     "chapter": "rossyvolan:ch:family-02",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -120,23 +350,24 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "rossyvolan:census:1911"
+      "open_card": "rossyvolan:familycensus:02:1911"
      },
-     "caption": "Rossyvolan had three people in one household in 1911. Heads of household included McIntyre.",
+     "caption": "Rossyvolan had one McIntyre household in 1911, headed by John.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "rossyvolan:census:1911"
+       "rossyvolan:familycensus:02:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 5600,
+     "duration_ms": 4000,
      "audio": null,
-     "counts": {
-      "people": 3,
-      "households": 1
+     "thread": {
+      "id": "rossyvolan:family:02",
+      "label": "McIntyre",
+      "run": true
      }
     }
    ]
@@ -145,45 +376,6 @@
    "id": "rossyvolan:ch:1926",
    "title": "1926",
    "beats": [
-    {
-     "id": "rossyvolan:beat:census:1926",
-     "kind": "census",
-     "chapter": "rossyvolan:ch:1926",
-     "time": {
-      "label": "1926",
-      "iso": "1926",
-      "sort": "1926-01-01",
-      "approximate": true
-     },
-     "place": {
-      "townland": "rossyvolan",
-      "name": "Rossyvolan",
-      "logainm_id": "14155",
-      "lat": 54.621989,
-      "lon": -8.108648,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "rossyvolan:census:1926"
-     },
-     "caption": "Rossyvolan had three people in one household in 1926. Heads of household included Shannon.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "rossyvolan:census:1926"
-      ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
-     },
-     "duration_ms": 5600,
-     "audio": null,
-     "counts": {
-      "people": 3,
-      "households": 1
-     }
-    },
     {
      "id": "rossyvolan:beat:closing:end",
      "kind": "closing",
@@ -218,6 +410,92 @@
      },
      "duration_ms": 4000,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "rossyvolan:ch:family-03",
+   "title": "The Shannon family",
+   "beats": [
+    {
+     "id": "rossyvolan:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "rossyvolan:ch:family-03",
+     "time": {
+      "label": "The Shannon family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossyvolan",
+      "name": "Rossyvolan",
+      "logainm_id": "14155",
+      "lat": 54.621989,
+      "lon": -8.108648,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rossyvolan:familypresence:03"
+     },
+     "caption": "The Shannon family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossyvolan:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "rossyvolan:family:03",
+      "label": "Shannon",
+      "run": false
+     }
+    },
+    {
+     "id": "rossyvolan:beat:familycensus:03-1926",
+     "kind": "familycensus",
+     "chapter": "rossyvolan:ch:family-03",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossyvolan",
+      "name": "Rossyvolan",
+      "logainm_id": "14155",
+      "lat": 54.621989,
+      "lon": -8.108648,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rossyvolan:familycensus:03:1926"
+     },
+     "caption": "Rossyvolan had one Shannon household in 1926, headed by Margaret.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossyvolan:familycensus:03:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "rossyvolan:family:03",
+      "label": "Shannon",
+      "run": false
+     }
     }
    ]
   }

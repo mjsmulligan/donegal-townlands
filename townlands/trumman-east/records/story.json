@@ -52,15 +52,15 @@
    ]
   },
   {
-   "id": "trumman-east:ch:1901",
-   "title": "1901",
+   "id": "trumman-east:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "trumman-east:beat:census:1901",
+     "id": "trumman-east:beat:census:returns",
      "kind": "census",
-     "chapter": "trumman-east:ch:1901",
+     "chapter": "trumman-east:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1926",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -77,33 +77,177 @@
       "stage": "map",
       "open_card": "trumman east:census:1901"
      },
-     "caption": "Trumman East had 142 people in 31 households in 1901. Heads of household included McClay, Boyle and Dorrian.",
+     "caption": "The censuses of 1901, 1911 and 1926 counted 142, 131 and 89 people in Trumman East, in 31, 27 and 22 households. Heads of household included McClay, Boyle and Dorrian.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "trumman east:census:1901"
+       "trumman east:census:1901",
+       "trumman east:census:1911",
+       "trumman east:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 7200,
+     "duration_ms": 12000,
      "audio": null,
      "counts": {
-      "people": 142,
-      "households": 31
+      "returns": [
+       {
+        "year": "1901",
+        "people": 142,
+        "households": 31
+       },
+       {
+        "year": "1911",
+        "people": 131,
+        "households": 27
+       },
+       {
+        "year": "1926",
+        "people": 89,
+        "households": 22
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "trumman-east:ch:1911",
-   "title": "1911",
+   "id": "trumman-east:ch:families",
+   "title": "The families of Trumman East",
    "beats": [
     {
-     "id": "trumman-east:beat:census:1911",
-     "kind": "census",
-     "chapter": "trumman-east:ch:1911",
+     "id": "trumman-east:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "trumman-east:ch:families",
+     "time": {
+      "label": "The families of Trumman East",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman east:census:1901"
+     },
+     "caption": "Here are the families of Trumman East, from 1901 to 1926. First, the Boyle and McClay families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman east:census:1901",
+       "trumman east:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:02",
+      "label": "Boyle",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "trumman-east:ch:family-02",
+   "title": "The Boyle family",
+   "beats": [
+    {
+     "id": "trumman-east:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "trumman-east:ch:family-02",
+     "time": {
+      "label": "The Boyle family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familypresence:02"
+     },
+     "caption": "The Boyle family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:02",
+      "label": "Boyle",
+      "run": true
+     }
+    },
+    {
+     "id": "trumman-east:beat:familycensus:02-1901",
+     "kind": "familycensus",
+     "chapter": "trumman-east:ch:family-02",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familycensus:02:1901"
+     },
+     "caption": "Trumman East had two Boyle households in 1901, headed by Patrick and Catherine.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familycensus:02:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:02",
+      "label": "Boyle",
+      "run": true
+     }
+    },
+    {
+     "id": "trumman-east:beat:familycensus:02-1911",
+     "kind": "familycensus",
+     "chapter": "trumman-east:ch:family-02",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -120,35 +264,30 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "trumman east:census:1911"
+      "open_card": "trumman-east:familycensus:02:1911"
      },
-     "caption": "Trumman East had 131 people in 27 households in 1911. Heads of household included McClay, Bartley and Boyle.",
+     "caption": "Trumman East had two Boyle households in 1911, headed by Patrick and Charles.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "trumman east:census:1911"
+       "trumman-east:familycensus:02:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 7200,
+     "duration_ms": 5200,
      "audio": null,
-     "counts": {
-      "people": 131,
-      "households": 27
+     "thread": {
+      "id": "trumman-east:family:02",
+      "label": "Boyle",
+      "run": true
      }
-    }
-   ]
-  },
-  {
-   "id": "trumman-east:ch:1926",
-   "title": "1926",
-   "beats": [
+    },
     {
-     "id": "trumman-east:beat:census:1926",
-     "kind": "census",
-     "chapter": "trumman-east:ch:1926",
+     "id": "trumman-east:beat:familycensus:02-1926",
+     "kind": "familycensus",
+     "chapter": "trumman-east:ch:family-02",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -165,25 +304,198 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "trumman east:census:1926"
+      "open_card": "trumman-east:familycensus:02:1926"
      },
-     "caption": "In 1926, 89 people in 22 households lived in Trumman East. Heads of household included Gallagher, Curistan and Dorrian.",
+     "caption": "Trumman East had one Boyle household in 1926, headed by James.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "trumman east:census:1926"
+       "trumman-east:familycensus:02:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 7600,
+     "duration_ms": 4400,
      "audio": null,
-     "counts": {
-      "people": 89,
-      "households": 22
+     "thread": {
+      "id": "trumman-east:family:02",
+      "label": "Boyle",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "trumman-east:ch:family-17",
+   "title": "The McClay family",
+   "beats": [
+    {
+     "id": "trumman-east:beat:familyhead:17",
+     "kind": "familyhead",
+     "chapter": "trumman-east:ch:family-17",
+     "time": {
+      "label": "The McClay family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familypresence:17"
+     },
+     "caption": "The McClay family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familypresence:17"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:17",
+      "label": "McClay",
+      "run": true
      }
     },
+    {
+     "id": "trumman-east:beat:familycensus:17-1901",
+     "kind": "familycensus",
+     "chapter": "trumman-east:ch:family-17",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familycensus:17:1901"
+     },
+     "caption": "Trumman East had three McClay households in 1901, headed by James, Mary Anne and Andrew.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familycensus:17:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 6000,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:17",
+      "label": "McClay",
+      "run": true
+     }
+    },
+    {
+     "id": "trumman-east:beat:familycensus:17-1911",
+     "kind": "familycensus",
+     "chapter": "trumman-east:ch:family-17",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familycensus:17:1911"
+     },
+     "caption": "Trumman East had four McClay households in 1911, headed by James, Mary, Andrew and Elizabeth.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familycensus:17:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 6000,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:17",
+      "label": "McClay",
+      "run": true
+     }
+    },
+    {
+     "id": "trumman-east:beat:familycensus:17-1926",
+     "kind": "familycensus",
+     "chapter": "trumman-east:ch:family-17",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familycensus:17:1926"
+     },
+     "caption": "Trumman East had one McClay household in 1926, headed by Bella.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familycensus:17:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:17",
+      "label": "McClay",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "trumman-east:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "trumman-east:beat:closing:end",
      "kind": "closing",
@@ -218,6 +530,3546 @@
      },
      "duration_ms": 4400,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "trumman-east:ch:family-01",
+   "title": "The Bartley family",
+   "beats": [
+    {
+     "id": "trumman-east:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "trumman-east:ch:family-01",
+     "time": {
+      "label": "The Bartley family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familypresence:01"
+     },
+     "caption": "The Bartley family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:01",
+      "label": "Bartley",
+      "run": false
+     }
+    },
+    {
+     "id": "trumman-east:beat:familycensus:01-1901",
+     "kind": "familycensus",
+     "chapter": "trumman-east:ch:family-01",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familycensus:01:1901"
+     },
+     "caption": "Trumman East had one Bartley household in 1901, headed by Owen.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familycensus:01:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:01",
+      "label": "Bartley",
+      "run": false
+     }
+    },
+    {
+     "id": "trumman-east:beat:familycensus:01-1911",
+     "kind": "familycensus",
+     "chapter": "trumman-east:ch:family-01",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familycensus:01:1911"
+     },
+     "caption": "Trumman East had two Bartley households in 1911, headed by Francis and Own.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familycensus:01:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:01",
+      "label": "Bartley",
+      "run": false
+     }
+    },
+    {
+     "id": "trumman-east:beat:familycensus:01-1926",
+     "kind": "familycensus",
+     "chapter": "trumman-east:ch:family-01",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familycensus:01:1926"
+     },
+     "caption": "Trumman East had one Bartley household in 1926, headed by Michael.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familycensus:01:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:01",
+      "label": "Bartley",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "trumman-east:ch:family-03",
+   "title": "The Callaghan family",
+   "beats": [
+    {
+     "id": "trumman-east:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "trumman-east:ch:family-03",
+     "time": {
+      "label": "The Callaghan family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familypresence:03"
+     },
+     "caption": "The Callaghan family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:03",
+      "label": "Callaghan",
+      "run": false
+     }
+    },
+    {
+     "id": "trumman-east:beat:familycensus:03-1901",
+     "kind": "familycensus",
+     "chapter": "trumman-east:ch:family-03",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familycensus:03:1901"
+     },
+     "caption": "Trumman East had one Callaghan household in 1901, headed by Francis.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familycensus:03:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:03",
+      "label": "Callaghan",
+      "run": false
+     }
+    },
+    {
+     "id": "trumman-east:beat:familycensus:03-1911",
+     "kind": "familycensus",
+     "chapter": "trumman-east:ch:family-03",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familycensus:03:1911"
+     },
+     "caption": "Trumman East had one Callaghan household in 1911, headed by Catherine.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familycensus:03:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:03",
+      "label": "Callaghan",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "trumman-east:ch:family-06",
+   "title": "The Dorrian family",
+   "beats": [
+    {
+     "id": "trumman-east:beat:familyhead:06",
+     "kind": "familyhead",
+     "chapter": "trumman-east:ch:family-06",
+     "time": {
+      "label": "The Dorrian family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familypresence:06"
+     },
+     "caption": "The Dorrian family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familypresence:06"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:06",
+      "label": "Dorrian",
+      "run": false
+     }
+    },
+    {
+     "id": "trumman-east:beat:familycensus:06-1901",
+     "kind": "familycensus",
+     "chapter": "trumman-east:ch:family-06",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familycensus:06:1901"
+     },
+     "caption": "Trumman East had two Dorrian households in 1901, headed by John and Daniel.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familycensus:06:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:06",
+      "label": "Dorrian",
+      "run": false
+     }
+    },
+    {
+     "id": "trumman-east:beat:familycensus:06-1911",
+     "kind": "familycensus",
+     "chapter": "trumman-east:ch:family-06",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familycensus:06:1911"
+     },
+     "caption": "Trumman East had one Dorrian household in 1911, headed by Daniel.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familycensus:06:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:06",
+      "label": "Dorrian",
+      "run": false
+     }
+    },
+    {
+     "id": "trumman-east:beat:familycensus:06-1926",
+     "kind": "familycensus",
+     "chapter": "trumman-east:ch:family-06",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familycensus:06:1926"
+     },
+     "caption": "Trumman East had two Dorrian households in 1926, headed by Maggie and Michael.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familycensus:06:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:06",
+      "label": "Dorrian",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "trumman-east:ch:family-07",
+   "title": "The Elliott family",
+   "beats": [
+    {
+     "id": "trumman-east:beat:familyhead:07",
+     "kind": "familyhead",
+     "chapter": "trumman-east:ch:family-07",
+     "time": {
+      "label": "The Elliott family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familypresence:07"
+     },
+     "caption": "The Elliott family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familypresence:07"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:07",
+      "label": "Elliott",
+      "run": false
+     }
+    },
+    {
+     "id": "trumman-east:beat:familycensus:07-1901",
+     "kind": "familycensus",
+     "chapter": "trumman-east:ch:family-07",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familycensus:07:1901"
+     },
+     "caption": "Trumman East had one Elliott household in 1901, headed by William.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familycensus:07:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:07",
+      "label": "Elliott",
+      "run": false
+     }
+    },
+    {
+     "id": "trumman-east:beat:familycensus:07-1911",
+     "kind": "familycensus",
+     "chapter": "trumman-east:ch:family-07",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familycensus:07:1911"
+     },
+     "caption": "Trumman East had one Elliott household in 1911, headed by William.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familycensus:07:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:07",
+      "label": "Elliott",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "trumman-east:ch:family-08",
+   "title": "The Erwin family",
+   "beats": [
+    {
+     "id": "trumman-east:beat:familyhead:08",
+     "kind": "familyhead",
+     "chapter": "trumman-east:ch:family-08",
+     "time": {
+      "label": "The Erwin family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familypresence:08"
+     },
+     "caption": "The Erwin family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familypresence:08"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:08",
+      "label": "Erwin",
+      "run": false
+     }
+    },
+    {
+     "id": "trumman-east:beat:familycensus:08-1901",
+     "kind": "familycensus",
+     "chapter": "trumman-east:ch:family-08",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familycensus:08:1901"
+     },
+     "caption": "Trumman East had one Erwin household in 1901, headed by David.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familycensus:08:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:08",
+      "label": "Erwin",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "trumman-east:ch:family-10",
+   "title": "The Graham family",
+   "beats": [
+    {
+     "id": "trumman-east:beat:familyhead:10",
+     "kind": "familyhead",
+     "chapter": "trumman-east:ch:family-10",
+     "time": {
+      "label": "The Graham family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familypresence:10"
+     },
+     "caption": "The Graham family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familypresence:10"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:10",
+      "label": "Graham",
+      "run": false
+     }
+    },
+    {
+     "id": "trumman-east:beat:familycensus:10-1901",
+     "kind": "familycensus",
+     "chapter": "trumman-east:ch:family-10",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familycensus:10:1901"
+     },
+     "caption": "Trumman East had one Graham household in 1901, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familycensus:10:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:10",
+      "label": "Graham",
+      "run": false
+     }
+    },
+    {
+     "id": "trumman-east:beat:familycensus:10-1911",
+     "kind": "familycensus",
+     "chapter": "trumman-east:ch:family-10",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familycensus:10:1911"
+     },
+     "caption": "Trumman East had one Graham household in 1911, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familycensus:10:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:10",
+      "label": "Graham",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "trumman-east:ch:family-11",
+   "title": "The Hammond family",
+   "beats": [
+    {
+     "id": "trumman-east:beat:familyhead:11",
+     "kind": "familyhead",
+     "chapter": "trumman-east:ch:family-11",
+     "time": {
+      "label": "The Hammond family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familypresence:11"
+     },
+     "caption": "The Hammond family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familypresence:11"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:11",
+      "label": "Hammond",
+      "run": false
+     }
+    },
+    {
+     "id": "trumman-east:beat:familycensus:11-1901",
+     "kind": "familycensus",
+     "chapter": "trumman-east:ch:family-11",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familycensus:11:1901"
+     },
+     "caption": "Trumman East had one Hammond household in 1901, headed by William.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familycensus:11:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:11",
+      "label": "Hammond",
+      "run": false
+     }
+    },
+    {
+     "id": "trumman-east:beat:familycensus:11-1911",
+     "kind": "familycensus",
+     "chapter": "trumman-east:ch:family-11",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familycensus:11:1911"
+     },
+     "caption": "Trumman East had one Hammond household in 1911, headed by Jane.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familycensus:11:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:11",
+      "label": "Hammond",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "trumman-east:ch:family-12",
+   "title": "The Hilley family",
+   "beats": [
+    {
+     "id": "trumman-east:beat:familyhead:12",
+     "kind": "familyhead",
+     "chapter": "trumman-east:ch:family-12",
+     "time": {
+      "label": "The Hilley family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familypresence:12"
+     },
+     "caption": "The Hilley family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familypresence:12"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:12",
+      "label": "Hilley",
+      "run": false
+     }
+    },
+    {
+     "id": "trumman-east:beat:familycensus:12-1901",
+     "kind": "familycensus",
+     "chapter": "trumman-east:ch:family-12",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familycensus:12:1901"
+     },
+     "caption": "Trumman East had one Hilley household in 1901, headed by Thomas.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familycensus:12:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:12",
+      "label": "Hilley",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "trumman-east:ch:family-14",
+   "title": "The Lawn family",
+   "beats": [
+    {
+     "id": "trumman-east:beat:familyhead:14",
+     "kind": "familyhead",
+     "chapter": "trumman-east:ch:family-14",
+     "time": {
+      "label": "The Lawn family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familypresence:14"
+     },
+     "caption": "The Lawn family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familypresence:14"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:14",
+      "label": "Lawn",
+      "run": false
+     }
+    },
+    {
+     "id": "trumman-east:beat:familycensus:14-1901",
+     "kind": "familycensus",
+     "chapter": "trumman-east:ch:family-14",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familycensus:14:1901"
+     },
+     "caption": "Trumman East had one Lawn household in 1901, headed by Edward.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familycensus:14:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:14",
+      "label": "Lawn",
+      "run": false
+     }
+    },
+    {
+     "id": "trumman-east:beat:familycensus:14-1911",
+     "kind": "familycensus",
+     "chapter": "trumman-east:ch:family-14",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familycensus:14:1911"
+     },
+     "caption": "Trumman East had one Lawn household in 1911, headed by Edward.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familycensus:14:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:14",
+      "label": "Lawn",
+      "run": false
+     }
+    },
+    {
+     "id": "trumman-east:beat:familycensus:14-1926",
+     "kind": "familycensus",
+     "chapter": "trumman-east:ch:family-14",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familycensus:14:1926"
+     },
+     "caption": "Trumman East had two Lawn households in 1926, headed by Joseph and Susan.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familycensus:14:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:14",
+      "label": "Lawn",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "trumman-east:ch:family-15",
+   "title": "The Love family",
+   "beats": [
+    {
+     "id": "trumman-east:beat:familyhead:15",
+     "kind": "familyhead",
+     "chapter": "trumman-east:ch:family-15",
+     "time": {
+      "label": "The Love family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familypresence:15"
+     },
+     "caption": "The Love family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familypresence:15"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:15",
+      "label": "Love",
+      "run": false
+     }
+    },
+    {
+     "id": "trumman-east:beat:familycensus:15-1901",
+     "kind": "familycensus",
+     "chapter": "trumman-east:ch:family-15",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familycensus:15:1901"
+     },
+     "caption": "Trumman East had one Love household in 1901, headed by Robert.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familycensus:15:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:15",
+      "label": "Love",
+      "run": false
+     }
+    },
+    {
+     "id": "trumman-east:beat:familycensus:15-1911",
+     "kind": "familycensus",
+     "chapter": "trumman-east:ch:family-15",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familycensus:15:1911"
+     },
+     "caption": "Trumman East had one Love household in 1911, headed by Robert.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familycensus:15:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:15",
+      "label": "Love",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "trumman-east:ch:family-18",
+   "title": "The McGinley family",
+   "beats": [
+    {
+     "id": "trumman-east:beat:familyhead:18",
+     "kind": "familyhead",
+     "chapter": "trumman-east:ch:family-18",
+     "time": {
+      "label": "The McGinley family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familypresence:18"
+     },
+     "caption": "The McGinley family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familypresence:18"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:18",
+      "label": "McGinley",
+      "run": false
+     }
+    },
+    {
+     "id": "trumman-east:beat:familycensus:18-1901",
+     "kind": "familycensus",
+     "chapter": "trumman-east:ch:family-18",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familycensus:18:1901"
+     },
+     "caption": "Trumman East had one McGinley household in 1901, headed by Daniel.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familycensus:18:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:18",
+      "label": "McGinley",
+      "run": false
+     }
+    },
+    {
+     "id": "trumman-east:beat:familycensus:18-1911",
+     "kind": "familycensus",
+     "chapter": "trumman-east:ch:family-18",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familycensus:18:1911"
+     },
+     "caption": "Trumman East had one McGinley household in 1911, headed by Bridget.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familycensus:18:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:18",
+      "label": "McGinley",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "trumman-east:ch:family-19",
+   "title": "The McGlinchey family",
+   "beats": [
+    {
+     "id": "trumman-east:beat:familyhead:19",
+     "kind": "familyhead",
+     "chapter": "trumman-east:ch:family-19",
+     "time": {
+      "label": "The McGlinchey family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familypresence:19"
+     },
+     "caption": "The McGlinchey family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familypresence:19"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:19",
+      "label": "McGlinchey",
+      "run": false
+     }
+    },
+    {
+     "id": "trumman-east:beat:familycensus:19-1901",
+     "kind": "familycensus",
+     "chapter": "trumman-east:ch:family-19",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familycensus:19:1901"
+     },
+     "caption": "Trumman East had one McGlinchey household in 1901, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familycensus:19:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:19",
+      "label": "McGlinchey",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "trumman-east:ch:family-20",
+   "title": "The McGoldrick family",
+   "beats": [
+    {
+     "id": "trumman-east:beat:familyhead:20",
+     "kind": "familyhead",
+     "chapter": "trumman-east:ch:family-20",
+     "time": {
+      "label": "The McGoldrick family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familypresence:20"
+     },
+     "caption": "The McGoldrick family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familypresence:20"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:20",
+      "label": "McGoldrick",
+      "run": false
+     }
+    },
+    {
+     "id": "trumman-east:beat:familycensus:20-1901",
+     "kind": "familycensus",
+     "chapter": "trumman-east:ch:family-20",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familycensus:20:1901"
+     },
+     "caption": "Trumman East had one McGoldrick household in 1901, headed by Sarah.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familycensus:20:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:20",
+      "label": "McGoldrick",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "trumman-east:ch:family-21",
+   "title": "The McGroary family",
+   "beats": [
+    {
+     "id": "trumman-east:beat:familyhead:21",
+     "kind": "familyhead",
+     "chapter": "trumman-east:ch:family-21",
+     "time": {
+      "label": "The McGroary family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familypresence:21"
+     },
+     "caption": "The McGroary family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familypresence:21"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:21",
+      "label": "McGroary",
+      "run": false
+     }
+    },
+    {
+     "id": "trumman-east:beat:familycensus:21-1901",
+     "kind": "familycensus",
+     "chapter": "trumman-east:ch:family-21",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familycensus:21:1901"
+     },
+     "caption": "Trumman East had two McGroary households in 1901, headed by Thomas and Constantine.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familycensus:21:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:21",
+      "label": "McGroary",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "trumman-east:ch:family-24",
+   "title": "The McMurray family",
+   "beats": [
+    {
+     "id": "trumman-east:beat:familyhead:24",
+     "kind": "familyhead",
+     "chapter": "trumman-east:ch:family-24",
+     "time": {
+      "label": "The McMurray family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familypresence:24"
+     },
+     "caption": "The McMurray family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familypresence:24"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:24",
+      "label": "McMurray",
+      "run": false
+     }
+    },
+    {
+     "id": "trumman-east:beat:familycensus:24-1901",
+     "kind": "familycensus",
+     "chapter": "trumman-east:ch:family-24",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familycensus:24:1901"
+     },
+     "caption": "Trumman East had one McMurray household in 1901, headed by Samuel.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familycensus:24:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:24",
+      "label": "McMurray",
+      "run": false
+     }
+    },
+    {
+     "id": "trumman-east:beat:familycensus:24-1911",
+     "kind": "familycensus",
+     "chapter": "trumman-east:ch:family-24",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familycensus:24:1911"
+     },
+     "caption": "Trumman East had one McMurray household in 1911, headed by Samuel.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familycensus:24:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:24",
+      "label": "McMurray",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "trumman-east:ch:family-25",
+   "title": "The Molloy family",
+   "beats": [
+    {
+     "id": "trumman-east:beat:familyhead:25",
+     "kind": "familyhead",
+     "chapter": "trumman-east:ch:family-25",
+     "time": {
+      "label": "The Molloy family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familypresence:25"
+     },
+     "caption": "The Molloy family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familypresence:25"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:25",
+      "label": "Molloy",
+      "run": false
+     }
+    },
+    {
+     "id": "trumman-east:beat:familycensus:25-1901",
+     "kind": "familycensus",
+     "chapter": "trumman-east:ch:family-25",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familycensus:25:1901"
+     },
+     "caption": "Trumman East had one Molloy household in 1901, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familycensus:25:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:25",
+      "label": "Molloy",
+      "run": false
+     }
+    },
+    {
+     "id": "trumman-east:beat:familycensus:25-1926",
+     "kind": "familycensus",
+     "chapter": "trumman-east:ch:family-25",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familycensus:25:1926"
+     },
+     "caption": "Trumman East had two Molloy households in 1926, headed by John and Catherine.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familycensus:25:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:25",
+      "label": "Molloy",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "trumman-east:ch:family-27",
+   "title": "The Quinn family",
+   "beats": [
+    {
+     "id": "trumman-east:beat:familyhead:27",
+     "kind": "familyhead",
+     "chapter": "trumman-east:ch:family-27",
+     "time": {
+      "label": "The Quinn family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familypresence:27"
+     },
+     "caption": "The Quinn family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familypresence:27"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:27",
+      "label": "Quinn",
+      "run": false
+     }
+    },
+    {
+     "id": "trumman-east:beat:familycensus:27-1901",
+     "kind": "familycensus",
+     "chapter": "trumman-east:ch:family-27",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familycensus:27:1901"
+     },
+     "caption": "Trumman East had one Quinn household in 1901, headed by Bernard.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familycensus:27:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:27",
+      "label": "Quinn",
+      "run": false
+     }
+    },
+    {
+     "id": "trumman-east:beat:familycensus:27-1911",
+     "kind": "familycensus",
+     "chapter": "trumman-east:ch:family-27",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familycensus:27:1911"
+     },
+     "caption": "Trumman East had one Quinn household in 1911, headed by Cormac.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familycensus:27:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:27",
+      "label": "Quinn",
+      "run": false
+     }
+    },
+    {
+     "id": "trumman-east:beat:familycensus:27-1926",
+     "kind": "familycensus",
+     "chapter": "trumman-east:ch:family-27",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familycensus:27:1926"
+     },
+     "caption": "Trumman East had one Quinn household in 1926, headed by Joseph.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familycensus:27:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:27",
+      "label": "Quinn",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "trumman-east:ch:family-28",
+   "title": "The Scott family",
+   "beats": [
+    {
+     "id": "trumman-east:beat:familyhead:28",
+     "kind": "familyhead",
+     "chapter": "trumman-east:ch:family-28",
+     "time": {
+      "label": "The Scott family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familypresence:28"
+     },
+     "caption": "The Scott family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familypresence:28"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:28",
+      "label": "Scott",
+      "run": false
+     }
+    },
+    {
+     "id": "trumman-east:beat:familycensus:28-1901",
+     "kind": "familycensus",
+     "chapter": "trumman-east:ch:family-28",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familycensus:28:1901"
+     },
+     "caption": "Trumman East had two Scott households in 1901, headed by John and William.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familycensus:28:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:28",
+      "label": "Scott",
+      "run": false
+     }
+    },
+    {
+     "id": "trumman-east:beat:familycensus:28-1911",
+     "kind": "familycensus",
+     "chapter": "trumman-east:ch:family-28",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familycensus:28:1911"
+     },
+     "caption": "Trumman East had one Scott household in 1911, headed by William.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familycensus:28:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:28",
+      "label": "Scott",
+      "run": false
+     }
+    },
+    {
+     "id": "trumman-east:beat:familycensus:28-1926",
+     "kind": "familycensus",
+     "chapter": "trumman-east:ch:family-28",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familycensus:28:1926"
+     },
+     "caption": "Trumman East had one Scott household in 1926, headed by William.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familycensus:28:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:28",
+      "label": "Scott",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "trumman-east:ch:family-29",
+   "title": "The Timmoney family",
+   "beats": [
+    {
+     "id": "trumman-east:beat:familyhead:29",
+     "kind": "familyhead",
+     "chapter": "trumman-east:ch:family-29",
+     "time": {
+      "label": "The Timmoney family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familypresence:29"
+     },
+     "caption": "The Timmoney family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familypresence:29"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:29",
+      "label": "Timmoney",
+      "run": false
+     }
+    },
+    {
+     "id": "trumman-east:beat:familycensus:29-1901",
+     "kind": "familycensus",
+     "chapter": "trumman-east:ch:family-29",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familycensus:29:1901"
+     },
+     "caption": "Trumman East had one Timmoney household in 1901, headed by Mary.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familycensus:29:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:29",
+      "label": "Timmoney",
+      "run": false
+     }
+    },
+    {
+     "id": "trumman-east:beat:familycensus:29-1911",
+     "kind": "familycensus",
+     "chapter": "trumman-east:ch:family-29",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familycensus:29:1911"
+     },
+     "caption": "Trumman East had one Timmoney household in 1911, headed by Bryan.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familycensus:29:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:29",
+      "label": "Timmoney",
+      "run": false
+     }
+    },
+    {
+     "id": "trumman-east:beat:familycensus:29-1926",
+     "kind": "familycensus",
+     "chapter": "trumman-east:ch:family-29",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familycensus:29:1926"
+     },
+     "caption": "Trumman East had one Timmoney household in 1926, headed by Bernard.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familycensus:29:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:29",
+      "label": "Timmoney",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "trumman-east:ch:family-30",
+   "title": "The Timoney family",
+   "beats": [
+    {
+     "id": "trumman-east:beat:familyhead:30",
+     "kind": "familyhead",
+     "chapter": "trumman-east:ch:family-30",
+     "time": {
+      "label": "The Timoney family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familypresence:30"
+     },
+     "caption": "The Timoney family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familypresence:30"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:30",
+      "label": "Timoney",
+      "run": false
+     }
+    },
+    {
+     "id": "trumman-east:beat:familycensus:30-1901",
+     "kind": "familycensus",
+     "chapter": "trumman-east:ch:family-30",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familycensus:30:1901"
+     },
+     "caption": "Trumman East had one Timoney household in 1901, headed by Owen.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familycensus:30:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:30",
+      "label": "Timoney",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "trumman-east:ch:family-31",
+   "title": "The Travers family",
+   "beats": [
+    {
+     "id": "trumman-east:beat:familyhead:31",
+     "kind": "familyhead",
+     "chapter": "trumman-east:ch:family-31",
+     "time": {
+      "label": "The Travers family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familypresence:31"
+     },
+     "caption": "The Travers family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familypresence:31"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:31",
+      "label": "Travers",
+      "run": false
+     }
+    },
+    {
+     "id": "trumman-east:beat:familycensus:31-1901",
+     "kind": "familycensus",
+     "chapter": "trumman-east:ch:family-31",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familycensus:31:1901"
+     },
+     "caption": "Trumman East had one Travers household in 1901, headed by Denis.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familycensus:31:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:31",
+      "label": "Travers",
+      "run": false
+     }
+    },
+    {
+     "id": "trumman-east:beat:familycensus:31-1911",
+     "kind": "familycensus",
+     "chapter": "trumman-east:ch:family-31",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familycensus:31:1911"
+     },
+     "caption": "Trumman East had one Travers household in 1911, headed by Denis.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familycensus:31:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:31",
+      "label": "Travers",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "trumman-east:ch:family-32",
+   "title": "The Tunny family",
+   "beats": [
+    {
+     "id": "trumman-east:beat:familyhead:32",
+     "kind": "familyhead",
+     "chapter": "trumman-east:ch:family-32",
+     "time": {
+      "label": "The Tunny family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familypresence:32"
+     },
+     "caption": "The Tunny family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familypresence:32"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:32",
+      "label": "Tunny",
+      "run": false
+     }
+    },
+    {
+     "id": "trumman-east:beat:familycensus:32-1901",
+     "kind": "familycensus",
+     "chapter": "trumman-east:ch:family-32",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familycensus:32:1901"
+     },
+     "caption": "Trumman East had one Tunny household in 1901, headed by Daniel.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familycensus:32:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:32",
+      "label": "Tunny",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "trumman-east:ch:family-09",
+   "title": "The Gallagher family",
+   "beats": [
+    {
+     "id": "trumman-east:beat:familyhead:09",
+     "kind": "familyhead",
+     "chapter": "trumman-east:ch:family-09",
+     "time": {
+      "label": "The Gallagher family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familypresence:09"
+     },
+     "caption": "The Gallagher family appear in the records from 1911 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familypresence:09"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:09",
+      "label": "Gallagher",
+      "run": false
+     }
+    },
+    {
+     "id": "trumman-east:beat:familycensus:09-1911",
+     "kind": "familycensus",
+     "chapter": "trumman-east:ch:family-09",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familycensus:09:1911"
+     },
+     "caption": "Trumman East had one Gallagher household in 1911, headed by Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familycensus:09:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:09",
+      "label": "Gallagher",
+      "run": false
+     }
+    },
+    {
+     "id": "trumman-east:beat:familycensus:09-1926",
+     "kind": "familycensus",
+     "chapter": "trumman-east:ch:family-09",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familycensus:09:1926"
+     },
+     "caption": "Trumman East had three Gallagher households in 1926, headed by Susan, William and Patrick James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familycensus:09:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 6000,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:09",
+      "label": "Gallagher",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "trumman-east:ch:family-13",
+   "title": "The Hilly family",
+   "beats": [
+    {
+     "id": "trumman-east:beat:familyhead:13",
+     "kind": "familyhead",
+     "chapter": "trumman-east:ch:family-13",
+     "time": {
+      "label": "The Hilly family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familypresence:13"
+     },
+     "caption": "The Hilly family appear in the records from 1911 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familypresence:13"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:13",
+      "label": "Hilly",
+      "run": false
+     }
+    },
+    {
+     "id": "trumman-east:beat:familycensus:13-1911",
+     "kind": "familycensus",
+     "chapter": "trumman-east:ch:family-13",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familycensus:13:1911"
+     },
+     "caption": "Trumman East had one Hilly household in 1911, headed by Thomas.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familycensus:13:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:13",
+      "label": "Hilly",
+      "run": false
+     }
+    },
+    {
+     "id": "trumman-east:beat:familycensus:13-1926",
+     "kind": "familycensus",
+     "chapter": "trumman-east:ch:family-13",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familycensus:13:1926"
+     },
+     "caption": "Trumman East had one Hilly household in 1926, headed by Mary.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familycensus:13:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:13",
+      "label": "Hilly",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "trumman-east:ch:family-22",
+   "title": "The McGrory family",
+   "beats": [
+    {
+     "id": "trumman-east:beat:familyhead:22",
+     "kind": "familyhead",
+     "chapter": "trumman-east:ch:family-22",
+     "time": {
+      "label": "The McGrory family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familypresence:22"
+     },
+     "caption": "The McGrory family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familypresence:22"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:22",
+      "label": "McGrory",
+      "run": false
+     }
+    },
+    {
+     "id": "trumman-east:beat:familycensus:22-1911",
+     "kind": "familycensus",
+     "chapter": "trumman-east:ch:family-22",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familycensus:22:1911"
+     },
+     "caption": "Trumman East had two McGrory households in 1911, headed by Thomas and John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familycensus:22:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:22",
+      "label": "McGrory",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "trumman-east:ch:family-23",
+   "title": "The McHugh family",
+   "beats": [
+    {
+     "id": "trumman-east:beat:familyhead:23",
+     "kind": "familyhead",
+     "chapter": "trumman-east:ch:family-23",
+     "time": {
+      "label": "The McHugh family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familypresence:23"
+     },
+     "caption": "The McHugh family appear in the records from 1911 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familypresence:23"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:23",
+      "label": "McHugh",
+      "run": false
+     }
+    },
+    {
+     "id": "trumman-east:beat:familycensus:23-1911",
+     "kind": "familycensus",
+     "chapter": "trumman-east:ch:family-23",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familycensus:23:1911"
+     },
+     "caption": "Trumman East had one McHugh household in 1911, headed by Edward.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familycensus:23:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:23",
+      "label": "McHugh",
+      "run": false
+     }
+    },
+    {
+     "id": "trumman-east:beat:familycensus:23-1926",
+     "kind": "familycensus",
+     "chapter": "trumman-east:ch:family-23",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familycensus:23:1926"
+     },
+     "caption": "Trumman East had two McHugh households in 1926, headed by Edward and John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familycensus:23:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:23",
+      "label": "McHugh",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "trumman-east:ch:family-26",
+   "title": "The Mulloy family",
+   "beats": [
+    {
+     "id": "trumman-east:beat:familyhead:26",
+     "kind": "familyhead",
+     "chapter": "trumman-east:ch:family-26",
+     "time": {
+      "label": "The Mulloy family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familypresence:26"
+     },
+     "caption": "The Mulloy family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familypresence:26"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:26",
+      "label": "Mulloy",
+      "run": false
+     }
+    },
+    {
+     "id": "trumman-east:beat:familycensus:26-1911",
+     "kind": "familycensus",
+     "chapter": "trumman-east:ch:family-26",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familycensus:26:1911"
+     },
+     "caption": "Trumman East had one Mulloy household in 1911, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familycensus:26:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:26",
+      "label": "Mulloy",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "trumman-east:ch:family-04",
+   "title": "The Curistan family",
+   "beats": [
+    {
+     "id": "trumman-east:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "trumman-east:ch:family-04",
+     "time": {
+      "label": "The Curistan family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familypresence:04"
+     },
+     "caption": "The Curistan family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:04",
+      "label": "Curistan",
+      "run": false
+     }
+    },
+    {
+     "id": "trumman-east:beat:familycensus:04-1926",
+     "kind": "familycensus",
+     "chapter": "trumman-east:ch:family-04",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familycensus:04:1926"
+     },
+     "caption": "Trumman East had two Curistan households in 1926, headed by Rose and Evelyne Magdaline.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familycensus:04:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5600,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:04",
+      "label": "Curistan",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "trumman-east:ch:family-05",
+   "title": "The Devenney family",
+   "beats": [
+    {
+     "id": "trumman-east:beat:familyhead:05",
+     "kind": "familyhead",
+     "chapter": "trumman-east:ch:family-05",
+     "time": {
+      "label": "The Devenney family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familypresence:05"
+     },
+     "caption": "The Devenney family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familypresence:05"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:05",
+      "label": "Devenney",
+      "run": false
+     }
+    },
+    {
+     "id": "trumman-east:beat:familycensus:05-1926",
+     "kind": "familycensus",
+     "chapter": "trumman-east:ch:family-05",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familycensus:05:1926"
+     },
+     "caption": "Trumman East had one Devenney household in 1926, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familycensus:05:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:05",
+      "label": "Devenney",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "trumman-east:ch:family-16",
+   "title": "The McCafferty family",
+   "beats": [
+    {
+     "id": "trumman-east:beat:familyhead:16",
+     "kind": "familyhead",
+     "chapter": "trumman-east:ch:family-16",
+     "time": {
+      "label": "The McCafferty family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familypresence:16"
+     },
+     "caption": "The McCafferty family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familypresence:16"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:16",
+      "label": "McCafferty",
+      "run": false
+     }
+    },
+    {
+     "id": "trumman-east:beat:familycensus:16-1926",
+     "kind": "familycensus",
+     "chapter": "trumman-east:ch:family-16",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman-east:familycensus:16:1926"
+     },
+     "caption": "Trumman East had one McCafferty household in 1926, headed by Nellie.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman-east:familycensus:16:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "trumman-east:family:16",
+      "label": "McCafferty",
+      "run": false
+     }
     }
    ]
   }

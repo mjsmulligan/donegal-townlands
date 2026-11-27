@@ -52,15 +52,15 @@
    ]
   },
   {
-   "id": "clardrumnagahan:ch:1901",
-   "title": "1901",
+   "id": "clardrumnagahan:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "clardrumnagahan:beat:census:1901",
+     "id": "clardrumnagahan:beat:census:returns",
      "kind": "census",
-     "chapter": "clardrumnagahan:ch:1901",
+     "chapter": "clardrumnagahan:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1926",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -77,33 +77,177 @@
       "stage": "map",
       "open_card": "clardrumnagahan:census:1901"
      },
-     "caption": "In 1901, eight people in one household lived in Clardrumnagahan. Heads of household included Kearney.",
+     "caption": "The censuses of 1901, 1911 and 1926 counted 8, 9 and 13 people in Clardrumnagahan, in 1, 2 and 3 households. Heads of household included Kearney.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "clardrumnagahan:census:1901"
+       "clardrumnagahan:census:1901",
+       "clardrumnagahan:census:1911",
+       "clardrumnagahan:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 6000,
+     "duration_ms": 10400,
      "audio": null,
      "counts": {
-      "people": 8,
-      "households": 1
+      "returns": [
+       {
+        "year": "1901",
+        "people": 8,
+        "households": 1
+       },
+       {
+        "year": "1911",
+        "people": 9,
+        "households": 2
+       },
+       {
+        "year": "1926",
+        "people": 13,
+        "households": 3
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "clardrumnagahan:ch:1911",
-   "title": "1911",
+   "id": "clardrumnagahan:ch:families",
+   "title": "The families of Clardrumnagahan",
    "beats": [
     {
-     "id": "clardrumnagahan:beat:census:1911",
-     "kind": "census",
-     "chapter": "clardrumnagahan:ch:1911",
+     "id": "clardrumnagahan:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "clardrumnagahan:ch:families",
+     "time": {
+      "label": "The families of Clardrumnagahan",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clardrumnagahan",
+      "name": "Clardrumnagahan",
+      "logainm_id": "13962",
+      "lat": 54.675122,
+      "lon": -8.067044,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clardrumnagahan:census:1901"
+     },
+     "caption": "Here are the families of Clardrumnagahan, from 1901 to 1926. First, the Kearney family.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clardrumnagahan:census:1901",
+       "clardrumnagahan:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 5600,
+     "audio": null,
+     "thread": {
+      "id": "clardrumnagahan:family:01",
+      "label": "Kearney",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "clardrumnagahan:ch:family-01",
+   "title": "The Kearney family",
+   "beats": [
+    {
+     "id": "clardrumnagahan:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "clardrumnagahan:ch:family-01",
+     "time": {
+      "label": "The Kearney family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clardrumnagahan",
+      "name": "Clardrumnagahan",
+      "logainm_id": "13962",
+      "lat": 54.675122,
+      "lon": -8.067044,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clardrumnagahan:familypresence:01"
+     },
+     "caption": "The Kearney family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clardrumnagahan:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "clardrumnagahan:family:01",
+      "label": "Kearney",
+      "run": true
+     }
+    },
+    {
+     "id": "clardrumnagahan:beat:familycensus:01-1901",
+     "kind": "familycensus",
+     "chapter": "clardrumnagahan:ch:family-01",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clardrumnagahan",
+      "name": "Clardrumnagahan",
+      "logainm_id": "13962",
+      "lat": 54.675122,
+      "lon": -8.067044,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clardrumnagahan:familycensus:01:1901"
+     },
+     "caption": "Clardrumnagahan had one Kearney household in 1901, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clardrumnagahan:familycensus:01:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clardrumnagahan:family:01",
+      "label": "Kearney",
+      "run": true
+     }
+    },
+    {
+     "id": "clardrumnagahan:beat:familycensus:01-1911",
+     "kind": "familycensus",
+     "chapter": "clardrumnagahan:ch:family-01",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -120,35 +264,30 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "clardrumnagahan:census:1911"
+      "open_card": "clardrumnagahan:familycensus:01:1911"
      },
-     "caption": "In 1911, nine people in two households lived in Clardrumnagahan. Heads of household included Kearney.",
+     "caption": "Clardrumnagahan had two Kearney households in 1911, headed by Thomas and James.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "clardrumnagahan:census:1911"
+       "clardrumnagahan:familycensus:01:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6000,
+     "duration_ms": 4800,
      "audio": null,
-     "counts": {
-      "people": 9,
-      "households": 2
+     "thread": {
+      "id": "clardrumnagahan:family:01",
+      "label": "Kearney",
+      "run": true
      }
-    }
-   ]
-  },
-  {
-   "id": "clardrumnagahan:ch:1926",
-   "title": "1926",
-   "beats": [
+    },
     {
-     "id": "clardrumnagahan:beat:census:1926",
-     "kind": "census",
-     "chapter": "clardrumnagahan:ch:1926",
+     "id": "clardrumnagahan:beat:familycensus:01-1926",
+     "kind": "familycensus",
+     "chapter": "clardrumnagahan:ch:family-01",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -165,25 +304,32 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "clardrumnagahan:census:1926"
+      "open_card": "clardrumnagahan:familycensus:01:1926"
      },
-     "caption": "Clardrumnagahan had thirteen people in three households in 1926. Heads of household included Kearney.",
+     "caption": "Clardrumnagahan had three Kearney households in 1926, headed by Thomas, George A and James.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "clardrumnagahan:census:1926"
+       "clardrumnagahan:familycensus:01:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
      "duration_ms": 5600,
      "audio": null,
-     "counts": {
-      "people": 13,
-      "households": 3
+     "thread": {
+      "id": "clardrumnagahan:family:01",
+      "label": "Kearney",
+      "run": true
      }
-    },
+    }
+   ]
+  },
+  {
+   "id": "clardrumnagahan:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "clardrumnagahan:beat:closing:end",
      "kind": "closing",

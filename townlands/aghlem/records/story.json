@@ -99,13 +99,13 @@
    "title": "Baptisms, 1874 to 1875",
    "beats": [
     {
-     "id": "aghlem:beat:baptism:1874",
+     "id": "aghlem:beat:baptism:1874-08-13-TAW-B-p011-r141",
      "kind": "baptism",
      "chapter": "aghlem:ch:baptisms",
      "time": {
-      "label": "1 February 1874",
-      "iso": "1874-02-01",
-      "sort": "1874-02-01",
+      "label": "13 August 1874",
+      "iso": "1874-08-13",
+      "sort": "1874-08-13",
       "approximate": false
      },
      "place": {
@@ -118,20 +118,19 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "aghlem:baptism:TAW-B-p010-r103"
+      "open_card": "aghlem:baptism:TAW-B-p011-r141"
      },
-     "caption": "Two children were baptised in 1874: Catherine Gillespie on 1 February and Margaret Ellen Breslin on 13 August.",
+     "caption": "Margaret Ellen Breslin was baptised on 13 August 1874. Denis Breslin and Margaret Slevin were the parents.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "aghlem:baptism:TAW-B-p010-r103",
        "aghlem:baptism:TAW-B-p011-r141"
       ],
       "basis": "page_place",
       "certainty": "stated"
      },
-     "duration_ms": 7200,
+     "duration_ms": 6800,
      "audio": null
     },
     {
@@ -172,15 +171,15 @@
    ]
   },
   {
-   "id": "aghlem:ch:1901",
-   "title": "1901",
+   "id": "aghlem:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "aghlem:beat:census:1901",
+     "id": "aghlem:beat:census:returns",
      "kind": "census",
-     "chapter": "aghlem:ch:1901",
+     "chapter": "aghlem:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1926",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -197,33 +196,217 @@
       "stage": "map",
       "open_card": "aghlem:census:1901"
      },
-     "caption": "Aghlem had 61 people in fourteen households in 1901. Heads of household included Corrigan, Gallagher and Gillespie.",
+     "caption": "The censuses of 1901, 1911 and 1926 counted 61, 62 and 41 people in Aghlem, in 14, 10 and 9 households. Heads of household included Corrigan, Gallagher and Gillespie.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "aghlem:census:1901"
+       "aghlem:census:1901",
+       "aghlem:census:1911",
+       "aghlem:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 6800,
+     "duration_ms": 11600,
      "audio": null,
      "counts": {
-      "people": 61,
-      "households": 14
+      "returns": [
+       {
+        "year": "1901",
+        "people": 61,
+        "households": 14
+       },
+       {
+        "year": "1911",
+        "people": 62,
+        "households": 10
+       },
+       {
+        "year": "1926",
+        "people": 41,
+        "households": 9
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "aghlem:ch:1911",
-   "title": "1911",
+   "id": "aghlem:ch:families",
+   "title": "The families of Aghlem",
    "beats": [
     {
-     "id": "aghlem:beat:census:1911",
-     "kind": "census",
-     "chapter": "aghlem:ch:1911",
+     "id": "aghlem:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "aghlem:ch:families",
+     "time": {
+      "label": "The families of Aghlem",
+      "iso": "1874-02-01",
+      "sort": "1874-02-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "aghlem",
+      "name": "Aghlem",
+      "logainm_id": "14271",
+      "lat": 54.65671,
+      "lon": -8.021811,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "aghlem:baptism:TAW-B-p010-r103"
+     },
+     "caption": "Here are the families of Aghlem, from 1874 to 1926. First, the Gillespie and Cassidy families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "aghlem:baptism:TAW-B-p010-r103",
+       "aghlem:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "aghlem:family:06",
+      "label": "Gillespie",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "aghlem:ch:family-06",
+   "title": "The Gillespie family",
+   "beats": [
+    {
+     "id": "aghlem:beat:baptism:1874-02-01-TAW-B-p010-r103",
+     "kind": "baptism",
+     "chapter": "aghlem:ch:family-06",
+     "time": {
+      "label": "1 February 1874",
+      "iso": "1874-02-01",
+      "sort": "1874-02-01",
+      "approximate": false
+     },
+     "place": {
+      "townland": "aghlem",
+      "name": "Aghlem",
+      "logainm_id": "14271",
+      "lat": 54.65671,
+      "lon": -8.021811,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "aghlem:baptism:TAW-B-p010-r103"
+     },
+     "caption": "Catherine Gillespie was baptised on 1 February 1874. Francis Gillespie and Margaret Gallagher were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "aghlem:baptism:TAW-B-p010-r103"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "aghlem:family:06",
+      "label": "Gillespie",
+      "run": true
+     }
+    },
+    {
+     "id": "aghlem:beat:familyhead:06",
+     "kind": "familyhead",
+     "chapter": "aghlem:ch:family-06",
+     "time": {
+      "label": "The Gillespie family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "aghlem",
+      "name": "Aghlem",
+      "logainm_id": "14271",
+      "lat": 54.65671,
+      "lon": -8.021811,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "aghlem:familypresence:06"
+     },
+     "caption": "The Gillespie family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "aghlem:familypresence:06"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "aghlem:family:06",
+      "label": "Gillespie",
+      "run": true
+     }
+    },
+    {
+     "id": "aghlem:beat:familycensus:06-1901",
+     "kind": "familycensus",
+     "chapter": "aghlem:ch:family-06",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "aghlem",
+      "name": "Aghlem",
+      "logainm_id": "14271",
+      "lat": 54.65671,
+      "lon": -8.021811,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "aghlem:familycensus:06:1901"
+     },
+     "caption": "Aghlem had two Gillespie households in 1901, headed by Francis and Edward.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "aghlem:familycensus:06:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "aghlem:family:06",
+      "label": "Gillespie",
+      "run": true
+     }
+    },
+    {
+     "id": "aghlem:beat:familycensus:06-1911",
+     "kind": "familycensus",
+     "chapter": "aghlem:ch:family-06",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -240,35 +423,30 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "aghlem:census:1911"
+      "open_card": "aghlem:familycensus:06:1911"
      },
-     "caption": "Aghlem had 62 people in ten households in 1911. Heads of household included Gillespie, Cassidy and McCadden.",
+     "caption": "Aghlem had three Gillespie households in 1911, headed by Edward, William and Margaret.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "aghlem:census:1911"
+       "aghlem:familycensus:06:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6800,
+     "duration_ms": 5200,
      "audio": null,
-     "counts": {
-      "people": 62,
-      "households": 10
+     "thread": {
+      "id": "aghlem:family:06",
+      "label": "Gillespie",
+      "run": true
      }
-    }
-   ]
-  },
-  {
-   "id": "aghlem:ch:1926",
-   "title": "1926",
-   "beats": [
+    },
     {
-     "id": "aghlem:beat:census:1926",
-     "kind": "census",
-     "chapter": "aghlem:ch:1926",
+     "id": "aghlem:beat:familycensus:06-1926",
+     "kind": "familycensus",
+     "chapter": "aghlem:ch:family-06",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -285,25 +463,198 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "aghlem:census:1926"
+      "open_card": "aghlem:familycensus:06:1926"
      },
-     "caption": "Aghlem had 41 people in nine households in 1926. Heads of household included Gillespie, Cassidy and McCadden.",
+     "caption": "Aghlem had four Gillespie households in 1926, headed by Francey, Lizzie, Teresa and Margaret Ellen.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "aghlem:census:1926"
+       "aghlem:familycensus:06:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6800,
+     "duration_ms": 6000,
      "audio": null,
-     "counts": {
-      "people": 41,
-      "households": 9
+     "thread": {
+      "id": "aghlem:family:06",
+      "label": "Gillespie",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "aghlem:ch:family-02",
+   "title": "The Cassidy family",
+   "beats": [
+    {
+     "id": "aghlem:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "aghlem:ch:family-02",
+     "time": {
+      "label": "The Cassidy family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "aghlem",
+      "name": "Aghlem",
+      "logainm_id": "14271",
+      "lat": 54.65671,
+      "lon": -8.021811,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "aghlem:familypresence:02"
+     },
+     "caption": "The Cassidy family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "aghlem:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "aghlem:family:02",
+      "label": "Cassidy",
+      "run": true
      }
     },
+    {
+     "id": "aghlem:beat:familycensus:02-1901",
+     "kind": "familycensus",
+     "chapter": "aghlem:ch:family-02",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "aghlem",
+      "name": "Aghlem",
+      "logainm_id": "14271",
+      "lat": 54.65671,
+      "lon": -8.021811,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "aghlem:familycensus:02:1901"
+     },
+     "caption": "Aghlem had one Cassidy household in 1901, headed by Sarah.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "aghlem:familycensus:02:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "aghlem:family:02",
+      "label": "Cassidy",
+      "run": true
+     }
+    },
+    {
+     "id": "aghlem:beat:familycensus:02-1911",
+     "kind": "familycensus",
+     "chapter": "aghlem:ch:family-02",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "aghlem",
+      "name": "Aghlem",
+      "logainm_id": "14271",
+      "lat": 54.65671,
+      "lon": -8.021811,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "aghlem:familycensus:02:1911"
+     },
+     "caption": "Aghlem had two Cassidy households in 1911, headed by Francis and John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "aghlem:familycensus:02:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "aghlem:family:02",
+      "label": "Cassidy",
+      "run": true
+     }
+    },
+    {
+     "id": "aghlem:beat:familycensus:02-1926",
+     "kind": "familycensus",
+     "chapter": "aghlem:ch:family-02",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "aghlem",
+      "name": "Aghlem",
+      "logainm_id": "14271",
+      "lat": 54.65671,
+      "lon": -8.021811,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "aghlem:familycensus:02:1926"
+     },
+     "caption": "Aghlem had two Cassidy households in 1926, headed by Francis M and John Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "aghlem:familycensus:02:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5600,
+     "audio": null,
+     "thread": {
+      "id": "aghlem:family:02",
+      "label": "Cassidy",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "aghlem:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "aghlem:beat:closing:end",
      "kind": "closing",
@@ -338,6 +689,1020 @@
      },
      "duration_ms": 4000,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "aghlem:ch:family-01",
+   "title": "The Boyle family",
+   "beats": [
+    {
+     "id": "aghlem:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "aghlem:ch:family-01",
+     "time": {
+      "label": "The Boyle family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "aghlem",
+      "name": "Aghlem",
+      "logainm_id": "14271",
+      "lat": 54.65671,
+      "lon": -8.021811,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "aghlem:familypresence:01"
+     },
+     "caption": "The Boyle family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "aghlem:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "aghlem:family:01",
+      "label": "Boyle",
+      "run": false
+     }
+    },
+    {
+     "id": "aghlem:beat:familycensus:01-1901",
+     "kind": "familycensus",
+     "chapter": "aghlem:ch:family-01",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "aghlem",
+      "name": "Aghlem",
+      "logainm_id": "14271",
+      "lat": 54.65671,
+      "lon": -8.021811,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "aghlem:familycensus:01:1901"
+     },
+     "caption": "Aghlem had one Boyle household in 1901, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "aghlem:familycensus:01:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "aghlem:family:01",
+      "label": "Boyle",
+      "run": false
+     }
+    },
+    {
+     "id": "aghlem:beat:familycensus:01-1911",
+     "kind": "familycensus",
+     "chapter": "aghlem:ch:family-01",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "aghlem",
+      "name": "Aghlem",
+      "logainm_id": "14271",
+      "lat": 54.65671,
+      "lon": -8.021811,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "aghlem:familycensus:01:1911"
+     },
+     "caption": "Aghlem had one Boyle household in 1911, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "aghlem:familycensus:01:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "aghlem:family:01",
+      "label": "Boyle",
+      "run": false
+     }
+    },
+    {
+     "id": "aghlem:beat:familycensus:01-1926",
+     "kind": "familycensus",
+     "chapter": "aghlem:ch:family-01",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "aghlem",
+      "name": "Aghlem",
+      "logainm_id": "14271",
+      "lat": 54.65671,
+      "lon": -8.021811,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "aghlem:familycensus:01:1926"
+     },
+     "caption": "Aghlem had one Boyle household in 1926, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "aghlem:familycensus:01:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "aghlem:family:01",
+      "label": "Boyle",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "aghlem:ch:family-03",
+   "title": "The Corrigan family",
+   "beats": [
+    {
+     "id": "aghlem:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "aghlem:ch:family-03",
+     "time": {
+      "label": "The Corrigan family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "aghlem",
+      "name": "Aghlem",
+      "logainm_id": "14271",
+      "lat": 54.65671,
+      "lon": -8.021811,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "aghlem:familypresence:03"
+     },
+     "caption": "The Corrigan family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "aghlem:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "aghlem:family:03",
+      "label": "Corrigan",
+      "run": false
+     }
+    },
+    {
+     "id": "aghlem:beat:familycensus:03-1901",
+     "kind": "familycensus",
+     "chapter": "aghlem:ch:family-03",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "aghlem",
+      "name": "Aghlem",
+      "logainm_id": "14271",
+      "lat": 54.65671,
+      "lon": -8.021811,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "aghlem:familycensus:03:1901"
+     },
+     "caption": "Aghlem had two Corrigan households in 1901, headed by Andrew and Richard.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "aghlem:familycensus:03:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "aghlem:family:03",
+      "label": "Corrigan",
+      "run": false
+     }
+    },
+    {
+     "id": "aghlem:beat:familycensus:03-1911",
+     "kind": "familycensus",
+     "chapter": "aghlem:ch:family-03",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "aghlem",
+      "name": "Aghlem",
+      "logainm_id": "14271",
+      "lat": 54.65671,
+      "lon": -8.021811,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "aghlem:familycensus:03:1911"
+     },
+     "caption": "Aghlem had one Corrigan household in 1911, headed by Andrew.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "aghlem:familycensus:03:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "aghlem:family:03",
+      "label": "Corrigan",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "aghlem:ch:family-04",
+   "title": "The Devlin family",
+   "beats": [
+    {
+     "id": "aghlem:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "aghlem:ch:family-04",
+     "time": {
+      "label": "The Devlin family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "aghlem",
+      "name": "Aghlem",
+      "logainm_id": "14271",
+      "lat": 54.65671,
+      "lon": -8.021811,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "aghlem:familypresence:04"
+     },
+     "caption": "The Devlin family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "aghlem:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "aghlem:family:04",
+      "label": "Devlin",
+      "run": false
+     }
+    },
+    {
+     "id": "aghlem:beat:familycensus:04-1901",
+     "kind": "familycensus",
+     "chapter": "aghlem:ch:family-04",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "aghlem",
+      "name": "Aghlem",
+      "logainm_id": "14271",
+      "lat": 54.65671,
+      "lon": -8.021811,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "aghlem:familycensus:04:1901"
+     },
+     "caption": "Aghlem had one Devlin household in 1901, headed by Margaret.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "aghlem:familycensus:04:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "aghlem:family:04",
+      "label": "Devlin",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "aghlem:ch:family-05",
+   "title": "The Gallagher family",
+   "beats": [
+    {
+     "id": "aghlem:beat:familyhead:05",
+     "kind": "familyhead",
+     "chapter": "aghlem:ch:family-05",
+     "time": {
+      "label": "The Gallagher family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "aghlem",
+      "name": "Aghlem",
+      "logainm_id": "14271",
+      "lat": 54.65671,
+      "lon": -8.021811,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "aghlem:familypresence:05"
+     },
+     "caption": "The Gallagher family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "aghlem:familypresence:05"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "aghlem:family:05",
+      "label": "Gallagher",
+      "run": false
+     }
+    },
+    {
+     "id": "aghlem:beat:familycensus:05-1901",
+     "kind": "familycensus",
+     "chapter": "aghlem:ch:family-05",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "aghlem",
+      "name": "Aghlem",
+      "logainm_id": "14271",
+      "lat": 54.65671,
+      "lon": -8.021811,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "aghlem:familycensus:05:1901"
+     },
+     "caption": "Aghlem had two Gallagher households in 1901, headed by Ellen and Michael.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "aghlem:familycensus:05:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "aghlem:family:05",
+      "label": "Gallagher",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "aghlem:ch:family-07",
+   "title": "The McCadden family",
+   "beats": [
+    {
+     "id": "aghlem:beat:familyhead:07",
+     "kind": "familyhead",
+     "chapter": "aghlem:ch:family-07",
+     "time": {
+      "label": "The McCadden family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "aghlem",
+      "name": "Aghlem",
+      "logainm_id": "14271",
+      "lat": 54.65671,
+      "lon": -8.021811,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "aghlem:familypresence:07"
+     },
+     "caption": "The McCadden family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "aghlem:familypresence:07"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "aghlem:family:07",
+      "label": "McCadden",
+      "run": false
+     }
+    },
+    {
+     "id": "aghlem:beat:familycensus:07-1901",
+     "kind": "familycensus",
+     "chapter": "aghlem:ch:family-07",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "aghlem",
+      "name": "Aghlem",
+      "logainm_id": "14271",
+      "lat": 54.65671,
+      "lon": -8.021811,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "aghlem:familycensus:07:1901"
+     },
+     "caption": "Aghlem had one McCadden household in 1901, headed by Pat.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "aghlem:familycensus:07:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "aghlem:family:07",
+      "label": "McCadden",
+      "run": false
+     }
+    },
+    {
+     "id": "aghlem:beat:familycensus:07-1911",
+     "kind": "familycensus",
+     "chapter": "aghlem:ch:family-07",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "aghlem",
+      "name": "Aghlem",
+      "logainm_id": "14271",
+      "lat": 54.65671,
+      "lon": -8.021811,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "aghlem:familycensus:07:1911"
+     },
+     "caption": "Aghlem had two McCadden households in 1911, headed by Owen and Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "aghlem:familycensus:07:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "aghlem:family:07",
+      "label": "McCadden",
+      "run": false
+     }
+    },
+    {
+     "id": "aghlem:beat:familycensus:07-1926",
+     "kind": "familycensus",
+     "chapter": "aghlem:ch:family-07",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "aghlem",
+      "name": "Aghlem",
+      "logainm_id": "14271",
+      "lat": 54.65671,
+      "lon": -8.021811,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "aghlem:familycensus:07:1926"
+     },
+     "caption": "Aghlem had two McCadden households in 1926, headed by Mary and Andrew.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "aghlem:familycensus:07:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "aghlem:family:07",
+      "label": "McCadden",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "aghlem:ch:family-08",
+   "title": "The McElhar family",
+   "beats": [
+    {
+     "id": "aghlem:beat:familyhead:08",
+     "kind": "familyhead",
+     "chapter": "aghlem:ch:family-08",
+     "time": {
+      "label": "The McElhar family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "aghlem",
+      "name": "Aghlem",
+      "logainm_id": "14271",
+      "lat": 54.65671,
+      "lon": -8.021811,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "aghlem:familypresence:08"
+     },
+     "caption": "The McElhar family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "aghlem:familypresence:08"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "aghlem:family:08",
+      "label": "McElhar",
+      "run": false
+     }
+    },
+    {
+     "id": "aghlem:beat:familycensus:08-1901",
+     "kind": "familycensus",
+     "chapter": "aghlem:ch:family-08",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "aghlem",
+      "name": "Aghlem",
+      "logainm_id": "14271",
+      "lat": 54.65671,
+      "lon": -8.021811,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "aghlem:familycensus:08:1901"
+     },
+     "caption": "Aghlem had one McElhar household in 1901, headed by Edward.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "aghlem:familycensus:08:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "aghlem:family:08",
+      "label": "McElhar",
+      "run": false
+     }
+    },
+    {
+     "id": "aghlem:beat:familycensus:08-1911",
+     "kind": "familycensus",
+     "chapter": "aghlem:ch:family-08",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "aghlem",
+      "name": "Aghlem",
+      "logainm_id": "14271",
+      "lat": 54.65671,
+      "lon": -8.021811,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "aghlem:familycensus:08:1911"
+     },
+     "caption": "Aghlem had one McElhar household in 1911, headed by Catherine.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "aghlem:familycensus:08:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "aghlem:family:08",
+      "label": "McElhar",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "aghlem:ch:family-09",
+   "title": "The McGlyn family",
+   "beats": [
+    {
+     "id": "aghlem:beat:familyhead:09",
+     "kind": "familyhead",
+     "chapter": "aghlem:ch:family-09",
+     "time": {
+      "label": "The McGlyn family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "aghlem",
+      "name": "Aghlem",
+      "logainm_id": "14271",
+      "lat": 54.65671,
+      "lon": -8.021811,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "aghlem:familypresence:09"
+     },
+     "caption": "The McGlyn family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "aghlem:familypresence:09"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "aghlem:family:09",
+      "label": "McGlyn",
+      "run": false
+     }
+    },
+    {
+     "id": "aghlem:beat:familycensus:09-1901",
+     "kind": "familycensus",
+     "chapter": "aghlem:ch:family-09",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "aghlem",
+      "name": "Aghlem",
+      "logainm_id": "14271",
+      "lat": 54.65671,
+      "lon": -8.021811,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "aghlem:familycensus:09:1901"
+     },
+     "caption": "Aghlem had one McGlyn household in 1901, headed by Ellen.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "aghlem:familycensus:09:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "aghlem:family:09",
+      "label": "McGlyn",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "aghlem:ch:family-10",
+   "title": "The McHugh family",
+   "beats": [
+    {
+     "id": "aghlem:beat:familyhead:10",
+     "kind": "familyhead",
+     "chapter": "aghlem:ch:family-10",
+     "time": {
+      "label": "The McHugh family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "aghlem",
+      "name": "Aghlem",
+      "logainm_id": "14271",
+      "lat": 54.65671,
+      "lon": -8.021811,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "aghlem:familypresence:10"
+     },
+     "caption": "The McHugh family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "aghlem:familypresence:10"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "aghlem:family:10",
+      "label": "McHugh",
+      "run": false
+     }
+    },
+    {
+     "id": "aghlem:beat:familycensus:10-1901",
+     "kind": "familycensus",
+     "chapter": "aghlem:ch:family-10",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "aghlem",
+      "name": "Aghlem",
+      "logainm_id": "14271",
+      "lat": 54.65671,
+      "lon": -8.021811,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "aghlem:familycensus:10:1901"
+     },
+     "caption": "Aghlem had one McHugh household in 1901, headed by Mary.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "aghlem:familycensus:10:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "aghlem:family:10",
+      "label": "McHugh",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "aghlem:ch:family-11",
+   "title": "The White family",
+   "beats": [
+    {
+     "id": "aghlem:beat:familyhead:11",
+     "kind": "familyhead",
+     "chapter": "aghlem:ch:family-11",
+     "time": {
+      "label": "The White family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "aghlem",
+      "name": "Aghlem",
+      "logainm_id": "14271",
+      "lat": 54.65671,
+      "lon": -8.021811,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "aghlem:familypresence:11"
+     },
+     "caption": "The White family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "aghlem:familypresence:11"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "aghlem:family:11",
+      "label": "White",
+      "run": false
+     }
+    },
+    {
+     "id": "aghlem:beat:familycensus:11-1901",
+     "kind": "familycensus",
+     "chapter": "aghlem:ch:family-11",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "aghlem",
+      "name": "Aghlem",
+      "logainm_id": "14271",
+      "lat": 54.65671,
+      "lon": -8.021811,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "aghlem:familycensus:11:1901"
+     },
+     "caption": "Aghlem had one White household in 1901, headed by Robert.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "aghlem:familycensus:11:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "aghlem:family:11",
+      "label": "White",
+      "run": false
+     }
     }
    ]
   }

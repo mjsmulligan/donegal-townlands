@@ -52,15 +52,15 @@
    ]
   },
   {
-   "id": "drumlaght:ch:1901",
-   "title": "1901",
+   "id": "drumlaght:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "drumlaght:beat:census:1901",
+     "id": "drumlaght:beat:census:returns",
      "kind": "census",
-     "chapter": "drumlaght:ch:1901",
+     "chapter": "drumlaght:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1926",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -77,33 +77,177 @@
       "stage": "map",
       "open_card": "drumlaght:census:1901"
      },
-     "caption": "In 1901, 35 people in six households lived in Drumlaght. Heads of household included Montgomery, Freebourn and Kilpatrick.",
+     "caption": "The censuses of 1901, 1911 and 1926 counted 35, 29 and 23 people in Drumlaght, in 6, 6 and 6 households. Heads of household included Montgomery, Freebourn and Kilpatrick.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "drumlaght:census:1901"
+       "drumlaght:census:1901",
+       "drumlaght:census:1911",
+       "drumlaght:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 7200,
+     "duration_ms": 11600,
      "audio": null,
      "counts": {
-      "people": 35,
-      "households": 6
+      "returns": [
+       {
+        "year": "1901",
+        "people": 35,
+        "households": 6
+       },
+       {
+        "year": "1911",
+        "people": 29,
+        "households": 6
+       },
+       {
+        "year": "1926",
+        "people": 23,
+        "households": 6
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "drumlaght:ch:1911",
-   "title": "1911",
+   "id": "drumlaght:ch:families",
+   "title": "The families of Drumlaght",
    "beats": [
     {
-     "id": "drumlaght:beat:census:1911",
-     "kind": "census",
-     "chapter": "drumlaght:ch:1911",
+     "id": "drumlaght:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "drumlaght:ch:families",
+     "time": {
+      "label": "The families of Drumlaght",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlaght",
+      "name": "Drumlaght",
+      "logainm_id": "14033",
+      "lat": 54.662645,
+      "lon": -8.091802,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlaght:census:1901"
+     },
+     "caption": "Here are the families of Drumlaght, from 1901 to 1926. First, the Montgomery and Freeborn families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlaght:census:1901",
+       "drumlaght:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "drumlaght:family:07",
+      "label": "Montgomery",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumlaght:ch:family-07",
+   "title": "The Montgomery family",
+   "beats": [
+    {
+     "id": "drumlaght:beat:familyhead:07",
+     "kind": "familyhead",
+     "chapter": "drumlaght:ch:family-07",
+     "time": {
+      "label": "The Montgomery family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlaght",
+      "name": "Drumlaght",
+      "logainm_id": "14033",
+      "lat": 54.662645,
+      "lon": -8.091802,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlaght:familypresence:07"
+     },
+     "caption": "The Montgomery family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlaght:familypresence:07"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drumlaght:family:07",
+      "label": "Montgomery",
+      "run": true
+     }
+    },
+    {
+     "id": "drumlaght:beat:familycensus:07-1901",
+     "kind": "familycensus",
+     "chapter": "drumlaght:ch:family-07",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlaght",
+      "name": "Drumlaght",
+      "logainm_id": "14033",
+      "lat": 54.662645,
+      "lon": -8.091802,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlaght:familycensus:07:1901"
+     },
+     "caption": "Drumlaght had two Montgomery households in 1901, headed by Alexander and Isabella.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlaght:familycensus:07:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "drumlaght:family:07",
+      "label": "Montgomery",
+      "run": true
+     }
+    },
+    {
+     "id": "drumlaght:beat:familycensus:07-1911",
+     "kind": "familycensus",
+     "chapter": "drumlaght:ch:family-07",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -120,35 +264,30 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "drumlaght:census:1911"
+      "open_card": "drumlaght:familycensus:07:1911"
      },
-     "caption": "In 1911, 29 people in six households lived in Drumlaght. Heads of household included Montgomery, Freeborn and Freebourn.",
+     "caption": "Drumlaght had two Montgomery households in 1911, headed by James and Alexander.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "drumlaght:census:1911"
+       "drumlaght:familycensus:07:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 7200,
+     "duration_ms": 4800,
      "audio": null,
-     "counts": {
-      "people": 29,
-      "households": 6
+     "thread": {
+      "id": "drumlaght:family:07",
+      "label": "Montgomery",
+      "run": true
      }
-    }
-   ]
-  },
-  {
-   "id": "drumlaght:ch:1926",
-   "title": "1926",
-   "beats": [
+    },
     {
-     "id": "drumlaght:beat:census:1926",
-     "kind": "census",
-     "chapter": "drumlaght:ch:1926",
+     "id": "drumlaght:beat:familycensus:07-1926",
+     "kind": "familycensus",
+     "chapter": "drumlaght:ch:family-07",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -165,25 +304,158 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "drumlaght:census:1926"
+      "open_card": "drumlaght:familycensus:07:1926"
      },
-     "caption": "In 1926, 23 people in six households lived in Drumlaght. Heads of household included Freeborn, Montgomery and Kirkpatrick.",
+     "caption": "Drumlaght had two Montgomery households in 1926, headed by James and Thomas.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "drumlaght:census:1926"
+       "drumlaght:familycensus:07:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 7200,
+     "duration_ms": 4800,
      "audio": null,
-     "counts": {
-      "people": 23,
-      "households": 6
+     "thread": {
+      "id": "drumlaght:family:07",
+      "label": "Montgomery",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumlaght:ch:family-01",
+   "title": "The Freeborn family",
+   "beats": [
+    {
+     "id": "drumlaght:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "drumlaght:ch:family-01",
+     "time": {
+      "label": "The Freeborn family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlaght",
+      "name": "Drumlaght",
+      "logainm_id": "14033",
+      "lat": 54.662645,
+      "lon": -8.091802,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlaght:familypresence:01"
+     },
+     "caption": "The Freeborn family appear in the records from 1911 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlaght:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drumlaght:family:01",
+      "label": "Freeborn",
+      "run": true
      }
     },
+    {
+     "id": "drumlaght:beat:familycensus:01-1911",
+     "kind": "familycensus",
+     "chapter": "drumlaght:ch:family-01",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlaght",
+      "name": "Drumlaght",
+      "logainm_id": "14033",
+      "lat": 54.662645,
+      "lon": -8.091802,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlaght:familycensus:01:1911"
+     },
+     "caption": "Drumlaght had one Freeborn household in 1911, headed by Thomas.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlaght:familycensus:01:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumlaght:family:01",
+      "label": "Freeborn",
+      "run": true
+     }
+    },
+    {
+     "id": "drumlaght:beat:familycensus:01-1926",
+     "kind": "familycensus",
+     "chapter": "drumlaght:ch:family-01",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlaght",
+      "name": "Drumlaght",
+      "logainm_id": "14033",
+      "lat": 54.662645,
+      "lon": -8.091802,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlaght:familycensus:01:1926"
+     },
+     "caption": "Drumlaght had two Freeborn households in 1926, headed by Maud and Arthur.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlaght:familycensus:01:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "drumlaght:family:01",
+      "label": "Freeborn",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumlaght:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "drumlaght:beat:closing:end",
      "kind": "closing",
@@ -218,6 +490,688 @@
      },
      "duration_ms": 4000,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "drumlaght:ch:family-02",
+   "title": "The Freebourn family",
+   "beats": [
+    {
+     "id": "drumlaght:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "drumlaght:ch:family-02",
+     "time": {
+      "label": "The Freebourn family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlaght",
+      "name": "Drumlaght",
+      "logainm_id": "14033",
+      "lat": 54.662645,
+      "lon": -8.091802,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlaght:familypresence:02"
+     },
+     "caption": "The Freebourn family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlaght:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drumlaght:family:02",
+      "label": "Freebourn",
+      "run": false
+     }
+    },
+    {
+     "id": "drumlaght:beat:familycensus:02-1901",
+     "kind": "familycensus",
+     "chapter": "drumlaght:ch:family-02",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlaght",
+      "name": "Drumlaght",
+      "logainm_id": "14033",
+      "lat": 54.662645,
+      "lon": -8.091802,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlaght:familycensus:02:1901"
+     },
+     "caption": "Drumlaght had one Freebourn household in 1901, headed by Thomas.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlaght:familycensus:02:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumlaght:family:02",
+      "label": "Freebourn",
+      "run": false
+     }
+    },
+    {
+     "id": "drumlaght:beat:familycensus:02-1911",
+     "kind": "familycensus",
+     "chapter": "drumlaght:ch:family-02",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlaght",
+      "name": "Drumlaght",
+      "logainm_id": "14033",
+      "lat": 54.662645,
+      "lon": -8.091802,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlaght:familycensus:02:1911"
+     },
+     "caption": "Drumlaght had one Freebourn household in 1911, headed by Arthur.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlaght:familycensus:02:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumlaght:family:02",
+      "label": "Freebourn",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumlaght:ch:family-04",
+   "title": "The Kilpatrick family",
+   "beats": [
+    {
+     "id": "drumlaght:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "drumlaght:ch:family-04",
+     "time": {
+      "label": "The Kilpatrick family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlaght",
+      "name": "Drumlaght",
+      "logainm_id": "14033",
+      "lat": 54.662645,
+      "lon": -8.091802,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlaght:familypresence:04"
+     },
+     "caption": "The Kilpatrick family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlaght:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drumlaght:family:04",
+      "label": "Kilpatrick",
+      "run": false
+     }
+    },
+    {
+     "id": "drumlaght:beat:familycensus:04-1901",
+     "kind": "familycensus",
+     "chapter": "drumlaght:ch:family-04",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlaght",
+      "name": "Drumlaght",
+      "logainm_id": "14033",
+      "lat": 54.662645,
+      "lon": -8.091802,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlaght:familycensus:04:1901"
+     },
+     "caption": "Drumlaght had one Kilpatrick household in 1901, headed by William.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlaght:familycensus:04:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumlaght:family:04",
+      "label": "Kilpatrick",
+      "run": false
+     }
+    },
+    {
+     "id": "drumlaght:beat:familycensus:04-1911",
+     "kind": "familycensus",
+     "chapter": "drumlaght:ch:family-04",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlaght",
+      "name": "Drumlaght",
+      "logainm_id": "14033",
+      "lat": 54.662645,
+      "lon": -8.091802,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlaght:familycensus:04:1911"
+     },
+     "caption": "Drumlaght had one Kilpatrick household in 1911, headed by William.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlaght:familycensus:04:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumlaght:family:04",
+      "label": "Kilpatrick",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumlaght:ch:family-06",
+   "title": "The Monaghan family",
+   "beats": [
+    {
+     "id": "drumlaght:beat:familyhead:06",
+     "kind": "familyhead",
+     "chapter": "drumlaght:ch:family-06",
+     "time": {
+      "label": "The Monaghan family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlaght",
+      "name": "Drumlaght",
+      "logainm_id": "14033",
+      "lat": 54.662645,
+      "lon": -8.091802,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlaght:familypresence:06"
+     },
+     "caption": "The Monaghan family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlaght:familypresence:06"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumlaght:family:06",
+      "label": "Monaghan",
+      "run": false
+     }
+    },
+    {
+     "id": "drumlaght:beat:familycensus:06-1901",
+     "kind": "familycensus",
+     "chapter": "drumlaght:ch:family-06",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlaght",
+      "name": "Drumlaght",
+      "logainm_id": "14033",
+      "lat": 54.662645,
+      "lon": -8.091802,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlaght:familycensus:06:1901"
+     },
+     "caption": "Drumlaght had one Monaghan household in 1901, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlaght:familycensus:06:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumlaght:family:06",
+      "label": "Monaghan",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumlaght:ch:family-09",
+   "title": "The Quinton family",
+   "beats": [
+    {
+     "id": "drumlaght:beat:familyhead:09",
+     "kind": "familyhead",
+     "chapter": "drumlaght:ch:family-09",
+     "time": {
+      "label": "The Quinton family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlaght",
+      "name": "Drumlaght",
+      "logainm_id": "14033",
+      "lat": 54.662645,
+      "lon": -8.091802,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlaght:familypresence:09"
+     },
+     "caption": "The Quinton family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlaght:familypresence:09"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumlaght:family:09",
+      "label": "Quinton",
+      "run": false
+     }
+    },
+    {
+     "id": "drumlaght:beat:familycensus:09-1901",
+     "kind": "familycensus",
+     "chapter": "drumlaght:ch:family-09",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlaght",
+      "name": "Drumlaght",
+      "logainm_id": "14033",
+      "lat": 54.662645,
+      "lon": -8.091802,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlaght:familycensus:09:1901"
+     },
+     "caption": "Drumlaght had one Quinton household in 1901, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlaght:familycensus:09:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumlaght:family:09",
+      "label": "Quinton",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumlaght:ch:family-03",
+   "title": "The Hanna family",
+   "beats": [
+    {
+     "id": "drumlaght:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "drumlaght:ch:family-03",
+     "time": {
+      "label": "The Hanna family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlaght",
+      "name": "Drumlaght",
+      "logainm_id": "14033",
+      "lat": 54.662645,
+      "lon": -8.091802,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlaght:familypresence:03"
+     },
+     "caption": "The Hanna family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlaght:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumlaght:family:03",
+      "label": "Hanna",
+      "run": false
+     }
+    },
+    {
+     "id": "drumlaght:beat:familycensus:03-1911",
+     "kind": "familycensus",
+     "chapter": "drumlaght:ch:family-03",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlaght",
+      "name": "Drumlaght",
+      "logainm_id": "14033",
+      "lat": 54.662645,
+      "lon": -8.091802,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlaght:familycensus:03:1911"
+     },
+     "caption": "Drumlaght had one Hanna household in 1911, headed by Thomas.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlaght:familycensus:03:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumlaght:family:03",
+      "label": "Hanna",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumlaght:ch:family-05",
+   "title": "The Kirkpatrick family",
+   "beats": [
+    {
+     "id": "drumlaght:beat:familyhead:05",
+     "kind": "familyhead",
+     "chapter": "drumlaght:ch:family-05",
+     "time": {
+      "label": "The Kirkpatrick family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlaght",
+      "name": "Drumlaght",
+      "logainm_id": "14033",
+      "lat": 54.662645,
+      "lon": -8.091802,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlaght:familypresence:05"
+     },
+     "caption": "The Kirkpatrick family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlaght:familypresence:05"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumlaght:family:05",
+      "label": "Kirkpatrick",
+      "run": false
+     }
+    },
+    {
+     "id": "drumlaght:beat:familycensus:05-1926",
+     "kind": "familycensus",
+     "chapter": "drumlaght:ch:family-05",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlaght",
+      "name": "Drumlaght",
+      "logainm_id": "14033",
+      "lat": 54.662645,
+      "lon": -8.091802,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlaght:familycensus:05:1926"
+     },
+     "caption": "Drumlaght had one Kirkpatrick household in 1926, headed by William.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlaght:familycensus:05:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumlaght:family:05",
+      "label": "Kirkpatrick",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumlaght:ch:family-08",
+   "title": "The Patton family",
+   "beats": [
+    {
+     "id": "drumlaght:beat:familyhead:08",
+     "kind": "familyhead",
+     "chapter": "drumlaght:ch:family-08",
+     "time": {
+      "label": "The Patton family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlaght",
+      "name": "Drumlaght",
+      "logainm_id": "14033",
+      "lat": 54.662645,
+      "lon": -8.091802,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlaght:familypresence:08"
+     },
+     "caption": "The Patton family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlaght:familypresence:08"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumlaght:family:08",
+      "label": "Patton",
+      "run": false
+     }
+    },
+    {
+     "id": "drumlaght:beat:familycensus:08-1926",
+     "kind": "familycensus",
+     "chapter": "drumlaght:ch:family-08",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlaght",
+      "name": "Drumlaght",
+      "logainm_id": "14033",
+      "lat": 54.662645,
+      "lon": -8.091802,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlaght:familycensus:08:1926"
+     },
+     "caption": "Drumlaght had one Patton household in 1926, headed by Maggie.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlaght:familycensus:08:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumlaght:family:08",
+      "label": "Patton",
+      "run": false
+     }
     }
    ]
   }

@@ -52,15 +52,15 @@
    ]
   },
   {
-   "id": "drumstevlin:ch:1901",
-   "title": "1901",
+   "id": "drumstevlin:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "drumstevlin:beat:census:1901",
+     "id": "drumstevlin:beat:census:returns",
      "kind": "census",
-     "chapter": "drumstevlin:ch:1901",
+     "chapter": "drumstevlin:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1926",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -77,33 +77,177 @@
       "stage": "map",
       "open_card": "drumstevlin:census:1901"
      },
-     "caption": "Drumstevlin had eleven people in three households in 1901. Heads of household included Wray and Spence.",
+     "caption": "The censuses of 1901, 1911 and 1926 counted 11, 7 and 16 people in Drumstevlin, in 3, 2 and 2 households. Heads of household included Wray, Spence and Campbell.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "drumstevlin:census:1901"
+       "drumstevlin:census:1901",
+       "drumstevlin:census:1911",
+       "drumstevlin:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 6400,
+     "duration_ms": 11600,
      "audio": null,
      "counts": {
-      "people": 11,
-      "households": 3
+      "returns": [
+       {
+        "year": "1901",
+        "people": 11,
+        "households": 3
+       },
+       {
+        "year": "1911",
+        "people": 7,
+        "households": 2
+       },
+       {
+        "year": "1926",
+        "people": 16,
+        "households": 2
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "drumstevlin:ch:1911",
-   "title": "1911",
+   "id": "drumstevlin:ch:families",
+   "title": "The families of Drumstevlin",
    "beats": [
     {
-     "id": "drumstevlin:beat:census:1911",
-     "kind": "census",
-     "chapter": "drumstevlin:ch:1911",
+     "id": "drumstevlin:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "drumstevlin:ch:families",
+     "time": {
+      "label": "The families of Drumstevlin",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumstevlin",
+      "name": "Drumstevlin",
+      "logainm_id": "14014",
+      "lat": 54.661752,
+      "lon": -8.145615,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumstevlin:census:1901"
+     },
+     "caption": "Here are the families of Drumstevlin, from 1901 to 1926. First, the Spence and Wray families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumstevlin:census:1901",
+       "drumstevlin:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "drumstevlin:family:02",
+      "label": "Spence",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumstevlin:ch:family-02",
+   "title": "The Spence family",
+   "beats": [
+    {
+     "id": "drumstevlin:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "drumstevlin:ch:family-02",
+     "time": {
+      "label": "The Spence family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumstevlin",
+      "name": "Drumstevlin",
+      "logainm_id": "14014",
+      "lat": 54.661752,
+      "lon": -8.145615,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumstevlin:familypresence:02"
+     },
+     "caption": "The Spence family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumstevlin:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drumstevlin:family:02",
+      "label": "Spence",
+      "run": true
+     }
+    },
+    {
+     "id": "drumstevlin:beat:familycensus:02-1901",
+     "kind": "familycensus",
+     "chapter": "drumstevlin:ch:family-02",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumstevlin",
+      "name": "Drumstevlin",
+      "logainm_id": "14014",
+      "lat": 54.661752,
+      "lon": -8.145615,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumstevlin:familycensus:02:1901"
+     },
+     "caption": "Drumstevlin had one Spence household in 1901, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumstevlin:familycensus:02:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumstevlin:family:02",
+      "label": "Spence",
+      "run": true
+     }
+    },
+    {
+     "id": "drumstevlin:beat:familycensus:02-1911",
+     "kind": "familycensus",
+     "chapter": "drumstevlin:ch:family-02",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -120,35 +264,156 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "drumstevlin:census:1911"
+      "open_card": "drumstevlin:familycensus:02:1911"
      },
-     "caption": "In 1911, seven people in two households lived in Drumstevlin. Heads of household included Spence and Wray.",
+     "caption": "Drumstevlin had one Spence household in 1911, headed by John.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "drumstevlin:census:1911"
+       "drumstevlin:familycensus:02:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6800,
+     "duration_ms": 4000,
      "audio": null,
-     "counts": {
-      "people": 7,
-      "households": 2
+     "thread": {
+      "id": "drumstevlin:family:02",
+      "label": "Spence",
+      "run": true
      }
     }
    ]
   },
   {
-   "id": "drumstevlin:ch:1926",
-   "title": "1926",
+   "id": "drumstevlin:ch:family-03",
+   "title": "The Wray family",
    "beats": [
     {
-     "id": "drumstevlin:beat:census:1926",
-     "kind": "census",
-     "chapter": "drumstevlin:ch:1926",
+     "id": "drumstevlin:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "drumstevlin:ch:family-03",
+     "time": {
+      "label": "The Wray family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumstevlin",
+      "name": "Drumstevlin",
+      "logainm_id": "14014",
+      "lat": 54.661752,
+      "lon": -8.145615,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumstevlin:familypresence:03"
+     },
+     "caption": "The Wray family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumstevlin:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drumstevlin:family:03",
+      "label": "Wray",
+      "run": true
+     }
+    },
+    {
+     "id": "drumstevlin:beat:familycensus:03-1901",
+     "kind": "familycensus",
+     "chapter": "drumstevlin:ch:family-03",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumstevlin",
+      "name": "Drumstevlin",
+      "logainm_id": "14014",
+      "lat": 54.661752,
+      "lon": -8.145615,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumstevlin:familycensus:03:1901"
+     },
+     "caption": "Drumstevlin had two Wray households in 1901, headed by John and Samuel.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumstevlin:familycensus:03:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "drumstevlin:family:03",
+      "label": "Wray",
+      "run": true
+     }
+    },
+    {
+     "id": "drumstevlin:beat:familycensus:03-1911",
+     "kind": "familycensus",
+     "chapter": "drumstevlin:ch:family-03",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumstevlin",
+      "name": "Drumstevlin",
+      "logainm_id": "14014",
+      "lat": 54.661752,
+      "lon": -8.145615,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumstevlin:familycensus:03:1911"
+     },
+     "caption": "Drumstevlin had one Wray household in 1911, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumstevlin:familycensus:03:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumstevlin:family:03",
+      "label": "Wray",
+      "run": true
+     }
+    },
+    {
+     "id": "drumstevlin:beat:familycensus:03-1926",
+     "kind": "familycensus",
+     "chapter": "drumstevlin:ch:family-03",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -165,25 +430,32 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "drumstevlin:census:1926"
+      "open_card": "drumstevlin:familycensus:03:1926"
      },
-     "caption": "Drumstevlin had sixteen people in two households in 1926. Heads of household included Campbell and Wray.",
+     "caption": "Drumstevlin had one Wray household in 1926, headed by John.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "drumstevlin:census:1926"
+       "drumstevlin:familycensus:03:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6400,
+     "duration_ms": 4000,
      "audio": null,
-     "counts": {
-      "people": 16,
-      "households": 2
+     "thread": {
+      "id": "drumstevlin:family:03",
+      "label": "Wray",
+      "run": true
      }
-    },
+    }
+   ]
+  },
+  {
+   "id": "drumstevlin:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "drumstevlin:beat:closing:end",
      "kind": "closing",
@@ -218,6 +490,92 @@
      },
      "duration_ms": 4000,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "drumstevlin:ch:family-01",
+   "title": "The Campbell family",
+   "beats": [
+    {
+     "id": "drumstevlin:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "drumstevlin:ch:family-01",
+     "time": {
+      "label": "The Campbell family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumstevlin",
+      "name": "Drumstevlin",
+      "logainm_id": "14014",
+      "lat": 54.661752,
+      "lon": -8.145615,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumstevlin:familypresence:01"
+     },
+     "caption": "The Campbell family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumstevlin:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumstevlin:family:01",
+      "label": "Campbell",
+      "run": false
+     }
+    },
+    {
+     "id": "drumstevlin:beat:familycensus:01-1926",
+     "kind": "familycensus",
+     "chapter": "drumstevlin:ch:family-01",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumstevlin",
+      "name": "Drumstevlin",
+      "logainm_id": "14014",
+      "lat": 54.661752,
+      "lon": -8.145615,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumstevlin:familycensus:01:1926"
+     },
+     "caption": "Drumstevlin had one Campbell household in 1926, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumstevlin:familycensus:01:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumstevlin:family:01",
+      "label": "Campbell",
+      "run": false
+     }
     }
    ]
   }

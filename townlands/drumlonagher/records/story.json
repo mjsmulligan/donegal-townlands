@@ -52,15 +52,15 @@
    ]
   },
   {
-   "id": "drumlonagher:ch:1901",
-   "title": "1901",
+   "id": "drumlonagher:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "drumlonagher:beat:census:1901",
+     "id": "drumlonagher:beat:census:returns",
      "kind": "census",
-     "chapter": "drumlonagher:ch:1901",
+     "chapter": "drumlonagher:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1926",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -77,33 +77,137 @@
       "stage": "map",
       "open_card": "drumlonagher:census:1901"
      },
-     "caption": "In 1901, 22 people in four households lived in Drumlonagher. Heads of household included Stevenson, Hanna and McGinty.",
+     "caption": "The censuses of 1901, 1911 and 1926 counted 22, 37 and 49 people in Drumlonagher, in 4, 8 and 9 households. Heads of household included Stevenson, Hanna and McGinty.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "drumlonagher:census:1901"
+       "drumlonagher:census:1901",
+       "drumlonagher:census:1911",
+       "drumlonagher:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 7200,
+     "duration_ms": 11600,
      "audio": null,
      "counts": {
-      "people": 22,
-      "households": 4
+      "returns": [
+       {
+        "year": "1901",
+        "people": 22,
+        "households": 4
+       },
+       {
+        "year": "1911",
+        "people": 37,
+        "households": 8
+       },
+       {
+        "year": "1926",
+        "people": 49,
+        "households": 9
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "drumlonagher:ch:1911",
-   "title": "1911",
+   "id": "drumlonagher:ch:families",
+   "title": "The families of Drumlonagher",
    "beats": [
     {
-     "id": "drumlonagher:beat:census:1911",
-     "kind": "census",
-     "chapter": "drumlonagher:ch:1911",
+     "id": "drumlonagher:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "drumlonagher:ch:families",
+     "time": {
+      "label": "The families of Drumlonagher",
+      "iso": "1901",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlonagher",
+      "name": "Drumlonagher",
+      "logainm_id": "14034",
+      "lat": 54.660024,
+      "lon": -8.090253,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlonagher:census:1901"
+     },
+     "caption": "Here are the families of Drumlonagher, from 1901 to 1926. First, the McMullin and Stephenson families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlonagher:census:1901",
+       "drumlonagher:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "drumlonagher:family:10",
+      "label": "McMullin",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumlonagher:ch:family-10",
+   "title": "The McMullin family",
+   "beats": [
+    {
+     "id": "drumlonagher:beat:familyhead:10",
+     "kind": "familyhead",
+     "chapter": "drumlonagher:ch:family-10",
+     "time": {
+      "label": "The McMullin family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlonagher",
+      "name": "Drumlonagher",
+      "logainm_id": "14034",
+      "lat": 54.660024,
+      "lon": -8.090253,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlonagher:familypresence:10"
+     },
+     "caption": "The McMullin family appear in the records from 1911 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlonagher:familypresence:10"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drumlonagher:family:10",
+      "label": "McMullin",
+      "run": true
+     }
+    },
+    {
+     "id": "drumlonagher:beat:familycensus:10-1911",
+     "kind": "familycensus",
+     "chapter": "drumlonagher:ch:family-10",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -120,35 +224,30 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "drumlonagher:census:1911"
+      "open_card": "drumlonagher:familycensus:10:1911"
      },
-     "caption": "In 1911, 37 people in eight households lived in Drumlonagher. Heads of household included Furey, Gallagher and Hanna.",
+     "caption": "Drumlonagher had one McMullin household in 1911, headed by James.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "drumlonagher:census:1911"
+       "drumlonagher:familycensus:10:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 7200,
+     "duration_ms": 4000,
      "audio": null,
-     "counts": {
-      "people": 37,
-      "households": 8
+     "thread": {
+      "id": "drumlonagher:family:10",
+      "label": "McMullin",
+      "run": true
      }
-    }
-   ]
-  },
-  {
-   "id": "drumlonagher:ch:1926",
-   "title": "1926",
-   "beats": [
+    },
     {
-     "id": "drumlonagher:beat:census:1926",
-     "kind": "census",
-     "chapter": "drumlonagher:ch:1926",
+     "id": "drumlonagher:beat:familycensus:10-1926",
+     "kind": "familycensus",
+     "chapter": "drumlonagher:ch:family-10",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -165,25 +264,158 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "drumlonagher:census:1926"
+      "open_card": "drumlonagher:familycensus:10:1926"
      },
-     "caption": "Drumlonagher had 49 people in nine households in 1926. Heads of household included Cassidy, Diver and McGarvey.",
+     "caption": "Drumlonagher had one McMullin household in 1926, headed by James.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "drumlonagher:census:1926"
+       "drumlonagher:familycensus:10:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6800,
+     "duration_ms": 4000,
      "audio": null,
-     "counts": {
-      "people": 49,
-      "households": 9
+     "thread": {
+      "id": "drumlonagher:family:10",
+      "label": "McMullin",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumlonagher:ch:family-12",
+   "title": "The Stephenson family",
+   "beats": [
+    {
+     "id": "drumlonagher:beat:familyhead:12",
+     "kind": "familyhead",
+     "chapter": "drumlonagher:ch:family-12",
+     "time": {
+      "label": "The Stephenson family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlonagher",
+      "name": "Drumlonagher",
+      "logainm_id": "14034",
+      "lat": 54.660024,
+      "lon": -8.090253,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlonagher:familypresence:12"
+     },
+     "caption": "The Stephenson family appear in the records from 1911 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlonagher:familypresence:12"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drumlonagher:family:12",
+      "label": "Stephenson",
+      "run": true
      }
     },
+    {
+     "id": "drumlonagher:beat:familycensus:12-1911",
+     "kind": "familycensus",
+     "chapter": "drumlonagher:ch:family-12",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlonagher",
+      "name": "Drumlonagher",
+      "logainm_id": "14034",
+      "lat": 54.660024,
+      "lon": -8.090253,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlonagher:familycensus:12:1911"
+     },
+     "caption": "Drumlonagher had one Stephenson household in 1911, headed by Andrew.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlonagher:familycensus:12:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumlonagher:family:12",
+      "label": "Stephenson",
+      "run": true
+     }
+    },
+    {
+     "id": "drumlonagher:beat:familycensus:12-1926",
+     "kind": "familycensus",
+     "chapter": "drumlonagher:ch:family-12",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlonagher",
+      "name": "Drumlonagher",
+      "logainm_id": "14034",
+      "lat": 54.660024,
+      "lon": -8.090253,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlonagher:familycensus:12:1926"
+     },
+     "caption": "Drumlonagher had one Stephenson household in 1926, headed by Alexander.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlonagher:familycensus:12:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumlonagher:family:12",
+      "label": "Stephenson",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumlonagher:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "drumlonagher:beat:closing:end",
      "kind": "closing",
@@ -218,6 +450,1204 @@
      },
      "duration_ms": 4000,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "drumlonagher:ch:family-05",
+   "title": "The Hanna family",
+   "beats": [
+    {
+     "id": "drumlonagher:beat:familyhead:05",
+     "kind": "familyhead",
+     "chapter": "drumlonagher:ch:family-05",
+     "time": {
+      "label": "The Hanna family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlonagher",
+      "name": "Drumlonagher",
+      "logainm_id": "14034",
+      "lat": 54.660024,
+      "lon": -8.090253,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlonagher:familypresence:05"
+     },
+     "caption": "The Hanna family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlonagher:familypresence:05"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drumlonagher:family:05",
+      "label": "Hanna",
+      "run": false
+     }
+    },
+    {
+     "id": "drumlonagher:beat:familycensus:05-1901",
+     "kind": "familycensus",
+     "chapter": "drumlonagher:ch:family-05",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlonagher",
+      "name": "Drumlonagher",
+      "logainm_id": "14034",
+      "lat": 54.660024,
+      "lon": -8.090253,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlonagher:familycensus:05:1901"
+     },
+     "caption": "Drumlonagher had one Hanna household in 1901, headed by George.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlonagher:familycensus:05:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumlonagher:family:05",
+      "label": "Hanna",
+      "run": false
+     }
+    },
+    {
+     "id": "drumlonagher:beat:familycensus:05-1911",
+     "kind": "familycensus",
+     "chapter": "drumlonagher:ch:family-05",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlonagher",
+      "name": "Drumlonagher",
+      "logainm_id": "14034",
+      "lat": 54.660024,
+      "lon": -8.090253,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlonagher:familycensus:05:1911"
+     },
+     "caption": "Drumlonagher had one Hanna household in 1911, headed by George.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlonagher:familycensus:05:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumlonagher:family:05",
+      "label": "Hanna",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumlonagher:ch:family-08",
+   "title": "The McGinty family",
+   "beats": [
+    {
+     "id": "drumlonagher:beat:familyhead:08",
+     "kind": "familyhead",
+     "chapter": "drumlonagher:ch:family-08",
+     "time": {
+      "label": "The McGinty family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlonagher",
+      "name": "Drumlonagher",
+      "logainm_id": "14034",
+      "lat": 54.660024,
+      "lon": -8.090253,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlonagher:familypresence:08"
+     },
+     "caption": "The McGinty family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlonagher:familypresence:08"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drumlonagher:family:08",
+      "label": "McGinty",
+      "run": false
+     }
+    },
+    {
+     "id": "drumlonagher:beat:familycensus:08-1901",
+     "kind": "familycensus",
+     "chapter": "drumlonagher:ch:family-08",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlonagher",
+      "name": "Drumlonagher",
+      "logainm_id": "14034",
+      "lat": 54.660024,
+      "lon": -8.090253,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlonagher:familycensus:08:1901"
+     },
+     "caption": "Drumlonagher had one McGinty household in 1901, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlonagher:familycensus:08:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumlonagher:family:08",
+      "label": "McGinty",
+      "run": false
+     }
+    },
+    {
+     "id": "drumlonagher:beat:familycensus:08-1911",
+     "kind": "familycensus",
+     "chapter": "drumlonagher:ch:family-08",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlonagher",
+      "name": "Drumlonagher",
+      "logainm_id": "14034",
+      "lat": 54.660024,
+      "lon": -8.090253,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlonagher:familycensus:08:1911"
+     },
+     "caption": "Drumlonagher had one McGinty household in 1911, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlonagher:familycensus:08:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumlonagher:family:08",
+      "label": "McGinty",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumlonagher:ch:family-13",
+   "title": "The Stevenson family",
+   "beats": [
+    {
+     "id": "drumlonagher:beat:familyhead:13",
+     "kind": "familyhead",
+     "chapter": "drumlonagher:ch:family-13",
+     "time": {
+      "label": "The Stevenson family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlonagher",
+      "name": "Drumlonagher",
+      "logainm_id": "14034",
+      "lat": 54.660024,
+      "lon": -8.090253,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlonagher:familypresence:13"
+     },
+     "caption": "The Stevenson family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlonagher:familypresence:13"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumlonagher:family:13",
+      "label": "Stevenson",
+      "run": false
+     }
+    },
+    {
+     "id": "drumlonagher:beat:familycensus:13-1901",
+     "kind": "familycensus",
+     "chapter": "drumlonagher:ch:family-13",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlonagher",
+      "name": "Drumlonagher",
+      "logainm_id": "14034",
+      "lat": 54.660024,
+      "lon": -8.090253,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlonagher:familycensus:13:1901"
+     },
+     "caption": "Drumlonagher had two Stevenson households in 1901, headed by Andrew and George.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlonagher:familycensus:13:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "drumlonagher:family:13",
+      "label": "Stevenson",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumlonagher:ch:family-03",
+   "title": "The Furey family",
+   "beats": [
+    {
+     "id": "drumlonagher:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "drumlonagher:ch:family-03",
+     "time": {
+      "label": "The Furey family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlonagher",
+      "name": "Drumlonagher",
+      "logainm_id": "14034",
+      "lat": 54.660024,
+      "lon": -8.090253,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlonagher:familypresence:03"
+     },
+     "caption": "The Furey family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlonagher:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumlonagher:family:03",
+      "label": "Furey",
+      "run": false
+     }
+    },
+    {
+     "id": "drumlonagher:beat:familycensus:03-1911",
+     "kind": "familycensus",
+     "chapter": "drumlonagher:ch:family-03",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlonagher",
+      "name": "Drumlonagher",
+      "logainm_id": "14034",
+      "lat": 54.660024,
+      "lon": -8.090253,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlonagher:familycensus:03:1911"
+     },
+     "caption": "Drumlonagher had one Furey household in 1911, headed by Connell.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlonagher:familycensus:03:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumlonagher:family:03",
+      "label": "Furey",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumlonagher:ch:family-04",
+   "title": "The Gallagher family",
+   "beats": [
+    {
+     "id": "drumlonagher:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "drumlonagher:ch:family-04",
+     "time": {
+      "label": "The Gallagher family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlonagher",
+      "name": "Drumlonagher",
+      "logainm_id": "14034",
+      "lat": 54.660024,
+      "lon": -8.090253,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlonagher:familypresence:04"
+     },
+     "caption": "The Gallagher family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlonagher:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumlonagher:family:04",
+      "label": "Gallagher",
+      "run": false
+     }
+    },
+    {
+     "id": "drumlonagher:beat:familycensus:04-1911",
+     "kind": "familycensus",
+     "chapter": "drumlonagher:ch:family-04",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlonagher",
+      "name": "Drumlonagher",
+      "logainm_id": "14034",
+      "lat": 54.660024,
+      "lon": -8.090253,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlonagher:familycensus:04:1911"
+     },
+     "caption": "Drumlonagher had one Gallagher household in 1911, headed by Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlonagher:familycensus:04:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumlonagher:family:04",
+      "label": "Gallagher",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumlonagher:ch:family-06",
+   "title": "The M' Guinness family",
+   "beats": [
+    {
+     "id": "drumlonagher:beat:familyhead:06",
+     "kind": "familyhead",
+     "chapter": "drumlonagher:ch:family-06",
+     "time": {
+      "label": "The M' Guinness family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlonagher",
+      "name": "Drumlonagher",
+      "logainm_id": "14034",
+      "lat": 54.660024,
+      "lon": -8.090253,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlonagher:familypresence:06"
+     },
+     "caption": "The M' Guinness family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlonagher:familypresence:06"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumlonagher:family:06",
+      "label": "M' Guinness",
+      "run": false
+     }
+    },
+    {
+     "id": "drumlonagher:beat:familycensus:06-1911",
+     "kind": "familycensus",
+     "chapter": "drumlonagher:ch:family-06",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlonagher",
+      "name": "Drumlonagher",
+      "logainm_id": "14034",
+      "lat": 54.660024,
+      "lon": -8.090253,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlonagher:familycensus:06:1911"
+     },
+     "caption": "Drumlonagher had one M' Guinness household in 1911, headed by Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlonagher:familycensus:06:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drumlonagher:family:06",
+      "label": "M' Guinness",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumlonagher:ch:family-11",
+   "title": "The Quinton family",
+   "beats": [
+    {
+     "id": "drumlonagher:beat:familyhead:11",
+     "kind": "familyhead",
+     "chapter": "drumlonagher:ch:family-11",
+     "time": {
+      "label": "The Quinton family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlonagher",
+      "name": "Drumlonagher",
+      "logainm_id": "14034",
+      "lat": 54.660024,
+      "lon": -8.090253,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlonagher:familypresence:11"
+     },
+     "caption": "The Quinton family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlonagher:familypresence:11"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumlonagher:family:11",
+      "label": "Quinton",
+      "run": false
+     }
+    },
+    {
+     "id": "drumlonagher:beat:familycensus:11-1911",
+     "kind": "familycensus",
+     "chapter": "drumlonagher:ch:family-11",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlonagher",
+      "name": "Drumlonagher",
+      "logainm_id": "14034",
+      "lat": 54.660024,
+      "lon": -8.090253,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlonagher:familycensus:11:1911"
+     },
+     "caption": "Drumlonagher had one Quinton household in 1911, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlonagher:familycensus:11:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumlonagher:family:11",
+      "label": "Quinton",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumlonagher:ch:family-01",
+   "title": "The Cassidy family",
+   "beats": [
+    {
+     "id": "drumlonagher:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "drumlonagher:ch:family-01",
+     "time": {
+      "label": "The Cassidy family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlonagher",
+      "name": "Drumlonagher",
+      "logainm_id": "14034",
+      "lat": 54.660024,
+      "lon": -8.090253,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlonagher:familypresence:01"
+     },
+     "caption": "The Cassidy family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlonagher:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumlonagher:family:01",
+      "label": "Cassidy",
+      "run": false
+     }
+    },
+    {
+     "id": "drumlonagher:beat:familycensus:01-1926",
+     "kind": "familycensus",
+     "chapter": "drumlonagher:ch:family-01",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlonagher",
+      "name": "Drumlonagher",
+      "logainm_id": "14034",
+      "lat": 54.660024,
+      "lon": -8.090253,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlonagher:familycensus:01:1926"
+     },
+     "caption": "Drumlonagher had one Cassidy household in 1926, headed by Francis.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlonagher:familycensus:01:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumlonagher:family:01",
+      "label": "Cassidy",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumlonagher:ch:family-02",
+   "title": "The Diver family",
+   "beats": [
+    {
+     "id": "drumlonagher:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "drumlonagher:ch:family-02",
+     "time": {
+      "label": "The Diver family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlonagher",
+      "name": "Drumlonagher",
+      "logainm_id": "14034",
+      "lat": 54.660024,
+      "lon": -8.090253,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlonagher:familypresence:02"
+     },
+     "caption": "The Diver family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlonagher:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumlonagher:family:02",
+      "label": "Diver",
+      "run": false
+     }
+    },
+    {
+     "id": "drumlonagher:beat:familycensus:02-1926",
+     "kind": "familycensus",
+     "chapter": "drumlonagher:ch:family-02",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlonagher",
+      "name": "Drumlonagher",
+      "logainm_id": "14034",
+      "lat": 54.660024,
+      "lon": -8.090253,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlonagher:familycensus:02:1926"
+     },
+     "caption": "Drumlonagher had one Diver household in 1926, headed by Anthony.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlonagher:familycensus:02:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumlonagher:family:02",
+      "label": "Diver",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumlonagher:ch:family-07",
+   "title": "The McGarvey family",
+   "beats": [
+    {
+     "id": "drumlonagher:beat:familyhead:07",
+     "kind": "familyhead",
+     "chapter": "drumlonagher:ch:family-07",
+     "time": {
+      "label": "The McGarvey family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlonagher",
+      "name": "Drumlonagher",
+      "logainm_id": "14034",
+      "lat": 54.660024,
+      "lon": -8.090253,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlonagher:familypresence:07"
+     },
+     "caption": "The McGarvey family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlonagher:familypresence:07"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumlonagher:family:07",
+      "label": "McGarvey",
+      "run": false
+     }
+    },
+    {
+     "id": "drumlonagher:beat:familycensus:07-1926",
+     "kind": "familycensus",
+     "chapter": "drumlonagher:ch:family-07",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlonagher",
+      "name": "Drumlonagher",
+      "logainm_id": "14034",
+      "lat": 54.660024,
+      "lon": -8.090253,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlonagher:familycensus:07:1926"
+     },
+     "caption": "Drumlonagher had one McGarvey household in 1926, headed by Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlonagher:familycensus:07:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumlonagher:family:07",
+      "label": "McGarvey",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumlonagher:ch:family-09",
+   "title": "The McIntyre family",
+   "beats": [
+    {
+     "id": "drumlonagher:beat:familyhead:09",
+     "kind": "familyhead",
+     "chapter": "drumlonagher:ch:family-09",
+     "time": {
+      "label": "The McIntyre family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlonagher",
+      "name": "Drumlonagher",
+      "logainm_id": "14034",
+      "lat": 54.660024,
+      "lon": -8.090253,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlonagher:familypresence:09"
+     },
+     "caption": "The McIntyre family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlonagher:familypresence:09"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumlonagher:family:09",
+      "label": "McIntyre",
+      "run": false
+     }
+    },
+    {
+     "id": "drumlonagher:beat:familycensus:09-1926",
+     "kind": "familycensus",
+     "chapter": "drumlonagher:ch:family-09",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlonagher",
+      "name": "Drumlonagher",
+      "logainm_id": "14034",
+      "lat": 54.660024,
+      "lon": -8.090253,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlonagher:familycensus:09:1926"
+     },
+     "caption": "Drumlonagher had one McIntyre household in 1926, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlonagher:familycensus:09:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumlonagher:family:09",
+      "label": "McIntyre",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumlonagher:ch:family-14",
+   "title": "The Walsh family",
+   "beats": [
+    {
+     "id": "drumlonagher:beat:familyhead:14",
+     "kind": "familyhead",
+     "chapter": "drumlonagher:ch:family-14",
+     "time": {
+      "label": "The Walsh family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlonagher",
+      "name": "Drumlonagher",
+      "logainm_id": "14034",
+      "lat": 54.660024,
+      "lon": -8.090253,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlonagher:familypresence:14"
+     },
+     "caption": "The Walsh family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlonagher:familypresence:14"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumlonagher:family:14",
+      "label": "Walsh",
+      "run": false
+     }
+    },
+    {
+     "id": "drumlonagher:beat:familycensus:14-1926",
+     "kind": "familycensus",
+     "chapter": "drumlonagher:ch:family-14",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlonagher",
+      "name": "Drumlonagher",
+      "logainm_id": "14034",
+      "lat": 54.660024,
+      "lon": -8.090253,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlonagher:familycensus:14:1926"
+     },
+     "caption": "Drumlonagher had one Walsh household in 1926, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlonagher:familycensus:14:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumlonagher:family:14",
+      "label": "Walsh",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumlonagher:ch:family-15",
+   "title": "The Wray family",
+   "beats": [
+    {
+     "id": "drumlonagher:beat:familyhead:15",
+     "kind": "familyhead",
+     "chapter": "drumlonagher:ch:family-15",
+     "time": {
+      "label": "The Wray family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlonagher",
+      "name": "Drumlonagher",
+      "logainm_id": "14034",
+      "lat": 54.660024,
+      "lon": -8.090253,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlonagher:familypresence:15"
+     },
+     "caption": "The Wray family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlonagher:familypresence:15"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumlonagher:family:15",
+      "label": "Wray",
+      "run": false
+     }
+    },
+    {
+     "id": "drumlonagher:beat:familycensus:15-1926",
+     "kind": "familycensus",
+     "chapter": "drumlonagher:ch:family-15",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlonagher",
+      "name": "Drumlonagher",
+      "logainm_id": "14034",
+      "lat": 54.660024,
+      "lon": -8.090253,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlonagher:familycensus:15:1926"
+     },
+     "caption": "Drumlonagher had one Wray household in 1926, headed by Joseph.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlonagher:familycensus:15:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumlonagher:family:15",
+      "label": "Wray",
+      "run": false
+     }
     }
    ]
   }

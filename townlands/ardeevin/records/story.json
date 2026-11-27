@@ -95,56 +95,15 @@
    ]
   },
   {
-   "id": "ardeevin:ch:baptisms",
-   "title": "Baptisms, 1873",
+   "id": "ardeevin:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "ardeevin:beat:baptism:1873-06-08-TAW-B-p007-r50",
-     "kind": "baptism",
-     "chapter": "ardeevin:ch:baptisms",
-     "time": {
-      "label": "8 June 1873",
-      "iso": "1873-06-08",
-      "sort": "1873-06-08",
-      "approximate": false
-     },
-     "place": {
-      "townland": "ardeevin",
-      "name": "Ardeevin",
-      "logainm_id": "14236",
-      "lat": 54.692639,
-      "lon": -8.021663,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "ardeevin:baptism:TAW-B-p007-r50"
-     },
-     "caption": "Patrick Thomas was baptised on 8 June 1873. James Thomas and Anne Martin were the parents.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "ardeevin:baptism:TAW-B-p007-r50"
-      ],
-      "basis": "page_place",
-      "certainty": "stated"
-     },
-     "duration_ms": 6400,
-     "audio": null
-    }
-   ]
-  },
-  {
-   "id": "ardeevin:ch:1901",
-   "title": "1901",
-   "beats": [
-    {
-     "id": "ardeevin:beat:census:1901",
+     "id": "ardeevin:beat:census:returns",
      "kind": "census",
-     "chapter": "ardeevin:ch:1901",
+     "chapter": "ardeevin:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1926",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -161,33 +120,177 @@
       "stage": "map",
       "open_card": "ardeevin:census:1901"
      },
-     "caption": "Ardeevin had 21 people in four households in 1901. Heads of household included Johnston, McMenimin and Slevin.",
+     "caption": "The censuses of 1901, 1911 and 1926 counted 21, 21 and 16 people in Ardeevin, in 4, 4 and 4 households. Heads of household included Johnston, McMenimin and Slevin.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "ardeevin:census:1901"
+       "ardeevin:census:1901",
+       "ardeevin:census:1911",
+       "ardeevin:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 6800,
+     "duration_ms": 11600,
      "audio": null,
      "counts": {
-      "people": 21,
-      "households": 4
+      "returns": [
+       {
+        "year": "1901",
+        "people": 21,
+        "households": 4
+       },
+       {
+        "year": "1911",
+        "people": 21,
+        "households": 4
+       },
+       {
+        "year": "1926",
+        "people": 16,
+        "households": 4
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "ardeevin:ch:1911",
-   "title": "1911",
+   "id": "ardeevin:ch:families",
+   "title": "The families of Ardeevin",
    "beats": [
     {
-     "id": "ardeevin:beat:census:1911",
-     "kind": "census",
-     "chapter": "ardeevin:ch:1911",
+     "id": "ardeevin:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "ardeevin:ch:families",
+     "time": {
+      "label": "The families of Ardeevin",
+      "iso": "1873-06-08",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardeevin",
+      "name": "Ardeevin",
+      "logainm_id": "14236",
+      "lat": 54.692639,
+      "lon": -8.021663,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardeevin:baptism:TAW-B-p007-r50"
+     },
+     "caption": "Here are the families of Ardeevin, from 1873 to 1926. First, the Johnston and Slevin families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardeevin:baptism:TAW-B-p007-r50",
+       "ardeevin:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "ardeevin:family:01",
+      "label": "Johnston",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardeevin:ch:family-01",
+   "title": "The Johnston family",
+   "beats": [
+    {
+     "id": "ardeevin:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "ardeevin:ch:family-01",
+     "time": {
+      "label": "The Johnston family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardeevin",
+      "name": "Ardeevin",
+      "logainm_id": "14236",
+      "lat": 54.692639,
+      "lon": -8.021663,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardeevin:familypresence:01"
+     },
+     "caption": "The Johnston family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardeevin:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ardeevin:family:01",
+      "label": "Johnston",
+      "run": true
+     }
+    },
+    {
+     "id": "ardeevin:beat:familycensus:01-1901",
+     "kind": "familycensus",
+     "chapter": "ardeevin:ch:family-01",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardeevin",
+      "name": "Ardeevin",
+      "logainm_id": "14236",
+      "lat": 54.692639,
+      "lon": -8.021663,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardeevin:familycensus:01:1901"
+     },
+     "caption": "Ardeevin had one Johnston household in 1901, headed by Andrew.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardeevin:familycensus:01:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardeevin:family:01",
+      "label": "Johnston",
+      "run": true
+     }
+    },
+    {
+     "id": "ardeevin:beat:familycensus:01-1911",
+     "kind": "familycensus",
+     "chapter": "ardeevin:ch:family-01",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -204,35 +307,30 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "ardeevin:census:1911"
+      "open_card": "ardeevin:familycensus:01:1911"
      },
-     "caption": "In 1911, 21 people in four households lived in Ardeevin. Heads of household included Johnston, McMenamin and Slavin.",
+     "caption": "Ardeevin had one Johnston household in 1911, headed by Elizabeth.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "ardeevin:census:1911"
+       "ardeevin:familycensus:01:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 7200,
+     "duration_ms": 4000,
      "audio": null,
-     "counts": {
-      "people": 21,
-      "households": 4
+     "thread": {
+      "id": "ardeevin:family:01",
+      "label": "Johnston",
+      "run": true
      }
-    }
-   ]
-  },
-  {
-   "id": "ardeevin:ch:1926",
-   "title": "1926",
-   "beats": [
+    },
     {
-     "id": "ardeevin:beat:census:1926",
-     "kind": "census",
-     "chapter": "ardeevin:ch:1926",
+     "id": "ardeevin:beat:familycensus:01-1926",
+     "kind": "familycensus",
+     "chapter": "ardeevin:ch:family-01",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -249,25 +347,158 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "ardeevin:census:1926"
+      "open_card": "ardeevin:familycensus:01:1926"
      },
-     "caption": "Ardeevin had sixteen people in four households in 1926. Heads of household included Slevin and Johnston.",
+     "caption": "Ardeevin had two Johnston households in 1926, headed by Andrew and John.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "ardeevin:census:1926"
+       "ardeevin:familycensus:01:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6400,
+     "duration_ms": 4800,
      "audio": null,
-     "counts": {
-      "people": 16,
-      "households": 4
+     "thread": {
+      "id": "ardeevin:family:01",
+      "label": "Johnston",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardeevin:ch:family-05",
+   "title": "The Slevin family",
+   "beats": [
+    {
+     "id": "ardeevin:beat:familyhead:05",
+     "kind": "familyhead",
+     "chapter": "ardeevin:ch:family-05",
+     "time": {
+      "label": "The Slevin family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardeevin",
+      "name": "Ardeevin",
+      "logainm_id": "14236",
+      "lat": 54.692639,
+      "lon": -8.021663,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardeevin:familypresence:05"
+     },
+     "caption": "The Slevin family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardeevin:familypresence:05"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ardeevin:family:05",
+      "label": "Slevin",
+      "run": true
      }
     },
+    {
+     "id": "ardeevin:beat:familycensus:05-1901",
+     "kind": "familycensus",
+     "chapter": "ardeevin:ch:family-05",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardeevin",
+      "name": "Ardeevin",
+      "logainm_id": "14236",
+      "lat": 54.692639,
+      "lon": -8.021663,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardeevin:familycensus:05:1901"
+     },
+     "caption": "Ardeevin had one Slevin household in 1901, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardeevin:familycensus:05:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardeevin:family:05",
+      "label": "Slevin",
+      "run": true
+     }
+    },
+    {
+     "id": "ardeevin:beat:familycensus:05-1926",
+     "kind": "familycensus",
+     "chapter": "ardeevin:ch:family-05",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardeevin",
+      "name": "Ardeevin",
+      "logainm_id": "14236",
+      "lat": 54.692639,
+      "lon": -8.021663,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardeevin:familycensus:05:1926"
+     },
+     "caption": "Ardeevin had three Slevin households in 1926, headed by Owen, Eddie and Dan.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardeevin:familycensus:05:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "ardeevin:family:05",
+      "label": "Slevin",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardeevin:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "ardeevin:beat:closing:end",
      "kind": "closing",
@@ -302,6 +533,430 @@
      },
      "duration_ms": 4000,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "ardeevin:ch:family-06",
+   "title": "The Thomas family",
+   "beats": [
+    {
+     "id": "ardeevin:beat:baptism:1873-06-08-TAW-B-p007-r50",
+     "kind": "baptism",
+     "chapter": "ardeevin:ch:family-06",
+     "time": {
+      "label": "8 June 1873",
+      "iso": "1873-06-08",
+      "sort": "1873-06-08",
+      "approximate": false
+     },
+     "place": {
+      "townland": "ardeevin",
+      "name": "Ardeevin",
+      "logainm_id": "14236",
+      "lat": 54.692639,
+      "lon": -8.021663,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardeevin:baptism:TAW-B-p007-r50"
+     },
+     "caption": "Patrick Thomas was baptised on 8 June 1873. James Thomas and Anne Martin were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardeevin:baptism:TAW-B-p007-r50"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "ardeevin:family:06",
+      "label": "Thomas",
+      "run": false
+     }
+    },
+    {
+     "id": "ardeevin:beat:familyhead:06",
+     "kind": "familyhead",
+     "chapter": "ardeevin:ch:family-06",
+     "time": {
+      "label": "The Thomas family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardeevin",
+      "name": "Ardeevin",
+      "logainm_id": "14236",
+      "lat": 54.692639,
+      "lon": -8.021663,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardeevin:familypresence:06"
+     },
+     "caption": "The Thomas family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardeevin:familypresence:06"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ardeevin:family:06",
+      "label": "Thomas",
+      "run": false
+     }
+    },
+    {
+     "id": "ardeevin:beat:familycensus:06-1901",
+     "kind": "familycensus",
+     "chapter": "ardeevin:ch:family-06",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardeevin",
+      "name": "Ardeevin",
+      "logainm_id": "14236",
+      "lat": 54.692639,
+      "lon": -8.021663,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardeevin:familycensus:06:1901"
+     },
+     "caption": "Ardeevin had one Thomas household in 1901, headed by Anne.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardeevin:familycensus:06:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardeevin:family:06",
+      "label": "Thomas",
+      "run": false
+     }
+    },
+    {
+     "id": "ardeevin:beat:familycensus:06-1911",
+     "kind": "familycensus",
+     "chapter": "ardeevin:ch:family-06",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardeevin",
+      "name": "Ardeevin",
+      "logainm_id": "14236",
+      "lat": 54.692639,
+      "lon": -8.021663,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardeevin:familycensus:06:1911"
+     },
+     "caption": "Ardeevin had one Thomas household in 1911, headed by Anne.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardeevin:familycensus:06:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardeevin:family:06",
+      "label": "Thomas",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardeevin:ch:family-03",
+   "title": "The McMenimin family",
+   "beats": [
+    {
+     "id": "ardeevin:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "ardeevin:ch:family-03",
+     "time": {
+      "label": "The McMenimin family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardeevin",
+      "name": "Ardeevin",
+      "logainm_id": "14236",
+      "lat": 54.692639,
+      "lon": -8.021663,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardeevin:familypresence:03"
+     },
+     "caption": "The McMenimin family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardeevin:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardeevin:family:03",
+      "label": "McMenimin",
+      "run": false
+     }
+    },
+    {
+     "id": "ardeevin:beat:familycensus:03-1901",
+     "kind": "familycensus",
+     "chapter": "ardeevin:ch:family-03",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardeevin",
+      "name": "Ardeevin",
+      "logainm_id": "14236",
+      "lat": 54.692639,
+      "lon": -8.021663,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardeevin:familycensus:03:1901"
+     },
+     "caption": "Ardeevin had one McMenimin household in 1901, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardeevin:familycensus:03:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardeevin:family:03",
+      "label": "McMenimin",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardeevin:ch:family-02",
+   "title": "The McMenamin family",
+   "beats": [
+    {
+     "id": "ardeevin:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "ardeevin:ch:family-02",
+     "time": {
+      "label": "The McMenamin family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardeevin",
+      "name": "Ardeevin",
+      "logainm_id": "14236",
+      "lat": 54.692639,
+      "lon": -8.021663,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardeevin:familypresence:02"
+     },
+     "caption": "The McMenamin family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardeevin:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardeevin:family:02",
+      "label": "McMenamin",
+      "run": false
+     }
+    },
+    {
+     "id": "ardeevin:beat:familycensus:02-1911",
+     "kind": "familycensus",
+     "chapter": "ardeevin:ch:family-02",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardeevin",
+      "name": "Ardeevin",
+      "logainm_id": "14236",
+      "lat": 54.692639,
+      "lon": -8.021663,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardeevin:familycensus:02:1911"
+     },
+     "caption": "Ardeevin had one McMenamin household in 1911, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardeevin:familycensus:02:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardeevin:family:02",
+      "label": "McMenamin",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardeevin:ch:family-04",
+   "title": "The Slavin family",
+   "beats": [
+    {
+     "id": "ardeevin:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "ardeevin:ch:family-04",
+     "time": {
+      "label": "The Slavin family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardeevin",
+      "name": "Ardeevin",
+      "logainm_id": "14236",
+      "lat": 54.692639,
+      "lon": -8.021663,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardeevin:familypresence:04"
+     },
+     "caption": "The Slavin family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardeevin:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardeevin:family:04",
+      "label": "Slavin",
+      "run": false
+     }
+    },
+    {
+     "id": "ardeevin:beat:familycensus:04-1911",
+     "kind": "familycensus",
+     "chapter": "ardeevin:ch:family-04",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardeevin",
+      "name": "Ardeevin",
+      "logainm_id": "14236",
+      "lat": 54.692639,
+      "lon": -8.021663,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardeevin:familycensus:04:1911"
+     },
+     "caption": "Ardeevin had one Slavin household in 1911, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardeevin:familycensus:04:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardeevin:family:04",
+      "label": "Slavin",
+      "run": false
+     }
     }
    ]
   }

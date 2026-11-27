@@ -52,15 +52,15 @@
    ]
   },
   {
-   "id": "carrick-east:ch:1901",
-   "title": "1901",
+   "id": "carrick-east:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "carrick-east:beat:census:1901",
+     "id": "carrick-east:beat:census:returns",
      "kind": "census",
-     "chapter": "carrick-east:ch:1901",
+     "chapter": "carrick-east:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1926",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -77,33 +77,177 @@
       "stage": "map",
       "open_card": "carrick east:census:1901"
      },
-     "caption": "Carrick East had 33 people in six households in 1901. Heads of household included McClay, Colgan and McGroary.",
+     "caption": "The censuses of 1901, 1911 and 1926 counted 33, 25 and 19 people in Carrick East, in 6, 6 and 5 households. Heads of household included McClay, Colgan and McGroary.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "carrick east:census:1901"
+       "carrick east:census:1901",
+       "carrick east:census:1911",
+       "carrick east:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 7200,
+     "duration_ms": 12000,
      "audio": null,
      "counts": {
-      "people": 33,
-      "households": 6
+      "returns": [
+       {
+        "year": "1901",
+        "people": 33,
+        "households": 6
+       },
+       {
+        "year": "1911",
+        "people": 25,
+        "households": 6
+       },
+       {
+        "year": "1926",
+        "people": 19,
+        "households": 5
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "carrick-east:ch:1911",
-   "title": "1911",
+   "id": "carrick-east:ch:families",
+   "title": "The families of Carrick East",
    "beats": [
     {
-     "id": "carrick-east:beat:census:1911",
-     "kind": "census",
-     "chapter": "carrick-east:ch:1911",
+     "id": "carrick-east:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "carrick-east:ch:families",
+     "time": {
+      "label": "The families of Carrick East",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "carrick-east",
+      "name": "Carrick East",
+      "logainm_id": "14136",
+      "lat": 54.61209,
+      "lon": -8.093362,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "carrick east:census:1901"
+     },
+     "caption": "Here are the families of Carrick East, from 1901 to 1926. First, the Colgan and McClay families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "carrick east:census:1901",
+       "carrick east:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "thread": {
+      "id": "carrick-east:family:02",
+      "label": "Colgan",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "carrick-east:ch:family-02",
+   "title": "The Colgan family",
+   "beats": [
+    {
+     "id": "carrick-east:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "carrick-east:ch:family-02",
+     "time": {
+      "label": "The Colgan family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "carrick-east",
+      "name": "Carrick East",
+      "logainm_id": "14136",
+      "lat": 54.61209,
+      "lon": -8.093362,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "carrick-east:familypresence:02"
+     },
+     "caption": "The Colgan family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "carrick-east:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "carrick-east:family:02",
+      "label": "Colgan",
+      "run": true
+     }
+    },
+    {
+     "id": "carrick-east:beat:familycensus:02-1901",
+     "kind": "familycensus",
+     "chapter": "carrick-east:ch:family-02",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "carrick-east",
+      "name": "Carrick East",
+      "logainm_id": "14136",
+      "lat": 54.61209,
+      "lon": -8.093362,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "carrick-east:familycensus:02:1901"
+     },
+     "caption": "Carrick East had one Colgan household in 1901, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "carrick-east:familycensus:02:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "carrick-east:family:02",
+      "label": "Colgan",
+      "run": true
+     }
+    },
+    {
+     "id": "carrick-east:beat:familycensus:02-1911",
+     "kind": "familycensus",
+     "chapter": "carrick-east:ch:family-02",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -120,35 +264,156 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "carrick east:census:1911"
+      "open_card": "carrick-east:familycensus:02:1911"
      },
-     "caption": "Carrick East had 25 people in six households in 1911. Heads of household included McClay, Colgan and McGrory.",
+     "caption": "Carrick East had one Colgan household in 1911, headed by James.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "carrick east:census:1911"
+       "carrick-east:familycensus:02:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 7200,
+     "duration_ms": 4400,
      "audio": null,
-     "counts": {
-      "people": 25,
-      "households": 6
+     "thread": {
+      "id": "carrick-east:family:02",
+      "label": "Colgan",
+      "run": true
      }
     }
    ]
   },
   {
-   "id": "carrick-east:ch:1926",
-   "title": "1926",
+   "id": "carrick-east:ch:family-03",
+   "title": "The McClay family",
    "beats": [
     {
-     "id": "carrick-east:beat:census:1926",
-     "kind": "census",
-     "chapter": "carrick-east:ch:1926",
+     "id": "carrick-east:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "carrick-east:ch:family-03",
+     "time": {
+      "label": "The McClay family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "carrick-east",
+      "name": "Carrick East",
+      "logainm_id": "14136",
+      "lat": 54.61209,
+      "lon": -8.093362,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "carrick-east:familypresence:03"
+     },
+     "caption": "The McClay family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "carrick-east:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "carrick-east:family:03",
+      "label": "McClay",
+      "run": true
+     }
+    },
+    {
+     "id": "carrick-east:beat:familycensus:03-1901",
+     "kind": "familycensus",
+     "chapter": "carrick-east:ch:family-03",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "carrick-east",
+      "name": "Carrick East",
+      "logainm_id": "14136",
+      "lat": 54.61209,
+      "lon": -8.093362,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "carrick-east:familycensus:03:1901"
+     },
+     "caption": "Carrick East had three McClay households in 1901, headed by Mary, James and Margaret.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "carrick-east:familycensus:03:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5600,
+     "audio": null,
+     "thread": {
+      "id": "carrick-east:family:03",
+      "label": "McClay",
+      "run": true
+     }
+    },
+    {
+     "id": "carrick-east:beat:familycensus:03-1911",
+     "kind": "familycensus",
+     "chapter": "carrick-east:ch:family-03",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "carrick-east",
+      "name": "Carrick East",
+      "logainm_id": "14136",
+      "lat": 54.61209,
+      "lon": -8.093362,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "carrick-east:familycensus:03:1911"
+     },
+     "caption": "Carrick East had three McClay households in 1911, headed by Margaret, Andrew and James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "carrick-east:familycensus:03:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5600,
+     "audio": null,
+     "thread": {
+      "id": "carrick-east:family:03",
+      "label": "McClay",
+      "run": true
+     }
+    },
+    {
+     "id": "carrick-east:beat:familycensus:03-1926",
+     "kind": "familycensus",
+     "chapter": "carrick-east:ch:family-03",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -165,25 +430,32 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "carrick east:census:1926"
+      "open_card": "carrick-east:familycensus:03:1926"
      },
-     "caption": "Carrick East had nineteen people in five households in 1926. Heads of household included Campbell, McClay and McHugh.",
+     "caption": "Carrick East had one McClay household in 1926, headed by Annie.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "carrick east:census:1926"
+       "carrick-east:familycensus:03:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 7200,
+     "duration_ms": 4400,
      "audio": null,
-     "counts": {
-      "people": 19,
-      "households": 5
+     "thread": {
+      "id": "carrick-east:family:03",
+      "label": "McClay",
+      "run": true
      }
-    },
+    }
+   ]
+  },
+  {
+   "id": "carrick-east:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "carrick-east:beat:closing:end",
      "kind": "closing",
@@ -218,6 +490,522 @@
      },
      "duration_ms": 4400,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "carrick-east:ch:family-04",
+   "title": "The McGroary family",
+   "beats": [
+    {
+     "id": "carrick-east:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "carrick-east:ch:family-04",
+     "time": {
+      "label": "The McGroary family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "carrick-east",
+      "name": "Carrick East",
+      "logainm_id": "14136",
+      "lat": 54.61209,
+      "lon": -8.093362,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "carrick-east:familypresence:04"
+     },
+     "caption": "The McGroary family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "carrick-east:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "carrick-east:family:04",
+      "label": "McGroary",
+      "run": false
+     }
+    },
+    {
+     "id": "carrick-east:beat:familycensus:04-1901",
+     "kind": "familycensus",
+     "chapter": "carrick-east:ch:family-04",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "carrick-east",
+      "name": "Carrick East",
+      "logainm_id": "14136",
+      "lat": 54.61209,
+      "lon": -8.093362,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "carrick-east:familycensus:04:1901"
+     },
+     "caption": "Carrick East had one McGroary household in 1901, headed by Bernard.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "carrick-east:familycensus:04:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "carrick-east:family:04",
+      "label": "McGroary",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "carrick-east:ch:family-07",
+   "title": "The Smith family",
+   "beats": [
+    {
+     "id": "carrick-east:beat:familyhead:07",
+     "kind": "familyhead",
+     "chapter": "carrick-east:ch:family-07",
+     "time": {
+      "label": "The Smith family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "carrick-east",
+      "name": "Carrick East",
+      "logainm_id": "14136",
+      "lat": 54.61209,
+      "lon": -8.093362,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "carrick-east:familypresence:07"
+     },
+     "caption": "The Smith family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "carrick-east:familypresence:07"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "carrick-east:family:07",
+      "label": "Smith",
+      "run": false
+     }
+    },
+    {
+     "id": "carrick-east:beat:familycensus:07-1901",
+     "kind": "familycensus",
+     "chapter": "carrick-east:ch:family-07",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "carrick-east",
+      "name": "Carrick East",
+      "logainm_id": "14136",
+      "lat": 54.61209,
+      "lon": -8.093362,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "carrick-east:familycensus:07:1901"
+     },
+     "caption": "Carrick East had one Smith household in 1901, headed by Robert.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "carrick-east:familycensus:07:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "carrick-east:family:07",
+      "label": "Smith",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "carrick-east:ch:family-05",
+   "title": "The McGrory family",
+   "beats": [
+    {
+     "id": "carrick-east:beat:familyhead:05",
+     "kind": "familyhead",
+     "chapter": "carrick-east:ch:family-05",
+     "time": {
+      "label": "The McGrory family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "carrick-east",
+      "name": "Carrick East",
+      "logainm_id": "14136",
+      "lat": 54.61209,
+      "lon": -8.093362,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "carrick-east:familypresence:05"
+     },
+     "caption": "The McGrory family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "carrick-east:familypresence:05"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "carrick-east:family:05",
+      "label": "McGrory",
+      "run": false
+     }
+    },
+    {
+     "id": "carrick-east:beat:familycensus:05-1911",
+     "kind": "familycensus",
+     "chapter": "carrick-east:ch:family-05",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "carrick-east",
+      "name": "Carrick East",
+      "logainm_id": "14136",
+      "lat": 54.61209,
+      "lon": -8.093362,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "carrick-east:familycensus:05:1911"
+     },
+     "caption": "Carrick East had one McGrory household in 1911, headed by Bernard.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "carrick-east:familycensus:05:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "carrick-east:family:05",
+      "label": "McGrory",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "carrick-east:ch:family-08",
+   "title": "The Smyth family",
+   "beats": [
+    {
+     "id": "carrick-east:beat:familyhead:08",
+     "kind": "familyhead",
+     "chapter": "carrick-east:ch:family-08",
+     "time": {
+      "label": "The Smyth family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "carrick-east",
+      "name": "Carrick East",
+      "logainm_id": "14136",
+      "lat": 54.61209,
+      "lon": -8.093362,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "carrick-east:familypresence:08"
+     },
+     "caption": "The Smyth family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "carrick-east:familypresence:08"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "carrick-east:family:08",
+      "label": "Smyth",
+      "run": false
+     }
+    },
+    {
+     "id": "carrick-east:beat:familycensus:08-1911",
+     "kind": "familycensus",
+     "chapter": "carrick-east:ch:family-08",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "carrick-east",
+      "name": "Carrick East",
+      "logainm_id": "14136",
+      "lat": 54.61209,
+      "lon": -8.093362,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "carrick-east:familycensus:08:1911"
+     },
+     "caption": "Carrick East had one Smyth household in 1911, headed by Robert.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "carrick-east:familycensus:08:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "carrick-east:family:08",
+      "label": "Smyth",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "carrick-east:ch:family-01",
+   "title": "The Campbell family",
+   "beats": [
+    {
+     "id": "carrick-east:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "carrick-east:ch:family-01",
+     "time": {
+      "label": "The Campbell family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "carrick-east",
+      "name": "Carrick East",
+      "logainm_id": "14136",
+      "lat": 54.61209,
+      "lon": -8.093362,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "carrick-east:familypresence:01"
+     },
+     "caption": "The Campbell family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "carrick-east:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "carrick-east:family:01",
+      "label": "Campbell",
+      "run": false
+     }
+    },
+    {
+     "id": "carrick-east:beat:familycensus:01-1926",
+     "kind": "familycensus",
+     "chapter": "carrick-east:ch:family-01",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "carrick-east",
+      "name": "Carrick East",
+      "logainm_id": "14136",
+      "lat": 54.61209,
+      "lon": -8.093362,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "carrick-east:familycensus:01:1926"
+     },
+     "caption": "Carrick East had one Campbell household in 1926, headed by Bridget.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "carrick-east:familycensus:01:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "carrick-east:family:01",
+      "label": "Campbell",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "carrick-east:ch:family-06",
+   "title": "The McHugh family",
+   "beats": [
+    {
+     "id": "carrick-east:beat:familyhead:06",
+     "kind": "familyhead",
+     "chapter": "carrick-east:ch:family-06",
+     "time": {
+      "label": "The McHugh family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "carrick-east",
+      "name": "Carrick East",
+      "logainm_id": "14136",
+      "lat": 54.61209,
+      "lon": -8.093362,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "carrick-east:familypresence:06"
+     },
+     "caption": "The McHugh family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "carrick-east:familypresence:06"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "carrick-east:family:06",
+      "label": "McHugh",
+      "run": false
+     }
+    },
+    {
+     "id": "carrick-east:beat:familycensus:06-1926",
+     "kind": "familycensus",
+     "chapter": "carrick-east:ch:family-06",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "carrick-east",
+      "name": "Carrick East",
+      "logainm_id": "14136",
+      "lat": 54.61209,
+      "lon": -8.093362,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "carrick-east:familycensus:06:1926"
+     },
+     "caption": "Carrick East had one McHugh household in 1926, headed by Andrew.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "carrick-east:familycensus:06:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "carrick-east:family:06",
+      "label": "McHugh",
+      "run": false
+     }
     }
    ]
   }

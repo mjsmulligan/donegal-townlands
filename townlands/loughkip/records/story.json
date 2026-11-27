@@ -96,43 +96,8 @@
   },
   {
    "id": "loughkip:ch:baptisms",
-   "title": "Baptisms, 1873 to 1875",
+   "title": "Baptisms, 1874",
    "beats": [
-    {
-     "id": "loughkip:beat:baptism:1873-01-28-TAW-B-p004-r12",
-     "kind": "baptism",
-     "chapter": "loughkip:ch:baptisms",
-     "time": {
-      "label": "28 January 1873",
-      "iso": "1873-01-28",
-      "sort": "1873-01-28",
-      "approximate": false
-     },
-     "place": {
-      "townland": "loughkip",
-      "name": "Loughkip",
-      "logainm_id": "14283",
-      "lat": 54.649977,
-      "lon": -7.995207,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "loughkip:baptism:TAW-B-p004-r12"
-     },
-     "caption": "Mary Gallagher was baptised on 28 January 1873. Hugh Gallagher and Anne Boyle were the parents.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "loughkip:baptism:TAW-B-p004-r12"
-      ],
-      "basis": "page_place",
-      "certainty": "stated"
-     },
-     "duration_ms": 6400,
-     "audio": null
-    },
     {
      "id": "loughkip:beat:baptism:1874-03-01-TAW-B-p010-r112",
      "kind": "baptism",
@@ -167,11 +132,166 @@
      },
      "duration_ms": 6400,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "loughkip:ch:census",
+   "title": "1901 to 1926",
+   "beats": [
+    {
+     "id": "loughkip:beat:census:returns",
+     "kind": "census",
+     "chapter": "loughkip:ch:census",
+     "time": {
+      "label": "1901 to 1926",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "loughkip",
+      "name": "Loughkip",
+      "logainm_id": "14283",
+      "lat": 54.649977,
+      "lon": -7.995207,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "loughkip:census:1901"
+     },
+     "caption": "The censuses of 1901, 1911 and 1926 counted 23, 22 and 5 people in Loughkip, in 5, 5 and 3 households. Heads of household included Gallagher, McCadden and McShea.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "loughkip:census:1901",
+       "loughkip:census:1911",
+       "loughkip:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 11600,
+     "audio": null,
+     "counts": {
+      "returns": [
+       {
+        "year": "1901",
+        "people": 23,
+        "households": 5
+       },
+       {
+        "year": "1911",
+        "people": 22,
+        "households": 5
+       },
+       {
+        "year": "1926",
+        "people": 5,
+        "households": 3
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "loughkip:ch:families",
+   "title": "The families of Loughkip",
+   "beats": [
+    {
+     "id": "loughkip:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "loughkip:ch:families",
+     "time": {
+      "label": "The families of Loughkip",
+      "iso": "1873-01-28",
+      "sort": "1873-01-28",
+      "approximate": true
+     },
+     "place": {
+      "townland": "loughkip",
+      "name": "Loughkip",
+      "logainm_id": "14283",
+      "lat": 54.649977,
+      "lon": -7.995207,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "loughkip:baptism:TAW-B-p004-r12"
+     },
+     "caption": "Here are the families of Loughkip, from 1873 to 1926. First, the Gallagher and McCadden families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "loughkip:baptism:TAW-B-p004-r12",
+       "loughkip:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "loughkip:family:01",
+      "label": "Gallagher",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "loughkip:ch:family-01",
+   "title": "The Gallagher family",
+   "beats": [
+    {
+     "id": "loughkip:beat:baptism:1873-01-28-TAW-B-p004-r12",
+     "kind": "baptism",
+     "chapter": "loughkip:ch:family-01",
+     "time": {
+      "label": "28 January 1873",
+      "iso": "1873-01-28",
+      "sort": "1873-01-28",
+      "approximate": false
+     },
+     "place": {
+      "townland": "loughkip",
+      "name": "Loughkip",
+      "logainm_id": "14283",
+      "lat": 54.649977,
+      "lon": -7.995207,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "loughkip:baptism:TAW-B-p004-r12"
+     },
+     "caption": "Mary Gallagher was baptised on 28 January 1873. Hugh Gallagher and Anne Boyle were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "loughkip:baptism:TAW-B-p004-r12"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "loughkip:family:01",
+      "label": "Gallagher",
+      "run": true
+     }
     },
     {
      "id": "loughkip:beat:baptism:1875-02-11-TAW-B-p015-r188",
      "kind": "baptism",
-     "chapter": "loughkip:ch:baptisms",
+     "chapter": "loughkip:ch:family-01",
      "time": {
       "label": "11 February 1875",
       "iso": "1875-02-11",
@@ -201,18 +321,57 @@
       "certainty": "stated"
      },
      "duration_ms": 6400,
-     "audio": null
-    }
-   ]
-  },
-  {
-   "id": "loughkip:ch:1901",
-   "title": "1901",
-   "beats": [
+     "audio": null,
+     "thread": {
+      "id": "loughkip:family:01",
+      "label": "Gallagher",
+      "run": true
+     }
+    },
     {
-     "id": "loughkip:beat:census:1901",
-     "kind": "census",
-     "chapter": "loughkip:ch:1901",
+     "id": "loughkip:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "loughkip:ch:family-01",
+     "time": {
+      "label": "The Gallagher family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "loughkip",
+      "name": "Loughkip",
+      "logainm_id": "14283",
+      "lat": 54.649977,
+      "lon": -7.995207,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "loughkip:familypresence:01"
+     },
+     "caption": "The Gallagher family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "loughkip:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "loughkip:family:01",
+      "label": "Gallagher",
+      "run": true
+     }
+    },
+    {
+     "id": "loughkip:beat:familycensus:01-1901",
+     "kind": "familycensus",
+     "chapter": "loughkip:ch:family-01",
      "time": {
       "label": "1901",
       "iso": "1901",
@@ -229,35 +388,30 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "loughkip:census:1901"
+      "open_card": "loughkip:familycensus:01:1901"
      },
-     "caption": "Loughkip had 23 people in five households in 1901. Heads of household included Gallagher, McCadden and McShea.",
+     "caption": "Loughkip had one Gallagher household in 1901, headed by Annie.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "loughkip:census:1901"
+       "loughkip:familycensus:01:1901"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6800,
+     "duration_ms": 4000,
      "audio": null,
-     "counts": {
-      "people": 23,
-      "households": 5
+     "thread": {
+      "id": "loughkip:family:01",
+      "label": "Gallagher",
+      "run": true
      }
-    }
-   ]
-  },
-  {
-   "id": "loughkip:ch:1911",
-   "title": "1911",
-   "beats": [
+    },
     {
-     "id": "loughkip:beat:census:1911",
-     "kind": "census",
-     "chapter": "loughkip:ch:1911",
+     "id": "loughkip:beat:familycensus:01-1911",
+     "kind": "familycensus",
+     "chapter": "loughkip:ch:family-01",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -274,35 +428,30 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "loughkip:census:1911"
+      "open_card": "loughkip:familycensus:01:1911"
      },
-     "caption": "Loughkip had 22 people in five households in 1911. Heads of household included Gallagher, McCadden and McShee.",
+     "caption": "Loughkip had one Gallagher household in 1911, headed by Ann.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "loughkip:census:1911"
+       "loughkip:familycensus:01:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6800,
+     "duration_ms": 4000,
      "audio": null,
-     "counts": {
-      "people": 22,
-      "households": 5
+     "thread": {
+      "id": "loughkip:family:01",
+      "label": "Gallagher",
+      "run": true
      }
-    }
-   ]
-  },
-  {
-   "id": "loughkip:ch:1926",
-   "title": "1926",
-   "beats": [
+    },
     {
-     "id": "loughkip:beat:census:1926",
-     "kind": "census",
-     "chapter": "loughkip:ch:1926",
+     "id": "loughkip:beat:familycensus:01-1926",
+     "kind": "familycensus",
+     "chapter": "loughkip:ch:family-01",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -319,25 +468,198 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "loughkip:census:1926"
+      "open_card": "loughkip:familycensus:01:1926"
      },
-     "caption": "Loughkip had five people in three households in 1926. Heads of household included Gallagher, McCadden and McNulty.",
+     "caption": "Loughkip had one Gallagher household in 1926, headed by Patrick.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "loughkip:census:1926"
+       "loughkip:familycensus:01:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6800,
+     "duration_ms": 4000,
      "audio": null,
-     "counts": {
-      "people": 5,
-      "households": 3
+     "thread": {
+      "id": "loughkip:family:01",
+      "label": "Gallagher",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "loughkip:ch:family-02",
+   "title": "The McCadden family",
+   "beats": [
+    {
+     "id": "loughkip:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "loughkip:ch:family-02",
+     "time": {
+      "label": "The McCadden family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "loughkip",
+      "name": "Loughkip",
+      "logainm_id": "14283",
+      "lat": 54.649977,
+      "lon": -7.995207,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "loughkip:familypresence:02"
+     },
+     "caption": "The McCadden family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "loughkip:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "loughkip:family:02",
+      "label": "McCadden",
+      "run": true
      }
     },
+    {
+     "id": "loughkip:beat:familycensus:02-1901",
+     "kind": "familycensus",
+     "chapter": "loughkip:ch:family-02",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "loughkip",
+      "name": "Loughkip",
+      "logainm_id": "14283",
+      "lat": 54.649977,
+      "lon": -7.995207,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "loughkip:familycensus:02:1901"
+     },
+     "caption": "Loughkip had one McCadden household in 1901, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "loughkip:familycensus:02:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "loughkip:family:02",
+      "label": "McCadden",
+      "run": true
+     }
+    },
+    {
+     "id": "loughkip:beat:familycensus:02-1911",
+     "kind": "familycensus",
+     "chapter": "loughkip:ch:family-02",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "loughkip",
+      "name": "Loughkip",
+      "logainm_id": "14283",
+      "lat": 54.649977,
+      "lon": -7.995207,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "loughkip:familycensus:02:1911"
+     },
+     "caption": "Loughkip had one McCadden household in 1911, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "loughkip:familycensus:02:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "loughkip:family:02",
+      "label": "McCadden",
+      "run": true
+     }
+    },
+    {
+     "id": "loughkip:beat:familycensus:02-1926",
+     "kind": "familycensus",
+     "chapter": "loughkip:ch:family-02",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "loughkip",
+      "name": "Loughkip",
+      "logainm_id": "14283",
+      "lat": 54.649977,
+      "lon": -7.995207,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "loughkip:familycensus:02:1926"
+     },
+     "caption": "Loughkip had one McCadden household in 1926, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "loughkip:familycensus:02:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "loughkip:family:02",
+      "label": "McCadden",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "loughkip:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "loughkip:beat:closing:end",
      "kind": "closing",
@@ -372,6 +694,562 @@
      },
      "duration_ms": 4000,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "loughkip:ch:family-04",
+   "title": "The McShea family",
+   "beats": [
+    {
+     "id": "loughkip:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "loughkip:ch:family-04",
+     "time": {
+      "label": "The McShea family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "loughkip",
+      "name": "Loughkip",
+      "logainm_id": "14283",
+      "lat": 54.649977,
+      "lon": -7.995207,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "loughkip:familypresence:04"
+     },
+     "caption": "The McShea family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "loughkip:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "loughkip:family:04",
+      "label": "McShea",
+      "run": false
+     }
+    },
+    {
+     "id": "loughkip:beat:familycensus:04-1901",
+     "kind": "familycensus",
+     "chapter": "loughkip:ch:family-04",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "loughkip",
+      "name": "Loughkip",
+      "logainm_id": "14283",
+      "lat": 54.649977,
+      "lon": -7.995207,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "loughkip:familycensus:04:1901"
+     },
+     "caption": "Loughkip had one McShea household in 1901, headed by Susan.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "loughkip:familycensus:04:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "loughkip:family:04",
+      "label": "McShea",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "loughkip:ch:family-06",
+   "title": "The Mulreany family",
+   "beats": [
+    {
+     "id": "loughkip:beat:familyhead:06",
+     "kind": "familyhead",
+     "chapter": "loughkip:ch:family-06",
+     "time": {
+      "label": "The Mulreany family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "loughkip",
+      "name": "Loughkip",
+      "logainm_id": "14283",
+      "lat": 54.649977,
+      "lon": -7.995207,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "loughkip:familypresence:06"
+     },
+     "caption": "The Mulreany family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "loughkip:familypresence:06"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "loughkip:family:06",
+      "label": "Mulreany",
+      "run": false
+     }
+    },
+    {
+     "id": "loughkip:beat:familycensus:06-1901",
+     "kind": "familycensus",
+     "chapter": "loughkip:ch:family-06",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "loughkip",
+      "name": "Loughkip",
+      "logainm_id": "14283",
+      "lat": 54.649977,
+      "lon": -7.995207,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "loughkip:familycensus:06:1901"
+     },
+     "caption": "Loughkip had one Mulreany household in 1901, headed by Neil.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "loughkip:familycensus:06:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "loughkip:family:06",
+      "label": "Mulreany",
+      "run": false
+     }
+    },
+    {
+     "id": "loughkip:beat:familycensus:06-1911",
+     "kind": "familycensus",
+     "chapter": "loughkip:ch:family-06",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "loughkip",
+      "name": "Loughkip",
+      "logainm_id": "14283",
+      "lat": 54.649977,
+      "lon": -7.995207,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "loughkip:familycensus:06:1911"
+     },
+     "caption": "Loughkip had one Mulreany household in 1911, headed by Neil.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "loughkip:familycensus:06:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "loughkip:family:06",
+      "label": "Mulreany",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "loughkip:ch:family-07",
+   "title": "The Stephenson family",
+   "beats": [
+    {
+     "id": "loughkip:beat:familyhead:07",
+     "kind": "familyhead",
+     "chapter": "loughkip:ch:family-07",
+     "time": {
+      "label": "The Stephenson family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "loughkip",
+      "name": "Loughkip",
+      "logainm_id": "14283",
+      "lat": 54.649977,
+      "lon": -7.995207,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "loughkip:familypresence:07"
+     },
+     "caption": "The Stephenson family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "loughkip:familypresence:07"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "loughkip:family:07",
+      "label": "Stephenson",
+      "run": false
+     }
+    },
+    {
+     "id": "loughkip:beat:familycensus:07-1901",
+     "kind": "familycensus",
+     "chapter": "loughkip:ch:family-07",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "loughkip",
+      "name": "Loughkip",
+      "logainm_id": "14283",
+      "lat": 54.649977,
+      "lon": -7.995207,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "loughkip:familycensus:07:1901"
+     },
+     "caption": "Loughkip had one Stephenson household in 1901, headed by Thomas.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "loughkip:familycensus:07:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "loughkip:family:07",
+      "label": "Stephenson",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "loughkip:ch:family-05",
+   "title": "The McShee family",
+   "beats": [
+    {
+     "id": "loughkip:beat:familyhead:05",
+     "kind": "familyhead",
+     "chapter": "loughkip:ch:family-05",
+     "time": {
+      "label": "The McShee family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "loughkip",
+      "name": "Loughkip",
+      "logainm_id": "14283",
+      "lat": 54.649977,
+      "lon": -7.995207,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "loughkip:familypresence:05"
+     },
+     "caption": "The McShee family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "loughkip:familypresence:05"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "loughkip:family:05",
+      "label": "McShee",
+      "run": false
+     }
+    },
+    {
+     "id": "loughkip:beat:familycensus:05-1911",
+     "kind": "familycensus",
+     "chapter": "loughkip:ch:family-05",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "loughkip",
+      "name": "Loughkip",
+      "logainm_id": "14283",
+      "lat": 54.649977,
+      "lon": -7.995207,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "loughkip:familycensus:05:1911"
+     },
+     "caption": "Loughkip had one McShee household in 1911, headed by Susan.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "loughkip:familycensus:05:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "loughkip:family:05",
+      "label": "McShee",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "loughkip:ch:family-08",
+   "title": "The Stevenson family",
+   "beats": [
+    {
+     "id": "loughkip:beat:familyhead:08",
+     "kind": "familyhead",
+     "chapter": "loughkip:ch:family-08",
+     "time": {
+      "label": "The Stevenson family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "loughkip",
+      "name": "Loughkip",
+      "logainm_id": "14283",
+      "lat": 54.649977,
+      "lon": -7.995207,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "loughkip:familypresence:08"
+     },
+     "caption": "The Stevenson family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "loughkip:familypresence:08"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "loughkip:family:08",
+      "label": "Stevenson",
+      "run": false
+     }
+    },
+    {
+     "id": "loughkip:beat:familycensus:08-1911",
+     "kind": "familycensus",
+     "chapter": "loughkip:ch:family-08",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "loughkip",
+      "name": "Loughkip",
+      "logainm_id": "14283",
+      "lat": 54.649977,
+      "lon": -7.995207,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "loughkip:familycensus:08:1911"
+     },
+     "caption": "Loughkip had one Stevenson household in 1911, headed by William.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "loughkip:familycensus:08:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "loughkip:family:08",
+      "label": "Stevenson",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "loughkip:ch:family-03",
+   "title": "The McNulty family",
+   "beats": [
+    {
+     "id": "loughkip:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "loughkip:ch:family-03",
+     "time": {
+      "label": "The McNulty family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "loughkip",
+      "name": "Loughkip",
+      "logainm_id": "14283",
+      "lat": 54.649977,
+      "lon": -7.995207,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "loughkip:familypresence:03"
+     },
+     "caption": "The McNulty family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "loughkip:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "loughkip:family:03",
+      "label": "McNulty",
+      "run": false
+     }
+    },
+    {
+     "id": "loughkip:beat:familycensus:03-1926",
+     "kind": "familycensus",
+     "chapter": "loughkip:ch:family-03",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "loughkip",
+      "name": "Loughkip",
+      "logainm_id": "14283",
+      "lat": 54.649977,
+      "lon": -7.995207,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "loughkip:familycensus:03:1926"
+     },
+     "caption": "Loughkip had one McNulty household in 1926, headed by Margaret.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "loughkip:familycensus:03:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "loughkip:family:03",
+      "label": "McNulty",
+      "run": false
+     }
     }
    ]
   }

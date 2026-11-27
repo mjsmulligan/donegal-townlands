@@ -52,15 +52,15 @@
    ]
   },
   {
-   "id": "rossmore:ch:1901",
-   "title": "1901",
+   "id": "rossmore:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "rossmore:beat:census:1901",
+     "id": "rossmore:beat:census:returns",
      "kind": "census",
-     "chapter": "rossmore:ch:1901",
+     "chapter": "rossmore:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1926",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -77,33 +77,177 @@
       "stage": "map",
       "open_card": "rossmore:census:1901"
      },
-     "caption": "Rossmore had 22 people in seven households in 1901. Heads of household included Bustard, Ellis and Graham.",
+     "caption": "The censuses of 1901, 1911 and 1926 counted 22, 16 and 9 people in Rossmore, in 7, 5 and 5 households. Heads of household included Bustard, Ellis and Graham.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "rossmore:census:1901"
+       "rossmore:census:1901",
+       "rossmore:census:1911",
+       "rossmore:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 6800,
+     "duration_ms": 11600,
      "audio": null,
      "counts": {
-      "people": 22,
-      "households": 7
+      "returns": [
+       {
+        "year": "1901",
+        "people": 22,
+        "households": 7
+       },
+       {
+        "year": "1911",
+        "people": 16,
+        "households": 5
+       },
+       {
+        "year": "1926",
+        "people": 9,
+        "households": 5
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "rossmore:ch:1911",
-   "title": "1911",
+   "id": "rossmore:ch:families",
+   "title": "The families of Rossmore",
    "beats": [
     {
-     "id": "rossmore:beat:census:1911",
-     "kind": "census",
-     "chapter": "rossmore:ch:1911",
+     "id": "rossmore:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "rossmore:ch:families",
+     "time": {
+      "label": "The families of Rossmore",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossmore",
+      "name": "Rossmore",
+      "logainm_id": "14298",
+      "lat": 54.625024,
+      "lon": -8.10861,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rossmore:census:1901"
+     },
+     "caption": "Here are the families of Rossmore, from 1901 to 1926. First, the Bustard and Magee families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossmore:census:1901",
+       "rossmore:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "rossmore:family:01",
+      "label": "Bustard",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "rossmore:ch:family-01",
+   "title": "The Bustard family",
+   "beats": [
+    {
+     "id": "rossmore:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "rossmore:ch:family-01",
+     "time": {
+      "label": "The Bustard family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossmore",
+      "name": "Rossmore",
+      "logainm_id": "14298",
+      "lat": 54.625024,
+      "lon": -8.10861,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rossmore:familypresence:01"
+     },
+     "caption": "The Bustard family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossmore:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "rossmore:family:01",
+      "label": "Bustard",
+      "run": true
+     }
+    },
+    {
+     "id": "rossmore:beat:familycensus:01-1901",
+     "kind": "familycensus",
+     "chapter": "rossmore:ch:family-01",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossmore",
+      "name": "Rossmore",
+      "logainm_id": "14298",
+      "lat": 54.625024,
+      "lon": -8.10861,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rossmore:familycensus:01:1901"
+     },
+     "caption": "Rossmore had one Bustard household in 1901, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossmore:familycensus:01:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "rossmore:family:01",
+      "label": "Bustard",
+      "run": true
+     }
+    },
+    {
+     "id": "rossmore:beat:familycensus:01-1911",
+     "kind": "familycensus",
+     "chapter": "rossmore:ch:family-01",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -120,35 +264,156 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "rossmore:census:1911"
+      "open_card": "rossmore:familycensus:01:1911"
      },
-     "caption": "Rossmore had sixteen people in five households in 1911. Heads of household included Bustard, Graham and Hiely.",
+     "caption": "Rossmore had one Bustard household in 1911, headed by James.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "rossmore:census:1911"
+       "rossmore:familycensus:01:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6800,
+     "duration_ms": 4000,
      "audio": null,
-     "counts": {
-      "people": 16,
-      "households": 5
+     "thread": {
+      "id": "rossmore:family:01",
+      "label": "Bustard",
+      "run": true
      }
     }
    ]
   },
   {
-   "id": "rossmore:ch:1926",
-   "title": "1926",
+   "id": "rossmore:ch:family-06",
+   "title": "The Magee family",
    "beats": [
     {
-     "id": "rossmore:beat:census:1926",
-     "kind": "census",
-     "chapter": "rossmore:ch:1926",
+     "id": "rossmore:beat:familyhead:06",
+     "kind": "familyhead",
+     "chapter": "rossmore:ch:family-06",
+     "time": {
+      "label": "The Magee family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossmore",
+      "name": "Rossmore",
+      "logainm_id": "14298",
+      "lat": 54.625024,
+      "lon": -8.10861,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rossmore:familypresence:06"
+     },
+     "caption": "The Magee family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossmore:familypresence:06"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "rossmore:family:06",
+      "label": "Magee",
+      "run": true
+     }
+    },
+    {
+     "id": "rossmore:beat:familycensus:06-1901",
+     "kind": "familycensus",
+     "chapter": "rossmore:ch:family-06",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossmore",
+      "name": "Rossmore",
+      "logainm_id": "14298",
+      "lat": 54.625024,
+      "lon": -8.10861,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rossmore:familycensus:06:1901"
+     },
+     "caption": "Rossmore had one Magee household in 1901, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossmore:familycensus:06:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "rossmore:family:06",
+      "label": "Magee",
+      "run": true
+     }
+    },
+    {
+     "id": "rossmore:beat:familycensus:06-1911",
+     "kind": "familycensus",
+     "chapter": "rossmore:ch:family-06",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossmore",
+      "name": "Rossmore",
+      "logainm_id": "14298",
+      "lat": 54.625024,
+      "lon": -8.10861,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rossmore:familycensus:06:1911"
+     },
+     "caption": "Rossmore had one Magee household in 1911, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossmore:familycensus:06:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "rossmore:family:06",
+      "label": "Magee",
+      "run": true
+     }
+    },
+    {
+     "id": "rossmore:beat:familycensus:06-1926",
+     "kind": "familycensus",
+     "chapter": "rossmore:ch:family-06",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -165,25 +430,32 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "rossmore:census:1926"
+      "open_card": "rossmore:familycensus:06:1926"
      },
-     "caption": "In 1926, nine people in five households lived in Rossmore. Heads of household included Magee.",
+     "caption": "Rossmore had one Magee household in 1926, headed by Charles.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "rossmore:census:1926"
+       "rossmore:familycensus:06:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6000,
+     "duration_ms": 4000,
      "audio": null,
-     "counts": {
-      "people": 9,
-      "households": 5
+     "thread": {
+      "id": "rossmore:family:06",
+      "label": "Magee",
+      "run": true
      }
-    },
+    }
+   ]
+  },
+  {
+   "id": "rossmore:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "rossmore:beat:closing:end",
      "kind": "closing",
@@ -218,6 +490,602 @@
      },
      "duration_ms": 4000,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "rossmore:ch:family-02",
+   "title": "The Ellis family",
+   "beats": [
+    {
+     "id": "rossmore:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "rossmore:ch:family-02",
+     "time": {
+      "label": "The Ellis family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossmore",
+      "name": "Rossmore",
+      "logainm_id": "14298",
+      "lat": 54.625024,
+      "lon": -8.10861,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rossmore:familypresence:02"
+     },
+     "caption": "The Ellis family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossmore:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "rossmore:family:02",
+      "label": "Ellis",
+      "run": false
+     }
+    },
+    {
+     "id": "rossmore:beat:familycensus:02-1901",
+     "kind": "familycensus",
+     "chapter": "rossmore:ch:family-02",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossmore",
+      "name": "Rossmore",
+      "logainm_id": "14298",
+      "lat": 54.625024,
+      "lon": -8.10861,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rossmore:familycensus:02:1901"
+     },
+     "caption": "Rossmore had one Ellis household in 1901, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossmore:familycensus:02:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "rossmore:family:02",
+      "label": "Ellis",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "rossmore:ch:family-03",
+   "title": "The Graham family",
+   "beats": [
+    {
+     "id": "rossmore:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "rossmore:ch:family-03",
+     "time": {
+      "label": "The Graham family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossmore",
+      "name": "Rossmore",
+      "logainm_id": "14298",
+      "lat": 54.625024,
+      "lon": -8.10861,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rossmore:familypresence:03"
+     },
+     "caption": "The Graham family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossmore:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "rossmore:family:03",
+      "label": "Graham",
+      "run": false
+     }
+    },
+    {
+     "id": "rossmore:beat:familycensus:03-1901",
+     "kind": "familycensus",
+     "chapter": "rossmore:ch:family-03",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossmore",
+      "name": "Rossmore",
+      "logainm_id": "14298",
+      "lat": 54.625024,
+      "lon": -8.10861,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rossmore:familycensus:03:1901"
+     },
+     "caption": "Rossmore had one Graham household in 1901, headed by Anne.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossmore:familycensus:03:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "rossmore:family:03",
+      "label": "Graham",
+      "run": false
+     }
+    },
+    {
+     "id": "rossmore:beat:familycensus:03-1911",
+     "kind": "familycensus",
+     "chapter": "rossmore:ch:family-03",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossmore",
+      "name": "Rossmore",
+      "logainm_id": "14298",
+      "lat": 54.625024,
+      "lon": -8.10861,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rossmore:familycensus:03:1911"
+     },
+     "caption": "Rossmore had one Graham household in 1911, headed by Charles.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossmore:familycensus:03:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "rossmore:family:03",
+      "label": "Graham",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "rossmore:ch:family-05",
+   "title": "The Hilley family",
+   "beats": [
+    {
+     "id": "rossmore:beat:familyhead:05",
+     "kind": "familyhead",
+     "chapter": "rossmore:ch:family-05",
+     "time": {
+      "label": "The Hilley family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossmore",
+      "name": "Rossmore",
+      "logainm_id": "14298",
+      "lat": 54.625024,
+      "lon": -8.10861,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rossmore:familypresence:05"
+     },
+     "caption": "The Hilley family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossmore:familypresence:05"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "rossmore:family:05",
+      "label": "Hilley",
+      "run": false
+     }
+    },
+    {
+     "id": "rossmore:beat:familycensus:05-1901",
+     "kind": "familycensus",
+     "chapter": "rossmore:ch:family-05",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossmore",
+      "name": "Rossmore",
+      "logainm_id": "14298",
+      "lat": 54.625024,
+      "lon": -8.10861,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rossmore:familycensus:05:1901"
+     },
+     "caption": "Rossmore had one Hilley household in 1901, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossmore:familycensus:05:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "rossmore:family:05",
+      "label": "Hilley",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "rossmore:ch:family-07",
+   "title": "The Martin family",
+   "beats": [
+    {
+     "id": "rossmore:beat:familyhead:07",
+     "kind": "familyhead",
+     "chapter": "rossmore:ch:family-07",
+     "time": {
+      "label": "The Martin family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossmore",
+      "name": "Rossmore",
+      "logainm_id": "14298",
+      "lat": 54.625024,
+      "lon": -8.10861,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rossmore:familypresence:07"
+     },
+     "caption": "The Martin family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossmore:familypresence:07"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "rossmore:family:07",
+      "label": "Martin",
+      "run": false
+     }
+    },
+    {
+     "id": "rossmore:beat:familycensus:07-1901",
+     "kind": "familycensus",
+     "chapter": "rossmore:ch:family-07",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossmore",
+      "name": "Rossmore",
+      "logainm_id": "14298",
+      "lat": 54.625024,
+      "lon": -8.10861,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rossmore:familycensus:07:1901"
+     },
+     "caption": "Rossmore had one Martin household in 1901, headed by Mary.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossmore:familycensus:07:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "rossmore:family:07",
+      "label": "Martin",
+      "run": false
+     }
+    },
+    {
+     "id": "rossmore:beat:familycensus:07-1911",
+     "kind": "familycensus",
+     "chapter": "rossmore:ch:family-07",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossmore",
+      "name": "Rossmore",
+      "logainm_id": "14298",
+      "lat": 54.625024,
+      "lon": -8.10861,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rossmore:familycensus:07:1911"
+     },
+     "caption": "Rossmore had one Martin household in 1911, headed by Mary.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossmore:familycensus:07:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "rossmore:family:07",
+      "label": "Martin",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "rossmore:ch:family-08",
+   "title": "The McKnight family",
+   "beats": [
+    {
+     "id": "rossmore:beat:familyhead:08",
+     "kind": "familyhead",
+     "chapter": "rossmore:ch:family-08",
+     "time": {
+      "label": "The McKnight family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossmore",
+      "name": "Rossmore",
+      "logainm_id": "14298",
+      "lat": 54.625024,
+      "lon": -8.10861,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rossmore:familypresence:08"
+     },
+     "caption": "The McKnight family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossmore:familypresence:08"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "rossmore:family:08",
+      "label": "McKnight",
+      "run": false
+     }
+    },
+    {
+     "id": "rossmore:beat:familycensus:08-1901",
+     "kind": "familycensus",
+     "chapter": "rossmore:ch:family-08",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossmore",
+      "name": "Rossmore",
+      "logainm_id": "14298",
+      "lat": 54.625024,
+      "lon": -8.10861,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rossmore:familycensus:08:1901"
+     },
+     "caption": "Rossmore had one McKnight household in 1901, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossmore:familycensus:08:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "rossmore:family:08",
+      "label": "McKnight",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "rossmore:ch:family-04",
+   "title": "The Hiely family",
+   "beats": [
+    {
+     "id": "rossmore:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "rossmore:ch:family-04",
+     "time": {
+      "label": "The Hiely family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossmore",
+      "name": "Rossmore",
+      "logainm_id": "14298",
+      "lat": 54.625024,
+      "lon": -8.10861,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rossmore:familypresence:04"
+     },
+     "caption": "The Hiely family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossmore:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "rossmore:family:04",
+      "label": "Hiely",
+      "run": false
+     }
+    },
+    {
+     "id": "rossmore:beat:familycensus:04-1911",
+     "kind": "familycensus",
+     "chapter": "rossmore:ch:family-04",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossmore",
+      "name": "Rossmore",
+      "logainm_id": "14298",
+      "lat": 54.625024,
+      "lon": -8.10861,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rossmore:familycensus:04:1911"
+     },
+     "caption": "Rossmore had one Hiely household in 1911, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossmore:familycensus:04:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "rossmore:family:04",
+      "label": "Hiely",
+      "run": false
+     }
     }
    ]
   }

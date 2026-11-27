@@ -52,15 +52,15 @@
    ]
   },
   {
-   "id": "drumroosk-west:ch:1901",
-   "title": "1901",
+   "id": "drumroosk-west:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "drumroosk-west:beat:census:1901",
+     "id": "drumroosk-west:beat:census:returns",
      "kind": "census",
-     "chapter": "drumroosk-west:ch:1901",
+     "chapter": "drumroosk-west:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1926",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -77,33 +77,177 @@
       "stage": "map",
       "open_card": "drumroosk west:census:1901"
      },
-     "caption": "In 1901, 32 people in five households lived in Drumroosk West. Heads of household included Doherty, Gallagher and Crommer.",
+     "caption": "The censuses of 1901, 1911 and 1926 counted 32, 16 and 18 people in Drumroosk West, in 5, 5 and 5 households. Heads of household included Doherty, Gallagher and Crommer.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "drumroosk west:census:1901"
+       "drumroosk west:census:1901",
+       "drumroosk west:census:1911",
+       "drumroosk west:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 7600,
+     "duration_ms": 12000,
      "audio": null,
      "counts": {
-      "people": 32,
-      "households": 5
+      "returns": [
+       {
+        "year": "1901",
+        "people": 32,
+        "households": 5
+       },
+       {
+        "year": "1911",
+        "people": 16,
+        "households": 5
+       },
+       {
+        "year": "1926",
+        "people": 18,
+        "households": 5
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "drumroosk-west:ch:1911",
-   "title": "1911",
+   "id": "drumroosk-west:ch:families",
+   "title": "The families of Drumroosk West",
    "beats": [
     {
-     "id": "drumroosk-west:beat:census:1911",
-     "kind": "census",
-     "chapter": "drumroosk-west:ch:1911",
+     "id": "drumroosk-west:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "drumroosk-west:ch:families",
+     "time": {
+      "label": "The families of Drumroosk West",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumroosk-west",
+      "name": "Drumroosk West",
+      "logainm_id": "14013",
+      "lat": 54.660233,
+      "lon": -8.109253,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumroosk west:census:1901"
+     },
+     "caption": "Here are the families of Drumroosk West, from 1901 to 1926. First, the Doherty and Clarke families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumroosk west:census:1901",
+       "drumroosk west:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "thread": {
+      "id": "drumroosk-west:family:03",
+      "label": "Doherty",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumroosk-west:ch:family-03",
+   "title": "The Doherty family",
+   "beats": [
+    {
+     "id": "drumroosk-west:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "drumroosk-west:ch:family-03",
+     "time": {
+      "label": "The Doherty family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumroosk-west",
+      "name": "Drumroosk West",
+      "logainm_id": "14013",
+      "lat": 54.660233,
+      "lon": -8.109253,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumroosk-west:familypresence:03"
+     },
+     "caption": "The Doherty family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumroosk-west:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drumroosk-west:family:03",
+      "label": "Doherty",
+      "run": true
+     }
+    },
+    {
+     "id": "drumroosk-west:beat:familycensus:03-1901",
+     "kind": "familycensus",
+     "chapter": "drumroosk-west:ch:family-03",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumroosk-west",
+      "name": "Drumroosk West",
+      "logainm_id": "14013",
+      "lat": 54.660233,
+      "lon": -8.109253,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumroosk-west:familycensus:03:1901"
+     },
+     "caption": "Drumroosk West had two Doherty households in 1901, headed by John and Catherine.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumroosk-west:familycensus:03:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "drumroosk-west:family:03",
+      "label": "Doherty",
+      "run": true
+     }
+    },
+    {
+     "id": "drumroosk-west:beat:familycensus:03-1911",
+     "kind": "familycensus",
+     "chapter": "drumroosk-west:ch:family-03",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -120,35 +264,116 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "drumroosk west:census:1911"
+      "open_card": "drumroosk-west:familycensus:03:1911"
      },
-     "caption": "In 1911, sixteen people in five households lived in Drumroosk West. Heads of household included Clarke, Crommer and Doherty.",
+     "caption": "Drumroosk West had one Doherty household in 1911, headed by Kathleen.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "drumroosk west:census:1911"
+       "drumroosk-west:familycensus:03:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 7600,
+     "duration_ms": 4400,
      "audio": null,
-     "counts": {
-      "people": 16,
-      "households": 5
+     "thread": {
+      "id": "drumroosk-west:family:03",
+      "label": "Doherty",
+      "run": true
      }
     }
    ]
   },
   {
-   "id": "drumroosk-west:ch:1926",
-   "title": "1926",
+   "id": "drumroosk-west:ch:family-01",
+   "title": "The Clarke family",
    "beats": [
     {
-     "id": "drumroosk-west:beat:census:1926",
-     "kind": "census",
-     "chapter": "drumroosk-west:ch:1926",
+     "id": "drumroosk-west:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "drumroosk-west:ch:family-01",
+     "time": {
+      "label": "The Clarke family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumroosk-west",
+      "name": "Drumroosk West",
+      "logainm_id": "14013",
+      "lat": 54.660233,
+      "lon": -8.109253,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumroosk-west:familypresence:01"
+     },
+     "caption": "The Clarke family appear in the records from 1911 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumroosk-west:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drumroosk-west:family:01",
+      "label": "Clarke",
+      "run": true
+     }
+    },
+    {
+     "id": "drumroosk-west:beat:familycensus:01-1911",
+     "kind": "familycensus",
+     "chapter": "drumroosk-west:ch:family-01",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumroosk-west",
+      "name": "Drumroosk West",
+      "logainm_id": "14013",
+      "lat": 54.660233,
+      "lon": -8.109253,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumroosk-west:familycensus:01:1911"
+     },
+     "caption": "Drumroosk West had one Clarke household in 1911, headed by Thomas.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumroosk-west:familycensus:01:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drumroosk-west:family:01",
+      "label": "Clarke",
+      "run": true
+     }
+    },
+    {
+     "id": "drumroosk-west:beat:familycensus:01-1926",
+     "kind": "familycensus",
+     "chapter": "drumroosk-west:ch:family-01",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -165,25 +390,32 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "drumroosk west:census:1926"
+      "open_card": "drumroosk-west:familycensus:01:1926"
      },
-     "caption": "In 1926, eighteen people in five households lived in Drumroosk West. Heads of household included Clarke, McGettigan and Melly.",
+     "caption": "Drumroosk West had one Clarke household in 1926, headed by Thomas.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "drumroosk west:census:1926"
+       "drumroosk-west:familycensus:01:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 7600,
+     "duration_ms": 4400,
      "audio": null,
-     "counts": {
-      "people": 18,
-      "households": 5
+     "thread": {
+      "id": "drumroosk-west:family:01",
+      "label": "Clarke",
+      "run": true
      }
-    },
+    }
+   ]
+  },
+  {
+   "id": "drumroosk-west:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "drumroosk-west:beat:closing:end",
      "kind": "closing",
@@ -218,6 +450,774 @@
      },
      "duration_ms": 4400,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "drumroosk-west:ch:family-02",
+   "title": "The Crommer family",
+   "beats": [
+    {
+     "id": "drumroosk-west:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "drumroosk-west:ch:family-02",
+     "time": {
+      "label": "The Crommer family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumroosk-west",
+      "name": "Drumroosk West",
+      "logainm_id": "14013",
+      "lat": 54.660233,
+      "lon": -8.109253,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumroosk-west:familypresence:02"
+     },
+     "caption": "The Crommer family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumroosk-west:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drumroosk-west:family:02",
+      "label": "Crommer",
+      "run": false
+     }
+    },
+    {
+     "id": "drumroosk-west:beat:familycensus:02-1901",
+     "kind": "familycensus",
+     "chapter": "drumroosk-west:ch:family-02",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumroosk-west",
+      "name": "Drumroosk West",
+      "logainm_id": "14013",
+      "lat": 54.660233,
+      "lon": -8.109253,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumroosk-west:familycensus:02:1901"
+     },
+     "caption": "Drumroosk West had one Crommer household in 1901, headed by Adam.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumroosk-west:familycensus:02:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drumroosk-west:family:02",
+      "label": "Crommer",
+      "run": false
+     }
+    },
+    {
+     "id": "drumroosk-west:beat:familycensus:02-1911",
+     "kind": "familycensus",
+     "chapter": "drumroosk-west:ch:family-02",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumroosk-west",
+      "name": "Drumroosk West",
+      "logainm_id": "14013",
+      "lat": 54.660233,
+      "lon": -8.109253,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumroosk-west:familycensus:02:1911"
+     },
+     "caption": "Drumroosk West had one Crommer household in 1911, headed by Isabella.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumroosk-west:familycensus:02:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drumroosk-west:family:02",
+      "label": "Crommer",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumroosk-west:ch:family-04",
+   "title": "The Gallagher family",
+   "beats": [
+    {
+     "id": "drumroosk-west:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "drumroosk-west:ch:family-04",
+     "time": {
+      "label": "The Gallagher family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumroosk-west",
+      "name": "Drumroosk West",
+      "logainm_id": "14013",
+      "lat": 54.660233,
+      "lon": -8.109253,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumroosk-west:familypresence:04"
+     },
+     "caption": "The Gallagher family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumroosk-west:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drumroosk-west:family:04",
+      "label": "Gallagher",
+      "run": false
+     }
+    },
+    {
+     "id": "drumroosk-west:beat:familycensus:04-1901",
+     "kind": "familycensus",
+     "chapter": "drumroosk-west:ch:family-04",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumroosk-west",
+      "name": "Drumroosk West",
+      "logainm_id": "14013",
+      "lat": 54.660233,
+      "lon": -8.109253,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumroosk-west:familycensus:04:1901"
+     },
+     "caption": "Drumroosk West had two Gallagher households in 1901, headed by James and Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumroosk-west:familycensus:04:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "drumroosk-west:family:04",
+      "label": "Gallagher",
+      "run": false
+     }
+    },
+    {
+     "id": "drumroosk-west:beat:familycensus:04-1911",
+     "kind": "familycensus",
+     "chapter": "drumroosk-west:ch:family-04",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumroosk-west",
+      "name": "Drumroosk West",
+      "logainm_id": "14013",
+      "lat": 54.660233,
+      "lon": -8.109253,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumroosk-west:familycensus:04:1911"
+     },
+     "caption": "Drumroosk West had one Gallagher household in 1911, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumroosk-west:familycensus:04:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drumroosk-west:family:04",
+      "label": "Gallagher",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumroosk-west:ch:family-05",
+   "title": "The Gillespie family",
+   "beats": [
+    {
+     "id": "drumroosk-west:beat:familyhead:05",
+     "kind": "familyhead",
+     "chapter": "drumroosk-west:ch:family-05",
+     "time": {
+      "label": "The Gillespie family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumroosk-west",
+      "name": "Drumroosk West",
+      "logainm_id": "14013",
+      "lat": 54.660233,
+      "lon": -8.109253,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumroosk-west:familypresence:05"
+     },
+     "caption": "The Gillespie family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumroosk-west:familypresence:05"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumroosk-west:family:05",
+      "label": "Gillespie",
+      "run": false
+     }
+    },
+    {
+     "id": "drumroosk-west:beat:familycensus:05-1901",
+     "kind": "familycensus",
+     "chapter": "drumroosk-west:ch:family-05",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumroosk-west",
+      "name": "Drumroosk West",
+      "logainm_id": "14013",
+      "lat": 54.660233,
+      "lon": -8.109253,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumroosk-west:familycensus:05:1901"
+     },
+     "caption": "Drumroosk West had one Gillespie household in 1901, headed by Nannie.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumroosk-west:familycensus:05:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drumroosk-west:family:05",
+      "label": "Gillespie",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumroosk-west:ch:family-08",
+   "title": "The Mulherin family",
+   "beats": [
+    {
+     "id": "drumroosk-west:beat:familyhead:08",
+     "kind": "familyhead",
+     "chapter": "drumroosk-west:ch:family-08",
+     "time": {
+      "label": "The Mulherin family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumroosk-west",
+      "name": "Drumroosk West",
+      "logainm_id": "14013",
+      "lat": 54.660233,
+      "lon": -8.109253,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumroosk-west:familypresence:08"
+     },
+     "caption": "The Mulherin family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumroosk-west:familypresence:08"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumroosk-west:family:08",
+      "label": "Mulherin",
+      "run": false
+     }
+    },
+    {
+     "id": "drumroosk-west:beat:familycensus:08-1911",
+     "kind": "familycensus",
+     "chapter": "drumroosk-west:ch:family-08",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumroosk-west",
+      "name": "Drumroosk West",
+      "logainm_id": "14013",
+      "lat": 54.660233,
+      "lon": -8.109253,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumroosk-west:familycensus:08:1911"
+     },
+     "caption": "Drumroosk West had one Mulherin household in 1911, headed by Edward.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumroosk-west:familycensus:08:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drumroosk-west:family:08",
+      "label": "Mulherin",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumroosk-west:ch:family-06",
+   "title": "The McGettigan family",
+   "beats": [
+    {
+     "id": "drumroosk-west:beat:familyhead:06",
+     "kind": "familyhead",
+     "chapter": "drumroosk-west:ch:family-06",
+     "time": {
+      "label": "The McGettigan family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumroosk-west",
+      "name": "Drumroosk West",
+      "logainm_id": "14013",
+      "lat": 54.660233,
+      "lon": -8.109253,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumroosk-west:familypresence:06"
+     },
+     "caption": "The McGettigan family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumroosk-west:familypresence:06"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumroosk-west:family:06",
+      "label": "McGettigan",
+      "run": false
+     }
+    },
+    {
+     "id": "drumroosk-west:beat:familycensus:06-1926",
+     "kind": "familycensus",
+     "chapter": "drumroosk-west:ch:family-06",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumroosk-west",
+      "name": "Drumroosk West",
+      "logainm_id": "14013",
+      "lat": 54.660233,
+      "lon": -8.109253,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumroosk-west:familycensus:06:1926"
+     },
+     "caption": "Drumroosk West had one McGettigan household in 1926, headed by Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumroosk-west:familycensus:06:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drumroosk-west:family:06",
+      "label": "McGettigan",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumroosk-west:ch:family-07",
+   "title": "The Melly family",
+   "beats": [
+    {
+     "id": "drumroosk-west:beat:familyhead:07",
+     "kind": "familyhead",
+     "chapter": "drumroosk-west:ch:family-07",
+     "time": {
+      "label": "The Melly family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumroosk-west",
+      "name": "Drumroosk West",
+      "logainm_id": "14013",
+      "lat": 54.660233,
+      "lon": -8.109253,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumroosk-west:familypresence:07"
+     },
+     "caption": "The Melly family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumroosk-west:familypresence:07"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumroosk-west:family:07",
+      "label": "Melly",
+      "run": false
+     }
+    },
+    {
+     "id": "drumroosk-west:beat:familycensus:07-1926",
+     "kind": "familycensus",
+     "chapter": "drumroosk-west:ch:family-07",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumroosk-west",
+      "name": "Drumroosk West",
+      "logainm_id": "14013",
+      "lat": 54.660233,
+      "lon": -8.109253,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumroosk-west:familycensus:07:1926"
+     },
+     "caption": "Drumroosk West had one Melly household in 1926, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumroosk-west:familycensus:07:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drumroosk-west:family:07",
+      "label": "Melly",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumroosk-west:ch:family-09",
+   "title": "The Perry family",
+   "beats": [
+    {
+     "id": "drumroosk-west:beat:familyhead:09",
+     "kind": "familyhead",
+     "chapter": "drumroosk-west:ch:family-09",
+     "time": {
+      "label": "The Perry family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumroosk-west",
+      "name": "Drumroosk West",
+      "logainm_id": "14013",
+      "lat": 54.660233,
+      "lon": -8.109253,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumroosk-west:familypresence:09"
+     },
+     "caption": "The Perry family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumroosk-west:familypresence:09"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumroosk-west:family:09",
+      "label": "Perry",
+      "run": false
+     }
+    },
+    {
+     "id": "drumroosk-west:beat:familycensus:09-1926",
+     "kind": "familycensus",
+     "chapter": "drumroosk-west:ch:family-09",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumroosk-west",
+      "name": "Drumroosk West",
+      "logainm_id": "14013",
+      "lat": 54.660233,
+      "lon": -8.109253,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumroosk-west:familycensus:09:1926"
+     },
+     "caption": "Drumroosk West had one Perry household in 1926, headed by Andrew.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumroosk-west:familycensus:09:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drumroosk-west:family:09",
+      "label": "Perry",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumroosk-west:ch:family-10",
+   "title": "The Potter family",
+   "beats": [
+    {
+     "id": "drumroosk-west:beat:familyhead:10",
+     "kind": "familyhead",
+     "chapter": "drumroosk-west:ch:family-10",
+     "time": {
+      "label": "The Potter family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumroosk-west",
+      "name": "Drumroosk West",
+      "logainm_id": "14013",
+      "lat": 54.660233,
+      "lon": -8.109253,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumroosk-west:familypresence:10"
+     },
+     "caption": "The Potter family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumroosk-west:familypresence:10"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumroosk-west:family:10",
+      "label": "Potter",
+      "run": false
+     }
+    },
+    {
+     "id": "drumroosk-west:beat:familycensus:10-1926",
+     "kind": "familycensus",
+     "chapter": "drumroosk-west:ch:family-10",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumroosk-west",
+      "name": "Drumroosk West",
+      "logainm_id": "14013",
+      "lat": 54.660233,
+      "lon": -8.109253,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumroosk-west:familycensus:10:1926"
+     },
+     "caption": "Drumroosk West had one Potter household in 1926, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumroosk-west:familycensus:10:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drumroosk-west:family:10",
+      "label": "Potter",
+      "run": false
+     }
     }
    ]
   }

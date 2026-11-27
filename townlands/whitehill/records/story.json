@@ -52,15 +52,15 @@
    ]
   },
   {
-   "id": "whitehill:ch:1901",
-   "title": "1901",
+   "id": "whitehill:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "whitehill:beat:census:1901",
+     "id": "whitehill:beat:census:returns",
      "kind": "census",
-     "chapter": "whitehill:ch:1901",
+     "chapter": "whitehill:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1926",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -77,37 +77,54 @@
       "stage": "map",
       "open_card": "whitehill:census:1901"
      },
-     "caption": "In 1901, sixteen people in five households lived in Whitehill. Heads of household included Phillips, Gildea and Robinson.",
+     "caption": "The censuses of 1901, 1911 and 1926 counted 16, 21 and 16 people in Whitehill, in 5, 5 and 3 households. Heads of household included Phillips, Gildea and Robinson.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "whitehill:census:1901"
+       "whitehill:census:1901",
+       "whitehill:census:1911",
+       "whitehill:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 7200,
+     "duration_ms": 11600,
      "audio": null,
      "counts": {
-      "people": 16,
-      "households": 5
+      "returns": [
+       {
+        "year": "1901",
+        "people": 16,
+        "households": 5
+       },
+       {
+        "year": "1911",
+        "people": 21,
+        "households": 5
+       },
+       {
+        "year": "1926",
+        "people": 16,
+        "households": 3
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "whitehill:ch:1911",
-   "title": "1911",
+   "id": "whitehill:ch:families",
+   "title": "The families of Whitehill",
    "beats": [
     {
-     "id": "whitehill:beat:census:1911",
-     "kind": "census",
-     "chapter": "whitehill:ch:1911",
+     "id": "whitehill:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "whitehill:ch:families",
      "time": {
-      "label": "1911",
-      "iso": "1911",
-      "sort": "1911-01-01",
+      "label": "The families of Whitehill",
+      "iso": "1901",
+      "sort": "1901-01-01",
       "approximate": true
      },
      "place": {
@@ -120,35 +137,117 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "whitehill:census:1911"
+      "open_card": "whitehill:census:1901"
      },
-     "caption": "In 1911, 21 people in five households lived in Whitehill. Heads of household included Philips, Gildea and Robinson.",
+     "caption": "Here are the families of Whitehill, from 1901 to 1926. First, the Phillips and Robinson families.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "whitehill:census:1911"
+       "whitehill:census:1901",
+       "whitehill:census:1926"
       ],
-      "basis": "return_for_townland",
+      "basis": "place_record",
       "certainty": "stated"
      },
-     "duration_ms": 7200,
+     "duration_ms": 6400,
      "audio": null,
-     "counts": {
-      "people": 21,
-      "households": 5
+     "thread": {
+      "id": "whitehill:family:04",
+      "label": "Phillips",
+      "run": true
      }
     }
    ]
   },
   {
-   "id": "whitehill:ch:1926",
-   "title": "1926",
+   "id": "whitehill:ch:family-04",
+   "title": "The Phillips family",
    "beats": [
     {
-     "id": "whitehill:beat:census:1926",
-     "kind": "census",
-     "chapter": "whitehill:ch:1926",
+     "id": "whitehill:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "whitehill:ch:family-04",
+     "time": {
+      "label": "The Phillips family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "whitehill",
+      "name": "Whitehill",
+      "logainm_id": "14287",
+      "lat": 54.639747,
+      "lon": -8.076547,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "whitehill:familypresence:04"
+     },
+     "caption": "The Phillips family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "whitehill:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "whitehill:family:04",
+      "label": "Phillips",
+      "run": true
+     }
+    },
+    {
+     "id": "whitehill:beat:familycensus:04-1901",
+     "kind": "familycensus",
+     "chapter": "whitehill:ch:family-04",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "whitehill",
+      "name": "Whitehill",
+      "logainm_id": "14287",
+      "lat": 54.639747,
+      "lon": -8.076547,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "whitehill:familycensus:04:1901"
+     },
+     "caption": "Whitehill had two Phillips households in 1901, headed by Charles and Anthony.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "whitehill:familycensus:04:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "whitehill:family:04",
+      "label": "Phillips",
+      "run": true
+     }
+    },
+    {
+     "id": "whitehill:beat:familycensus:04-1926",
+     "kind": "familycensus",
+     "chapter": "whitehill:ch:family-04",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -165,25 +264,198 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "whitehill:census:1926"
+      "open_card": "whitehill:familycensus:04:1926"
      },
-     "caption": "In 1926, sixteen people in three households lived in Whitehill. Heads of household included Phillips, Bustard and Robinson.",
+     "caption": "Whitehill had three Phillips households in 1926, headed by Robert J, Michael and Bridget T.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "whitehill:census:1926"
+       "whitehill:familycensus:04:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 7200,
+     "duration_ms": 6000,
      "audio": null,
-     "counts": {
-      "people": 16,
-      "households": 3
+     "thread": {
+      "id": "whitehill:family:04",
+      "label": "Phillips",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "whitehill:ch:family-05",
+   "title": "The Robinson family",
+   "beats": [
+    {
+     "id": "whitehill:beat:familyhead:05",
+     "kind": "familyhead",
+     "chapter": "whitehill:ch:family-05",
+     "time": {
+      "label": "The Robinson family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "whitehill",
+      "name": "Whitehill",
+      "logainm_id": "14287",
+      "lat": 54.639747,
+      "lon": -8.076547,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "whitehill:familypresence:05"
+     },
+     "caption": "The Robinson family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "whitehill:familypresence:05"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "whitehill:family:05",
+      "label": "Robinson",
+      "run": true
      }
     },
+    {
+     "id": "whitehill:beat:familycensus:05-1901",
+     "kind": "familycensus",
+     "chapter": "whitehill:ch:family-05",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "whitehill",
+      "name": "Whitehill",
+      "logainm_id": "14287",
+      "lat": 54.639747,
+      "lon": -8.076547,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "whitehill:familycensus:05:1901"
+     },
+     "caption": "Whitehill had one Robinson household in 1901, headed by Henery.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "whitehill:familycensus:05:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "whitehill:family:05",
+      "label": "Robinson",
+      "run": true
+     }
+    },
+    {
+     "id": "whitehill:beat:familycensus:05-1911",
+     "kind": "familycensus",
+     "chapter": "whitehill:ch:family-05",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "whitehill",
+      "name": "Whitehill",
+      "logainm_id": "14287",
+      "lat": 54.639747,
+      "lon": -8.076547,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "whitehill:familycensus:05:1911"
+     },
+     "caption": "Whitehill had one Robinson household in 1911, headed by Henry.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "whitehill:familycensus:05:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "whitehill:family:05",
+      "label": "Robinson",
+      "run": true
+     }
+    },
+    {
+     "id": "whitehill:beat:familycensus:05-1926",
+     "kind": "familycensus",
+     "chapter": "whitehill:ch:family-05",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "whitehill",
+      "name": "Whitehill",
+      "logainm_id": "14287",
+      "lat": 54.639747,
+      "lon": -8.076547,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "whitehill:familycensus:05:1926"
+     },
+     "caption": "Whitehill had one Robinson household in 1926, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "whitehill:familycensus:05:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "whitehill:family:05",
+      "label": "Robinson",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "whitehill:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "whitehill:beat:closing:end",
      "kind": "closing",
@@ -218,6 +490,430 @@
      },
      "duration_ms": 4000,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "whitehill:ch:family-02",
+   "title": "The Gildea family",
+   "beats": [
+    {
+     "id": "whitehill:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "whitehill:ch:family-02",
+     "time": {
+      "label": "The Gildea family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "whitehill",
+      "name": "Whitehill",
+      "logainm_id": "14287",
+      "lat": 54.639747,
+      "lon": -8.076547,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "whitehill:familypresence:02"
+     },
+     "caption": "The Gildea family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "whitehill:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "whitehill:family:02",
+      "label": "Gildea",
+      "run": false
+     }
+    },
+    {
+     "id": "whitehill:beat:familycensus:02-1901",
+     "kind": "familycensus",
+     "chapter": "whitehill:ch:family-02",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "whitehill",
+      "name": "Whitehill",
+      "logainm_id": "14287",
+      "lat": 54.639747,
+      "lon": -8.076547,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "whitehill:familycensus:02:1901"
+     },
+     "caption": "Whitehill had one Gildea household in 1901, headed by Anne Jane.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "whitehill:familycensus:02:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "whitehill:family:02",
+      "label": "Gildea",
+      "run": false
+     }
+    },
+    {
+     "id": "whitehill:beat:familycensus:02-1911",
+     "kind": "familycensus",
+     "chapter": "whitehill:ch:family-02",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "whitehill",
+      "name": "Whitehill",
+      "logainm_id": "14287",
+      "lat": 54.639747,
+      "lon": -8.076547,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "whitehill:familycensus:02:1911"
+     },
+     "caption": "Whitehill had one Gildea household in 1911, headed by Anne Jane.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "whitehill:familycensus:02:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "whitehill:family:02",
+      "label": "Gildea",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "whitehill:ch:family-06",
+   "title": "The Wray family",
+   "beats": [
+    {
+     "id": "whitehill:beat:familyhead:06",
+     "kind": "familyhead",
+     "chapter": "whitehill:ch:family-06",
+     "time": {
+      "label": "The Wray family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "whitehill",
+      "name": "Whitehill",
+      "logainm_id": "14287",
+      "lat": 54.639747,
+      "lon": -8.076547,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "whitehill:familypresence:06"
+     },
+     "caption": "The Wray family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "whitehill:familypresence:06"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "whitehill:family:06",
+      "label": "Wray",
+      "run": false
+     }
+    },
+    {
+     "id": "whitehill:beat:familycensus:06-1901",
+     "kind": "familycensus",
+     "chapter": "whitehill:ch:family-06",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "whitehill",
+      "name": "Whitehill",
+      "logainm_id": "14287",
+      "lat": 54.639747,
+      "lon": -8.076547,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "whitehill:familycensus:06:1901"
+     },
+     "caption": "Whitehill had one Wray household in 1901, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "whitehill:familycensus:06:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "whitehill:family:06",
+      "label": "Wray",
+      "run": false
+     }
+    },
+    {
+     "id": "whitehill:beat:familycensus:06-1911",
+     "kind": "familycensus",
+     "chapter": "whitehill:ch:family-06",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "whitehill",
+      "name": "Whitehill",
+      "logainm_id": "14287",
+      "lat": 54.639747,
+      "lon": -8.076547,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "whitehill:familycensus:06:1911"
+     },
+     "caption": "Whitehill had one Wray household in 1911, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "whitehill:familycensus:06:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "whitehill:family:06",
+      "label": "Wray",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "whitehill:ch:family-03",
+   "title": "The Philips family",
+   "beats": [
+    {
+     "id": "whitehill:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "whitehill:ch:family-03",
+     "time": {
+      "label": "The Philips family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "whitehill",
+      "name": "Whitehill",
+      "logainm_id": "14287",
+      "lat": 54.639747,
+      "lon": -8.076547,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "whitehill:familypresence:03"
+     },
+     "caption": "The Philips family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "whitehill:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "whitehill:family:03",
+      "label": "Philips",
+      "run": false
+     }
+    },
+    {
+     "id": "whitehill:beat:familycensus:03-1911",
+     "kind": "familycensus",
+     "chapter": "whitehill:ch:family-03",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "whitehill",
+      "name": "Whitehill",
+      "logainm_id": "14287",
+      "lat": 54.639747,
+      "lon": -8.076547,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "whitehill:familycensus:03:1911"
+     },
+     "caption": "Whitehill had two Philips households in 1911, headed by Charles and Anthony.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "whitehill:familycensus:03:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "whitehill:family:03",
+      "label": "Philips",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "whitehill:ch:family-01",
+   "title": "The Bustard family",
+   "beats": [
+    {
+     "id": "whitehill:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "whitehill:ch:family-01",
+     "time": {
+      "label": "The Bustard family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "whitehill",
+      "name": "Whitehill",
+      "logainm_id": "14287",
+      "lat": 54.639747,
+      "lon": -8.076547,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "whitehill:familypresence:01"
+     },
+     "caption": "The Bustard family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "whitehill:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "whitehill:family:01",
+      "label": "Bustard",
+      "run": false
+     }
+    },
+    {
+     "id": "whitehill:beat:familycensus:01-1926",
+     "kind": "familycensus",
+     "chapter": "whitehill:ch:family-01",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "whitehill",
+      "name": "Whitehill",
+      "logainm_id": "14287",
+      "lat": 54.639747,
+      "lon": -8.076547,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "whitehill:familycensus:01:1926"
+     },
+     "caption": "Whitehill had one Bustard household in 1926, headed by Mathew.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "whitehill:familycensus:01:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "whitehill:family:01",
+      "label": "Bustard",
+      "run": false
+     }
     }
    ]
   }

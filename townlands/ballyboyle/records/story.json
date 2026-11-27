@@ -52,15 +52,15 @@
    ]
   },
   {
-   "id": "ballyboyle:ch:1901",
-   "title": "1901",
+   "id": "ballyboyle:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "ballyboyle:beat:census:1901",
+     "id": "ballyboyle:beat:census:returns",
      "kind": "census",
-     "chapter": "ballyboyle:ch:1901",
+     "chapter": "ballyboyle:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1926",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -77,33 +77,177 @@
       "stage": "map",
       "open_card": "ballyboyle:census:1901"
      },
-     "caption": "Ballyboyle had 31 people in seven households in 1901. Heads of household included Perry, Boyd and Gold.",
+     "caption": "The censuses of 1901, 1911 and 1926 counted 31, 29 and 20 people in Ballyboyle, in 7, 6 and 6 households. Heads of household included Perry, Boyd and Gold.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "ballyboyle:census:1901"
+       "ballyboyle:census:1901",
+       "ballyboyle:census:1911",
+       "ballyboyle:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 6800,
+     "duration_ms": 11600,
      "audio": null,
      "counts": {
-      "people": 31,
-      "households": 7
+      "returns": [
+       {
+        "year": "1901",
+        "people": 31,
+        "households": 7
+       },
+       {
+        "year": "1911",
+        "people": 29,
+        "households": 6
+       },
+       {
+        "year": "1926",
+        "people": 20,
+        "households": 6
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "ballyboyle:ch:1911",
-   "title": "1911",
+   "id": "ballyboyle:ch:families",
+   "title": "The families of Ballyboyle",
    "beats": [
     {
-     "id": "ballyboyle:beat:census:1911",
-     "kind": "census",
-     "chapter": "ballyboyle:ch:1911",
+     "id": "ballyboyle:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "ballyboyle:ch:families",
+     "time": {
+      "label": "The families of Ballyboyle",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballyboyle",
+      "name": "Ballyboyle",
+      "logainm_id": "13997",
+      "lat": 54.645739,
+      "lon": -8.144307,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballyboyle:census:1901"
+     },
+     "caption": "Here are the families of Ballyboyle, from 1901 to 1926. First, the Boyd and Perry families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballyboyle:census:1901",
+       "ballyboyle:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "ballyboyle:family:01",
+      "label": "Boyd",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "ballyboyle:ch:family-01",
+   "title": "The Boyd family",
+   "beats": [
+    {
+     "id": "ballyboyle:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "ballyboyle:ch:family-01",
+     "time": {
+      "label": "The Boyd family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballyboyle",
+      "name": "Ballyboyle",
+      "logainm_id": "13997",
+      "lat": 54.645739,
+      "lon": -8.144307,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballyboyle:familypresence:01"
+     },
+     "caption": "The Boyd family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballyboyle:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ballyboyle:family:01",
+      "label": "Boyd",
+      "run": true
+     }
+    },
+    {
+     "id": "ballyboyle:beat:familycensus:01-1901",
+     "kind": "familycensus",
+     "chapter": "ballyboyle:ch:family-01",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballyboyle",
+      "name": "Ballyboyle",
+      "logainm_id": "13997",
+      "lat": 54.645739,
+      "lon": -8.144307,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballyboyle:familycensus:01:1901"
+     },
+     "caption": "Ballyboyle had one Boyd household in 1901, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballyboyle:familycensus:01:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ballyboyle:family:01",
+      "label": "Boyd",
+      "run": true
+     }
+    },
+    {
+     "id": "ballyboyle:beat:familycensus:01-1911",
+     "kind": "familycensus",
+     "chapter": "ballyboyle:ch:family-01",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -120,35 +264,30 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "ballyboyle:census:1911"
+      "open_card": "ballyboyle:familycensus:01:1911"
      },
-     "caption": "In 1911, 29 people in six households lived in Ballyboyle. Heads of household included Perry, Boyd and Gold.",
+     "caption": "Ballyboyle had one Boyd household in 1911, headed by John.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "ballyboyle:census:1911"
+       "ballyboyle:familycensus:01:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 7200,
+     "duration_ms": 4000,
      "audio": null,
-     "counts": {
-      "people": 29,
-      "households": 6
+     "thread": {
+      "id": "ballyboyle:family:01",
+      "label": "Boyd",
+      "run": true
      }
-    }
-   ]
-  },
-  {
-   "id": "ballyboyle:ch:1926",
-   "title": "1926",
-   "beats": [
+    },
     {
-     "id": "ballyboyle:beat:census:1926",
-     "kind": "census",
-     "chapter": "ballyboyle:ch:1926",
+     "id": "ballyboyle:beat:familycensus:01-1926",
+     "kind": "familycensus",
+     "chapter": "ballyboyle:ch:family-01",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -165,25 +304,198 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "ballyboyle:census:1926"
+      "open_card": "ballyboyle:familycensus:01:1926"
      },
-     "caption": "Ballyboyle had twenty people in six households in 1926. Heads of household included Perry, Boyd and Gold.",
+     "caption": "Ballyboyle had one Boyd household in 1926, headed by James.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "ballyboyle:census:1926"
+       "ballyboyle:familycensus:01:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6800,
+     "duration_ms": 4000,
      "audio": null,
-     "counts": {
-      "people": 20,
-      "households": 6
+     "thread": {
+      "id": "ballyboyle:family:01",
+      "label": "Boyd",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "ballyboyle:ch:family-05",
+   "title": "The Perry family",
+   "beats": [
+    {
+     "id": "ballyboyle:beat:familyhead:05",
+     "kind": "familyhead",
+     "chapter": "ballyboyle:ch:family-05",
+     "time": {
+      "label": "The Perry family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballyboyle",
+      "name": "Ballyboyle",
+      "logainm_id": "13997",
+      "lat": 54.645739,
+      "lon": -8.144307,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballyboyle:familypresence:05"
+     },
+     "caption": "The Perry family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballyboyle:familypresence:05"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ballyboyle:family:05",
+      "label": "Perry",
+      "run": true
      }
     },
+    {
+     "id": "ballyboyle:beat:familycensus:05-1901",
+     "kind": "familycensus",
+     "chapter": "ballyboyle:ch:family-05",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballyboyle",
+      "name": "Ballyboyle",
+      "logainm_id": "13997",
+      "lat": 54.645739,
+      "lon": -8.144307,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballyboyle:familycensus:05:1901"
+     },
+     "caption": "Ballyboyle had two Perry households in 1901, headed by Francis and Joseph.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballyboyle:familycensus:05:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "ballyboyle:family:05",
+      "label": "Perry",
+      "run": true
+     }
+    },
+    {
+     "id": "ballyboyle:beat:familycensus:05-1911",
+     "kind": "familycensus",
+     "chapter": "ballyboyle:ch:family-05",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballyboyle",
+      "name": "Ballyboyle",
+      "logainm_id": "13997",
+      "lat": 54.645739,
+      "lon": -8.144307,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballyboyle:familycensus:05:1911"
+     },
+     "caption": "Ballyboyle had two Perry households in 1911, headed by James and Fanny.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballyboyle:familycensus:05:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "ballyboyle:family:05",
+      "label": "Perry",
+      "run": true
+     }
+    },
+    {
+     "id": "ballyboyle:beat:familycensus:05-1926",
+     "kind": "familycensus",
+     "chapter": "ballyboyle:ch:family-05",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballyboyle",
+      "name": "Ballyboyle",
+      "logainm_id": "13997",
+      "lat": 54.645739,
+      "lon": -8.144307,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballyboyle:familycensus:05:1926"
+     },
+     "caption": "Ballyboyle had two Perry households in 1926, headed by Joseph and James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballyboyle:familycensus:05:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "ballyboyle:family:05",
+      "label": "Perry",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "ballyboyle:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "ballyboyle:beat:closing:end",
      "kind": "closing",
@@ -218,6 +530,642 @@
      },
      "duration_ms": 4000,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "ballyboyle:ch:family-02",
+   "title": "The Gold family",
+   "beats": [
+    {
+     "id": "ballyboyle:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "ballyboyle:ch:family-02",
+     "time": {
+      "label": "The Gold family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballyboyle",
+      "name": "Ballyboyle",
+      "logainm_id": "13997",
+      "lat": 54.645739,
+      "lon": -8.144307,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballyboyle:familypresence:02"
+     },
+     "caption": "The Gold family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballyboyle:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ballyboyle:family:02",
+      "label": "Gold",
+      "run": false
+     }
+    },
+    {
+     "id": "ballyboyle:beat:familycensus:02-1901",
+     "kind": "familycensus",
+     "chapter": "ballyboyle:ch:family-02",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballyboyle",
+      "name": "Ballyboyle",
+      "logainm_id": "13997",
+      "lat": 54.645739,
+      "lon": -8.144307,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballyboyle:familycensus:02:1901"
+     },
+     "caption": "Ballyboyle had one Gold household in 1901, headed by Charles.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballyboyle:familycensus:02:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ballyboyle:family:02",
+      "label": "Gold",
+      "run": false
+     }
+    },
+    {
+     "id": "ballyboyle:beat:familycensus:02-1911",
+     "kind": "familycensus",
+     "chapter": "ballyboyle:ch:family-02",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballyboyle",
+      "name": "Ballyboyle",
+      "logainm_id": "13997",
+      "lat": 54.645739,
+      "lon": -8.144307,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballyboyle:familycensus:02:1911"
+     },
+     "caption": "Ballyboyle had one Gold household in 1911, headed by Charles.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballyboyle:familycensus:02:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ballyboyle:family:02",
+      "label": "Gold",
+      "run": false
+     }
+    },
+    {
+     "id": "ballyboyle:beat:familycensus:02-1926",
+     "kind": "familycensus",
+     "chapter": "ballyboyle:ch:family-02",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballyboyle",
+      "name": "Ballyboyle",
+      "logainm_id": "13997",
+      "lat": 54.645739,
+      "lon": -8.144307,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballyboyle:familycensus:02:1926"
+     },
+     "caption": "Ballyboyle had one Gold household in 1926, headed by Charles.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballyboyle:familycensus:02:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ballyboyle:family:02",
+      "label": "Gold",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ballyboyle:ch:family-03",
+   "title": "The Magee family",
+   "beats": [
+    {
+     "id": "ballyboyle:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "ballyboyle:ch:family-03",
+     "time": {
+      "label": "The Magee family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballyboyle",
+      "name": "Ballyboyle",
+      "logainm_id": "13997",
+      "lat": 54.645739,
+      "lon": -8.144307,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballyboyle:familypresence:03"
+     },
+     "caption": "The Magee family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballyboyle:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ballyboyle:family:03",
+      "label": "Magee",
+      "run": false
+     }
+    },
+    {
+     "id": "ballyboyle:beat:familycensus:03-1901",
+     "kind": "familycensus",
+     "chapter": "ballyboyle:ch:family-03",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballyboyle",
+      "name": "Ballyboyle",
+      "logainm_id": "13997",
+      "lat": 54.645739,
+      "lon": -8.144307,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballyboyle:familycensus:03:1901"
+     },
+     "caption": "Ballyboyle had one Magee household in 1901, headed by Andrew.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballyboyle:familycensus:03:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ballyboyle:family:03",
+      "label": "Magee",
+      "run": false
+     }
+    },
+    {
+     "id": "ballyboyle:beat:familycensus:03-1911",
+     "kind": "familycensus",
+     "chapter": "ballyboyle:ch:family-03",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballyboyle",
+      "name": "Ballyboyle",
+      "logainm_id": "13997",
+      "lat": 54.645739,
+      "lon": -8.144307,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballyboyle:familycensus:03:1911"
+     },
+     "caption": "Ballyboyle had one Magee household in 1911, headed by Andrew.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballyboyle:familycensus:03:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ballyboyle:family:03",
+      "label": "Magee",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ballyboyle:ch:family-04",
+   "title": "The McCluskey family",
+   "beats": [
+    {
+     "id": "ballyboyle:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "ballyboyle:ch:family-04",
+     "time": {
+      "label": "The McCluskey family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballyboyle",
+      "name": "Ballyboyle",
+      "logainm_id": "13997",
+      "lat": 54.645739,
+      "lon": -8.144307,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballyboyle:familypresence:04"
+     },
+     "caption": "The McCluskey family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballyboyle:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ballyboyle:family:04",
+      "label": "McCluskey",
+      "run": false
+     }
+    },
+    {
+     "id": "ballyboyle:beat:familycensus:04-1901",
+     "kind": "familycensus",
+     "chapter": "ballyboyle:ch:family-04",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballyboyle",
+      "name": "Ballyboyle",
+      "logainm_id": "13997",
+      "lat": 54.645739,
+      "lon": -8.144307,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballyboyle:familycensus:04:1901"
+     },
+     "caption": "Ballyboyle had one McCluskey household in 1901, headed by William.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballyboyle:familycensus:04:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ballyboyle:family:04",
+      "label": "McCluskey",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ballyboyle:ch:family-06",
+   "title": "The Regan family",
+   "beats": [
+    {
+     "id": "ballyboyle:beat:familyhead:06",
+     "kind": "familyhead",
+     "chapter": "ballyboyle:ch:family-06",
+     "time": {
+      "label": "The Regan family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballyboyle",
+      "name": "Ballyboyle",
+      "logainm_id": "13997",
+      "lat": 54.645739,
+      "lon": -8.144307,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballyboyle:familypresence:06"
+     },
+     "caption": "The Regan family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballyboyle:familypresence:06"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ballyboyle:family:06",
+      "label": "Regan",
+      "run": false
+     }
+    },
+    {
+     "id": "ballyboyle:beat:familycensus:06-1901",
+     "kind": "familycensus",
+     "chapter": "ballyboyle:ch:family-06",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballyboyle",
+      "name": "Ballyboyle",
+      "logainm_id": "13997",
+      "lat": 54.645739,
+      "lon": -8.144307,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballyboyle:familycensus:06:1901"
+     },
+     "caption": "Ballyboyle had one Regan household in 1901, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballyboyle:familycensus:06:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ballyboyle:family:06",
+      "label": "Regan",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ballyboyle:ch:family-08",
+   "title": "The Spence family",
+   "beats": [
+    {
+     "id": "ballyboyle:beat:familyhead:08",
+     "kind": "familyhead",
+     "chapter": "ballyboyle:ch:family-08",
+     "time": {
+      "label": "The Spence family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballyboyle",
+      "name": "Ballyboyle",
+      "logainm_id": "13997",
+      "lat": 54.645739,
+      "lon": -8.144307,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballyboyle:familypresence:08"
+     },
+     "caption": "The Spence family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballyboyle:familypresence:08"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ballyboyle:family:08",
+      "label": "Spence",
+      "run": false
+     }
+    },
+    {
+     "id": "ballyboyle:beat:familycensus:08-1911",
+     "kind": "familycensus",
+     "chapter": "ballyboyle:ch:family-08",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballyboyle",
+      "name": "Ballyboyle",
+      "logainm_id": "13997",
+      "lat": 54.645739,
+      "lon": -8.144307,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballyboyle:familycensus:08:1911"
+     },
+     "caption": "Ballyboyle had one Spence household in 1911, headed by Jacob.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballyboyle:familycensus:08:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ballyboyle:family:08",
+      "label": "Spence",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ballyboyle:ch:family-07",
+   "title": "The Scott family",
+   "beats": [
+    {
+     "id": "ballyboyle:beat:familyhead:07",
+     "kind": "familyhead",
+     "chapter": "ballyboyle:ch:family-07",
+     "time": {
+      "label": "The Scott family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballyboyle",
+      "name": "Ballyboyle",
+      "logainm_id": "13997",
+      "lat": 54.645739,
+      "lon": -8.144307,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballyboyle:familypresence:07"
+     },
+     "caption": "The Scott family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballyboyle:familypresence:07"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ballyboyle:family:07",
+      "label": "Scott",
+      "run": false
+     }
+    },
+    {
+     "id": "ballyboyle:beat:familycensus:07-1926",
+     "kind": "familycensus",
+     "chapter": "ballyboyle:ch:family-07",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballyboyle",
+      "name": "Ballyboyle",
+      "logainm_id": "13997",
+      "lat": 54.645739,
+      "lon": -8.144307,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballyboyle:familycensus:07:1926"
+     },
+     "caption": "Ballyboyle had one Scott household in 1926, headed by Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballyboyle:familycensus:07:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ballyboyle:family:07",
+      "label": "Scott",
+      "run": false
+     }
     }
    ]
   }
