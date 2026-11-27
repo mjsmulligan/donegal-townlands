@@ -55,7 +55,7 @@ Publish only births and baptisms 100 or more years old, marriages 75 or more, de
 
 ## Layout
 
-- `engine/story.html`: the story player, the one townland page (`docs/<name>/story.html`, built by `tools/build_story.py`). Holds no townland content. The walk and timeline pages were removed on 2026-11-26.
+- `engine/story.html`: the story player, the one townland page (copied to `docs/story.html`; each townland's story is `docs/data/<name>.js`, opened as `docs/story.html?t=<name>`, built by `tools/build_story.py`). Holds no townland content. The walk and timeline pages were removed on 2026-11-26.
 - `townlands/<name>/`: `townland.json` (name, page title, storage key, census spellings), `content.json` (family stories, Griffith's rows, open questions, plate copy), `records/` (census.json, corrections.json, later events.csv), `media/` (web-sized images with captions), `STATUS.md`.
 - `data/source/census/` holds the census CSVs, the manifest-covered originals. `tools/refresh_census.py` (and the manual workflow "Refresh census from NAI") refreshes the 1901, 1911 and 1926 files from NAI, all or none, saved as supplied. There are no researcher annotations in the census files. See `docs/CENSUS_REFRESH.md`.
 - `tools/attach_census.py`, `tools/build_story.py <name>`, `tools/build.py` (the index), `tools/validate.py`.

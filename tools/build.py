@@ -2,7 +2,7 @@
 Usage:
     python tools/build.py        rewrite docs/index.html from engine/index.html
 
-The townland pages are the stories written by tools/build_story.py (docs/<name>/story.html). This script
+The townland pages are the stories written by tools/build_story.py (docs/data/<name>.js, played by docs/story.html?t=<name>). This script
 only lists them: one card per case, tagged Townland Study, Census Returns or Townland Record by the
 case's state, and a link to its story where one exists. A case with too few records for a story gets a
 card and no link. The walk and the timeline pages were removed on 2026-11-26 (DECISIONS.md).
@@ -144,7 +144,7 @@ def index_page(entries, template, deds=None):
     entries = sorted(entries, key=lambda e: e['name'].casefold())
     cards = []
     for e in entries:
-        main = './%s/story.html' % q(e['slug']) if e.get('doc') else ''
+        main = './story.html?t=%s' % q(e['slug']) if e.get('doc') else ''
         where = (' data-lat="%s" data-lng="%s"' % (q(e['lat']), q(e['lng']))) if e['lat'] and e['lng'] else ''
         ga = '<div class="card-ga">%s</div>' % q(e['name_ga']) if e['name_ga'] else ''
         links = '<a class="pill main" href="%s">Play the story</a>' % main if main else ''
@@ -170,7 +170,7 @@ def index_page(entries, template, deds=None):
             continue
         props = {'name': e['name'], 'name_ga': e['name_ga'], 'slug': e['slug'], 'kind': KIND[e['state']],
                  'doc': bool(e.get('doc')), 'ded': str(e.get('ded', '')),
-                 'href': './%s/story.html' % e['slug'] if e.get('doc') else ''}
+                 'href': './story.html?t=%s' % e['slug'] if e.get('doc') else ''}
         if e.get('outline'):
             props['outline'] = e['outline']          # drawn instead of the dot; the point stays as the centre
         features.append({'type': 'Feature', 'properties': props,

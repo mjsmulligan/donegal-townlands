@@ -33,7 +33,7 @@ CAMERAS = ('parish', 'townland', 'household')
 # points at it (docs/MEDIA_SPEC.md section 3.5). The original is in data/source/nli_parish/tawnawilly/images/.
 COVER_FILE = 'shared/tawnawilly-register-cover.jpg'
 COVER_MEDIA = {
-    'url': '../shared/tawnawilly-register-cover.jpg',
+    'url': 'shared/tawnawilly-register-cover.jpg',
     'caption': 'The cover of the Tawnawilly parish register, Diocese of Raphoe. Baptisms run from 18 December 1872 '
                'to 30 December 1880 and marriages from 9 January 1873 to 2 October 1880.',
     'alt': 'The handwritten label on the cover of the parish register: Diocese of Raphoe, Parish Tawnawilly, '
@@ -756,8 +756,8 @@ def explore_block(doc):
     return {'families': families, 'sources': sources}
 
 
-def render_page(doc, found, outline=None, events=None):
-    """The page text for one story. Pure: the same inputs give the same bytes (RO-03). `outline` is the
+def _payload(doc, found, outline=None, events=None):
+    """The data for one story. Pure: the same inputs give the same bytes (RO-03). `outline` is the
     townland's boundary geometry (WGS84), drawn on the map and used to frame it; with none the page frames the
     place point at zoom 16 as before. It goes into the page only, never into story.json. `events` are the
     case's events, from which the footnote sources are named (page only, also never in story.json)."""
@@ -787,21 +787,54 @@ def render_page(doc, found, outline=None, events=None):
         payload['outline'] = outline
         payload['outline_credit'] = bt.build.BOUNDARY_CREDIT
     data = json.dumps(payload, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
+    return data
+
+
+def render_page(doc, found, outline=None, events=None):
+    """A self-contained story page: the player with the story inlined. Used by tests and for previewing one
+    story from a folder. The published site uses write_page instead (one shared player, one data file per
+    townland). Pure: the same inputs give the same bytes (RO-03)."""
+    data = render_data(doc, found, outline, events)
     html = (ROOT / 'engine' / 'story.html').read_text(encoding='utf-8')
-    return (html.replace('__TITLE__', bt.build.esc(doc['townland'] + ' story'))
-                .replace('__BRAND__', bt.build.esc(doc['townland']))
-                .replace('__DATA__', data))
+    return html.replace('<!--STORY_DATA-->', '<script>window.STORY_DATA=' + data + ';</script>')
+
+
+def render_data(doc, found, outline=None, events=None):
+    """The story data one townland's page needs, as JSON text. Pure."""
+    return _payload(doc, found, outline, events)
+
+
+STUB = """<!doctype html>
+<html lang="en-IE"><head><meta charset="utf-8"><title>%(title)s story</title>
+<meta http-equiv="refresh" content="0;url=../story.html?t=%(slug)s">
+<script>location.replace('../story.html?t=%(slug)s'+location.hash)</script></head>
+<body><p><a href="../story.html?t=%(slug)s">%(title)s story</a></p></body></html>
+"""
+
+
+def copy_player():
+    """Copy the one shared player, unchanged, from engine/story.html to docs/story.html. Returns True if it changed."""
+    src, target = ROOT / 'engine' / 'story.html', ROOT / 'docs' / 'story.html'
+    if target.is_file() and target.read_bytes() == src.read_bytes():
+        return False
+    shutil.copyfile(src, target)
+    return True
 
 
 def write_page(name, doc, found, events=None):
-    """Render engine/story.html to docs/<name>/story.html, a page beside the walk and the
-    timeline. It does not replace either (docs/TOWNLAND_STORY_SPEC.md, DP9). Returns the path written."""
-    dest = ROOT / 'docs' / name / 'story.html'
-    dest.parent.mkdir(parents=True, exist_ok=True)
+    """Write one townland's story data to docs/data/<name>.js, which the shared player (docs/story.html, copied
+    from engine/story.html) loads for story.html?t=<name>. Also keeps docs/<name>/story.html as a small redirect so
+    the old address still works, and copies the media. Returns the data file written."""
     place_file = ROOT / 'townlands' / name / 'place.json'
     place = json.loads(place_file.read_text(encoding='utf-8')) if place_file.is_file() else {}
     outline = bt.build.load_outlines().get(str(place.get('logainm_id', '')))
-    dest.write_text(render_page(doc, found, outline, events), encoding='utf-8')
+    copy_player()
+    dest = ROOT / 'docs' / 'data' / (name + '.js')
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    dest.write_text('window.STORY_DATA=' + render_data(doc, found, outline, events) + ';\n', encoding='utf-8')
+    stub = ROOT / 'docs' / name / 'story.html'
+    stub.parent.mkdir(parents=True, exist_ok=True)
+    stub.write_text(STUB % {'slug': name, 'title': bt.build.esc(doc['townland'])}, encoding='utf-8')
     bt.build.copy_media(name, found)
     if COVER_FILE in {f for c in doc['chapters'] for b in c['beats'] for f in b.get('media', [])}:
         copy_shared(COVER_FILE)

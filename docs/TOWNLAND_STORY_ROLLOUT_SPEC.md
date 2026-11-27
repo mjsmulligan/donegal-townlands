@@ -69,7 +69,7 @@ Numbering continues the story spec's style. RO means rollout.
 
 **Page**
 
-- RO-07. The story page for each case is `docs/<name>/story.html`, with its media copied beside it. It is generated, never edited by hand.
+- RO-07. The story for each case is `docs/data/<name>.js`, played by the one shared player `docs/story.html?t=<name>`, with its media copied to `docs/<name>/media/`. `docs/<name>/story.html` remains as a redirect so older links work. All of it is generated, never edited by hand.
 - RO-08. The opening and the backdrop depend only on the case's coordinates. Check coordinate quality in the sample: a townland's Logainm point may sit away from where people lived. Report any that look wrong rather than correcting them silently.
 - RO-09. Imagery coverage varies. At the closest zoom some rural tiles may be soft or missing. The new session looks at all six and decides whether the final zoom should vary by townland size or stop at 15.
 - RO-10. Phones first. Every sample page is checked at 360 and 375 px wide and at desktop width, with no horizontal scroll, readable cards and 48 px controls. Reduced motion and no network (no map library) must still leave a working story.

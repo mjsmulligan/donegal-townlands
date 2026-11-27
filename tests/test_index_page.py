@@ -13,8 +13,8 @@ class IndexTests(unittest.TestCase):
 
     def test_story_card_plays_the_story(self):
         p = self.page()
-        self.assertIn('<a class="pill main" href="./alpha/story.html">Play the story</a>', p)
-        self.assertIn('<a class="card-en" href="./alpha/story.html">Alpha</a>', p)
+        self.assertIn('<a class="pill main" href="./story.html?t=alpha">Play the story</a>', p)
+        self.assertIn('<a class="card-en" href="./story.html?t=alpha">Alpha</a>', p)
         self.assertNotIn('Gallery walk', p)
 
     def test_card_without_story_has_a_name_and_no_link(self):
