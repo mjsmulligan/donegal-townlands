@@ -79,7 +79,9 @@
      },
      "caption": "The parish register of Tawnawilly records nine baptisms at Goladoo between 1873 and 1875. Its marriage entries give no townland, so none are placed here.",
      "people": [],
-     "media": [],
+     "media": [
+      "shared/tawnawilly-register-cover.jpg"
+     ],
      "evidence": {
       "events": [
        "goladoo:register:tawnawilly"
@@ -87,7 +89,7 @@
       "basis": "page_place",
       "certainty": "stated"
      },
-     "duration_ms": 10000,
+     "duration_ms": 11000,
      "audio": null
     }
    ]

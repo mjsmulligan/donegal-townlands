@@ -14,7 +14,7 @@ evidence only) with one softening agreed 2026-11-20: a link that is possible but
 carry the single word "possibly". The generator checks every beat before writing and stops if one
 fails, naming the beat.
 """
-import datetime, hashlib, json, pathlib, re, sys
+import datetime, hashlib, json, pathlib, re, shutil, sys
 
 try:
     from tools import events as bt, story_families as sf, credits
@@ -27,6 +27,20 @@ BAPTISM_MIN_AGE = bt.BAPTISM_MIN_AGE
 KIND_ORDER = {'title': 0, 'estate': 1, 'valuation': 1, 'familyintro': 0, 'familyhead': 1, 'family': 2, 'baptism': 2, 'register': 2, 'census': 3, 'familycensus': 3, 'photo': 5, 'closing': 9}
 CERTAINTY = ('stated', 'accepted', 'possible')
 CAMERAS = ('parish', 'townland', 'household')
+
+# The cover of the Tawnawilly parish register, one image for the whole parish. It is not in any townland's media
+# folder: the one web image lives in shared_media/ and is copied once to docs/shared/, and every register beat
+# points at it (docs/MEDIA_SPEC.md section 3.5). The original is in data/source/nli_parish/tawnawilly/images/.
+COVER_FILE = 'shared/tawnawilly-register-cover.jpg'
+COVER_MEDIA = {
+    'url': '../shared/tawnawilly-register-cover.jpg',
+    'caption': 'The cover of the Tawnawilly parish register, Diocese of Raphoe. Baptisms run from 18 December 1872 '
+               'to 30 December 1880 and marriages from 9 January 1873 to 2 October 1880.',
+    'alt': 'The handwritten label on the cover of the parish register: Diocese of Raphoe, Parish Tawnawilly, '
+           'baptisms December 18 1872 to December 30 1880, marriages January 9 1873 to October 2 1880',
+    'source': 'National Library of Ireland, Catholic Parish Registers, microfilm 04599/04',
+    'credit': 'nli', 'reference': 'NLI microfilm 04599/04, cover',
+}
 STAGES = ('map', 'walk', 'timeline')
 REQUIRED = ('id', 'kind', 'chapter', 'time', 'place', 'scene', 'caption', 'evidence', 'duration_ms')
 WORDS_PER_SECOND = 2.5
@@ -307,7 +321,7 @@ def register_beat(ev, place, names=()):
     else:
         cap += f" at {town} {when}. Its marriage entries give no townland, so none are placed here."
     return beat('register', 'tawnawilly', f"{place['townland']}:ch:register", ev, cap, place,
-                basis=ev['association']['basis'], events=[ev['id']])
+                basis=ev['association']['basis'], events=[ev['id']], media=[COVER_FILE])
 
 
 def family_head_beat(t, place):
@@ -694,6 +708,9 @@ def render_page(doc, found, outline=None, events=None):
     place point at zoom 16 as before. It goes into the page only, never into story.json. `events` are the
     case's events, from which the footnote sources are named (page only, also never in story.json)."""
     media = {}
+    used = {f for c in doc['chapters'] for b in c['beats'] for f in b.get('media', [])}
+    if COVER_FILE in used:
+        media[COVER_FILE] = dict(COVER_MEDIA)
     for r in found['rows']:
         media[r['file']] = {'caption': r.get('caption', ''), 'alt': r.get('alt', ''),
                             'source': r.get('source', ''), 'lat': r.get('lat', ''), 'lon': r.get('lon', '')}
@@ -701,7 +718,6 @@ def render_page(doc, found, outline=None, events=None):
             if r.get(key):
                 media[r['file']][key] = r[key]
     # the credits the page must show: only those of images a beat actually uses
-    used = {f for c in doc['chapters'] for b in c['beats'] for f in b.get('media', [])}
     keys = sorted({m['credit'] for f, m in media.items() if f in used and m.get('credit')})
     payload = dict(doc, media=media, foot='', credits={k: credits.credit_block(k) for k in keys})
     if events is not None:
@@ -733,7 +749,19 @@ def write_page(name, doc, found, events=None):
     outline = bt.build.load_outlines().get(str(place.get('logainm_id', '')))
     dest.write_text(render_page(doc, found, outline, events), encoding='utf-8')
     bt.build.copy_media(name, found)
+    if COVER_FILE in {f for c in doc['chapters'] for b in c['beats'] for f in b.get('media', [])}:
+        copy_shared(COVER_FILE)
     return dest
+
+
+def copy_shared(file):
+    """Copy one shared image, unchanged, from shared_media/ to docs/shared/ (once, whatever the number of pages)."""
+    src, target = ROOT / "shared_media" / pathlib.Path(file).name, ROOT / 'docs' / file
+    if target.is_file() and target.read_bytes() == src.read_bytes():
+        return False
+    target.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copyfile(src, target)
+    return True
 
 
 def family_inputs(base, name, today=None, display=None):
