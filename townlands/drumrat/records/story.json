@@ -52,15 +52,15 @@
    ]
   },
   {
-   "id": "drumrat:ch:1901",
-   "title": "1901",
+   "id": "drumrat:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "drumrat:beat:census:1901",
+     "id": "drumrat:beat:census:returns",
      "kind": "census",
-     "chapter": "drumrat:ch:1901",
+     "chapter": "drumrat:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1926",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -77,37 +77,54 @@
       "stage": "map",
       "open_card": "drumrat:census:1901"
      },
-     "caption": "In 1901, ten people in two households lived in Drumrat. Heads of household included Cairney and Hannond.",
+     "caption": "The censuses of 1901, 1911 and 1926 counted 10, 2 and 9 people in Drumrat, in 2, 1 and 3 households. Heads of household included Cairney, Hannond and Hammond.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "drumrat:census:1901"
+       "drumrat:census:1901",
+       "drumrat:census:1911",
+       "drumrat:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 6800,
+     "duration_ms": 11600,
      "audio": null,
      "counts": {
-      "people": 10,
-      "households": 2
+      "returns": [
+       {
+        "year": "1901",
+        "people": 10,
+        "households": 2
+       },
+       {
+        "year": "1911",
+        "people": 2,
+        "households": 1
+       },
+       {
+        "year": "1926",
+        "people": 9,
+        "households": 3
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "drumrat:ch:1911",
-   "title": "1911",
+   "id": "drumrat:ch:families",
+   "title": "The families of Drumrat",
    "beats": [
     {
-     "id": "drumrat:beat:census:1911",
-     "kind": "census",
-     "chapter": "drumrat:ch:1911",
+     "id": "drumrat:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "drumrat:ch:families",
      "time": {
-      "label": "1911",
-      "iso": "1911",
-      "sort": "1911-01-01",
+      "label": "The families of Drumrat",
+      "iso": "1901",
+      "sort": "1901-01-01",
       "approximate": true
      },
      "place": {
@@ -120,35 +137,163 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "drumrat:census:1911"
+      "open_card": "drumrat:census:1901"
      },
-     "caption": "Drumrat had two people in one household in 1911. Heads of household included Hammond.",
+     "caption": "Here are the families of Drumrat, from 1901 to 1926. First, the Cairney and Devenny families.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "drumrat:census:1911"
+       "drumrat:census:1901",
+       "drumrat:census:1926"
       ],
-      "basis": "return_for_townland",
+      "basis": "place_record",
       "certainty": "stated"
      },
-     "duration_ms": 5600,
+     "duration_ms": 6400,
      "audio": null,
-     "counts": {
-      "people": 2,
-      "households": 1
+     "thread": {
+      "id": "drumrat:family:01",
+      "label": "Cairney",
+      "run": true
      }
     }
    ]
   },
   {
-   "id": "drumrat:ch:1926",
-   "title": "1926",
+   "id": "drumrat:ch:family-01",
+   "title": "The Cairney family",
    "beats": [
     {
-     "id": "drumrat:beat:census:1926",
-     "kind": "census",
-     "chapter": "drumrat:ch:1926",
+     "id": "drumrat:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "drumrat:ch:family-01",
+     "time": {
+      "label": "The Cairney family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumrat",
+      "name": "Drumrat",
+      "logainm_id": "14035",
+      "lat": 54.652197,
+      "lon": -8.088743,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumrat:familypresence:01"
+     },
+     "caption": "The Cairney family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumrat:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumrat:family:01",
+      "label": "Cairney",
+      "run": true
+     }
+    },
+    {
+     "id": "drumrat:beat:familycensus:01-1901",
+     "kind": "familycensus",
+     "chapter": "drumrat:ch:family-01",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumrat",
+      "name": "Drumrat",
+      "logainm_id": "14035",
+      "lat": 54.652197,
+      "lon": -8.088743,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumrat:familycensus:01:1901"
+     },
+     "caption": "Drumrat had one Cairney household in 1901, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumrat:familycensus:01:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumrat:family:01",
+      "label": "Cairney",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumrat:ch:family-02",
+   "title": "The Devenny family",
+   "beats": [
+    {
+     "id": "drumrat:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "drumrat:ch:family-02",
+     "time": {
+      "label": "The Devenny family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumrat",
+      "name": "Drumrat",
+      "logainm_id": "14035",
+      "lat": 54.652197,
+      "lon": -8.088743,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumrat:familypresence:02"
+     },
+     "caption": "The Devenny family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumrat:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumrat:family:02",
+      "label": "Devenny",
+      "run": true
+     }
+    },
+    {
+     "id": "drumrat:beat:familycensus:02-1926",
+     "kind": "familycensus",
+     "chapter": "drumrat:ch:family-02",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -165,25 +310,32 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "drumrat:census:1926"
+      "open_card": "drumrat:familycensus:02:1926"
      },
-     "caption": "In 1926, nine people in three households lived in Drumrat. Heads of household included Devenny, McCormick and Walker.",
+     "caption": "Drumrat had one Devenny household in 1926, headed by Bryne.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "drumrat:census:1926"
+       "drumrat:familycensus:02:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 7200,
+     "duration_ms": 4000,
      "audio": null,
-     "counts": {
-      "people": 9,
-      "households": 3
+     "thread": {
+      "id": "drumrat:family:02",
+      "label": "Devenny",
+      "run": true
      }
-    },
+    }
+   ]
+  },
+  {
+   "id": "drumrat:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "drumrat:beat:closing:end",
      "kind": "closing",
@@ -218,6 +370,350 @@
      },
      "duration_ms": 4000,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "drumrat:ch:family-04",
+   "title": "The Hannond family",
+   "beats": [
+    {
+     "id": "drumrat:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "drumrat:ch:family-04",
+     "time": {
+      "label": "The Hannond family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumrat",
+      "name": "Drumrat",
+      "logainm_id": "14035",
+      "lat": 54.652197,
+      "lon": -8.088743,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumrat:familypresence:04"
+     },
+     "caption": "The Hannond family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumrat:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumrat:family:04",
+      "label": "Hannond",
+      "run": false
+     }
+    },
+    {
+     "id": "drumrat:beat:familycensus:04-1901",
+     "kind": "familycensus",
+     "chapter": "drumrat:ch:family-04",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumrat",
+      "name": "Drumrat",
+      "logainm_id": "14035",
+      "lat": 54.652197,
+      "lon": -8.088743,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumrat:familycensus:04:1901"
+     },
+     "caption": "Drumrat had one Hannond household in 1901, headed by Andrew.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumrat:familycensus:04:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumrat:family:04",
+      "label": "Hannond",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumrat:ch:family-03",
+   "title": "The Hammond family",
+   "beats": [
+    {
+     "id": "drumrat:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "drumrat:ch:family-03",
+     "time": {
+      "label": "The Hammond family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumrat",
+      "name": "Drumrat",
+      "logainm_id": "14035",
+      "lat": 54.652197,
+      "lon": -8.088743,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumrat:familypresence:03"
+     },
+     "caption": "The Hammond family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumrat:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumrat:family:03",
+      "label": "Hammond",
+      "run": false
+     }
+    },
+    {
+     "id": "drumrat:beat:familycensus:03-1911",
+     "kind": "familycensus",
+     "chapter": "drumrat:ch:family-03",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumrat",
+      "name": "Drumrat",
+      "logainm_id": "14035",
+      "lat": 54.652197,
+      "lon": -8.088743,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumrat:familycensus:03:1911"
+     },
+     "caption": "Drumrat had one Hammond household in 1911, headed by Andrew.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumrat:familycensus:03:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumrat:family:03",
+      "label": "Hammond",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumrat:ch:family-05",
+   "title": "The McCormick family",
+   "beats": [
+    {
+     "id": "drumrat:beat:familyhead:05",
+     "kind": "familyhead",
+     "chapter": "drumrat:ch:family-05",
+     "time": {
+      "label": "The McCormick family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumrat",
+      "name": "Drumrat",
+      "logainm_id": "14035",
+      "lat": 54.652197,
+      "lon": -8.088743,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumrat:familypresence:05"
+     },
+     "caption": "The McCormick family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumrat:familypresence:05"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumrat:family:05",
+      "label": "McCormick",
+      "run": false
+     }
+    },
+    {
+     "id": "drumrat:beat:familycensus:05-1926",
+     "kind": "familycensus",
+     "chapter": "drumrat:ch:family-05",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumrat",
+      "name": "Drumrat",
+      "logainm_id": "14035",
+      "lat": 54.652197,
+      "lon": -8.088743,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumrat:familycensus:05:1926"
+     },
+     "caption": "Drumrat had one McCormick household in 1926, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumrat:familycensus:05:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumrat:family:05",
+      "label": "McCormick",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumrat:ch:family-06",
+   "title": "The Walker family",
+   "beats": [
+    {
+     "id": "drumrat:beat:familyhead:06",
+     "kind": "familyhead",
+     "chapter": "drumrat:ch:family-06",
+     "time": {
+      "label": "The Walker family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumrat",
+      "name": "Drumrat",
+      "logainm_id": "14035",
+      "lat": 54.652197,
+      "lon": -8.088743,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumrat:familypresence:06"
+     },
+     "caption": "The Walker family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumrat:familypresence:06"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumrat:family:06",
+      "label": "Walker",
+      "run": false
+     }
+    },
+    {
+     "id": "drumrat:beat:familycensus:06-1926",
+     "kind": "familycensus",
+     "chapter": "drumrat:ch:family-06",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumrat",
+      "name": "Drumrat",
+      "logainm_id": "14035",
+      "lat": 54.652197,
+      "lon": -8.088743,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumrat:familycensus:06:1926"
+     },
+     "caption": "Drumrat had one Walker household in 1926, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumrat:familycensus:06:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumrat:family:06",
+      "label": "Walker",
+      "run": false
+     }
     }
    ]
   }

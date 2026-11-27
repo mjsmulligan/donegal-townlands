@@ -141,47 +141,10 @@
   },
   {
    "id": "cullionboy:ch:baptisms",
-   "title": "Baptisms, 1874 to 1875",
+   "title": "Baptisms, 1875",
    "beats": [
     {
-     "id": "cullionboy:beat:baptism:1874-10-05-TAW-B-p012-r152",
-     "kind": "baptism",
-     "chapter": "cullionboy:ch:baptisms",
-     "time": {
-      "label": "5 October 1874",
-      "iso": "1874-10-05",
-      "sort": "1874-10-05",
-      "approximate": false
-     },
-     "place": {
-      "townland": "cullionboy",
-      "name": "Cullionboy",
-      "logainm_id": "13967",
-      "lat": 54.685502,
-      "lon": -7.975892,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "cullionboy:baptism:TAW-B-p012-r152"
-     },
-     "caption": "James Bradley was baptised on 5 October 1874. Daniel Bradley and Ellen Callaghan were the parents.",
-     "people": [],
-     "media": [
-      "st-agathas-church-donegal.jpg"
-     ],
-     "evidence": {
-      "events": [
-       "cullionboy:baptism:TAW-B-p012-r152"
-      ],
-      "basis": "page_place",
-      "certainty": "stated"
-     },
-     "duration_ms": 7400,
-     "audio": null
-    },
-    {
-     "id": "cullionboy:beat:baptism:1875",
+     "id": "cullionboy:beat:baptism:1875-03-31-TAW-B-p016-r199",
      "kind": "baptism",
      "chapter": "cullionboy:ch:baptisms",
      "time": {
@@ -202,35 +165,33 @@
       "stage": "map",
       "open_card": "cullionboy:baptism:TAW-B-p016-r199"
      },
-     "caption": "Three children were baptised in 1875: Edward Harraghy on 31 March, Joseph Kelly on 11 June and Margaret McGinty on 10 July.",
+     "caption": "Edward Harraghy was baptised on 31 March 1875. Francis Harraghy and Mary McGinty were the parents.",
      "people": [],
      "media": [
       "st-agathas-church-donegal.jpg"
      ],
      "evidence": {
       "events": [
-       "cullionboy:baptism:TAW-B-p016-r199",
-       "cullionboy:baptism:TAW-B-p017-r219",
-       "cullionboy:baptism:TAW-B-p018-r230"
+       "cullionboy:baptism:TAW-B-p016-r199"
       ],
       "basis": "page_place",
       "certainty": "stated"
      },
-     "duration_ms": 9800,
+     "duration_ms": 7400,
      "audio": null
     }
    ]
   },
   {
-   "id": "cullionboy:ch:1901",
-   "title": "1901",
+   "id": "cullionboy:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "cullionboy:beat:census:1901",
+     "id": "cullionboy:beat:census:returns",
      "kind": "census",
-     "chapter": "cullionboy:ch:1901",
+     "chapter": "cullionboy:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1926",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -247,111 +208,38 @@
       "stage": "map",
       "open_card": "cullionboy:census:1901"
      },
-     "caption": "In 1901, 93 people in eighteen households lived in Cullionboy. Heads of household included Gillespie, Gildea and McCool.",
+     "caption": "The censuses of 1901, 1911 and 1926 counted 93, 72 and 79 people in Cullionboy, in 18, 16 and 15 households. Heads of household included Gillespie, Gildea and McCool.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "cullionboy:census:1901"
-      ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
-     },
-     "duration_ms": 7200,
-     "audio": null,
-     "counts": {
-      "people": 93,
-      "households": 18
-     }
-    }
-   ]
-  },
-  {
-   "id": "cullionboy:ch:1911",
-   "title": "1911",
-   "beats": [
-    {
-     "id": "cullionboy:beat:census:1911",
-     "kind": "census",
-     "chapter": "cullionboy:ch:1911",
-     "time": {
-      "label": "1911",
-      "iso": "1911",
-      "sort": "1911-01-01",
-      "approximate": true
-     },
-     "place": {
-      "townland": "cullionboy",
-      "name": "Cullionboy",
-      "logainm_id": "13967",
-      "lat": 54.685502,
-      "lon": -7.975892,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "cullionboy:census:1911"
-     },
-     "caption": "Cullionboy had 72 people in sixteen households in 1911. Heads of household included Gillespie, Cassidy and Gildea.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "cullionboy:census:1911"
-      ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
-     },
-     "duration_ms": 6800,
-     "audio": null,
-     "counts": {
-      "people": 72,
-      "households": 16
-     }
-    }
-   ]
-  },
-  {
-   "id": "cullionboy:ch:1926",
-   "title": "1926",
-   "beats": [
-    {
-     "id": "cullionboy:beat:census:1926",
-     "kind": "census",
-     "chapter": "cullionboy:ch:1926",
-     "time": {
-      "label": "1926",
-      "iso": "1926",
-      "sort": "1926-01-01",
-      "approximate": true
-     },
-     "place": {
-      "townland": "cullionboy",
-      "name": "Cullionboy",
-      "logainm_id": "13967",
-      "lat": 54.685502,
-      "lon": -7.975892,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "cullionboy:census:1926"
-     },
-     "caption": "Cullionboy had 79 people in fifteen households in 1926. Heads of household included Gillespie, Cassidy and Bradley.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
+       "cullionboy:census:1901",
+       "cullionboy:census:1911",
        "cullionboy:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 6800,
+     "duration_ms": 11600,
      "audio": null,
      "counts": {
-      "people": 79,
-      "households": 15
+      "returns": [
+       {
+        "year": "1901",
+        "people": 93,
+        "households": 18
+       },
+       {
+        "year": "1911",
+        "people": 72,
+        "households": 16
+       },
+       {
+        "year": "1926",
+        "people": 79,
+        "households": 15
+       }
+      ]
      }
     }
    ]
@@ -394,11 +282,396 @@
      },
      "duration_ms": 7800,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "cullionboy:ch:families",
+   "title": "The families of Cullionboy",
+   "beats": [
+    {
+     "id": "cullionboy:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "cullionboy:ch:families",
+     "time": {
+      "label": "The families of Cullionboy",
+      "iso": "1850/1859",
+      "sort": "1855-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:valuation:griffiths"
+     },
+     "caption": "Here are the families of Cullionboy, from the 1850s to 1954. First, the Gildea and Gillespie families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:valuation:griffiths",
+       "cullionboy:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "thread": {
+      "id": "cullionboy:family:11",
+      "label": "Gildea",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "cullionboy:ch:family-11",
+   "title": "The Gildea family",
+   "beats": [
+    {
+     "id": "cullionboy:beat:familyhead:11",
+     "kind": "familyhead",
+     "chapter": "cullionboy:ch:family-11",
+     "time": {
+      "label": "The Gildea family",
+      "iso": "1855",
+      "sort": "1855-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:familypresence:11"
+     },
+     "caption": "The Gildea family appear in the records from 1855 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:familypresence:11"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "cullionboy:family:11",
+      "label": "Gildea",
+      "run": true
+     }
     },
+    {
+     "id": "cullionboy:beat:familycensus:11-1901",
+     "kind": "familycensus",
+     "chapter": "cullionboy:ch:family-11",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:familycensus:11:1901"
+     },
+     "caption": "Cullionboy had two Gildea households in 1901, headed by Edward and James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:familycensus:11:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "cullionboy:family:11",
+      "label": "Gildea",
+      "run": true
+     }
+    },
+    {
+     "id": "cullionboy:beat:familycensus:11-1911",
+     "kind": "familycensus",
+     "chapter": "cullionboy:ch:family-11",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:familycensus:11:1911"
+     },
+     "caption": "Cullionboy had two Gildea households in 1911, headed by Mary and James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:familycensus:11:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "cullionboy:family:11",
+      "label": "Gildea",
+      "run": true
+     }
+    },
+    {
+     "id": "cullionboy:beat:familycensus:11-1926",
+     "kind": "familycensus",
+     "chapter": "cullionboy:ch:family-11",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:familycensus:11:1926"
+     },
+     "caption": "Cullionboy had one Gildea household in 1926, headed by Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:familycensus:11:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "cullionboy:family:11",
+      "label": "Gildea",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "cullionboy:ch:family-12",
+   "title": "The Gillespie family",
+   "beats": [
+    {
+     "id": "cullionboy:beat:familyhead:12",
+     "kind": "familyhead",
+     "chapter": "cullionboy:ch:family-12",
+     "time": {
+      "label": "The Gillespie family",
+      "iso": "1855",
+      "sort": "1855-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:familypresence:12"
+     },
+     "caption": "The Gillespie family appear in the records from 1855 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:familypresence:12"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "cullionboy:family:12",
+      "label": "Gillespie",
+      "run": true
+     }
+    },
+    {
+     "id": "cullionboy:beat:familycensus:12-1901",
+     "kind": "familycensus",
+     "chapter": "cullionboy:ch:family-12",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:familycensus:12:1901"
+     },
+     "caption": "Cullionboy had three Gillespie households in 1901, headed by Ellen, Patrick and Anne.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:familycensus:12:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "cullionboy:family:12",
+      "label": "Gillespie",
+      "run": true
+     }
+    },
+    {
+     "id": "cullionboy:beat:familycensus:12-1911",
+     "kind": "familycensus",
+     "chapter": "cullionboy:ch:family-12",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:familycensus:12:1911"
+     },
+     "caption": "Cullionboy had three Gillespie households in 1911, headed by Thomas, Owen and Anne.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:familycensus:12:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "cullionboy:family:12",
+      "label": "Gillespie",
+      "run": true
+     }
+    },
+    {
+     "id": "cullionboy:beat:familycensus:12-1926",
+     "kind": "familycensus",
+     "chapter": "cullionboy:ch:family-12",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:familycensus:12:1926"
+     },
+     "caption": "Cullionboy had four Gillespie households in 1926, headed by two named Thomas, Owen and Edward.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:familycensus:12:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 6000,
+     "audio": null,
+     "thread": {
+      "id": "cullionboy:family:12",
+      "label": "Gillespie",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "cullionboy:ch:1954-2",
+   "title": "1954",
+   "beats": [
     {
      "id": "cullionboy:beat:closing:end",
      "kind": "closing",
-     "chapter": "cullionboy:ch:1954",
+     "chapter": "cullionboy:ch:1954-2",
      "time": {
       "label": "1954",
       "iso": "1954",
@@ -429,6 +702,2206 @@
      },
      "duration_ms": 4000,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "cullionboy:ch:family-01",
+   "title": "The (Long) family",
+   "beats": [
+    {
+     "id": "cullionboy:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "cullionboy:ch:family-01",
+     "time": {
+      "label": "The (Long) family",
+      "iso": "1855",
+      "sort": "1855-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:familypresence:01"
+     },
+     "caption": "The (Long) family appear in the records in 1855.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "cullionboy:family:01",
+      "label": "(Long)",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "cullionboy:ch:family-02",
+   "title": "The (Wee) family",
+   "beats": [
+    {
+     "id": "cullionboy:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "cullionboy:ch:family-02",
+     "time": {
+      "label": "The (Wee) family",
+      "iso": "1855",
+      "sort": "1855-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:familypresence:02"
+     },
+     "caption": "The (Wee) family appear in the records in 1855.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "cullionboy:family:02",
+      "label": "(Wee)",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "cullionboy:ch:family-03",
+   "title": "The Bradley family",
+   "beats": [
+    {
+     "id": "cullionboy:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "cullionboy:ch:family-03",
+     "time": {
+      "label": "The Bradley family",
+      "iso": "1855",
+      "sort": "1855-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:familypresence:03"
+     },
+     "caption": "The Bradley family appear in the records from 1855 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "cullionboy:family:03",
+      "label": "Bradley",
+      "run": false
+     }
+    },
+    {
+     "id": "cullionboy:beat:baptism:1874-10-05-TAW-B-p012-r152",
+     "kind": "baptism",
+     "chapter": "cullionboy:ch:family-03",
+     "time": {
+      "label": "5 October 1874",
+      "iso": "1874-10-05",
+      "sort": "1874-10-05",
+      "approximate": false
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:baptism:TAW-B-p012-r152"
+     },
+     "caption": "James Bradley was baptised on 5 October 1874. Daniel Bradley and Ellen Callaghan were the parents.",
+     "people": [],
+     "media": [
+      "st-agathas-church-donegal.jpg"
+     ],
+     "evidence": {
+      "events": [
+       "cullionboy:baptism:TAW-B-p012-r152"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 7400,
+     "audio": null,
+     "thread": {
+      "id": "cullionboy:family:03",
+      "label": "Bradley",
+      "run": false
+     }
+    },
+    {
+     "id": "cullionboy:beat:familycensus:03-1901",
+     "kind": "familycensus",
+     "chapter": "cullionboy:ch:family-03",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:familycensus:03:1901"
+     },
+     "caption": "Cullionboy had one Bradley household in 1901, headed by Dan.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:familycensus:03:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "cullionboy:family:03",
+      "label": "Bradley",
+      "run": false
+     }
+    },
+    {
+     "id": "cullionboy:beat:familycensus:03-1911",
+     "kind": "familycensus",
+     "chapter": "cullionboy:ch:family-03",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:familycensus:03:1911"
+     },
+     "caption": "Cullionboy had one Bradley household in 1911, headed by Ellen.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:familycensus:03:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "cullionboy:family:03",
+      "label": "Bradley",
+      "run": false
+     }
+    },
+    {
+     "id": "cullionboy:beat:familycensus:03-1926",
+     "kind": "familycensus",
+     "chapter": "cullionboy:ch:family-03",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:familycensus:03:1926"
+     },
+     "caption": "Cullionboy had one Bradley household in 1926, headed by Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:familycensus:03:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "cullionboy:family:03",
+      "label": "Bradley",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "cullionboy:ch:family-06",
+   "title": "The Cull) family",
+   "beats": [
+    {
+     "id": "cullionboy:beat:familyhead:06",
+     "kind": "familyhead",
+     "chapter": "cullionboy:ch:family-06",
+     "time": {
+      "label": "The Cull) family",
+      "iso": "1855",
+      "sort": "1855-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:familypresence:06"
+     },
+     "caption": "The Cull) family appear in the records in 1855.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:familypresence:06"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "cullionboy:family:06",
+      "label": "Cull)",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "cullionboy:ch:family-07",
+   "title": "The Doherty family",
+   "beats": [
+    {
+     "id": "cullionboy:beat:familyhead:07",
+     "kind": "familyhead",
+     "chapter": "cullionboy:ch:family-07",
+     "time": {
+      "label": "The Doherty family",
+      "iso": "1855",
+      "sort": "1855-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:familypresence:07"
+     },
+     "caption": "The Doherty family appear in the records from 1855 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:familypresence:07"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "cullionboy:family:07",
+      "label": "Doherty",
+      "run": false
+     }
+    },
+    {
+     "id": "cullionboy:beat:familycensus:07-1901",
+     "kind": "familycensus",
+     "chapter": "cullionboy:ch:family-07",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:familycensus:07:1901"
+     },
+     "caption": "Cullionboy had one Doherty household in 1901, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:familycensus:07:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "cullionboy:family:07",
+      "label": "Doherty",
+      "run": false
+     }
+    },
+    {
+     "id": "cullionboy:beat:familycensus:07-1911",
+     "kind": "familycensus",
+     "chapter": "cullionboy:ch:family-07",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:familycensus:07:1911"
+     },
+     "caption": "Cullionboy had one Doherty household in 1911, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:familycensus:07:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "cullionboy:family:07",
+      "label": "Doherty",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "cullionboy:ch:family-08",
+   "title": "The Dunlevy family",
+   "beats": [
+    {
+     "id": "cullionboy:beat:familyhead:08",
+     "kind": "familyhead",
+     "chapter": "cullionboy:ch:family-08",
+     "time": {
+      "label": "The Dunlevy family",
+      "iso": "1855",
+      "sort": "1855-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:familypresence:08"
+     },
+     "caption": "The Dunlevy family appear in the records from 1855 to 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:familypresence:08"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "cullionboy:family:08",
+      "label": "Dunlevy",
+      "run": false
+     }
+    },
+    {
+     "id": "cullionboy:beat:familycensus:08-1901",
+     "kind": "familycensus",
+     "chapter": "cullionboy:ch:family-08",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:familycensus:08:1901"
+     },
+     "caption": "Cullionboy had one Dunlevy household in 1901, headed by Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:familycensus:08:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "cullionboy:family:08",
+      "label": "Dunlevy",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "cullionboy:ch:family-09",
+   "title": "The Dunnion family",
+   "beats": [
+    {
+     "id": "cullionboy:beat:familyhead:09",
+     "kind": "familyhead",
+     "chapter": "cullionboy:ch:family-09",
+     "time": {
+      "label": "The Dunnion family",
+      "iso": "1855",
+      "sort": "1855-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:familypresence:09"
+     },
+     "caption": "The Dunnion family appear in the records from 1855 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:familypresence:09"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "cullionboy:family:09",
+      "label": "Dunnion",
+      "run": false
+     }
+    },
+    {
+     "id": "cullionboy:beat:familycensus:09-1901",
+     "kind": "familycensus",
+     "chapter": "cullionboy:ch:family-09",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:familycensus:09:1901"
+     },
+     "caption": "Cullionboy had one Dunnion household in 1901, headed by Michael.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:familycensus:09:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "cullionboy:family:09",
+      "label": "Dunnion",
+      "run": false
+     }
+    },
+    {
+     "id": "cullionboy:beat:familycensus:09-1911",
+     "kind": "familycensus",
+     "chapter": "cullionboy:ch:family-09",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:familycensus:09:1911"
+     },
+     "caption": "Cullionboy had one Dunnion household in 1911, headed by Letitia.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:familycensus:09:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "cullionboy:family:09",
+      "label": "Dunnion",
+      "run": false
+     }
+    },
+    {
+     "id": "cullionboy:beat:familycensus:09-1926",
+     "kind": "familycensus",
+     "chapter": "cullionboy:ch:family-09",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:familycensus:09:1926"
+     },
+     "caption": "Cullionboy had one Dunnion household in 1926, headed by Michael.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:familycensus:09:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "cullionboy:family:09",
+      "label": "Dunnion",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "cullionboy:ch:family-10",
+   "title": "The Gallagher family",
+   "beats": [
+    {
+     "id": "cullionboy:beat:familyhead:10",
+     "kind": "familyhead",
+     "chapter": "cullionboy:ch:family-10",
+     "time": {
+      "label": "The Gallagher family",
+      "iso": "1855",
+      "sort": "1855-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:familypresence:10"
+     },
+     "caption": "The Gallagher family appear in the records in 1855.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:familypresence:10"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "cullionboy:family:10",
+      "label": "Gallagher",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "cullionboy:ch:family-14",
+   "title": "The Hone family",
+   "beats": [
+    {
+     "id": "cullionboy:beat:familyhead:14",
+     "kind": "familyhead",
+     "chapter": "cullionboy:ch:family-14",
+     "time": {
+      "label": "The Hone family",
+      "iso": "1855",
+      "sort": "1855-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:familypresence:14"
+     },
+     "caption": "The Hone family appear in the records from 1855 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:familypresence:14"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "cullionboy:family:14",
+      "label": "Hone",
+      "run": false
+     }
+    },
+    {
+     "id": "cullionboy:beat:familycensus:14-1926",
+     "kind": "familycensus",
+     "chapter": "cullionboy:ch:family-14",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:familycensus:14:1926"
+     },
+     "caption": "Cullionboy had one Hone household in 1926, headed by Michael.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:familycensus:14:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "cullionboy:family:14",
+      "label": "Hone",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "cullionboy:ch:family-15",
+   "title": "The Kelly family",
+   "beats": [
+    {
+     "id": "cullionboy:beat:familyhead:15",
+     "kind": "familyhead",
+     "chapter": "cullionboy:ch:family-15",
+     "time": {
+      "label": "The Kelly family",
+      "iso": "1855",
+      "sort": "1855-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:familypresence:15"
+     },
+     "caption": "The Kelly family appear in the records from 1855 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:familypresence:15"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "cullionboy:family:15",
+      "label": "Kelly",
+      "run": false
+     }
+    },
+    {
+     "id": "cullionboy:beat:baptism:1875-06-11-TAW-B-p017-r219",
+     "kind": "baptism",
+     "chapter": "cullionboy:ch:family-15",
+     "time": {
+      "label": "11 June 1875",
+      "iso": "1875-06-11",
+      "sort": "1875-06-11",
+      "approximate": false
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:baptism:TAW-B-p017-r219"
+     },
+     "caption": "Joseph Kelly was baptised on 11 June 1875. Thomas Kelly and Margaret Carr were the parents.",
+     "people": [],
+     "media": [
+      "st-agathas-church-donegal.jpg"
+     ],
+     "evidence": {
+      "events": [
+       "cullionboy:baptism:TAW-B-p017-r219"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 7400,
+     "audio": null,
+     "thread": {
+      "id": "cullionboy:family:15",
+      "label": "Kelly",
+      "run": false
+     }
+    },
+    {
+     "id": "cullionboy:beat:familycensus:15-1901",
+     "kind": "familycensus",
+     "chapter": "cullionboy:ch:family-15",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:familycensus:15:1901"
+     },
+     "caption": "Cullionboy had one Kelly household in 1901, headed by Thomas.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:familycensus:15:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "cullionboy:family:15",
+      "label": "Kelly",
+      "run": false
+     }
+    },
+    {
+     "id": "cullionboy:beat:familycensus:15-1911",
+     "kind": "familycensus",
+     "chapter": "cullionboy:ch:family-15",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:familycensus:15:1911"
+     },
+     "caption": "Cullionboy had one Kelly household in 1911, headed by Thomas.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:familycensus:15:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "cullionboy:family:15",
+      "label": "Kelly",
+      "run": false
+     }
+    },
+    {
+     "id": "cullionboy:beat:familycensus:15-1926",
+     "kind": "familycensus",
+     "chapter": "cullionboy:ch:family-15",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:familycensus:15:1926"
+     },
+     "caption": "Cullionboy had one Kelly household in 1926, headed by Bella.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:familycensus:15:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "cullionboy:family:15",
+      "label": "Kelly",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "cullionboy:ch:family-16",
+   "title": "The McCool family",
+   "beats": [
+    {
+     "id": "cullionboy:beat:familyhead:16",
+     "kind": "familyhead",
+     "chapter": "cullionboy:ch:family-16",
+     "time": {
+      "label": "The McCool family",
+      "iso": "1855",
+      "sort": "1855-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:familypresence:16"
+     },
+     "caption": "The McCool family appear in the records from 1855 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:familypresence:16"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "cullionboy:family:16",
+      "label": "McCool",
+      "run": false
+     }
+    },
+    {
+     "id": "cullionboy:beat:familycensus:16-1901",
+     "kind": "familycensus",
+     "chapter": "cullionboy:ch:family-16",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:familycensus:16:1901"
+     },
+     "caption": "Cullionboy had two McCool households in 1901, headed by Edward and John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:familycensus:16:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "cullionboy:family:16",
+      "label": "McCool",
+      "run": false
+     }
+    },
+    {
+     "id": "cullionboy:beat:familycensus:16-1911",
+     "kind": "familycensus",
+     "chapter": "cullionboy:ch:family-16",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:familycensus:16:1911"
+     },
+     "caption": "Cullionboy had one McCool household in 1911, headed by Edward.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:familycensus:16:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "cullionboy:family:16",
+      "label": "McCool",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "cullionboy:ch:family-18",
+   "title": "The Mcginty family",
+   "beats": [
+    {
+     "id": "cullionboy:beat:familyhead:18",
+     "kind": "familyhead",
+     "chapter": "cullionboy:ch:family-18",
+     "time": {
+      "label": "The Mcginty family",
+      "iso": "1855",
+      "sort": "1855-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:familypresence:18"
+     },
+     "caption": "The Mcginty family appear in the records in 1855.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:familypresence:18"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "cullionboy:family:18",
+      "label": "Mcginty",
+      "run": false
+     }
+    },
+    {
+     "id": "cullionboy:beat:baptism:1875-07-10-TAW-B-p018-r230",
+     "kind": "baptism",
+     "chapter": "cullionboy:ch:family-18",
+     "time": {
+      "label": "10 July 1875",
+      "iso": "1875-07-10",
+      "sort": "1875-07-10",
+      "approximate": false
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:baptism:TAW-B-p018-r230"
+     },
+     "caption": "Margaret McGinty was baptised on 10 July 1875. Edward McGinty and Brigid Dunlevy were the parents.",
+     "people": [],
+     "media": [
+      "st-agathas-church-donegal.jpg"
+     ],
+     "evidence": {
+      "events": [
+       "cullionboy:baptism:TAW-B-p018-r230"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 7400,
+     "audio": null,
+     "thread": {
+      "id": "cullionboy:family:18",
+      "label": "Mcginty",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "cullionboy:ch:family-20",
+   "title": "The Mulrenin family",
+   "beats": [
+    {
+     "id": "cullionboy:beat:familyhead:20",
+     "kind": "familyhead",
+     "chapter": "cullionboy:ch:family-20",
+     "time": {
+      "label": "The Mulrenin family",
+      "iso": "1855",
+      "sort": "1855-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:familypresence:20"
+     },
+     "caption": "The Mulrenin family appear in the records in 1855.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:familypresence:20"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "cullionboy:family:20",
+      "label": "Mulrenin",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "cullionboy:ch:family-21",
+   "title": "The Sweeney family",
+   "beats": [
+    {
+     "id": "cullionboy:beat:familyhead:21",
+     "kind": "familyhead",
+     "chapter": "cullionboy:ch:family-21",
+     "time": {
+      "label": "The Sweeney family",
+      "iso": "1855",
+      "sort": "1855-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:familypresence:21"
+     },
+     "caption": "The Sweeney family appear in the records from 1855 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:familypresence:21"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "cullionboy:family:21",
+      "label": "Sweeney",
+      "run": false
+     }
+    },
+    {
+     "id": "cullionboy:beat:familycensus:21-1901",
+     "kind": "familycensus",
+     "chapter": "cullionboy:ch:family-21",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:familycensus:21:1901"
+     },
+     "caption": "Cullionboy had two Sweeney households in 1901, headed by James and Denis.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:familycensus:21:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "cullionboy:family:21",
+      "label": "Sweeney",
+      "run": false
+     }
+    },
+    {
+     "id": "cullionboy:beat:familycensus:21-1911",
+     "kind": "familycensus",
+     "chapter": "cullionboy:ch:family-21",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:familycensus:21:1911"
+     },
+     "caption": "Cullionboy had one Sweeney household in 1911, headed by Denis.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:familycensus:21:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "cullionboy:family:21",
+      "label": "Sweeney",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "cullionboy:ch:family-04",
+   "title": "The Cassidy family",
+   "beats": [
+    {
+     "id": "cullionboy:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "cullionboy:ch:family-04",
+     "time": {
+      "label": "The Cassidy family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:familypresence:04"
+     },
+     "caption": "The Cassidy family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "cullionboy:family:04",
+      "label": "Cassidy",
+      "run": false
+     }
+    },
+    {
+     "id": "cullionboy:beat:familycensus:04-1901",
+     "kind": "familycensus",
+     "chapter": "cullionboy:ch:family-04",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:familycensus:04:1901"
+     },
+     "caption": "Cullionboy had one Cassidy household in 1901, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:familycensus:04:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "cullionboy:family:04",
+      "label": "Cassidy",
+      "run": false
+     }
+    },
+    {
+     "id": "cullionboy:beat:familycensus:04-1911",
+     "kind": "familycensus",
+     "chapter": "cullionboy:ch:family-04",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:familycensus:04:1911"
+     },
+     "caption": "Cullionboy had two Cassidy households in 1911, headed by Hugh and John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:familycensus:04:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "cullionboy:family:04",
+      "label": "Cassidy",
+      "run": false
+     }
+    },
+    {
+     "id": "cullionboy:beat:familycensus:04-1926",
+     "kind": "familycensus",
+     "chapter": "cullionboy:ch:family-04",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:familycensus:04:1926"
+     },
+     "caption": "Cullionboy had two Cassidy households in 1926, headed by two named Bridget.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:familycensus:04:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "cullionboy:family:04",
+      "label": "Cassidy",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "cullionboy:ch:family-05",
+   "title": "The Colhoun family",
+   "beats": [
+    {
+     "id": "cullionboy:beat:familyhead:05",
+     "kind": "familyhead",
+     "chapter": "cullionboy:ch:family-05",
+     "time": {
+      "label": "The Colhoun family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:familypresence:05"
+     },
+     "caption": "The Colhoun family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:familypresence:05"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "cullionboy:family:05",
+      "label": "Colhoun",
+      "run": false
+     }
+    },
+    {
+     "id": "cullionboy:beat:familycensus:05-1901",
+     "kind": "familycensus",
+     "chapter": "cullionboy:ch:family-05",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:familycensus:05:1901"
+     },
+     "caption": "Cullionboy had one Colhoun household in 1901, headed by Mary.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:familycensus:05:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "cullionboy:family:05",
+      "label": "Colhoun",
+      "run": false
+     }
+    },
+    {
+     "id": "cullionboy:beat:familycensus:05-1911",
+     "kind": "familycensus",
+     "chapter": "cullionboy:ch:family-05",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:familycensus:05:1911"
+     },
+     "caption": "Cullionboy had one Colhoun household in 1911, headed by Mary.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:familycensus:05:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "cullionboy:family:05",
+      "label": "Colhoun",
+      "run": false
+     }
+    },
+    {
+     "id": "cullionboy:beat:familycensus:05-1926",
+     "kind": "familycensus",
+     "chapter": "cullionboy:ch:family-05",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:familycensus:05:1926"
+     },
+     "caption": "Cullionboy had one Colhoun household in 1926, headed by Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:familycensus:05:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "cullionboy:family:05",
+      "label": "Colhoun",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "cullionboy:ch:family-13",
+   "title": "The Harvey family",
+   "beats": [
+    {
+     "id": "cullionboy:beat:familyhead:13",
+     "kind": "familyhead",
+     "chapter": "cullionboy:ch:family-13",
+     "time": {
+      "label": "The Harvey family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:familypresence:13"
+     },
+     "caption": "The Harvey family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:familypresence:13"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "cullionboy:family:13",
+      "label": "Harvey",
+      "run": false
+     }
+    },
+    {
+     "id": "cullionboy:beat:familycensus:13-1901",
+     "kind": "familycensus",
+     "chapter": "cullionboy:ch:family-13",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:familycensus:13:1901"
+     },
+     "caption": "Cullionboy had one Harvey household in 1901, headed by Francis.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:familycensus:13:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "cullionboy:family:13",
+      "label": "Harvey",
+      "run": false
+     }
+    },
+    {
+     "id": "cullionboy:beat:familycensus:13-1911",
+     "kind": "familycensus",
+     "chapter": "cullionboy:ch:family-13",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:familycensus:13:1911"
+     },
+     "caption": "Cullionboy had one Harvey household in 1911, headed by Edward.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:familycensus:13:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "cullionboy:family:13",
+      "label": "Harvey",
+      "run": false
+     }
+    },
+    {
+     "id": "cullionboy:beat:familycensus:13-1926",
+     "kind": "familycensus",
+     "chapter": "cullionboy:ch:family-13",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:familycensus:13:1926"
+     },
+     "caption": "Cullionboy had one Harvey household in 1926, headed by Edward.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:familycensus:13:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "cullionboy:family:13",
+      "label": "Harvey",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "cullionboy:ch:family-19",
+   "title": "The McMullin family",
+   "beats": [
+    {
+     "id": "cullionboy:beat:familyhead:19",
+     "kind": "familyhead",
+     "chapter": "cullionboy:ch:family-19",
+     "time": {
+      "label": "The McMullin family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:familypresence:19"
+     },
+     "caption": "The McMullin family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:familypresence:19"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "cullionboy:family:19",
+      "label": "McMullin",
+      "run": false
+     }
+    },
+    {
+     "id": "cullionboy:beat:familycensus:19-1901",
+     "kind": "familycensus",
+     "chapter": "cullionboy:ch:family-19",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:familycensus:19:1901"
+     },
+     "caption": "Cullionboy had one McMullin household in 1901, headed by Bridget.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:familycensus:19:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "cullionboy:family:19",
+      "label": "McMullin",
+      "run": false
+     }
+    },
+    {
+     "id": "cullionboy:beat:familycensus:19-1911",
+     "kind": "familycensus",
+     "chapter": "cullionboy:ch:family-19",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:familycensus:19:1911"
+     },
+     "caption": "Cullionboy had one McMullin household in 1911, headed by Bridget.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:familycensus:19:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "cullionboy:family:19",
+      "label": "McMullin",
+      "run": false
+     }
+    },
+    {
+     "id": "cullionboy:beat:familycensus:19-1926",
+     "kind": "familycensus",
+     "chapter": "cullionboy:ch:family-19",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:familycensus:19:1926"
+     },
+     "caption": "Cullionboy had one McMullin household in 1926, headed by Anne.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:familycensus:19:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "cullionboy:family:19",
+      "label": "McMullin",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "cullionboy:ch:family-17",
+   "title": "The McGettigan family",
+   "beats": [
+    {
+     "id": "cullionboy:beat:familyhead:17",
+     "kind": "familyhead",
+     "chapter": "cullionboy:ch:family-17",
+     "time": {
+      "label": "The McGettigan family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:familypresence:17"
+     },
+     "caption": "The McGettigan family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:familypresence:17"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "cullionboy:family:17",
+      "label": "McGettigan",
+      "run": false
+     }
+    },
+    {
+     "id": "cullionboy:beat:familycensus:17-1926",
+     "kind": "familycensus",
+     "chapter": "cullionboy:ch:family-17",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cullionboy",
+      "name": "Cullionboy",
+      "logainm_id": "13967",
+      "lat": 54.685502,
+      "lon": -7.975892,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cullionboy:familycensus:17:1926"
+     },
+     "caption": "Cullionboy had one McGettigan household in 1926, headed by Edward.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cullionboy:familycensus:17:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "cullionboy:family:17",
+      "label": "McGettigan",
+      "run": false
+     }
     }
    ]
   }

@@ -52,15 +52,15 @@
    ]
   },
   {
-   "id": "altadoo:ch:1901",
-   "title": "1901",
+   "id": "altadoo:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "altadoo:beat:census:1901",
+     "id": "altadoo:beat:census:returns",
      "kind": "census",
-     "chapter": "altadoo:ch:1901",
+     "chapter": "altadoo:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1926",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -77,33 +77,177 @@
       "stage": "map",
       "open_card": "altadoo:census:1901"
      },
-     "caption": "Altadoo had 103 people in 25 households in 1901. Heads of household included Gallagher, Kennedy and McGinley.",
+     "caption": "The censuses of 1901, 1911 and 1926 counted 103, 97 and 69 people in Altadoo, in 25, 22 and 20 households. Heads of household included Gallagher, Kennedy and McGinley.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "altadoo:census:1901"
+       "altadoo:census:1901",
+       "altadoo:census:1911",
+       "altadoo:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 6800,
+     "duration_ms": 11600,
      "audio": null,
      "counts": {
-      "people": 103,
-      "households": 25
+      "returns": [
+       {
+        "year": "1901",
+        "people": 103,
+        "households": 25
+       },
+       {
+        "year": "1911",
+        "people": 97,
+        "households": 22
+       },
+       {
+        "year": "1926",
+        "people": 69,
+        "households": 20
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "altadoo:ch:1911",
-   "title": "1911",
+   "id": "altadoo:ch:families",
+   "title": "The families of Altadoo",
    "beats": [
     {
-     "id": "altadoo:beat:census:1911",
-     "kind": "census",
-     "chapter": "altadoo:ch:1911",
+     "id": "altadoo:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "altadoo:ch:families",
+     "time": {
+      "label": "The families of Altadoo",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:census:1901"
+     },
+     "caption": "Here are the families of Altadoo, from 1901 to 1926. First, the Campbell and McGinley families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:census:1901",
+       "altadoo:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:03",
+      "label": "Campbell",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "altadoo:ch:family-03",
+   "title": "The Campbell family",
+   "beats": [
+    {
+     "id": "altadoo:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "altadoo:ch:family-03",
+     "time": {
+      "label": "The Campbell family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familypresence:03"
+     },
+     "caption": "The Campbell family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:03",
+      "label": "Campbell",
+      "run": true
+     }
+    },
+    {
+     "id": "altadoo:beat:familycensus:03-1901",
+     "kind": "familycensus",
+     "chapter": "altadoo:ch:family-03",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familycensus:03:1901"
+     },
+     "caption": "Altadoo had one Campbell household in 1901, headed by Anne.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familycensus:03:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:03",
+      "label": "Campbell",
+      "run": true
+     }
+    },
+    {
+     "id": "altadoo:beat:familycensus:03-1911",
+     "kind": "familycensus",
+     "chapter": "altadoo:ch:family-03",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -120,35 +264,30 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "altadoo:census:1911"
+      "open_card": "altadoo:familycensus:03:1911"
      },
-     "caption": "Altadoo had 97 people in 22 households in 1911. Heads of household included Campbell, McGinley and McKelvy.",
+     "caption": "Altadoo had two Campbell households in 1911, headed by John and Patrick.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "altadoo:census:1911"
+       "altadoo:familycensus:03:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6800,
+     "duration_ms": 4800,
      "audio": null,
-     "counts": {
-      "people": 97,
-      "households": 22
+     "thread": {
+      "id": "altadoo:family:03",
+      "label": "Campbell",
+      "run": true
      }
-    }
-   ]
-  },
-  {
-   "id": "altadoo:ch:1926",
-   "title": "1926",
-   "beats": [
+    },
     {
-     "id": "altadoo:beat:census:1926",
-     "kind": "census",
-     "chapter": "altadoo:ch:1926",
+     "id": "altadoo:beat:familycensus:03-1926",
+     "kind": "familycensus",
+     "chapter": "altadoo:ch:family-03",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -165,25 +304,198 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "altadoo:census:1926"
+      "open_card": "altadoo:familycensus:03:1926"
      },
-     "caption": "In 1926, 69 people in twenty households lived in Altadoo. Heads of household included Campbell, McGinley and Breslin.",
+     "caption": "Altadoo had two Campbell households in 1926, headed by Patrick and John.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "altadoo:census:1926"
+       "altadoo:familycensus:03:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 7200,
+     "duration_ms": 4800,
      "audio": null,
-     "counts": {
-      "people": 69,
-      "households": 20
+     "thread": {
+      "id": "altadoo:family:03",
+      "label": "Campbell",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "altadoo:ch:family-15",
+   "title": "The McGinley family",
+   "beats": [
+    {
+     "id": "altadoo:beat:familyhead:15",
+     "kind": "familyhead",
+     "chapter": "altadoo:ch:family-15",
+     "time": {
+      "label": "The McGinley family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familypresence:15"
+     },
+     "caption": "The McGinley family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familypresence:15"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:15",
+      "label": "McGinley",
+      "run": true
      }
     },
+    {
+     "id": "altadoo:beat:familycensus:15-1901",
+     "kind": "familycensus",
+     "chapter": "altadoo:ch:family-15",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familycensus:15:1901"
+     },
+     "caption": "Altadoo had two McGinley households in 1901, headed by two named Mary.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familycensus:15:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:15",
+      "label": "McGinley",
+      "run": true
+     }
+    },
+    {
+     "id": "altadoo:beat:familycensus:15-1911",
+     "kind": "familycensus",
+     "chapter": "altadoo:ch:family-15",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familycensus:15:1911"
+     },
+     "caption": "Altadoo had two McGinley households in 1911, headed by two named Mary.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familycensus:15:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:15",
+      "label": "McGinley",
+      "run": true
+     }
+    },
+    {
+     "id": "altadoo:beat:familycensus:15-1926",
+     "kind": "familycensus",
+     "chapter": "altadoo:ch:family-15",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familycensus:15:1926"
+     },
+     "caption": "Altadoo had two McGinley households in 1926, headed by Michael and Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familycensus:15:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:15",
+      "label": "McGinley",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "altadoo:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "altadoo:beat:closing:end",
      "kind": "closing",
@@ -218,6 +530,3076 @@
      },
      "duration_ms": 4000,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "altadoo:ch:family-02",
+   "title": "The Cairns family",
+   "beats": [
+    {
+     "id": "altadoo:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "altadoo:ch:family-02",
+     "time": {
+      "label": "The Cairns family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familypresence:02"
+     },
+     "caption": "The Cairns family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:02",
+      "label": "Cairns",
+      "run": false
+     }
+    },
+    {
+     "id": "altadoo:beat:familycensus:02-1901",
+     "kind": "familycensus",
+     "chapter": "altadoo:ch:family-02",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familycensus:02:1901"
+     },
+     "caption": "Altadoo had one Cairns household in 1901, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familycensus:02:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:02",
+      "label": "Cairns",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "altadoo:ch:family-04",
+   "title": "The Diver family",
+   "beats": [
+    {
+     "id": "altadoo:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "altadoo:ch:family-04",
+     "time": {
+      "label": "The Diver family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familypresence:04"
+     },
+     "caption": "The Diver family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:04",
+      "label": "Diver",
+      "run": false
+     }
+    },
+    {
+     "id": "altadoo:beat:familycensus:04-1901",
+     "kind": "familycensus",
+     "chapter": "altadoo:ch:family-04",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familycensus:04:1901"
+     },
+     "caption": "Altadoo had one Diver household in 1901, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familycensus:04:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:04",
+      "label": "Diver",
+      "run": false
+     }
+    },
+    {
+     "id": "altadoo:beat:familycensus:04-1911",
+     "kind": "familycensus",
+     "chapter": "altadoo:ch:family-04",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familycensus:04:1911"
+     },
+     "caption": "Altadoo had one Diver household in 1911, headed by Connell.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familycensus:04:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:04",
+      "label": "Diver",
+      "run": false
+     }
+    },
+    {
+     "id": "altadoo:beat:familycensus:04-1926",
+     "kind": "familycensus",
+     "chapter": "altadoo:ch:family-04",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familycensus:04:1926"
+     },
+     "caption": "Altadoo had one Diver household in 1926, headed by Conn.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familycensus:04:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:04",
+      "label": "Diver",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "altadoo:ch:family-06",
+   "title": "The Gallagher family",
+   "beats": [
+    {
+     "id": "altadoo:beat:familyhead:06",
+     "kind": "familyhead",
+     "chapter": "altadoo:ch:family-06",
+     "time": {
+      "label": "The Gallagher family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familypresence:06"
+     },
+     "caption": "The Gallagher family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familypresence:06"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:06",
+      "label": "Gallagher",
+      "run": false
+     }
+    },
+    {
+     "id": "altadoo:beat:familycensus:06-1901",
+     "kind": "familycensus",
+     "chapter": "altadoo:ch:family-06",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familycensus:06:1901"
+     },
+     "caption": "Altadoo had three Gallagher households in 1901, headed by Mary, Edward and John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familycensus:06:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:06",
+      "label": "Gallagher",
+      "run": false
+     }
+    },
+    {
+     "id": "altadoo:beat:familycensus:06-1911",
+     "kind": "familycensus",
+     "chapter": "altadoo:ch:family-06",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familycensus:06:1911"
+     },
+     "caption": "Altadoo had one Gallagher household in 1911, headed by Edward.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familycensus:06:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:06",
+      "label": "Gallagher",
+      "run": false
+     }
+    },
+    {
+     "id": "altadoo:beat:familycensus:06-1926",
+     "kind": "familycensus",
+     "chapter": "altadoo:ch:family-06",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familycensus:06:1926"
+     },
+     "caption": "Altadoo had one Gallagher household in 1926, headed by Con.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familycensus:06:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:06",
+      "label": "Gallagher",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "altadoo:ch:family-07",
+   "title": "The Gildea family",
+   "beats": [
+    {
+     "id": "altadoo:beat:familyhead:07",
+     "kind": "familyhead",
+     "chapter": "altadoo:ch:family-07",
+     "time": {
+      "label": "The Gildea family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familypresence:07"
+     },
+     "caption": "The Gildea family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familypresence:07"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:07",
+      "label": "Gildea",
+      "run": false
+     }
+    },
+    {
+     "id": "altadoo:beat:familycensus:07-1901",
+     "kind": "familycensus",
+     "chapter": "altadoo:ch:family-07",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familycensus:07:1901"
+     },
+     "caption": "Altadoo had one Gildea household in 1901, headed by Mary.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familycensus:07:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:07",
+      "label": "Gildea",
+      "run": false
+     }
+    },
+    {
+     "id": "altadoo:beat:familycensus:07-1911",
+     "kind": "familycensus",
+     "chapter": "altadoo:ch:family-07",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familycensus:07:1911"
+     },
+     "caption": "Altadoo had one Gildea household in 1911, headed by Mary.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familycensus:07:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:07",
+      "label": "Gildea",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "altadoo:ch:family-08",
+   "title": "The Gillespie family",
+   "beats": [
+    {
+     "id": "altadoo:beat:familyhead:08",
+     "kind": "familyhead",
+     "chapter": "altadoo:ch:family-08",
+     "time": {
+      "label": "The Gillespie family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familypresence:08"
+     },
+     "caption": "The Gillespie family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familypresence:08"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:08",
+      "label": "Gillespie",
+      "run": false
+     }
+    },
+    {
+     "id": "altadoo:beat:familycensus:08-1901",
+     "kind": "familycensus",
+     "chapter": "altadoo:ch:family-08",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familycensus:08:1901"
+     },
+     "caption": "Altadoo had one Gillespie household in 1901, headed by Mary.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familycensus:08:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:08",
+      "label": "Gillespie",
+      "run": false
+     }
+    },
+    {
+     "id": "altadoo:beat:familycensus:08-1911",
+     "kind": "familycensus",
+     "chapter": "altadoo:ch:family-08",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familycensus:08:1911"
+     },
+     "caption": "Altadoo had one Gillespie household in 1911, headed by Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familycensus:08:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:08",
+      "label": "Gillespie",
+      "run": false
+     }
+    },
+    {
+     "id": "altadoo:beat:familycensus:08-1926",
+     "kind": "familycensus",
+     "chapter": "altadoo:ch:family-08",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familycensus:08:1926"
+     },
+     "caption": "Altadoo had one Gillespie household in 1926, headed by Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familycensus:08:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:08",
+      "label": "Gillespie",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "altadoo:ch:family-09",
+   "title": "The Gold family",
+   "beats": [
+    {
+     "id": "altadoo:beat:familyhead:09",
+     "kind": "familyhead",
+     "chapter": "altadoo:ch:family-09",
+     "time": {
+      "label": "The Gold family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familypresence:09"
+     },
+     "caption": "The Gold family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familypresence:09"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:09",
+      "label": "Gold",
+      "run": false
+     }
+    },
+    {
+     "id": "altadoo:beat:familycensus:09-1901",
+     "kind": "familycensus",
+     "chapter": "altadoo:ch:family-09",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familycensus:09:1901"
+     },
+     "caption": "Altadoo had one Gold household in 1901, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familycensus:09:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:09",
+      "label": "Gold",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "altadoo:ch:family-11",
+   "title": "The Hammond family",
+   "beats": [
+    {
+     "id": "altadoo:beat:familyhead:11",
+     "kind": "familyhead",
+     "chapter": "altadoo:ch:family-11",
+     "time": {
+      "label": "The Hammond family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familypresence:11"
+     },
+     "caption": "The Hammond family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familypresence:11"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:11",
+      "label": "Hammond",
+      "run": false
+     }
+    },
+    {
+     "id": "altadoo:beat:familycensus:11-1901",
+     "kind": "familycensus",
+     "chapter": "altadoo:ch:family-11",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familycensus:11:1901"
+     },
+     "caption": "Altadoo had one Hammond household in 1901, headed by Fanny.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familycensus:11:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:11",
+      "label": "Hammond",
+      "run": false
+     }
+    },
+    {
+     "id": "altadoo:beat:familycensus:11-1911",
+     "kind": "familycensus",
+     "chapter": "altadoo:ch:family-11",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familycensus:11:1911"
+     },
+     "caption": "Altadoo had one Hammond household in 1911, headed by Fannie.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familycensus:11:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:11",
+      "label": "Hammond",
+      "run": false
+     }
+    },
+    {
+     "id": "altadoo:beat:familycensus:11-1926",
+     "kind": "familycensus",
+     "chapter": "altadoo:ch:family-11",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familycensus:11:1926"
+     },
+     "caption": "Altadoo had one Hammond household in 1926, headed by Fanny.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familycensus:11:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:11",
+      "label": "Hammond",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "altadoo:ch:family-12",
+   "title": "The Kennedy family",
+   "beats": [
+    {
+     "id": "altadoo:beat:familyhead:12",
+     "kind": "familyhead",
+     "chapter": "altadoo:ch:family-12",
+     "time": {
+      "label": "The Kennedy family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familypresence:12"
+     },
+     "caption": "The Kennedy family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familypresence:12"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:12",
+      "label": "Kennedy",
+      "run": false
+     }
+    },
+    {
+     "id": "altadoo:beat:familycensus:12-1901",
+     "kind": "familycensus",
+     "chapter": "altadoo:ch:family-12",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familycensus:12:1901"
+     },
+     "caption": "Altadoo had two Kennedy households in 1901, headed by Bridget and Michael.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familycensus:12:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:12",
+      "label": "Kennedy",
+      "run": false
+     }
+    },
+    {
+     "id": "altadoo:beat:familycensus:12-1911",
+     "kind": "familycensus",
+     "chapter": "altadoo:ch:family-12",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familycensus:12:1911"
+     },
+     "caption": "Altadoo had one Kennedy household in 1911, headed by Bridget.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familycensus:12:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:12",
+      "label": "Kennedy",
+      "run": false
+     }
+    },
+    {
+     "id": "altadoo:beat:familycensus:12-1926",
+     "kind": "familycensus",
+     "chapter": "altadoo:ch:family-12",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familycensus:12:1926"
+     },
+     "caption": "Altadoo had one Kennedy household in 1926, headed by Thomas.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familycensus:12:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:12",
+      "label": "Kennedy",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "altadoo:ch:family-16",
+   "title": "The McGroarty family",
+   "beats": [
+    {
+     "id": "altadoo:beat:familyhead:16",
+     "kind": "familyhead",
+     "chapter": "altadoo:ch:family-16",
+     "time": {
+      "label": "The McGroarty family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familypresence:16"
+     },
+     "caption": "The McGroarty family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familypresence:16"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:16",
+      "label": "McGroarty",
+      "run": false
+     }
+    },
+    {
+     "id": "altadoo:beat:familycensus:16-1901",
+     "kind": "familycensus",
+     "chapter": "altadoo:ch:family-16",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familycensus:16:1901"
+     },
+     "caption": "Altadoo had one McGroarty household in 1901, headed by Mary.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familycensus:16:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:16",
+      "label": "McGroarty",
+      "run": false
+     }
+    },
+    {
+     "id": "altadoo:beat:familycensus:16-1911",
+     "kind": "familycensus",
+     "chapter": "altadoo:ch:family-16",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familycensus:16:1911"
+     },
+     "caption": "Altadoo had one McGroarty household in 1911, headed by Margaret.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familycensus:16:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:16",
+      "label": "McGroarty",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "altadoo:ch:family-17",
+   "title": "The McKelvey family",
+   "beats": [
+    {
+     "id": "altadoo:beat:familyhead:17",
+     "kind": "familyhead",
+     "chapter": "altadoo:ch:family-17",
+     "time": {
+      "label": "The McKelvey family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familypresence:17"
+     },
+     "caption": "The McKelvey family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familypresence:17"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:17",
+      "label": "McKelvey",
+      "run": false
+     }
+    },
+    {
+     "id": "altadoo:beat:familycensus:17-1901",
+     "kind": "familycensus",
+     "chapter": "altadoo:ch:family-17",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familycensus:17:1901"
+     },
+     "caption": "Altadoo had two McKelvey households in 1901, headed by James and John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familycensus:17:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:17",
+      "label": "McKelvey",
+      "run": false
+     }
+    },
+    {
+     "id": "altadoo:beat:familycensus:17-1926",
+     "kind": "familycensus",
+     "chapter": "altadoo:ch:family-17",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familycensus:17:1926"
+     },
+     "caption": "Altadoo had one McKelvey household in 1926, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familycensus:17:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:17",
+      "label": "McKelvey",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "altadoo:ch:family-20",
+   "title": "The ODonnell family",
+   "beats": [
+    {
+     "id": "altadoo:beat:familyhead:20",
+     "kind": "familyhead",
+     "chapter": "altadoo:ch:family-20",
+     "time": {
+      "label": "The ODonnell family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familypresence:20"
+     },
+     "caption": "The ODonnell family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familypresence:20"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:20",
+      "label": "ODonnell",
+      "run": false
+     }
+    },
+    {
+     "id": "altadoo:beat:familycensus:20-1901",
+     "kind": "familycensus",
+     "chapter": "altadoo:ch:family-20",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familycensus:20:1901"
+     },
+     "caption": "Altadoo had one ODonnell household in 1901, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familycensus:20:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:20",
+      "label": "ODonnell",
+      "run": false
+     }
+    },
+    {
+     "id": "altadoo:beat:familycensus:20-1911",
+     "kind": "familycensus",
+     "chapter": "altadoo:ch:family-20",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familycensus:20:1911"
+     },
+     "caption": "Altadoo had one ODonnell household in 1911, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familycensus:20:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:20",
+      "label": "ODonnell",
+      "run": false
+     }
+    },
+    {
+     "id": "altadoo:beat:familycensus:20-1926",
+     "kind": "familycensus",
+     "chapter": "altadoo:ch:family-20",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familycensus:20:1926"
+     },
+     "caption": "Altadoo had one ODonnell household in 1926, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familycensus:20:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:20",
+      "label": "ODonnell",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "altadoo:ch:family-21",
+   "title": "The Quinn family",
+   "beats": [
+    {
+     "id": "altadoo:beat:familyhead:21",
+     "kind": "familyhead",
+     "chapter": "altadoo:ch:family-21",
+     "time": {
+      "label": "The Quinn family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familypresence:21"
+     },
+     "caption": "The Quinn family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familypresence:21"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:21",
+      "label": "Quinn",
+      "run": false
+     }
+    },
+    {
+     "id": "altadoo:beat:familycensus:21-1901",
+     "kind": "familycensus",
+     "chapter": "altadoo:ch:family-21",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familycensus:21:1901"
+     },
+     "caption": "Altadoo had two Quinn households in 1901, headed by James and Ann.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familycensus:21:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:21",
+      "label": "Quinn",
+      "run": false
+     }
+    },
+    {
+     "id": "altadoo:beat:familycensus:21-1911",
+     "kind": "familycensus",
+     "chapter": "altadoo:ch:family-21",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familycensus:21:1911"
+     },
+     "caption": "Altadoo had one Quinn household in 1911, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familycensus:21:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:21",
+      "label": "Quinn",
+      "run": false
+     }
+    },
+    {
+     "id": "altadoo:beat:familycensus:21-1926",
+     "kind": "familycensus",
+     "chapter": "altadoo:ch:family-21",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familycensus:21:1926"
+     },
+     "caption": "Altadoo had one Quinn household in 1926, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familycensus:21:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:21",
+      "label": "Quinn",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "altadoo:ch:family-22",
+   "title": "The Ritchie family",
+   "beats": [
+    {
+     "id": "altadoo:beat:familyhead:22",
+     "kind": "familyhead",
+     "chapter": "altadoo:ch:family-22",
+     "time": {
+      "label": "The Ritchie family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familypresence:22"
+     },
+     "caption": "The Ritchie family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familypresence:22"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:22",
+      "label": "Ritchie",
+      "run": false
+     }
+    },
+    {
+     "id": "altadoo:beat:familycensus:22-1901",
+     "kind": "familycensus",
+     "chapter": "altadoo:ch:family-22",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familycensus:22:1901"
+     },
+     "caption": "Altadoo had one Ritchie household in 1901, headed by Hugh.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familycensus:22:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:22",
+      "label": "Ritchie",
+      "run": false
+     }
+    },
+    {
+     "id": "altadoo:beat:familycensus:22-1911",
+     "kind": "familycensus",
+     "chapter": "altadoo:ch:family-22",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familycensus:22:1911"
+     },
+     "caption": "Altadoo had one Ritchie household in 1911, headed by Hugh.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familycensus:22:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:22",
+      "label": "Ritchie",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "altadoo:ch:family-24",
+   "title": "The Torrins family",
+   "beats": [
+    {
+     "id": "altadoo:beat:familyhead:24",
+     "kind": "familyhead",
+     "chapter": "altadoo:ch:family-24",
+     "time": {
+      "label": "The Torrins family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familypresence:24"
+     },
+     "caption": "The Torrins family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familypresence:24"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:24",
+      "label": "Torrins",
+      "run": false
+     }
+    },
+    {
+     "id": "altadoo:beat:familycensus:24-1901",
+     "kind": "familycensus",
+     "chapter": "altadoo:ch:family-24",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familycensus:24:1901"
+     },
+     "caption": "Altadoo had one Torrins household in 1901, headed by Jane.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familycensus:24:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:24",
+      "label": "Torrins",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "altadoo:ch:family-25",
+   "title": "The Ward family",
+   "beats": [
+    {
+     "id": "altadoo:beat:familyhead:25",
+     "kind": "familyhead",
+     "chapter": "altadoo:ch:family-25",
+     "time": {
+      "label": "The Ward family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familypresence:25"
+     },
+     "caption": "The Ward family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familypresence:25"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:25",
+      "label": "Ward",
+      "run": false
+     }
+    },
+    {
+     "id": "altadoo:beat:familycensus:25-1901",
+     "kind": "familycensus",
+     "chapter": "altadoo:ch:family-25",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familycensus:25:1901"
+     },
+     "caption": "Altadoo had one Ward household in 1901, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familycensus:25:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:25",
+      "label": "Ward",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "altadoo:ch:family-27",
+   "title": "The Wray family",
+   "beats": [
+    {
+     "id": "altadoo:beat:familyhead:27",
+     "kind": "familyhead",
+     "chapter": "altadoo:ch:family-27",
+     "time": {
+      "label": "The Wray family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familypresence:27"
+     },
+     "caption": "The Wray family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familypresence:27"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:27",
+      "label": "Wray",
+      "run": false
+     }
+    },
+    {
+     "id": "altadoo:beat:familycensus:27-1901",
+     "kind": "familycensus",
+     "chapter": "altadoo:ch:family-27",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familycensus:27:1901"
+     },
+     "caption": "Altadoo had two Wray households in 1901, headed by Andrew and William.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familycensus:27:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:27",
+      "label": "Wray",
+      "run": false
+     }
+    },
+    {
+     "id": "altadoo:beat:familycensus:27-1911",
+     "kind": "familycensus",
+     "chapter": "altadoo:ch:family-27",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familycensus:27:1911"
+     },
+     "caption": "Altadoo had two Wray households in 1911, headed by Andrew and Jane.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familycensus:27:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:27",
+      "label": "Wray",
+      "run": false
+     }
+    },
+    {
+     "id": "altadoo:beat:familycensus:27-1926",
+     "kind": "familycensus",
+     "chapter": "altadoo:ch:family-27",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familycensus:27:1926"
+     },
+     "caption": "Altadoo had one Wray household in 1926, headed by Hugh.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familycensus:27:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:27",
+      "label": "Wray",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "altadoo:ch:family-10",
+   "title": "The Gould family",
+   "beats": [
+    {
+     "id": "altadoo:beat:familyhead:10",
+     "kind": "familyhead",
+     "chapter": "altadoo:ch:family-10",
+     "time": {
+      "label": "The Gould family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familypresence:10"
+     },
+     "caption": "The Gould family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familypresence:10"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:10",
+      "label": "Gould",
+      "run": false
+     }
+    },
+    {
+     "id": "altadoo:beat:familycensus:10-1911",
+     "kind": "familycensus",
+     "chapter": "altadoo:ch:family-10",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familycensus:10:1911"
+     },
+     "caption": "Altadoo had one Gould household in 1911, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familycensus:10:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:10",
+      "label": "Gould",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "altadoo:ch:family-13",
+   "title": "The Kerins family",
+   "beats": [
+    {
+     "id": "altadoo:beat:familyhead:13",
+     "kind": "familyhead",
+     "chapter": "altadoo:ch:family-13",
+     "time": {
+      "label": "The Kerins family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familypresence:13"
+     },
+     "caption": "The Kerins family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familypresence:13"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:13",
+      "label": "Kerins",
+      "run": false
+     }
+    },
+    {
+     "id": "altadoo:beat:familycensus:13-1911",
+     "kind": "familycensus",
+     "chapter": "altadoo:ch:family-13",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familycensus:13:1911"
+     },
+     "caption": "Altadoo had one Kerins household in 1911, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familycensus:13:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:13",
+      "label": "Kerins",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "altadoo:ch:family-18",
+   "title": "The McKelvy family",
+   "beats": [
+    {
+     "id": "altadoo:beat:familyhead:18",
+     "kind": "familyhead",
+     "chapter": "altadoo:ch:family-18",
+     "time": {
+      "label": "The McKelvy family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familypresence:18"
+     },
+     "caption": "The McKelvy family appear in the records from 1911 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familypresence:18"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:18",
+      "label": "McKelvy",
+      "run": false
+     }
+    },
+    {
+     "id": "altadoo:beat:familycensus:18-1911",
+     "kind": "familycensus",
+     "chapter": "altadoo:ch:family-18",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familycensus:18:1911"
+     },
+     "caption": "Altadoo had two McKelvy households in 1911, headed by John and James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familycensus:18:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:18",
+      "label": "McKelvy",
+      "run": false
+     }
+    },
+    {
+     "id": "altadoo:beat:familycensus:18-1926",
+     "kind": "familycensus",
+     "chapter": "altadoo:ch:family-18",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familycensus:18:1926"
+     },
+     "caption": "Altadoo had one McKelvy household in 1926, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familycensus:18:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:18",
+      "label": "McKelvy",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "altadoo:ch:family-19",
+   "title": "The Mohan family",
+   "beats": [
+    {
+     "id": "altadoo:beat:familyhead:19",
+     "kind": "familyhead",
+     "chapter": "altadoo:ch:family-19",
+     "time": {
+      "label": "The Mohan family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familypresence:19"
+     },
+     "caption": "The Mohan family appear in the records from 1911 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familypresence:19"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:19",
+      "label": "Mohan",
+      "run": false
+     }
+    },
+    {
+     "id": "altadoo:beat:familycensus:19-1911",
+     "kind": "familycensus",
+     "chapter": "altadoo:ch:family-19",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familycensus:19:1911"
+     },
+     "caption": "Altadoo had one Mohan household in 1911, headed by Sarah.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familycensus:19:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:19",
+      "label": "Mohan",
+      "run": false
+     }
+    },
+    {
+     "id": "altadoo:beat:familycensus:19-1926",
+     "kind": "familycensus",
+     "chapter": "altadoo:ch:family-19",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familycensus:19:1926"
+     },
+     "caption": "Altadoo had one Mohan household in 1926, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familycensus:19:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:19",
+      "label": "Mohan",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "altadoo:ch:family-23",
+   "title": "The Torrens family",
+   "beats": [
+    {
+     "id": "altadoo:beat:familyhead:23",
+     "kind": "familyhead",
+     "chapter": "altadoo:ch:family-23",
+     "time": {
+      "label": "The Torrens family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familypresence:23"
+     },
+     "caption": "The Torrens family appear in the records from 1911 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familypresence:23"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:23",
+      "label": "Torrens",
+      "run": false
+     }
+    },
+    {
+     "id": "altadoo:beat:familycensus:23-1911",
+     "kind": "familycensus",
+     "chapter": "altadoo:ch:family-23",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familycensus:23:1911"
+     },
+     "caption": "Altadoo had one Torrens household in 1911, headed by William.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familycensus:23:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:23",
+      "label": "Torrens",
+      "run": false
+     }
+    },
+    {
+     "id": "altadoo:beat:familycensus:23-1926",
+     "kind": "familycensus",
+     "chapter": "altadoo:ch:family-23",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familycensus:23:1926"
+     },
+     "caption": "Altadoo had one Torrens household in 1926, headed by William.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familycensus:23:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:23",
+      "label": "Torrens",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "altadoo:ch:family-01",
+   "title": "The Breslin family",
+   "beats": [
+    {
+     "id": "altadoo:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "altadoo:ch:family-01",
+     "time": {
+      "label": "The Breslin family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familypresence:01"
+     },
+     "caption": "The Breslin family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:01",
+      "label": "Breslin",
+      "run": false
+     }
+    },
+    {
+     "id": "altadoo:beat:familycensus:01-1926",
+     "kind": "familycensus",
+     "chapter": "altadoo:ch:family-01",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familycensus:01:1926"
+     },
+     "caption": "Altadoo had one Breslin household in 1926, headed by Daniel.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familycensus:01:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:01",
+      "label": "Breslin",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "altadoo:ch:family-05",
+   "title": "The Downey family",
+   "beats": [
+    {
+     "id": "altadoo:beat:familyhead:05",
+     "kind": "familyhead",
+     "chapter": "altadoo:ch:family-05",
+     "time": {
+      "label": "The Downey family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familypresence:05"
+     },
+     "caption": "The Downey family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familypresence:05"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:05",
+      "label": "Downey",
+      "run": false
+     }
+    },
+    {
+     "id": "altadoo:beat:familycensus:05-1926",
+     "kind": "familycensus",
+     "chapter": "altadoo:ch:family-05",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familycensus:05:1926"
+     },
+     "caption": "Altadoo had one Downey household in 1926, headed by Mary A.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familycensus:05:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:05",
+      "label": "Downey",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "altadoo:ch:family-14",
+   "title": "The Lavin family",
+   "beats": [
+    {
+     "id": "altadoo:beat:familyhead:14",
+     "kind": "familyhead",
+     "chapter": "altadoo:ch:family-14",
+     "time": {
+      "label": "The Lavin family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familypresence:14"
+     },
+     "caption": "The Lavin family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familypresence:14"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:14",
+      "label": "Lavin",
+      "run": false
+     }
+    },
+    {
+     "id": "altadoo:beat:familycensus:14-1926",
+     "kind": "familycensus",
+     "chapter": "altadoo:ch:family-14",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familycensus:14:1926"
+     },
+     "caption": "Altadoo had one Lavin household in 1926, headed by Brigid.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familycensus:14:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:14",
+      "label": "Lavin",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "altadoo:ch:family-26",
+   "title": "The Wilson family",
+   "beats": [
+    {
+     "id": "altadoo:beat:familyhead:26",
+     "kind": "familyhead",
+     "chapter": "altadoo:ch:family-26",
+     "time": {
+      "label": "The Wilson family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familypresence:26"
+     },
+     "caption": "The Wilson family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familypresence:26"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:26",
+      "label": "Wilson",
+      "run": false
+     }
+    },
+    {
+     "id": "altadoo:beat:familycensus:26-1926",
+     "kind": "familycensus",
+     "chapter": "altadoo:ch:family-26",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "altadoo",
+      "name": "Altadoo",
+      "logainm_id": "13996",
+      "lat": 54.672798,
+      "lon": -8.160758,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "altadoo:familycensus:26:1926"
+     },
+     "caption": "Altadoo had one Wilson household in 1926, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "altadoo:familycensus:26:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "altadoo:family:26",
+      "label": "Wilson",
+      "run": false
+     }
     }
    ]
   }

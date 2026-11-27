@@ -52,15 +52,15 @@
    ]
   },
   {
-   "id": "tullygallen-tullywee-and-oughtnadrin-barr:ch:1901",
-   "title": "1901",
+   "id": "tullygallen-tullywee-and-oughtnadrin-barr:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "tullygallen-tullywee-and-oughtnadrin-barr:beat:census:1901",
+     "id": "tullygallen-tullywee-and-oughtnadrin-barr:beat:census:returns",
      "kind": "census",
-     "chapter": "tullygallen-tullywee-and-oughtnadrin-barr:ch:1901",
+     "chapter": "tullygallen-tullywee-and-oughtnadrin-barr:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1926",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -77,33 +77,177 @@
       "stage": "map",
       "open_card": "tullygallen, tullywee and oughtnadrin barr:census:1901"
      },
-     "caption": "In 1901, 33 people in five households lived in Tullygallen, Tullywee and Oughtnadrin Barr. Heads of household included Gallagher, McGoldrick and McGrath.",
+     "caption": "The censuses of 1901, 1911 and 1926 counted 33, 24 and 27 people in Tullygallen, Tullywee and Oughtnadrin Barr, in 5, 5 and 5 households. Heads of household included Gallagher, McGoldrick and McGrath.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "tullygallen, tullywee and oughtnadrin barr:census:1901"
+       "tullygallen, tullywee and oughtnadrin barr:census:1901",
+       "tullygallen, tullywee and oughtnadrin barr:census:1911",
+       "tullygallen, tullywee and oughtnadrin barr:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 8800,
+     "duration_ms": 13200,
      "audio": null,
      "counts": {
-      "people": 33,
-      "households": 5
+      "returns": [
+       {
+        "year": "1901",
+        "people": 33,
+        "households": 5
+       },
+       {
+        "year": "1911",
+        "people": 24,
+        "households": 5
+       },
+       {
+        "year": "1926",
+        "people": 27,
+        "households": 5
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "tullygallen-tullywee-and-oughtnadrin-barr:ch:1911",
-   "title": "1911",
+   "id": "tullygallen-tullywee-and-oughtnadrin-barr:ch:families",
+   "title": "The families of Tullygallen, Tullywee and Oughtnadrin Barr",
    "beats": [
     {
-     "id": "tullygallen-tullywee-and-oughtnadrin-barr:beat:census:1911",
-     "kind": "census",
-     "chapter": "tullygallen-tullywee-and-oughtnadrin-barr:ch:1911",
+     "id": "tullygallen-tullywee-and-oughtnadrin-barr:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "tullygallen-tullywee-and-oughtnadrin-barr:ch:families",
+     "time": {
+      "label": "The families of Tullygallen, Tullywee and Oughtnadrin Barr",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullygallen-tullywee-and-oughtnadrin-barr",
+      "name": "Tullygallen, Tullywee and Oughtnadrin Barr",
+      "logainm_id": "14160",
+      "lat": 54.641037,
+      "lon": -7.945142,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullygallen, tullywee and oughtnadrin barr:census:1901"
+     },
+     "caption": "Here are the families of Tullygallen, Tullywee and Oughtnadrin Barr, from 1901 to 1926. First, the Gallagher and McGrath families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullygallen, tullywee and oughtnadrin barr:census:1901",
+       "tullygallen, tullywee and oughtnadrin barr:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 8000,
+     "audio": null,
+     "thread": {
+      "id": "tullygallen-tullywee-and-oughtnadrin-barr:family:01",
+      "label": "Gallagher",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "tullygallen-tullywee-and-oughtnadrin-barr:ch:family-01",
+   "title": "The Gallagher family",
+   "beats": [
+    {
+     "id": "tullygallen-tullywee-and-oughtnadrin-barr:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "tullygallen-tullywee-and-oughtnadrin-barr:ch:family-01",
+     "time": {
+      "label": "The Gallagher family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullygallen-tullywee-and-oughtnadrin-barr",
+      "name": "Tullygallen, Tullywee and Oughtnadrin Barr",
+      "logainm_id": "14160",
+      "lat": 54.641037,
+      "lon": -7.945142,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullygallen-tullywee-and-oughtnadrin-barr:familypresence:01"
+     },
+     "caption": "The Gallagher family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullygallen-tullywee-and-oughtnadrin-barr:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "tullygallen-tullywee-and-oughtnadrin-barr:family:01",
+      "label": "Gallagher",
+      "run": true
+     }
+    },
+    {
+     "id": "tullygallen-tullywee-and-oughtnadrin-barr:beat:familycensus:01-1901",
+     "kind": "familycensus",
+     "chapter": "tullygallen-tullywee-and-oughtnadrin-barr:ch:family-01",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullygallen-tullywee-and-oughtnadrin-barr",
+      "name": "Tullygallen, Tullywee and Oughtnadrin Barr",
+      "logainm_id": "14160",
+      "lat": 54.641037,
+      "lon": -7.945142,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullygallen-tullywee-and-oughtnadrin-barr:familycensus:01:1901"
+     },
+     "caption": "Tullygallen, Tullywee and Oughtnadrin Barr had two Gallagher households in 1901, headed by Anthony and Owen.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullygallen-tullywee-and-oughtnadrin-barr:familycensus:01:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "tullygallen-tullywee-and-oughtnadrin-barr:family:01",
+      "label": "Gallagher",
+      "run": true
+     }
+    },
+    {
+     "id": "tullygallen-tullywee-and-oughtnadrin-barr:beat:familycensus:01-1911",
+     "kind": "familycensus",
+     "chapter": "tullygallen-tullywee-and-oughtnadrin-barr:ch:family-01",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -120,35 +264,30 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "tullygallen, tullywee and oughtnadrin barr:census:1911"
+      "open_card": "tullygallen-tullywee-and-oughtnadrin-barr:familycensus:01:1911"
      },
-     "caption": "In 1911, 24 people in five households lived in Tullygallen, Tullywee and Oughtnadrin Barr. Heads of household included Gallagher, McGoldrick and McGrath.",
+     "caption": "Tullygallen, Tullywee and Oughtnadrin Barr had two Gallagher households in 1911, headed by Owen and Margaret.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "tullygallen, tullywee and oughtnadrin barr:census:1911"
+       "tullygallen-tullywee-and-oughtnadrin-barr:familycensus:01:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 8800,
+     "duration_ms": 6400,
      "audio": null,
-     "counts": {
-      "people": 24,
-      "households": 5
+     "thread": {
+      "id": "tullygallen-tullywee-and-oughtnadrin-barr:family:01",
+      "label": "Gallagher",
+      "run": true
      }
-    }
-   ]
-  },
-  {
-   "id": "tullygallen-tullywee-and-oughtnadrin-barr:ch:1926",
-   "title": "1926",
-   "beats": [
+    },
     {
-     "id": "tullygallen-tullywee-and-oughtnadrin-barr:beat:census:1926",
-     "kind": "census",
-     "chapter": "tullygallen-tullywee-and-oughtnadrin-barr:ch:1926",
+     "id": "tullygallen-tullywee-and-oughtnadrin-barr:beat:familycensus:01-1926",
+     "kind": "familycensus",
+     "chapter": "tullygallen-tullywee-and-oughtnadrin-barr:ch:family-01",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -165,25 +304,198 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "tullygallen, tullywee and oughtnadrin barr:census:1926"
+      "open_card": "tullygallen-tullywee-and-oughtnadrin-barr:familycensus:01:1926"
      },
-     "caption": "In 1926, 27 people in five households lived in Tullygallen, Tullywee and Oughtnadrin Barr. Heads of household included McGrath, Gallagher and McGoldrick.",
+     "caption": "Tullygallen, Tullywee and Oughtnadrin Barr had two Gallagher households in 1926, headed by John and Danial Hugh.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "tullygallen, tullywee and oughtnadrin barr:census:1926"
+       "tullygallen-tullywee-and-oughtnadrin-barr:familycensus:01:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 8800,
+     "duration_ms": 6800,
      "audio": null,
-     "counts": {
-      "people": 27,
-      "households": 5
+     "thread": {
+      "id": "tullygallen-tullywee-and-oughtnadrin-barr:family:01",
+      "label": "Gallagher",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "tullygallen-tullywee-and-oughtnadrin-barr:ch:family-03",
+   "title": "The McGrath family",
+   "beats": [
+    {
+     "id": "tullygallen-tullywee-and-oughtnadrin-barr:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "tullygallen-tullywee-and-oughtnadrin-barr:ch:family-03",
+     "time": {
+      "label": "The McGrath family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullygallen-tullywee-and-oughtnadrin-barr",
+      "name": "Tullygallen, Tullywee and Oughtnadrin Barr",
+      "logainm_id": "14160",
+      "lat": 54.641037,
+      "lon": -7.945142,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullygallen-tullywee-and-oughtnadrin-barr:familypresence:03"
+     },
+     "caption": "The McGrath family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullygallen-tullywee-and-oughtnadrin-barr:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "tullygallen-tullywee-and-oughtnadrin-barr:family:03",
+      "label": "McGrath",
+      "run": true
      }
     },
+    {
+     "id": "tullygallen-tullywee-and-oughtnadrin-barr:beat:familycensus:03-1901",
+     "kind": "familycensus",
+     "chapter": "tullygallen-tullywee-and-oughtnadrin-barr:ch:family-03",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullygallen-tullywee-and-oughtnadrin-barr",
+      "name": "Tullygallen, Tullywee and Oughtnadrin Barr",
+      "logainm_id": "14160",
+      "lat": 54.641037,
+      "lon": -7.945142,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullygallen-tullywee-and-oughtnadrin-barr:familycensus:03:1901"
+     },
+     "caption": "Tullygallen, Tullywee and Oughtnadrin Barr had one McGrath household in 1901, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullygallen-tullywee-and-oughtnadrin-barr:familycensus:03:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5600,
+     "audio": null,
+     "thread": {
+      "id": "tullygallen-tullywee-and-oughtnadrin-barr:family:03",
+      "label": "McGrath",
+      "run": true
+     }
+    },
+    {
+     "id": "tullygallen-tullywee-and-oughtnadrin-barr:beat:familycensus:03-1911",
+     "kind": "familycensus",
+     "chapter": "tullygallen-tullywee-and-oughtnadrin-barr:ch:family-03",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullygallen-tullywee-and-oughtnadrin-barr",
+      "name": "Tullygallen, Tullywee and Oughtnadrin Barr",
+      "logainm_id": "14160",
+      "lat": 54.641037,
+      "lon": -7.945142,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullygallen-tullywee-and-oughtnadrin-barr:familycensus:03:1911"
+     },
+     "caption": "Tullygallen, Tullywee and Oughtnadrin Barr had one McGrath household in 1911, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullygallen-tullywee-and-oughtnadrin-barr:familycensus:03:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5600,
+     "audio": null,
+     "thread": {
+      "id": "tullygallen-tullywee-and-oughtnadrin-barr:family:03",
+      "label": "McGrath",
+      "run": true
+     }
+    },
+    {
+     "id": "tullygallen-tullywee-and-oughtnadrin-barr:beat:familycensus:03-1926",
+     "kind": "familycensus",
+     "chapter": "tullygallen-tullywee-and-oughtnadrin-barr:ch:family-03",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullygallen-tullywee-and-oughtnadrin-barr",
+      "name": "Tullygallen, Tullywee and Oughtnadrin Barr",
+      "logainm_id": "14160",
+      "lat": 54.641037,
+      "lon": -7.945142,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullygallen-tullywee-and-oughtnadrin-barr:familycensus:03:1926"
+     },
+     "caption": "Tullygallen, Tullywee and Oughtnadrin Barr had three McGrath households in 1926, headed by Sarah, Bridget and Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullygallen-tullywee-and-oughtnadrin-barr:familycensus:03:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "thread": {
+      "id": "tullygallen-tullywee-and-oughtnadrin-barr:family:03",
+      "label": "McGrath",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "tullygallen-tullywee-and-oughtnadrin-barr:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "tullygallen-tullywee-and-oughtnadrin-barr:beat:closing:end",
      "kind": "closing",
@@ -218,6 +530,384 @@
      },
      "duration_ms": 5600,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "tullygallen-tullywee-and-oughtnadrin-barr:ch:family-02",
+   "title": "The McGoldrick family",
+   "beats": [
+    {
+     "id": "tullygallen-tullywee-and-oughtnadrin-barr:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "tullygallen-tullywee-and-oughtnadrin-barr:ch:family-02",
+     "time": {
+      "label": "The McGoldrick family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullygallen-tullywee-and-oughtnadrin-barr",
+      "name": "Tullygallen, Tullywee and Oughtnadrin Barr",
+      "logainm_id": "14160",
+      "lat": 54.641037,
+      "lon": -7.945142,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullygallen-tullywee-and-oughtnadrin-barr:familypresence:02"
+     },
+     "caption": "The McGoldrick family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullygallen-tullywee-and-oughtnadrin-barr:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "tullygallen-tullywee-and-oughtnadrin-barr:family:02",
+      "label": "McGoldrick",
+      "run": false
+     }
+    },
+    {
+     "id": "tullygallen-tullywee-and-oughtnadrin-barr:beat:familycensus:02-1901",
+     "kind": "familycensus",
+     "chapter": "tullygallen-tullywee-and-oughtnadrin-barr:ch:family-02",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullygallen-tullywee-and-oughtnadrin-barr",
+      "name": "Tullygallen, Tullywee and Oughtnadrin Barr",
+      "logainm_id": "14160",
+      "lat": 54.641037,
+      "lon": -7.945142,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullygallen-tullywee-and-oughtnadrin-barr:familycensus:02:1901"
+     },
+     "caption": "Tullygallen, Tullywee and Oughtnadrin Barr had one McGoldrick household in 1901, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullygallen-tullywee-and-oughtnadrin-barr:familycensus:02:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5600,
+     "audio": null,
+     "thread": {
+      "id": "tullygallen-tullywee-and-oughtnadrin-barr:family:02",
+      "label": "McGoldrick",
+      "run": false
+     }
+    },
+    {
+     "id": "tullygallen-tullywee-and-oughtnadrin-barr:beat:familycensus:02-1911",
+     "kind": "familycensus",
+     "chapter": "tullygallen-tullywee-and-oughtnadrin-barr:ch:family-02",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullygallen-tullywee-and-oughtnadrin-barr",
+      "name": "Tullygallen, Tullywee and Oughtnadrin Barr",
+      "logainm_id": "14160",
+      "lat": 54.641037,
+      "lon": -7.945142,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullygallen-tullywee-and-oughtnadrin-barr:familycensus:02:1911"
+     },
+     "caption": "Tullygallen, Tullywee and Oughtnadrin Barr had one McGoldrick household in 1911, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullygallen-tullywee-and-oughtnadrin-barr:familycensus:02:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5600,
+     "audio": null,
+     "thread": {
+      "id": "tullygallen-tullywee-and-oughtnadrin-barr:family:02",
+      "label": "McGoldrick",
+      "run": false
+     }
+    },
+    {
+     "id": "tullygallen-tullywee-and-oughtnadrin-barr:beat:familycensus:02-1926",
+     "kind": "familycensus",
+     "chapter": "tullygallen-tullywee-and-oughtnadrin-barr:ch:family-02",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullygallen-tullywee-and-oughtnadrin-barr",
+      "name": "Tullygallen, Tullywee and Oughtnadrin Barr",
+      "logainm_id": "14160",
+      "lat": 54.641037,
+      "lon": -7.945142,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullygallen-tullywee-and-oughtnadrin-barr:familycensus:02:1926"
+     },
+     "caption": "Tullygallen, Tullywee and Oughtnadrin Barr had two McGoldrick households in 1926, headed by James and Michael.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullygallen-tullywee-and-oughtnadrin-barr:familycensus:02:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "tullygallen-tullywee-and-oughtnadrin-barr:family:02",
+      "label": "McGoldrick",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "tullygallen-tullywee-and-oughtnadrin-barr:ch:family-04",
+   "title": "The McGroary family",
+   "beats": [
+    {
+     "id": "tullygallen-tullywee-and-oughtnadrin-barr:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "tullygallen-tullywee-and-oughtnadrin-barr:ch:family-04",
+     "time": {
+      "label": "The McGroary family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullygallen-tullywee-and-oughtnadrin-barr",
+      "name": "Tullygallen, Tullywee and Oughtnadrin Barr",
+      "logainm_id": "14160",
+      "lat": 54.641037,
+      "lon": -7.945142,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullygallen-tullywee-and-oughtnadrin-barr:familypresence:04"
+     },
+     "caption": "The McGroary family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullygallen-tullywee-and-oughtnadrin-barr:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "tullygallen-tullywee-and-oughtnadrin-barr:family:04",
+      "label": "McGroary",
+      "run": false
+     }
+    },
+    {
+     "id": "tullygallen-tullywee-and-oughtnadrin-barr:beat:familycensus:04-1901",
+     "kind": "familycensus",
+     "chapter": "tullygallen-tullywee-and-oughtnadrin-barr:ch:family-04",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullygallen-tullywee-and-oughtnadrin-barr",
+      "name": "Tullygallen, Tullywee and Oughtnadrin Barr",
+      "logainm_id": "14160",
+      "lat": 54.641037,
+      "lon": -7.945142,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullygallen-tullywee-and-oughtnadrin-barr:familycensus:04:1901"
+     },
+     "caption": "Tullygallen, Tullywee and Oughtnadrin Barr had one McGroary household in 1901, headed by Henry.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullygallen-tullywee-and-oughtnadrin-barr:familycensus:04:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5600,
+     "audio": null,
+     "thread": {
+      "id": "tullygallen-tullywee-and-oughtnadrin-barr:family:04",
+      "label": "McGroary",
+      "run": false
+     }
+    },
+    {
+     "id": "tullygallen-tullywee-and-oughtnadrin-barr:beat:familycensus:04-1926",
+     "kind": "familycensus",
+     "chapter": "tullygallen-tullywee-and-oughtnadrin-barr:ch:family-04",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullygallen-tullywee-and-oughtnadrin-barr",
+      "name": "Tullygallen, Tullywee and Oughtnadrin Barr",
+      "logainm_id": "14160",
+      "lat": 54.641037,
+      "lon": -7.945142,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullygallen-tullywee-and-oughtnadrin-barr:familycensus:04:1926"
+     },
+     "caption": "Tullygallen, Tullywee and Oughtnadrin Barr had two McGroary households in 1926, headed by Henry and Francis.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullygallen-tullywee-and-oughtnadrin-barr:familycensus:04:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "tullygallen-tullywee-and-oughtnadrin-barr:family:04",
+      "label": "McGroary",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "tullygallen-tullywee-and-oughtnadrin-barr:ch:family-05",
+   "title": "The McGrory family",
+   "beats": [
+    {
+     "id": "tullygallen-tullywee-and-oughtnadrin-barr:beat:familyhead:05",
+     "kind": "familyhead",
+     "chapter": "tullygallen-tullywee-and-oughtnadrin-barr:ch:family-05",
+     "time": {
+      "label": "The McGrory family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullygallen-tullywee-and-oughtnadrin-barr",
+      "name": "Tullygallen, Tullywee and Oughtnadrin Barr",
+      "logainm_id": "14160",
+      "lat": 54.641037,
+      "lon": -7.945142,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullygallen-tullywee-and-oughtnadrin-barr:familypresence:05"
+     },
+     "caption": "The McGrory family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullygallen-tullywee-and-oughtnadrin-barr:familypresence:05"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "tullygallen-tullywee-and-oughtnadrin-barr:family:05",
+      "label": "McGrory",
+      "run": false
+     }
+    },
+    {
+     "id": "tullygallen-tullywee-and-oughtnadrin-barr:beat:familycensus:05-1911",
+     "kind": "familycensus",
+     "chapter": "tullygallen-tullywee-and-oughtnadrin-barr:ch:family-05",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullygallen-tullywee-and-oughtnadrin-barr",
+      "name": "Tullygallen, Tullywee and Oughtnadrin Barr",
+      "logainm_id": "14160",
+      "lat": 54.641037,
+      "lon": -7.945142,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullygallen-tullywee-and-oughtnadrin-barr:familycensus:05:1911"
+     },
+     "caption": "Tullygallen, Tullywee and Oughtnadrin Barr had one McGrory household in 1911, headed by Henry.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullygallen-tullywee-and-oughtnadrin-barr:familycensus:05:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5600,
+     "audio": null,
+     "thread": {
+      "id": "tullygallen-tullywee-and-oughtnadrin-barr:family:05",
+      "label": "McGrory",
+      "run": false
+     }
     }
    ]
   }

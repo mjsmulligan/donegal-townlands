@@ -52,15 +52,15 @@
    ]
   },
   {
-   "id": "tullygallan:ch:1901",
-   "title": "1901",
+   "id": "tullygallan:ch:census",
+   "title": "1901 to 1911",
    "beats": [
     {
-     "id": "tullygallan:beat:census:1901",
+     "id": "tullygallan:beat:census:returns",
      "kind": "census",
-     "chapter": "tullygallan:ch:1901",
+     "chapter": "tullygallan:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1911",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -77,33 +77,171 @@
       "stage": "map",
       "open_card": "tullygallan:census:1901"
      },
-     "caption": "Tullygallan had four people in one household in 1901. Heads of household included Boyle.",
+     "caption": "The censuses of 1901 and 1911 counted 4 and 3 people in Tullygallan, in 1 and 1 households. Heads of household included Boyle.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "tullygallan:census:1901"
+       "tullygallan:census:1901",
+       "tullygallan:census:1911"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 5600,
+     "duration_ms": 9200,
      "audio": null,
      "counts": {
-      "people": 4,
-      "households": 1
+      "returns": [
+       {
+        "year": "1901",
+        "people": 4,
+        "households": 1
+       },
+       {
+        "year": "1911",
+        "people": 3,
+        "households": 1
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "tullygallan:ch:1911",
-   "title": "1911",
+   "id": "tullygallan:ch:families",
+   "title": "The families of Tullygallan",
    "beats": [
     {
-     "id": "tullygallan:beat:census:1911",
-     "kind": "census",
-     "chapter": "tullygallan:ch:1911",
+     "id": "tullygallan:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "tullygallan:ch:families",
+     "time": {
+      "label": "The families of Tullygallan",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullygallan",
+      "name": "Tullygallan",
+      "logainm_id": "14159",
+      "lat": 54.625715,
+      "lon": -8.092626,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullygallan:census:1901"
+     },
+     "caption": "Here are the families of Tullygallan, from 1901 to 1911. First, the Boyle family.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullygallan:census:1901",
+       "tullygallan:census:1911"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 5600,
+     "audio": null,
+     "thread": {
+      "id": "tullygallan:family:01",
+      "label": "Boyle",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "tullygallan:ch:family-01",
+   "title": "The Boyle family",
+   "beats": [
+    {
+     "id": "tullygallan:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "tullygallan:ch:family-01",
+     "time": {
+      "label": "The Boyle family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullygallan",
+      "name": "Tullygallan",
+      "logainm_id": "14159",
+      "lat": 54.625715,
+      "lon": -8.092626,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullygallan:familypresence:01"
+     },
+     "caption": "The Boyle family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullygallan:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "tullygallan:family:01",
+      "label": "Boyle",
+      "run": true
+     }
+    },
+    {
+     "id": "tullygallan:beat:familycensus:01-1901",
+     "kind": "familycensus",
+     "chapter": "tullygallan:ch:family-01",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullygallan",
+      "name": "Tullygallan",
+      "logainm_id": "14159",
+      "lat": 54.625715,
+      "lon": -8.092626,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullygallan:familycensus:01:1901"
+     },
+     "caption": "Tullygallan had one Boyle household in 1901, headed by Edward.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullygallan:familycensus:01:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "tullygallan:family:01",
+      "label": "Boyle",
+      "run": true
+     }
+    },
+    {
+     "id": "tullygallan:beat:familycensus:01-1911",
+     "kind": "familycensus",
+     "chapter": "tullygallan:ch:family-01",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -120,25 +258,32 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "tullygallan:census:1911"
+      "open_card": "tullygallan:familycensus:01:1911"
      },
-     "caption": "In 1911, three people in one household lived in Tullygallan. Heads of household included Boyle.",
+     "caption": "Tullygallan had one Boyle household in 1911, headed by Margaret.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "tullygallan:census:1911"
+       "tullygallan:familycensus:01:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6000,
+     "duration_ms": 4000,
      "audio": null,
-     "counts": {
-      "people": 3,
-      "households": 1
+     "thread": {
+      "id": "tullygallan:family:01",
+      "label": "Boyle",
+      "run": true
      }
-    },
+    }
+   ]
+  },
+  {
+   "id": "tullygallan:ch:1911",
+   "title": "1911",
+   "beats": [
     {
      "id": "tullygallan:beat:closing:end",
      "kind": "closing",

@@ -52,15 +52,15 @@
    ]
   },
   {
-   "id": "moyne:ch:1901",
-   "title": "1901",
+   "id": "moyne:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "moyne:beat:census:1901",
+     "id": "moyne:beat:census:returns",
      "kind": "census",
-     "chapter": "moyne:ch:1901",
+     "chapter": "moyne:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1926",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -77,33 +77,177 @@
       "stage": "map",
       "open_card": "moyne:census:1901"
      },
-     "caption": "In 1901, 71 people in fifteen households lived in Moyne. Heads of household included Graham, Scott and Kee.",
+     "caption": "The censuses of 1901, 1911 and 1926 counted 71, 62 and 45 people in Moyne, in 15, 13 and 10 households. Heads of household included Graham, Scott and Kee.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "moyne:census:1901"
+       "moyne:census:1901",
+       "moyne:census:1911",
+       "moyne:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 7200,
+     "duration_ms": 11600,
      "audio": null,
      "counts": {
-      "people": 71,
-      "households": 15
+      "returns": [
+       {
+        "year": "1901",
+        "people": 71,
+        "households": 15
+       },
+       {
+        "year": "1911",
+        "people": 62,
+        "households": 13
+       },
+       {
+        "year": "1926",
+        "people": 45,
+        "households": 10
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "moyne:ch:1911",
-   "title": "1911",
+   "id": "moyne:ch:families",
+   "title": "The families of Moyne",
    "beats": [
     {
-     "id": "moyne:beat:census:1911",
-     "kind": "census",
-     "chapter": "moyne:ch:1911",
+     "id": "moyne:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "moyne:ch:families",
+     "time": {
+      "label": "The families of Moyne",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "moyne",
+      "name": "Moyne",
+      "logainm_id": "14295",
+      "lat": 54.632494,
+      "lon": -8.060203,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "moyne:census:1901"
+     },
+     "caption": "Here are the families of Moyne, from 1901 to 1926. First, the Graham and Kee families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "moyne:census:1901",
+       "moyne:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "moyne:family:04",
+      "label": "Graham",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "moyne:ch:family-04",
+   "title": "The Graham family",
+   "beats": [
+    {
+     "id": "moyne:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "moyne:ch:family-04",
+     "time": {
+      "label": "The Graham family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "moyne",
+      "name": "Moyne",
+      "logainm_id": "14295",
+      "lat": 54.632494,
+      "lon": -8.060203,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "moyne:familypresence:04"
+     },
+     "caption": "The Graham family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "moyne:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "moyne:family:04",
+      "label": "Graham",
+      "run": true
+     }
+    },
+    {
+     "id": "moyne:beat:familycensus:04-1901",
+     "kind": "familycensus",
+     "chapter": "moyne:ch:family-04",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "moyne",
+      "name": "Moyne",
+      "logainm_id": "14295",
+      "lat": 54.632494,
+      "lon": -8.060203,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "moyne:familycensus:04:1901"
+     },
+     "caption": "Moyne had three Graham households in 1901, headed by Robert, Mary and John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "moyne:familycensus:04:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "moyne:family:04",
+      "label": "Graham",
+      "run": true
+     }
+    },
+    {
+     "id": "moyne:beat:familycensus:04-1911",
+     "kind": "familycensus",
+     "chapter": "moyne:ch:family-04",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -120,35 +264,30 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "moyne:census:1911"
+      "open_card": "moyne:familycensus:04:1911"
      },
-     "caption": "Moyne had 62 people in thirteen households in 1911. Heads of household included Kee, Scott and Graham.",
+     "caption": "Moyne had two Graham households in 1911, headed by John and Henry.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "moyne:census:1911"
+       "moyne:familycensus:04:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6800,
+     "duration_ms": 4800,
      "audio": null,
-     "counts": {
-      "people": 62,
-      "households": 13
+     "thread": {
+      "id": "moyne:family:04",
+      "label": "Graham",
+      "run": true
      }
-    }
-   ]
-  },
-  {
-   "id": "moyne:ch:1926",
-   "title": "1926",
-   "beats": [
+    },
     {
-     "id": "moyne:beat:census:1926",
-     "kind": "census",
-     "chapter": "moyne:ch:1926",
+     "id": "moyne:beat:familycensus:04-1926",
+     "kind": "familycensus",
+     "chapter": "moyne:ch:family-04",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -165,25 +304,198 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "moyne:census:1926"
+      "open_card": "moyne:familycensus:04:1926"
      },
-     "caption": "In 1926, 45 people in ten households lived in Moyne. Heads of household included Kee, Graham and McClay.",
+     "caption": "Moyne had two Graham households in 1926, headed by Catherine and Lizzie.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "moyne:census:1926"
+       "moyne:familycensus:04:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 7200,
+     "duration_ms": 4800,
      "audio": null,
-     "counts": {
-      "people": 45,
-      "households": 10
+     "thread": {
+      "id": "moyne:family:04",
+      "label": "Graham",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "moyne:ch:family-07",
+   "title": "The Kee family",
+   "beats": [
+    {
+     "id": "moyne:beat:familyhead:07",
+     "kind": "familyhead",
+     "chapter": "moyne:ch:family-07",
+     "time": {
+      "label": "The Kee family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "moyne",
+      "name": "Moyne",
+      "logainm_id": "14295",
+      "lat": 54.632494,
+      "lon": -8.060203,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "moyne:familypresence:07"
+     },
+     "caption": "The Kee family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "moyne:familypresence:07"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "moyne:family:07",
+      "label": "Kee",
+      "run": true
      }
     },
+    {
+     "id": "moyne:beat:familycensus:07-1901",
+     "kind": "familycensus",
+     "chapter": "moyne:ch:family-07",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "moyne",
+      "name": "Moyne",
+      "logainm_id": "14295",
+      "lat": 54.632494,
+      "lon": -8.060203,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "moyne:familycensus:07:1901"
+     },
+     "caption": "Moyne had two Kee households in 1901, headed by Mary Anne and William.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "moyne:familycensus:07:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "moyne:family:07",
+      "label": "Kee",
+      "run": true
+     }
+    },
+    {
+     "id": "moyne:beat:familycensus:07-1911",
+     "kind": "familycensus",
+     "chapter": "moyne:ch:family-07",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "moyne",
+      "name": "Moyne",
+      "logainm_id": "14295",
+      "lat": 54.632494,
+      "lon": -8.060203,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "moyne:familycensus:07:1911"
+     },
+     "caption": "Moyne had three Kee households in 1911, headed by Mary Anne, Susan and James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "moyne:familycensus:07:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5600,
+     "audio": null,
+     "thread": {
+      "id": "moyne:family:07",
+      "label": "Kee",
+      "run": true
+     }
+    },
+    {
+     "id": "moyne:beat:familycensus:07-1926",
+     "kind": "familycensus",
+     "chapter": "moyne:ch:family-07",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "moyne",
+      "name": "Moyne",
+      "logainm_id": "14295",
+      "lat": 54.632494,
+      "lon": -8.060203,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "moyne:familycensus:07:1926"
+     },
+     "caption": "Moyne had four Kee households in 1926, headed by James, two named Annie and Samuel.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "moyne:familycensus:07:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 6000,
+     "audio": null,
+     "thread": {
+      "id": "moyne:family:07",
+      "label": "Kee",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "moyne:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "moyne:beat:closing:end",
      "kind": "closing",
@@ -218,6 +530,1186 @@
      },
      "duration_ms": 4000,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "moyne:ch:family-01",
+   "title": "The Colvin family",
+   "beats": [
+    {
+     "id": "moyne:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "moyne:ch:family-01",
+     "time": {
+      "label": "The Colvin family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "moyne",
+      "name": "Moyne",
+      "logainm_id": "14295",
+      "lat": 54.632494,
+      "lon": -8.060203,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "moyne:familypresence:01"
+     },
+     "caption": "The Colvin family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "moyne:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "moyne:family:01",
+      "label": "Colvin",
+      "run": false
+     }
+    },
+    {
+     "id": "moyne:beat:familycensus:01-1901",
+     "kind": "familycensus",
+     "chapter": "moyne:ch:family-01",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "moyne",
+      "name": "Moyne",
+      "logainm_id": "14295",
+      "lat": 54.632494,
+      "lon": -8.060203,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "moyne:familycensus:01:1901"
+     },
+     "caption": "Moyne had one Colvin household in 1901, headed by William.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "moyne:familycensus:01:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "moyne:family:01",
+      "label": "Colvin",
+      "run": false
+     }
+    },
+    {
+     "id": "moyne:beat:familycensus:01-1911",
+     "kind": "familycensus",
+     "chapter": "moyne:ch:family-01",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "moyne",
+      "name": "Moyne",
+      "logainm_id": "14295",
+      "lat": 54.632494,
+      "lon": -8.060203,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "moyne:familycensus:01:1911"
+     },
+     "caption": "Moyne had one Colvin household in 1911, headed by William.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "moyne:familycensus:01:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "moyne:family:01",
+      "label": "Colvin",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "moyne:ch:family-02",
+   "title": "The Crawford family",
+   "beats": [
+    {
+     "id": "moyne:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "moyne:ch:family-02",
+     "time": {
+      "label": "The Crawford family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "moyne",
+      "name": "Moyne",
+      "logainm_id": "14295",
+      "lat": 54.632494,
+      "lon": -8.060203,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "moyne:familypresence:02"
+     },
+     "caption": "The Crawford family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "moyne:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "moyne:family:02",
+      "label": "Crawford",
+      "run": false
+     }
+    },
+    {
+     "id": "moyne:beat:familycensus:02-1901",
+     "kind": "familycensus",
+     "chapter": "moyne:ch:family-02",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "moyne",
+      "name": "Moyne",
+      "logainm_id": "14295",
+      "lat": 54.632494,
+      "lon": -8.060203,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "moyne:familycensus:02:1901"
+     },
+     "caption": "Moyne had one Crawford household in 1901, headed by Mary.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "moyne:familycensus:02:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "moyne:family:02",
+      "label": "Crawford",
+      "run": false
+     }
+    },
+    {
+     "id": "moyne:beat:familycensus:02-1911",
+     "kind": "familycensus",
+     "chapter": "moyne:ch:family-02",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "moyne",
+      "name": "Moyne",
+      "logainm_id": "14295",
+      "lat": 54.632494,
+      "lon": -8.060203,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "moyne:familycensus:02:1911"
+     },
+     "caption": "Moyne had one Crawford household in 1911, headed by Mary.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "moyne:familycensus:02:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "moyne:family:02",
+      "label": "Crawford",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "moyne:ch:family-03",
+   "title": "The Freeborn family",
+   "beats": [
+    {
+     "id": "moyne:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "moyne:ch:family-03",
+     "time": {
+      "label": "The Freeborn family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "moyne",
+      "name": "Moyne",
+      "logainm_id": "14295",
+      "lat": 54.632494,
+      "lon": -8.060203,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "moyne:familypresence:03"
+     },
+     "caption": "The Freeborn family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "moyne:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "moyne:family:03",
+      "label": "Freeborn",
+      "run": false
+     }
+    },
+    {
+     "id": "moyne:beat:familycensus:03-1901",
+     "kind": "familycensus",
+     "chapter": "moyne:ch:family-03",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "moyne",
+      "name": "Moyne",
+      "logainm_id": "14295",
+      "lat": 54.632494,
+      "lon": -8.060203,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "moyne:familycensus:03:1901"
+     },
+     "caption": "Moyne had one Freeborn household in 1901, headed by Andrew.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "moyne:familycensus:03:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "moyne:family:03",
+      "label": "Freeborn",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "moyne:ch:family-05",
+   "title": "The Harron family",
+   "beats": [
+    {
+     "id": "moyne:beat:familyhead:05",
+     "kind": "familyhead",
+     "chapter": "moyne:ch:family-05",
+     "time": {
+      "label": "The Harron family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "moyne",
+      "name": "Moyne",
+      "logainm_id": "14295",
+      "lat": 54.632494,
+      "lon": -8.060203,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "moyne:familypresence:05"
+     },
+     "caption": "The Harron family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "moyne:familypresence:05"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "moyne:family:05",
+      "label": "Harron",
+      "run": false
+     }
+    },
+    {
+     "id": "moyne:beat:familycensus:05-1901",
+     "kind": "familycensus",
+     "chapter": "moyne:ch:family-05",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "moyne",
+      "name": "Moyne",
+      "logainm_id": "14295",
+      "lat": 54.632494,
+      "lon": -8.060203,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "moyne:familycensus:05:1901"
+     },
+     "caption": "Moyne had one Harron household in 1901, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "moyne:familycensus:05:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "moyne:family:05",
+      "label": "Harron",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "moyne:ch:family-06",
+   "title": "The Johnston family",
+   "beats": [
+    {
+     "id": "moyne:beat:familyhead:06",
+     "kind": "familyhead",
+     "chapter": "moyne:ch:family-06",
+     "time": {
+      "label": "The Johnston family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "moyne",
+      "name": "Moyne",
+      "logainm_id": "14295",
+      "lat": 54.632494,
+      "lon": -8.060203,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "moyne:familypresence:06"
+     },
+     "caption": "The Johnston family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "moyne:familypresence:06"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "moyne:family:06",
+      "label": "Johnston",
+      "run": false
+     }
+    },
+    {
+     "id": "moyne:beat:familycensus:06-1901",
+     "kind": "familycensus",
+     "chapter": "moyne:ch:family-06",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "moyne",
+      "name": "Moyne",
+      "logainm_id": "14295",
+      "lat": 54.632494,
+      "lon": -8.060203,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "moyne:familycensus:06:1901"
+     },
+     "caption": "Moyne had one Johnston household in 1901, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "moyne:familycensus:06:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "moyne:family:06",
+      "label": "Johnston",
+      "run": false
+     }
+    },
+    {
+     "id": "moyne:beat:familycensus:06-1911",
+     "kind": "familycensus",
+     "chapter": "moyne:ch:family-06",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "moyne",
+      "name": "Moyne",
+      "logainm_id": "14295",
+      "lat": 54.632494,
+      "lon": -8.060203,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "moyne:familycensus:06:1911"
+     },
+     "caption": "Moyne had one Johnston household in 1911, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "moyne:familycensus:06:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "moyne:family:06",
+      "label": "Johnston",
+      "run": false
+     }
+    },
+    {
+     "id": "moyne:beat:familycensus:06-1926",
+     "kind": "familycensus",
+     "chapter": "moyne:ch:family-06",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "moyne",
+      "name": "Moyne",
+      "logainm_id": "14295",
+      "lat": 54.632494,
+      "lon": -8.060203,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "moyne:familycensus:06:1926"
+     },
+     "caption": "Moyne had one Johnston household in 1926, headed by Charles.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "moyne:familycensus:06:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "moyne:family:06",
+      "label": "Johnston",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "moyne:ch:family-08",
+   "title": "The Maxwell family",
+   "beats": [
+    {
+     "id": "moyne:beat:familyhead:08",
+     "kind": "familyhead",
+     "chapter": "moyne:ch:family-08",
+     "time": {
+      "label": "The Maxwell family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "moyne",
+      "name": "Moyne",
+      "logainm_id": "14295",
+      "lat": 54.632494,
+      "lon": -8.060203,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "moyne:familypresence:08"
+     },
+     "caption": "The Maxwell family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "moyne:familypresence:08"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "moyne:family:08",
+      "label": "Maxwell",
+      "run": false
+     }
+    },
+    {
+     "id": "moyne:beat:familycensus:08-1901",
+     "kind": "familycensus",
+     "chapter": "moyne:ch:family-08",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "moyne",
+      "name": "Moyne",
+      "logainm_id": "14295",
+      "lat": 54.632494,
+      "lon": -8.060203,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "moyne:familycensus:08:1901"
+     },
+     "caption": "Moyne had one Maxwell household in 1901, headed by Robert.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "moyne:familycensus:08:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "moyne:family:08",
+      "label": "Maxwell",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "moyne:ch:family-10",
+   "title": "The McGlynn family",
+   "beats": [
+    {
+     "id": "moyne:beat:familyhead:10",
+     "kind": "familyhead",
+     "chapter": "moyne:ch:family-10",
+     "time": {
+      "label": "The McGlynn family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "moyne",
+      "name": "Moyne",
+      "logainm_id": "14295",
+      "lat": 54.632494,
+      "lon": -8.060203,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "moyne:familypresence:10"
+     },
+     "caption": "The McGlynn family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "moyne:familypresence:10"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "moyne:family:10",
+      "label": "McGlynn",
+      "run": false
+     }
+    },
+    {
+     "id": "moyne:beat:familycensus:10-1901",
+     "kind": "familycensus",
+     "chapter": "moyne:ch:family-10",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "moyne",
+      "name": "Moyne",
+      "logainm_id": "14295",
+      "lat": 54.632494,
+      "lon": -8.060203,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "moyne:familycensus:10:1901"
+     },
+     "caption": "Moyne had one McGlynn household in 1901, headed by Michael.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "moyne:familycensus:10:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "moyne:family:10",
+      "label": "McGlynn",
+      "run": false
+     }
+    },
+    {
+     "id": "moyne:beat:familycensus:10-1911",
+     "kind": "familycensus",
+     "chapter": "moyne:ch:family-10",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "moyne",
+      "name": "Moyne",
+      "logainm_id": "14295",
+      "lat": 54.632494,
+      "lon": -8.060203,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "moyne:familycensus:10:1911"
+     },
+     "caption": "Moyne had one McGlynn household in 1911, headed by Michael.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "moyne:familycensus:10:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "moyne:family:10",
+      "label": "McGlynn",
+      "run": false
+     }
+    },
+    {
+     "id": "moyne:beat:familycensus:10-1926",
+     "kind": "familycensus",
+     "chapter": "moyne:ch:family-10",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "moyne",
+      "name": "Moyne",
+      "logainm_id": "14295",
+      "lat": 54.632494,
+      "lon": -8.060203,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "moyne:familycensus:10:1926"
+     },
+     "caption": "Moyne had one McGlynn household in 1926, headed by Mary Anne.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "moyne:familycensus:10:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "moyne:family:10",
+      "label": "McGlynn",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "moyne:ch:family-11",
+   "title": "The Scott family",
+   "beats": [
+    {
+     "id": "moyne:beat:familyhead:11",
+     "kind": "familyhead",
+     "chapter": "moyne:ch:family-11",
+     "time": {
+      "label": "The Scott family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "moyne",
+      "name": "Moyne",
+      "logainm_id": "14295",
+      "lat": 54.632494,
+      "lon": -8.060203,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "moyne:familypresence:11"
+     },
+     "caption": "The Scott family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "moyne:familypresence:11"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "moyne:family:11",
+      "label": "Scott",
+      "run": false
+     }
+    },
+    {
+     "id": "moyne:beat:familycensus:11-1901",
+     "kind": "familycensus",
+     "chapter": "moyne:ch:family-11",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "moyne",
+      "name": "Moyne",
+      "logainm_id": "14295",
+      "lat": 54.632494,
+      "lon": -8.060203,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "moyne:familycensus:11:1901"
+     },
+     "caption": "Moyne had three Scott households in 1901, headed by John, William and James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "moyne:familycensus:11:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "moyne:family:11",
+      "label": "Scott",
+      "run": false
+     }
+    },
+    {
+     "id": "moyne:beat:familycensus:11-1911",
+     "kind": "familycensus",
+     "chapter": "moyne:ch:family-11",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "moyne",
+      "name": "Moyne",
+      "logainm_id": "14295",
+      "lat": 54.632494,
+      "lon": -8.060203,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "moyne:familycensus:11:1911"
+     },
+     "caption": "Moyne had three Scott households in 1911, headed by Alexander, William and James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "moyne:familycensus:11:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "moyne:family:11",
+      "label": "Scott",
+      "run": false
+     }
+    },
+    {
+     "id": "moyne:beat:familycensus:11-1926",
+     "kind": "familycensus",
+     "chapter": "moyne:ch:family-11",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "moyne",
+      "name": "Moyne",
+      "logainm_id": "14295",
+      "lat": 54.632494,
+      "lon": -8.060203,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "moyne:familycensus:11:1926"
+     },
+     "caption": "Moyne had one Scott household in 1926, headed by Alex.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "moyne:familycensus:11:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "moyne:family:11",
+      "label": "Scott",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "moyne:ch:family-12",
+   "title": "The White family",
+   "beats": [
+    {
+     "id": "moyne:beat:familyhead:12",
+     "kind": "familyhead",
+     "chapter": "moyne:ch:family-12",
+     "time": {
+      "label": "The White family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "moyne",
+      "name": "Moyne",
+      "logainm_id": "14295",
+      "lat": 54.632494,
+      "lon": -8.060203,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "moyne:familypresence:12"
+     },
+     "caption": "The White family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "moyne:familypresence:12"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "moyne:family:12",
+      "label": "White",
+      "run": false
+     }
+    },
+    {
+     "id": "moyne:beat:familycensus:12-1911",
+     "kind": "familycensus",
+     "chapter": "moyne:ch:family-12",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "moyne",
+      "name": "Moyne",
+      "logainm_id": "14295",
+      "lat": 54.632494,
+      "lon": -8.060203,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "moyne:familycensus:12:1911"
+     },
+     "caption": "Moyne had one White household in 1911, headed by William.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "moyne:familycensus:12:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "moyne:family:12",
+      "label": "White",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "moyne:ch:family-09",
+   "title": "The McClay family",
+   "beats": [
+    {
+     "id": "moyne:beat:familyhead:09",
+     "kind": "familyhead",
+     "chapter": "moyne:ch:family-09",
+     "time": {
+      "label": "The McClay family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "moyne",
+      "name": "Moyne",
+      "logainm_id": "14295",
+      "lat": 54.632494,
+      "lon": -8.060203,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "moyne:familypresence:09"
+     },
+     "caption": "The McClay family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "moyne:familypresence:09"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "moyne:family:09",
+      "label": "McClay",
+      "run": false
+     }
+    },
+    {
+     "id": "moyne:beat:familycensus:09-1926",
+     "kind": "familycensus",
+     "chapter": "moyne:ch:family-09",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "moyne",
+      "name": "Moyne",
+      "logainm_id": "14295",
+      "lat": 54.632494,
+      "lon": -8.060203,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "moyne:familycensus:09:1926"
+     },
+     "caption": "Moyne had two McClay households in 1926, headed by Edith and Alexandra.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "moyne:familycensus:09:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "moyne:family:09",
+      "label": "McClay",
+      "run": false
+     }
     }
    ]
   }

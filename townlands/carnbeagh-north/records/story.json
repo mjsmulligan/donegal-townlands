@@ -93,15 +93,15 @@
    ]
   },
   {
-   "id": "carnbeagh-north:ch:1901",
-   "title": "1901",
+   "id": "carnbeagh-north:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "carnbeagh-north:beat:census:1901",
+     "id": "carnbeagh-north:beat:census:returns",
      "kind": "census",
-     "chapter": "carnbeagh-north:ch:1901",
+     "chapter": "carnbeagh-north:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1926",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -118,37 +118,54 @@
       "stage": "map",
       "open_card": "carnbeagh north:census:1901"
      },
-     "caption": "Carnbeagh North had 29 people in six households in 1901. Heads of household included McFadden, Davis and Gallagher.",
+     "caption": "The censuses of 1901, 1911 and 1926 counted 29, 20 and 10 people in Carnbeagh North, in 6, 4 and 3 households. Heads of household included McFadden, Davis and Gallagher.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "carnbeagh north:census:1901"
+       "carnbeagh north:census:1901",
+       "carnbeagh north:census:1911",
+       "carnbeagh north:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 7200,
+     "duration_ms": 12000,
      "audio": null,
      "counts": {
-      "people": 29,
-      "households": 6
+      "returns": [
+       {
+        "year": "1901",
+        "people": 29,
+        "households": 6
+       },
+       {
+        "year": "1911",
+        "people": 20,
+        "households": 4
+       },
+       {
+        "year": "1926",
+        "people": 10,
+        "households": 3
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "carnbeagh-north:ch:1911",
-   "title": "1911",
+   "id": "carnbeagh-north:ch:families",
+   "title": "The families of Carnbeagh North",
    "beats": [
     {
-     "id": "carnbeagh-north:beat:census:1911",
-     "kind": "census",
-     "chapter": "carnbeagh-north:ch:1911",
+     "id": "carnbeagh-north:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "carnbeagh-north:ch:families",
      "time": {
-      "label": "1911",
-      "iso": "1911",
-      "sort": "1911-01-01",
+      "label": "The families of Carnbeagh North",
+      "iso": "1850/1859",
+      "sort": "1855-01-01",
       "approximate": true
      },
      "place": {
@@ -161,35 +178,117 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "carnbeagh north:census:1911"
+      "open_card": "carnbeagh north:valuation:griffiths"
      },
-     "caption": "In 1911, twenty people in four households lived in Carnbeagh North. Heads of household included McFadden, Davis and Pearson.",
+     "caption": "Here are the families of Carnbeagh North, from the 1850s to 1926. First, the Ingram and McFadden families.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "carnbeagh north:census:1911"
+       "carnbeagh north:valuation:griffiths",
+       "carnbeagh north:census:1926"
       ],
-      "basis": "return_for_townland",
+      "basis": "place_record",
       "certainty": "stated"
      },
-     "duration_ms": 7600,
+     "duration_ms": 7200,
      "audio": null,
-     "counts": {
-      "people": 20,
-      "households": 4
+     "thread": {
+      "id": "carnbeagh-north:family:04",
+      "label": "Ingram",
+      "run": true
      }
     }
    ]
   },
   {
-   "id": "carnbeagh-north:ch:1926",
-   "title": "1926",
+   "id": "carnbeagh-north:ch:family-04",
+   "title": "The Ingram family",
    "beats": [
     {
-     "id": "carnbeagh-north:beat:census:1926",
-     "kind": "census",
-     "chapter": "carnbeagh-north:ch:1926",
+     "id": "carnbeagh-north:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "carnbeagh-north:ch:family-04",
+     "time": {
+      "label": "The Ingram family",
+      "iso": "1855",
+      "sort": "1855-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "carnbeagh-north",
+      "name": "Carnbeagh North",
+      "logainm_id": "13958",
+      "lat": 54.666428,
+      "lon": -8.041795,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "carnbeagh-north:familypresence:04"
+     },
+     "caption": "The Ingram family appear in the records from 1855 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "carnbeagh-north:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "carnbeagh-north:family:04",
+      "label": "Ingram",
+      "run": true
+     }
+    },
+    {
+     "id": "carnbeagh-north:beat:familycensus:04-1901",
+     "kind": "familycensus",
+     "chapter": "carnbeagh-north:ch:family-04",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "carnbeagh-north",
+      "name": "Carnbeagh North",
+      "logainm_id": "13958",
+      "lat": 54.666428,
+      "lon": -8.041795,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "carnbeagh-north:familycensus:04:1901"
+     },
+     "caption": "Carnbeagh North had one Ingram household in 1901, headed by Isabella.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "carnbeagh-north:familycensus:04:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "carnbeagh-north:family:04",
+      "label": "Ingram",
+      "run": true
+     }
+    },
+    {
+     "id": "carnbeagh-north:beat:familycensus:04-1926",
+     "kind": "familycensus",
+     "chapter": "carnbeagh-north:ch:family-04",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -206,25 +305,158 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "carnbeagh north:census:1926"
+      "open_card": "carnbeagh-north:familycensus:04:1926"
      },
-     "caption": "Carnbeagh North had ten people in three households in 1926. Heads of household included Davis, Ingram and Pearson.",
+     "caption": "Carnbeagh North had one Ingram household in 1926, headed by James.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "carnbeagh north:census:1926"
+       "carnbeagh-north:familycensus:04:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 7200,
+     "duration_ms": 4400,
      "audio": null,
-     "counts": {
-      "people": 10,
-      "households": 3
+     "thread": {
+      "id": "carnbeagh-north:family:04",
+      "label": "Ingram",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "carnbeagh-north:ch:family-06",
+   "title": "The McFadden family",
+   "beats": [
+    {
+     "id": "carnbeagh-north:beat:familyhead:06",
+     "kind": "familyhead",
+     "chapter": "carnbeagh-north:ch:family-06",
+     "time": {
+      "label": "The McFadden family",
+      "iso": "1855",
+      "sort": "1855-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "carnbeagh-north",
+      "name": "Carnbeagh North",
+      "logainm_id": "13958",
+      "lat": 54.666428,
+      "lon": -8.041795,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "carnbeagh-north:familypresence:06"
+     },
+     "caption": "The McFadden family appear in the records from 1855 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "carnbeagh-north:familypresence:06"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "carnbeagh-north:family:06",
+      "label": "McFadden",
+      "run": true
      }
     },
+    {
+     "id": "carnbeagh-north:beat:familycensus:06-1901",
+     "kind": "familycensus",
+     "chapter": "carnbeagh-north:ch:family-06",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "carnbeagh-north",
+      "name": "Carnbeagh North",
+      "logainm_id": "13958",
+      "lat": 54.666428,
+      "lon": -8.041795,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "carnbeagh-north:familycensus:06:1901"
+     },
+     "caption": "Carnbeagh North had two McFadden households in 1901, headed by Neil and Denis.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "carnbeagh-north:familycensus:06:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "carnbeagh-north:family:06",
+      "label": "McFadden",
+      "run": true
+     }
+    },
+    {
+     "id": "carnbeagh-north:beat:familycensus:06-1911",
+     "kind": "familycensus",
+     "chapter": "carnbeagh-north:ch:family-06",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "carnbeagh-north",
+      "name": "Carnbeagh North",
+      "logainm_id": "13958",
+      "lat": 54.666428,
+      "lon": -8.041795,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "carnbeagh-north:familycensus:06:1911"
+     },
+     "caption": "Carnbeagh North had two McFadden households in 1911, headed by Rose and Ellen.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "carnbeagh-north:familycensus:06:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "carnbeagh-north:family:06",
+      "label": "McFadden",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "carnbeagh-north:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "carnbeagh-north:beat:closing:end",
      "kind": "closing",
@@ -259,6 +491,654 @@
      },
      "duration_ms": 4400,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "carnbeagh-north:ch:family-02",
+   "title": "The Gallagher family",
+   "beats": [
+    {
+     "id": "carnbeagh-north:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "carnbeagh-north:ch:family-02",
+     "time": {
+      "label": "The Gallagher family",
+      "iso": "1855",
+      "sort": "1855-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "carnbeagh-north",
+      "name": "Carnbeagh North",
+      "logainm_id": "13958",
+      "lat": 54.666428,
+      "lon": -8.041795,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "carnbeagh-north:familypresence:02"
+     },
+     "caption": "The Gallagher family appear in the records from 1855 to 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "carnbeagh-north:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "carnbeagh-north:family:02",
+      "label": "Gallagher",
+      "run": false
+     }
+    },
+    {
+     "id": "carnbeagh-north:beat:familycensus:02-1901",
+     "kind": "familycensus",
+     "chapter": "carnbeagh-north:ch:family-02",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "carnbeagh-north",
+      "name": "Carnbeagh North",
+      "logainm_id": "13958",
+      "lat": 54.666428,
+      "lon": -8.041795,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "carnbeagh-north:familycensus:02:1901"
+     },
+     "caption": "Carnbeagh North had one Gallagher household in 1901, headed by Conal.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "carnbeagh-north:familycensus:02:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "carnbeagh-north:family:02",
+      "label": "Gallagher",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "carnbeagh-north:ch:family-03",
+   "title": "The Hammond family",
+   "beats": [
+    {
+     "id": "carnbeagh-north:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "carnbeagh-north:ch:family-03",
+     "time": {
+      "label": "The Hammond family",
+      "iso": "1855",
+      "sort": "1855-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "carnbeagh-north",
+      "name": "Carnbeagh North",
+      "logainm_id": "13958",
+      "lat": 54.666428,
+      "lon": -8.041795,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "carnbeagh-north:familypresence:03"
+     },
+     "caption": "The Hammond family appear in the records in 1855.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "carnbeagh-north:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "carnbeagh-north:family:03",
+      "label": "Hammond",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "carnbeagh-north:ch:family-05",
+   "title": "The Irwin family",
+   "beats": [
+    {
+     "id": "carnbeagh-north:beat:familyhead:05",
+     "kind": "familyhead",
+     "chapter": "carnbeagh-north:ch:family-05",
+     "time": {
+      "label": "The Irwin family",
+      "iso": "1855",
+      "sort": "1855-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "carnbeagh-north",
+      "name": "Carnbeagh North",
+      "logainm_id": "13958",
+      "lat": 54.666428,
+      "lon": -8.041795,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "carnbeagh-north:familypresence:05"
+     },
+     "caption": "The Irwin family appear in the records in 1855.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "carnbeagh-north:familypresence:05"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "carnbeagh-north:family:05",
+      "label": "Irwin",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "carnbeagh-north:ch:family-07",
+   "title": "The Mcginty family",
+   "beats": [
+    {
+     "id": "carnbeagh-north:beat:familyhead:07",
+     "kind": "familyhead",
+     "chapter": "carnbeagh-north:ch:family-07",
+     "time": {
+      "label": "The Mcginty family",
+      "iso": "1855",
+      "sort": "1855-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "carnbeagh-north",
+      "name": "Carnbeagh North",
+      "logainm_id": "13958",
+      "lat": 54.666428,
+      "lon": -8.041795,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "carnbeagh-north:familypresence:07"
+     },
+     "caption": "The Mcginty family appear in the records in 1855.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "carnbeagh-north:familypresence:07"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "carnbeagh-north:family:07",
+      "label": "Mcginty",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "carnbeagh-north:ch:family-09",
+   "title": "The Rea family",
+   "beats": [
+    {
+     "id": "carnbeagh-north:beat:familyhead:09",
+     "kind": "familyhead",
+     "chapter": "carnbeagh-north:ch:family-09",
+     "time": {
+      "label": "The Rea family",
+      "iso": "1855",
+      "sort": "1855-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "carnbeagh-north",
+      "name": "Carnbeagh North",
+      "logainm_id": "13958",
+      "lat": 54.666428,
+      "lon": -8.041795,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "carnbeagh-north:familypresence:09"
+     },
+     "caption": "The Rea family appear in the records in 1855.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "carnbeagh-north:familypresence:09"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "carnbeagh-north:family:09",
+      "label": "Rea",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "carnbeagh-north:ch:family-10",
+   "title": "The Slevin family",
+   "beats": [
+    {
+     "id": "carnbeagh-north:beat:familyhead:10",
+     "kind": "familyhead",
+     "chapter": "carnbeagh-north:ch:family-10",
+     "time": {
+      "label": "The Slevin family",
+      "iso": "1855",
+      "sort": "1855-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "carnbeagh-north",
+      "name": "Carnbeagh North",
+      "logainm_id": "13958",
+      "lat": 54.666428,
+      "lon": -8.041795,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "carnbeagh-north:familypresence:10"
+     },
+     "caption": "The Slevin family appear in the records in 1855.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "carnbeagh-north:familypresence:10"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "carnbeagh-north:family:10",
+      "label": "Slevin",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "carnbeagh-north:ch:family-01",
+   "title": "The Davis family",
+   "beats": [
+    {
+     "id": "carnbeagh-north:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "carnbeagh-north:ch:family-01",
+     "time": {
+      "label": "The Davis family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "carnbeagh-north",
+      "name": "Carnbeagh North",
+      "logainm_id": "13958",
+      "lat": 54.666428,
+      "lon": -8.041795,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "carnbeagh-north:familypresence:01"
+     },
+     "caption": "The Davis family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "carnbeagh-north:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "carnbeagh-north:family:01",
+      "label": "Davis",
+      "run": false
+     }
+    },
+    {
+     "id": "carnbeagh-north:beat:familycensus:01-1901",
+     "kind": "familycensus",
+     "chapter": "carnbeagh-north:ch:family-01",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "carnbeagh-north",
+      "name": "Carnbeagh North",
+      "logainm_id": "13958",
+      "lat": 54.666428,
+      "lon": -8.041795,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "carnbeagh-north:familycensus:01:1901"
+     },
+     "caption": "Carnbeagh North had one Davis household in 1901, headed by Robert.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "carnbeagh-north:familycensus:01:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "carnbeagh-north:family:01",
+      "label": "Davis",
+      "run": false
+     }
+    },
+    {
+     "id": "carnbeagh-north:beat:familycensus:01-1911",
+     "kind": "familycensus",
+     "chapter": "carnbeagh-north:ch:family-01",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "carnbeagh-north",
+      "name": "Carnbeagh North",
+      "logainm_id": "13958",
+      "lat": 54.666428,
+      "lon": -8.041795,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "carnbeagh-north:familycensus:01:1911"
+     },
+     "caption": "Carnbeagh North had one Davis household in 1911, headed by Robert.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "carnbeagh-north:familycensus:01:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "carnbeagh-north:family:01",
+      "label": "Davis",
+      "run": false
+     }
+    },
+    {
+     "id": "carnbeagh-north:beat:familycensus:01-1926",
+     "kind": "familycensus",
+     "chapter": "carnbeagh-north:ch:family-01",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "carnbeagh-north",
+      "name": "Carnbeagh North",
+      "logainm_id": "13958",
+      "lat": 54.666428,
+      "lon": -8.041795,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "carnbeagh-north:familycensus:01:1926"
+     },
+     "caption": "Carnbeagh North had one Davis household in 1926, headed by Robert.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "carnbeagh-north:familycensus:01:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "carnbeagh-north:family:01",
+      "label": "Davis",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "carnbeagh-north:ch:family-08",
+   "title": "The Pearson family",
+   "beats": [
+    {
+     "id": "carnbeagh-north:beat:familyhead:08",
+     "kind": "familyhead",
+     "chapter": "carnbeagh-north:ch:family-08",
+     "time": {
+      "label": "The Pearson family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "carnbeagh-north",
+      "name": "Carnbeagh North",
+      "logainm_id": "13958",
+      "lat": 54.666428,
+      "lon": -8.041795,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "carnbeagh-north:familypresence:08"
+     },
+     "caption": "The Pearson family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "carnbeagh-north:familypresence:08"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "carnbeagh-north:family:08",
+      "label": "Pearson",
+      "run": false
+     }
+    },
+    {
+     "id": "carnbeagh-north:beat:familycensus:08-1901",
+     "kind": "familycensus",
+     "chapter": "carnbeagh-north:ch:family-08",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "carnbeagh-north",
+      "name": "Carnbeagh North",
+      "logainm_id": "13958",
+      "lat": 54.666428,
+      "lon": -8.041795,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "carnbeagh-north:familycensus:08:1901"
+     },
+     "caption": "Carnbeagh North had one Pearson household in 1901, headed by Thomas.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "carnbeagh-north:familycensus:08:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "carnbeagh-north:family:08",
+      "label": "Pearson",
+      "run": false
+     }
+    },
+    {
+     "id": "carnbeagh-north:beat:familycensus:08-1911",
+     "kind": "familycensus",
+     "chapter": "carnbeagh-north:ch:family-08",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "carnbeagh-north",
+      "name": "Carnbeagh North",
+      "logainm_id": "13958",
+      "lat": 54.666428,
+      "lon": -8.041795,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "carnbeagh-north:familycensus:08:1911"
+     },
+     "caption": "Carnbeagh North had one Pearson household in 1911, headed by Thomas.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "carnbeagh-north:familycensus:08:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "carnbeagh-north:family:08",
+      "label": "Pearson",
+      "run": false
+     }
+    },
+    {
+     "id": "carnbeagh-north:beat:familycensus:08-1926",
+     "kind": "familycensus",
+     "chapter": "carnbeagh-north:ch:family-08",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "carnbeagh-north",
+      "name": "Carnbeagh North",
+      "logainm_id": "13958",
+      "lat": 54.666428,
+      "lon": -8.041795,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "carnbeagh-north:familycensus:08:1926"
+     },
+     "caption": "Carnbeagh North had one Pearson household in 1926, headed by Edwin.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "carnbeagh-north:familycensus:08:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "carnbeagh-north:family:08",
+      "label": "Pearson",
+      "run": false
+     }
     }
    ]
   }

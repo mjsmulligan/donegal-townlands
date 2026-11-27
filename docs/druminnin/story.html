@@ -82,6 +82,15 @@ a.zoomable{cursor:zoom-in}
 .dotgrid i.off{transform:scale(.8);opacity:.5;background:transparent;box-shadow:inset 0 0 0 2px var(--hill-d)}
 .dotnum{font:300 clamp(40px,11vw,64px)/1 var(--display);font-variant-numeric:tabular-nums}
 .dotnum small{font:400 15px var(--body);color:var(--ink2);margin-left:8px}
+.dotrow{display:none;align-items:flex-start;justify-content:center;gap:clamp(8px,3vw,22px);width:100%;max-width:560px}
+.dots.multi .dotrow{display:flex}
+.dots.multi>.dotnum,.dots.multi>.dotgrid{display:none}
+.dotcol{flex:1 1 0;min-width:0;display:flex;flex-direction:column;align-items:center;gap:6px}
+.dotyear{font:600 13px var(--body);letter-spacing:.06em;color:var(--ink2)}
+.dotcol b{font:300 clamp(26px,8vw,40px)/1 var(--display);font-variant-numeric:tabular-nums}
+.dotcol small{font:400 12px var(--body);color:var(--ink2);text-align:center}
+.dotcol .dotgrid{display:flex;gap:3px;max-width:100%}
+.dotcol .dotgrid i{width:6px;height:6px}
 
 /* cards travel along a track; the one in view is clear, the ones either side wait in the haze */
 .cards{position:relative;flex:1 1 auto;min-height:0;overflow:hidden;display:flex;align-items:center;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 6%,#000 94%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 6%,#000 94%,transparent 100%)}
@@ -178,7 +187,7 @@ details a{overflow-wrap:anywhere}
 <div class="app hero" id="app">
   <div class="top"><a href="../">Donegal Townlands</a><span id="place">Druminnin</span><button class="replay" id="replay" type="button" hidden>Replay opening</button></div>
   <section class="stage" aria-label="Photographs and people">
-    <div class="dots" id="dots" aria-hidden="true"><div class="dotnum" id="dotnum"></div><div class="dotgrid" id="dotgrid"></div></div>
+    <div class="dots" id="dots" aria-hidden="true"><div class="dotnum" id="dotnum"></div><div class="dotgrid" id="dotgrid"></div><div class="dotrow" id="dotrow"></div></div>
     <div class="photo" id="photo"><figure><a id="photolink" href="#" target="_blank" rel="noopener" style="display:flex;flex:1 1 auto;min-height:0" title="Open the full size image"><img id="photoimg" alt=""></a>
       <div class="pbar pctl" id="pbar" hidden>
         <button class="pbtn" id="pprev" type="button" aria-label="Previous page">&#8249;</button>
@@ -442,9 +451,27 @@ var D={"schema":1,"townland":"Druminnin","slug":"druminnin","generated_by":"done
 
   /* dots: a census beat fills in one dot for each person counted. Counts only. */
   var dotTimer=null;
+  /* the people of several returns side by side: a column and a dot for each person counted, in each year */
+  function manyDots(box,returns){
+    var row=$('dotrow'), cols=[];
+    row.textContent=''; box.classList.add('multi');
+    returns.forEach(function(r){
+      var col=document.createElement('div'); col.className='dotcol';
+      var y=document.createElement('span'); y.className='dotyear'; y.textContent=r.year;
+      var n=document.createElement('b'); n.textContent=r.people;
+      var sm=document.createElement('small'); sm.textContent='people in '+r.households+' households';
+      var g=document.createElement('div'); g.className='dotgrid';
+      for(var k=0;k<r.people;k++){var d=document.createElement('i'); d.style.transitionDelay=reduce?'0s':Math.min(k*6,900)+'ms'; g.append(d)}
+      col.append(y,n,sm,g); row.append(col); cols.push(g);
+    });
+    box.classList.add('on');
+    dotTimer=setTimeout(function(){cols.forEach(function(g){Array.prototype.forEach.call(g.children,function(d){d.className='on'})})},reduce?0:120);
+  }
   function dots(b){
     var box=$('dots'), grid=$('dotgrid'), c=b.counts;
     clearTimeout(dotTimer);
+    if(c&&c.returns){manyDots(box,c.returns); return}
+    box.classList.remove('multi');
     if(!c||!c.people){box.classList.remove('on'); return}
     var total=c.people, is=[];
     grid.textContent='';

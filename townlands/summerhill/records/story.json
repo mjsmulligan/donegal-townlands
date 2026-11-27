@@ -52,15 +52,15 @@
    ]
   },
   {
-   "id": "summerhill:ch:1901",
-   "title": "1901",
+   "id": "summerhill:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "summerhill:beat:census:1901",
+     "id": "summerhill:beat:census:returns",
      "kind": "census",
-     "chapter": "summerhill:ch:1901",
+     "chapter": "summerhill:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1926",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -77,33 +77,177 @@
       "stage": "map",
       "open_card": "summerhill:census:1901"
      },
-     "caption": "In 1901, 94 people in sixteen households lived in Summerhill. Heads of household included Barber, Brogan and Broyan.",
+     "caption": "The censuses of 1901, 1911 and 1926 counted 94, 69 and 23 people in Summerhill, in 16, 13 and 9 households. Heads of household included Barber, Brogan and Broyan.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "summerhill:census:1901"
+       "summerhill:census:1901",
+       "summerhill:census:1911",
+       "summerhill:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 7200,
+     "duration_ms": 11600,
      "audio": null,
      "counts": {
-      "people": 94,
-      "households": 16
+      "returns": [
+       {
+        "year": "1901",
+        "people": 94,
+        "households": 16
+       },
+       {
+        "year": "1911",
+        "people": 69,
+        "households": 13
+       },
+       {
+        "year": "1926",
+        "people": 23,
+        "households": 9
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "summerhill:ch:1911",
-   "title": "1911",
+   "id": "summerhill:ch:families",
+   "title": "The families of Summerhill",
    "beats": [
     {
-     "id": "summerhill:beat:census:1911",
-     "kind": "census",
-     "chapter": "summerhill:ch:1911",
+     "id": "summerhill:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "summerhill:ch:families",
+     "time": {
+      "label": "The families of Summerhill",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "summerhill",
+      "name": "Summerhill",
+      "logainm_id": "14024",
+      "lat": 54.637959,
+      "lon": -8.158183,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "summerhill:census:1901"
+     },
+     "caption": "Here are the families of Summerhill, from 1901 to 1926. First, the Brogan and Kavanagh families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "summerhill:census:1901",
+       "summerhill:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "summerhill:family:04",
+      "label": "Brogan",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "summerhill:ch:family-04",
+   "title": "The Brogan family",
+   "beats": [
+    {
+     "id": "summerhill:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "summerhill:ch:family-04",
+     "time": {
+      "label": "The Brogan family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "summerhill",
+      "name": "Summerhill",
+      "logainm_id": "14024",
+      "lat": 54.637959,
+      "lon": -8.158183,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "summerhill:familypresence:04"
+     },
+     "caption": "The Brogan family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "summerhill:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "summerhill:family:04",
+      "label": "Brogan",
+      "run": true
+     }
+    },
+    {
+     "id": "summerhill:beat:familycensus:04-1901",
+     "kind": "familycensus",
+     "chapter": "summerhill:ch:family-04",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "summerhill",
+      "name": "Summerhill",
+      "logainm_id": "14024",
+      "lat": 54.637959,
+      "lon": -8.158183,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "summerhill:familycensus:04:1901"
+     },
+     "caption": "Summerhill had one Brogan household in 1901, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "summerhill:familycensus:04:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "summerhill:family:04",
+      "label": "Brogan",
+      "run": true
+     }
+    },
+    {
+     "id": "summerhill:beat:familycensus:04-1911",
+     "kind": "familycensus",
+     "chapter": "summerhill:ch:family-04",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -120,35 +264,30 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "summerhill:census:1911"
+      "open_card": "summerhill:familycensus:04:1911"
      },
-     "caption": "Summerhill had 69 people in thirteen households in 1911. Heads of household included Bonner, Brogan and Coffey.",
+     "caption": "Summerhill had one Brogan household in 1911, headed by John.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "summerhill:census:1911"
+       "summerhill:familycensus:04:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6800,
+     "duration_ms": 4000,
      "audio": null,
-     "counts": {
-      "people": 69,
-      "households": 13
+     "thread": {
+      "id": "summerhill:family:04",
+      "label": "Brogan",
+      "run": true
      }
-    }
-   ]
-  },
-  {
-   "id": "summerhill:ch:1926",
-   "title": "1926",
-   "beats": [
+    },
     {
-     "id": "summerhill:beat:census:1926",
-     "kind": "census",
-     "chapter": "summerhill:ch:1926",
+     "id": "summerhill:beat:familycensus:04-1926",
+     "kind": "familycensus",
+     "chapter": "summerhill:ch:family-04",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -165,25 +304,198 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "summerhill:census:1926"
+      "open_card": "summerhill:familycensus:04:1926"
      },
-     "caption": "In 1926, 23 people in nine households lived in Summerhill. Heads of household included Kavanagh, Bonner and Boyle.",
+     "caption": "Summerhill had one Brogan household in 1926, headed by Patrick.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "summerhill:census:1926"
+       "summerhill:familycensus:04:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 7200,
+     "duration_ms": 4000,
      "audio": null,
-     "counts": {
-      "people": 23,
-      "households": 9
+     "thread": {
+      "id": "summerhill:family:04",
+      "label": "Brogan",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "summerhill:ch:family-15",
+   "title": "The Kavanagh family",
+   "beats": [
+    {
+     "id": "summerhill:beat:familyhead:15",
+     "kind": "familyhead",
+     "chapter": "summerhill:ch:family-15",
+     "time": {
+      "label": "The Kavanagh family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "summerhill",
+      "name": "Summerhill",
+      "logainm_id": "14024",
+      "lat": 54.637959,
+      "lon": -8.158183,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "summerhill:familypresence:15"
+     },
+     "caption": "The Kavanagh family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "summerhill:familypresence:15"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "summerhill:family:15",
+      "label": "Kavanagh",
+      "run": true
      }
     },
+    {
+     "id": "summerhill:beat:familycensus:15-1901",
+     "kind": "familycensus",
+     "chapter": "summerhill:ch:family-15",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "summerhill",
+      "name": "Summerhill",
+      "logainm_id": "14024",
+      "lat": 54.637959,
+      "lon": -8.158183,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "summerhill:familycensus:15:1901"
+     },
+     "caption": "Summerhill had one Kavanagh household in 1901, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "summerhill:familycensus:15:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "summerhill:family:15",
+      "label": "Kavanagh",
+      "run": true
+     }
+    },
+    {
+     "id": "summerhill:beat:familycensus:15-1911",
+     "kind": "familycensus",
+     "chapter": "summerhill:ch:family-15",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "summerhill",
+      "name": "Summerhill",
+      "logainm_id": "14024",
+      "lat": 54.637959,
+      "lon": -8.158183,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "summerhill:familycensus:15:1911"
+     },
+     "caption": "Summerhill had one Kavanagh household in 1911, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "summerhill:familycensus:15:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "summerhill:family:15",
+      "label": "Kavanagh",
+      "run": true
+     }
+    },
+    {
+     "id": "summerhill:beat:familycensus:15-1926",
+     "kind": "familycensus",
+     "chapter": "summerhill:ch:family-15",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "summerhill",
+      "name": "Summerhill",
+      "logainm_id": "14024",
+      "lat": 54.637959,
+      "lon": -8.158183,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "summerhill:familycensus:15:1926"
+     },
+     "caption": "Summerhill had two Kavanagh households in 1926, headed by William and Brigid.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "summerhill:familycensus:15:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "summerhill:family:15",
+      "label": "Kavanagh",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "summerhill:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "summerhill:beat:closing:end",
      "kind": "closing",
@@ -218,6 +530,2212 @@
      },
      "duration_ms": 4000,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "summerhill:ch:family-01",
+   "title": "The Barber family",
+   "beats": [
+    {
+     "id": "summerhill:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "summerhill:ch:family-01",
+     "time": {
+      "label": "The Barber family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "summerhill",
+      "name": "Summerhill",
+      "logainm_id": "14024",
+      "lat": 54.637959,
+      "lon": -8.158183,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "summerhill:familypresence:01"
+     },
+     "caption": "The Barber family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "summerhill:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "summerhill:family:01",
+      "label": "Barber",
+      "run": false
+     }
+    },
+    {
+     "id": "summerhill:beat:familycensus:01-1901",
+     "kind": "familycensus",
+     "chapter": "summerhill:ch:family-01",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "summerhill",
+      "name": "Summerhill",
+      "logainm_id": "14024",
+      "lat": 54.637959,
+      "lon": -8.158183,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "summerhill:familycensus:01:1901"
+     },
+     "caption": "Summerhill had one Barber household in 1901, headed by Thomas.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "summerhill:familycensus:01:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "summerhill:family:01",
+      "label": "Barber",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "summerhill:ch:family-05",
+   "title": "The Broyan family",
+   "beats": [
+    {
+     "id": "summerhill:beat:familyhead:05",
+     "kind": "familyhead",
+     "chapter": "summerhill:ch:family-05",
+     "time": {
+      "label": "The Broyan family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "summerhill",
+      "name": "Summerhill",
+      "logainm_id": "14024",
+      "lat": 54.637959,
+      "lon": -8.158183,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "summerhill:familypresence:05"
+     },
+     "caption": "The Broyan family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "summerhill:familypresence:05"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "summerhill:family:05",
+      "label": "Broyan",
+      "run": false
+     }
+    },
+    {
+     "id": "summerhill:beat:familycensus:05-1901",
+     "kind": "familycensus",
+     "chapter": "summerhill:ch:family-05",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "summerhill",
+      "name": "Summerhill",
+      "logainm_id": "14024",
+      "lat": 54.637959,
+      "lon": -8.158183,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "summerhill:familycensus:05:1901"
+     },
+     "caption": "Summerhill had one Broyan household in 1901, headed by Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "summerhill:familycensus:05:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "summerhill:family:05",
+      "label": "Broyan",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "summerhill:ch:family-08",
+   "title": "The Culf family",
+   "beats": [
+    {
+     "id": "summerhill:beat:familyhead:08",
+     "kind": "familyhead",
+     "chapter": "summerhill:ch:family-08",
+     "time": {
+      "label": "The Culf family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "summerhill",
+      "name": "Summerhill",
+      "logainm_id": "14024",
+      "lat": 54.637959,
+      "lon": -8.158183,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "summerhill:familypresence:08"
+     },
+     "caption": "The Culf family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "summerhill:familypresence:08"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "summerhill:family:08",
+      "label": "Culf",
+      "run": false
+     }
+    },
+    {
+     "id": "summerhill:beat:familycensus:08-1901",
+     "kind": "familycensus",
+     "chapter": "summerhill:ch:family-08",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "summerhill",
+      "name": "Summerhill",
+      "logainm_id": "14024",
+      "lat": 54.637959,
+      "lon": -8.158183,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "summerhill:familycensus:08:1901"
+     },
+     "caption": "Summerhill had one Culf household in 1901, headed by William.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "summerhill:familycensus:08:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "summerhill:family:08",
+      "label": "Culf",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "summerhill:ch:family-10",
+   "title": "The Ewing family",
+   "beats": [
+    {
+     "id": "summerhill:beat:familyhead:10",
+     "kind": "familyhead",
+     "chapter": "summerhill:ch:family-10",
+     "time": {
+      "label": "The Ewing family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "summerhill",
+      "name": "Summerhill",
+      "logainm_id": "14024",
+      "lat": 54.637959,
+      "lon": -8.158183,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "summerhill:familypresence:10"
+     },
+     "caption": "The Ewing family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "summerhill:familypresence:10"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "summerhill:family:10",
+      "label": "Ewing",
+      "run": false
+     }
+    },
+    {
+     "id": "summerhill:beat:familycensus:10-1901",
+     "kind": "familycensus",
+     "chapter": "summerhill:ch:family-10",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "summerhill",
+      "name": "Summerhill",
+      "logainm_id": "14024",
+      "lat": 54.637959,
+      "lon": -8.158183,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "summerhill:familycensus:10:1901"
+     },
+     "caption": "Summerhill had one Ewing household in 1901, headed by Eliza.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "summerhill:familycensus:10:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "summerhill:family:10",
+      "label": "Ewing",
+      "run": false
+     }
+    },
+    {
+     "id": "summerhill:beat:familycensus:10-1911",
+     "kind": "familycensus",
+     "chapter": "summerhill:ch:family-10",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "summerhill",
+      "name": "Summerhill",
+      "logainm_id": "14024",
+      "lat": 54.637959,
+      "lon": -8.158183,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "summerhill:familycensus:10:1911"
+     },
+     "caption": "Summerhill had one Ewing household in 1911, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "summerhill:familycensus:10:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "summerhill:family:10",
+      "label": "Ewing",
+      "run": false
+     }
+    },
+    {
+     "id": "summerhill:beat:familycensus:10-1926",
+     "kind": "familycensus",
+     "chapter": "summerhill:ch:family-10",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "summerhill",
+      "name": "Summerhill",
+      "logainm_id": "14024",
+      "lat": 54.637959,
+      "lon": -8.158183,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "summerhill:familycensus:10:1926"
+     },
+     "caption": "Summerhill had one Ewing household in 1926, headed by Samuel.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "summerhill:familycensus:10:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "summerhill:family:10",
+      "label": "Ewing",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "summerhill:ch:family-11",
+   "title": "The Fleming family",
+   "beats": [
+    {
+     "id": "summerhill:beat:familyhead:11",
+     "kind": "familyhead",
+     "chapter": "summerhill:ch:family-11",
+     "time": {
+      "label": "The Fleming family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "summerhill",
+      "name": "Summerhill",
+      "logainm_id": "14024",
+      "lat": 54.637959,
+      "lon": -8.158183,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "summerhill:familypresence:11"
+     },
+     "caption": "The Fleming family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "summerhill:familypresence:11"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "summerhill:family:11",
+      "label": "Fleming",
+      "run": false
+     }
+    },
+    {
+     "id": "summerhill:beat:familycensus:11-1901",
+     "kind": "familycensus",
+     "chapter": "summerhill:ch:family-11",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "summerhill",
+      "name": "Summerhill",
+      "logainm_id": "14024",
+      "lat": 54.637959,
+      "lon": -8.158183,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "summerhill:familycensus:11:1901"
+     },
+     "caption": "Summerhill had one Fleming household in 1901, headed by Wallace.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "summerhill:familycensus:11:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "summerhill:family:11",
+      "label": "Fleming",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "summerhill:ch:family-13",
+   "title": "The Graham family",
+   "beats": [
+    {
+     "id": "summerhill:beat:familyhead:13",
+     "kind": "familyhead",
+     "chapter": "summerhill:ch:family-13",
+     "time": {
+      "label": "The Graham family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "summerhill",
+      "name": "Summerhill",
+      "logainm_id": "14024",
+      "lat": 54.637959,
+      "lon": -8.158183,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "summerhill:familypresence:13"
+     },
+     "caption": "The Graham family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "summerhill:familypresence:13"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "summerhill:family:13",
+      "label": "Graham",
+      "run": false
+     }
+    },
+    {
+     "id": "summerhill:beat:familycensus:13-1901",
+     "kind": "familycensus",
+     "chapter": "summerhill:ch:family-13",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "summerhill",
+      "name": "Summerhill",
+      "logainm_id": "14024",
+      "lat": 54.637959,
+      "lon": -8.158183,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "summerhill:familycensus:13:1901"
+     },
+     "caption": "Summerhill had one Graham household in 1901, headed by Isaac.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "summerhill:familycensus:13:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "summerhill:family:13",
+      "label": "Graham",
+      "run": false
+     }
+    },
+    {
+     "id": "summerhill:beat:familycensus:13-1911",
+     "kind": "familycensus",
+     "chapter": "summerhill:ch:family-13",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "summerhill",
+      "name": "Summerhill",
+      "logainm_id": "14024",
+      "lat": 54.637959,
+      "lon": -8.158183,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "summerhill:familycensus:13:1911"
+     },
+     "caption": "Summerhill had one Graham household in 1911, headed by Thomas John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "summerhill:familycensus:13:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "summerhill:family:13",
+      "label": "Graham",
+      "run": false
+     }
+    },
+    {
+     "id": "summerhill:beat:familycensus:13-1926",
+     "kind": "familycensus",
+     "chapter": "summerhill:ch:family-13",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "summerhill",
+      "name": "Summerhill",
+      "logainm_id": "14024",
+      "lat": 54.637959,
+      "lon": -8.158183,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "summerhill:familycensus:13:1926"
+     },
+     "caption": "Summerhill had one Graham household in 1926, headed by Sarah Jane.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "summerhill:familycensus:13:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "summerhill:family:13",
+      "label": "Graham",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "summerhill:ch:family-14",
+   "title": "The Horn family",
+   "beats": [
+    {
+     "id": "summerhill:beat:familyhead:14",
+     "kind": "familyhead",
+     "chapter": "summerhill:ch:family-14",
+     "time": {
+      "label": "The Horn family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "summerhill",
+      "name": "Summerhill",
+      "logainm_id": "14024",
+      "lat": 54.637959,
+      "lon": -8.158183,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "summerhill:familypresence:14"
+     },
+     "caption": "The Horn family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "summerhill:familypresence:14"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "summerhill:family:14",
+      "label": "Horn",
+      "run": false
+     }
+    },
+    {
+     "id": "summerhill:beat:familycensus:14-1901",
+     "kind": "familycensus",
+     "chapter": "summerhill:ch:family-14",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "summerhill",
+      "name": "Summerhill",
+      "logainm_id": "14024",
+      "lat": 54.637959,
+      "lon": -8.158183,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "summerhill:familycensus:14:1901"
+     },
+     "caption": "Summerhill had one Horn household in 1901, headed by Samuel.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "summerhill:familycensus:14:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "summerhill:family:14",
+      "label": "Horn",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "summerhill:ch:family-16",
+   "title": "The Kelly family",
+   "beats": [
+    {
+     "id": "summerhill:beat:familyhead:16",
+     "kind": "familyhead",
+     "chapter": "summerhill:ch:family-16",
+     "time": {
+      "label": "The Kelly family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "summerhill",
+      "name": "Summerhill",
+      "logainm_id": "14024",
+      "lat": 54.637959,
+      "lon": -8.158183,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "summerhill:familypresence:16"
+     },
+     "caption": "The Kelly family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "summerhill:familypresence:16"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "summerhill:family:16",
+      "label": "Kelly",
+      "run": false
+     }
+    },
+    {
+     "id": "summerhill:beat:familycensus:16-1901",
+     "kind": "familycensus",
+     "chapter": "summerhill:ch:family-16",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "summerhill",
+      "name": "Summerhill",
+      "logainm_id": "14024",
+      "lat": 54.637959,
+      "lon": -8.158183,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "summerhill:familycensus:16:1901"
+     },
+     "caption": "Summerhill had one Kelly household in 1901, headed by Francis.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "summerhill:familycensus:16:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "summerhill:family:16",
+      "label": "Kelly",
+      "run": false
+     }
+    },
+    {
+     "id": "summerhill:beat:familycensus:16-1911",
+     "kind": "familycensus",
+     "chapter": "summerhill:ch:family-16",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "summerhill",
+      "name": "Summerhill",
+      "logainm_id": "14024",
+      "lat": 54.637959,
+      "lon": -8.158183,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "summerhill:familycensus:16:1911"
+     },
+     "caption": "Summerhill had one Kelly household in 1911, headed by Francis.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "summerhill:familycensus:16:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "summerhill:family:16",
+      "label": "Kelly",
+      "run": false
+     }
+    },
+    {
+     "id": "summerhill:beat:familycensus:16-1926",
+     "kind": "familycensus",
+     "chapter": "summerhill:ch:family-16",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "summerhill",
+      "name": "Summerhill",
+      "logainm_id": "14024",
+      "lat": 54.637959,
+      "lon": -8.158183,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "summerhill:familycensus:16:1926"
+     },
+     "caption": "Summerhill had one Kelly household in 1926, headed by Dan.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "summerhill:familycensus:16:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "summerhill:family:16",
+      "label": "Kelly",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "summerhill:ch:family-17",
+   "title": "The Kerr family",
+   "beats": [
+    {
+     "id": "summerhill:beat:familyhead:17",
+     "kind": "familyhead",
+     "chapter": "summerhill:ch:family-17",
+     "time": {
+      "label": "The Kerr family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "summerhill",
+      "name": "Summerhill",
+      "logainm_id": "14024",
+      "lat": 54.637959,
+      "lon": -8.158183,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "summerhill:familypresence:17"
+     },
+     "caption": "The Kerr family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "summerhill:familypresence:17"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "summerhill:family:17",
+      "label": "Kerr",
+      "run": false
+     }
+    },
+    {
+     "id": "summerhill:beat:familycensus:17-1901",
+     "kind": "familycensus",
+     "chapter": "summerhill:ch:family-17",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "summerhill",
+      "name": "Summerhill",
+      "logainm_id": "14024",
+      "lat": 54.637959,
+      "lon": -8.158183,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "summerhill:familycensus:17:1901"
+     },
+     "caption": "Summerhill had one Kerr household in 1901, headed by George.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "summerhill:familycensus:17:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "summerhill:family:17",
+      "label": "Kerr",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "summerhill:ch:family-18",
+   "title": "The Mullen family",
+   "beats": [
+    {
+     "id": "summerhill:beat:familyhead:18",
+     "kind": "familyhead",
+     "chapter": "summerhill:ch:family-18",
+     "time": {
+      "label": "The Mullen family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "summerhill",
+      "name": "Summerhill",
+      "logainm_id": "14024",
+      "lat": 54.637959,
+      "lon": -8.158183,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "summerhill:familypresence:18"
+     },
+     "caption": "The Mullen family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "summerhill:familypresence:18"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "summerhill:family:18",
+      "label": "Mullen",
+      "run": false
+     }
+    },
+    {
+     "id": "summerhill:beat:familycensus:18-1901",
+     "kind": "familycensus",
+     "chapter": "summerhill:ch:family-18",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "summerhill",
+      "name": "Summerhill",
+      "logainm_id": "14024",
+      "lat": 54.637959,
+      "lon": -8.158183,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "summerhill:familycensus:18:1901"
+     },
+     "caption": "Summerhill had one Mullen household in 1901, headed by Sarah.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "summerhill:familycensus:18:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "summerhill:family:18",
+      "label": "Mullen",
+      "run": false
+     }
+    },
+    {
+     "id": "summerhill:beat:familycensus:18-1911",
+     "kind": "familycensus",
+     "chapter": "summerhill:ch:family-18",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "summerhill",
+      "name": "Summerhill",
+      "logainm_id": "14024",
+      "lat": 54.637959,
+      "lon": -8.158183,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "summerhill:familycensus:18:1911"
+     },
+     "caption": "Summerhill had one Mullen household in 1911, headed by George.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "summerhill:familycensus:18:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "summerhill:family:18",
+      "label": "Mullen",
+      "run": false
+     }
+    },
+    {
+     "id": "summerhill:beat:familycensus:18-1926",
+     "kind": "familycensus",
+     "chapter": "summerhill:ch:family-18",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "summerhill",
+      "name": "Summerhill",
+      "logainm_id": "14024",
+      "lat": 54.637959,
+      "lon": -8.158183,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "summerhill:familycensus:18:1926"
+     },
+     "caption": "Summerhill had one Mullen household in 1926, headed by George.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "summerhill:familycensus:18:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "summerhill:family:18",
+      "label": "Mullen",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "summerhill:ch:family-19",
+   "title": "The Murphy family",
+   "beats": [
+    {
+     "id": "summerhill:beat:familyhead:19",
+     "kind": "familyhead",
+     "chapter": "summerhill:ch:family-19",
+     "time": {
+      "label": "The Murphy family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "summerhill",
+      "name": "Summerhill",
+      "logainm_id": "14024",
+      "lat": 54.637959,
+      "lon": -8.158183,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "summerhill:familypresence:19"
+     },
+     "caption": "The Murphy family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "summerhill:familypresence:19"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "summerhill:family:19",
+      "label": "Murphy",
+      "run": false
+     }
+    },
+    {
+     "id": "summerhill:beat:familycensus:19-1901",
+     "kind": "familycensus",
+     "chapter": "summerhill:ch:family-19",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "summerhill",
+      "name": "Summerhill",
+      "logainm_id": "14024",
+      "lat": 54.637959,
+      "lon": -8.158183,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "summerhill:familycensus:19:1901"
+     },
+     "caption": "Summerhill had one Murphy household in 1901, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "summerhill:familycensus:19:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "summerhill:family:19",
+      "label": "Murphy",
+      "run": false
+     }
+    },
+    {
+     "id": "summerhill:beat:familycensus:19-1911",
+     "kind": "familycensus",
+     "chapter": "summerhill:ch:family-19",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "summerhill",
+      "name": "Summerhill",
+      "logainm_id": "14024",
+      "lat": 54.637959,
+      "lon": -8.158183,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "summerhill:familycensus:19:1911"
+     },
+     "caption": "Summerhill had one Murphy household in 1911, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "summerhill:familycensus:19:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "summerhill:family:19",
+      "label": "Murphy",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "summerhill:ch:family-20",
+   "title": "The Oldfield family",
+   "beats": [
+    {
+     "id": "summerhill:beat:familyhead:20",
+     "kind": "familyhead",
+     "chapter": "summerhill:ch:family-20",
+     "time": {
+      "label": "The Oldfield family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "summerhill",
+      "name": "Summerhill",
+      "logainm_id": "14024",
+      "lat": 54.637959,
+      "lon": -8.158183,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "summerhill:familypresence:20"
+     },
+     "caption": "The Oldfield family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "summerhill:familypresence:20"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "summerhill:family:20",
+      "label": "Oldfield",
+      "run": false
+     }
+    },
+    {
+     "id": "summerhill:beat:familycensus:20-1901",
+     "kind": "familycensus",
+     "chapter": "summerhill:ch:family-20",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "summerhill",
+      "name": "Summerhill",
+      "logainm_id": "14024",
+      "lat": 54.637959,
+      "lon": -8.158183,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "summerhill:familycensus:20:1901"
+     },
+     "caption": "Summerhill had one Oldfield household in 1901, headed by William.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "summerhill:familycensus:20:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "summerhill:family:20",
+      "label": "Oldfield",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "summerhill:ch:family-22",
+   "title": "The Swan family",
+   "beats": [
+    {
+     "id": "summerhill:beat:familyhead:22",
+     "kind": "familyhead",
+     "chapter": "summerhill:ch:family-22",
+     "time": {
+      "label": "The Swan family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "summerhill",
+      "name": "Summerhill",
+      "logainm_id": "14024",
+      "lat": 54.637959,
+      "lon": -8.158183,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "summerhill:familypresence:22"
+     },
+     "caption": "The Swan family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "summerhill:familypresence:22"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "summerhill:family:22",
+      "label": "Swan",
+      "run": false
+     }
+    },
+    {
+     "id": "summerhill:beat:familycensus:22-1901",
+     "kind": "familycensus",
+     "chapter": "summerhill:ch:family-22",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "summerhill",
+      "name": "Summerhill",
+      "logainm_id": "14024",
+      "lat": 54.637959,
+      "lon": -8.158183,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "summerhill:familycensus:22:1901"
+     },
+     "caption": "Summerhill had one Swan household in 1901, headed by Henry.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "summerhill:familycensus:22:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "summerhill:family:22",
+      "label": "Swan",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "summerhill:ch:family-23",
+   "title": "The Weir family",
+   "beats": [
+    {
+     "id": "summerhill:beat:familyhead:23",
+     "kind": "familyhead",
+     "chapter": "summerhill:ch:family-23",
+     "time": {
+      "label": "The Weir family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "summerhill",
+      "name": "Summerhill",
+      "logainm_id": "14024",
+      "lat": 54.637959,
+      "lon": -8.158183,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "summerhill:familypresence:23"
+     },
+     "caption": "The Weir family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "summerhill:familypresence:23"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "summerhill:family:23",
+      "label": "Weir",
+      "run": false
+     }
+    },
+    {
+     "id": "summerhill:beat:familycensus:23-1901",
+     "kind": "familycensus",
+     "chapter": "summerhill:ch:family-23",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "summerhill",
+      "name": "Summerhill",
+      "logainm_id": "14024",
+      "lat": 54.637959,
+      "lon": -8.158183,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "summerhill:familycensus:23:1901"
+     },
+     "caption": "Summerhill had one Weir household in 1901, headed by William.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "summerhill:familycensus:23:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "summerhill:family:23",
+      "label": "Weir",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "summerhill:ch:family-02",
+   "title": "The Bonner family",
+   "beats": [
+    {
+     "id": "summerhill:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "summerhill:ch:family-02",
+     "time": {
+      "label": "The Bonner family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "summerhill",
+      "name": "Summerhill",
+      "logainm_id": "14024",
+      "lat": 54.637959,
+      "lon": -8.158183,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "summerhill:familypresence:02"
+     },
+     "caption": "The Bonner family appear in the records from 1911 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "summerhill:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "summerhill:family:02",
+      "label": "Bonner",
+      "run": false
+     }
+    },
+    {
+     "id": "summerhill:beat:familycensus:02-1911",
+     "kind": "familycensus",
+     "chapter": "summerhill:ch:family-02",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "summerhill",
+      "name": "Summerhill",
+      "logainm_id": "14024",
+      "lat": 54.637959,
+      "lon": -8.158183,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "summerhill:familycensus:02:1911"
+     },
+     "caption": "Summerhill had one Bonner household in 1911, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "summerhill:familycensus:02:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "summerhill:family:02",
+      "label": "Bonner",
+      "run": false
+     }
+    },
+    {
+     "id": "summerhill:beat:familycensus:02-1926",
+     "kind": "familycensus",
+     "chapter": "summerhill:ch:family-02",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "summerhill",
+      "name": "Summerhill",
+      "logainm_id": "14024",
+      "lat": 54.637959,
+      "lon": -8.158183,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "summerhill:familycensus:02:1926"
+     },
+     "caption": "Summerhill had one Bonner household in 1926, headed by Anastasia.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "summerhill:familycensus:02:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "summerhill:family:02",
+      "label": "Bonner",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "summerhill:ch:family-06",
+   "title": "The Coffey family",
+   "beats": [
+    {
+     "id": "summerhill:beat:familyhead:06",
+     "kind": "familyhead",
+     "chapter": "summerhill:ch:family-06",
+     "time": {
+      "label": "The Coffey family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "summerhill",
+      "name": "Summerhill",
+      "logainm_id": "14024",
+      "lat": 54.637959,
+      "lon": -8.158183,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "summerhill:familypresence:06"
+     },
+     "caption": "The Coffey family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "summerhill:familypresence:06"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "summerhill:family:06",
+      "label": "Coffey",
+      "run": false
+     }
+    },
+    {
+     "id": "summerhill:beat:familycensus:06-1911",
+     "kind": "familycensus",
+     "chapter": "summerhill:ch:family-06",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "summerhill",
+      "name": "Summerhill",
+      "logainm_id": "14024",
+      "lat": 54.637959,
+      "lon": -8.158183,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "summerhill:familycensus:06:1911"
+     },
+     "caption": "Summerhill had one Coffey household in 1911, headed by Thomas.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "summerhill:familycensus:06:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "summerhill:family:06",
+      "label": "Coffey",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "summerhill:ch:family-07",
+   "title": "The Cole family",
+   "beats": [
+    {
+     "id": "summerhill:beat:familyhead:07",
+     "kind": "familyhead",
+     "chapter": "summerhill:ch:family-07",
+     "time": {
+      "label": "The Cole family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "summerhill",
+      "name": "Summerhill",
+      "logainm_id": "14024",
+      "lat": 54.637959,
+      "lon": -8.158183,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "summerhill:familypresence:07"
+     },
+     "caption": "The Cole family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "summerhill:familypresence:07"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "summerhill:family:07",
+      "label": "Cole",
+      "run": false
+     }
+    },
+    {
+     "id": "summerhill:beat:familycensus:07-1911",
+     "kind": "familycensus",
+     "chapter": "summerhill:ch:family-07",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "summerhill",
+      "name": "Summerhill",
+      "logainm_id": "14024",
+      "lat": 54.637959,
+      "lon": -8.158183,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "summerhill:familycensus:07:1911"
+     },
+     "caption": "Summerhill had one Cole household in 1911, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "summerhill:familycensus:07:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "summerhill:family:07",
+      "label": "Cole",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "summerhill:ch:family-09",
+   "title": "The Davis family",
+   "beats": [
+    {
+     "id": "summerhill:beat:familyhead:09",
+     "kind": "familyhead",
+     "chapter": "summerhill:ch:family-09",
+     "time": {
+      "label": "The Davis family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "summerhill",
+      "name": "Summerhill",
+      "logainm_id": "14024",
+      "lat": 54.637959,
+      "lon": -8.158183,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "summerhill:familypresence:09"
+     },
+     "caption": "The Davis family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "summerhill:familypresence:09"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "summerhill:family:09",
+      "label": "Davis",
+      "run": false
+     }
+    },
+    {
+     "id": "summerhill:beat:familycensus:09-1911",
+     "kind": "familycensus",
+     "chapter": "summerhill:ch:family-09",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "summerhill",
+      "name": "Summerhill",
+      "logainm_id": "14024",
+      "lat": 54.637959,
+      "lon": -8.158183,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "summerhill:familycensus:09:1911"
+     },
+     "caption": "Summerhill had one Davis household in 1911, headed by William Thomas.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "summerhill:familycensus:09:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "summerhill:family:09",
+      "label": "Davis",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "summerhill:ch:family-12",
+   "title": "The Foxford family",
+   "beats": [
+    {
+     "id": "summerhill:beat:familyhead:12",
+     "kind": "familyhead",
+     "chapter": "summerhill:ch:family-12",
+     "time": {
+      "label": "The Foxford family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "summerhill",
+      "name": "Summerhill",
+      "logainm_id": "14024",
+      "lat": 54.637959,
+      "lon": -8.158183,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "summerhill:familypresence:12"
+     },
+     "caption": "The Foxford family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "summerhill:familypresence:12"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "summerhill:family:12",
+      "label": "Foxford",
+      "run": false
+     }
+    },
+    {
+     "id": "summerhill:beat:familycensus:12-1911",
+     "kind": "familycensus",
+     "chapter": "summerhill:ch:family-12",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "summerhill",
+      "name": "Summerhill",
+      "logainm_id": "14024",
+      "lat": 54.637959,
+      "lon": -8.158183,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "summerhill:familycensus:12:1911"
+     },
+     "caption": "Summerhill had one Foxford household in 1911, headed by Samuel A. E.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "summerhill:familycensus:12:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "summerhill:family:12",
+      "label": "Foxford",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "summerhill:ch:family-21",
+   "title": "The Stoyle family",
+   "beats": [
+    {
+     "id": "summerhill:beat:familyhead:21",
+     "kind": "familyhead",
+     "chapter": "summerhill:ch:family-21",
+     "time": {
+      "label": "The Stoyle family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "summerhill",
+      "name": "Summerhill",
+      "logainm_id": "14024",
+      "lat": 54.637959,
+      "lon": -8.158183,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "summerhill:familypresence:21"
+     },
+     "caption": "The Stoyle family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "summerhill:familypresence:21"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "summerhill:family:21",
+      "label": "Stoyle",
+      "run": false
+     }
+    },
+    {
+     "id": "summerhill:beat:familycensus:21-1911",
+     "kind": "familycensus",
+     "chapter": "summerhill:ch:family-21",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "summerhill",
+      "name": "Summerhill",
+      "logainm_id": "14024",
+      "lat": 54.637959,
+      "lon": -8.158183,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "summerhill:familycensus:21:1911"
+     },
+     "caption": "Summerhill had one Stoyle household in 1911, headed by Charles Henry.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "summerhill:familycensus:21:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "summerhill:family:21",
+      "label": "Stoyle",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "summerhill:ch:family-03",
+   "title": "The Boyle family",
+   "beats": [
+    {
+     "id": "summerhill:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "summerhill:ch:family-03",
+     "time": {
+      "label": "The Boyle family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "summerhill",
+      "name": "Summerhill",
+      "logainm_id": "14024",
+      "lat": 54.637959,
+      "lon": -8.158183,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "summerhill:familypresence:03"
+     },
+     "caption": "The Boyle family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "summerhill:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "summerhill:family:03",
+      "label": "Boyle",
+      "run": false
+     }
+    },
+    {
+     "id": "summerhill:beat:familycensus:03-1926",
+     "kind": "familycensus",
+     "chapter": "summerhill:ch:family-03",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "summerhill",
+      "name": "Summerhill",
+      "logainm_id": "14024",
+      "lat": 54.637959,
+      "lon": -8.158183,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "summerhill:familycensus:03:1926"
+     },
+     "caption": "Summerhill had one Boyle household in 1926, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "summerhill:familycensus:03:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "summerhill:family:03",
+      "label": "Boyle",
+      "run": false
+     }
     }
    ]
   }

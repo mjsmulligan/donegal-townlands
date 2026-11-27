@@ -52,15 +52,15 @@
    ]
   },
   {
-   "id": "gortlosky:ch:1901",
-   "title": "1901",
+   "id": "gortlosky:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "gortlosky:beat:census:1901",
+     "id": "gortlosky:beat:census:returns",
      "kind": "census",
-     "chapter": "gortlosky:ch:1901",
+     "chapter": "gortlosky:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1926",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -77,33 +77,177 @@
       "stage": "map",
       "open_card": "gortlosky:census:1901"
      },
-     "caption": "Gortlosky had twelve people in four households in 1901. Heads of household included Gallagher, Perrey and Perry.",
+     "caption": "The censuses of 1901, 1911 and 1926 counted 12, 10 and 8 people in Gortlosky, in 4, 3 and 2 households. Heads of household included Gallagher, Perrey and Perry.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "gortlosky:census:1901"
+       "gortlosky:census:1901",
+       "gortlosky:census:1911",
+       "gortlosky:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 6800,
+     "duration_ms": 11600,
      "audio": null,
      "counts": {
-      "people": 12,
-      "households": 4
+      "returns": [
+       {
+        "year": "1901",
+        "people": 12,
+        "households": 4
+       },
+       {
+        "year": "1911",
+        "people": 10,
+        "households": 3
+       },
+       {
+        "year": "1926",
+        "people": 8,
+        "households": 2
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "gortlosky:ch:1911",
-   "title": "1911",
+   "id": "gortlosky:ch:families",
+   "title": "The families of Gortlosky",
    "beats": [
     {
-     "id": "gortlosky:beat:census:1911",
-     "kind": "census",
-     "chapter": "gortlosky:ch:1911",
+     "id": "gortlosky:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "gortlosky:ch:families",
+     "time": {
+      "label": "The families of Gortlosky",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "gortlosky",
+      "name": "Gortlosky",
+      "logainm_id": "14016",
+      "lat": 54.670278,
+      "lon": -8.105692,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "gortlosky:census:1901"
+     },
+     "caption": "Here are the families of Gortlosky, from 1901 to 1926. First, the Perry and Sheerin families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "gortlosky:census:1901",
+       "gortlosky:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "gortlosky:family:04",
+      "label": "Perry",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "gortlosky:ch:family-04",
+   "title": "The Perry family",
+   "beats": [
+    {
+     "id": "gortlosky:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "gortlosky:ch:family-04",
+     "time": {
+      "label": "The Perry family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "gortlosky",
+      "name": "Gortlosky",
+      "logainm_id": "14016",
+      "lat": 54.670278,
+      "lon": -8.105692,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "gortlosky:familypresence:04"
+     },
+     "caption": "The Perry family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "gortlosky:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "gortlosky:family:04",
+      "label": "Perry",
+      "run": true
+     }
+    },
+    {
+     "id": "gortlosky:beat:familycensus:04-1901",
+     "kind": "familycensus",
+     "chapter": "gortlosky:ch:family-04",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "gortlosky",
+      "name": "Gortlosky",
+      "logainm_id": "14016",
+      "lat": 54.670278,
+      "lon": -8.105692,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "gortlosky:familycensus:04:1901"
+     },
+     "caption": "Gortlosky had one Perry household in 1901, headed by Andrew.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "gortlosky:familycensus:04:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "gortlosky:family:04",
+      "label": "Perry",
+      "run": true
+     }
+    },
+    {
+     "id": "gortlosky:beat:familycensus:04-1911",
+     "kind": "familycensus",
+     "chapter": "gortlosky:ch:family-04",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -120,35 +264,116 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "gortlosky:census:1911"
+      "open_card": "gortlosky:familycensus:04:1911"
      },
-     "caption": "Gortlosky had ten people in three households in 1911. Heads of household included Perry and Sheerin.",
+     "caption": "Gortlosky had two Perry households in 1911, headed by Andrew and Catherine.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "gortlosky:census:1911"
+       "gortlosky:familycensus:04:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6400,
+     "duration_ms": 4800,
      "audio": null,
-     "counts": {
-      "people": 10,
-      "households": 3
+     "thread": {
+      "id": "gortlosky:family:04",
+      "label": "Perry",
+      "run": true
      }
     }
    ]
   },
   {
-   "id": "gortlosky:ch:1926",
-   "title": "1926",
+   "id": "gortlosky:ch:family-05",
+   "title": "The Sheerin family",
    "beats": [
     {
-     "id": "gortlosky:beat:census:1926",
-     "kind": "census",
-     "chapter": "gortlosky:ch:1926",
+     "id": "gortlosky:beat:familyhead:05",
+     "kind": "familyhead",
+     "chapter": "gortlosky:ch:family-05",
+     "time": {
+      "label": "The Sheerin family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "gortlosky",
+      "name": "Gortlosky",
+      "logainm_id": "14016",
+      "lat": 54.670278,
+      "lon": -8.105692,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "gortlosky:familypresence:05"
+     },
+     "caption": "The Sheerin family appear in the records from 1911 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "gortlosky:familypresence:05"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "gortlosky:family:05",
+      "label": "Sheerin",
+      "run": true
+     }
+    },
+    {
+     "id": "gortlosky:beat:familycensus:05-1911",
+     "kind": "familycensus",
+     "chapter": "gortlosky:ch:family-05",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "gortlosky",
+      "name": "Gortlosky",
+      "logainm_id": "14016",
+      "lat": 54.670278,
+      "lon": -8.105692,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "gortlosky:familycensus:05:1911"
+     },
+     "caption": "Gortlosky had one Sheerin household in 1911, headed by Michael.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "gortlosky:familycensus:05:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "gortlosky:family:05",
+      "label": "Sheerin",
+      "run": true
+     }
+    },
+    {
+     "id": "gortlosky:beat:familycensus:05-1926",
+     "kind": "familycensus",
+     "chapter": "gortlosky:ch:family-05",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -165,25 +390,32 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "gortlosky:census:1926"
+      "open_card": "gortlosky:familycensus:05:1926"
      },
-     "caption": "Gortlosky had eight people in two households in 1926. Heads of household included Bushey and Sheerin.",
+     "caption": "Gortlosky had one Sheerin household in 1926, headed by Patrick.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "gortlosky:census:1926"
+       "gortlosky:familycensus:05:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6400,
+     "duration_ms": 4000,
      "audio": null,
-     "counts": {
-      "people": 8,
-      "households": 2
+     "thread": {
+      "id": "gortlosky:family:05",
+      "label": "Sheerin",
+      "run": true
      }
-    },
+    }
+   ]
+  },
+  {
+   "id": "gortlosky:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "gortlosky:beat:closing:end",
      "kind": "closing",
@@ -218,6 +450,350 @@
      },
      "duration_ms": 4000,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "gortlosky:ch:family-02",
+   "title": "The Gallagher family",
+   "beats": [
+    {
+     "id": "gortlosky:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "gortlosky:ch:family-02",
+     "time": {
+      "label": "The Gallagher family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "gortlosky",
+      "name": "Gortlosky",
+      "logainm_id": "14016",
+      "lat": 54.670278,
+      "lon": -8.105692,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "gortlosky:familypresence:02"
+     },
+     "caption": "The Gallagher family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "gortlosky:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "gortlosky:family:02",
+      "label": "Gallagher",
+      "run": false
+     }
+    },
+    {
+     "id": "gortlosky:beat:familycensus:02-1901",
+     "kind": "familycensus",
+     "chapter": "gortlosky:ch:family-02",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "gortlosky",
+      "name": "Gortlosky",
+      "logainm_id": "14016",
+      "lat": 54.670278,
+      "lon": -8.105692,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "gortlosky:familycensus:02:1901"
+     },
+     "caption": "Gortlosky had one Gallagher household in 1901, headed by Peter.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "gortlosky:familycensus:02:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "gortlosky:family:02",
+      "label": "Gallagher",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "gortlosky:ch:family-03",
+   "title": "The Perrey family",
+   "beats": [
+    {
+     "id": "gortlosky:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "gortlosky:ch:family-03",
+     "time": {
+      "label": "The Perrey family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "gortlosky",
+      "name": "Gortlosky",
+      "logainm_id": "14016",
+      "lat": 54.670278,
+      "lon": -8.105692,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "gortlosky:familypresence:03"
+     },
+     "caption": "The Perrey family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "gortlosky:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "gortlosky:family:03",
+      "label": "Perrey",
+      "run": false
+     }
+    },
+    {
+     "id": "gortlosky:beat:familycensus:03-1901",
+     "kind": "familycensus",
+     "chapter": "gortlosky:ch:family-03",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "gortlosky",
+      "name": "Gortlosky",
+      "logainm_id": "14016",
+      "lat": 54.670278,
+      "lon": -8.105692,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "gortlosky:familycensus:03:1901"
+     },
+     "caption": "Gortlosky had one Perrey household in 1901, headed by Catherin.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "gortlosky:familycensus:03:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "gortlosky:family:03",
+      "label": "Perrey",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "gortlosky:ch:family-06",
+   "title": "The Sherin family",
+   "beats": [
+    {
+     "id": "gortlosky:beat:familyhead:06",
+     "kind": "familyhead",
+     "chapter": "gortlosky:ch:family-06",
+     "time": {
+      "label": "The Sherin family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "gortlosky",
+      "name": "Gortlosky",
+      "logainm_id": "14016",
+      "lat": 54.670278,
+      "lon": -8.105692,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "gortlosky:familypresence:06"
+     },
+     "caption": "The Sherin family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "gortlosky:familypresence:06"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "gortlosky:family:06",
+      "label": "Sherin",
+      "run": false
+     }
+    },
+    {
+     "id": "gortlosky:beat:familycensus:06-1901",
+     "kind": "familycensus",
+     "chapter": "gortlosky:ch:family-06",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "gortlosky",
+      "name": "Gortlosky",
+      "logainm_id": "14016",
+      "lat": 54.670278,
+      "lon": -8.105692,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "gortlosky:familycensus:06:1901"
+     },
+     "caption": "Gortlosky had one Sherin household in 1901, headed by Michael.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "gortlosky:familycensus:06:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "gortlosky:family:06",
+      "label": "Sherin",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "gortlosky:ch:family-01",
+   "title": "The Bushey family",
+   "beats": [
+    {
+     "id": "gortlosky:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "gortlosky:ch:family-01",
+     "time": {
+      "label": "The Bushey family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "gortlosky",
+      "name": "Gortlosky",
+      "logainm_id": "14016",
+      "lat": 54.670278,
+      "lon": -8.105692,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "gortlosky:familypresence:01"
+     },
+     "caption": "The Bushey family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "gortlosky:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "gortlosky:family:01",
+      "label": "Bushey",
+      "run": false
+     }
+    },
+    {
+     "id": "gortlosky:beat:familycensus:01-1926",
+     "kind": "familycensus",
+     "chapter": "gortlosky:ch:family-01",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "gortlosky",
+      "name": "Gortlosky",
+      "logainm_id": "14016",
+      "lat": 54.670278,
+      "lon": -8.105692,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "gortlosky:familycensus:01:1926"
+     },
+     "caption": "Gortlosky had one Bushey household in 1926, headed by Joseph.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "gortlosky:familycensus:01:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "gortlosky:family:01",
+      "label": "Bushey",
+      "run": false
+     }
     }
    ]
   }

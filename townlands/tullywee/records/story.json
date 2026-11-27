@@ -52,15 +52,15 @@
    ]
   },
   {
-   "id": "tullywee:ch:1901",
-   "title": "1901",
+   "id": "tullywee:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "tullywee:beat:census:1901",
+     "id": "tullywee:beat:census:returns",
      "kind": "census",
-     "chapter": "tullywee:ch:1901",
+     "chapter": "tullywee:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1926",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -77,33 +77,177 @@
       "stage": "map",
       "open_card": "tullywee:census:1901"
      },
-     "caption": "Tullywee had fourteen people in two households in 1901. Heads of household included Kirkpatrick.",
+     "caption": "The censuses of 1901, 1911 and 1926 counted 14, 9 and 7 people in Tullywee, in 2, 2 and 2 households. Heads of household included Kirkpatrick and Graham.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "tullywee:census:1901"
+       "tullywee:census:1901",
+       "tullywee:census:1911",
+       "tullywee:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 5600,
+     "duration_ms": 11200,
      "audio": null,
      "counts": {
-      "people": 14,
-      "households": 2
+      "returns": [
+       {
+        "year": "1901",
+        "people": 14,
+        "households": 2
+       },
+       {
+        "year": "1911",
+        "people": 9,
+        "households": 2
+       },
+       {
+        "year": "1926",
+        "people": 7,
+        "households": 2
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "tullywee:ch:1911",
-   "title": "1911",
+   "id": "tullywee:ch:families",
+   "title": "The families of Tullywee",
    "beats": [
     {
-     "id": "tullywee:beat:census:1911",
-     "kind": "census",
-     "chapter": "tullywee:ch:1911",
+     "id": "tullywee:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "tullywee:ch:families",
+     "time": {
+      "label": "The families of Tullywee",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullywee",
+      "name": "Tullywee",
+      "logainm_id": "14161",
+      "lat": 54.619806,
+      "lon": -8.101928,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullywee:census:1901"
+     },
+     "caption": "Here are the families of Tullywee, from 1901 to 1926. First, the Kirkpatrick and Graham families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullywee:census:1901",
+       "tullywee:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "tullywee:family:02",
+      "label": "Kirkpatrick",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "tullywee:ch:family-02",
+   "title": "The Kirkpatrick family",
+   "beats": [
+    {
+     "id": "tullywee:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "tullywee:ch:family-02",
+     "time": {
+      "label": "The Kirkpatrick family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullywee",
+      "name": "Tullywee",
+      "logainm_id": "14161",
+      "lat": 54.619806,
+      "lon": -8.101928,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullywee:familypresence:02"
+     },
+     "caption": "The Kirkpatrick family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullywee:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "tullywee:family:02",
+      "label": "Kirkpatrick",
+      "run": true
+     }
+    },
+    {
+     "id": "tullywee:beat:familycensus:02-1901",
+     "kind": "familycensus",
+     "chapter": "tullywee:ch:family-02",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullywee",
+      "name": "Tullywee",
+      "logainm_id": "14161",
+      "lat": 54.619806,
+      "lon": -8.101928,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullywee:familycensus:02:1901"
+     },
+     "caption": "Tullywee had one Kirkpatrick household in 1901, headed by Andrew.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullywee:familycensus:02:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "tullywee:family:02",
+      "label": "Kirkpatrick",
+      "run": true
+     }
+    },
+    {
+     "id": "tullywee:beat:familycensus:02-1911",
+     "kind": "familycensus",
+     "chapter": "tullywee:ch:family-02",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -120,35 +264,30 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "tullywee:census:1911"
+      "open_card": "tullywee:familycensus:02:1911"
      },
-     "caption": "Tullywee had nine people in two households in 1911. Heads of household included Kirkpatrick.",
+     "caption": "Tullywee had one Kirkpatrick household in 1911, headed by Andrew.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "tullywee:census:1911"
+       "tullywee:familycensus:02:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 5600,
+     "duration_ms": 4000,
      "audio": null,
-     "counts": {
-      "people": 9,
-      "households": 2
+     "thread": {
+      "id": "tullywee:family:02",
+      "label": "Kirkpatrick",
+      "run": true
      }
-    }
-   ]
-  },
-  {
-   "id": "tullywee:ch:1926",
-   "title": "1926",
-   "beats": [
+    },
     {
-     "id": "tullywee:beat:census:1926",
-     "kind": "census",
-     "chapter": "tullywee:ch:1926",
+     "id": "tullywee:beat:familycensus:02-1926",
+     "kind": "familycensus",
+     "chapter": "tullywee:ch:family-02",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -165,25 +304,118 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "tullywee:census:1926"
+      "open_card": "tullywee:familycensus:02:1926"
      },
-     "caption": "Tullywee had seven people in two households in 1926. Heads of household included Graham and Kirkpatrick.",
+     "caption": "Tullywee had one Kirkpatrick household in 1926, headed by Maggie.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "tullywee:census:1926"
+       "tullywee:familycensus:02:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6400,
+     "duration_ms": 4000,
      "audio": null,
-     "counts": {
-      "people": 7,
-      "households": 2
+     "thread": {
+      "id": "tullywee:family:02",
+      "label": "Kirkpatrick",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "tullywee:ch:family-01",
+   "title": "The Graham family",
+   "beats": [
+    {
+     "id": "tullywee:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "tullywee:ch:family-01",
+     "time": {
+      "label": "The Graham family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullywee",
+      "name": "Tullywee",
+      "logainm_id": "14161",
+      "lat": 54.619806,
+      "lon": -8.101928,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullywee:familypresence:01"
+     },
+     "caption": "The Graham family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullywee:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "tullywee:family:01",
+      "label": "Graham",
+      "run": true
      }
     },
+    {
+     "id": "tullywee:beat:familycensus:01-1926",
+     "kind": "familycensus",
+     "chapter": "tullywee:ch:family-01",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullywee",
+      "name": "Tullywee",
+      "logainm_id": "14161",
+      "lat": 54.619806,
+      "lon": -8.101928,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullywee:familycensus:01:1926"
+     },
+     "caption": "Tullywee had two Graham households in 1926, headed by Polly and Lisa.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullywee:familycensus:01:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "tullywee:family:01",
+      "label": "Graham",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "tullywee:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "tullywee:beat:closing:end",
      "kind": "closing",

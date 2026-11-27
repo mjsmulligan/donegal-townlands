@@ -95,13 +95,122 @@
    ]
   },
   {
-   "id": "drumbar:ch:baptisms",
-   "title": "Baptisms, 1875",
+   "id": "drumbar:ch:census",
+   "title": "1901 to 1926",
+   "beats": [
+    {
+     "id": "drumbar:beat:census:returns",
+     "kind": "census",
+     "chapter": "drumbar:ch:census",
+     "time": {
+      "label": "1901 to 1926",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumbar",
+      "name": "Drumbar",
+      "logainm_id": "14031",
+      "lat": 54.640452,
+      "lon": -8.087593,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumbar:census:1901"
+     },
+     "caption": "The censuses of 1901, 1911 and 1926 counted 40, 38 and 38 people in Drumbar, in 9, 9 and 9 households. Heads of household included Cassidy, Bustard and Brogan.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumbar:census:1901",
+       "drumbar:census:1911",
+       "drumbar:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 11600,
+     "audio": null,
+     "counts": {
+      "returns": [
+       {
+        "year": "1901",
+        "people": 40,
+        "households": 9
+       },
+       {
+        "year": "1911",
+        "people": 38,
+        "households": 9
+       },
+       {
+        "year": "1926",
+        "people": 38,
+        "households": 9
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumbar:ch:families",
+   "title": "The families of Drumbar",
+   "beats": [
+    {
+     "id": "drumbar:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "drumbar:ch:families",
+     "time": {
+      "label": "The families of Drumbar",
+      "iso": "1875-09-17",
+      "sort": "1875-09-17",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumbar",
+      "name": "Drumbar",
+      "logainm_id": "14031",
+      "lat": 54.640452,
+      "lon": -8.087593,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumbar:baptism:TAW-B-p018-r342"
+     },
+     "caption": "Here are the families of Drumbar, from 1875 to 1926. First, the Cassidy and Bustard families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumbar:baptism:TAW-B-p018-r342",
+       "drumbar:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "drumbar:family:03",
+      "label": "Cassidy",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumbar:ch:family-03",
+   "title": "The Cassidy family",
    "beats": [
     {
      "id": "drumbar:beat:baptism:1875-09-17-TAW-B-p018-r342",
      "kind": "baptism",
-     "chapter": "drumbar:ch:baptisms",
+     "chapter": "drumbar:ch:family-03",
      "time": {
       "label": "17 September 1875",
       "iso": "1875-09-17",
@@ -131,18 +240,57 @@
       "certainty": "stated"
      },
      "duration_ms": 6400,
-     "audio": null
-    }
-   ]
-  },
-  {
-   "id": "drumbar:ch:1901",
-   "title": "1901",
-   "beats": [
+     "audio": null,
+     "thread": {
+      "id": "drumbar:family:03",
+      "label": "Cassidy",
+      "run": true
+     }
+    },
     {
-     "id": "drumbar:beat:census:1901",
-     "kind": "census",
-     "chapter": "drumbar:ch:1901",
+     "id": "drumbar:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "drumbar:ch:family-03",
+     "time": {
+      "label": "The Cassidy family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumbar",
+      "name": "Drumbar",
+      "logainm_id": "14031",
+      "lat": 54.640452,
+      "lon": -8.087593,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumbar:familypresence:03"
+     },
+     "caption": "The Cassidy family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumbar:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drumbar:family:03",
+      "label": "Cassidy",
+      "run": true
+     }
+    },
+    {
+     "id": "drumbar:beat:familycensus:03-1901",
+     "kind": "familycensus",
+     "chapter": "drumbar:ch:family-03",
      "time": {
       "label": "1901",
       "iso": "1901",
@@ -159,35 +307,30 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "drumbar:census:1901"
+      "open_card": "drumbar:familycensus:03:1901"
      },
-     "caption": "In 1901, 40 people in nine households lived in Drumbar. Heads of household included Cassidy, Bustard and Brogan.",
+     "caption": "Drumbar had three Cassidy households in 1901, headed by William, John and Anne.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "drumbar:census:1901"
+       "drumbar:familycensus:03:1901"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 7200,
+     "duration_ms": 5200,
      "audio": null,
-     "counts": {
-      "people": 40,
-      "households": 9
+     "thread": {
+      "id": "drumbar:family:03",
+      "label": "Cassidy",
+      "run": true
      }
-    }
-   ]
-  },
-  {
-   "id": "drumbar:ch:1911",
-   "title": "1911",
-   "beats": [
+    },
     {
-     "id": "drumbar:beat:census:1911",
-     "kind": "census",
-     "chapter": "drumbar:ch:1911",
+     "id": "drumbar:beat:familycensus:03-1911",
+     "kind": "familycensus",
+     "chapter": "drumbar:ch:family-03",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -204,35 +347,30 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "drumbar:census:1911"
+      "open_card": "drumbar:familycensus:03:1911"
      },
-     "caption": "In 1911, 38 people in nine households lived in Drumbar. Heads of household included Cassidy, Bustard and Scallen.",
+     "caption": "Drumbar had three Cassidy households in 1911, headed by Mary, William and Anne.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "drumbar:census:1911"
+       "drumbar:familycensus:03:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 7200,
+     "duration_ms": 5200,
      "audio": null,
-     "counts": {
-      "people": 38,
-      "households": 9
+     "thread": {
+      "id": "drumbar:family:03",
+      "label": "Cassidy",
+      "run": true
      }
-    }
-   ]
-  },
-  {
-   "id": "drumbar:ch:1926",
-   "title": "1926",
-   "beats": [
+    },
     {
-     "id": "drumbar:beat:census:1926",
-     "kind": "census",
-     "chapter": "drumbar:ch:1926",
+     "id": "drumbar:beat:familycensus:03-1926",
+     "kind": "familycensus",
+     "chapter": "drumbar:ch:family-03",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -249,25 +387,198 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "drumbar:census:1926"
+      "open_card": "drumbar:familycensus:03:1926"
      },
-     "caption": "Drumbar had 38 people in nine households in 1926. Heads of household included Bustard, Scallen and Brogan.",
+     "caption": "Drumbar had one Cassidy household in 1926, headed by Hugh.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "drumbar:census:1926"
+       "drumbar:familycensus:03:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6800,
+     "duration_ms": 4000,
      "audio": null,
-     "counts": {
-      "people": 38,
-      "households": 9
+     "thread": {
+      "id": "drumbar:family:03",
+      "label": "Cassidy",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumbar:ch:family-02",
+   "title": "The Bustard family",
+   "beats": [
+    {
+     "id": "drumbar:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "drumbar:ch:family-02",
+     "time": {
+      "label": "The Bustard family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumbar",
+      "name": "Drumbar",
+      "logainm_id": "14031",
+      "lat": 54.640452,
+      "lon": -8.087593,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumbar:familypresence:02"
+     },
+     "caption": "The Bustard family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumbar:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drumbar:family:02",
+      "label": "Bustard",
+      "run": true
      }
     },
+    {
+     "id": "drumbar:beat:familycensus:02-1901",
+     "kind": "familycensus",
+     "chapter": "drumbar:ch:family-02",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumbar",
+      "name": "Drumbar",
+      "logainm_id": "14031",
+      "lat": 54.640452,
+      "lon": -8.087593,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumbar:familycensus:02:1901"
+     },
+     "caption": "Drumbar had two Bustard households in 1901, headed by Adam and Mary.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumbar:familycensus:02:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "drumbar:family:02",
+      "label": "Bustard",
+      "run": true
+     }
+    },
+    {
+     "id": "drumbar:beat:familycensus:02-1911",
+     "kind": "familycensus",
+     "chapter": "drumbar:ch:family-02",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumbar",
+      "name": "Drumbar",
+      "logainm_id": "14031",
+      "lat": 54.640452,
+      "lon": -8.087593,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumbar:familycensus:02:1911"
+     },
+     "caption": "Drumbar had two Bustard households in 1911, headed by William James and Adam.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumbar:familycensus:02:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "drumbar:family:02",
+      "label": "Bustard",
+      "run": true
+     }
+    },
+    {
+     "id": "drumbar:beat:familycensus:02-1926",
+     "kind": "familycensus",
+     "chapter": "drumbar:ch:family-02",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumbar",
+      "name": "Drumbar",
+      "logainm_id": "14031",
+      "lat": 54.640452,
+      "lon": -8.087593,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumbar:familycensus:02:1926"
+     },
+     "caption": "Drumbar had two Bustard households in 1926, headed by William J and Thomas.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumbar:familycensus:02:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "drumbar:family:02",
+      "label": "Bustard",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumbar:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "drumbar:beat:closing:end",
      "kind": "closing",
@@ -302,6 +613,676 @@
      },
      "duration_ms": 4000,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "drumbar:ch:family-01",
+   "title": "The Brogan family",
+   "beats": [
+    {
+     "id": "drumbar:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "drumbar:ch:family-01",
+     "time": {
+      "label": "The Brogan family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumbar",
+      "name": "Drumbar",
+      "logainm_id": "14031",
+      "lat": 54.640452,
+      "lon": -8.087593,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumbar:familypresence:01"
+     },
+     "caption": "The Brogan family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumbar:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drumbar:family:01",
+      "label": "Brogan",
+      "run": false
+     }
+    },
+    {
+     "id": "drumbar:beat:familycensus:01-1901",
+     "kind": "familycensus",
+     "chapter": "drumbar:ch:family-01",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumbar",
+      "name": "Drumbar",
+      "logainm_id": "14031",
+      "lat": 54.640452,
+      "lon": -8.087593,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumbar:familycensus:01:1901"
+     },
+     "caption": "Drumbar had one Brogan household in 1901, headed by Catherine.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumbar:familycensus:01:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumbar:family:01",
+      "label": "Brogan",
+      "run": false
+     }
+    },
+    {
+     "id": "drumbar:beat:familycensus:01-1911",
+     "kind": "familycensus",
+     "chapter": "drumbar:ch:family-01",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumbar",
+      "name": "Drumbar",
+      "logainm_id": "14031",
+      "lat": 54.640452,
+      "lon": -8.087593,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumbar:familycensus:01:1911"
+     },
+     "caption": "Drumbar had one Brogan household in 1911, headed by Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumbar:familycensus:01:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumbar:family:01",
+      "label": "Brogan",
+      "run": false
+     }
+    },
+    {
+     "id": "drumbar:beat:familycensus:01-1926",
+     "kind": "familycensus",
+     "chapter": "drumbar:ch:family-01",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumbar",
+      "name": "Drumbar",
+      "logainm_id": "14031",
+      "lat": 54.640452,
+      "lon": -8.087593,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumbar:familycensus:01:1926"
+     },
+     "caption": "Drumbar had one Brogan household in 1926, headed by Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumbar:familycensus:01:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumbar:family:01",
+      "label": "Brogan",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumbar:ch:family-04",
+   "title": "The Flood family",
+   "beats": [
+    {
+     "id": "drumbar:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "drumbar:ch:family-04",
+     "time": {
+      "label": "The Flood family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumbar",
+      "name": "Drumbar",
+      "logainm_id": "14031",
+      "lat": 54.640452,
+      "lon": -8.087593,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumbar:familypresence:04"
+     },
+     "caption": "The Flood family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumbar:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drumbar:family:04",
+      "label": "Flood",
+      "run": false
+     }
+    },
+    {
+     "id": "drumbar:beat:familycensus:04-1901",
+     "kind": "familycensus",
+     "chapter": "drumbar:ch:family-04",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumbar",
+      "name": "Drumbar",
+      "logainm_id": "14031",
+      "lat": 54.640452,
+      "lon": -8.087593,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumbar:familycensus:04:1901"
+     },
+     "caption": "Drumbar had one Flood household in 1901, headed by Sarah.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumbar:familycensus:04:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumbar:family:04",
+      "label": "Flood",
+      "run": false
+     }
+    },
+    {
+     "id": "drumbar:beat:familycensus:04-1911",
+     "kind": "familycensus",
+     "chapter": "drumbar:ch:family-04",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumbar",
+      "name": "Drumbar",
+      "logainm_id": "14031",
+      "lat": 54.640452,
+      "lon": -8.087593,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumbar:familycensus:04:1911"
+     },
+     "caption": "Drumbar had one Flood household in 1911, headed by Robert.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumbar:familycensus:04:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumbar:family:04",
+      "label": "Flood",
+      "run": false
+     }
+    },
+    {
+     "id": "drumbar:beat:familycensus:04-1926",
+     "kind": "familycensus",
+     "chapter": "drumbar:ch:family-04",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumbar",
+      "name": "Drumbar",
+      "logainm_id": "14031",
+      "lat": 54.640452,
+      "lon": -8.087593,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumbar:familycensus:04:1926"
+     },
+     "caption": "Drumbar had one Flood household in 1926, headed by Robert.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumbar:familycensus:04:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumbar:family:04",
+      "label": "Flood",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumbar:ch:family-05",
+   "title": "The Scallen family",
+   "beats": [
+    {
+     "id": "drumbar:beat:familyhead:05",
+     "kind": "familyhead",
+     "chapter": "drumbar:ch:family-05",
+     "time": {
+      "label": "The Scallen family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumbar",
+      "name": "Drumbar",
+      "logainm_id": "14031",
+      "lat": 54.640452,
+      "lon": -8.087593,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumbar:familypresence:05"
+     },
+     "caption": "The Scallen family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumbar:familypresence:05"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drumbar:family:05",
+      "label": "Scallen",
+      "run": false
+     }
+    },
+    {
+     "id": "drumbar:beat:familycensus:05-1901",
+     "kind": "familycensus",
+     "chapter": "drumbar:ch:family-05",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumbar",
+      "name": "Drumbar",
+      "logainm_id": "14031",
+      "lat": 54.640452,
+      "lon": -8.087593,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumbar:familycensus:05:1901"
+     },
+     "caption": "Drumbar had one Scallen household in 1901, headed by George.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumbar:familycensus:05:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumbar:family:05",
+      "label": "Scallen",
+      "run": false
+     }
+    },
+    {
+     "id": "drumbar:beat:familycensus:05-1911",
+     "kind": "familycensus",
+     "chapter": "drumbar:ch:family-05",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumbar",
+      "name": "Drumbar",
+      "logainm_id": "14031",
+      "lat": 54.640452,
+      "lon": -8.087593,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumbar:familycensus:05:1911"
+     },
+     "caption": "Drumbar had two Scallen households in 1911, headed by Bridget and James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumbar:familycensus:05:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "drumbar:family:05",
+      "label": "Scallen",
+      "run": false
+     }
+    },
+    {
+     "id": "drumbar:beat:familycensus:05-1926",
+     "kind": "familycensus",
+     "chapter": "drumbar:ch:family-05",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumbar",
+      "name": "Drumbar",
+      "logainm_id": "14031",
+      "lat": 54.640452,
+      "lon": -8.087593,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumbar:familycensus:05:1926"
+     },
+     "caption": "Drumbar had two Scallen households in 1926, headed by Brigid and James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumbar:familycensus:05:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "drumbar:family:05",
+      "label": "Scallen",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumbar:ch:family-06",
+   "title": "The Scallon family",
+   "beats": [
+    {
+     "id": "drumbar:beat:familyhead:06",
+     "kind": "familyhead",
+     "chapter": "drumbar:ch:family-06",
+     "time": {
+      "label": "The Scallon family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumbar",
+      "name": "Drumbar",
+      "logainm_id": "14031",
+      "lat": 54.640452,
+      "lon": -8.087593,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumbar:familypresence:06"
+     },
+     "caption": "The Scallon family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumbar:familypresence:06"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumbar:family:06",
+      "label": "Scallon",
+      "run": false
+     }
+    },
+    {
+     "id": "drumbar:beat:familycensus:06-1901",
+     "kind": "familycensus",
+     "chapter": "drumbar:ch:family-06",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumbar",
+      "name": "Drumbar",
+      "logainm_id": "14031",
+      "lat": 54.640452,
+      "lon": -8.087593,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumbar:familycensus:06:1901"
+     },
+     "caption": "Drumbar had one Scallon household in 1901, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumbar:familycensus:06:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumbar:family:06",
+      "label": "Scallon",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumbar:ch:family-07",
+   "title": "The Weir family",
+   "beats": [
+    {
+     "id": "drumbar:beat:familyhead:07",
+     "kind": "familyhead",
+     "chapter": "drumbar:ch:family-07",
+     "time": {
+      "label": "The Weir family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumbar",
+      "name": "Drumbar",
+      "logainm_id": "14031",
+      "lat": 54.640452,
+      "lon": -8.087593,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumbar:familypresence:07"
+     },
+     "caption": "The Weir family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumbar:familypresence:07"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumbar:family:07",
+      "label": "Weir",
+      "run": false
+     }
+    },
+    {
+     "id": "drumbar:beat:familycensus:07-1926",
+     "kind": "familycensus",
+     "chapter": "drumbar:ch:family-07",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumbar",
+      "name": "Drumbar",
+      "logainm_id": "14031",
+      "lat": 54.640452,
+      "lon": -8.087593,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumbar:familycensus:07:1926"
+     },
+     "caption": "Drumbar had one Weir household in 1926, headed by Francis.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumbar:familycensus:07:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumbar:family:07",
+      "label": "Weir",
+      "run": false
+     }
     }
    ]
   }

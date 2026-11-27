@@ -52,15 +52,15 @@
    ]
   },
   {
-   "id": "tawnagh:ch:1901",
-   "title": "1901",
+   "id": "tawnagh:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "tawnagh:beat:census:1901",
+     "id": "tawnagh:beat:census:returns",
      "kind": "census",
-     "chapter": "tawnagh:ch:1901",
+     "chapter": "tawnagh:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1926",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -77,33 +77,177 @@
       "stage": "map",
       "open_card": "tawnagh:census:1901"
      },
-     "caption": "In 1901, 42 people in nine households lived in Tawnagh. Heads of household included Wray, Logue and Rose.",
+     "caption": "The censuses of 1901, 1911 and 1926 counted 42, 38 and 35 people in Tawnagh, in 9, 9 and 7 households. Heads of household included Wray, Logue and Rose.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "tawnagh:census:1901"
+       "tawnagh:census:1901",
+       "tawnagh:census:1911",
+       "tawnagh:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 7200,
+     "duration_ms": 11600,
      "audio": null,
      "counts": {
-      "people": 42,
-      "households": 9
+      "returns": [
+       {
+        "year": "1901",
+        "people": 42,
+        "households": 9
+       },
+       {
+        "year": "1911",
+        "people": 38,
+        "households": 9
+       },
+       {
+        "year": "1926",
+        "people": 35,
+        "households": 7
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "tawnagh:ch:1911",
-   "title": "1911",
+   "id": "tawnagh:ch:families",
+   "title": "The families of Tawnagh",
    "beats": [
     {
-     "id": "tawnagh:beat:census:1911",
-     "kind": "census",
-     "chapter": "tawnagh:ch:1911",
+     "id": "tawnagh:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "tawnagh:ch:families",
+     "time": {
+      "label": "The families of Tawnagh",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tawnagh",
+      "name": "Tawnagh",
+      "logainm_id": "14285",
+      "lat": 54.643841,
+      "lon": -8.05547,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tawnagh:census:1901"
+     },
+     "caption": "Here are the families of Tawnagh, from 1901 to 1926. First, the Logue and Wray families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tawnagh:census:1901",
+       "tawnagh:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "tawnagh:family:01",
+      "label": "Logue",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "tawnagh:ch:family-01",
+   "title": "The Logue family",
+   "beats": [
+    {
+     "id": "tawnagh:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "tawnagh:ch:family-01",
+     "time": {
+      "label": "The Logue family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tawnagh",
+      "name": "Tawnagh",
+      "logainm_id": "14285",
+      "lat": 54.643841,
+      "lon": -8.05547,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tawnagh:familypresence:01"
+     },
+     "caption": "The Logue family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tawnagh:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "tawnagh:family:01",
+      "label": "Logue",
+      "run": true
+     }
+    },
+    {
+     "id": "tawnagh:beat:familycensus:01-1901",
+     "kind": "familycensus",
+     "chapter": "tawnagh:ch:family-01",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tawnagh",
+      "name": "Tawnagh",
+      "logainm_id": "14285",
+      "lat": 54.643841,
+      "lon": -8.05547,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tawnagh:familycensus:01:1901"
+     },
+     "caption": "Tawnagh had two Logue households in 1901, headed by Thomas and Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tawnagh:familycensus:01:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "tawnagh:family:01",
+      "label": "Logue",
+      "run": true
+     }
+    },
+    {
+     "id": "tawnagh:beat:familycensus:01-1911",
+     "kind": "familycensus",
+     "chapter": "tawnagh:ch:family-01",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -120,35 +264,30 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "tawnagh:census:1911"
+      "open_card": "tawnagh:familycensus:01:1911"
      },
-     "caption": "Tawnagh had 38 people in nine households in 1911. Heads of household included Wray, Logue and Rose.",
+     "caption": "Tawnagh had three Logue households in 1911, headed by Edward, Thomas and James.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "tawnagh:census:1911"
+       "tawnagh:familycensus:01:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6800,
+     "duration_ms": 5200,
      "audio": null,
-     "counts": {
-      "people": 38,
-      "households": 9
+     "thread": {
+      "id": "tawnagh:family:01",
+      "label": "Logue",
+      "run": true
      }
-    }
-   ]
-  },
-  {
-   "id": "tawnagh:ch:1926",
-   "title": "1926",
-   "beats": [
+    },
     {
-     "id": "tawnagh:beat:census:1926",
-     "kind": "census",
-     "chapter": "tawnagh:ch:1926",
+     "id": "tawnagh:beat:familycensus:01-1926",
+     "kind": "familycensus",
+     "chapter": "tawnagh:ch:family-01",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -165,25 +304,198 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "tawnagh:census:1926"
+      "open_card": "tawnagh:familycensus:01:1926"
      },
-     "caption": "Tawnagh had 35 people in seven households in 1926. Heads of household included Logue, Rose and Wray.",
+     "caption": "Tawnagh had three Logue households in 1926, headed by Joseph, Eileen and Mary.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "tawnagh:census:1926"
+       "tawnagh:familycensus:01:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6800,
+     "duration_ms": 5200,
      "audio": null,
-     "counts": {
-      "people": 35,
-      "households": 7
+     "thread": {
+      "id": "tawnagh:family:01",
+      "label": "Logue",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "tawnagh:ch:family-04",
+   "title": "The Wray family",
+   "beats": [
+    {
+     "id": "tawnagh:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "tawnagh:ch:family-04",
+     "time": {
+      "label": "The Wray family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tawnagh",
+      "name": "Tawnagh",
+      "logainm_id": "14285",
+      "lat": 54.643841,
+      "lon": -8.05547,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tawnagh:familypresence:04"
+     },
+     "caption": "The Wray family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tawnagh:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "tawnagh:family:04",
+      "label": "Wray",
+      "run": true
      }
     },
+    {
+     "id": "tawnagh:beat:familycensus:04-1901",
+     "kind": "familycensus",
+     "chapter": "tawnagh:ch:family-04",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tawnagh",
+      "name": "Tawnagh",
+      "logainm_id": "14285",
+      "lat": 54.643841,
+      "lon": -8.05547,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tawnagh:familycensus:04:1901"
+     },
+     "caption": "Tawnagh had five Wray households in 1901, headed by Francis, Richard, Joseph, Margaret Jane and Sarah.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tawnagh:familycensus:04:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "tawnagh:family:04",
+      "label": "Wray",
+      "run": true
+     }
+    },
+    {
+     "id": "tawnagh:beat:familycensus:04-1911",
+     "kind": "familycensus",
+     "chapter": "tawnagh:ch:family-04",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tawnagh",
+      "name": "Tawnagh",
+      "logainm_id": "14285",
+      "lat": 54.643841,
+      "lon": -8.05547,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tawnagh:familycensus:04:1911"
+     },
+     "caption": "Tawnagh had five Wray households in 1911, headed by Joseph, Mary, Prue, Sarah and John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tawnagh:familycensus:04:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 6000,
+     "audio": null,
+     "thread": {
+      "id": "tawnagh:family:04",
+      "label": "Wray",
+      "run": true
+     }
+    },
+    {
+     "id": "tawnagh:beat:familycensus:04-1926",
+     "kind": "familycensus",
+     "chapter": "tawnagh:ch:family-04",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tawnagh",
+      "name": "Tawnagh",
+      "logainm_id": "14285",
+      "lat": 54.643841,
+      "lon": -8.05547,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tawnagh:familycensus:04:1926"
+     },
+     "caption": "Tawnagh had two Wray households in 1926, headed by Martha and Henry.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tawnagh:familycensus:04:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "tawnagh:family:04",
+      "label": "Wray",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "tawnagh:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "tawnagh:beat:closing:end",
      "kind": "closing",
@@ -218,6 +530,258 @@
      },
      "duration_ms": 4000,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "tawnagh:ch:family-02",
+   "title": "The Rose family",
+   "beats": [
+    {
+     "id": "tawnagh:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "tawnagh:ch:family-02",
+     "time": {
+      "label": "The Rose family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tawnagh",
+      "name": "Tawnagh",
+      "logainm_id": "14285",
+      "lat": 54.643841,
+      "lon": -8.05547,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tawnagh:familypresence:02"
+     },
+     "caption": "The Rose family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tawnagh:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "tawnagh:family:02",
+      "label": "Rose",
+      "run": false
+     }
+    },
+    {
+     "id": "tawnagh:beat:familycensus:02-1901",
+     "kind": "familycensus",
+     "chapter": "tawnagh:ch:family-02",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tawnagh",
+      "name": "Tawnagh",
+      "logainm_id": "14285",
+      "lat": 54.643841,
+      "lon": -8.05547,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tawnagh:familycensus:02:1901"
+     },
+     "caption": "Tawnagh had one Rose household in 1901, headed by Thomas.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tawnagh:familycensus:02:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "tawnagh:family:02",
+      "label": "Rose",
+      "run": false
+     }
+    },
+    {
+     "id": "tawnagh:beat:familycensus:02-1911",
+     "kind": "familycensus",
+     "chapter": "tawnagh:ch:family-02",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tawnagh",
+      "name": "Tawnagh",
+      "logainm_id": "14285",
+      "lat": 54.643841,
+      "lon": -8.05547,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tawnagh:familycensus:02:1911"
+     },
+     "caption": "Tawnagh had one Rose household in 1911, headed by Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tawnagh:familycensus:02:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "tawnagh:family:02",
+      "label": "Rose",
+      "run": false
+     }
+    },
+    {
+     "id": "tawnagh:beat:familycensus:02-1926",
+     "kind": "familycensus",
+     "chapter": "tawnagh:ch:family-02",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tawnagh",
+      "name": "Tawnagh",
+      "logainm_id": "14285",
+      "lat": 54.643841,
+      "lon": -8.05547,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tawnagh:familycensus:02:1926"
+     },
+     "caption": "Tawnagh had two Rose households in 1926, headed by Cassie and Hugh.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tawnagh:familycensus:02:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "tawnagh:family:02",
+      "label": "Rose",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "tawnagh:ch:family-03",
+   "title": "The Ward family",
+   "beats": [
+    {
+     "id": "tawnagh:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "tawnagh:ch:family-03",
+     "time": {
+      "label": "The Ward family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tawnagh",
+      "name": "Tawnagh",
+      "logainm_id": "14285",
+      "lat": 54.643841,
+      "lon": -8.05547,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tawnagh:familypresence:03"
+     },
+     "caption": "The Ward family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tawnagh:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "tawnagh:family:03",
+      "label": "Ward",
+      "run": false
+     }
+    },
+    {
+     "id": "tawnagh:beat:familycensus:03-1901",
+     "kind": "familycensus",
+     "chapter": "tawnagh:ch:family-03",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tawnagh",
+      "name": "Tawnagh",
+      "logainm_id": "14285",
+      "lat": 54.643841,
+      "lon": -8.05547,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tawnagh:familycensus:03:1901"
+     },
+     "caption": "Tawnagh had one Ward household in 1901, headed by Hugh.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tawnagh:familycensus:03:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "tawnagh:family:03",
+      "label": "Ward",
+      "run": false
+     }
     }
    ]
   }

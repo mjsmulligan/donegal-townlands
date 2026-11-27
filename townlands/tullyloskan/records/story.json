@@ -95,56 +95,15 @@
    ]
   },
   {
-   "id": "tullyloskan:ch:baptisms",
-   "title": "Baptisms, 1873",
+   "id": "tullyloskan:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "tullyloskan:beat:baptism:1873-01-21-TAW-B-p004-r9",
-     "kind": "baptism",
-     "chapter": "tullyloskan:ch:baptisms",
-     "time": {
-      "label": "21 January 1873",
-      "iso": "1873-01-21",
-      "sort": "1873-01-21",
-      "approximate": false
-     },
-     "place": {
-      "townland": "tullyloskan",
-      "name": "Tullyloskan",
-      "logainm_id": "14286",
-      "lat": 54.644115,
-      "lon": -8.07139,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "tullyloskan:baptism:TAW-B-p004-r9"
-     },
-     "caption": "Denis McGroarty was baptised on 21 January 1873. Denis McGroarty and Jane Travers were the parents.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "tullyloskan:baptism:TAW-B-p004-r9"
-      ],
-      "basis": "page_place",
-      "certainty": "stated"
-     },
-     "duration_ms": 6400,
-     "audio": null
-    }
-   ]
-  },
-  {
-   "id": "tullyloskan:ch:1901",
-   "title": "1901",
-   "beats": [
-    {
-     "id": "tullyloskan:beat:census:1901",
+     "id": "tullyloskan:beat:census:returns",
      "kind": "census",
-     "chapter": "tullyloskan:ch:1901",
+     "chapter": "tullyloskan:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1926",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -161,33 +120,177 @@
       "stage": "map",
       "open_card": "tullyloskan:census:1901"
      },
-     "caption": "Tullyloskan had 24 people in six households in 1901. Heads of household included Cassidy, Dorrion and McElhinney.",
+     "caption": "The censuses of 1901, 1911 and 1926 counted 24, 32 and 31 people in Tullyloskan, in 6, 6 and 6 households. Heads of household included Cassidy, Dorrion and McElhinney.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "tullyloskan:census:1901"
+       "tullyloskan:census:1901",
+       "tullyloskan:census:1911",
+       "tullyloskan:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 6800,
+     "duration_ms": 11600,
      "audio": null,
      "counts": {
-      "people": 24,
-      "households": 6
+      "returns": [
+       {
+        "year": "1901",
+        "people": 24,
+        "households": 6
+       },
+       {
+        "year": "1911",
+        "people": 32,
+        "households": 6
+       },
+       {
+        "year": "1926",
+        "people": 31,
+        "households": 6
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "tullyloskan:ch:1911",
-   "title": "1911",
+   "id": "tullyloskan:ch:families",
+   "title": "The families of Tullyloskan",
    "beats": [
     {
-     "id": "tullyloskan:beat:census:1911",
-     "kind": "census",
-     "chapter": "tullyloskan:ch:1911",
+     "id": "tullyloskan:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "tullyloskan:ch:families",
+     "time": {
+      "label": "The families of Tullyloskan",
+      "iso": "1873-01-21",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullyloskan",
+      "name": "Tullyloskan",
+      "logainm_id": "14286",
+      "lat": 54.644115,
+      "lon": -8.07139,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullyloskan:baptism:TAW-B-p004-r9"
+     },
+     "caption": "Here are the families of Tullyloskan, from 1873 to 1926. First, the Cassidy and McElhinney families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullyloskan:baptism:TAW-B-p004-r9",
+       "tullyloskan:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "tullyloskan:family:01",
+      "label": "Cassidy",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "tullyloskan:ch:family-01",
+   "title": "The Cassidy family",
+   "beats": [
+    {
+     "id": "tullyloskan:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "tullyloskan:ch:family-01",
+     "time": {
+      "label": "The Cassidy family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullyloskan",
+      "name": "Tullyloskan",
+      "logainm_id": "14286",
+      "lat": 54.644115,
+      "lon": -8.07139,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullyloskan:familypresence:01"
+     },
+     "caption": "The Cassidy family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullyloskan:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "tullyloskan:family:01",
+      "label": "Cassidy",
+      "run": true
+     }
+    },
+    {
+     "id": "tullyloskan:beat:familycensus:01-1901",
+     "kind": "familycensus",
+     "chapter": "tullyloskan:ch:family-01",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullyloskan",
+      "name": "Tullyloskan",
+      "logainm_id": "14286",
+      "lat": 54.644115,
+      "lon": -8.07139,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullyloskan:familycensus:01:1901"
+     },
+     "caption": "Tullyloskan had two Cassidy households in 1901, headed by Francis and Edward.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullyloskan:familycensus:01:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "tullyloskan:family:01",
+      "label": "Cassidy",
+      "run": true
+     }
+    },
+    {
+     "id": "tullyloskan:beat:familycensus:01-1911",
+     "kind": "familycensus",
+     "chapter": "tullyloskan:ch:family-01",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -204,35 +307,30 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "tullyloskan:census:1911"
+      "open_card": "tullyloskan:familycensus:01:1911"
      },
-     "caption": "Tullyloskan had 32 people in six households in 1911. Heads of household included Cassidy, McElhinney and McGroarty.",
+     "caption": "Tullyloskan had two Cassidy households in 1911, headed by Francis and Edward.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "tullyloskan:census:1911"
+       "tullyloskan:familycensus:01:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6800,
+     "duration_ms": 4800,
      "audio": null,
-     "counts": {
-      "people": 32,
-      "households": 6
+     "thread": {
+      "id": "tullyloskan:family:01",
+      "label": "Cassidy",
+      "run": true
      }
-    }
-   ]
-  },
-  {
-   "id": "tullyloskan:ch:1926",
-   "title": "1926",
-   "beats": [
+    },
     {
-     "id": "tullyloskan:beat:census:1926",
-     "kind": "census",
-     "chapter": "tullyloskan:ch:1926",
+     "id": "tullyloskan:beat:familycensus:01-1926",
+     "kind": "familycensus",
+     "chapter": "tullyloskan:ch:family-01",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -249,25 +347,198 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "tullyloskan:census:1926"
+      "open_card": "tullyloskan:familycensus:01:1926"
      },
-     "caption": "In 1926, 31 people in six households lived in Tullyloskan. Heads of household included Cassidy, McElhinney and Meehan.",
+     "caption": "Tullyloskan had five Cassidy households in 1926, headed by Edward, William, two named Francis J and Gracie.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "tullyloskan:census:1926"
+       "tullyloskan:familycensus:01:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 7200,
+     "duration_ms": 6800,
      "audio": null,
-     "counts": {
-      "people": 31,
-      "households": 6
+     "thread": {
+      "id": "tullyloskan:family:01",
+      "label": "Cassidy",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "tullyloskan:ch:family-03",
+   "title": "The McElhinney family",
+   "beats": [
+    {
+     "id": "tullyloskan:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "tullyloskan:ch:family-03",
+     "time": {
+      "label": "The McElhinney family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullyloskan",
+      "name": "Tullyloskan",
+      "logainm_id": "14286",
+      "lat": 54.644115,
+      "lon": -8.07139,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullyloskan:familypresence:03"
+     },
+     "caption": "The McElhinney family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullyloskan:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "tullyloskan:family:03",
+      "label": "McElhinney",
+      "run": true
      }
     },
+    {
+     "id": "tullyloskan:beat:familycensus:03-1901",
+     "kind": "familycensus",
+     "chapter": "tullyloskan:ch:family-03",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullyloskan",
+      "name": "Tullyloskan",
+      "logainm_id": "14286",
+      "lat": 54.644115,
+      "lon": -8.07139,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullyloskan:familycensus:03:1901"
+     },
+     "caption": "Tullyloskan had one McElhinney household in 1901, headed by William.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullyloskan:familycensus:03:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "tullyloskan:family:03",
+      "label": "McElhinney",
+      "run": true
+     }
+    },
+    {
+     "id": "tullyloskan:beat:familycensus:03-1911",
+     "kind": "familycensus",
+     "chapter": "tullyloskan:ch:family-03",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullyloskan",
+      "name": "Tullyloskan",
+      "logainm_id": "14286",
+      "lat": 54.644115,
+      "lon": -8.07139,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullyloskan:familycensus:03:1911"
+     },
+     "caption": "Tullyloskan had one McElhinney household in 1911, headed by Matilda.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullyloskan:familycensus:03:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "tullyloskan:family:03",
+      "label": "McElhinney",
+      "run": true
+     }
+    },
+    {
+     "id": "tullyloskan:beat:familycensus:03-1926",
+     "kind": "familycensus",
+     "chapter": "tullyloskan:ch:family-03",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullyloskan",
+      "name": "Tullyloskan",
+      "logainm_id": "14286",
+      "lat": 54.644115,
+      "lon": -8.07139,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullyloskan:familycensus:03:1926"
+     },
+     "caption": "Tullyloskan had one McElhinney household in 1926, headed by Matilda.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullyloskan:familycensus:03:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "tullyloskan:family:03",
+      "label": "McElhinney",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "tullyloskan:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "tullyloskan:beat:closing:end",
      "kind": "closing",
@@ -302,6 +573,642 @@
      },
      "duration_ms": 4000,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "tullyloskan:ch:family-05",
+   "title": "The McGroarty family",
+   "beats": [
+    {
+     "id": "tullyloskan:beat:baptism:1873-01-21-TAW-B-p004-r9",
+     "kind": "baptism",
+     "chapter": "tullyloskan:ch:family-05",
+     "time": {
+      "label": "21 January 1873",
+      "iso": "1873-01-21",
+      "sort": "1873-01-21",
+      "approximate": false
+     },
+     "place": {
+      "townland": "tullyloskan",
+      "name": "Tullyloskan",
+      "logainm_id": "14286",
+      "lat": 54.644115,
+      "lon": -8.07139,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullyloskan:baptism:TAW-B-p004-r9"
+     },
+     "caption": "Denis McGroarty was baptised on 21 January 1873. Denis McGroarty and Jane Travers were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullyloskan:baptism:TAW-B-p004-r9"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "tullyloskan:family:05",
+      "label": "McGroarty",
+      "run": false
+     }
+    },
+    {
+     "id": "tullyloskan:beat:familyhead:05",
+     "kind": "familyhead",
+     "chapter": "tullyloskan:ch:family-05",
+     "time": {
+      "label": "The McGroarty family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullyloskan",
+      "name": "Tullyloskan",
+      "logainm_id": "14286",
+      "lat": 54.644115,
+      "lon": -8.07139,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullyloskan:familypresence:05"
+     },
+     "caption": "The McGroarty family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullyloskan:familypresence:05"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "tullyloskan:family:05",
+      "label": "McGroarty",
+      "run": false
+     }
+    },
+    {
+     "id": "tullyloskan:beat:familycensus:05-1911",
+     "kind": "familycensus",
+     "chapter": "tullyloskan:ch:family-05",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullyloskan",
+      "name": "Tullyloskan",
+      "logainm_id": "14286",
+      "lat": 54.644115,
+      "lon": -8.07139,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullyloskan:familycensus:05:1911"
+     },
+     "caption": "Tullyloskan had one McGroarty household in 1911, headed by Neil.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullyloskan:familycensus:05:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "tullyloskan:family:05",
+      "label": "McGroarty",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "tullyloskan:ch:family-02",
+   "title": "The Dorrion family",
+   "beats": [
+    {
+     "id": "tullyloskan:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "tullyloskan:ch:family-02",
+     "time": {
+      "label": "The Dorrion family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullyloskan",
+      "name": "Tullyloskan",
+      "logainm_id": "14286",
+      "lat": 54.644115,
+      "lon": -8.07139,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullyloskan:familypresence:02"
+     },
+     "caption": "The Dorrion family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullyloskan:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "tullyloskan:family:02",
+      "label": "Dorrion",
+      "run": false
+     }
+    },
+    {
+     "id": "tullyloskan:beat:familycensus:02-1901",
+     "kind": "familycensus",
+     "chapter": "tullyloskan:ch:family-02",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullyloskan",
+      "name": "Tullyloskan",
+      "logainm_id": "14286",
+      "lat": 54.644115,
+      "lon": -8.07139,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullyloskan:familycensus:02:1901"
+     },
+     "caption": "Tullyloskan had one Dorrion household in 1901, headed by Jane.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullyloskan:familycensus:02:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "tullyloskan:family:02",
+      "label": "Dorrion",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "tullyloskan:ch:family-04",
+   "title": "The McGlinn family",
+   "beats": [
+    {
+     "id": "tullyloskan:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "tullyloskan:ch:family-04",
+     "time": {
+      "label": "The McGlinn family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullyloskan",
+      "name": "Tullyloskan",
+      "logainm_id": "14286",
+      "lat": 54.644115,
+      "lon": -8.07139,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullyloskan:familypresence:04"
+     },
+     "caption": "The McGlinn family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullyloskan:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "tullyloskan:family:04",
+      "label": "McGlinn",
+      "run": false
+     }
+    },
+    {
+     "id": "tullyloskan:beat:familycensus:04-1901",
+     "kind": "familycensus",
+     "chapter": "tullyloskan:ch:family-04",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullyloskan",
+      "name": "Tullyloskan",
+      "logainm_id": "14286",
+      "lat": 54.644115,
+      "lon": -8.07139,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullyloskan:familycensus:04:1901"
+     },
+     "caption": "Tullyloskan had one McGlinn household in 1901, headed by Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullyloskan:familycensus:04:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "tullyloskan:family:04",
+      "label": "McGlinn",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "tullyloskan:ch:family-08",
+   "title": "The Ward family",
+   "beats": [
+    {
+     "id": "tullyloskan:beat:familyhead:08",
+     "kind": "familyhead",
+     "chapter": "tullyloskan:ch:family-08",
+     "time": {
+      "label": "The Ward family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullyloskan",
+      "name": "Tullyloskan",
+      "logainm_id": "14286",
+      "lat": 54.644115,
+      "lon": -8.07139,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullyloskan:familypresence:08"
+     },
+     "caption": "The Ward family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullyloskan:familypresence:08"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "tullyloskan:family:08",
+      "label": "Ward",
+      "run": false
+     }
+    },
+    {
+     "id": "tullyloskan:beat:familycensus:08-1901",
+     "kind": "familycensus",
+     "chapter": "tullyloskan:ch:family-08",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullyloskan",
+      "name": "Tullyloskan",
+      "logainm_id": "14286",
+      "lat": 54.644115,
+      "lon": -8.07139,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullyloskan:familycensus:08:1901"
+     },
+     "caption": "Tullyloskan had one Ward household in 1901, headed by Mary.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullyloskan:familycensus:08:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "tullyloskan:family:08",
+      "label": "Ward",
+      "run": false
+     }
+    },
+    {
+     "id": "tullyloskan:beat:familycensus:08-1911",
+     "kind": "familycensus",
+     "chapter": "tullyloskan:ch:family-08",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullyloskan",
+      "name": "Tullyloskan",
+      "logainm_id": "14286",
+      "lat": 54.644115,
+      "lon": -8.07139,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullyloskan:familycensus:08:1911"
+     },
+     "caption": "Tullyloskan had one Ward household in 1911, headed by Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullyloskan:familycensus:08:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "tullyloskan:family:08",
+      "label": "Ward",
+      "run": false
+     }
+    },
+    {
+     "id": "tullyloskan:beat:familycensus:08-1926",
+     "kind": "familycensus",
+     "chapter": "tullyloskan:ch:family-08",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullyloskan",
+      "name": "Tullyloskan",
+      "logainm_id": "14286",
+      "lat": 54.644115,
+      "lon": -8.07139,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullyloskan:familycensus:08:1926"
+     },
+     "caption": "Tullyloskan had one Ward household in 1926, headed by Una E.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullyloskan:familycensus:08:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "tullyloskan:family:08",
+      "label": "Ward",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "tullyloskan:ch:family-07",
+   "title": "The Mulreany family",
+   "beats": [
+    {
+     "id": "tullyloskan:beat:familyhead:07",
+     "kind": "familyhead",
+     "chapter": "tullyloskan:ch:family-07",
+     "time": {
+      "label": "The Mulreany family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullyloskan",
+      "name": "Tullyloskan",
+      "logainm_id": "14286",
+      "lat": 54.644115,
+      "lon": -8.07139,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullyloskan:familypresence:07"
+     },
+     "caption": "The Mulreany family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullyloskan:familypresence:07"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "tullyloskan:family:07",
+      "label": "Mulreany",
+      "run": false
+     }
+    },
+    {
+     "id": "tullyloskan:beat:familycensus:07-1911",
+     "kind": "familycensus",
+     "chapter": "tullyloskan:ch:family-07",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullyloskan",
+      "name": "Tullyloskan",
+      "logainm_id": "14286",
+      "lat": 54.644115,
+      "lon": -8.07139,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullyloskan:familycensus:07:1911"
+     },
+     "caption": "Tullyloskan had one Mulreany household in 1911, headed by Mary.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullyloskan:familycensus:07:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "tullyloskan:family:07",
+      "label": "Mulreany",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "tullyloskan:ch:family-06",
+   "title": "The Meehan family",
+   "beats": [
+    {
+     "id": "tullyloskan:beat:familyhead:06",
+     "kind": "familyhead",
+     "chapter": "tullyloskan:ch:family-06",
+     "time": {
+      "label": "The Meehan family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullyloskan",
+      "name": "Tullyloskan",
+      "logainm_id": "14286",
+      "lat": 54.644115,
+      "lon": -8.07139,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullyloskan:familypresence:06"
+     },
+     "caption": "The Meehan family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullyloskan:familypresence:06"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "tullyloskan:family:06",
+      "label": "Meehan",
+      "run": false
+     }
+    },
+    {
+     "id": "tullyloskan:beat:familycensus:06-1926",
+     "kind": "familycensus",
+     "chapter": "tullyloskan:ch:family-06",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullyloskan",
+      "name": "Tullyloskan",
+      "logainm_id": "14286",
+      "lat": 54.644115,
+      "lon": -8.07139,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullyloskan:familycensus:06:1926"
+     },
+     "caption": "Tullyloskan had one Meehan household in 1926, headed by Peter.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullyloskan:familycensus:06:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "tullyloskan:family:06",
+      "label": "Meehan",
+      "run": false
+     }
     }
    ]
   }

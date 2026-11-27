@@ -52,15 +52,15 @@
    ]
   },
   {
-   "id": "drumcroagh:ch:1901",
-   "title": "1901",
+   "id": "drumcroagh:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "drumcroagh:beat:census:1901",
+     "id": "drumcroagh:beat:census:returns",
      "kind": "census",
-     "chapter": "drumcroagh:ch:1901",
+     "chapter": "drumcroagh:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1926",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -77,33 +77,177 @@
       "stage": "map",
       "open_card": "drumcroagh:census:1901"
      },
-     "caption": "In 1901, 38 people in nine households lived in Drumcroagh. Heads of household included Walsh, Wray and Gallagher.",
+     "caption": "The censuses of 1901, 1911 and 1926 counted 38, 38 and 36 people in Drumcroagh, in 9, 8 and 8 households. Heads of household included Walsh, Wray and Gallagher.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "drumcroagh:census:1901"
+       "drumcroagh:census:1901",
+       "drumcroagh:census:1911",
+       "drumcroagh:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 7200,
+     "duration_ms": 11600,
      "audio": null,
      "counts": {
-      "people": 38,
-      "households": 9
+      "returns": [
+       {
+        "year": "1901",
+        "people": 38,
+        "households": 9
+       },
+       {
+        "year": "1911",
+        "people": 38,
+        "households": 8
+       },
+       {
+        "year": "1926",
+        "people": 36,
+        "households": 8
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "drumcroagh:ch:1911",
-   "title": "1911",
+   "id": "drumcroagh:ch:families",
+   "title": "The families of Drumcroagh",
    "beats": [
     {
-     "id": "drumcroagh:beat:census:1911",
-     "kind": "census",
-     "chapter": "drumcroagh:ch:1911",
+     "id": "drumcroagh:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "drumcroagh:ch:families",
+     "time": {
+      "label": "The families of Drumcroagh",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumcroagh",
+      "name": "Drumcroagh",
+      "logainm_id": "14274",
+      "lat": 54.649305,
+      "lon": -8.059092,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumcroagh:census:1901"
+     },
+     "caption": "Here are the families of Drumcroagh, from 1901 to 1926. First, the Walsh and Wray families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumcroagh:census:1901",
+       "drumcroagh:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "drumcroagh:family:08",
+      "label": "Walsh",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumcroagh:ch:family-08",
+   "title": "The Walsh family",
+   "beats": [
+    {
+     "id": "drumcroagh:beat:familyhead:08",
+     "kind": "familyhead",
+     "chapter": "drumcroagh:ch:family-08",
+     "time": {
+      "label": "The Walsh family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumcroagh",
+      "name": "Drumcroagh",
+      "logainm_id": "14274",
+      "lat": 54.649305,
+      "lon": -8.059092,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumcroagh:familypresence:08"
+     },
+     "caption": "The Walsh family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumcroagh:familypresence:08"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drumcroagh:family:08",
+      "label": "Walsh",
+      "run": true
+     }
+    },
+    {
+     "id": "drumcroagh:beat:familycensus:08-1901",
+     "kind": "familycensus",
+     "chapter": "drumcroagh:ch:family-08",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumcroagh",
+      "name": "Drumcroagh",
+      "logainm_id": "14274",
+      "lat": 54.649305,
+      "lon": -8.059092,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumcroagh:familycensus:08:1901"
+     },
+     "caption": "Drumcroagh had three Walsh households in 1901, headed by two named Patrick and Margaret.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumcroagh:familycensus:08:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5600,
+     "audio": null,
+     "thread": {
+      "id": "drumcroagh:family:08",
+      "label": "Walsh",
+      "run": true
+     }
+    },
+    {
+     "id": "drumcroagh:beat:familycensus:08-1911",
+     "kind": "familycensus",
+     "chapter": "drumcroagh:ch:family-08",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -120,35 +264,30 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "drumcroagh:census:1911"
+      "open_card": "drumcroagh:familycensus:08:1911"
      },
-     "caption": "Drumcroagh had 38 people in eight households in 1911. Heads of household included Walsh, Wray and Devlin.",
+     "caption": "Drumcroagh had three Walsh households in 1911, headed by Sarah, Patrick and Margaret.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "drumcroagh:census:1911"
+       "drumcroagh:familycensus:08:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6800,
+     "duration_ms": 5200,
      "audio": null,
-     "counts": {
-      "people": 38,
-      "households": 8
+     "thread": {
+      "id": "drumcroagh:family:08",
+      "label": "Walsh",
+      "run": true
      }
-    }
-   ]
-  },
-  {
-   "id": "drumcroagh:ch:1926",
-   "title": "1926",
-   "beats": [
+    },
     {
-     "id": "drumcroagh:beat:census:1926",
-     "kind": "census",
-     "chapter": "drumcroagh:ch:1926",
+     "id": "drumcroagh:beat:familycensus:08-1926",
+     "kind": "familycensus",
+     "chapter": "drumcroagh:ch:family-08",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -165,25 +304,198 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "drumcroagh:census:1926"
+      "open_card": "drumcroagh:familycensus:08:1926"
      },
-     "caption": "Drumcroagh had 36 people in eight households in 1926. Heads of household included Devlin, Wray and Cassidy.",
+     "caption": "Drumcroagh had one Walsh household in 1926, headed by John.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "drumcroagh:census:1926"
+       "drumcroagh:familycensus:08:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6800,
+     "duration_ms": 4000,
      "audio": null,
-     "counts": {
-      "people": 36,
-      "households": 8
+     "thread": {
+      "id": "drumcroagh:family:08",
+      "label": "Walsh",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumcroagh:ch:family-09",
+   "title": "The Wray family",
+   "beats": [
+    {
+     "id": "drumcroagh:beat:familyhead:09",
+     "kind": "familyhead",
+     "chapter": "drumcroagh:ch:family-09",
+     "time": {
+      "label": "The Wray family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumcroagh",
+      "name": "Drumcroagh",
+      "logainm_id": "14274",
+      "lat": 54.649305,
+      "lon": -8.059092,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumcroagh:familypresence:09"
+     },
+     "caption": "The Wray family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumcroagh:familypresence:09"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drumcroagh:family:09",
+      "label": "Wray",
+      "run": true
      }
     },
+    {
+     "id": "drumcroagh:beat:familycensus:09-1901",
+     "kind": "familycensus",
+     "chapter": "drumcroagh:ch:family-09",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumcroagh",
+      "name": "Drumcroagh",
+      "logainm_id": "14274",
+      "lat": 54.649305,
+      "lon": -8.059092,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumcroagh:familycensus:09:1901"
+     },
+     "caption": "Drumcroagh had two Wray households in 1901, headed by Andrew and John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumcroagh:familycensus:09:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "drumcroagh:family:09",
+      "label": "Wray",
+      "run": true
+     }
+    },
+    {
+     "id": "drumcroagh:beat:familycensus:09-1911",
+     "kind": "familycensus",
+     "chapter": "drumcroagh:ch:family-09",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumcroagh",
+      "name": "Drumcroagh",
+      "logainm_id": "14274",
+      "lat": 54.649305,
+      "lon": -8.059092,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumcroagh:familycensus:09:1911"
+     },
+     "caption": "Drumcroagh had two Wray households in 1911, headed by Andrew and John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumcroagh:familycensus:09:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "drumcroagh:family:09",
+      "label": "Wray",
+      "run": true
+     }
+    },
+    {
+     "id": "drumcroagh:beat:familycensus:09-1926",
+     "kind": "familycensus",
+     "chapter": "drumcroagh:ch:family-09",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumcroagh",
+      "name": "Drumcroagh",
+      "logainm_id": "14274",
+      "lat": 54.649305,
+      "lon": -8.059092,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumcroagh:familycensus:09:1926"
+     },
+     "caption": "Drumcroagh had two Wray households in 1926, headed by Francis and William John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumcroagh:familycensus:09:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "drumcroagh:family:09",
+      "label": "Wray",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumcroagh:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "drumcroagh:beat:closing:end",
      "kind": "closing",
@@ -218,6 +530,768 @@
      },
      "duration_ms": 4000,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "drumcroagh:ch:family-03",
+   "title": "The Gallagher family",
+   "beats": [
+    {
+     "id": "drumcroagh:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "drumcroagh:ch:family-03",
+     "time": {
+      "label": "The Gallagher family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumcroagh",
+      "name": "Drumcroagh",
+      "logainm_id": "14274",
+      "lat": 54.649305,
+      "lon": -8.059092,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumcroagh:familypresence:03"
+     },
+     "caption": "The Gallagher family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumcroagh:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumcroagh:family:03",
+      "label": "Gallagher",
+      "run": false
+     }
+    },
+    {
+     "id": "drumcroagh:beat:familycensus:03-1901",
+     "kind": "familycensus",
+     "chapter": "drumcroagh:ch:family-03",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumcroagh",
+      "name": "Drumcroagh",
+      "logainm_id": "14274",
+      "lat": 54.649305,
+      "lon": -8.059092,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumcroagh:familycensus:03:1901"
+     },
+     "caption": "Drumcroagh had one Gallagher household in 1901, headed by Cecilia.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumcroagh:familycensus:03:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumcroagh:family:03",
+      "label": "Gallagher",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumcroagh:ch:family-04",
+   "title": "The Graham family",
+   "beats": [
+    {
+     "id": "drumcroagh:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "drumcroagh:ch:family-04",
+     "time": {
+      "label": "The Graham family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumcroagh",
+      "name": "Drumcroagh",
+      "logainm_id": "14274",
+      "lat": 54.649305,
+      "lon": -8.059092,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumcroagh:familypresence:04"
+     },
+     "caption": "The Graham family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumcroagh:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drumcroagh:family:04",
+      "label": "Graham",
+      "run": false
+     }
+    },
+    {
+     "id": "drumcroagh:beat:familycensus:04-1901",
+     "kind": "familycensus",
+     "chapter": "drumcroagh:ch:family-04",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumcroagh",
+      "name": "Drumcroagh",
+      "logainm_id": "14274",
+      "lat": 54.649305,
+      "lon": -8.059092,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumcroagh:familycensus:04:1901"
+     },
+     "caption": "Drumcroagh had one Graham household in 1901, headed by Francis.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumcroagh:familycensus:04:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumcroagh:family:04",
+      "label": "Graham",
+      "run": false
+     }
+    },
+    {
+     "id": "drumcroagh:beat:familycensus:04-1911",
+     "kind": "familycensus",
+     "chapter": "drumcroagh:ch:family-04",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumcroagh",
+      "name": "Drumcroagh",
+      "logainm_id": "14274",
+      "lat": 54.649305,
+      "lon": -8.059092,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumcroagh:familycensus:04:1911"
+     },
+     "caption": "Drumcroagh had one Graham household in 1911, headed by Francis.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumcroagh:familycensus:04:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumcroagh:family:04",
+      "label": "Graham",
+      "run": false
+     }
+    },
+    {
+     "id": "drumcroagh:beat:familycensus:04-1926",
+     "kind": "familycensus",
+     "chapter": "drumcroagh:ch:family-04",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumcroagh",
+      "name": "Drumcroagh",
+      "logainm_id": "14274",
+      "lat": 54.649305,
+      "lon": -8.059092,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumcroagh:familycensus:04:1926"
+     },
+     "caption": "Drumcroagh had one Graham household in 1926, headed by Francis.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumcroagh:familycensus:04:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumcroagh:family:04",
+      "label": "Graham",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumcroagh:ch:family-06",
+   "title": "The Mulraney family",
+   "beats": [
+    {
+     "id": "drumcroagh:beat:familyhead:06",
+     "kind": "familyhead",
+     "chapter": "drumcroagh:ch:family-06",
+     "time": {
+      "label": "The Mulraney family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumcroagh",
+      "name": "Drumcroagh",
+      "logainm_id": "14274",
+      "lat": 54.649305,
+      "lon": -8.059092,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumcroagh:familypresence:06"
+     },
+     "caption": "The Mulraney family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumcroagh:familypresence:06"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumcroagh:family:06",
+      "label": "Mulraney",
+      "run": false
+     }
+    },
+    {
+     "id": "drumcroagh:beat:familycensus:06-1901",
+     "kind": "familycensus",
+     "chapter": "drumcroagh:ch:family-06",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumcroagh",
+      "name": "Drumcroagh",
+      "logainm_id": "14274",
+      "lat": 54.649305,
+      "lon": -8.059092,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumcroagh:familycensus:06:1901"
+     },
+     "caption": "Drumcroagh had one Mulraney household in 1901, headed by Mary.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumcroagh:familycensus:06:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumcroagh:family:06",
+      "label": "Mulraney",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumcroagh:ch:family-07",
+   "title": "The Thompson family",
+   "beats": [
+    {
+     "id": "drumcroagh:beat:familyhead:07",
+     "kind": "familyhead",
+     "chapter": "drumcroagh:ch:family-07",
+     "time": {
+      "label": "The Thompson family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumcroagh",
+      "name": "Drumcroagh",
+      "logainm_id": "14274",
+      "lat": 54.649305,
+      "lon": -8.059092,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumcroagh:familypresence:07"
+     },
+     "caption": "The Thompson family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumcroagh:familypresence:07"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drumcroagh:family:07",
+      "label": "Thompson",
+      "run": false
+     }
+    },
+    {
+     "id": "drumcroagh:beat:familycensus:07-1901",
+     "kind": "familycensus",
+     "chapter": "drumcroagh:ch:family-07",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumcroagh",
+      "name": "Drumcroagh",
+      "logainm_id": "14274",
+      "lat": 54.649305,
+      "lon": -8.059092,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumcroagh:familycensus:07:1901"
+     },
+     "caption": "Drumcroagh had one Thompson household in 1901, headed by Abiander.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumcroagh:familycensus:07:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumcroagh:family:07",
+      "label": "Thompson",
+      "run": false
+     }
+    },
+    {
+     "id": "drumcroagh:beat:familycensus:07-1926",
+     "kind": "familycensus",
+     "chapter": "drumcroagh:ch:family-07",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumcroagh",
+      "name": "Drumcroagh",
+      "logainm_id": "14274",
+      "lat": 54.649305,
+      "lon": -8.059092,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumcroagh:familycensus:07:1926"
+     },
+     "caption": "Drumcroagh had one Thompson household in 1926, headed by Elizabeth F.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumcroagh:familycensus:07:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drumcroagh:family:07",
+      "label": "Thompson",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumcroagh:ch:family-02",
+   "title": "The Devlin family",
+   "beats": [
+    {
+     "id": "drumcroagh:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "drumcroagh:ch:family-02",
+     "time": {
+      "label": "The Devlin family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumcroagh",
+      "name": "Drumcroagh",
+      "logainm_id": "14274",
+      "lat": 54.649305,
+      "lon": -8.059092,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumcroagh:familypresence:02"
+     },
+     "caption": "The Devlin family appear in the records from 1911 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumcroagh:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drumcroagh:family:02",
+      "label": "Devlin",
+      "run": false
+     }
+    },
+    {
+     "id": "drumcroagh:beat:familycensus:02-1911",
+     "kind": "familycensus",
+     "chapter": "drumcroagh:ch:family-02",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumcroagh",
+      "name": "Drumcroagh",
+      "logainm_id": "14274",
+      "lat": 54.649305,
+      "lon": -8.059092,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumcroagh:familycensus:02:1911"
+     },
+     "caption": "Drumcroagh had one Devlin household in 1911, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumcroagh:familycensus:02:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumcroagh:family:02",
+      "label": "Devlin",
+      "run": false
+     }
+    },
+    {
+     "id": "drumcroagh:beat:familycensus:02-1926",
+     "kind": "familycensus",
+     "chapter": "drumcroagh:ch:family-02",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumcroagh",
+      "name": "Drumcroagh",
+      "logainm_id": "14274",
+      "lat": 54.649305,
+      "lon": -8.059092,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumcroagh:familycensus:02:1926"
+     },
+     "caption": "Drumcroagh had two Devlin households in 1926, headed by James and Michael.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumcroagh:familycensus:02:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "drumcroagh:family:02",
+      "label": "Devlin",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumcroagh:ch:family-05",
+   "title": "The McMullin family",
+   "beats": [
+    {
+     "id": "drumcroagh:beat:familyhead:05",
+     "kind": "familyhead",
+     "chapter": "drumcroagh:ch:family-05",
+     "time": {
+      "label": "The McMullin family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumcroagh",
+      "name": "Drumcroagh",
+      "logainm_id": "14274",
+      "lat": 54.649305,
+      "lon": -8.059092,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumcroagh:familypresence:05"
+     },
+     "caption": "The McMullin family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumcroagh:familypresence:05"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumcroagh:family:05",
+      "label": "McMullin",
+      "run": false
+     }
+    },
+    {
+     "id": "drumcroagh:beat:familycensus:05-1911",
+     "kind": "familycensus",
+     "chapter": "drumcroagh:ch:family-05",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumcroagh",
+      "name": "Drumcroagh",
+      "logainm_id": "14274",
+      "lat": 54.649305,
+      "lon": -8.059092,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumcroagh:familycensus:05:1911"
+     },
+     "caption": "Drumcroagh had one McMullin household in 1911, headed by Timothy.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumcroagh:familycensus:05:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumcroagh:family:05",
+      "label": "McMullin",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumcroagh:ch:family-01",
+   "title": "The Cassidy family",
+   "beats": [
+    {
+     "id": "drumcroagh:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "drumcroagh:ch:family-01",
+     "time": {
+      "label": "The Cassidy family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumcroagh",
+      "name": "Drumcroagh",
+      "logainm_id": "14274",
+      "lat": 54.649305,
+      "lon": -8.059092,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumcroagh:familypresence:01"
+     },
+     "caption": "The Cassidy family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumcroagh:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumcroagh:family:01",
+      "label": "Cassidy",
+      "run": false
+     }
+    },
+    {
+     "id": "drumcroagh:beat:familycensus:01-1926",
+     "kind": "familycensus",
+     "chapter": "drumcroagh:ch:family-01",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumcroagh",
+      "name": "Drumcroagh",
+      "logainm_id": "14274",
+      "lat": 54.649305,
+      "lon": -8.059092,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumcroagh:familycensus:01:1926"
+     },
+     "caption": "Drumcroagh had one Cassidy household in 1926, headed by Hannah.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumcroagh:familycensus:01:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumcroagh:family:01",
+      "label": "Cassidy",
+      "run": false
+     }
     }
    ]
   }

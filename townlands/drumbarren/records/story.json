@@ -52,15 +52,15 @@
    ]
   },
   {
-   "id": "drumbarren:ch:1901",
-   "title": "1901",
+   "id": "drumbarren:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "drumbarren:beat:census:1901",
+     "id": "drumbarren:beat:census:returns",
      "kind": "census",
-     "chapter": "drumbarren:ch:1901",
+     "chapter": "drumbarren:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1926",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -77,33 +77,177 @@
       "stage": "map",
       "open_card": "drumbarren:census:1901"
      },
-     "caption": "Drumbarren had nine people in three households in 1901. Heads of household included Morrow and Lowry.",
+     "caption": "The censuses of 1901, 1911 and 1926 counted 9, 10 and 17 people in Drumbarren, in 3, 2 and 2 households. Heads of household included Morrow and Lowry.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "drumbarren:census:1901"
+       "drumbarren:census:1901",
+       "drumbarren:census:1911",
+       "drumbarren:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 6400,
+     "duration_ms": 11200,
      "audio": null,
      "counts": {
-      "people": 9,
-      "households": 3
+      "returns": [
+       {
+        "year": "1901",
+        "people": 9,
+        "households": 3
+       },
+       {
+        "year": "1911",
+        "people": 10,
+        "households": 2
+       },
+       {
+        "year": "1926",
+        "people": 17,
+        "households": 2
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "drumbarren:ch:1911",
-   "title": "1911",
+   "id": "drumbarren:ch:families",
+   "title": "The families of Drumbarren",
    "beats": [
     {
-     "id": "drumbarren:beat:census:1911",
-     "kind": "census",
-     "chapter": "drumbarren:ch:1911",
+     "id": "drumbarren:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "drumbarren:ch:families",
+     "time": {
+      "label": "The families of Drumbarren",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumbarren",
+      "name": "Drumbarren",
+      "logainm_id": "13968",
+      "lat": 54.669057,
+      "lon": -8.080501,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumbarren:census:1901"
+     },
+     "caption": "Here are the families of Drumbarren, from 1901 to 1926. First, the Lowry and Morrow families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumbarren:census:1901",
+       "drumbarren:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "drumbarren:family:01",
+      "label": "Lowry",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumbarren:ch:family-01",
+   "title": "The Lowry family",
+   "beats": [
+    {
+     "id": "drumbarren:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "drumbarren:ch:family-01",
+     "time": {
+      "label": "The Lowry family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumbarren",
+      "name": "Drumbarren",
+      "logainm_id": "13968",
+      "lat": 54.669057,
+      "lon": -8.080501,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumbarren:familypresence:01"
+     },
+     "caption": "The Lowry family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumbarren:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drumbarren:family:01",
+      "label": "Lowry",
+      "run": true
+     }
+    },
+    {
+     "id": "drumbarren:beat:familycensus:01-1901",
+     "kind": "familycensus",
+     "chapter": "drumbarren:ch:family-01",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumbarren",
+      "name": "Drumbarren",
+      "logainm_id": "13968",
+      "lat": 54.669057,
+      "lon": -8.080501,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumbarren:familycensus:01:1901"
+     },
+     "caption": "Drumbarren had one Lowry household in 1901, headed by Andrew.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumbarren:familycensus:01:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumbarren:family:01",
+      "label": "Lowry",
+      "run": true
+     }
+    },
+    {
+     "id": "drumbarren:beat:familycensus:01-1911",
+     "kind": "familycensus",
+     "chapter": "drumbarren:ch:family-01",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -120,35 +264,30 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "drumbarren:census:1911"
+      "open_card": "drumbarren:familycensus:01:1911"
      },
-     "caption": "In 1911, ten people in two households lived in Drumbarren. Heads of household included Lowry and Morrow.",
+     "caption": "Drumbarren had one Lowry household in 1911, headed by Andrew.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "drumbarren:census:1911"
+       "drumbarren:familycensus:01:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6800,
+     "duration_ms": 4000,
      "audio": null,
-     "counts": {
-      "people": 10,
-      "households": 2
+     "thread": {
+      "id": "drumbarren:family:01",
+      "label": "Lowry",
+      "run": true
      }
-    }
-   ]
-  },
-  {
-   "id": "drumbarren:ch:1926",
-   "title": "1926",
-   "beats": [
+    },
     {
-     "id": "drumbarren:beat:census:1926",
-     "kind": "census",
-     "chapter": "drumbarren:ch:1926",
+     "id": "drumbarren:beat:familycensus:01-1926",
+     "kind": "familycensus",
+     "chapter": "drumbarren:ch:family-01",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -165,25 +304,198 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "drumbarren:census:1926"
+      "open_card": "drumbarren:familycensus:01:1926"
      },
-     "caption": "In 1926, seventeen people in two households lived in Drumbarren. Heads of household included Lowry and Morrow.",
+     "caption": "Drumbarren had one Lowry household in 1926, headed by Andrew.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "drumbarren:census:1926"
+       "drumbarren:familycensus:01:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6800,
+     "duration_ms": 4000,
      "audio": null,
-     "counts": {
-      "people": 17,
-      "households": 2
+     "thread": {
+      "id": "drumbarren:family:01",
+      "label": "Lowry",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumbarren:ch:family-02",
+   "title": "The Morrow family",
+   "beats": [
+    {
+     "id": "drumbarren:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "drumbarren:ch:family-02",
+     "time": {
+      "label": "The Morrow family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumbarren",
+      "name": "Drumbarren",
+      "logainm_id": "13968",
+      "lat": 54.669057,
+      "lon": -8.080501,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumbarren:familypresence:02"
+     },
+     "caption": "The Morrow family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumbarren:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drumbarren:family:02",
+      "label": "Morrow",
+      "run": true
      }
     },
+    {
+     "id": "drumbarren:beat:familycensus:02-1901",
+     "kind": "familycensus",
+     "chapter": "drumbarren:ch:family-02",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumbarren",
+      "name": "Drumbarren",
+      "logainm_id": "13968",
+      "lat": 54.669057,
+      "lon": -8.080501,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumbarren:familycensus:02:1901"
+     },
+     "caption": "Drumbarren had two Morrow households in 1901, headed by Henry and Rebecca.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumbarren:familycensus:02:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "drumbarren:family:02",
+      "label": "Morrow",
+      "run": true
+     }
+    },
+    {
+     "id": "drumbarren:beat:familycensus:02-1911",
+     "kind": "familycensus",
+     "chapter": "drumbarren:ch:family-02",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumbarren",
+      "name": "Drumbarren",
+      "logainm_id": "13968",
+      "lat": 54.669057,
+      "lon": -8.080501,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumbarren:familycensus:02:1911"
+     },
+     "caption": "Drumbarren had one Morrow household in 1911, headed by Robert.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumbarren:familycensus:02:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumbarren:family:02",
+      "label": "Morrow",
+      "run": true
+     }
+    },
+    {
+     "id": "drumbarren:beat:familycensus:02-1926",
+     "kind": "familycensus",
+     "chapter": "drumbarren:ch:family-02",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumbarren",
+      "name": "Drumbarren",
+      "logainm_id": "13968",
+      "lat": 54.669057,
+      "lon": -8.080501,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumbarren:familycensus:02:1926"
+     },
+     "caption": "Drumbarren had one Morrow household in 1926, headed by Arthur.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumbarren:familycensus:02:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumbarren:family:02",
+      "label": "Morrow",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumbarren:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "drumbarren:beat:closing:end",
      "kind": "closing",

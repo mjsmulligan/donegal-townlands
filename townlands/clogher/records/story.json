@@ -139,12 +139,368 @@
   },
   {
    "id": "clogher:ch:baptisms",
-   "title": "Baptisms, 1873 to 1875",
+   "title": "Baptisms, 1874",
    "beats": [
+    {
+     "id": "clogher:beat:baptism:1874-02-15-TAW-B-p010-r107",
+     "kind": "baptism",
+     "chapter": "clogher:ch:baptisms",
+     "time": {
+      "label": "15 February 1874",
+      "iso": "1874-02-15",
+      "sort": "1874-02-15",
+      "approximate": false
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:baptism:TAW-B-p010-r107"
+     },
+     "caption": "John Flanaghan was baptised on 15 February 1874. Michael Flanaghan and Margaret Breen were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:baptism:TAW-B-p010-r107"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "clogher:ch:census",
+   "title": "1901 to 1926",
+   "beats": [
+    {
+     "id": "clogher:beat:census:returns",
+     "kind": "census",
+     "chapter": "clogher:ch:census",
+     "time": {
+      "label": "1901 to 1926",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:census:1901"
+     },
+     "caption": "The censuses of 1901, 1911 and 1926 counted 125, 112 and 89 people in Clogher, in 27, 23 and 20 households. Heads of household included Flanagan, Hone and Cassidy.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:census:1901",
+       "clogher:census:1911",
+       "clogher:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 11600,
+     "audio": null,
+     "counts": {
+      "returns": [
+       {
+        "year": "1901",
+        "people": 125,
+        "households": 27
+       },
+       {
+        "year": "1911",
+        "people": 112,
+        "households": 23
+       },
+       {
+        "year": "1926",
+        "people": 89,
+        "households": 20
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "clogher:ch:families",
+   "title": "The families of Clogher",
+   "beats": [
+    {
+     "id": "clogher:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "clogher:ch:families",
+     "time": {
+      "label": "The families of Clogher",
+      "iso": "1850/1859",
+      "sort": "1855-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:valuation:griffiths"
+     },
+     "caption": "Here are the families of Clogher, from the 1850s to 1926. First, the Flanagan and Gallagher families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:valuation:griffiths",
+       "clogher:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:08",
+      "label": "Flanagan",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "clogher:ch:family-08",
+   "title": "The Flanagan family",
+   "beats": [
+    {
+     "id": "clogher:beat:familyhead:08",
+     "kind": "familyhead",
+     "chapter": "clogher:ch:family-08",
+     "time": {
+      "label": "The Flanagan family",
+      "iso": "1855",
+      "sort": "1855-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familypresence:08"
+     },
+     "caption": "The Flanagan family appear in the records from 1855 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familypresence:08"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:08",
+      "label": "Flanagan",
+      "run": true
+     }
+    },
+    {
+     "id": "clogher:beat:familycensus:08-1901",
+     "kind": "familycensus",
+     "chapter": "clogher:ch:family-08",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familycensus:08:1901"
+     },
+     "caption": "Clogher had four Flanagan households in 1901, headed by two named Michael, Thomas and Laurence.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familycensus:08:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 6000,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:08",
+      "label": "Flanagan",
+      "run": true
+     }
+    },
+    {
+     "id": "clogher:beat:familycensus:08-1911",
+     "kind": "familycensus",
+     "chapter": "clogher:ch:family-08",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familycensus:08:1911"
+     },
+     "caption": "Clogher had three Flanagan households in 1911, headed by two named Michael and Thomas.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familycensus:08:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5600,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:08",
+      "label": "Flanagan",
+      "run": true
+     }
+    },
+    {
+     "id": "clogher:beat:familycensus:08-1926",
+     "kind": "familycensus",
+     "chapter": "clogher:ch:family-08",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familycensus:08:1926"
+     },
+     "caption": "Clogher had one Flanagan household in 1926, headed by Thomas.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familycensus:08:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:08",
+      "label": "Flanagan",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "clogher:ch:family-10",
+   "title": "The Gallagher family",
+   "beats": [
+    {
+     "id": "clogher:beat:familyhead:10",
+     "kind": "familyhead",
+     "chapter": "clogher:ch:family-10",
+     "time": {
+      "label": "The Gallagher family",
+      "iso": "1855",
+      "sort": "1855-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familypresence:10"
+     },
+     "caption": "The Gallagher family appear in the records from 1855 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familypresence:10"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:10",
+      "label": "Gallagher",
+      "run": true
+     }
+    },
     {
      "id": "clogher:beat:baptism:1873-01-15-TAW-B-p004-r7",
      "kind": "baptism",
-     "chapter": "clogher:ch:baptisms",
+     "chapter": "clogher:ch:family-10",
      "time": {
       "label": "15 January 1873",
       "iso": "1873-01-15",
@@ -174,16 +530,21 @@
       "certainty": "stated"
      },
      "duration_ms": 6400,
-     "audio": null
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:10",
+      "label": "Gallagher",
+      "run": true
+     }
     },
     {
-     "id": "clogher:beat:baptism:1874",
+     "id": "clogher:beat:baptism:1875-08-01-TAW-B-p018-r232",
      "kind": "baptism",
-     "chapter": "clogher:ch:baptisms",
+     "chapter": "clogher:ch:family-10",
      "time": {
-      "label": "29 January 1874",
-      "iso": "1874-01-29",
-      "sort": "1874-01-29",
+      "label": "1 August 1875",
+      "iso": "1875-08-01",
+      "sort": "1875-08-01",
       "approximate": false
      },
      "place": {
@@ -196,70 +557,30 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "clogher:baptism:TAW-B-p010-r102"
+      "open_card": "clogher:baptism:TAW-B-p018-r232"
      },
-     "caption": "Two children were baptised in 1874: Anne Hone on 29 January and John Flanaghan on 15 February.",
+     "caption": "Edward Gallagher was baptised on 1 August 1875. Edward Gallagher and Biddy Devlin were the parents.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "clogher:baptism:TAW-B-p010-r102",
-       "clogher:baptism:TAW-B-p010-r107"
-      ],
-      "basis": "page_place",
-      "certainty": "stated"
-     },
-     "duration_ms": 6800,
-     "audio": null
-    },
-    {
-     "id": "clogher:beat:baptism:1875",
-     "kind": "baptism",
-     "chapter": "clogher:ch:baptisms",
-     "time": {
-      "label": "26 January 1875",
-      "iso": "1875-01-26",
-      "sort": "1875-01-26",
-      "approximate": false
-     },
-     "place": {
-      "townland": "clogher",
-      "name": "Clogher",
-      "logainm_id": "13964",
-      "lat": 54.677864,
-      "lon": -7.976911,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "clogher:baptism:TAW-B-p015-r180"
-     },
-     "caption": "Four children were baptised in 1875: James Bresland on 26 January, Catherine Doogan on 6 July, Patrick O'Donnell on 30 July and Edward Gallagher on 1 August.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "clogher:baptism:TAW-B-p015-r180",
-       "clogher:baptism:TAW-B-p018-r229",
-       "clogher:baptism:TAW-B-p018-r231",
        "clogher:baptism:TAW-B-p018-r232"
       ],
       "basis": "page_place",
       "certainty": "stated"
      },
-     "duration_ms": 10800,
-     "audio": null
-    }
-   ]
-  },
-  {
-   "id": "clogher:ch:1901",
-   "title": "1901",
-   "beats": [
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:10",
+      "label": "Gallagher",
+      "run": true
+     }
+    },
     {
-     "id": "clogher:beat:census:1901",
-     "kind": "census",
-     "chapter": "clogher:ch:1901",
+     "id": "clogher:beat:familycensus:10-1901",
+     "kind": "familycensus",
+     "chapter": "clogher:ch:family-10",
      "time": {
       "label": "1901",
       "iso": "1901",
@@ -276,35 +597,30 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "clogher:census:1901"
+      "open_card": "clogher:familycensus:10:1901"
      },
-     "caption": "Clogher had 125 people in 27 households in 1901. Heads of household included Flanagan, Hone and Cassidy.",
+     "caption": "Clogher had two Gallagher households in 1901, headed by James and Edward.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "clogher:census:1901"
+       "clogher:familycensus:10:1901"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6800,
+     "duration_ms": 4800,
      "audio": null,
-     "counts": {
-      "people": 125,
-      "households": 27
+     "thread": {
+      "id": "clogher:family:10",
+      "label": "Gallagher",
+      "run": true
      }
-    }
-   ]
-  },
-  {
-   "id": "clogher:ch:1911",
-   "title": "1911",
-   "beats": [
+    },
     {
-     "id": "clogher:beat:census:1911",
-     "kind": "census",
-     "chapter": "clogher:ch:1911",
+     "id": "clogher:beat:familycensus:10-1911",
+     "kind": "familycensus",
+     "chapter": "clogher:ch:family-10",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -321,35 +637,30 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "clogher:census:1911"
+      "open_card": "clogher:familycensus:10:1911"
      },
-     "caption": "Clogher had 112 people in 23 households in 1911. Heads of household included Flanagan, Gallagher and Cassidy.",
+     "caption": "Clogher had three Gallagher households in 1911, headed by Hugh, Edward and James.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "clogher:census:1911"
+       "clogher:familycensus:10:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6800,
+     "duration_ms": 5200,
      "audio": null,
-     "counts": {
-      "people": 112,
-      "households": 23
+     "thread": {
+      "id": "clogher:family:10",
+      "label": "Gallagher",
+      "run": true
      }
-    }
-   ]
-  },
-  {
-   "id": "clogher:ch:1926",
-   "title": "1926",
-   "beats": [
+    },
     {
-     "id": "clogher:beat:census:1926",
-     "kind": "census",
-     "chapter": "clogher:ch:1926",
+     "id": "clogher:beat:familycensus:10-1926",
+     "kind": "familycensus",
+     "chapter": "clogher:ch:family-10",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -366,25 +677,32 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "clogher:census:1926"
+      "open_card": "clogher:familycensus:10:1926"
      },
-     "caption": "In 1926, 89 people in twenty households lived in Clogher. Heads of household included Gallagher, Hone and Breslin.",
+     "caption": "Clogher had three Gallagher households in 1926, headed by Ellen, Edward and Hugh.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "clogher:census:1926"
+       "clogher:familycensus:10:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 7200,
+     "duration_ms": 5200,
      "audio": null,
-     "counts": {
-      "people": 89,
-      "households": 20
+     "thread": {
+      "id": "clogher:family:10",
+      "label": "Gallagher",
+      "run": true
      }
-    },
+    }
+   ]
+  },
+  {
+   "id": "clogher:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "clogher:beat:closing:end",
      "kind": "closing",
@@ -419,6 +737,3266 @@
      },
      "duration_ms": 4000,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "clogher:ch:family-01",
+   "title": "The Breen family",
+   "beats": [
+    {
+     "id": "clogher:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "clogher:ch:family-01",
+     "time": {
+      "label": "The Breen family",
+      "iso": "1855",
+      "sort": "1855-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familypresence:01"
+     },
+     "caption": "The Breen family appear in the records in 1855.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:01",
+      "label": "Breen",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clogher:ch:family-02",
+   "title": "The Breslin family",
+   "beats": [
+    {
+     "id": "clogher:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "clogher:ch:family-02",
+     "time": {
+      "label": "The Breslin family",
+      "iso": "1855",
+      "sort": "1855-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familypresence:02"
+     },
+     "caption": "The Breslin family appear in the records from 1855 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:02",
+      "label": "Breslin",
+      "run": false
+     }
+    },
+    {
+     "id": "clogher:beat:baptism:1875-01-26-TAW-B-p015-r180",
+     "kind": "baptism",
+     "chapter": "clogher:ch:family-02",
+     "time": {
+      "label": "26 January 1875",
+      "iso": "1875-01-26",
+      "sort": "1875-01-26",
+      "approximate": false
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:baptism:TAW-B-p015-r180"
+     },
+     "caption": "James Bresland was baptised on 26 January 1875. Patrick Bresland and Catherine McCool were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:baptism:TAW-B-p015-r180"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:02",
+      "label": "Breslin",
+      "run": false
+     }
+    },
+    {
+     "id": "clogher:beat:familycensus:02-1901",
+     "kind": "familycensus",
+     "chapter": "clogher:ch:family-02",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familycensus:02:1901"
+     },
+     "caption": "Clogher had one Breslin household in 1901, headed by Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familycensus:02:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:02",
+      "label": "Breslin",
+      "run": false
+     }
+    },
+    {
+     "id": "clogher:beat:familycensus:02-1911",
+     "kind": "familycensus",
+     "chapter": "clogher:ch:family-02",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familycensus:02:1911"
+     },
+     "caption": "Clogher had one Breslin household in 1911, headed by Michael.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familycensus:02:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:02",
+      "label": "Breslin",
+      "run": false
+     }
+    },
+    {
+     "id": "clogher:beat:familycensus:02-1926",
+     "kind": "familycensus",
+     "chapter": "clogher:ch:family-02",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familycensus:02:1926"
+     },
+     "caption": "Clogher had two Breslin households in 1926, headed by Patrick and Michael.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familycensus:02:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:02",
+      "label": "Breslin",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clogher:ch:family-03",
+   "title": "The Browne family",
+   "beats": [
+    {
+     "id": "clogher:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "clogher:ch:family-03",
+     "time": {
+      "label": "The Browne family",
+      "iso": "1855",
+      "sort": "1855-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familypresence:03"
+     },
+     "caption": "The Browne family appear in the records from 1855 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:03",
+      "label": "Browne",
+      "run": false
+     }
+    },
+    {
+     "id": "clogher:beat:familycensus:03-1926",
+     "kind": "familycensus",
+     "chapter": "clogher:ch:family-03",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familycensus:03:1926"
+     },
+     "caption": "Clogher had one Browne household in 1926, headed by Michael.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familycensus:03:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:03",
+      "label": "Browne",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clogher:ch:family-04",
+   "title": "The Cassidy family",
+   "beats": [
+    {
+     "id": "clogher:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "clogher:ch:family-04",
+     "time": {
+      "label": "The Cassidy family",
+      "iso": "1855",
+      "sort": "1855-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familypresence:04"
+     },
+     "caption": "The Cassidy family appear in the records from 1855 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:04",
+      "label": "Cassidy",
+      "run": false
+     }
+    },
+    {
+     "id": "clogher:beat:familycensus:04-1901",
+     "kind": "familycensus",
+     "chapter": "clogher:ch:family-04",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familycensus:04:1901"
+     },
+     "caption": "Clogher had two Cassidy households in 1901, headed by two named Hugh.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familycensus:04:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:04",
+      "label": "Cassidy",
+      "run": false
+     }
+    },
+    {
+     "id": "clogher:beat:familycensus:04-1911",
+     "kind": "familycensus",
+     "chapter": "clogher:ch:family-04",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familycensus:04:1911"
+     },
+     "caption": "Clogher had two Cassidy households in 1911, headed by two named Hugh.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familycensus:04:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:04",
+      "label": "Cassidy",
+      "run": false
+     }
+    },
+    {
+     "id": "clogher:beat:familycensus:04-1926",
+     "kind": "familycensus",
+     "chapter": "clogher:ch:family-04",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familycensus:04:1926"
+     },
+     "caption": "Clogher had two Cassidy households in 1926, headed by two named Hugh.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familycensus:04:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:04",
+      "label": "Cassidy",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clogher:ch:family-12",
+   "title": "The Gildea family",
+   "beats": [
+    {
+     "id": "clogher:beat:familyhead:12",
+     "kind": "familyhead",
+     "chapter": "clogher:ch:family-12",
+     "time": {
+      "label": "The Gildea family",
+      "iso": "1855",
+      "sort": "1855-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familypresence:12"
+     },
+     "caption": "The Gildea family appear in the records from 1855 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familypresence:12"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:12",
+      "label": "Gildea",
+      "run": false
+     }
+    },
+    {
+     "id": "clogher:beat:familycensus:12-1901",
+     "kind": "familycensus",
+     "chapter": "clogher:ch:family-12",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familycensus:12:1901"
+     },
+     "caption": "Clogher had one Gildea household in 1901, headed by Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familycensus:12:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:12",
+      "label": "Gildea",
+      "run": false
+     }
+    },
+    {
+     "id": "clogher:beat:familycensus:12-1911",
+     "kind": "familycensus",
+     "chapter": "clogher:ch:family-12",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familycensus:12:1911"
+     },
+     "caption": "Clogher had one Gildea household in 1911, headed by Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familycensus:12:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:12",
+      "label": "Gildea",
+      "run": false
+     }
+    },
+    {
+     "id": "clogher:beat:familycensus:12-1926",
+     "kind": "familycensus",
+     "chapter": "clogher:ch:family-12",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familycensus:12:1926"
+     },
+     "caption": "Clogher had one Gildea household in 1926, headed by Francis J.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familycensus:12:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:12",
+      "label": "Gildea",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clogher:ch:family-13",
+   "title": "The Gillespie family",
+   "beats": [
+    {
+     "id": "clogher:beat:familyhead:13",
+     "kind": "familyhead",
+     "chapter": "clogher:ch:family-13",
+     "time": {
+      "label": "The Gillespie family",
+      "iso": "1855",
+      "sort": "1855-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familypresence:13"
+     },
+     "caption": "The Gillespie family appear in the records in 1855.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familypresence:13"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:13",
+      "label": "Gillespie",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clogher:ch:family-14",
+   "title": "The Hone family",
+   "beats": [
+    {
+     "id": "clogher:beat:familyhead:14",
+     "kind": "familyhead",
+     "chapter": "clogher:ch:family-14",
+     "time": {
+      "label": "The Hone family",
+      "iso": "1855",
+      "sort": "1855-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familypresence:14"
+     },
+     "caption": "The Hone family appear in the records from 1855 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familypresence:14"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:14",
+      "label": "Hone",
+      "run": false
+     }
+    },
+    {
+     "id": "clogher:beat:baptism:1874-01-29-TAW-B-p010-r102",
+     "kind": "baptism",
+     "chapter": "clogher:ch:family-14",
+     "time": {
+      "label": "29 January 1874",
+      "iso": "1874-01-29",
+      "sort": "1874-01-29",
+      "approximate": false
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:baptism:TAW-B-p010-r102"
+     },
+     "caption": "Anne Hone was baptised on 29 January 1874. Patrick Hone and Margaret Magy were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:baptism:TAW-B-p010-r102"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:14",
+      "label": "Hone",
+      "run": false
+     }
+    },
+    {
+     "id": "clogher:beat:familycensus:14-1901",
+     "kind": "familycensus",
+     "chapter": "clogher:ch:family-14",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familycensus:14:1901"
+     },
+     "caption": "Clogher had three Hone households in 1901, headed by Patrick and two named Bridget.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familycensus:14:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5600,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:14",
+      "label": "Hone",
+      "run": false
+     }
+    },
+    {
+     "id": "clogher:beat:familycensus:14-1911",
+     "kind": "familycensus",
+     "chapter": "clogher:ch:family-14",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familycensus:14:1911"
+     },
+     "caption": "Clogher had two Hone households in 1911, headed by Patrick and Michael.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familycensus:14:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:14",
+      "label": "Hone",
+      "run": false
+     }
+    },
+    {
+     "id": "clogher:beat:familycensus:14-1926",
+     "kind": "familycensus",
+     "chapter": "clogher:ch:family-14",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familycensus:14:1926"
+     },
+     "caption": "Clogher had three Hone households in 1926, headed by Joseph and two named Michael.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familycensus:14:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5600,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:14",
+      "label": "Hone",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clogher:ch:family-16",
+   "title": "The M'Gettigan family",
+   "beats": [
+    {
+     "id": "clogher:beat:familyhead:16",
+     "kind": "familyhead",
+     "chapter": "clogher:ch:family-16",
+     "time": {
+      "label": "The M'Gettigan family",
+      "iso": "1855",
+      "sort": "1855-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familypresence:16"
+     },
+     "caption": "The M'Gettigan family appear in the records in 1855.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familypresence:16"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:16",
+      "label": "M'Gettigan",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clogher:ch:family-17",
+   "title": "The M'Ginty family",
+   "beats": [
+    {
+     "id": "clogher:beat:familyhead:17",
+     "kind": "familyhead",
+     "chapter": "clogher:ch:family-17",
+     "time": {
+      "label": "The M'Ginty family",
+      "iso": "1855",
+      "sort": "1855-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familypresence:17"
+     },
+     "caption": "The M'Ginty family appear in the records in 1855.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familypresence:17"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:17",
+      "label": "M'Ginty",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clogher:ch:family-18",
+   "title": "The M'Nulty family",
+   "beats": [
+    {
+     "id": "clogher:beat:familyhead:18",
+     "kind": "familyhead",
+     "chapter": "clogher:ch:family-18",
+     "time": {
+      "label": "The M'Nulty family",
+      "iso": "1855",
+      "sort": "1855-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familypresence:18"
+     },
+     "caption": "The M'Nulty family appear in the records in 1855.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familypresence:18"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:18",
+      "label": "M'Nulty",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clogher:ch:family-19",
+   "title": "The M'Quaid family",
+   "beats": [
+    {
+     "id": "clogher:beat:familyhead:19",
+     "kind": "familyhead",
+     "chapter": "clogher:ch:family-19",
+     "time": {
+      "label": "The M'Quaid family",
+      "iso": "1855",
+      "sort": "1855-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familypresence:19"
+     },
+     "caption": "The M'Quaid family appear in the records in 1855.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familypresence:19"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:19",
+      "label": "M'Quaid",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clogher:ch:family-26",
+   "title": "The Meehan family",
+   "beats": [
+    {
+     "id": "clogher:beat:familyhead:26",
+     "kind": "familyhead",
+     "chapter": "clogher:ch:family-26",
+     "time": {
+      "label": "The Meehan family",
+      "iso": "1855",
+      "sort": "1855-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familypresence:26"
+     },
+     "caption": "The Meehan family appear in the records in 1855.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familypresence:26"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:26",
+      "label": "Meehan",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clogher:ch:family-27",
+   "title": "The Monaghan family",
+   "beats": [
+    {
+     "id": "clogher:beat:familyhead:27",
+     "kind": "familyhead",
+     "chapter": "clogher:ch:family-27",
+     "time": {
+      "label": "The Monaghan family",
+      "iso": "1855",
+      "sort": "1855-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familypresence:27"
+     },
+     "caption": "The Monaghan family appear in the records in 1855.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familypresence:27"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:27",
+      "label": "Monaghan",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clogher:ch:family-28",
+   "title": "The Moss family",
+   "beats": [
+    {
+     "id": "clogher:beat:familyhead:28",
+     "kind": "familyhead",
+     "chapter": "clogher:ch:family-28",
+     "time": {
+      "label": "The Moss family",
+      "iso": "1855",
+      "sort": "1855-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familypresence:28"
+     },
+     "caption": "The Moss family appear in the records from 1855 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familypresence:28"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:28",
+      "label": "Moss",
+      "run": false
+     }
+    },
+    {
+     "id": "clogher:beat:familycensus:28-1901",
+     "kind": "familycensus",
+     "chapter": "clogher:ch:family-28",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familycensus:28:1901"
+     },
+     "caption": "Clogher had one Moss household in 1901, headed by Anne.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familycensus:28:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:28",
+      "label": "Moss",
+      "run": false
+     }
+    },
+    {
+     "id": "clogher:beat:familycensus:28-1911",
+     "kind": "familycensus",
+     "chapter": "clogher:ch:family-28",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familycensus:28:1911"
+     },
+     "caption": "Clogher had one Moss household in 1911, headed by Anne.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familycensus:28:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:28",
+      "label": "Moss",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clogher:ch:family-31",
+   "title": "The Pearson family",
+   "beats": [
+    {
+     "id": "clogher:beat:familyhead:31",
+     "kind": "familyhead",
+     "chapter": "clogher:ch:family-31",
+     "time": {
+      "label": "The Pearson family",
+      "iso": "1855",
+      "sort": "1855-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familypresence:31"
+     },
+     "caption": "The Pearson family appear in the records from 1855 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familypresence:31"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:31",
+      "label": "Pearson",
+      "run": false
+     }
+    },
+    {
+     "id": "clogher:beat:familycensus:31-1901",
+     "kind": "familycensus",
+     "chapter": "clogher:ch:family-31",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familycensus:31:1901"
+     },
+     "caption": "Clogher had one Pearson household in 1901, headed by Edward.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familycensus:31:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:31",
+      "label": "Pearson",
+      "run": false
+     }
+    },
+    {
+     "id": "clogher:beat:familycensus:31-1911",
+     "kind": "familycensus",
+     "chapter": "clogher:ch:family-31",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familycensus:31:1911"
+     },
+     "caption": "Clogher had one Pearson household in 1911, headed by Adam.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familycensus:31:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:31",
+      "label": "Pearson",
+      "run": false
+     }
+    },
+    {
+     "id": "clogher:beat:familycensus:31-1926",
+     "kind": "familycensus",
+     "chapter": "clogher:ch:family-31",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familycensus:31:1926"
+     },
+     "caption": "Clogher had one Pearson household in 1926, headed by Margaret.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familycensus:31:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:31",
+      "label": "Pearson",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clogher:ch:family-06",
+   "title": "The Doogan family",
+   "beats": [
+    {
+     "id": "clogher:beat:baptism:1875-07-06-TAW-B-p018-r229",
+     "kind": "baptism",
+     "chapter": "clogher:ch:family-06",
+     "time": {
+      "label": "6 July 1875",
+      "iso": "1875-07-06",
+      "sort": "1875-07-06",
+      "approximate": false
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:baptism:TAW-B-p018-r229"
+     },
+     "caption": "Catherine Doogan was baptised on 6 July 1875. Patrick Doogan and Unity Hilly were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:baptism:TAW-B-p018-r229"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:06",
+      "label": "Doogan",
+      "run": false
+     }
+    },
+    {
+     "id": "clogher:beat:familyhead:06",
+     "kind": "familyhead",
+     "chapter": "clogher:ch:family-06",
+     "time": {
+      "label": "The Doogan family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familypresence:06"
+     },
+     "caption": "The Doogan family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familypresence:06"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:06",
+      "label": "Doogan",
+      "run": false
+     }
+    },
+    {
+     "id": "clogher:beat:familycensus:06-1901",
+     "kind": "familycensus",
+     "chapter": "clogher:ch:family-06",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familycensus:06:1901"
+     },
+     "caption": "Clogher had one Doogan household in 1901, headed by Unity.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familycensus:06:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:06",
+      "label": "Doogan",
+      "run": false
+     }
+    },
+    {
+     "id": "clogher:beat:familycensus:06-1911",
+     "kind": "familycensus",
+     "chapter": "clogher:ch:family-06",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familycensus:06:1911"
+     },
+     "caption": "Clogher had one Doogan household in 1911, headed by Unity.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familycensus:06:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:06",
+      "label": "Doogan",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clogher:ch:family-29",
+   "title": "The O Donnell family",
+   "beats": [
+    {
+     "id": "clogher:beat:baptism:1875-07-30-TAW-B-p018-r231",
+     "kind": "baptism",
+     "chapter": "clogher:ch:family-29",
+     "time": {
+      "label": "30 July 1875",
+      "iso": "1875-07-30",
+      "sort": "1875-07-30",
+      "approximate": false
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:baptism:TAW-B-p018-r231"
+     },
+     "caption": "Patrick O'Donnell was baptised on 30 July 1875. Connell O'Donnell and Margaret Flanaghan were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:baptism:TAW-B-p018-r231"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:29",
+      "label": "O Donnell",
+      "run": false
+     }
+    },
+    {
+     "id": "clogher:beat:familyhead:29",
+     "kind": "familyhead",
+     "chapter": "clogher:ch:family-29",
+     "time": {
+      "label": "The O Donnell family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familypresence:29"
+     },
+     "caption": "The O Donnell family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familypresence:29"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:29",
+      "label": "O Donnell",
+      "run": false
+     }
+    },
+    {
+     "id": "clogher:beat:familycensus:29-1901",
+     "kind": "familycensus",
+     "chapter": "clogher:ch:family-29",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familycensus:29:1901"
+     },
+     "caption": "Clogher had one O Donnell household in 1901, headed by Condy.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familycensus:29:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:29",
+      "label": "O Donnell",
+      "run": false
+     }
+    },
+    {
+     "id": "clogher:beat:familycensus:29-1911",
+     "kind": "familycensus",
+     "chapter": "clogher:ch:family-29",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familycensus:29:1911"
+     },
+     "caption": "Clogher had one O Donnell household in 1911, headed by Connell.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familycensus:29:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:29",
+      "label": "O Donnell",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clogher:ch:family-05",
+   "title": "The Doherty family",
+   "beats": [
+    {
+     "id": "clogher:beat:familyhead:05",
+     "kind": "familyhead",
+     "chapter": "clogher:ch:family-05",
+     "time": {
+      "label": "The Doherty family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familypresence:05"
+     },
+     "caption": "The Doherty family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familypresence:05"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:05",
+      "label": "Doherty",
+      "run": false
+     }
+    },
+    {
+     "id": "clogher:beat:familycensus:05-1901",
+     "kind": "familycensus",
+     "chapter": "clogher:ch:family-05",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familycensus:05:1901"
+     },
+     "caption": "Clogher had one Doherty household in 1901, headed by Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familycensus:05:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:05",
+      "label": "Doherty",
+      "run": false
+     }
+    },
+    {
+     "id": "clogher:beat:familycensus:05-1911",
+     "kind": "familycensus",
+     "chapter": "clogher:ch:family-05",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familycensus:05:1911"
+     },
+     "caption": "Clogher had one Doherty household in 1911, headed by Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familycensus:05:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:05",
+      "label": "Doherty",
+      "run": false
+     }
+    },
+    {
+     "id": "clogher:beat:familycensus:05-1926",
+     "kind": "familycensus",
+     "chapter": "clogher:ch:family-05",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familycensus:05:1926"
+     },
+     "caption": "Clogher had one Doherty household in 1926, headed by Ellen.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familycensus:05:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:05",
+      "label": "Doherty",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clogher:ch:family-09",
+   "title": "The Flanigan family",
+   "beats": [
+    {
+     "id": "clogher:beat:familyhead:09",
+     "kind": "familyhead",
+     "chapter": "clogher:ch:family-09",
+     "time": {
+      "label": "The Flanigan family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familypresence:09"
+     },
+     "caption": "The Flanigan family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familypresence:09"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:09",
+      "label": "Flanigan",
+      "run": false
+     }
+    },
+    {
+     "id": "clogher:beat:familycensus:09-1901",
+     "kind": "familycensus",
+     "chapter": "clogher:ch:family-09",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familycensus:09:1901"
+     },
+     "caption": "Clogher had two Flanigan households in 1901, headed by John and Anne.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familycensus:09:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:09",
+      "label": "Flanigan",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clogher:ch:family-20",
+   "title": "The McGettigan family",
+   "beats": [
+    {
+     "id": "clogher:beat:familyhead:20",
+     "kind": "familyhead",
+     "chapter": "clogher:ch:family-20",
+     "time": {
+      "label": "The McGettigan family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familypresence:20"
+     },
+     "caption": "The McGettigan family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familypresence:20"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:20",
+      "label": "McGettigan",
+      "run": false
+     }
+    },
+    {
+     "id": "clogher:beat:familycensus:20-1901",
+     "kind": "familycensus",
+     "chapter": "clogher:ch:family-20",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familycensus:20:1901"
+     },
+     "caption": "Clogher had two McGettigan households in 1901, headed by Patrick and Denis.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familycensus:20:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:20",
+      "label": "McGettigan",
+      "run": false
+     }
+    },
+    {
+     "id": "clogher:beat:familycensus:20-1911",
+     "kind": "familycensus",
+     "chapter": "clogher:ch:family-20",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familycensus:20:1911"
+     },
+     "caption": "Clogher had one McGettigan household in 1911, headed by Catherine.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familycensus:20:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:20",
+      "label": "McGettigan",
+      "run": false
+     }
+    },
+    {
+     "id": "clogher:beat:familycensus:20-1926",
+     "kind": "familycensus",
+     "chapter": "clogher:ch:family-20",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familycensus:20:1926"
+     },
+     "caption": "Clogher had one McGettigan household in 1926, headed by Edward.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familycensus:20:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:20",
+      "label": "McGettigan",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clogher:ch:family-21",
+   "title": "The McGinty family",
+   "beats": [
+    {
+     "id": "clogher:beat:familyhead:21",
+     "kind": "familyhead",
+     "chapter": "clogher:ch:family-21",
+     "time": {
+      "label": "The McGinty family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familypresence:21"
+     },
+     "caption": "The McGinty family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familypresence:21"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:21",
+      "label": "McGinty",
+      "run": false
+     }
+    },
+    {
+     "id": "clogher:beat:familycensus:21-1901",
+     "kind": "familycensus",
+     "chapter": "clogher:ch:family-21",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familycensus:21:1901"
+     },
+     "caption": "Clogher had one McGinty household in 1901, headed by Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familycensus:21:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:21",
+      "label": "McGinty",
+      "run": false
+     }
+    },
+    {
+     "id": "clogher:beat:familycensus:21-1911",
+     "kind": "familycensus",
+     "chapter": "clogher:ch:family-21",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familycensus:21:1911"
+     },
+     "caption": "Clogher had one McGinty household in 1911, headed by Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familycensus:21:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:21",
+      "label": "McGinty",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clogher:ch:family-22",
+   "title": "The McGrath family",
+   "beats": [
+    {
+     "id": "clogher:beat:familyhead:22",
+     "kind": "familyhead",
+     "chapter": "clogher:ch:family-22",
+     "time": {
+      "label": "The McGrath family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familypresence:22"
+     },
+     "caption": "The McGrath family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familypresence:22"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:22",
+      "label": "McGrath",
+      "run": false
+     }
+    },
+    {
+     "id": "clogher:beat:familycensus:22-1901",
+     "kind": "familycensus",
+     "chapter": "clogher:ch:family-22",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familycensus:22:1901"
+     },
+     "caption": "Clogher had one McGrath household in 1901, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familycensus:22:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:22",
+      "label": "McGrath",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clogher:ch:family-23",
+   "title": "The McNulty family",
+   "beats": [
+    {
+     "id": "clogher:beat:familyhead:23",
+     "kind": "familyhead",
+     "chapter": "clogher:ch:family-23",
+     "time": {
+      "label": "The McNulty family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familypresence:23"
+     },
+     "caption": "The McNulty family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familypresence:23"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:23",
+      "label": "McNulty",
+      "run": false
+     }
+    },
+    {
+     "id": "clogher:beat:familycensus:23-1901",
+     "kind": "familycensus",
+     "chapter": "clogher:ch:family-23",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familycensus:23:1901"
+     },
+     "caption": "Clogher had one McNulty household in 1901, headed by Hannah.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familycensus:23:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:23",
+      "label": "McNulty",
+      "run": false
+     }
+    },
+    {
+     "id": "clogher:beat:familycensus:23-1911",
+     "kind": "familycensus",
+     "chapter": "clogher:ch:family-23",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familycensus:23:1911"
+     },
+     "caption": "Clogher had one McNulty household in 1911, headed by Hannagh.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familycensus:23:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:23",
+      "label": "McNulty",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clogher:ch:family-25",
+   "title": "The McQuaid family",
+   "beats": [
+    {
+     "id": "clogher:beat:familyhead:25",
+     "kind": "familyhead",
+     "chapter": "clogher:ch:family-25",
+     "time": {
+      "label": "The McQuaid family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familypresence:25"
+     },
+     "caption": "The McQuaid family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familypresence:25"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:25",
+      "label": "McQuaid",
+      "run": false
+     }
+    },
+    {
+     "id": "clogher:beat:familycensus:25-1901",
+     "kind": "familycensus",
+     "chapter": "clogher:ch:family-25",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familycensus:25:1901"
+     },
+     "caption": "Clogher had one McQuaid household in 1901, headed by Sarah.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familycensus:25:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:25",
+      "label": "McQuaid",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clogher:ch:family-32",
+   "title": "The Roper family",
+   "beats": [
+    {
+     "id": "clogher:beat:familyhead:32",
+     "kind": "familyhead",
+     "chapter": "clogher:ch:family-32",
+     "time": {
+      "label": "The Roper family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familypresence:32"
+     },
+     "caption": "The Roper family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familypresence:32"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:32",
+      "label": "Roper",
+      "run": false
+     }
+    },
+    {
+     "id": "clogher:beat:familycensus:32-1901",
+     "kind": "familycensus",
+     "chapter": "clogher:ch:family-32",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familycensus:32:1901"
+     },
+     "caption": "Clogher had one Roper household in 1901, headed by Margaret.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familycensus:32:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:32",
+      "label": "Roper",
+      "run": false
+     }
+    },
+    {
+     "id": "clogher:beat:familycensus:32-1911",
+     "kind": "familycensus",
+     "chapter": "clogher:ch:family-32",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familycensus:32:1911"
+     },
+     "caption": "Clogher had one Roper household in 1911, headed by Denis.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familycensus:32:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:32",
+      "label": "Roper",
+      "run": false
+     }
+    },
+    {
+     "id": "clogher:beat:familycensus:32-1926",
+     "kind": "familycensus",
+     "chapter": "clogher:ch:family-32",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familycensus:32:1926"
+     },
+     "caption": "Clogher had one Roper household in 1926, headed by Denis.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familycensus:32:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:32",
+      "label": "Roper",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clogher:ch:family-11",
+   "title": "The Gara family",
+   "beats": [
+    {
+     "id": "clogher:beat:familyhead:11",
+     "kind": "familyhead",
+     "chapter": "clogher:ch:family-11",
+     "time": {
+      "label": "The Gara family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familypresence:11"
+     },
+     "caption": "The Gara family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familypresence:11"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:11",
+      "label": "Gara",
+      "run": false
+     }
+    },
+    {
+     "id": "clogher:beat:familycensus:11-1911",
+     "kind": "familycensus",
+     "chapter": "clogher:ch:family-11",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familycensus:11:1911"
+     },
+     "caption": "Clogher had one Gara household in 1911, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familycensus:11:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:11",
+      "label": "Gara",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clogher:ch:family-24",
+   "title": "The McQuade family",
+   "beats": [
+    {
+     "id": "clogher:beat:familyhead:24",
+     "kind": "familyhead",
+     "chapter": "clogher:ch:family-24",
+     "time": {
+      "label": "The McQuade family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familypresence:24"
+     },
+     "caption": "The McQuade family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familypresence:24"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:24",
+      "label": "McQuade",
+      "run": false
+     }
+    },
+    {
+     "id": "clogher:beat:familycensus:24-1911",
+     "kind": "familycensus",
+     "chapter": "clogher:ch:family-24",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familycensus:24:1911"
+     },
+     "caption": "Clogher had one McQuade household in 1911, headed by Sarah.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familycensus:24:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:24",
+      "label": "McQuade",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clogher:ch:family-07",
+   "title": "The Duggan family",
+   "beats": [
+    {
+     "id": "clogher:beat:familyhead:07",
+     "kind": "familyhead",
+     "chapter": "clogher:ch:family-07",
+     "time": {
+      "label": "The Duggan family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familypresence:07"
+     },
+     "caption": "The Duggan family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familypresence:07"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:07",
+      "label": "Duggan",
+      "run": false
+     }
+    },
+    {
+     "id": "clogher:beat:familycensus:07-1926",
+     "kind": "familycensus",
+     "chapter": "clogher:ch:family-07",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familycensus:07:1926"
+     },
+     "caption": "Clogher had one Duggan household in 1926, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familycensus:07:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:07",
+      "label": "Duggan",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clogher:ch:family-15",
+   "title": "The Lynch family",
+   "beats": [
+    {
+     "id": "clogher:beat:familyhead:15",
+     "kind": "familyhead",
+     "chapter": "clogher:ch:family-15",
+     "time": {
+      "label": "The Lynch family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familypresence:15"
+     },
+     "caption": "The Lynch family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familypresence:15"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:15",
+      "label": "Lynch",
+      "run": false
+     }
+    },
+    {
+     "id": "clogher:beat:familycensus:15-1926",
+     "kind": "familycensus",
+     "chapter": "clogher:ch:family-15",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familycensus:15:1926"
+     },
+     "caption": "Clogher had one Lynch household in 1926, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familycensus:15:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:15",
+      "label": "Lynch",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clogher:ch:family-30",
+   "title": "The O'Gara family",
+   "beats": [
+    {
+     "id": "clogher:beat:familyhead:30",
+     "kind": "familyhead",
+     "chapter": "clogher:ch:family-30",
+     "time": {
+      "label": "The O'Gara family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familypresence:30"
+     },
+     "caption": "The O'Gara family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familypresence:30"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:30",
+      "label": "O'Gara",
+      "run": false
+     }
+    },
+    {
+     "id": "clogher:beat:familycensus:30-1926",
+     "kind": "familycensus",
+     "chapter": "clogher:ch:family-30",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familycensus:30:1926"
+     },
+     "caption": "Clogher had one O'Gara household in 1926, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familycensus:30:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:30",
+      "label": "O'Gara",
+      "run": false
+     }
     }
    ]
   }

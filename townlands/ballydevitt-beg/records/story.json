@@ -52,15 +52,15 @@
    ]
   },
   {
-   "id": "ballydevitt-beg:ch:1901",
-   "title": "1901",
+   "id": "ballydevitt-beg:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "ballydevitt-beg:beat:census:1901",
+     "id": "ballydevitt-beg:beat:census:returns",
      "kind": "census",
-     "chapter": "ballydevitt-beg:ch:1901",
+     "chapter": "ballydevitt-beg:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1926",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -77,33 +77,177 @@
       "stage": "map",
       "open_card": "ballydevitt beg:census:1901"
      },
-     "caption": "In 1901, 35 people in eight households lived in Ballydevitt Beg. Heads of household included Gillespie, Brogan and Harvey.",
+     "caption": "The censuses of 1901, 1911 and 1926 counted 35, 34 and 37 people in Ballydevitt Beg, in 8, 9 and 9 households. Heads of household included Gillespie, Brogan and Harvey.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "ballydevitt beg:census:1901"
+       "ballydevitt beg:census:1901",
+       "ballydevitt beg:census:1911",
+       "ballydevitt beg:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 7600,
+     "duration_ms": 12000,
      "audio": null,
      "counts": {
-      "people": 35,
-      "households": 8
+      "returns": [
+       {
+        "year": "1901",
+        "people": 35,
+        "households": 8
+       },
+       {
+        "year": "1911",
+        "people": 34,
+        "households": 9
+       },
+       {
+        "year": "1926",
+        "people": 37,
+        "households": 9
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "ballydevitt-beg:ch:1911",
-   "title": "1911",
+   "id": "ballydevitt-beg:ch:families",
+   "title": "The families of Ballydevitt Beg",
    "beats": [
     {
-     "id": "ballydevitt-beg:beat:census:1911",
-     "kind": "census",
-     "chapter": "ballydevitt-beg:ch:1911",
+     "id": "ballydevitt-beg:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "ballydevitt-beg:ch:families",
+     "time": {
+      "label": "The families of Ballydevitt Beg",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballydevitt-beg",
+      "name": "Ballydevitt Beg",
+      "logainm_id": "14000",
+      "lat": 54.669258,
+      "lon": -8.131656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballydevitt beg:census:1901"
+     },
+     "caption": "Here are the families of Ballydevitt Beg, from 1901 to 1926. First, the Gillespie and Kelly families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballydevitt beg:census:1901",
+       "ballydevitt beg:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "thread": {
+      "id": "ballydevitt-beg:family:05",
+      "label": "Gillespie",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "ballydevitt-beg:ch:family-05",
+   "title": "The Gillespie family",
+   "beats": [
+    {
+     "id": "ballydevitt-beg:beat:familyhead:05",
+     "kind": "familyhead",
+     "chapter": "ballydevitt-beg:ch:family-05",
+     "time": {
+      "label": "The Gillespie family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballydevitt-beg",
+      "name": "Ballydevitt Beg",
+      "logainm_id": "14000",
+      "lat": 54.669258,
+      "lon": -8.131656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballydevitt-beg:familypresence:05"
+     },
+     "caption": "The Gillespie family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballydevitt-beg:familypresence:05"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ballydevitt-beg:family:05",
+      "label": "Gillespie",
+      "run": true
+     }
+    },
+    {
+     "id": "ballydevitt-beg:beat:familycensus:05-1901",
+     "kind": "familycensus",
+     "chapter": "ballydevitt-beg:ch:family-05",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballydevitt-beg",
+      "name": "Ballydevitt Beg",
+      "logainm_id": "14000",
+      "lat": 54.669258,
+      "lon": -8.131656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballydevitt-beg:familycensus:05:1901"
+     },
+     "caption": "Ballydevitt Beg had three Gillespie households in 1901, headed by Unity, Patrick and James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballydevitt-beg:familycensus:05:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5600,
+     "audio": null,
+     "thread": {
+      "id": "ballydevitt-beg:family:05",
+      "label": "Gillespie",
+      "run": true
+     }
+    },
+    {
+     "id": "ballydevitt-beg:beat:familycensus:05-1911",
+     "kind": "familycensus",
+     "chapter": "ballydevitt-beg:ch:family-05",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -120,35 +264,30 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "ballydevitt beg:census:1911"
+      "open_card": "ballydevitt-beg:familycensus:05:1911"
      },
-     "caption": "Ballydevitt Beg had 34 people in nine households in 1911. Heads of household included Gillespie, Brogan and Gallinagh.",
+     "caption": "Ballydevitt Beg had three Gillespie households in 1911, headed by Patrick, Unity and James.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "ballydevitt beg:census:1911"
+       "ballydevitt-beg:familycensus:05:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 7200,
+     "duration_ms": 5600,
      "audio": null,
-     "counts": {
-      "people": 34,
-      "households": 9
+     "thread": {
+      "id": "ballydevitt-beg:family:05",
+      "label": "Gillespie",
+      "run": true
      }
-    }
-   ]
-  },
-  {
-   "id": "ballydevitt-beg:ch:1926",
-   "title": "1926",
-   "beats": [
+    },
     {
-     "id": "ballydevitt-beg:beat:census:1926",
-     "kind": "census",
-     "chapter": "ballydevitt-beg:ch:1926",
+     "id": "ballydevitt-beg:beat:familycensus:05-1926",
+     "kind": "familycensus",
+     "chapter": "ballydevitt-beg:ch:family-05",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -165,25 +304,198 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "ballydevitt beg:census:1926"
+      "open_card": "ballydevitt-beg:familycensus:05:1926"
      },
-     "caption": "In 1926, 37 people in nine households lived in Ballydevitt Beg. Heads of household included Diver, Gallagher and Gallinagh.",
+     "caption": "Ballydevitt Beg had one Gillespie household in 1926, headed by James.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "ballydevitt beg:census:1926"
+       "ballydevitt-beg:familycensus:05:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 7600,
+     "duration_ms": 4400,
      "audio": null,
-     "counts": {
-      "people": 37,
-      "households": 9
+     "thread": {
+      "id": "ballydevitt-beg:family:05",
+      "label": "Gillespie",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "ballydevitt-beg:ch:family-08",
+   "title": "The Kelly family",
+   "beats": [
+    {
+     "id": "ballydevitt-beg:beat:familyhead:08",
+     "kind": "familyhead",
+     "chapter": "ballydevitt-beg:ch:family-08",
+     "time": {
+      "label": "The Kelly family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballydevitt-beg",
+      "name": "Ballydevitt Beg",
+      "logainm_id": "14000",
+      "lat": 54.669258,
+      "lon": -8.131656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballydevitt-beg:familypresence:08"
+     },
+     "caption": "The Kelly family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballydevitt-beg:familypresence:08"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ballydevitt-beg:family:08",
+      "label": "Kelly",
+      "run": true
      }
     },
+    {
+     "id": "ballydevitt-beg:beat:familycensus:08-1901",
+     "kind": "familycensus",
+     "chapter": "ballydevitt-beg:ch:family-08",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballydevitt-beg",
+      "name": "Ballydevitt Beg",
+      "logainm_id": "14000",
+      "lat": 54.669258,
+      "lon": -8.131656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballydevitt-beg:familycensus:08:1901"
+     },
+     "caption": "Ballydevitt Beg had one Kelly household in 1901, headed by Margaret.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballydevitt-beg:familycensus:08:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ballydevitt-beg:family:08",
+      "label": "Kelly",
+      "run": true
+     }
+    },
+    {
+     "id": "ballydevitt-beg:beat:familycensus:08-1911",
+     "kind": "familycensus",
+     "chapter": "ballydevitt-beg:ch:family-08",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballydevitt-beg",
+      "name": "Ballydevitt Beg",
+      "logainm_id": "14000",
+      "lat": 54.669258,
+      "lon": -8.131656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballydevitt-beg:familycensus:08:1911"
+     },
+     "caption": "Ballydevitt Beg had one Kelly household in 1911, headed by Daniel.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballydevitt-beg:familycensus:08:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ballydevitt-beg:family:08",
+      "label": "Kelly",
+      "run": true
+     }
+    },
+    {
+     "id": "ballydevitt-beg:beat:familycensus:08-1926",
+     "kind": "familycensus",
+     "chapter": "ballydevitt-beg:ch:family-08",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballydevitt-beg",
+      "name": "Ballydevitt Beg",
+      "logainm_id": "14000",
+      "lat": 54.669258,
+      "lon": -8.131656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballydevitt-beg:familycensus:08:1926"
+     },
+     "caption": "Ballydevitt Beg had one Kelly household in 1926, headed by Dan.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballydevitt-beg:familycensus:08:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ballydevitt-beg:family:08",
+      "label": "Kelly",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "ballydevitt-beg:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "ballydevitt-beg:beat:closing:end",
      "kind": "closing",
@@ -218,6 +530,1106 @@
      },
      "duration_ms": 4400,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "ballydevitt-beg:ch:family-01",
+   "title": "The Brogan family",
+   "beats": [
+    {
+     "id": "ballydevitt-beg:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "ballydevitt-beg:ch:family-01",
+     "time": {
+      "label": "The Brogan family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballydevitt-beg",
+      "name": "Ballydevitt Beg",
+      "logainm_id": "14000",
+      "lat": 54.669258,
+      "lon": -8.131656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballydevitt-beg:familypresence:01"
+     },
+     "caption": "The Brogan family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballydevitt-beg:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ballydevitt-beg:family:01",
+      "label": "Brogan",
+      "run": false
+     }
+    },
+    {
+     "id": "ballydevitt-beg:beat:familycensus:01-1901",
+     "kind": "familycensus",
+     "chapter": "ballydevitt-beg:ch:family-01",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballydevitt-beg",
+      "name": "Ballydevitt Beg",
+      "logainm_id": "14000",
+      "lat": 54.669258,
+      "lon": -8.131656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballydevitt-beg:familycensus:01:1901"
+     },
+     "caption": "Ballydevitt Beg had one Brogan household in 1901, headed by Edward.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballydevitt-beg:familycensus:01:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ballydevitt-beg:family:01",
+      "label": "Brogan",
+      "run": false
+     }
+    },
+    {
+     "id": "ballydevitt-beg:beat:familycensus:01-1911",
+     "kind": "familycensus",
+     "chapter": "ballydevitt-beg:ch:family-01",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballydevitt-beg",
+      "name": "Ballydevitt Beg",
+      "logainm_id": "14000",
+      "lat": 54.669258,
+      "lon": -8.131656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballydevitt-beg:familycensus:01:1911"
+     },
+     "caption": "Ballydevitt Beg had one Brogan household in 1911, headed by Edward.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballydevitt-beg:familycensus:01:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ballydevitt-beg:family:01",
+      "label": "Brogan",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ballydevitt-beg:ch:family-07",
+   "title": "The Harvey family",
+   "beats": [
+    {
+     "id": "ballydevitt-beg:beat:familyhead:07",
+     "kind": "familyhead",
+     "chapter": "ballydevitt-beg:ch:family-07",
+     "time": {
+      "label": "The Harvey family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballydevitt-beg",
+      "name": "Ballydevitt Beg",
+      "logainm_id": "14000",
+      "lat": 54.669258,
+      "lon": -8.131656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballydevitt-beg:familypresence:07"
+     },
+     "caption": "The Harvey family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballydevitt-beg:familypresence:07"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ballydevitt-beg:family:07",
+      "label": "Harvey",
+      "run": false
+     }
+    },
+    {
+     "id": "ballydevitt-beg:beat:familycensus:07-1901",
+     "kind": "familycensus",
+     "chapter": "ballydevitt-beg:ch:family-07",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballydevitt-beg",
+      "name": "Ballydevitt Beg",
+      "logainm_id": "14000",
+      "lat": 54.669258,
+      "lon": -8.131656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballydevitt-beg:familycensus:07:1901"
+     },
+     "caption": "Ballydevitt Beg had one Harvey household in 1901, headed by Denis.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballydevitt-beg:familycensus:07:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ballydevitt-beg:family:07",
+      "label": "Harvey",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ballydevitt-beg:ch:family-11",
+   "title": "The Wilson family",
+   "beats": [
+    {
+     "id": "ballydevitt-beg:beat:familyhead:11",
+     "kind": "familyhead",
+     "chapter": "ballydevitt-beg:ch:family-11",
+     "time": {
+      "label": "The Wilson family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballydevitt-beg",
+      "name": "Ballydevitt Beg",
+      "logainm_id": "14000",
+      "lat": 54.669258,
+      "lon": -8.131656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballydevitt-beg:familypresence:11"
+     },
+     "caption": "The Wilson family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballydevitt-beg:familypresence:11"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ballydevitt-beg:family:11",
+      "label": "Wilson",
+      "run": false
+     }
+    },
+    {
+     "id": "ballydevitt-beg:beat:familycensus:11-1901",
+     "kind": "familycensus",
+     "chapter": "ballydevitt-beg:ch:family-11",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballydevitt-beg",
+      "name": "Ballydevitt Beg",
+      "logainm_id": "14000",
+      "lat": 54.669258,
+      "lon": -8.131656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballydevitt-beg:familycensus:11:1901"
+     },
+     "caption": "Ballydevitt Beg had one Wilson household in 1901, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballydevitt-beg:familycensus:11:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ballydevitt-beg:family:11",
+      "label": "Wilson",
+      "run": false
+     }
+    },
+    {
+     "id": "ballydevitt-beg:beat:familycensus:11-1911",
+     "kind": "familycensus",
+     "chapter": "ballydevitt-beg:ch:family-11",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballydevitt-beg",
+      "name": "Ballydevitt Beg",
+      "logainm_id": "14000",
+      "lat": 54.669258,
+      "lon": -8.131656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballydevitt-beg:familycensus:11:1911"
+     },
+     "caption": "Ballydevitt Beg had one Wilson household in 1911, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballydevitt-beg:familycensus:11:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ballydevitt-beg:family:11",
+      "label": "Wilson",
+      "run": false
+     }
+    },
+    {
+     "id": "ballydevitt-beg:beat:familycensus:11-1926",
+     "kind": "familycensus",
+     "chapter": "ballydevitt-beg:ch:family-11",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballydevitt-beg",
+      "name": "Ballydevitt Beg",
+      "logainm_id": "14000",
+      "lat": 54.669258,
+      "lon": -8.131656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballydevitt-beg:familycensus:11:1926"
+     },
+     "caption": "Ballydevitt Beg had one Wilson household in 1926, headed by Andrew.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballydevitt-beg:familycensus:11:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ballydevitt-beg:family:11",
+      "label": "Wilson",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ballydevitt-beg:ch:family-12",
+   "title": "The Wray family",
+   "beats": [
+    {
+     "id": "ballydevitt-beg:beat:familyhead:12",
+     "kind": "familyhead",
+     "chapter": "ballydevitt-beg:ch:family-12",
+     "time": {
+      "label": "The Wray family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballydevitt-beg",
+      "name": "Ballydevitt Beg",
+      "logainm_id": "14000",
+      "lat": 54.669258,
+      "lon": -8.131656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballydevitt-beg:familypresence:12"
+     },
+     "caption": "The Wray family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballydevitt-beg:familypresence:12"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ballydevitt-beg:family:12",
+      "label": "Wray",
+      "run": false
+     }
+    },
+    {
+     "id": "ballydevitt-beg:beat:familycensus:12-1901",
+     "kind": "familycensus",
+     "chapter": "ballydevitt-beg:ch:family-12",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballydevitt-beg",
+      "name": "Ballydevitt Beg",
+      "logainm_id": "14000",
+      "lat": 54.669258,
+      "lon": -8.131656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballydevitt-beg:familycensus:12:1901"
+     },
+     "caption": "Ballydevitt Beg had one Wray household in 1901, headed by David.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballydevitt-beg:familycensus:12:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ballydevitt-beg:family:12",
+      "label": "Wray",
+      "run": false
+     }
+    },
+    {
+     "id": "ballydevitt-beg:beat:familycensus:12-1911",
+     "kind": "familycensus",
+     "chapter": "ballydevitt-beg:ch:family-12",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballydevitt-beg",
+      "name": "Ballydevitt Beg",
+      "logainm_id": "14000",
+      "lat": 54.669258,
+      "lon": -8.131656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballydevitt-beg:familycensus:12:1911"
+     },
+     "caption": "Ballydevitt Beg had one Wray household in 1911, headed by Anne.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballydevitt-beg:familycensus:12:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ballydevitt-beg:family:12",
+      "label": "Wray",
+      "run": false
+     }
+    },
+    {
+     "id": "ballydevitt-beg:beat:familycensus:12-1926",
+     "kind": "familycensus",
+     "chapter": "ballydevitt-beg:ch:family-12",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballydevitt-beg",
+      "name": "Ballydevitt Beg",
+      "logainm_id": "14000",
+      "lat": 54.669258,
+      "lon": -8.131656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballydevitt-beg:familycensus:12:1926"
+     },
+     "caption": "Ballydevitt Beg had one Wray household in 1926, headed by Alexander.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballydevitt-beg:familycensus:12:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ballydevitt-beg:family:12",
+      "label": "Wray",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ballydevitt-beg:ch:family-04",
+   "title": "The Gallinagh family",
+   "beats": [
+    {
+     "id": "ballydevitt-beg:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "ballydevitt-beg:ch:family-04",
+     "time": {
+      "label": "The Gallinagh family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballydevitt-beg",
+      "name": "Ballydevitt Beg",
+      "logainm_id": "14000",
+      "lat": 54.669258,
+      "lon": -8.131656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballydevitt-beg:familypresence:04"
+     },
+     "caption": "The Gallinagh family appear in the records from 1911 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballydevitt-beg:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ballydevitt-beg:family:04",
+      "label": "Gallinagh",
+      "run": false
+     }
+    },
+    {
+     "id": "ballydevitt-beg:beat:familycensus:04-1911",
+     "kind": "familycensus",
+     "chapter": "ballydevitt-beg:ch:family-04",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballydevitt-beg",
+      "name": "Ballydevitt Beg",
+      "logainm_id": "14000",
+      "lat": 54.669258,
+      "lon": -8.131656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballydevitt-beg:familycensus:04:1911"
+     },
+     "caption": "Ballydevitt Beg had one Gallinagh household in 1911, headed by Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballydevitt-beg:familycensus:04:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ballydevitt-beg:family:04",
+      "label": "Gallinagh",
+      "run": false
+     }
+    },
+    {
+     "id": "ballydevitt-beg:beat:familycensus:04-1926",
+     "kind": "familycensus",
+     "chapter": "ballydevitt-beg:ch:family-04",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballydevitt-beg",
+      "name": "Ballydevitt Beg",
+      "logainm_id": "14000",
+      "lat": 54.669258,
+      "lon": -8.131656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballydevitt-beg:familycensus:04:1926"
+     },
+     "caption": "Ballydevitt Beg had one Gallinagh household in 1926, headed by Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballydevitt-beg:familycensus:04:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ballydevitt-beg:family:04",
+      "label": "Gallinagh",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ballydevitt-beg:ch:family-06",
+   "title": "The Given family",
+   "beats": [
+    {
+     "id": "ballydevitt-beg:beat:familyhead:06",
+     "kind": "familyhead",
+     "chapter": "ballydevitt-beg:ch:family-06",
+     "time": {
+      "label": "The Given family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballydevitt-beg",
+      "name": "Ballydevitt Beg",
+      "logainm_id": "14000",
+      "lat": 54.669258,
+      "lon": -8.131656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballydevitt-beg:familypresence:06"
+     },
+     "caption": "The Given family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballydevitt-beg:familypresence:06"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ballydevitt-beg:family:06",
+      "label": "Given",
+      "run": false
+     }
+    },
+    {
+     "id": "ballydevitt-beg:beat:familycensus:06-1911",
+     "kind": "familycensus",
+     "chapter": "ballydevitt-beg:ch:family-06",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballydevitt-beg",
+      "name": "Ballydevitt Beg",
+      "logainm_id": "14000",
+      "lat": 54.669258,
+      "lon": -8.131656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballydevitt-beg:familycensus:06:1911"
+     },
+     "caption": "Ballydevitt Beg had one Given household in 1911, headed by Thomas.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballydevitt-beg:familycensus:06:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ballydevitt-beg:family:06",
+      "label": "Given",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ballydevitt-beg:ch:family-02",
+   "title": "The Diver family",
+   "beats": [
+    {
+     "id": "ballydevitt-beg:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "ballydevitt-beg:ch:family-02",
+     "time": {
+      "label": "The Diver family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballydevitt-beg",
+      "name": "Ballydevitt Beg",
+      "logainm_id": "14000",
+      "lat": 54.669258,
+      "lon": -8.131656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballydevitt-beg:familypresence:02"
+     },
+     "caption": "The Diver family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballydevitt-beg:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ballydevitt-beg:family:02",
+      "label": "Diver",
+      "run": false
+     }
+    },
+    {
+     "id": "ballydevitt-beg:beat:familycensus:02-1926",
+     "kind": "familycensus",
+     "chapter": "ballydevitt-beg:ch:family-02",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballydevitt-beg",
+      "name": "Ballydevitt Beg",
+      "logainm_id": "14000",
+      "lat": 54.669258,
+      "lon": -8.131656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballydevitt-beg:familycensus:02:1926"
+     },
+     "caption": "Ballydevitt Beg had one Diver household in 1926, headed by William.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballydevitt-beg:familycensus:02:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ballydevitt-beg:family:02",
+      "label": "Diver",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ballydevitt-beg:ch:family-03",
+   "title": "The Gallagher family",
+   "beats": [
+    {
+     "id": "ballydevitt-beg:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "ballydevitt-beg:ch:family-03",
+     "time": {
+      "label": "The Gallagher family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballydevitt-beg",
+      "name": "Ballydevitt Beg",
+      "logainm_id": "14000",
+      "lat": 54.669258,
+      "lon": -8.131656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballydevitt-beg:familypresence:03"
+     },
+     "caption": "The Gallagher family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballydevitt-beg:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ballydevitt-beg:family:03",
+      "label": "Gallagher",
+      "run": false
+     }
+    },
+    {
+     "id": "ballydevitt-beg:beat:familycensus:03-1926",
+     "kind": "familycensus",
+     "chapter": "ballydevitt-beg:ch:family-03",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballydevitt-beg",
+      "name": "Ballydevitt Beg",
+      "logainm_id": "14000",
+      "lat": 54.669258,
+      "lon": -8.131656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballydevitt-beg:familycensus:03:1926"
+     },
+     "caption": "Ballydevitt Beg had one Gallagher household in 1926, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballydevitt-beg:familycensus:03:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ballydevitt-beg:family:03",
+      "label": "Gallagher",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ballydevitt-beg:ch:family-09",
+   "title": "The Sweeney family",
+   "beats": [
+    {
+     "id": "ballydevitt-beg:beat:familyhead:09",
+     "kind": "familyhead",
+     "chapter": "ballydevitt-beg:ch:family-09",
+     "time": {
+      "label": "The Sweeney family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballydevitt-beg",
+      "name": "Ballydevitt Beg",
+      "logainm_id": "14000",
+      "lat": 54.669258,
+      "lon": -8.131656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballydevitt-beg:familypresence:09"
+     },
+     "caption": "The Sweeney family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballydevitt-beg:familypresence:09"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ballydevitt-beg:family:09",
+      "label": "Sweeney",
+      "run": false
+     }
+    },
+    {
+     "id": "ballydevitt-beg:beat:familycensus:09-1926",
+     "kind": "familycensus",
+     "chapter": "ballydevitt-beg:ch:family-09",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballydevitt-beg",
+      "name": "Ballydevitt Beg",
+      "logainm_id": "14000",
+      "lat": 54.669258,
+      "lon": -8.131656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballydevitt-beg:familycensus:09:1926"
+     },
+     "caption": "Ballydevitt Beg had one Sweeney household in 1926, headed by Hugh.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballydevitt-beg:familycensus:09:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ballydevitt-beg:family:09",
+      "label": "Sweeney",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ballydevitt-beg:ch:family-10",
+   "title": "The Whyte family",
+   "beats": [
+    {
+     "id": "ballydevitt-beg:beat:familyhead:10",
+     "kind": "familyhead",
+     "chapter": "ballydevitt-beg:ch:family-10",
+     "time": {
+      "label": "The Whyte family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballydevitt-beg",
+      "name": "Ballydevitt Beg",
+      "logainm_id": "14000",
+      "lat": 54.669258,
+      "lon": -8.131656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballydevitt-beg:familypresence:10"
+     },
+     "caption": "The Whyte family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballydevitt-beg:familypresence:10"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ballydevitt-beg:family:10",
+      "label": "Whyte",
+      "run": false
+     }
+    },
+    {
+     "id": "ballydevitt-beg:beat:familycensus:10-1926",
+     "kind": "familycensus",
+     "chapter": "ballydevitt-beg:ch:family-10",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballydevitt-beg",
+      "name": "Ballydevitt Beg",
+      "logainm_id": "14000",
+      "lat": 54.669258,
+      "lon": -8.131656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballydevitt-beg:familycensus:10:1926"
+     },
+     "caption": "Ballydevitt Beg had one Whyte household in 1926, headed by Andrew.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballydevitt-beg:familycensus:10:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ballydevitt-beg:family:10",
+      "label": "Whyte",
+      "run": false
+     }
     }
    ]
   }

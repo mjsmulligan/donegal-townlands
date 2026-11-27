@@ -95,18 +95,80 @@
    ]
   },
   {
-   "id": "goladoo:ch:baptisms",
-   "title": "Baptisms, 1873 to 1875",
+   "id": "goladoo:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "goladoo:beat:baptism:1873",
-     "kind": "baptism",
-     "chapter": "goladoo:ch:baptisms",
+     "id": "goladoo:beat:census:returns",
+     "kind": "census",
+     "chapter": "goladoo:ch:census",
      "time": {
-      "label": "27 March 1873",
+      "label": "1901 to 1926",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "goladoo",
+      "name": "Goladoo",
+      "logainm_id": "14243",
+      "lat": 54.717584,
+      "lon": -8.032827,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "goladoo:census:1901"
+     },
+     "caption": "The censuses of 1901, 1911 and 1926 counted 90, 81 and 59 people in Goladoo, in 16, 17 and 15 households. Heads of household included Martin, Slevin and Timoney.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "goladoo:census:1901",
+       "goladoo:census:1911",
+       "goladoo:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 11600,
+     "audio": null,
+     "counts": {
+      "returns": [
+       {
+        "year": "1901",
+        "people": 90,
+        "households": 16
+       },
+       {
+        "year": "1911",
+        "people": 81,
+        "households": 17
+       },
+       {
+        "year": "1926",
+        "people": 59,
+        "households": 15
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "goladoo:ch:families",
+   "title": "The families of Goladoo",
+   "beats": [
+    {
+     "id": "goladoo:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "goladoo:ch:families",
+     "time": {
+      "label": "The families of Goladoo",
       "iso": "1873-03-27",
-      "sort": "1873-03-27",
-      "approximate": false
+      "sort": "1873-08-24",
+      "approximate": true
      },
      "place": {
       "townland": "goladoo",
@@ -120,24 +182,281 @@
       "stage": "map",
       "open_card": "goladoo:baptism:TAW-B-p006-r29"
      },
-     "caption": "Two children were baptised in 1873: Peter Slevin on 27 March and Ellen Boyle on 24 August.",
+     "caption": "Here are the families of Goladoo, from 1873 to 1926. First, the Boyle and Martin families.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
        "goladoo:baptism:TAW-B-p006-r29",
+       "goladoo:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "goladoo:family:01",
+      "label": "Boyle",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "goladoo:ch:family-01",
+   "title": "The Boyle family",
+   "beats": [
+    {
+     "id": "goladoo:beat:baptism:1873-08-24-TAW-B-p008-r65",
+     "kind": "baptism",
+     "chapter": "goladoo:ch:family-01",
+     "time": {
+      "label": "24 August 1873",
+      "iso": "1873-08-24",
+      "sort": "1873-08-24",
+      "approximate": false
+     },
+     "place": {
+      "townland": "goladoo",
+      "name": "Goladoo",
+      "logainm_id": "14243",
+      "lat": 54.717584,
+      "lon": -8.032827,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "goladoo:baptism:TAW-B-p008-r65"
+     },
+     "caption": "Ellen Boyle was baptised on 24 August 1873. Owen Boyle and Ellen Martin were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
        "goladoo:baptism:TAW-B-p008-r65"
       ],
       "basis": "page_place",
       "certainty": "stated"
      },
-     "duration_ms": 6800,
-     "audio": null
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "goladoo:family:01",
+      "label": "Boyle",
+      "run": true
+     }
     },
     {
-     "id": "goladoo:beat:baptism:1874",
+     "id": "goladoo:beat:baptism:1875-10-03-TAW-B-p019-r344",
      "kind": "baptism",
-     "chapter": "goladoo:ch:baptisms",
+     "chapter": "goladoo:ch:family-01",
+     "time": {
+      "label": "3 October 1875",
+      "iso": "1875-10-03",
+      "sort": "1875-10-03",
+      "approximate": false
+     },
+     "place": {
+      "townland": "goladoo",
+      "name": "Goladoo",
+      "logainm_id": "14243",
+      "lat": 54.717584,
+      "lon": -8.032827,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "goladoo:baptism:TAW-B-p019-r344"
+     },
+     "caption": "Michael Boyle was baptised on 3 October 1875. Owen Boyle and Ellen Martin were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "goladoo:baptism:TAW-B-p019-r344"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "goladoo:family:01",
+      "label": "Boyle",
+      "run": true
+     }
+    },
+    {
+     "id": "goladoo:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "goladoo:ch:family-01",
+     "time": {
+      "label": "The Boyle family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "goladoo",
+      "name": "Goladoo",
+      "logainm_id": "14243",
+      "lat": 54.717584,
+      "lon": -8.032827,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "goladoo:familypresence:01"
+     },
+     "caption": "The Boyle family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "goladoo:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "goladoo:family:01",
+      "label": "Boyle",
+      "run": true
+     }
+    },
+    {
+     "id": "goladoo:beat:familycensus:01-1901",
+     "kind": "familycensus",
+     "chapter": "goladoo:ch:family-01",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "goladoo",
+      "name": "Goladoo",
+      "logainm_id": "14243",
+      "lat": 54.717584,
+      "lon": -8.032827,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "goladoo:familycensus:01:1901"
+     },
+     "caption": "Goladoo had one Boyle household in 1901, headed by Owen.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "goladoo:familycensus:01:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "goladoo:family:01",
+      "label": "Boyle",
+      "run": true
+     }
+    },
+    {
+     "id": "goladoo:beat:familycensus:01-1911",
+     "kind": "familycensus",
+     "chapter": "goladoo:ch:family-01",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "goladoo",
+      "name": "Goladoo",
+      "logainm_id": "14243",
+      "lat": 54.717584,
+      "lon": -8.032827,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "goladoo:familycensus:01:1911"
+     },
+     "caption": "Goladoo had one Boyle household in 1911, headed by Owen.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "goladoo:familycensus:01:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "goladoo:family:01",
+      "label": "Boyle",
+      "run": true
+     }
+    },
+    {
+     "id": "goladoo:beat:familycensus:01-1926",
+     "kind": "familycensus",
+     "chapter": "goladoo:ch:family-01",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "goladoo",
+      "name": "Goladoo",
+      "logainm_id": "14243",
+      "lat": 54.717584,
+      "lon": -8.032827,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "goladoo:familycensus:01:1926"
+     },
+     "caption": "Goladoo had one Boyle household in 1926, headed by Joseph.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "goladoo:familycensus:01:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "goladoo:family:01",
+      "label": "Boyle",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "goladoo:ch:family-09",
+   "title": "The Martin family",
+   "beats": [
+    {
+     "id": "goladoo:beat:baptism:1874-02-22-TAW-B-p010-r110",
+     "kind": "baptism",
+     "chapter": "goladoo:ch:family-09",
      "time": {
       "label": "22 February 1874",
       "iso": "1874-02-22",
@@ -156,30 +475,33 @@
       "stage": "map",
       "open_card": "goladoo:baptism:TAW-B-p010-r110"
      },
-     "caption": "Three children were baptised in 1874: Denis Martin on 22 February, John Timoney on 26 April and Bernard Slevin on 3 May.",
+     "caption": "Denis Martin was baptised on 22 February 1874. Denis Martin and Anne Timoney were the parents.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "goladoo:baptism:TAW-B-p010-r110",
-       "goladoo:baptism:TAW-B-p010-r118",
-       "goladoo:baptism:TAW-B-p010-r119"
+       "goladoo:baptism:TAW-B-p010-r110"
       ],
       "basis": "page_place",
       "certainty": "stated"
      },
-     "duration_ms": 8800,
-     "audio": null
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "goladoo:family:09",
+      "label": "Martin",
+      "run": true
+     }
     },
     {
-     "id": "goladoo:beat:baptism:1875",
-     "kind": "baptism",
-     "chapter": "goladoo:ch:baptisms",
+     "id": "goladoo:beat:familyhead:09",
+     "kind": "familyhead",
+     "chapter": "goladoo:ch:family-09",
      "time": {
-      "label": "8 June 1875",
-      "iso": "1875-06-08",
-      "sort": "1875-06-08",
-      "approximate": false
+      "label": "The Martin family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
      },
      "place": {
       "townland": "goladoo",
@@ -191,32 +513,30 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "goladoo:baptism:TAW-B-p017-r220"
+      "open_card": "goladoo:familypresence:09"
      },
-     "caption": "Two children were baptised in 1875: Mary Anne Slevin on 8 June and Michael Boyle on 3 October.",
+     "caption": "The Martin family appear in the records from 1901 to 1926.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "goladoo:baptism:TAW-B-p017-r220",
-       "goladoo:baptism:TAW-B-p019-r344"
+       "goladoo:familypresence:09"
       ],
-      "basis": "page_place",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 7200,
-     "audio": null
-    }
-   ]
-  },
-  {
-   "id": "goladoo:ch:1901",
-   "title": "1901",
-   "beats": [
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "goladoo:family:09",
+      "label": "Martin",
+      "run": true
+     }
+    },
     {
-     "id": "goladoo:beat:census:1901",
-     "kind": "census",
-     "chapter": "goladoo:ch:1901",
+     "id": "goladoo:beat:familycensus:09-1901",
+     "kind": "familycensus",
+     "chapter": "goladoo:ch:family-09",
      "time": {
       "label": "1901",
       "iso": "1901",
@@ -233,35 +553,30 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "goladoo:census:1901"
+      "open_card": "goladoo:familycensus:09:1901"
      },
-     "caption": "In 1901, 90 people in sixteen households lived in Goladoo. Heads of household included Martin, Slevin and Timoney.",
+     "caption": "Goladoo had four Martin households in 1901, headed by Daniel, Donal, Edward and Ellen.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "goladoo:census:1901"
+       "goladoo:familycensus:09:1901"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 7200,
+     "duration_ms": 5600,
      "audio": null,
-     "counts": {
-      "people": 90,
-      "households": 16
+     "thread": {
+      "id": "goladoo:family:09",
+      "label": "Martin",
+      "run": true
      }
-    }
-   ]
-  },
-  {
-   "id": "goladoo:ch:1911",
-   "title": "1911",
-   "beats": [
+    },
     {
-     "id": "goladoo:beat:census:1911",
-     "kind": "census",
-     "chapter": "goladoo:ch:1911",
+     "id": "goladoo:beat:familycensus:09-1911",
+     "kind": "familycensus",
+     "chapter": "goladoo:ch:family-09",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -278,35 +593,30 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "goladoo:census:1911"
+      "open_card": "goladoo:familycensus:09:1911"
      },
-     "caption": "In 1911, 81 people in seventeen households lived in Goladoo. Heads of household included Martin, Timoney and Slevin.",
+     "caption": "Goladoo had five Martin households in 1911, headed by Ellen, Edward, Donald, Daniel and John.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "goladoo:census:1911"
+       "goladoo:familycensus:09:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 7200,
+     "duration_ms": 6000,
      "audio": null,
-     "counts": {
-      "people": 81,
-      "households": 17
+     "thread": {
+      "id": "goladoo:family:09",
+      "label": "Martin",
+      "run": true
      }
-    }
-   ]
-  },
-  {
-   "id": "goladoo:ch:1926",
-   "title": "1926",
-   "beats": [
+    },
     {
-     "id": "goladoo:beat:census:1926",
-     "kind": "census",
-     "chapter": "goladoo:ch:1926",
+     "id": "goladoo:beat:familycensus:09-1926",
+     "kind": "familycensus",
+     "chapter": "goladoo:ch:family-09",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -323,25 +633,32 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "goladoo:census:1926"
+      "open_card": "goladoo:familycensus:09:1926"
      },
-     "caption": "In 1926, 59 people in fifteen households lived in Goladoo. Heads of household included Herron, Timmoney and Martain.",
+     "caption": "Goladoo had two Martin households in 1926, headed by Eddie and John.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "goladoo:census:1926"
+       "goladoo:familycensus:09:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 7200,
+     "duration_ms": 4800,
      "audio": null,
-     "counts": {
-      "people": 59,
-      "households": 15
+     "thread": {
+      "id": "goladoo:family:09",
+      "label": "Martin",
+      "run": true
      }
-    },
+    }
+   ]
+  },
+  {
+   "id": "goladoo:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "goladoo:beat:closing:end",
      "kind": "closing",
@@ -376,6 +693,1570 @@
      },
      "duration_ms": 4000,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "goladoo:ch:family-13",
+   "title": "The Slevin family",
+   "beats": [
+    {
+     "id": "goladoo:beat:baptism:1873-03-27-TAW-B-p006-r29",
+     "kind": "baptism",
+     "chapter": "goladoo:ch:family-13",
+     "time": {
+      "label": "27 March 1873",
+      "iso": "1873-03-27",
+      "sort": "1873-03-27",
+      "approximate": false
+     },
+     "place": {
+      "townland": "goladoo",
+      "name": "Goladoo",
+      "logainm_id": "14243",
+      "lat": 54.717584,
+      "lon": -8.032827,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "goladoo:baptism:TAW-B-p006-r29"
+     },
+     "caption": "Peter Slevin was baptised on 27 March 1873. Edward Slevin and Susan Dunnion were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "goladoo:baptism:TAW-B-p006-r29"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "goladoo:family:13",
+      "label": "Slevin",
+      "run": false
+     }
+    },
+    {
+     "id": "goladoo:beat:baptism:1874-05-03-TAW-B-p010-r119",
+     "kind": "baptism",
+     "chapter": "goladoo:ch:family-13",
+     "time": {
+      "label": "3 May 1874",
+      "iso": "1874-05-03",
+      "sort": "1874-05-03",
+      "approximate": false
+     },
+     "place": {
+      "townland": "goladoo",
+      "name": "Goladoo",
+      "logainm_id": "14243",
+      "lat": 54.717584,
+      "lon": -8.032827,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "goladoo:baptism:TAW-B-p010-r119"
+     },
+     "caption": "Bernard Slevin was baptised on 3 May 1874. Bryan Slevin and Margaret Clarke were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "goladoo:baptism:TAW-B-p010-r119"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "goladoo:family:13",
+      "label": "Slevin",
+      "run": false
+     }
+    },
+    {
+     "id": "goladoo:beat:baptism:1875-06-08-TAW-B-p017-r220",
+     "kind": "baptism",
+     "chapter": "goladoo:ch:family-13",
+     "time": {
+      "label": "8 June 1875",
+      "iso": "1875-06-08",
+      "sort": "1875-06-08",
+      "approximate": false
+     },
+     "place": {
+      "townland": "goladoo",
+      "name": "Goladoo",
+      "logainm_id": "14243",
+      "lat": 54.717584,
+      "lon": -8.032827,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "goladoo:baptism:TAW-B-p017-r220"
+     },
+     "caption": "Mary Anne Slevin was baptised on 8 June 1875. Edward Slevin and Susan Dunnion were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "goladoo:baptism:TAW-B-p017-r220"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "thread": {
+      "id": "goladoo:family:13",
+      "label": "Slevin",
+      "run": false
+     }
+    },
+    {
+     "id": "goladoo:beat:familyhead:13",
+     "kind": "familyhead",
+     "chapter": "goladoo:ch:family-13",
+     "time": {
+      "label": "The Slevin family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "goladoo",
+      "name": "Goladoo",
+      "logainm_id": "14243",
+      "lat": 54.717584,
+      "lon": -8.032827,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "goladoo:familypresence:13"
+     },
+     "caption": "The Slevin family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "goladoo:familypresence:13"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "goladoo:family:13",
+      "label": "Slevin",
+      "run": false
+     }
+    },
+    {
+     "id": "goladoo:beat:familycensus:13-1901",
+     "kind": "familycensus",
+     "chapter": "goladoo:ch:family-13",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "goladoo",
+      "name": "Goladoo",
+      "logainm_id": "14243",
+      "lat": 54.717584,
+      "lon": -8.032827,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "goladoo:familycensus:13:1901"
+     },
+     "caption": "Goladoo had three Slevin households in 1901, headed by Bryan, Tully and Catherine.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "goladoo:familycensus:13:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "goladoo:family:13",
+      "label": "Slevin",
+      "run": false
+     }
+    },
+    {
+     "id": "goladoo:beat:familycensus:13-1911",
+     "kind": "familycensus",
+     "chapter": "goladoo:ch:family-13",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "goladoo",
+      "name": "Goladoo",
+      "logainm_id": "14243",
+      "lat": 54.717584,
+      "lon": -8.032827,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "goladoo:familycensus:13:1911"
+     },
+     "caption": "Goladoo had two Slevin households in 1911, headed by Margaret and Peter.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "goladoo:familycensus:13:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "goladoo:family:13",
+      "label": "Slevin",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "goladoo:ch:family-15",
+   "title": "The Timoney family",
+   "beats": [
+    {
+     "id": "goladoo:beat:baptism:1874-04-26-TAW-B-p010-r118",
+     "kind": "baptism",
+     "chapter": "goladoo:ch:family-15",
+     "time": {
+      "label": "26 April 1874",
+      "iso": "1874-04-26",
+      "sort": "1874-04-26",
+      "approximate": false
+     },
+     "place": {
+      "townland": "goladoo",
+      "name": "Goladoo",
+      "logainm_id": "14243",
+      "lat": 54.717584,
+      "lon": -8.032827,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "goladoo:baptism:TAW-B-p010-r118"
+     },
+     "caption": "John Timoney was baptised on 26 April 1874. Paddy Timoney and Margaret Martin were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "goladoo:baptism:TAW-B-p010-r118"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "goladoo:family:15",
+      "label": "Timoney",
+      "run": false
+     }
+    },
+    {
+     "id": "goladoo:beat:familyhead:15",
+     "kind": "familyhead",
+     "chapter": "goladoo:ch:family-15",
+     "time": {
+      "label": "The Timoney family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "goladoo",
+      "name": "Goladoo",
+      "logainm_id": "14243",
+      "lat": 54.717584,
+      "lon": -8.032827,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "goladoo:familypresence:15"
+     },
+     "caption": "The Timoney family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "goladoo:familypresence:15"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "goladoo:family:15",
+      "label": "Timoney",
+      "run": false
+     }
+    },
+    {
+     "id": "goladoo:beat:familycensus:15-1901",
+     "kind": "familycensus",
+     "chapter": "goladoo:ch:family-15",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "goladoo",
+      "name": "Goladoo",
+      "logainm_id": "14243",
+      "lat": 54.717584,
+      "lon": -8.032827,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "goladoo:familycensus:15:1901"
+     },
+     "caption": "Goladoo had three Timoney households in 1901, headed by John and two named Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "goladoo:familycensus:15:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5600,
+     "audio": null,
+     "thread": {
+      "id": "goladoo:family:15",
+      "label": "Timoney",
+      "run": false
+     }
+    },
+    {
+     "id": "goladoo:beat:familycensus:15-1911",
+     "kind": "familycensus",
+     "chapter": "goladoo:ch:family-15",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "goladoo",
+      "name": "Goladoo",
+      "logainm_id": "14243",
+      "lat": 54.717584,
+      "lon": -8.032827,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "goladoo:familycensus:15:1911"
+     },
+     "caption": "Goladoo had three Timoney households in 1911, headed by Margaret and two named Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "goladoo:familycensus:15:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5600,
+     "audio": null,
+     "thread": {
+      "id": "goladoo:family:15",
+      "label": "Timoney",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "goladoo:ch:family-03",
+   "title": "The Carolan family",
+   "beats": [
+    {
+     "id": "goladoo:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "goladoo:ch:family-03",
+     "time": {
+      "label": "The Carolan family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "goladoo",
+      "name": "Goladoo",
+      "logainm_id": "14243",
+      "lat": 54.717584,
+      "lon": -8.032827,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "goladoo:familypresence:03"
+     },
+     "caption": "The Carolan family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "goladoo:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "goladoo:family:03",
+      "label": "Carolan",
+      "run": false
+     }
+    },
+    {
+     "id": "goladoo:beat:familycensus:03-1901",
+     "kind": "familycensus",
+     "chapter": "goladoo:ch:family-03",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "goladoo",
+      "name": "Goladoo",
+      "logainm_id": "14243",
+      "lat": 54.717584,
+      "lon": -8.032827,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "goladoo:familycensus:03:1901"
+     },
+     "caption": "Goladoo had one Carolan household in 1901, headed by Owen.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "goladoo:familycensus:03:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "goladoo:family:03",
+      "label": "Carolan",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "goladoo:ch:family-04",
+   "title": "The Gallinagh family",
+   "beats": [
+    {
+     "id": "goladoo:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "goladoo:ch:family-04",
+     "time": {
+      "label": "The Gallinagh family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "goladoo",
+      "name": "Goladoo",
+      "logainm_id": "14243",
+      "lat": 54.717584,
+      "lon": -8.032827,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "goladoo:familypresence:04"
+     },
+     "caption": "The Gallinagh family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "goladoo:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "goladoo:family:04",
+      "label": "Gallinagh",
+      "run": false
+     }
+    },
+    {
+     "id": "goladoo:beat:familycensus:04-1901",
+     "kind": "familycensus",
+     "chapter": "goladoo:ch:family-04",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "goladoo",
+      "name": "Goladoo",
+      "logainm_id": "14243",
+      "lat": 54.717584,
+      "lon": -8.032827,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "goladoo:familycensus:04:1901"
+     },
+     "caption": "Goladoo had one Gallinagh household in 1901, headed by Daniel.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "goladoo:familycensus:04:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "goladoo:family:04",
+      "label": "Gallinagh",
+      "run": false
+     }
+    },
+    {
+     "id": "goladoo:beat:familycensus:04-1911",
+     "kind": "familycensus",
+     "chapter": "goladoo:ch:family-04",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "goladoo",
+      "name": "Goladoo",
+      "logainm_id": "14243",
+      "lat": 54.717584,
+      "lon": -8.032827,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "goladoo:familycensus:04:1911"
+     },
+     "caption": "Goladoo had one Gallinagh household in 1911, headed by Daniel.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "goladoo:familycensus:04:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "goladoo:family:04",
+      "label": "Gallinagh",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "goladoo:ch:family-05",
+   "title": "The Halferty family",
+   "beats": [
+    {
+     "id": "goladoo:beat:familyhead:05",
+     "kind": "familyhead",
+     "chapter": "goladoo:ch:family-05",
+     "time": {
+      "label": "The Halferty family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "goladoo",
+      "name": "Goladoo",
+      "logainm_id": "14243",
+      "lat": 54.717584,
+      "lon": -8.032827,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "goladoo:familypresence:05"
+     },
+     "caption": "The Halferty family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "goladoo:familypresence:05"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "goladoo:family:05",
+      "label": "Halferty",
+      "run": false
+     }
+    },
+    {
+     "id": "goladoo:beat:familycensus:05-1901",
+     "kind": "familycensus",
+     "chapter": "goladoo:ch:family-05",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "goladoo",
+      "name": "Goladoo",
+      "logainm_id": "14243",
+      "lat": 54.717584,
+      "lon": -8.032827,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "goladoo:familycensus:05:1901"
+     },
+     "caption": "Goladoo had one Halferty household in 1901, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "goladoo:familycensus:05:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "goladoo:family:05",
+      "label": "Halferty",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "goladoo:ch:family-10",
+   "title": "The McGinty family",
+   "beats": [
+    {
+     "id": "goladoo:beat:familyhead:10",
+     "kind": "familyhead",
+     "chapter": "goladoo:ch:family-10",
+     "time": {
+      "label": "The McGinty family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "goladoo",
+      "name": "Goladoo",
+      "logainm_id": "14243",
+      "lat": 54.717584,
+      "lon": -8.032827,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "goladoo:familypresence:10"
+     },
+     "caption": "The McGinty family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "goladoo:familypresence:10"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "goladoo:family:10",
+      "label": "McGinty",
+      "run": false
+     }
+    },
+    {
+     "id": "goladoo:beat:familycensus:10-1901",
+     "kind": "familycensus",
+     "chapter": "goladoo:ch:family-10",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "goladoo",
+      "name": "Goladoo",
+      "logainm_id": "14243",
+      "lat": 54.717584,
+      "lon": -8.032827,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "goladoo:familycensus:10:1901"
+     },
+     "caption": "Goladoo had one McGinty household in 1901, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "goladoo:familycensus:10:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "goladoo:family:10",
+      "label": "McGinty",
+      "run": false
+     }
+    },
+    {
+     "id": "goladoo:beat:familycensus:10-1911",
+     "kind": "familycensus",
+     "chapter": "goladoo:ch:family-10",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "goladoo",
+      "name": "Goladoo",
+      "logainm_id": "14243",
+      "lat": 54.717584,
+      "lon": -8.032827,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "goladoo:familycensus:10:1911"
+     },
+     "caption": "Goladoo had one McGinty household in 1911, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "goladoo:familycensus:10:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "goladoo:family:10",
+      "label": "McGinty",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "goladoo:ch:family-11",
+   "title": "The Shiels family",
+   "beats": [
+    {
+     "id": "goladoo:beat:familyhead:11",
+     "kind": "familyhead",
+     "chapter": "goladoo:ch:family-11",
+     "time": {
+      "label": "The Shiels family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "goladoo",
+      "name": "Goladoo",
+      "logainm_id": "14243",
+      "lat": 54.717584,
+      "lon": -8.032827,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "goladoo:familypresence:11"
+     },
+     "caption": "The Shiels family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "goladoo:familypresence:11"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "goladoo:family:11",
+      "label": "Shiels",
+      "run": false
+     }
+    },
+    {
+     "id": "goladoo:beat:familycensus:11-1901",
+     "kind": "familycensus",
+     "chapter": "goladoo:ch:family-11",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "goladoo",
+      "name": "Goladoo",
+      "logainm_id": "14243",
+      "lat": 54.717584,
+      "lon": -8.032827,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "goladoo:familycensus:11:1901"
+     },
+     "caption": "Goladoo had one Shiels household in 1901, headed by Edward.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "goladoo:familycensus:11:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "goladoo:family:11",
+      "label": "Shiels",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "goladoo:ch:family-02",
+   "title": "The Caralin family",
+   "beats": [
+    {
+     "id": "goladoo:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "goladoo:ch:family-02",
+     "time": {
+      "label": "The Caralin family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "goladoo",
+      "name": "Goladoo",
+      "logainm_id": "14243",
+      "lat": 54.717584,
+      "lon": -8.032827,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "goladoo:familypresence:02"
+     },
+     "caption": "The Caralin family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "goladoo:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "goladoo:family:02",
+      "label": "Caralin",
+      "run": false
+     }
+    },
+    {
+     "id": "goladoo:beat:familycensus:02-1911",
+     "kind": "familycensus",
+     "chapter": "goladoo:ch:family-02",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "goladoo",
+      "name": "Goladoo",
+      "logainm_id": "14243",
+      "lat": 54.717584,
+      "lon": -8.032827,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "goladoo:familycensus:02:1911"
+     },
+     "caption": "Goladoo had one Caralin household in 1911, headed by Michael.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "goladoo:familycensus:02:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "goladoo:family:02",
+      "label": "Caralin",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "goladoo:ch:family-06",
+   "title": "The Helferty family",
+   "beats": [
+    {
+     "id": "goladoo:beat:familyhead:06",
+     "kind": "familyhead",
+     "chapter": "goladoo:ch:family-06",
+     "time": {
+      "label": "The Helferty family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "goladoo",
+      "name": "Goladoo",
+      "logainm_id": "14243",
+      "lat": 54.717584,
+      "lon": -8.032827,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "goladoo:familypresence:06"
+     },
+     "caption": "The Helferty family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "goladoo:familypresence:06"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "goladoo:family:06",
+      "label": "Helferty",
+      "run": false
+     }
+    },
+    {
+     "id": "goladoo:beat:familycensus:06-1911",
+     "kind": "familycensus",
+     "chapter": "goladoo:ch:family-06",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "goladoo",
+      "name": "Goladoo",
+      "logainm_id": "14243",
+      "lat": 54.717584,
+      "lon": -8.032827,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "goladoo:familycensus:06:1911"
+     },
+     "caption": "Goladoo had one Helferty household in 1911, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "goladoo:familycensus:06:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "goladoo:family:06",
+      "label": "Helferty",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "goladoo:ch:family-07",
+   "title": "The Herron family",
+   "beats": [
+    {
+     "id": "goladoo:beat:familyhead:07",
+     "kind": "familyhead",
+     "chapter": "goladoo:ch:family-07",
+     "time": {
+      "label": "The Herron family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "goladoo",
+      "name": "Goladoo",
+      "logainm_id": "14243",
+      "lat": 54.717584,
+      "lon": -8.032827,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "goladoo:familypresence:07"
+     },
+     "caption": "The Herron family appear in the records from 1911 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "goladoo:familypresence:07"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "goladoo:family:07",
+      "label": "Herron",
+      "run": false
+     }
+    },
+    {
+     "id": "goladoo:beat:familycensus:07-1911",
+     "kind": "familycensus",
+     "chapter": "goladoo:ch:family-07",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "goladoo",
+      "name": "Goladoo",
+      "logainm_id": "14243",
+      "lat": 54.717584,
+      "lon": -8.032827,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "goladoo:familycensus:07:1911"
+     },
+     "caption": "Goladoo had one Herron household in 1911, headed by Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "goladoo:familycensus:07:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "goladoo:family:07",
+      "label": "Herron",
+      "run": false
+     }
+    },
+    {
+     "id": "goladoo:beat:familycensus:07-1926",
+     "kind": "familycensus",
+     "chapter": "goladoo:ch:family-07",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "goladoo",
+      "name": "Goladoo",
+      "logainm_id": "14243",
+      "lat": 54.717584,
+      "lon": -8.032827,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "goladoo:familycensus:07:1926"
+     },
+     "caption": "Goladoo had three Herron households in 1926, headed by Mary, Frank and Kathleen.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "goladoo:familycensus:07:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "goladoo:family:07",
+      "label": "Herron",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "goladoo:ch:family-12",
+   "title": "The Sleavin family",
+   "beats": [
+    {
+     "id": "goladoo:beat:familyhead:12",
+     "kind": "familyhead",
+     "chapter": "goladoo:ch:family-12",
+     "time": {
+      "label": "The Sleavin family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "goladoo",
+      "name": "Goladoo",
+      "logainm_id": "14243",
+      "lat": 54.717584,
+      "lon": -8.032827,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "goladoo:familypresence:12"
+     },
+     "caption": "The Sleavin family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "goladoo:familypresence:12"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "goladoo:family:12",
+      "label": "Sleavin",
+      "run": false
+     }
+    },
+    {
+     "id": "goladoo:beat:familycensus:12-1911",
+     "kind": "familycensus",
+     "chapter": "goladoo:ch:family-12",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "goladoo",
+      "name": "Goladoo",
+      "logainm_id": "14243",
+      "lat": 54.717584,
+      "lon": -8.032827,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "goladoo:familycensus:12:1911"
+     },
+     "caption": "Goladoo had one Sleavin household in 1911, headed by Tully.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "goladoo:familycensus:12:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "goladoo:family:12",
+      "label": "Sleavin",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "goladoo:ch:family-08",
+   "title": "The Martain family",
+   "beats": [
+    {
+     "id": "goladoo:beat:familyhead:08",
+     "kind": "familyhead",
+     "chapter": "goladoo:ch:family-08",
+     "time": {
+      "label": "The Martain family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "goladoo",
+      "name": "Goladoo",
+      "logainm_id": "14243",
+      "lat": 54.717584,
+      "lon": -8.032827,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "goladoo:familypresence:08"
+     },
+     "caption": "The Martain family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "goladoo:familypresence:08"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "goladoo:family:08",
+      "label": "Martain",
+      "run": false
+     }
+    },
+    {
+     "id": "goladoo:beat:familycensus:08-1926",
+     "kind": "familycensus",
+     "chapter": "goladoo:ch:family-08",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "goladoo",
+      "name": "Goladoo",
+      "logainm_id": "14243",
+      "lat": 54.717584,
+      "lon": -8.032827,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "goladoo:familycensus:08:1926"
+     },
+     "caption": "Goladoo had two Martain households in 1926, headed by Donald and Patrick James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "goladoo:familycensus:08:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "goladoo:family:08",
+      "label": "Martain",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "goladoo:ch:family-14",
+   "title": "The Timmoney family",
+   "beats": [
+    {
+     "id": "goladoo:beat:familyhead:14",
+     "kind": "familyhead",
+     "chapter": "goladoo:ch:family-14",
+     "time": {
+      "label": "The Timmoney family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "goladoo",
+      "name": "Goladoo",
+      "logainm_id": "14243",
+      "lat": 54.717584,
+      "lon": -8.032827,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "goladoo:familypresence:14"
+     },
+     "caption": "The Timmoney family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "goladoo:familypresence:14"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "goladoo:family:14",
+      "label": "Timmoney",
+      "run": false
+     }
+    },
+    {
+     "id": "goladoo:beat:familycensus:14-1926",
+     "kind": "familycensus",
+     "chapter": "goladoo:ch:family-14",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "goladoo",
+      "name": "Goladoo",
+      "logainm_id": "14243",
+      "lat": 54.717584,
+      "lon": -8.032827,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "goladoo:familycensus:14:1926"
+     },
+     "caption": "Goladoo had three Timmoney households in 1926, headed by Charles, Patrick and Mary.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "goladoo:familycensus:14:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "goladoo:family:14",
+      "label": "Timmoney",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "goladoo:ch:family-16",
+   "title": "The Ó Sléibhín family",
+   "beats": [
+    {
+     "id": "goladoo:beat:familyhead:16",
+     "kind": "familyhead",
+     "chapter": "goladoo:ch:family-16",
+     "time": {
+      "label": "The Ó Sléibhín family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "goladoo",
+      "name": "Goladoo",
+      "logainm_id": "14243",
+      "lat": 54.717584,
+      "lon": -8.032827,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "goladoo:familypresence:16"
+     },
+     "caption": "The Ó Sléibhín family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "goladoo:familypresence:16"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "goladoo:family:16",
+      "label": "Ó Sléibhín",
+      "run": false
+     }
+    },
+    {
+     "id": "goladoo:beat:familycensus:16-1926",
+     "kind": "familycensus",
+     "chapter": "goladoo:ch:family-16",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "goladoo",
+      "name": "Goladoo",
+      "logainm_id": "14243",
+      "lat": 54.717584,
+      "lon": -8.032827,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "goladoo:familycensus:16:1926"
+     },
+     "caption": "Goladoo had one Ó Sléibhín household in 1926, headed by Peadar.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "goladoo:familycensus:16:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "goladoo:family:16",
+      "label": "Ó Sléibhín",
+      "run": false
+     }
     }
    ]
   }

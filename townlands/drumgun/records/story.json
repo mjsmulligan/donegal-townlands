@@ -52,15 +52,15 @@
    ]
   },
   {
-   "id": "drumgun:ch:1901",
-   "title": "1901",
+   "id": "drumgun:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "drumgun:beat:census:1901",
+     "id": "drumgun:beat:census:returns",
      "kind": "census",
-     "chapter": "drumgun:ch:1901",
+     "chapter": "drumgun:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1926",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -77,33 +77,177 @@
       "stage": "map",
       "open_card": "drumgun:census:1901"
      },
-     "caption": "In 1901, six people in one household lived in Drumgun. Heads of household included Stewart.",
+     "caption": "The censuses of 1901, 1911 and 1926 counted 6, 8 and 11 people in Drumgun, in 1, 2 and 2 households. Heads of household included Stewart and Wilson.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "drumgun:census:1901"
+       "drumgun:census:1901",
+       "drumgun:census:1911",
+       "drumgun:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 6000,
+     "duration_ms": 11200,
      "audio": null,
      "counts": {
-      "people": 6,
-      "households": 1
+      "returns": [
+       {
+        "year": "1901",
+        "people": 6,
+        "households": 1
+       },
+       {
+        "year": "1911",
+        "people": 8,
+        "households": 2
+       },
+       {
+        "year": "1926",
+        "people": 11,
+        "households": 2
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "drumgun:ch:1911",
-   "title": "1911",
+   "id": "drumgun:ch:families",
+   "title": "The families of Drumgun",
    "beats": [
     {
-     "id": "drumgun:beat:census:1911",
-     "kind": "census",
-     "chapter": "drumgun:ch:1911",
+     "id": "drumgun:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "drumgun:ch:families",
+     "time": {
+      "label": "The families of Drumgun",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumgun",
+      "name": "Drumgun",
+      "logainm_id": "14008",
+      "lat": 54.648871,
+      "lon": -8.152539,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumgun:census:1901"
+     },
+     "caption": "Here are the families of Drumgun, from 1901 to 1926. First, the Stewart and Wilson families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumgun:census:1901",
+       "drumgun:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "drumgun:family:01",
+      "label": "Stewart",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumgun:ch:family-01",
+   "title": "The Stewart family",
+   "beats": [
+    {
+     "id": "drumgun:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "drumgun:ch:family-01",
+     "time": {
+      "label": "The Stewart family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumgun",
+      "name": "Drumgun",
+      "logainm_id": "14008",
+      "lat": 54.648871,
+      "lon": -8.152539,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumgun:familypresence:01"
+     },
+     "caption": "The Stewart family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumgun:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drumgun:family:01",
+      "label": "Stewart",
+      "run": true
+     }
+    },
+    {
+     "id": "drumgun:beat:familycensus:01-1901",
+     "kind": "familycensus",
+     "chapter": "drumgun:ch:family-01",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumgun",
+      "name": "Drumgun",
+      "logainm_id": "14008",
+      "lat": 54.648871,
+      "lon": -8.152539,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumgun:familycensus:01:1901"
+     },
+     "caption": "Drumgun had one Stewart household in 1901, headed by George.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumgun:familycensus:01:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumgun:family:01",
+      "label": "Stewart",
+      "run": true
+     }
+    },
+    {
+     "id": "drumgun:beat:familycensus:01-1911",
+     "kind": "familycensus",
+     "chapter": "drumgun:ch:family-01",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -120,35 +264,30 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "drumgun:census:1911"
+      "open_card": "drumgun:familycensus:01:1911"
      },
-     "caption": "Drumgun had eight people in two households in 1911. Heads of household included Stewart and Wilson.",
+     "caption": "Drumgun had one Stewart household in 1911, headed by George.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "drumgun:census:1911"
+       "drumgun:familycensus:01:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6400,
+     "duration_ms": 4000,
      "audio": null,
-     "counts": {
-      "people": 8,
-      "households": 2
+     "thread": {
+      "id": "drumgun:family:01",
+      "label": "Stewart",
+      "run": true
      }
-    }
-   ]
-  },
-  {
-   "id": "drumgun:ch:1926",
-   "title": "1926",
-   "beats": [
+    },
     {
-     "id": "drumgun:beat:census:1926",
-     "kind": "census",
-     "chapter": "drumgun:ch:1926",
+     "id": "drumgun:beat:familycensus:01-1926",
+     "kind": "familycensus",
+     "chapter": "drumgun:ch:family-01",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -165,25 +304,158 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "drumgun:census:1926"
+      "open_card": "drumgun:familycensus:01:1926"
      },
-     "caption": "Drumgun had eleven people in two households in 1926. Heads of household included Stewart and Wilson.",
+     "caption": "Drumgun had one Stewart household in 1926, headed by George.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "drumgun:census:1926"
+       "drumgun:familycensus:01:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6400,
+     "duration_ms": 4000,
      "audio": null,
-     "counts": {
-      "people": 11,
-      "households": 2
+     "thread": {
+      "id": "drumgun:family:01",
+      "label": "Stewart",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumgun:ch:family-02",
+   "title": "The Wilson family",
+   "beats": [
+    {
+     "id": "drumgun:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "drumgun:ch:family-02",
+     "time": {
+      "label": "The Wilson family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumgun",
+      "name": "Drumgun",
+      "logainm_id": "14008",
+      "lat": 54.648871,
+      "lon": -8.152539,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumgun:familypresence:02"
+     },
+     "caption": "The Wilson family appear in the records from 1911 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumgun:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drumgun:family:02",
+      "label": "Wilson",
+      "run": true
      }
     },
+    {
+     "id": "drumgun:beat:familycensus:02-1911",
+     "kind": "familycensus",
+     "chapter": "drumgun:ch:family-02",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumgun",
+      "name": "Drumgun",
+      "logainm_id": "14008",
+      "lat": 54.648871,
+      "lon": -8.152539,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumgun:familycensus:02:1911"
+     },
+     "caption": "Drumgun had one Wilson household in 1911, headed by Elizabeth.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumgun:familycensus:02:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumgun:family:02",
+      "label": "Wilson",
+      "run": true
+     }
+    },
+    {
+     "id": "drumgun:beat:familycensus:02-1926",
+     "kind": "familycensus",
+     "chapter": "drumgun:ch:family-02",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumgun",
+      "name": "Drumgun",
+      "logainm_id": "14008",
+      "lat": 54.648871,
+      "lon": -8.152539,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumgun:familycensus:02:1926"
+     },
+     "caption": "Drumgun had one Wilson household in 1926, headed by Elizabeth.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumgun:familycensus:02:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumgun:family:02",
+      "label": "Wilson",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumgun:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "drumgun:beat:closing:end",
      "kind": "closing",

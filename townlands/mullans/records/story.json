@@ -52,15 +52,15 @@
    ]
   },
   {
-   "id": "mullans:ch:1901",
-   "title": "1901",
+   "id": "mullans:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "mullans:beat:census:1901",
+     "id": "mullans:beat:census:returns",
      "kind": "census",
-     "chapter": "mullans:ch:1901",
+     "chapter": "mullans:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1926",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -77,33 +77,263 @@
       "stage": "map",
       "open_card": "mullans:census:1901"
      },
-     "caption": "Mullans had 21 people in three households in 1901. Heads of household included Ellis, Graham and Wray.",
+     "caption": "The censuses of 1901, 1911 and 1926 counted 21, 7 and 11 people in Mullans, in 3, 1 and 2 households. Heads of household included Ellis, Graham and Wray.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "mullans:census:1901"
+       "mullans:census:1901",
+       "mullans:census:1911",
+       "mullans:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 6800,
+     "duration_ms": 11600,
      "audio": null,
      "counts": {
-      "people": 21,
-      "households": 3
+      "returns": [
+       {
+        "year": "1901",
+        "people": 21,
+        "households": 3
+       },
+       {
+        "year": "1911",
+        "people": 7,
+        "households": 1
+       },
+       {
+        "year": "1926",
+        "people": 11,
+        "households": 2
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "mullans:ch:1911",
-   "title": "1911",
+   "id": "mullans:ch:families",
+   "title": "The families of Mullans",
    "beats": [
     {
-     "id": "mullans:beat:census:1911",
-     "kind": "census",
-     "chapter": "mullans:ch:1911",
+     "id": "mullans:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "mullans:ch:families",
+     "time": {
+      "label": "The families of Mullans",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "mullans",
+      "name": "Mullans",
+      "logainm_id": "14296",
+      "lat": 54.634451,
+      "lon": -8.070912,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "mullans:census:1901"
+     },
+     "caption": "Here are the families of Mullans, from 1901 to 1926. First, the Ellis and Graham families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "mullans:census:1901",
+       "mullans:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "mullans:family:01",
+      "label": "Ellis",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "mullans:ch:family-01",
+   "title": "The Ellis family",
+   "beats": [
+    {
+     "id": "mullans:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "mullans:ch:family-01",
+     "time": {
+      "label": "The Ellis family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "mullans",
+      "name": "Mullans",
+      "logainm_id": "14296",
+      "lat": 54.634451,
+      "lon": -8.070912,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "mullans:familypresence:01"
+     },
+     "caption": "The Ellis family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "mullans:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "mullans:family:01",
+      "label": "Ellis",
+      "run": true
+     }
+    },
+    {
+     "id": "mullans:beat:familycensus:01-1901",
+     "kind": "familycensus",
+     "chapter": "mullans:ch:family-01",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "mullans",
+      "name": "Mullans",
+      "logainm_id": "14296",
+      "lat": 54.634451,
+      "lon": -8.070912,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "mullans:familycensus:01:1901"
+     },
+     "caption": "Mullans had one Ellis household in 1901, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "mullans:familycensus:01:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "mullans:family:01",
+      "label": "Ellis",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "mullans:ch:family-02",
+   "title": "The Graham family",
+   "beats": [
+    {
+     "id": "mullans:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "mullans:ch:family-02",
+     "time": {
+      "label": "The Graham family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "mullans",
+      "name": "Mullans",
+      "logainm_id": "14296",
+      "lat": 54.634451,
+      "lon": -8.070912,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "mullans:familypresence:02"
+     },
+     "caption": "The Graham family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "mullans:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "mullans:family:02",
+      "label": "Graham",
+      "run": true
+     }
+    },
+    {
+     "id": "mullans:beat:familycensus:02-1901",
+     "kind": "familycensus",
+     "chapter": "mullans:ch:family-02",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "mullans",
+      "name": "Mullans",
+      "logainm_id": "14296",
+      "lat": 54.634451,
+      "lon": -8.070912,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "mullans:familycensus:02:1901"
+     },
+     "caption": "Mullans had one Graham household in 1901, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "mullans:familycensus:02:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "mullans:family:02",
+      "label": "Graham",
+      "run": true
+     }
+    },
+    {
+     "id": "mullans:beat:familycensus:02-1911",
+     "kind": "familycensus",
+     "chapter": "mullans:ch:family-02",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -120,35 +350,30 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "mullans:census:1911"
+      "open_card": "mullans:familycensus:02:1911"
      },
-     "caption": "In 1911, seven people in one household lived in Mullans. Heads of household included Graham.",
+     "caption": "Mullans had one Graham household in 1911, headed by James.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "mullans:census:1911"
+       "mullans:familycensus:02:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6000,
+     "duration_ms": 4000,
      "audio": null,
-     "counts": {
-      "people": 7,
-      "households": 1
+     "thread": {
+      "id": "mullans:family:02",
+      "label": "Graham",
+      "run": true
      }
-    }
-   ]
-  },
-  {
-   "id": "mullans:ch:1926",
-   "title": "1926",
-   "beats": [
+    },
     {
-     "id": "mullans:beat:census:1926",
-     "kind": "census",
-     "chapter": "mullans:ch:1926",
+     "id": "mullans:beat:familycensus:02-1926",
+     "kind": "familycensus",
+     "chapter": "mullans:ch:family-02",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -165,25 +390,32 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "mullans:census:1926"
+      "open_card": "mullans:familycensus:02:1926"
      },
-     "caption": "Mullans had eleven people in two households in 1926. Heads of household included Graham and Spence.",
+     "caption": "Mullans had one Graham household in 1926, headed by Thomas J.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "mullans:census:1926"
+       "mullans:familycensus:02:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6400,
+     "duration_ms": 4400,
      "audio": null,
-     "counts": {
-      "people": 11,
-      "households": 2
+     "thread": {
+      "id": "mullans:family:02",
+      "label": "Graham",
+      "run": true
      }
-    },
+    }
+   ]
+  },
+  {
+   "id": "mullans:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "mullans:beat:closing:end",
      "kind": "closing",
@@ -218,6 +450,178 @@
      },
      "duration_ms": 4000,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "mullans:ch:family-04",
+   "title": "The Wray family",
+   "beats": [
+    {
+     "id": "mullans:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "mullans:ch:family-04",
+     "time": {
+      "label": "The Wray family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "mullans",
+      "name": "Mullans",
+      "logainm_id": "14296",
+      "lat": 54.634451,
+      "lon": -8.070912,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "mullans:familypresence:04"
+     },
+     "caption": "The Wray family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "mullans:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "mullans:family:04",
+      "label": "Wray",
+      "run": false
+     }
+    },
+    {
+     "id": "mullans:beat:familycensus:04-1901",
+     "kind": "familycensus",
+     "chapter": "mullans:ch:family-04",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "mullans",
+      "name": "Mullans",
+      "logainm_id": "14296",
+      "lat": 54.634451,
+      "lon": -8.070912,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "mullans:familycensus:04:1901"
+     },
+     "caption": "Mullans had one Wray household in 1901, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "mullans:familycensus:04:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "mullans:family:04",
+      "label": "Wray",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "mullans:ch:family-03",
+   "title": "The Spence family",
+   "beats": [
+    {
+     "id": "mullans:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "mullans:ch:family-03",
+     "time": {
+      "label": "The Spence family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "mullans",
+      "name": "Mullans",
+      "logainm_id": "14296",
+      "lat": 54.634451,
+      "lon": -8.070912,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "mullans:familypresence:03"
+     },
+     "caption": "The Spence family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "mullans:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "mullans:family:03",
+      "label": "Spence",
+      "run": false
+     }
+    },
+    {
+     "id": "mullans:beat:familycensus:03-1926",
+     "kind": "familycensus",
+     "chapter": "mullans:ch:family-03",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "mullans",
+      "name": "Mullans",
+      "logainm_id": "14296",
+      "lat": 54.634451,
+      "lon": -8.070912,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "mullans:familycensus:03:1926"
+     },
+     "caption": "Mullans had one Spence household in 1926, headed by Margaret.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "mullans:familycensus:03:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "mullans:family:03",
+      "label": "Spence",
+      "run": false
+     }
     }
    ]
   }

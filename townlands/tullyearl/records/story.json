@@ -52,15 +52,15 @@
    ]
   },
   {
-   "id": "tullyearl:ch:1901",
-   "title": "1901",
+   "id": "tullyearl:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "tullyearl:beat:census:1901",
+     "id": "tullyearl:beat:census:returns",
      "kind": "census",
-     "chapter": "tullyearl:ch:1901",
+     "chapter": "tullyearl:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1926",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -77,33 +77,177 @@
       "stage": "map",
       "open_card": "tullyearl:census:1901"
      },
-     "caption": "In 1901, 62 people in thirteen households lived in Tullyearl. Heads of household included Graham, Mulhern and Crawford.",
+     "caption": "The censuses of 1901, 1911 and 1926 counted 62, 39 and 27 people in Tullyearl, in 13, 11 and 9 households. Heads of household included Graham, Mulhern and Crawford.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "tullyearl:census:1901"
+       "tullyearl:census:1901",
+       "tullyearl:census:1911",
+       "tullyearl:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 7200,
+     "duration_ms": 11600,
      "audio": null,
      "counts": {
-      "people": 62,
-      "households": 13
+      "returns": [
+       {
+        "year": "1901",
+        "people": 62,
+        "households": 13
+       },
+       {
+        "year": "1911",
+        "people": 39,
+        "households": 11
+       },
+       {
+        "year": "1926",
+        "people": 27,
+        "households": 9
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "tullyearl:ch:1911",
-   "title": "1911",
+   "id": "tullyearl:ch:families",
+   "title": "The families of Tullyearl",
    "beats": [
     {
-     "id": "tullyearl:beat:census:1911",
-     "kind": "census",
-     "chapter": "tullyearl:ch:1911",
+     "id": "tullyearl:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "tullyearl:ch:families",
+     "time": {
+      "label": "The families of Tullyearl",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullyearl",
+      "name": "Tullyearl",
+      "logainm_id": "14301",
+      "lat": 54.629243,
+      "lon": -8.112234,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullyearl:census:1901"
+     },
+     "caption": "Here are the families of Tullyearl, from 1901 to 1926. First, the Graham and Mulhern families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullyearl:census:1901",
+       "tullyearl:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "tullyearl:family:04",
+      "label": "Graham",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "tullyearl:ch:family-04",
+   "title": "The Graham family",
+   "beats": [
+    {
+     "id": "tullyearl:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "tullyearl:ch:family-04",
+     "time": {
+      "label": "The Graham family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullyearl",
+      "name": "Tullyearl",
+      "logainm_id": "14301",
+      "lat": 54.629243,
+      "lon": -8.112234,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullyearl:familypresence:04"
+     },
+     "caption": "The Graham family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullyearl:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "tullyearl:family:04",
+      "label": "Graham",
+      "run": true
+     }
+    },
+    {
+     "id": "tullyearl:beat:familycensus:04-1901",
+     "kind": "familycensus",
+     "chapter": "tullyearl:ch:family-04",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullyearl",
+      "name": "Tullyearl",
+      "logainm_id": "14301",
+      "lat": 54.629243,
+      "lon": -8.112234,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullyearl:familycensus:04:1901"
+     },
+     "caption": "Tullyearl had three Graham households in 1901, headed by Charles, William and David.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullyearl:familycensus:04:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "tullyearl:family:04",
+      "label": "Graham",
+      "run": true
+     }
+    },
+    {
+     "id": "tullyearl:beat:familycensus:04-1911",
+     "kind": "familycensus",
+     "chapter": "tullyearl:ch:family-04",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -120,35 +264,156 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "tullyearl:census:1911"
+      "open_card": "tullyearl:familycensus:04:1911"
      },
-     "caption": "Tullyearl had 39 people in eleven households in 1911. Heads of household included Graham, Mulhern and Gleary.",
+     "caption": "Tullyearl had three Graham households in 1911, headed by Charles, David and Edward.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "tullyearl:census:1911"
+       "tullyearl:familycensus:04:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6800,
+     "duration_ms": 5200,
      "audio": null,
-     "counts": {
-      "people": 39,
-      "households": 11
+     "thread": {
+      "id": "tullyearl:family:04",
+      "label": "Graham",
+      "run": true
      }
     }
    ]
   },
   {
-   "id": "tullyearl:ch:1926",
-   "title": "1926",
+   "id": "tullyearl:ch:family-09",
+   "title": "The Mulhern family",
    "beats": [
     {
-     "id": "tullyearl:beat:census:1926",
-     "kind": "census",
-     "chapter": "tullyearl:ch:1926",
+     "id": "tullyearl:beat:familyhead:09",
+     "kind": "familyhead",
+     "chapter": "tullyearl:ch:family-09",
+     "time": {
+      "label": "The Mulhern family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullyearl",
+      "name": "Tullyearl",
+      "logainm_id": "14301",
+      "lat": 54.629243,
+      "lon": -8.112234,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullyearl:familypresence:09"
+     },
+     "caption": "The Mulhern family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullyearl:familypresence:09"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "tullyearl:family:09",
+      "label": "Mulhern",
+      "run": true
+     }
+    },
+    {
+     "id": "tullyearl:beat:familycensus:09-1901",
+     "kind": "familycensus",
+     "chapter": "tullyearl:ch:family-09",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullyearl",
+      "name": "Tullyearl",
+      "logainm_id": "14301",
+      "lat": 54.629243,
+      "lon": -8.112234,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullyearl:familycensus:09:1901"
+     },
+     "caption": "Tullyearl had three Mulhern households in 1901, headed by two named John and James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullyearl:familycensus:09:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5600,
+     "audio": null,
+     "thread": {
+      "id": "tullyearl:family:09",
+      "label": "Mulhern",
+      "run": true
+     }
+    },
+    {
+     "id": "tullyearl:beat:familycensus:09-1911",
+     "kind": "familycensus",
+     "chapter": "tullyearl:ch:family-09",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullyearl",
+      "name": "Tullyearl",
+      "logainm_id": "14301",
+      "lat": 54.629243,
+      "lon": -8.112234,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullyearl:familycensus:09:1911"
+     },
+     "caption": "Tullyearl had three Mulhern households in 1911, headed by John, Maggie Jane and James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullyearl:familycensus:09:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5600,
+     "audio": null,
+     "thread": {
+      "id": "tullyearl:family:09",
+      "label": "Mulhern",
+      "run": true
+     }
+    },
+    {
+     "id": "tullyearl:beat:familycensus:09-1926",
+     "kind": "familycensus",
+     "chapter": "tullyearl:ch:family-09",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -165,25 +430,32 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "tullyearl:census:1926"
+      "open_card": "tullyearl:familycensus:09:1926"
      },
-     "caption": "In 1926, 27 people in nine households lived in Tullyearl. Heads of household included Mulhern and Morrow.",
+     "caption": "Tullyearl had three Mulhern households in 1926, headed by Edward, Margaret and Phoebe E.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "tullyearl:census:1926"
+       "tullyearl:familycensus:09:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6800,
+     "duration_ms": 5600,
      "audio": null,
-     "counts": {
-      "people": 27,
-      "households": 9
+     "thread": {
+      "id": "tullyearl:family:09",
+      "label": "Mulhern",
+      "run": true
      }
-    },
+    }
+   ]
+  },
+  {
+   "id": "tullyearl:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "tullyearl:beat:closing:end",
      "kind": "closing",
@@ -218,6 +490,854 @@
      },
      "duration_ms": 4000,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "tullyearl:ch:family-01",
+   "title": "The Cleary family",
+   "beats": [
+    {
+     "id": "tullyearl:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "tullyearl:ch:family-01",
+     "time": {
+      "label": "The Cleary family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullyearl",
+      "name": "Tullyearl",
+      "logainm_id": "14301",
+      "lat": 54.629243,
+      "lon": -8.112234,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullyearl:familypresence:01"
+     },
+     "caption": "The Cleary family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullyearl:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "tullyearl:family:01",
+      "label": "Cleary",
+      "run": false
+     }
+    },
+    {
+     "id": "tullyearl:beat:familycensus:01-1901",
+     "kind": "familycensus",
+     "chapter": "tullyearl:ch:family-01",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullyearl",
+      "name": "Tullyearl",
+      "logainm_id": "14301",
+      "lat": 54.629243,
+      "lon": -8.112234,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullyearl:familycensus:01:1901"
+     },
+     "caption": "Tullyearl had one Cleary household in 1901, headed by Michael.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullyearl:familycensus:01:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "tullyearl:family:01",
+      "label": "Cleary",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "tullyearl:ch:family-02",
+   "title": "The Crawford family",
+   "beats": [
+    {
+     "id": "tullyearl:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "tullyearl:ch:family-02",
+     "time": {
+      "label": "The Crawford family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullyearl",
+      "name": "Tullyearl",
+      "logainm_id": "14301",
+      "lat": 54.629243,
+      "lon": -8.112234,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullyearl:familypresence:02"
+     },
+     "caption": "The Crawford family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullyearl:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "tullyearl:family:02",
+      "label": "Crawford",
+      "run": false
+     }
+    },
+    {
+     "id": "tullyearl:beat:familycensus:02-1901",
+     "kind": "familycensus",
+     "chapter": "tullyearl:ch:family-02",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullyearl",
+      "name": "Tullyearl",
+      "logainm_id": "14301",
+      "lat": 54.629243,
+      "lon": -8.112234,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullyearl:familycensus:02:1901"
+     },
+     "caption": "Tullyearl had two Crawford households in 1901, headed by Margaret and Hugh.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullyearl:familycensus:02:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "tullyearl:family:02",
+      "label": "Crawford",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "tullyearl:ch:family-05",
+   "title": "The Lynn family",
+   "beats": [
+    {
+     "id": "tullyearl:beat:familyhead:05",
+     "kind": "familyhead",
+     "chapter": "tullyearl:ch:family-05",
+     "time": {
+      "label": "The Lynn family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullyearl",
+      "name": "Tullyearl",
+      "logainm_id": "14301",
+      "lat": 54.629243,
+      "lon": -8.112234,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullyearl:familypresence:05"
+     },
+     "caption": "The Lynn family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullyearl:familypresence:05"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "tullyearl:family:05",
+      "label": "Lynn",
+      "run": false
+     }
+    },
+    {
+     "id": "tullyearl:beat:familycensus:05-1901",
+     "kind": "familycensus",
+     "chapter": "tullyearl:ch:family-05",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullyearl",
+      "name": "Tullyearl",
+      "logainm_id": "14301",
+      "lat": 54.629243,
+      "lon": -8.112234,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullyearl:familycensus:05:1901"
+     },
+     "caption": "Tullyearl had one Lynn household in 1901, headed by William.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullyearl:familycensus:05:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "tullyearl:family:05",
+      "label": "Lynn",
+      "run": false
+     }
+    },
+    {
+     "id": "tullyearl:beat:familycensus:05-1911",
+     "kind": "familycensus",
+     "chapter": "tullyearl:ch:family-05",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullyearl",
+      "name": "Tullyearl",
+      "logainm_id": "14301",
+      "lat": 54.629243,
+      "lon": -8.112234,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullyearl:familycensus:05:1911"
+     },
+     "caption": "Tullyearl had one Lynn household in 1911, headed by William.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullyearl:familycensus:05:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "tullyearl:family:05",
+      "label": "Lynn",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "tullyearl:ch:family-06",
+   "title": "The Millar family",
+   "beats": [
+    {
+     "id": "tullyearl:beat:familyhead:06",
+     "kind": "familyhead",
+     "chapter": "tullyearl:ch:family-06",
+     "time": {
+      "label": "The Millar family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullyearl",
+      "name": "Tullyearl",
+      "logainm_id": "14301",
+      "lat": 54.629243,
+      "lon": -8.112234,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullyearl:familypresence:06"
+     },
+     "caption": "The Millar family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullyearl:familypresence:06"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "tullyearl:family:06",
+      "label": "Millar",
+      "run": false
+     }
+    },
+    {
+     "id": "tullyearl:beat:familycensus:06-1901",
+     "kind": "familycensus",
+     "chapter": "tullyearl:ch:family-06",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullyearl",
+      "name": "Tullyearl",
+      "logainm_id": "14301",
+      "lat": 54.629243,
+      "lon": -8.112234,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullyearl:familycensus:06:1901"
+     },
+     "caption": "Tullyearl had one Millar household in 1901, headed by William.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullyearl:familycensus:06:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "tullyearl:family:06",
+      "label": "Millar",
+      "run": false
+     }
+    },
+    {
+     "id": "tullyearl:beat:familycensus:06-1911",
+     "kind": "familycensus",
+     "chapter": "tullyearl:ch:family-06",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullyearl",
+      "name": "Tullyearl",
+      "logainm_id": "14301",
+      "lat": 54.629243,
+      "lon": -8.112234,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullyearl:familycensus:06:1911"
+     },
+     "caption": "Tullyearl had one Millar household in 1911, headed by Samuel.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullyearl:familycensus:06:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "tullyearl:family:06",
+      "label": "Millar",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "tullyearl:ch:family-07",
+   "title": "The Miller family",
+   "beats": [
+    {
+     "id": "tullyearl:beat:familyhead:07",
+     "kind": "familyhead",
+     "chapter": "tullyearl:ch:family-07",
+     "time": {
+      "label": "The Miller family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullyearl",
+      "name": "Tullyearl",
+      "logainm_id": "14301",
+      "lat": 54.629243,
+      "lon": -8.112234,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullyearl:familypresence:07"
+     },
+     "caption": "The Miller family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullyearl:familypresence:07"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "tullyearl:family:07",
+      "label": "Miller",
+      "run": false
+     }
+    },
+    {
+     "id": "tullyearl:beat:familycensus:07-1901",
+     "kind": "familycensus",
+     "chapter": "tullyearl:ch:family-07",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullyearl",
+      "name": "Tullyearl",
+      "logainm_id": "14301",
+      "lat": 54.629243,
+      "lon": -8.112234,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullyearl:familycensus:07:1901"
+     },
+     "caption": "Tullyearl had one Miller household in 1901, headed by Samuel.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullyearl:familycensus:07:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "tullyearl:family:07",
+      "label": "Miller",
+      "run": false
+     }
+    },
+    {
+     "id": "tullyearl:beat:familycensus:07-1911",
+     "kind": "familycensus",
+     "chapter": "tullyearl:ch:family-07",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullyearl",
+      "name": "Tullyearl",
+      "logainm_id": "14301",
+      "lat": 54.629243,
+      "lon": -8.112234,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullyearl:familycensus:07:1911"
+     },
+     "caption": "Tullyearl had one Miller household in 1911, headed by William.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullyearl:familycensus:07:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "tullyearl:family:07",
+      "label": "Miller",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "tullyearl:ch:family-10",
+   "title": "The White family",
+   "beats": [
+    {
+     "id": "tullyearl:beat:familyhead:10",
+     "kind": "familyhead",
+     "chapter": "tullyearl:ch:family-10",
+     "time": {
+      "label": "The White family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullyearl",
+      "name": "Tullyearl",
+      "logainm_id": "14301",
+      "lat": 54.629243,
+      "lon": -8.112234,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullyearl:familypresence:10"
+     },
+     "caption": "The White family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullyearl:familypresence:10"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "tullyearl:family:10",
+      "label": "White",
+      "run": false
+     }
+    },
+    {
+     "id": "tullyearl:beat:familycensus:10-1901",
+     "kind": "familycensus",
+     "chapter": "tullyearl:ch:family-10",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullyearl",
+      "name": "Tullyearl",
+      "logainm_id": "14301",
+      "lat": 54.629243,
+      "lon": -8.112234,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullyearl:familycensus:10:1901"
+     },
+     "caption": "Tullyearl had one White household in 1901, headed by William.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullyearl:familycensus:10:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "tullyearl:family:10",
+      "label": "White",
+      "run": false
+     }
+    },
+    {
+     "id": "tullyearl:beat:familycensus:10-1911",
+     "kind": "familycensus",
+     "chapter": "tullyearl:ch:family-10",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullyearl",
+      "name": "Tullyearl",
+      "logainm_id": "14301",
+      "lat": 54.629243,
+      "lon": -8.112234,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullyearl:familycensus:10:1911"
+     },
+     "caption": "Tullyearl had one White household in 1911, headed by Williaim.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullyearl:familycensus:10:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "tullyearl:family:10",
+      "label": "White",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "tullyearl:ch:family-03",
+   "title": "The Gleary family",
+   "beats": [
+    {
+     "id": "tullyearl:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "tullyearl:ch:family-03",
+     "time": {
+      "label": "The Gleary family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullyearl",
+      "name": "Tullyearl",
+      "logainm_id": "14301",
+      "lat": 54.629243,
+      "lon": -8.112234,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullyearl:familypresence:03"
+     },
+     "caption": "The Gleary family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullyearl:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "tullyearl:family:03",
+      "label": "Gleary",
+      "run": false
+     }
+    },
+    {
+     "id": "tullyearl:beat:familycensus:03-1911",
+     "kind": "familycensus",
+     "chapter": "tullyearl:ch:family-03",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullyearl",
+      "name": "Tullyearl",
+      "logainm_id": "14301",
+      "lat": 54.629243,
+      "lon": -8.112234,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullyearl:familycensus:03:1911"
+     },
+     "caption": "Tullyearl had one Gleary household in 1911, headed by Michael.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullyearl:familycensus:03:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "tullyearl:family:03",
+      "label": "Gleary",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "tullyearl:ch:family-08",
+   "title": "The Morrow family",
+   "beats": [
+    {
+     "id": "tullyearl:beat:familyhead:08",
+     "kind": "familyhead",
+     "chapter": "tullyearl:ch:family-08",
+     "time": {
+      "label": "The Morrow family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullyearl",
+      "name": "Tullyearl",
+      "logainm_id": "14301",
+      "lat": 54.629243,
+      "lon": -8.112234,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullyearl:familypresence:08"
+     },
+     "caption": "The Morrow family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullyearl:familypresence:08"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "tullyearl:family:08",
+      "label": "Morrow",
+      "run": false
+     }
+    },
+    {
+     "id": "tullyearl:beat:familycensus:08-1926",
+     "kind": "familycensus",
+     "chapter": "tullyearl:ch:family-08",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullyearl",
+      "name": "Tullyearl",
+      "logainm_id": "14301",
+      "lat": 54.629243,
+      "lon": -8.112234,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullyearl:familycensus:08:1926"
+     },
+     "caption": "Tullyearl had one Morrow household in 1926, headed by Andrew.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullyearl:familycensus:08:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "tullyearl:family:08",
+      "label": "Morrow",
+      "run": false
+     }
     }
    ]
   }

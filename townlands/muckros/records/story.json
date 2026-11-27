@@ -52,15 +52,15 @@
    ]
   },
   {
-   "id": "muckros:ch:1901",
-   "title": "1901",
+   "id": "muckros:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "muckros:beat:census:1901",
+     "id": "muckros:beat:census:returns",
      "kind": "census",
-     "chapter": "muckros:ch:1901",
+     "chapter": "muckros:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1926",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -77,33 +77,263 @@
       "stage": "map",
       "open_card": "muckros:census:1901"
      },
-     "caption": "In 1901, 22 people in four households lived in Muckros. Heads of household included Foster, Martin and Torrans.",
+     "caption": "The censuses of 1901, 1911 and 1926 counted 22, 6 and 2 people in Muckros, in 4, 1 and 1 households. Heads of household included Foster, Martin and Torrans.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "muckros:census:1901"
+       "muckros:census:1901",
+       "muckros:census:1911",
+       "muckros:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 7200,
+     "duration_ms": 11600,
      "audio": null,
      "counts": {
-      "people": 22,
-      "households": 4
+      "returns": [
+       {
+        "year": "1901",
+        "people": 22,
+        "households": 4
+       },
+       {
+        "year": "1911",
+        "people": 6,
+        "households": 1
+       },
+       {
+        "year": "1926",
+        "people": 2,
+        "households": 1
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "muckros:ch:1911",
-   "title": "1911",
+   "id": "muckros:ch:families",
+   "title": "The families of Muckros",
    "beats": [
     {
-     "id": "muckros:beat:census:1911",
-     "kind": "census",
-     "chapter": "muckros:ch:1911",
+     "id": "muckros:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "muckros:ch:families",
+     "time": {
+      "label": "The families of Muckros",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "muckros",
+      "name": "Muckros",
+      "logainm_id": "14038",
+      "lat": 54.633222,
+      "lon": -8.131542,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "muckros:census:1901"
+     },
+     "caption": "Here are the families of Muckros, from 1901 to 1926. First, the Foster and White families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "muckros:census:1901",
+       "muckros:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "muckros:family:01",
+      "label": "Foster",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "muckros:ch:family-01",
+   "title": "The Foster family",
+   "beats": [
+    {
+     "id": "muckros:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "muckros:ch:family-01",
+     "time": {
+      "label": "The Foster family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "muckros",
+      "name": "Muckros",
+      "logainm_id": "14038",
+      "lat": 54.633222,
+      "lon": -8.131542,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "muckros:familypresence:01"
+     },
+     "caption": "The Foster family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "muckros:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "muckros:family:01",
+      "label": "Foster",
+      "run": true
+     }
+    },
+    {
+     "id": "muckros:beat:familycensus:01-1901",
+     "kind": "familycensus",
+     "chapter": "muckros:ch:family-01",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "muckros",
+      "name": "Muckros",
+      "logainm_id": "14038",
+      "lat": 54.633222,
+      "lon": -8.131542,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "muckros:familycensus:01:1901"
+     },
+     "caption": "Muckros had one Foster household in 1901, headed by Arthur.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "muckros:familycensus:01:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "muckros:family:01",
+      "label": "Foster",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "muckros:ch:family-05",
+   "title": "The White family",
+   "beats": [
+    {
+     "id": "muckros:beat:familyhead:05",
+     "kind": "familyhead",
+     "chapter": "muckros:ch:family-05",
+     "time": {
+      "label": "The White family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "muckros",
+      "name": "Muckros",
+      "logainm_id": "14038",
+      "lat": 54.633222,
+      "lon": -8.131542,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "muckros:familypresence:05"
+     },
+     "caption": "The White family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "muckros:familypresence:05"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "muckros:family:05",
+      "label": "White",
+      "run": true
+     }
+    },
+    {
+     "id": "muckros:beat:familycensus:05-1901",
+     "kind": "familycensus",
+     "chapter": "muckros:ch:family-05",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "muckros",
+      "name": "Muckros",
+      "logainm_id": "14038",
+      "lat": 54.633222,
+      "lon": -8.131542,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "muckros:familycensus:05:1901"
+     },
+     "caption": "Muckros had one White household in 1901, headed by William.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "muckros:familycensus:05:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "muckros:family:05",
+      "label": "White",
+      "run": true
+     }
+    },
+    {
+     "id": "muckros:beat:familycensus:05-1911",
+     "kind": "familycensus",
+     "chapter": "muckros:ch:family-05",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -120,23 +350,24 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "muckros:census:1911"
+      "open_card": "muckros:familycensus:05:1911"
      },
-     "caption": "Muckros had six people in one household in 1911. Heads of household included White.",
+     "caption": "Muckros had one White household in 1911, headed by William.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "muckros:census:1911"
+       "muckros:familycensus:05:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 5600,
+     "duration_ms": 4000,
      "audio": null,
-     "counts": {
-      "people": 6,
-      "households": 1
+     "thread": {
+      "id": "muckros:family:05",
+      "label": "White",
+      "run": true
      }
     }
    ]
@@ -145,45 +376,6 @@
    "id": "muckros:ch:1926",
    "title": "1926",
    "beats": [
-    {
-     "id": "muckros:beat:census:1926",
-     "kind": "census",
-     "chapter": "muckros:ch:1926",
-     "time": {
-      "label": "1926",
-      "iso": "1926",
-      "sort": "1926-01-01",
-      "approximate": true
-     },
-     "place": {
-      "townland": "muckros",
-      "name": "Muckros",
-      "logainm_id": "14038",
-      "lat": 54.633222,
-      "lon": -8.131542,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "muckros:census:1926"
-     },
-     "caption": "Muckros had two people in one household in 1926. Heads of household included Love.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "muckros:census:1926"
-      ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
-     },
-     "duration_ms": 5600,
-     "audio": null,
-     "counts": {
-      "people": 2,
-      "households": 1
-     }
-    },
     {
      "id": "muckros:beat:closing:end",
      "kind": "closing",
@@ -218,6 +410,264 @@
      },
      "duration_ms": 4000,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "muckros:ch:family-03",
+   "title": "The Martin family",
+   "beats": [
+    {
+     "id": "muckros:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "muckros:ch:family-03",
+     "time": {
+      "label": "The Martin family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "muckros",
+      "name": "Muckros",
+      "logainm_id": "14038",
+      "lat": 54.633222,
+      "lon": -8.131542,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "muckros:familypresence:03"
+     },
+     "caption": "The Martin family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "muckros:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "muckros:family:03",
+      "label": "Martin",
+      "run": false
+     }
+    },
+    {
+     "id": "muckros:beat:familycensus:03-1901",
+     "kind": "familycensus",
+     "chapter": "muckros:ch:family-03",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "muckros",
+      "name": "Muckros",
+      "logainm_id": "14038",
+      "lat": 54.633222,
+      "lon": -8.131542,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "muckros:familycensus:03:1901"
+     },
+     "caption": "Muckros had one Martin household in 1901, headed by Thomas.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "muckros:familycensus:03:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "muckros:family:03",
+      "label": "Martin",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "muckros:ch:family-04",
+   "title": "The Torrans family",
+   "beats": [
+    {
+     "id": "muckros:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "muckros:ch:family-04",
+     "time": {
+      "label": "The Torrans family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "muckros",
+      "name": "Muckros",
+      "logainm_id": "14038",
+      "lat": 54.633222,
+      "lon": -8.131542,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "muckros:familypresence:04"
+     },
+     "caption": "The Torrans family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "muckros:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "muckros:family:04",
+      "label": "Torrans",
+      "run": false
+     }
+    },
+    {
+     "id": "muckros:beat:familycensus:04-1901",
+     "kind": "familycensus",
+     "chapter": "muckros:ch:family-04",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "muckros",
+      "name": "Muckros",
+      "logainm_id": "14038",
+      "lat": 54.633222,
+      "lon": -8.131542,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "muckros:familycensus:04:1901"
+     },
+     "caption": "Muckros had one Torrans household in 1901, headed by Samuel.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "muckros:familycensus:04:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "muckros:family:04",
+      "label": "Torrans",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "muckros:ch:family-02",
+   "title": "The Love family",
+   "beats": [
+    {
+     "id": "muckros:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "muckros:ch:family-02",
+     "time": {
+      "label": "The Love family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "muckros",
+      "name": "Muckros",
+      "logainm_id": "14038",
+      "lat": 54.633222,
+      "lon": -8.131542,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "muckros:familypresence:02"
+     },
+     "caption": "The Love family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "muckros:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "muckros:family:02",
+      "label": "Love",
+      "run": false
+     }
+    },
+    {
+     "id": "muckros:beat:familycensus:02-1926",
+     "kind": "familycensus",
+     "chapter": "muckros:ch:family-02",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "muckros",
+      "name": "Muckros",
+      "logainm_id": "14038",
+      "lat": 54.633222,
+      "lon": -8.131542,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "muckros:familycensus:02:1926"
+     },
+     "caption": "Muckros had one Love household in 1926, headed by Robert John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "muckros:familycensus:02:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "muckros:family:02",
+      "label": "Love",
+      "run": false
+     }
     }
    ]
   }

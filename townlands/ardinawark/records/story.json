@@ -95,18 +95,80 @@
    ]
   },
   {
-   "id": "ardinawark:ch:baptisms",
-   "title": "Baptisms, 1874 to 1875",
+   "id": "ardinawark:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "ardinawark:beat:baptism:1874",
-     "kind": "baptism",
-     "chapter": "ardinawark:ch:baptisms",
+     "id": "ardinawark:beat:census:returns",
+     "kind": "census",
+     "chapter": "ardinawark:ch:census",
      "time": {
-      "label": "6 January 1874",
+      "label": "1901 to 1926",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardinawark",
+      "name": "Ardinawark",
+      "logainm_id": "14237",
+      "lat": 54.705926,
+      "lon": -7.983339,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardinawark:census:1901"
+     },
+     "caption": "The censuses of 1901, 1911 and 1926 counted 102, 97 and 67 people in Ardinawark, in 19, 17 and 16 households. Heads of household included Callaghan, Boyle and McGinty.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardinawark:census:1901",
+       "ardinawark:census:1911",
+       "ardinawark:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 11600,
+     "audio": null,
+     "counts": {
+      "returns": [
+       {
+        "year": "1901",
+        "people": 102,
+        "households": 19
+       },
+       {
+        "year": "1911",
+        "people": 97,
+        "households": 17
+       },
+       {
+        "year": "1926",
+        "people": 67,
+        "households": 16
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardinawark:ch:families",
+   "title": "The families of Ardinawark",
+   "beats": [
+    {
+     "id": "ardinawark:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "ardinawark:ch:families",
+     "time": {
+      "label": "The families of Ardinawark",
       "iso": "1874-01-06",
-      "sort": "1874-01-06",
-      "approximate": false
+      "sort": "1874-12-06",
+      "approximate": true
      },
      "place": {
       "townland": "ardinawark",
@@ -120,24 +182,281 @@
       "stage": "map",
       "open_card": "ardinawark:baptism:TAW-B-p009-r97"
      },
-     "caption": "Two children were baptised in 1874: Eugene McGinty on 6 January and Brigid Boyle on 6 December.",
+     "caption": "Here are the families of Ardinawark, from 1874 to 1926. First, the Boyle and Callaghan families.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
        "ardinawark:baptism:TAW-B-p009-r97",
+       "ardinawark:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "ardinawark:family:01",
+      "label": "Boyle",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardinawark:ch:family-01",
+   "title": "The Boyle family",
+   "beats": [
+    {
+     "id": "ardinawark:beat:baptism:1874-12-06-TAW-B-p013-r167",
+     "kind": "baptism",
+     "chapter": "ardinawark:ch:family-01",
+     "time": {
+      "label": "6 December 1874",
+      "iso": "1874-12-06",
+      "sort": "1874-12-06",
+      "approximate": false
+     },
+     "place": {
+      "townland": "ardinawark",
+      "name": "Ardinawark",
+      "logainm_id": "14237",
+      "lat": 54.705926,
+      "lon": -7.983339,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardinawark:baptism:TAW-B-p013-r167"
+     },
+     "caption": "Brigid Boyle was baptised on 6 December 1874. Michael Boyle and Margaret McGinty were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
        "ardinawark:baptism:TAW-B-p013-r167"
       ],
       "basis": "page_place",
       "certainty": "stated"
      },
-     "duration_ms": 6800,
-     "audio": null
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "ardinawark:family:01",
+      "label": "Boyle",
+      "run": true
+     }
     },
     {
-     "id": "ardinawark:beat:baptism:1875",
+     "id": "ardinawark:beat:baptism:1875-09-01-TAW-B-p018-r339",
      "kind": "baptism",
-     "chapter": "ardinawark:ch:baptisms",
+     "chapter": "ardinawark:ch:family-01",
+     "time": {
+      "label": "1 September 1875",
+      "iso": "1875-09-01",
+      "sort": "1875-09-01",
+      "approximate": false
+     },
+     "place": {
+      "townland": "ardinawark",
+      "name": "Ardinawark",
+      "logainm_id": "14237",
+      "lat": 54.705926,
+      "lon": -7.983339,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardinawark:baptism:TAW-B-p018-r339"
+     },
+     "caption": "Anne Boyle was baptised on 1 September 1875. Bryan Boyle and Anne McGinty were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardinawark:baptism:TAW-B-p018-r339"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "ardinawark:family:01",
+      "label": "Boyle",
+      "run": true
+     }
+    },
+    {
+     "id": "ardinawark:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "ardinawark:ch:family-01",
+     "time": {
+      "label": "The Boyle family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardinawark",
+      "name": "Ardinawark",
+      "logainm_id": "14237",
+      "lat": 54.705926,
+      "lon": -7.983339,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardinawark:familypresence:01"
+     },
+     "caption": "The Boyle family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardinawark:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ardinawark:family:01",
+      "label": "Boyle",
+      "run": true
+     }
+    },
+    {
+     "id": "ardinawark:beat:familycensus:01-1901",
+     "kind": "familycensus",
+     "chapter": "ardinawark:ch:family-01",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardinawark",
+      "name": "Ardinawark",
+      "logainm_id": "14237",
+      "lat": 54.705926,
+      "lon": -7.983339,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardinawark:familycensus:01:1901"
+     },
+     "caption": "Ardinawark had two Boyle households in 1901, headed by Bryan and Michael.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardinawark:familycensus:01:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "ardinawark:family:01",
+      "label": "Boyle",
+      "run": true
+     }
+    },
+    {
+     "id": "ardinawark:beat:familycensus:01-1911",
+     "kind": "familycensus",
+     "chapter": "ardinawark:ch:family-01",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardinawark",
+      "name": "Ardinawark",
+      "logainm_id": "14237",
+      "lat": 54.705926,
+      "lon": -7.983339,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardinawark:familycensus:01:1911"
+     },
+     "caption": "Ardinawark had two Boyle households in 1911, headed by Bryan and Michael.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardinawark:familycensus:01:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "ardinawark:family:01",
+      "label": "Boyle",
+      "run": true
+     }
+    },
+    {
+     "id": "ardinawark:beat:familycensus:01-1926",
+     "kind": "familycensus",
+     "chapter": "ardinawark:ch:family-01",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardinawark",
+      "name": "Ardinawark",
+      "logainm_id": "14237",
+      "lat": 54.705926,
+      "lon": -7.983339,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardinawark:familycensus:01:1926"
+     },
+     "caption": "Ardinawark had two Boyle households in 1926, headed by Mary and Lizzie.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardinawark:familycensus:01:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "ardinawark:family:01",
+      "label": "Boyle",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardinawark:ch:family-02",
+   "title": "The Callaghan family",
+   "beats": [
+    {
+     "id": "ardinawark:beat:baptism:1875-02-14-TAW-B-p015-r189",
+     "kind": "baptism",
+     "chapter": "ardinawark:ch:family-02",
      "time": {
       "label": "14 February 1875",
       "iso": "1875-02-14",
@@ -156,30 +475,68 @@
       "stage": "map",
       "open_card": "ardinawark:baptism:TAW-B-p015-r189"
      },
-     "caption": "Two children were baptised in 1875: Denis Callaghan on 14 February and Anne Boyle on 1 September.",
+     "caption": "Denis Callaghan was baptised on 14 February 1875. Bernard Callaghan and Catherine Conaghan were the parents.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "ardinawark:baptism:TAW-B-p015-r189",
-       "ardinawark:baptism:TAW-B-p018-r339"
+       "ardinawark:baptism:TAW-B-p015-r189"
       ],
       "basis": "page_place",
       "certainty": "stated"
      },
-     "duration_ms": 6800,
-     "audio": null
-    }
-   ]
-  },
-  {
-   "id": "ardinawark:ch:1901",
-   "title": "1901",
-   "beats": [
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "ardinawark:family:02",
+      "label": "Callaghan",
+      "run": true
+     }
+    },
     {
-     "id": "ardinawark:beat:census:1901",
-     "kind": "census",
-     "chapter": "ardinawark:ch:1901",
+     "id": "ardinawark:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "ardinawark:ch:family-02",
+     "time": {
+      "label": "The Callaghan family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardinawark",
+      "name": "Ardinawark",
+      "logainm_id": "14237",
+      "lat": 54.705926,
+      "lon": -7.983339,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardinawark:familypresence:02"
+     },
+     "caption": "The Callaghan family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardinawark:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ardinawark:family:02",
+      "label": "Callaghan",
+      "run": true
+     }
+    },
+    {
+     "id": "ardinawark:beat:familycensus:02-1901",
+     "kind": "familycensus",
+     "chapter": "ardinawark:ch:family-02",
      "time": {
       "label": "1901",
       "iso": "1901",
@@ -196,35 +553,30 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "ardinawark:census:1901"
+      "open_card": "ardinawark:familycensus:02:1901"
      },
-     "caption": "In 1901, 102 people in nineteen households lived in Ardinawark. Heads of household included Callaghan, Boyle and McGinty.",
+     "caption": "Ardinawark had seven Callaghan households in 1901, headed by Denis, Catherine, John, Michael, Connell, James and Bridget.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "ardinawark:census:1901"
+       "ardinawark:familycensus:02:1901"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 7200,
+     "duration_ms": 6800,
      "audio": null,
-     "counts": {
-      "people": 102,
-      "households": 19
+     "thread": {
+      "id": "ardinawark:family:02",
+      "label": "Callaghan",
+      "run": true
      }
-    }
-   ]
-  },
-  {
-   "id": "ardinawark:ch:1911",
-   "title": "1911",
-   "beats": [
+    },
     {
-     "id": "ardinawark:beat:census:1911",
-     "kind": "census",
-     "chapter": "ardinawark:ch:1911",
+     "id": "ardinawark:beat:familycensus:02-1911",
+     "kind": "familycensus",
+     "chapter": "ardinawark:ch:family-02",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -241,35 +593,30 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "ardinawark:census:1911"
+      "open_card": "ardinawark:familycensus:02:1911"
      },
-     "caption": "Ardinawark had 97 people in seventeen households in 1911. Heads of household included Callaghan, Boyle and McGinty.",
+     "caption": "Ardinawark had six Callaghan households in 1911, headed by Bridget, Dennis, Condy, Kate, Charles and Catherine.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "ardinawark:census:1911"
+       "ardinawark:familycensus:02:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6800,
+     "duration_ms": 6400,
      "audio": null,
-     "counts": {
-      "people": 97,
-      "households": 17
+     "thread": {
+      "id": "ardinawark:family:02",
+      "label": "Callaghan",
+      "run": true
      }
-    }
-   ]
-  },
-  {
-   "id": "ardinawark:ch:1926",
-   "title": "1926",
-   "beats": [
+    },
     {
-     "id": "ardinawark:beat:census:1926",
-     "kind": "census",
-     "chapter": "ardinawark:ch:1926",
+     "id": "ardinawark:beat:familycensus:02-1926",
+     "kind": "familycensus",
+     "chapter": "ardinawark:ch:family-02",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -286,25 +633,32 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "ardinawark:census:1926"
+      "open_card": "ardinawark:familycensus:02:1926"
      },
-     "caption": "In 1926, 67 people in sixteen households lived in Ardinawark. Heads of household included Callaghan, McMenamin and Boyle.",
+     "caption": "Ardinawark had five Callaghan households in 1926, headed by Bridget E, Bernard John, Peter, John Patrick and Charles.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "ardinawark:census:1926"
+       "ardinawark:familycensus:02:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
      "duration_ms": 7200,
      "audio": null,
-     "counts": {
-      "people": 67,
-      "households": 16
+     "thread": {
+      "id": "ardinawark:family:02",
+      "label": "Callaghan",
+      "run": true
      }
-    },
+    }
+   ]
+  },
+  {
+   "id": "ardinawark:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "ardinawark:beat:closing:end",
      "kind": "closing",
@@ -339,6 +693,1266 @@
      },
      "duration_ms": 4000,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "ardinawark:ch:family-07",
+   "title": "The McGinty family",
+   "beats": [
+    {
+     "id": "ardinawark:beat:baptism:1874-01-06-TAW-B-p009-r97",
+     "kind": "baptism",
+     "chapter": "ardinawark:ch:family-07",
+     "time": {
+      "label": "6 January 1874",
+      "iso": "1874-01-06",
+      "sort": "1874-01-06",
+      "approximate": false
+     },
+     "place": {
+      "townland": "ardinawark",
+      "name": "Ardinawark",
+      "logainm_id": "14237",
+      "lat": 54.705926,
+      "lon": -7.983339,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardinawark:baptism:TAW-B-p009-r97"
+     },
+     "caption": "Eugene McGinty was baptised on 6 January 1874. Donnell McGinty and Cecilia Monaghan were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardinawark:baptism:TAW-B-p009-r97"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "ardinawark:family:07",
+      "label": "McGinty",
+      "run": false
+     }
+    },
+    {
+     "id": "ardinawark:beat:familyhead:07",
+     "kind": "familyhead",
+     "chapter": "ardinawark:ch:family-07",
+     "time": {
+      "label": "The McGinty family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardinawark",
+      "name": "Ardinawark",
+      "logainm_id": "14237",
+      "lat": 54.705926,
+      "lon": -7.983339,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardinawark:familypresence:07"
+     },
+     "caption": "The McGinty family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardinawark:familypresence:07"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ardinawark:family:07",
+      "label": "McGinty",
+      "run": false
+     }
+    },
+    {
+     "id": "ardinawark:beat:familycensus:07-1901",
+     "kind": "familycensus",
+     "chapter": "ardinawark:ch:family-07",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardinawark",
+      "name": "Ardinawark",
+      "logainm_id": "14237",
+      "lat": 54.705926,
+      "lon": -7.983339,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardinawark:familycensus:07:1901"
+     },
+     "caption": "Ardinawark had two McGinty households in 1901, headed by Anne and John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardinawark:familycensus:07:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "ardinawark:family:07",
+      "label": "McGinty",
+      "run": false
+     }
+    },
+    {
+     "id": "ardinawark:beat:familycensus:07-1911",
+     "kind": "familycensus",
+     "chapter": "ardinawark:ch:family-07",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardinawark",
+      "name": "Ardinawark",
+      "logainm_id": "14237",
+      "lat": 54.705926,
+      "lon": -7.983339,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardinawark:familycensus:07:1911"
+     },
+     "caption": "Ardinawark had two McGinty households in 1911, headed by Connell and Bridget.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardinawark:familycensus:07:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "ardinawark:family:07",
+      "label": "McGinty",
+      "run": false
+     }
+    },
+    {
+     "id": "ardinawark:beat:familycensus:07-1926",
+     "kind": "familycensus",
+     "chapter": "ardinawark:ch:family-07",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardinawark",
+      "name": "Ardinawark",
+      "logainm_id": "14237",
+      "lat": 54.705926,
+      "lon": -7.983339,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardinawark:familycensus:07:1926"
+     },
+     "caption": "Ardinawark had two McGinty households in 1926, headed by James and Connell.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardinawark:familycensus:07:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "ardinawark:family:07",
+      "label": "McGinty",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardinawark:ch:family-04",
+   "title": "The Gildea family",
+   "beats": [
+    {
+     "id": "ardinawark:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "ardinawark:ch:family-04",
+     "time": {
+      "label": "The Gildea family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardinawark",
+      "name": "Ardinawark",
+      "logainm_id": "14237",
+      "lat": 54.705926,
+      "lon": -7.983339,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardinawark:familypresence:04"
+     },
+     "caption": "The Gildea family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardinawark:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ardinawark:family:04",
+      "label": "Gildea",
+      "run": false
+     }
+    },
+    {
+     "id": "ardinawark:beat:familycensus:04-1901",
+     "kind": "familycensus",
+     "chapter": "ardinawark:ch:family-04",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardinawark",
+      "name": "Ardinawark",
+      "logainm_id": "14237",
+      "lat": 54.705926,
+      "lon": -7.983339,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardinawark:familycensus:04:1901"
+     },
+     "caption": "Ardinawark had one Gildea household in 1901, headed by Denis.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardinawark:familycensus:04:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardinawark:family:04",
+      "label": "Gildea",
+      "run": false
+     }
+    },
+    {
+     "id": "ardinawark:beat:familycensus:04-1911",
+     "kind": "familycensus",
+     "chapter": "ardinawark:ch:family-04",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardinawark",
+      "name": "Ardinawark",
+      "logainm_id": "14237",
+      "lat": 54.705926,
+      "lon": -7.983339,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardinawark:familycensus:04:1911"
+     },
+     "caption": "Ardinawark had one Gildea household in 1911, headed by Denis.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardinawark:familycensus:04:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardinawark:family:04",
+      "label": "Gildea",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardinawark:ch:family-05",
+   "title": "The Harley family",
+   "beats": [
+    {
+     "id": "ardinawark:beat:familyhead:05",
+     "kind": "familyhead",
+     "chapter": "ardinawark:ch:family-05",
+     "time": {
+      "label": "The Harley family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardinawark",
+      "name": "Ardinawark",
+      "logainm_id": "14237",
+      "lat": 54.705926,
+      "lon": -7.983339,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardinawark:familypresence:05"
+     },
+     "caption": "The Harley family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardinawark:familypresence:05"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ardinawark:family:05",
+      "label": "Harley",
+      "run": false
+     }
+    },
+    {
+     "id": "ardinawark:beat:familycensus:05-1901",
+     "kind": "familycensus",
+     "chapter": "ardinawark:ch:family-05",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardinawark",
+      "name": "Ardinawark",
+      "logainm_id": "14237",
+      "lat": 54.705926,
+      "lon": -7.983339,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardinawark:familycensus:05:1901"
+     },
+     "caption": "Ardinawark had one Harley household in 1901, headed by Michael.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardinawark:familycensus:05:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardinawark:family:05",
+      "label": "Harley",
+      "run": false
+     }
+    },
+    {
+     "id": "ardinawark:beat:familycensus:05-1911",
+     "kind": "familycensus",
+     "chapter": "ardinawark:ch:family-05",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardinawark",
+      "name": "Ardinawark",
+      "logainm_id": "14237",
+      "lat": 54.705926,
+      "lon": -7.983339,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardinawark:familycensus:05:1911"
+     },
+     "caption": "Ardinawark had one Harley household in 1911, headed by Mary.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardinawark:familycensus:05:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardinawark:family:05",
+      "label": "Harley",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardinawark:ch:family-06",
+   "title": "The McElhar family",
+   "beats": [
+    {
+     "id": "ardinawark:beat:familyhead:06",
+     "kind": "familyhead",
+     "chapter": "ardinawark:ch:family-06",
+     "time": {
+      "label": "The McElhar family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardinawark",
+      "name": "Ardinawark",
+      "logainm_id": "14237",
+      "lat": 54.705926,
+      "lon": -7.983339,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardinawark:familypresence:06"
+     },
+     "caption": "The McElhar family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardinawark:familypresence:06"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ardinawark:family:06",
+      "label": "McElhar",
+      "run": false
+     }
+    },
+    {
+     "id": "ardinawark:beat:familycensus:06-1901",
+     "kind": "familycensus",
+     "chapter": "ardinawark:ch:family-06",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardinawark",
+      "name": "Ardinawark",
+      "logainm_id": "14237",
+      "lat": 54.705926,
+      "lon": -7.983339,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardinawark:familycensus:06:1901"
+     },
+     "caption": "Ardinawark had one McElhar household in 1901, headed by Denis.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardinawark:familycensus:06:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardinawark:family:06",
+      "label": "McElhar",
+      "run": false
+     }
+    },
+    {
+     "id": "ardinawark:beat:familycensus:06-1911",
+     "kind": "familycensus",
+     "chapter": "ardinawark:ch:family-06",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardinawark",
+      "name": "Ardinawark",
+      "logainm_id": "14237",
+      "lat": 54.705926,
+      "lon": -7.983339,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardinawark:familycensus:06:1911"
+     },
+     "caption": "Ardinawark had one McElhar household in 1911, headed by Denis.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardinawark:familycensus:06:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardinawark:family:06",
+      "label": "McElhar",
+      "run": false
+     }
+    },
+    {
+     "id": "ardinawark:beat:familycensus:06-1926",
+     "kind": "familycensus",
+     "chapter": "ardinawark:ch:family-06",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardinawark",
+      "name": "Ardinawark",
+      "logainm_id": "14237",
+      "lat": 54.705926,
+      "lon": -7.983339,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardinawark:familycensus:06:1926"
+     },
+     "caption": "Ardinawark had one McElhar household in 1926, headed by Mary Teresa.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardinawark:familycensus:06:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ardinawark:family:06",
+      "label": "McElhar",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardinawark:ch:family-08",
+   "title": "The McHugh family",
+   "beats": [
+    {
+     "id": "ardinawark:beat:familyhead:08",
+     "kind": "familyhead",
+     "chapter": "ardinawark:ch:family-08",
+     "time": {
+      "label": "The McHugh family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardinawark",
+      "name": "Ardinawark",
+      "logainm_id": "14237",
+      "lat": 54.705926,
+      "lon": -7.983339,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardinawark:familypresence:08"
+     },
+     "caption": "The McHugh family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardinawark:familypresence:08"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ardinawark:family:08",
+      "label": "McHugh",
+      "run": false
+     }
+    },
+    {
+     "id": "ardinawark:beat:familycensus:08-1901",
+     "kind": "familycensus",
+     "chapter": "ardinawark:ch:family-08",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardinawark",
+      "name": "Ardinawark",
+      "logainm_id": "14237",
+      "lat": 54.705926,
+      "lon": -7.983339,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardinawark:familycensus:08:1901"
+     },
+     "caption": "Ardinawark had one McHugh household in 1901, headed by Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardinawark:familycensus:08:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardinawark:family:08",
+      "label": "McHugh",
+      "run": false
+     }
+    },
+    {
+     "id": "ardinawark:beat:familycensus:08-1911",
+     "kind": "familycensus",
+     "chapter": "ardinawark:ch:family-08",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardinawark",
+      "name": "Ardinawark",
+      "logainm_id": "14237",
+      "lat": 54.705926,
+      "lon": -7.983339,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardinawark:familycensus:08:1911"
+     },
+     "caption": "Ardinawark had one McHugh household in 1911, headed by Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardinawark:familycensus:08:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardinawark:family:08",
+      "label": "McHugh",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardinawark:ch:family-10",
+   "title": "The McMenimin family",
+   "beats": [
+    {
+     "id": "ardinawark:beat:familyhead:10",
+     "kind": "familyhead",
+     "chapter": "ardinawark:ch:family-10",
+     "time": {
+      "label": "The McMenimin family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardinawark",
+      "name": "Ardinawark",
+      "logainm_id": "14237",
+      "lat": 54.705926,
+      "lon": -7.983339,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardinawark:familypresence:10"
+     },
+     "caption": "The McMenimin family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardinawark:familypresence:10"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardinawark:family:10",
+      "label": "McMenimin",
+      "run": false
+     }
+    },
+    {
+     "id": "ardinawark:beat:familycensus:10-1901",
+     "kind": "familycensus",
+     "chapter": "ardinawark:ch:family-10",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardinawark",
+      "name": "Ardinawark",
+      "logainm_id": "14237",
+      "lat": 54.705926,
+      "lon": -7.983339,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardinawark:familycensus:10:1901"
+     },
+     "caption": "Ardinawark had two McMenimin households in 1901, headed by Edward and Hugh.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardinawark:familycensus:10:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "ardinawark:family:10",
+      "label": "McMenimin",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardinawark:ch:family-11",
+   "title": "The McNulty family",
+   "beats": [
+    {
+     "id": "ardinawark:beat:familyhead:11",
+     "kind": "familyhead",
+     "chapter": "ardinawark:ch:family-11",
+     "time": {
+      "label": "The McNulty family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardinawark",
+      "name": "Ardinawark",
+      "logainm_id": "14237",
+      "lat": 54.705926,
+      "lon": -7.983339,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardinawark:familypresence:11"
+     },
+     "caption": "The McNulty family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardinawark:familypresence:11"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ardinawark:family:11",
+      "label": "McNulty",
+      "run": false
+     }
+    },
+    {
+     "id": "ardinawark:beat:familycensus:11-1901",
+     "kind": "familycensus",
+     "chapter": "ardinawark:ch:family-11",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardinawark",
+      "name": "Ardinawark",
+      "logainm_id": "14237",
+      "lat": 54.705926,
+      "lon": -7.983339,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardinawark:familycensus:11:1901"
+     },
+     "caption": "Ardinawark had one McNulty household in 1901, headed by Edward.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardinawark:familycensus:11:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardinawark:family:11",
+      "label": "McNulty",
+      "run": false
+     }
+    },
+    {
+     "id": "ardinawark:beat:familycensus:11-1911",
+     "kind": "familycensus",
+     "chapter": "ardinawark:ch:family-11",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardinawark",
+      "name": "Ardinawark",
+      "logainm_id": "14237",
+      "lat": 54.705926,
+      "lon": -7.983339,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardinawark:familycensus:11:1911"
+     },
+     "caption": "Ardinawark had one McNulty household in 1911, headed by Edward.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardinawark:familycensus:11:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardinawark:family:11",
+      "label": "McNulty",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardinawark:ch:family-12",
+   "title": "The Timoney family",
+   "beats": [
+    {
+     "id": "ardinawark:beat:familyhead:12",
+     "kind": "familyhead",
+     "chapter": "ardinawark:ch:family-12",
+     "time": {
+      "label": "The Timoney family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardinawark",
+      "name": "Ardinawark",
+      "logainm_id": "14237",
+      "lat": 54.705926,
+      "lon": -7.983339,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardinawark:familypresence:12"
+     },
+     "caption": "The Timoney family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardinawark:familypresence:12"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardinawark:family:12",
+      "label": "Timoney",
+      "run": false
+     }
+    },
+    {
+     "id": "ardinawark:beat:familycensus:12-1901",
+     "kind": "familycensus",
+     "chapter": "ardinawark:ch:family-12",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardinawark",
+      "name": "Ardinawark",
+      "logainm_id": "14237",
+      "lat": 54.705926,
+      "lon": -7.983339,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardinawark:familycensus:12:1901"
+     },
+     "caption": "Ardinawark had one Timoney household in 1901, headed by Donal.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardinawark:familycensus:12:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardinawark:family:12",
+      "label": "Timoney",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardinawark:ch:family-09",
+   "title": "The McMenamin family",
+   "beats": [
+    {
+     "id": "ardinawark:beat:familyhead:09",
+     "kind": "familyhead",
+     "chapter": "ardinawark:ch:family-09",
+     "time": {
+      "label": "The McMenamin family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardinawark",
+      "name": "Ardinawark",
+      "logainm_id": "14237",
+      "lat": 54.705926,
+      "lon": -7.983339,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardinawark:familypresence:09"
+     },
+     "caption": "The McMenamin family appear in the records from 1911 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardinawark:familypresence:09"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ardinawark:family:09",
+      "label": "McMenamin",
+      "run": false
+     }
+    },
+    {
+     "id": "ardinawark:beat:familycensus:09-1911",
+     "kind": "familycensus",
+     "chapter": "ardinawark:ch:family-09",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardinawark",
+      "name": "Ardinawark",
+      "logainm_id": "14237",
+      "lat": 54.705926,
+      "lon": -7.983339,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardinawark:familycensus:09:1911"
+     },
+     "caption": "Ardinawark had two McMenamin households in 1911, headed by Edward and Hugh.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardinawark:familycensus:09:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "ardinawark:family:09",
+      "label": "McMenamin",
+      "run": false
+     }
+    },
+    {
+     "id": "ardinawark:beat:familycensus:09-1926",
+     "kind": "familycensus",
+     "chapter": "ardinawark:ch:family-09",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardinawark",
+      "name": "Ardinawark",
+      "logainm_id": "14237",
+      "lat": 54.705926,
+      "lon": -7.983339,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardinawark:familycensus:09:1926"
+     },
+     "caption": "Ardinawark had four McMenamin households in 1926, headed by Hugh, Joseph, Bridget and Maggie.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardinawark:familycensus:09:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5600,
+     "audio": null,
+     "thread": {
+      "id": "ardinawark:family:09",
+      "label": "McMenamin",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardinawark:ch:family-03",
+   "title": "The Campbell family",
+   "beats": [
+    {
+     "id": "ardinawark:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "ardinawark:ch:family-03",
+     "time": {
+      "label": "The Campbell family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardinawark",
+      "name": "Ardinawark",
+      "logainm_id": "14237",
+      "lat": 54.705926,
+      "lon": -7.983339,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardinawark:familypresence:03"
+     },
+     "caption": "The Campbell family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardinawark:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardinawark:family:03",
+      "label": "Campbell",
+      "run": false
+     }
+    },
+    {
+     "id": "ardinawark:beat:familycensus:03-1926",
+     "kind": "familycensus",
+     "chapter": "ardinawark:ch:family-03",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardinawark",
+      "name": "Ardinawark",
+      "logainm_id": "14237",
+      "lat": 54.705926,
+      "lon": -7.983339,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardinawark:familycensus:03:1926"
+     },
+     "caption": "Ardinawark had one Campbell household in 1926, headed by Susan.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardinawark:familycensus:03:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardinawark:family:03",
+      "label": "Campbell",
+      "run": false
+     }
     }
    ]
   }

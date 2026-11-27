@@ -95,13 +95,122 @@
    ]
   },
   {
-   "id": "finnadoos:ch:baptisms",
-   "title": "Baptisms, 1873 to 1874",
+   "id": "finnadoos:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "finnadoos:beat:baptism:1873",
+     "id": "finnadoos:beat:census:returns",
+     "kind": "census",
+     "chapter": "finnadoos:ch:census",
+     "time": {
+      "label": "1901 to 1926",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "finnadoos",
+      "name": "Finnadoos",
+      "logainm_id": "14280",
+      "lat": 54.666055,
+      "lon": -8.026379,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "finnadoos:census:1901"
+     },
+     "caption": "The censuses of 1901, 1911 and 1926 counted 72, 60 and 45 people in Finnadoos, in 17, 15 and 12 households. Heads of household included Travers, Barron and Thomas.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "finnadoos:census:1901",
+       "finnadoos:census:1911",
+       "finnadoos:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 11600,
+     "audio": null,
+     "counts": {
+      "returns": [
+       {
+        "year": "1901",
+        "people": 72,
+        "households": 17
+       },
+       {
+        "year": "1911",
+        "people": 60,
+        "households": 15
+       },
+       {
+        "year": "1926",
+        "people": 45,
+        "households": 12
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "finnadoos:ch:families",
+   "title": "The families of Finnadoos",
+   "beats": [
+    {
+     "id": "finnadoos:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "finnadoos:ch:families",
+     "time": {
+      "label": "The families of Finnadoos",
+      "iso": "1873-02-23",
+      "sort": "1873-02-23",
+      "approximate": true
+     },
+     "place": {
+      "townland": "finnadoos",
+      "name": "Finnadoos",
+      "logainm_id": "14280",
+      "lat": 54.666055,
+      "lon": -8.026379,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "finnadoos:baptism:TAW-B-p005-r19"
+     },
+     "caption": "Here are the families of Finnadoos, from 1873 to 1926. First, the Thomas and Travers families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "finnadoos:baptism:TAW-B-p005-r19",
+       "finnadoos:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "finnadoos:family:10",
+      "label": "Thomas",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "finnadoos:ch:family-10",
+   "title": "The Thomas family",
+   "beats": [
+    {
+     "id": "finnadoos:beat:baptism:1873-02-23-TAW-B-p005-r19",
      "kind": "baptism",
-     "chapter": "finnadoos:ch:baptisms",
+     "chapter": "finnadoos:ch:family-10",
      "time": {
       "label": "23 February 1873",
       "iso": "1873-02-23",
@@ -120,24 +229,234 @@
       "stage": "map",
       "open_card": "finnadoos:baptism:TAW-B-p005-r19"
      },
-     "caption": "Two children were baptised in 1873: Brigid Thomas on 23 February and Elizabeth Travers on 15 June.",
+     "caption": "Brigid Thomas was baptised on 23 February 1873. William Thomas and Brigid Dunnion were the parents.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "finnadoos:baptism:TAW-B-p005-r19",
+       "finnadoos:baptism:TAW-B-p005-r19"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "finnadoos:family:10",
+      "label": "Thomas",
+      "run": true
+     }
+    },
+    {
+     "id": "finnadoos:beat:familyhead:10",
+     "kind": "familyhead",
+     "chapter": "finnadoos:ch:family-10",
+     "time": {
+      "label": "The Thomas family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "finnadoos",
+      "name": "Finnadoos",
+      "logainm_id": "14280",
+      "lat": 54.666055,
+      "lon": -8.026379,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "finnadoos:familypresence:10"
+     },
+     "caption": "The Thomas family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "finnadoos:familypresence:10"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "finnadoos:family:10",
+      "label": "Thomas",
+      "run": true
+     }
+    },
+    {
+     "id": "finnadoos:beat:familycensus:10-1901",
+     "kind": "familycensus",
+     "chapter": "finnadoos:ch:family-10",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "finnadoos",
+      "name": "Finnadoos",
+      "logainm_id": "14280",
+      "lat": 54.666055,
+      "lon": -8.026379,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "finnadoos:familycensus:10:1901"
+     },
+     "caption": "Finnadoos had three Thomas households in 1901, headed by Anne, Owen and Margaret.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "finnadoos:familycensus:10:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "finnadoos:family:10",
+      "label": "Thomas",
+      "run": true
+     }
+    },
+    {
+     "id": "finnadoos:beat:familycensus:10-1911",
+     "kind": "familycensus",
+     "chapter": "finnadoos:ch:family-10",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "finnadoos",
+      "name": "Finnadoos",
+      "logainm_id": "14280",
+      "lat": 54.666055,
+      "lon": -8.026379,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "finnadoos:familycensus:10:1911"
+     },
+     "caption": "Finnadoos had two Thomas households in 1911, headed by Anne and Owen.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "finnadoos:familycensus:10:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "finnadoos:family:10",
+      "label": "Thomas",
+      "run": true
+     }
+    },
+    {
+     "id": "finnadoos:beat:familycensus:10-1926",
+     "kind": "familycensus",
+     "chapter": "finnadoos:ch:family-10",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "finnadoos",
+      "name": "Finnadoos",
+      "logainm_id": "14280",
+      "lat": 54.666055,
+      "lon": -8.026379,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "finnadoos:familycensus:10:1926"
+     },
+     "caption": "Finnadoos had one Thomas household in 1926, headed by Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "finnadoos:familycensus:10:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "finnadoos:family:10",
+      "label": "Thomas",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "finnadoos:ch:family-12",
+   "title": "The Travers family",
+   "beats": [
+    {
+     "id": "finnadoos:beat:baptism:1873-06-15-TAW-B-p007-r53",
+     "kind": "baptism",
+     "chapter": "finnadoos:ch:family-12",
+     "time": {
+      "label": "15 June 1873",
+      "iso": "1873-06-15",
+      "sort": "1873-06-15",
+      "approximate": false
+     },
+     "place": {
+      "townland": "finnadoos",
+      "name": "Finnadoos",
+      "logainm_id": "14280",
+      "lat": 54.666055,
+      "lon": -8.026379,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "finnadoos:baptism:TAW-B-p007-r53"
+     },
+     "caption": "Elizabeth Travers was baptised on 15 June 1873. John Travers and Anne Lawn were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
        "finnadoos:baptism:TAW-B-p007-r53"
       ],
       "basis": "page_place",
       "certainty": "stated"
      },
-     "duration_ms": 6800,
-     "audio": null
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "finnadoos:family:12",
+      "label": "Travers",
+      "run": true
+     }
     },
     {
-     "id": "finnadoos:beat:baptism:1874",
+     "id": "finnadoos:beat:baptism:1874-06-25-TAW-B-p011-r135",
      "kind": "baptism",
-     "chapter": "finnadoos:ch:baptisms",
+     "chapter": "finnadoos:ch:family-12",
      "time": {
       "label": "25 June 1874",
       "iso": "1874-06-25",
@@ -156,31 +475,108 @@
       "stage": "map",
       "open_card": "finnadoos:baptism:TAW-B-p011-r135"
      },
-     "caption": "Three children were baptised in 1874: Margaret Travers on 25 June, Patrick Travers on 2 August and Brigid Meehan on 1 November.",
+     "caption": "Margaret Travers was baptised on 25 June 1874. Edward Travers and Mary Thomas were the parents.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "finnadoos:baptism:TAW-B-p011-r135",
-       "finnadoos:baptism:TAW-B-p011-r139",
-       "finnadoos:baptism:TAW-B-p013-r162"
+       "finnadoos:baptism:TAW-B-p011-r135"
       ],
       "basis": "page_place",
       "certainty": "stated"
      },
-     "duration_ms": 8800,
-     "audio": null
-    }
-   ]
-  },
-  {
-   "id": "finnadoos:ch:1901",
-   "title": "1901",
-   "beats": [
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "finnadoos:family:12",
+      "label": "Travers",
+      "run": true
+     }
+    },
     {
-     "id": "finnadoos:beat:census:1901",
-     "kind": "census",
-     "chapter": "finnadoos:ch:1901",
+     "id": "finnadoos:beat:baptism:1874-08-02-TAW-B-p011-r139",
+     "kind": "baptism",
+     "chapter": "finnadoos:ch:family-12",
+     "time": {
+      "label": "2 August 1874",
+      "iso": "1874-08-02",
+      "sort": "1874-08-02",
+      "approximate": false
+     },
+     "place": {
+      "townland": "finnadoos",
+      "name": "Finnadoos",
+      "logainm_id": "14280",
+      "lat": 54.666055,
+      "lon": -8.026379,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "finnadoos:baptism:TAW-B-p011-r139"
+     },
+     "caption": "Patrick Travers was baptised on 2 August 1874. John Travers and Anne Laun were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "finnadoos:baptism:TAW-B-p011-r139"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "finnadoos:family:12",
+      "label": "Travers",
+      "run": true
+     }
+    },
+    {
+     "id": "finnadoos:beat:familyhead:12",
+     "kind": "familyhead",
+     "chapter": "finnadoos:ch:family-12",
+     "time": {
+      "label": "The Travers family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "finnadoos",
+      "name": "Finnadoos",
+      "logainm_id": "14280",
+      "lat": 54.666055,
+      "lon": -8.026379,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "finnadoos:familypresence:12"
+     },
+     "caption": "The Travers family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "finnadoos:familypresence:12"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "finnadoos:family:12",
+      "label": "Travers",
+      "run": true
+     }
+    },
+    {
+     "id": "finnadoos:beat:familycensus:12-1901",
+     "kind": "familycensus",
+     "chapter": "finnadoos:ch:family-12",
      "time": {
       "label": "1901",
       "iso": "1901",
@@ -197,35 +593,30 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "finnadoos:census:1901"
+      "open_card": "finnadoos:familycensus:12:1901"
      },
-     "caption": "Finnadoos had 72 people in seventeen households in 1901. Heads of household included Travers, Barron and Thomas.",
+     "caption": "Finnadoos had six Travers households in 1901, headed by three named John, Owen, Mary and Patrick.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "finnadoos:census:1901"
+       "finnadoos:familycensus:12:1901"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6800,
+     "duration_ms": 6400,
      "audio": null,
-     "counts": {
-      "people": 72,
-      "households": 17
+     "thread": {
+      "id": "finnadoos:family:12",
+      "label": "Travers",
+      "run": true
      }
-    }
-   ]
-  },
-  {
-   "id": "finnadoos:ch:1911",
-   "title": "1911",
-   "beats": [
+    },
     {
-     "id": "finnadoos:beat:census:1911",
-     "kind": "census",
-     "chapter": "finnadoos:ch:1911",
+     "id": "finnadoos:beat:familycensus:12-1911",
+     "kind": "familycensus",
+     "chapter": "finnadoos:ch:family-12",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -242,35 +633,30 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "finnadoos:census:1911"
+      "open_card": "finnadoos:familycensus:12:1911"
      },
-     "caption": "In 1911, 60 people in fifteen households lived in Finnadoos. Heads of household included Travers, Barren and Thomas.",
+     "caption": "Finnadoos had six Travers households in 1911, headed by two named John, Grace, Owen, Edward and Patrick.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "finnadoos:census:1911"
+       "finnadoos:familycensus:12:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 7200,
+     "duration_ms": 6800,
      "audio": null,
-     "counts": {
-      "people": 60,
-      "households": 15
+     "thread": {
+      "id": "finnadoos:family:12",
+      "label": "Travers",
+      "run": true
      }
-    }
-   ]
-  },
-  {
-   "id": "finnadoos:ch:1926",
-   "title": "1926",
-   "beats": [
+    },
     {
-     "id": "finnadoos:beat:census:1926",
-     "kind": "census",
-     "chapter": "finnadoos:ch:1926",
+     "id": "finnadoos:beat:familycensus:12-1926",
+     "kind": "familycensus",
+     "chapter": "finnadoos:ch:family-12",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -287,25 +673,32 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "finnadoos:census:1926"
+      "open_card": "finnadoos:familycensus:12:1926"
      },
-     "caption": "Finnadoos had 45 people in twelve households in 1926. Heads of household included Travers, [Hore] and Cassidy.",
+     "caption": "Finnadoos had four Travers households in 1926, headed by Ann, Charles, Joseph and Barney.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "finnadoos:census:1926"
+       "finnadoos:familycensus:12:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6800,
+     "duration_ms": 5600,
      "audio": null,
-     "counts": {
-      "people": 45,
-      "households": 12
+     "thread": {
+      "id": "finnadoos:family:12",
+      "label": "Travers",
+      "run": true
      }
-    },
+    }
+   ]
+  },
+  {
+   "id": "finnadoos:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "finnadoos:beat:closing:end",
      "kind": "closing",
@@ -340,6 +733,1152 @@
      },
      "duration_ms": 4000,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "finnadoos:ch:family-09",
+   "title": "The Meehan family",
+   "beats": [
+    {
+     "id": "finnadoos:beat:baptism:1874-11-01-TAW-B-p013-r162",
+     "kind": "baptism",
+     "chapter": "finnadoos:ch:family-09",
+     "time": {
+      "label": "1 November 1874",
+      "iso": "1874-11-01",
+      "sort": "1874-11-01",
+      "approximate": false
+     },
+     "place": {
+      "townland": "finnadoos",
+      "name": "Finnadoos",
+      "logainm_id": "14280",
+      "lat": 54.666055,
+      "lon": -8.026379,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "finnadoos:baptism:TAW-B-p013-r162"
+     },
+     "caption": "Brigid Meehan was baptised on 1 November 1874. John Meehan and Mary Harkin were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "finnadoos:baptism:TAW-B-p013-r162"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "finnadoos:family:09",
+      "label": "Meehan",
+      "run": false
+     }
+    },
+    {
+     "id": "finnadoos:beat:familyhead:09",
+     "kind": "familyhead",
+     "chapter": "finnadoos:ch:family-09",
+     "time": {
+      "label": "The Meehan family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "finnadoos",
+      "name": "Finnadoos",
+      "logainm_id": "14280",
+      "lat": 54.666055,
+      "lon": -8.026379,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "finnadoos:familypresence:09"
+     },
+     "caption": "The Meehan family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "finnadoos:familypresence:09"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "finnadoos:family:09",
+      "label": "Meehan",
+      "run": false
+     }
+    },
+    {
+     "id": "finnadoos:beat:familycensus:09-1901",
+     "kind": "familycensus",
+     "chapter": "finnadoos:ch:family-09",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "finnadoos",
+      "name": "Finnadoos",
+      "logainm_id": "14280",
+      "lat": 54.666055,
+      "lon": -8.026379,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "finnadoos:familycensus:09:1901"
+     },
+     "caption": "Finnadoos had one Meehan household in 1901, headed by Mary.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "finnadoos:familycensus:09:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "finnadoos:family:09",
+      "label": "Meehan",
+      "run": false
+     }
+    },
+    {
+     "id": "finnadoos:beat:familycensus:09-1911",
+     "kind": "familycensus",
+     "chapter": "finnadoos:ch:family-09",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "finnadoos",
+      "name": "Finnadoos",
+      "logainm_id": "14280",
+      "lat": 54.666055,
+      "lon": -8.026379,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "finnadoos:familycensus:09:1911"
+     },
+     "caption": "Finnadoos had one Meehan household in 1911, headed by Neil.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "finnadoos:familycensus:09:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "finnadoos:family:09",
+      "label": "Meehan",
+      "run": false
+     }
+    },
+    {
+     "id": "finnadoos:beat:familycensus:09-1926",
+     "kind": "familycensus",
+     "chapter": "finnadoos:ch:family-09",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "finnadoos",
+      "name": "Finnadoos",
+      "logainm_id": "14280",
+      "lat": 54.666055,
+      "lon": -8.026379,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "finnadoos:familycensus:09:1926"
+     },
+     "caption": "Finnadoos had one Meehan household in 1926, headed by Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "finnadoos:familycensus:09:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "finnadoos:family:09",
+      "label": "Meehan",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "finnadoos:ch:family-03",
+   "title": "The Barron family",
+   "beats": [
+    {
+     "id": "finnadoos:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "finnadoos:ch:family-03",
+     "time": {
+      "label": "The Barron family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "finnadoos",
+      "name": "Finnadoos",
+      "logainm_id": "14280",
+      "lat": 54.666055,
+      "lon": -8.026379,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "finnadoos:familypresence:03"
+     },
+     "caption": "The Barron family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "finnadoos:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "finnadoos:family:03",
+      "label": "Barron",
+      "run": false
+     }
+    },
+    {
+     "id": "finnadoos:beat:familycensus:03-1901",
+     "kind": "familycensus",
+     "chapter": "finnadoos:ch:family-03",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "finnadoos",
+      "name": "Finnadoos",
+      "logainm_id": "14280",
+      "lat": 54.666055,
+      "lon": -8.026379,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "finnadoos:familycensus:03:1901"
+     },
+     "caption": "Finnadoos had three Barron households in 1901, headed by Patrick, Barney and Michael.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "finnadoos:familycensus:03:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "finnadoos:family:03",
+      "label": "Barron",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "finnadoos:ch:family-05",
+   "title": "The Fravers family",
+   "beats": [
+    {
+     "id": "finnadoos:beat:familyhead:05",
+     "kind": "familyhead",
+     "chapter": "finnadoos:ch:family-05",
+     "time": {
+      "label": "The Fravers family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "finnadoos",
+      "name": "Finnadoos",
+      "logainm_id": "14280",
+      "lat": 54.666055,
+      "lon": -8.026379,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "finnadoos:familypresence:05"
+     },
+     "caption": "The Fravers family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "finnadoos:familypresence:05"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "finnadoos:family:05",
+      "label": "Fravers",
+      "run": false
+     }
+    },
+    {
+     "id": "finnadoos:beat:familycensus:05-1901",
+     "kind": "familycensus",
+     "chapter": "finnadoos:ch:family-05",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "finnadoos",
+      "name": "Finnadoos",
+      "logainm_id": "14280",
+      "lat": 54.666055,
+      "lon": -8.026379,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "finnadoos:familycensus:05:1901"
+     },
+     "caption": "Finnadoos had one Fravers household in 1901, headed by Grace.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "finnadoos:familycensus:05:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "finnadoos:family:05",
+      "label": "Fravers",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "finnadoos:ch:family-06",
+   "title": "The Gallagher family",
+   "beats": [
+    {
+     "id": "finnadoos:beat:familyhead:06",
+     "kind": "familyhead",
+     "chapter": "finnadoos:ch:family-06",
+     "time": {
+      "label": "The Gallagher family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "finnadoos",
+      "name": "Finnadoos",
+      "logainm_id": "14280",
+      "lat": 54.666055,
+      "lon": -8.026379,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "finnadoos:familypresence:06"
+     },
+     "caption": "The Gallagher family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "finnadoos:familypresence:06"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "finnadoos:family:06",
+      "label": "Gallagher",
+      "run": false
+     }
+    },
+    {
+     "id": "finnadoos:beat:familycensus:06-1901",
+     "kind": "familycensus",
+     "chapter": "finnadoos:ch:family-06",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "finnadoos",
+      "name": "Finnadoos",
+      "logainm_id": "14280",
+      "lat": 54.666055,
+      "lon": -8.026379,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "finnadoos:familycensus:06:1901"
+     },
+     "caption": "Finnadoos had one Gallagher household in 1901, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "finnadoos:familycensus:06:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "finnadoos:family:06",
+      "label": "Gallagher",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "finnadoos:ch:family-07",
+   "title": "The Kane family",
+   "beats": [
+    {
+     "id": "finnadoos:beat:familyhead:07",
+     "kind": "familyhead",
+     "chapter": "finnadoos:ch:family-07",
+     "time": {
+      "label": "The Kane family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "finnadoos",
+      "name": "Finnadoos",
+      "logainm_id": "14280",
+      "lat": 54.666055,
+      "lon": -8.026379,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "finnadoos:familypresence:07"
+     },
+     "caption": "The Kane family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "finnadoos:familypresence:07"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "finnadoos:family:07",
+      "label": "Kane",
+      "run": false
+     }
+    },
+    {
+     "id": "finnadoos:beat:familycensus:07-1901",
+     "kind": "familycensus",
+     "chapter": "finnadoos:ch:family-07",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "finnadoos",
+      "name": "Finnadoos",
+      "logainm_id": "14280",
+      "lat": 54.666055,
+      "lon": -8.026379,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "finnadoos:familycensus:07:1901"
+     },
+     "caption": "Finnadoos had one Kane household in 1901, headed by Hugh.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "finnadoos:familycensus:07:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "finnadoos:family:07",
+      "label": "Kane",
+      "run": false
+     }
+    },
+    {
+     "id": "finnadoos:beat:familycensus:07-1911",
+     "kind": "familycensus",
+     "chapter": "finnadoos:ch:family-07",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "finnadoos",
+      "name": "Finnadoos",
+      "logainm_id": "14280",
+      "lat": 54.666055,
+      "lon": -8.026379,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "finnadoos:familycensus:07:1911"
+     },
+     "caption": "Finnadoos had one Kane household in 1911, headed by Hugh.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "finnadoos:familycensus:07:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "finnadoos:family:07",
+      "label": "Kane",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "finnadoos:ch:family-13",
+   "title": "The Ward family",
+   "beats": [
+    {
+     "id": "finnadoos:beat:familyhead:13",
+     "kind": "familyhead",
+     "chapter": "finnadoos:ch:family-13",
+     "time": {
+      "label": "The Ward family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "finnadoos",
+      "name": "Finnadoos",
+      "logainm_id": "14280",
+      "lat": 54.666055,
+      "lon": -8.026379,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "finnadoos:familypresence:13"
+     },
+     "caption": "The Ward family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "finnadoos:familypresence:13"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "finnadoos:family:13",
+      "label": "Ward",
+      "run": false
+     }
+    },
+    {
+     "id": "finnadoos:beat:familycensus:13-1901",
+     "kind": "familycensus",
+     "chapter": "finnadoos:ch:family-13",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "finnadoos",
+      "name": "Finnadoos",
+      "logainm_id": "14280",
+      "lat": 54.666055,
+      "lon": -8.026379,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "finnadoos:familycensus:13:1901"
+     },
+     "caption": "Finnadoos had one Ward household in 1901, headed by Fank.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "finnadoos:familycensus:13:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "finnadoos:family:13",
+      "label": "Ward",
+      "run": false
+     }
+    },
+    {
+     "id": "finnadoos:beat:familycensus:13-1911",
+     "kind": "familycensus",
+     "chapter": "finnadoos:ch:family-13",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "finnadoos",
+      "name": "Finnadoos",
+      "logainm_id": "14280",
+      "lat": 54.666055,
+      "lon": -8.026379,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "finnadoos:familycensus:13:1911"
+     },
+     "caption": "Finnadoos had one Ward household in 1911, headed by Francis.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "finnadoos:familycensus:13:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "finnadoos:family:13",
+      "label": "Ward",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "finnadoos:ch:family-02",
+   "title": "The Barren family",
+   "beats": [
+    {
+     "id": "finnadoos:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "finnadoos:ch:family-02",
+     "time": {
+      "label": "The Barren family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "finnadoos",
+      "name": "Finnadoos",
+      "logainm_id": "14280",
+      "lat": 54.666055,
+      "lon": -8.026379,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "finnadoos:familypresence:02"
+     },
+     "caption": "The Barren family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "finnadoos:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "finnadoos:family:02",
+      "label": "Barren",
+      "run": false
+     }
+    },
+    {
+     "id": "finnadoos:beat:familycensus:02-1911",
+     "kind": "familycensus",
+     "chapter": "finnadoos:ch:family-02",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "finnadoos",
+      "name": "Finnadoos",
+      "logainm_id": "14280",
+      "lat": 54.666055,
+      "lon": -8.026379,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "finnadoos:familycensus:02:1911"
+     },
+     "caption": "Finnadoos had three Barren households in 1911, headed by two named Mary and Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "finnadoos:familycensus:02:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5600,
+     "audio": null,
+     "thread": {
+      "id": "finnadoos:family:02",
+      "label": "Barren",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "finnadoos:ch:family-11",
+   "title": "The Thravis family",
+   "beats": [
+    {
+     "id": "finnadoos:beat:familyhead:11",
+     "kind": "familyhead",
+     "chapter": "finnadoos:ch:family-11",
+     "time": {
+      "label": "The Thravis family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "finnadoos",
+      "name": "Finnadoos",
+      "logainm_id": "14280",
+      "lat": 54.666055,
+      "lon": -8.026379,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "finnadoos:familypresence:11"
+     },
+     "caption": "The Thravis family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "finnadoos:familypresence:11"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "finnadoos:family:11",
+      "label": "Thravis",
+      "run": false
+     }
+    },
+    {
+     "id": "finnadoos:beat:familycensus:11-1911",
+     "kind": "familycensus",
+     "chapter": "finnadoos:ch:family-11",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "finnadoos",
+      "name": "Finnadoos",
+      "logainm_id": "14280",
+      "lat": 54.666055,
+      "lon": -8.026379,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "finnadoos:familycensus:11:1911"
+     },
+     "caption": "Finnadoos had one Thravis household in 1911, headed by Sarah.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "finnadoos:familycensus:11:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "finnadoos:family:11",
+      "label": "Thravis",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "finnadoos:ch:family-01",
+   "title": "The [Hore] family",
+   "beats": [
+    {
+     "id": "finnadoos:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "finnadoos:ch:family-01",
+     "time": {
+      "label": "The [Hore] family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "finnadoos",
+      "name": "Finnadoos",
+      "logainm_id": "14280",
+      "lat": 54.666055,
+      "lon": -8.026379,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "finnadoos:familypresence:01"
+     },
+     "caption": "The [Hore] family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "finnadoos:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "finnadoos:family:01",
+      "label": "[Hore]",
+      "run": false
+     }
+    },
+    {
+     "id": "finnadoos:beat:familycensus:01-1926",
+     "kind": "familycensus",
+     "chapter": "finnadoos:ch:family-01",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "finnadoos",
+      "name": "Finnadoos",
+      "logainm_id": "14280",
+      "lat": 54.666055,
+      "lon": -8.026379,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "finnadoos:familycensus:01:1926"
+     },
+     "caption": "Finnadoos had two [Hore] households in 1926, headed by Hugh and Bridget A.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "finnadoos:familycensus:01:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "finnadoos:family:01",
+      "label": "[Hore]",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "finnadoos:ch:family-04",
+   "title": "The Cassidy family",
+   "beats": [
+    {
+     "id": "finnadoos:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "finnadoos:ch:family-04",
+     "time": {
+      "label": "The Cassidy family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "finnadoos",
+      "name": "Finnadoos",
+      "logainm_id": "14280",
+      "lat": 54.666055,
+      "lon": -8.026379,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "finnadoos:familypresence:04"
+     },
+     "caption": "The Cassidy family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "finnadoos:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "finnadoos:family:04",
+      "label": "Cassidy",
+      "run": false
+     }
+    },
+    {
+     "id": "finnadoos:beat:familycensus:04-1926",
+     "kind": "familycensus",
+     "chapter": "finnadoos:ch:family-04",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "finnadoos",
+      "name": "Finnadoos",
+      "logainm_id": "14280",
+      "lat": 54.666055,
+      "lon": -8.026379,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "finnadoos:familycensus:04:1926"
+     },
+     "caption": "Finnadoos had one Cassidy household in 1926, headed by Mary A.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "finnadoos:familycensus:04:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "finnadoos:family:04",
+      "label": "Cassidy",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "finnadoos:ch:family-08",
+   "title": "The McGuire family",
+   "beats": [
+    {
+     "id": "finnadoos:beat:familyhead:08",
+     "kind": "familyhead",
+     "chapter": "finnadoos:ch:family-08",
+     "time": {
+      "label": "The McGuire family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "finnadoos",
+      "name": "Finnadoos",
+      "logainm_id": "14280",
+      "lat": 54.666055,
+      "lon": -8.026379,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "finnadoos:familypresence:08"
+     },
+     "caption": "The McGuire family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "finnadoos:familypresence:08"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "finnadoos:family:08",
+      "label": "McGuire",
+      "run": false
+     }
+    },
+    {
+     "id": "finnadoos:beat:familycensus:08-1926",
+     "kind": "familycensus",
+     "chapter": "finnadoos:ch:family-08",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "finnadoos",
+      "name": "Finnadoos",
+      "logainm_id": "14280",
+      "lat": 54.666055,
+      "lon": -8.026379,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "finnadoos:familycensus:08:1926"
+     },
+     "caption": "Finnadoos had one McGuire household in 1926, headed by Bella.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "finnadoos:familycensus:08:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "finnadoos:family:08",
+      "label": "McGuire",
+      "run": false
+     }
     }
    ]
   }

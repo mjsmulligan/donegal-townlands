@@ -95,93 +95,15 @@
    ]
   },
   {
-   "id": "drumadoney:ch:baptisms",
-   "title": "Baptisms, 1874 to 1875",
+   "id": "drumadoney:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "drumadoney:beat:baptism:1874-10-25-TAW-B-p013-r160",
-     "kind": "baptism",
-     "chapter": "drumadoney:ch:baptisms",
-     "time": {
-      "label": "25 October 1874",
-      "iso": "1874-10-25",
-      "sort": "1874-10-25",
-      "approximate": false
-     },
-     "place": {
-      "townland": "drumadoney",
-      "name": "Drumadoney",
-      "logainm_id": "14273",
-      "lat": 54.658955,
-      "lon": -8.036524,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "drumadoney:baptism:TAW-B-p013-r160"
-     },
-     "caption": "Mary Anne Lawn was baptised on 25 October 1874. John Lawn and Margaret Devenney were the parents.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "drumadoney:baptism:TAW-B-p013-r160"
-      ],
-      "basis": "page_place",
-      "certainty": "stated"
-     },
-     "duration_ms": 6800,
-     "audio": null
-    },
-    {
-     "id": "drumadoney:beat:baptism:1875",
-     "kind": "baptism",
-     "chapter": "drumadoney:ch:baptisms",
-     "time": {
-      "label": "31 January 1875",
-      "iso": "1875-01-31",
-      "sort": "1875-01-31",
-      "approximate": false
-     },
-     "place": {
-      "townland": "drumadoney",
-      "name": "Drumadoney",
-      "logainm_id": "14273",
-      "lat": 54.658955,
-      "lon": -8.036524,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "drumadoney:baptism:TAW-B-p015-r184"
-     },
-     "caption": "Three children were baptised in 1875: John Murphy on 31 January, Mary Murphy on 8 August and Margaret Murphy on 8 August.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "drumadoney:baptism:TAW-B-p015-r184",
-       "drumadoney:baptism:TAW-B-p018-r233",
-       "drumadoney:baptism:TAW-B-p018-r234"
-      ],
-      "basis": "page_place",
-      "certainty": "stated"
-     },
-     "duration_ms": 8800,
-     "audio": null
-    }
-   ]
-  },
-  {
-   "id": "drumadoney:ch:1901",
-   "title": "1901",
-   "beats": [
-    {
-     "id": "drumadoney:beat:census:1901",
+     "id": "drumadoney:beat:census:returns",
      "kind": "census",
-     "chapter": "drumadoney:ch:1901",
+     "chapter": "drumadoney:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1926",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -198,33 +120,177 @@
       "stage": "map",
       "open_card": "drumadoney:census:1901"
      },
-     "caption": "In 1901, 29 people in seven households lived in Drumadoney. Heads of household included Cannon, Gallagher and Hilley.",
+     "caption": "The censuses of 1901, 1911 and 1926 counted 29, 17 and 14 people in Drumadoney, in 7, 6 and 7 households. Heads of household included Cannon, Gallagher and Hilley.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "drumadoney:census:1901"
+       "drumadoney:census:1901",
+       "drumadoney:census:1911",
+       "drumadoney:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 7200,
+     "duration_ms": 11600,
      "audio": null,
      "counts": {
-      "people": 29,
-      "households": 7
+      "returns": [
+       {
+        "year": "1901",
+        "people": 29,
+        "households": 7
+       },
+       {
+        "year": "1911",
+        "people": 17,
+        "households": 6
+       },
+       {
+        "year": "1926",
+        "people": 14,
+        "households": 7
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "drumadoney:ch:1911",
-   "title": "1911",
+   "id": "drumadoney:ch:families",
+   "title": "The families of Drumadoney",
    "beats": [
     {
-     "id": "drumadoney:beat:census:1911",
-     "kind": "census",
-     "chapter": "drumadoney:ch:1911",
+     "id": "drumadoney:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "drumadoney:ch:families",
+     "time": {
+      "label": "The families of Drumadoney",
+      "iso": "1874-10-25",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumadoney",
+      "name": "Drumadoney",
+      "logainm_id": "14273",
+      "lat": 54.658955,
+      "lon": -8.036524,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumadoney:baptism:TAW-B-p013-r160"
+     },
+     "caption": "Here are the families of Drumadoney, from 1874 to 1926. First, the Cannon and Hilly families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumadoney:baptism:TAW-B-p013-r160",
+       "drumadoney:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "drumadoney:family:01",
+      "label": "Cannon",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumadoney:ch:family-01",
+   "title": "The Cannon family",
+   "beats": [
+    {
+     "id": "drumadoney:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "drumadoney:ch:family-01",
+     "time": {
+      "label": "The Cannon family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumadoney",
+      "name": "Drumadoney",
+      "logainm_id": "14273",
+      "lat": 54.658955,
+      "lon": -8.036524,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumadoney:familypresence:01"
+     },
+     "caption": "The Cannon family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumadoney:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drumadoney:family:01",
+      "label": "Cannon",
+      "run": true
+     }
+    },
+    {
+     "id": "drumadoney:beat:familycensus:01-1901",
+     "kind": "familycensus",
+     "chapter": "drumadoney:ch:family-01",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumadoney",
+      "name": "Drumadoney",
+      "logainm_id": "14273",
+      "lat": 54.658955,
+      "lon": -8.036524,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumadoney:familycensus:01:1901"
+     },
+     "caption": "Drumadoney had one Cannon household in 1901, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumadoney:familycensus:01:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumadoney:family:01",
+      "label": "Cannon",
+      "run": true
+     }
+    },
+    {
+     "id": "drumadoney:beat:familycensus:01-1911",
+     "kind": "familycensus",
+     "chapter": "drumadoney:ch:family-01",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -241,35 +307,156 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "drumadoney:census:1911"
+      "open_card": "drumadoney:familycensus:01:1911"
      },
-     "caption": "In 1911, seventeen people in six households lived in Drumadoney. Heads of household included Cannon, Flanagan and Hilly.",
+     "caption": "Drumadoney had one Cannon household in 1911, headed by John.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "drumadoney:census:1911"
+       "drumadoney:familycensus:01:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 7200,
+     "duration_ms": 4000,
      "audio": null,
-     "counts": {
-      "people": 17,
-      "households": 6
+     "thread": {
+      "id": "drumadoney:family:01",
+      "label": "Cannon",
+      "run": true
      }
     }
    ]
   },
   {
-   "id": "drumadoney:ch:1926",
-   "title": "1926",
+   "id": "drumadoney:ch:family-05",
+   "title": "The Hilly family",
    "beats": [
     {
-     "id": "drumadoney:beat:census:1926",
-     "kind": "census",
-     "chapter": "drumadoney:ch:1926",
+     "id": "drumadoney:beat:familyhead:05",
+     "kind": "familyhead",
+     "chapter": "drumadoney:ch:family-05",
+     "time": {
+      "label": "The Hilly family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumadoney",
+      "name": "Drumadoney",
+      "logainm_id": "14273",
+      "lat": 54.658955,
+      "lon": -8.036524,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumadoney:familypresence:05"
+     },
+     "caption": "The Hilly family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumadoney:familypresence:05"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drumadoney:family:05",
+      "label": "Hilly",
+      "run": true
+     }
+    },
+    {
+     "id": "drumadoney:beat:familycensus:05-1901",
+     "kind": "familycensus",
+     "chapter": "drumadoney:ch:family-05",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumadoney",
+      "name": "Drumadoney",
+      "logainm_id": "14273",
+      "lat": 54.658955,
+      "lon": -8.036524,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumadoney:familycensus:05:1901"
+     },
+     "caption": "Drumadoney had one Hilly household in 1901, headed by Owen.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumadoney:familycensus:05:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumadoney:family:05",
+      "label": "Hilly",
+      "run": true
+     }
+    },
+    {
+     "id": "drumadoney:beat:familycensus:05-1911",
+     "kind": "familycensus",
+     "chapter": "drumadoney:ch:family-05",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumadoney",
+      "name": "Drumadoney",
+      "logainm_id": "14273",
+      "lat": 54.658955,
+      "lon": -8.036524,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumadoney:familycensus:05:1911"
+     },
+     "caption": "Drumadoney had one Hilly household in 1911, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumadoney:familycensus:05:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumadoney:family:05",
+      "label": "Hilly",
+      "run": true
+     }
+    },
+    {
+     "id": "drumadoney:beat:familycensus:05-1926",
+     "kind": "familycensus",
+     "chapter": "drumadoney:ch:family-05",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -286,25 +473,32 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "drumadoney:census:1926"
+      "open_card": "drumadoney:familycensus:05:1926"
      },
-     "caption": "Drumadoney had fourteen people in seven households in 1926. Heads of household included Hilly.",
+     "caption": "Drumadoney had one Hilly household in 1926, headed by Mary.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "drumadoney:census:1926"
+       "drumadoney:familycensus:05:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 5600,
+     "duration_ms": 4000,
      "audio": null,
-     "counts": {
-      "people": 14,
-      "households": 7
+     "thread": {
+      "id": "drumadoney:family:05",
+      "label": "Hilly",
+      "run": true
      }
-    },
+    }
+   ]
+  },
+  {
+   "id": "drumadoney:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "drumadoney:beat:closing:end",
      "kind": "closing",
@@ -339,6 +533,802 @@
      },
      "duration_ms": 4000,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "drumadoney:ch:family-06",
+   "title": "The Lawn family",
+   "beats": [
+    {
+     "id": "drumadoney:beat:baptism:1874-10-25-TAW-B-p013-r160",
+     "kind": "baptism",
+     "chapter": "drumadoney:ch:family-06",
+     "time": {
+      "label": "25 October 1874",
+      "iso": "1874-10-25",
+      "sort": "1874-10-25",
+      "approximate": false
+     },
+     "place": {
+      "townland": "drumadoney",
+      "name": "Drumadoney",
+      "logainm_id": "14273",
+      "lat": 54.658955,
+      "lon": -8.036524,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumadoney:baptism:TAW-B-p013-r160"
+     },
+     "caption": "Mary Anne Lawn was baptised on 25 October 1874. John Lawn and Margaret Devenney were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumadoney:baptism:TAW-B-p013-r160"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "thread": {
+      "id": "drumadoney:family:06",
+      "label": "Lawn",
+      "run": false
+     }
+    },
+    {
+     "id": "drumadoney:beat:familyhead:06",
+     "kind": "familyhead",
+     "chapter": "drumadoney:ch:family-06",
+     "time": {
+      "label": "The Lawn family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumadoney",
+      "name": "Drumadoney",
+      "logainm_id": "14273",
+      "lat": 54.658955,
+      "lon": -8.036524,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumadoney:familypresence:06"
+     },
+     "caption": "The Lawn family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumadoney:familypresence:06"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drumadoney:family:06",
+      "label": "Lawn",
+      "run": false
+     }
+    },
+    {
+     "id": "drumadoney:beat:familycensus:06-1901",
+     "kind": "familycensus",
+     "chapter": "drumadoney:ch:family-06",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumadoney",
+      "name": "Drumadoney",
+      "logainm_id": "14273",
+      "lat": 54.658955,
+      "lon": -8.036524,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumadoney:familycensus:06:1901"
+     },
+     "caption": "Drumadoney had one Lawn household in 1901, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumadoney:familycensus:06:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumadoney:family:06",
+      "label": "Lawn",
+      "run": false
+     }
+    },
+    {
+     "id": "drumadoney:beat:familycensus:06-1911",
+     "kind": "familycensus",
+     "chapter": "drumadoney:ch:family-06",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumadoney",
+      "name": "Drumadoney",
+      "logainm_id": "14273",
+      "lat": 54.658955,
+      "lon": -8.036524,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumadoney:familycensus:06:1911"
+     },
+     "caption": "Drumadoney had one Lawn household in 1911, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumadoney:familycensus:06:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumadoney:family:06",
+      "label": "Lawn",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumadoney:ch:family-07",
+   "title": "The Murphy family",
+   "beats": [
+    {
+     "id": "drumadoney:beat:baptism:1875-01-31-TAW-B-p015-r184",
+     "kind": "baptism",
+     "chapter": "drumadoney:ch:family-07",
+     "time": {
+      "label": "31 January 1875",
+      "iso": "1875-01-31",
+      "sort": "1875-01-31",
+      "approximate": false
+     },
+     "place": {
+      "townland": "drumadoney",
+      "name": "Drumadoney",
+      "logainm_id": "14273",
+      "lat": 54.658955,
+      "lon": -8.036524,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumadoney:baptism:TAW-B-p015-r184"
+     },
+     "caption": "John Murphy was baptised on 31 January 1875. Patrick Murphy and Mary Kennedy were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumadoney:baptism:TAW-B-p015-r184"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "drumadoney:family:07",
+      "label": "Murphy",
+      "run": false
+     }
+    },
+    {
+     "id": "drumadoney:beat:baptism:1875-08-08-TAW-B-p018-r233",
+     "kind": "baptism",
+     "chapter": "drumadoney:ch:family-07",
+     "time": {
+      "label": "8 August 1875",
+      "iso": "1875-08-08",
+      "sort": "1875-08-08",
+      "approximate": false
+     },
+     "place": {
+      "townland": "drumadoney",
+      "name": "Drumadoney",
+      "logainm_id": "14273",
+      "lat": 54.658955,
+      "lon": -8.036524,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumadoney:baptism:TAW-B-p018-r233"
+     },
+     "caption": "Mary Murphy was baptised on 8 August 1875. John Murphy and Hannah Friel were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumadoney:baptism:TAW-B-p018-r233"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "drumadoney:family:07",
+      "label": "Murphy",
+      "run": false
+     }
+    },
+    {
+     "id": "drumadoney:beat:baptism:1875-08-08-TAW-B-p018-r234",
+     "kind": "baptism",
+     "chapter": "drumadoney:ch:family-07",
+     "time": {
+      "label": "8 August 1875",
+      "iso": "1875-08-08",
+      "sort": "1875-08-08",
+      "approximate": false
+     },
+     "place": {
+      "townland": "drumadoney",
+      "name": "Drumadoney",
+      "logainm_id": "14273",
+      "lat": 54.658955,
+      "lon": -8.036524,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumadoney:baptism:TAW-B-p018-r234"
+     },
+     "caption": "Margaret Murphy was baptised on 8 August 1875. John Murphy and Hannah Friel were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumadoney:baptism:TAW-B-p018-r234"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "drumadoney:family:07",
+      "label": "Murphy",
+      "run": false
+     }
+    },
+    {
+     "id": "drumadoney:beat:familyhead:07",
+     "kind": "familyhead",
+     "chapter": "drumadoney:ch:family-07",
+     "time": {
+      "label": "The Murphy family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumadoney",
+      "name": "Drumadoney",
+      "logainm_id": "14273",
+      "lat": 54.658955,
+      "lon": -8.036524,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumadoney:familypresence:07"
+     },
+     "caption": "The Murphy family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumadoney:familypresence:07"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drumadoney:family:07",
+      "label": "Murphy",
+      "run": false
+     }
+    },
+    {
+     "id": "drumadoney:beat:familycensus:07-1901",
+     "kind": "familycensus",
+     "chapter": "drumadoney:ch:family-07",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumadoney",
+      "name": "Drumadoney",
+      "logainm_id": "14273",
+      "lat": 54.658955,
+      "lon": -8.036524,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumadoney:familycensus:07:1901"
+     },
+     "caption": "Drumadoney had one Murphy household in 1901, headed by Mary.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumadoney:familycensus:07:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumadoney:family:07",
+      "label": "Murphy",
+      "run": false
+     }
+    },
+    {
+     "id": "drumadoney:beat:familycensus:07-1911",
+     "kind": "familycensus",
+     "chapter": "drumadoney:ch:family-07",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumadoney",
+      "name": "Drumadoney",
+      "logainm_id": "14273",
+      "lat": 54.658955,
+      "lon": -8.036524,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumadoney:familycensus:07:1911"
+     },
+     "caption": "Drumadoney had one Murphy household in 1911, headed by Mary.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumadoney:familycensus:07:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumadoney:family:07",
+      "label": "Murphy",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumadoney:ch:family-03",
+   "title": "The Gallagher family",
+   "beats": [
+    {
+     "id": "drumadoney:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "drumadoney:ch:family-03",
+     "time": {
+      "label": "The Gallagher family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumadoney",
+      "name": "Drumadoney",
+      "logainm_id": "14273",
+      "lat": 54.658955,
+      "lon": -8.036524,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumadoney:familypresence:03"
+     },
+     "caption": "The Gallagher family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumadoney:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumadoney:family:03",
+      "label": "Gallagher",
+      "run": false
+     }
+    },
+    {
+     "id": "drumadoney:beat:familycensus:03-1901",
+     "kind": "familycensus",
+     "chapter": "drumadoney:ch:family-03",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumadoney",
+      "name": "Drumadoney",
+      "logainm_id": "14273",
+      "lat": 54.658955,
+      "lon": -8.036524,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumadoney:familycensus:03:1901"
+     },
+     "caption": "Drumadoney had one Gallagher household in 1901, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumadoney:familycensus:03:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumadoney:family:03",
+      "label": "Gallagher",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumadoney:ch:family-04",
+   "title": "The Hilley family",
+   "beats": [
+    {
+     "id": "drumadoney:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "drumadoney:ch:family-04",
+     "time": {
+      "label": "The Hilley family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumadoney",
+      "name": "Drumadoney",
+      "logainm_id": "14273",
+      "lat": 54.658955,
+      "lon": -8.036524,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumadoney:familypresence:04"
+     },
+     "caption": "The Hilley family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumadoney:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumadoney:family:04",
+      "label": "Hilley",
+      "run": false
+     }
+    },
+    {
+     "id": "drumadoney:beat:familycensus:04-1901",
+     "kind": "familycensus",
+     "chapter": "drumadoney:ch:family-04",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumadoney",
+      "name": "Drumadoney",
+      "logainm_id": "14273",
+      "lat": 54.658955,
+      "lon": -8.036524,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumadoney:familycensus:04:1901"
+     },
+     "caption": "Drumadoney had one Hilley household in 1901, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumadoney:familycensus:04:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumadoney:family:04",
+      "label": "Hilley",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumadoney:ch:family-08",
+   "title": "The Travers family",
+   "beats": [
+    {
+     "id": "drumadoney:beat:familyhead:08",
+     "kind": "familyhead",
+     "chapter": "drumadoney:ch:family-08",
+     "time": {
+      "label": "The Travers family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumadoney",
+      "name": "Drumadoney",
+      "logainm_id": "14273",
+      "lat": 54.658955,
+      "lon": -8.036524,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumadoney:familypresence:08"
+     },
+     "caption": "The Travers family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumadoney:familypresence:08"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drumadoney:family:08",
+      "label": "Travers",
+      "run": false
+     }
+    },
+    {
+     "id": "drumadoney:beat:familycensus:08-1901",
+     "kind": "familycensus",
+     "chapter": "drumadoney:ch:family-08",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumadoney",
+      "name": "Drumadoney",
+      "logainm_id": "14273",
+      "lat": 54.658955,
+      "lon": -8.036524,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumadoney:familycensus:08:1901"
+     },
+     "caption": "Drumadoney had one Travers household in 1901, headed by Bridget.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumadoney:familycensus:08:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumadoney:family:08",
+      "label": "Travers",
+      "run": false
+     }
+    },
+    {
+     "id": "drumadoney:beat:familycensus:08-1911",
+     "kind": "familycensus",
+     "chapter": "drumadoney:ch:family-08",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumadoney",
+      "name": "Drumadoney",
+      "logainm_id": "14273",
+      "lat": 54.658955,
+      "lon": -8.036524,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumadoney:familycensus:08:1911"
+     },
+     "caption": "Drumadoney had one Travers household in 1911, headed by Bridget.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumadoney:familycensus:08:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumadoney:family:08",
+      "label": "Travers",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumadoney:ch:family-02",
+   "title": "The Flanagan family",
+   "beats": [
+    {
+     "id": "drumadoney:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "drumadoney:ch:family-02",
+     "time": {
+      "label": "The Flanagan family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumadoney",
+      "name": "Drumadoney",
+      "logainm_id": "14273",
+      "lat": 54.658955,
+      "lon": -8.036524,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumadoney:familypresence:02"
+     },
+     "caption": "The Flanagan family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumadoney:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumadoney:family:02",
+      "label": "Flanagan",
+      "run": false
+     }
+    },
+    {
+     "id": "drumadoney:beat:familycensus:02-1911",
+     "kind": "familycensus",
+     "chapter": "drumadoney:ch:family-02",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumadoney",
+      "name": "Drumadoney",
+      "logainm_id": "14273",
+      "lat": 54.658955,
+      "lon": -8.036524,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumadoney:familycensus:02:1911"
+     },
+     "caption": "Drumadoney had one Flanagan household in 1911, headed by Edward.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumadoney:familycensus:02:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumadoney:family:02",
+      "label": "Flanagan",
+      "run": false
+     }
     }
    ]
   }

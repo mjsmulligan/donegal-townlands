@@ -52,15 +52,15 @@
    ]
   },
   {
-   "id": "loughcuill:ch:1901",
-   "title": "1901",
+   "id": "loughcuill:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "loughcuill:beat:census:1901",
+     "id": "loughcuill:beat:census:returns",
      "kind": "census",
-     "chapter": "loughcuill:ch:1901",
+     "chapter": "loughcuill:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1926",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -77,33 +77,177 @@
       "stage": "map",
       "open_card": "loughcuill:census:1901"
      },
-     "caption": "Loughcuill had ten people in two households in 1901. Heads of household included McCool and McCoole.",
+     "caption": "The censuses of 1901, 1911 and 1926 counted 10, 10 and 4 people in Loughcuill, in 2, 2 and 2 households. Heads of household included McCool and McCoole.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "loughcuill:census:1901"
+       "loughcuill:census:1901",
+       "loughcuill:census:1911",
+       "loughcuill:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 6400,
+     "duration_ms": 11200,
      "audio": null,
      "counts": {
-      "people": 10,
-      "households": 2
+      "returns": [
+       {
+        "year": "1901",
+        "people": 10,
+        "households": 2
+       },
+       {
+        "year": "1911",
+        "people": 10,
+        "households": 2
+       },
+       {
+        "year": "1926",
+        "people": 4,
+        "households": 2
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "loughcuill:ch:1911",
-   "title": "1911",
+   "id": "loughcuill:ch:families",
+   "title": "The families of Loughcuill",
    "beats": [
     {
-     "id": "loughcuill:beat:census:1911",
-     "kind": "census",
-     "chapter": "loughcuill:ch:1911",
+     "id": "loughcuill:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "loughcuill:ch:families",
+     "time": {
+      "label": "The families of Loughcuill",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "loughcuill",
+      "name": "Loughcuill",
+      "logainm_id": "14282",
+      "lat": 54.651431,
+      "lon": -7.966367,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "loughcuill:census:1901"
+     },
+     "caption": "Here are the families of Loughcuill, from 1901 to 1926. First, the McCool and McCoole families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "loughcuill:census:1901",
+       "loughcuill:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "loughcuill:family:01",
+      "label": "McCool",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "loughcuill:ch:family-01",
+   "title": "The McCool family",
+   "beats": [
+    {
+     "id": "loughcuill:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "loughcuill:ch:family-01",
+     "time": {
+      "label": "The McCool family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "loughcuill",
+      "name": "Loughcuill",
+      "logainm_id": "14282",
+      "lat": 54.651431,
+      "lon": -7.966367,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "loughcuill:familypresence:01"
+     },
+     "caption": "The McCool family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "loughcuill:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "loughcuill:family:01",
+      "label": "McCool",
+      "run": true
+     }
+    },
+    {
+     "id": "loughcuill:beat:familycensus:01-1901",
+     "kind": "familycensus",
+     "chapter": "loughcuill:ch:family-01",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "loughcuill",
+      "name": "Loughcuill",
+      "logainm_id": "14282",
+      "lat": 54.651431,
+      "lon": -7.966367,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "loughcuill:familycensus:01:1901"
+     },
+     "caption": "Loughcuill had one McCool household in 1901, headed by Bridget.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "loughcuill:familycensus:01:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "loughcuill:family:01",
+      "label": "McCool",
+      "run": true
+     }
+    },
+    {
+     "id": "loughcuill:beat:familycensus:01-1911",
+     "kind": "familycensus",
+     "chapter": "loughcuill:ch:family-01",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -120,39 +264,40 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "loughcuill:census:1911"
+      "open_card": "loughcuill:familycensus:01:1911"
      },
-     "caption": "Loughcuill had ten people in two households in 1911. Heads of household included McCool.",
+     "caption": "Loughcuill had two McCool households in 1911, headed by Hugh and Bridget.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "loughcuill:census:1911"
+       "loughcuill:familycensus:01:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 5600,
+     "duration_ms": 4800,
      "audio": null,
-     "counts": {
-      "people": 10,
-      "households": 2
+     "thread": {
+      "id": "loughcuill:family:01",
+      "label": "McCool",
+      "run": true
      }
     }
    ]
   },
   {
-   "id": "loughcuill:ch:1926",
-   "title": "1926",
+   "id": "loughcuill:ch:family-02",
+   "title": "The McCoole family",
    "beats": [
     {
-     "id": "loughcuill:beat:census:1926",
-     "kind": "census",
-     "chapter": "loughcuill:ch:1926",
+     "id": "loughcuill:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "loughcuill:ch:family-02",
      "time": {
-      "label": "1926",
-      "iso": "1926",
-      "sort": "1926-01-01",
+      "label": "The McCoole family",
+      "iso": "1901",
+      "sort": "1901-01-01",
       "approximate": true
      },
      "place": {
@@ -165,25 +310,72 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "loughcuill:census:1926"
+      "open_card": "loughcuill:familypresence:02"
      },
-     "caption": "Loughcuill had four people in two households in 1926.",
+     "caption": "The McCoole family appear in the records in 1901.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "loughcuill:census:1926"
+       "loughcuill:familypresence:02"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
      "duration_ms": 4000,
      "audio": null,
-     "counts": {
-      "people": 4,
-      "households": 2
+     "thread": {
+      "id": "loughcuill:family:02",
+      "label": "McCoole",
+      "run": true
      }
     },
+    {
+     "id": "loughcuill:beat:familycensus:02-1901",
+     "kind": "familycensus",
+     "chapter": "loughcuill:ch:family-02",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "loughcuill",
+      "name": "Loughcuill",
+      "logainm_id": "14282",
+      "lat": 54.651431,
+      "lon": -7.966367,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "loughcuill:familycensus:02:1901"
+     },
+     "caption": "Loughcuill had one McCoole household in 1901, headed by Hugh.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "loughcuill:familycensus:02:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "loughcuill:family:02",
+      "label": "McCoole",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "loughcuill:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "loughcuill:beat:closing:end",
      "kind": "closing",

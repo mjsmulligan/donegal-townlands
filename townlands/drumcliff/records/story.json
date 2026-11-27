@@ -52,15 +52,15 @@
    ]
   },
   {
-   "id": "drumcliff:ch:1911",
-   "title": "1911",
+   "id": "drumcliff:ch:census",
+   "title": "1911 to 1926",
    "beats": [
     {
-     "id": "drumcliff:beat:census:1911",
+     "id": "drumcliff:beat:census:returns",
      "kind": "census",
-     "chapter": "drumcliff:ch:1911",
+     "chapter": "drumcliff:ch:census",
      "time": {
-      "label": "1911",
+      "label": "1911 to 1926",
       "iso": "1911",
       "sort": "1911-01-01",
       "approximate": true
@@ -77,33 +77,171 @@
       "stage": "map",
       "open_card": "drumcliff:census:1911"
      },
-     "caption": "Drumcliff had seven people in two households in 1911. Heads of household included Moran and O'Brien.",
+     "caption": "The censuses of 1911 and 1926 counted 7 and 8 people in Drumcliff, in 2 and 2 households. Heads of household included Moran and O'Brien.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "drumcliff:census:1911"
+       "drumcliff:census:1911",
+       "drumcliff:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 6400,
+     "duration_ms": 10000,
      "audio": null,
      "counts": {
-      "people": 7,
-      "households": 2
+      "returns": [
+       {
+        "year": "1911",
+        "people": 7,
+        "households": 2
+       },
+       {
+        "year": "1926",
+        "people": 8,
+        "households": 2
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "drumcliff:ch:1926",
-   "title": "1926",
+   "id": "drumcliff:ch:families",
+   "title": "The families of Drumcliff",
    "beats": [
     {
-     "id": "drumcliff:beat:census:1926",
-     "kind": "census",
-     "chapter": "drumcliff:ch:1926",
+     "id": "drumcliff:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "drumcliff:ch:families",
+     "time": {
+      "label": "The families of Drumcliff",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumcliff",
+      "name": "Drumcliff",
+      "logainm_id": "14006",
+      "lat": 54.654452,
+      "lon": -8.119198,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumcliff:census:1911"
+     },
+     "caption": "Here are the families of Drumcliff, from 1911 to 1926. First, the Moran and O'Brien families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumcliff:census:1911",
+       "drumcliff:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "drumcliff:family:01",
+      "label": "Moran",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumcliff:ch:family-01",
+   "title": "The Moran family",
+   "beats": [
+    {
+     "id": "drumcliff:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "drumcliff:ch:family-01",
+     "time": {
+      "label": "The Moran family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumcliff",
+      "name": "Drumcliff",
+      "logainm_id": "14006",
+      "lat": 54.654452,
+      "lon": -8.119198,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumcliff:familypresence:01"
+     },
+     "caption": "The Moran family appear in the records from 1911 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumcliff:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drumcliff:family:01",
+      "label": "Moran",
+      "run": true
+     }
+    },
+    {
+     "id": "drumcliff:beat:familycensus:01-1911",
+     "kind": "familycensus",
+     "chapter": "drumcliff:ch:family-01",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumcliff",
+      "name": "Drumcliff",
+      "logainm_id": "14006",
+      "lat": 54.654452,
+      "lon": -8.119198,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumcliff:familycensus:01:1911"
+     },
+     "caption": "Drumcliff had one Moran household in 1911, headed by Francis.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumcliff:familycensus:01:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumcliff:family:01",
+      "label": "Moran",
+      "run": true
+     }
+    },
+    {
+     "id": "drumcliff:beat:familycensus:01-1926",
+     "kind": "familycensus",
+     "chapter": "drumcliff:ch:family-01",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -120,25 +258,158 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "drumcliff:census:1926"
+      "open_card": "drumcliff:familycensus:01:1926"
      },
-     "caption": "Drumcliff had eight people in two households in 1926. Heads of household included Moran and O'Brien.",
+     "caption": "Drumcliff had one Moran household in 1926, headed by Francis.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "drumcliff:census:1926"
+       "drumcliff:familycensus:01:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6400,
+     "duration_ms": 4000,
      "audio": null,
-     "counts": {
-      "people": 8,
-      "households": 2
+     "thread": {
+      "id": "drumcliff:family:01",
+      "label": "Moran",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumcliff:ch:family-02",
+   "title": "The O'Brien family",
+   "beats": [
+    {
+     "id": "drumcliff:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "drumcliff:ch:family-02",
+     "time": {
+      "label": "The O'Brien family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumcliff",
+      "name": "Drumcliff",
+      "logainm_id": "14006",
+      "lat": 54.654452,
+      "lon": -8.119198,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumcliff:familypresence:02"
+     },
+     "caption": "The O'Brien family appear in the records from 1911 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumcliff:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drumcliff:family:02",
+      "label": "O'Brien",
+      "run": true
      }
     },
+    {
+     "id": "drumcliff:beat:familycensus:02-1911",
+     "kind": "familycensus",
+     "chapter": "drumcliff:ch:family-02",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumcliff",
+      "name": "Drumcliff",
+      "logainm_id": "14006",
+      "lat": 54.654452,
+      "lon": -8.119198,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumcliff:familycensus:02:1911"
+     },
+     "caption": "Drumcliff had one O'Brien household in 1911, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumcliff:familycensus:02:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumcliff:family:02",
+      "label": "O'Brien",
+      "run": true
+     }
+    },
+    {
+     "id": "drumcliff:beat:familycensus:02-1926",
+     "kind": "familycensus",
+     "chapter": "drumcliff:ch:family-02",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumcliff",
+      "name": "Drumcliff",
+      "logainm_id": "14006",
+      "lat": 54.654452,
+      "lon": -8.119198,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumcliff:familycensus:02:1926"
+     },
+     "caption": "Drumcliff had one O'Brien household in 1926, headed by Brigid.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumcliff:familycensus:02:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "drumcliff:family:02",
+      "label": "O'Brien",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumcliff:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "drumcliff:beat:closing:end",
      "kind": "closing",

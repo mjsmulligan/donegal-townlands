@@ -52,15 +52,15 @@
    ]
   },
   {
-   "id": "croaghnameal:ch:1901",
-   "title": "1901",
+   "id": "croaghnameal:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "croaghnameal:beat:census:1901",
+     "id": "croaghnameal:beat:census:returns",
      "kind": "census",
-     "chapter": "croaghnameal:ch:1901",
+     "chapter": "croaghnameal:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1926",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -77,33 +77,177 @@
       "stage": "map",
       "open_card": "croaghnameal:census:1901"
      },
-     "caption": "Croaghnameal had 23 people in four households in 1901. Heads of household included Gallagher.",
+     "caption": "The censuses of 1901, 1911 and 1926 counted 23, 25 and 20 people in Croaghnameal, in 4, 4 and 4 households. Heads of household included Gallagher, McGrory and McGroary.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "croaghnameal:census:1901"
+       "croaghnameal:census:1901",
+       "croaghnameal:census:1911",
+       "croaghnameal:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 5600,
+     "duration_ms": 11600,
      "audio": null,
      "counts": {
-      "people": 23,
-      "households": 4
+      "returns": [
+       {
+        "year": "1901",
+        "people": 23,
+        "households": 4
+       },
+       {
+        "year": "1911",
+        "people": 25,
+        "households": 4
+       },
+       {
+        "year": "1926",
+        "people": 20,
+        "households": 4
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "croaghnameal:ch:1911",
-   "title": "1911",
+   "id": "croaghnameal:ch:families",
+   "title": "The families of Croaghnameal",
    "beats": [
     {
-     "id": "croaghnameal:beat:census:1911",
-     "kind": "census",
-     "chapter": "croaghnameal:ch:1911",
+     "id": "croaghnameal:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "croaghnameal:ch:families",
+     "time": {
+      "label": "The families of Croaghnameal",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "croaghnameal",
+      "name": "Croaghnameal",
+      "logainm_id": "14291",
+      "lat": 54.651531,
+      "lon": -7.95902,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "croaghnameal:census:1901"
+     },
+     "caption": "Here are the families of Croaghnameal, from 1901 to 1926. First, the Gallagher and McGroary families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "croaghnameal:census:1901",
+       "croaghnameal:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "croaghnameal:family:01",
+      "label": "Gallagher",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "croaghnameal:ch:family-01",
+   "title": "The Gallagher family",
+   "beats": [
+    {
+     "id": "croaghnameal:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "croaghnameal:ch:family-01",
+     "time": {
+      "label": "The Gallagher family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "croaghnameal",
+      "name": "Croaghnameal",
+      "logainm_id": "14291",
+      "lat": 54.651531,
+      "lon": -7.95902,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "croaghnameal:familypresence:01"
+     },
+     "caption": "The Gallagher family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "croaghnameal:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "croaghnameal:family:01",
+      "label": "Gallagher",
+      "run": true
+     }
+    },
+    {
+     "id": "croaghnameal:beat:familycensus:01-1901",
+     "kind": "familycensus",
+     "chapter": "croaghnameal:ch:family-01",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "croaghnameal",
+      "name": "Croaghnameal",
+      "logainm_id": "14291",
+      "lat": 54.651531,
+      "lon": -7.95902,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "croaghnameal:familycensus:01:1901"
+     },
+     "caption": "Croaghnameal had four Gallagher households in 1901, headed by Patrick, Anne, James and Bridget.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "croaghnameal:familycensus:01:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5600,
+     "audio": null,
+     "thread": {
+      "id": "croaghnameal:family:01",
+      "label": "Gallagher",
+      "run": true
+     }
+    },
+    {
+     "id": "croaghnameal:beat:familycensus:01-1911",
+     "kind": "familycensus",
+     "chapter": "croaghnameal:ch:family-01",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -120,35 +264,30 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "croaghnameal:census:1911"
+      "open_card": "croaghnameal:familycensus:01:1911"
      },
-     "caption": "In 1911, 25 people in four households lived in Croaghnameal. Heads of household included Gallagher and McGrory.",
+     "caption": "Croaghnameal had three Gallagher households in 1911, headed by Patrick, James and Neil.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "croaghnameal:census:1911"
+       "croaghnameal:familycensus:01:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6800,
+     "duration_ms": 5200,
      "audio": null,
-     "counts": {
-      "people": 25,
-      "households": 4
+     "thread": {
+      "id": "croaghnameal:family:01",
+      "label": "Gallagher",
+      "run": true
      }
-    }
-   ]
-  },
-  {
-   "id": "croaghnameal:ch:1926",
-   "title": "1926",
-   "beats": [
+    },
     {
-     "id": "croaghnameal:beat:census:1926",
-     "kind": "census",
-     "chapter": "croaghnameal:ch:1926",
+     "id": "croaghnameal:beat:familycensus:01-1926",
+     "kind": "familycensus",
+     "chapter": "croaghnameal:ch:family-01",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -165,25 +304,118 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "croaghnameal:census:1926"
+      "open_card": "croaghnameal:familycensus:01:1926"
      },
-     "caption": "In 1926, twenty people in four households lived in Croaghnameal. Heads of household included Gallagher, McGroary and Mullen.",
+     "caption": "Croaghnameal had one Gallagher household in 1926, headed by Bridget C.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "croaghnameal:census:1926"
+       "croaghnameal:familycensus:01:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 7200,
+     "duration_ms": 4400,
      "audio": null,
-     "counts": {
-      "people": 20,
-      "households": 4
+     "thread": {
+      "id": "croaghnameal:family:01",
+      "label": "Gallagher",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "croaghnameal:ch:family-02",
+   "title": "The McGroary family",
+   "beats": [
+    {
+     "id": "croaghnameal:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "croaghnameal:ch:family-02",
+     "time": {
+      "label": "The McGroary family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "croaghnameal",
+      "name": "Croaghnameal",
+      "logainm_id": "14291",
+      "lat": 54.651531,
+      "lon": -7.95902,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "croaghnameal:familypresence:02"
+     },
+     "caption": "The McGroary family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "croaghnameal:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "croaghnameal:family:02",
+      "label": "McGroary",
+      "run": true
      }
     },
+    {
+     "id": "croaghnameal:beat:familycensus:02-1926",
+     "kind": "familycensus",
+     "chapter": "croaghnameal:ch:family-02",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "croaghnameal",
+      "name": "Croaghnameal",
+      "logainm_id": "14291",
+      "lat": 54.651531,
+      "lon": -7.95902,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "croaghnameal:familycensus:02:1926"
+     },
+     "caption": "Croaghnameal had one McGroary household in 1926, headed by Patrick F.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "croaghnameal:familycensus:02:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "croaghnameal:family:02",
+      "label": "McGroary",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "croaghnameal:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "croaghnameal:beat:closing:end",
      "kind": "closing",
@@ -218,6 +450,178 @@
      },
      "duration_ms": 4000,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "croaghnameal:ch:family-03",
+   "title": "The McGrory family",
+   "beats": [
+    {
+     "id": "croaghnameal:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "croaghnameal:ch:family-03",
+     "time": {
+      "label": "The McGrory family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "croaghnameal",
+      "name": "Croaghnameal",
+      "logainm_id": "14291",
+      "lat": 54.651531,
+      "lon": -7.95902,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "croaghnameal:familypresence:03"
+     },
+     "caption": "The McGrory family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "croaghnameal:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "croaghnameal:family:03",
+      "label": "McGrory",
+      "run": false
+     }
+    },
+    {
+     "id": "croaghnameal:beat:familycensus:03-1911",
+     "kind": "familycensus",
+     "chapter": "croaghnameal:ch:family-03",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "croaghnameal",
+      "name": "Croaghnameal",
+      "logainm_id": "14291",
+      "lat": 54.651531,
+      "lon": -7.95902,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "croaghnameal:familycensus:03:1911"
+     },
+     "caption": "Croaghnameal had one McGrory household in 1911, headed by Henry.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "croaghnameal:familycensus:03:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "croaghnameal:family:03",
+      "label": "McGrory",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "croaghnameal:ch:family-04",
+   "title": "The Mullen family",
+   "beats": [
+    {
+     "id": "croaghnameal:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "croaghnameal:ch:family-04",
+     "time": {
+      "label": "The Mullen family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "croaghnameal",
+      "name": "Croaghnameal",
+      "logainm_id": "14291",
+      "lat": 54.651531,
+      "lon": -7.95902,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "croaghnameal:familypresence:04"
+     },
+     "caption": "The Mullen family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "croaghnameal:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "croaghnameal:family:04",
+      "label": "Mullen",
+      "run": false
+     }
+    },
+    {
+     "id": "croaghnameal:beat:familycensus:04-1926",
+     "kind": "familycensus",
+     "chapter": "croaghnameal:ch:family-04",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "croaghnameal",
+      "name": "Croaghnameal",
+      "logainm_id": "14291",
+      "lat": 54.651531,
+      "lon": -7.95902,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "croaghnameal:familycensus:04:1926"
+     },
+     "caption": "Croaghnameal had one Mullen household in 1926, headed by Thomas.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "croaghnameal:familycensus:04:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "croaghnameal:family:04",
+      "label": "Mullen",
+      "run": false
+     }
     }
    ]
   }

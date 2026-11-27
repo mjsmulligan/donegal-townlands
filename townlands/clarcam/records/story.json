@@ -95,127 +95,15 @@
    ]
   },
   {
-   "id": "clarcam:ch:baptisms",
-   "title": "Baptisms, 1873 to 1875",
+   "id": "clarcam:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "clarcam:beat:baptism:1873",
-     "kind": "baptism",
-     "chapter": "clarcam:ch:baptisms",
-     "time": {
-      "label": "2 February 1873",
-      "iso": "1873-02-02",
-      "sort": "1873-02-02",
-      "approximate": false
-     },
-     "place": {
-      "townland": "clarcam",
-      "name": "Clarcam",
-      "logainm_id": "13960",
-      "lat": 54.666169,
-      "lon": -8.054174,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "clarcam:baptism:TAW-B-p005-r14"
-     },
-     "caption": "Two children were baptised in 1873: Mary Anne McGinty on 2 February and Letitia Kelly on 4 February.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "clarcam:baptism:TAW-B-p005-r14",
-       "clarcam:baptism:TAW-B-p005-r16"
-      ],
-      "basis": "page_place",
-      "certainty": "stated"
-     },
-     "duration_ms": 7200,
-     "audio": null
-    },
-    {
-     "id": "clarcam:beat:baptism:1874-11-25-TAW-B-p013-r165b",
-     "kind": "baptism",
-     "chapter": "clarcam:ch:baptisms",
-     "time": {
-      "label": "25 November 1874",
-      "iso": "1874-11-25",
-      "sort": "1874-11-25",
-      "approximate": false
-     },
-     "place": {
-      "townland": "clarcam",
-      "name": "Clarcam",
-      "logainm_id": "13960",
-      "lat": 54.666169,
-      "lon": -8.054174,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "clarcam:baptism:TAW-B-p013-r165b"
-     },
-     "caption": "Hugh Kelly was baptised on 25 November 1874. Edward Kelly and Mary Harvey were the parents.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "clarcam:baptism:TAW-B-p013-r165b"
-      ],
-      "basis": "page_place",
-      "certainty": "stated"
-     },
-     "duration_ms": 6400,
-     "audio": null
-    },
-    {
-     "id": "clarcam:beat:baptism:1875-01-31-TAW-B-p015-r183",
-     "kind": "baptism",
-     "chapter": "clarcam:ch:baptisms",
-     "time": {
-      "label": "31 January 1875",
-      "iso": "1875-01-31",
-      "sort": "1875-01-31",
-      "approximate": false
-     },
-     "place": {
-      "townland": "clarcam",
-      "name": "Clarcam",
-      "logainm_id": "13960",
-      "lat": 54.666169,
-      "lon": -8.054174,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "clarcam:baptism:TAW-B-p015-r183"
-     },
-     "caption": "Catherine McGinty was baptised on 31 January 1875. Edward McGinty and Mary O'Donnell were the parents.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "clarcam:baptism:TAW-B-p015-r183"
-      ],
-      "basis": "page_place",
-      "certainty": "stated"
-     },
-     "duration_ms": 6400,
-     "audio": null
-    }
-   ]
-  },
-  {
-   "id": "clarcam:ch:1901",
-   "title": "1901",
-   "beats": [
-    {
-     "id": "clarcam:beat:census:1901",
+     "id": "clarcam:beat:census:returns",
      "kind": "census",
-     "chapter": "clarcam:ch:1901",
+     "chapter": "clarcam:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1926",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -232,33 +120,177 @@
       "stage": "map",
       "open_card": "clarcam:census:1901"
      },
-     "caption": "Clarcam had 77 people in eighteen households in 1901. Heads of household included Morrow, Bustard and Kelly.",
+     "caption": "The censuses of 1901, 1911 and 1926 counted 77, 54 and 54 people in Clarcam, in 18, 15 and 16 households. Heads of household included Morrow, Bustard and Kelly.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "clarcam:census:1901"
+       "clarcam:census:1901",
+       "clarcam:census:1911",
+       "clarcam:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 6800,
+     "duration_ms": 11600,
      "audio": null,
      "counts": {
-      "people": 77,
-      "households": 18
+      "returns": [
+       {
+        "year": "1901",
+        "people": 77,
+        "households": 18
+       },
+       {
+        "year": "1911",
+        "people": 54,
+        "households": 15
+       },
+       {
+        "year": "1926",
+        "people": 54,
+        "households": 16
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "clarcam:ch:1911",
-   "title": "1911",
+   "id": "clarcam:ch:families",
+   "title": "The families of Clarcam",
    "beats": [
     {
-     "id": "clarcam:beat:census:1911",
-     "kind": "census",
-     "chapter": "clarcam:ch:1911",
+     "id": "clarcam:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "clarcam:ch:families",
+     "time": {
+      "label": "The families of Clarcam",
+      "iso": "1873-02-02",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcam",
+      "name": "Clarcam",
+      "logainm_id": "13960",
+      "lat": 54.666169,
+      "lon": -8.054174,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcam:baptism:TAW-B-p005-r14"
+     },
+     "caption": "Here are the families of Clarcam, from 1873 to 1926. First, the Bustard and Morrow families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcam:baptism:TAW-B-p005-r14",
+       "clarcam:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "clarcam:family:04",
+      "label": "Bustard",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "clarcam:ch:family-04",
+   "title": "The Bustard family",
+   "beats": [
+    {
+     "id": "clarcam:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "clarcam:ch:family-04",
+     "time": {
+      "label": "The Bustard family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcam",
+      "name": "Clarcam",
+      "logainm_id": "13960",
+      "lat": 54.666169,
+      "lon": -8.054174,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcam:familypresence:04"
+     },
+     "caption": "The Bustard family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcam:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "clarcam:family:04",
+      "label": "Bustard",
+      "run": true
+     }
+    },
+    {
+     "id": "clarcam:beat:familycensus:04-1901",
+     "kind": "familycensus",
+     "chapter": "clarcam:ch:family-04",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcam",
+      "name": "Clarcam",
+      "logainm_id": "13960",
+      "lat": 54.666169,
+      "lon": -8.054174,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcam:familycensus:04:1901"
+     },
+     "caption": "Clarcam had three Bustard households in 1901, headed by Charles, John and Margaret.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcam:familycensus:04:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "clarcam:family:04",
+      "label": "Bustard",
+      "run": true
+     }
+    },
+    {
+     "id": "clarcam:beat:familycensus:04-1911",
+     "kind": "familycensus",
+     "chapter": "clarcam:ch:family-04",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -275,35 +307,30 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "clarcam:census:1911"
+      "open_card": "clarcam:familycensus:04:1911"
      },
-     "caption": "Clarcam had 54 people in fifteen households in 1911. Heads of household included Bustard, Morrow and Buchanan.",
+     "caption": "Clarcam had four Bustard households in 1911, headed by Thomas, Charles, John and William.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "clarcam:census:1911"
+       "clarcam:familycensus:04:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6800,
+     "duration_ms": 5600,
      "audio": null,
-     "counts": {
-      "people": 54,
-      "households": 15
+     "thread": {
+      "id": "clarcam:family:04",
+      "label": "Bustard",
+      "run": true
      }
-    }
-   ]
-  },
-  {
-   "id": "clarcam:ch:1926",
-   "title": "1926",
-   "beats": [
+    },
     {
-     "id": "clarcam:beat:census:1926",
-     "kind": "census",
-     "chapter": "clarcam:ch:1926",
+     "id": "clarcam:beat:familycensus:04-1926",
+     "kind": "familycensus",
+     "chapter": "clarcam:ch:family-04",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -320,25 +347,198 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "clarcam:census:1926"
+      "open_card": "clarcam:familycensus:04:1926"
      },
-     "caption": "Clarcam had 54 people in sixteen households in 1926. Heads of household included Bustard, Morrow and Bartley.",
+     "caption": "Clarcam had five Bustard households in 1926, headed by Hamilton, Ben, William, Thomas and Isabella.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "clarcam:census:1926"
+       "clarcam:familycensus:04:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6800,
+     "duration_ms": 6000,
      "audio": null,
-     "counts": {
-      "people": 54,
-      "households": 16
+     "thread": {
+      "id": "clarcam:family:04",
+      "label": "Bustard",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "clarcam:ch:family-15",
+   "title": "The Morrow family",
+   "beats": [
+    {
+     "id": "clarcam:beat:familyhead:15",
+     "kind": "familyhead",
+     "chapter": "clarcam:ch:family-15",
+     "time": {
+      "label": "The Morrow family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcam",
+      "name": "Clarcam",
+      "logainm_id": "13960",
+      "lat": 54.666169,
+      "lon": -8.054174,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcam:familypresence:15"
+     },
+     "caption": "The Morrow family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcam:familypresence:15"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "clarcam:family:15",
+      "label": "Morrow",
+      "run": true
      }
     },
+    {
+     "id": "clarcam:beat:familycensus:15-1901",
+     "kind": "familycensus",
+     "chapter": "clarcam:ch:family-15",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcam",
+      "name": "Clarcam",
+      "logainm_id": "13960",
+      "lat": 54.666169,
+      "lon": -8.054174,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcam:familycensus:15:1901"
+     },
+     "caption": "Clarcam had four Morrow households in 1901, headed by Thomas, John, Francis and Richard.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcam:familycensus:15:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5600,
+     "audio": null,
+     "thread": {
+      "id": "clarcam:family:15",
+      "label": "Morrow",
+      "run": true
+     }
+    },
+    {
+     "id": "clarcam:beat:familycensus:15-1911",
+     "kind": "familycensus",
+     "chapter": "clarcam:ch:family-15",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcam",
+      "name": "Clarcam",
+      "logainm_id": "13960",
+      "lat": 54.666169,
+      "lon": -8.054174,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcam:familycensus:15:1911"
+     },
+     "caption": "Clarcam had four Morrow households in 1911, headed by Thomas, Susan, Francis and William.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcam:familycensus:15:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5600,
+     "audio": null,
+     "thread": {
+      "id": "clarcam:family:15",
+      "label": "Morrow",
+      "run": true
+     }
+    },
+    {
+     "id": "clarcam:beat:familycensus:15-1926",
+     "kind": "familycensus",
+     "chapter": "clarcam:ch:family-15",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcam",
+      "name": "Clarcam",
+      "logainm_id": "13960",
+      "lat": 54.666169,
+      "lon": -8.054174,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcam:familycensus:15:1926"
+     },
+     "caption": "Clarcam had four Morrow households in 1926, headed by Thomas, Susan, Francis and William.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcam:familycensus:15:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5600,
+     "audio": null,
+     "thread": {
+      "id": "clarcam:family:15",
+      "label": "Morrow",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "clarcam:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "clarcam:beat:closing:end",
      "kind": "closing",
@@ -373,6 +573,1862 @@
      },
      "duration_ms": 4000,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "clarcam:ch:family-12",
+   "title": "The McGinty family",
+   "beats": [
+    {
+     "id": "clarcam:beat:baptism:1873-02-02-TAW-B-p005-r14",
+     "kind": "baptism",
+     "chapter": "clarcam:ch:family-12",
+     "time": {
+      "label": "2 February 1873",
+      "iso": "1873-02-02",
+      "sort": "1873-02-02",
+      "approximate": false
+     },
+     "place": {
+      "townland": "clarcam",
+      "name": "Clarcam",
+      "logainm_id": "13960",
+      "lat": 54.666169,
+      "lon": -8.054174,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcam:baptism:TAW-B-p005-r14"
+     },
+     "caption": "Mary Anne McGinty was baptised on 2 February 1873. Edward McGinty and Mary O'Donnell were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcam:baptism:TAW-B-p005-r14"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "thread": {
+      "id": "clarcam:family:12",
+      "label": "McGinty",
+      "run": false
+     }
+    },
+    {
+     "id": "clarcam:beat:baptism:1875-01-31-TAW-B-p015-r183",
+     "kind": "baptism",
+     "chapter": "clarcam:ch:family-12",
+     "time": {
+      "label": "31 January 1875",
+      "iso": "1875-01-31",
+      "sort": "1875-01-31",
+      "approximate": false
+     },
+     "place": {
+      "townland": "clarcam",
+      "name": "Clarcam",
+      "logainm_id": "13960",
+      "lat": 54.666169,
+      "lon": -8.054174,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcam:baptism:TAW-B-p015-r183"
+     },
+     "caption": "Catherine McGinty was baptised on 31 January 1875. Edward McGinty and Mary O'Donnell were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcam:baptism:TAW-B-p015-r183"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "clarcam:family:12",
+      "label": "McGinty",
+      "run": false
+     }
+    },
+    {
+     "id": "clarcam:beat:familyhead:12",
+     "kind": "familyhead",
+     "chapter": "clarcam:ch:family-12",
+     "time": {
+      "label": "The McGinty family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcam",
+      "name": "Clarcam",
+      "logainm_id": "13960",
+      "lat": 54.666169,
+      "lon": -8.054174,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcam:familypresence:12"
+     },
+     "caption": "The McGinty family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcam:familypresence:12"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "clarcam:family:12",
+      "label": "McGinty",
+      "run": false
+     }
+    },
+    {
+     "id": "clarcam:beat:familycensus:12-1901",
+     "kind": "familycensus",
+     "chapter": "clarcam:ch:family-12",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcam",
+      "name": "Clarcam",
+      "logainm_id": "13960",
+      "lat": 54.666169,
+      "lon": -8.054174,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcam:familycensus:12:1901"
+     },
+     "caption": "Clarcam had one McGinty household in 1901, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcam:familycensus:12:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarcam:family:12",
+      "label": "McGinty",
+      "run": false
+     }
+    },
+    {
+     "id": "clarcam:beat:familycensus:12-1911",
+     "kind": "familycensus",
+     "chapter": "clarcam:ch:family-12",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcam",
+      "name": "Clarcam",
+      "logainm_id": "13960",
+      "lat": 54.666169,
+      "lon": -8.054174,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcam:familycensus:12:1911"
+     },
+     "caption": "Clarcam had one McGinty household in 1911, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcam:familycensus:12:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarcam:family:12",
+      "label": "McGinty",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clarcam:ch:family-08",
+   "title": "The Kelly family",
+   "beats": [
+    {
+     "id": "clarcam:beat:baptism:1873-02-04-TAW-B-p005-r16",
+     "kind": "baptism",
+     "chapter": "clarcam:ch:family-08",
+     "time": {
+      "label": "4 February 1873",
+      "iso": "1873-02-04",
+      "sort": "1873-02-04",
+      "approximate": false
+     },
+     "place": {
+      "townland": "clarcam",
+      "name": "Clarcam",
+      "logainm_id": "13960",
+      "lat": 54.666169,
+      "lon": -8.054174,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcam:baptism:TAW-B-p005-r16"
+     },
+     "caption": "Letitia Kelly was baptised on 4 February 1873. Edward Kelly and Mary Harvey were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcam:baptism:TAW-B-p005-r16"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "clarcam:family:08",
+      "label": "Kelly",
+      "run": false
+     }
+    },
+    {
+     "id": "clarcam:beat:baptism:1874-11-25-TAW-B-p013-r165b",
+     "kind": "baptism",
+     "chapter": "clarcam:ch:family-08",
+     "time": {
+      "label": "25 November 1874",
+      "iso": "1874-11-25",
+      "sort": "1874-11-25",
+      "approximate": false
+     },
+     "place": {
+      "townland": "clarcam",
+      "name": "Clarcam",
+      "logainm_id": "13960",
+      "lat": 54.666169,
+      "lon": -8.054174,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcam:baptism:TAW-B-p013-r165b"
+     },
+     "caption": "Hugh Kelly was baptised on 25 November 1874. Edward Kelly and Mary Harvey were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcam:baptism:TAW-B-p013-r165b"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "clarcam:family:08",
+      "label": "Kelly",
+      "run": false
+     }
+    },
+    {
+     "id": "clarcam:beat:familyhead:08",
+     "kind": "familyhead",
+     "chapter": "clarcam:ch:family-08",
+     "time": {
+      "label": "The Kelly family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcam",
+      "name": "Clarcam",
+      "logainm_id": "13960",
+      "lat": 54.666169,
+      "lon": -8.054174,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcam:familypresence:08"
+     },
+     "caption": "The Kelly family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcam:familypresence:08"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "clarcam:family:08",
+      "label": "Kelly",
+      "run": false
+     }
+    },
+    {
+     "id": "clarcam:beat:familycensus:08-1901",
+     "kind": "familycensus",
+     "chapter": "clarcam:ch:family-08",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcam",
+      "name": "Clarcam",
+      "logainm_id": "13960",
+      "lat": 54.666169,
+      "lon": -8.054174,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcam:familycensus:08:1901"
+     },
+     "caption": "Clarcam had two Kelly households in 1901, headed by James and Jeremiah.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcam:familycensus:08:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "clarcam:family:08",
+      "label": "Kelly",
+      "run": false
+     }
+    },
+    {
+     "id": "clarcam:beat:familycensus:08-1911",
+     "kind": "familycensus",
+     "chapter": "clarcam:ch:family-08",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcam",
+      "name": "Clarcam",
+      "logainm_id": "13960",
+      "lat": 54.666169,
+      "lon": -8.054174,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcam:familycensus:08:1911"
+     },
+     "caption": "Clarcam had one Kelly household in 1911, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcam:familycensus:08:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarcam:family:08",
+      "label": "Kelly",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clarcam:ch:family-03",
+   "title": "The Buchannan family",
+   "beats": [
+    {
+     "id": "clarcam:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "clarcam:ch:family-03",
+     "time": {
+      "label": "The Buchannan family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcam",
+      "name": "Clarcam",
+      "logainm_id": "13960",
+      "lat": 54.666169,
+      "lon": -8.054174,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcam:familypresence:03"
+     },
+     "caption": "The Buchannan family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcam:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarcam:family:03",
+      "label": "Buchannan",
+      "run": false
+     }
+    },
+    {
+     "id": "clarcam:beat:familycensus:03-1901",
+     "kind": "familycensus",
+     "chapter": "clarcam:ch:family-03",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcam",
+      "name": "Clarcam",
+      "logainm_id": "13960",
+      "lat": 54.666169,
+      "lon": -8.054174,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcam:familycensus:03:1901"
+     },
+     "caption": "Clarcam had one Buchannan household in 1901, headed by Hugh.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcam:familycensus:03:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarcam:family:03",
+      "label": "Buchannan",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clarcam:ch:family-06",
+   "title": "The Hanna family",
+   "beats": [
+    {
+     "id": "clarcam:beat:familyhead:06",
+     "kind": "familyhead",
+     "chapter": "clarcam:ch:family-06",
+     "time": {
+      "label": "The Hanna family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcam",
+      "name": "Clarcam",
+      "logainm_id": "13960",
+      "lat": 54.666169,
+      "lon": -8.054174,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcam:familypresence:06"
+     },
+     "caption": "The Hanna family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcam:familypresence:06"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarcam:family:06",
+      "label": "Hanna",
+      "run": false
+     }
+    },
+    {
+     "id": "clarcam:beat:familycensus:06-1901",
+     "kind": "familycensus",
+     "chapter": "clarcam:ch:family-06",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcam",
+      "name": "Clarcam",
+      "logainm_id": "13960",
+      "lat": 54.666169,
+      "lon": -8.054174,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcam:familycensus:06:1901"
+     },
+     "caption": "Clarcam had one Hanna household in 1901, headed by Jane.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcam:familycensus:06:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarcam:family:06",
+      "label": "Hanna",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clarcam:ch:family-07",
+   "title": "The Henry family",
+   "beats": [
+    {
+     "id": "clarcam:beat:familyhead:07",
+     "kind": "familyhead",
+     "chapter": "clarcam:ch:family-07",
+     "time": {
+      "label": "The Henry family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcam",
+      "name": "Clarcam",
+      "logainm_id": "13960",
+      "lat": 54.666169,
+      "lon": -8.054174,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcam:familypresence:07"
+     },
+     "caption": "The Henry family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcam:familypresence:07"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "clarcam:family:07",
+      "label": "Henry",
+      "run": false
+     }
+    },
+    {
+     "id": "clarcam:beat:familycensus:07-1901",
+     "kind": "familycensus",
+     "chapter": "clarcam:ch:family-07",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcam",
+      "name": "Clarcam",
+      "logainm_id": "13960",
+      "lat": 54.666169,
+      "lon": -8.054174,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcam:familycensus:07:1901"
+     },
+     "caption": "Clarcam had one Henry household in 1901, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcam:familycensus:07:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarcam:family:07",
+      "label": "Henry",
+      "run": false
+     }
+    },
+    {
+     "id": "clarcam:beat:familycensus:07-1911",
+     "kind": "familycensus",
+     "chapter": "clarcam:ch:family-07",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcam",
+      "name": "Clarcam",
+      "logainm_id": "13960",
+      "lat": 54.666169,
+      "lon": -8.054174,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcam:familycensus:07:1911"
+     },
+     "caption": "Clarcam had one Henry household in 1911, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcam:familycensus:07:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarcam:family:07",
+      "label": "Henry",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clarcam:ch:family-11",
+   "title": "The McElhinney family",
+   "beats": [
+    {
+     "id": "clarcam:beat:familyhead:11",
+     "kind": "familyhead",
+     "chapter": "clarcam:ch:family-11",
+     "time": {
+      "label": "The McElhinney family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcam",
+      "name": "Clarcam",
+      "logainm_id": "13960",
+      "lat": 54.666169,
+      "lon": -8.054174,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcam:familypresence:11"
+     },
+     "caption": "The McElhinney family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcam:familypresence:11"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "clarcam:family:11",
+      "label": "McElhinney",
+      "run": false
+     }
+    },
+    {
+     "id": "clarcam:beat:familycensus:11-1901",
+     "kind": "familycensus",
+     "chapter": "clarcam:ch:family-11",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcam",
+      "name": "Clarcam",
+      "logainm_id": "13960",
+      "lat": 54.666169,
+      "lon": -8.054174,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcam:familycensus:11:1901"
+     },
+     "caption": "Clarcam had one McElhinney household in 1901, headed by Thomas.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcam:familycensus:11:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarcam:family:11",
+      "label": "McElhinney",
+      "run": false
+     }
+    },
+    {
+     "id": "clarcam:beat:familycensus:11-1911",
+     "kind": "familycensus",
+     "chapter": "clarcam:ch:family-11",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcam",
+      "name": "Clarcam",
+      "logainm_id": "13960",
+      "lat": 54.666169,
+      "lon": -8.054174,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcam:familycensus:11:1911"
+     },
+     "caption": "Clarcam had one McElhinney household in 1911, headed by Thomas.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcam:familycensus:11:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarcam:family:11",
+      "label": "McElhinney",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clarcam:ch:family-14",
+   "title": "The Moran family",
+   "beats": [
+    {
+     "id": "clarcam:beat:familyhead:14",
+     "kind": "familyhead",
+     "chapter": "clarcam:ch:family-14",
+     "time": {
+      "label": "The Moran family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcam",
+      "name": "Clarcam",
+      "logainm_id": "13960",
+      "lat": 54.666169,
+      "lon": -8.054174,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcam:familypresence:14"
+     },
+     "caption": "The Moran family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcam:familypresence:14"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "clarcam:family:14",
+      "label": "Moran",
+      "run": false
+     }
+    },
+    {
+     "id": "clarcam:beat:familycensus:14-1901",
+     "kind": "familycensus",
+     "chapter": "clarcam:ch:family-14",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcam",
+      "name": "Clarcam",
+      "logainm_id": "13960",
+      "lat": 54.666169,
+      "lon": -8.054174,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcam:familycensus:14:1901"
+     },
+     "caption": "Clarcam had one Moran household in 1901, headed by George.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcam:familycensus:14:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarcam:family:14",
+      "label": "Moran",
+      "run": false
+     }
+    },
+    {
+     "id": "clarcam:beat:familycensus:14-1911",
+     "kind": "familycensus",
+     "chapter": "clarcam:ch:family-14",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcam",
+      "name": "Clarcam",
+      "logainm_id": "13960",
+      "lat": 54.666169,
+      "lon": -8.054174,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcam:familycensus:14:1911"
+     },
+     "caption": "Clarcam had one Moran household in 1911, headed by George.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcam:familycensus:14:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarcam:family:14",
+      "label": "Moran",
+      "run": false
+     }
+    },
+    {
+     "id": "clarcam:beat:familycensus:14-1926",
+     "kind": "familycensus",
+     "chapter": "clarcam:ch:family-14",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcam",
+      "name": "Clarcam",
+      "logainm_id": "13960",
+      "lat": 54.666169,
+      "lon": -8.054174,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcam:familycensus:14:1926"
+     },
+     "caption": "Clarcam had one Moran household in 1926, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcam:familycensus:14:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarcam:family:14",
+      "label": "Moran",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clarcam:ch:family-16",
+   "title": "The Rea family",
+   "beats": [
+    {
+     "id": "clarcam:beat:familyhead:16",
+     "kind": "familyhead",
+     "chapter": "clarcam:ch:family-16",
+     "time": {
+      "label": "The Rea family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcam",
+      "name": "Clarcam",
+      "logainm_id": "13960",
+      "lat": 54.666169,
+      "lon": -8.054174,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcam:familypresence:16"
+     },
+     "caption": "The Rea family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcam:familypresence:16"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarcam:family:16",
+      "label": "Rea",
+      "run": false
+     }
+    },
+    {
+     "id": "clarcam:beat:familycensus:16-1901",
+     "kind": "familycensus",
+     "chapter": "clarcam:ch:family-16",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcam",
+      "name": "Clarcam",
+      "logainm_id": "13960",
+      "lat": 54.666169,
+      "lon": -8.054174,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcam:familycensus:16:1901"
+     },
+     "caption": "Clarcam had one Rea household in 1901, headed by William.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcam:familycensus:16:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarcam:family:16",
+      "label": "Rea",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clarcam:ch:family-17",
+   "title": "The Taylor family",
+   "beats": [
+    {
+     "id": "clarcam:beat:familyhead:17",
+     "kind": "familyhead",
+     "chapter": "clarcam:ch:family-17",
+     "time": {
+      "label": "The Taylor family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcam",
+      "name": "Clarcam",
+      "logainm_id": "13960",
+      "lat": 54.666169,
+      "lon": -8.054174,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcam:familypresence:17"
+     },
+     "caption": "The Taylor family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcam:familypresence:17"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarcam:family:17",
+      "label": "Taylor",
+      "run": false
+     }
+    },
+    {
+     "id": "clarcam:beat:familycensus:17-1901",
+     "kind": "familycensus",
+     "chapter": "clarcam:ch:family-17",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcam",
+      "name": "Clarcam",
+      "logainm_id": "13960",
+      "lat": 54.666169,
+      "lon": -8.054174,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcam:familycensus:17:1901"
+     },
+     "caption": "Clarcam had one Taylor household in 1901, headed by Samuel.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcam:familycensus:17:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarcam:family:17",
+      "label": "Taylor",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clarcam:ch:family-18",
+   "title": "The Wray family",
+   "beats": [
+    {
+     "id": "clarcam:beat:familyhead:18",
+     "kind": "familyhead",
+     "chapter": "clarcam:ch:family-18",
+     "time": {
+      "label": "The Wray family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcam",
+      "name": "Clarcam",
+      "logainm_id": "13960",
+      "lat": 54.666169,
+      "lon": -8.054174,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcam:familypresence:18"
+     },
+     "caption": "The Wray family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcam:familypresence:18"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "clarcam:family:18",
+      "label": "Wray",
+      "run": false
+     }
+    },
+    {
+     "id": "clarcam:beat:familycensus:18-1901",
+     "kind": "familycensus",
+     "chapter": "clarcam:ch:family-18",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcam",
+      "name": "Clarcam",
+      "logainm_id": "13960",
+      "lat": 54.666169,
+      "lon": -8.054174,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcam:familycensus:18:1901"
+     },
+     "caption": "Clarcam had one Wray household in 1901, headed by Eliza.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcam:familycensus:18:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarcam:family:18",
+      "label": "Wray",
+      "run": false
+     }
+    },
+    {
+     "id": "clarcam:beat:familycensus:18-1911",
+     "kind": "familycensus",
+     "chapter": "clarcam:ch:family-18",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcam",
+      "name": "Clarcam",
+      "logainm_id": "13960",
+      "lat": 54.666169,
+      "lon": -8.054174,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcam:familycensus:18:1911"
+     },
+     "caption": "Clarcam had one Wray household in 1911, headed by William.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcam:familycensus:18:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarcam:family:18",
+      "label": "Wray",
+      "run": false
+     }
+    },
+    {
+     "id": "clarcam:beat:familycensus:18-1926",
+     "kind": "familycensus",
+     "chapter": "clarcam:ch:family-18",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcam",
+      "name": "Clarcam",
+      "logainm_id": "13960",
+      "lat": 54.666169,
+      "lon": -8.054174,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcam:familycensus:18:1926"
+     },
+     "caption": "Clarcam had one Wray household in 1926, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcam:familycensus:18:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarcam:family:18",
+      "label": "Wray",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clarcam:ch:family-02",
+   "title": "The Buchanan family",
+   "beats": [
+    {
+     "id": "clarcam:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "clarcam:ch:family-02",
+     "time": {
+      "label": "The Buchanan family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcam",
+      "name": "Clarcam",
+      "logainm_id": "13960",
+      "lat": 54.666169,
+      "lon": -8.054174,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcam:familypresence:02"
+     },
+     "caption": "The Buchanan family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcam:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarcam:family:02",
+      "label": "Buchanan",
+      "run": false
+     }
+    },
+    {
+     "id": "clarcam:beat:familycensus:02-1911",
+     "kind": "familycensus",
+     "chapter": "clarcam:ch:family-02",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcam",
+      "name": "Clarcam",
+      "logainm_id": "13960",
+      "lat": 54.666169,
+      "lon": -8.054174,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcam:familycensus:02:1911"
+     },
+     "caption": "Clarcam had one Buchanan household in 1911, headed by Hugh.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcam:familycensus:02:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarcam:family:02",
+      "label": "Buchanan",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clarcam:ch:family-01",
+   "title": "The Bartley family",
+   "beats": [
+    {
+     "id": "clarcam:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "clarcam:ch:family-01",
+     "time": {
+      "label": "The Bartley family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcam",
+      "name": "Clarcam",
+      "logainm_id": "13960",
+      "lat": 54.666169,
+      "lon": -8.054174,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcam:familypresence:01"
+     },
+     "caption": "The Bartley family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcam:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarcam:family:01",
+      "label": "Bartley",
+      "run": false
+     }
+    },
+    {
+     "id": "clarcam:beat:familycensus:01-1926",
+     "kind": "familycensus",
+     "chapter": "clarcam:ch:family-01",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcam",
+      "name": "Clarcam",
+      "logainm_id": "13960",
+      "lat": 54.666169,
+      "lon": -8.054174,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcam:familycensus:01:1926"
+     },
+     "caption": "Clarcam had one Bartley household in 1926, headed by Robert.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcam:familycensus:01:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarcam:family:01",
+      "label": "Bartley",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clarcam:ch:family-05",
+   "title": "The Graham family",
+   "beats": [
+    {
+     "id": "clarcam:beat:familyhead:05",
+     "kind": "familyhead",
+     "chapter": "clarcam:ch:family-05",
+     "time": {
+      "label": "The Graham family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcam",
+      "name": "Clarcam",
+      "logainm_id": "13960",
+      "lat": 54.666169,
+      "lon": -8.054174,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcam:familypresence:05"
+     },
+     "caption": "The Graham family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcam:familypresence:05"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarcam:family:05",
+      "label": "Graham",
+      "run": false
+     }
+    },
+    {
+     "id": "clarcam:beat:familycensus:05-1926",
+     "kind": "familycensus",
+     "chapter": "clarcam:ch:family-05",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcam",
+      "name": "Clarcam",
+      "logainm_id": "13960",
+      "lat": 54.666169,
+      "lon": -8.054174,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcam:familycensus:05:1926"
+     },
+     "caption": "Clarcam had one Graham household in 1926, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcam:familycensus:05:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarcam:family:05",
+      "label": "Graham",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clarcam:ch:family-09",
+   "title": "The Mac Cuinneagáin family",
+   "beats": [
+    {
+     "id": "clarcam:beat:familyhead:09",
+     "kind": "familyhead",
+     "chapter": "clarcam:ch:family-09",
+     "time": {
+      "label": "The Mac Cuinneagáin family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcam",
+      "name": "Clarcam",
+      "logainm_id": "13960",
+      "lat": 54.666169,
+      "lon": -8.054174,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcam:familypresence:09"
+     },
+     "caption": "The Mac Cuinneagáin family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcam:familypresence:09"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarcam:family:09",
+      "label": "Mac Cuinneagáin",
+      "run": false
+     }
+    },
+    {
+     "id": "clarcam:beat:familycensus:09-1926",
+     "kind": "familycensus",
+     "chapter": "clarcam:ch:family-09",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcam",
+      "name": "Clarcam",
+      "logainm_id": "13960",
+      "lat": 54.666169,
+      "lon": -8.054174,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcam:familycensus:09:1926"
+     },
+     "caption": "Clarcam had one Mac Cuinneagáin household in 1926, headed by Brian.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcam:familycensus:09:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "clarcam:family:09",
+      "label": "Mac Cuinneagáin",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clarcam:ch:family-10",
+   "title": "The Martin family",
+   "beats": [
+    {
+     "id": "clarcam:beat:familyhead:10",
+     "kind": "familyhead",
+     "chapter": "clarcam:ch:family-10",
+     "time": {
+      "label": "The Martin family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcam",
+      "name": "Clarcam",
+      "logainm_id": "13960",
+      "lat": 54.666169,
+      "lon": -8.054174,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcam:familypresence:10"
+     },
+     "caption": "The Martin family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcam:familypresence:10"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarcam:family:10",
+      "label": "Martin",
+      "run": false
+     }
+    },
+    {
+     "id": "clarcam:beat:familycensus:10-1926",
+     "kind": "familycensus",
+     "chapter": "clarcam:ch:family-10",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcam",
+      "name": "Clarcam",
+      "logainm_id": "13960",
+      "lat": 54.666169,
+      "lon": -8.054174,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcam:familycensus:10:1926"
+     },
+     "caption": "Clarcam had one Martin household in 1926, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcam:familycensus:10:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarcam:family:10",
+      "label": "Martin",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clarcam:ch:family-13",
+   "title": "The McIlhiney family",
+   "beats": [
+    {
+     "id": "clarcam:beat:familyhead:13",
+     "kind": "familyhead",
+     "chapter": "clarcam:ch:family-13",
+     "time": {
+      "label": "The McIlhiney family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcam",
+      "name": "Clarcam",
+      "logainm_id": "13960",
+      "lat": 54.666169,
+      "lon": -8.054174,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcam:familypresence:13"
+     },
+     "caption": "The McIlhiney family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcam:familypresence:13"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarcam:family:13",
+      "label": "McIlhiney",
+      "run": false
+     }
+    },
+    {
+     "id": "clarcam:beat:familycensus:13-1926",
+     "kind": "familycensus",
+     "chapter": "clarcam:ch:family-13",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcam",
+      "name": "Clarcam",
+      "logainm_id": "13960",
+      "lat": 54.666169,
+      "lon": -8.054174,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcam:familycensus:13:1926"
+     },
+     "caption": "Clarcam had one McIlhiney household in 1926, headed by Jane.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcam:familycensus:13:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarcam:family:13",
+      "label": "McIlhiney",
+      "run": false
+     }
     }
    ]
   }

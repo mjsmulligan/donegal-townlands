@@ -95,13 +95,122 @@
    ]
   },
   {
-   "id": "ballykillowen:ch:baptisms",
-   "title": "Baptisms, 1875",
+   "id": "ballykillowen:ch:census",
+   "title": "1901 to 1926",
+   "beats": [
+    {
+     "id": "ballykillowen:beat:census:returns",
+     "kind": "census",
+     "chapter": "ballykillowen:ch:census",
+     "time": {
+      "label": "1901 to 1926",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:census:1901"
+     },
+     "caption": "The censuses of 1901, 1911 and 1926 counted 97, 86 and 76 people in Ballykillowen, in 20, 21 and 19 households. Heads of household included Scott, McGirr and Cassidy.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:census:1901",
+       "ballykillowen:census:1911",
+       "ballykillowen:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 11600,
+     "audio": null,
+     "counts": {
+      "returns": [
+       {
+        "year": "1901",
+        "people": 97,
+        "households": 20
+       },
+       {
+        "year": "1911",
+        "people": 86,
+        "households": 21
+       },
+       {
+        "year": "1926",
+        "people": 76,
+        "households": 19
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "ballykillowen:ch:families",
+   "title": "The families of Ballykillowen",
+   "beats": [
+    {
+     "id": "ballykillowen:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "ballykillowen:ch:families",
+     "time": {
+      "label": "The families of Ballykillowen",
+      "iso": "1875-05-02",
+      "sort": "1875-05-02",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:baptism:TAW-B-p016-r207"
+     },
+     "caption": "Here are the families of Ballykillowen, from 1875 to 1926. First, the McGirr and Scott families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:baptism:TAW-B-p016-r207",
+       "ballykillowen:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "ballykillowen:family:13",
+      "label": "McGirr",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "ballykillowen:ch:family-13",
+   "title": "The McGirr family",
    "beats": [
     {
      "id": "ballykillowen:beat:baptism:1875-05-02-TAW-B-p016-r207",
      "kind": "baptism",
-     "chapter": "ballykillowen:ch:baptisms",
+     "chapter": "ballykillowen:ch:family-13",
      "time": {
       "label": "2 May 1875",
       "iso": "1875-05-02",
@@ -131,18 +240,57 @@
       "certainty": "stated"
      },
      "duration_ms": 6400,
-     "audio": null
-    }
-   ]
-  },
-  {
-   "id": "ballykillowen:ch:1901",
-   "title": "1901",
-   "beats": [
+     "audio": null,
+     "thread": {
+      "id": "ballykillowen:family:13",
+      "label": "McGirr",
+      "run": true
+     }
+    },
     {
-     "id": "ballykillowen:beat:census:1901",
-     "kind": "census",
-     "chapter": "ballykillowen:ch:1901",
+     "id": "ballykillowen:beat:familyhead:13",
+     "kind": "familyhead",
+     "chapter": "ballykillowen:ch:family-13",
+     "time": {
+      "label": "The McGirr family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:familypresence:13"
+     },
+     "caption": "The McGirr family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:familypresence:13"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ballykillowen:family:13",
+      "label": "McGirr",
+      "run": true
+     }
+    },
+    {
+     "id": "ballykillowen:beat:familycensus:13-1901",
+     "kind": "familycensus",
+     "chapter": "ballykillowen:ch:family-13",
      "time": {
       "label": "1901",
       "iso": "1901",
@@ -159,35 +307,30 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "ballykillowen:census:1901"
+      "open_card": "ballykillowen:familycensus:13:1901"
      },
-     "caption": "Ballykillowen had 97 people in twenty households in 1901. Heads of household included Scott, McGirr and Cassidy.",
+     "caption": "Ballykillowen had three McGirr households in 1901, headed by two named Patrick and William.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "ballykillowen:census:1901"
+       "ballykillowen:familycensus:13:1901"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6800,
+     "duration_ms": 5600,
      "audio": null,
-     "counts": {
-      "people": 97,
-      "households": 20
+     "thread": {
+      "id": "ballykillowen:family:13",
+      "label": "McGirr",
+      "run": true
      }
-    }
-   ]
-  },
-  {
-   "id": "ballykillowen:ch:1911",
-   "title": "1911",
-   "beats": [
+    },
     {
-     "id": "ballykillowen:beat:census:1911",
-     "kind": "census",
-     "chapter": "ballykillowen:ch:1911",
+     "id": "ballykillowen:beat:familycensus:13-1911",
+     "kind": "familycensus",
+     "chapter": "ballykillowen:ch:family-13",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -204,35 +347,30 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "ballykillowen:census:1911"
+      "open_card": "ballykillowen:familycensus:13:1911"
      },
-     "caption": "Ballykillowen had 86 people in 21 households in 1911. Heads of household included McGirr, Scott and Cassidy.",
+     "caption": "Ballykillowen had three McGirr households in 1911, headed by William and two named Patrick.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "ballykillowen:census:1911"
+       "ballykillowen:familycensus:13:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6800,
+     "duration_ms": 5600,
      "audio": null,
-     "counts": {
-      "people": 86,
-      "households": 21
+     "thread": {
+      "id": "ballykillowen:family:13",
+      "label": "McGirr",
+      "run": true
      }
-    }
-   ]
-  },
-  {
-   "id": "ballykillowen:ch:1926",
-   "title": "1926",
-   "beats": [
+    },
     {
-     "id": "ballykillowen:beat:census:1926",
-     "kind": "census",
-     "chapter": "ballykillowen:ch:1926",
+     "id": "ballykillowen:beat:familycensus:13-1926",
+     "kind": "familycensus",
+     "chapter": "ballykillowen:ch:family-13",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -249,25 +387,198 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "ballykillowen:census:1926"
+      "open_card": "ballykillowen:familycensus:13:1926"
      },
-     "caption": "Ballykillowen had 76 people in nineteen households in 1926. Heads of household included Scott, Cassidy and Curristin.",
+     "caption": "Ballykillowen had two McGirr households in 1926, headed by William J and Rose E.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "ballykillowen:census:1926"
+       "ballykillowen:familycensus:13:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6800,
+     "duration_ms": 5600,
      "audio": null,
-     "counts": {
-      "people": 76,
-      "households": 19
+     "thread": {
+      "id": "ballykillowen:family:13",
+      "label": "McGirr",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "ballykillowen:ch:family-18",
+   "title": "The Scott family",
+   "beats": [
+    {
+     "id": "ballykillowen:beat:familyhead:18",
+     "kind": "familyhead",
+     "chapter": "ballykillowen:ch:family-18",
+     "time": {
+      "label": "The Scott family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:familypresence:18"
+     },
+     "caption": "The Scott family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:familypresence:18"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ballykillowen:family:18",
+      "label": "Scott",
+      "run": true
      }
     },
+    {
+     "id": "ballykillowen:beat:familycensus:18-1901",
+     "kind": "familycensus",
+     "chapter": "ballykillowen:ch:family-18",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:familycensus:18:1901"
+     },
+     "caption": "Ballykillowen had four Scott households in 1901, headed by Susan J, Alexander, Robert and Elizabeth.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:familycensus:18:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 6000,
+     "audio": null,
+     "thread": {
+      "id": "ballykillowen:family:18",
+      "label": "Scott",
+      "run": true
+     }
+    },
+    {
+     "id": "ballykillowen:beat:familycensus:18-1911",
+     "kind": "familycensus",
+     "chapter": "ballykillowen:ch:family-18",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:familycensus:18:1911"
+     },
+     "caption": "Ballykillowen had three Scott households in 1911, headed by Robert, Willie and Robert John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:familycensus:18:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5600,
+     "audio": null,
+     "thread": {
+      "id": "ballykillowen:family:18",
+      "label": "Scott",
+      "run": true
+     }
+    },
+    {
+     "id": "ballykillowen:beat:familycensus:18-1926",
+     "kind": "familycensus",
+     "chapter": "ballykillowen:ch:family-18",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:familycensus:18:1926"
+     },
+     "caption": "Ballykillowen had four Scott households in 1926, headed by Mary, Charles, John and Rebecca J.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:familycensus:18:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 6000,
+     "audio": null,
+     "thread": {
+      "id": "ballykillowen:family:18",
+      "label": "Scott",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "ballykillowen:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "ballykillowen:beat:closing:end",
      "kind": "closing",
@@ -302,6 +613,2194 @@
      },
      "duration_ms": 4000,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "ballykillowen:ch:family-01",
+   "title": "The Abraham family",
+   "beats": [
+    {
+     "id": "ballykillowen:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "ballykillowen:ch:family-01",
+     "time": {
+      "label": "The Abraham family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:familypresence:01"
+     },
+     "caption": "The Abraham family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ballykillowen:family:01",
+      "label": "Abraham",
+      "run": false
+     }
+    },
+    {
+     "id": "ballykillowen:beat:familycensus:01-1901",
+     "kind": "familycensus",
+     "chapter": "ballykillowen:ch:family-01",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:familycensus:01:1901"
+     },
+     "caption": "Ballykillowen had one Abraham household in 1901, headed by William.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:familycensus:01:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ballykillowen:family:01",
+      "label": "Abraham",
+      "run": false
+     }
+    },
+    {
+     "id": "ballykillowen:beat:familycensus:01-1926",
+     "kind": "familycensus",
+     "chapter": "ballykillowen:ch:family-01",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:familycensus:01:1926"
+     },
+     "caption": "Ballykillowen had one Abraham household in 1926, headed by William J.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:familycensus:01:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ballykillowen:family:01",
+      "label": "Abraham",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ballykillowen:ch:family-04",
+   "title": "The Cassidy family",
+   "beats": [
+    {
+     "id": "ballykillowen:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "ballykillowen:ch:family-04",
+     "time": {
+      "label": "The Cassidy family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:familypresence:04"
+     },
+     "caption": "The Cassidy family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ballykillowen:family:04",
+      "label": "Cassidy",
+      "run": false
+     }
+    },
+    {
+     "id": "ballykillowen:beat:familycensus:04-1901",
+     "kind": "familycensus",
+     "chapter": "ballykillowen:ch:family-04",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:familycensus:04:1901"
+     },
+     "caption": "Ballykillowen had two Cassidy households in 1901, headed by James and Ellen.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:familycensus:04:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "ballykillowen:family:04",
+      "label": "Cassidy",
+      "run": false
+     }
+    },
+    {
+     "id": "ballykillowen:beat:familycensus:04-1911",
+     "kind": "familycensus",
+     "chapter": "ballykillowen:ch:family-04",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:familycensus:04:1911"
+     },
+     "caption": "Ballykillowen had two Cassidy households in 1911, headed by James and Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:familycensus:04:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "ballykillowen:family:04",
+      "label": "Cassidy",
+      "run": false
+     }
+    },
+    {
+     "id": "ballykillowen:beat:familycensus:04-1926",
+     "kind": "familycensus",
+     "chapter": "ballykillowen:ch:family-04",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:familycensus:04:1926"
+     },
+     "caption": "Ballykillowen had two Cassidy households in 1926, headed by James and Cassie.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:familycensus:04:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "ballykillowen:family:04",
+      "label": "Cassidy",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ballykillowen:ch:family-05",
+   "title": "The Corriston family",
+   "beats": [
+    {
+     "id": "ballykillowen:beat:familyhead:05",
+     "kind": "familyhead",
+     "chapter": "ballykillowen:ch:family-05",
+     "time": {
+      "label": "The Corriston family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:familypresence:05"
+     },
+     "caption": "The Corriston family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:familypresence:05"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ballykillowen:family:05",
+      "label": "Corriston",
+      "run": false
+     }
+    },
+    {
+     "id": "ballykillowen:beat:familycensus:05-1901",
+     "kind": "familycensus",
+     "chapter": "ballykillowen:ch:family-05",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:familycensus:05:1901"
+     },
+     "caption": "Ballykillowen had one Corriston household in 1901, headed by Hugh.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:familycensus:05:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ballykillowen:family:05",
+      "label": "Corriston",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ballykillowen:ch:family-07",
+   "title": "The Doherty family",
+   "beats": [
+    {
+     "id": "ballykillowen:beat:familyhead:07",
+     "kind": "familyhead",
+     "chapter": "ballykillowen:ch:family-07",
+     "time": {
+      "label": "The Doherty family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:familypresence:07"
+     },
+     "caption": "The Doherty family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:familypresence:07"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ballykillowen:family:07",
+      "label": "Doherty",
+      "run": false
+     }
+    },
+    {
+     "id": "ballykillowen:beat:familycensus:07-1901",
+     "kind": "familycensus",
+     "chapter": "ballykillowen:ch:family-07",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:familycensus:07:1901"
+     },
+     "caption": "Ballykillowen had two Doherty households in 1901, headed by two named John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:familycensus:07:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "ballykillowen:family:07",
+      "label": "Doherty",
+      "run": false
+     }
+    },
+    {
+     "id": "ballykillowen:beat:familycensus:07-1911",
+     "kind": "familycensus",
+     "chapter": "ballykillowen:ch:family-07",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:familycensus:07:1911"
+     },
+     "caption": "Ballykillowen had two Doherty households in 1911, headed by two named John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:familycensus:07:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "ballykillowen:family:07",
+      "label": "Doherty",
+      "run": false
+     }
+    },
+    {
+     "id": "ballykillowen:beat:familycensus:07-1926",
+     "kind": "familycensus",
+     "chapter": "ballykillowen:ch:family-07",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:familycensus:07:1926"
+     },
+     "caption": "Ballykillowen had one Doherty household in 1926, headed by John J.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:familycensus:07:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ballykillowen:family:07",
+      "label": "Doherty",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ballykillowen:ch:family-09",
+   "title": "The Gallagher family",
+   "beats": [
+    {
+     "id": "ballykillowen:beat:familyhead:09",
+     "kind": "familyhead",
+     "chapter": "ballykillowen:ch:family-09",
+     "time": {
+      "label": "The Gallagher family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:familypresence:09"
+     },
+     "caption": "The Gallagher family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:familypresence:09"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ballykillowen:family:09",
+      "label": "Gallagher",
+      "run": false
+     }
+    },
+    {
+     "id": "ballykillowen:beat:familycensus:09-1901",
+     "kind": "familycensus",
+     "chapter": "ballykillowen:ch:family-09",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:familycensus:09:1901"
+     },
+     "caption": "Ballykillowen had two Gallagher households in 1901, headed by Edward and Hugh.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:familycensus:09:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "ballykillowen:family:09",
+      "label": "Gallagher",
+      "run": false
+     }
+    },
+    {
+     "id": "ballykillowen:beat:familycensus:09-1911",
+     "kind": "familycensus",
+     "chapter": "ballykillowen:ch:family-09",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:familycensus:09:1911"
+     },
+     "caption": "Ballykillowen had two Gallagher households in 1911, headed by Hugh and Mary.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:familycensus:09:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "ballykillowen:family:09",
+      "label": "Gallagher",
+      "run": false
+     }
+    },
+    {
+     "id": "ballykillowen:beat:familycensus:09-1926",
+     "kind": "familycensus",
+     "chapter": "ballykillowen:ch:family-09",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:familycensus:09:1926"
+     },
+     "caption": "Ballykillowen had two Gallagher households in 1926, headed by William J and Mary A.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:familycensus:09:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5600,
+     "audio": null,
+     "thread": {
+      "id": "ballykillowen:family:09",
+      "label": "Gallagher",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ballykillowen:ch:family-12",
+   "title": "The Harte family",
+   "beats": [
+    {
+     "id": "ballykillowen:beat:familyhead:12",
+     "kind": "familyhead",
+     "chapter": "ballykillowen:ch:family-12",
+     "time": {
+      "label": "The Harte family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:familypresence:12"
+     },
+     "caption": "The Harte family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:familypresence:12"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ballykillowen:family:12",
+      "label": "Harte",
+      "run": false
+     }
+    },
+    {
+     "id": "ballykillowen:beat:familycensus:12-1901",
+     "kind": "familycensus",
+     "chapter": "ballykillowen:ch:family-12",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:familycensus:12:1901"
+     },
+     "caption": "Ballykillowen had one Harte household in 1901, headed by Bernard.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:familycensus:12:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ballykillowen:family:12",
+      "label": "Harte",
+      "run": false
+     }
+    },
+    {
+     "id": "ballykillowen:beat:familycensus:12-1911",
+     "kind": "familycensus",
+     "chapter": "ballykillowen:ch:family-12",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:familycensus:12:1911"
+     },
+     "caption": "Ballykillowen had one Harte household in 1911, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:familycensus:12:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ballykillowen:family:12",
+      "label": "Harte",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ballykillowen:ch:family-15",
+   "title": "The McGlinchy family",
+   "beats": [
+    {
+     "id": "ballykillowen:beat:familyhead:15",
+     "kind": "familyhead",
+     "chapter": "ballykillowen:ch:family-15",
+     "time": {
+      "label": "The McGlinchy family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:familypresence:15"
+     },
+     "caption": "The McGlinchy family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:familypresence:15"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ballykillowen:family:15",
+      "label": "McGlinchy",
+      "run": false
+     }
+    },
+    {
+     "id": "ballykillowen:beat:familycensus:15-1901",
+     "kind": "familycensus",
+     "chapter": "ballykillowen:ch:family-15",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:familycensus:15:1901"
+     },
+     "caption": "Ballykillowen had one McGlinchy household in 1901, headed by Bernard.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:familycensus:15:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ballykillowen:family:15",
+      "label": "McGlinchy",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ballykillowen:ch:family-16",
+   "title": "The McGrath family",
+   "beats": [
+    {
+     "id": "ballykillowen:beat:familyhead:16",
+     "kind": "familyhead",
+     "chapter": "ballykillowen:ch:family-16",
+     "time": {
+      "label": "The McGrath family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:familypresence:16"
+     },
+     "caption": "The McGrath family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:familypresence:16"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ballykillowen:family:16",
+      "label": "McGrath",
+      "run": false
+     }
+    },
+    {
+     "id": "ballykillowen:beat:familycensus:16-1901",
+     "kind": "familycensus",
+     "chapter": "ballykillowen:ch:family-16",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:familycensus:16:1901"
+     },
+     "caption": "Ballykillowen had one McGrath household in 1901, headed by Michael.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:familycensus:16:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ballykillowen:family:16",
+      "label": "McGrath",
+      "run": false
+     }
+    },
+    {
+     "id": "ballykillowen:beat:familycensus:16-1911",
+     "kind": "familycensus",
+     "chapter": "ballykillowen:ch:family-16",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:familycensus:16:1911"
+     },
+     "caption": "Ballykillowen had one McGrath household in 1911, headed by Sarah.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:familycensus:16:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ballykillowen:family:16",
+      "label": "McGrath",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ballykillowen:ch:family-17",
+   "title": "The Quinn family",
+   "beats": [
+    {
+     "id": "ballykillowen:beat:familyhead:17",
+     "kind": "familyhead",
+     "chapter": "ballykillowen:ch:family-17",
+     "time": {
+      "label": "The Quinn family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:familypresence:17"
+     },
+     "caption": "The Quinn family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:familypresence:17"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ballykillowen:family:17",
+      "label": "Quinn",
+      "run": false
+     }
+    },
+    {
+     "id": "ballykillowen:beat:familycensus:17-1901",
+     "kind": "familycensus",
+     "chapter": "ballykillowen:ch:family-17",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:familycensus:17:1901"
+     },
+     "caption": "Ballykillowen had one Quinn household in 1901, headed by Andrew.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:familycensus:17:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ballykillowen:family:17",
+      "label": "Quinn",
+      "run": false
+     }
+    },
+    {
+     "id": "ballykillowen:beat:familycensus:17-1911",
+     "kind": "familycensus",
+     "chapter": "ballykillowen:ch:family-17",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:familycensus:17:1911"
+     },
+     "caption": "Ballykillowen had one Quinn household in 1911, headed by Anne.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:familycensus:17:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ballykillowen:family:17",
+      "label": "Quinn",
+      "run": false
+     }
+    },
+    {
+     "id": "ballykillowen:beat:familycensus:17-1926",
+     "kind": "familycensus",
+     "chapter": "ballykillowen:ch:family-17",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:familycensus:17:1926"
+     },
+     "caption": "Ballykillowen had two Quinn households in 1926, headed by Charles and Mary Ann.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:familycensus:17:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "ballykillowen:family:17",
+      "label": "Quinn",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ballykillowen:ch:family-20",
+   "title": "The White family",
+   "beats": [
+    {
+     "id": "ballykillowen:beat:familyhead:20",
+     "kind": "familyhead",
+     "chapter": "ballykillowen:ch:family-20",
+     "time": {
+      "label": "The White family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:familypresence:20"
+     },
+     "caption": "The White family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:familypresence:20"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ballykillowen:family:20",
+      "label": "White",
+      "run": false
+     }
+    },
+    {
+     "id": "ballykillowen:beat:familycensus:20-1901",
+     "kind": "familycensus",
+     "chapter": "ballykillowen:ch:family-20",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:familycensus:20:1901"
+     },
+     "caption": "Ballykillowen had one White household in 1901, headed by Robert.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:familycensus:20:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ballykillowen:family:20",
+      "label": "White",
+      "run": false
+     }
+    },
+    {
+     "id": "ballykillowen:beat:familycensus:20-1911",
+     "kind": "familycensus",
+     "chapter": "ballykillowen:ch:family-20",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:familycensus:20:1911"
+     },
+     "caption": "Ballykillowen had one White household in 1911, headed by Samuel.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:familycensus:20:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ballykillowen:family:20",
+      "label": "White",
+      "run": false
+     }
+    },
+    {
+     "id": "ballykillowen:beat:familycensus:20-1926",
+     "kind": "familycensus",
+     "chapter": "ballykillowen:ch:family-20",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:familycensus:20:1926"
+     },
+     "caption": "Ballykillowen had one White household in 1926, headed by [Ruth].",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:familycensus:20:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ballykillowen:family:20",
+      "label": "White",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ballykillowen:ch:family-02",
+   "title": "The Abram family",
+   "beats": [
+    {
+     "id": "ballykillowen:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "ballykillowen:ch:family-02",
+     "time": {
+      "label": "The Abram family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:familypresence:02"
+     },
+     "caption": "The Abram family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ballykillowen:family:02",
+      "label": "Abram",
+      "run": false
+     }
+    },
+    {
+     "id": "ballykillowen:beat:familycensus:02-1911",
+     "kind": "familycensus",
+     "chapter": "ballykillowen:ch:family-02",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:familycensus:02:1911"
+     },
+     "caption": "Ballykillowen had one Abram household in 1911, headed by William.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:familycensus:02:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ballykillowen:family:02",
+      "label": "Abram",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ballykillowen:ch:family-03",
+   "title": "The Bartley family",
+   "beats": [
+    {
+     "id": "ballykillowen:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "ballykillowen:ch:family-03",
+     "time": {
+      "label": "The Bartley family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:familypresence:03"
+     },
+     "caption": "The Bartley family appear in the records from 1911 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ballykillowen:family:03",
+      "label": "Bartley",
+      "run": false
+     }
+    },
+    {
+     "id": "ballykillowen:beat:familycensus:03-1911",
+     "kind": "familycensus",
+     "chapter": "ballykillowen:ch:family-03",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:familycensus:03:1911"
+     },
+     "caption": "Ballykillowen had one Bartley household in 1911, headed by Thomas.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:familycensus:03:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ballykillowen:family:03",
+      "label": "Bartley",
+      "run": false
+     }
+    },
+    {
+     "id": "ballykillowen:beat:familycensus:03-1926",
+     "kind": "familycensus",
+     "chapter": "ballykillowen:ch:family-03",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:familycensus:03:1926"
+     },
+     "caption": "Ballykillowen had one Bartley household in 1926, headed by Thomas.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:familycensus:03:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ballykillowen:family:03",
+      "label": "Bartley",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ballykillowen:ch:family-06",
+   "title": "The Curristin family",
+   "beats": [
+    {
+     "id": "ballykillowen:beat:familyhead:06",
+     "kind": "familyhead",
+     "chapter": "ballykillowen:ch:family-06",
+     "time": {
+      "label": "The Curristin family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:familypresence:06"
+     },
+     "caption": "The Curristin family appear in the records from 1911 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:familypresence:06"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ballykillowen:family:06",
+      "label": "Curristin",
+      "run": false
+     }
+    },
+    {
+     "id": "ballykillowen:beat:familycensus:06-1911",
+     "kind": "familycensus",
+     "chapter": "ballykillowen:ch:family-06",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:familycensus:06:1911"
+     },
+     "caption": "Ballykillowen had one Curristin household in 1911, headed by Catherine.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:familycensus:06:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ballykillowen:family:06",
+      "label": "Curristin",
+      "run": false
+     }
+    },
+    {
+     "id": "ballykillowen:beat:familycensus:06-1926",
+     "kind": "familycensus",
+     "chapter": "ballykillowen:ch:family-06",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:familycensus:06:1926"
+     },
+     "caption": "Ballykillowen had two Curristin households in 1926, headed by John and Catherine.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:familycensus:06:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "ballykillowen:family:06",
+      "label": "Curristin",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ballykillowen:ch:family-11",
+   "title": "The Graham family",
+   "beats": [
+    {
+     "id": "ballykillowen:beat:familyhead:11",
+     "kind": "familyhead",
+     "chapter": "ballykillowen:ch:family-11",
+     "time": {
+      "label": "The Graham family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:familypresence:11"
+     },
+     "caption": "The Graham family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:familypresence:11"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ballykillowen:family:11",
+      "label": "Graham",
+      "run": false
+     }
+    },
+    {
+     "id": "ballykillowen:beat:familycensus:11-1911",
+     "kind": "familycensus",
+     "chapter": "ballykillowen:ch:family-11",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:familycensus:11:1911"
+     },
+     "caption": "Ballykillowen had one Graham household in 1911, headed by Joseph.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:familycensus:11:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ballykillowen:family:11",
+      "label": "Graham",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ballykillowen:ch:family-14",
+   "title": "The McGlinchey family",
+   "beats": [
+    {
+     "id": "ballykillowen:beat:familyhead:14",
+     "kind": "familyhead",
+     "chapter": "ballykillowen:ch:family-14",
+     "time": {
+      "label": "The McGlinchey family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:familypresence:14"
+     },
+     "caption": "The McGlinchey family appear in the records from 1911 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:familypresence:14"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ballykillowen:family:14",
+      "label": "McGlinchey",
+      "run": false
+     }
+    },
+    {
+     "id": "ballykillowen:beat:familycensus:14-1911",
+     "kind": "familycensus",
+     "chapter": "ballykillowen:ch:family-14",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:familycensus:14:1911"
+     },
+     "caption": "Ballykillowen had one McGlinchey household in 1911, headed by Bernard.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:familycensus:14:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ballykillowen:family:14",
+      "label": "McGlinchey",
+      "run": false
+     }
+    },
+    {
+     "id": "ballykillowen:beat:familycensus:14-1926",
+     "kind": "familycensus",
+     "chapter": "ballykillowen:ch:family-14",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:familycensus:14:1926"
+     },
+     "caption": "Ballykillowen had one McGlinchey household in 1926, headed by Lizzie.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:familycensus:14:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ballykillowen:family:14",
+      "label": "McGlinchey",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ballykillowen:ch:family-08",
+   "title": "The Fraven family",
+   "beats": [
+    {
+     "id": "ballykillowen:beat:familyhead:08",
+     "kind": "familyhead",
+     "chapter": "ballykillowen:ch:family-08",
+     "time": {
+      "label": "The Fraven family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:familypresence:08"
+     },
+     "caption": "The Fraven family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:familypresence:08"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ballykillowen:family:08",
+      "label": "Fraven",
+      "run": false
+     }
+    },
+    {
+     "id": "ballykillowen:beat:familycensus:08-1926",
+     "kind": "familycensus",
+     "chapter": "ballykillowen:ch:family-08",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:familycensus:08:1926"
+     },
+     "caption": "Ballykillowen had one Fraven household in 1926, headed by Mary.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:familycensus:08:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ballykillowen:family:08",
+      "label": "Fraven",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ballykillowen:ch:family-10",
+   "title": "The Gillespie family",
+   "beats": [
+    {
+     "id": "ballykillowen:beat:familyhead:10",
+     "kind": "familyhead",
+     "chapter": "ballykillowen:ch:family-10",
+     "time": {
+      "label": "The Gillespie family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:familypresence:10"
+     },
+     "caption": "The Gillespie family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:familypresence:10"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ballykillowen:family:10",
+      "label": "Gillespie",
+      "run": false
+     }
+    },
+    {
+     "id": "ballykillowen:beat:familycensus:10-1926",
+     "kind": "familycensus",
+     "chapter": "ballykillowen:ch:family-10",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:familycensus:10:1926"
+     },
+     "caption": "Ballykillowen had two Gillespie households in 1926, headed by Katie and Anthony.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:familycensus:10:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "ballykillowen:family:10",
+      "label": "Gillespie",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ballykillowen:ch:family-19",
+   "title": "The Travers family",
+   "beats": [
+    {
+     "id": "ballykillowen:beat:familyhead:19",
+     "kind": "familyhead",
+     "chapter": "ballykillowen:ch:family-19",
+     "time": {
+      "label": "The Travers family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:familypresence:19"
+     },
+     "caption": "The Travers family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:familypresence:19"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ballykillowen:family:19",
+      "label": "Travers",
+      "run": false
+     }
+    },
+    {
+     "id": "ballykillowen:beat:familycensus:19-1926",
+     "kind": "familycensus",
+     "chapter": "ballykillowen:ch:family-19",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:familycensus:19:1926"
+     },
+     "caption": "Ballykillowen had one Travers household in 1926, headed by Mary B.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:familycensus:19:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ballykillowen:family:19",
+      "label": "Travers",
+      "run": false
+     }
     }
    ]
   }

@@ -95,91 +95,15 @@
    ]
   },
   {
-   "id": "meenadreen:ch:baptisms",
-   "title": "Baptisms, 1873 to 1875",
+   "id": "meenadreen:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "meenadreen:beat:baptism:1873-11-01-TAW-B-p008-r77",
-     "kind": "baptism",
-     "chapter": "meenadreen:ch:baptisms",
-     "time": {
-      "label": "1 November 1873",
-      "iso": "1873-11-01",
-      "sort": "1873-11-01",
-      "approximate": false
-     },
-     "place": {
-      "townland": "meenadreen",
-      "name": "Meenadreen",
-      "logainm_id": "14284",
-      "lat": 54.658474,
-      "lon": -7.983221,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "meenadreen:baptism:TAW-B-p008-r77"
-     },
-     "caption": "Brigid Gildea was baptised on 1 November 1873. Patrick Gildea and Grace Hanaghy were the parents.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "meenadreen:baptism:TAW-B-p008-r77"
-      ],
-      "basis": "page_place",
-      "certainty": "stated"
-     },
-     "duration_ms": 6400,
-     "audio": null
-    },
-    {
-     "id": "meenadreen:beat:baptism:1875-01-30-TAW-B-p015-r181",
-     "kind": "baptism",
-     "chapter": "meenadreen:ch:baptisms",
-     "time": {
-      "label": "30 January 1875",
-      "iso": "1875-01-30",
-      "sort": "1875-01-30",
-      "approximate": false
-     },
-     "place": {
-      "townland": "meenadreen",
-      "name": "Meenadreen",
-      "logainm_id": "14284",
-      "lat": 54.658474,
-      "lon": -7.983221,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "meenadreen:baptism:TAW-B-p015-r181"
-     },
-     "caption": "Brigid Gildea was baptised on 30 January 1875. Patrick Gildea and Grace Hanaghy were the parents.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "meenadreen:baptism:TAW-B-p015-r181"
-      ],
-      "basis": "page_place",
-      "certainty": "stated"
-     },
-     "duration_ms": 6400,
-     "audio": null
-    }
-   ]
-  },
-  {
-   "id": "meenadreen:ch:1901",
-   "title": "1901",
-   "beats": [
-    {
-     "id": "meenadreen:beat:census:1901",
+     "id": "meenadreen:beat:census:returns",
      "kind": "census",
-     "chapter": "meenadreen:ch:1901",
+     "chapter": "meenadreen:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1926",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -196,33 +120,177 @@
       "stage": "map",
       "open_card": "meenadreen:census:1901"
      },
-     "caption": "Meenadreen had 65 people in fifteen households in 1901. Heads of household included Gillespie, Cassidy and Gildea.",
+     "caption": "The censuses of 1901, 1911 and 1926 counted 65, 62 and 66 people in Meenadreen, in 15, 13 and 15 households. Heads of household included Gillespie, Cassidy and Gildea.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "meenadreen:census:1901"
+       "meenadreen:census:1901",
+       "meenadreen:census:1911",
+       "meenadreen:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 6800,
+     "duration_ms": 11600,
      "audio": null,
      "counts": {
-      "people": 65,
-      "households": 15
+      "returns": [
+       {
+        "year": "1901",
+        "people": 65,
+        "households": 15
+       },
+       {
+        "year": "1911",
+        "people": 62,
+        "households": 13
+       },
+       {
+        "year": "1926",
+        "people": 66,
+        "households": 15
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "meenadreen:ch:1911",
-   "title": "1911",
+   "id": "meenadreen:ch:families",
+   "title": "The families of Meenadreen",
    "beats": [
     {
-     "id": "meenadreen:beat:census:1911",
-     "kind": "census",
-     "chapter": "meenadreen:ch:1911",
+     "id": "meenadreen:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "meenadreen:ch:families",
+     "time": {
+      "label": "The families of Meenadreen",
+      "iso": "1873-11-01",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "meenadreen",
+      "name": "Meenadreen",
+      "logainm_id": "14284",
+      "lat": 54.658474,
+      "lon": -7.983221,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "meenadreen:baptism:TAW-B-p008-r77"
+     },
+     "caption": "Here are the families of Meenadreen, from 1873 to 1926. First, the Gallagher and Gillespie families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "meenadreen:baptism:TAW-B-p008-r77",
+       "meenadreen:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "meenadreen:family:04",
+      "label": "Gallagher",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "meenadreen:ch:family-04",
+   "title": "The Gallagher family",
+   "beats": [
+    {
+     "id": "meenadreen:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "meenadreen:ch:family-04",
+     "time": {
+      "label": "The Gallagher family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "meenadreen",
+      "name": "Meenadreen",
+      "logainm_id": "14284",
+      "lat": 54.658474,
+      "lon": -7.983221,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "meenadreen:familypresence:04"
+     },
+     "caption": "The Gallagher family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "meenadreen:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "meenadreen:family:04",
+      "label": "Gallagher",
+      "run": true
+     }
+    },
+    {
+     "id": "meenadreen:beat:familycensus:04-1901",
+     "kind": "familycensus",
+     "chapter": "meenadreen:ch:family-04",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "meenadreen",
+      "name": "Meenadreen",
+      "logainm_id": "14284",
+      "lat": 54.658474,
+      "lon": -7.983221,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "meenadreen:familycensus:04:1901"
+     },
+     "caption": "Meenadreen had one Gallagher household in 1901, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "meenadreen:familycensus:04:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "meenadreen:family:04",
+      "label": "Gallagher",
+      "run": true
+     }
+    },
+    {
+     "id": "meenadreen:beat:familycensus:04-1911",
+     "kind": "familycensus",
+     "chapter": "meenadreen:ch:family-04",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -239,35 +307,30 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "meenadreen:census:1911"
+      "open_card": "meenadreen:familycensus:04:1911"
      },
-     "caption": "In 1911, 62 people in thirteen households lived in Meenadreen. Heads of household included Gildea, Cassidy and Doherty.",
+     "caption": "Meenadreen had one Gallagher household in 1911, headed by John.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "meenadreen:census:1911"
+       "meenadreen:familycensus:04:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 7200,
+     "duration_ms": 4000,
      "audio": null,
-     "counts": {
-      "people": 62,
-      "households": 13
+     "thread": {
+      "id": "meenadreen:family:04",
+      "label": "Gallagher",
+      "run": true
      }
-    }
-   ]
-  },
-  {
-   "id": "meenadreen:ch:1926",
-   "title": "1926",
-   "beats": [
+    },
     {
-     "id": "meenadreen:beat:census:1926",
-     "kind": "census",
-     "chapter": "meenadreen:ch:1926",
+     "id": "meenadreen:beat:familycensus:04-1926",
+     "kind": "familycensus",
+     "chapter": "meenadreen:ch:family-04",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -284,25 +347,198 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "meenadreen:census:1926"
+      "open_card": "meenadreen:familycensus:04:1926"
      },
-     "caption": "In 1926, 66 people in fifteen households lived in Meenadreen. Heads of household included Gillespie, Gallagher and McMullin.",
+     "caption": "Meenadreen had four Gallagher households in 1926, headed by John, Mary A, Mary and Mary Eileen.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "meenadreen:census:1926"
+       "meenadreen:familycensus:04:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 7200,
+     "duration_ms": 6400,
      "audio": null,
-     "counts": {
-      "people": 66,
-      "households": 15
+     "thread": {
+      "id": "meenadreen:family:04",
+      "label": "Gallagher",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "meenadreen:ch:family-06",
+   "title": "The Gillespie family",
+   "beats": [
+    {
+     "id": "meenadreen:beat:familyhead:06",
+     "kind": "familyhead",
+     "chapter": "meenadreen:ch:family-06",
+     "time": {
+      "label": "The Gillespie family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "meenadreen",
+      "name": "Meenadreen",
+      "logainm_id": "14284",
+      "lat": 54.658474,
+      "lon": -7.983221,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "meenadreen:familypresence:06"
+     },
+     "caption": "The Gillespie family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "meenadreen:familypresence:06"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "meenadreen:family:06",
+      "label": "Gillespie",
+      "run": true
      }
     },
+    {
+     "id": "meenadreen:beat:familycensus:06-1901",
+     "kind": "familycensus",
+     "chapter": "meenadreen:ch:family-06",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "meenadreen",
+      "name": "Meenadreen",
+      "logainm_id": "14284",
+      "lat": 54.658474,
+      "lon": -7.983221,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "meenadreen:familycensus:06:1901"
+     },
+     "caption": "Meenadreen had three Gillespie households in 1901, headed by Felix, Hugh and Denis.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "meenadreen:familycensus:06:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "meenadreen:family:06",
+      "label": "Gillespie",
+      "run": true
+     }
+    },
+    {
+     "id": "meenadreen:beat:familycensus:06-1911",
+     "kind": "familycensus",
+     "chapter": "meenadreen:ch:family-06",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "meenadreen",
+      "name": "Meenadreen",
+      "logainm_id": "14284",
+      "lat": 54.658474,
+      "lon": -7.983221,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "meenadreen:familycensus:06:1911"
+     },
+     "caption": "Meenadreen had one Gillespie household in 1911, headed by Felix.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "meenadreen:familycensus:06:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "meenadreen:family:06",
+      "label": "Gillespie",
+      "run": true
+     }
+    },
+    {
+     "id": "meenadreen:beat:familycensus:06-1926",
+     "kind": "familycensus",
+     "chapter": "meenadreen:ch:family-06",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "meenadreen",
+      "name": "Meenadreen",
+      "logainm_id": "14284",
+      "lat": 54.658474,
+      "lon": -7.983221,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "meenadreen:familycensus:06:1926"
+     },
+     "caption": "Meenadreen had five Gillespie households in 1926, headed by Lizzie, Bridget, Lizzie O, Ellen J and Margaret.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "meenadreen:familycensus:06:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "thread": {
+      "id": "meenadreen:family:06",
+      "label": "Gillespie",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "meenadreen:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "meenadreen:beat:closing:end",
      "kind": "closing",
@@ -337,6 +573,1684 @@
      },
      "duration_ms": 4000,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "meenadreen:ch:family-05",
+   "title": "The Gildea family",
+   "beats": [
+    {
+     "id": "meenadreen:beat:baptism:1873-11-01-TAW-B-p008-r77",
+     "kind": "baptism",
+     "chapter": "meenadreen:ch:family-05",
+     "time": {
+      "label": "1 November 1873",
+      "iso": "1873-11-01",
+      "sort": "1873-11-01",
+      "approximate": false
+     },
+     "place": {
+      "townland": "meenadreen",
+      "name": "Meenadreen",
+      "logainm_id": "14284",
+      "lat": 54.658474,
+      "lon": -7.983221,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "meenadreen:baptism:TAW-B-p008-r77"
+     },
+     "caption": "Brigid Gildea was baptised on 1 November 1873. Patrick Gildea and Grace Hanaghy were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "meenadreen:baptism:TAW-B-p008-r77"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "meenadreen:family:05",
+      "label": "Gildea",
+      "run": false
+     }
+    },
+    {
+     "id": "meenadreen:beat:baptism:1875-01-30-TAW-B-p015-r181",
+     "kind": "baptism",
+     "chapter": "meenadreen:ch:family-05",
+     "time": {
+      "label": "30 January 1875",
+      "iso": "1875-01-30",
+      "sort": "1875-01-30",
+      "approximate": false
+     },
+     "place": {
+      "townland": "meenadreen",
+      "name": "Meenadreen",
+      "logainm_id": "14284",
+      "lat": 54.658474,
+      "lon": -7.983221,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "meenadreen:baptism:TAW-B-p015-r181"
+     },
+     "caption": "Brigid Gildea was baptised on 30 January 1875. Patrick Gildea and Grace Hanaghy were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "meenadreen:baptism:TAW-B-p015-r181"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "meenadreen:family:05",
+      "label": "Gildea",
+      "run": false
+     }
+    },
+    {
+     "id": "meenadreen:beat:familyhead:05",
+     "kind": "familyhead",
+     "chapter": "meenadreen:ch:family-05",
+     "time": {
+      "label": "The Gildea family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "meenadreen",
+      "name": "Meenadreen",
+      "logainm_id": "14284",
+      "lat": 54.658474,
+      "lon": -7.983221,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "meenadreen:familypresence:05"
+     },
+     "caption": "The Gildea family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "meenadreen:familypresence:05"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "meenadreen:family:05",
+      "label": "Gildea",
+      "run": false
+     }
+    },
+    {
+     "id": "meenadreen:beat:familycensus:05-1901",
+     "kind": "familycensus",
+     "chapter": "meenadreen:ch:family-05",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "meenadreen",
+      "name": "Meenadreen",
+      "logainm_id": "14284",
+      "lat": 54.658474,
+      "lon": -7.983221,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "meenadreen:familycensus:05:1901"
+     },
+     "caption": "Meenadreen had two Gildea households in 1901, headed by Michael and Grace.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "meenadreen:familycensus:05:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "meenadreen:family:05",
+      "label": "Gildea",
+      "run": false
+     }
+    },
+    {
+     "id": "meenadreen:beat:familycensus:05-1911",
+     "kind": "familycensus",
+     "chapter": "meenadreen:ch:family-05",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "meenadreen",
+      "name": "Meenadreen",
+      "logainm_id": "14284",
+      "lat": 54.658474,
+      "lon": -7.983221,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "meenadreen:familycensus:05:1911"
+     },
+     "caption": "Meenadreen had two Gildea households in 1911, headed by Grace and Michael.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "meenadreen:familycensus:05:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "meenadreen:family:05",
+      "label": "Gildea",
+      "run": false
+     }
+    },
+    {
+     "id": "meenadreen:beat:familycensus:05-1926",
+     "kind": "familycensus",
+     "chapter": "meenadreen:ch:family-05",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "meenadreen",
+      "name": "Meenadreen",
+      "logainm_id": "14284",
+      "lat": 54.658474,
+      "lon": -7.983221,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "meenadreen:familycensus:05:1926"
+     },
+     "caption": "Meenadreen had two Gildea households in 1926, headed by Kate and Joseph.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "meenadreen:familycensus:05:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "meenadreen:family:05",
+      "label": "Gildea",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "meenadreen:ch:family-01",
+   "title": "The Cassidy family",
+   "beats": [
+    {
+     "id": "meenadreen:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "meenadreen:ch:family-01",
+     "time": {
+      "label": "The Cassidy family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "meenadreen",
+      "name": "Meenadreen",
+      "logainm_id": "14284",
+      "lat": 54.658474,
+      "lon": -7.983221,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "meenadreen:familypresence:01"
+     },
+     "caption": "The Cassidy family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "meenadreen:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "meenadreen:family:01",
+      "label": "Cassidy",
+      "run": false
+     }
+    },
+    {
+     "id": "meenadreen:beat:familycensus:01-1901",
+     "kind": "familycensus",
+     "chapter": "meenadreen:ch:family-01",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "meenadreen",
+      "name": "Meenadreen",
+      "logainm_id": "14284",
+      "lat": 54.658474,
+      "lon": -7.983221,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "meenadreen:familycensus:01:1901"
+     },
+     "caption": "Meenadreen had two Cassidy households in 1901, headed by Michael and Anne.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "meenadreen:familycensus:01:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "meenadreen:family:01",
+      "label": "Cassidy",
+      "run": false
+     }
+    },
+    {
+     "id": "meenadreen:beat:familycensus:01-1911",
+     "kind": "familycensus",
+     "chapter": "meenadreen:ch:family-01",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "meenadreen",
+      "name": "Meenadreen",
+      "logainm_id": "14284",
+      "lat": 54.658474,
+      "lon": -7.983221,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "meenadreen:familycensus:01:1911"
+     },
+     "caption": "Meenadreen had one Cassidy household in 1911, headed by Michael.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "meenadreen:familycensus:01:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "meenadreen:family:01",
+      "label": "Cassidy",
+      "run": false
+     }
+    },
+    {
+     "id": "meenadreen:beat:familycensus:01-1926",
+     "kind": "familycensus",
+     "chapter": "meenadreen:ch:family-01",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "meenadreen",
+      "name": "Meenadreen",
+      "logainm_id": "14284",
+      "lat": 54.658474,
+      "lon": -7.983221,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "meenadreen:familycensus:01:1926"
+     },
+     "caption": "Meenadreen had one Cassidy household in 1926, headed by Bernard.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "meenadreen:familycensus:01:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "meenadreen:family:01",
+      "label": "Cassidy",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "meenadreen:ch:family-03",
+   "title": "The Doherty family",
+   "beats": [
+    {
+     "id": "meenadreen:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "meenadreen:ch:family-03",
+     "time": {
+      "label": "The Doherty family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "meenadreen",
+      "name": "Meenadreen",
+      "logainm_id": "14284",
+      "lat": 54.658474,
+      "lon": -7.983221,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "meenadreen:familypresence:03"
+     },
+     "caption": "The Doherty family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "meenadreen:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "meenadreen:family:03",
+      "label": "Doherty",
+      "run": false
+     }
+    },
+    {
+     "id": "meenadreen:beat:familycensus:03-1901",
+     "kind": "familycensus",
+     "chapter": "meenadreen:ch:family-03",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "meenadreen",
+      "name": "Meenadreen",
+      "logainm_id": "14284",
+      "lat": 54.658474,
+      "lon": -7.983221,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "meenadreen:familycensus:03:1901"
+     },
+     "caption": "Meenadreen had one Doherty household in 1901, headed by Thomas.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "meenadreen:familycensus:03:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "meenadreen:family:03",
+      "label": "Doherty",
+      "run": false
+     }
+    },
+    {
+     "id": "meenadreen:beat:familycensus:03-1911",
+     "kind": "familycensus",
+     "chapter": "meenadreen:ch:family-03",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "meenadreen",
+      "name": "Meenadreen",
+      "logainm_id": "14284",
+      "lat": 54.658474,
+      "lon": -7.983221,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "meenadreen:familycensus:03:1911"
+     },
+     "caption": "Meenadreen had one Doherty household in 1911, headed by Thomas.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "meenadreen:familycensus:03:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "meenadreen:family:03",
+      "label": "Doherty",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "meenadreen:ch:family-07",
+   "title": "The Love family",
+   "beats": [
+    {
+     "id": "meenadreen:beat:familyhead:07",
+     "kind": "familyhead",
+     "chapter": "meenadreen:ch:family-07",
+     "time": {
+      "label": "The Love family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "meenadreen",
+      "name": "Meenadreen",
+      "logainm_id": "14284",
+      "lat": 54.658474,
+      "lon": -7.983221,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "meenadreen:familypresence:07"
+     },
+     "caption": "The Love family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "meenadreen:familypresence:07"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "meenadreen:family:07",
+      "label": "Love",
+      "run": false
+     }
+    },
+    {
+     "id": "meenadreen:beat:familycensus:07-1901",
+     "kind": "familycensus",
+     "chapter": "meenadreen:ch:family-07",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "meenadreen",
+      "name": "Meenadreen",
+      "logainm_id": "14284",
+      "lat": 54.658474,
+      "lon": -7.983221,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "meenadreen:familycensus:07:1901"
+     },
+     "caption": "Meenadreen had one Love household in 1901, headed by Hannah.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "meenadreen:familycensus:07:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "meenadreen:family:07",
+      "label": "Love",
+      "run": false
+     }
+    },
+    {
+     "id": "meenadreen:beat:familycensus:07-1911",
+     "kind": "familycensus",
+     "chapter": "meenadreen:ch:family-07",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "meenadreen",
+      "name": "Meenadreen",
+      "logainm_id": "14284",
+      "lat": 54.658474,
+      "lon": -7.983221,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "meenadreen:familycensus:07:1911"
+     },
+     "caption": "Meenadreen had one Love household in 1911, headed by Robert.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "meenadreen:familycensus:07:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "meenadreen:family:07",
+      "label": "Love",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "meenadreen:ch:family-08",
+   "title": "The Mahon family",
+   "beats": [
+    {
+     "id": "meenadreen:beat:familyhead:08",
+     "kind": "familyhead",
+     "chapter": "meenadreen:ch:family-08",
+     "time": {
+      "label": "The Mahon family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "meenadreen",
+      "name": "Meenadreen",
+      "logainm_id": "14284",
+      "lat": 54.658474,
+      "lon": -7.983221,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "meenadreen:familypresence:08"
+     },
+     "caption": "The Mahon family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "meenadreen:familypresence:08"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "meenadreen:family:08",
+      "label": "Mahon",
+      "run": false
+     }
+    },
+    {
+     "id": "meenadreen:beat:familycensus:08-1901",
+     "kind": "familycensus",
+     "chapter": "meenadreen:ch:family-08",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "meenadreen",
+      "name": "Meenadreen",
+      "logainm_id": "14284",
+      "lat": 54.658474,
+      "lon": -7.983221,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "meenadreen:familycensus:08:1901"
+     },
+     "caption": "Meenadreen had one Mahon household in 1901, headed by Samuel.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "meenadreen:familycensus:08:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "meenadreen:family:08",
+      "label": "Mahon",
+      "run": false
+     }
+    },
+    {
+     "id": "meenadreen:beat:familycensus:08-1911",
+     "kind": "familycensus",
+     "chapter": "meenadreen:ch:family-08",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "meenadreen",
+      "name": "Meenadreen",
+      "logainm_id": "14284",
+      "lat": 54.658474,
+      "lon": -7.983221,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "meenadreen:familycensus:08:1911"
+     },
+     "caption": "Meenadreen had one Mahon household in 1911, headed by Samuel.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "meenadreen:familycensus:08:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "meenadreen:family:08",
+      "label": "Mahon",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "meenadreen:ch:family-11",
+   "title": "The McMullin family",
+   "beats": [
+    {
+     "id": "meenadreen:beat:familyhead:11",
+     "kind": "familyhead",
+     "chapter": "meenadreen:ch:family-11",
+     "time": {
+      "label": "The McMullin family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "meenadreen",
+      "name": "Meenadreen",
+      "logainm_id": "14284",
+      "lat": 54.658474,
+      "lon": -7.983221,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "meenadreen:familypresence:11"
+     },
+     "caption": "The McMullin family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "meenadreen:familypresence:11"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "meenadreen:family:11",
+      "label": "McMullin",
+      "run": false
+     }
+    },
+    {
+     "id": "meenadreen:beat:familycensus:11-1901",
+     "kind": "familycensus",
+     "chapter": "meenadreen:ch:family-11",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "meenadreen",
+      "name": "Meenadreen",
+      "logainm_id": "14284",
+      "lat": 54.658474,
+      "lon": -7.983221,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "meenadreen:familycensus:11:1901"
+     },
+     "caption": "Meenadreen had one McMullin household in 1901, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "meenadreen:familycensus:11:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "meenadreen:family:11",
+      "label": "McMullin",
+      "run": false
+     }
+    },
+    {
+     "id": "meenadreen:beat:familycensus:11-1911",
+     "kind": "familycensus",
+     "chapter": "meenadreen:ch:family-11",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "meenadreen",
+      "name": "Meenadreen",
+      "logainm_id": "14284",
+      "lat": 54.658474,
+      "lon": -7.983221,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "meenadreen:familycensus:11:1911"
+     },
+     "caption": "Meenadreen had one McMullin household in 1911, headed by Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "meenadreen:familycensus:11:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "meenadreen:family:11",
+      "label": "McMullin",
+      "run": false
+     }
+    },
+    {
+     "id": "meenadreen:beat:familycensus:11-1926",
+     "kind": "familycensus",
+     "chapter": "meenadreen:ch:family-11",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "meenadreen",
+      "name": "Meenadreen",
+      "logainm_id": "14284",
+      "lat": 54.658474,
+      "lon": -7.983221,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "meenadreen:familycensus:11:1926"
+     },
+     "caption": "Meenadreen had three McMullin households in 1926, headed by Sara J, Jim and Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "meenadreen:familycensus:11:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5600,
+     "audio": null,
+     "thread": {
+      "id": "meenadreen:family:11",
+      "label": "McMullin",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "meenadreen:ch:family-13",
+   "title": "The Murphy family",
+   "beats": [
+    {
+     "id": "meenadreen:beat:familyhead:13",
+     "kind": "familyhead",
+     "chapter": "meenadreen:ch:family-13",
+     "time": {
+      "label": "The Murphy family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "meenadreen",
+      "name": "Meenadreen",
+      "logainm_id": "14284",
+      "lat": 54.658474,
+      "lon": -7.983221,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "meenadreen:familypresence:13"
+     },
+     "caption": "The Murphy family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "meenadreen:familypresence:13"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "meenadreen:family:13",
+      "label": "Murphy",
+      "run": false
+     }
+    },
+    {
+     "id": "meenadreen:beat:familycensus:13-1901",
+     "kind": "familycensus",
+     "chapter": "meenadreen:ch:family-13",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "meenadreen",
+      "name": "Meenadreen",
+      "logainm_id": "14284",
+      "lat": 54.658474,
+      "lon": -7.983221,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "meenadreen:familycensus:13:1901"
+     },
+     "caption": "Meenadreen had one Murphy household in 1901, headed by Hannah.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "meenadreen:familycensus:13:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "meenadreen:family:13",
+      "label": "Murphy",
+      "run": false
+     }
+    },
+    {
+     "id": "meenadreen:beat:familycensus:13-1911",
+     "kind": "familycensus",
+     "chapter": "meenadreen:ch:family-13",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "meenadreen",
+      "name": "Meenadreen",
+      "logainm_id": "14284",
+      "lat": 54.658474,
+      "lon": -7.983221,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "meenadreen:familycensus:13:1911"
+     },
+     "caption": "Meenadreen had one Murphy household in 1911, headed by Hannagh.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "meenadreen:familycensus:13:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "meenadreen:family:13",
+      "label": "Murphy",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "meenadreen:ch:family-15",
+   "title": "The Slevin family",
+   "beats": [
+    {
+     "id": "meenadreen:beat:familyhead:15",
+     "kind": "familyhead",
+     "chapter": "meenadreen:ch:family-15",
+     "time": {
+      "label": "The Slevin family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "meenadreen",
+      "name": "Meenadreen",
+      "logainm_id": "14284",
+      "lat": 54.658474,
+      "lon": -7.983221,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "meenadreen:familypresence:15"
+     },
+     "caption": "The Slevin family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "meenadreen:familypresence:15"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "meenadreen:family:15",
+      "label": "Slevin",
+      "run": false
+     }
+    },
+    {
+     "id": "meenadreen:beat:familycensus:15-1901",
+     "kind": "familycensus",
+     "chapter": "meenadreen:ch:family-15",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "meenadreen",
+      "name": "Meenadreen",
+      "logainm_id": "14284",
+      "lat": 54.658474,
+      "lon": -7.983221,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "meenadreen:familycensus:15:1901"
+     },
+     "caption": "Meenadreen had two Slevin households in 1901, headed by Mary and Anne.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "meenadreen:familycensus:15:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "meenadreen:family:15",
+      "label": "Slevin",
+      "run": false
+     }
+    },
+    {
+     "id": "meenadreen:beat:familycensus:15-1911",
+     "kind": "familycensus",
+     "chapter": "meenadreen:ch:family-15",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "meenadreen",
+      "name": "Meenadreen",
+      "logainm_id": "14284",
+      "lat": 54.658474,
+      "lon": -7.983221,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "meenadreen:familycensus:15:1911"
+     },
+     "caption": "Meenadreen had one Slevin household in 1911, headed by Charles.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "meenadreen:familycensus:15:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "meenadreen:family:15",
+      "label": "Slevin",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "meenadreen:ch:family-09",
+   "title": "The McCadden family",
+   "beats": [
+    {
+     "id": "meenadreen:beat:familyhead:09",
+     "kind": "familyhead",
+     "chapter": "meenadreen:ch:family-09",
+     "time": {
+      "label": "The McCadden family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "meenadreen",
+      "name": "Meenadreen",
+      "logainm_id": "14284",
+      "lat": 54.658474,
+      "lon": -7.983221,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "meenadreen:familypresence:09"
+     },
+     "caption": "The McCadden family appear in the records from 1911 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "meenadreen:familypresence:09"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "meenadreen:family:09",
+      "label": "McCadden",
+      "run": false
+     }
+    },
+    {
+     "id": "meenadreen:beat:familycensus:09-1911",
+     "kind": "familycensus",
+     "chapter": "meenadreen:ch:family-09",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "meenadreen",
+      "name": "Meenadreen",
+      "logainm_id": "14284",
+      "lat": 54.658474,
+      "lon": -7.983221,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "meenadreen:familycensus:09:1911"
+     },
+     "caption": "Meenadreen had one McCadden household in 1911, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "meenadreen:familycensus:09:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "meenadreen:family:09",
+      "label": "McCadden",
+      "run": false
+     }
+    },
+    {
+     "id": "meenadreen:beat:familycensus:09-1926",
+     "kind": "familycensus",
+     "chapter": "meenadreen:ch:family-09",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "meenadreen",
+      "name": "Meenadreen",
+      "logainm_id": "14284",
+      "lat": 54.658474,
+      "lon": -7.983221,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "meenadreen:familycensus:09:1926"
+     },
+     "caption": "Meenadreen had two McCadden households in 1926, headed by Patrick and Thomas F.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "meenadreen:familycensus:09:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "meenadreen:family:09",
+      "label": "McCadden",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "meenadreen:ch:family-10",
+   "title": "The McCoole family",
+   "beats": [
+    {
+     "id": "meenadreen:beat:familyhead:10",
+     "kind": "familyhead",
+     "chapter": "meenadreen:ch:family-10",
+     "time": {
+      "label": "The McCoole family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "meenadreen",
+      "name": "Meenadreen",
+      "logainm_id": "14284",
+      "lat": 54.658474,
+      "lon": -7.983221,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "meenadreen:familypresence:10"
+     },
+     "caption": "The McCoole family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "meenadreen:familypresence:10"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "meenadreen:family:10",
+      "label": "McCoole",
+      "run": false
+     }
+    },
+    {
+     "id": "meenadreen:beat:familycensus:10-1911",
+     "kind": "familycensus",
+     "chapter": "meenadreen:ch:family-10",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "meenadreen",
+      "name": "Meenadreen",
+      "logainm_id": "14284",
+      "lat": 54.658474,
+      "lon": -7.983221,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "meenadreen:familycensus:10:1911"
+     },
+     "caption": "Meenadreen had one McCoole household in 1911, headed by Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "meenadreen:familycensus:10:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "meenadreen:family:10",
+      "label": "McCoole",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "meenadreen:ch:family-02",
+   "title": "The Corrigan family",
+   "beats": [
+    {
+     "id": "meenadreen:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "meenadreen:ch:family-02",
+     "time": {
+      "label": "The Corrigan family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "meenadreen",
+      "name": "Meenadreen",
+      "logainm_id": "14284",
+      "lat": 54.658474,
+      "lon": -7.983221,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "meenadreen:familypresence:02"
+     },
+     "caption": "The Corrigan family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "meenadreen:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "meenadreen:family:02",
+      "label": "Corrigan",
+      "run": false
+     }
+    },
+    {
+     "id": "meenadreen:beat:familycensus:02-1926",
+     "kind": "familycensus",
+     "chapter": "meenadreen:ch:family-02",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "meenadreen",
+      "name": "Meenadreen",
+      "logainm_id": "14284",
+      "lat": 54.658474,
+      "lon": -7.983221,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "meenadreen:familycensus:02:1926"
+     },
+     "caption": "Meenadreen had one Corrigan household in 1926, headed by Mary A.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "meenadreen:familycensus:02:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "meenadreen:family:02",
+      "label": "Corrigan",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "meenadreen:ch:family-12",
+   "title": "The Mundy family",
+   "beats": [
+    {
+     "id": "meenadreen:beat:familyhead:12",
+     "kind": "familyhead",
+     "chapter": "meenadreen:ch:family-12",
+     "time": {
+      "label": "The Mundy family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "meenadreen",
+      "name": "Meenadreen",
+      "logainm_id": "14284",
+      "lat": 54.658474,
+      "lon": -7.983221,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "meenadreen:familypresence:12"
+     },
+     "caption": "The Mundy family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "meenadreen:familypresence:12"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "meenadreen:family:12",
+      "label": "Mundy",
+      "run": false
+     }
+    },
+    {
+     "id": "meenadreen:beat:familycensus:12-1926",
+     "kind": "familycensus",
+     "chapter": "meenadreen:ch:family-12",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "meenadreen",
+      "name": "Meenadreen",
+      "logainm_id": "14284",
+      "lat": 54.658474,
+      "lon": -7.983221,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "meenadreen:familycensus:12:1926"
+     },
+     "caption": "Meenadreen had one Mundy household in 1926, headed by Edna May.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "meenadreen:familycensus:12:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "meenadreen:family:12",
+      "label": "Mundy",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "meenadreen:ch:family-14",
+   "title": "The Slaven family",
+   "beats": [
+    {
+     "id": "meenadreen:beat:familyhead:14",
+     "kind": "familyhead",
+     "chapter": "meenadreen:ch:family-14",
+     "time": {
+      "label": "The Slaven family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "meenadreen",
+      "name": "Meenadreen",
+      "logainm_id": "14284",
+      "lat": 54.658474,
+      "lon": -7.983221,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "meenadreen:familypresence:14"
+     },
+     "caption": "The Slaven family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "meenadreen:familypresence:14"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "meenadreen:family:14",
+      "label": "Slaven",
+      "run": false
+     }
+    },
+    {
+     "id": "meenadreen:beat:familycensus:14-1926",
+     "kind": "familycensus",
+     "chapter": "meenadreen:ch:family-14",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "meenadreen",
+      "name": "Meenadreen",
+      "logainm_id": "14284",
+      "lat": 54.658474,
+      "lon": -7.983221,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "meenadreen:familycensus:14:1926"
+     },
+     "caption": "Meenadreen had one Slaven household in 1926, headed by Cassie.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "meenadreen:familycensus:14:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "meenadreen:family:14",
+      "label": "Slaven",
+      "run": false
+     }
     }
    ]
   }

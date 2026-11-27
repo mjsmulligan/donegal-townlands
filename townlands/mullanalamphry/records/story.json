@@ -136,57 +136,15 @@
    ]
   },
   {
-   "id": "mullanalamphry:ch:baptisms",
-   "title": "Baptisms, 1875",
+   "id": "mullanalamphry:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "mullanalamphry:beat:baptism:1875",
-     "kind": "baptism",
-     "chapter": "mullanalamphry:ch:baptisms",
-     "time": {
-      "label": "14 January 1875",
-      "iso": "1875-01-14",
-      "sort": "1875-01-14",
-      "approximate": false
-     },
-     "place": {
-      "townland": "mullanalamphry",
-      "name": "Mullanalamphry",
-      "logainm_id": "13976",
-      "lat": 54.687714,
-      "lon": -8.020136,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "mullanalamphry:baptism:TAW-B-p015-r176"
-     },
-     "caption": "Two children were baptised in 1875: James McGinty on 14 January and Catherine Thomas on 11 April.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "mullanalamphry:baptism:TAW-B-p015-r176",
-       "mullanalamphry:baptism:TAW-B-p016-r203"
-      ],
-      "basis": "page_place",
-      "certainty": "stated"
-     },
-     "duration_ms": 6800,
-     "audio": null
-    }
-   ]
-  },
-  {
-   "id": "mullanalamphry:ch:1901",
-   "title": "1901",
-   "beats": [
-    {
-     "id": "mullanalamphry:beat:census:1901",
+     "id": "mullanalamphry:beat:census:returns",
      "kind": "census",
-     "chapter": "mullanalamphry:ch:1901",
+     "chapter": "mullanalamphry:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1926",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -203,33 +161,177 @@
       "stage": "map",
       "open_card": "mullanalamphry:census:1901"
      },
-     "caption": "In 1901, 47 people in ten households lived in Mullanalamphry. Heads of household included Thomas, McGettigan and Devlin.",
+     "caption": "The censuses of 1901, 1911 and 1926 counted 47, 35 and 23 people in Mullanalamphry, in 10, 8 and 7 households. Heads of household included Thomas, McGettigan and Devlin.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "mullanalamphry:census:1901"
+       "mullanalamphry:census:1901",
+       "mullanalamphry:census:1911",
+       "mullanalamphry:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 7200,
+     "duration_ms": 11600,
      "audio": null,
      "counts": {
-      "people": 47,
-      "households": 10
+      "returns": [
+       {
+        "year": "1901",
+        "people": 47,
+        "households": 10
+       },
+       {
+        "year": "1911",
+        "people": 35,
+        "households": 8
+       },
+       {
+        "year": "1926",
+        "people": 23,
+        "households": 7
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "mullanalamphry:ch:1911",
-   "title": "1911",
+   "id": "mullanalamphry:ch:families",
+   "title": "The families of Mullanalamphry",
    "beats": [
     {
-     "id": "mullanalamphry:beat:census:1911",
-     "kind": "census",
-     "chapter": "mullanalamphry:ch:1911",
+     "id": "mullanalamphry:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "mullanalamphry:ch:families",
+     "time": {
+      "label": "The families of Mullanalamphry",
+      "iso": "1850/1859",
+      "sort": "1855-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "mullanalamphry",
+      "name": "Mullanalamphry",
+      "logainm_id": "13976",
+      "lat": 54.687714,
+      "lon": -8.020136,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "mullanalamphry:valuation:griffiths"
+     },
+     "caption": "Here are the families of Mullanalamphry, from the 1850s to 1926. First, the McGettigan and Thomas families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "mullanalamphry:valuation:griffiths",
+       "mullanalamphry:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "thread": {
+      "id": "mullanalamphry:family:10",
+      "label": "McGettigan",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "mullanalamphry:ch:family-10",
+   "title": "The McGettigan family",
+   "beats": [
+    {
+     "id": "mullanalamphry:beat:familyhead:10",
+     "kind": "familyhead",
+     "chapter": "mullanalamphry:ch:family-10",
+     "time": {
+      "label": "The McGettigan family",
+      "iso": "1855",
+      "sort": "1855-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "mullanalamphry",
+      "name": "Mullanalamphry",
+      "logainm_id": "13976",
+      "lat": 54.687714,
+      "lon": -8.020136,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "mullanalamphry:familypresence:10"
+     },
+     "caption": "The McGettigan family appear in the records from 1855 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "mullanalamphry:familypresence:10"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "mullanalamphry:family:10",
+      "label": "McGettigan",
+      "run": true
+     }
+    },
+    {
+     "id": "mullanalamphry:beat:familycensus:10-1901",
+     "kind": "familycensus",
+     "chapter": "mullanalamphry:ch:family-10",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "mullanalamphry",
+      "name": "Mullanalamphry",
+      "logainm_id": "13976",
+      "lat": 54.687714,
+      "lon": -8.020136,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "mullanalamphry:familycensus:10:1901"
+     },
+     "caption": "Mullanalamphry had two McGettigan households in 1901, headed by Edward and Hugh.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "mullanalamphry:familycensus:10:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "mullanalamphry:family:10",
+      "label": "McGettigan",
+      "run": true
+     }
+    },
+    {
+     "id": "mullanalamphry:beat:familycensus:10-1911",
+     "kind": "familycensus",
+     "chapter": "mullanalamphry:ch:family-10",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -246,35 +348,30 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "mullanalamphry:census:1911"
+      "open_card": "mullanalamphry:familycensus:10:1911"
      },
-     "caption": "Mullanalamphry had 35 people in eight households in 1911. Heads of household included McGettigan, Thomas and Davis.",
+     "caption": "Mullanalamphry had two McGettigan households in 1911, headed by Mary and Edward.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "mullanalamphry:census:1911"
+       "mullanalamphry:familycensus:10:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6800,
+     "duration_ms": 4800,
      "audio": null,
-     "counts": {
-      "people": 35,
-      "households": 8
+     "thread": {
+      "id": "mullanalamphry:family:10",
+      "label": "McGettigan",
+      "run": true
      }
-    }
-   ]
-  },
-  {
-   "id": "mullanalamphry:ch:1926",
-   "title": "1926",
-   "beats": [
+    },
     {
-     "id": "mullanalamphry:beat:census:1926",
-     "kind": "census",
-     "chapter": "mullanalamphry:ch:1926",
+     "id": "mullanalamphry:beat:familycensus:10-1926",
+     "kind": "familycensus",
+     "chapter": "mullanalamphry:ch:family-10",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -291,25 +388,238 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "mullanalamphry:census:1926"
+      "open_card": "mullanalamphry:familycensus:10:1926"
      },
-     "caption": "In 1926, 23 people in seven households lived in Mullanalamphry. Heads of household included McGettigan, Thomas and Heron.",
+     "caption": "Mullanalamphry had two McGettigan households in 1926, headed by Mary and Katherine.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "mullanalamphry:census:1926"
+       "mullanalamphry:familycensus:10:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 7200,
+     "duration_ms": 4800,
      "audio": null,
-     "counts": {
-      "people": 23,
-      "households": 7
+     "thread": {
+      "id": "mullanalamphry:family:10",
+      "label": "McGettigan",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "mullanalamphry:ch:family-12",
+   "title": "The Thomas family",
+   "beats": [
+    {
+     "id": "mullanalamphry:beat:familyhead:12",
+     "kind": "familyhead",
+     "chapter": "mullanalamphry:ch:family-12",
+     "time": {
+      "label": "The Thomas family",
+      "iso": "1855",
+      "sort": "1855-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "mullanalamphry",
+      "name": "Mullanalamphry",
+      "logainm_id": "13976",
+      "lat": 54.687714,
+      "lon": -8.020136,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "mullanalamphry:familypresence:12"
+     },
+     "caption": "The Thomas family appear in the records from 1855 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "mullanalamphry:familypresence:12"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "mullanalamphry:family:12",
+      "label": "Thomas",
+      "run": true
      }
     },
+    {
+     "id": "mullanalamphry:beat:baptism:1875-04-11-TAW-B-p016-r203",
+     "kind": "baptism",
+     "chapter": "mullanalamphry:ch:family-12",
+     "time": {
+      "label": "11 April 1875",
+      "iso": "1875-04-11",
+      "sort": "1875-04-11",
+      "approximate": false
+     },
+     "place": {
+      "townland": "mullanalamphry",
+      "name": "Mullanalamphry",
+      "logainm_id": "13976",
+      "lat": 54.687714,
+      "lon": -8.020136,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "mullanalamphry:baptism:TAW-B-p016-r203"
+     },
+     "caption": "Catherine Thomas was baptised on 11 April 1875. Charles Thomas and Brigid Cassidy were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "mullanalamphry:baptism:TAW-B-p016-r203"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "mullanalamphry:family:12",
+      "label": "Thomas",
+      "run": true
+     }
+    },
+    {
+     "id": "mullanalamphry:beat:familycensus:12-1901",
+     "kind": "familycensus",
+     "chapter": "mullanalamphry:ch:family-12",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "mullanalamphry",
+      "name": "Mullanalamphry",
+      "logainm_id": "13976",
+      "lat": 54.687714,
+      "lon": -8.020136,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "mullanalamphry:familycensus:12:1901"
+     },
+     "caption": "Mullanalamphry had three Thomas households in 1901, headed by Charles, Mary and Michael.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "mullanalamphry:familycensus:12:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "mullanalamphry:family:12",
+      "label": "Thomas",
+      "run": true
+     }
+    },
+    {
+     "id": "mullanalamphry:beat:familycensus:12-1911",
+     "kind": "familycensus",
+     "chapter": "mullanalamphry:ch:family-12",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "mullanalamphry",
+      "name": "Mullanalamphry",
+      "logainm_id": "13976",
+      "lat": 54.687714,
+      "lon": -8.020136,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "mullanalamphry:familycensus:12:1911"
+     },
+     "caption": "Mullanalamphry had two Thomas households in 1911, headed by Michael and Charles.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "mullanalamphry:familycensus:12:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "mullanalamphry:family:12",
+      "label": "Thomas",
+      "run": true
+     }
+    },
+    {
+     "id": "mullanalamphry:beat:familycensus:12-1926",
+     "kind": "familycensus",
+     "chapter": "mullanalamphry:ch:family-12",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "mullanalamphry",
+      "name": "Mullanalamphry",
+      "logainm_id": "13976",
+      "lat": 54.687714,
+      "lon": -8.020136,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "mullanalamphry:familycensus:12:1926"
+     },
+     "caption": "Mullanalamphry had two Thomas households in 1926, headed by Henry and Bridget.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "mullanalamphry:familycensus:12:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "mullanalamphry:family:12",
+      "label": "Thomas",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "mullanalamphry:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "mullanalamphry:beat:closing:end",
      "kind": "closing",
@@ -344,6 +654,986 @@
      },
      "duration_ms": 4000,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "mullanalamphry:ch:family-02",
+   "title": "The Devlin family",
+   "beats": [
+    {
+     "id": "mullanalamphry:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "mullanalamphry:ch:family-02",
+     "time": {
+      "label": "The Devlin family",
+      "iso": "1855",
+      "sort": "1855-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "mullanalamphry",
+      "name": "Mullanalamphry",
+      "logainm_id": "13976",
+      "lat": 54.687714,
+      "lon": -8.020136,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "mullanalamphry:familypresence:02"
+     },
+     "caption": "The Devlin family appear in the records from 1855 to 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "mullanalamphry:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "mullanalamphry:family:02",
+      "label": "Devlin",
+      "run": false
+     }
+    },
+    {
+     "id": "mullanalamphry:beat:familycensus:02-1901",
+     "kind": "familycensus",
+     "chapter": "mullanalamphry:ch:family-02",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "mullanalamphry",
+      "name": "Mullanalamphry",
+      "logainm_id": "13976",
+      "lat": 54.687714,
+      "lon": -8.020136,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "mullanalamphry:familycensus:02:1901"
+     },
+     "caption": "Mullanalamphry had one Devlin household in 1901, headed by Catherine.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "mullanalamphry:familycensus:02:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "mullanalamphry:family:02",
+      "label": "Devlin",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "mullanalamphry:ch:family-04",
+   "title": "The Grimes family",
+   "beats": [
+    {
+     "id": "mullanalamphry:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "mullanalamphry:ch:family-04",
+     "time": {
+      "label": "The Grimes family",
+      "iso": "1855",
+      "sort": "1855-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "mullanalamphry",
+      "name": "Mullanalamphry",
+      "logainm_id": "13976",
+      "lat": 54.687714,
+      "lon": -8.020136,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "mullanalamphry:familypresence:04"
+     },
+     "caption": "The Grimes family appear in the records in 1855.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "mullanalamphry:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "mullanalamphry:family:04",
+      "label": "Grimes",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "mullanalamphry:ch:family-08",
+   "title": "The Lahan family",
+   "beats": [
+    {
+     "id": "mullanalamphry:beat:familyhead:08",
+     "kind": "familyhead",
+     "chapter": "mullanalamphry:ch:family-08",
+     "time": {
+      "label": "The Lahan family",
+      "iso": "1855",
+      "sort": "1855-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "mullanalamphry",
+      "name": "Mullanalamphry",
+      "logainm_id": "13976",
+      "lat": 54.687714,
+      "lon": -8.020136,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "mullanalamphry:familypresence:08"
+     },
+     "caption": "The Lahan family appear in the records in 1855.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "mullanalamphry:familypresence:08"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "mullanalamphry:family:08",
+      "label": "Lahan",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "mullanalamphry:ch:family-09",
+   "title": "The Lipsett family",
+   "beats": [
+    {
+     "id": "mullanalamphry:beat:familyhead:09",
+     "kind": "familyhead",
+     "chapter": "mullanalamphry:ch:family-09",
+     "time": {
+      "label": "The Lipsett family",
+      "iso": "1855",
+      "sort": "1855-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "mullanalamphry",
+      "name": "Mullanalamphry",
+      "logainm_id": "13976",
+      "lat": 54.687714,
+      "lon": -8.020136,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "mullanalamphry:familypresence:09"
+     },
+     "caption": "The Lipsett family appear in the records in 1855.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "mullanalamphry:familypresence:09"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "mullanalamphry:family:09",
+      "label": "Lipsett",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "mullanalamphry:ch:family-11",
+   "title": "The McGinty family",
+   "beats": [
+    {
+     "id": "mullanalamphry:beat:familyhead:11",
+     "kind": "familyhead",
+     "chapter": "mullanalamphry:ch:family-11",
+     "time": {
+      "label": "The McGinty family",
+      "iso": "1855",
+      "sort": "1855-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "mullanalamphry",
+      "name": "Mullanalamphry",
+      "logainm_id": "13976",
+      "lat": 54.687714,
+      "lon": -8.020136,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "mullanalamphry:familypresence:11"
+     },
+     "caption": "The McGinty family appear in the records from 1855 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "mullanalamphry:familypresence:11"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "mullanalamphry:family:11",
+      "label": "McGinty",
+      "run": false
+     }
+    },
+    {
+     "id": "mullanalamphry:beat:baptism:1875-01-14-TAW-B-p015-r176",
+     "kind": "baptism",
+     "chapter": "mullanalamphry:ch:family-11",
+     "time": {
+      "label": "14 January 1875",
+      "iso": "1875-01-14",
+      "sort": "1875-01-14",
+      "approximate": false
+     },
+     "place": {
+      "townland": "mullanalamphry",
+      "name": "Mullanalamphry",
+      "logainm_id": "13976",
+      "lat": 54.687714,
+      "lon": -8.020136,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "mullanalamphry:baptism:TAW-B-p015-r176"
+     },
+     "caption": "James McGinty was baptised on 14 January 1875. John McGinty and Margaret Cassidy were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "mullanalamphry:baptism:TAW-B-p015-r176"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "mullanalamphry:family:11",
+      "label": "McGinty",
+      "run": false
+     }
+    },
+    {
+     "id": "mullanalamphry:beat:familycensus:11-1901",
+     "kind": "familycensus",
+     "chapter": "mullanalamphry:ch:family-11",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "mullanalamphry",
+      "name": "Mullanalamphry",
+      "logainm_id": "13976",
+      "lat": 54.687714,
+      "lon": -8.020136,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "mullanalamphry:familycensus:11:1901"
+     },
+     "caption": "Mullanalamphry had one McGinty household in 1901, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "mullanalamphry:familycensus:11:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "mullanalamphry:family:11",
+      "label": "McGinty",
+      "run": false
+     }
+    },
+    {
+     "id": "mullanalamphry:beat:familycensus:11-1911",
+     "kind": "familycensus",
+     "chapter": "mullanalamphry:ch:family-11",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "mullanalamphry",
+      "name": "Mullanalamphry",
+      "logainm_id": "13976",
+      "lat": 54.687714,
+      "lon": -8.020136,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "mullanalamphry:familycensus:11:1911"
+     },
+     "caption": "Mullanalamphry had one McGinty household in 1911, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "mullanalamphry:familycensus:11:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "mullanalamphry:family:11",
+      "label": "McGinty",
+      "run": false
+     }
+    },
+    {
+     "id": "mullanalamphry:beat:familycensus:11-1926",
+     "kind": "familycensus",
+     "chapter": "mullanalamphry:ch:family-11",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "mullanalamphry",
+      "name": "Mullanalamphry",
+      "logainm_id": "13976",
+      "lat": 54.687714,
+      "lon": -8.020136,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "mullanalamphry:familycensus:11:1926"
+     },
+     "caption": "Mullanalamphry had one McGinty household in 1926, headed by Margaret.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "mullanalamphry:familycensus:11:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "mullanalamphry:family:11",
+      "label": "McGinty",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "mullanalamphry:ch:family-03",
+   "title": "The Graham family",
+   "beats": [
+    {
+     "id": "mullanalamphry:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "mullanalamphry:ch:family-03",
+     "time": {
+      "label": "The Graham family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "mullanalamphry",
+      "name": "Mullanalamphry",
+      "logainm_id": "13976",
+      "lat": 54.687714,
+      "lon": -8.020136,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "mullanalamphry:familypresence:03"
+     },
+     "caption": "The Graham family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "mullanalamphry:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "mullanalamphry:family:03",
+      "label": "Graham",
+      "run": false
+     }
+    },
+    {
+     "id": "mullanalamphry:beat:familycensus:03-1901",
+     "kind": "familycensus",
+     "chapter": "mullanalamphry:ch:family-03",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "mullanalamphry",
+      "name": "Mullanalamphry",
+      "logainm_id": "13976",
+      "lat": 54.687714,
+      "lon": -8.020136,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "mullanalamphry:familycensus:03:1901"
+     },
+     "caption": "Mullanalamphry had one Graham household in 1901, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "mullanalamphry:familycensus:03:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "mullanalamphry:family:03",
+      "label": "Graham",
+      "run": false
+     }
+    },
+    {
+     "id": "mullanalamphry:beat:familycensus:03-1911",
+     "kind": "familycensus",
+     "chapter": "mullanalamphry:ch:family-03",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "mullanalamphry",
+      "name": "Mullanalamphry",
+      "logainm_id": "13976",
+      "lat": 54.687714,
+      "lon": -8.020136,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "mullanalamphry:familycensus:03:1911"
+     },
+     "caption": "Mullanalamphry had one Graham household in 1911, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "mullanalamphry:familycensus:03:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "mullanalamphry:family:03",
+      "label": "Graham",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "mullanalamphry:ch:family-05",
+   "title": "The Heron family",
+   "beats": [
+    {
+     "id": "mullanalamphry:beat:familyhead:05",
+     "kind": "familyhead",
+     "chapter": "mullanalamphry:ch:family-05",
+     "time": {
+      "label": "The Heron family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "mullanalamphry",
+      "name": "Mullanalamphry",
+      "logainm_id": "13976",
+      "lat": 54.687714,
+      "lon": -8.020136,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "mullanalamphry:familypresence:05"
+     },
+     "caption": "The Heron family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "mullanalamphry:familypresence:05"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "mullanalamphry:family:05",
+      "label": "Heron",
+      "run": false
+     }
+    },
+    {
+     "id": "mullanalamphry:beat:familycensus:05-1901",
+     "kind": "familycensus",
+     "chapter": "mullanalamphry:ch:family-05",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "mullanalamphry",
+      "name": "Mullanalamphry",
+      "logainm_id": "13976",
+      "lat": 54.687714,
+      "lon": -8.020136,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "mullanalamphry:familycensus:05:1901"
+     },
+     "caption": "Mullanalamphry had one Heron household in 1901, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "mullanalamphry:familycensus:05:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "mullanalamphry:family:05",
+      "label": "Heron",
+      "run": false
+     }
+    },
+    {
+     "id": "mullanalamphry:beat:familycensus:05-1911",
+     "kind": "familycensus",
+     "chapter": "mullanalamphry:ch:family-05",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "mullanalamphry",
+      "name": "Mullanalamphry",
+      "logainm_id": "13976",
+      "lat": 54.687714,
+      "lon": -8.020136,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "mullanalamphry:familycensus:05:1911"
+     },
+     "caption": "Mullanalamphry had one Heron household in 1911, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "mullanalamphry:familycensus:05:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "mullanalamphry:family:05",
+      "label": "Heron",
+      "run": false
+     }
+    },
+    {
+     "id": "mullanalamphry:beat:familycensus:05-1926",
+     "kind": "familycensus",
+     "chapter": "mullanalamphry:ch:family-05",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "mullanalamphry",
+      "name": "Mullanalamphry",
+      "logainm_id": "13976",
+      "lat": 54.687714,
+      "lon": -8.020136,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "mullanalamphry:familycensus:05:1926"
+     },
+     "caption": "Mullanalamphry had one Heron household in 1926, headed by William.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "mullanalamphry:familycensus:05:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "mullanalamphry:family:05",
+      "label": "Heron",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "mullanalamphry:ch:family-06",
+   "title": "The Ingram family",
+   "beats": [
+    {
+     "id": "mullanalamphry:beat:familyhead:06",
+     "kind": "familyhead",
+     "chapter": "mullanalamphry:ch:family-06",
+     "time": {
+      "label": "The Ingram family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "mullanalamphry",
+      "name": "Mullanalamphry",
+      "logainm_id": "13976",
+      "lat": 54.687714,
+      "lon": -8.020136,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "mullanalamphry:familypresence:06"
+     },
+     "caption": "The Ingram family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "mullanalamphry:familypresence:06"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "mullanalamphry:family:06",
+      "label": "Ingram",
+      "run": false
+     }
+    },
+    {
+     "id": "mullanalamphry:beat:familycensus:06-1901",
+     "kind": "familycensus",
+     "chapter": "mullanalamphry:ch:family-06",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "mullanalamphry",
+      "name": "Mullanalamphry",
+      "logainm_id": "13976",
+      "lat": 54.687714,
+      "lon": -8.020136,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "mullanalamphry:familycensus:06:1901"
+     },
+     "caption": "Mullanalamphry had one Ingram household in 1901, headed by William.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "mullanalamphry:familycensus:06:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "mullanalamphry:family:06",
+      "label": "Ingram",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "mullanalamphry:ch:family-01",
+   "title": "The Davis family",
+   "beats": [
+    {
+     "id": "mullanalamphry:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "mullanalamphry:ch:family-01",
+     "time": {
+      "label": "The Davis family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "mullanalamphry",
+      "name": "Mullanalamphry",
+      "logainm_id": "13976",
+      "lat": 54.687714,
+      "lon": -8.020136,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "mullanalamphry:familypresence:01"
+     },
+     "caption": "The Davis family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "mullanalamphry:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "mullanalamphry:family:01",
+      "label": "Davis",
+      "run": false
+     }
+    },
+    {
+     "id": "mullanalamphry:beat:familycensus:01-1911",
+     "kind": "familycensus",
+     "chapter": "mullanalamphry:ch:family-01",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "mullanalamphry",
+      "name": "Mullanalamphry",
+      "logainm_id": "13976",
+      "lat": 54.687714,
+      "lon": -8.020136,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "mullanalamphry:familycensus:01:1911"
+     },
+     "caption": "Mullanalamphry had one Davis household in 1911, headed by Richard.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "mullanalamphry:familycensus:01:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "mullanalamphry:family:01",
+      "label": "Davis",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "mullanalamphry:ch:family-07",
+   "title": "The Johnston family",
+   "beats": [
+    {
+     "id": "mullanalamphry:beat:familyhead:07",
+     "kind": "familyhead",
+     "chapter": "mullanalamphry:ch:family-07",
+     "time": {
+      "label": "The Johnston family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "mullanalamphry",
+      "name": "Mullanalamphry",
+      "logainm_id": "13976",
+      "lat": 54.687714,
+      "lon": -8.020136,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "mullanalamphry:familypresence:07"
+     },
+     "caption": "The Johnston family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "mullanalamphry:familypresence:07"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "mullanalamphry:family:07",
+      "label": "Johnston",
+      "run": false
+     }
+    },
+    {
+     "id": "mullanalamphry:beat:familycensus:07-1926",
+     "kind": "familycensus",
+     "chapter": "mullanalamphry:ch:family-07",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "mullanalamphry",
+      "name": "Mullanalamphry",
+      "logainm_id": "13976",
+      "lat": 54.687714,
+      "lon": -8.020136,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "mullanalamphry:familycensus:07:1926"
+     },
+     "caption": "Mullanalamphry had one Johnston household in 1926, headed by George.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "mullanalamphry:familycensus:07:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "mullanalamphry:family:07",
+      "label": "Johnston",
+      "run": false
+     }
     }
    ]
   }

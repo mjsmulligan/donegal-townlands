@@ -52,15 +52,15 @@
    ]
   },
   {
-   "id": "clanboorhin:ch:1901",
-   "title": "1901",
+   "id": "clanboorhin:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "clanboorhin:beat:census:1901",
+     "id": "clanboorhin:beat:census:returns",
      "kind": "census",
-     "chapter": "clanboorhin:ch:1901",
+     "chapter": "clanboorhin:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1926",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -77,33 +77,177 @@
       "stage": "map",
       "open_card": "clanboorhin:census:1901"
      },
-     "caption": "In 1901, 39 people in ten households lived in Clanboorhin. Heads of household included Breslin, Gillespie and Gillispie.",
+     "caption": "The censuses of 1901, 1911 and 1926 counted 39, 50 and 47 people in Clanboorhin, in 10, 11 and 11 households. Heads of household included Breslin, Gillespie and Gillispie.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "clanboorhin:census:1901"
+       "clanboorhin:census:1901",
+       "clanboorhin:census:1911",
+       "clanboorhin:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 7200,
+     "duration_ms": 11600,
      "audio": null,
      "counts": {
-      "people": 39,
-      "households": 10
+      "returns": [
+       {
+        "year": "1901",
+        "people": 39,
+        "households": 10
+       },
+       {
+        "year": "1911",
+        "people": 50,
+        "households": 11
+       },
+       {
+        "year": "1926",
+        "people": 47,
+        "households": 11
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "clanboorhin:ch:1911",
-   "title": "1911",
+   "id": "clanboorhin:ch:families",
+   "title": "The families of Clanboorhin",
    "beats": [
     {
-     "id": "clanboorhin:beat:census:1911",
-     "kind": "census",
-     "chapter": "clanboorhin:ch:1911",
+     "id": "clanboorhin:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "clanboorhin:ch:families",
+     "time": {
+      "label": "The families of Clanboorhin",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clanboorhin",
+      "name": "Clanboorhin",
+      "logainm_id": "14001",
+      "lat": 54.678353,
+      "lon": -8.144436,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clanboorhin:census:1901"
+     },
+     "caption": "Here are the families of Clanboorhin, from 1901 to 1926. First, the Gillespie and Mulhern families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clanboorhin:census:1901",
+       "clanboorhin:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "clanboorhin:family:04",
+      "label": "Gillespie",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "clanboorhin:ch:family-04",
+   "title": "The Gillespie family",
+   "beats": [
+    {
+     "id": "clanboorhin:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "clanboorhin:ch:family-04",
+     "time": {
+      "label": "The Gillespie family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clanboorhin",
+      "name": "Clanboorhin",
+      "logainm_id": "14001",
+      "lat": 54.678353,
+      "lon": -8.144436,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clanboorhin:familypresence:04"
+     },
+     "caption": "The Gillespie family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clanboorhin:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "clanboorhin:family:04",
+      "label": "Gillespie",
+      "run": true
+     }
+    },
+    {
+     "id": "clanboorhin:beat:familycensus:04-1901",
+     "kind": "familycensus",
+     "chapter": "clanboorhin:ch:family-04",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clanboorhin",
+      "name": "Clanboorhin",
+      "logainm_id": "14001",
+      "lat": 54.678353,
+      "lon": -8.144436,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clanboorhin:familycensus:04:1901"
+     },
+     "caption": "Clanboorhin had one Gillespie household in 1901, headed by William.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clanboorhin:familycensus:04:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clanboorhin:family:04",
+      "label": "Gillespie",
+      "run": true
+     }
+    },
+    {
+     "id": "clanboorhin:beat:familycensus:04-1911",
+     "kind": "familycensus",
+     "chapter": "clanboorhin:ch:family-04",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -120,35 +264,30 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "clanboorhin:census:1911"
+      "open_card": "clanboorhin:familycensus:04:1911"
      },
-     "caption": "Clanboorhin had 50 people in eleven households in 1911. Heads of household included Gillespie, Doherty and Dunnion.",
+     "caption": "Clanboorhin had three Gillespie households in 1911, headed by two named James and Charles.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "clanboorhin:census:1911"
+       "clanboorhin:familycensus:04:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6800,
+     "duration_ms": 5600,
      "audio": null,
-     "counts": {
-      "people": 50,
-      "households": 11
+     "thread": {
+      "id": "clanboorhin:family:04",
+      "label": "Gillespie",
+      "run": true
      }
-    }
-   ]
-  },
-  {
-   "id": "clanboorhin:ch:1926",
-   "title": "1926",
-   "beats": [
+    },
     {
-     "id": "clanboorhin:beat:census:1926",
-     "kind": "census",
-     "chapter": "clanboorhin:ch:1926",
+     "id": "clanboorhin:beat:familycensus:04-1926",
+     "kind": "familycensus",
+     "chapter": "clanboorhin:ch:family-04",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -165,25 +304,198 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "clanboorhin:census:1926"
+      "open_card": "clanboorhin:familycensus:04:1926"
      },
-     "caption": "In 1926, 47 people in eleven households lived in Clanboorhin. Heads of household included Gillespie, Doherty and Kenny.",
+     "caption": "Clanboorhin had three Gillespie households in 1926, headed by two named James and Charles.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "clanboorhin:census:1926"
+       "clanboorhin:familycensus:04:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 7200,
+     "duration_ms": 5600,
      "audio": null,
-     "counts": {
-      "people": 47,
-      "households": 11
+     "thread": {
+      "id": "clanboorhin:family:04",
+      "label": "Gillespie",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "clanboorhin:ch:family-12",
+   "title": "The Mulhern family",
+   "beats": [
+    {
+     "id": "clanboorhin:beat:familyhead:12",
+     "kind": "familyhead",
+     "chapter": "clanboorhin:ch:family-12",
+     "time": {
+      "label": "The Mulhern family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clanboorhin",
+      "name": "Clanboorhin",
+      "logainm_id": "14001",
+      "lat": 54.678353,
+      "lon": -8.144436,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clanboorhin:familypresence:12"
+     },
+     "caption": "The Mulhern family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clanboorhin:familypresence:12"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "clanboorhin:family:12",
+      "label": "Mulhern",
+      "run": true
      }
     },
+    {
+     "id": "clanboorhin:beat:familycensus:12-1901",
+     "kind": "familycensus",
+     "chapter": "clanboorhin:ch:family-12",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clanboorhin",
+      "name": "Clanboorhin",
+      "logainm_id": "14001",
+      "lat": 54.678353,
+      "lon": -8.144436,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clanboorhin:familycensus:12:1901"
+     },
+     "caption": "Clanboorhin had one Mulhern household in 1901, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clanboorhin:familycensus:12:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clanboorhin:family:12",
+      "label": "Mulhern",
+      "run": true
+     }
+    },
+    {
+     "id": "clanboorhin:beat:familycensus:12-1911",
+     "kind": "familycensus",
+     "chapter": "clanboorhin:ch:family-12",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clanboorhin",
+      "name": "Clanboorhin",
+      "logainm_id": "14001",
+      "lat": 54.678353,
+      "lon": -8.144436,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clanboorhin:familycensus:12:1911"
+     },
+     "caption": "Clanboorhin had one Mulhern household in 1911, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clanboorhin:familycensus:12:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clanboorhin:family:12",
+      "label": "Mulhern",
+      "run": true
+     }
+    },
+    {
+     "id": "clanboorhin:beat:familycensus:12-1926",
+     "kind": "familycensus",
+     "chapter": "clanboorhin:ch:family-12",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clanboorhin",
+      "name": "Clanboorhin",
+      "logainm_id": "14001",
+      "lat": 54.678353,
+      "lon": -8.144436,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clanboorhin:familycensus:12:1926"
+     },
+     "caption": "Clanboorhin had one Mulhern household in 1926, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clanboorhin:familycensus:12:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clanboorhin:family:12",
+      "label": "Mulhern",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "clanboorhin:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "clanboorhin:beat:closing:end",
      "kind": "closing",
@@ -218,6 +530,1444 @@
      },
      "duration_ms": 4000,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "clanboorhin:ch:family-01",
+   "title": "The Breslin family",
+   "beats": [
+    {
+     "id": "clanboorhin:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "clanboorhin:ch:family-01",
+     "time": {
+      "label": "The Breslin family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clanboorhin",
+      "name": "Clanboorhin",
+      "logainm_id": "14001",
+      "lat": 54.678353,
+      "lon": -8.144436,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clanboorhin:familypresence:01"
+     },
+     "caption": "The Breslin family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clanboorhin:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clanboorhin:family:01",
+      "label": "Breslin",
+      "run": false
+     }
+    },
+    {
+     "id": "clanboorhin:beat:familycensus:01-1901",
+     "kind": "familycensus",
+     "chapter": "clanboorhin:ch:family-01",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clanboorhin",
+      "name": "Clanboorhin",
+      "logainm_id": "14001",
+      "lat": 54.678353,
+      "lon": -8.144436,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clanboorhin:familycensus:01:1901"
+     },
+     "caption": "Clanboorhin had one Breslin household in 1901, headed by Chaterine.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clanboorhin:familycensus:01:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clanboorhin:family:01",
+      "label": "Breslin",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clanboorhin:ch:family-05",
+   "title": "The Gillispie family",
+   "beats": [
+    {
+     "id": "clanboorhin:beat:familyhead:05",
+     "kind": "familyhead",
+     "chapter": "clanboorhin:ch:family-05",
+     "time": {
+      "label": "The Gillispie family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clanboorhin",
+      "name": "Clanboorhin",
+      "logainm_id": "14001",
+      "lat": 54.678353,
+      "lon": -8.144436,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clanboorhin:familypresence:05"
+     },
+     "caption": "The Gillispie family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clanboorhin:familypresence:05"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clanboorhin:family:05",
+      "label": "Gillispie",
+      "run": false
+     }
+    },
+    {
+     "id": "clanboorhin:beat:familycensus:05-1901",
+     "kind": "familycensus",
+     "chapter": "clanboorhin:ch:family-05",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clanboorhin",
+      "name": "Clanboorhin",
+      "logainm_id": "14001",
+      "lat": 54.678353,
+      "lon": -8.144436,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clanboorhin:familycensus:05:1901"
+     },
+     "caption": "Clanboorhin had one Gillispie household in 1901, headed by Joseph.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clanboorhin:familycensus:05:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clanboorhin:family:05",
+      "label": "Gillispie",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clanboorhin:ch:family-08",
+   "title": "The McCoole family",
+   "beats": [
+    {
+     "id": "clanboorhin:beat:familyhead:08",
+     "kind": "familyhead",
+     "chapter": "clanboorhin:ch:family-08",
+     "time": {
+      "label": "The McCoole family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clanboorhin",
+      "name": "Clanboorhin",
+      "logainm_id": "14001",
+      "lat": 54.678353,
+      "lon": -8.144436,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clanboorhin:familypresence:08"
+     },
+     "caption": "The McCoole family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clanboorhin:familypresence:08"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clanboorhin:family:08",
+      "label": "McCoole",
+      "run": false
+     }
+    },
+    {
+     "id": "clanboorhin:beat:familycensus:08-1901",
+     "kind": "familycensus",
+     "chapter": "clanboorhin:ch:family-08",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clanboorhin",
+      "name": "Clanboorhin",
+      "logainm_id": "14001",
+      "lat": 54.678353,
+      "lon": -8.144436,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clanboorhin:familycensus:08:1901"
+     },
+     "caption": "Clanboorhin had one McCoole household in 1901, headed by Ellen.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clanboorhin:familycensus:08:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clanboorhin:family:08",
+      "label": "McCoole",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clanboorhin:ch:family-09",
+   "title": "The McGrath family",
+   "beats": [
+    {
+     "id": "clanboorhin:beat:familyhead:09",
+     "kind": "familyhead",
+     "chapter": "clanboorhin:ch:family-09",
+     "time": {
+      "label": "The McGrath family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clanboorhin",
+      "name": "Clanboorhin",
+      "logainm_id": "14001",
+      "lat": 54.678353,
+      "lon": -8.144436,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clanboorhin:familypresence:09"
+     },
+     "caption": "The McGrath family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clanboorhin:familypresence:09"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clanboorhin:family:09",
+      "label": "McGrath",
+      "run": false
+     }
+    },
+    {
+     "id": "clanboorhin:beat:familycensus:09-1901",
+     "kind": "familycensus",
+     "chapter": "clanboorhin:ch:family-09",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clanboorhin",
+      "name": "Clanboorhin",
+      "logainm_id": "14001",
+      "lat": 54.678353,
+      "lon": -8.144436,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clanboorhin:familycensus:09:1901"
+     },
+     "caption": "Clanboorhin had one McGrath household in 1901, headed by Bridget.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clanboorhin:familycensus:09:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clanboorhin:family:09",
+      "label": "McGrath",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clanboorhin:ch:family-10",
+   "title": "The McGroary family",
+   "beats": [
+    {
+     "id": "clanboorhin:beat:familyhead:10",
+     "kind": "familyhead",
+     "chapter": "clanboorhin:ch:family-10",
+     "time": {
+      "label": "The McGroary family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clanboorhin",
+      "name": "Clanboorhin",
+      "logainm_id": "14001",
+      "lat": 54.678353,
+      "lon": -8.144436,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clanboorhin:familypresence:10"
+     },
+     "caption": "The McGroary family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clanboorhin:familypresence:10"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clanboorhin:family:10",
+      "label": "McGroary",
+      "run": false
+     }
+    },
+    {
+     "id": "clanboorhin:beat:familycensus:10-1901",
+     "kind": "familycensus",
+     "chapter": "clanboorhin:ch:family-10",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clanboorhin",
+      "name": "Clanboorhin",
+      "logainm_id": "14001",
+      "lat": 54.678353,
+      "lon": -8.144436,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clanboorhin:familycensus:10:1901"
+     },
+     "caption": "Clanboorhin had one McGroary household in 1901, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clanboorhin:familycensus:10:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clanboorhin:family:10",
+      "label": "McGroary",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clanboorhin:ch:family-11",
+   "title": "The Meehan family",
+   "beats": [
+    {
+     "id": "clanboorhin:beat:familyhead:11",
+     "kind": "familyhead",
+     "chapter": "clanboorhin:ch:family-11",
+     "time": {
+      "label": "The Meehan family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clanboorhin",
+      "name": "Clanboorhin",
+      "logainm_id": "14001",
+      "lat": 54.678353,
+      "lon": -8.144436,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clanboorhin:familypresence:11"
+     },
+     "caption": "The Meehan family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clanboorhin:familypresence:11"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clanboorhin:family:11",
+      "label": "Meehan",
+      "run": false
+     }
+    },
+    {
+     "id": "clanboorhin:beat:familycensus:11-1901",
+     "kind": "familycensus",
+     "chapter": "clanboorhin:ch:family-11",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clanboorhin",
+      "name": "Clanboorhin",
+      "logainm_id": "14001",
+      "lat": 54.678353,
+      "lon": -8.144436,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clanboorhin:familycensus:11:1901"
+     },
+     "caption": "Clanboorhin had one Meehan household in 1901, headed by Bryan.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clanboorhin:familycensus:11:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clanboorhin:family:11",
+      "label": "Meehan",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clanboorhin:ch:family-14",
+   "title": "The Williamson family",
+   "beats": [
+    {
+     "id": "clanboorhin:beat:familyhead:14",
+     "kind": "familyhead",
+     "chapter": "clanboorhin:ch:family-14",
+     "time": {
+      "label": "The Williamson family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clanboorhin",
+      "name": "Clanboorhin",
+      "logainm_id": "14001",
+      "lat": 54.678353,
+      "lon": -8.144436,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clanboorhin:familypresence:14"
+     },
+     "caption": "The Williamson family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clanboorhin:familypresence:14"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "clanboorhin:family:14",
+      "label": "Williamson",
+      "run": false
+     }
+    },
+    {
+     "id": "clanboorhin:beat:familycensus:14-1901",
+     "kind": "familycensus",
+     "chapter": "clanboorhin:ch:family-14",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clanboorhin",
+      "name": "Clanboorhin",
+      "logainm_id": "14001",
+      "lat": 54.678353,
+      "lon": -8.144436,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clanboorhin:familycensus:14:1901"
+     },
+     "caption": "Clanboorhin had one Williamson household in 1901, headed by Jane.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clanboorhin:familycensus:14:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clanboorhin:family:14",
+      "label": "Williamson",
+      "run": false
+     }
+    },
+    {
+     "id": "clanboorhin:beat:familycensus:14-1911",
+     "kind": "familycensus",
+     "chapter": "clanboorhin:ch:family-14",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clanboorhin",
+      "name": "Clanboorhin",
+      "logainm_id": "14001",
+      "lat": 54.678353,
+      "lon": -8.144436,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clanboorhin:familycensus:14:1911"
+     },
+     "caption": "Clanboorhin had one Williamson household in 1911, headed by Martha.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clanboorhin:familycensus:14:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clanboorhin:family:14",
+      "label": "Williamson",
+      "run": false
+     }
+    },
+    {
+     "id": "clanboorhin:beat:familycensus:14-1926",
+     "kind": "familycensus",
+     "chapter": "clanboorhin:ch:family-14",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clanboorhin",
+      "name": "Clanboorhin",
+      "logainm_id": "14001",
+      "lat": 54.678353,
+      "lon": -8.144436,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clanboorhin:familycensus:14:1926"
+     },
+     "caption": "Clanboorhin had one Williamson household in 1926, headed by Martha.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clanboorhin:familycensus:14:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clanboorhin:family:14",
+      "label": "Williamson",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clanboorhin:ch:family-15",
+   "title": "The Wilson family",
+   "beats": [
+    {
+     "id": "clanboorhin:beat:familyhead:15",
+     "kind": "familyhead",
+     "chapter": "clanboorhin:ch:family-15",
+     "time": {
+      "label": "The Wilson family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clanboorhin",
+      "name": "Clanboorhin",
+      "logainm_id": "14001",
+      "lat": 54.678353,
+      "lon": -8.144436,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clanboorhin:familypresence:15"
+     },
+     "caption": "The Wilson family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clanboorhin:familypresence:15"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "clanboorhin:family:15",
+      "label": "Wilson",
+      "run": false
+     }
+    },
+    {
+     "id": "clanboorhin:beat:familycensus:15-1901",
+     "kind": "familycensus",
+     "chapter": "clanboorhin:ch:family-15",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clanboorhin",
+      "name": "Clanboorhin",
+      "logainm_id": "14001",
+      "lat": 54.678353,
+      "lon": -8.144436,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clanboorhin:familycensus:15:1901"
+     },
+     "caption": "Clanboorhin had one Wilson household in 1901, headed by Eleanor.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clanboorhin:familycensus:15:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clanboorhin:family:15",
+      "label": "Wilson",
+      "run": false
+     }
+    },
+    {
+     "id": "clanboorhin:beat:familycensus:15-1911",
+     "kind": "familycensus",
+     "chapter": "clanboorhin:ch:family-15",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clanboorhin",
+      "name": "Clanboorhin",
+      "logainm_id": "14001",
+      "lat": 54.678353,
+      "lon": -8.144436,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clanboorhin:familycensus:15:1911"
+     },
+     "caption": "Clanboorhin had one Wilson household in 1911, headed by William.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clanboorhin:familycensus:15:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clanboorhin:family:15",
+      "label": "Wilson",
+      "run": false
+     }
+    },
+    {
+     "id": "clanboorhin:beat:familycensus:15-1926",
+     "kind": "familycensus",
+     "chapter": "clanboorhin:ch:family-15",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clanboorhin",
+      "name": "Clanboorhin",
+      "logainm_id": "14001",
+      "lat": 54.678353,
+      "lon": -8.144436,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clanboorhin:familycensus:15:1926"
+     },
+     "caption": "Clanboorhin had one Wilson household in 1926, headed by William.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clanboorhin:familycensus:15:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clanboorhin:family:15",
+      "label": "Wilson",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clanboorhin:ch:family-02",
+   "title": "The Doherty family",
+   "beats": [
+    {
+     "id": "clanboorhin:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "clanboorhin:ch:family-02",
+     "time": {
+      "label": "The Doherty family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clanboorhin",
+      "name": "Clanboorhin",
+      "logainm_id": "14001",
+      "lat": 54.678353,
+      "lon": -8.144436,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clanboorhin:familypresence:02"
+     },
+     "caption": "The Doherty family appear in the records from 1911 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clanboorhin:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "clanboorhin:family:02",
+      "label": "Doherty",
+      "run": false
+     }
+    },
+    {
+     "id": "clanboorhin:beat:familycensus:02-1911",
+     "kind": "familycensus",
+     "chapter": "clanboorhin:ch:family-02",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clanboorhin",
+      "name": "Clanboorhin",
+      "logainm_id": "14001",
+      "lat": 54.678353,
+      "lon": -8.144436,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clanboorhin:familycensus:02:1911"
+     },
+     "caption": "Clanboorhin had one Doherty household in 1911, headed by Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clanboorhin:familycensus:02:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clanboorhin:family:02",
+      "label": "Doherty",
+      "run": false
+     }
+    },
+    {
+     "id": "clanboorhin:beat:familycensus:02-1926",
+     "kind": "familycensus",
+     "chapter": "clanboorhin:ch:family-02",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clanboorhin",
+      "name": "Clanboorhin",
+      "logainm_id": "14001",
+      "lat": 54.678353,
+      "lon": -8.144436,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clanboorhin:familycensus:02:1926"
+     },
+     "caption": "Clanboorhin had one Doherty household in 1926, headed by Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clanboorhin:familycensus:02:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clanboorhin:family:02",
+      "label": "Doherty",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clanboorhin:ch:family-03",
+   "title": "The Dunnion family",
+   "beats": [
+    {
+     "id": "clanboorhin:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "clanboorhin:ch:family-03",
+     "time": {
+      "label": "The Dunnion family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clanboorhin",
+      "name": "Clanboorhin",
+      "logainm_id": "14001",
+      "lat": 54.678353,
+      "lon": -8.144436,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clanboorhin:familypresence:03"
+     },
+     "caption": "The Dunnion family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clanboorhin:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clanboorhin:family:03",
+      "label": "Dunnion",
+      "run": false
+     }
+    },
+    {
+     "id": "clanboorhin:beat:familycensus:03-1911",
+     "kind": "familycensus",
+     "chapter": "clanboorhin:ch:family-03",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clanboorhin",
+      "name": "Clanboorhin",
+      "logainm_id": "14001",
+      "lat": 54.678353,
+      "lon": -8.144436,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clanboorhin:familycensus:03:1911"
+     },
+     "caption": "Clanboorhin had one Dunnion household in 1911, headed by Frederick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clanboorhin:familycensus:03:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clanboorhin:family:03",
+      "label": "Dunnion",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clanboorhin:ch:family-06",
+   "title": "The Kenny family",
+   "beats": [
+    {
+     "id": "clanboorhin:beat:familyhead:06",
+     "kind": "familyhead",
+     "chapter": "clanboorhin:ch:family-06",
+     "time": {
+      "label": "The Kenny family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clanboorhin",
+      "name": "Clanboorhin",
+      "logainm_id": "14001",
+      "lat": 54.678353,
+      "lon": -8.144436,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clanboorhin:familypresence:06"
+     },
+     "caption": "The Kenny family appear in the records from 1911 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clanboorhin:familypresence:06"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "clanboorhin:family:06",
+      "label": "Kenny",
+      "run": false
+     }
+    },
+    {
+     "id": "clanboorhin:beat:familycensus:06-1911",
+     "kind": "familycensus",
+     "chapter": "clanboorhin:ch:family-06",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clanboorhin",
+      "name": "Clanboorhin",
+      "logainm_id": "14001",
+      "lat": 54.678353,
+      "lon": -8.144436,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clanboorhin:familycensus:06:1911"
+     },
+     "caption": "Clanboorhin had one Kenny household in 1911, headed by Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clanboorhin:familycensus:06:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clanboorhin:family:06",
+      "label": "Kenny",
+      "run": false
+     }
+    },
+    {
+     "id": "clanboorhin:beat:familycensus:06-1926",
+     "kind": "familycensus",
+     "chapter": "clanboorhin:ch:family-06",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clanboorhin",
+      "name": "Clanboorhin",
+      "logainm_id": "14001",
+      "lat": 54.678353,
+      "lon": -8.144436,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clanboorhin:familycensus:06:1926"
+     },
+     "caption": "Clanboorhin had one Kenny household in 1926, headed by Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clanboorhin:familycensus:06:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clanboorhin:family:06",
+      "label": "Kenny",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clanboorhin:ch:family-07",
+   "title": "The McCool family",
+   "beats": [
+    {
+     "id": "clanboorhin:beat:familyhead:07",
+     "kind": "familyhead",
+     "chapter": "clanboorhin:ch:family-07",
+     "time": {
+      "label": "The McCool family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clanboorhin",
+      "name": "Clanboorhin",
+      "logainm_id": "14001",
+      "lat": 54.678353,
+      "lon": -8.144436,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clanboorhin:familypresence:07"
+     },
+     "caption": "The McCool family appear in the records from 1911 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clanboorhin:familypresence:07"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "clanboorhin:family:07",
+      "label": "McCool",
+      "run": false
+     }
+    },
+    {
+     "id": "clanboorhin:beat:familycensus:07-1911",
+     "kind": "familycensus",
+     "chapter": "clanboorhin:ch:family-07",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clanboorhin",
+      "name": "Clanboorhin",
+      "logainm_id": "14001",
+      "lat": 54.678353,
+      "lon": -8.144436,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clanboorhin:familycensus:07:1911"
+     },
+     "caption": "Clanboorhin had one McCool household in 1911, headed by Ellen.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clanboorhin:familycensus:07:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clanboorhin:family:07",
+      "label": "McCool",
+      "run": false
+     }
+    },
+    {
+     "id": "clanboorhin:beat:familycensus:07-1926",
+     "kind": "familycensus",
+     "chapter": "clanboorhin:ch:family-07",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clanboorhin",
+      "name": "Clanboorhin",
+      "logainm_id": "14001",
+      "lat": 54.678353,
+      "lon": -8.144436,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clanboorhin:familycensus:07:1926"
+     },
+     "caption": "Clanboorhin had one McCool household in 1926, headed by Michael.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clanboorhin:familycensus:07:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clanboorhin:family:07",
+      "label": "McCool",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clanboorhin:ch:family-13",
+   "title": "The ODonnell family",
+   "beats": [
+    {
+     "id": "clanboorhin:beat:familyhead:13",
+     "kind": "familyhead",
+     "chapter": "clanboorhin:ch:family-13",
+     "time": {
+      "label": "The ODonnell family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clanboorhin",
+      "name": "Clanboorhin",
+      "logainm_id": "14001",
+      "lat": 54.678353,
+      "lon": -8.144436,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clanboorhin:familypresence:13"
+     },
+     "caption": "The ODonnell family appear in the records from 1911 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clanboorhin:familypresence:13"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "clanboorhin:family:13",
+      "label": "ODonnell",
+      "run": false
+     }
+    },
+    {
+     "id": "clanboorhin:beat:familycensus:13-1911",
+     "kind": "familycensus",
+     "chapter": "clanboorhin:ch:family-13",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clanboorhin",
+      "name": "Clanboorhin",
+      "logainm_id": "14001",
+      "lat": 54.678353,
+      "lon": -8.144436,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clanboorhin:familycensus:13:1911"
+     },
+     "caption": "Clanboorhin had one ODonnell household in 1911, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clanboorhin:familycensus:13:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clanboorhin:family:13",
+      "label": "ODonnell",
+      "run": false
+     }
+    },
+    {
+     "id": "clanboorhin:beat:familycensus:13-1926",
+     "kind": "familycensus",
+     "chapter": "clanboorhin:ch:family-13",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clanboorhin",
+      "name": "Clanboorhin",
+      "logainm_id": "14001",
+      "lat": 54.678353,
+      "lon": -8.144436,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clanboorhin:familycensus:13:1926"
+     },
+     "caption": "Clanboorhin had one ODonnell household in 1926, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clanboorhin:familycensus:13:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clanboorhin:family:13",
+      "label": "ODonnell",
+      "run": false
+     }
     }
    ]
   }

@@ -52,15 +52,15 @@
    ]
   },
   {
-   "id": "cormullin:ch:1901",
-   "title": "1901",
+   "id": "cormullin:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "cormullin:beat:census:1901",
+     "id": "cormullin:beat:census:returns",
      "kind": "census",
-     "chapter": "cormullin:ch:1901",
+     "chapter": "cormullin:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1926",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -77,33 +77,177 @@
       "stage": "map",
       "open_card": "cormullin:census:1901"
      },
-     "caption": "In 1901, 105 people in twenty households lived in Cormullin. Heads of household included Brodbin, Devany and McGahern.",
+     "caption": "The censuses of 1901, 1911 and 1926 counted 105, 86 and 75 people in Cormullin, in 20, 17 and 14 households. Heads of household included Brodbin, Devany and McGahern.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "cormullin:census:1901"
+       "cormullin:census:1901",
+       "cormullin:census:1911",
+       "cormullin:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 7200,
+     "duration_ms": 11600,
      "audio": null,
      "counts": {
-      "people": 105,
-      "households": 20
+      "returns": [
+       {
+        "year": "1901",
+        "people": 105,
+        "households": 20
+       },
+       {
+        "year": "1911",
+        "people": 86,
+        "households": 17
+       },
+       {
+        "year": "1926",
+        "people": 75,
+        "households": 14
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "cormullin:ch:1911",
-   "title": "1911",
+   "id": "cormullin:ch:families",
+   "title": "The families of Cormullin",
    "beats": [
     {
-     "id": "cormullin:beat:census:1911",
-     "kind": "census",
-     "chapter": "cormullin:ch:1911",
+     "id": "cormullin:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "cormullin:ch:families",
+     "time": {
+      "label": "The families of Cormullin",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cormullin",
+      "name": "Cormullin",
+      "logainm_id": "14139",
+      "lat": 54.621535,
+      "lon": -8.041536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cormullin:census:1901"
+     },
+     "caption": "Here are the families of Cormullin, from 1901 to 1926. First, the Brodbin and Gallagher families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cormullin:census:1901",
+       "cormullin:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "cormullin:family:02",
+      "label": "Brodbin",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "cormullin:ch:family-02",
+   "title": "The Brodbin family",
+   "beats": [
+    {
+     "id": "cormullin:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "cormullin:ch:family-02",
+     "time": {
+      "label": "The Brodbin family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cormullin",
+      "name": "Cormullin",
+      "logainm_id": "14139",
+      "lat": 54.621535,
+      "lon": -8.041536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cormullin:familypresence:02"
+     },
+     "caption": "The Brodbin family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cormullin:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "cormullin:family:02",
+      "label": "Brodbin",
+      "run": true
+     }
+    },
+    {
+     "id": "cormullin:beat:familycensus:02-1901",
+     "kind": "familycensus",
+     "chapter": "cormullin:ch:family-02",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cormullin",
+      "name": "Cormullin",
+      "logainm_id": "14139",
+      "lat": 54.621535,
+      "lon": -8.041536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cormullin:familycensus:02:1901"
+     },
+     "caption": "Cormullin had three Brodbin households in 1901, headed by two named Patrick and Michael.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cormullin:familycensus:02:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5600,
+     "audio": null,
+     "thread": {
+      "id": "cormullin:family:02",
+      "label": "Brodbin",
+      "run": true
+     }
+    },
+    {
+     "id": "cormullin:beat:familycensus:02-1911",
+     "kind": "familycensus",
+     "chapter": "cormullin:ch:family-02",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -120,35 +264,30 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "cormullin:census:1911"
+      "open_card": "cormullin:familycensus:02:1911"
      },
-     "caption": "Cormullin had 86 people in seventeen households in 1911. Heads of household included McGahern, Brodbin and Cunningham.",
+     "caption": "Cormullin had two Brodbin households in 1911, headed by Catherine and William.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "cormullin:census:1911"
+       "cormullin:familycensus:02:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6800,
+     "duration_ms": 4800,
      "audio": null,
-     "counts": {
-      "people": 86,
-      "households": 17
+     "thread": {
+      "id": "cormullin:family:02",
+      "label": "Brodbin",
+      "run": true
      }
-    }
-   ]
-  },
-  {
-   "id": "cormullin:ch:1926",
-   "title": "1926",
-   "beats": [
+    },
     {
-     "id": "cormullin:beat:census:1926",
-     "kind": "census",
-     "chapter": "cormullin:ch:1926",
+     "id": "cormullin:beat:familycensus:02-1926",
+     "kind": "familycensus",
+     "chapter": "cormullin:ch:family-02",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -165,25 +304,198 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "cormullin:census:1926"
+      "open_card": "cormullin:familycensus:02:1926"
      },
-     "caption": "In 1926, 75 people in fourteen households lived in Cormullin. Heads of household included Curristin, Tunney and Devenny.",
+     "caption": "Cormullin had two Brodbin households in 1926, headed by Bridget and Mary.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "cormullin:census:1926"
+       "cormullin:familycensus:02:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 7200,
+     "duration_ms": 4800,
      "audio": null,
-     "counts": {
-      "people": 75,
-      "households": 14
+     "thread": {
+      "id": "cormullin:family:02",
+      "label": "Brodbin",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "cormullin:ch:family-10",
+   "title": "The Gallagher family",
+   "beats": [
+    {
+     "id": "cormullin:beat:familyhead:10",
+     "kind": "familyhead",
+     "chapter": "cormullin:ch:family-10",
+     "time": {
+      "label": "The Gallagher family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cormullin",
+      "name": "Cormullin",
+      "logainm_id": "14139",
+      "lat": 54.621535,
+      "lon": -8.041536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cormullin:familypresence:10"
+     },
+     "caption": "The Gallagher family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cormullin:familypresence:10"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "cormullin:family:10",
+      "label": "Gallagher",
+      "run": true
      }
     },
+    {
+     "id": "cormullin:beat:familycensus:10-1901",
+     "kind": "familycensus",
+     "chapter": "cormullin:ch:family-10",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cormullin",
+      "name": "Cormullin",
+      "logainm_id": "14139",
+      "lat": 54.621535,
+      "lon": -8.041536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cormullin:familycensus:10:1901"
+     },
+     "caption": "Cormullin had two Gallagher households in 1901, headed by Bridget and Edward.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cormullin:familycensus:10:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "cormullin:family:10",
+      "label": "Gallagher",
+      "run": true
+     }
+    },
+    {
+     "id": "cormullin:beat:familycensus:10-1911",
+     "kind": "familycensus",
+     "chapter": "cormullin:ch:family-10",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cormullin",
+      "name": "Cormullin",
+      "logainm_id": "14139",
+      "lat": 54.621535,
+      "lon": -8.041536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cormullin:familycensus:10:1911"
+     },
+     "caption": "Cormullin had one Gallagher household in 1911, headed by Edward.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cormullin:familycensus:10:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "cormullin:family:10",
+      "label": "Gallagher",
+      "run": true
+     }
+    },
+    {
+     "id": "cormullin:beat:familycensus:10-1926",
+     "kind": "familycensus",
+     "chapter": "cormullin:ch:family-10",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cormullin",
+      "name": "Cormullin",
+      "logainm_id": "14139",
+      "lat": 54.621535,
+      "lon": -8.041536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cormullin:familycensus:10:1926"
+     },
+     "caption": "Cormullin had two Gallagher households in 1926, headed by Bridget and Rose.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cormullin:familycensus:10:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "cormullin:family:10",
+      "label": "Gallagher",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "cormullin:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "cormullin:beat:closing:end",
      "kind": "closing",
@@ -218,6 +530,1834 @@
      },
      "duration_ms": 4000,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "cormullin:ch:family-03",
+   "title": "The Couristin family",
+   "beats": [
+    {
+     "id": "cormullin:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "cormullin:ch:family-03",
+     "time": {
+      "label": "The Couristin family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cormullin",
+      "name": "Cormullin",
+      "logainm_id": "14139",
+      "lat": 54.621535,
+      "lon": -8.041536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cormullin:familypresence:03"
+     },
+     "caption": "The Couristin family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cormullin:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "cormullin:family:03",
+      "label": "Couristin",
+      "run": false
+     }
+    },
+    {
+     "id": "cormullin:beat:familycensus:03-1901",
+     "kind": "familycensus",
+     "chapter": "cormullin:ch:family-03",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cormullin",
+      "name": "Cormullin",
+      "logainm_id": "14139",
+      "lat": 54.621535,
+      "lon": -8.041536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cormullin:familycensus:03:1901"
+     },
+     "caption": "Cormullin had one Couristin household in 1901, headed by Peter.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cormullin:familycensus:03:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "cormullin:family:03",
+      "label": "Couristin",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "cormullin:ch:family-04",
+   "title": "The Courstin family",
+   "beats": [
+    {
+     "id": "cormullin:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "cormullin:ch:family-04",
+     "time": {
+      "label": "The Courstin family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cormullin",
+      "name": "Cormullin",
+      "logainm_id": "14139",
+      "lat": 54.621535,
+      "lon": -8.041536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cormullin:familypresence:04"
+     },
+     "caption": "The Courstin family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cormullin:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "cormullin:family:04",
+      "label": "Courstin",
+      "run": false
+     }
+    },
+    {
+     "id": "cormullin:beat:familycensus:04-1901",
+     "kind": "familycensus",
+     "chapter": "cormullin:ch:family-04",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cormullin",
+      "name": "Cormullin",
+      "logainm_id": "14139",
+      "lat": 54.621535,
+      "lon": -8.041536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cormullin:familycensus:04:1901"
+     },
+     "caption": "Cormullin had one Courstin household in 1901, headed by Mary.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cormullin:familycensus:04:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "cormullin:family:04",
+      "label": "Courstin",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "cormullin:ch:family-05",
+   "title": "The Cunningham family",
+   "beats": [
+    {
+     "id": "cormullin:beat:familyhead:05",
+     "kind": "familyhead",
+     "chapter": "cormullin:ch:family-05",
+     "time": {
+      "label": "The Cunningham family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cormullin",
+      "name": "Cormullin",
+      "logainm_id": "14139",
+      "lat": 54.621535,
+      "lon": -8.041536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cormullin:familypresence:05"
+     },
+     "caption": "The Cunningham family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cormullin:familypresence:05"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "cormullin:family:05",
+      "label": "Cunningham",
+      "run": false
+     }
+    },
+    {
+     "id": "cormullin:beat:familycensus:05-1901",
+     "kind": "familycensus",
+     "chapter": "cormullin:ch:family-05",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cormullin",
+      "name": "Cormullin",
+      "logainm_id": "14139",
+      "lat": 54.621535,
+      "lon": -8.041536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cormullin:familycensus:05:1901"
+     },
+     "caption": "Cormullin had one Cunningham household in 1901, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cormullin:familycensus:05:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "cormullin:family:05",
+      "label": "Cunningham",
+      "run": false
+     }
+    },
+    {
+     "id": "cormullin:beat:familycensus:05-1911",
+     "kind": "familycensus",
+     "chapter": "cormullin:ch:family-05",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cormullin",
+      "name": "Cormullin",
+      "logainm_id": "14139",
+      "lat": 54.621535,
+      "lon": -8.041536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cormullin:familycensus:05:1911"
+     },
+     "caption": "Cormullin had two Cunningham households in 1911, headed by Edward and John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cormullin:familycensus:05:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "cormullin:family:05",
+      "label": "Cunningham",
+      "run": false
+     }
+    },
+    {
+     "id": "cormullin:beat:familycensus:05-1926",
+     "kind": "familycensus",
+     "chapter": "cormullin:ch:family-05",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cormullin",
+      "name": "Cormullin",
+      "logainm_id": "14139",
+      "lat": 54.621535,
+      "lon": -8.041536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cormullin:familycensus:05:1926"
+     },
+     "caption": "Cormullin had one Cunningham household in 1926, headed by Maggie.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cormullin:familycensus:05:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "cormullin:family:05",
+      "label": "Cunningham",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "cormullin:ch:family-08",
+   "title": "The Devany family",
+   "beats": [
+    {
+     "id": "cormullin:beat:familyhead:08",
+     "kind": "familyhead",
+     "chapter": "cormullin:ch:family-08",
+     "time": {
+      "label": "The Devany family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cormullin",
+      "name": "Cormullin",
+      "logainm_id": "14139",
+      "lat": 54.621535,
+      "lon": -8.041536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cormullin:familypresence:08"
+     },
+     "caption": "The Devany family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cormullin:familypresence:08"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "cormullin:family:08",
+      "label": "Devany",
+      "run": false
+     }
+    },
+    {
+     "id": "cormullin:beat:familycensus:08-1901",
+     "kind": "familycensus",
+     "chapter": "cormullin:ch:family-08",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cormullin",
+      "name": "Cormullin",
+      "logainm_id": "14139",
+      "lat": 54.621535,
+      "lon": -8.041536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cormullin:familycensus:08:1901"
+     },
+     "caption": "Cormullin had three Devany households in 1901, headed by two named James and John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cormullin:familycensus:08:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5600,
+     "audio": null,
+     "thread": {
+      "id": "cormullin:family:08",
+      "label": "Devany",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "cormullin:ch:family-11",
+   "title": "The McElhar family",
+   "beats": [
+    {
+     "id": "cormullin:beat:familyhead:11",
+     "kind": "familyhead",
+     "chapter": "cormullin:ch:family-11",
+     "time": {
+      "label": "The McElhar family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cormullin",
+      "name": "Cormullin",
+      "logainm_id": "14139",
+      "lat": 54.621535,
+      "lon": -8.041536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cormullin:familypresence:11"
+     },
+     "caption": "The McElhar family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cormullin:familypresence:11"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "cormullin:family:11",
+      "label": "McElhar",
+      "run": false
+     }
+    },
+    {
+     "id": "cormullin:beat:familycensus:11-1901",
+     "kind": "familycensus",
+     "chapter": "cormullin:ch:family-11",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cormullin",
+      "name": "Cormullin",
+      "logainm_id": "14139",
+      "lat": 54.621535,
+      "lon": -8.041536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cormullin:familycensus:11:1901"
+     },
+     "caption": "Cormullin had one McElhar household in 1901, headed by Anne.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cormullin:familycensus:11:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "cormullin:family:11",
+      "label": "McElhar",
+      "run": false
+     }
+    },
+    {
+     "id": "cormullin:beat:familycensus:11-1911",
+     "kind": "familycensus",
+     "chapter": "cormullin:ch:family-11",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cormullin",
+      "name": "Cormullin",
+      "logainm_id": "14139",
+      "lat": 54.621535,
+      "lon": -8.041536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cormullin:familycensus:11:1911"
+     },
+     "caption": "Cormullin had one McElhar household in 1911, headed by Anne.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cormullin:familycensus:11:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "cormullin:family:11",
+      "label": "McElhar",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "cormullin:ch:family-12",
+   "title": "The McGahern family",
+   "beats": [
+    {
+     "id": "cormullin:beat:familyhead:12",
+     "kind": "familyhead",
+     "chapter": "cormullin:ch:family-12",
+     "time": {
+      "label": "The McGahern family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cormullin",
+      "name": "Cormullin",
+      "logainm_id": "14139",
+      "lat": 54.621535,
+      "lon": -8.041536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cormullin:familypresence:12"
+     },
+     "caption": "The McGahern family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cormullin:familypresence:12"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "cormullin:family:12",
+      "label": "McGahern",
+      "run": false
+     }
+    },
+    {
+     "id": "cormullin:beat:familycensus:12-1901",
+     "kind": "familycensus",
+     "chapter": "cormullin:ch:family-12",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cormullin",
+      "name": "Cormullin",
+      "logainm_id": "14139",
+      "lat": 54.621535,
+      "lon": -8.041536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cormullin:familycensus:12:1901"
+     },
+     "caption": "Cormullin had three McGahern households in 1901, headed by William, Mary and James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cormullin:familycensus:12:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "cormullin:family:12",
+      "label": "McGahern",
+      "run": false
+     }
+    },
+    {
+     "id": "cormullin:beat:familycensus:12-1911",
+     "kind": "familycensus",
+     "chapter": "cormullin:ch:family-12",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cormullin",
+      "name": "Cormullin",
+      "logainm_id": "14139",
+      "lat": 54.621535,
+      "lon": -8.041536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cormullin:familycensus:12:1911"
+     },
+     "caption": "Cormullin had three McGahern households in 1911, headed by William, James and Mary.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cormullin:familycensus:12:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "cormullin:family:12",
+      "label": "McGahern",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "cormullin:ch:family-15",
+   "title": "The Mulhern family",
+   "beats": [
+    {
+     "id": "cormullin:beat:familyhead:15",
+     "kind": "familyhead",
+     "chapter": "cormullin:ch:family-15",
+     "time": {
+      "label": "The Mulhern family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cormullin",
+      "name": "Cormullin",
+      "logainm_id": "14139",
+      "lat": 54.621535,
+      "lon": -8.041536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cormullin:familypresence:15"
+     },
+     "caption": "The Mulhern family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cormullin:familypresence:15"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "cormullin:family:15",
+      "label": "Mulhern",
+      "run": false
+     }
+    },
+    {
+     "id": "cormullin:beat:familycensus:15-1901",
+     "kind": "familycensus",
+     "chapter": "cormullin:ch:family-15",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cormullin",
+      "name": "Cormullin",
+      "logainm_id": "14139",
+      "lat": 54.621535,
+      "lon": -8.041536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cormullin:familycensus:15:1901"
+     },
+     "caption": "Cormullin had one Mulhern household in 1901, headed by Peter John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cormullin:familycensus:15:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "cormullin:family:15",
+      "label": "Mulhern",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "cormullin:ch:family-17",
+   "title": "The Travers family",
+   "beats": [
+    {
+     "id": "cormullin:beat:familyhead:17",
+     "kind": "familyhead",
+     "chapter": "cormullin:ch:family-17",
+     "time": {
+      "label": "The Travers family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cormullin",
+      "name": "Cormullin",
+      "logainm_id": "14139",
+      "lat": 54.621535,
+      "lon": -8.041536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cormullin:familypresence:17"
+     },
+     "caption": "The Travers family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cormullin:familypresence:17"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "cormullin:family:17",
+      "label": "Travers",
+      "run": false
+     }
+    },
+    {
+     "id": "cormullin:beat:familycensus:17-1901",
+     "kind": "familycensus",
+     "chapter": "cormullin:ch:family-17",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cormullin",
+      "name": "Cormullin",
+      "logainm_id": "14139",
+      "lat": 54.621535,
+      "lon": -8.041536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cormullin:familycensus:17:1901"
+     },
+     "caption": "Cormullin had one Travers household in 1901, headed by William.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cormullin:familycensus:17:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "cormullin:family:17",
+      "label": "Travers",
+      "run": false
+     }
+    },
+    {
+     "id": "cormullin:beat:familycensus:17-1911",
+     "kind": "familycensus",
+     "chapter": "cormullin:ch:family-17",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cormullin",
+      "name": "Cormullin",
+      "logainm_id": "14139",
+      "lat": 54.621535,
+      "lon": -8.041536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cormullin:familycensus:17:1911"
+     },
+     "caption": "Cormullin had one Travers household in 1911, headed by William.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cormullin:familycensus:17:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "cormullin:family:17",
+      "label": "Travers",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "cormullin:ch:family-19",
+   "title": "The Tunny family",
+   "beats": [
+    {
+     "id": "cormullin:beat:familyhead:19",
+     "kind": "familyhead",
+     "chapter": "cormullin:ch:family-19",
+     "time": {
+      "label": "The Tunny family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cormullin",
+      "name": "Cormullin",
+      "logainm_id": "14139",
+      "lat": 54.621535,
+      "lon": -8.041536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cormullin:familypresence:19"
+     },
+     "caption": "The Tunny family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cormullin:familypresence:19"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "cormullin:family:19",
+      "label": "Tunny",
+      "run": false
+     }
+    },
+    {
+     "id": "cormullin:beat:familycensus:19-1901",
+     "kind": "familycensus",
+     "chapter": "cormullin:ch:family-19",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cormullin",
+      "name": "Cormullin",
+      "logainm_id": "14139",
+      "lat": 54.621535,
+      "lon": -8.041536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cormullin:familycensus:19:1901"
+     },
+     "caption": "Cormullin had one Tunny household in 1901, headed by Margaret.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cormullin:familycensus:19:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "cormullin:family:19",
+      "label": "Tunny",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "cormullin:ch:family-20",
+   "title": "The Tunny Travers family",
+   "beats": [
+    {
+     "id": "cormullin:beat:familyhead:20",
+     "kind": "familyhead",
+     "chapter": "cormullin:ch:family-20",
+     "time": {
+      "label": "The Tunny Travers family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cormullin",
+      "name": "Cormullin",
+      "logainm_id": "14139",
+      "lat": 54.621535,
+      "lon": -8.041536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cormullin:familypresence:20"
+     },
+     "caption": "The Tunny Travers family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cormullin:familypresence:20"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "cormullin:family:20",
+      "label": "Tunny Travers",
+      "run": false
+     }
+    },
+    {
+     "id": "cormullin:beat:familycensus:20-1901",
+     "kind": "familycensus",
+     "chapter": "cormullin:ch:family-20",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cormullin",
+      "name": "Cormullin",
+      "logainm_id": "14139",
+      "lat": 54.621535,
+      "lon": -8.041536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cormullin:familycensus:20:1901"
+     },
+     "caption": "Cormullin had one Tunny Travers household in 1901, headed by Francis.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cormullin:familycensus:20:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "cormullin:family:20",
+      "label": "Tunny Travers",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "cormullin:ch:family-06",
+   "title": "The Curristan family",
+   "beats": [
+    {
+     "id": "cormullin:beat:familyhead:06",
+     "kind": "familyhead",
+     "chapter": "cormullin:ch:family-06",
+     "time": {
+      "label": "The Curristan family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cormullin",
+      "name": "Cormullin",
+      "logainm_id": "14139",
+      "lat": 54.621535,
+      "lon": -8.041536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cormullin:familypresence:06"
+     },
+     "caption": "The Curristan family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cormullin:familypresence:06"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "cormullin:family:06",
+      "label": "Curristan",
+      "run": false
+     }
+    },
+    {
+     "id": "cormullin:beat:familycensus:06-1911",
+     "kind": "familycensus",
+     "chapter": "cormullin:ch:family-06",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cormullin",
+      "name": "Cormullin",
+      "logainm_id": "14139",
+      "lat": 54.621535,
+      "lon": -8.041536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cormullin:familycensus:06:1911"
+     },
+     "caption": "Cormullin had two Curristan households in 1911, headed by Catherine and James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cormullin:familycensus:06:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "cormullin:family:06",
+      "label": "Curristan",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "cormullin:ch:family-09",
+   "title": "The Devenny family",
+   "beats": [
+    {
+     "id": "cormullin:beat:familyhead:09",
+     "kind": "familyhead",
+     "chapter": "cormullin:ch:family-09",
+     "time": {
+      "label": "The Devenny family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cormullin",
+      "name": "Cormullin",
+      "logainm_id": "14139",
+      "lat": 54.621535,
+      "lon": -8.041536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cormullin:familypresence:09"
+     },
+     "caption": "The Devenny family appear in the records from 1911 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cormullin:familypresence:09"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "cormullin:family:09",
+      "label": "Devenny",
+      "run": false
+     }
+    },
+    {
+     "id": "cormullin:beat:familycensus:09-1911",
+     "kind": "familycensus",
+     "chapter": "cormullin:ch:family-09",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cormullin",
+      "name": "Cormullin",
+      "logainm_id": "14139",
+      "lat": 54.621535,
+      "lon": -8.041536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cormullin:familycensus:09:1911"
+     },
+     "caption": "Cormullin had two Devenny households in 1911, headed by James and John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cormullin:familycensus:09:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "cormullin:family:09",
+      "label": "Devenny",
+      "run": false
+     }
+    },
+    {
+     "id": "cormullin:beat:familycensus:09-1926",
+     "kind": "familycensus",
+     "chapter": "cormullin:ch:family-09",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cormullin",
+      "name": "Cormullin",
+      "logainm_id": "14139",
+      "lat": 54.621535,
+      "lon": -8.041536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cormullin:familycensus:09:1926"
+     },
+     "caption": "Cormullin had three Devenny households in 1926, headed by Joseph, Bridget and Lillie.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cormullin:familycensus:09:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "cormullin:family:09",
+      "label": "Devenny",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "cormullin:ch:family-14",
+   "title": "The Mulherin family",
+   "beats": [
+    {
+     "id": "cormullin:beat:familyhead:14",
+     "kind": "familyhead",
+     "chapter": "cormullin:ch:family-14",
+     "time": {
+      "label": "The Mulherin family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cormullin",
+      "name": "Cormullin",
+      "logainm_id": "14139",
+      "lat": 54.621535,
+      "lon": -8.041536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cormullin:familypresence:14"
+     },
+     "caption": "The Mulherin family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cormullin:familypresence:14"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "cormullin:family:14",
+      "label": "Mulherin",
+      "run": false
+     }
+    },
+    {
+     "id": "cormullin:beat:familycensus:14-1911",
+     "kind": "familycensus",
+     "chapter": "cormullin:ch:family-14",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cormullin",
+      "name": "Cormullin",
+      "logainm_id": "14139",
+      "lat": 54.621535,
+      "lon": -8.041536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cormullin:familycensus:14:1911"
+     },
+     "caption": "Cormullin had one Mulherin household in 1911, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cormullin:familycensus:14:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "cormullin:family:14",
+      "label": "Mulherin",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "cormullin:ch:family-18",
+   "title": "The Tunney family",
+   "beats": [
+    {
+     "id": "cormullin:beat:familyhead:18",
+     "kind": "familyhead",
+     "chapter": "cormullin:ch:family-18",
+     "time": {
+      "label": "The Tunney family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cormullin",
+      "name": "Cormullin",
+      "logainm_id": "14139",
+      "lat": 54.621535,
+      "lon": -8.041536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cormullin:familypresence:18"
+     },
+     "caption": "The Tunney family appear in the records from 1911 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cormullin:familypresence:18"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "cormullin:family:18",
+      "label": "Tunney",
+      "run": false
+     }
+    },
+    {
+     "id": "cormullin:beat:familycensus:18-1911",
+     "kind": "familycensus",
+     "chapter": "cormullin:ch:family-18",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cormullin",
+      "name": "Cormullin",
+      "logainm_id": "14139",
+      "lat": 54.621535,
+      "lon": -8.041536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cormullin:familycensus:18:1911"
+     },
+     "caption": "Cormullin had one Tunney household in 1911, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cormullin:familycensus:18:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "cormullin:family:18",
+      "label": "Tunney",
+      "run": false
+     }
+    },
+    {
+     "id": "cormullin:beat:familycensus:18-1926",
+     "kind": "familycensus",
+     "chapter": "cormullin:ch:family-18",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cormullin",
+      "name": "Cormullin",
+      "logainm_id": "14139",
+      "lat": 54.621535,
+      "lon": -8.041536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cormullin:familycensus:18:1926"
+     },
+     "caption": "Cormullin had five Tunney households in 1926, headed by James, two named Lizzie, Cassie and Francis.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cormullin:familycensus:18:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "cormullin:family:18",
+      "label": "Tunney",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "cormullin:ch:family-01",
+   "title": "The Barron family",
+   "beats": [
+    {
+     "id": "cormullin:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "cormullin:ch:family-01",
+     "time": {
+      "label": "The Barron family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cormullin",
+      "name": "Cormullin",
+      "logainm_id": "14139",
+      "lat": 54.621535,
+      "lon": -8.041536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cormullin:familypresence:01"
+     },
+     "caption": "The Barron family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cormullin:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "cormullin:family:01",
+      "label": "Barron",
+      "run": false
+     }
+    },
+    {
+     "id": "cormullin:beat:familycensus:01-1926",
+     "kind": "familycensus",
+     "chapter": "cormullin:ch:family-01",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cormullin",
+      "name": "Cormullin",
+      "logainm_id": "14139",
+      "lat": 54.621535,
+      "lon": -8.041536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cormullin:familycensus:01:1926"
+     },
+     "caption": "Cormullin had one Barron household in 1926, headed by Mary A.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cormullin:familycensus:01:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "cormullin:family:01",
+      "label": "Barron",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "cormullin:ch:family-07",
+   "title": "The Curristin family",
+   "beats": [
+    {
+     "id": "cormullin:beat:familyhead:07",
+     "kind": "familyhead",
+     "chapter": "cormullin:ch:family-07",
+     "time": {
+      "label": "The Curristin family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cormullin",
+      "name": "Cormullin",
+      "logainm_id": "14139",
+      "lat": 54.621535,
+      "lon": -8.041536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cormullin:familypresence:07"
+     },
+     "caption": "The Curristin family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cormullin:familypresence:07"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "cormullin:family:07",
+      "label": "Curristin",
+      "run": false
+     }
+    },
+    {
+     "id": "cormullin:beat:familycensus:07-1926",
+     "kind": "familycensus",
+     "chapter": "cormullin:ch:family-07",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cormullin",
+      "name": "Cormullin",
+      "logainm_id": "14139",
+      "lat": 54.621535,
+      "lon": -8.041536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cormullin:familycensus:07:1926"
+     },
+     "caption": "Cormullin had five Curristin households in 1926, headed by James, Mary, John, Joseph and Kate.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cormullin:familycensus:07:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 6000,
+     "audio": null,
+     "thread": {
+      "id": "cormullin:family:07",
+      "label": "Curristin",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "cormullin:ch:family-13",
+   "title": "The Melly family",
+   "beats": [
+    {
+     "id": "cormullin:beat:familyhead:13",
+     "kind": "familyhead",
+     "chapter": "cormullin:ch:family-13",
+     "time": {
+      "label": "The Melly family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cormullin",
+      "name": "Cormullin",
+      "logainm_id": "14139",
+      "lat": 54.621535,
+      "lon": -8.041536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cormullin:familypresence:13"
+     },
+     "caption": "The Melly family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cormullin:familypresence:13"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "cormullin:family:13",
+      "label": "Melly",
+      "run": false
+     }
+    },
+    {
+     "id": "cormullin:beat:familycensus:13-1926",
+     "kind": "familycensus",
+     "chapter": "cormullin:ch:family-13",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cormullin",
+      "name": "Cormullin",
+      "logainm_id": "14139",
+      "lat": 54.621535,
+      "lon": -8.041536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cormullin:familycensus:13:1926"
+     },
+     "caption": "Cormullin had one Melly household in 1926, headed by Edward.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cormullin:familycensus:13:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "cormullin:family:13",
+      "label": "Melly",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "cormullin:ch:family-16",
+   "title": "The Mullhern family",
+   "beats": [
+    {
+     "id": "cormullin:beat:familyhead:16",
+     "kind": "familyhead",
+     "chapter": "cormullin:ch:family-16",
+     "time": {
+      "label": "The Mullhern family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cormullin",
+      "name": "Cormullin",
+      "logainm_id": "14139",
+      "lat": 54.621535,
+      "lon": -8.041536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cormullin:familypresence:16"
+     },
+     "caption": "The Mullhern family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cormullin:familypresence:16"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "cormullin:family:16",
+      "label": "Mullhern",
+      "run": false
+     }
+    },
+    {
+     "id": "cormullin:beat:familycensus:16-1926",
+     "kind": "familycensus",
+     "chapter": "cormullin:ch:family-16",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cormullin",
+      "name": "Cormullin",
+      "logainm_id": "14139",
+      "lat": 54.621535,
+      "lon": -8.041536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cormullin:familycensus:16:1926"
+     },
+     "caption": "Cormullin had one Mullhern household in 1926, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cormullin:familycensus:16:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "cormullin:family:16",
+      "label": "Mullhern",
+      "run": false
+     }
     }
    ]
   }

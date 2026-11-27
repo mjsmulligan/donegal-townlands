@@ -52,15 +52,15 @@
    ]
   },
   {
-   "id": "ardnagassan:ch:1901",
-   "title": "1901",
+   "id": "ardnagassan:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "ardnagassan:beat:census:1901",
+     "id": "ardnagassan:beat:census:returns",
      "kind": "census",
-     "chapter": "ardnagassan:ch:1901",
+     "chapter": "ardnagassan:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1926",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -77,33 +77,177 @@
       "stage": "map",
       "open_card": "ardnagassan:census:1901"
      },
-     "caption": "In 1901, 47 people in eleven households lived in Ardnagassan. Heads of household included Wray, Carney and Graham.",
+     "caption": "The censuses of 1901, 1911 and 1926 counted 47, 32 and 42 people in Ardnagassan, in 11, 10 and 9 households. Heads of household included Wray, Carney and Graham.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "ardnagassan:census:1901"
+       "ardnagassan:census:1901",
+       "ardnagassan:census:1911",
+       "ardnagassan:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 7200,
+     "duration_ms": 11600,
      "audio": null,
      "counts": {
-      "people": 47,
-      "households": 11
+      "returns": [
+       {
+        "year": "1901",
+        "people": 47,
+        "households": 11
+       },
+       {
+        "year": "1911",
+        "people": 32,
+        "households": 10
+       },
+       {
+        "year": "1926",
+        "people": 42,
+        "households": 9
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "ardnagassan:ch:1911",
-   "title": "1911",
+   "id": "ardnagassan:ch:families",
+   "title": "The families of Ardnagassan",
    "beats": [
     {
-     "id": "ardnagassan:beat:census:1911",
-     "kind": "census",
-     "chapter": "ardnagassan:ch:1911",
+     "id": "ardnagassan:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "ardnagassan:ch:families",
+     "time": {
+      "label": "The families of Ardnagassan",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnagassan",
+      "name": "Ardnagassan",
+      "logainm_id": "14272",
+      "lat": 54.651482,
+      "lon": -8.041187,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnagassan:census:1901"
+     },
+     "caption": "Here are the families of Ardnagassan, from 1901 to 1926. First, the Graham and Wray families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnagassan:census:1901",
+       "ardnagassan:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "ardnagassan:family:03",
+      "label": "Graham",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardnagassan:ch:family-03",
+   "title": "The Graham family",
+   "beats": [
+    {
+     "id": "ardnagassan:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "ardnagassan:ch:family-03",
+     "time": {
+      "label": "The Graham family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnagassan",
+      "name": "Ardnagassan",
+      "logainm_id": "14272",
+      "lat": 54.651482,
+      "lon": -8.041187,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnagassan:familypresence:03"
+     },
+     "caption": "The Graham family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnagassan:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ardnagassan:family:03",
+      "label": "Graham",
+      "run": true
+     }
+    },
+    {
+     "id": "ardnagassan:beat:familycensus:03-1901",
+     "kind": "familycensus",
+     "chapter": "ardnagassan:ch:family-03",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnagassan",
+      "name": "Ardnagassan",
+      "logainm_id": "14272",
+      "lat": 54.651482,
+      "lon": -8.041187,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnagassan:familycensus:03:1901"
+     },
+     "caption": "Ardnagassan had one Graham household in 1901, headed by Eliza.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnagassan:familycensus:03:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardnagassan:family:03",
+      "label": "Graham",
+      "run": true
+     }
+    },
+    {
+     "id": "ardnagassan:beat:familycensus:03-1911",
+     "kind": "familycensus",
+     "chapter": "ardnagassan:ch:family-03",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -120,35 +264,30 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "ardnagassan:census:1911"
+      "open_card": "ardnagassan:familycensus:03:1911"
      },
-     "caption": "Ardnagassan had 32 people in ten households in 1911. Heads of household included Wray, Graham and McElhinney.",
+     "caption": "Ardnagassan had one Graham household in 1911, headed by Elizabeth.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "ardnagassan:census:1911"
+       "ardnagassan:familycensus:03:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6800,
+     "duration_ms": 4000,
      "audio": null,
-     "counts": {
-      "people": 32,
-      "households": 10
+     "thread": {
+      "id": "ardnagassan:family:03",
+      "label": "Graham",
+      "run": true
      }
-    }
-   ]
-  },
-  {
-   "id": "ardnagassan:ch:1926",
-   "title": "1926",
-   "beats": [
+    },
     {
-     "id": "ardnagassan:beat:census:1926",
-     "kind": "census",
-     "chapter": "ardnagassan:ch:1926",
+     "id": "ardnagassan:beat:familycensus:03-1926",
+     "kind": "familycensus",
+     "chapter": "ardnagassan:ch:family-03",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -165,25 +304,198 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "ardnagassan:census:1926"
+      "open_card": "ardnagassan:familycensus:03:1926"
      },
-     "caption": "Ardnagassan had 42 people in nine households in 1926. Heads of household included Wray, Bustard and Graham.",
+     "caption": "Ardnagassan had one Graham household in 1926, headed by Katie.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "ardnagassan:census:1926"
+       "ardnagassan:familycensus:03:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardnagassan:family:03",
+      "label": "Graham",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardnagassan:ch:family-09",
+   "title": "The Wray family",
+   "beats": [
+    {
+     "id": "ardnagassan:beat:familyhead:09",
+     "kind": "familyhead",
+     "chapter": "ardnagassan:ch:family-09",
+     "time": {
+      "label": "The Wray family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnagassan",
+      "name": "Ardnagassan",
+      "logainm_id": "14272",
+      "lat": 54.651482,
+      "lon": -8.041187,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnagassan:familypresence:09"
+     },
+     "caption": "The Wray family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnagassan:familypresence:09"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ardnagassan:family:09",
+      "label": "Wray",
+      "run": true
+     }
+    },
+    {
+     "id": "ardnagassan:beat:familycensus:09-1901",
+     "kind": "familycensus",
+     "chapter": "ardnagassan:ch:family-09",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnagassan",
+      "name": "Ardnagassan",
+      "logainm_id": "14272",
+      "lat": 54.651482,
+      "lon": -8.041187,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnagassan:familycensus:09:1901"
+     },
+     "caption": "Ardnagassan had five Wray households in 1901, headed by two named Joseph, Gilbert and two named Hugh.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnagassan:familycensus:09:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
      "duration_ms": 6800,
      "audio": null,
-     "counts": {
-      "people": 42,
-      "households": 9
+     "thread": {
+      "id": "ardnagassan:family:09",
+      "label": "Wray",
+      "run": true
      }
     },
+    {
+     "id": "ardnagassan:beat:familycensus:09-1911",
+     "kind": "familycensus",
+     "chapter": "ardnagassan:ch:family-09",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnagassan",
+      "name": "Ardnagassan",
+      "logainm_id": "14272",
+      "lat": 54.651482,
+      "lon": -8.041187,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnagassan:familycensus:09:1911"
+     },
+     "caption": "Ardnagassan had five Wray households in 1911, headed by Mary, Gilbert, Elizabeth and two named Hugh.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnagassan:familycensus:09:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "ardnagassan:family:09",
+      "label": "Wray",
+      "run": true
+     }
+    },
+    {
+     "id": "ardnagassan:beat:familycensus:09-1926",
+     "kind": "familycensus",
+     "chapter": "ardnagassan:ch:family-09",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnagassan",
+      "name": "Ardnagassan",
+      "logainm_id": "14272",
+      "lat": 54.651482,
+      "lon": -8.041187,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnagassan:familycensus:09:1926"
+     },
+     "caption": "Ardnagassan had six Wray households in 1926, headed by Hugh J, James A, Elizabeth, Robert, Lilly and Maggie.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnagassan:familycensus:09:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "thread": {
+      "id": "ardnagassan:family:09",
+      "label": "Wray",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardnagassan:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "ardnagassan:beat:closing:end",
      "kind": "closing",
@@ -218,6 +530,808 @@
      },
      "duration_ms": 4000,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "ardnagassan:ch:family-02",
+   "title": "The Carney family",
+   "beats": [
+    {
+     "id": "ardnagassan:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "ardnagassan:ch:family-02",
+     "time": {
+      "label": "The Carney family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnagassan",
+      "name": "Ardnagassan",
+      "logainm_id": "14272",
+      "lat": 54.651482,
+      "lon": -8.041187,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnagassan:familypresence:02"
+     },
+     "caption": "The Carney family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnagassan:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardnagassan:family:02",
+      "label": "Carney",
+      "run": false
+     }
+    },
+    {
+     "id": "ardnagassan:beat:familycensus:02-1901",
+     "kind": "familycensus",
+     "chapter": "ardnagassan:ch:family-02",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnagassan",
+      "name": "Ardnagassan",
+      "logainm_id": "14272",
+      "lat": 54.651482,
+      "lon": -8.041187,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnagassan:familycensus:02:1901"
+     },
+     "caption": "Ardnagassan had one Carney household in 1901, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnagassan:familycensus:02:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardnagassan:family:02",
+      "label": "Carney",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardnagassan:ch:family-04",
+   "title": "The McElhinney family",
+   "beats": [
+    {
+     "id": "ardnagassan:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "ardnagassan:ch:family-04",
+     "time": {
+      "label": "The McElhinney family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnagassan",
+      "name": "Ardnagassan",
+      "logainm_id": "14272",
+      "lat": 54.651482,
+      "lon": -8.041187,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnagassan:familypresence:04"
+     },
+     "caption": "The McElhinney family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnagassan:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ardnagassan:family:04",
+      "label": "McElhinney",
+      "run": false
+     }
+    },
+    {
+     "id": "ardnagassan:beat:familycensus:04-1901",
+     "kind": "familycensus",
+     "chapter": "ardnagassan:ch:family-04",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnagassan",
+      "name": "Ardnagassan",
+      "logainm_id": "14272",
+      "lat": 54.651482,
+      "lon": -8.041187,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnagassan:familycensus:04:1901"
+     },
+     "caption": "Ardnagassan had one McElhinney household in 1901, headed by Jane.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnagassan:familycensus:04:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardnagassan:family:04",
+      "label": "McElhinney",
+      "run": false
+     }
+    },
+    {
+     "id": "ardnagassan:beat:familycensus:04-1911",
+     "kind": "familycensus",
+     "chapter": "ardnagassan:ch:family-04",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnagassan",
+      "name": "Ardnagassan",
+      "logainm_id": "14272",
+      "lat": 54.651482,
+      "lon": -8.041187,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnagassan:familycensus:04:1911"
+     },
+     "caption": "Ardnagassan had one McElhinney household in 1911, headed by Jane.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnagassan:familycensus:04:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardnagassan:family:04",
+      "label": "McElhinney",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardnagassan:ch:family-05",
+   "title": "The McGinty family",
+   "beats": [
+    {
+     "id": "ardnagassan:beat:familyhead:05",
+     "kind": "familyhead",
+     "chapter": "ardnagassan:ch:family-05",
+     "time": {
+      "label": "The McGinty family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnagassan",
+      "name": "Ardnagassan",
+      "logainm_id": "14272",
+      "lat": 54.651482,
+      "lon": -8.041187,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnagassan:familypresence:05"
+     },
+     "caption": "The McGinty family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnagassan:familypresence:05"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ardnagassan:family:05",
+      "label": "McGinty",
+      "run": false
+     }
+    },
+    {
+     "id": "ardnagassan:beat:familycensus:05-1901",
+     "kind": "familycensus",
+     "chapter": "ardnagassan:ch:family-05",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnagassan",
+      "name": "Ardnagassan",
+      "logainm_id": "14272",
+      "lat": 54.651482,
+      "lon": -8.041187,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnagassan:familycensus:05:1901"
+     },
+     "caption": "Ardnagassan had one McGinty household in 1901, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnagassan:familycensus:05:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardnagassan:family:05",
+      "label": "McGinty",
+      "run": false
+     }
+    },
+    {
+     "id": "ardnagassan:beat:familycensus:05-1911",
+     "kind": "familycensus",
+     "chapter": "ardnagassan:ch:family-05",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnagassan",
+      "name": "Ardnagassan",
+      "logainm_id": "14272",
+      "lat": 54.651482,
+      "lon": -8.041187,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnagassan:familycensus:05:1911"
+     },
+     "caption": "Ardnagassan had one McGinty household in 1911, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnagassan:familycensus:05:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardnagassan:family:05",
+      "label": "McGinty",
+      "run": false
+     }
+    },
+    {
+     "id": "ardnagassan:beat:familycensus:05-1926",
+     "kind": "familycensus",
+     "chapter": "ardnagassan:ch:family-05",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnagassan",
+      "name": "Ardnagassan",
+      "logainm_id": "14272",
+      "lat": 54.651482,
+      "lon": -8.041187,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnagassan:familycensus:05:1926"
+     },
+     "caption": "Ardnagassan had one McGinty household in 1926, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnagassan:familycensus:05:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardnagassan:family:05",
+      "label": "McGinty",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardnagassan:ch:family-07",
+   "title": "The Slevin family",
+   "beats": [
+    {
+     "id": "ardnagassan:beat:familyhead:07",
+     "kind": "familyhead",
+     "chapter": "ardnagassan:ch:family-07",
+     "time": {
+      "label": "The Slevin family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnagassan",
+      "name": "Ardnagassan",
+      "logainm_id": "14272",
+      "lat": 54.651482,
+      "lon": -8.041187,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnagassan:familypresence:07"
+     },
+     "caption": "The Slevin family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnagassan:familypresence:07"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ardnagassan:family:07",
+      "label": "Slevin",
+      "run": false
+     }
+    },
+    {
+     "id": "ardnagassan:beat:familycensus:07-1901",
+     "kind": "familycensus",
+     "chapter": "ardnagassan:ch:family-07",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnagassan",
+      "name": "Ardnagassan",
+      "logainm_id": "14272",
+      "lat": 54.651482,
+      "lon": -8.041187,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnagassan:familycensus:07:1901"
+     },
+     "caption": "Ardnagassan had one Slevin household in 1901, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnagassan:familycensus:07:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardnagassan:family:07",
+      "label": "Slevin",
+      "run": false
+     }
+    },
+    {
+     "id": "ardnagassan:beat:familycensus:07-1911",
+     "kind": "familycensus",
+     "chapter": "ardnagassan:ch:family-07",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnagassan",
+      "name": "Ardnagassan",
+      "logainm_id": "14272",
+      "lat": 54.651482,
+      "lon": -8.041187,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnagassan:familycensus:07:1911"
+     },
+     "caption": "Ardnagassan had one Slevin household in 1911, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnagassan:familycensus:07:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardnagassan:family:07",
+      "label": "Slevin",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardnagassan:ch:family-08",
+   "title": "The Stewart family",
+   "beats": [
+    {
+     "id": "ardnagassan:beat:familyhead:08",
+     "kind": "familyhead",
+     "chapter": "ardnagassan:ch:family-08",
+     "time": {
+      "label": "The Stewart family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnagassan",
+      "name": "Ardnagassan",
+      "logainm_id": "14272",
+      "lat": 54.651482,
+      "lon": -8.041187,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnagassan:familypresence:08"
+     },
+     "caption": "The Stewart family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnagassan:familypresence:08"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ardnagassan:family:08",
+      "label": "Stewart",
+      "run": false
+     }
+    },
+    {
+     "id": "ardnagassan:beat:familycensus:08-1901",
+     "kind": "familycensus",
+     "chapter": "ardnagassan:ch:family-08",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnagassan",
+      "name": "Ardnagassan",
+      "logainm_id": "14272",
+      "lat": 54.651482,
+      "lon": -8.041187,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnagassan:familycensus:08:1901"
+     },
+     "caption": "Ardnagassan had one Stewart household in 1901, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnagassan:familycensus:08:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardnagassan:family:08",
+      "label": "Stewart",
+      "run": false
+     }
+    },
+    {
+     "id": "ardnagassan:beat:familycensus:08-1911",
+     "kind": "familycensus",
+     "chapter": "ardnagassan:ch:family-08",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnagassan",
+      "name": "Ardnagassan",
+      "logainm_id": "14272",
+      "lat": 54.651482,
+      "lon": -8.041187,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnagassan:familycensus:08:1911"
+     },
+     "caption": "Ardnagassan had one Stewart household in 1911, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnagassan:familycensus:08:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardnagassan:family:08",
+      "label": "Stewart",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardnagassan:ch:family-01",
+   "title": "The Bustard family",
+   "beats": [
+    {
+     "id": "ardnagassan:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "ardnagassan:ch:family-01",
+     "time": {
+      "label": "The Bustard family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnagassan",
+      "name": "Ardnagassan",
+      "logainm_id": "14272",
+      "lat": 54.651482,
+      "lon": -8.041187,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnagassan:familypresence:01"
+     },
+     "caption": "The Bustard family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnagassan:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardnagassan:family:01",
+      "label": "Bustard",
+      "run": false
+     }
+    },
+    {
+     "id": "ardnagassan:beat:familycensus:01-1926",
+     "kind": "familycensus",
+     "chapter": "ardnagassan:ch:family-01",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnagassan",
+      "name": "Ardnagassan",
+      "logainm_id": "14272",
+      "lat": 54.651482,
+      "lon": -8.041187,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnagassan:familycensus:01:1926"
+     },
+     "caption": "Ardnagassan had one Bustard household in 1926, headed by Jennie.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnagassan:familycensus:01:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardnagassan:family:01",
+      "label": "Bustard",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardnagassan:ch:family-06",
+   "title": "The Scott family",
+   "beats": [
+    {
+     "id": "ardnagassan:beat:familyhead:06",
+     "kind": "familyhead",
+     "chapter": "ardnagassan:ch:family-06",
+     "time": {
+      "label": "The Scott family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnagassan",
+      "name": "Ardnagassan",
+      "logainm_id": "14272",
+      "lat": 54.651482,
+      "lon": -8.041187,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnagassan:familypresence:06"
+     },
+     "caption": "The Scott family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnagassan:familypresence:06"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardnagassan:family:06",
+      "label": "Scott",
+      "run": false
+     }
+    },
+    {
+     "id": "ardnagassan:beat:familycensus:06-1926",
+     "kind": "familycensus",
+     "chapter": "ardnagassan:ch:family-06",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnagassan",
+      "name": "Ardnagassan",
+      "logainm_id": "14272",
+      "lat": 54.651482,
+      "lon": -8.041187,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnagassan:familycensus:06:1926"
+     },
+     "caption": "Ardnagassan had one Scott household in 1926, headed by William G.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnagassan:familycensus:06:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ardnagassan:family:06",
+      "label": "Scott",
+      "run": false
+     }
     }
    ]
   }

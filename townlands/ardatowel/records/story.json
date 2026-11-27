@@ -95,18 +95,80 @@
    ]
   },
   {
-   "id": "ardatowel:ch:baptisms",
-   "title": "Baptisms, 1873 to 1875",
+   "id": "ardatowel:ch:census",
+   "title": "1901 to 1926",
    "beats": [
     {
-     "id": "ardatowel:beat:baptism:1873",
-     "kind": "baptism",
-     "chapter": "ardatowel:ch:baptisms",
+     "id": "ardatowel:beat:census:returns",
+     "kind": "census",
+     "chapter": "ardatowel:ch:census",
      "time": {
-      "label": "26 January 1873",
+      "label": "1901 to 1926",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardatowel",
+      "name": "Ardatowel",
+      "logainm_id": "14235",
+      "lat": 54.698932,
+      "lon": -8.018969,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardatowel:census:1901"
+     },
+     "caption": "The censuses of 1901, 1911 and 1926 counted 78, 71 and 77 people in Ardatowel, in 16, 14 and 13 households. Heads of household included McNulty, Martin and Slevin.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardatowel:census:1901",
+       "ardatowel:census:1911",
+       "ardatowel:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 11600,
+     "audio": null,
+     "counts": {
+      "returns": [
+       {
+        "year": "1901",
+        "people": 78,
+        "households": 16
+       },
+       {
+        "year": "1911",
+        "people": 71,
+        "households": 14
+       },
+       {
+        "year": "1926",
+        "people": 77,
+        "households": 13
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardatowel:ch:families",
+   "title": "The families of Ardatowel",
+   "beats": [
+    {
+     "id": "ardatowel:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "ardatowel:ch:families",
+     "time": {
+      "label": "The families of Ardatowel",
       "iso": "1873-01-26",
-      "sort": "1873-01-26",
-      "approximate": false
+      "sort": "1873-08-17",
+      "approximate": true
      },
      "place": {
       "townland": "ardatowel",
@@ -120,24 +182,75 @@
       "stage": "map",
       "open_card": "ardatowel:baptism:TAW-B-p004-r11"
      },
-     "caption": "Two children were baptised in 1873: Michael Slevin on 26 January and Francis McNulty on 17 August.",
+     "caption": "Here are the families of Ardatowel, from 1873 to 1926. First, the McNulty and Martin families.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
        "ardatowel:baptism:TAW-B-p004-r11",
+       "ardatowel:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "ardatowel:family:09",
+      "label": "McNulty",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardatowel:ch:family-09",
+   "title": "The McNulty family",
+   "beats": [
+    {
+     "id": "ardatowel:beat:baptism:1873-08-17-TAW-B-p008-r63",
+     "kind": "baptism",
+     "chapter": "ardatowel:ch:family-09",
+     "time": {
+      "label": "17 August 1873",
+      "iso": "1873-08-17",
+      "sort": "1873-08-17",
+      "approximate": false
+     },
+     "place": {
+      "townland": "ardatowel",
+      "name": "Ardatowel",
+      "logainm_id": "14235",
+      "lat": 54.698932,
+      "lon": -8.018969,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardatowel:baptism:TAW-B-p008-r63"
+     },
+     "caption": "Francis McNulty was baptised on 17 August 1873. Patrick McNulty and Maggie McMenamin were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
        "ardatowel:baptism:TAW-B-p008-r63"
       ],
       "basis": "page_place",
       "certainty": "stated"
      },
-     "duration_ms": 6800,
-     "audio": null
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "ardatowel:family:09",
+      "label": "McNulty",
+      "run": true
+     }
     },
     {
-     "id": "ardatowel:beat:baptism:1875",
+     "id": "ardatowel:beat:baptism:1875-01-01-TAW-B-p014-r171",
      "kind": "baptism",
-     "chapter": "ardatowel:ch:baptisms",
+     "chapter": "ardatowel:ch:family-09",
      "time": {
       "label": "1 January 1875",
       "iso": "1875-01-01",
@@ -156,32 +269,108 @@
       "stage": "map",
       "open_card": "ardatowel:baptism:TAW-B-p014-r171"
      },
-     "caption": "Four children were baptised in 1875: Bridget McNulty on 1 January, Patrick Martin on 14 March, Patrick Slevin on 17 April and Catherine McNulty on 6 June.",
+     "caption": "Bridget McNulty was baptised on 1 January 1875. William McNulty and Bridget Martin were the parents.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "ardatowel:baptism:TAW-B-p014-r171",
-       "ardatowel:baptism:TAW-B-p016-r195",
-       "ardatowel:baptism:TAW-B-p016-r204",
+       "ardatowel:baptism:TAW-B-p014-r171"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "ardatowel:family:09",
+      "label": "McNulty",
+      "run": true
+     }
+    },
+    {
+     "id": "ardatowel:beat:baptism:1875-06-06-TAW-B-p017-r216",
+     "kind": "baptism",
+     "chapter": "ardatowel:ch:family-09",
+     "time": {
+      "label": "6 June 1875",
+      "iso": "1875-06-06",
+      "sort": "1875-06-06",
+      "approximate": false
+     },
+     "place": {
+      "townland": "ardatowel",
+      "name": "Ardatowel",
+      "logainm_id": "14235",
+      "lat": 54.698932,
+      "lon": -8.018969,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardatowel:baptism:TAW-B-p017-r216"
+     },
+     "caption": "Catherine McNulty was baptised on 6 June 1875. Patrick McNulty and Madge McMenamin were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
        "ardatowel:baptism:TAW-B-p017-r216"
       ],
       "basis": "page_place",
       "certainty": "stated"
      },
-     "duration_ms": 10800,
-     "audio": null
-    }
-   ]
-  },
-  {
-   "id": "ardatowel:ch:1901",
-   "title": "1901",
-   "beats": [
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "ardatowel:family:09",
+      "label": "McNulty",
+      "run": true
+     }
+    },
     {
-     "id": "ardatowel:beat:census:1901",
-     "kind": "census",
-     "chapter": "ardatowel:ch:1901",
+     "id": "ardatowel:beat:familyhead:09",
+     "kind": "familyhead",
+     "chapter": "ardatowel:ch:family-09",
+     "time": {
+      "label": "The McNulty family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardatowel",
+      "name": "Ardatowel",
+      "logainm_id": "14235",
+      "lat": 54.698932,
+      "lon": -8.018969,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardatowel:familypresence:09"
+     },
+     "caption": "The McNulty family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardatowel:familypresence:09"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ardatowel:family:09",
+      "label": "McNulty",
+      "run": true
+     }
+    },
+    {
+     "id": "ardatowel:beat:familycensus:09-1901",
+     "kind": "familycensus",
+     "chapter": "ardatowel:ch:family-09",
      "time": {
       "label": "1901",
       "iso": "1901",
@@ -198,35 +387,30 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "ardatowel:census:1901"
+      "open_card": "ardatowel:familycensus:09:1901"
      },
-     "caption": "In 1901, 78 people in sixteen households lived in Ardatowel. Heads of household included McNulty, Martin and Slevin.",
+     "caption": "Ardatowel had four McNulty households in 1901, headed by Patrick, Bridget, Mary and Thomas.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "ardatowel:census:1901"
+       "ardatowel:familycensus:09:1901"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 7200,
+     "duration_ms": 5600,
      "audio": null,
-     "counts": {
-      "people": 78,
-      "households": 16
+     "thread": {
+      "id": "ardatowel:family:09",
+      "label": "McNulty",
+      "run": true
      }
-    }
-   ]
-  },
-  {
-   "id": "ardatowel:ch:1911",
-   "title": "1911",
-   "beats": [
+    },
     {
-     "id": "ardatowel:beat:census:1911",
-     "kind": "census",
-     "chapter": "ardatowel:ch:1911",
+     "id": "ardatowel:beat:familycensus:09-1911",
+     "kind": "familycensus",
+     "chapter": "ardatowel:ch:family-09",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -243,35 +427,30 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "ardatowel:census:1911"
+      "open_card": "ardatowel:familycensus:09:1911"
      },
-     "caption": "In 1911, 71 people in fourteen households lived in Ardatowel. Heads of household included McNulty, Martin and Cassidy.",
+     "caption": "Ardatowel had four McNulty households in 1911, headed by Thomas, Bridget, Mary and Patrick.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "ardatowel:census:1911"
+       "ardatowel:familycensus:09:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 7200,
+     "duration_ms": 5600,
      "audio": null,
-     "counts": {
-      "people": 71,
-      "households": 14
+     "thread": {
+      "id": "ardatowel:family:09",
+      "label": "McNulty",
+      "run": true
      }
-    }
-   ]
-  },
-  {
-   "id": "ardatowel:ch:1926",
-   "title": "1926",
-   "beats": [
+    },
     {
-     "id": "ardatowel:beat:census:1926",
-     "kind": "census",
-     "chapter": "ardatowel:ch:1926",
+     "id": "ardatowel:beat:familycensus:09-1926",
+     "kind": "familycensus",
+     "chapter": "ardatowel:ch:family-09",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -288,25 +467,238 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "ardatowel:census:1926"
+      "open_card": "ardatowel:familycensus:09:1926"
      },
-     "caption": "Ardatowel had 77 people in thirteen households in 1926. Heads of household included McNulty, Martain and McMenamin.",
+     "caption": "Ardatowel had five McNulty households in 1926, headed by Bridget, Michael, Dan, Peter and Lizzie.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "ardatowel:census:1926"
+       "ardatowel:familycensus:09:1926"
       ],
-      "basis": "return_for_townland",
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 6000,
+     "audio": null,
+     "thread": {
+      "id": "ardatowel:family:09",
+      "label": "McNulty",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardatowel:ch:family-07",
+   "title": "The Martin family",
+   "beats": [
+    {
+     "id": "ardatowel:beat:baptism:1875-03-14-TAW-B-p016-r195",
+     "kind": "baptism",
+     "chapter": "ardatowel:ch:family-07",
+     "time": {
+      "label": "14 March 1875",
+      "iso": "1875-03-14",
+      "sort": "1875-03-14",
+      "approximate": false
+     },
+     "place": {
+      "townland": "ardatowel",
+      "name": "Ardatowel",
+      "logainm_id": "14235",
+      "lat": 54.698932,
+      "lon": -8.018969,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardatowel:baptism:TAW-B-p016-r195"
+     },
+     "caption": "Patrick Martin was baptised on 14 March 1875. Charles Martin and Catherine Martin were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardatowel:baptism:TAW-B-p016-r195"
+      ],
+      "basis": "page_place",
       "certainty": "stated"
      },
-     "duration_ms": 6800,
+     "duration_ms": 6400,
      "audio": null,
-     "counts": {
-      "people": 77,
-      "households": 13
+     "thread": {
+      "id": "ardatowel:family:07",
+      "label": "Martin",
+      "run": true
      }
     },
+    {
+     "id": "ardatowel:beat:familyhead:07",
+     "kind": "familyhead",
+     "chapter": "ardatowel:ch:family-07",
+     "time": {
+      "label": "The Martin family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardatowel",
+      "name": "Ardatowel",
+      "logainm_id": "14235",
+      "lat": 54.698932,
+      "lon": -8.018969,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardatowel:familypresence:07"
+     },
+     "caption": "The Martin family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardatowel:familypresence:07"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ardatowel:family:07",
+      "label": "Martin",
+      "run": true
+     }
+    },
+    {
+     "id": "ardatowel:beat:familycensus:07-1901",
+     "kind": "familycensus",
+     "chapter": "ardatowel:ch:family-07",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardatowel",
+      "name": "Ardatowel",
+      "logainm_id": "14235",
+      "lat": 54.698932,
+      "lon": -8.018969,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardatowel:familycensus:07:1901"
+     },
+     "caption": "Ardatowel had three Martin households in 1901, headed by John, Bernard and Charles.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardatowel:familycensus:07:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "ardatowel:family:07",
+      "label": "Martin",
+      "run": true
+     }
+    },
+    {
+     "id": "ardatowel:beat:familycensus:07-1911",
+     "kind": "familycensus",
+     "chapter": "ardatowel:ch:family-07",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardatowel",
+      "name": "Ardatowel",
+      "logainm_id": "14235",
+      "lat": 54.698932,
+      "lon": -8.018969,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardatowel:familycensus:07:1911"
+     },
+     "caption": "Ardatowel had three Martin households in 1911, headed by John, Bernard and Catherine.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardatowel:familycensus:07:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "ardatowel:family:07",
+      "label": "Martin",
+      "run": true
+     }
+    },
+    {
+     "id": "ardatowel:beat:familycensus:07-1926",
+     "kind": "familycensus",
+     "chapter": "ardatowel:ch:family-07",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardatowel",
+      "name": "Ardatowel",
+      "logainm_id": "14235",
+      "lat": 54.698932,
+      "lon": -8.018969,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardatowel:familycensus:07:1926"
+     },
+     "caption": "Ardatowel had one Martin household in 1926, headed by Bridget.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardatowel:familycensus:07:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardatowel:family:07",
+      "label": "Martin",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardatowel:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "ardatowel:beat:closing:end",
      "kind": "closing",
@@ -341,6 +733,1346 @@
      },
      "duration_ms": 4000,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "ardatowel:ch:family-11",
+   "title": "The Slevin family",
+   "beats": [
+    {
+     "id": "ardatowel:beat:baptism:1873-01-26-TAW-B-p004-r11",
+     "kind": "baptism",
+     "chapter": "ardatowel:ch:family-11",
+     "time": {
+      "label": "26 January 1873",
+      "iso": "1873-01-26",
+      "sort": "1873-01-26",
+      "approximate": false
+     },
+     "place": {
+      "townland": "ardatowel",
+      "name": "Ardatowel",
+      "logainm_id": "14235",
+      "lat": 54.698932,
+      "lon": -8.018969,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardatowel:baptism:TAW-B-p004-r11"
+     },
+     "caption": "Michael Slevin was baptised on 26 January 1873. Charles Slevin and Susan Martin were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardatowel:baptism:TAW-B-p004-r11"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "ardatowel:family:11",
+      "label": "Slevin",
+      "run": false
+     }
+    },
+    {
+     "id": "ardatowel:beat:baptism:1875-04-17-TAW-B-p016-r204",
+     "kind": "baptism",
+     "chapter": "ardatowel:ch:family-11",
+     "time": {
+      "label": "17 April 1875",
+      "iso": "1875-04-17",
+      "sort": "1875-04-17",
+      "approximate": false
+     },
+     "place": {
+      "townland": "ardatowel",
+      "name": "Ardatowel",
+      "logainm_id": "14235",
+      "lat": 54.698932,
+      "lon": -8.018969,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardatowel:baptism:TAW-B-p016-r204"
+     },
+     "caption": "Patrick Slevin was baptised on 17 April 1875. Charles Slevin and Susan Martin were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardatowel:baptism:TAW-B-p016-r204"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "ardatowel:family:11",
+      "label": "Slevin",
+      "run": false
+     }
+    },
+    {
+     "id": "ardatowel:beat:familyhead:11",
+     "kind": "familyhead",
+     "chapter": "ardatowel:ch:family-11",
+     "time": {
+      "label": "The Slevin family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardatowel",
+      "name": "Ardatowel",
+      "logainm_id": "14235",
+      "lat": 54.698932,
+      "lon": -8.018969,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardatowel:familypresence:11"
+     },
+     "caption": "The Slevin family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardatowel:familypresence:11"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ardatowel:family:11",
+      "label": "Slevin",
+      "run": false
+     }
+    },
+    {
+     "id": "ardatowel:beat:familycensus:11-1901",
+     "kind": "familycensus",
+     "chapter": "ardatowel:ch:family-11",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardatowel",
+      "name": "Ardatowel",
+      "logainm_id": "14235",
+      "lat": 54.698932,
+      "lon": -8.018969,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardatowel:familycensus:11:1901"
+     },
+     "caption": "Ardatowel had two Slevin households in 1901, headed by John and Susan.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardatowel:familycensus:11:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "ardatowel:family:11",
+      "label": "Slevin",
+      "run": false
+     }
+    },
+    {
+     "id": "ardatowel:beat:familycensus:11-1911",
+     "kind": "familycensus",
+     "chapter": "ardatowel:ch:family-11",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardatowel",
+      "name": "Ardatowel",
+      "logainm_id": "14235",
+      "lat": 54.698932,
+      "lon": -8.018969,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardatowel:familycensus:11:1911"
+     },
+     "caption": "Ardatowel had one Slevin household in 1911, headed by Susan.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardatowel:familycensus:11:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardatowel:family:11",
+      "label": "Slevin",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardatowel:ch:family-01",
+   "title": "The Boyle family",
+   "beats": [
+    {
+     "id": "ardatowel:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "ardatowel:ch:family-01",
+     "time": {
+      "label": "The Boyle family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardatowel",
+      "name": "Ardatowel",
+      "logainm_id": "14235",
+      "lat": 54.698932,
+      "lon": -8.018969,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardatowel:familypresence:01"
+     },
+     "caption": "The Boyle family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardatowel:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardatowel:family:01",
+      "label": "Boyle",
+      "run": false
+     }
+    },
+    {
+     "id": "ardatowel:beat:familycensus:01-1901",
+     "kind": "familycensus",
+     "chapter": "ardatowel:ch:family-01",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardatowel",
+      "name": "Ardatowel",
+      "logainm_id": "14235",
+      "lat": 54.698932,
+      "lon": -8.018969,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardatowel:familycensus:01:1901"
+     },
+     "caption": "Ardatowel had one Boyle household in 1901, headed by Hugh.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardatowel:familycensus:01:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardatowel:family:01",
+      "label": "Boyle",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardatowel:ch:family-02",
+   "title": "The Cassidy family",
+   "beats": [
+    {
+     "id": "ardatowel:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "ardatowel:ch:family-02",
+     "time": {
+      "label": "The Cassidy family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardatowel",
+      "name": "Ardatowel",
+      "logainm_id": "14235",
+      "lat": 54.698932,
+      "lon": -8.018969,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardatowel:familypresence:02"
+     },
+     "caption": "The Cassidy family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardatowel:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ardatowel:family:02",
+      "label": "Cassidy",
+      "run": false
+     }
+    },
+    {
+     "id": "ardatowel:beat:familycensus:02-1901",
+     "kind": "familycensus",
+     "chapter": "ardatowel:ch:family-02",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardatowel",
+      "name": "Ardatowel",
+      "logainm_id": "14235",
+      "lat": 54.698932,
+      "lon": -8.018969,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardatowel:familycensus:02:1901"
+     },
+     "caption": "Ardatowel had one Cassidy household in 1901, headed by Bridget.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardatowel:familycensus:02:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardatowel:family:02",
+      "label": "Cassidy",
+      "run": false
+     }
+    },
+    {
+     "id": "ardatowel:beat:familycensus:02-1911",
+     "kind": "familycensus",
+     "chapter": "ardatowel:ch:family-02",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardatowel",
+      "name": "Ardatowel",
+      "logainm_id": "14235",
+      "lat": 54.698932,
+      "lon": -8.018969,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardatowel:familycensus:02:1911"
+     },
+     "caption": "Ardatowel had one Cassidy household in 1911, headed by Peter.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardatowel:familycensus:02:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardatowel:family:02",
+      "label": "Cassidy",
+      "run": false
+     }
+    },
+    {
+     "id": "ardatowel:beat:familycensus:02-1926",
+     "kind": "familycensus",
+     "chapter": "ardatowel:ch:family-02",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardatowel",
+      "name": "Ardatowel",
+      "logainm_id": "14235",
+      "lat": 54.698932,
+      "lon": -8.018969,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardatowel:familycensus:02:1926"
+     },
+     "caption": "Ardatowel had two Cassidy households in 1926, headed by John and Francis.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardatowel:familycensus:02:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "ardatowel:family:02",
+      "label": "Cassidy",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardatowel:ch:family-03",
+   "title": "The Duffy family",
+   "beats": [
+    {
+     "id": "ardatowel:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "ardatowel:ch:family-03",
+     "time": {
+      "label": "The Duffy family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardatowel",
+      "name": "Ardatowel",
+      "logainm_id": "14235",
+      "lat": 54.698932,
+      "lon": -8.018969,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardatowel:familypresence:03"
+     },
+     "caption": "The Duffy family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardatowel:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardatowel:family:03",
+      "label": "Duffy",
+      "run": false
+     }
+    },
+    {
+     "id": "ardatowel:beat:familycensus:03-1901",
+     "kind": "familycensus",
+     "chapter": "ardatowel:ch:family-03",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardatowel",
+      "name": "Ardatowel",
+      "logainm_id": "14235",
+      "lat": 54.698932,
+      "lon": -8.018969,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardatowel:familycensus:03:1901"
+     },
+     "caption": "Ardatowel had one Duffy household in 1901, headed by Thomas.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardatowel:familycensus:03:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardatowel:family:03",
+      "label": "Duffy",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardatowel:ch:family-04",
+   "title": "The Gallagher family",
+   "beats": [
+    {
+     "id": "ardatowel:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "ardatowel:ch:family-04",
+     "time": {
+      "label": "The Gallagher family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardatowel",
+      "name": "Ardatowel",
+      "logainm_id": "14235",
+      "lat": 54.698932,
+      "lon": -8.018969,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardatowel:familypresence:04"
+     },
+     "caption": "The Gallagher family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardatowel:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ardatowel:family:04",
+      "label": "Gallagher",
+      "run": false
+     }
+    },
+    {
+     "id": "ardatowel:beat:familycensus:04-1901",
+     "kind": "familycensus",
+     "chapter": "ardatowel:ch:family-04",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardatowel",
+      "name": "Ardatowel",
+      "logainm_id": "14235",
+      "lat": 54.698932,
+      "lon": -8.018969,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardatowel:familycensus:04:1901"
+     },
+     "caption": "Ardatowel had one Gallagher household in 1901, headed by Hugh.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardatowel:familycensus:04:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardatowel:family:04",
+      "label": "Gallagher",
+      "run": false
+     }
+    },
+    {
+     "id": "ardatowel:beat:familycensus:04-1911",
+     "kind": "familycensus",
+     "chapter": "ardatowel:ch:family-04",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardatowel",
+      "name": "Ardatowel",
+      "logainm_id": "14235",
+      "lat": 54.698932,
+      "lon": -8.018969,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardatowel:familycensus:04:1911"
+     },
+     "caption": "Ardatowel had one Gallagher household in 1911, headed by Hugh.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardatowel:familycensus:04:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardatowel:family:04",
+      "label": "Gallagher",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardatowel:ch:family-05",
+   "title": "The Gallinagh family",
+   "beats": [
+    {
+     "id": "ardatowel:beat:familyhead:05",
+     "kind": "familyhead",
+     "chapter": "ardatowel:ch:family-05",
+     "time": {
+      "label": "The Gallinagh family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardatowel",
+      "name": "Ardatowel",
+      "logainm_id": "14235",
+      "lat": 54.698932,
+      "lon": -8.018969,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardatowel:familypresence:05"
+     },
+     "caption": "The Gallinagh family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardatowel:familypresence:05"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ardatowel:family:05",
+      "label": "Gallinagh",
+      "run": false
+     }
+    },
+    {
+     "id": "ardatowel:beat:familycensus:05-1901",
+     "kind": "familycensus",
+     "chapter": "ardatowel:ch:family-05",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardatowel",
+      "name": "Ardatowel",
+      "logainm_id": "14235",
+      "lat": 54.698932,
+      "lon": -8.018969,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardatowel:familycensus:05:1901"
+     },
+     "caption": "Ardatowel had one Gallinagh household in 1901, headed by Anne.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardatowel:familycensus:05:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardatowel:family:05",
+      "label": "Gallinagh",
+      "run": false
+     }
+    },
+    {
+     "id": "ardatowel:beat:familycensus:05-1911",
+     "kind": "familycensus",
+     "chapter": "ardatowel:ch:family-05",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardatowel",
+      "name": "Ardatowel",
+      "logainm_id": "14235",
+      "lat": 54.698932,
+      "lon": -8.018969,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardatowel:familycensus:05:1911"
+     },
+     "caption": "Ardatowel had one Gallinagh household in 1911, headed by Anne.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardatowel:familycensus:05:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardatowel:family:05",
+      "label": "Gallinagh",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardatowel:ch:family-08",
+   "title": "The McMenamin family",
+   "beats": [
+    {
+     "id": "ardatowel:beat:familyhead:08",
+     "kind": "familyhead",
+     "chapter": "ardatowel:ch:family-08",
+     "time": {
+      "label": "The McMenamin family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardatowel",
+      "name": "Ardatowel",
+      "logainm_id": "14235",
+      "lat": 54.698932,
+      "lon": -8.018969,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardatowel:familypresence:08"
+     },
+     "caption": "The McMenamin family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardatowel:familypresence:08"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ardatowel:family:08",
+      "label": "McMenamin",
+      "run": false
+     }
+    },
+    {
+     "id": "ardatowel:beat:familycensus:08-1901",
+     "kind": "familycensus",
+     "chapter": "ardatowel:ch:family-08",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardatowel",
+      "name": "Ardatowel",
+      "logainm_id": "14235",
+      "lat": 54.698932,
+      "lon": -8.018969,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardatowel:familycensus:08:1901"
+     },
+     "caption": "Ardatowel had one McMenamin household in 1901, headed by Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardatowel:familycensus:08:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardatowel:family:08",
+      "label": "McMenamin",
+      "run": false
+     }
+    },
+    {
+     "id": "ardatowel:beat:familycensus:08-1911",
+     "kind": "familycensus",
+     "chapter": "ardatowel:ch:family-08",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardatowel",
+      "name": "Ardatowel",
+      "logainm_id": "14235",
+      "lat": 54.698932,
+      "lon": -8.018969,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardatowel:familycensus:08:1911"
+     },
+     "caption": "Ardatowel had one McMenamin household in 1911, headed by Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardatowel:familycensus:08:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardatowel:family:08",
+      "label": "McMenamin",
+      "run": false
+     }
+    },
+    {
+     "id": "ardatowel:beat:familycensus:08-1926",
+     "kind": "familycensus",
+     "chapter": "ardatowel:ch:family-08",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardatowel",
+      "name": "Ardatowel",
+      "logainm_id": "14235",
+      "lat": 54.698932,
+      "lon": -8.018969,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardatowel:familycensus:08:1926"
+     },
+     "caption": "Ardatowel had three McMenamin households in 1926, headed by Hugh, Susan and Patrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardatowel:familycensus:08:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5200,
+     "audio": null,
+     "thread": {
+      "id": "ardatowel:family:08",
+      "label": "McMenamin",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardatowel:ch:family-12",
+   "title": "The Tinney family",
+   "beats": [
+    {
+     "id": "ardatowel:beat:familyhead:12",
+     "kind": "familyhead",
+     "chapter": "ardatowel:ch:family-12",
+     "time": {
+      "label": "The Tinney family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardatowel",
+      "name": "Ardatowel",
+      "logainm_id": "14235",
+      "lat": 54.698932,
+      "lon": -8.018969,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardatowel:familypresence:12"
+     },
+     "caption": "The Tinney family appear in the records from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardatowel:familypresence:12"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ardatowel:family:12",
+      "label": "Tinney",
+      "run": false
+     }
+    },
+    {
+     "id": "ardatowel:beat:familycensus:12-1901",
+     "kind": "familycensus",
+     "chapter": "ardatowel:ch:family-12",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardatowel",
+      "name": "Ardatowel",
+      "logainm_id": "14235",
+      "lat": 54.698932,
+      "lon": -8.018969,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardatowel:familycensus:12:1901"
+     },
+     "caption": "Ardatowel had one Tinney household in 1901, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardatowel:familycensus:12:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardatowel:family:12",
+      "label": "Tinney",
+      "run": false
+     }
+    },
+    {
+     "id": "ardatowel:beat:familycensus:12-1911",
+     "kind": "familycensus",
+     "chapter": "ardatowel:ch:family-12",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardatowel",
+      "name": "Ardatowel",
+      "logainm_id": "14235",
+      "lat": 54.698932,
+      "lon": -8.018969,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardatowel:familycensus:12:1911"
+     },
+     "caption": "Ardatowel had one Tinney household in 1911, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardatowel:familycensus:12:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardatowel:family:12",
+      "label": "Tinney",
+      "run": false
+     }
+    },
+    {
+     "id": "ardatowel:beat:familycensus:12-1926",
+     "kind": "familycensus",
+     "chapter": "ardatowel:ch:family-12",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardatowel",
+      "name": "Ardatowel",
+      "logainm_id": "14235",
+      "lat": 54.698932,
+      "lon": -8.018969,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardatowel:familycensus:12:1926"
+     },
+     "caption": "Ardatowel had one Tinney household in 1926, headed by Mary Anne.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardatowel:familycensus:12:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ardatowel:family:12",
+      "label": "Tinney",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardatowel:ch:family-10",
+   "title": "The Sleavin family",
+   "beats": [
+    {
+     "id": "ardatowel:beat:familyhead:10",
+     "kind": "familyhead",
+     "chapter": "ardatowel:ch:family-10",
+     "time": {
+      "label": "The Sleavin family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardatowel",
+      "name": "Ardatowel",
+      "logainm_id": "14235",
+      "lat": 54.698932,
+      "lon": -8.018969,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardatowel:familypresence:10"
+     },
+     "caption": "The Sleavin family appear in the records from 1911 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardatowel:familypresence:10"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ardatowel:family:10",
+      "label": "Sleavin",
+      "run": false
+     }
+    },
+    {
+     "id": "ardatowel:beat:familycensus:10-1911",
+     "kind": "familycensus",
+     "chapter": "ardatowel:ch:family-10",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardatowel",
+      "name": "Ardatowel",
+      "logainm_id": "14235",
+      "lat": 54.698932,
+      "lon": -8.018969,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardatowel:familycensus:10:1911"
+     },
+     "caption": "Ardatowel had one Sleavin household in 1911, headed by John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardatowel:familycensus:10:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardatowel:family:10",
+      "label": "Sleavin",
+      "run": false
+     }
+    },
+    {
+     "id": "ardatowel:beat:familycensus:10-1926",
+     "kind": "familycensus",
+     "chapter": "ardatowel:ch:family-10",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardatowel",
+      "name": "Ardatowel",
+      "logainm_id": "14235",
+      "lat": 54.698932,
+      "lon": -8.018969,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardatowel:familycensus:10:1926"
+     },
+     "caption": "Ardatowel had one Sleavin household in 1926, headed by Maryann.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardatowel:familycensus:10:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardatowel:family:10",
+      "label": "Sleavin",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardatowel:ch:family-06",
+   "title": "The Martain family",
+   "beats": [
+    {
+     "id": "ardatowel:beat:familyhead:06",
+     "kind": "familyhead",
+     "chapter": "ardatowel:ch:family-06",
+     "time": {
+      "label": "The Martain family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardatowel",
+      "name": "Ardatowel",
+      "logainm_id": "14235",
+      "lat": 54.698932,
+      "lon": -8.018969,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardatowel:familypresence:06"
+     },
+     "caption": "The Martain family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardatowel:familypresence:06"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "ardatowel:family:06",
+      "label": "Martain",
+      "run": false
+     }
+    },
+    {
+     "id": "ardatowel:beat:familycensus:06-1926",
+     "kind": "familycensus",
+     "chapter": "ardatowel:ch:family-06",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardatowel",
+      "name": "Ardatowel",
+      "logainm_id": "14235",
+      "lat": 54.698932,
+      "lon": -8.018969,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardatowel:familycensus:06:1926"
+     },
+     "caption": "Ardatowel had three Martain households in 1926, headed by two named Mary and John.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardatowel:familycensus:06:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 5600,
+     "audio": null,
+     "thread": {
+      "id": "ardatowel:family:06",
+      "label": "Martain",
+      "run": false
+     }
     }
    ]
   }

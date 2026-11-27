@@ -52,15 +52,15 @@
    ]
   },
   {
-   "id": "tawnalary:ch:1911",
-   "title": "1911",
+   "id": "tawnalary:ch:census",
+   "title": "1911 to 1926",
    "beats": [
     {
-     "id": "tawnalary:beat:census:1911",
+     "id": "tawnalary:beat:census:returns",
      "kind": "census",
-     "chapter": "tawnalary:ch:1911",
+     "chapter": "tawnalary:ch:census",
      "time": {
-      "label": "1911",
+      "label": "1911 to 1926",
       "iso": "1911",
       "sort": "1911-01-01",
       "approximate": true
@@ -77,33 +77,217 @@
       "stage": "map",
       "open_card": "tawnalary:census:1911"
      },
-     "caption": "Tawnalary had six people in two households in 1911. Heads of household included Elliott and Freebourn.",
+     "caption": "The censuses of 1911 and 1926 counted 6 and 3 people in Tawnalary, in 2 and 2 households. Heads of household included Elliott, Freebourn and Elliot.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "tawnalary:census:1911"
+       "tawnalary:census:1911",
+       "tawnalary:census:1926"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 6400,
+     "duration_ms": 10400,
      "audio": null,
      "counts": {
-      "people": 6,
-      "households": 2
+      "returns": [
+       {
+        "year": "1911",
+        "people": 6,
+        "households": 2
+       },
+       {
+        "year": "1926",
+        "people": 3,
+        "households": 2
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "tawnalary:ch:1926",
-   "title": "1926",
+   "id": "tawnalary:ch:families",
+   "title": "The families of Tawnalary",
    "beats": [
     {
-     "id": "tawnalary:beat:census:1926",
-     "kind": "census",
-     "chapter": "tawnalary:ch:1926",
+     "id": "tawnalary:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "tawnalary:ch:families",
+     "time": {
+      "label": "The families of Tawnalary",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tawnalary",
+      "name": "Tawnalary",
+      "logainm_id": "14041",
+      "lat": 54.637679,
+      "lon": -8.106871,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tawnalary:census:1911"
+     },
+     "caption": "Here are the families of Tawnalary, from 1911 to 1926. First, the Elliott and Elliot families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tawnalary:census:1911",
+       "tawnalary:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "tawnalary:family:02",
+      "label": "Elliott",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "tawnalary:ch:family-02",
+   "title": "The Elliott family",
+   "beats": [
+    {
+     "id": "tawnalary:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "tawnalary:ch:family-02",
+     "time": {
+      "label": "The Elliott family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tawnalary",
+      "name": "Tawnalary",
+      "logainm_id": "14041",
+      "lat": 54.637679,
+      "lon": -8.106871,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tawnalary:familypresence:02"
+     },
+     "caption": "The Elliott family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tawnalary:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "tawnalary:family:02",
+      "label": "Elliott",
+      "run": true
+     }
+    },
+    {
+     "id": "tawnalary:beat:familycensus:02-1911",
+     "kind": "familycensus",
+     "chapter": "tawnalary:ch:family-02",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tawnalary",
+      "name": "Tawnalary",
+      "logainm_id": "14041",
+      "lat": 54.637679,
+      "lon": -8.106871,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tawnalary:familycensus:02:1911"
+     },
+     "caption": "Tawnalary had one Elliott household in 1911, headed by William.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tawnalary:familycensus:02:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "tawnalary:family:02",
+      "label": "Elliott",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "tawnalary:ch:family-01",
+   "title": "The Elliot family",
+   "beats": [
+    {
+     "id": "tawnalary:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "tawnalary:ch:family-01",
+     "time": {
+      "label": "The Elliot family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tawnalary",
+      "name": "Tawnalary",
+      "logainm_id": "14041",
+      "lat": 54.637679,
+      "lon": -8.106871,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tawnalary:familypresence:01"
+     },
+     "caption": "The Elliot family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tawnalary:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "tawnalary:family:01",
+      "label": "Elliot",
+      "run": true
+     }
+    },
+    {
+     "id": "tawnalary:beat:familycensus:01-1926",
+     "kind": "familycensus",
+     "chapter": "tawnalary:ch:family-01",
      "time": {
       "label": "1926",
       "iso": "1926",
@@ -120,25 +304,32 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "tawnalary:census:1926"
+      "open_card": "tawnalary:familycensus:01:1926"
      },
-     "caption": "Tawnalary had three people in two households in 1926. Heads of household included Elliot and Freeborn.",
+     "caption": "Tawnalary had one Elliot household in 1926, headed by William.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "tawnalary:census:1926"
+       "tawnalary:familycensus:01:1926"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6400,
+     "duration_ms": 4000,
      "audio": null,
-     "counts": {
-      "people": 3,
-      "households": 2
+     "thread": {
+      "id": "tawnalary:family:01",
+      "label": "Elliot",
+      "run": true
      }
-    },
+    }
+   ]
+  },
+  {
+   "id": "tawnalary:ch:1926",
+   "title": "1926",
+   "beats": [
     {
      "id": "tawnalary:beat:closing:end",
      "kind": "closing",
@@ -173,6 +364,178 @@
      },
      "duration_ms": 4000,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "tawnalary:ch:family-04",
+   "title": "The Freebourn family",
+   "beats": [
+    {
+     "id": "tawnalary:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "tawnalary:ch:family-04",
+     "time": {
+      "label": "The Freebourn family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tawnalary",
+      "name": "Tawnalary",
+      "logainm_id": "14041",
+      "lat": 54.637679,
+      "lon": -8.106871,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tawnalary:familypresence:04"
+     },
+     "caption": "The Freebourn family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tawnalary:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "tawnalary:family:04",
+      "label": "Freebourn",
+      "run": false
+     }
+    },
+    {
+     "id": "tawnalary:beat:familycensus:04-1911",
+     "kind": "familycensus",
+     "chapter": "tawnalary:ch:family-04",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tawnalary",
+      "name": "Tawnalary",
+      "logainm_id": "14041",
+      "lat": 54.637679,
+      "lon": -8.106871,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tawnalary:familycensus:04:1911"
+     },
+     "caption": "Tawnalary had one Freebourn household in 1911, headed by Elleanor.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tawnalary:familycensus:04:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "tawnalary:family:04",
+      "label": "Freebourn",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "tawnalary:ch:family-03",
+   "title": "The Freeborn family",
+   "beats": [
+    {
+     "id": "tawnalary:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "tawnalary:ch:family-03",
+     "time": {
+      "label": "The Freeborn family",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tawnalary",
+      "name": "Tawnalary",
+      "logainm_id": "14041",
+      "lat": 54.637679,
+      "lon": -8.106871,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tawnalary:familypresence:03"
+     },
+     "caption": "The Freeborn family appear in the records in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tawnalary:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "tawnalary:family:03",
+      "label": "Freeborn",
+      "run": false
+     }
+    },
+    {
+     "id": "tawnalary:beat:familycensus:03-1926",
+     "kind": "familycensus",
+     "chapter": "tawnalary:ch:family-03",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tawnalary",
+      "name": "Tawnalary",
+      "logainm_id": "14041",
+      "lat": 54.637679,
+      "lon": -8.106871,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tawnalary:familycensus:03:1926"
+     },
+     "caption": "Tawnalary had one Freeborn household in 1926, headed by William.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tawnalary:familycensus:03:1926"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "tawnalary:family:03",
+      "label": "Freeborn",
+      "run": false
+     }
     }
    ]
   }

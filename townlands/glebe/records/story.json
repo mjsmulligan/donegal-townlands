@@ -52,15 +52,15 @@
    ]
   },
   {
-   "id": "glebe:ch:1901",
-   "title": "1901",
+   "id": "glebe:ch:census",
+   "title": "1901 to 1911",
    "beats": [
     {
-     "id": "glebe:beat:census:1901",
+     "id": "glebe:beat:census:returns",
      "kind": "census",
-     "chapter": "glebe:ch:1901",
+     "chapter": "glebe:ch:census",
      "time": {
-      "label": "1901",
+      "label": "1901 to 1911",
       "iso": "1901",
       "sort": "1901-01-01",
       "approximate": true
@@ -77,33 +77,171 @@
       "stage": "map",
       "open_card": "glebe:census:1901"
      },
-     "caption": "In 1901, 27 people in five households lived in Glebe. Heads of household included Brogan, Chapman and McDivitt.",
+     "caption": "The censuses of 1901 and 1911 counted 27 and 31 people in Glebe, in 5 and 6 households. Heads of household included Brogan, Chapman and McDivitt.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "glebe:census:1901"
+       "glebe:census:1901",
+       "glebe:census:1911"
       ],
       "basis": "return_for_townland",
       "certainty": "stated"
      },
-     "duration_ms": 7200,
+     "duration_ms": 10400,
      "audio": null,
      "counts": {
-      "people": 27,
-      "households": 5
+      "returns": [
+       {
+        "year": "1901",
+        "people": 27,
+        "households": 5
+       },
+       {
+        "year": "1911",
+        "people": 31,
+        "households": 6
+       }
+      ]
      }
     }
    ]
   },
   {
-   "id": "glebe:ch:1911",
-   "title": "1911",
+   "id": "glebe:ch:families",
+   "title": "The families of Glebe",
    "beats": [
     {
-     "id": "glebe:beat:census:1911",
-     "kind": "census",
-     "chapter": "glebe:ch:1911",
+     "id": "glebe:beat:familyintro:families",
+     "kind": "familyintro",
+     "chapter": "glebe:ch:families",
+     "time": {
+      "label": "The families of Glebe",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "glebe",
+      "name": "Glebe",
+      "logainm_id": "14036",
+      "lat": 54.649866,
+      "lon": -8.111371,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "glebe:census:1901"
+     },
+     "caption": "Here are the families of Glebe, from 1901 to 1911. First, the Brogan and Chapman families.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "glebe:census:1901",
+       "glebe:census:1911"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "glebe:family:01",
+      "label": "Brogan",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "glebe:ch:family-01",
+   "title": "The Brogan family",
+   "beats": [
+    {
+     "id": "glebe:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "glebe:ch:family-01",
+     "time": {
+      "label": "The Brogan family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "glebe",
+      "name": "Glebe",
+      "logainm_id": "14036",
+      "lat": 54.649866,
+      "lon": -8.111371,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "glebe:familypresence:01"
+     },
+     "caption": "The Brogan family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "glebe:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "glebe:family:01",
+      "label": "Brogan",
+      "run": true
+     }
+    },
+    {
+     "id": "glebe:beat:familycensus:01-1901",
+     "kind": "familycensus",
+     "chapter": "glebe:ch:family-01",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "glebe",
+      "name": "Glebe",
+      "logainm_id": "14036",
+      "lat": 54.649866,
+      "lon": -8.111371,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "glebe:familycensus:01:1901"
+     },
+     "caption": "Glebe had one Brogan household in 1901, headed by Joseph.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "glebe:familycensus:01:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "glebe:family:01",
+      "label": "Brogan",
+      "run": true
+     }
+    },
+    {
+     "id": "glebe:beat:familycensus:01-1911",
+     "kind": "familycensus",
+     "chapter": "glebe:ch:family-01",
      "time": {
       "label": "1911",
       "iso": "1911",
@@ -120,25 +258,158 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "glebe:census:1911"
+      "open_card": "glebe:familycensus:01:1911"
      },
-     "caption": "Glebe had 31 people in six households in 1911. Heads of household included Brogan, Chapman and Coleman.",
+     "caption": "Glebe had one Brogan household in 1911, headed by Joseph.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "glebe:census:1911"
+       "glebe:familycensus:01:1911"
       ],
-      "basis": "return_for_townland",
-      "certainty": "stated"
+      "basis": "census_surname",
+      "certainty": "accepted"
      },
-     "duration_ms": 6800,
+     "duration_ms": 4000,
      "audio": null,
-     "counts": {
-      "people": 31,
-      "households": 6
+     "thread": {
+      "id": "glebe:family:01",
+      "label": "Brogan",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "glebe:ch:family-02",
+   "title": "The Chapman family",
+   "beats": [
+    {
+     "id": "glebe:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "glebe:ch:family-02",
+     "time": {
+      "label": "The Chapman family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "glebe",
+      "name": "Glebe",
+      "logainm_id": "14036",
+      "lat": 54.649866,
+      "lon": -8.111371,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "glebe:familypresence:02"
+     },
+     "caption": "The Chapman family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "glebe:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "glebe:family:02",
+      "label": "Chapman",
+      "run": true
      }
     },
+    {
+     "id": "glebe:beat:familycensus:02-1901",
+     "kind": "familycensus",
+     "chapter": "glebe:ch:family-02",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "glebe",
+      "name": "Glebe",
+      "logainm_id": "14036",
+      "lat": 54.649866,
+      "lon": -8.111371,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "glebe:familycensus:02:1901"
+     },
+     "caption": "Glebe had one Chapman household in 1901, headed by Elizabeth.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "glebe:familycensus:02:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "glebe:family:02",
+      "label": "Chapman",
+      "run": true
+     }
+    },
+    {
+     "id": "glebe:beat:familycensus:02-1911",
+     "kind": "familycensus",
+     "chapter": "glebe:ch:family-02",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "glebe",
+      "name": "Glebe",
+      "logainm_id": "14036",
+      "lat": 54.649866,
+      "lon": -8.111371,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "glebe:familycensus:02:1911"
+     },
+     "caption": "Glebe had one Chapman household in 1911, headed by William E B.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "glebe:familycensus:02:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "glebe:family:02",
+      "label": "Chapman",
+      "run": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "glebe:ch:1911",
+   "title": "1911",
+   "beats": [
     {
      "id": "glebe:beat:closing:end",
      "kind": "closing",
@@ -173,6 +444,562 @@
      },
      "duration_ms": 4000,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "glebe:ch:family-06",
+   "title": "The McDivitt family",
+   "beats": [
+    {
+     "id": "glebe:beat:familyhead:06",
+     "kind": "familyhead",
+     "chapter": "glebe:ch:family-06",
+     "time": {
+      "label": "The McDivitt family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "glebe",
+      "name": "Glebe",
+      "logainm_id": "14036",
+      "lat": 54.649866,
+      "lon": -8.111371,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "glebe:familypresence:06"
+     },
+     "caption": "The McDivitt family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "glebe:familypresence:06"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "glebe:family:06",
+      "label": "McDivitt",
+      "run": false
+     }
+    },
+    {
+     "id": "glebe:beat:familycensus:06-1901",
+     "kind": "familycensus",
+     "chapter": "glebe:ch:family-06",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "glebe",
+      "name": "Glebe",
+      "logainm_id": "14036",
+      "lat": 54.649866,
+      "lon": -8.111371,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "glebe:familycensus:06:1901"
+     },
+     "caption": "Glebe had one McDivitt household in 1901, headed by William.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "glebe:familycensus:06:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "glebe:family:06",
+      "label": "McDivitt",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "glebe:ch:family-07",
+   "title": "The Pope family",
+   "beats": [
+    {
+     "id": "glebe:beat:familyhead:07",
+     "kind": "familyhead",
+     "chapter": "glebe:ch:family-07",
+     "time": {
+      "label": "The Pope family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "glebe",
+      "name": "Glebe",
+      "logainm_id": "14036",
+      "lat": 54.649866,
+      "lon": -8.111371,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "glebe:familypresence:07"
+     },
+     "caption": "The Pope family appear in the records in 1901.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "glebe:familypresence:07"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "glebe:family:07",
+      "label": "Pope",
+      "run": false
+     }
+    },
+    {
+     "id": "glebe:beat:familycensus:07-1901",
+     "kind": "familycensus",
+     "chapter": "glebe:ch:family-07",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "glebe",
+      "name": "Glebe",
+      "logainm_id": "14036",
+      "lat": 54.649866,
+      "lon": -8.111371,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "glebe:familycensus:07:1901"
+     },
+     "caption": "Glebe had one Pope household in 1901, headed by Richard Henry.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "glebe:familycensus:07:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "glebe:family:07",
+      "label": "Pope",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "glebe:ch:family-08",
+   "title": "The Warnock family",
+   "beats": [
+    {
+     "id": "glebe:beat:familyhead:08",
+     "kind": "familyhead",
+     "chapter": "glebe:ch:family-08",
+     "time": {
+      "label": "The Warnock family",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "glebe",
+      "name": "Glebe",
+      "logainm_id": "14036",
+      "lat": 54.649866,
+      "lon": -8.111371,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "glebe:familypresence:08"
+     },
+     "caption": "The Warnock family appear in the records from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "glebe:familypresence:08"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "glebe:family:08",
+      "label": "Warnock",
+      "run": false
+     }
+    },
+    {
+     "id": "glebe:beat:familycensus:08-1901",
+     "kind": "familycensus",
+     "chapter": "glebe:ch:family-08",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "glebe",
+      "name": "Glebe",
+      "logainm_id": "14036",
+      "lat": 54.649866,
+      "lon": -8.111371,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "glebe:familycensus:08:1901"
+     },
+     "caption": "Glebe had one Warnock household in 1901, headed by H T A.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "glebe:familycensus:08:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "glebe:family:08",
+      "label": "Warnock",
+      "run": false
+     }
+    },
+    {
+     "id": "glebe:beat:familycensus:08-1911",
+     "kind": "familycensus",
+     "chapter": "glebe:ch:family-08",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "glebe",
+      "name": "Glebe",
+      "logainm_id": "14036",
+      "lat": 54.649866,
+      "lon": -8.111371,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "glebe:familycensus:08:1911"
+     },
+     "caption": "Glebe had one Warnock household in 1911, headed by Hugh Thomas Archibald.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "glebe:familycensus:08:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "glebe:family:08",
+      "label": "Warnock",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "glebe:ch:family-03",
+   "title": "The Coleman family",
+   "beats": [
+    {
+     "id": "glebe:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "glebe:ch:family-03",
+     "time": {
+      "label": "The Coleman family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "glebe",
+      "name": "Glebe",
+      "logainm_id": "14036",
+      "lat": 54.649866,
+      "lon": -8.111371,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "glebe:familypresence:03"
+     },
+     "caption": "The Coleman family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "glebe:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "glebe:family:03",
+      "label": "Coleman",
+      "run": false
+     }
+    },
+    {
+     "id": "glebe:beat:familycensus:03-1911",
+     "kind": "familycensus",
+     "chapter": "glebe:ch:family-03",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "glebe",
+      "name": "Glebe",
+      "logainm_id": "14036",
+      "lat": 54.649866,
+      "lon": -8.111371,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "glebe:familycensus:03:1911"
+     },
+     "caption": "Glebe had one Coleman household in 1911, headed by Andrew.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "glebe:familycensus:03:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "glebe:family:03",
+      "label": "Coleman",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "glebe:ch:family-04",
+   "title": "The Herries Crosbie family",
+   "beats": [
+    {
+     "id": "glebe:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "glebe:ch:family-04",
+     "time": {
+      "label": "The Herries Crosbie family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "glebe",
+      "name": "Glebe",
+      "logainm_id": "14036",
+      "lat": 54.649866,
+      "lon": -8.111371,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "glebe:familypresence:04"
+     },
+     "caption": "The Herries Crosbie family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "glebe:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "glebe:family:04",
+      "label": "Herries Crosbie",
+      "run": false
+     }
+    },
+    {
+     "id": "glebe:beat:familycensus:04-1911",
+     "kind": "familycensus",
+     "chapter": "glebe:ch:family-04",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "glebe",
+      "name": "Glebe",
+      "logainm_id": "14036",
+      "lat": 54.649866,
+      "lon": -8.111371,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "glebe:familycensus:04:1911"
+     },
+     "caption": "Glebe had one Herries Crosbie household in 1911, headed by Charles Howard.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "glebe:familycensus:04:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "glebe:family:04",
+      "label": "Herries Crosbie",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "glebe:ch:family-05",
+   "title": "The McDade family",
+   "beats": [
+    {
+     "id": "glebe:beat:familyhead:05",
+     "kind": "familyhead",
+     "chapter": "glebe:ch:family-05",
+     "time": {
+      "label": "The McDade family",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "glebe",
+      "name": "Glebe",
+      "logainm_id": "14036",
+      "lat": 54.649866,
+      "lon": -8.111371,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "glebe:familypresence:05"
+     },
+     "caption": "The McDade family appear in the records in 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "glebe:familypresence:05"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "glebe:family:05",
+      "label": "McDade",
+      "run": false
+     }
+    },
+    {
+     "id": "glebe:beat:familycensus:05-1911",
+     "kind": "familycensus",
+     "chapter": "glebe:ch:family-05",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "glebe",
+      "name": "Glebe",
+      "logainm_id": "14036",
+      "lat": 54.649866,
+      "lon": -8.111371,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "glebe:familycensus:05:1911"
+     },
+     "caption": "Glebe had one McDade household in 1911, headed by William.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "glebe:familycensus:05:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "glebe:family:05",
+      "label": "McDade",
+      "run": false
+     }
     }
    ]
   }
