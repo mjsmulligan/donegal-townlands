@@ -10,6 +10,48 @@
  },
  "chapters": [
   {
+   "id": "birchhill:ch:intro",
+   "title": "Birchhill",
+   "beats": [
+    {
+     "id": "birchhill:beat:title:title",
+     "kind": "title",
+     "chapter": "birchhill:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1873-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "birchhill",
+      "name": "Birchhill",
+      "logainm_id": "13957",
+      "lat": 54.676172,
+      "lon": -8.036301,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Birchhill, in Irish Carn Beitheach, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Birchhill and its eight families, from 1873 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "birchhill:baptism:TAW-B-p006-r28",
+       "birchhill:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 12000,
+     "audio": null
+    }
+   ]
+  },
+  {
    "id": "birchhill:ch:register",
    "title": "The parish register",
    "beats": [
@@ -46,48 +88,6 @@
       "certainty": "stated"
      },
      "duration_ms": 10000,
-     "audio": null
-    }
-   ]
-  },
-  {
-   "id": "birchhill:ch:intro",
-   "title": "Birchhill",
-   "beats": [
-    {
-     "id": "birchhill:beat:title:title",
-     "kind": "title",
-     "chapter": "birchhill:ch:intro",
-     "time": {
-      "label": "",
-      "iso": "",
-      "sort": "1873-03-25",
-      "approximate": true
-     },
-     "place": {
-      "townland": "birchhill",
-      "name": "Birchhill",
-      "logainm_id": "13957",
-      "lat": 54.676172,
-      "lon": -8.036301,
-      "camera": "parish"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": ""
-     },
-     "caption": "Birchhill, in Irish Carn Beitheach, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Birchhill and its eight families, from 1873 to 1926.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "birchhill:baptism:TAW-B-p006-r28",
-       "birchhill:census:1926"
-      ],
-      "basis": "place_record",
-      "certainty": "stated"
-     },
-     "duration_ms": 12000,
      "audio": null
     }
    ]

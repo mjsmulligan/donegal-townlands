@@ -10,6 +10,48 @@
  },
  "chapters": [
   {
+   "id": "tully:ch:intro",
+   "title": "Tully",
+   "beats": [
+    {
+     "id": "tully:beat:title:title",
+     "kind": "title",
+     "chapter": "tully:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1874-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tully",
+      "name": "Tully",
+      "logainm_id": "14043",
+      "lat": 54.646111,
+      "lon": -8.078972,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Tully, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Tully and its six families, from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tully:census:1901",
+       "tully:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 10400,
+     "audio": null
+    }
+   ]
+  },
+  {
    "id": "tully:ch:register",
    "title": "The parish register",
    "beats": [
@@ -46,48 +88,6 @@
       "certainty": "stated"
      },
      "duration_ms": 9200,
-     "audio": null
-    }
-   ]
-  },
-  {
-   "id": "tully:ch:intro",
-   "title": "Tully",
-   "beats": [
-    {
-     "id": "tully:beat:title:title",
-     "kind": "title",
-     "chapter": "tully:ch:intro",
-     "time": {
-      "label": "",
-      "iso": "",
-      "sort": "1901-01-01",
-      "approximate": true
-     },
-     "place": {
-      "townland": "tully",
-      "name": "Tully",
-      "logainm_id": "14043",
-      "lat": 54.646111,
-      "lon": -8.078972,
-      "camera": "parish"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": ""
-     },
-     "caption": "Tully, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Tully and its six families, from 1901 to 1926.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "tully:census:1901",
-       "tully:census:1926"
-      ],
-      "basis": "place_record",
-      "certainty": "stated"
-     },
-     "duration_ms": 10400,
      "audio": null
     }
    ]

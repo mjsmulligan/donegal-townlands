@@ -10,6 +10,48 @@
  },
  "chapters": [
   {
+   "id": "ardatowel:ch:intro",
+   "title": "Ardatowel",
+   "beats": [
+    {
+     "id": "ardatowel:beat:title:title",
+     "kind": "title",
+     "chapter": "ardatowel:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1873-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardatowel",
+      "name": "Ardatowel",
+      "logainm_id": "14235",
+      "lat": 54.698932,
+      "lon": -8.018969,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Ardatowel, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Ardatowel and its twelve families, from 1873 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardatowel:baptism:TAW-B-p004-r11",
+       "ardatowel:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 10400,
+     "audio": null
+    }
+   ]
+  },
+  {
    "id": "ardatowel:ch:register",
    "title": "The parish register",
    "beats": [
@@ -46,48 +88,6 @@
       "certainty": "stated"
      },
      "duration_ms": 10000,
-     "audio": null
-    }
-   ]
-  },
-  {
-   "id": "ardatowel:ch:intro",
-   "title": "Ardatowel",
-   "beats": [
-    {
-     "id": "ardatowel:beat:title:title",
-     "kind": "title",
-     "chapter": "ardatowel:ch:intro",
-     "time": {
-      "label": "",
-      "iso": "",
-      "sort": "1873-01-26",
-      "approximate": true
-     },
-     "place": {
-      "townland": "ardatowel",
-      "name": "Ardatowel",
-      "logainm_id": "14235",
-      "lat": 54.698932,
-      "lon": -8.018969,
-      "camera": "parish"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": ""
-     },
-     "caption": "Ardatowel, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Ardatowel and its twelve families, from 1873 to 1926.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "ardatowel:baptism:TAW-B-p004-r11",
-       "ardatowel:census:1926"
-      ],
-      "basis": "place_record",
-      "certainty": "stated"
-     },
-     "duration_ms": 10400,
      "audio": null
     }
    ]

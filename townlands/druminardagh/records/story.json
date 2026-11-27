@@ -10,6 +10,48 @@
  },
  "chapters": [
   {
+   "id": "druminardagh:ch:intro",
+   "title": "Druminardagh",
+   "beats": [
+    {
+     "id": "druminardagh:beat:title:title",
+     "kind": "title",
+     "chapter": "druminardagh:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1874-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminardagh",
+      "name": "Druminardagh",
+      "logainm_id": "14275",
+      "lat": 54.644538,
+      "lon": -8.024656,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Druminardagh, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Druminardagh and its twelve families, from 1874 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminardagh:baptism:TAW-B-p011-r138",
+       "druminardagh:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 10400,
+     "audio": null
+    }
+   ]
+  },
+  {
    "id": "druminardagh:ch:register",
    "title": "The parish register",
    "beats": [
@@ -46,48 +88,6 @@
       "certainty": "stated"
      },
      "duration_ms": 9200,
-     "audio": null
-    }
-   ]
-  },
-  {
-   "id": "druminardagh:ch:intro",
-   "title": "Druminardagh",
-   "beats": [
-    {
-     "id": "druminardagh:beat:title:title",
-     "kind": "title",
-     "chapter": "druminardagh:ch:intro",
-     "time": {
-      "label": "",
-      "iso": "",
-      "sort": "1874-07-19",
-      "approximate": true
-     },
-     "place": {
-      "townland": "druminardagh",
-      "name": "Druminardagh",
-      "logainm_id": "14275",
-      "lat": 54.644538,
-      "lon": -8.024656,
-      "camera": "parish"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": ""
-     },
-     "caption": "Druminardagh, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Druminardagh and its twelve families, from 1874 to 1926.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "druminardagh:baptism:TAW-B-p011-r138",
-       "druminardagh:census:1926"
-      ],
-      "basis": "place_record",
-      "certainty": "stated"
-     },
-     "duration_ms": 10400,
      "audio": null
     }
    ]

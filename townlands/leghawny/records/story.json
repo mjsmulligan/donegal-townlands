@@ -10,6 +10,48 @@
  },
  "chapters": [
   {
+   "id": "leghawny:ch:intro",
+   "title": "Leghawny",
+   "beats": [
+    {
+     "id": "leghawny:beat:title:title",
+     "kind": "title",
+     "chapter": "leghawny:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1874-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "leghawny",
+      "name": "Leghawny",
+      "logainm_id": "14281",
+      "lat": 54.662561,
+      "lon": -8.007576,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Leghawny, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Leghawny and its twelve families, from 1874 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "leghawny:baptism:TAW-B-p012-r151",
+       "leghawny:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 10400,
+     "audio": null
+    }
+   ]
+  },
+  {
    "id": "leghawny:ch:register",
    "title": "The parish register",
    "beats": [
@@ -46,48 +88,6 @@
       "certainty": "stated"
      },
      "duration_ms": 10000,
-     "audio": null
-    }
-   ]
-  },
-  {
-   "id": "leghawny:ch:intro",
-   "title": "Leghawny",
-   "beats": [
-    {
-     "id": "leghawny:beat:title:title",
-     "kind": "title",
-     "chapter": "leghawny:ch:intro",
-     "time": {
-      "label": "",
-      "iso": "",
-      "sort": "1874-09-26",
-      "approximate": true
-     },
-     "place": {
-      "townland": "leghawny",
-      "name": "Leghawny",
-      "logainm_id": "14281",
-      "lat": 54.662561,
-      "lon": -8.007576,
-      "camera": "parish"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": ""
-     },
-     "caption": "Leghawny, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Leghawny and its twelve families, from 1874 to 1926.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "leghawny:baptism:TAW-B-p012-r151",
-       "leghawny:census:1926"
-      ],
-      "basis": "place_record",
-      "certainty": "stated"
-     },
-     "duration_ms": 10400,
      "audio": null
     }
    ]

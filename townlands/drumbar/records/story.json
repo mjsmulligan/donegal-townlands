@@ -10,6 +10,48 @@
  },
  "chapters": [
   {
+   "id": "drumbar:ch:intro",
+   "title": "Drumbar",
+   "beats": [
+    {
+     "id": "drumbar:beat:title:title",
+     "kind": "title",
+     "chapter": "drumbar:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1875-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumbar",
+      "name": "Drumbar",
+      "logainm_id": "14031",
+      "lat": 54.640452,
+      "lon": -8.087593,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Drumbar, in Irish Droim Bairr, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Drumbar and its seven families, from 1875 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumbar:baptism:TAW-B-p018-r342",
+       "drumbar:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 12000,
+     "audio": null
+    }
+   ]
+  },
+  {
    "id": "drumbar:ch:register",
    "title": "The parish register",
    "beats": [
@@ -46,48 +88,6 @@
       "certainty": "stated"
      },
      "duration_ms": 9200,
-     "audio": null
-    }
-   ]
-  },
-  {
-   "id": "drumbar:ch:intro",
-   "title": "Drumbar",
-   "beats": [
-    {
-     "id": "drumbar:beat:title:title",
-     "kind": "title",
-     "chapter": "drumbar:ch:intro",
-     "time": {
-      "label": "",
-      "iso": "",
-      "sort": "1875-09-17",
-      "approximate": true
-     },
-     "place": {
-      "townland": "drumbar",
-      "name": "Drumbar",
-      "logainm_id": "14031",
-      "lat": 54.640452,
-      "lon": -8.087593,
-      "camera": "parish"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": ""
-     },
-     "caption": "Drumbar, in Irish Droim Bairr, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Drumbar and its seven families, from 1875 to 1926.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "drumbar:baptism:TAW-B-p018-r342",
-       "drumbar:census:1926"
-      ],
-      "basis": "place_record",
-      "certainty": "stated"
-     },
-     "duration_ms": 12000,
      "audio": null
     }
    ]

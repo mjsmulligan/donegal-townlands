@@ -10,6 +10,48 @@
  },
  "chapters": [
   {
+   "id": "ardeevin:ch:intro",
+   "title": "Ardeevin",
+   "beats": [
+    {
+     "id": "ardeevin:beat:title:title",
+     "kind": "title",
+     "chapter": "ardeevin:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1873-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardeevin",
+      "name": "Ardeevin",
+      "logainm_id": "14236",
+      "lat": 54.692639,
+      "lon": -8.021663,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Ardeevin, in Irish Ard Aoibhinn, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Ardeevin and its six families, from 1873 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardeevin:baptism:TAW-B-p007-r50",
+       "ardeevin:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 12000,
+     "audio": null
+    }
+   ]
+  },
+  {
    "id": "ardeevin:ch:register",
    "title": "The parish register",
    "beats": [
@@ -46,48 +88,6 @@
       "certainty": "stated"
      },
      "duration_ms": 9200,
-     "audio": null
-    }
-   ]
-  },
-  {
-   "id": "ardeevin:ch:intro",
-   "title": "Ardeevin",
-   "beats": [
-    {
-     "id": "ardeevin:beat:title:title",
-     "kind": "title",
-     "chapter": "ardeevin:ch:intro",
-     "time": {
-      "label": "",
-      "iso": "",
-      "sort": "1873-06-08",
-      "approximate": true
-     },
-     "place": {
-      "townland": "ardeevin",
-      "name": "Ardeevin",
-      "logainm_id": "14236",
-      "lat": 54.692639,
-      "lon": -8.021663,
-      "camera": "parish"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": ""
-     },
-     "caption": "Ardeevin, in Irish Ard Aoibhinn, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Ardeevin and its six families, from 1873 to 1926.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "ardeevin:baptism:TAW-B-p007-r50",
-       "ardeevin:census:1926"
-      ],
-      "basis": "place_record",
-      "certainty": "stated"
-     },
-     "duration_ms": 12000,
      "audio": null
     }
    ]

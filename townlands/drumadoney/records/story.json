@@ -10,6 +10,48 @@
  },
  "chapters": [
   {
+   "id": "drumadoney:ch:intro",
+   "title": "Drumadoney",
+   "beats": [
+    {
+     "id": "drumadoney:beat:title:title",
+     "kind": "title",
+     "chapter": "drumadoney:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1874-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumadoney",
+      "name": "Drumadoney",
+      "logainm_id": "14273",
+      "lat": 54.658955,
+      "lon": -8.036524,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Drumadoney, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Drumadoney and its eight families, from 1874 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumadoney:baptism:TAW-B-p013-r160",
+       "drumadoney:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 10400,
+     "audio": null
+    }
+   ]
+  },
+  {
    "id": "drumadoney:ch:register",
    "title": "The parish register",
    "beats": [
@@ -46,48 +88,6 @@
       "certainty": "stated"
      },
      "duration_ms": 10000,
-     "audio": null
-    }
-   ]
-  },
-  {
-   "id": "drumadoney:ch:intro",
-   "title": "Drumadoney",
-   "beats": [
-    {
-     "id": "drumadoney:beat:title:title",
-     "kind": "title",
-     "chapter": "drumadoney:ch:intro",
-     "time": {
-      "label": "",
-      "iso": "",
-      "sort": "1874-10-25",
-      "approximate": true
-     },
-     "place": {
-      "townland": "drumadoney",
-      "name": "Drumadoney",
-      "logainm_id": "14273",
-      "lat": 54.658955,
-      "lon": -8.036524,
-      "camera": "parish"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": ""
-     },
-     "caption": "Drumadoney, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Drumadoney and its eight families, from 1874 to 1926.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "drumadoney:baptism:TAW-B-p013-r160",
-       "drumadoney:census:1926"
-      ],
-      "basis": "place_record",
-      "certainty": "stated"
-     },
-     "duration_ms": 10400,
      "audio": null
     }
    ]

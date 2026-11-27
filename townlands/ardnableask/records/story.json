@@ -10,6 +10,48 @@
  },
  "chapters": [
   {
+   "id": "ardnableask:ch:intro",
+   "title": "Ardnableask",
+   "beats": [
+    {
+     "id": "ardnableask:beat:title:title",
+     "kind": "title",
+     "chapter": "ardnableask:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1874-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnableask",
+      "name": "Ardnableask",
+      "logainm_id": "14238",
+      "lat": 54.696229,
+      "lon": -8.010488,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Ardnableask, in Irish Ard na mBlaosc, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Ardnableask and its ten families, from 1874 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnableask:baptism:TAW-B-p011-r126",
+       "ardnableask:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 12400,
+     "audio": null
+    }
+   ]
+  },
+  {
    "id": "ardnableask:ch:register",
    "title": "The parish register",
    "beats": [
@@ -46,48 +88,6 @@
       "certainty": "stated"
      },
      "duration_ms": 9200,
-     "audio": null
-    }
-   ]
-  },
-  {
-   "id": "ardnableask:ch:intro",
-   "title": "Ardnableask",
-   "beats": [
-    {
-     "id": "ardnableask:beat:title:title",
-     "kind": "title",
-     "chapter": "ardnableask:ch:intro",
-     "time": {
-      "label": "",
-      "iso": "",
-      "sort": "1874-06-04",
-      "approximate": true
-     },
-     "place": {
-      "townland": "ardnableask",
-      "name": "Ardnableask",
-      "logainm_id": "14238",
-      "lat": 54.696229,
-      "lon": -8.010488,
-      "camera": "parish"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": ""
-     },
-     "caption": "Ardnableask, in Irish Ard na mBlaosc, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Ardnableask and its ten families, from 1874 to 1926.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "ardnableask:baptism:TAW-B-p011-r126",
-       "ardnableask:census:1926"
-      ],
-      "basis": "place_record",
-      "certainty": "stated"
-     },
-     "duration_ms": 12400,
      "audio": null
     }
    ]

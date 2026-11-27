@@ -10,6 +10,48 @@
  },
  "chapters": [
   {
+   "id": "goladoo:ch:intro",
+   "title": "Goladoo",
+   "beats": [
+    {
+     "id": "goladoo:beat:title:title",
+     "kind": "title",
+     "chapter": "goladoo:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1873-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "goladoo",
+      "name": "Goladoo",
+      "logainm_id": "14243",
+      "lat": 54.717584,
+      "lon": -8.032827,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Goladoo, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Goladoo and its sixteen families, from 1873 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "goladoo:baptism:TAW-B-p006-r29",
+       "goladoo:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 10400,
+     "audio": null
+    }
+   ]
+  },
+  {
    "id": "goladoo:ch:register",
    "title": "The parish register",
    "beats": [
@@ -46,48 +88,6 @@
       "certainty": "stated"
      },
      "duration_ms": 10000,
-     "audio": null
-    }
-   ]
-  },
-  {
-   "id": "goladoo:ch:intro",
-   "title": "Goladoo",
-   "beats": [
-    {
-     "id": "goladoo:beat:title:title",
-     "kind": "title",
-     "chapter": "goladoo:ch:intro",
-     "time": {
-      "label": "",
-      "iso": "",
-      "sort": "1873-03-27",
-      "approximate": true
-     },
-     "place": {
-      "townland": "goladoo",
-      "name": "Goladoo",
-      "logainm_id": "14243",
-      "lat": 54.717584,
-      "lon": -8.032827,
-      "camera": "parish"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": ""
-     },
-     "caption": "Goladoo, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Goladoo and its sixteen families, from 1873 to 1926.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "goladoo:baptism:TAW-B-p006-r29",
-       "goladoo:census:1926"
-      ],
-      "basis": "place_record",
-      "certainty": "stated"
-     },
-     "duration_ms": 10400,
      "audio": null
     }
    ]

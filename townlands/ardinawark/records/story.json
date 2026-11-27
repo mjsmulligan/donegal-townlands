@@ -10,6 +10,48 @@
  },
  "chapters": [
   {
+   "id": "ardinawark:ch:intro",
+   "title": "Ardinawark",
+   "beats": [
+    {
+     "id": "ardinawark:beat:title:title",
+     "kind": "title",
+     "chapter": "ardinawark:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1873-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardinawark",
+      "name": "Ardinawark",
+      "logainm_id": "14237",
+      "lat": 54.705926,
+      "lon": -7.983339,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Ardinawark, in Irish Ard an Amhairc, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Ardinawark and its twelve families, from 1874 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardinawark:baptism:TAW-B-p009-r97",
+       "ardinawark:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 12400,
+     "audio": null
+    }
+   ]
+  },
+  {
    "id": "ardinawark:ch:register",
    "title": "The parish register",
    "beats": [
@@ -46,48 +88,6 @@
       "certainty": "stated"
      },
      "duration_ms": 10000,
-     "audio": null
-    }
-   ]
-  },
-  {
-   "id": "ardinawark:ch:intro",
-   "title": "Ardinawark",
-   "beats": [
-    {
-     "id": "ardinawark:beat:title:title",
-     "kind": "title",
-     "chapter": "ardinawark:ch:intro",
-     "time": {
-      "label": "",
-      "iso": "",
-      "sort": "1874-01-06",
-      "approximate": true
-     },
-     "place": {
-      "townland": "ardinawark",
-      "name": "Ardinawark",
-      "logainm_id": "14237",
-      "lat": 54.705926,
-      "lon": -7.983339,
-      "camera": "parish"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": ""
-     },
-     "caption": "Ardinawark, in Irish Ard an Amhairc, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Ardinawark and its twelve families, from 1874 to 1926.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "ardinawark:baptism:TAW-B-p009-r97",
-       "ardinawark:census:1926"
-      ],
-      "basis": "place_record",
-      "certainty": "stated"
-     },
-     "duration_ms": 12400,
      "audio": null
     }
    ]
