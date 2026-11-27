@@ -376,10 +376,12 @@ var D={"schema":1,"townland":"Drumlask","slug":"drumlask","generated_by":"donega
     box.onclick=end; $('iskip').onclick=end;
   }
 
+  /* an image's address: a shared one (the parish register cover) names its own url, the rest sit in media/ */
+  function mpath(f){ var m=(D.media||{})[f]; return (m&&m.url)||'media/'+f }
   var shownPhoto=null, curFiles=[], pageIdx=0, zoomFrom=null, credFrom=null;
   function fillPhoto(f){
     var m=(D.media||{})[f]||{}, a=$('photolink'), multi=curFiles.length>1, cr=m.credit&&D.credits&&D.credits[m.credit];
-    $('photoimg').src='media/'+f; a.href='media/'+f; $('photoimg').alt=m.alt||m.caption||'';
+    $('photoimg').src=mpath(f); a.href=mpath(f); $('photoimg').alt=m.alt||m.caption||'';
     a.classList.toggle('zoomable',!!m.focus);
     /* a record form: the pages, a zoom, and the custodian's credit line under the image */
     $('pbar').hidden=!(multi||m.focus);
@@ -398,7 +400,7 @@ var D={"schema":1,"townland":"Drumlask","slug":"drumlask","generated_by":"donega
     var img=$('zimg'), p=m.focus.split(','), fx=parseFloat(p[0]), fy=parseFloat(p[1]);
     var aim=function(){var s=$('zscroll'); s.scrollLeft=Math.max(0,fx*img.offsetWidth-s.clientWidth/2); s.scrollTop=Math.max(0,fy*img.offsetHeight-s.clientHeight/2)};
     img.alt=m.alt||m.caption||''; $('zcap').textContent=m.caption||'';
-    $('zoom').hidden=false; img.onload=aim; img.src='media/'+f; if(img.complete) aim();
+    $('zoom').hidden=false; img.onload=aim; img.src=mpath(f); if(img.complete) aim();
     $('zclose').focus();
   }
   function closeZoom(){ $('zoom').hidden=true; if(zoomFrom&&zoomFrom.focus) zoomFrom.focus() }

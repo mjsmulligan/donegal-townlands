@@ -88,6 +88,15 @@ The census moment of the story shows the townland's own census form, for example
 - **Credits:** the credit text is generated from the `credit` key and never typed per image. 1926 is CC BY 4.0 from the National Archives of Ireland, and the wording is theirs. A short credit line sits under each image and opens the "Credits and licences" panel, which the footer also opens and which lists only what the page uses. Only 1926 has credit wording so far. 1901, 1911 and the parish register register images need their own wording before `add` accepts them.
 - **Licence conditions to keep:** attribution, a statement that the images were changed, the archive reference, and no paywall.
 
+### 3.5 The parish register cover (shared, 2026-11-27)
+
+The register moment of every story that has one shows the cover of the Tawnawilly parish register (NLI microfilm 04599/04, page 1), because the one image serves the whole parish. Decided with the user on 2026-11-27 (DECISIONS.md). It is not in any townland's `media.csv`.
+
+- **Original kept as supplied** in `data/source/nli_parish/tawnawilly/images/vtls000631954_001.jpg`, with `manifest.csv` beside it (page URL, date acquired, licence note, SHA-256).
+- **One web image**, greyscale JPEG 1600 px wide, never cropped, in `shared_media/tawnawilly-register-cover.jpg`. `tools/build_story.py` copies it once to `docs/shared/`, and each register beat points at it (`../shared/...`), so 31 townlands do not mean 31 copies.
+- **Credit:** key `nli` in `tools/credits.py`. The NLI Licence is non-commercial and gives no fixed wording, so the wording is ours: it credits the NLI, names the NLI Licence, links the terms, says the image was converted and resized, and states that the site is not endorsed by the NLI. The site must stay non-commercial.
+- **Not yet decided:** pages from the register itself (per-townland entries). The `parish` scope remains for photographs of the parish.
+
 ### 3.3 media_config.json
 
 ```json

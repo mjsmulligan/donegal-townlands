@@ -927,5 +927,26 @@ class HedgeCheckTests(unittest.TestCase):
         self.assertTrue(bd.hedge_in('Two families lived here. Perhaps they were cousins.', 'perhaps'))
 
 
+class RegisterCoverTests(unittest.TestCase):
+    """The parish register cover is one shared image on every register beat, with the NLI credit."""
+
+    def test_register_beat_carries_the_shared_cover(self):
+        ev = {'id': 'x:register:tawnawilly', 'type': 'register', 'baptisms': 2, 'marriages': 0, 'marriages_placed': False,
+              'date': {'kind': 'range', 'label': '1874 to 1875', 'iso': '1874'}, 'sort': '1874-01-01',
+              'association': {'basis': 'page_place', 'label': ''}}
+        b = bd.register_beat(ev, {'townland': 'x', 'name': 'X', 'logainm_id': '', 'lat': None, 'lon': None})
+        self.assertEqual(b['media'], [bd.COVER_FILE])
+
+    def test_cover_files_and_credit_exist(self):
+        root = bd.ROOT
+        self.assertTrue((root / 'shared_media' / 'tawnawilly-register-cover.jpg').is_file())
+        self.assertIn(bd.COVER_MEDIA['credit'], bd.credits.CREDITS)
+        import csv, hashlib
+        rows = list(csv.DictReader((root / 'data/source/nli_parish/tawnawilly/images/manifest.csv').open(encoding='utf-8')))
+        for r in rows:
+            data = (root / 'data/source/nli_parish/tawnawilly/images' / r['file']).read_bytes()
+            self.assertEqual(hashlib.sha256(data).hexdigest(), r['sha256'])
+
+
 if __name__ == '__main__':
     unittest.main()
