@@ -1,0 +1,379 @@
+{
+ "schema": 1,
+ "townland": "Corracramph",
+ "slug": "corracramph",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Corracramph",
+ "span": {
+  "from": "1873",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "corracramph:ch:register",
+   "title": "The parish register",
+   "beats": [
+    {
+     "id": "corracramph:beat:register:tawnawilly",
+     "kind": "register",
+     "chapter": "corracramph:ch:register",
+     "time": {
+      "label": "1873 to 1875",
+      "iso": "1873",
+      "sort": "1873-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "corracramph",
+      "name": "Corracramph",
+      "logainm_id": "14240",
+      "lat": 54.715615,
+      "lon": -8.026325,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "corracramph:register:tawnawilly"
+     },
+     "caption": "The parish register of Tawnawilly records six baptisms at Corracramph between 1873 and 1875. Its marriage entries give no townland, so none are placed here.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "corracramph:register:tawnawilly"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 10000,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "corracramph:ch:intro",
+   "title": "Corracramph",
+   "beats": [
+    {
+     "id": "corracramph:beat:title:title",
+     "kind": "title",
+     "chapter": "corracramph:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1873-08-24",
+      "approximate": true
+     },
+     "place": {
+      "townland": "corracramph",
+      "name": "Corracramph",
+      "logainm_id": "14240",
+      "lat": 54.715615,
+      "lon": -8.026325,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Corracramph, in Irish Corr an Chreamha, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Corracramph and its sixteen families, from 1873 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "corracramph:baptism:TAW-B-p008-r64",
+       "corracramph:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 12400,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "corracramph:ch:baptisms",
+   "title": "Baptisms, 1873 to 1875",
+   "beats": [
+    {
+     "id": "corracramph:beat:baptism:1873",
+     "kind": "baptism",
+     "chapter": "corracramph:ch:baptisms",
+     "time": {
+      "label": "24 August 1873",
+      "iso": "1873-08-24",
+      "sort": "1873-08-24",
+      "approximate": false
+     },
+     "place": {
+      "townland": "corracramph",
+      "name": "Corracramph",
+      "logainm_id": "14240",
+      "lat": 54.715615,
+      "lon": -8.026325,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "corracramph:baptism:TAW-B-p008-r64"
+     },
+     "caption": "Two children were baptised in 1873: Mary McMullin on 24 August and Catherine Martin on 5 October.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "corracramph:baptism:TAW-B-p008-r64",
+       "corracramph:baptism:TAW-B-p008-r75"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null
+    },
+    {
+     "id": "corracramph:beat:baptism:1874",
+     "kind": "baptism",
+     "chapter": "corracramph:ch:baptisms",
+     "time": {
+      "label": "7 June 1874",
+      "iso": "1874-06-07",
+      "sort": "1874-06-07",
+      "approximate": false
+     },
+     "place": {
+      "townland": "corracramph",
+      "name": "Corracramph",
+      "logainm_id": "14240",
+      "lat": 54.715615,
+      "lon": -8.026325,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "corracramph:baptism:TAW-B-p011-r127"
+     },
+     "caption": "Two children were baptised in 1874: Brigid Walsh on 7 June and James McMullin on 12 November.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "corracramph:baptism:TAW-B-p011-r127",
+       "corracramph:baptism:TAW-B-p013-r165a"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null
+    },
+    {
+     "id": "corracramph:beat:baptism:1875-06-17-TAW-B-p017-r224",
+     "kind": "baptism",
+     "chapter": "corracramph:ch:baptisms",
+     "time": {
+      "label": "17 June 1875",
+      "iso": "1875-06-17",
+      "sort": "1875-06-17",
+      "approximate": false
+     },
+     "place": {
+      "townland": "corracramph",
+      "name": "Corracramph",
+      "logainm_id": "14240",
+      "lat": 54.715615,
+      "lon": -8.026325,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "corracramph:baptism:TAW-B-p017-r224"
+     },
+     "caption": "Patrick Martin was baptised on 17 June 1875. Edward Martin and Ellen Callaghan were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "corracramph:baptism:TAW-B-p017-r224"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "corracramph:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "corracramph:beat:census:1901",
+     "kind": "census",
+     "chapter": "corracramph:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "corracramph",
+      "name": "Corracramph",
+      "logainm_id": "14240",
+      "lat": 54.715615,
+      "lon": -8.026325,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "corracramph:census:1901"
+     },
+     "caption": "Corracramph had 58 people in eleven households in 1901. Heads of household included Callaghan, Martin and Gallinagh.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "corracramph:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 58,
+      "households": 11
+     }
+    }
+   ]
+  },
+  {
+   "id": "corracramph:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "corracramph:beat:census:1911",
+     "kind": "census",
+     "chapter": "corracramph:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "corracramph",
+      "name": "Corracramph",
+      "logainm_id": "14240",
+      "lat": 54.715615,
+      "lon": -8.026325,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "corracramph:census:1911"
+     },
+     "caption": "In 1911, 72 people in ten households lived in Corracramph. Heads of household included Callaghan, Martin and Gillenagh.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "corracramph:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 72,
+      "households": 10
+     }
+    }
+   ]
+  },
+  {
+   "id": "corracramph:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "corracramph:beat:census:1926",
+     "kind": "census",
+     "chapter": "corracramph:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "corracramph",
+      "name": "Corracramph",
+      "logainm_id": "14240",
+      "lat": 54.715615,
+      "lon": -8.026325,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "corracramph:census:1926"
+     },
+     "caption": "Corracramph had 52 people in nine households in 1926. Heads of household included Martain, Gillen and Mac Fhionnlaoich.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "corracramph:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 52,
+      "households": 9
+     }
+    },
+    {
+     "id": "corracramph:beat:closing:end",
+     "kind": "closing",
+     "chapter": "corracramph:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "corracramph",
+      "name": "Corracramph",
+      "logainm_id": "14240",
+      "lat": 54.715615,
+      "lon": -8.026325,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "corracramph:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with nine households in Corracramph.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "corracramph:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

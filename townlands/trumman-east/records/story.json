@@ -1,0 +1,225 @@
+{
+ "schema": 1,
+ "townland": "Trumman East",
+ "slug": "trumman-east",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Trumman East",
+ "span": {
+  "from": "1901",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "trumman-east:ch:intro",
+   "title": "Trumman East",
+   "beats": [
+    {
+     "id": "trumman-east:beat:title:title",
+     "kind": "title",
+     "chapter": "trumman-east:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Trumman East. Here is the story of Trumman East and its 32 families, from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman east:census:1901",
+       "trumman east:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "trumman-east:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "trumman-east:beat:census:1901",
+     "kind": "census",
+     "chapter": "trumman-east:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman east:census:1901"
+     },
+     "caption": "Trumman East had 142 people in 31 households in 1901. Heads of household included McClay, Boyle and Dorrian.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman east:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 142,
+      "households": 31
+     }
+    }
+   ]
+  },
+  {
+   "id": "trumman-east:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "trumman-east:beat:census:1911",
+     "kind": "census",
+     "chapter": "trumman-east:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman east:census:1911"
+     },
+     "caption": "Trumman East had 131 people in 27 households in 1911. Heads of household included McClay, Bartley and Boyle.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman east:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 131,
+      "households": 27
+     }
+    }
+   ]
+  },
+  {
+   "id": "trumman-east:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "trumman-east:beat:census:1926",
+     "kind": "census",
+     "chapter": "trumman-east:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman east:census:1926"
+     },
+     "caption": "In 1926, 89 people in 22 households lived in Trumman East. Heads of household included Gallagher, Curistan and Dorrian.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman east:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7600,
+     "audio": null,
+     "counts": {
+      "people": 89,
+      "households": 22
+     }
+    },
+    {
+     "id": "trumman-east:beat:closing:end",
+     "kind": "closing",
+     "chapter": "trumman-east:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-east",
+      "name": "Trumman East",
+      "logainm_id": "14156",
+      "lat": 54.608313,
+      "lon": -8.06852,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman east:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with 22 households in Trumman East.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman east:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4400,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

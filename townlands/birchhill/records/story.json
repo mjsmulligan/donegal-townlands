@@ -1,0 +1,346 @@
+{
+ "schema": 1,
+ "townland": "Birchhill",
+ "slug": "birchhill",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Birchhill",
+ "span": {
+  "from": "1873",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "birchhill:ch:register",
+   "title": "The parish register",
+   "beats": [
+    {
+     "id": "birchhill:beat:register:tawnawilly",
+     "kind": "register",
+     "chapter": "birchhill:ch:register",
+     "time": {
+      "label": "1873 to 1874",
+      "iso": "1873",
+      "sort": "1873-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "birchhill",
+      "name": "Birchhill",
+      "logainm_id": "13957",
+      "lat": 54.676172,
+      "lon": -8.036301,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "birchhill:register:tawnawilly"
+     },
+     "caption": "The parish register of Tawnawilly records six baptisms at Birchhill between 1873 and 1874. Its marriage entries give no townland, so none are placed here.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "birchhill:register:tawnawilly"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 10000,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "birchhill:ch:intro",
+   "title": "Birchhill",
+   "beats": [
+    {
+     "id": "birchhill:beat:title:title",
+     "kind": "title",
+     "chapter": "birchhill:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1873-03-25",
+      "approximate": true
+     },
+     "place": {
+      "townland": "birchhill",
+      "name": "Birchhill",
+      "logainm_id": "13957",
+      "lat": 54.676172,
+      "lon": -8.036301,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Birchhill, in Irish Carn Beitheach, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Birchhill and its eight families, from 1873 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "birchhill:baptism:TAW-B-p006-r28",
+       "birchhill:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 12000,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "birchhill:ch:baptisms",
+   "title": "Baptisms, 1873 to 1874",
+   "beats": [
+    {
+     "id": "birchhill:beat:baptism:1873",
+     "kind": "baptism",
+     "chapter": "birchhill:ch:baptisms",
+     "time": {
+      "label": "25 March 1873",
+      "iso": "1873-03-25",
+      "sort": "1873-03-25",
+      "approximate": false
+     },
+     "place": {
+      "townland": "birchhill",
+      "name": "Birchhill",
+      "logainm_id": "13957",
+      "lat": 54.676172,
+      "lon": -8.036301,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "birchhill:baptism:TAW-B-p006-r28"
+     },
+     "caption": "Four children were baptised in 1873: Hugh McGinty on 25 March, Joseph Thomas on 8 April, Edward, child of Peggy Kelly on 15 June and Anne McGinty on 19 June.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "birchhill:baptism:TAW-B-p006-r28",
+       "birchhill:baptism:TAW-B-p006-r35",
+       "birchhill:baptism:TAW-B-p007-r52",
+       "birchhill:baptism:TAW-B-p007-r54"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 12000,
+     "audio": null
+    },
+    {
+     "id": "birchhill:beat:baptism:1874",
+     "kind": "baptism",
+     "chapter": "birchhill:ch:baptisms",
+     "time": {
+      "label": "5 August 1874",
+      "iso": "1874-08-05",
+      "sort": "1874-08-05",
+      "approximate": false
+     },
+     "place": {
+      "townland": "birchhill",
+      "name": "Birchhill",
+      "logainm_id": "13957",
+      "lat": 54.676172,
+      "lon": -8.036301,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "birchhill:baptism:TAW-B-p011-r140"
+     },
+     "caption": "Two children were baptised in 1874: Connell McGinty on 5 August and Mary Anne McGinty on 22 October.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "birchhill:baptism:TAW-B-p011-r140",
+       "birchhill:baptism:TAW-B-p013-r159"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "birchhill:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "birchhill:beat:census:1901",
+     "kind": "census",
+     "chapter": "birchhill:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "birchhill",
+      "name": "Birchhill",
+      "logainm_id": "13957",
+      "lat": 54.676172,
+      "lon": -8.036301,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "birchhill:census:1901"
+     },
+     "caption": "In 1901, 54 people in twelve households lived in Birchhill. Heads of household included McGinty, Callaghan and Martin.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "birchhill:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 54,
+      "households": 12
+     }
+    }
+   ]
+  },
+  {
+   "id": "birchhill:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "birchhill:beat:census:1911",
+     "kind": "census",
+     "chapter": "birchhill:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "birchhill",
+      "name": "Birchhill",
+      "logainm_id": "13957",
+      "lat": 54.676172,
+      "lon": -8.036301,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "birchhill:census:1911"
+     },
+     "caption": "In 1911, 43 people in ten households lived in Birchhill. Heads of household included McGinty, Martin and McCafferty.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "birchhill:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 43,
+      "households": 10
+     }
+    }
+   ]
+  },
+  {
+   "id": "birchhill:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "birchhill:beat:census:1926",
+     "kind": "census",
+     "chapter": "birchhill:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "birchhill",
+      "name": "Birchhill",
+      "logainm_id": "13957",
+      "lat": 54.676172,
+      "lon": -8.036301,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "birchhill:census:1926"
+     },
+     "caption": "In 1926, 31 people in seven households lived in Birchhill. Heads of household included McGinty, Martin and McGlinchy.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "birchhill:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 31,
+      "households": 7
+     }
+    },
+    {
+     "id": "birchhill:beat:closing:end",
+     "kind": "closing",
+     "chapter": "birchhill:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "birchhill",
+      "name": "Birchhill",
+      "logainm_id": "13957",
+      "lat": 54.676172,
+      "lon": -8.036301,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "birchhill:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with seven households in Birchhill.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "birchhill:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,225 @@
+{
+ "schema": 1,
+ "townland": "Drumgowan",
+ "slug": "drumgowan",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Drumgowan",
+ "span": {
+  "from": "1901",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "drumgowan:ch:intro",
+   "title": "Drumgowan",
+   "beats": [
+    {
+     "id": "drumgowan:beat:title:title",
+     "kind": "title",
+     "chapter": "drumgowan:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumgowan",
+      "name": "Drumgowan",
+      "logainm_id": "14032",
+      "lat": 54.63473,
+      "lon": -8.098764,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Drumgowan, in Irish Droim Gamhan, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Drumgowan and its 23 families, from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumgowan:census:1901",
+       "drumgowan:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 12000,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "drumgowan:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "drumgowan:beat:census:1901",
+     "kind": "census",
+     "chapter": "drumgowan:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumgowan",
+      "name": "Drumgowan",
+      "logainm_id": "14032",
+      "lat": 54.63473,
+      "lon": -8.098764,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumgowan:census:1901"
+     },
+     "caption": "In 1901, 61 people in fourteen households lived in Drumgowan. Heads of household included Graham, Boyle and Coulter.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumgowan:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 61,
+      "households": 14
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumgowan:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "drumgowan:beat:census:1911",
+     "kind": "census",
+     "chapter": "drumgowan:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumgowan",
+      "name": "Drumgowan",
+      "logainm_id": "14032",
+      "lat": 54.63473,
+      "lon": -8.098764,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumgowan:census:1911"
+     },
+     "caption": "Drumgowan had 44 people in eleven households in 1911. Heads of household included Graham, Elkin and Farrell.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumgowan:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 44,
+      "households": 11
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumgowan:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "drumgowan:beat:census:1926",
+     "kind": "census",
+     "chapter": "drumgowan:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumgowan",
+      "name": "Drumgowan",
+      "logainm_id": "14032",
+      "lat": 54.63473,
+      "lon": -8.098764,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumgowan:census:1926"
+     },
+     "caption": "In 1926, 45 people in twelve households lived in Drumgowan. Heads of household included Graham, Allen and Farrell.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumgowan:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 45,
+      "households": 12
+     }
+    },
+    {
+     "id": "drumgowan:beat:closing:end",
+     "kind": "closing",
+     "chapter": "drumgowan:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumgowan",
+      "name": "Drumgowan",
+      "logainm_id": "14032",
+      "lat": 54.63473,
+      "lon": -8.098764,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumgowan:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with twelve households in Drumgowan.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumgowan:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

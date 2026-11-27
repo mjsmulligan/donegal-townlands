@@ -3,7 +3,7 @@ Usage:
     python tools/build_story.py cullionboy
     python tools/build_story.py --all     only cases that have a story; also writes the survey report
 
-Reads the case's records through tools/build_timeline.py (Griffith's, census and baptism events,
+Reads the case's records through tools/events.py (Griffith's, census and baptism events,
 media) and place.json, and writes townlands/<name>/records/story.json. Nothing else is written.
 The file is generated and never edited by hand.
 
@@ -17,9 +17,9 @@ fails, naming the beat.
 import datetime, hashlib, json, pathlib, re, sys
 
 try:
-    from tools import build_timeline as bt, story_families as sf, credits
+    from tools import events as bt, story_families as sf, credits
 except ImportError:                  # run as a script: python tools/build_story.py
-    import build_timeline as bt, story_families as sf, credits
+    import events as bt, story_families as sf, credits
 
 ROOT = bt.ROOT
 SCHEMA = 1
@@ -410,6 +410,13 @@ def evidence_numbers(b, by_id):
     return allowed
 
 
+def hedge_in(caption, phrase):
+    """True when the caption hedges with this phrase. The phrase is matched as whole words, in lower case or
+    opening a sentence, so a surname such as Likely (Mullanasole census) is not read as a hedge."""
+    opening = phrase[:1].upper() + phrase[1:]
+    return bool(re.search(r'\b' + re.escape(phrase) + r'\b|(?:^|[.!?]\s+)' + re.escape(opening) + r'\b', caption))
+
+
 def check_beat(b, by_id, known_ids, extra=frozenset()):
     """Return a list of problems for one beat. Empty means it passes DOC-02, 05, 06, 06a, 07 and 08."""
     problems = []
@@ -437,7 +444,7 @@ def check_beat(b, by_id, known_ids, extra=frozenset()):
         if phrase in low:
             problems.append('source talk: ' + phrase)
     for phrase in HEDGES:
-        if phrase in low:
+        if hedge_in(cap, phrase):
             problems.append('hedge: ' + phrase)
     count = len(re.findall(r'\bpossibly\b', low))
     if cert == 'possible' and count != 1:

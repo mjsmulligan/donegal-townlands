@@ -1,0 +1,307 @@
+{
+ "schema": 1,
+ "townland": "Ardeevin",
+ "slug": "ardeevin",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Ardeevin",
+ "span": {
+  "from": "1873",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "ardeevin:ch:register",
+   "title": "The parish register",
+   "beats": [
+    {
+     "id": "ardeevin:beat:register:tawnawilly",
+     "kind": "register",
+     "chapter": "ardeevin:ch:register",
+     "time": {
+      "label": "1873",
+      "iso": "1873",
+      "sort": "1873-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardeevin",
+      "name": "Ardeevin",
+      "logainm_id": "14236",
+      "lat": 54.692639,
+      "lon": -8.021663,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardeevin:register:tawnawilly"
+     },
+     "caption": "The parish register of Tawnawilly records one baptism at Ardeevin in 1873. Its marriage entries give no townland, so none are placed here.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardeevin:register:tawnawilly"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 9200,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "ardeevin:ch:intro",
+   "title": "Ardeevin",
+   "beats": [
+    {
+     "id": "ardeevin:beat:title:title",
+     "kind": "title",
+     "chapter": "ardeevin:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1873-06-08",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardeevin",
+      "name": "Ardeevin",
+      "logainm_id": "14236",
+      "lat": 54.692639,
+      "lon": -8.021663,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Ardeevin, in Irish Ard Aoibhinn, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Ardeevin and its six families, from 1873 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardeevin:baptism:TAW-B-p007-r50",
+       "ardeevin:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 12000,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "ardeevin:ch:baptisms",
+   "title": "Baptisms, 1873",
+   "beats": [
+    {
+     "id": "ardeevin:beat:baptism:1873-06-08-TAW-B-p007-r50",
+     "kind": "baptism",
+     "chapter": "ardeevin:ch:baptisms",
+     "time": {
+      "label": "8 June 1873",
+      "iso": "1873-06-08",
+      "sort": "1873-06-08",
+      "approximate": false
+     },
+     "place": {
+      "townland": "ardeevin",
+      "name": "Ardeevin",
+      "logainm_id": "14236",
+      "lat": 54.692639,
+      "lon": -8.021663,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardeevin:baptism:TAW-B-p007-r50"
+     },
+     "caption": "Patrick Thomas was baptised on 8 June 1873. James Thomas and Anne Martin were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardeevin:baptism:TAW-B-p007-r50"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "ardeevin:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "ardeevin:beat:census:1901",
+     "kind": "census",
+     "chapter": "ardeevin:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardeevin",
+      "name": "Ardeevin",
+      "logainm_id": "14236",
+      "lat": 54.692639,
+      "lon": -8.021663,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardeevin:census:1901"
+     },
+     "caption": "Ardeevin had 21 people in four households in 1901. Heads of household included Johnston, McMenimin and Slevin.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardeevin:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 21,
+      "households": 4
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardeevin:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "ardeevin:beat:census:1911",
+     "kind": "census",
+     "chapter": "ardeevin:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardeevin",
+      "name": "Ardeevin",
+      "logainm_id": "14236",
+      "lat": 54.692639,
+      "lon": -8.021663,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardeevin:census:1911"
+     },
+     "caption": "In 1911, 21 people in four households lived in Ardeevin. Heads of household included Johnston, McMenamin and Slavin.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardeevin:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 21,
+      "households": 4
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardeevin:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "ardeevin:beat:census:1926",
+     "kind": "census",
+     "chapter": "ardeevin:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardeevin",
+      "name": "Ardeevin",
+      "logainm_id": "14236",
+      "lat": 54.692639,
+      "lon": -8.021663,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardeevin:census:1926"
+     },
+     "caption": "Ardeevin had sixteen people in four households in 1926. Heads of household included Slevin and Johnston.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardeevin:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "counts": {
+      "people": 16,
+      "households": 4
+     }
+    },
+    {
+     "id": "ardeevin:beat:closing:end",
+     "kind": "closing",
+     "chapter": "ardeevin:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardeevin",
+      "name": "Ardeevin",
+      "logainm_id": "14236",
+      "lat": 54.692639,
+      "lon": -8.021663,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardeevin:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with four households in Ardeevin.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardeevin:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,225 @@
+{
+ "schema": 1,
+ "townland": "Meenacargagh or Raneany Barr",
+ "slug": "meenacargagh-or-raneany-barr",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Meenacargagh or Raneany Barr",
+ "span": {
+  "from": "1901",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "meenacargagh-or-raneany-barr:ch:intro",
+   "title": "Meenacargagh or Raneany Barr",
+   "beats": [
+    {
+     "id": "meenacargagh-or-raneany-barr:beat:title:title",
+     "kind": "title",
+     "chapter": "meenacargagh-or-raneany-barr:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "meenacargagh-or-raneany-barr",
+      "name": "Meenacargagh or Raneany Barr",
+      "logainm_id": "14145",
+      "lat": 54.62562,
+      "lon": -7.990059,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Meenacargagh or Raneany Barr. Here is the story of Meenacargagh or Raneany Barr and its seven families, from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "meenacargagh or raneany barr:census:1901",
+       "meenacargagh or raneany barr:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 8400,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "meenacargagh-or-raneany-barr:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "meenacargagh-or-raneany-barr:beat:census:1901",
+     "kind": "census",
+     "chapter": "meenacargagh-or-raneany-barr:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "meenacargagh-or-raneany-barr",
+      "name": "Meenacargagh or Raneany Barr",
+      "logainm_id": "14145",
+      "lat": 54.62562,
+      "lon": -7.990059,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "meenacargagh or raneany barr:census:1901"
+     },
+     "caption": "In 1901, 44 people in nine households lived in Meenacargagh or Raneany Barr. Heads of household included Gallagher, McGlinchy and Devenny.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "meenacargagh or raneany barr:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 8400,
+     "audio": null,
+     "counts": {
+      "people": 44,
+      "households": 9
+     }
+    }
+   ]
+  },
+  {
+   "id": "meenacargagh-or-raneany-barr:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "meenacargagh-or-raneany-barr:beat:census:1911",
+     "kind": "census",
+     "chapter": "meenacargagh-or-raneany-barr:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "meenacargagh-or-raneany-barr",
+      "name": "Meenacargagh or Raneany Barr",
+      "logainm_id": "14145",
+      "lat": 54.62562,
+      "lon": -7.990059,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "meenacargagh or raneany barr:census:1911"
+     },
+     "caption": "Meenacargagh or Raneany Barr had 39 people in eight households in 1911. Heads of household included Gallagher, McGlinchey and Devine.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "meenacargagh or raneany barr:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 8000,
+     "audio": null,
+     "counts": {
+      "people": 39,
+      "households": 8
+     }
+    }
+   ]
+  },
+  {
+   "id": "meenacargagh-or-raneany-barr:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "meenacargagh-or-raneany-barr:beat:census:1926",
+     "kind": "census",
+     "chapter": "meenacargagh-or-raneany-barr:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "meenacargagh-or-raneany-barr",
+      "name": "Meenacargagh or Raneany Barr",
+      "logainm_id": "14145",
+      "lat": 54.62562,
+      "lon": -7.990059,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "meenacargagh or raneany barr:census:1926"
+     },
+     "caption": "Meenacargagh or Raneany Barr had 27 people in eight households in 1926. Heads of household included Gallagher, Devenny and McGlinchey.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "meenacargagh or raneany barr:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 8000,
+     "audio": null,
+     "counts": {
+      "people": 27,
+      "households": 8
+     }
+    },
+    {
+     "id": "meenacargagh-or-raneany-barr:beat:closing:end",
+     "kind": "closing",
+     "chapter": "meenacargagh-or-raneany-barr:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "meenacargagh-or-raneany-barr",
+      "name": "Meenacargagh or Raneany Barr",
+      "logainm_id": "14145",
+      "lat": 54.62562,
+      "lon": -7.990059,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "meenacargagh or raneany barr:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with eight households in Meenacargagh or Raneany Barr.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "meenacargagh or raneany barr:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 5200,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

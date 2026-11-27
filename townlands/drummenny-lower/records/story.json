@@ -1,0 +1,225 @@
+{
+ "schema": 1,
+ "townland": "Drummenny Lower",
+ "slug": "drummenny-lower",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Drummenny Lower",
+ "span": {
+  "from": "1901",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "drummenny-lower:ch:intro",
+   "title": "Drummenny Lower",
+   "beats": [
+    {
+     "id": "drummenny-lower:beat:title:title",
+     "kind": "title",
+     "chapter": "drummenny-lower:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drummenny-lower",
+      "name": "Drummenny Lower",
+      "logainm_id": "14276",
+      "lat": 54.651335,
+      "lon": -8.083377,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Drummenny Lower, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Drummenny Lower and its three families, from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drummenny lower:census:1901",
+       "drummenny lower:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 11200,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "drummenny-lower:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "drummenny-lower:beat:census:1901",
+     "kind": "census",
+     "chapter": "drummenny-lower:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drummenny-lower",
+      "name": "Drummenny Lower",
+      "logainm_id": "14276",
+      "lat": 54.651335,
+      "lon": -8.083377,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drummenny lower:census:1901"
+     },
+     "caption": "Drummenny Lower had 27 people in five households in 1901. Heads of household included Hammond, Stevenson and Graham.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drummenny lower:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 27,
+      "households": 5
+     }
+    }
+   ]
+  },
+  {
+   "id": "drummenny-lower:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "drummenny-lower:beat:census:1911",
+     "kind": "census",
+     "chapter": "drummenny-lower:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drummenny-lower",
+      "name": "Drummenny Lower",
+      "logainm_id": "14276",
+      "lat": 54.651335,
+      "lon": -8.083377,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drummenny lower:census:1911"
+     },
+     "caption": "In 1911, 26 people in six households lived in Drummenny Lower. Heads of household included Stevenson, Hammond and Graham.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drummenny lower:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7600,
+     "audio": null,
+     "counts": {
+      "people": 26,
+      "households": 6
+     }
+    }
+   ]
+  },
+  {
+   "id": "drummenny-lower:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "drummenny-lower:beat:census:1926",
+     "kind": "census",
+     "chapter": "drummenny-lower:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drummenny-lower",
+      "name": "Drummenny Lower",
+      "logainm_id": "14276",
+      "lat": 54.651335,
+      "lon": -8.083377,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drummenny lower:census:1926"
+     },
+     "caption": "In 1926, twenty people in five households lived in Drummenny Lower. Heads of household included Stevenson, Graham and Hammond.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drummenny lower:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7600,
+     "audio": null,
+     "counts": {
+      "people": 20,
+      "households": 5
+     }
+    },
+    {
+     "id": "drummenny-lower:beat:closing:end",
+     "kind": "closing",
+     "chapter": "drummenny-lower:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drummenny-lower",
+      "name": "Drummenny Lower",
+      "logainm_id": "14276",
+      "lat": 54.651335,
+      "lon": -8.083377,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drummenny lower:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with five households in Drummenny Lower.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drummenny lower:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4400,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

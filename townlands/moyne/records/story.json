@@ -1,0 +1,225 @@
+{
+ "schema": 1,
+ "townland": "Moyne",
+ "slug": "moyne",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Moyne",
+ "span": {
+  "from": "1901",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "moyne:ch:intro",
+   "title": "Moyne",
+   "beats": [
+    {
+     "id": "moyne:beat:title:title",
+     "kind": "title",
+     "chapter": "moyne:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "moyne",
+      "name": "Moyne",
+      "logainm_id": "14295",
+      "lat": 54.632494,
+      "lon": -8.060203,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Moyne. Here is the story of Moyne and its twelve families, from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "moyne:census:1901",
+       "moyne:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6000,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "moyne:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "moyne:beat:census:1901",
+     "kind": "census",
+     "chapter": "moyne:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "moyne",
+      "name": "Moyne",
+      "logainm_id": "14295",
+      "lat": 54.632494,
+      "lon": -8.060203,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "moyne:census:1901"
+     },
+     "caption": "In 1901, 71 people in fifteen households lived in Moyne. Heads of household included Graham, Scott and Kee.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "moyne:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 71,
+      "households": 15
+     }
+    }
+   ]
+  },
+  {
+   "id": "moyne:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "moyne:beat:census:1911",
+     "kind": "census",
+     "chapter": "moyne:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "moyne",
+      "name": "Moyne",
+      "logainm_id": "14295",
+      "lat": 54.632494,
+      "lon": -8.060203,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "moyne:census:1911"
+     },
+     "caption": "Moyne had 62 people in thirteen households in 1911. Heads of household included Kee, Scott and Graham.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "moyne:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 62,
+      "households": 13
+     }
+    }
+   ]
+  },
+  {
+   "id": "moyne:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "moyne:beat:census:1926",
+     "kind": "census",
+     "chapter": "moyne:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "moyne",
+      "name": "Moyne",
+      "logainm_id": "14295",
+      "lat": 54.632494,
+      "lon": -8.060203,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "moyne:census:1926"
+     },
+     "caption": "In 1926, 45 people in ten households lived in Moyne. Heads of household included Kee, Graham and McClay.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "moyne:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 45,
+      "households": 10
+     }
+    },
+    {
+     "id": "moyne:beat:closing:end",
+     "kind": "closing",
+     "chapter": "moyne:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "moyne",
+      "name": "Moyne",
+      "logainm_id": "14295",
+      "lat": 54.632494,
+      "lon": -8.060203,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "moyne:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with ten households in Moyne.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "moyne:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

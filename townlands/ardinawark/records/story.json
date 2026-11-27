@@ -1,0 +1,344 @@
+{
+ "schema": 1,
+ "townland": "Ardinawark",
+ "slug": "ardinawark",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Ardinawark",
+ "span": {
+  "from": "1874",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "ardinawark:ch:register",
+   "title": "The parish register",
+   "beats": [
+    {
+     "id": "ardinawark:beat:register:tawnawilly",
+     "kind": "register",
+     "chapter": "ardinawark:ch:register",
+     "time": {
+      "label": "1873 to 1875",
+      "iso": "1873",
+      "sort": "1873-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardinawark",
+      "name": "Ardinawark",
+      "logainm_id": "14237",
+      "lat": 54.705926,
+      "lon": -7.983339,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardinawark:register:tawnawilly"
+     },
+     "caption": "The parish register of Tawnawilly records six baptisms at Ardinawark between 1873 and 1875. Its marriage entries give no townland, so none are placed here.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardinawark:register:tawnawilly"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 10000,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "ardinawark:ch:intro",
+   "title": "Ardinawark",
+   "beats": [
+    {
+     "id": "ardinawark:beat:title:title",
+     "kind": "title",
+     "chapter": "ardinawark:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1874-01-06",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardinawark",
+      "name": "Ardinawark",
+      "logainm_id": "14237",
+      "lat": 54.705926,
+      "lon": -7.983339,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Ardinawark, in Irish Ard an Amhairc, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Ardinawark and its twelve families, from 1874 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardinawark:baptism:TAW-B-p009-r97",
+       "ardinawark:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 12400,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "ardinawark:ch:baptisms",
+   "title": "Baptisms, 1874 to 1875",
+   "beats": [
+    {
+     "id": "ardinawark:beat:baptism:1874",
+     "kind": "baptism",
+     "chapter": "ardinawark:ch:baptisms",
+     "time": {
+      "label": "6 January 1874",
+      "iso": "1874-01-06",
+      "sort": "1874-01-06",
+      "approximate": false
+     },
+     "place": {
+      "townland": "ardinawark",
+      "name": "Ardinawark",
+      "logainm_id": "14237",
+      "lat": 54.705926,
+      "lon": -7.983339,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardinawark:baptism:TAW-B-p009-r97"
+     },
+     "caption": "Two children were baptised in 1874: Eugene McGinty on 6 January and Brigid Boyle on 6 December.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardinawark:baptism:TAW-B-p009-r97",
+       "ardinawark:baptism:TAW-B-p013-r167"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null
+    },
+    {
+     "id": "ardinawark:beat:baptism:1875",
+     "kind": "baptism",
+     "chapter": "ardinawark:ch:baptisms",
+     "time": {
+      "label": "14 February 1875",
+      "iso": "1875-02-14",
+      "sort": "1875-02-14",
+      "approximate": false
+     },
+     "place": {
+      "townland": "ardinawark",
+      "name": "Ardinawark",
+      "logainm_id": "14237",
+      "lat": 54.705926,
+      "lon": -7.983339,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardinawark:baptism:TAW-B-p015-r189"
+     },
+     "caption": "Two children were baptised in 1875: Denis Callaghan on 14 February and Anne Boyle on 1 September.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardinawark:baptism:TAW-B-p015-r189",
+       "ardinawark:baptism:TAW-B-p018-r339"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "ardinawark:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "ardinawark:beat:census:1901",
+     "kind": "census",
+     "chapter": "ardinawark:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardinawark",
+      "name": "Ardinawark",
+      "logainm_id": "14237",
+      "lat": 54.705926,
+      "lon": -7.983339,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardinawark:census:1901"
+     },
+     "caption": "In 1901, 102 people in nineteen households lived in Ardinawark. Heads of household included Callaghan, Boyle and McGinty.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardinawark:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 102,
+      "households": 19
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardinawark:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "ardinawark:beat:census:1911",
+     "kind": "census",
+     "chapter": "ardinawark:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardinawark",
+      "name": "Ardinawark",
+      "logainm_id": "14237",
+      "lat": 54.705926,
+      "lon": -7.983339,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardinawark:census:1911"
+     },
+     "caption": "Ardinawark had 97 people in seventeen households in 1911. Heads of household included Callaghan, Boyle and McGinty.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardinawark:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 97,
+      "households": 17
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardinawark:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "ardinawark:beat:census:1926",
+     "kind": "census",
+     "chapter": "ardinawark:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardinawark",
+      "name": "Ardinawark",
+      "logainm_id": "14237",
+      "lat": 54.705926,
+      "lon": -7.983339,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardinawark:census:1926"
+     },
+     "caption": "In 1926, 67 people in sixteen households lived in Ardinawark. Heads of household included Callaghan, McMenamin and Boyle.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardinawark:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 67,
+      "households": 16
+     }
+    },
+    {
+     "id": "ardinawark:beat:closing:end",
+     "kind": "closing",
+     "chapter": "ardinawark:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardinawark",
+      "name": "Ardinawark",
+      "logainm_id": "14237",
+      "lat": 54.705926,
+      "lon": -7.983339,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardinawark:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with sixteen households in Ardinawark.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardinawark:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

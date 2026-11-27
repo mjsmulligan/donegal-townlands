@@ -1,0 +1,225 @@
+{
+ "schema": 1,
+ "townland": "Drumnahoul",
+ "slug": "drumnahoul",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Drumnahoul",
+ "span": {
+  "from": "1901",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "drumnahoul:ch:intro",
+   "title": "Drumnahoul",
+   "beats": [
+    {
+     "id": "drumnahoul:beat:title:title",
+     "kind": "title",
+     "chapter": "drumnahoul:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumnahoul",
+      "name": "Drumnahoul",
+      "logainm_id": "14279",
+      "lat": 54.655672,
+      "lon": -8.046802,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Drumnahoul, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Drumnahoul and its nine families, from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumnahoul:census:1901",
+       "drumnahoul:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 10400,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "drumnahoul:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "drumnahoul:beat:census:1901",
+     "kind": "census",
+     "chapter": "drumnahoul:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumnahoul",
+      "name": "Drumnahoul",
+      "logainm_id": "14279",
+      "lat": 54.655672,
+      "lon": -8.046802,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumnahoul:census:1901"
+     },
+     "caption": "Drumnahoul had 31 people in six households in 1901. Heads of household included Cassidy, Corr and Hammond.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumnahoul:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 31,
+      "households": 6
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumnahoul:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "drumnahoul:beat:census:1911",
+     "kind": "census",
+     "chapter": "drumnahoul:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumnahoul",
+      "name": "Drumnahoul",
+      "logainm_id": "14279",
+      "lat": 54.655672,
+      "lon": -8.046802,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumnahoul:census:1911"
+     },
+     "caption": "Drumnahoul had 29 people in seven households in 1911. Heads of household included Hammond, Lawn and Cassidy.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumnahoul:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 29,
+      "households": 7
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumnahoul:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "drumnahoul:beat:census:1926",
+     "kind": "census",
+     "chapter": "drumnahoul:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumnahoul",
+      "name": "Drumnahoul",
+      "logainm_id": "14279",
+      "lat": 54.655672,
+      "lon": -8.046802,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumnahoul:census:1926"
+     },
+     "caption": "Drumnahoul had seventeen people in one household in 1926. Heads of household included Corr, Gallagher and McMullin.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumnahoul:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 17,
+      "households": 1
+     }
+    },
+    {
+     "id": "drumnahoul:beat:closing:end",
+     "kind": "closing",
+     "chapter": "drumnahoul:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumnahoul",
+      "name": "Drumnahoul",
+      "logainm_id": "14279",
+      "lat": 54.655672,
+      "lon": -8.046802,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumnahoul:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with one household in Drumnahoul.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumnahoul:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

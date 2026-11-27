@@ -1,0 +1,225 @@
+{
+ "schema": 1,
+ "townland": "Drumroosk Middle",
+ "slug": "drumroosk-middle",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Drumroosk Middle",
+ "span": {
+  "from": "1901",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "drumroosk-middle:ch:intro",
+   "title": "Drumroosk Middle",
+   "beats": [
+    {
+     "id": "drumroosk-middle:beat:title:title",
+     "kind": "title",
+     "chapter": "drumroosk-middle:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumroosk-middle",
+      "name": "Drumroosk Middle",
+      "logainm_id": "14012",
+      "lat": 54.662666,
+      "lon": -8.102839,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Drumroosk Middle. Here is the story of Drumroosk Middle and its six families, from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumroosk middle:census:1901",
+       "drumroosk middle:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "drumroosk-middle:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "drumroosk-middle:beat:census:1901",
+     "kind": "census",
+     "chapter": "drumroosk-middle:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumroosk-middle",
+      "name": "Drumroosk Middle",
+      "logainm_id": "14012",
+      "lat": 54.662666,
+      "lon": -8.102839,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumroosk middle:census:1901"
+     },
+     "caption": "Drumroosk Middle had 23 people in three households in 1901. Heads of household included McGettigan, Melly and Potter.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumroosk middle:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 23,
+      "households": 3
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumroosk-middle:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "drumroosk-middle:beat:census:1911",
+     "kind": "census",
+     "chapter": "drumroosk-middle:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumroosk-middle",
+      "name": "Drumroosk Middle",
+      "logainm_id": "14012",
+      "lat": 54.662666,
+      "lon": -8.102839,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumroosk middle:census:1911"
+     },
+     "caption": "In 1911, thirteen people in three households lived in Drumroosk Middle. Heads of household included McGettigan, Melly and Potter.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumroosk middle:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7600,
+     "audio": null,
+     "counts": {
+      "people": 13,
+      "households": 3
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumroosk-middle:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "drumroosk-middle:beat:census:1926",
+     "kind": "census",
+     "chapter": "drumroosk-middle:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumroosk-middle",
+      "name": "Drumroosk Middle",
+      "logainm_id": "14012",
+      "lat": 54.662666,
+      "lon": -8.102839,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumroosk middle:census:1926"
+     },
+     "caption": "In 1926, 22 people in four households lived in Drumroosk Middle. Heads of household included Love, McMullin and Millar.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumroosk middle:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7600,
+     "audio": null,
+     "counts": {
+      "people": 22,
+      "households": 4
+     }
+    },
+    {
+     "id": "drumroosk-middle:beat:closing:end",
+     "kind": "closing",
+     "chapter": "drumroosk-middle:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumroosk-middle",
+      "name": "Drumroosk Middle",
+      "logainm_id": "14012",
+      "lat": 54.662666,
+      "lon": -8.102839,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumroosk middle:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with four households in Drumroosk Middle.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumroosk middle:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4400,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

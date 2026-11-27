@@ -1,0 +1,225 @@
+{
+ "schema": 1,
+ "townland": "Cornaveagh",
+ "slug": "cornaveagh",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Cornaveagh",
+ "span": {
+  "from": "1901",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "cornaveagh:ch:intro",
+   "title": "Cornaveagh",
+   "beats": [
+    {
+     "id": "cornaveagh:beat:title:title",
+     "kind": "title",
+     "chapter": "cornaveagh:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cornaveagh",
+      "name": "Cornaveagh",
+      "logainm_id": "14239",
+      "lat": 54.724235,
+      "lon": -8.033047,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Cornaveagh, in Irish Corr na bhFiach, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Cornaveagh and its eight families, from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cornaveagh:census:1901",
+       "cornaveagh:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 12400,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "cornaveagh:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "cornaveagh:beat:census:1901",
+     "kind": "census",
+     "chapter": "cornaveagh:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cornaveagh",
+      "name": "Cornaveagh",
+      "logainm_id": "14239",
+      "lat": 54.724235,
+      "lon": -8.033047,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cornaveagh:census:1901"
+     },
+     "caption": "Cornaveagh had 51 people in ten households in 1901. Heads of household included Craig, Halferty and Timoney.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cornaveagh:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 51,
+      "households": 10
+     }
+    }
+   ]
+  },
+  {
+   "id": "cornaveagh:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "cornaveagh:beat:census:1911",
+     "kind": "census",
+     "chapter": "cornaveagh:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cornaveagh",
+      "name": "Cornaveagh",
+      "logainm_id": "14239",
+      "lat": 54.724235,
+      "lon": -8.033047,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cornaveagh:census:1911"
+     },
+     "caption": "In 1911, 39 people in nine households lived in Cornaveagh. Heads of household included Craig, Halferty and Timoney.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cornaveagh:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 39,
+      "households": 9
+     }
+    }
+   ]
+  },
+  {
+   "id": "cornaveagh:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "cornaveagh:beat:census:1926",
+     "kind": "census",
+     "chapter": "cornaveagh:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cornaveagh",
+      "name": "Cornaveagh",
+      "logainm_id": "14239",
+      "lat": 54.724235,
+      "lon": -8.033047,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cornaveagh:census:1926"
+     },
+     "caption": "Cornaveagh had 31 people in six households in 1926. Heads of household included Craig, Timoney and Callaghan.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cornaveagh:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 31,
+      "households": 6
+     }
+    },
+    {
+     "id": "cornaveagh:beat:closing:end",
+     "kind": "closing",
+     "chapter": "cornaveagh:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cornaveagh",
+      "name": "Cornaveagh",
+      "logainm_id": "14239",
+      "lat": 54.724235,
+      "lon": -8.033047,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cornaveagh:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with six households in Cornaveagh.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cornaveagh:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

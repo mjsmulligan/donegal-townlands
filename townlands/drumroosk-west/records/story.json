@@ -1,0 +1,225 @@
+{
+ "schema": 1,
+ "townland": "Drumroosk West",
+ "slug": "drumroosk-west",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Drumroosk West",
+ "span": {
+  "from": "1901",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "drumroosk-west:ch:intro",
+   "title": "Drumroosk West",
+   "beats": [
+    {
+     "id": "drumroosk-west:beat:title:title",
+     "kind": "title",
+     "chapter": "drumroosk-west:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumroosk-west",
+      "name": "Drumroosk West",
+      "logainm_id": "14013",
+      "lat": 54.660233,
+      "lon": -8.109253,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Drumroosk West. Here is the story of Drumroosk West and its ten families, from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumroosk west:census:1901",
+       "drumroosk west:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "drumroosk-west:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "drumroosk-west:beat:census:1901",
+     "kind": "census",
+     "chapter": "drumroosk-west:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumroosk-west",
+      "name": "Drumroosk West",
+      "logainm_id": "14013",
+      "lat": 54.660233,
+      "lon": -8.109253,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumroosk west:census:1901"
+     },
+     "caption": "In 1901, 32 people in five households lived in Drumroosk West. Heads of household included Doherty, Gallagher and Crommer.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumroosk west:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7600,
+     "audio": null,
+     "counts": {
+      "people": 32,
+      "households": 5
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumroosk-west:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "drumroosk-west:beat:census:1911",
+     "kind": "census",
+     "chapter": "drumroosk-west:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumroosk-west",
+      "name": "Drumroosk West",
+      "logainm_id": "14013",
+      "lat": 54.660233,
+      "lon": -8.109253,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumroosk west:census:1911"
+     },
+     "caption": "In 1911, sixteen people in five households lived in Drumroosk West. Heads of household included Clarke, Crommer and Doherty.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumroosk west:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7600,
+     "audio": null,
+     "counts": {
+      "people": 16,
+      "households": 5
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumroosk-west:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "drumroosk-west:beat:census:1926",
+     "kind": "census",
+     "chapter": "drumroosk-west:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumroosk-west",
+      "name": "Drumroosk West",
+      "logainm_id": "14013",
+      "lat": 54.660233,
+      "lon": -8.109253,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumroosk west:census:1926"
+     },
+     "caption": "In 1926, eighteen people in five households lived in Drumroosk West. Heads of household included Clarke, McGettigan and Melly.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumroosk west:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7600,
+     "audio": null,
+     "counts": {
+      "people": 18,
+      "households": 5
+     }
+    },
+    {
+     "id": "drumroosk-west:beat:closing:end",
+     "kind": "closing",
+     "chapter": "drumroosk-west:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumroosk-west",
+      "name": "Drumroosk West",
+      "logainm_id": "14013",
+      "lat": 54.660233,
+      "lon": -8.109253,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumroosk west:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with five households in Drumroosk West.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumroosk west:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4400,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

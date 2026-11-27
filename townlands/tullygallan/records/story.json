@@ -1,0 +1,180 @@
+{
+ "schema": 1,
+ "townland": "Tullygallan",
+ "slug": "tullygallan",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Tullygallan",
+ "span": {
+  "from": "1901",
+  "to": "1911"
+ },
+ "chapters": [
+  {
+   "id": "tullygallan:ch:intro",
+   "title": "Tullygallan",
+   "beats": [
+    {
+     "id": "tullygallan:beat:title:title",
+     "kind": "title",
+     "chapter": "tullygallan:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullygallan",
+      "name": "Tullygallan",
+      "logainm_id": "14159",
+      "lat": 54.625715,
+      "lon": -8.092626,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Tullygallan, in Irish Tulaigh Dhalláin. Its story here runs from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullygallan:census:1901",
+       "tullygallan:census:1911"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 5200,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "tullygallan:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "tullygallan:beat:census:1901",
+     "kind": "census",
+     "chapter": "tullygallan:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullygallan",
+      "name": "Tullygallan",
+      "logainm_id": "14159",
+      "lat": 54.625715,
+      "lon": -8.092626,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullygallan:census:1901"
+     },
+     "caption": "Tullygallan had four people in one household in 1901. Heads of household included Boyle.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullygallan:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 5600,
+     "audio": null,
+     "counts": {
+      "people": 4,
+      "households": 1
+     }
+    }
+   ]
+  },
+  {
+   "id": "tullygallan:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "tullygallan:beat:census:1911",
+     "kind": "census",
+     "chapter": "tullygallan:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullygallan",
+      "name": "Tullygallan",
+      "logainm_id": "14159",
+      "lat": 54.625715,
+      "lon": -8.092626,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullygallan:census:1911"
+     },
+     "caption": "In 1911, three people in one household lived in Tullygallan. Heads of household included Boyle.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullygallan:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6000,
+     "audio": null,
+     "counts": {
+      "people": 3,
+      "households": 1
+     }
+    },
+    {
+     "id": "tullygallan:beat:closing:end",
+     "kind": "closing",
+     "chapter": "tullygallan:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullygallan",
+      "name": "Tullygallan",
+      "logainm_id": "14159",
+      "lat": 54.625715,
+      "lon": -8.092626,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullygallan:census:1911"
+     },
+     "caption": "The story reaches 1911 here, with one household in Tullygallan.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullygallan:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

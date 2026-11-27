@@ -74,7 +74,7 @@ docs/<name>/media/<image files>          build output, never edited by hand
 | `year` | for `census` | The census year the form belongs to: 1901, 1911 or 1926. |
 | `credit` | no | A key from `tools/credits.py` (so far `nai1926`). The page then shows the custodian's own credit words under "Credits and licences", and a short credit line under the image. |
 | `focus` | no | Where the zoom view opens, as two fractions from 0 to 1, across then down, for example `0.7,0.5`. An image with a focus can be tapped to zoom. |
-| `event` | no | Timeline only (`tools/build_timeline.py`): the id of the timeline event the photograph belongs to, for example `cullionboy:census:1911`. The photograph is shown on that event's card. A photograph with no `event` is not on the timeline, because the timeline never shows undated material. The first header image is the timeline's page background. |
+| `event` | no | Story events only (`tools/events.py`): the id of the timeline event the photograph belongs to, for example `cullionboy:census:1911`. The photograph is shown on that event's card. A photograph with no `event` is not on the timeline, because the timeline never shows undated material. The first header image is the timeline's page background. |
 
 Row order in the file is display order within a family's Photos tab.
 

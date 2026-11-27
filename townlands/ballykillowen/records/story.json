@@ -1,0 +1,307 @@
+{
+ "schema": 1,
+ "townland": "Ballykillowen",
+ "slug": "ballykillowen",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Ballykillowen",
+ "span": {
+  "from": "1875",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "ballykillowen:ch:register",
+   "title": "The parish register",
+   "beats": [
+    {
+     "id": "ballykillowen:beat:register:tawnawilly",
+     "kind": "register",
+     "chapter": "ballykillowen:ch:register",
+     "time": {
+      "label": "1875",
+      "iso": "1875",
+      "sort": "1875-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:register:tawnawilly"
+     },
+     "caption": "The parish register of Tawnawilly records one baptism at Ballykillowen in 1875. Its marriage entries give no townland, so none are placed here.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:register:tawnawilly"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 9200,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "ballykillowen:ch:intro",
+   "title": "Ballykillowen",
+   "beats": [
+    {
+     "id": "ballykillowen:beat:title:title",
+     "kind": "title",
+     "chapter": "ballykillowen:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1875-05-02",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Ballykillowen. Here is the story of Ballykillowen and its twenty families, from 1875 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:baptism:TAW-B-p016-r207",
+       "ballykillowen:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6000,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "ballykillowen:ch:baptisms",
+   "title": "Baptisms, 1875",
+   "beats": [
+    {
+     "id": "ballykillowen:beat:baptism:1875-05-02-TAW-B-p016-r207",
+     "kind": "baptism",
+     "chapter": "ballykillowen:ch:baptisms",
+     "time": {
+      "label": "2 May 1875",
+      "iso": "1875-05-02",
+      "sort": "1875-05-02",
+      "approximate": false
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:baptism:TAW-B-p016-r207"
+     },
+     "caption": "Hugh McGirr was baptised on 2 May 1875. William McGirr and Catherine Hilley were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:baptism:TAW-B-p016-r207"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "ballykillowen:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "ballykillowen:beat:census:1901",
+     "kind": "census",
+     "chapter": "ballykillowen:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:census:1901"
+     },
+     "caption": "Ballykillowen had 97 people in twenty households in 1901. Heads of household included Scott, McGirr and Cassidy.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 97,
+      "households": 20
+     }
+    }
+   ]
+  },
+  {
+   "id": "ballykillowen:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "ballykillowen:beat:census:1911",
+     "kind": "census",
+     "chapter": "ballykillowen:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:census:1911"
+     },
+     "caption": "Ballykillowen had 86 people in 21 households in 1911. Heads of household included McGirr, Scott and Cassidy.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 86,
+      "households": 21
+     }
+    }
+   ]
+  },
+  {
+   "id": "ballykillowen:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "ballykillowen:beat:census:1926",
+     "kind": "census",
+     "chapter": "ballykillowen:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:census:1926"
+     },
+     "caption": "Ballykillowen had 76 people in nineteen households in 1926. Heads of household included Scott, Cassidy and Curristin.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 76,
+      "households": 19
+     }
+    },
+    {
+     "id": "ballykillowen:beat:closing:end",
+     "kind": "closing",
+     "chapter": "ballykillowen:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with nineteen households in Ballykillowen.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

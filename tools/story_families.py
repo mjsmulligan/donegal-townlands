@@ -17,9 +17,9 @@ import json
 import re
 
 try:
-    from tools import build, build_timeline as bt, variants_reference as vr
+    from tools import build, events as bt, variants_reference as vr
 except ImportError:                  # run as a script from tools/
-    import build, build_timeline as bt, variants_reference as vr
+    import build, events as bt, variants_reference as vr
 
 HIGHLIGHTS = 2
 CERTAINTY_NOTE = 'Households headed by the surname.'
@@ -76,7 +76,7 @@ def _estate_rows(base):
 
 def _griffiths_rows(base):
     """The occupiers of Griffith's, as {'surname', 'forename'}. The printed page transcribed in content.json is
-    the count the story uses (see build_timeline.valuation_event); the askaboutireland index is the fallback."""
+    the count the story uses (see events.valuation_event); the askaboutireland index is the fallback."""
     content = base / 'content.json'
     if content.is_file():
         rows = (json.loads(content.read_text(encoding='utf-8')).get('griffiths') or {}).get('rows', [])

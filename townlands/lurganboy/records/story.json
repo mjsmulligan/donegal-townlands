@@ -1,0 +1,225 @@
+{
+ "schema": 1,
+ "townland": "Lurganboy",
+ "slug": "lurganboy",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Lurganboy",
+ "span": {
+  "from": "1901",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "lurganboy:ch:intro",
+   "title": "Lurganboy",
+   "beats": [
+    {
+     "id": "lurganboy:beat:title:title",
+     "kind": "title",
+     "chapter": "lurganboy:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "lurganboy",
+      "name": "Lurganboy",
+      "logainm_id": "14037",
+      "lat": 54.6386,
+      "lon": -8.117063,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Lurganboy, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Lurganboy and its ten families, from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "lurganboy:census:1901",
+       "lurganboy:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 10400,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "lurganboy:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "lurganboy:beat:census:1901",
+     "kind": "census",
+     "chapter": "lurganboy:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "lurganboy",
+      "name": "Lurganboy",
+      "logainm_id": "14037",
+      "lat": 54.6386,
+      "lon": -8.117063,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "lurganboy:census:1901"
+     },
+     "caption": "Lurganboy had eight people in two households in 1901. Heads of household included Crosbie and Kincaide.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "lurganboy:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "counts": {
+      "people": 8,
+      "households": 2
+     }
+    }
+   ]
+  },
+  {
+   "id": "lurganboy:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "lurganboy:beat:census:1911",
+     "kind": "census",
+     "chapter": "lurganboy:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "lurganboy",
+      "name": "Lurganboy",
+      "logainm_id": "14037",
+      "lat": 54.6386,
+      "lon": -8.117063,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "lurganboy:census:1911"
+     },
+     "caption": "In 1911, 23 people in five households lived in Lurganboy. Heads of household included Espey, Hurst and Kenkode.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "lurganboy:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 23,
+      "households": 5
+     }
+    }
+   ]
+  },
+  {
+   "id": "lurganboy:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "lurganboy:beat:census:1926",
+     "kind": "census",
+     "chapter": "lurganboy:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "lurganboy",
+      "name": "Lurganboy",
+      "logainm_id": "14037",
+      "lat": 54.6386,
+      "lon": -8.117063,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "lurganboy:census:1926"
+     },
+     "caption": "Lurganboy had eighteen people in four households in 1926. Heads of household included Hughes, Kincaid and Martin.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "lurganboy:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 18,
+      "households": 4
+     }
+    },
+    {
+     "id": "lurganboy:beat:closing:end",
+     "kind": "closing",
+     "chapter": "lurganboy:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "lurganboy",
+      "name": "Lurganboy",
+      "logainm_id": "14037",
+      "lat": 54.6386,
+      "lon": -8.117063,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "lurganboy:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with four households in Lurganboy.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "lurganboy:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

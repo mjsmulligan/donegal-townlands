@@ -1,0 +1,225 @@
+{
+ "schema": 1,
+ "townland": "Ardnagassan",
+ "slug": "ardnagassan",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Ardnagassan",
+ "span": {
+  "from": "1901",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "ardnagassan:ch:intro",
+   "title": "Ardnagassan",
+   "beats": [
+    {
+     "id": "ardnagassan:beat:title:title",
+     "kind": "title",
+     "chapter": "ardnagassan:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnagassan",
+      "name": "Ardnagassan",
+      "logainm_id": "14272",
+      "lat": 54.651482,
+      "lon": -8.041187,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Ardnagassan, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Ardnagassan and its nine families, from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnagassan:census:1901",
+       "ardnagassan:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 10400,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "ardnagassan:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "ardnagassan:beat:census:1901",
+     "kind": "census",
+     "chapter": "ardnagassan:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnagassan",
+      "name": "Ardnagassan",
+      "logainm_id": "14272",
+      "lat": 54.651482,
+      "lon": -8.041187,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnagassan:census:1901"
+     },
+     "caption": "In 1901, 47 people in eleven households lived in Ardnagassan. Heads of household included Wray, Carney and Graham.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnagassan:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 47,
+      "households": 11
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardnagassan:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "ardnagassan:beat:census:1911",
+     "kind": "census",
+     "chapter": "ardnagassan:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnagassan",
+      "name": "Ardnagassan",
+      "logainm_id": "14272",
+      "lat": 54.651482,
+      "lon": -8.041187,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnagassan:census:1911"
+     },
+     "caption": "Ardnagassan had 32 people in ten households in 1911. Heads of household included Wray, Graham and McElhinney.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnagassan:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 32,
+      "households": 10
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardnagassan:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "ardnagassan:beat:census:1926",
+     "kind": "census",
+     "chapter": "ardnagassan:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnagassan",
+      "name": "Ardnagassan",
+      "logainm_id": "14272",
+      "lat": 54.651482,
+      "lon": -8.041187,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnagassan:census:1926"
+     },
+     "caption": "Ardnagassan had 42 people in nine households in 1926. Heads of household included Wray, Bustard and Graham.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnagassan:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 42,
+      "households": 9
+     }
+    },
+    {
+     "id": "ardnagassan:beat:closing:end",
+     "kind": "closing",
+     "chapter": "ardnagassan:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnagassan",
+      "name": "Ardnagassan",
+      "logainm_id": "14272",
+      "lat": 54.651482,
+      "lon": -8.041187,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnagassan:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with nine households in Ardnagassan.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnagassan:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

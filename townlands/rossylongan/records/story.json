@@ -1,0 +1,225 @@
+{
+ "schema": 1,
+ "townland": "Rossylongan",
+ "slug": "rossylongan",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Rossylongan",
+ "span": {
+  "from": "1901",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "rossylongan:ch:intro",
+   "title": "Rossylongan",
+   "beats": [
+    {
+     "id": "rossylongan:beat:title:title",
+     "kind": "title",
+     "chapter": "rossylongan:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossylongan",
+      "name": "Rossylongan",
+      "logainm_id": "14023",
+      "lat": 54.649031,
+      "lon": -8.136729,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Rossylongan, in Irish Ros Uí Longáin. Here is the story of Rossylongan and its fifteen families, from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossylongan:census:1901",
+       "rossylongan:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 8000,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "rossylongan:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "rossylongan:beat:census:1901",
+     "kind": "census",
+     "chapter": "rossylongan:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossylongan",
+      "name": "Rossylongan",
+      "logainm_id": "14023",
+      "lat": 54.649031,
+      "lon": -8.136729,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rossylongan:census:1901"
+     },
+     "caption": "Rossylongan had 27 people in eight households in 1901. Heads of household included Bevan, Ellis and Fawcett.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossylongan:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 27,
+      "households": 8
+     }
+    }
+   ]
+  },
+  {
+   "id": "rossylongan:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "rossylongan:beat:census:1911",
+     "kind": "census",
+     "chapter": "rossylongan:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossylongan",
+      "name": "Rossylongan",
+      "logainm_id": "14023",
+      "lat": 54.649031,
+      "lon": -8.136729,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rossylongan:census:1911"
+     },
+     "caption": "Rossylongan had 26 people in six households in 1911. Heads of household included Ellis, Faweett and Harron.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossylongan:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 26,
+      "households": 6
+     }
+    }
+   ]
+  },
+  {
+   "id": "rossylongan:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "rossylongan:beat:census:1926",
+     "kind": "census",
+     "chapter": "rossylongan:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossylongan",
+      "name": "Rossylongan",
+      "logainm_id": "14023",
+      "lat": 54.649031,
+      "lon": -8.136729,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rossylongan:census:1926"
+     },
+     "caption": "Rossylongan had eighteen people in five households in 1926. Heads of household included Bonner, Ellis and Fawcett.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossylongan:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 18,
+      "households": 5
+     }
+    },
+    {
+     "id": "rossylongan:beat:closing:end",
+     "kind": "closing",
+     "chapter": "rossylongan:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossylongan",
+      "name": "Rossylongan",
+      "logainm_id": "14023",
+      "lat": 54.649031,
+      "lon": -8.136729,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rossylongan:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with five households in Rossylongan.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossylongan:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

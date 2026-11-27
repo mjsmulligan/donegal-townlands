@@ -1,0 +1,225 @@
+{
+ "schema": 1,
+ "townland": "Oughtnadrin",
+ "slug": "oughtnadrin",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Oughtnadrin",
+ "span": {
+  "from": "1901",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "oughtnadrin:ch:intro",
+   "title": "Oughtnadrin",
+   "beats": [
+    {
+     "id": "oughtnadrin:beat:title:title",
+     "kind": "title",
+     "chapter": "oughtnadrin:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "oughtnadrin",
+      "name": "Oughtnadrin",
+      "logainm_id": "14149",
+      "lat": 54.614885,
+      "lon": -8.102165,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Oughtnadrin. Here is the story of Oughtnadrin and its eight families, from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "oughtnadrin:census:1901",
+       "oughtnadrin:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6000,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "oughtnadrin:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "oughtnadrin:beat:census:1901",
+     "kind": "census",
+     "chapter": "oughtnadrin:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "oughtnadrin",
+      "name": "Oughtnadrin",
+      "logainm_id": "14149",
+      "lat": 54.614885,
+      "lon": -8.102165,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "oughtnadrin:census:1901"
+     },
+     "caption": "Oughtnadrin had 24 people in six households in 1901. Heads of household included Connolly, Barron and Dorrian.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "oughtnadrin:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 24,
+      "households": 6
+     }
+    }
+   ]
+  },
+  {
+   "id": "oughtnadrin:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "oughtnadrin:beat:census:1911",
+     "kind": "census",
+     "chapter": "oughtnadrin:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "oughtnadrin",
+      "name": "Oughtnadrin",
+      "logainm_id": "14149",
+      "lat": 54.614885,
+      "lon": -8.102165,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "oughtnadrin:census:1911"
+     },
+     "caption": "Oughtnadrin had twenty people in five households in 1911. Heads of household included Connolly, Dorrian and Kelly.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "oughtnadrin:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 20,
+      "households": 5
+     }
+    }
+   ]
+  },
+  {
+   "id": "oughtnadrin:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "oughtnadrin:beat:census:1926",
+     "kind": "census",
+     "chapter": "oughtnadrin:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "oughtnadrin",
+      "name": "Oughtnadrin",
+      "logainm_id": "14149",
+      "lat": 54.614885,
+      "lon": -8.102165,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "oughtnadrin:census:1926"
+     },
+     "caption": "In 1926, sixteen people in five households lived in Oughtnadrin. Heads of household included Brennan, Connolly and Dorrian.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "oughtnadrin:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 16,
+      "households": 5
+     }
+    },
+    {
+     "id": "oughtnadrin:beat:closing:end",
+     "kind": "closing",
+     "chapter": "oughtnadrin:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "oughtnadrin",
+      "name": "Oughtnadrin",
+      "logainm_id": "14149",
+      "lat": 54.614885,
+      "lon": -8.102165,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "oughtnadrin:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with five households in Oughtnadrin.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "oughtnadrin:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

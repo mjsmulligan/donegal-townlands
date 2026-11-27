@@ -1,0 +1,343 @@
+{
+ "schema": 1,
+ "townland": "Aghlem",
+ "slug": "aghlem",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Aghlem",
+ "span": {
+  "from": "1874",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "aghlem:ch:register",
+   "title": "The parish register",
+   "beats": [
+    {
+     "id": "aghlem:beat:register:tawnawilly",
+     "kind": "register",
+     "chapter": "aghlem:ch:register",
+     "time": {
+      "label": "1874 to 1875",
+      "iso": "1874",
+      "sort": "1874-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "aghlem",
+      "name": "Aghlem",
+      "logainm_id": "14271",
+      "lat": 54.65671,
+      "lon": -8.021811,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "aghlem:register:tawnawilly"
+     },
+     "caption": "The parish register of Tawnawilly records three baptisms at Aghlem between 1874 and 1875. Its marriage entries give no townland, so none are placed here.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "aghlem:register:tawnawilly"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 10000,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "aghlem:ch:intro",
+   "title": "Aghlem",
+   "beats": [
+    {
+     "id": "aghlem:beat:title:title",
+     "kind": "title",
+     "chapter": "aghlem:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1874-02-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "aghlem",
+      "name": "Aghlem",
+      "logainm_id": "14271",
+      "lat": 54.65671,
+      "lon": -8.021811,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Aghlem, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Aghlem and its eleven families, from 1874 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "aghlem:baptism:TAW-B-p010-r103",
+       "aghlem:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 10400,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "aghlem:ch:baptisms",
+   "title": "Baptisms, 1874 to 1875",
+   "beats": [
+    {
+     "id": "aghlem:beat:baptism:1874",
+     "kind": "baptism",
+     "chapter": "aghlem:ch:baptisms",
+     "time": {
+      "label": "1 February 1874",
+      "iso": "1874-02-01",
+      "sort": "1874-02-01",
+      "approximate": false
+     },
+     "place": {
+      "townland": "aghlem",
+      "name": "Aghlem",
+      "logainm_id": "14271",
+      "lat": 54.65671,
+      "lon": -8.021811,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "aghlem:baptism:TAW-B-p010-r103"
+     },
+     "caption": "Two children were baptised in 1874: Catherine Gillespie on 1 February and Margaret Ellen Breslin on 13 August.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "aghlem:baptism:TAW-B-p010-r103",
+       "aghlem:baptism:TAW-B-p011-r141"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null
+    },
+    {
+     "id": "aghlem:beat:baptism:1875-03-07-TAW-B-p016-r194",
+     "kind": "baptism",
+     "chapter": "aghlem:ch:baptisms",
+     "time": {
+      "label": "7 March 1875",
+      "iso": "1875-03-07",
+      "sort": "1875-03-07",
+      "approximate": false
+     },
+     "place": {
+      "townland": "aghlem",
+      "name": "Aghlem",
+      "logainm_id": "14271",
+      "lat": 54.65671,
+      "lon": -8.021811,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "aghlem:baptism:TAW-B-p016-r194"
+     },
+     "caption": "Thomas McMullin was baptised on 7 March 1875. Peter McMullin and Catherine Kelly were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "aghlem:baptism:TAW-B-p016-r194"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "aghlem:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "aghlem:beat:census:1901",
+     "kind": "census",
+     "chapter": "aghlem:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "aghlem",
+      "name": "Aghlem",
+      "logainm_id": "14271",
+      "lat": 54.65671,
+      "lon": -8.021811,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "aghlem:census:1901"
+     },
+     "caption": "Aghlem had 61 people in fourteen households in 1901. Heads of household included Corrigan, Gallagher and Gillespie.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "aghlem:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 61,
+      "households": 14
+     }
+    }
+   ]
+  },
+  {
+   "id": "aghlem:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "aghlem:beat:census:1911",
+     "kind": "census",
+     "chapter": "aghlem:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "aghlem",
+      "name": "Aghlem",
+      "logainm_id": "14271",
+      "lat": 54.65671,
+      "lon": -8.021811,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "aghlem:census:1911"
+     },
+     "caption": "Aghlem had 62 people in ten households in 1911. Heads of household included Gillespie, Cassidy and McCadden.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "aghlem:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 62,
+      "households": 10
+     }
+    }
+   ]
+  },
+  {
+   "id": "aghlem:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "aghlem:beat:census:1926",
+     "kind": "census",
+     "chapter": "aghlem:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "aghlem",
+      "name": "Aghlem",
+      "logainm_id": "14271",
+      "lat": 54.65671,
+      "lon": -8.021811,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "aghlem:census:1926"
+     },
+     "caption": "Aghlem had 41 people in nine households in 1926. Heads of household included Gillespie, Cassidy and McCadden.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "aghlem:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 41,
+      "households": 9
+     }
+    },
+    {
+     "id": "aghlem:beat:closing:end",
+     "kind": "closing",
+     "chapter": "aghlem:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "aghlem",
+      "name": "Aghlem",
+      "logainm_id": "14271",
+      "lat": 54.65671,
+      "lon": -8.021811,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "aghlem:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with nine households in Aghlem.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "aghlem:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

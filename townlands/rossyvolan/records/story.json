@@ -1,0 +1,225 @@
+{
+ "schema": 1,
+ "townland": "Rossyvolan",
+ "slug": "rossyvolan",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Rossyvolan",
+ "span": {
+  "from": "1901",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "rossyvolan:ch:intro",
+   "title": "Rossyvolan",
+   "beats": [
+    {
+     "id": "rossyvolan:beat:title:title",
+     "kind": "title",
+     "chapter": "rossyvolan:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossyvolan",
+      "name": "Rossyvolan",
+      "logainm_id": "14155",
+      "lat": 54.621989,
+      "lon": -8.108648,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Rossyvolan. Here is the story of Rossyvolan and its three families, from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossyvolan:census:1901",
+       "rossyvolan:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6000,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "rossyvolan:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "rossyvolan:beat:census:1901",
+     "kind": "census",
+     "chapter": "rossyvolan:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossyvolan",
+      "name": "Rossyvolan",
+      "logainm_id": "14155",
+      "lat": 54.621989,
+      "lon": -8.108648,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rossyvolan:census:1901"
+     },
+     "caption": "In 1901, six people in two households lived in Rossyvolan. Heads of household included Graham and McIntyre.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossyvolan:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 6,
+      "households": 2
+     }
+    }
+   ]
+  },
+  {
+   "id": "rossyvolan:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "rossyvolan:beat:census:1911",
+     "kind": "census",
+     "chapter": "rossyvolan:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossyvolan",
+      "name": "Rossyvolan",
+      "logainm_id": "14155",
+      "lat": 54.621989,
+      "lon": -8.108648,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rossyvolan:census:1911"
+     },
+     "caption": "Rossyvolan had three people in one household in 1911. Heads of household included McIntyre.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossyvolan:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 5600,
+     "audio": null,
+     "counts": {
+      "people": 3,
+      "households": 1
+     }
+    }
+   ]
+  },
+  {
+   "id": "rossyvolan:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "rossyvolan:beat:census:1926",
+     "kind": "census",
+     "chapter": "rossyvolan:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossyvolan",
+      "name": "Rossyvolan",
+      "logainm_id": "14155",
+      "lat": 54.621989,
+      "lon": -8.108648,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rossyvolan:census:1926"
+     },
+     "caption": "Rossyvolan had three people in one household in 1926. Heads of household included Shannon.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossyvolan:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 5600,
+     "audio": null,
+     "counts": {
+      "people": 3,
+      "households": 1
+     }
+    },
+    {
+     "id": "rossyvolan:beat:closing:end",
+     "kind": "closing",
+     "chapter": "rossyvolan:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossyvolan",
+      "name": "Rossyvolan",
+      "logainm_id": "14155",
+      "lat": 54.621989,
+      "lon": -8.108648,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rossyvolan:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with one household in Rossyvolan.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossyvolan:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

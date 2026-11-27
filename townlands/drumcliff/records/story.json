@@ -1,0 +1,180 @@
+{
+ "schema": 1,
+ "townland": "Drumcliff",
+ "slug": "drumcliff",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Drumcliff",
+ "span": {
+  "from": "1911",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "drumcliff:ch:intro",
+   "title": "Drumcliff",
+   "beats": [
+    {
+     "id": "drumcliff:beat:title:title",
+     "kind": "title",
+     "chapter": "drumcliff:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumcliff",
+      "name": "Drumcliff",
+      "logainm_id": "14006",
+      "lat": 54.654452,
+      "lon": -8.119198,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Drumcliff. Here is the story of Drumcliff and its two families, from 1911 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumcliff:census:1911",
+       "drumcliff:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6000,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "drumcliff:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "drumcliff:beat:census:1911",
+     "kind": "census",
+     "chapter": "drumcliff:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumcliff",
+      "name": "Drumcliff",
+      "logainm_id": "14006",
+      "lat": 54.654452,
+      "lon": -8.119198,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumcliff:census:1911"
+     },
+     "caption": "Drumcliff had seven people in two households in 1911. Heads of household included Moran and O'Brien.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumcliff:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "counts": {
+      "people": 7,
+      "households": 2
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumcliff:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "drumcliff:beat:census:1926",
+     "kind": "census",
+     "chapter": "drumcliff:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumcliff",
+      "name": "Drumcliff",
+      "logainm_id": "14006",
+      "lat": 54.654452,
+      "lon": -8.119198,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumcliff:census:1926"
+     },
+     "caption": "Drumcliff had eight people in two households in 1926. Heads of household included Moran and O'Brien.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumcliff:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "counts": {
+      "people": 8,
+      "households": 2
+     }
+    },
+    {
+     "id": "drumcliff:beat:closing:end",
+     "kind": "closing",
+     "chapter": "drumcliff:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumcliff",
+      "name": "Drumcliff",
+      "logainm_id": "14006",
+      "lat": 54.654452,
+      "lon": -8.119198,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumcliff:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with two households in Drumcliff.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumcliff:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

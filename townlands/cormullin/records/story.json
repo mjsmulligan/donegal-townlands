@@ -1,0 +1,225 @@
+{
+ "schema": 1,
+ "townland": "Cormullin",
+ "slug": "cormullin",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Cormullin",
+ "span": {
+  "from": "1901",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "cormullin:ch:intro",
+   "title": "Cormullin",
+   "beats": [
+    {
+     "id": "cormullin:beat:title:title",
+     "kind": "title",
+     "chapter": "cormullin:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cormullin",
+      "name": "Cormullin",
+      "logainm_id": "14139",
+      "lat": 54.621535,
+      "lon": -8.041536,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Cormullin. Here is the story of Cormullin and its twenty families, from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cormullin:census:1901",
+       "cormullin:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6000,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "cormullin:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "cormullin:beat:census:1901",
+     "kind": "census",
+     "chapter": "cormullin:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cormullin",
+      "name": "Cormullin",
+      "logainm_id": "14139",
+      "lat": 54.621535,
+      "lon": -8.041536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cormullin:census:1901"
+     },
+     "caption": "In 1901, 105 people in twenty households lived in Cormullin. Heads of household included Brodbin, Devany and McGahern.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cormullin:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 105,
+      "households": 20
+     }
+    }
+   ]
+  },
+  {
+   "id": "cormullin:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "cormullin:beat:census:1911",
+     "kind": "census",
+     "chapter": "cormullin:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cormullin",
+      "name": "Cormullin",
+      "logainm_id": "14139",
+      "lat": 54.621535,
+      "lon": -8.041536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cormullin:census:1911"
+     },
+     "caption": "Cormullin had 86 people in seventeen households in 1911. Heads of household included McGahern, Brodbin and Cunningham.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cormullin:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 86,
+      "households": 17
+     }
+    }
+   ]
+  },
+  {
+   "id": "cormullin:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "cormullin:beat:census:1926",
+     "kind": "census",
+     "chapter": "cormullin:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cormullin",
+      "name": "Cormullin",
+      "logainm_id": "14139",
+      "lat": 54.621535,
+      "lon": -8.041536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cormullin:census:1926"
+     },
+     "caption": "In 1926, 75 people in fourteen households lived in Cormullin. Heads of household included Curristin, Tunney and Devenny.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cormullin:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 75,
+      "households": 14
+     }
+    },
+    {
+     "id": "cormullin:beat:closing:end",
+     "kind": "closing",
+     "chapter": "cormullin:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "cormullin",
+      "name": "Cormullin",
+      "logainm_id": "14139",
+      "lat": 54.621535,
+      "lon": -8.041536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "cormullin:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with fourteen households in Cormullin.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "cormullin:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

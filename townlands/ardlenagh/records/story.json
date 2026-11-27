@@ -1,0 +1,225 @@
+{
+ "schema": 1,
+ "townland": "Ardlenagh",
+ "slug": "ardlenagh",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Ardlenagh",
+ "span": {
+  "from": "1901",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "ardlenagh:ch:intro",
+   "title": "Ardlenagh",
+   "beats": [
+    {
+     "id": "ardlenagh:beat:title:title",
+     "kind": "title",
+     "chapter": "ardlenagh:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardlenagh",
+      "name": "Ardlenagh",
+      "logainm_id": "14027",
+      "lat": 54.633122,
+      "lon": -8.119617,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Ardlenagh, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Ardlenagh and its two families, from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardlenagh:census:1901",
+       "ardlenagh:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 10400,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "ardlenagh:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "ardlenagh:beat:census:1901",
+     "kind": "census",
+     "chapter": "ardlenagh:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardlenagh",
+      "name": "Ardlenagh",
+      "logainm_id": "14027",
+      "lat": 54.633122,
+      "lon": -8.119617,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardlenagh:census:1901"
+     },
+     "caption": "In 1901, three people in one household lived in Ardlenagh. Heads of household included Tunney.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardlenagh:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6000,
+     "audio": null,
+     "counts": {
+      "people": 3,
+      "households": 1
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardlenagh:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "ardlenagh:beat:census:1911",
+     "kind": "census",
+     "chapter": "ardlenagh:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardlenagh",
+      "name": "Ardlenagh",
+      "logainm_id": "14027",
+      "lat": 54.633122,
+      "lon": -8.119617,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardlenagh:census:1911"
+     },
+     "caption": "Ardlenagh had three people in one household in 1911. Heads of household included Tunney.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardlenagh:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 5600,
+     "audio": null,
+     "counts": {
+      "people": 3,
+      "households": 1
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardlenagh:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "ardlenagh:beat:census:1926",
+     "kind": "census",
+     "chapter": "ardlenagh:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardlenagh",
+      "name": "Ardlenagh",
+      "logainm_id": "14027",
+      "lat": 54.633122,
+      "lon": -8.119617,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardlenagh:census:1926"
+     },
+     "caption": "Ardlenagh had eleven people in two households in 1926. Heads of household included O'Hanrahan and Tunney.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardlenagh:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "counts": {
+      "people": 11,
+      "households": 2
+     }
+    },
+    {
+     "id": "ardlenagh:beat:closing:end",
+     "kind": "closing",
+     "chapter": "ardlenagh:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardlenagh",
+      "name": "Ardlenagh",
+      "logainm_id": "14027",
+      "lat": 54.633122,
+      "lon": -8.119617,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardlenagh:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with two households in Ardlenagh.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardlenagh:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

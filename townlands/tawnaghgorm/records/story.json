@@ -1,0 +1,378 @@
+{
+ "schema": 1,
+ "townland": "Tawnaghgorm",
+ "slug": "tawnaghgorm",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Tawnaghgorm",
+ "span": {
+  "from": "1873",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "tawnaghgorm:ch:register",
+   "title": "The parish register",
+   "beats": [
+    {
+     "id": "tawnaghgorm:beat:register:tawnawilly",
+     "kind": "register",
+     "chapter": "tawnaghgorm:ch:register",
+     "time": {
+      "label": "1873 to 1875",
+      "iso": "1873",
+      "sort": "1873-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tawnaghgorm",
+      "name": "Tawnaghgorm",
+      "logainm_id": "14246",
+      "lat": 54.702174,
+      "lon": -8.024602,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tawnaghgorm:register:tawnawilly"
+     },
+     "caption": "The parish register of Tawnawilly records five baptisms at Tawnaghgorm between 1873 and 1875. Its marriage entries give no townland, so none are placed here.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tawnaghgorm:register:tawnawilly"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 10000,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "tawnaghgorm:ch:intro",
+   "title": "Tawnaghgorm",
+   "beats": [
+    {
+     "id": "tawnaghgorm:beat:title:title",
+     "kind": "title",
+     "chapter": "tawnaghgorm:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1873-03-27",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tawnaghgorm",
+      "name": "Tawnaghgorm",
+      "logainm_id": "14246",
+      "lat": 54.702174,
+      "lon": -8.024602,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Tawnaghgorm, in Irish Tamhnach Ghorm, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Tawnaghgorm and its fifteen families, from 1873 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tawnaghgorm:baptism:TAW-B-p006-r31",
+       "tawnaghgorm:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 12000,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "tawnaghgorm:ch:baptisms",
+   "title": "Baptisms, 1873 to 1875",
+   "beats": [
+    {
+     "id": "tawnaghgorm:beat:baptism:1873-03-27-TAW-B-p006-r31",
+     "kind": "baptism",
+     "chapter": "tawnaghgorm:ch:baptisms",
+     "time": {
+      "label": "27 March 1873",
+      "iso": "1873-03-27",
+      "sort": "1873-03-27",
+      "approximate": false
+     },
+     "place": {
+      "townland": "tawnaghgorm",
+      "name": "Tawnaghgorm",
+      "logainm_id": "14246",
+      "lat": 54.702174,
+      "lon": -8.024602,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tawnaghgorm:baptism:TAW-B-p006-r31"
+     },
+     "caption": "Patrick Gallinagh was baptised on 27 March 1873. Michael Gallinagh and Catherine Martin were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tawnaghgorm:baptism:TAW-B-p006-r31"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null
+    },
+    {
+     "id": "tawnaghgorm:beat:baptism:1874-04-26-TAW-B-p010-r117",
+     "kind": "baptism",
+     "chapter": "tawnaghgorm:ch:baptisms",
+     "time": {
+      "label": "26 April 1874",
+      "iso": "1874-04-26",
+      "sort": "1874-04-26",
+      "approximate": false
+     },
+     "place": {
+      "townland": "tawnaghgorm",
+      "name": "Tawnaghgorm",
+      "logainm_id": "14246",
+      "lat": 54.702174,
+      "lon": -8.024602,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tawnaghgorm:baptism:TAW-B-p010-r117"
+     },
+     "caption": "Patrick Boyle was baptised on 26 April 1874. Natl. Boyle and Anne Martin were the parents. The family was possibly from Tawnaghgorm.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tawnaghgorm:baptism:TAW-B-p010-r117"
+      ],
+      "basis": "page_place_doubtful",
+      "certainty": "possible"
+     },
+     "duration_ms": 8800,
+     "audio": null
+    },
+    {
+     "id": "tawnaghgorm:beat:baptism:1875",
+     "kind": "baptism",
+     "chapter": "tawnaghgorm:ch:baptisms",
+     "time": {
+      "label": "7 February 1875",
+      "iso": "1875-02-07",
+      "sort": "1875-02-07",
+      "approximate": false
+     },
+     "place": {
+      "townland": "tawnaghgorm",
+      "name": "Tawnaghgorm",
+      "logainm_id": "14246",
+      "lat": 54.702174,
+      "lon": -8.024602,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tawnaghgorm:baptism:TAW-B-p015-r187"
+     },
+     "caption": "Two children were baptised in 1875: Denis Gallinagh on 7 February and Bernard McGinty on 2 April.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tawnaghgorm:baptism:TAW-B-p015-r187",
+       "tawnaghgorm:baptism:TAW-B-p016-r200"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "tawnaghgorm:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "tawnaghgorm:beat:census:1901",
+     "kind": "census",
+     "chapter": "tawnaghgorm:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tawnaghgorm",
+      "name": "Tawnaghgorm",
+      "logainm_id": "14246",
+      "lat": 54.702174,
+      "lon": -8.024602,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tawnaghgorm:census:1901"
+     },
+     "caption": "Tawnaghgorm had 82 people in sixteen households in 1901. Heads of household included Martin, McGinty and O'Donnell.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tawnaghgorm:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 82,
+      "households": 16
+     }
+    }
+   ]
+  },
+  {
+   "id": "tawnaghgorm:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "tawnaghgorm:beat:census:1911",
+     "kind": "census",
+     "chapter": "tawnaghgorm:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tawnaghgorm",
+      "name": "Tawnaghgorm",
+      "logainm_id": "14246",
+      "lat": 54.702174,
+      "lon": -8.024602,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tawnaghgorm:census:1911"
+     },
+     "caption": "In 1911, 75 people in twelve households lived in Tawnaghgorm. Heads of household included Martin, McGinty and Boyle.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tawnaghgorm:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 75,
+      "households": 12
+     }
+    }
+   ]
+  },
+  {
+   "id": "tawnaghgorm:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "tawnaghgorm:beat:census:1926",
+     "kind": "census",
+     "chapter": "tawnaghgorm:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tawnaghgorm",
+      "name": "Tawnaghgorm",
+      "logainm_id": "14246",
+      "lat": 54.702174,
+      "lon": -8.024602,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tawnaghgorm:census:1926"
+     },
+     "caption": "In 1926, 52 people in eleven households lived in Tawnaghgorm. Heads of household included Bryson, Cassidy and Gillen.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tawnaghgorm:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 52,
+      "households": 11
+     }
+    },
+    {
+     "id": "tawnaghgorm:beat:closing:end",
+     "kind": "closing",
+     "chapter": "tawnaghgorm:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tawnaghgorm",
+      "name": "Tawnaghgorm",
+      "logainm_id": "14246",
+      "lat": 54.702174,
+      "lon": -8.024602,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tawnaghgorm:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with eleven households in Tawnaghgorm.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tawnaghgorm:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

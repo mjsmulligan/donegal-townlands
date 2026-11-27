@@ -1,0 +1,342 @@
+{
+ "schema": 1,
+ "townland": "Meenadreen",
+ "slug": "meenadreen",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Meenadreen",
+ "span": {
+  "from": "1873",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "meenadreen:ch:register",
+   "title": "The parish register",
+   "beats": [
+    {
+     "id": "meenadreen:beat:register:tawnawilly",
+     "kind": "register",
+     "chapter": "meenadreen:ch:register",
+     "time": {
+      "label": "1873 to 1875",
+      "iso": "1873",
+      "sort": "1873-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "meenadreen",
+      "name": "Meenadreen",
+      "logainm_id": "14284",
+      "lat": 54.658474,
+      "lon": -7.983221,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "meenadreen:register:tawnawilly"
+     },
+     "caption": "The parish register of Tawnawilly records two baptisms at Meenadreen between 1873 and 1875. Its marriage entries give no townland, so none are placed here.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "meenadreen:register:tawnawilly"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 10000,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "meenadreen:ch:intro",
+   "title": "Meenadreen",
+   "beats": [
+    {
+     "id": "meenadreen:beat:title:title",
+     "kind": "title",
+     "chapter": "meenadreen:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1873-11-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "meenadreen",
+      "name": "Meenadreen",
+      "logainm_id": "14284",
+      "lat": 54.658474,
+      "lon": -7.983221,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Meenadreen, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Meenadreen and its fifteen families, from 1873 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "meenadreen:baptism:TAW-B-p008-r77",
+       "meenadreen:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 10400,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "meenadreen:ch:baptisms",
+   "title": "Baptisms, 1873 to 1875",
+   "beats": [
+    {
+     "id": "meenadreen:beat:baptism:1873-11-01-TAW-B-p008-r77",
+     "kind": "baptism",
+     "chapter": "meenadreen:ch:baptisms",
+     "time": {
+      "label": "1 November 1873",
+      "iso": "1873-11-01",
+      "sort": "1873-11-01",
+      "approximate": false
+     },
+     "place": {
+      "townland": "meenadreen",
+      "name": "Meenadreen",
+      "logainm_id": "14284",
+      "lat": 54.658474,
+      "lon": -7.983221,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "meenadreen:baptism:TAW-B-p008-r77"
+     },
+     "caption": "Brigid Gildea was baptised on 1 November 1873. Patrick Gildea and Grace Hanaghy were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "meenadreen:baptism:TAW-B-p008-r77"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null
+    },
+    {
+     "id": "meenadreen:beat:baptism:1875-01-30-TAW-B-p015-r181",
+     "kind": "baptism",
+     "chapter": "meenadreen:ch:baptisms",
+     "time": {
+      "label": "30 January 1875",
+      "iso": "1875-01-30",
+      "sort": "1875-01-30",
+      "approximate": false
+     },
+     "place": {
+      "townland": "meenadreen",
+      "name": "Meenadreen",
+      "logainm_id": "14284",
+      "lat": 54.658474,
+      "lon": -7.983221,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "meenadreen:baptism:TAW-B-p015-r181"
+     },
+     "caption": "Brigid Gildea was baptised on 30 January 1875. Patrick Gildea and Grace Hanaghy were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "meenadreen:baptism:TAW-B-p015-r181"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "meenadreen:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "meenadreen:beat:census:1901",
+     "kind": "census",
+     "chapter": "meenadreen:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "meenadreen",
+      "name": "Meenadreen",
+      "logainm_id": "14284",
+      "lat": 54.658474,
+      "lon": -7.983221,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "meenadreen:census:1901"
+     },
+     "caption": "Meenadreen had 65 people in fifteen households in 1901. Heads of household included Gillespie, Cassidy and Gildea.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "meenadreen:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 65,
+      "households": 15
+     }
+    }
+   ]
+  },
+  {
+   "id": "meenadreen:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "meenadreen:beat:census:1911",
+     "kind": "census",
+     "chapter": "meenadreen:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "meenadreen",
+      "name": "Meenadreen",
+      "logainm_id": "14284",
+      "lat": 54.658474,
+      "lon": -7.983221,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "meenadreen:census:1911"
+     },
+     "caption": "In 1911, 62 people in thirteen households lived in Meenadreen. Heads of household included Gildea, Cassidy and Doherty.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "meenadreen:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 62,
+      "households": 13
+     }
+    }
+   ]
+  },
+  {
+   "id": "meenadreen:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "meenadreen:beat:census:1926",
+     "kind": "census",
+     "chapter": "meenadreen:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "meenadreen",
+      "name": "Meenadreen",
+      "logainm_id": "14284",
+      "lat": 54.658474,
+      "lon": -7.983221,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "meenadreen:census:1926"
+     },
+     "caption": "In 1926, 66 people in fifteen households lived in Meenadreen. Heads of household included Gillespie, Gallagher and McMullin.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "meenadreen:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 66,
+      "households": 15
+     }
+    },
+    {
+     "id": "meenadreen:beat:closing:end",
+     "kind": "closing",
+     "chapter": "meenadreen:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "meenadreen",
+      "name": "Meenadreen",
+      "logainm_id": "14284",
+      "lat": 54.658474,
+      "lon": -7.983221,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "meenadreen:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with fifteen households in Meenadreen.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "meenadreen:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

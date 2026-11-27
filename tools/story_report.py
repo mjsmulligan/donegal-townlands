@@ -14,10 +14,10 @@ not committed (see .gitignore). A case that fails is reported with its error and
 import csv, datetime, json, math, statistics, sys
 
 try:
-    from tools import build_story as bd, build_timeline as bt
+    from tools import build_story as bd, events as bt
 except ImportError:                  # run as a script: python tools/story_report.py
     import build_story as bd
-    import build_timeline as bt
+    import events as bt
 
 ROOT = bt.ROOT
 OUT = ROOT / 'data' / 'processed' / 'story_report.csv'

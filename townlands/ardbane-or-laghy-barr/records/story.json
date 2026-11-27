@@ -1,0 +1,225 @@
+{
+ "schema": 1,
+ "townland": "Ardbane or Laghy Barr",
+ "slug": "ardbane-or-laghy-barr",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Ardbane or Laghy Barr",
+ "span": {
+  "from": "1901",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "ardbane-or-laghy-barr:ch:intro",
+   "title": "Ardbane or Laghy Barr",
+   "beats": [
+    {
+     "id": "ardbane-or-laghy-barr:beat:title:title",
+     "kind": "title",
+     "chapter": "ardbane-or-laghy-barr:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardbane-or-laghy-barr",
+      "name": "Ardbane or Laghy Barr",
+      "logainm_id": "14132",
+      "lat": 54.618226,
+      "lon": -8.016601,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Ardbane or Laghy Barr. Here is the story of Ardbane or Laghy Barr and its six families, from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardbane or laghy barr:census:1901",
+       "ardbane or laghy barr:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 8400,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "ardbane-or-laghy-barr:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "ardbane-or-laghy-barr:beat:census:1901",
+     "kind": "census",
+     "chapter": "ardbane-or-laghy-barr:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardbane-or-laghy-barr",
+      "name": "Ardbane or Laghy Barr",
+      "logainm_id": "14132",
+      "lat": 54.618226,
+      "lon": -8.016601,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardbane or laghy barr:census:1901"
+     },
+     "caption": "In 1901, 41 people in eight households lived in Ardbane or Laghy Barr. Heads of household included Travers, Melly and Murray.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardbane or laghy barr:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 8400,
+     "audio": null,
+     "counts": {
+      "people": 41,
+      "households": 8
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardbane-or-laghy-barr:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "ardbane-or-laghy-barr:beat:census:1911",
+     "kind": "census",
+     "chapter": "ardbane-or-laghy-barr:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardbane-or-laghy-barr",
+      "name": "Ardbane or Laghy Barr",
+      "logainm_id": "14132",
+      "lat": 54.618226,
+      "lon": -8.016601,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardbane or laghy barr:census:1911"
+     },
+     "caption": "In 1911, 36 people in seven households lived in Ardbane or Laghy Barr. Heads of household included Travers, Melley and Murray.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardbane or laghy barr:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 8400,
+     "audio": null,
+     "counts": {
+      "people": 36,
+      "households": 7
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardbane-or-laghy-barr:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "ardbane-or-laghy-barr:beat:census:1926",
+     "kind": "census",
+     "chapter": "ardbane-or-laghy-barr:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardbane-or-laghy-barr",
+      "name": "Ardbane or Laghy Barr",
+      "logainm_id": "14132",
+      "lat": 54.618226,
+      "lon": -8.016601,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardbane or laghy barr:census:1926"
+     },
+     "caption": "Ardbane or Laghy Barr had 22 people in five households in 1926. Heads of household included McCormack, McGrory and Travers.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardbane or laghy barr:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 8000,
+     "audio": null,
+     "counts": {
+      "people": 22,
+      "households": 5
+     }
+    },
+    {
+     "id": "ardbane-or-laghy-barr:beat:closing:end",
+     "kind": "closing",
+     "chapter": "ardbane-or-laghy-barr:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardbane-or-laghy-barr",
+      "name": "Ardbane or Laghy Barr",
+      "logainm_id": "14132",
+      "lat": 54.618226,
+      "lon": -8.016601,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardbane or laghy barr:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with five households in Ardbane or Laghy Barr.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardbane or laghy barr:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 5200,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

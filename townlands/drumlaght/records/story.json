@@ -1,0 +1,225 @@
+{
+ "schema": 1,
+ "townland": "Drumlaght",
+ "slug": "drumlaght",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Drumlaght",
+ "span": {
+  "from": "1901",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "drumlaght:ch:intro",
+   "title": "Drumlaght",
+   "beats": [
+    {
+     "id": "drumlaght:beat:title:title",
+     "kind": "title",
+     "chapter": "drumlaght:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlaght",
+      "name": "Drumlaght",
+      "logainm_id": "14033",
+      "lat": 54.662645,
+      "lon": -8.091802,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Drumlaght, in Irish Droim Leachta, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Drumlaght and its nine families, from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlaght:census:1901",
+       "drumlaght:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 12000,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "drumlaght:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "drumlaght:beat:census:1901",
+     "kind": "census",
+     "chapter": "drumlaght:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlaght",
+      "name": "Drumlaght",
+      "logainm_id": "14033",
+      "lat": 54.662645,
+      "lon": -8.091802,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlaght:census:1901"
+     },
+     "caption": "In 1901, 35 people in six households lived in Drumlaght. Heads of household included Montgomery, Freebourn and Kilpatrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlaght:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 35,
+      "households": 6
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumlaght:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "drumlaght:beat:census:1911",
+     "kind": "census",
+     "chapter": "drumlaght:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlaght",
+      "name": "Drumlaght",
+      "logainm_id": "14033",
+      "lat": 54.662645,
+      "lon": -8.091802,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlaght:census:1911"
+     },
+     "caption": "In 1911, 29 people in six households lived in Drumlaght. Heads of household included Montgomery, Freeborn and Freebourn.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlaght:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 29,
+      "households": 6
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumlaght:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "drumlaght:beat:census:1926",
+     "kind": "census",
+     "chapter": "drumlaght:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlaght",
+      "name": "Drumlaght",
+      "logainm_id": "14033",
+      "lat": 54.662645,
+      "lon": -8.091802,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlaght:census:1926"
+     },
+     "caption": "In 1926, 23 people in six households lived in Drumlaght. Heads of household included Freeborn, Montgomery and Kirkpatrick.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlaght:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 23,
+      "households": 6
+     }
+    },
+    {
+     "id": "drumlaght:beat:closing:end",
+     "kind": "closing",
+     "chapter": "drumlaght:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumlaght",
+      "name": "Drumlaght",
+      "logainm_id": "14033",
+      "lat": 54.662645,
+      "lon": -8.091802,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumlaght:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with six households in Drumlaght.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumlaght:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}
