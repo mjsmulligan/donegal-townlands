@@ -146,56 +146,85 @@ def n_word(n):
     return words[n] if n < len(words) else str(n)
 
 
+def _thread(name, i, fams, caption, sort, census, estate, grif, labels):
+    """One family thread: the census households of the family by year and where it appears. `caption` is the
+    user's own family caption when there is one; a census year it speaks of gets no second account."""
+    spell = {f: labels.spellings_of(f) for f in fams}
+    every = set().union(*spell.values())
+    years, sources = [], 0
+    for y in sorted({r['source_date'].strip() for r in estate}):
+        if any(vr.key(r.get('interpreted_surname', '')) in every for r in estate if r['source_date'].strip() == y):
+            years.append(int(y)); sources += 1
+    if any(vr.key(r.get('surname', '')) in every for r in grif):
+        years.append(1855); sources += 1
+    events, houses = [], 0
+    fid = f'{name.lower()}:family:{i:02d}'
+    for y in sorted(census):
+        heads = [p for p in census[y] if _head(p) and vr.key(p.get('s', '')) in every]
+        if not heads:
+            continue
+        years.append(int(y)); sources += 1; houses += len(heads)
+        if caption and re.search(r'\b' + y + r'\b', caption):
+            continue        # the user's own caption already speaks of this census year, so no second account of it
+        groups = []
+        for f in fams:
+            fh = [p for p in heads if vr.key(p.get('s', '')) in spell[f]]
+            if fh:
+                groups.append((f, [p.get('f', '').strip() for p in fh]))
+        events.append(census_event(name, fid, i, y, groups))
+    presence = None
+    if years:
+        a, z = min(years), max(years)
+        lab = str(a) if a == z else f'{a} to {z}'
+        presence = {'id': f'{name.lower()}:familypresence:{i:02d}', 'type': 'family_presence', 'milestone': False,
+                    'date': {'kind': 'range', 'label': lab, 'iso': str(a)}, 'sort': f'{a}-01-01',
+                    'approximate_sort': True, 'title': f'The {" and ".join(fams)} family in the records',
+                    'text': f'In the records from {lab}.', 'people': [], 'media': [], 'first': a, 'last': z}
+    return {'id': fid, 'label': ' and '.join(fams), 'presence': presence, 'labels': fams, 'start_sort': f'{min(years)}-01-01' if years else sort,
+            'span': (max(years) - min(years)) if years else 0, 'sources': sources, 'households': houses,
+            'events': events, 'spellings': sorted(every)}
+
+
 def threads(base, name):
-    """One thread for each told family (an accepted row of the family beats file), in file order.
+    """One thread for each told family, in file order. Where the user has accepted family beats (a family beats
+    file and its crosswalk) those are the families, as they have always been. Otherwise every family the
+    records hold is a thread, a family being a surname (DECISIONS.md, 2026-11-25 and 2026-11-27).
     {'id', 'label', 'labels', 'start_sort', 'years', 'sources', 'households', 'events'} where `events` are
     the census households of the family, one event for each census year it appears in."""
     beats_file = bt.ASSOC_DIR / (base.name + '_family_beats.csv')
     cross = bt.ASSOC_DIR / (base.name + '_holdings_crosswalk.csv')
-    if not (beats_file.is_file() and cross.is_file()):
-        return []
-    status = {r['family']: r['status'] for r in _read(cross)}
     census, estate, grif = _census(base), _estate_rows(base), _griffiths_rows(base)
     labels = Labels([r.get('interpreted_surname', '') for r in estate] + [p.get('s', '') for y in census for p in census[y]])
+    if not (beats_file.is_file() and cross.is_file()):
+        return auto_threads(name, census, estate, grif, labels)
+    status = {r['family']: r['status'] for r in _read(cross)}
     out = []
     for i, row in enumerate(_read(beats_file), start=1):
         fams = [f.strip() for f in row['crosswalk_families'].split(';')]
         if any(status.get(f) != 'accepted' for f in fams):
             continue
-        spell = {f: labels.spellings_of(f) for f in fams}
-        every = set().union(*spell.values())
-        years, sources = [], 0
-        for y in sorted({r['source_date'].strip() for r in estate}):
-            if any(vr.key(r.get('interpreted_surname', '')) in every for r in estate if r['source_date'].strip() == y):
-                years.append(int(y)); sources += 1
-        if any(vr.key(r.get('surname', '')) in every for r in grif):
-            years.append(1855); sources += 1
-        events, houses = [], 0
-        fid = f'{name.lower()}:family:{i:02d}'
-        for y in sorted(census):
-            heads = [p for p in census[y] if _head(p) and vr.key(p.get('s', '')) in every]
-            if not heads:
-                continue
-            years.append(int(y)); sources += 1; houses += len(heads)
-            if re.search(r'\b' + y + r'\b', row['caption']):
-                continue        # the user's own caption already speaks of this census year, so no second account of it
-            groups = []
-            for f in fams:
-                fh = [p for p in heads if vr.key(p.get('s', '')) in spell[f]]
-                if fh:
-                    groups.append((f, [p.get('f', '').strip() for p in fh]))
-            events.append(census_event(name, fid, i, y, groups))
-        presence = None
-        if years:
-            a, z = min(years), max(years)
-            lab = str(a) if a == z else f'{a} to {z}'
-            presence = {'id': f'{name.lower()}:familypresence:{i:02d}', 'type': 'family_presence', 'milestone': False,
-                        'date': {'kind': 'range', 'label': lab, 'iso': str(a)}, 'sort': f'{a}-01-01',
-                        'approximate_sort': True, 'title': f'The {" and ".join(fams)} family in the records',
-                        'text': f'In the records from {lab}.', 'people': [], 'media': [], 'first': a, 'last': z}
-        out.append({'id': fid, 'label': ' and '.join(fams), 'presence': presence, 'labels': fams, 'start_sort': f'{min(years)}-01-01' if years else row['sort'],
-                    'span': (max(years) - min(years)) if years else 0, 'sources': sources, 'households': houses,
-                    'events': events, 'spellings': sorted(every)})
+        out.append(_thread(name, i, fams, row['caption'], row['sort'], census, estate, grif, labels))
+    return out
+
+
+def auto_threads(name, census, estate, grif, labels):
+    """A thread for each family name in the records, in name order. The name is the label of a verified
+    variants row or the spelling as recorded, so spellings group only where the user has verified them. A
+    thread built here has no authored family caption: it is told by the records alone (`auto`)."""
+    found = {}
+    for r in estate:
+        found.setdefault(labels(r.get('interpreted_surname', '')), None)
+    for r in grif:
+        found.setdefault(labels(r.get('surname', '')), None)
+    for y in census:
+        for p in census[y]:
+            if _head(p):
+                found.setdefault(labels(p.get('s', '')), None)
+    out = []
+    for i, label in enumerate(sorted((x for x in found if x.strip()), key=str.casefold), start=1):
+        t = _thread(name, i, [label], '', '0000-01-01', census, estate, grif, labels)
+        t['auto'] = True
+        out.append(t)
     return out
 
 

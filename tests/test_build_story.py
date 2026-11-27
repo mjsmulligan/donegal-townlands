@@ -916,6 +916,59 @@ class FamilyThreadTests(unittest.TestCase):
         self.assertEqual(bd.check_document(doc, events + extra, 5), [])
 
 
+class AutoFamilyTests(unittest.TestCase):
+    """A townland with no authored family beats still has a family for each surname (DECISIONS.md, 2026-11-27)."""
+
+    def head(self, sur, first, house):
+        return {'h': house, 's': sur, 'f': first, 'a': 40, 'x': 'M', 'r': 'Head', 'm': '', 'o': '', 'i': 0, 'ref': 'r'}
+
+    def families(self, census_rows):
+        import tempfile, json
+        from pathlib import Path
+        from tools import story_families as sf
+        with tempfile.TemporaryDirectory() as tmp:
+            base = Path(tmp) / 'alpha'
+            (base / 'records').mkdir(parents=True)
+            (base / 'records' / 'census.json').write_text(json.dumps(census_rows), encoding='utf-8')
+            return sf.threads(base, 'alpha')
+
+    def test_every_surname_that_heads_a_household_is_a_family(self):
+        found = self.families({'1901': [self.head('Boyle', 'John', 1), self.head('Gallagher', 'Ann', 2)],
+                               '1911': [self.head('Boyle', 'John', 1)]})
+        self.assertEqual([t['label'] for t in found], ['Boyle', 'Gallagher'])
+        boyle = found[0]
+        self.assertTrue(boyle['auto'])
+        self.assertEqual([e['date']['label'] for e in boyle['events']], ['1901', '1911'])
+        self.assertEqual((boyle['presence']['first'], boyle['presence']['last']), (1901, 1911))
+        self.assertEqual(boyle['households'], 2)
+
+    def test_unverified_spellings_stay_separate_families(self):
+        found = self.families({'1901': [self.head('Zzalpha', 'Pat', 1), self.head('Zzalfa', 'Joe', 2)]})
+        self.assertEqual(sorted(t['label'] for t in found), ['Zzalfa', 'Zzalpha'])
+
+    def test_a_family_with_only_the_census_is_told_by_a_header_and_its_households(self):
+        events = [census(1901, 61, 14), census(1911, 62, 10), census(1926, 41, 9)]
+        found = self.families({'1901': [self.head('Boyle', 'John', 1)], '1911': [self.head('Boyle', 'John', 1)],
+                               '1926': [self.head('Boyle', 'John', 1)]})
+        fam = {'names': {'families': 1}, 'threads': found, 'highlights': [found[0]['id']], 'register': None}
+        doc, _ = bd.generate('Alpha', 'alpha', PLACE, events, today=TODAY, fam=fam)
+        kinds = [x['kind'] for c in doc['chapters'] for x in c['beats']]
+        self.assertEqual(kinds.count('familyhead'), 1)
+        self.assertEqual(kinds.count('familycensus'), 3)
+        self.assertEqual(kinds.count('census'), 1)          # one milestone for the three returns
+        milestone = next(x for c in doc['chapters'] for x in c['beats'] if x['kind'] == 'census')
+        self.assertEqual([r['people'] for r in milestone['counts']['returns']], [61, 62, 41])
+
+    def test_form_images_replace_the_dots_on_the_milestone(self):
+        events = [census(1901, 61, 14), census(1911, 62, 10)]
+        found = self.families({'1901': [self.head('Boyle', 'John', 1)], '1911': [self.head('Boyle', 'John', 1)]})
+        fam = {'names': {'families': 1}, 'threads': found, 'highlights': [found[0]['id']], 'register': None}
+        doc, _ = bd.generate('Alpha', 'alpha', PLACE, events, today=TODAY, fam=fam, census_files={'1911': ['form.jpg']})
+        milestone = next(x for c in doc['chapters'] for x in c['beats'] if x['kind'] == 'census')
+        self.assertEqual(milestone['media'], ['form.jpg'])
+        self.assertNotIn('counts', milestone)
+
+
 class HedgeCheckTests(unittest.TestCase):
     def test_a_surname_is_not_a_hedge(self):
         self.assertFalse(bd.hedge_in('The Likelys and the Likely family lived here.', 'likely'))
