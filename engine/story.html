@@ -491,7 +491,8 @@ function boot(D,BASE){
   function show(n,fromHash){
     i=Math.max(0,Math.min(N-1,n)); cur=i;
     var b=beats[i];
-    var shows=!isHero(b)&&((b.media&&b.media.length)||b.counts);
+    var hasDots=!!(b.counts&&(b.counts.people||b.counts.returns));
+    var shows=!isHero(b)&&((b.media&&b.media.length)||hasDots);
     $('app').classList.toggle('hero',!shows);
     $('app').classList.toggle('pic',!!(b.media&&b.media.length)&&!isHero(b));
     cardEls.forEach(function(c,k){c.classList.toggle('cur',k===i); c.setAttribute('aria-hidden',k===i?'false':'true')});
