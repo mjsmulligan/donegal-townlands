@@ -51,7 +51,7 @@ class Labels:
 
     def __call__(self, spelling):
         k = vr.key(spelling)
-        return self.verified.get(k) or self.shown.get(k) or str(spelling).strip().title()
+        return self.verified.get(k) or self.shown.get(k) or re.sub(r'\bMc([a-z])', lambda m: 'Mc' + m.group(1).upper(), str(spelling).strip().title())
 
     def spellings_of(self, label):
         """Every spelling a label stands for: the verified row's list, or the label itself. A label like
@@ -172,14 +172,7 @@ def _thread(name, i, fams, caption, sort, census, estate, grif, labels):
             if fh:
                 groups.append((f, [p.get('f', '').strip() for p in fh]))
         events.append(census_event(name, fid, i, y, groups))
-    presence = None
-    if years:
-        a, z = min(years), max(years)
-        lab = str(a) if a == z else f'{a} to {z}'
-        presence = {'id': f'{name.lower()}:familypresence:{i:02d}', 'type': 'family_presence', 'milestone': False,
-                    'date': {'kind': 'range', 'label': lab, 'iso': str(a)}, 'sort': f'{a}-01-01',
-                    'approximate_sort': True, 'title': f'The {" and ".join(fams)} family in the records',
-                    'text': f'In the records from {lab}.', 'people': [], 'media': [], 'first': a, 'last': z}
+    presence = _presence(name, i, fams, years) if years else None
     return {'id': fid, 'label': ' and '.join(fams), 'presence': presence, 'labels': fams, 'start_sort': f'{min(years)}-01-01' if years else sort,
             'span': (max(years) - min(years)) if years else 0, 'sources': sources, 'households': houses,
             'events': events, 'spellings': sorted(every)}
@@ -226,6 +219,39 @@ def auto_threads(name, census, estate, grif, labels):
         t['auto'] = True
         out.append(t)
     return out
+
+
+def register_thread(name, i, label, spellings, years):
+    """A family known only from the parish register (its baptisms name the father, a surname no other source
+    holds for the townland). Built the same way as the others: a header slide and, in the story, the baptisms."""
+    a, z = min(years), max(years)
+    thread = {'id': f'{name.lower()}:family:{i:02d}', 'label': label, 'presence': None, 'labels': [label],
+              'start_sort': f'{a}-01-01', 'span': z - a, 'sources': 1, 'households': 0, 'events': [],
+              'spellings': sorted(spellings), 'auto': True}
+    thread['presence'] = _presence(name, i, [label], years)
+    return thread
+
+
+def _presence(name, i, fams, years):
+    a, z = min(years), max(years)
+    lab = str(a) if a == z else f'{a} to {z}'
+    return {'id': f'{name.lower()}:familypresence:{i:02d}', 'type': 'family_presence', 'milestone': False,
+            'date': {'kind': 'range', 'label': lab, 'iso': str(a)}, 'sort': f'{a}-01-01',
+            'approximate_sort': True, 'title': f'The {" and ".join(fams)} family in the records',
+            'text': f'In the records from {lab}.', 'people': [], 'media': [], 'first': a, 'last': z}
+
+
+def add_register_years(thread, years):
+    """The register is a record of the family too: its baptism years widen where the family appears."""
+    pe = thread.get('presence')
+    if not pe:
+        return
+    a, z = min([pe['first']] + list(years)), max([pe['last']] + list(years))
+    if (a, z) != (pe['first'], pe['last']):
+        n = pe['id'].rsplit(':', 1)[1]
+        thread['presence'] = _presence(pe['id'].split(':familypresence:')[0], int(n), thread['labels'], [a, z])
+        thread['start_sort'] = f'{a}-01-01'
+        thread['span'] = z - a
 
 
 MARRIAGES = bt.NORMALISED.parent / 'tawnawilly_marriages_normalised.csv'

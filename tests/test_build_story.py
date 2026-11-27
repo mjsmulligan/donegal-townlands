@@ -969,6 +969,64 @@ class AutoFamilyTests(unittest.TestCase):
         self.assertNotIn('counts', milestone)
 
 
+class RegisterFamilyTests(unittest.TestCase):
+    """A surname known only from the parish register is a family too, so no baptism is left on its own."""
+
+    def bap(self, n, father, iso, mother='Mary Kelly'):
+        y, m, d = iso.split('-')
+        return {'id': f'alpha:baptism:B{n}', 'type': 'baptism', 'milestone': False,
+                'date': {'kind': 'exact', 'label': f'{int(d)} March {y}', 'iso': iso}, 'sort': iso,
+                'title': 'Baptism of Anne ' + father.split()[-1], 'text': f'Father: {father}.', 'media': [],
+                'people': [{'name': 'Anne ' + father.split()[-1], 'role': 'child baptised'},
+                           {'name': father, 'role': 'father'}, {'name': mother, 'role': 'mother'}],
+                'association': {'basis': 'page_place', 'label': ''},
+                'source': {'label': 'Register', 'url': '', 'reference': f'B{n}'}}
+
+    def story(self, census_rows, baps):
+        found = AutoFamilyTests().families(census_rows)
+        events = [census(1901, 61, 14), census(1911, 62, 10)] + baps
+        fam = {'names': {'families': len(found)}, 'threads': found, 'highlights': [found[0]['id']], 'register': None}
+        doc, _ = bd.generate('Alpha', 'alpha', PLACE, events, today=TODAY, fam=fam)
+        return [x for c in doc['chapters'] for x in c['beats']]
+
+    def head(self, sur):
+        return AutoFamilyTests().head(sur, 'John', 1)
+
+    def test_a_surname_only_in_the_register_becomes_a_family_with_its_baptism(self):
+        beats = self.story({'1901': [self.head('Boyle')], '1911': [self.head('Boyle')]},
+                           [self.bap(1, 'Francis Harraghy', '1875-03-31')])
+        bap = next(b for b in beats if b['kind'] == 'baptism')
+        self.assertEqual(bap['thread']['label'], 'Harraghy')
+        head = next(b for b in beats if b['kind'] == 'familyhead' and b['thread']['label'] == 'Harraghy')
+        self.assertIn('in 1875', head['caption'])
+        self.assertLess(beats.index(head), beats.index(bap))
+
+    def test_a_baptism_before_the_census_widens_where_its_family_appears(self):
+        beats = self.story({'1901': [self.head('Boyle')], '1911': [self.head('Boyle')]},
+                           [self.bap(1, 'John Boyle', '1874-02-01')])
+        head = next(b for b in beats if b['kind'] == 'familyhead' and b['thread']['label'] == 'Boyle')
+        self.assertIn('from 1874 to 1911', head['caption'])
+        bap = next(b for b in beats if b['kind'] == 'baptism')
+        self.assertLess(beats.index(head), beats.index(bap))
+
+    def test_no_baptism_is_left_in_the_townland_section(self):
+        beats = self.story({'1901': [self.head('Boyle')], '1911': [self.head('Boyle')]},
+                           [self.bap(1, 'John Boyle', '1874-02-01'), self.bap(2, 'Francis Harraghy', '1875-03-31')])
+        self.assertTrue(all(b.get('thread') for b in beats if b['kind'] == 'baptism'))
+
+    def test_a_baptism_naming_only_the_mother_joins_the_mother_surname(self):
+        e = self.bap(1, 'Peggy Kelly', '1873-06-15')
+        e['people'] = [{'name': 'Edward', 'role': 'child baptised'}, {'name': 'Peggy Kelly', 'role': 'mother'}]
+        beats = self.story({'1901': [self.head('Boyle')], '1911': [self.head('Boyle')]}, [e])
+        bap = next(b for b in beats if b['kind'] == 'baptism')
+        self.assertEqual(bap['thread']['label'], 'Kelly')
+
+    def test_a_surname_known_only_in_capitals_keeps_its_mc(self):
+        from tools import story_families as sf
+        self.assertEqual(sf.Labels([])('MCGINTY'), 'McGinty')
+        self.assertEqual(sf.Labels([])('GILDEA'), 'Gildea')
+
+
 class HedgeCheckTests(unittest.TestCase):
     def test_a_surname_is_not_a_hedge(self):
         self.assertFalse(bd.hedge_in('The Likelys and the Likely family lived here.', 'likely'))

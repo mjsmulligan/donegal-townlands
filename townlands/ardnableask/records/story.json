@@ -581,6 +581,46 @@
    "title": "The Gallagher family",
    "beats": [
     {
+     "id": "ardnableask:beat:familyhead:06",
+     "kind": "familyhead",
+     "chapter": "ardnableask:ch:family-06",
+     "time": {
+      "label": "The Gallagher family",
+      "iso": "1874",
+      "sort": "1874-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnableask",
+      "name": "Ardnableask",
+      "logainm_id": "14238",
+      "lat": 54.696229,
+      "lon": -8.010488,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnableask:familypresence:06"
+     },
+     "caption": "The Gallagher family appear in the records from 1874 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnableask:familypresence:06"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ardnableask:family:06",
+      "label": "Gallagher",
+      "run": false
+     }
+    },
+    {
      "id": "ardnableask:beat:baptism:1874-06-04-TAW-B-p011-r126",
      "kind": "baptism",
      "chapter": "ardnableask:ch:family-06",
@@ -613,46 +653,6 @@
       "certainty": "stated"
      },
      "duration_ms": 6400,
-     "audio": null,
-     "thread": {
-      "id": "ardnableask:family:06",
-      "label": "Gallagher",
-      "run": false
-     }
-    },
-    {
-     "id": "ardnableask:beat:familyhead:06",
-     "kind": "familyhead",
-     "chapter": "ardnableask:ch:family-06",
-     "time": {
-      "label": "The Gallagher family",
-      "iso": "1901",
-      "sort": "1901-01-01",
-      "approximate": true
-     },
-     "place": {
-      "townland": "ardnableask",
-      "name": "Ardnableask",
-      "logainm_id": "14238",
-      "lat": 54.696229,
-      "lon": -8.010488,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "ardnableask:familypresence:06"
-     },
-     "caption": "The Gallagher family appear in the records from 1901 to 1926.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "ardnableask:familypresence:06"
-      ],
-      "basis": "census_surname",
-      "certainty": "accepted"
-     },
-     "duration_ms": 4400,
      "audio": null,
      "thread": {
       "id": "ardnableask:family:06",

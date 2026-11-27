@@ -35,7 +35,7 @@
       "stage": "map",
       "open_card": ""
      },
-     "caption": "Raforker, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Raforker and its four families, from 1873 to 1926.",
+     "caption": "Raforker, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Raforker and its five families, from 1873 to 1926.",
      "people": [],
      "media": [],
      "evidence": {
@@ -90,47 +90,6 @@
       "certainty": "stated"
      },
      "duration_ms": 10200,
-     "audio": null
-    }
-   ]
-  },
-  {
-   "id": "raforker:ch:baptisms",
-   "title": "Baptisms, 1873",
-   "beats": [
-    {
-     "id": "raforker:beat:baptism:1873-12-06-TAW-B-p009-r86",
-     "kind": "baptism",
-     "chapter": "raforker:ch:baptisms",
-     "time": {
-      "label": "6 December 1873",
-      "iso": "1873-12-06",
-      "sort": "1873-12-06",
-      "approximate": false
-     },
-     "place": {
-      "townland": "raforker",
-      "name": "Raforker",
-      "logainm_id": "14039",
-      "lat": 54.647635,
-      "lon": -8.105515,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "raforker:baptism:TAW-B-p009-r86"
-     },
-     "caption": "James McBrearty was baptised on 6 December 1873. Patrick McBrearty and Mary Gillespie were the parents.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "raforker:baptism:TAW-B-p009-r86"
-      ],
-      "basis": "page_place",
-      "certainty": "stated"
-     },
-     "duration_ms": 6400,
      "audio": null
     }
    ]
@@ -454,6 +413,92 @@
      },
      "duration_ms": 4000,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "raforker:ch:family-05",
+   "title": "The McBrearty family",
+   "beats": [
+    {
+     "id": "raforker:beat:familyhead:05",
+     "kind": "familyhead",
+     "chapter": "raforker:ch:family-05",
+     "time": {
+      "label": "The McBrearty family",
+      "iso": "1873",
+      "sort": "1873-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "raforker",
+      "name": "Raforker",
+      "logainm_id": "14039",
+      "lat": 54.647635,
+      "lon": -8.105515,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "raforker:familypresence:05"
+     },
+     "caption": "The McBrearty family appear in the records in 1873.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "raforker:familypresence:05"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "raforker:family:05",
+      "label": "McBrearty",
+      "run": false
+     }
+    },
+    {
+     "id": "raforker:beat:baptism:1873-12-06-TAW-B-p009-r86",
+     "kind": "baptism",
+     "chapter": "raforker:ch:family-05",
+     "time": {
+      "label": "6 December 1873",
+      "iso": "1873-12-06",
+      "sort": "1873-12-06",
+      "approximate": false
+     },
+     "place": {
+      "townland": "raforker",
+      "name": "Raforker",
+      "logainm_id": "14039",
+      "lat": 54.647635,
+      "lon": -8.105515,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "raforker:baptism:TAW-B-p009-r86"
+     },
+     "caption": "James McBrearty was baptised on 6 December 1873. Patrick McBrearty and Mary Gillespie were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "raforker:baptism:TAW-B-p009-r86"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "raforker:family:05",
+      "label": "McBrearty",
+      "run": false
+     }
     }
    ]
   },

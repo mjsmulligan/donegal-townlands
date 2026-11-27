@@ -327,6 +327,48 @@ def register_beat(ev, place, names=()):
                 basis=ev['association']['basis'], events=[ev['id']], media=[COVER_FILE])
 
 
+def parent_name(e):
+    """The parent a baptism names for its family: the father, else the mother when no father is recorded."""
+    for role in ('father', 'mother'):
+        who = next((p['name'] for p in e['people'] if p['role'] == role), '')
+        if who:
+            return who
+    return ''
+
+
+def register_families(threads, baps, labels, slug):
+    """A family is a surname, and the parish register is one of the records. A baptism whose father's surname
+    is no family yet makes one, and every baptism widens where its family appears. Returns how many families
+    the register added. Only for families told by the records alone: the user's own family beats are left as
+    they wrote them."""
+    by_key = {}
+    for t in threads:
+        for k in t.get('spellings', ()):
+            by_key.setdefault(k, t)
+    years, added, nxt = {}, 0, 1 + max([int(t['id'].rsplit(':', 1)[1]) for t in threads] or [0])
+    for e in baps:
+        father = parent_name(e)
+        if not father:
+            continue
+        sur = father.split()[-1]
+        k = vr_key(sur)
+        t = by_key.get(k)
+        if t is None:
+            label = labels(sur) if labels else sur.title()
+            spell = labels.spellings_of(label) if labels else {k}
+            t = sf.register_thread(slug, nxt, label, spell | {k}, [int(e['sort'][:4])])
+            nxt += 1
+            added += 1
+            threads.append(t)
+            for kk in t['spellings']:
+                by_key.setdefault(kk, t)
+        years.setdefault(t['id'], []).append(int(e['sort'][:4]))
+    for t in threads:
+        if t['id'] in years:
+            sf.add_register_years(t, years[t['id']])
+    return added
+
+
 def family_head_beat(t, place):
     """The header slide of a family: where it appears in the records, from first to last."""
     pe = t['presence']
@@ -530,6 +572,12 @@ def generate(display, slug, place_record, events, by_event=None, header=None, to
     for t in threads:
         t['key'] = 'family-' + t['id'].rsplit(':', 1)[1]
     parish, barony = place_names(place_record)
+    if threads and all(x.get('auto') for x in threads):
+        added = register_families(threads, [e for e in events if e['type'] == 'baptism'], nm.get('labels'), slug)
+        for x in threads:
+            x.setdefault('key', 'family-' + x['id'].rsplit(':', 1)[1])
+        if added:
+            nm = dict(nm, families=nm.get('families', 0) + added)
     beats = [title_beat(display, place_record.get('name_ga', ''), events, place, header,
                         later['date']['label'] if later else '', nm.get('families', 0), parish, barony)]
     tbeats = {}
@@ -561,7 +609,7 @@ def generate(display, slug, place_record, events, by_event=None, header=None, to
         # a baptism joins the thread of the family named by the father's surname; the rest stay in the townland story
         left = []
         for e in baps:
-            father = next((p['name'] for p in e['people'] if p['role'] == 'father'), '')
+            father = parent_name(e) if all(x.get('auto') for x in threads) else next((p['name'] for p in e['people'] if p['role'] == 'father'), '')
             home = next((t for t in threads if t['id'] in tbeats and father and
                          vr_key(father.split()[-1]) in set(t.get('spellings', ()))), None)
             if home:
@@ -779,9 +827,22 @@ def family_inputs(base, name, today=None, display=None):
             'register': reg}
 
 
+def threads_with_register(name, today=None):
+    """The case's family threads as the build makes them: from the records, then the register's families.
+    Returns (threads, how many families the register added)."""
+    base = ROOT / 'townlands' / name
+    found = sf.threads(base, name)
+    added = 0
+    if found and all(x.get('auto') for x in found):
+        baps = [e for e in bt.events_for(name, today or datetime.date.today())['events'] if e['type'] == 'baptism']
+        added = register_families(found, baps, sf.names(base)['labels'], name)
+    return found, added
+
+
 def thread_events(name, today=None, display=None):
     reg = sf.register_event(name, today or datetime.date.today(), display or name.title())
-    return [e for t in sf.threads(ROOT / 'townlands' / name, name) for e in t['events'] + ([t['presence']] if t.get('presence') else [])] + ([reg] if reg else [])
+    found, _ = threads_with_register(name, today)
+    return [e for t in found for e in t['events'] + ([t['presence']] if t.get('presence') else [])] + ([reg] if reg else [])
 
 
 def census_files_by_year(rows):
@@ -923,7 +984,7 @@ def check_repo(today=None):
         try:
             doc = json.loads(path.read_text(encoding='utf-8'))
             events = bt.events_for(name, today)['events'] + thread_events(name, today)
-            families = sf.names(ROOT / 'townlands' / name)['families']
+            families = sf.names(ROOT / 'townlands' / name)['families'] + threads_with_register(name, today)[1]
         except (ValueError, OSError) as e:
             problems.append(f'{name}: story.json cannot be checked: {e}')
             continue

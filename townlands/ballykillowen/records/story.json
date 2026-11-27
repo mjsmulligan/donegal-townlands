@@ -167,7 +167,7 @@
      "time": {
       "label": "The families of Ballykillowen",
       "iso": "1875-05-02",
-      "sort": "1875-05-02",
+      "sort": "1875-01-01",
       "approximate": true
      },
      "place": {
@@ -208,6 +208,46 @@
    "title": "The McGirr family",
    "beats": [
     {
+     "id": "ballykillowen:beat:familyhead:13",
+     "kind": "familyhead",
+     "chapter": "ballykillowen:ch:family-13",
+     "time": {
+      "label": "The McGirr family",
+      "iso": "1875",
+      "sort": "1875-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ballykillowen",
+      "name": "Ballykillowen",
+      "logainm_id": "14133",
+      "lat": 54.636841,
+      "lon": -8.023426,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ballykillowen:familypresence:13"
+     },
+     "caption": "The McGirr family appear in the records from 1875 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ballykillowen:familypresence:13"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ballykillowen:family:13",
+      "label": "McGirr",
+      "run": true
+     }
+    },
+    {
      "id": "ballykillowen:beat:baptism:1875-05-02-TAW-B-p016-r207",
      "kind": "baptism",
      "chapter": "ballykillowen:ch:family-13",
@@ -240,46 +280,6 @@
       "certainty": "stated"
      },
      "duration_ms": 6400,
-     "audio": null,
-     "thread": {
-      "id": "ballykillowen:family:13",
-      "label": "McGirr",
-      "run": true
-     }
-    },
-    {
-     "id": "ballykillowen:beat:familyhead:13",
-     "kind": "familyhead",
-     "chapter": "ballykillowen:ch:family-13",
-     "time": {
-      "label": "The McGirr family",
-      "iso": "1901",
-      "sort": "1901-01-01",
-      "approximate": true
-     },
-     "place": {
-      "townland": "ballykillowen",
-      "name": "Ballykillowen",
-      "logainm_id": "14133",
-      "lat": 54.636841,
-      "lon": -8.023426,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "ballykillowen:familypresence:13"
-     },
-     "caption": "The McGirr family appear in the records from 1901 to 1926.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "ballykillowen:familypresence:13"
-      ],
-      "basis": "census_surname",
-      "certainty": "accepted"
-     },
-     "duration_ms": 4400,
      "audio": null,
      "thread": {
       "id": "ballykillowen:family:13",

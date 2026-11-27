@@ -167,7 +167,7 @@
      "time": {
       "label": "The families of Ardinawark",
       "iso": "1874-01-06",
-      "sort": "1874-12-06",
+      "sort": "1874-01-01",
       "approximate": true
      },
      "place": {
@@ -207,6 +207,46 @@
    "id": "ardinawark:ch:family-01",
    "title": "The Boyle family",
    "beats": [
+    {
+     "id": "ardinawark:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "ardinawark:ch:family-01",
+     "time": {
+      "label": "The Boyle family",
+      "iso": "1874",
+      "sort": "1874-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardinawark",
+      "name": "Ardinawark",
+      "logainm_id": "14237",
+      "lat": 54.705926,
+      "lon": -7.983339,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardinawark:familypresence:01"
+     },
+     "caption": "The Boyle family appear in the records from 1874 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardinawark:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ardinawark:family:01",
+      "label": "Boyle",
+      "run": true
+     }
+    },
     {
      "id": "ardinawark:beat:baptism:1874-12-06-TAW-B-p013-r167",
      "kind": "baptism",
@@ -280,46 +320,6 @@
       "certainty": "stated"
      },
      "duration_ms": 6400,
-     "audio": null,
-     "thread": {
-      "id": "ardinawark:family:01",
-      "label": "Boyle",
-      "run": true
-     }
-    },
-    {
-     "id": "ardinawark:beat:familyhead:01",
-     "kind": "familyhead",
-     "chapter": "ardinawark:ch:family-01",
-     "time": {
-      "label": "The Boyle family",
-      "iso": "1901",
-      "sort": "1901-01-01",
-      "approximate": true
-     },
-     "place": {
-      "townland": "ardinawark",
-      "name": "Ardinawark",
-      "logainm_id": "14237",
-      "lat": 54.705926,
-      "lon": -7.983339,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "ardinawark:familypresence:01"
-     },
-     "caption": "The Boyle family appear in the records from 1901 to 1926.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "ardinawark:familypresence:01"
-      ],
-      "basis": "census_surname",
-      "certainty": "accepted"
-     },
-     "duration_ms": 4400,
      "audio": null,
      "thread": {
       "id": "ardinawark:family:01",
@@ -454,6 +454,46 @@
    "title": "The Callaghan family",
    "beats": [
     {
+     "id": "ardinawark:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "ardinawark:ch:family-02",
+     "time": {
+      "label": "The Callaghan family",
+      "iso": "1875",
+      "sort": "1875-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardinawark",
+      "name": "Ardinawark",
+      "logainm_id": "14237",
+      "lat": 54.705926,
+      "lon": -7.983339,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardinawark:familypresence:02"
+     },
+     "caption": "The Callaghan family appear in the records from 1875 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardinawark:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ardinawark:family:02",
+      "label": "Callaghan",
+      "run": true
+     }
+    },
+    {
      "id": "ardinawark:beat:baptism:1875-02-14-TAW-B-p015-r189",
      "kind": "baptism",
      "chapter": "ardinawark:ch:family-02",
@@ -486,46 +526,6 @@
       "certainty": "stated"
      },
      "duration_ms": 6400,
-     "audio": null,
-     "thread": {
-      "id": "ardinawark:family:02",
-      "label": "Callaghan",
-      "run": true
-     }
-    },
-    {
-     "id": "ardinawark:beat:familyhead:02",
-     "kind": "familyhead",
-     "chapter": "ardinawark:ch:family-02",
-     "time": {
-      "label": "The Callaghan family",
-      "iso": "1901",
-      "sort": "1901-01-01",
-      "approximate": true
-     },
-     "place": {
-      "townland": "ardinawark",
-      "name": "Ardinawark",
-      "logainm_id": "14237",
-      "lat": 54.705926,
-      "lon": -7.983339,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "ardinawark:familypresence:02"
-     },
-     "caption": "The Callaghan family appear in the records from 1901 to 1926.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "ardinawark:familypresence:02"
-      ],
-      "basis": "census_surname",
-      "certainty": "accepted"
-     },
-     "duration_ms": 4400,
      "audio": null,
      "thread": {
       "id": "ardinawark:family:02",
@@ -701,6 +701,46 @@
    "title": "The McGinty family",
    "beats": [
     {
+     "id": "ardinawark:beat:familyhead:07",
+     "kind": "familyhead",
+     "chapter": "ardinawark:ch:family-07",
+     "time": {
+      "label": "The McGinty family",
+      "iso": "1874",
+      "sort": "1874-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardinawark",
+      "name": "Ardinawark",
+      "logainm_id": "14237",
+      "lat": 54.705926,
+      "lon": -7.983339,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardinawark:familypresence:07"
+     },
+     "caption": "The McGinty family appear in the records from 1874 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardinawark:familypresence:07"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ardinawark:family:07",
+      "label": "McGinty",
+      "run": false
+     }
+    },
+    {
      "id": "ardinawark:beat:baptism:1874-01-06-TAW-B-p009-r97",
      "kind": "baptism",
      "chapter": "ardinawark:ch:family-07",
@@ -733,46 +773,6 @@
       "certainty": "stated"
      },
      "duration_ms": 6400,
-     "audio": null,
-     "thread": {
-      "id": "ardinawark:family:07",
-      "label": "McGinty",
-      "run": false
-     }
-    },
-    {
-     "id": "ardinawark:beat:familyhead:07",
-     "kind": "familyhead",
-     "chapter": "ardinawark:ch:family-07",
-     "time": {
-      "label": "The McGinty family",
-      "iso": "1901",
-      "sort": "1901-01-01",
-      "approximate": true
-     },
-     "place": {
-      "townland": "ardinawark",
-      "name": "Ardinawark",
-      "logainm_id": "14237",
-      "lat": 54.705926,
-      "lon": -7.983339,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "ardinawark:familypresence:07"
-     },
-     "caption": "The McGinty family appear in the records from 1901 to 1926.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "ardinawark:familypresence:07"
-      ],
-      "basis": "census_surname",
-      "certainty": "accepted"
-     },
-     "duration_ms": 4400,
      "audio": null,
      "thread": {
       "id": "ardinawark:family:07",

@@ -35,7 +35,7 @@
       "stage": "map",
       "open_card": ""
      },
-     "caption": "Clogher, in Irish An Clochar, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Clogher and its 32 families, from the 1850s to 1926.",
+     "caption": "Clogher, in Irish An Clochar, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Clogher and its 33 families, from the 1850s to 1926.",
      "people": [],
      "media": [
       "clogher-landscape.jpg"
@@ -133,47 +133,6 @@
       "certainty": "stated"
      },
      "duration_ms": 11000,
-     "audio": null
-    }
-   ]
-  },
-  {
-   "id": "clogher:ch:baptisms",
-   "title": "Baptisms, 1874",
-   "beats": [
-    {
-     "id": "clogher:beat:baptism:1874-02-15-TAW-B-p010-r107",
-     "kind": "baptism",
-     "chapter": "clogher:ch:baptisms",
-     "time": {
-      "label": "15 February 1874",
-      "iso": "1874-02-15",
-      "sort": "1874-02-15",
-      "approximate": false
-     },
-     "place": {
-      "townland": "clogher",
-      "name": "Clogher",
-      "logainm_id": "13964",
-      "lat": 54.677864,
-      "lon": -7.976911,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "clogher:baptism:TAW-B-p010-r107"
-     },
-     "caption": "John Flanaghan was baptised on 15 February 1874. Michael Flanaghan and Margaret Breen were the parents.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "clogher:baptism:TAW-B-p010-r107"
-      ],
-      "basis": "page_place",
-      "certainty": "stated"
-     },
-     "duration_ms": 6400,
      "audio": null
     }
    ]
@@ -2231,9 +2190,135 @@
    ]
   },
   {
+   "id": "clogher:ch:family-33",
+   "title": "The Flanaghan family",
+   "beats": [
+    {
+     "id": "clogher:beat:familyhead:33",
+     "kind": "familyhead",
+     "chapter": "clogher:ch:family-33",
+     "time": {
+      "label": "The Flanaghan family",
+      "iso": "1874",
+      "sort": "1874-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familypresence:33"
+     },
+     "caption": "The Flanaghan family appear in the records in 1874.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familypresence:33"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:33",
+      "label": "Flanaghan",
+      "run": false
+     }
+    },
+    {
+     "id": "clogher:beat:baptism:1874-02-15-TAW-B-p010-r107",
+     "kind": "baptism",
+     "chapter": "clogher:ch:family-33",
+     "time": {
+      "label": "15 February 1874",
+      "iso": "1874-02-15",
+      "sort": "1874-02-15",
+      "approximate": false
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:baptism:TAW-B-p010-r107"
+     },
+     "caption": "John Flanaghan was baptised on 15 February 1874. Michael Flanaghan and Margaret Breen were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:baptism:TAW-B-p010-r107"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:33",
+      "label": "Flanaghan",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
    "id": "clogher:ch:family-06",
    "title": "The Doogan family",
    "beats": [
+    {
+     "id": "clogher:beat:familyhead:06",
+     "kind": "familyhead",
+     "chapter": "clogher:ch:family-06",
+     "time": {
+      "label": "The Doogan family",
+      "iso": "1875",
+      "sort": "1875-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familypresence:06"
+     },
+     "caption": "The Doogan family appear in the records from 1875 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familypresence:06"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:06",
+      "label": "Doogan",
+      "run": false
+     }
+    },
     {
      "id": "clogher:beat:baptism:1875-07-06-TAW-B-p018-r229",
      "kind": "baptism",
@@ -2267,46 +2352,6 @@
       "certainty": "stated"
      },
      "duration_ms": 6400,
-     "audio": null,
-     "thread": {
-      "id": "clogher:family:06",
-      "label": "Doogan",
-      "run": false
-     }
-    },
-    {
-     "id": "clogher:beat:familyhead:06",
-     "kind": "familyhead",
-     "chapter": "clogher:ch:family-06",
-     "time": {
-      "label": "The Doogan family",
-      "iso": "1901",
-      "sort": "1901-01-01",
-      "approximate": true
-     },
-     "place": {
-      "townland": "clogher",
-      "name": "Clogher",
-      "logainm_id": "13964",
-      "lat": 54.677864,
-      "lon": -7.976911,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "clogher:familypresence:06"
-     },
-     "caption": "The Doogan family appear in the records from 1901 to 1911.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "clogher:familypresence:06"
-      ],
-      "basis": "census_surname",
-      "certainty": "accepted"
-     },
-     "duration_ms": 4400,
      "audio": null,
      "thread": {
       "id": "clogher:family:06",
@@ -2401,6 +2446,46 @@
    "title": "The O Donnell family",
    "beats": [
     {
+     "id": "clogher:beat:familyhead:29",
+     "kind": "familyhead",
+     "chapter": "clogher:ch:family-29",
+     "time": {
+      "label": "The O Donnell family",
+      "iso": "1875",
+      "sort": "1875-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clogher",
+      "name": "Clogher",
+      "logainm_id": "13964",
+      "lat": 54.677864,
+      "lon": -7.976911,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clogher:familypresence:29"
+     },
+     "caption": "The O Donnell family appear in the records from 1875 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clogher:familypresence:29"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4800,
+     "audio": null,
+     "thread": {
+      "id": "clogher:family:29",
+      "label": "O Donnell",
+      "run": false
+     }
+    },
+    {
      "id": "clogher:beat:baptism:1875-07-30-TAW-B-p018-r231",
      "kind": "baptism",
      "chapter": "clogher:ch:family-29",
@@ -2433,46 +2518,6 @@
       "certainty": "stated"
      },
      "duration_ms": 6400,
-     "audio": null,
-     "thread": {
-      "id": "clogher:family:29",
-      "label": "O Donnell",
-      "run": false
-     }
-    },
-    {
-     "id": "clogher:beat:familyhead:29",
-     "kind": "familyhead",
-     "chapter": "clogher:ch:family-29",
-     "time": {
-      "label": "The O Donnell family",
-      "iso": "1901",
-      "sort": "1901-01-01",
-      "approximate": true
-     },
-     "place": {
-      "townland": "clogher",
-      "name": "Clogher",
-      "logainm_id": "13964",
-      "lat": 54.677864,
-      "lon": -7.976911,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "clogher:familypresence:29"
-     },
-     "caption": "The O Donnell family appear in the records from 1901 to 1911.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "clogher:familypresence:29"
-      ],
-      "basis": "census_surname",
-      "certainty": "accepted"
-     },
-     "duration_ms": 4800,
      "audio": null,
      "thread": {
       "id": "clogher:family:29",

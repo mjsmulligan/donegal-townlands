@@ -167,7 +167,7 @@
      "time": {
       "label": "The families of Leghawny",
       "iso": "1874-09-26",
-      "sort": "1874-09-26",
+      "sort": "1874-01-01",
       "approximate": true
      },
      "place": {
@@ -208,6 +208,46 @@
    "title": "The Cassidy family",
    "beats": [
     {
+     "id": "leghawny:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "leghawny:ch:family-02",
+     "time": {
+      "label": "The Cassidy family",
+      "iso": "1874",
+      "sort": "1874-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "leghawny",
+      "name": "Leghawny",
+      "logainm_id": "14281",
+      "lat": 54.662561,
+      "lon": -8.007576,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "leghawny:familypresence:02"
+     },
+     "caption": "The Cassidy family appear in the records from 1874 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "leghawny:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "leghawny:family:02",
+      "label": "Cassidy",
+      "run": true
+     }
+    },
+    {
      "id": "leghawny:beat:baptism:1874-09-26-TAW-B-p012-r151",
      "kind": "baptism",
      "chapter": "leghawny:ch:family-02",
@@ -240,46 +280,6 @@
       "certainty": "stated"
      },
      "duration_ms": 6400,
-     "audio": null,
-     "thread": {
-      "id": "leghawny:family:02",
-      "label": "Cassidy",
-      "run": true
-     }
-    },
-    {
-     "id": "leghawny:beat:familyhead:02",
-     "kind": "familyhead",
-     "chapter": "leghawny:ch:family-02",
-     "time": {
-      "label": "The Cassidy family",
-      "iso": "1901",
-      "sort": "1901-01-01",
-      "approximate": true
-     },
-     "place": {
-      "townland": "leghawny",
-      "name": "Leghawny",
-      "logainm_id": "14281",
-      "lat": 54.662561,
-      "lon": -8.007576,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "leghawny:familypresence:02"
-     },
-     "caption": "The Cassidy family appear in the records from 1901 to 1926.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "leghawny:familypresence:02"
-      ],
-      "basis": "census_surname",
-      "certainty": "accepted"
-     },
-     "duration_ms": 4400,
      "audio": null,
      "thread": {
       "id": "leghawny:family:02",
@@ -414,6 +414,46 @@
    "title": "The Murphy family",
    "beats": [
     {
+     "id": "leghawny:beat:familyhead:11",
+     "kind": "familyhead",
+     "chapter": "leghawny:ch:family-11",
+     "time": {
+      "label": "The Murphy family",
+      "iso": "1875",
+      "sort": "1875-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "leghawny",
+      "name": "Leghawny",
+      "logainm_id": "14281",
+      "lat": 54.662561,
+      "lon": -8.007576,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "leghawny:familypresence:11"
+     },
+     "caption": "The Murphy family appear in the records from 1875 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "leghawny:familypresence:11"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "leghawny:family:11",
+      "label": "Murphy",
+      "run": true
+     }
+    },
+    {
      "id": "leghawny:beat:baptism:1875-01-13-TAW-B-p014-r174",
      "kind": "baptism",
      "chapter": "leghawny:ch:family-11",
@@ -446,46 +486,6 @@
       "certainty": "stated"
      },
      "duration_ms": 6400,
-     "audio": null,
-     "thread": {
-      "id": "leghawny:family:11",
-      "label": "Murphy",
-      "run": true
-     }
-    },
-    {
-     "id": "leghawny:beat:familyhead:11",
-     "kind": "familyhead",
-     "chapter": "leghawny:ch:family-11",
-     "time": {
-      "label": "The Murphy family",
-      "iso": "1901",
-      "sort": "1901-01-01",
-      "approximate": true
-     },
-     "place": {
-      "townland": "leghawny",
-      "name": "Leghawny",
-      "logainm_id": "14281",
-      "lat": 54.662561,
-      "lon": -8.007576,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "leghawny:familypresence:11"
-     },
-     "caption": "The Murphy family appear in the records from 1901 to 1926.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "leghawny:familypresence:11"
-      ],
-      "basis": "census_surname",
-      "certainty": "accepted"
-     },
-     "duration_ms": 4400,
      "audio": null,
      "thread": {
       "id": "leghawny:family:11",
@@ -661,6 +661,46 @@
    "title": "The Devlin family",
    "beats": [
     {
+     "id": "leghawny:beat:familyhead:04",
+     "kind": "familyhead",
+     "chapter": "leghawny:ch:family-04",
+     "time": {
+      "label": "The Devlin family",
+      "iso": "1875",
+      "sort": "1875-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "leghawny",
+      "name": "Leghawny",
+      "logainm_id": "14281",
+      "lat": 54.662561,
+      "lon": -8.007576,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "leghawny:familypresence:04"
+     },
+     "caption": "The Devlin family appear in the records from 1875 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "leghawny:familypresence:04"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "leghawny:family:04",
+      "label": "Devlin",
+      "run": false
+     }
+    },
+    {
      "id": "leghawny:beat:baptism:1875-01-13-TAW-B-p014-r175",
      "kind": "baptism",
      "chapter": "leghawny:ch:family-04",
@@ -693,46 +733,6 @@
       "certainty": "stated"
      },
      "duration_ms": 6400,
-     "audio": null,
-     "thread": {
-      "id": "leghawny:family:04",
-      "label": "Devlin",
-      "run": false
-     }
-    },
-    {
-     "id": "leghawny:beat:familyhead:04",
-     "kind": "familyhead",
-     "chapter": "leghawny:ch:family-04",
-     "time": {
-      "label": "The Devlin family",
-      "iso": "1901",
-      "sort": "1901-01-01",
-      "approximate": true
-     },
-     "place": {
-      "townland": "leghawny",
-      "name": "Leghawny",
-      "logainm_id": "14281",
-      "lat": 54.662561,
-      "lon": -8.007576,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "leghawny:familypresence:04"
-     },
-     "caption": "The Devlin family appear in the records from 1901 to 1926.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "leghawny:familypresence:04"
-      ],
-      "basis": "census_surname",
-      "certainty": "accepted"
-     },
-     "duration_ms": 4400,
      "audio": null,
      "thread": {
       "id": "leghawny:family:04",

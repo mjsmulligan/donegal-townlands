@@ -541,6 +541,46 @@
    "title": "The Lawn family",
    "beats": [
     {
+     "id": "drumadoney:beat:familyhead:06",
+     "kind": "familyhead",
+     "chapter": "drumadoney:ch:family-06",
+     "time": {
+      "label": "The Lawn family",
+      "iso": "1874",
+      "sort": "1874-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumadoney",
+      "name": "Drumadoney",
+      "logainm_id": "14273",
+      "lat": 54.658955,
+      "lon": -8.036524,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumadoney:familypresence:06"
+     },
+     "caption": "The Lawn family appear in the records from 1874 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumadoney:familypresence:06"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drumadoney:family:06",
+      "label": "Lawn",
+      "run": false
+     }
+    },
+    {
      "id": "drumadoney:beat:baptism:1874-10-25-TAW-B-p013-r160",
      "kind": "baptism",
      "chapter": "drumadoney:ch:family-06",
@@ -573,46 +613,6 @@
       "certainty": "stated"
      },
      "duration_ms": 6800,
-     "audio": null,
-     "thread": {
-      "id": "drumadoney:family:06",
-      "label": "Lawn",
-      "run": false
-     }
-    },
-    {
-     "id": "drumadoney:beat:familyhead:06",
-     "kind": "familyhead",
-     "chapter": "drumadoney:ch:family-06",
-     "time": {
-      "label": "The Lawn family",
-      "iso": "1901",
-      "sort": "1901-01-01",
-      "approximate": true
-     },
-     "place": {
-      "townland": "drumadoney",
-      "name": "Drumadoney",
-      "logainm_id": "14273",
-      "lat": 54.658955,
-      "lon": -8.036524,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "drumadoney:familypresence:06"
-     },
-     "caption": "The Lawn family appear in the records from 1901 to 1911.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "drumadoney:familypresence:06"
-      ],
-      "basis": "census_surname",
-      "certainty": "accepted"
-     },
-     "duration_ms": 4400,
      "audio": null,
      "thread": {
       "id": "drumadoney:family:06",
@@ -706,6 +706,46 @@
    "id": "drumadoney:ch:family-07",
    "title": "The Murphy family",
    "beats": [
+    {
+     "id": "drumadoney:beat:familyhead:07",
+     "kind": "familyhead",
+     "chapter": "drumadoney:ch:family-07",
+     "time": {
+      "label": "The Murphy family",
+      "iso": "1875",
+      "sort": "1875-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumadoney",
+      "name": "Drumadoney",
+      "logainm_id": "14273",
+      "lat": 54.658955,
+      "lon": -8.036524,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumadoney:familypresence:07"
+     },
+     "caption": "The Murphy family appear in the records from 1875 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumadoney:familypresence:07"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drumadoney:family:07",
+      "label": "Murphy",
+      "run": false
+     }
+    },
     {
      "id": "drumadoney:beat:baptism:1875-01-31-TAW-B-p015-r184",
      "kind": "baptism",
@@ -819,46 +859,6 @@
       "certainty": "stated"
      },
      "duration_ms": 6400,
-     "audio": null,
-     "thread": {
-      "id": "drumadoney:family:07",
-      "label": "Murphy",
-      "run": false
-     }
-    },
-    {
-     "id": "drumadoney:beat:familyhead:07",
-     "kind": "familyhead",
-     "chapter": "drumadoney:ch:family-07",
-     "time": {
-      "label": "The Murphy family",
-      "iso": "1901",
-      "sort": "1901-01-01",
-      "approximate": true
-     },
-     "place": {
-      "townland": "drumadoney",
-      "name": "Drumadoney",
-      "logainm_id": "14273",
-      "lat": 54.658955,
-      "lon": -8.036524,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "drumadoney:familypresence:07"
-     },
-     "caption": "The Murphy family appear in the records from 1901 to 1911.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "drumadoney:familypresence:07"
-      ],
-      "basis": "census_surname",
-      "certainty": "accepted"
-     },
-     "duration_ms": 4400,
      "audio": null,
      "thread": {
       "id": "drumadoney:family:07",

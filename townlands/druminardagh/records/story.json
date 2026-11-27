@@ -35,7 +35,7 @@
       "stage": "map",
       "open_card": ""
      },
-     "caption": "Druminardagh, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Druminardagh and its twelve families, from 1874 to 1926.",
+     "caption": "Druminardagh, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Druminardagh and its thirteen families, from 1874 to 1926.",
      "people": [],
      "media": [],
      "evidence": {
@@ -90,47 +90,6 @@
       "certainty": "stated"
      },
      "duration_ms": 10200,
-     "audio": null
-    }
-   ]
-  },
-  {
-   "id": "druminardagh:ch:baptisms",
-   "title": "Baptisms, 1874",
-   "beats": [
-    {
-     "id": "druminardagh:beat:baptism:1874-07-19-TAW-B-p011-r138",
-     "kind": "baptism",
-     "chapter": "druminardagh:ch:baptisms",
-     "time": {
-      "label": "19 July 1874",
-      "iso": "1874-07-19",
-      "sort": "1874-07-19",
-      "approximate": false
-     },
-     "place": {
-      "townland": "druminardagh",
-      "name": "Druminardagh",
-      "logainm_id": "14275",
-      "lat": 54.644538,
-      "lon": -8.024656,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "druminardagh:baptism:TAW-B-p011-r138"
-     },
-     "caption": "Thomas McGinty was baptised on 19 July 1874. John McGinty and Anne Furey were the parents.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "druminardagh:baptism:TAW-B-p011-r138"
-      ],
-      "basis": "page_place",
-      "certainty": "stated"
-     },
-     "duration_ms": 6400,
      "audio": null
     }
    ]
@@ -622,6 +581,46 @@
    "title": "The McGlinchey family",
    "beats": [
     {
+     "id": "druminardagh:beat:familyhead:09",
+     "kind": "familyhead",
+     "chapter": "druminardagh:ch:family-09",
+     "time": {
+      "label": "The McGlinchey family",
+      "iso": "1874",
+      "sort": "1874-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminardagh",
+      "name": "Druminardagh",
+      "logainm_id": "14275",
+      "lat": 54.644538,
+      "lon": -8.024656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminardagh:familypresence:09"
+     },
+     "caption": "The McGlinchey family appear in the records from 1874 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminardagh:familypresence:09"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "druminardagh:family:09",
+      "label": "McGlinchey",
+      "run": false
+     }
+    },
+    {
      "id": "druminardagh:beat:baptism:1874-07-19-TAW-B-p012-r145",
      "kind": "baptism",
      "chapter": "druminardagh:ch:family-09",
@@ -654,46 +653,6 @@
       "certainty": "possible"
      },
      "duration_ms": 8800,
-     "audio": null,
-     "thread": {
-      "id": "druminardagh:family:09",
-      "label": "McGlinchey",
-      "run": false
-     }
-    },
-    {
-     "id": "druminardagh:beat:familyhead:09",
-     "kind": "familyhead",
-     "chapter": "druminardagh:ch:family-09",
-     "time": {
-      "label": "The McGlinchey family",
-      "iso": "1911",
-      "sort": "1911-01-01",
-      "approximate": true
-     },
-     "place": {
-      "townland": "druminardagh",
-      "name": "Druminardagh",
-      "logainm_id": "14275",
-      "lat": 54.644538,
-      "lon": -8.024656,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "druminardagh:familypresence:09"
-     },
-     "caption": "The McGlinchey family appear in the records from 1911 to 1926.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "druminardagh:familypresence:09"
-      ],
-      "basis": "census_surname",
-      "certainty": "accepted"
-     },
-     "duration_ms": 4400,
      "audio": null,
      "thread": {
       "id": "druminardagh:family:09",
@@ -778,6 +737,92 @@
      "thread": {
       "id": "druminardagh:family:09",
       "label": "McGlinchey",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "druminardagh:ch:family-13",
+   "title": "The McGinty family",
+   "beats": [
+    {
+     "id": "druminardagh:beat:familyhead:13",
+     "kind": "familyhead",
+     "chapter": "druminardagh:ch:family-13",
+     "time": {
+      "label": "The McGinty family",
+      "iso": "1874",
+      "sort": "1874-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminardagh",
+      "name": "Druminardagh",
+      "logainm_id": "14275",
+      "lat": 54.644538,
+      "lon": -8.024656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminardagh:familypresence:13"
+     },
+     "caption": "The McGinty family appear in the records in 1874.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminardagh:familypresence:13"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "druminardagh:family:13",
+      "label": "McGinty",
+      "run": false
+     }
+    },
+    {
+     "id": "druminardagh:beat:baptism:1874-07-19-TAW-B-p011-r138",
+     "kind": "baptism",
+     "chapter": "druminardagh:ch:family-13",
+     "time": {
+      "label": "19 July 1874",
+      "iso": "1874-07-19",
+      "sort": "1874-07-19",
+      "approximate": false
+     },
+     "place": {
+      "townland": "druminardagh",
+      "name": "Druminardagh",
+      "logainm_id": "14275",
+      "lat": 54.644538,
+      "lon": -8.024656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminardagh:baptism:TAW-B-p011-r138"
+     },
+     "caption": "Thomas McGinty was baptised on 19 July 1874. John McGinty and Anne Furey were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminardagh:baptism:TAW-B-p011-r138"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "druminardagh:family:13",
+      "label": "McGinty",
       "run": false
      }
     }
