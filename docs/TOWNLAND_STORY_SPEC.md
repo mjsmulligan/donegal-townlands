@@ -60,7 +60,9 @@ This applies to the story only. `docs/STORY_SPEC.md` and the family stories are 
 townlands/<name>/records/story.json     generated, never edited by hand
 tools/build_story.py                    the generator
 engine/story.html                       the player template
-docs/<name>/story.html                  build output, never edited by hand
+docs/story.html                         the one shared player, copied from engine/story.html
+docs/data/<name>.js                     one townland's story data, build output
+docs/<name>/story.html                  small redirect to docs/story.html?t=<name>, build output
 townlands/story_config.json             optional, repo wide (music, audio base address)
 townlands/<name>/story_extras.csv       reserved, optional later (section 3.5)
 ```

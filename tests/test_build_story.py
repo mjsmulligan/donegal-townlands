@@ -553,13 +553,13 @@ class CensusFormImageTests(unittest.TestCase):
     def test_the_page_lists_the_credit_of_images_it_uses_and_only_those(self):
         doc, _ = build(FULL, census_files={'1926': ['f1.png', 'f2.png']})
         page = bd.render_page(doc, {'rows': CENSUS_ROWS})
-        data = json.loads(page.split('var D=')[1].split(';\n')[0])
+        data = json.loads(page.split('window.STORY_DATA=')[1].split(';</script>')[0])
         self.assertEqual(list(data['credits']), ['nai1926'])
         self.assertIn('Creative Commons Attribution 4.0 International (CC BY 4.0) licence. Please see further',
                       data['credits']['nai1926']['text'])
         self.assertEqual(data['media']['f1.png']['focus'], '0.7,0.5')
         plain, _ = build(FULL)
-        data = json.loads(bd.render_page(plain, {'rows': CENSUS_ROWS}).split('var D=')[1].split(';\n')[0])
+        data = json.loads(bd.render_page(plain, {'rows': CENSUS_ROWS}).split('window.STORY_DATA=')[1].split(';</script>')[0])
         self.assertEqual(data['credits'], {})
 
     def test_census_files_are_grouped_by_year_in_page_order(self):
@@ -732,7 +732,7 @@ class FootnoteAndExploreTests(unittest.TestCase):
         page = bd.render_page(self.doc, {'rows': []}, events=self.events)
         self.assertIn('"sources":', page)
         self.assertIn('"explore":', page)
-        data = json.loads(page.split('var D=', 1)[1].split(';\n(function', 1)[0])
+        data = json.loads(page.split('window.STORY_DATA=', 1)[1].split(';</script>', 1)[0])
         self.assertEqual([f['label'] for f in data['explore']['families']], ['Gildea', 'Mullen and Monaghan'])
         self.assertEqual([s['label'] for s in data['explore']['sources']],
                          ['Estate records', "Griffith's Valuation", 'Census returns'])
@@ -1057,6 +1057,29 @@ class RegisterCoverTests(unittest.TestCase):
         for r in rows:
             data = (root / 'data/source/nli_parish/tawnawilly/images' / r['file']).read_bytes()
             self.assertEqual(hashlib.sha256(data).hexdigest(), r['sha256'])
+
+
+class SharedPlayerTests(unittest.TestCase):
+    """One player for every townland: docs/story.html is a copy of engine/story.html, each story is a data file."""
+
+    def test_published_player_is_the_engine_player(self):
+        self.assertEqual((bd.ROOT / 'docs' / 'story.html').read_bytes(), (bd.ROOT / 'engine' / 'story.html').read_bytes(),
+                         'docs/story.html is stale: run python tools/build_story.py --all')
+
+    def test_every_redirect_stub_has_its_data_file(self):
+        for stub in sorted((bd.ROOT / 'docs').glob('*/story.html')):
+            slug = stub.parent.name
+            self.assertIn('story.html?t=' + slug, stub.read_text(encoding='utf-8'))
+            self.assertTrue((bd.ROOT / 'docs' / 'data' / (slug + '.js')).is_file(), slug)
+
+    def test_data_file_is_data_only(self):
+        text = (bd.ROOT / 'docs' / 'data' / 'druminnin.js').read_text(encoding='utf-8')
+        self.assertTrue(text.startswith('window.STORY_DATA={'))
+        self.assertNotIn('<style', text)
+
+    def test_inline_page_still_works_for_previews(self):
+        page = bd.render_page({'townland': 'X', 'slug': 'x', 'chapters': []}, {'rows': []})
+        self.assertIn('window.STORY_DATA=', page)
 
 
 if __name__ == '__main__':

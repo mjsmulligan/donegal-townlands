@@ -98,7 +98,7 @@ class BuildTests(unittest.TestCase):
         story.write_text("<html></html>", encoding="utf-8")
         out = self.run_main()
         index = self.index()
-        self.assertIn('href="./alpha/story.html"', index)
+        self.assertIn('href="./story.html?t=alpha"', index)
         self.assertNotIn("./one/", index)
         self.assertIn("1 of 2 places have a story page", out)
 
