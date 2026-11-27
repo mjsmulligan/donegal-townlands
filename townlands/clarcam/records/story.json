@@ -577,97 +577,17 @@
    ]
   },
   {
-   "id": "clarcam:ch:family-12",
-   "title": "The McGinty family",
+   "id": "clarcam:ch:family-08",
+   "title": "The Kelly family",
    "beats": [
     {
-     "id": "clarcam:beat:baptism:1873-02-02-TAW-B-p005-r14",
-     "kind": "baptism",
-     "chapter": "clarcam:ch:family-12",
-     "time": {
-      "label": "2 February 1873",
-      "iso": "1873-02-02",
-      "sort": "1873-02-02",
-      "approximate": false
-     },
-     "place": {
-      "townland": "clarcam",
-      "name": "Clarcam",
-      "logainm_id": "13960",
-      "lat": 54.666169,
-      "lon": -8.054174,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "clarcam:baptism:TAW-B-p005-r14"
-     },
-     "caption": "Mary Anne McGinty was baptised on 2 February 1873. Edward McGinty and Mary O'Donnell were the parents.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "clarcam:baptism:TAW-B-p005-r14"
-      ],
-      "basis": "page_place",
-      "certainty": "stated"
-     },
-     "duration_ms": 6800,
-     "audio": null,
-     "thread": {
-      "id": "clarcam:family:12",
-      "label": "McGinty",
-      "run": false
-     }
-    },
-    {
-     "id": "clarcam:beat:baptism:1875-01-31-TAW-B-p015-r183",
-     "kind": "baptism",
-     "chapter": "clarcam:ch:family-12",
-     "time": {
-      "label": "31 January 1875",
-      "iso": "1875-01-31",
-      "sort": "1875-01-31",
-      "approximate": false
-     },
-     "place": {
-      "townland": "clarcam",
-      "name": "Clarcam",
-      "logainm_id": "13960",
-      "lat": 54.666169,
-      "lon": -8.054174,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "clarcam:baptism:TAW-B-p015-r183"
-     },
-     "caption": "Catherine McGinty was baptised on 31 January 1875. Edward McGinty and Mary O'Donnell were the parents.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "clarcam:baptism:TAW-B-p015-r183"
-      ],
-      "basis": "page_place",
-      "certainty": "stated"
-     },
-     "duration_ms": 6400,
-     "audio": null,
-     "thread": {
-      "id": "clarcam:family:12",
-      "label": "McGinty",
-      "run": false
-     }
-    },
-    {
-     "id": "clarcam:beat:familyhead:12",
+     "id": "clarcam:beat:familyhead:08",
      "kind": "familyhead",
-     "chapter": "clarcam:ch:family-12",
+     "chapter": "clarcam:ch:family-08",
      "time": {
-      "label": "The McGinty family",
-      "iso": "1901",
-      "sort": "1901-01-01",
+      "label": "The Kelly family",
+      "iso": "1873",
+      "sort": "1873-01-01",
       "approximate": true
      },
      "place": {
@@ -680,14 +600,14 @@
      },
      "scene": {
       "stage": "map",
-      "open_card": "clarcam:familypresence:12"
+      "open_card": "clarcam:familypresence:08"
      },
-     "caption": "The McGinty family appear in the records from 1901 to 1911.",
+     "caption": "The Kelly family appear in the records from 1873 to 1911.",
      "people": [],
      "media": [],
      "evidence": {
       "events": [
-       "clarcam:familypresence:12"
+       "clarcam:familypresence:08"
       ],
       "basis": "census_surname",
       "certainty": "accepted"
@@ -695,97 +615,11 @@
      "duration_ms": 4400,
      "audio": null,
      "thread": {
-      "id": "clarcam:family:12",
-      "label": "McGinty",
+      "id": "clarcam:family:08",
+      "label": "Kelly",
       "run": false
      }
     },
-    {
-     "id": "clarcam:beat:familycensus:12-1901",
-     "kind": "familycensus",
-     "chapter": "clarcam:ch:family-12",
-     "time": {
-      "label": "1901",
-      "iso": "1901",
-      "sort": "1901-01-01",
-      "approximate": true
-     },
-     "place": {
-      "townland": "clarcam",
-      "name": "Clarcam",
-      "logainm_id": "13960",
-      "lat": 54.666169,
-      "lon": -8.054174,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "clarcam:familycensus:12:1901"
-     },
-     "caption": "Clarcam had one McGinty household in 1901, headed by James.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "clarcam:familycensus:12:1901"
-      ],
-      "basis": "census_surname",
-      "certainty": "accepted"
-     },
-     "duration_ms": 4000,
-     "audio": null,
-     "thread": {
-      "id": "clarcam:family:12",
-      "label": "McGinty",
-      "run": false
-     }
-    },
-    {
-     "id": "clarcam:beat:familycensus:12-1911",
-     "kind": "familycensus",
-     "chapter": "clarcam:ch:family-12",
-     "time": {
-      "label": "1911",
-      "iso": "1911",
-      "sort": "1911-01-01",
-      "approximate": true
-     },
-     "place": {
-      "townland": "clarcam",
-      "name": "Clarcam",
-      "logainm_id": "13960",
-      "lat": 54.666169,
-      "lon": -8.054174,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "clarcam:familycensus:12:1911"
-     },
-     "caption": "Clarcam had one McGinty household in 1911, headed by James.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "clarcam:familycensus:12:1911"
-      ],
-      "basis": "census_surname",
-      "certainty": "accepted"
-     },
-     "duration_ms": 4000,
-     "audio": null,
-     "thread": {
-      "id": "clarcam:family:12",
-      "label": "McGinty",
-      "run": false
-     }
-    }
-   ]
-  },
-  {
-   "id": "clarcam:ch:family-08",
-   "title": "The Kelly family",
-   "beats": [
     {
      "id": "clarcam:beat:baptism:1873-02-04-TAW-B-p005-r16",
      "kind": "baptism",
@@ -859,46 +693,6 @@
       "certainty": "stated"
      },
      "duration_ms": 6400,
-     "audio": null,
-     "thread": {
-      "id": "clarcam:family:08",
-      "label": "Kelly",
-      "run": false
-     }
-    },
-    {
-     "id": "clarcam:beat:familyhead:08",
-     "kind": "familyhead",
-     "chapter": "clarcam:ch:family-08",
-     "time": {
-      "label": "The Kelly family",
-      "iso": "1901",
-      "sort": "1901-01-01",
-      "approximate": true
-     },
-     "place": {
-      "townland": "clarcam",
-      "name": "Clarcam",
-      "logainm_id": "13960",
-      "lat": 54.666169,
-      "lon": -8.054174,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "clarcam:familypresence:08"
-     },
-     "caption": "The Kelly family appear in the records from 1901 to 1911.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "clarcam:familypresence:08"
-      ],
-      "basis": "census_surname",
-      "certainty": "accepted"
-     },
-     "duration_ms": 4400,
      "audio": null,
      "thread": {
       "id": "clarcam:family:08",
@@ -983,6 +777,212 @@
      "thread": {
       "id": "clarcam:family:08",
       "label": "Kelly",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clarcam:ch:family-12",
+   "title": "The McGinty family",
+   "beats": [
+    {
+     "id": "clarcam:beat:familyhead:12",
+     "kind": "familyhead",
+     "chapter": "clarcam:ch:family-12",
+     "time": {
+      "label": "The McGinty family",
+      "iso": "1873",
+      "sort": "1873-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcam",
+      "name": "Clarcam",
+      "logainm_id": "13960",
+      "lat": 54.666169,
+      "lon": -8.054174,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcam:familypresence:12"
+     },
+     "caption": "The McGinty family appear in the records from 1873 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcam:familypresence:12"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "clarcam:family:12",
+      "label": "McGinty",
+      "run": false
+     }
+    },
+    {
+     "id": "clarcam:beat:baptism:1873-02-02-TAW-B-p005-r14",
+     "kind": "baptism",
+     "chapter": "clarcam:ch:family-12",
+     "time": {
+      "label": "2 February 1873",
+      "iso": "1873-02-02",
+      "sort": "1873-02-02",
+      "approximate": false
+     },
+     "place": {
+      "townland": "clarcam",
+      "name": "Clarcam",
+      "logainm_id": "13960",
+      "lat": 54.666169,
+      "lon": -8.054174,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcam:baptism:TAW-B-p005-r14"
+     },
+     "caption": "Mary Anne McGinty was baptised on 2 February 1873. Edward McGinty and Mary O'Donnell were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcam:baptism:TAW-B-p005-r14"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "thread": {
+      "id": "clarcam:family:12",
+      "label": "McGinty",
+      "run": false
+     }
+    },
+    {
+     "id": "clarcam:beat:baptism:1875-01-31-TAW-B-p015-r183",
+     "kind": "baptism",
+     "chapter": "clarcam:ch:family-12",
+     "time": {
+      "label": "31 January 1875",
+      "iso": "1875-01-31",
+      "sort": "1875-01-31",
+      "approximate": false
+     },
+     "place": {
+      "townland": "clarcam",
+      "name": "Clarcam",
+      "logainm_id": "13960",
+      "lat": 54.666169,
+      "lon": -8.054174,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcam:baptism:TAW-B-p015-r183"
+     },
+     "caption": "Catherine McGinty was baptised on 31 January 1875. Edward McGinty and Mary O'Donnell were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcam:baptism:TAW-B-p015-r183"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "clarcam:family:12",
+      "label": "McGinty",
+      "run": false
+     }
+    },
+    {
+     "id": "clarcam:beat:familycensus:12-1901",
+     "kind": "familycensus",
+     "chapter": "clarcam:ch:family-12",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcam",
+      "name": "Clarcam",
+      "logainm_id": "13960",
+      "lat": 54.666169,
+      "lon": -8.054174,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcam:familycensus:12:1901"
+     },
+     "caption": "Clarcam had one McGinty household in 1901, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcam:familycensus:12:1901"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarcam:family:12",
+      "label": "McGinty",
+      "run": false
+     }
+    },
+    {
+     "id": "clarcam:beat:familycensus:12-1911",
+     "kind": "familycensus",
+     "chapter": "clarcam:ch:family-12",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcam",
+      "name": "Clarcam",
+      "logainm_id": "13960",
+      "lat": 54.666169,
+      "lon": -8.054174,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcam:familycensus:12:1911"
+     },
+     "caption": "Clarcam had one McGinty household in 1911, headed by James.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcam:familycensus:12:1911"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarcam:family:12",
+      "label": "McGinty",
       "run": false
      }
     }

@@ -35,7 +35,7 @@
       "stage": "map",
       "open_card": ""
      },
-     "caption": "Clarlougheask, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Clarlougheask and its fifteen families, from 1873 to 1926.",
+     "caption": "Clarlougheask, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Clarlougheask and its sixteen families, from 1873 to 1926.",
      "people": [],
      "media": [],
      "evidence": {
@@ -90,47 +90,6 @@
       "certainty": "stated"
      },
      "duration_ms": 11000,
-     "audio": null
-    }
-   ]
-  },
-  {
-   "id": "clarlougheask:ch:baptisms",
-   "title": "Baptisms, 1874",
-   "beats": [
-    {
-     "id": "clarlougheask:beat:baptism:1874-06-21-TAW-B-p011-r132",
-     "kind": "baptism",
-     "chapter": "clarlougheask:ch:baptisms",
-     "time": {
-      "label": "21 June 1874",
-      "iso": "1874-06-21",
-      "sort": "1874-06-21",
-      "approximate": false
-     },
-     "place": {
-      "townland": "clarlougheask",
-      "name": "Clarlougheask",
-      "logainm_id": "13963",
-      "lat": 54.678353,
-      "lon": -8.054077,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "clarlougheask:baptism:TAW-B-p011-r132"
-     },
-     "caption": "Mary Murray was baptised on 21 June 1874. Thomas Murray and Catherine Cunningham were the parents.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "clarlougheask:baptism:TAW-B-p011-r132"
-      ],
-      "basis": "page_place",
-      "certainty": "stated"
-     },
-     "duration_ms": 6400,
      "audio": null
     }
    ]
@@ -208,7 +167,7 @@
      "time": {
       "label": "The families of Clarlougheask",
       "iso": "1873-02-16",
-      "sort": "1875-06-17",
+      "sort": "1875-01-01",
       "approximate": true
      },
      "place": {
@@ -249,6 +208,46 @@
    "title": "The Boyce family",
    "beats": [
     {
+     "id": "clarlougheask:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "clarlougheask:ch:family-01",
+     "time": {
+      "label": "The Boyce family",
+      "iso": "1875",
+      "sort": "1875-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarlougheask",
+      "name": "Clarlougheask",
+      "logainm_id": "13963",
+      "lat": 54.678353,
+      "lon": -8.054077,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarlougheask:familypresence:01"
+     },
+     "caption": "The Boyce family appear in the records from 1875 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarlougheask:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "clarlougheask:family:01",
+      "label": "Boyce",
+      "run": true
+     }
+    },
+    {
      "id": "clarlougheask:beat:baptism:1875-06-17-TAW-B-p017-r223",
      "kind": "baptism",
      "chapter": "clarlougheask:ch:family-01",
@@ -281,46 +280,6 @@
       "certainty": "stated"
      },
      "duration_ms": 6400,
-     "audio": null,
-     "thread": {
-      "id": "clarlougheask:family:01",
-      "label": "Boyce",
-      "run": true
-     }
-    },
-    {
-     "id": "clarlougheask:beat:familyhead:01",
-     "kind": "familyhead",
-     "chapter": "clarlougheask:ch:family-01",
-     "time": {
-      "label": "The Boyce family",
-      "iso": "1901",
-      "sort": "1901-01-01",
-      "approximate": true
-     },
-     "place": {
-      "townland": "clarlougheask",
-      "name": "Clarlougheask",
-      "logainm_id": "13963",
-      "lat": 54.678353,
-      "lon": -8.054077,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "clarlougheask:familypresence:01"
-     },
-     "caption": "The Boyce family appear in the records from 1901 to 1926.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "clarlougheask:familypresence:01"
-      ],
-      "basis": "census_surname",
-      "certainty": "accepted"
-     },
-     "duration_ms": 4400,
      "audio": null,
      "thread": {
       "id": "clarlougheask:family:01",
@@ -662,6 +621,46 @@
    "title": "The Breslin family",
    "beats": [
     {
+     "id": "clarlougheask:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "clarlougheask:ch:family-02",
+     "time": {
+      "label": "The Breslin family",
+      "iso": "1873",
+      "sort": "1873-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarlougheask",
+      "name": "Clarlougheask",
+      "logainm_id": "13963",
+      "lat": 54.678353,
+      "lon": -8.054077,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarlougheask:familypresence:02"
+     },
+     "caption": "The Breslin family appear in the records from 1873 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarlougheask:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "clarlougheask:family:02",
+      "label": "Breslin",
+      "run": false
+     }
+    },
+    {
      "id": "clarlougheask:beat:baptism:1873-02-16-TAW-B-p005-r18",
      "kind": "baptism",
      "chapter": "clarlougheask:ch:family-02",
@@ -694,46 +693,6 @@
       "certainty": "stated"
      },
      "duration_ms": 6400,
-     "audio": null,
-     "thread": {
-      "id": "clarlougheask:family:02",
-      "label": "Breslin",
-      "run": false
-     }
-    },
-    {
-     "id": "clarlougheask:beat:familyhead:02",
-     "kind": "familyhead",
-     "chapter": "clarlougheask:ch:family-02",
-     "time": {
-      "label": "The Breslin family",
-      "iso": "1901",
-      "sort": "1901-01-01",
-      "approximate": true
-     },
-     "place": {
-      "townland": "clarlougheask",
-      "name": "Clarlougheask",
-      "logainm_id": "13963",
-      "lat": 54.678353,
-      "lon": -8.054077,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "clarlougheask:familypresence:02"
-     },
-     "caption": "The Breslin family appear in the records from 1901 to 1926.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "clarlougheask:familypresence:02"
-      ],
-      "basis": "census_surname",
-      "certainty": "accepted"
-     },
-     "duration_ms": 4400,
      "audio": null,
      "thread": {
       "id": "clarlougheask:family:02",
@@ -868,6 +827,46 @@
    "title": "The McDermott family",
    "beats": [
     {
+     "id": "clarlougheask:beat:familyhead:10",
+     "kind": "familyhead",
+     "chapter": "clarlougheask:ch:family-10",
+     "time": {
+      "label": "The McDermott family",
+      "iso": "1873",
+      "sort": "1873-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarlougheask",
+      "name": "Clarlougheask",
+      "logainm_id": "13963",
+      "lat": 54.678353,
+      "lon": -8.054077,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarlougheask:familypresence:10"
+     },
+     "caption": "The McDermott family appear in the records from 1873 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarlougheask:familypresence:10"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "clarlougheask:family:10",
+      "label": "McDermott",
+      "run": false
+     }
+    },
+    {
      "id": "clarlougheask:beat:baptism:1873-12-26-TAW-B-p009-r90",
      "kind": "baptism",
      "chapter": "clarlougheask:ch:family-10",
@@ -900,46 +899,6 @@
       "certainty": "stated"
      },
      "duration_ms": 6800,
-     "audio": null,
-     "thread": {
-      "id": "clarlougheask:family:10",
-      "label": "McDermott",
-      "run": false
-     }
-    },
-    {
-     "id": "clarlougheask:beat:familyhead:10",
-     "kind": "familyhead",
-     "chapter": "clarlougheask:ch:family-10",
-     "time": {
-      "label": "The McDermott family",
-      "iso": "1901",
-      "sort": "1901-01-01",
-      "approximate": true
-     },
-     "place": {
-      "townland": "clarlougheask",
-      "name": "Clarlougheask",
-      "logainm_id": "13963",
-      "lat": 54.678353,
-      "lon": -8.054077,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "clarlougheask:familypresence:10"
-     },
-     "caption": "The McDermott family appear in the records from 1901 to 1911.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "clarlougheask:familypresence:10"
-      ],
-      "basis": "census_surname",
-      "certainty": "accepted"
-     },
-     "duration_ms": 4400,
      "audio": null,
      "thread": {
       "id": "clarlougheask:family:10",
@@ -1024,6 +983,92 @@
      "thread": {
       "id": "clarlougheask:family:10",
       "label": "McDermott",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "clarlougheask:ch:family-16",
+   "title": "The Murray family",
+   "beats": [
+    {
+     "id": "clarlougheask:beat:familyhead:16",
+     "kind": "familyhead",
+     "chapter": "clarlougheask:ch:family-16",
+     "time": {
+      "label": "The Murray family",
+      "iso": "1874",
+      "sort": "1874-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarlougheask",
+      "name": "Clarlougheask",
+      "logainm_id": "13963",
+      "lat": 54.678353,
+      "lon": -8.054077,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarlougheask:familypresence:16"
+     },
+     "caption": "The Murray family appear in the records in 1874.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarlougheask:familypresence:16"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clarlougheask:family:16",
+      "label": "Murray",
+      "run": false
+     }
+    },
+    {
+     "id": "clarlougheask:beat:baptism:1874-06-21-TAW-B-p011-r132",
+     "kind": "baptism",
+     "chapter": "clarlougheask:ch:family-16",
+     "time": {
+      "label": "21 June 1874",
+      "iso": "1874-06-21",
+      "sort": "1874-06-21",
+      "approximate": false
+     },
+     "place": {
+      "townland": "clarlougheask",
+      "name": "Clarlougheask",
+      "logainm_id": "13963",
+      "lat": 54.678353,
+      "lon": -8.054077,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarlougheask:baptism:TAW-B-p011-r132"
+     },
+     "caption": "Mary Murray was baptised on 21 June 1874. Thomas Murray and Catherine Cunningham were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarlougheask:baptism:TAW-B-p011-r132"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "clarlougheask:family:16",
+      "label": "Murray",
       "run": false
      }
     }

@@ -35,7 +35,7 @@
       "stage": "map",
       "open_card": ""
      },
-     "caption": "Tawnaghgorm, in Irish Tamhnach Ghorm, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Tawnaghgorm and its fifteen families, from 1873 to 1926.",
+     "caption": "Tawnaghgorm, in Irish Tamhnach Ghorm, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Tawnaghgorm and its sixteen families, from 1873 to 1926.",
      "people": [],
      "media": [],
      "evidence": {
@@ -90,82 +90,6 @@
       "certainty": "stated"
      },
      "duration_ms": 11000,
-     "audio": null
-    }
-   ]
-  },
-  {
-   "id": "tawnaghgorm:ch:baptisms",
-   "title": "Baptisms, 1873 to 1875",
-   "beats": [
-    {
-     "id": "tawnaghgorm:beat:baptism:1873-03-27-TAW-B-p006-r31",
-     "kind": "baptism",
-     "chapter": "tawnaghgorm:ch:baptisms",
-     "time": {
-      "label": "27 March 1873",
-      "iso": "1873-03-27",
-      "sort": "1873-03-27",
-      "approximate": false
-     },
-     "place": {
-      "townland": "tawnaghgorm",
-      "name": "Tawnaghgorm",
-      "logainm_id": "14246",
-      "lat": 54.702174,
-      "lon": -8.024602,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "tawnaghgorm:baptism:TAW-B-p006-r31"
-     },
-     "caption": "Patrick Gallinagh was baptised on 27 March 1873. Michael Gallinagh and Catherine Martin were the parents.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "tawnaghgorm:baptism:TAW-B-p006-r31"
-      ],
-      "basis": "page_place",
-      "certainty": "stated"
-     },
-     "duration_ms": 6400,
-     "audio": null
-    },
-    {
-     "id": "tawnaghgorm:beat:baptism:1875-02-07-TAW-B-p015-r187",
-     "kind": "baptism",
-     "chapter": "tawnaghgorm:ch:baptisms",
-     "time": {
-      "label": "7 February 1875",
-      "iso": "1875-02-07",
-      "sort": "1875-02-07",
-      "approximate": false
-     },
-     "place": {
-      "townland": "tawnaghgorm",
-      "name": "Tawnaghgorm",
-      "logainm_id": "14246",
-      "lat": 54.702174,
-      "lon": -8.024602,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "tawnaghgorm:baptism:TAW-B-p015-r187"
-     },
-     "caption": "Denis Gallinagh was baptised on 7 February 1875. Michael Gallinagh and Catherine Martin were the parents.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "tawnaghgorm:baptism:TAW-B-p015-r187"
-      ],
-      "basis": "page_place",
-      "certainty": "stated"
-     },
-     "duration_ms": 6400,
      "audio": null
     }
    ]
@@ -243,7 +167,7 @@
      "time": {
       "label": "The families of Tawnaghgorm",
       "iso": "1873-03-27",
-      "sort": "1875-04-02",
+      "sort": "1875-01-01",
       "approximate": true
      },
      "place": {
@@ -284,6 +208,46 @@
    "title": "The McGinty family",
    "beats": [
     {
+     "id": "tawnaghgorm:beat:familyhead:13",
+     "kind": "familyhead",
+     "chapter": "tawnaghgorm:ch:family-13",
+     "time": {
+      "label": "The McGinty family",
+      "iso": "1875",
+      "sort": "1875-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tawnaghgorm",
+      "name": "Tawnaghgorm",
+      "logainm_id": "14246",
+      "lat": 54.702174,
+      "lon": -8.024602,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tawnaghgorm:familypresence:13"
+     },
+     "caption": "The McGinty family appear in the records from 1875 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tawnaghgorm:familypresence:13"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "tawnaghgorm:family:13",
+      "label": "McGinty",
+      "run": true
+     }
+    },
+    {
      "id": "tawnaghgorm:beat:baptism:1875-04-02-TAW-B-p016-r200",
      "kind": "baptism",
      "chapter": "tawnaghgorm:ch:family-13",
@@ -316,46 +280,6 @@
       "certainty": "stated"
      },
      "duration_ms": 6400,
-     "audio": null,
-     "thread": {
-      "id": "tawnaghgorm:family:13",
-      "label": "McGinty",
-      "run": true
-     }
-    },
-    {
-     "id": "tawnaghgorm:beat:familyhead:13",
-     "kind": "familyhead",
-     "chapter": "tawnaghgorm:ch:family-13",
-     "time": {
-      "label": "The McGinty family",
-      "iso": "1901",
-      "sort": "1901-01-01",
-      "approximate": true
-     },
-     "place": {
-      "townland": "tawnaghgorm",
-      "name": "Tawnaghgorm",
-      "logainm_id": "14246",
-      "lat": 54.702174,
-      "lon": -8.024602,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "tawnaghgorm:familypresence:13"
-     },
-     "caption": "The McGinty family appear in the records from 1901 to 1926.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "tawnaghgorm:familypresence:13"
-      ],
-      "basis": "census_surname",
-      "certainty": "accepted"
-     },
-     "duration_ms": 4400,
      "audio": null,
      "thread": {
       "id": "tawnaghgorm:family:13",
@@ -693,9 +617,175 @@
    ]
   },
   {
+   "id": "tawnaghgorm:ch:family-16",
+   "title": "The Gallinagh family",
+   "beats": [
+    {
+     "id": "tawnaghgorm:beat:familyhead:16",
+     "kind": "familyhead",
+     "chapter": "tawnaghgorm:ch:family-16",
+     "time": {
+      "label": "The Gallinagh family",
+      "iso": "1873",
+      "sort": "1873-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tawnaghgorm",
+      "name": "Tawnaghgorm",
+      "logainm_id": "14246",
+      "lat": 54.702174,
+      "lon": -8.024602,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tawnaghgorm:familypresence:16"
+     },
+     "caption": "The Gallinagh family appear in the records from 1873 to 1875.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tawnaghgorm:familypresence:16"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "tawnaghgorm:family:16",
+      "label": "Gallinagh",
+      "run": false
+     }
+    },
+    {
+     "id": "tawnaghgorm:beat:baptism:1873-03-27-TAW-B-p006-r31",
+     "kind": "baptism",
+     "chapter": "tawnaghgorm:ch:family-16",
+     "time": {
+      "label": "27 March 1873",
+      "iso": "1873-03-27",
+      "sort": "1873-03-27",
+      "approximate": false
+     },
+     "place": {
+      "townland": "tawnaghgorm",
+      "name": "Tawnaghgorm",
+      "logainm_id": "14246",
+      "lat": 54.702174,
+      "lon": -8.024602,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tawnaghgorm:baptism:TAW-B-p006-r31"
+     },
+     "caption": "Patrick Gallinagh was baptised on 27 March 1873. Michael Gallinagh and Catherine Martin were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tawnaghgorm:baptism:TAW-B-p006-r31"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "tawnaghgorm:family:16",
+      "label": "Gallinagh",
+      "run": false
+     }
+    },
+    {
+     "id": "tawnaghgorm:beat:baptism:1875-02-07-TAW-B-p015-r187",
+     "kind": "baptism",
+     "chapter": "tawnaghgorm:ch:family-16",
+     "time": {
+      "label": "7 February 1875",
+      "iso": "1875-02-07",
+      "sort": "1875-02-07",
+      "approximate": false
+     },
+     "place": {
+      "townland": "tawnaghgorm",
+      "name": "Tawnaghgorm",
+      "logainm_id": "14246",
+      "lat": 54.702174,
+      "lon": -8.024602,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tawnaghgorm:baptism:TAW-B-p015-r187"
+     },
+     "caption": "Denis Gallinagh was baptised on 7 February 1875. Michael Gallinagh and Catherine Martin were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tawnaghgorm:baptism:TAW-B-p015-r187"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "tawnaghgorm:family:16",
+      "label": "Gallinagh",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
    "id": "tawnaghgorm:ch:family-01",
    "title": "The Boyle family",
    "beats": [
+    {
+     "id": "tawnaghgorm:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "tawnaghgorm:ch:family-01",
+     "time": {
+      "label": "The Boyle family",
+      "iso": "1874",
+      "sort": "1874-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tawnaghgorm",
+      "name": "Tawnaghgorm",
+      "logainm_id": "14246",
+      "lat": 54.702174,
+      "lon": -8.024602,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tawnaghgorm:familypresence:01"
+     },
+     "caption": "The Boyle family appear in the records from 1874 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tawnaghgorm:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "tawnaghgorm:family:01",
+      "label": "Boyle",
+      "run": false
+     }
+    },
     {
      "id": "tawnaghgorm:beat:baptism:1874-04-26-TAW-B-p010-r117",
      "kind": "baptism",
@@ -729,46 +819,6 @@
       "certainty": "possible"
      },
      "duration_ms": 8800,
-     "audio": null,
-     "thread": {
-      "id": "tawnaghgorm:family:01",
-      "label": "Boyle",
-      "run": false
-     }
-    },
-    {
-     "id": "tawnaghgorm:beat:familyhead:01",
-     "kind": "familyhead",
-     "chapter": "tawnaghgorm:ch:family-01",
-     "time": {
-      "label": "The Boyle family",
-      "iso": "1901",
-      "sort": "1901-01-01",
-      "approximate": true
-     },
-     "place": {
-      "townland": "tawnaghgorm",
-      "name": "Tawnaghgorm",
-      "logainm_id": "14246",
-      "lat": 54.702174,
-      "lon": -8.024602,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "tawnaghgorm:familypresence:01"
-     },
-     "caption": "The Boyle family appear in the records from 1901 to 1911.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "tawnaghgorm:familypresence:01"
-      ],
-      "basis": "census_surname",
-      "certainty": "accepted"
-     },
-     "duration_ms": 4400,
      "audio": null,
      "thread": {
       "id": "tawnaghgorm:family:01",

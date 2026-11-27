@@ -167,7 +167,7 @@
      "time": {
       "label": "The families of Drumbar",
       "iso": "1875-09-17",
-      "sort": "1875-09-17",
+      "sort": "1875-01-01",
       "approximate": true
      },
      "place": {
@@ -208,6 +208,46 @@
    "title": "The Cassidy family",
    "beats": [
     {
+     "id": "drumbar:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "drumbar:ch:family-03",
+     "time": {
+      "label": "The Cassidy family",
+      "iso": "1875",
+      "sort": "1875-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumbar",
+      "name": "Drumbar",
+      "logainm_id": "14031",
+      "lat": 54.640452,
+      "lon": -8.087593,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumbar:familypresence:03"
+     },
+     "caption": "The Cassidy family appear in the records from 1875 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumbar:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "drumbar:family:03",
+      "label": "Cassidy",
+      "run": true
+     }
+    },
+    {
      "id": "drumbar:beat:baptism:1875-09-17-TAW-B-p018-r342",
      "kind": "baptism",
      "chapter": "drumbar:ch:family-03",
@@ -240,46 +280,6 @@
       "certainty": "stated"
      },
      "duration_ms": 6400,
-     "audio": null,
-     "thread": {
-      "id": "drumbar:family:03",
-      "label": "Cassidy",
-      "run": true
-     }
-    },
-    {
-     "id": "drumbar:beat:familyhead:03",
-     "kind": "familyhead",
-     "chapter": "drumbar:ch:family-03",
-     "time": {
-      "label": "The Cassidy family",
-      "iso": "1901",
-      "sort": "1901-01-01",
-      "approximate": true
-     },
-     "place": {
-      "townland": "drumbar",
-      "name": "Drumbar",
-      "logainm_id": "14031",
-      "lat": 54.640452,
-      "lon": -8.087593,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "drumbar:familypresence:03"
-     },
-     "caption": "The Cassidy family appear in the records from 1901 to 1926.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "drumbar:familypresence:03"
-      ],
-      "basis": "census_surname",
-      "certainty": "accepted"
-     },
-     "duration_ms": 4400,
      "audio": null,
      "thread": {
       "id": "drumbar:family:03",

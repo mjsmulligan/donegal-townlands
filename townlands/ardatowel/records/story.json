@@ -167,7 +167,7 @@
      "time": {
       "label": "The families of Ardatowel",
       "iso": "1873-01-26",
-      "sort": "1873-08-17",
+      "sort": "1873-01-01",
       "approximate": true
      },
      "place": {
@@ -207,6 +207,46 @@
    "id": "ardatowel:ch:family-09",
    "title": "The McNulty family",
    "beats": [
+    {
+     "id": "ardatowel:beat:familyhead:09",
+     "kind": "familyhead",
+     "chapter": "ardatowel:ch:family-09",
+     "time": {
+      "label": "The McNulty family",
+      "iso": "1873",
+      "sort": "1873-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardatowel",
+      "name": "Ardatowel",
+      "logainm_id": "14235",
+      "lat": 54.698932,
+      "lon": -8.018969,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardatowel:familypresence:09"
+     },
+     "caption": "The McNulty family appear in the records from 1873 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardatowel:familypresence:09"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ardatowel:family:09",
+      "label": "McNulty",
+      "run": true
+     }
+    },
     {
      "id": "ardatowel:beat:baptism:1873-08-17-TAW-B-p008-r63",
      "kind": "baptism",
@@ -320,46 +360,6 @@
       "certainty": "stated"
      },
      "duration_ms": 6400,
-     "audio": null,
-     "thread": {
-      "id": "ardatowel:family:09",
-      "label": "McNulty",
-      "run": true
-     }
-    },
-    {
-     "id": "ardatowel:beat:familyhead:09",
-     "kind": "familyhead",
-     "chapter": "ardatowel:ch:family-09",
-     "time": {
-      "label": "The McNulty family",
-      "iso": "1901",
-      "sort": "1901-01-01",
-      "approximate": true
-     },
-     "place": {
-      "townland": "ardatowel",
-      "name": "Ardatowel",
-      "logainm_id": "14235",
-      "lat": 54.698932,
-      "lon": -8.018969,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "ardatowel:familypresence:09"
-     },
-     "caption": "The McNulty family appear in the records from 1901 to 1926.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "ardatowel:familypresence:09"
-      ],
-      "basis": "census_surname",
-      "certainty": "accepted"
-     },
-     "duration_ms": 4400,
      "audio": null,
      "thread": {
       "id": "ardatowel:family:09",
@@ -494,6 +494,46 @@
    "title": "The Martin family",
    "beats": [
     {
+     "id": "ardatowel:beat:familyhead:07",
+     "kind": "familyhead",
+     "chapter": "ardatowel:ch:family-07",
+     "time": {
+      "label": "The Martin family",
+      "iso": "1875",
+      "sort": "1875-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardatowel",
+      "name": "Ardatowel",
+      "logainm_id": "14235",
+      "lat": 54.698932,
+      "lon": -8.018969,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardatowel:familypresence:07"
+     },
+     "caption": "The Martin family appear in the records from 1875 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardatowel:familypresence:07"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ardatowel:family:07",
+      "label": "Martin",
+      "run": true
+     }
+    },
+    {
      "id": "ardatowel:beat:baptism:1875-03-14-TAW-B-p016-r195",
      "kind": "baptism",
      "chapter": "ardatowel:ch:family-07",
@@ -526,46 +566,6 @@
       "certainty": "stated"
      },
      "duration_ms": 6400,
-     "audio": null,
-     "thread": {
-      "id": "ardatowel:family:07",
-      "label": "Martin",
-      "run": true
-     }
-    },
-    {
-     "id": "ardatowel:beat:familyhead:07",
-     "kind": "familyhead",
-     "chapter": "ardatowel:ch:family-07",
-     "time": {
-      "label": "The Martin family",
-      "iso": "1901",
-      "sort": "1901-01-01",
-      "approximate": true
-     },
-     "place": {
-      "townland": "ardatowel",
-      "name": "Ardatowel",
-      "logainm_id": "14235",
-      "lat": 54.698932,
-      "lon": -8.018969,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "ardatowel:familypresence:07"
-     },
-     "caption": "The Martin family appear in the records from 1901 to 1926.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "ardatowel:familypresence:07"
-      ],
-      "basis": "census_surname",
-      "certainty": "accepted"
-     },
-     "duration_ms": 4400,
      "audio": null,
      "thread": {
       "id": "ardatowel:family:07",
@@ -741,6 +741,46 @@
    "title": "The Slevin family",
    "beats": [
     {
+     "id": "ardatowel:beat:familyhead:11",
+     "kind": "familyhead",
+     "chapter": "ardatowel:ch:family-11",
+     "time": {
+      "label": "The Slevin family",
+      "iso": "1873",
+      "sort": "1873-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardatowel",
+      "name": "Ardatowel",
+      "logainm_id": "14235",
+      "lat": 54.698932,
+      "lon": -8.018969,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardatowel:familypresence:11"
+     },
+     "caption": "The Slevin family appear in the records from 1873 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardatowel:familypresence:11"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ardatowel:family:11",
+      "label": "Slevin",
+      "run": false
+     }
+    },
+    {
      "id": "ardatowel:beat:baptism:1873-01-26-TAW-B-p004-r11",
      "kind": "baptism",
      "chapter": "ardatowel:ch:family-11",
@@ -813,46 +853,6 @@
       "certainty": "stated"
      },
      "duration_ms": 6400,
-     "audio": null,
-     "thread": {
-      "id": "ardatowel:family:11",
-      "label": "Slevin",
-      "run": false
-     }
-    },
-    {
-     "id": "ardatowel:beat:familyhead:11",
-     "kind": "familyhead",
-     "chapter": "ardatowel:ch:family-11",
-     "time": {
-      "label": "The Slevin family",
-      "iso": "1901",
-      "sort": "1901-01-01",
-      "approximate": true
-     },
-     "place": {
-      "townland": "ardatowel",
-      "name": "Ardatowel",
-      "logainm_id": "14235",
-      "lat": 54.698932,
-      "lon": -8.018969,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "ardatowel:familypresence:11"
-     },
-     "caption": "The Slevin family appear in the records from 1901 to 1911.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "ardatowel:familypresence:11"
-      ],
-      "basis": "census_surname",
-      "certainty": "accepted"
-     },
-     "duration_ms": 4400,
      "audio": null,
      "thread": {
       "id": "ardatowel:family:11",

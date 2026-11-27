@@ -167,7 +167,7 @@
      "time": {
       "label": "The families of Goladoo",
       "iso": "1873-03-27",
-      "sort": "1873-08-24",
+      "sort": "1873-01-01",
       "approximate": true
      },
      "place": {
@@ -207,6 +207,46 @@
    "id": "goladoo:ch:family-01",
    "title": "The Boyle family",
    "beats": [
+    {
+     "id": "goladoo:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "goladoo:ch:family-01",
+     "time": {
+      "label": "The Boyle family",
+      "iso": "1873",
+      "sort": "1873-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "goladoo",
+      "name": "Goladoo",
+      "logainm_id": "14243",
+      "lat": 54.717584,
+      "lon": -8.032827,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "goladoo:familypresence:01"
+     },
+     "caption": "The Boyle family appear in the records from 1873 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "goladoo:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "goladoo:family:01",
+      "label": "Boyle",
+      "run": true
+     }
+    },
     {
      "id": "goladoo:beat:baptism:1873-08-24-TAW-B-p008-r65",
      "kind": "baptism",
@@ -280,46 +320,6 @@
       "certainty": "stated"
      },
      "duration_ms": 6400,
-     "audio": null,
-     "thread": {
-      "id": "goladoo:family:01",
-      "label": "Boyle",
-      "run": true
-     }
-    },
-    {
-     "id": "goladoo:beat:familyhead:01",
-     "kind": "familyhead",
-     "chapter": "goladoo:ch:family-01",
-     "time": {
-      "label": "The Boyle family",
-      "iso": "1901",
-      "sort": "1901-01-01",
-      "approximate": true
-     },
-     "place": {
-      "townland": "goladoo",
-      "name": "Goladoo",
-      "logainm_id": "14243",
-      "lat": 54.717584,
-      "lon": -8.032827,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "goladoo:familypresence:01"
-     },
-     "caption": "The Boyle family appear in the records from 1901 to 1926.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "goladoo:familypresence:01"
-      ],
-      "basis": "census_surname",
-      "certainty": "accepted"
-     },
-     "duration_ms": 4400,
      "audio": null,
      "thread": {
       "id": "goladoo:family:01",
@@ -454,6 +454,46 @@
    "title": "The Martin family",
    "beats": [
     {
+     "id": "goladoo:beat:familyhead:09",
+     "kind": "familyhead",
+     "chapter": "goladoo:ch:family-09",
+     "time": {
+      "label": "The Martin family",
+      "iso": "1874",
+      "sort": "1874-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "goladoo",
+      "name": "Goladoo",
+      "logainm_id": "14243",
+      "lat": 54.717584,
+      "lon": -8.032827,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "goladoo:familypresence:09"
+     },
+     "caption": "The Martin family appear in the records from 1874 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "goladoo:familypresence:09"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "goladoo:family:09",
+      "label": "Martin",
+      "run": true
+     }
+    },
+    {
      "id": "goladoo:beat:baptism:1874-02-22-TAW-B-p010-r110",
      "kind": "baptism",
      "chapter": "goladoo:ch:family-09",
@@ -486,46 +526,6 @@
       "certainty": "stated"
      },
      "duration_ms": 6400,
-     "audio": null,
-     "thread": {
-      "id": "goladoo:family:09",
-      "label": "Martin",
-      "run": true
-     }
-    },
-    {
-     "id": "goladoo:beat:familyhead:09",
-     "kind": "familyhead",
-     "chapter": "goladoo:ch:family-09",
-     "time": {
-      "label": "The Martin family",
-      "iso": "1901",
-      "sort": "1901-01-01",
-      "approximate": true
-     },
-     "place": {
-      "townland": "goladoo",
-      "name": "Goladoo",
-      "logainm_id": "14243",
-      "lat": 54.717584,
-      "lon": -8.032827,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "goladoo:familypresence:09"
-     },
-     "caption": "The Martin family appear in the records from 1901 to 1926.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "goladoo:familypresence:09"
-      ],
-      "basis": "census_surname",
-      "certainty": "accepted"
-     },
-     "duration_ms": 4400,
      "audio": null,
      "thread": {
       "id": "goladoo:family:09",
@@ -701,6 +701,46 @@
    "title": "The Slevin family",
    "beats": [
     {
+     "id": "goladoo:beat:familyhead:13",
+     "kind": "familyhead",
+     "chapter": "goladoo:ch:family-13",
+     "time": {
+      "label": "The Slevin family",
+      "iso": "1873",
+      "sort": "1873-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "goladoo",
+      "name": "Goladoo",
+      "logainm_id": "14243",
+      "lat": 54.717584,
+      "lon": -8.032827,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "goladoo:familypresence:13"
+     },
+     "caption": "The Slevin family appear in the records from 1873 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "goladoo:familypresence:13"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "goladoo:family:13",
+      "label": "Slevin",
+      "run": false
+     }
+    },
+    {
      "id": "goladoo:beat:baptism:1873-03-27-TAW-B-p006-r29",
      "kind": "baptism",
      "chapter": "goladoo:ch:family-13",
@@ -821,46 +861,6 @@
      }
     },
     {
-     "id": "goladoo:beat:familyhead:13",
-     "kind": "familyhead",
-     "chapter": "goladoo:ch:family-13",
-     "time": {
-      "label": "The Slevin family",
-      "iso": "1901",
-      "sort": "1901-01-01",
-      "approximate": true
-     },
-     "place": {
-      "townland": "goladoo",
-      "name": "Goladoo",
-      "logainm_id": "14243",
-      "lat": 54.717584,
-      "lon": -8.032827,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "goladoo:familypresence:13"
-     },
-     "caption": "The Slevin family appear in the records from 1901 to 1911.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "goladoo:familypresence:13"
-      ],
-      "basis": "census_surname",
-      "certainty": "accepted"
-     },
-     "duration_ms": 4400,
-     "audio": null,
-     "thread": {
-      "id": "goladoo:family:13",
-      "label": "Slevin",
-      "run": false
-     }
-    },
-    {
      "id": "goladoo:beat:familycensus:13-1901",
      "kind": "familycensus",
      "chapter": "goladoo:ch:family-13",
@@ -947,6 +947,46 @@
    "title": "The Timoney family",
    "beats": [
     {
+     "id": "goladoo:beat:familyhead:15",
+     "kind": "familyhead",
+     "chapter": "goladoo:ch:family-15",
+     "time": {
+      "label": "The Timoney family",
+      "iso": "1874",
+      "sort": "1874-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "goladoo",
+      "name": "Goladoo",
+      "logainm_id": "14243",
+      "lat": 54.717584,
+      "lon": -8.032827,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "goladoo:familypresence:15"
+     },
+     "caption": "The Timoney family appear in the records from 1874 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "goladoo:familypresence:15"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "goladoo:family:15",
+      "label": "Timoney",
+      "run": false
+     }
+    },
+    {
      "id": "goladoo:beat:baptism:1874-04-26-TAW-B-p010-r118",
      "kind": "baptism",
      "chapter": "goladoo:ch:family-15",
@@ -979,46 +1019,6 @@
       "certainty": "stated"
      },
      "duration_ms": 6400,
-     "audio": null,
-     "thread": {
-      "id": "goladoo:family:15",
-      "label": "Timoney",
-      "run": false
-     }
-    },
-    {
-     "id": "goladoo:beat:familyhead:15",
-     "kind": "familyhead",
-     "chapter": "goladoo:ch:family-15",
-     "time": {
-      "label": "The Timoney family",
-      "iso": "1901",
-      "sort": "1901-01-01",
-      "approximate": true
-     },
-     "place": {
-      "townland": "goladoo",
-      "name": "Goladoo",
-      "logainm_id": "14243",
-      "lat": 54.717584,
-      "lon": -8.032827,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "goladoo:familypresence:15"
-     },
-     "caption": "The Timoney family appear in the records from 1901 to 1911.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "goladoo:familypresence:15"
-      ],
-      "basis": "census_surname",
-      "certainty": "accepted"
-     },
-     "duration_ms": 4400,
      "audio": null,
      "thread": {
       "id": "goladoo:family:15",

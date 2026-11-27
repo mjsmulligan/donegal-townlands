@@ -674,14 +674,14 @@
   },
   {
    "id": "carnbeagh-north:ch:family-07",
-   "title": "The Mcginty family",
+   "title": "The McGinty family",
    "beats": [
     {
      "id": "carnbeagh-north:beat:familyhead:07",
      "kind": "familyhead",
      "chapter": "carnbeagh-north:ch:family-07",
      "time": {
-      "label": "The Mcginty family",
+      "label": "The McGinty family",
       "iso": "1855",
       "sort": "1855-01-01",
       "approximate": true
@@ -698,7 +698,7 @@
       "stage": "map",
       "open_card": "carnbeagh-north:familypresence:07"
      },
-     "caption": "The Mcginty family appear in the records in 1855.",
+     "caption": "The McGinty family appear in the records in 1855.",
      "people": [],
      "media": [],
      "evidence": {
@@ -712,7 +712,7 @@
      "audio": null,
      "thread": {
       "id": "carnbeagh-north:family:07",
-      "label": "Mcginty",
+      "label": "McGinty",
       "run": false
      }
     }

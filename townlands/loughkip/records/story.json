@@ -35,7 +35,7 @@
       "stage": "map",
       "open_card": ""
      },
-     "caption": "Loughkip, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Loughkip and its eight families, from 1873 to 1926.",
+     "caption": "Loughkip, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Loughkip and its nine families, from 1873 to 1926.",
      "people": [],
      "media": [],
      "evidence": {
@@ -90,47 +90,6 @@
       "certainty": "stated"
      },
      "duration_ms": 11000,
-     "audio": null
-    }
-   ]
-  },
-  {
-   "id": "loughkip:ch:baptisms",
-   "title": "Baptisms, 1874",
-   "beats": [
-    {
-     "id": "loughkip:beat:baptism:1874-03-01-TAW-B-p010-r112",
-     "kind": "baptism",
-     "chapter": "loughkip:ch:baptisms",
-     "time": {
-      "label": "1 March 1874",
-      "iso": "1874-03-01",
-      "sort": "1874-03-01",
-      "approximate": false
-     },
-     "place": {
-      "townland": "loughkip",
-      "name": "Loughkip",
-      "logainm_id": "14283",
-      "lat": 54.649977,
-      "lon": -7.995207,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "loughkip:baptism:TAW-B-p010-r112"
-     },
-     "caption": "John McCaul was baptised on 1 March 1874. Patrick McCaul and Biddy McGoldrick were the parents.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "loughkip:baptism:TAW-B-p010-r112"
-      ],
-      "basis": "page_place",
-      "certainty": "stated"
-     },
-     "duration_ms": 6400,
      "audio": null
     }
    ]
@@ -208,7 +167,7 @@
      "time": {
       "label": "The families of Loughkip",
       "iso": "1873-01-28",
-      "sort": "1873-01-28",
+      "sort": "1873-01-01",
       "approximate": true
      },
      "place": {
@@ -248,6 +207,46 @@
    "id": "loughkip:ch:family-01",
    "title": "The Gallagher family",
    "beats": [
+    {
+     "id": "loughkip:beat:familyhead:01",
+     "kind": "familyhead",
+     "chapter": "loughkip:ch:family-01",
+     "time": {
+      "label": "The Gallagher family",
+      "iso": "1873",
+      "sort": "1873-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "loughkip",
+      "name": "Loughkip",
+      "logainm_id": "14283",
+      "lat": 54.649977,
+      "lon": -7.995207,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "loughkip:familypresence:01"
+     },
+     "caption": "The Gallagher family appear in the records from 1873 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "loughkip:familypresence:01"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "loughkip:family:01",
+      "label": "Gallagher",
+      "run": true
+     }
+    },
     {
      "id": "loughkip:beat:baptism:1873-01-28-TAW-B-p004-r12",
      "kind": "baptism",
@@ -321,46 +320,6 @@
       "certainty": "stated"
      },
      "duration_ms": 6400,
-     "audio": null,
-     "thread": {
-      "id": "loughkip:family:01",
-      "label": "Gallagher",
-      "run": true
-     }
-    },
-    {
-     "id": "loughkip:beat:familyhead:01",
-     "kind": "familyhead",
-     "chapter": "loughkip:ch:family-01",
-     "time": {
-      "label": "The Gallagher family",
-      "iso": "1901",
-      "sort": "1901-01-01",
-      "approximate": true
-     },
-     "place": {
-      "townland": "loughkip",
-      "name": "Loughkip",
-      "logainm_id": "14283",
-      "lat": 54.649977,
-      "lon": -7.995207,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "loughkip:familypresence:01"
-     },
-     "caption": "The Gallagher family appear in the records from 1901 to 1926.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "loughkip:familypresence:01"
-      ],
-      "basis": "census_surname",
-      "certainty": "accepted"
-     },
-     "duration_ms": 4400,
      "audio": null,
      "thread": {
       "id": "loughkip:family:01",
@@ -694,6 +653,92 @@
      },
      "duration_ms": 4000,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "loughkip:ch:family-09",
+   "title": "The McCaul family",
+   "beats": [
+    {
+     "id": "loughkip:beat:familyhead:09",
+     "kind": "familyhead",
+     "chapter": "loughkip:ch:family-09",
+     "time": {
+      "label": "The McCaul family",
+      "iso": "1874",
+      "sort": "1874-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "loughkip",
+      "name": "Loughkip",
+      "logainm_id": "14283",
+      "lat": 54.649977,
+      "lon": -7.995207,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "loughkip:familypresence:09"
+     },
+     "caption": "The McCaul family appear in the records in 1874.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "loughkip:familypresence:09"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "loughkip:family:09",
+      "label": "McCaul",
+      "run": false
+     }
+    },
+    {
+     "id": "loughkip:beat:baptism:1874-03-01-TAW-B-p010-r112",
+     "kind": "baptism",
+     "chapter": "loughkip:ch:family-09",
+     "time": {
+      "label": "1 March 1874",
+      "iso": "1874-03-01",
+      "sort": "1874-03-01",
+      "approximate": false
+     },
+     "place": {
+      "townland": "loughkip",
+      "name": "Loughkip",
+      "logainm_id": "14283",
+      "lat": 54.649977,
+      "lon": -7.995207,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "loughkip:baptism:TAW-B-p010-r112"
+     },
+     "caption": "John McCaul was baptised on 1 March 1874. Patrick McCaul and Biddy McGoldrick were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "loughkip:baptism:TAW-B-p010-r112"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "loughkip:family:09",
+      "label": "McCaul",
+      "run": false
+     }
     }
    ]
   },

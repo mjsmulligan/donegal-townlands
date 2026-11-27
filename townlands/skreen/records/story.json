@@ -581,6 +581,46 @@
    "title": "The Carbin family",
    "beats": [
     {
+     "id": "skreen:beat:familyhead:02",
+     "kind": "familyhead",
+     "chapter": "skreen:ch:family-02",
+     "time": {
+      "label": "The Carbin family",
+      "iso": "1874",
+      "sort": "1874-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "skreen",
+      "name": "Skreen",
+      "logainm_id": "14299",
+      "lat": 54.643906,
+      "lon": -8.00866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "skreen:familypresence:02"
+     },
+     "caption": "The Carbin family appear in the records from 1874 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "skreen:familypresence:02"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "skreen:family:02",
+      "label": "Carbin",
+      "run": false
+     }
+    },
+    {
      "id": "skreen:beat:baptism:1874-11-09-TAW-B-p013-r163",
      "kind": "baptism",
      "chapter": "skreen:ch:family-02",
@@ -613,46 +653,6 @@
       "certainty": "stated"
      },
      "duration_ms": 6400,
-     "audio": null,
-     "thread": {
-      "id": "skreen:family:02",
-      "label": "Carbin",
-      "run": false
-     }
-    },
-    {
-     "id": "skreen:beat:familyhead:02",
-     "kind": "familyhead",
-     "chapter": "skreen:ch:family-02",
-     "time": {
-      "label": "The Carbin family",
-      "iso": "1911",
-      "sort": "1911-01-01",
-      "approximate": true
-     },
-     "place": {
-      "townland": "skreen",
-      "name": "Skreen",
-      "logainm_id": "14299",
-      "lat": 54.643906,
-      "lon": -8.00866,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "skreen:familypresence:02"
-     },
-     "caption": "The Carbin family appear in the records in 1911.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "skreen:familypresence:02"
-      ],
-      "basis": "census_surname",
-      "certainty": "accepted"
-     },
-     "duration_ms": 4000,
      "audio": null,
      "thread": {
       "id": "skreen:family:02",

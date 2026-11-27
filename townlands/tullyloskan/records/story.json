@@ -581,6 +581,46 @@
    "title": "The McGroarty family",
    "beats": [
     {
+     "id": "tullyloskan:beat:familyhead:05",
+     "kind": "familyhead",
+     "chapter": "tullyloskan:ch:family-05",
+     "time": {
+      "label": "The McGroarty family",
+      "iso": "1873",
+      "sort": "1873-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullyloskan",
+      "name": "Tullyloskan",
+      "logainm_id": "14286",
+      "lat": 54.644115,
+      "lon": -8.07139,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullyloskan:familypresence:05"
+     },
+     "caption": "The McGroarty family appear in the records from 1873 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullyloskan:familypresence:05"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "tullyloskan:family:05",
+      "label": "McGroarty",
+      "run": false
+     }
+    },
+    {
      "id": "tullyloskan:beat:baptism:1873-01-21-TAW-B-p004-r9",
      "kind": "baptism",
      "chapter": "tullyloskan:ch:family-05",
@@ -613,46 +653,6 @@
       "certainty": "stated"
      },
      "duration_ms": 6400,
-     "audio": null,
-     "thread": {
-      "id": "tullyloskan:family:05",
-      "label": "McGroarty",
-      "run": false
-     }
-    },
-    {
-     "id": "tullyloskan:beat:familyhead:05",
-     "kind": "familyhead",
-     "chapter": "tullyloskan:ch:family-05",
-     "time": {
-      "label": "The McGroarty family",
-      "iso": "1911",
-      "sort": "1911-01-01",
-      "approximate": true
-     },
-     "place": {
-      "townland": "tullyloskan",
-      "name": "Tullyloskan",
-      "logainm_id": "14286",
-      "lat": 54.644115,
-      "lon": -8.07139,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "tullyloskan:familypresence:05"
-     },
-     "caption": "The McGroarty family appear in the records in 1911.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "tullyloskan:familypresence:05"
-      ],
-      "basis": "census_surname",
-      "certainty": "accepted"
-     },
-     "duration_ms": 4000,
      "audio": null,
      "thread": {
       "id": "tullyloskan:family:05",

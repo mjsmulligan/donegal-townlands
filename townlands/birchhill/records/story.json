@@ -35,7 +35,7 @@
       "stage": "map",
       "open_card": ""
      },
-     "caption": "Birchhill, in Irish Carn Beitheach, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Birchhill and its eight families, from 1873 to 1926.",
+     "caption": "Birchhill, in Irish Carn Beitheach, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Birchhill and its nine families, from 1873 to 1926.",
      "people": [],
      "media": [],
      "evidence": {
@@ -90,47 +90,6 @@
       "certainty": "stated"
      },
      "duration_ms": 11000,
-     "audio": null
-    }
-   ]
-  },
-  {
-   "id": "birchhill:ch:baptisms",
-   "title": "Baptisms, 1873",
-   "beats": [
-    {
-     "id": "birchhill:beat:baptism:1873-06-15-TAW-B-p007-r52",
-     "kind": "baptism",
-     "chapter": "birchhill:ch:baptisms",
-     "time": {
-      "label": "15 June 1873",
-      "iso": "1873-06-15",
-      "sort": "1873-06-15",
-      "approximate": false
-     },
-     "place": {
-      "townland": "birchhill",
-      "name": "Birchhill",
-      "logainm_id": "13957",
-      "lat": 54.676172,
-      "lon": -8.036301,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "birchhill:baptism:TAW-B-p007-r52"
-     },
-     "caption": "Edward, child of Peggy Kelly was baptised on 15 June 1873. Peggy Kelly was the parent.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "birchhill:baptism:TAW-B-p007-r52"
-      ],
-      "basis": "page_place",
-      "certainty": "stated"
-     },
-     "duration_ms": 6400,
      "audio": null
     }
    ]
@@ -208,7 +167,7 @@
      "time": {
       "label": "The families of Birchhill",
       "iso": "1873-03-25",
-      "sort": "1873-03-25",
+      "sort": "1873-01-01",
       "approximate": true
      },
      "place": {
@@ -248,6 +207,46 @@
    "id": "birchhill:ch:family-05",
    "title": "The McGinty family",
    "beats": [
+    {
+     "id": "birchhill:beat:familyhead:05",
+     "kind": "familyhead",
+     "chapter": "birchhill:ch:family-05",
+     "time": {
+      "label": "The McGinty family",
+      "iso": "1873",
+      "sort": "1873-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "birchhill",
+      "name": "Birchhill",
+      "logainm_id": "13957",
+      "lat": 54.676172,
+      "lon": -8.036301,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "birchhill:familypresence:05"
+     },
+     "caption": "The McGinty family appear in the records from 1873 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "birchhill:familypresence:05"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "birchhill:family:05",
+      "label": "McGinty",
+      "run": true
+     }
+    },
     {
      "id": "birchhill:beat:baptism:1873-03-25-TAW-B-p006-r28",
      "kind": "baptism",
@@ -401,46 +400,6 @@
       "certainty": "stated"
      },
      "duration_ms": 6800,
-     "audio": null,
-     "thread": {
-      "id": "birchhill:family:05",
-      "label": "McGinty",
-      "run": true
-     }
-    },
-    {
-     "id": "birchhill:beat:familyhead:05",
-     "kind": "familyhead",
-     "chapter": "birchhill:ch:family-05",
-     "time": {
-      "label": "The McGinty family",
-      "iso": "1901",
-      "sort": "1901-01-01",
-      "approximate": true
-     },
-     "place": {
-      "townland": "birchhill",
-      "name": "Birchhill",
-      "logainm_id": "13957",
-      "lat": 54.676172,
-      "lon": -8.036301,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "birchhill:familypresence:05"
-     },
-     "caption": "The McGinty family appear in the records from 1901 to 1926.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "birchhill:familypresence:05"
-      ],
-      "basis": "census_surname",
-      "certainty": "accepted"
-     },
-     "duration_ms": 4400,
      "audio": null,
      "thread": {
       "id": "birchhill:family:05",
@@ -782,6 +741,46 @@
    "title": "The Thomas family",
    "beats": [
     {
+     "id": "birchhill:beat:familyhead:08",
+     "kind": "familyhead",
+     "chapter": "birchhill:ch:family-08",
+     "time": {
+      "label": "The Thomas family",
+      "iso": "1873",
+      "sort": "1873-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "birchhill",
+      "name": "Birchhill",
+      "logainm_id": "13957",
+      "lat": 54.676172,
+      "lon": -8.036301,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "birchhill:familypresence:08"
+     },
+     "caption": "The Thomas family appear in the records from 1873 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "birchhill:familypresence:08"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "birchhill:family:08",
+      "label": "Thomas",
+      "run": false
+     }
+    },
+    {
      "id": "birchhill:beat:baptism:1873-04-08-TAW-B-p006-r35",
      "kind": "baptism",
      "chapter": "birchhill:ch:family-08",
@@ -814,46 +813,6 @@
       "certainty": "stated"
      },
      "duration_ms": 6400,
-     "audio": null,
-     "thread": {
-      "id": "birchhill:family:08",
-      "label": "Thomas",
-      "run": false
-     }
-    },
-    {
-     "id": "birchhill:beat:familyhead:08",
-     "kind": "familyhead",
-     "chapter": "birchhill:ch:family-08",
-     "time": {
-      "label": "The Thomas family",
-      "iso": "1901",
-      "sort": "1901-01-01",
-      "approximate": true
-     },
-     "place": {
-      "townland": "birchhill",
-      "name": "Birchhill",
-      "logainm_id": "13957",
-      "lat": 54.676172,
-      "lon": -8.036301,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "birchhill:familypresence:08"
-     },
-     "caption": "The Thomas family appear in the records from 1901 to 1926.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "birchhill:familypresence:08"
-      ],
-      "basis": "census_surname",
-      "certainty": "accepted"
-     },
-     "duration_ms": 4400,
      "audio": null,
      "thread": {
       "id": "birchhill:family:08",
@@ -978,6 +937,92 @@
      "thread": {
       "id": "birchhill:family:08",
       "label": "Thomas",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "birchhill:ch:family-09",
+   "title": "The Kelly family",
+   "beats": [
+    {
+     "id": "birchhill:beat:familyhead:09",
+     "kind": "familyhead",
+     "chapter": "birchhill:ch:family-09",
+     "time": {
+      "label": "The Kelly family",
+      "iso": "1873",
+      "sort": "1873-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "birchhill",
+      "name": "Birchhill",
+      "logainm_id": "13957",
+      "lat": 54.676172,
+      "lon": -8.036301,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "birchhill:familypresence:09"
+     },
+     "caption": "The Kelly family appear in the records in 1873.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "birchhill:familypresence:09"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "birchhill:family:09",
+      "label": "Kelly",
+      "run": false
+     }
+    },
+    {
+     "id": "birchhill:beat:baptism:1873-06-15-TAW-B-p007-r52",
+     "kind": "baptism",
+     "chapter": "birchhill:ch:family-09",
+     "time": {
+      "label": "15 June 1873",
+      "iso": "1873-06-15",
+      "sort": "1873-06-15",
+      "approximate": false
+     },
+     "place": {
+      "townland": "birchhill",
+      "name": "Birchhill",
+      "logainm_id": "13957",
+      "lat": 54.676172,
+      "lon": -8.036301,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "birchhill:baptism:TAW-B-p007-r52"
+     },
+     "caption": "Edward, child of Peggy Kelly was baptised on 15 June 1873. Peggy Kelly was the parent.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "birchhill:baptism:TAW-B-p007-r52"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "birchhill:family:09",
+      "label": "Kelly",
       "run": false
      }
     }

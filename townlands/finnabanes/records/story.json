@@ -35,7 +35,7 @@
       "stage": "map",
       "open_card": ""
      },
-     "caption": "Finnabanes, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Finnabanes and its fifteen families, from 1874 to 1926.",
+     "caption": "Finnabanes, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Finnabanes and its sixteen families, from 1874 to 1926.",
      "people": [],
      "media": [],
      "evidence": {
@@ -90,47 +90,6 @@
       "certainty": "stated"
      },
      "duration_ms": 10200,
-     "audio": null
-    }
-   ]
-  },
-  {
-   "id": "finnabanes:ch:baptisms",
-   "title": "Baptisms, 1874",
-   "beats": [
-    {
-     "id": "finnabanes:beat:baptism:1874-05-05-TAW-B-p010-r114",
-     "kind": "baptism",
-     "chapter": "finnabanes:ch:baptisms",
-     "time": {
-      "label": "5 May 1874",
-      "iso": "1874-05-05",
-      "sort": "1874-05-05",
-      "approximate": false
-     },
-     "place": {
-      "townland": "finnabanes",
-      "name": "Finnabanes",
-      "logainm_id": "13971",
-      "lat": 54.671751,
-      "lon": -8.037353,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "finnabanes:baptism:TAW-B-p010-r114"
-     },
-     "caption": "Mary Anne McGinty was baptised on 5 May 1874. Michael McGinty and Brigid Martin were the parents.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "finnabanes:baptism:TAW-B-p010-r114"
-      ],
-      "basis": "page_place",
-      "certainty": "stated"
-     },
-     "duration_ms": 6800,
      "audio": null
     }
    ]
@@ -614,6 +573,92 @@
      },
      "duration_ms": 4000,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "finnabanes:ch:family-16",
+   "title": "The McGinty family",
+   "beats": [
+    {
+     "id": "finnabanes:beat:familyhead:16",
+     "kind": "familyhead",
+     "chapter": "finnabanes:ch:family-16",
+     "time": {
+      "label": "The McGinty family",
+      "iso": "1874",
+      "sort": "1874-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "finnabanes",
+      "name": "Finnabanes",
+      "logainm_id": "13971",
+      "lat": 54.671751,
+      "lon": -8.037353,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "finnabanes:familypresence:16"
+     },
+     "caption": "The McGinty family appear in the records in 1874.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "finnabanes:familypresence:16"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "finnabanes:family:16",
+      "label": "McGinty",
+      "run": false
+     }
+    },
+    {
+     "id": "finnabanes:beat:baptism:1874-05-05-TAW-B-p010-r114",
+     "kind": "baptism",
+     "chapter": "finnabanes:ch:family-16",
+     "time": {
+      "label": "5 May 1874",
+      "iso": "1874-05-05",
+      "sort": "1874-05-05",
+      "approximate": false
+     },
+     "place": {
+      "townland": "finnabanes",
+      "name": "Finnabanes",
+      "logainm_id": "13971",
+      "lat": 54.671751,
+      "lon": -8.037353,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "finnabanes:baptism:TAW-B-p010-r114"
+     },
+     "caption": "Mary Anne McGinty was baptised on 5 May 1874. Michael McGinty and Brigid Martin were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "finnabanes:baptism:TAW-B-p010-r114"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "thread": {
+      "id": "finnabanes:family:16",
+      "label": "McGinty",
+      "run": false
+     }
     }
    ]
   },

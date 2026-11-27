@@ -541,6 +541,46 @@
    "title": "The Thomas family",
    "beats": [
     {
+     "id": "ardeevin:beat:familyhead:06",
+     "kind": "familyhead",
+     "chapter": "ardeevin:ch:family-06",
+     "time": {
+      "label": "The Thomas family",
+      "iso": "1873",
+      "sort": "1873-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardeevin",
+      "name": "Ardeevin",
+      "logainm_id": "14236",
+      "lat": 54.692639,
+      "lon": -8.021663,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardeevin:familypresence:06"
+     },
+     "caption": "The Thomas family appear in the records from 1873 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardeevin:familypresence:06"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "ardeevin:family:06",
+      "label": "Thomas",
+      "run": false
+     }
+    },
+    {
      "id": "ardeevin:beat:baptism:1873-06-08-TAW-B-p007-r50",
      "kind": "baptism",
      "chapter": "ardeevin:ch:family-06",
@@ -573,46 +613,6 @@
       "certainty": "stated"
      },
      "duration_ms": 6400,
-     "audio": null,
-     "thread": {
-      "id": "ardeevin:family:06",
-      "label": "Thomas",
-      "run": false
-     }
-    },
-    {
-     "id": "ardeevin:beat:familyhead:06",
-     "kind": "familyhead",
-     "chapter": "ardeevin:ch:family-06",
-     "time": {
-      "label": "The Thomas family",
-      "iso": "1901",
-      "sort": "1901-01-01",
-      "approximate": true
-     },
-     "place": {
-      "townland": "ardeevin",
-      "name": "Ardeevin",
-      "logainm_id": "14236",
-      "lat": 54.692639,
-      "lon": -8.021663,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "ardeevin:familypresence:06"
-     },
-     "caption": "The Thomas family appear in the records from 1901 to 1911.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "ardeevin:familypresence:06"
-      ],
-      "basis": "census_surname",
-      "certainty": "accepted"
-     },
-     "duration_ms": 4400,
      "audio": null,
      "thread": {
       "id": "ardeevin:family:06",

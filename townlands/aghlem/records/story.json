@@ -35,7 +35,7 @@
       "stage": "map",
       "open_card": ""
      },
-     "caption": "Aghlem, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Aghlem and its eleven families, from 1874 to 1926.",
+     "caption": "Aghlem, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Aghlem and its thirteen families, from 1874 to 1926.",
      "people": [],
      "media": [],
      "evidence": {
@@ -90,82 +90,6 @@
       "certainty": "stated"
      },
      "duration_ms": 11000,
-     "audio": null
-    }
-   ]
-  },
-  {
-   "id": "aghlem:ch:baptisms",
-   "title": "Baptisms, 1874 to 1875",
-   "beats": [
-    {
-     "id": "aghlem:beat:baptism:1874-08-13-TAW-B-p011-r141",
-     "kind": "baptism",
-     "chapter": "aghlem:ch:baptisms",
-     "time": {
-      "label": "13 August 1874",
-      "iso": "1874-08-13",
-      "sort": "1874-08-13",
-      "approximate": false
-     },
-     "place": {
-      "townland": "aghlem",
-      "name": "Aghlem",
-      "logainm_id": "14271",
-      "lat": 54.65671,
-      "lon": -8.021811,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "aghlem:baptism:TAW-B-p011-r141"
-     },
-     "caption": "Margaret Ellen Breslin was baptised on 13 August 1874. Denis Breslin and Margaret Slevin were the parents.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "aghlem:baptism:TAW-B-p011-r141"
-      ],
-      "basis": "page_place",
-      "certainty": "stated"
-     },
-     "duration_ms": 6800,
-     "audio": null
-    },
-    {
-     "id": "aghlem:beat:baptism:1875-03-07-TAW-B-p016-r194",
-     "kind": "baptism",
-     "chapter": "aghlem:ch:baptisms",
-     "time": {
-      "label": "7 March 1875",
-      "iso": "1875-03-07",
-      "sort": "1875-03-07",
-      "approximate": false
-     },
-     "place": {
-      "townland": "aghlem",
-      "name": "Aghlem",
-      "logainm_id": "14271",
-      "lat": 54.65671,
-      "lon": -8.021811,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "aghlem:baptism:TAW-B-p016-r194"
-     },
-     "caption": "Thomas McMullin was baptised on 7 March 1875. Peter McMullin and Catherine Kelly were the parents.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "aghlem:baptism:TAW-B-p016-r194"
-      ],
-      "basis": "page_place",
-      "certainty": "stated"
-     },
-     "duration_ms": 6400,
      "audio": null
     }
    ]
@@ -243,7 +167,7 @@
      "time": {
       "label": "The families of Aghlem",
       "iso": "1874-02-01",
-      "sort": "1874-02-01",
+      "sort": "1874-01-01",
       "approximate": true
      },
      "place": {
@@ -284,6 +208,46 @@
    "title": "The Gillespie family",
    "beats": [
     {
+     "id": "aghlem:beat:familyhead:06",
+     "kind": "familyhead",
+     "chapter": "aghlem:ch:family-06",
+     "time": {
+      "label": "The Gillespie family",
+      "iso": "1874",
+      "sort": "1874-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "aghlem",
+      "name": "Aghlem",
+      "logainm_id": "14271",
+      "lat": 54.65671,
+      "lon": -8.021811,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "aghlem:familypresence:06"
+     },
+     "caption": "The Gillespie family appear in the records from 1874 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "aghlem:familypresence:06"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "aghlem:family:06",
+      "label": "Gillespie",
+      "run": true
+     }
+    },
+    {
      "id": "aghlem:beat:baptism:1874-02-01-TAW-B-p010-r103",
      "kind": "baptism",
      "chapter": "aghlem:ch:family-06",
@@ -316,46 +280,6 @@
       "certainty": "stated"
      },
      "duration_ms": 6400,
-     "audio": null,
-     "thread": {
-      "id": "aghlem:family:06",
-      "label": "Gillespie",
-      "run": true
-     }
-    },
-    {
-     "id": "aghlem:beat:familyhead:06",
-     "kind": "familyhead",
-     "chapter": "aghlem:ch:family-06",
-     "time": {
-      "label": "The Gillespie family",
-      "iso": "1901",
-      "sort": "1901-01-01",
-      "approximate": true
-     },
-     "place": {
-      "townland": "aghlem",
-      "name": "Aghlem",
-      "logainm_id": "14271",
-      "lat": 54.65671,
-      "lon": -8.021811,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "aghlem:familypresence:06"
-     },
-     "caption": "The Gillespie family appear in the records from 1901 to 1926.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "aghlem:familypresence:06"
-      ],
-      "basis": "census_surname",
-      "certainty": "accepted"
-     },
-     "duration_ms": 4400,
      "audio": null,
      "thread": {
       "id": "aghlem:family:06",
@@ -689,6 +613,178 @@
      },
      "duration_ms": 4000,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "aghlem:ch:family-12",
+   "title": "The Breslin family",
+   "beats": [
+    {
+     "id": "aghlem:beat:familyhead:12",
+     "kind": "familyhead",
+     "chapter": "aghlem:ch:family-12",
+     "time": {
+      "label": "The Breslin family",
+      "iso": "1874",
+      "sort": "1874-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "aghlem",
+      "name": "Aghlem",
+      "logainm_id": "14271",
+      "lat": 54.65671,
+      "lon": -8.021811,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "aghlem:familypresence:12"
+     },
+     "caption": "The Breslin family appear in the records in 1874.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "aghlem:familypresence:12"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "aghlem:family:12",
+      "label": "Breslin",
+      "run": false
+     }
+    },
+    {
+     "id": "aghlem:beat:baptism:1874-08-13-TAW-B-p011-r141",
+     "kind": "baptism",
+     "chapter": "aghlem:ch:family-12",
+     "time": {
+      "label": "13 August 1874",
+      "iso": "1874-08-13",
+      "sort": "1874-08-13",
+      "approximate": false
+     },
+     "place": {
+      "townland": "aghlem",
+      "name": "Aghlem",
+      "logainm_id": "14271",
+      "lat": 54.65671,
+      "lon": -8.021811,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "aghlem:baptism:TAW-B-p011-r141"
+     },
+     "caption": "Margaret Ellen Breslin was baptised on 13 August 1874. Denis Breslin and Margaret Slevin were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "aghlem:baptism:TAW-B-p011-r141"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "thread": {
+      "id": "aghlem:family:12",
+      "label": "Breslin",
+      "run": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "aghlem:ch:family-13",
+   "title": "The McMullin family",
+   "beats": [
+    {
+     "id": "aghlem:beat:familyhead:13",
+     "kind": "familyhead",
+     "chapter": "aghlem:ch:family-13",
+     "time": {
+      "label": "The McMullin family",
+      "iso": "1875",
+      "sort": "1875-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "aghlem",
+      "name": "Aghlem",
+      "logainm_id": "14271",
+      "lat": 54.65671,
+      "lon": -8.021811,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "aghlem:familypresence:13"
+     },
+     "caption": "The McMullin family appear in the records in 1875.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "aghlem:familypresence:13"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "aghlem:family:13",
+      "label": "McMullin",
+      "run": false
+     }
+    },
+    {
+     "id": "aghlem:beat:baptism:1875-03-07-TAW-B-p016-r194",
+     "kind": "baptism",
+     "chapter": "aghlem:ch:family-13",
+     "time": {
+      "label": "7 March 1875",
+      "iso": "1875-03-07",
+      "sort": "1875-03-07",
+      "approximate": false
+     },
+     "place": {
+      "townland": "aghlem",
+      "name": "Aghlem",
+      "logainm_id": "14271",
+      "lat": 54.65671,
+      "lon": -8.021811,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "aghlem:baptism:TAW-B-p016-r194"
+     },
+     "caption": "Thomas McMullin was baptised on 7 March 1875. Peter McMullin and Catherine Kelly were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "aghlem:baptism:TAW-B-p016-r194"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "thread": {
+      "id": "aghlem:family:13",
+      "label": "McMullin",
+      "run": false
+     }
     }
    ]
   },

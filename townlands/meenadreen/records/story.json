@@ -581,6 +581,46 @@
    "title": "The Gildea family",
    "beats": [
     {
+     "id": "meenadreen:beat:familyhead:05",
+     "kind": "familyhead",
+     "chapter": "meenadreen:ch:family-05",
+     "time": {
+      "label": "The Gildea family",
+      "iso": "1873",
+      "sort": "1873-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "meenadreen",
+      "name": "Meenadreen",
+      "logainm_id": "14284",
+      "lat": 54.658474,
+      "lon": -7.983221,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "meenadreen:familypresence:05"
+     },
+     "caption": "The Gildea family appear in the records from 1873 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "meenadreen:familypresence:05"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "meenadreen:family:05",
+      "label": "Gildea",
+      "run": false
+     }
+    },
+    {
      "id": "meenadreen:beat:baptism:1873-11-01-TAW-B-p008-r77",
      "kind": "baptism",
      "chapter": "meenadreen:ch:family-05",
@@ -653,46 +693,6 @@
       "certainty": "stated"
      },
      "duration_ms": 6400,
-     "audio": null,
-     "thread": {
-      "id": "meenadreen:family:05",
-      "label": "Gildea",
-      "run": false
-     }
-    },
-    {
-     "id": "meenadreen:beat:familyhead:05",
-     "kind": "familyhead",
-     "chapter": "meenadreen:ch:family-05",
-     "time": {
-      "label": "The Gildea family",
-      "iso": "1901",
-      "sort": "1901-01-01",
-      "approximate": true
-     },
-     "place": {
-      "townland": "meenadreen",
-      "name": "Meenadreen",
-      "logainm_id": "14284",
-      "lat": 54.658474,
-      "lon": -7.983221,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "meenadreen:familypresence:05"
-     },
-     "caption": "The Gildea family appear in the records from 1901 to 1926.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "meenadreen:familypresence:05"
-      ],
-      "basis": "census_surname",
-      "certainty": "accepted"
-     },
-     "duration_ms": 4400,
      "audio": null,
      "thread": {
       "id": "meenadreen:family:05",

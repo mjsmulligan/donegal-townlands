@@ -167,7 +167,7 @@
      "time": {
       "label": "The families of Garvagh",
       "iso": "1873-03-27",
-      "sort": "1874-06-07",
+      "sort": "1874-01-01",
       "approximate": true
      },
      "place": {
@@ -208,6 +208,46 @@
    "title": "The McGinty family",
    "beats": [
     {
+     "id": "garvagh:beat:familyhead:06",
+     "kind": "familyhead",
+     "chapter": "garvagh:ch:family-06",
+     "time": {
+      "label": "The McGinty family",
+      "iso": "1874",
+      "sort": "1874-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "garvagh",
+      "name": "Garvagh",
+      "logainm_id": "14242",
+      "lat": 54.707058,
+      "lon": -8.029315,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "garvagh:familypresence:06"
+     },
+     "caption": "The McGinty family appear in the records from 1874 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "garvagh:familypresence:06"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "garvagh:family:06",
+      "label": "McGinty",
+      "run": true
+     }
+    },
+    {
      "id": "garvagh:beat:baptism:1874-06-07-TAW-B-p011-r128",
      "kind": "baptism",
      "chapter": "garvagh:ch:family-06",
@@ -240,46 +280,6 @@
       "certainty": "stated"
      },
      "duration_ms": 6400,
-     "audio": null,
-     "thread": {
-      "id": "garvagh:family:06",
-      "label": "McGinty",
-      "run": true
-     }
-    },
-    {
-     "id": "garvagh:beat:familyhead:06",
-     "kind": "familyhead",
-     "chapter": "garvagh:ch:family-06",
-     "time": {
-      "label": "The McGinty family",
-      "iso": "1901",
-      "sort": "1901-01-01",
-      "approximate": true
-     },
-     "place": {
-      "townland": "garvagh",
-      "name": "Garvagh",
-      "logainm_id": "14242",
-      "lat": 54.707058,
-      "lon": -8.029315,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "garvagh:familypresence:06"
-     },
-     "caption": "The McGinty family appear in the records from 1901 to 1926.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "garvagh:familypresence:06"
-      ],
-      "basis": "census_surname",
-      "certainty": "accepted"
-     },
-     "duration_ms": 4400,
      "audio": null,
      "thread": {
       "id": "garvagh:family:06",
@@ -621,6 +621,46 @@
    "title": "The Martin family",
    "beats": [
     {
+     "id": "garvagh:beat:familyhead:05",
+     "kind": "familyhead",
+     "chapter": "garvagh:ch:family-05",
+     "time": {
+      "label": "The Martin family",
+      "iso": "1873",
+      "sort": "1873-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "garvagh",
+      "name": "Garvagh",
+      "logainm_id": "14242",
+      "lat": 54.707058,
+      "lon": -8.029315,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "garvagh:familypresence:05"
+     },
+     "caption": "The Martin family appear in the records from 1873 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "garvagh:familypresence:05"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4400,
+     "audio": null,
+     "thread": {
+      "id": "garvagh:family:05",
+      "label": "Martin",
+      "run": false
+     }
+    },
+    {
      "id": "garvagh:beat:baptism:1873-03-27-TAW-B-p006-r30",
      "kind": "baptism",
      "chapter": "garvagh:ch:family-05",
@@ -773,46 +813,6 @@
       "certainty": "stated"
      },
      "duration_ms": 6400,
-     "audio": null,
-     "thread": {
-      "id": "garvagh:family:05",
-      "label": "Martin",
-      "run": false
-     }
-    },
-    {
-     "id": "garvagh:beat:familyhead:05",
-     "kind": "familyhead",
-     "chapter": "garvagh:ch:family-05",
-     "time": {
-      "label": "The Martin family",
-      "iso": "1901",
-      "sort": "1901-01-01",
-      "approximate": true
-     },
-     "place": {
-      "townland": "garvagh",
-      "name": "Garvagh",
-      "logainm_id": "14242",
-      "lat": 54.707058,
-      "lon": -8.029315,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "garvagh:familypresence:05"
-     },
-     "caption": "The Martin family appear in the records from 1901 to 1911.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "garvagh:familypresence:05"
-      ],
-      "basis": "census_surname",
-      "certainty": "accepted"
-     },
-     "duration_ms": 4400,
      "audio": null,
      "thread": {
       "id": "garvagh:family:05",

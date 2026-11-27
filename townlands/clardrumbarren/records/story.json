@@ -35,7 +35,7 @@
       "stage": "map",
       "open_card": ""
      },
-     "caption": "Clardrumbarren, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Clardrumbarren and its two families, from 1874 to 1926.",
+     "caption": "Clardrumbarren, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Clardrumbarren and its three families, from 1874 to 1926.",
      "people": [],
      "media": [],
      "evidence": {
@@ -90,47 +90,6 @@
       "certainty": "stated"
      },
      "duration_ms": 10200,
-     "audio": null
-    }
-   ]
-  },
-  {
-   "id": "clardrumbarren:ch:baptisms",
-   "title": "Baptisms, 1874",
-   "beats": [
-    {
-     "id": "clardrumbarren:beat:baptism:1874-08-30-TAW-B-p012-r146",
-     "kind": "baptism",
-     "chapter": "clardrumbarren:ch:baptisms",
-     "time": {
-      "label": "30 August 1874",
-      "iso": "1874-08-30",
-      "sort": "1874-08-30",
-      "approximate": false
-     },
-     "place": {
-      "townland": "clardrumbarren",
-      "name": "Clardrumbarren",
-      "logainm_id": "13961",
-      "lat": 54.673269,
-      "lon": -8.071599,
-      "camera": "townland"
-     },
-     "scene": {
-      "stage": "map",
-      "open_card": "clardrumbarren:baptism:TAW-B-p012-r146"
-     },
-     "caption": "Hugh Sharkey was baptised on 30 August 1874. Neil Sharkey and Rose Cassidy were the parents. The family was possibly from Clardrumbarren.",
-     "people": [],
-     "media": [],
-     "evidence": {
-      "events": [
-       "clardrumbarren:baptism:TAW-B-p012-r146"
-      ],
-      "basis": "page_place_doubtful",
-      "certainty": "possible"
-     },
-     "duration_ms": 8800,
      "audio": null
     }
    ]
@@ -494,6 +453,92 @@
      },
      "duration_ms": 4000,
      "audio": null
+    }
+   ]
+  },
+  {
+   "id": "clardrumbarren:ch:family-03",
+   "title": "The Sharkey family",
+   "beats": [
+    {
+     "id": "clardrumbarren:beat:familyhead:03",
+     "kind": "familyhead",
+     "chapter": "clardrumbarren:ch:family-03",
+     "time": {
+      "label": "The Sharkey family",
+      "iso": "1874",
+      "sort": "1874-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clardrumbarren",
+      "name": "Clardrumbarren",
+      "logainm_id": "13961",
+      "lat": 54.673269,
+      "lon": -8.071599,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clardrumbarren:familypresence:03"
+     },
+     "caption": "The Sharkey family appear in the records in 1874.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clardrumbarren:familypresence:03"
+      ],
+      "basis": "census_surname",
+      "certainty": "accepted"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "thread": {
+      "id": "clardrumbarren:family:03",
+      "label": "Sharkey",
+      "run": false
+     }
+    },
+    {
+     "id": "clardrumbarren:beat:baptism:1874-08-30-TAW-B-p012-r146",
+     "kind": "baptism",
+     "chapter": "clardrumbarren:ch:family-03",
+     "time": {
+      "label": "30 August 1874",
+      "iso": "1874-08-30",
+      "sort": "1874-08-30",
+      "approximate": false
+     },
+     "place": {
+      "townland": "clardrumbarren",
+      "name": "Clardrumbarren",
+      "logainm_id": "13961",
+      "lat": 54.673269,
+      "lon": -8.071599,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clardrumbarren:baptism:TAW-B-p012-r146"
+     },
+     "caption": "Hugh Sharkey was baptised on 30 August 1874. Neil Sharkey and Rose Cassidy were the parents. The family was possibly from Clardrumbarren.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clardrumbarren:baptism:TAW-B-p012-r146"
+      ],
+      "basis": "page_place_doubtful",
+      "certainty": "possible"
+     },
+     "duration_ms": 8800,
+     "audio": null,
+     "thread": {
+      "id": "clardrumbarren:family:03",
+      "label": "Sharkey",
+      "run": false
+     }
     }
    ]
   }
