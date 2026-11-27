@@ -566,6 +566,9 @@ def generate(display, slug, place_record, events, by_event=None, header=None, to
         beats += dated_beats
         beats.append(closing_beat(events, place, later))
     order = lambda b: (b['time']['sort'], KIND_ORDER[b['kind']], b['id'])
+    # the title opens the story: it is dated no later than the earliest beat (the register beat is dated
+    # 1 January of its first year, which can fall before the first baptism the title was dated from)
+    beats[0]['time']['sort'] = min(b['time']['sort'] for b in beats)
     beats.sort(key=order)
     closing = [b for b in beats if b['kind'] == 'closing']
     beats = [b for b in beats if b['kind'] != 'closing']

@@ -874,6 +874,23 @@ class FamilyThreadTests(unittest.TestCase):
         mine = next(x for x in beats if x['kind'] == 'baptism')
         self.assertEqual(mine['thread']['label'], 'Kelly')
 
+    def test_the_title_comes_before_the_register_in_a_story_with_no_valuation(self):
+        bap = {'id': 'aghlem:baptism:B1', 'type': 'baptism', 'milestone': False,
+               'date': {'kind': 'exact', 'label': '1 February 1874', 'iso': '1874-02-01'}, 'sort': '1874-02-01',
+               'title': 'Baptism of Anne Kelly', 'text': 'Father: Hugh Kelly.', 'media': [],
+               'people': [{'name': 'Anne Kelly', 'role': 'child baptised'}, {'name': 'Hugh Kelly', 'role': 'father'}],
+               'association': {'basis': 'page_place', 'label': ''},
+               'source': {'label': 'Register', 'url': '', 'reference': 'B1'}}
+        reg = {'id': 'aghlem:register:x', 'type': 'register', 'milestone': False, 'baptisms': 1, 'marriages': 0,
+               'marriages_placed': False, 'date': {'kind': 'range', 'label': '1874 to 1875', 'iso': '1874'},
+               'sort': '1874-01-01', 'title': 'Register', 'text': '1 baptism naming Aghlem.',
+               'people': [], 'media': [], 'association': {'basis': 'page_place', 'label': ''},
+               'source': {'label': 'Register', 'url': '', 'reference': 'x'}}
+        fam = {'names': {'families': 2}, 'threads': [], 'highlights': [], 'register': reg}
+        doc, _ = bd.generate('Aghlem', 'aghlem', PLACE, [bap, census(1901, 61, 14), census(1911, 62, 10)], today=TODAY, fam=fam)
+        beats = [x for c in doc['chapters'] for x in c['beats']]
+        self.assertEqual([b['kind'] for b in beats][:2], ['title', 'register'])
+
     def test_the_hub_lists_the_families_by_thread(self):
         doc, _, events, fam = self.make()
         extra = [e for t in fam['threads'] for e in t['events'] + [t['presence']]]
