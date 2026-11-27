@@ -1,0 +1,225 @@
+{
+ "schema": 1,
+ "townland": "Raneany West",
+ "slug": "raneany-west",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Raneany West",
+ "span": {
+  "from": "1901",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "raneany-west:ch:intro",
+   "title": "Raneany West",
+   "beats": [
+    {
+     "id": "raneany-west:beat:title:title",
+     "kind": "title",
+     "chapter": "raneany-west:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "raneany-west",
+      "name": "Raneany West",
+      "logainm_id": "14151",
+      "lat": 54.622728,
+      "lon": -8.081735,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Raneany West. Here is the story of Raneany West and its 35 families, from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "raneany west:census:1901",
+       "raneany west:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "raneany-west:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "raneany-west:beat:census:1901",
+     "kind": "census",
+     "chapter": "raneany-west:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "raneany-west",
+      "name": "Raneany West",
+      "logainm_id": "14151",
+      "lat": 54.622728,
+      "lon": -8.081735,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "raneany west:census:1901"
+     },
+     "caption": "In 1901, 70 people in seventeen households lived in Raneany West. Heads of household included Martin, Brown and Farrell.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "raneany west:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7600,
+     "audio": null,
+     "counts": {
+      "people": 70,
+      "households": 17
+     }
+    }
+   ]
+  },
+  {
+   "id": "raneany-west:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "raneany-west:beat:census:1911",
+     "kind": "census",
+     "chapter": "raneany-west:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "raneany-west",
+      "name": "Raneany West",
+      "logainm_id": "14151",
+      "lat": 54.622728,
+      "lon": -8.081735,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "raneany west:census:1911"
+     },
+     "caption": "In 1911, 98 people in seventeen households lived in Raneany West. Heads of household included Martin, Farrell and Tunny.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "raneany west:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7600,
+     "audio": null,
+     "counts": {
+      "people": 98,
+      "households": 17
+     }
+    }
+   ]
+  },
+  {
+   "id": "raneany-west:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "raneany-west:beat:census:1926",
+     "kind": "census",
+     "chapter": "raneany-west:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "raneany-west",
+      "name": "Raneany West",
+      "logainm_id": "14151",
+      "lat": 54.622728,
+      "lon": -8.081735,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "raneany west:census:1926"
+     },
+     "caption": "In 1926, 53 people in thirteen households lived in Raneany West. Heads of household included Robinson, McGinley and Sheldon.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "raneany west:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7600,
+     "audio": null,
+     "counts": {
+      "people": 53,
+      "households": 13
+     }
+    },
+    {
+     "id": "raneany-west:beat:closing:end",
+     "kind": "closing",
+     "chapter": "raneany-west:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "raneany-west",
+      "name": "Raneany West",
+      "logainm_id": "14151",
+      "lat": 54.622728,
+      "lon": -8.081735,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "raneany west:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with thirteen households in Raneany West.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "raneany west:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4400,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

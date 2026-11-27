@@ -1,0 +1,225 @@
+{
+ "schema": 1,
+ "townland": "Drummenny Upper",
+ "slug": "drummenny-upper",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Drummenny Upper",
+ "span": {
+  "from": "1901",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "drummenny-upper:ch:intro",
+   "title": "Drummenny Upper",
+   "beats": [
+    {
+     "id": "drummenny-upper:beat:title:title",
+     "kind": "title",
+     "chapter": "drummenny-upper:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drummenny-upper",
+      "name": "Drummenny Upper",
+      "logainm_id": "14278",
+      "lat": 54.658619,
+      "lon": -8.052215,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Drummenny Upper, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Drummenny Upper and its fourteen families, from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drummenny upper:census:1901",
+       "drummenny upper:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 11200,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "drummenny-upper:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "drummenny-upper:beat:census:1901",
+     "kind": "census",
+     "chapter": "drummenny-upper:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drummenny-upper",
+      "name": "Drummenny Upper",
+      "logainm_id": "14278",
+      "lat": 54.658619,
+      "lon": -8.052215,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drummenny upper:census:1901"
+     },
+     "caption": "In 1901, 27 people in seven households lived in Drummenny Upper. Heads of household included Bustard, Irwine and Little.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drummenny upper:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7600,
+     "audio": null,
+     "counts": {
+      "people": 27,
+      "households": 7
+     }
+    }
+   ]
+  },
+  {
+   "id": "drummenny-upper:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "drummenny-upper:beat:census:1911",
+     "kind": "census",
+     "chapter": "drummenny-upper:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drummenny-upper",
+      "name": "Drummenny Upper",
+      "logainm_id": "14278",
+      "lat": 54.658619,
+      "lon": -8.052215,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drummenny upper:census:1911"
+     },
+     "caption": "Drummenny Upper had 32 people in nine households in 1911. Heads of household included Bustard, Gallagher and Hone.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drummenny upper:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 32,
+      "households": 9
+     }
+    }
+   ]
+  },
+  {
+   "id": "drummenny-upper:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "drummenny-upper:beat:census:1926",
+     "kind": "census",
+     "chapter": "drummenny-upper:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drummenny-upper",
+      "name": "Drummenny Upper",
+      "logainm_id": "14278",
+      "lat": 54.658619,
+      "lon": -8.052215,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drummenny upper:census:1926"
+     },
+     "caption": "Drummenny Upper had 29 people in six households in 1926. Heads of household included Travers, Irwin and Little.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drummenny upper:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 29,
+      "households": 6
+     }
+    },
+    {
+     "id": "drummenny-upper:beat:closing:end",
+     "kind": "closing",
+     "chapter": "drummenny-upper:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drummenny-upper",
+      "name": "Drummenny Upper",
+      "logainm_id": "14278",
+      "lat": 54.658619,
+      "lon": -8.052215,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drummenny upper:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with six households in Drummenny Upper.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drummenny upper:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4400,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

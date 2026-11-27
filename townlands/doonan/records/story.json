@@ -1,0 +1,225 @@
+{
+ "schema": 1,
+ "townland": "Doonan",
+ "slug": "doonan",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Doonan",
+ "span": {
+  "from": "1901",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "doonan:ch:intro",
+   "title": "Doonan",
+   "beats": [
+    {
+     "id": "doonan:beat:title:title",
+     "kind": "title",
+     "chapter": "doonan:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "doonan",
+      "name": "Doonan",
+      "logainm_id": "14003",
+      "lat": 54.65788,
+      "lon": -8.129126,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Doonan. Here is the story of Doonan and its nineteen families, from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "doonan:census:1901",
+       "doonan:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6000,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "doonan:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "doonan:beat:census:1901",
+     "kind": "census",
+     "chapter": "doonan:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "doonan",
+      "name": "Doonan",
+      "logainm_id": "14003",
+      "lat": 54.65788,
+      "lon": -8.129126,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "doonan:census:1901"
+     },
+     "caption": "Doonan had 51 people in ten households in 1901. Heads of household included Coulter, Ellis and Fawcett.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "doonan:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 51,
+      "households": 10
+     }
+    }
+   ]
+  },
+  {
+   "id": "doonan:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "doonan:beat:census:1911",
+     "kind": "census",
+     "chapter": "doonan:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "doonan",
+      "name": "Doonan",
+      "logainm_id": "14003",
+      "lat": 54.65788,
+      "lon": -8.129126,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "doonan:census:1911"
+     },
+     "caption": "Doonan had 53 people in ten households in 1911. Heads of household included Coulter, Fawcett and Gairdner.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "doonan:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 53,
+      "households": 10
+     }
+    }
+   ]
+  },
+  {
+   "id": "doonan:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "doonan:beat:census:1926",
+     "kind": "census",
+     "chapter": "doonan:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "doonan",
+      "name": "Doonan",
+      "logainm_id": "14003",
+      "lat": 54.65788,
+      "lon": -8.129126,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "doonan:census:1926"
+     },
+     "caption": "Doonan had 36 people in nine households in 1926. Heads of household included Muldoon, Brogan and Fawcett.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "doonan:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 36,
+      "households": 9
+     }
+    },
+    {
+     "id": "doonan:beat:closing:end",
+     "kind": "closing",
+     "chapter": "doonan:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "doonan",
+      "name": "Doonan",
+      "logainm_id": "14003",
+      "lat": 54.65788,
+      "lon": -8.129126,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "doonan:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with nine households in Doonan.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "doonan:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

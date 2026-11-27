@@ -1,0 +1,225 @@
+{
+ "schema": 1,
+ "townland": "Rossilly Barr",
+ "slug": "rossilly-barr",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Rossilly Barr",
+ "span": {
+  "from": "1901",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "rossilly-barr:ch:intro",
+   "title": "Rossilly Barr",
+   "beats": [
+    {
+     "id": "rossilly-barr:beat:title:title",
+     "kind": "title",
+     "chapter": "rossilly-barr:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossilly-barr",
+      "name": "Rossilly Barr",
+      "logainm_id": "14154",
+      "lat": 54.601558,
+      "lon": -8.030052,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Rossilly Barr. Here is the story of Rossilly Barr and its seven families, from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossilly barr:census:1901",
+       "rossilly barr:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "rossilly-barr:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "rossilly-barr:beat:census:1901",
+     "kind": "census",
+     "chapter": "rossilly-barr:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossilly-barr",
+      "name": "Rossilly Barr",
+      "logainm_id": "14154",
+      "lat": 54.601558,
+      "lon": -8.030052,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rossilly barr:census:1901"
+     },
+     "caption": "In 1901, 32 people in seven households lived in Rossilly Barr. Heads of household included Quinn, Gallagher and McDaid.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossilly barr:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7600,
+     "audio": null,
+     "counts": {
+      "people": 32,
+      "households": 7
+     }
+    }
+   ]
+  },
+  {
+   "id": "rossilly-barr:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "rossilly-barr:beat:census:1911",
+     "kind": "census",
+     "chapter": "rossilly-barr:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossilly-barr",
+      "name": "Rossilly Barr",
+      "logainm_id": "14154",
+      "lat": 54.601558,
+      "lon": -8.030052,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rossilly barr:census:1911"
+     },
+     "caption": "Rossilly Barr had 24 people in six households in 1911. Heads of household included Quinn, Timmoney and Gallagher.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossilly barr:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 24,
+      "households": 6
+     }
+    }
+   ]
+  },
+  {
+   "id": "rossilly-barr:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "rossilly-barr:beat:census:1926",
+     "kind": "census",
+     "chapter": "rossilly-barr:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossilly-barr",
+      "name": "Rossilly Barr",
+      "logainm_id": "14154",
+      "lat": 54.601558,
+      "lon": -8.030052,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rossilly barr:census:1926"
+     },
+     "caption": "Rossilly Barr had 34 people in five households in 1926. Heads of household included Quinn, Timmoney and Ward.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossilly barr:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 34,
+      "households": 5
+     }
+    },
+    {
+     "id": "rossilly-barr:beat:closing:end",
+     "kind": "closing",
+     "chapter": "rossilly-barr:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossilly-barr",
+      "name": "Rossilly Barr",
+      "logainm_id": "14154",
+      "lat": 54.601558,
+      "lon": -8.030052,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rossilly barr:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with five households in Rossilly Barr.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossilly barr:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4400,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

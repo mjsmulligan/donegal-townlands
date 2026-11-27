@@ -1,0 +1,307 @@
+{
+ "schema": 1,
+ "townland": "Skreen",
+ "slug": "skreen",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Skreen",
+ "span": {
+  "from": "1874",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "skreen:ch:register",
+   "title": "The parish register",
+   "beats": [
+    {
+     "id": "skreen:beat:register:tawnawilly",
+     "kind": "register",
+     "chapter": "skreen:ch:register",
+     "time": {
+      "label": "1873 to 1874",
+      "iso": "1873",
+      "sort": "1873-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "skreen",
+      "name": "Skreen",
+      "logainm_id": "14299",
+      "lat": 54.643906,
+      "lon": -8.00866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "skreen:register:tawnawilly"
+     },
+     "caption": "The parish register of Tawnawilly records two baptisms at Skreen between 1873 and 1874. Its marriage entries give no townland, so none are placed here.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "skreen:register:tawnawilly"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 10000,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "skreen:ch:intro",
+   "title": "Skreen",
+   "beats": [
+    {
+     "id": "skreen:beat:title:title",
+     "kind": "title",
+     "chapter": "skreen:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1874-11-09",
+      "approximate": true
+     },
+     "place": {
+      "townland": "skreen",
+      "name": "Skreen",
+      "logainm_id": "14299",
+      "lat": 54.643906,
+      "lon": -8.00866,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Skreen. Here is the story of Skreen and its sixteen families, from 1874 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "skreen:baptism:TAW-B-p013-r163",
+       "skreen:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6000,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "skreen:ch:baptisms",
+   "title": "Baptisms, 1874",
+   "beats": [
+    {
+     "id": "skreen:beat:baptism:1874-11-09-TAW-B-p013-r163",
+     "kind": "baptism",
+     "chapter": "skreen:ch:baptisms",
+     "time": {
+      "label": "9 November 1874",
+      "iso": "1874-11-09",
+      "sort": "1874-11-09",
+      "approximate": false
+     },
+     "place": {
+      "townland": "skreen",
+      "name": "Skreen",
+      "logainm_id": "14299",
+      "lat": 54.643906,
+      "lon": -8.00866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "skreen:baptism:TAW-B-p013-r163"
+     },
+     "caption": "John Carbin was baptised on 9 November 1874. James Carbin and Mary Cassidy were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "skreen:baptism:TAW-B-p013-r163"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "skreen:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "skreen:beat:census:1901",
+     "kind": "census",
+     "chapter": "skreen:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "skreen",
+      "name": "Skreen",
+      "logainm_id": "14299",
+      "lat": 54.643906,
+      "lon": -8.00866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "skreen:census:1901"
+     },
+     "caption": "In 1901, 73 people in thirteen households lived in Skreen. Heads of household included Carbine, Elliott and McGlinchy.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "skreen:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 73,
+      "households": 13
+     }
+    }
+   ]
+  },
+  {
+   "id": "skreen:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "skreen:beat:census:1911",
+     "kind": "census",
+     "chapter": "skreen:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "skreen",
+      "name": "Skreen",
+      "logainm_id": "14299",
+      "lat": 54.643906,
+      "lon": -8.00866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "skreen:census:1911"
+     },
+     "caption": "Skreen had 65 people in thirteen households in 1911. Heads of household included Carbin, Elliott and McCaffrey.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "skreen:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 65,
+      "households": 13
+     }
+    }
+   ]
+  },
+  {
+   "id": "skreen:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "skreen:beat:census:1926",
+     "kind": "census",
+     "chapter": "skreen:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "skreen",
+      "name": "Skreen",
+      "logainm_id": "14299",
+      "lat": 54.643906,
+      "lon": -8.00866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "skreen:census:1926"
+     },
+     "caption": "Skreen had 61 people in thirteen households in 1926. Heads of household included Elliot, Graham and McCaffrey.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "skreen:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 61,
+      "households": 13
+     }
+    },
+    {
+     "id": "skreen:beat:closing:end",
+     "kind": "closing",
+     "chapter": "skreen:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "skreen",
+      "name": "Skreen",
+      "logainm_id": "14299",
+      "lat": 54.643906,
+      "lon": -8.00866,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "skreen:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with thirteen households in Skreen.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "skreen:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

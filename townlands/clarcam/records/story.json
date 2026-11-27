@@ -1,0 +1,378 @@
+{
+ "schema": 1,
+ "townland": "Clarcam",
+ "slug": "clarcam",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Clarcam",
+ "span": {
+  "from": "1873",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "clarcam:ch:register",
+   "title": "The parish register",
+   "beats": [
+    {
+     "id": "clarcam:beat:register:tawnawilly",
+     "kind": "register",
+     "chapter": "clarcam:ch:register",
+     "time": {
+      "label": "1873 to 1875",
+      "iso": "1873",
+      "sort": "1873-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcam",
+      "name": "Clarcam",
+      "logainm_id": "13960",
+      "lat": 54.666169,
+      "lon": -8.054174,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcam:register:tawnawilly"
+     },
+     "caption": "The parish register of Tawnawilly records four baptisms at Clarcam between 1873 and 1875. Its marriage entries give no townland, so none are placed here.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcam:register:tawnawilly"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 10000,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "clarcam:ch:intro",
+   "title": "Clarcam",
+   "beats": [
+    {
+     "id": "clarcam:beat:title:title",
+     "kind": "title",
+     "chapter": "clarcam:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1873-02-02",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcam",
+      "name": "Clarcam",
+      "logainm_id": "13960",
+      "lat": 54.666169,
+      "lon": -8.054174,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Clarcam, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Clarcam and its eighteen families, from 1873 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcam:baptism:TAW-B-p005-r14",
+       "clarcam:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 10400,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "clarcam:ch:baptisms",
+   "title": "Baptisms, 1873 to 1875",
+   "beats": [
+    {
+     "id": "clarcam:beat:baptism:1873",
+     "kind": "baptism",
+     "chapter": "clarcam:ch:baptisms",
+     "time": {
+      "label": "2 February 1873",
+      "iso": "1873-02-02",
+      "sort": "1873-02-02",
+      "approximate": false
+     },
+     "place": {
+      "townland": "clarcam",
+      "name": "Clarcam",
+      "logainm_id": "13960",
+      "lat": 54.666169,
+      "lon": -8.054174,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcam:baptism:TAW-B-p005-r14"
+     },
+     "caption": "Two children were baptised in 1873: Mary Anne McGinty on 2 February and Letitia Kelly on 4 February.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcam:baptism:TAW-B-p005-r14",
+       "clarcam:baptism:TAW-B-p005-r16"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null
+    },
+    {
+     "id": "clarcam:beat:baptism:1874-11-25-TAW-B-p013-r165b",
+     "kind": "baptism",
+     "chapter": "clarcam:ch:baptisms",
+     "time": {
+      "label": "25 November 1874",
+      "iso": "1874-11-25",
+      "sort": "1874-11-25",
+      "approximate": false
+     },
+     "place": {
+      "townland": "clarcam",
+      "name": "Clarcam",
+      "logainm_id": "13960",
+      "lat": 54.666169,
+      "lon": -8.054174,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcam:baptism:TAW-B-p013-r165b"
+     },
+     "caption": "Hugh Kelly was baptised on 25 November 1874. Edward Kelly and Mary Harvey were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcam:baptism:TAW-B-p013-r165b"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null
+    },
+    {
+     "id": "clarcam:beat:baptism:1875-01-31-TAW-B-p015-r183",
+     "kind": "baptism",
+     "chapter": "clarcam:ch:baptisms",
+     "time": {
+      "label": "31 January 1875",
+      "iso": "1875-01-31",
+      "sort": "1875-01-31",
+      "approximate": false
+     },
+     "place": {
+      "townland": "clarcam",
+      "name": "Clarcam",
+      "logainm_id": "13960",
+      "lat": 54.666169,
+      "lon": -8.054174,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcam:baptism:TAW-B-p015-r183"
+     },
+     "caption": "Catherine McGinty was baptised on 31 January 1875. Edward McGinty and Mary O'Donnell were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcam:baptism:TAW-B-p015-r183"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "clarcam:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "clarcam:beat:census:1901",
+     "kind": "census",
+     "chapter": "clarcam:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcam",
+      "name": "Clarcam",
+      "logainm_id": "13960",
+      "lat": 54.666169,
+      "lon": -8.054174,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcam:census:1901"
+     },
+     "caption": "Clarcam had 77 people in eighteen households in 1901. Heads of household included Morrow, Bustard and Kelly.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcam:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 77,
+      "households": 18
+     }
+    }
+   ]
+  },
+  {
+   "id": "clarcam:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "clarcam:beat:census:1911",
+     "kind": "census",
+     "chapter": "clarcam:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcam",
+      "name": "Clarcam",
+      "logainm_id": "13960",
+      "lat": 54.666169,
+      "lon": -8.054174,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcam:census:1911"
+     },
+     "caption": "Clarcam had 54 people in fifteen households in 1911. Heads of household included Bustard, Morrow and Buchanan.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcam:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 54,
+      "households": 15
+     }
+    }
+   ]
+  },
+  {
+   "id": "clarcam:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "clarcam:beat:census:1926",
+     "kind": "census",
+     "chapter": "clarcam:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcam",
+      "name": "Clarcam",
+      "logainm_id": "13960",
+      "lat": 54.666169,
+      "lon": -8.054174,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcam:census:1926"
+     },
+     "caption": "Clarcam had 54 people in sixteen households in 1926. Heads of household included Bustard, Morrow and Bartley.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcam:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 54,
+      "households": 16
+     }
+    },
+    {
+     "id": "clarcam:beat:closing:end",
+     "kind": "closing",
+     "chapter": "clarcam:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcam",
+      "name": "Clarcam",
+      "logainm_id": "13960",
+      "lat": 54.666169,
+      "lon": -8.054174,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcam:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with sixteen households in Clarcam.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcam:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

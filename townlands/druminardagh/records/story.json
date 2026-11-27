@@ -1,0 +1,308 @@
+{
+ "schema": 1,
+ "townland": "Druminardagh",
+ "slug": "druminardagh",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Druminardagh",
+ "span": {
+  "from": "1874",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "druminardagh:ch:register",
+   "title": "The parish register",
+   "beats": [
+    {
+     "id": "druminardagh:beat:register:tawnawilly",
+     "kind": "register",
+     "chapter": "druminardagh:ch:register",
+     "time": {
+      "label": "1874",
+      "iso": "1874",
+      "sort": "1874-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminardagh",
+      "name": "Druminardagh",
+      "logainm_id": "14275",
+      "lat": 54.644538,
+      "lon": -8.024656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminardagh:register:tawnawilly"
+     },
+     "caption": "The parish register of Tawnawilly records two baptisms at Druminardagh in 1874. Its marriage entries give no townland, so none are placed here.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminardagh:register:tawnawilly"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 9200,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "druminardagh:ch:intro",
+   "title": "Druminardagh",
+   "beats": [
+    {
+     "id": "druminardagh:beat:title:title",
+     "kind": "title",
+     "chapter": "druminardagh:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1874-07-19",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminardagh",
+      "name": "Druminardagh",
+      "logainm_id": "14275",
+      "lat": 54.644538,
+      "lon": -8.024656,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Druminardagh, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Druminardagh and its twelve families, from 1874 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminardagh:baptism:TAW-B-p011-r138",
+       "druminardagh:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 10400,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "druminardagh:ch:baptisms",
+   "title": "Baptisms, 1874",
+   "beats": [
+    {
+     "id": "druminardagh:beat:baptism:1874",
+     "kind": "baptism",
+     "chapter": "druminardagh:ch:baptisms",
+     "time": {
+      "label": "19 July 1874",
+      "iso": "1874-07-19",
+      "sort": "1874-07-19",
+      "approximate": false
+     },
+     "place": {
+      "townland": "druminardagh",
+      "name": "Druminardagh",
+      "logainm_id": "14275",
+      "lat": 54.644538,
+      "lon": -8.024656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminardagh:baptism:TAW-B-p011-r138"
+     },
+     "caption": "Two children were baptised in 1874: Thomas McGinty on 19 July and Thomas McGlinchey on 19 July. Thomas McGlinchey was possibly from Druminardagh.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminardagh:baptism:TAW-B-p011-r138",
+       "druminardagh:baptism:TAW-B-p012-r145"
+      ],
+      "basis": "page_place",
+      "certainty": "possible"
+     },
+     "duration_ms": 9200,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "druminardagh:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "druminardagh:beat:census:1901",
+     "kind": "census",
+     "chapter": "druminardagh:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminardagh",
+      "name": "Druminardagh",
+      "logainm_id": "14275",
+      "lat": 54.644538,
+      "lon": -8.024656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminardagh:census:1901"
+     },
+     "caption": "Druminardagh had 59 people in twelve households in 1901. Heads of household included Cunningham, Graham and Abraham.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminardagh:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 59,
+      "households": 12
+     }
+    }
+   ]
+  },
+  {
+   "id": "druminardagh:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "druminardagh:beat:census:1911",
+     "kind": "census",
+     "chapter": "druminardagh:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminardagh",
+      "name": "Druminardagh",
+      "logainm_id": "14275",
+      "lat": 54.644538,
+      "lon": -8.024656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminardagh:census:1911"
+     },
+     "caption": "Druminardagh had 42 people in eleven households in 1911. Heads of household included Cunningham, Abraham and Corrigan.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminardagh:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 42,
+      "households": 11
+     }
+    }
+   ]
+  },
+  {
+   "id": "druminardagh:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "druminardagh:beat:census:1926",
+     "kind": "census",
+     "chapter": "druminardagh:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminardagh",
+      "name": "Druminardagh",
+      "logainm_id": "14275",
+      "lat": 54.644538,
+      "lon": -8.024656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminardagh:census:1926"
+     },
+     "caption": "Druminardagh had 36 people in eleven households in 1926. Heads of household included Conaghan, McGlinchey and Abraham.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminardagh:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 36,
+      "households": 11
+     }
+    },
+    {
+     "id": "druminardagh:beat:closing:end",
+     "kind": "closing",
+     "chapter": "druminardagh:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "druminardagh",
+      "name": "Druminardagh",
+      "logainm_id": "14275",
+      "lat": 54.644538,
+      "lon": -8.024656,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "druminardagh:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with eleven households in Druminardagh.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "druminardagh:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,225 @@
+{
+ "schema": 1,
+ "townland": "Greaghs",
+ "slug": "greaghs",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Greaghs",
+ "span": {
+  "from": "1901",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "greaghs:ch:intro",
+   "title": "Greaghs",
+   "beats": [
+    {
+     "id": "greaghs:beat:title:title",
+     "kind": "title",
+     "chapter": "greaghs:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "greaghs",
+      "name": "Greaghs",
+      "logainm_id": "14141",
+      "lat": 54.614619,
+      "lon": -8.061471,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Greaghs. Here is the story of Greaghs and its thirteen families, from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "greaghs:census:1901",
+       "greaghs:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6000,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "greaghs:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "greaghs:beat:census:1901",
+     "kind": "census",
+     "chapter": "greaghs:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "greaghs",
+      "name": "Greaghs",
+      "logainm_id": "14141",
+      "lat": 54.614619,
+      "lon": -8.061471,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "greaghs:census:1901"
+     },
+     "caption": "In 1901, 77 people in sixteen households lived in Greaghs. Heads of household included Gallagher, Gorman and Lappin.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "greaghs:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 77,
+      "households": 16
+     }
+    }
+   ]
+  },
+  {
+   "id": "greaghs:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "greaghs:beat:census:1911",
+     "kind": "census",
+     "chapter": "greaghs:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "greaghs",
+      "name": "Greaghs",
+      "logainm_id": "14141",
+      "lat": 54.614619,
+      "lon": -8.061471,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "greaghs:census:1911"
+     },
+     "caption": "In 1911, 61 people in fourteen households lived in Greaghs. Heads of household included Gallagher, Gorman and Boyle.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "greaghs:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 61,
+      "households": 14
+     }
+    }
+   ]
+  },
+  {
+   "id": "greaghs:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "greaghs:beat:census:1926",
+     "kind": "census",
+     "chapter": "greaghs:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "greaghs",
+      "name": "Greaghs",
+      "logainm_id": "14141",
+      "lat": 54.614619,
+      "lon": -8.061471,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "greaghs:census:1926"
+     },
+     "caption": "In 1926, 39 people in thirteen households lived in Greaghs. Heads of household included Gorman, Furey and Bartley.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "greaghs:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 39,
+      "households": 13
+     }
+    },
+    {
+     "id": "greaghs:beat:closing:end",
+     "kind": "closing",
+     "chapter": "greaghs:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "greaghs",
+      "name": "Greaghs",
+      "logainm_id": "14141",
+      "lat": 54.614619,
+      "lon": -8.061471,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "greaghs:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with thirteen households in Greaghs.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "greaghs:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

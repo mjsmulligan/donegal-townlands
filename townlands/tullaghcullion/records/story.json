@@ -1,0 +1,225 @@
+{
+ "schema": 1,
+ "townland": "Tullaghcullion",
+ "slug": "tullaghcullion",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Tullaghcullion",
+ "span": {
+  "from": "1901",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "tullaghcullion:ch:intro",
+   "title": "Tullaghcullion",
+   "beats": [
+    {
+     "id": "tullaghcullion:beat:title:title",
+     "kind": "title",
+     "chapter": "tullaghcullion:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullaghcullion",
+      "name": "Tullaghcullion",
+      "logainm_id": "14042",
+      "lat": 54.644957,
+      "lon": -8.118213,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Tullaghcullion, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Tullaghcullion and its eleven families, from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullaghcullion:census:1901",
+       "tullaghcullion:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 10400,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "tullaghcullion:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "tullaghcullion:beat:census:1901",
+     "kind": "census",
+     "chapter": "tullaghcullion:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullaghcullion",
+      "name": "Tullaghcullion",
+      "logainm_id": "14042",
+      "lat": 54.644957,
+      "lon": -8.118213,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullaghcullion:census:1901"
+     },
+     "caption": "Tullaghcullion had 23 people in four households in 1901. Heads of household included Donnell, Gillespie and Morrow.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullaghcullion:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 23,
+      "households": 4
+     }
+    }
+   ]
+  },
+  {
+   "id": "tullaghcullion:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "tullaghcullion:beat:census:1911",
+     "kind": "census",
+     "chapter": "tullaghcullion:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullaghcullion",
+      "name": "Tullaghcullion",
+      "logainm_id": "14042",
+      "lat": 54.644957,
+      "lon": -8.118213,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullaghcullion:census:1911"
+     },
+     "caption": "In 1911, 32 people in eight households lived in Tullaghcullion. Heads of household included Crawford, O'Donnell and Farrell.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullaghcullion:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 32,
+      "households": 8
+     }
+    }
+   ]
+  },
+  {
+   "id": "tullaghcullion:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "tullaghcullion:beat:census:1926",
+     "kind": "census",
+     "chapter": "tullaghcullion:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullaghcullion",
+      "name": "Tullaghcullion",
+      "logainm_id": "14042",
+      "lat": 54.644957,
+      "lon": -8.118213,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullaghcullion:census:1926"
+     },
+     "caption": "Tullaghcullion had 38 people in eight households in 1926. Heads of household included Crawford, Kirkpatrick and Doherty.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullaghcullion:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 38,
+      "households": 8
+     }
+    },
+    {
+     "id": "tullaghcullion:beat:closing:end",
+     "kind": "closing",
+     "chapter": "tullaghcullion:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullaghcullion",
+      "name": "Tullaghcullion",
+      "logainm_id": "14042",
+      "lat": 54.644957,
+      "lon": -8.118213,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullaghcullion:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with eight households in Tullaghcullion.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullaghcullion:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

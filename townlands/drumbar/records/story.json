@@ -1,0 +1,307 @@
+{
+ "schema": 1,
+ "townland": "Drumbar",
+ "slug": "drumbar",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Drumbar",
+ "span": {
+  "from": "1875",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "drumbar:ch:register",
+   "title": "The parish register",
+   "beats": [
+    {
+     "id": "drumbar:beat:register:tawnawilly",
+     "kind": "register",
+     "chapter": "drumbar:ch:register",
+     "time": {
+      "label": "1875",
+      "iso": "1875",
+      "sort": "1875-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumbar",
+      "name": "Drumbar",
+      "logainm_id": "14031",
+      "lat": 54.640452,
+      "lon": -8.087593,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumbar:register:tawnawilly"
+     },
+     "caption": "The parish register of Tawnawilly records one baptism at Drumbar in 1875. Its marriage entries give no townland, so none are placed here.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumbar:register:tawnawilly"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 9200,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "drumbar:ch:intro",
+   "title": "Drumbar",
+   "beats": [
+    {
+     "id": "drumbar:beat:title:title",
+     "kind": "title",
+     "chapter": "drumbar:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1875-09-17",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumbar",
+      "name": "Drumbar",
+      "logainm_id": "14031",
+      "lat": 54.640452,
+      "lon": -8.087593,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Drumbar, in Irish Droim Bairr, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Drumbar and its seven families, from 1875 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumbar:baptism:TAW-B-p018-r342",
+       "drumbar:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 12000,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "drumbar:ch:baptisms",
+   "title": "Baptisms, 1875",
+   "beats": [
+    {
+     "id": "drumbar:beat:baptism:1875-09-17-TAW-B-p018-r342",
+     "kind": "baptism",
+     "chapter": "drumbar:ch:baptisms",
+     "time": {
+      "label": "17 September 1875",
+      "iso": "1875-09-17",
+      "sort": "1875-09-17",
+      "approximate": false
+     },
+     "place": {
+      "townland": "drumbar",
+      "name": "Drumbar",
+      "logainm_id": "14031",
+      "lat": 54.640452,
+      "lon": -8.087593,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumbar:baptism:TAW-B-p018-r342"
+     },
+     "caption": "James Cassidy was baptised on 17 September 1875. Francis Cassidy and Anne Kelly were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumbar:baptism:TAW-B-p018-r342"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "drumbar:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "drumbar:beat:census:1901",
+     "kind": "census",
+     "chapter": "drumbar:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumbar",
+      "name": "Drumbar",
+      "logainm_id": "14031",
+      "lat": 54.640452,
+      "lon": -8.087593,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumbar:census:1901"
+     },
+     "caption": "In 1901, 40 people in nine households lived in Drumbar. Heads of household included Cassidy, Bustard and Brogan.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumbar:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 40,
+      "households": 9
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumbar:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "drumbar:beat:census:1911",
+     "kind": "census",
+     "chapter": "drumbar:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumbar",
+      "name": "Drumbar",
+      "logainm_id": "14031",
+      "lat": 54.640452,
+      "lon": -8.087593,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumbar:census:1911"
+     },
+     "caption": "In 1911, 38 people in nine households lived in Drumbar. Heads of household included Cassidy, Bustard and Scallen.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumbar:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 38,
+      "households": 9
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumbar:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "drumbar:beat:census:1926",
+     "kind": "census",
+     "chapter": "drumbar:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumbar",
+      "name": "Drumbar",
+      "logainm_id": "14031",
+      "lat": 54.640452,
+      "lon": -8.087593,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumbar:census:1926"
+     },
+     "caption": "Drumbar had 38 people in nine households in 1926. Heads of household included Bustard, Scallen and Brogan.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumbar:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 38,
+      "households": 9
+     }
+    },
+    {
+     "id": "drumbar:beat:closing:end",
+     "kind": "closing",
+     "chapter": "drumbar:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumbar",
+      "name": "Drumbar",
+      "logainm_id": "14031",
+      "lat": 54.640452,
+      "lon": -8.087593,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumbar:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with nine households in Drumbar.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumbar:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

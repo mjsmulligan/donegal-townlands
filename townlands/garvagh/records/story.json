@@ -1,0 +1,379 @@
+{
+ "schema": 1,
+ "townland": "Garvagh",
+ "slug": "garvagh",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Garvagh",
+ "span": {
+  "from": "1873",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "garvagh:ch:register",
+   "title": "The parish register",
+   "beats": [
+    {
+     "id": "garvagh:beat:register:tawnawilly",
+     "kind": "register",
+     "chapter": "garvagh:ch:register",
+     "time": {
+      "label": "1873 to 1875",
+      "iso": "1873",
+      "sort": "1873-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "garvagh",
+      "name": "Garvagh",
+      "logainm_id": "14242",
+      "lat": 54.707058,
+      "lon": -8.029315,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "garvagh:register:tawnawilly"
+     },
+     "caption": "The parish register of Tawnawilly records five baptisms at Garvagh between 1873 and 1875. Its marriage entries give no townland, so none are placed here.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "garvagh:register:tawnawilly"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 10000,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "garvagh:ch:intro",
+   "title": "Garvagh",
+   "beats": [
+    {
+     "id": "garvagh:beat:title:title",
+     "kind": "title",
+     "chapter": "garvagh:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1873-03-27",
+      "approximate": true
+     },
+     "place": {
+      "townland": "garvagh",
+      "name": "Garvagh",
+      "logainm_id": "14242",
+      "lat": 54.707058,
+      "lon": -8.029315,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Garvagh, in Irish Garbhachadh, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Garvagh and its eleven families, from 1873 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "garvagh:baptism:TAW-B-p006-r30",
+       "garvagh:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 11600,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "garvagh:ch:baptisms",
+   "title": "Baptisms, 1873 to 1875",
+   "beats": [
+    {
+     "id": "garvagh:beat:baptism:1873-03-27-TAW-B-p006-r30",
+     "kind": "baptism",
+     "chapter": "garvagh:ch:baptisms",
+     "time": {
+      "label": "27 March 1873",
+      "iso": "1873-03-27",
+      "sort": "1873-03-27",
+      "approximate": false
+     },
+     "place": {
+      "townland": "garvagh",
+      "name": "Garvagh",
+      "logainm_id": "14242",
+      "lat": 54.707058,
+      "lon": -8.029315,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "garvagh:baptism:TAW-B-p006-r30"
+     },
+     "caption": "Connell Martin was baptised on 27 March 1873. Connell Martin and Kitty Martin were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "garvagh:baptism:TAW-B-p006-r30"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null
+    },
+    {
+     "id": "garvagh:beat:baptism:1874",
+     "kind": "baptism",
+     "chapter": "garvagh:ch:baptisms",
+     "time": {
+      "label": "25 February 1874",
+      "iso": "1874-02-25",
+      "sort": "1874-02-25",
+      "approximate": false
+     },
+     "place": {
+      "townland": "garvagh",
+      "name": "Garvagh",
+      "logainm_id": "14242",
+      "lat": 54.707058,
+      "lon": -8.029315,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "garvagh:baptism:TAW-B-p010-r111"
+     },
+     "caption": "Two children were baptised in 1874: Patrick Martin on 25 February and John McGinty on 7 June.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "garvagh:baptism:TAW-B-p010-r111",
+       "garvagh:baptism:TAW-B-p011-r128"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null
+    },
+    {
+     "id": "garvagh:beat:baptism:1875",
+     "kind": "baptism",
+     "chapter": "garvagh:ch:baptisms",
+     "time": {
+      "label": "31 January 1875",
+      "iso": "1875-01-31",
+      "sort": "1875-01-31",
+      "approximate": false
+     },
+     "place": {
+      "townland": "garvagh",
+      "name": "Garvagh",
+      "logainm_id": "14242",
+      "lat": 54.707058,
+      "lon": -8.029315,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "garvagh:baptism:TAW-B-p015-r185"
+     },
+     "caption": "Two children were baptised in 1875: Thomas Martin on 31 January and Michael Martin on 11 April.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "garvagh:baptism:TAW-B-p015-r185",
+       "garvagh:baptism:TAW-B-p016-r202"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "garvagh:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "garvagh:beat:census:1901",
+     "kind": "census",
+     "chapter": "garvagh:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "garvagh",
+      "name": "Garvagh",
+      "logainm_id": "14242",
+      "lat": 54.707058,
+      "lon": -8.029315,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "garvagh:census:1901"
+     },
+     "caption": "Garvagh had 86 people in fifteen households in 1901. Heads of household included Martin, McGinty and Slevin.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "garvagh:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 86,
+      "households": 15
+     }
+    }
+   ]
+  },
+  {
+   "id": "garvagh:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "garvagh:beat:census:1911",
+     "kind": "census",
+     "chapter": "garvagh:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "garvagh",
+      "name": "Garvagh",
+      "logainm_id": "14242",
+      "lat": 54.707058,
+      "lon": -8.029315,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "garvagh:census:1911"
+     },
+     "caption": "In 1911, 60 people in thirteen households lived in Garvagh. Heads of household included Martin, McGinty and McLoughlin.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "garvagh:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 60,
+      "households": 13
+     }
+    }
+   ]
+  },
+  {
+   "id": "garvagh:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "garvagh:beat:census:1926",
+     "kind": "census",
+     "chapter": "garvagh:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "garvagh",
+      "name": "Garvagh",
+      "logainm_id": "14242",
+      "lat": 54.707058,
+      "lon": -8.029315,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "garvagh:census:1926"
+     },
+     "caption": "In 1926, 54 people in thirteen households lived in Garvagh. Heads of household included Martain, Mac Fhionntaigh and McGinty.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "garvagh:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7600,
+     "audio": null,
+     "counts": {
+      "people": 54,
+      "households": 13
+     }
+    },
+    {
+     "id": "garvagh:beat:closing:end",
+     "kind": "closing",
+     "chapter": "garvagh:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "garvagh",
+      "name": "Garvagh",
+      "logainm_id": "14242",
+      "lat": 54.707058,
+      "lon": -8.029315,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "garvagh:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with thirteen households in Garvagh.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "garvagh:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,225 @@
+{
+ "schema": 1,
+ "townland": "Corveen",
+ "slug": "corveen",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Corveen",
+ "span": {
+  "from": "1901",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "corveen:ch:intro",
+   "title": "Corveen",
+   "beats": [
+    {
+     "id": "corveen:beat:title:title",
+     "kind": "title",
+     "chapter": "corveen:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "corveen",
+      "name": "Corveen",
+      "logainm_id": "13965",
+      "lat": 54.685146,
+      "lon": -8.0388,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Corveen, in Irish Corr Mhín, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Corveen and its nine families, from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "corveen:census:1901",
+       "corveen:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 12000,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "corveen:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "corveen:beat:census:1901",
+     "kind": "census",
+     "chapter": "corveen:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "corveen",
+      "name": "Corveen",
+      "logainm_id": "13965",
+      "lat": 54.685146,
+      "lon": -8.0388,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "corveen:census:1901"
+     },
+     "caption": "Corveen had 38 people in seven households in 1901. Heads of household included Cassidy, Graham and Harvey.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "corveen:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 38,
+      "households": 7
+     }
+    }
+   ]
+  },
+  {
+   "id": "corveen:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "corveen:beat:census:1911",
+     "kind": "census",
+     "chapter": "corveen:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "corveen",
+      "name": "Corveen",
+      "logainm_id": "13965",
+      "lat": 54.685146,
+      "lon": -8.0388,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "corveen:census:1911"
+     },
+     "caption": "Corveen had 32 people in eight households in 1911. Heads of household included Lowry, Cassidy and Harvey.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "corveen:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 32,
+      "households": 8
+     }
+    }
+   ]
+  },
+  {
+   "id": "corveen:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "corveen:beat:census:1926",
+     "kind": "census",
+     "chapter": "corveen:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "corveen",
+      "name": "Corveen",
+      "logainm_id": "13965",
+      "lat": 54.685146,
+      "lon": -8.0388,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "corveen:census:1926"
+     },
+     "caption": "Corveen had sixteen people in five households in 1926. Heads of household included Cassidy, Crommer and Harvey.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "corveen:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 16,
+      "households": 5
+     }
+    },
+    {
+     "id": "corveen:beat:closing:end",
+     "kind": "closing",
+     "chapter": "corveen:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "corveen",
+      "name": "Corveen",
+      "logainm_id": "13965",
+      "lat": 54.685146,
+      "lon": -8.0388,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "corveen:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with five households in Corveen.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "corveen:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

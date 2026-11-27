@@ -1,0 +1,344 @@
+{
+ "schema": 1,
+ "townland": "Drumadoney",
+ "slug": "drumadoney",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Drumadoney",
+ "span": {
+  "from": "1874",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "drumadoney:ch:register",
+   "title": "The parish register",
+   "beats": [
+    {
+     "id": "drumadoney:beat:register:tawnawilly",
+     "kind": "register",
+     "chapter": "drumadoney:ch:register",
+     "time": {
+      "label": "1874 to 1875",
+      "iso": "1874",
+      "sort": "1874-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumadoney",
+      "name": "Drumadoney",
+      "logainm_id": "14273",
+      "lat": 54.658955,
+      "lon": -8.036524,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumadoney:register:tawnawilly"
+     },
+     "caption": "The parish register of Tawnawilly records four baptisms at Drumadoney between 1874 and 1875. Its marriage entries give no townland, so none are placed here.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumadoney:register:tawnawilly"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 10000,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "drumadoney:ch:intro",
+   "title": "Drumadoney",
+   "beats": [
+    {
+     "id": "drumadoney:beat:title:title",
+     "kind": "title",
+     "chapter": "drumadoney:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1874-10-25",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumadoney",
+      "name": "Drumadoney",
+      "logainm_id": "14273",
+      "lat": 54.658955,
+      "lon": -8.036524,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Drumadoney, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Drumadoney and its eight families, from 1874 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumadoney:baptism:TAW-B-p013-r160",
+       "drumadoney:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 10400,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "drumadoney:ch:baptisms",
+   "title": "Baptisms, 1874 to 1875",
+   "beats": [
+    {
+     "id": "drumadoney:beat:baptism:1874-10-25-TAW-B-p013-r160",
+     "kind": "baptism",
+     "chapter": "drumadoney:ch:baptisms",
+     "time": {
+      "label": "25 October 1874",
+      "iso": "1874-10-25",
+      "sort": "1874-10-25",
+      "approximate": false
+     },
+     "place": {
+      "townland": "drumadoney",
+      "name": "Drumadoney",
+      "logainm_id": "14273",
+      "lat": 54.658955,
+      "lon": -8.036524,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumadoney:baptism:TAW-B-p013-r160"
+     },
+     "caption": "Mary Anne Lawn was baptised on 25 October 1874. John Lawn and Margaret Devenney were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumadoney:baptism:TAW-B-p013-r160"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null
+    },
+    {
+     "id": "drumadoney:beat:baptism:1875",
+     "kind": "baptism",
+     "chapter": "drumadoney:ch:baptisms",
+     "time": {
+      "label": "31 January 1875",
+      "iso": "1875-01-31",
+      "sort": "1875-01-31",
+      "approximate": false
+     },
+     "place": {
+      "townland": "drumadoney",
+      "name": "Drumadoney",
+      "logainm_id": "14273",
+      "lat": 54.658955,
+      "lon": -8.036524,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumadoney:baptism:TAW-B-p015-r184"
+     },
+     "caption": "Three children were baptised in 1875: John Murphy on 31 January, Mary Murphy on 8 August and Margaret Murphy on 8 August.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumadoney:baptism:TAW-B-p015-r184",
+       "drumadoney:baptism:TAW-B-p018-r233",
+       "drumadoney:baptism:TAW-B-p018-r234"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 8800,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "drumadoney:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "drumadoney:beat:census:1901",
+     "kind": "census",
+     "chapter": "drumadoney:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumadoney",
+      "name": "Drumadoney",
+      "logainm_id": "14273",
+      "lat": 54.658955,
+      "lon": -8.036524,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumadoney:census:1901"
+     },
+     "caption": "In 1901, 29 people in seven households lived in Drumadoney. Heads of household included Cannon, Gallagher and Hilley.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumadoney:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 29,
+      "households": 7
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumadoney:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "drumadoney:beat:census:1911",
+     "kind": "census",
+     "chapter": "drumadoney:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumadoney",
+      "name": "Drumadoney",
+      "logainm_id": "14273",
+      "lat": 54.658955,
+      "lon": -8.036524,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumadoney:census:1911"
+     },
+     "caption": "In 1911, seventeen people in six households lived in Drumadoney. Heads of household included Cannon, Flanagan and Hilly.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumadoney:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 17,
+      "households": 6
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumadoney:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "drumadoney:beat:census:1926",
+     "kind": "census",
+     "chapter": "drumadoney:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumadoney",
+      "name": "Drumadoney",
+      "logainm_id": "14273",
+      "lat": 54.658955,
+      "lon": -8.036524,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumadoney:census:1926"
+     },
+     "caption": "Drumadoney had fourteen people in seven households in 1926. Heads of household included Hilly.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumadoney:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 5600,
+     "audio": null,
+     "counts": {
+      "people": 14,
+      "households": 7
+     }
+    },
+    {
+     "id": "drumadoney:beat:closing:end",
+     "kind": "closing",
+     "chapter": "drumadoney:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumadoney",
+      "name": "Drumadoney",
+      "logainm_id": "14273",
+      "lat": 54.658955,
+      "lon": -8.036524,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumadoney:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with seven households in Drumadoney.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumadoney:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

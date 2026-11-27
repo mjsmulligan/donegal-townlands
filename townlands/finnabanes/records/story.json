@@ -1,0 +1,307 @@
+{
+ "schema": 1,
+ "townland": "Finnabanes",
+ "slug": "finnabanes",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Finnabanes",
+ "span": {
+  "from": "1874",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "finnabanes:ch:register",
+   "title": "The parish register",
+   "beats": [
+    {
+     "id": "finnabanes:beat:register:tawnawilly",
+     "kind": "register",
+     "chapter": "finnabanes:ch:register",
+     "time": {
+      "label": "1874",
+      "iso": "1874",
+      "sort": "1874-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "finnabanes",
+      "name": "Finnabanes",
+      "logainm_id": "13971",
+      "lat": 54.671751,
+      "lon": -8.037353,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "finnabanes:register:tawnawilly"
+     },
+     "caption": "The parish register of Tawnawilly records one baptism at Finnabanes in 1874. Its marriage entries give no townland, so none are placed here.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "finnabanes:register:tawnawilly"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 9200,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "finnabanes:ch:intro",
+   "title": "Finnabanes",
+   "beats": [
+    {
+     "id": "finnabanes:beat:title:title",
+     "kind": "title",
+     "chapter": "finnabanes:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1874-05-05",
+      "approximate": true
+     },
+     "place": {
+      "townland": "finnabanes",
+      "name": "Finnabanes",
+      "logainm_id": "13971",
+      "lat": 54.671751,
+      "lon": -8.037353,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Finnabanes, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Finnabanes and its fifteen families, from 1874 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "finnabanes:baptism:TAW-B-p010-r114",
+       "finnabanes:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 10400,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "finnabanes:ch:baptisms",
+   "title": "Baptisms, 1874",
+   "beats": [
+    {
+     "id": "finnabanes:beat:baptism:1874-05-05-TAW-B-p010-r114",
+     "kind": "baptism",
+     "chapter": "finnabanes:ch:baptisms",
+     "time": {
+      "label": "5 May 1874",
+      "iso": "1874-05-05",
+      "sort": "1874-05-05",
+      "approximate": false
+     },
+     "place": {
+      "townland": "finnabanes",
+      "name": "Finnabanes",
+      "logainm_id": "13971",
+      "lat": 54.671751,
+      "lon": -8.037353,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "finnabanes:baptism:TAW-B-p010-r114"
+     },
+     "caption": "Mary Anne McGinty was baptised on 5 May 1874. Michael McGinty and Brigid Martin were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "finnabanes:baptism:TAW-B-p010-r114"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "finnabanes:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "finnabanes:beat:census:1901",
+     "kind": "census",
+     "chapter": "finnabanes:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "finnabanes",
+      "name": "Finnabanes",
+      "logainm_id": "13971",
+      "lat": 54.671751,
+      "lon": -8.037353,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "finnabanes:census:1901"
+     },
+     "caption": "In 1901, 76 people in sixteen households lived in Finnabanes. Heads of household included Hammond, McCrudden and Thomas.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "finnabanes:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 76,
+      "households": 16
+     }
+    }
+   ]
+  },
+  {
+   "id": "finnabanes:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "finnabanes:beat:census:1911",
+     "kind": "census",
+     "chapter": "finnabanes:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "finnabanes",
+      "name": "Finnabanes",
+      "logainm_id": "13971",
+      "lat": 54.671751,
+      "lon": -8.037353,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "finnabanes:census:1911"
+     },
+     "caption": "In 1911, 61 people in seventeen households lived in Finnabanes. Heads of household included Love, McCrudden and Hammond.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "finnabanes:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 61,
+      "households": 17
+     }
+    }
+   ]
+  },
+  {
+   "id": "finnabanes:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "finnabanes:beat:census:1926",
+     "kind": "census",
+     "chapter": "finnabanes:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "finnabanes",
+      "name": "Finnabanes",
+      "logainm_id": "13971",
+      "lat": 54.671751,
+      "lon": -8.037353,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "finnabanes:census:1926"
+     },
+     "caption": "In 1926, 60 people in fourteen households lived in Finnabanes. Heads of household included Love, Thomas and Wray.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "finnabanes:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 60,
+      "households": 14
+     }
+    },
+    {
+     "id": "finnabanes:beat:closing:end",
+     "kind": "closing",
+     "chapter": "finnabanes:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "finnabanes",
+      "name": "Finnabanes",
+      "logainm_id": "13971",
+      "lat": 54.671751,
+      "lon": -8.037353,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "finnabanes:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with fourteen households in Finnabanes.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "finnabanes:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

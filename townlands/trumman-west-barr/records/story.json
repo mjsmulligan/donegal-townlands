@@ -1,0 +1,225 @@
+{
+ "schema": 1,
+ "townland": "Trumman West Barr",
+ "slug": "trumman-west-barr",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Trumman West Barr",
+ "span": {
+  "from": "1901",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "trumman-west-barr:ch:intro",
+   "title": "Trumman West Barr",
+   "beats": [
+    {
+     "id": "trumman-west-barr:beat:title:title",
+     "kind": "title",
+     "chapter": "trumman-west-barr:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-west-barr",
+      "name": "Trumman West Barr",
+      "logainm_id": "14158",
+      "lat": 54.606119,
+      "lon": -8.043288,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Trumman West Barr. Here is the story of Trumman West Barr and its six families, from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman west barr:census:1901",
+       "trumman west barr:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 7600,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "trumman-west-barr:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "trumman-west-barr:beat:census:1901",
+     "kind": "census",
+     "chapter": "trumman-west-barr:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-west-barr",
+      "name": "Trumman West Barr",
+      "logainm_id": "14158",
+      "lat": 54.606119,
+      "lon": -8.043288,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman west barr:census:1901"
+     },
+     "caption": "Trumman West Barr had 29 people in six households in 1901. Heads of household included Gallagher, McDaid and McGlinchy.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman west barr:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7600,
+     "audio": null,
+     "counts": {
+      "people": 29,
+      "households": 6
+     }
+    }
+   ]
+  },
+  {
+   "id": "trumman-west-barr:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "trumman-west-barr:beat:census:1911",
+     "kind": "census",
+     "chapter": "trumman-west-barr:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-west-barr",
+      "name": "Trumman West Barr",
+      "logainm_id": "14158",
+      "lat": 54.606119,
+      "lon": -8.043288,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman west barr:census:1911"
+     },
+     "caption": "Trumman West Barr had 34 people in six households in 1911. Heads of household included Gallagher, Curristen and McDaid.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman west barr:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7600,
+     "audio": null,
+     "counts": {
+      "people": 34,
+      "households": 6
+     }
+    }
+   ]
+  },
+  {
+   "id": "trumman-west-barr:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "trumman-west-barr:beat:census:1926",
+     "kind": "census",
+     "chapter": "trumman-west-barr:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-west-barr",
+      "name": "Trumman West Barr",
+      "logainm_id": "14158",
+      "lat": 54.606119,
+      "lon": -8.043288,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman west barr:census:1926"
+     },
+     "caption": "In 1926, four people in two households lived in Trumman West Barr. Heads of household included McDaid.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman west barr:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 4,
+      "households": 2
+     }
+    },
+    {
+     "id": "trumman-west-barr:beat:closing:end",
+     "kind": "closing",
+     "chapter": "trumman-west-barr:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "trumman-west-barr",
+      "name": "Trumman West Barr",
+      "logainm_id": "14158",
+      "lat": 54.606119,
+      "lon": -8.043288,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "trumman west barr:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with two households in Trumman West Barr.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "trumman west barr:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4800,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

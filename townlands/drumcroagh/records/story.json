@@ -1,0 +1,225 @@
+{
+ "schema": 1,
+ "townland": "Drumcroagh",
+ "slug": "drumcroagh",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Drumcroagh",
+ "span": {
+  "from": "1901",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "drumcroagh:ch:intro",
+   "title": "Drumcroagh",
+   "beats": [
+    {
+     "id": "drumcroagh:beat:title:title",
+     "kind": "title",
+     "chapter": "drumcroagh:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumcroagh",
+      "name": "Drumcroagh",
+      "logainm_id": "14274",
+      "lat": 54.649305,
+      "lon": -8.059092,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Drumcroagh, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Drumcroagh and its nine families, from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumcroagh:census:1901",
+       "drumcroagh:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 10400,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "drumcroagh:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "drumcroagh:beat:census:1901",
+     "kind": "census",
+     "chapter": "drumcroagh:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumcroagh",
+      "name": "Drumcroagh",
+      "logainm_id": "14274",
+      "lat": 54.649305,
+      "lon": -8.059092,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumcroagh:census:1901"
+     },
+     "caption": "In 1901, 38 people in nine households lived in Drumcroagh. Heads of household included Walsh, Wray and Gallagher.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumcroagh:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 38,
+      "households": 9
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumcroagh:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "drumcroagh:beat:census:1911",
+     "kind": "census",
+     "chapter": "drumcroagh:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumcroagh",
+      "name": "Drumcroagh",
+      "logainm_id": "14274",
+      "lat": 54.649305,
+      "lon": -8.059092,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumcroagh:census:1911"
+     },
+     "caption": "Drumcroagh had 38 people in eight households in 1911. Heads of household included Walsh, Wray and Devlin.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumcroagh:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 38,
+      "households": 8
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumcroagh:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "drumcroagh:beat:census:1926",
+     "kind": "census",
+     "chapter": "drumcroagh:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumcroagh",
+      "name": "Drumcroagh",
+      "logainm_id": "14274",
+      "lat": 54.649305,
+      "lon": -8.059092,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumcroagh:census:1926"
+     },
+     "caption": "Drumcroagh had 36 people in eight households in 1926. Heads of household included Devlin, Wray and Cassidy.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumcroagh:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 36,
+      "households": 8
+     }
+    },
+    {
+     "id": "drumcroagh:beat:closing:end",
+     "kind": "closing",
+     "chapter": "drumcroagh:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumcroagh",
+      "name": "Drumcroagh",
+      "logainm_id": "14274",
+      "lat": 54.649305,
+      "lon": -8.059092,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumcroagh:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with eight households in Drumcroagh.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumcroagh:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

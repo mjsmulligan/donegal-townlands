@@ -1,0 +1,225 @@
+{
+ "schema": 1,
+ "townland": "Drumstevlin",
+ "slug": "drumstevlin",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Drumstevlin",
+ "span": {
+  "from": "1901",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "drumstevlin:ch:intro",
+   "title": "Drumstevlin",
+   "beats": [
+    {
+     "id": "drumstevlin:beat:title:title",
+     "kind": "title",
+     "chapter": "drumstevlin:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumstevlin",
+      "name": "Drumstevlin",
+      "logainm_id": "14014",
+      "lat": 54.661752,
+      "lon": -8.145615,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Drumstevlin. Here is the story of Drumstevlin and its three families, from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumstevlin:census:1901",
+       "drumstevlin:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6000,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "drumstevlin:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "drumstevlin:beat:census:1901",
+     "kind": "census",
+     "chapter": "drumstevlin:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumstevlin",
+      "name": "Drumstevlin",
+      "logainm_id": "14014",
+      "lat": 54.661752,
+      "lon": -8.145615,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumstevlin:census:1901"
+     },
+     "caption": "Drumstevlin had eleven people in three households in 1901. Heads of household included Wray and Spence.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumstevlin:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "counts": {
+      "people": 11,
+      "households": 3
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumstevlin:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "drumstevlin:beat:census:1911",
+     "kind": "census",
+     "chapter": "drumstevlin:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumstevlin",
+      "name": "Drumstevlin",
+      "logainm_id": "14014",
+      "lat": 54.661752,
+      "lon": -8.145615,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumstevlin:census:1911"
+     },
+     "caption": "In 1911, seven people in two households lived in Drumstevlin. Heads of household included Spence and Wray.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumstevlin:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 7,
+      "households": 2
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumstevlin:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "drumstevlin:beat:census:1926",
+     "kind": "census",
+     "chapter": "drumstevlin:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumstevlin",
+      "name": "Drumstevlin",
+      "logainm_id": "14014",
+      "lat": 54.661752,
+      "lon": -8.145615,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumstevlin:census:1926"
+     },
+     "caption": "Drumstevlin had sixteen people in two households in 1926. Heads of household included Campbell and Wray.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumstevlin:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "counts": {
+      "people": 16,
+      "households": 2
+     }
+    },
+    {
+     "id": "drumstevlin:beat:closing:end",
+     "kind": "closing",
+     "chapter": "drumstevlin:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumstevlin",
+      "name": "Drumstevlin",
+      "logainm_id": "14014",
+      "lat": 54.661752,
+      "lon": -8.145615,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumstevlin:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with two households in Drumstevlin.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumstevlin:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

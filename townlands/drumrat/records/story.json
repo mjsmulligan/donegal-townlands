@@ -1,0 +1,225 @@
+{
+ "schema": 1,
+ "townland": "Drumrat",
+ "slug": "drumrat",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Drumrat",
+ "span": {
+  "from": "1901",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "drumrat:ch:intro",
+   "title": "Drumrat",
+   "beats": [
+    {
+     "id": "drumrat:beat:title:title",
+     "kind": "title",
+     "chapter": "drumrat:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumrat",
+      "name": "Drumrat",
+      "logainm_id": "14035",
+      "lat": 54.652197,
+      "lon": -8.088743,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Drumrat, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Drumrat and its six families, from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumrat:census:1901",
+       "drumrat:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 10400,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "drumrat:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "drumrat:beat:census:1901",
+     "kind": "census",
+     "chapter": "drumrat:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumrat",
+      "name": "Drumrat",
+      "logainm_id": "14035",
+      "lat": 54.652197,
+      "lon": -8.088743,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumrat:census:1901"
+     },
+     "caption": "In 1901, ten people in two households lived in Drumrat. Heads of household included Cairney and Hannond.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumrat:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 10,
+      "households": 2
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumrat:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "drumrat:beat:census:1911",
+     "kind": "census",
+     "chapter": "drumrat:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumrat",
+      "name": "Drumrat",
+      "logainm_id": "14035",
+      "lat": 54.652197,
+      "lon": -8.088743,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumrat:census:1911"
+     },
+     "caption": "Drumrat had two people in one household in 1911. Heads of household included Hammond.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumrat:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 5600,
+     "audio": null,
+     "counts": {
+      "people": 2,
+      "households": 1
+     }
+    }
+   ]
+  },
+  {
+   "id": "drumrat:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "drumrat:beat:census:1926",
+     "kind": "census",
+     "chapter": "drumrat:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumrat",
+      "name": "Drumrat",
+      "logainm_id": "14035",
+      "lat": 54.652197,
+      "lon": -8.088743,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumrat:census:1926"
+     },
+     "caption": "In 1926, nine people in three households lived in Drumrat. Heads of household included Devenny, McCormick and Walker.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumrat:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 9,
+      "households": 3
+     }
+    },
+    {
+     "id": "drumrat:beat:closing:end",
+     "kind": "closing",
+     "chapter": "drumrat:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "drumrat",
+      "name": "Drumrat",
+      "logainm_id": "14035",
+      "lat": 54.652197,
+      "lon": -8.088743,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "drumrat:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with three households in Drumrat.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "drumrat:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

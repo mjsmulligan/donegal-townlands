@@ -1,0 +1,180 @@
+{
+ "schema": 1,
+ "townland": "Carnbeagh South",
+ "slug": "carnbeagh-south",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Carnbeagh South",
+ "span": {
+  "from": "1901",
+  "to": "1911"
+ },
+ "chapters": [
+  {
+   "id": "carnbeagh-south:ch:intro",
+   "title": "Carnbeagh South",
+   "beats": [
+    {
+     "id": "carnbeagh-south:beat:title:title",
+     "kind": "title",
+     "chapter": "carnbeagh-south:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "carnbeagh-south",
+      "name": "Carnbeagh South",
+      "logainm_id": "13959",
+      "lat": 54.66313,
+      "lon": -8.042585,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Carnbeagh South, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Carnbeagh South and its five families, from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "carnbeagh south:census:1901",
+       "carnbeagh south:census:1911"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 11200,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "carnbeagh-south:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "carnbeagh-south:beat:census:1901",
+     "kind": "census",
+     "chapter": "carnbeagh-south:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "carnbeagh-south",
+      "name": "Carnbeagh South",
+      "logainm_id": "13959",
+      "lat": 54.66313,
+      "lon": -8.042585,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "carnbeagh south:census:1901"
+     },
+     "caption": "Carnbeagh South had nineteen people in five households in 1901. Heads of household included Hilly, Irwin and McNeely.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "carnbeagh south:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 19,
+      "households": 5
+     }
+    }
+   ]
+  },
+  {
+   "id": "carnbeagh-south:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "carnbeagh-south:beat:census:1911",
+     "kind": "census",
+     "chapter": "carnbeagh-south:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "carnbeagh-south",
+      "name": "Carnbeagh South",
+      "logainm_id": "13959",
+      "lat": 54.66313,
+      "lon": -8.042585,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "carnbeagh south:census:1911"
+     },
+     "caption": "In 1911, twenty people in four households lived in Carnbeagh South. Heads of household included Irwin, McNeely and Morrow.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "carnbeagh south:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7600,
+     "audio": null,
+     "counts": {
+      "people": 20,
+      "households": 4
+     }
+    },
+    {
+     "id": "carnbeagh-south:beat:closing:end",
+     "kind": "closing",
+     "chapter": "carnbeagh-south:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "carnbeagh-south",
+      "name": "Carnbeagh South",
+      "logainm_id": "13959",
+      "lat": 54.66313,
+      "lon": -8.042585,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "carnbeagh south:census:1911"
+     },
+     "caption": "The story reaches 1911 here, with four households in Carnbeagh South.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "carnbeagh south:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4400,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

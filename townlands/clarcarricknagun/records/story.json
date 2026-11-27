@@ -1,0 +1,225 @@
+{
+ "schema": 1,
+ "townland": "Clarcarricknagun",
+ "slug": "clarcarricknagun",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Clarcarricknagun",
+ "span": {
+  "from": "1901",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "clarcarricknagun:ch:intro",
+   "title": "Clarcarricknagun",
+   "beats": [
+    {
+     "id": "clarcarricknagun:beat:title:title",
+     "kind": "title",
+     "chapter": "clarcarricknagun:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcarricknagun",
+      "name": "Clarcarricknagun",
+      "logainm_id": "14029",
+      "lat": 54.657031,
+      "lon": -8.076536,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Clarcarricknagun, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Clarcarricknagun and its four families, from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcarricknagun:census:1901",
+       "clarcarricknagun:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 10400,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "clarcarricknagun:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "clarcarricknagun:beat:census:1901",
+     "kind": "census",
+     "chapter": "clarcarricknagun:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcarricknagun",
+      "name": "Clarcarricknagun",
+      "logainm_id": "14029",
+      "lat": 54.657031,
+      "lon": -8.076536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcarricknagun:census:1901"
+     },
+     "caption": "In 1901, 23 people in four households lived in Clarcarricknagun. Heads of household included Stevenson, Gillespie and Ingram.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcarricknagun:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 23,
+      "households": 4
+     }
+    }
+   ]
+  },
+  {
+   "id": "clarcarricknagun:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "clarcarricknagun:beat:census:1911",
+     "kind": "census",
+     "chapter": "clarcarricknagun:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcarricknagun",
+      "name": "Clarcarricknagun",
+      "logainm_id": "14029",
+      "lat": 54.657031,
+      "lon": -8.076536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcarricknagun:census:1911"
+     },
+     "caption": "In 1911, seven people in two households lived in Clarcarricknagun. Heads of household included Ingram and Stevenson.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcarricknagun:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 7,
+      "households": 2
+     }
+    }
+   ]
+  },
+  {
+   "id": "clarcarricknagun:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "clarcarricknagun:beat:census:1926",
+     "kind": "census",
+     "chapter": "clarcarricknagun:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcarricknagun",
+      "name": "Clarcarricknagun",
+      "logainm_id": "14029",
+      "lat": 54.657031,
+      "lon": -8.076536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcarricknagun:census:1926"
+     },
+     "caption": "In 1926, eighteen people in three households lived in Clarcarricknagun. Heads of household included Ingram, Murphy and Stevenson.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcarricknagun:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 18,
+      "households": 3
+     }
+    },
+    {
+     "id": "clarcarricknagun:beat:closing:end",
+     "kind": "closing",
+     "chapter": "clarcarricknagun:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "clarcarricknagun",
+      "name": "Clarcarricknagun",
+      "logainm_id": "14029",
+      "lat": 54.657031,
+      "lon": -8.076536,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "clarcarricknagun:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with three households in Clarcarricknagun.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "clarcarricknagun:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

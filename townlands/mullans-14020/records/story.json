@@ -1,0 +1,225 @@
+{
+ "schema": 1,
+ "townland": "Mullans",
+ "slug": "mullans-14020",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Mullans",
+ "span": {
+  "from": "1901",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "mullans-14020:ch:intro",
+   "title": "Mullans",
+   "beats": [
+    {
+     "id": "mullans-14020:beat:title:title",
+     "kind": "title",
+     "chapter": "mullans-14020:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "mullans-14020",
+      "name": "Mullans",
+      "logainm_id": "14020",
+      "lat": 54.660319,
+      "lon": -8.117084,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Mullans, in Irish Na Mulláin. Here is the story of Mullans and its 28 families, from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "mullans:census:1901",
+       "mullans:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 7600,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "mullans-14020:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "mullans-14020:beat:census:1901",
+     "kind": "census",
+     "chapter": "mullans-14020:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "mullans-14020",
+      "name": "Mullans",
+      "logainm_id": "14020",
+      "lat": 54.660319,
+      "lon": -8.117084,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "mullans:census:1901"
+     },
+     "caption": "Mullans had 42 people in eight households in 1901. Heads of household included McCloskey, Day and Gallinagh.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "mullans:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 42,
+      "households": 8
+     }
+    }
+   ]
+  },
+  {
+   "id": "mullans-14020:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "mullans-14020:beat:census:1911",
+     "kind": "census",
+     "chapter": "mullans-14020:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "mullans-14020",
+      "name": "Mullans",
+      "logainm_id": "14020",
+      "lat": 54.660319,
+      "lon": -8.117084,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "mullans:census:1911"
+     },
+     "caption": "In 1911, 127 people in 23 households lived in Mullans. Heads of household included O Donnell, Buchanan and Kearns.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "mullans:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7600,
+     "audio": null,
+     "counts": {
+      "people": 127,
+      "households": 23
+     }
+    }
+   ]
+  },
+  {
+   "id": "mullans-14020:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "mullans-14020:beat:census:1926",
+     "kind": "census",
+     "chapter": "mullans-14020:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "mullans-14020",
+      "name": "Mullans",
+      "logainm_id": "14020",
+      "lat": 54.660319,
+      "lon": -8.117084,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "mullans:census:1926"
+     },
+     "caption": "Mullans had 109 people in eighteen households in 1926. Heads of household included Crawford, Kelly and O Donnell.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "mullans:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 109,
+      "households": 18
+     }
+    },
+    {
+     "id": "mullans-14020:beat:closing:end",
+     "kind": "closing",
+     "chapter": "mullans-14020:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "mullans-14020",
+      "name": "Mullans",
+      "logainm_id": "14020",
+      "lat": 54.660319,
+      "lon": -8.117084,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "mullans:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with eighteen households in Mullans.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "mullans:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

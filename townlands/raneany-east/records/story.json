@@ -1,0 +1,225 @@
+{
+ "schema": 1,
+ "townland": "Raneany East",
+ "slug": "raneany-east",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Raneany East",
+ "span": {
+  "from": "1901",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "raneany-east:ch:intro",
+   "title": "Raneany East",
+   "beats": [
+    {
+     "id": "raneany-east:beat:title:title",
+     "kind": "title",
+     "chapter": "raneany-east:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "raneany-east",
+      "name": "Raneany East",
+      "logainm_id": "14152",
+      "lat": 54.625844,
+      "lon": -8.070775,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Raneany East. Here is the story of Raneany East and its eight families, from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "raneany east:census:1901",
+       "raneany east:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "raneany-east:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "raneany-east:beat:census:1901",
+     "kind": "census",
+     "chapter": "raneany-east:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "raneany-east",
+      "name": "Raneany East",
+      "logainm_id": "14152",
+      "lat": 54.625844,
+      "lon": -8.070775,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "raneany east:census:1901"
+     },
+     "caption": "Raneany East had 30 people in five households in 1901. Heads of household included Travers, Molloy and Scott.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "raneany east:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 30,
+      "households": 5
+     }
+    }
+   ]
+  },
+  {
+   "id": "raneany-east:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "raneany-east:beat:census:1911",
+     "kind": "census",
+     "chapter": "raneany-east:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "raneany-east",
+      "name": "Raneany East",
+      "logainm_id": "14152",
+      "lat": 54.625844,
+      "lon": -8.070775,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "raneany east:census:1911"
+     },
+     "caption": "In 1911, 36 people in four households lived in Raneany East. Heads of household included Kirpatrick, McClay and Mulloy.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "raneany east:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7600,
+     "audio": null,
+     "counts": {
+      "people": 36,
+      "households": 4
+     }
+    }
+   ]
+  },
+  {
+   "id": "raneany-east:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "raneany-east:beat:census:1926",
+     "kind": "census",
+     "chapter": "raneany-east:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "raneany-east",
+      "name": "Raneany East",
+      "logainm_id": "14152",
+      "lat": 54.625844,
+      "lon": -8.070775,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "raneany east:census:1926"
+     },
+     "caption": "Raneany East had 35 people in six households in 1926. Heads of household included Browne, Travers and McClay.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "raneany east:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 35,
+      "households": 6
+     }
+    },
+    {
+     "id": "raneany-east:beat:closing:end",
+     "kind": "closing",
+     "chapter": "raneany-east:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "raneany-east",
+      "name": "Raneany East",
+      "logainm_id": "14152",
+      "lat": 54.625844,
+      "lon": -8.070775,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "raneany east:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with six households in Raneany East.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "raneany east:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4400,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

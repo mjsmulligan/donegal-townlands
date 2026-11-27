@@ -1,0 +1,266 @@
+{
+ "schema": 1,
+ "townland": "Tully",
+ "slug": "tully",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Tully",
+ "span": {
+  "from": "1901",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "tully:ch:register",
+   "title": "The parish register",
+   "beats": [
+    {
+     "id": "tully:beat:register:tawnawilly",
+     "kind": "register",
+     "chapter": "tully:ch:register",
+     "time": {
+      "label": "1874",
+      "iso": "1874",
+      "sort": "1874-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tully",
+      "name": "Tully",
+      "logainm_id": "14043",
+      "lat": 54.646111,
+      "lon": -8.078972,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tully:register:tawnawilly"
+     },
+     "caption": "The parish register of Tawnawilly records one baptism at Tully in 1874. Its marriage entries give no townland, so none are placed here.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tully:register:tawnawilly"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 9200,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "tully:ch:intro",
+   "title": "Tully",
+   "beats": [
+    {
+     "id": "tully:beat:title:title",
+     "kind": "title",
+     "chapter": "tully:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tully",
+      "name": "Tully",
+      "logainm_id": "14043",
+      "lat": 54.646111,
+      "lon": -8.078972,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Tully, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Tully and its six families, from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tully:census:1901",
+       "tully:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 10400,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "tully:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "tully:beat:census:1901",
+     "kind": "census",
+     "chapter": "tully:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tully",
+      "name": "Tully",
+      "logainm_id": "14043",
+      "lat": 54.646111,
+      "lon": -8.078972,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tully:census:1901"
+     },
+     "caption": "Tully had nineteen people in five households in 1901. Heads of household included Brogan, Carney and Graham.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tully:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 19,
+      "households": 5
+     }
+    }
+   ]
+  },
+  {
+   "id": "tully:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "tully:beat:census:1911",
+     "kind": "census",
+     "chapter": "tully:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tully",
+      "name": "Tully",
+      "logainm_id": "14043",
+      "lat": 54.646111,
+      "lon": -8.078972,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tully:census:1911"
+     },
+     "caption": "Tully had thirteen people in four households in 1911. Heads of household included Graham, Brogan and Martin.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tully:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 13,
+      "households": 4
+     }
+    }
+   ]
+  },
+  {
+   "id": "tully:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "tully:beat:census:1926",
+     "kind": "census",
+     "chapter": "tully:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tully",
+      "name": "Tully",
+      "logainm_id": "14043",
+      "lat": 54.646111,
+      "lon": -8.078972,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tully:census:1926"
+     },
+     "caption": "Tully had nine people in three households in 1926. Heads of household included Brogan, Martin and McMullin.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tully:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 9,
+      "households": 3
+     }
+    },
+    {
+     "id": "tully:beat:closing:end",
+     "kind": "closing",
+     "chapter": "tully:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tully",
+      "name": "Tully",
+      "logainm_id": "14043",
+      "lat": 54.646111,
+      "lon": -8.078972,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tully:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with three households in Tully.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tully:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

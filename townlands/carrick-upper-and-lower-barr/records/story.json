@@ -1,0 +1,180 @@
+{
+ "schema": 1,
+ "townland": "Carrick Upper and Lower Barr",
+ "slug": "carrick-upper-and-lower-barr",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Carrick Upper and Lower Barr",
+ "span": {
+  "from": "1901",
+  "to": "1911"
+ },
+ "chapters": [
+  {
+   "id": "carrick-upper-and-lower-barr:ch:intro",
+   "title": "Carrick Upper and Lower Barr",
+   "beats": [
+    {
+     "id": "carrick-upper-and-lower-barr:beat:title:title",
+     "kind": "title",
+     "chapter": "carrick-upper-and-lower-barr:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "carrick-upper-and-lower-barr",
+      "name": "Carrick Upper and Lower Barr",
+      "logainm_id": "14137",
+      "lat": 54.614878,
+      "lon": -8.001976,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Carrick Upper and Lower Barr. Here is the story of Carrick Upper and Lower Barr and its ten families, from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "carrick upper and lower barr:census:1901",
+       "carrick upper and lower barr:census:1911"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 9200,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "carrick-upper-and-lower-barr:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "carrick-upper-and-lower-barr:beat:census:1901",
+     "kind": "census",
+     "chapter": "carrick-upper-and-lower-barr:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "carrick-upper-and-lower-barr",
+      "name": "Carrick Upper and Lower Barr",
+      "logainm_id": "14137",
+      "lat": 54.614878,
+      "lon": -8.001976,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "carrick upper and lower barr:census:1901"
+     },
+     "caption": "Carrick Upper and Lower Barr had 46 people in ten households in 1901. Heads of household included McCafferty, Travers and Bartley.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "carrick upper and lower barr:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 8400,
+     "audio": null,
+     "counts": {
+      "people": 46,
+      "households": 10
+     }
+    }
+   ]
+  },
+  {
+   "id": "carrick-upper-and-lower-barr:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "carrick-upper-and-lower-barr:beat:census:1911",
+     "kind": "census",
+     "chapter": "carrick-upper-and-lower-barr:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "carrick-upper-and-lower-barr",
+      "name": "Carrick Upper and Lower Barr",
+      "logainm_id": "14137",
+      "lat": 54.614878,
+      "lon": -8.001976,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "carrick upper and lower barr:census:1911"
+     },
+     "caption": "In 1911, 42 people in ten households lived in Carrick Upper and Lower Barr. Heads of household included McCafferty, Bartley and Gallagher.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "carrick upper and lower barr:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 8800,
+     "audio": null,
+     "counts": {
+      "people": 42,
+      "households": 10
+     }
+    },
+    {
+     "id": "carrick-upper-and-lower-barr:beat:closing:end",
+     "kind": "closing",
+     "chapter": "carrick-upper-and-lower-barr:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "carrick-upper-and-lower-barr",
+      "name": "Carrick Upper and Lower Barr",
+      "logainm_id": "14137",
+      "lat": 54.614878,
+      "lon": -8.001976,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "carrick upper and lower barr:census:1911"
+     },
+     "caption": "The story reaches 1911 here, with ten households in Carrick Upper and Lower Barr.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "carrick upper and lower barr:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 5600,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

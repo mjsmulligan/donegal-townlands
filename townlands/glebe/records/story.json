@@ -1,0 +1,180 @@
+{
+ "schema": 1,
+ "townland": "Glebe",
+ "slug": "glebe",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Glebe",
+ "span": {
+  "from": "1901",
+  "to": "1911"
+ },
+ "chapters": [
+  {
+   "id": "glebe:ch:intro",
+   "title": "Glebe",
+   "beats": [
+    {
+     "id": "glebe:beat:title:title",
+     "kind": "title",
+     "chapter": "glebe:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "glebe",
+      "name": "Glebe",
+      "logainm_id": "14036",
+      "lat": 54.649866,
+      "lon": -8.111371,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Glebe, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Glebe and its eight families, from 1901 to 1911.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "glebe:census:1901",
+       "glebe:census:1911"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 10400,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "glebe:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "glebe:beat:census:1901",
+     "kind": "census",
+     "chapter": "glebe:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "glebe",
+      "name": "Glebe",
+      "logainm_id": "14036",
+      "lat": 54.649866,
+      "lon": -8.111371,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "glebe:census:1901"
+     },
+     "caption": "In 1901, 27 people in five households lived in Glebe. Heads of household included Brogan, Chapman and McDivitt.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "glebe:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 27,
+      "households": 5
+     }
+    }
+   ]
+  },
+  {
+   "id": "glebe:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "glebe:beat:census:1911",
+     "kind": "census",
+     "chapter": "glebe:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "glebe",
+      "name": "Glebe",
+      "logainm_id": "14036",
+      "lat": 54.649866,
+      "lon": -8.111371,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "glebe:census:1911"
+     },
+     "caption": "Glebe had 31 people in six households in 1911. Heads of household included Brogan, Chapman and Coleman.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "glebe:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 31,
+      "households": 6
+     }
+    },
+    {
+     "id": "glebe:beat:closing:end",
+     "kind": "closing",
+     "chapter": "glebe:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "glebe",
+      "name": "Glebe",
+      "logainm_id": "14036",
+      "lat": 54.649866,
+      "lon": -8.111371,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "glebe:census:1911"
+     },
+     "caption": "The story reaches 1911 here, with six households in Glebe.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "glebe:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

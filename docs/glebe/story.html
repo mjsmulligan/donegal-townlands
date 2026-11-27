@@ -1,0 +1,573 @@
+<!doctype html>
+<html lang="en-IE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Glebe story</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&display=swap">
+<style>
+:root{
+  /* The story player. Template only: every beat arrives in {"schema":1,"townland":"Glebe","slug":"glebe","generated_by":"donegal-townlands.build_story","title":"Glebe","span":{"from":"1901","to":"1911"},"chapters":[{"id":"glebe:ch:intro","title":"Glebe","beats":[{"id":"glebe:beat:title:title","kind":"title","chapter":"glebe:ch:intro","time":{"label":"","iso":"","sort":"1901-01-01","approximate":true},"place":{"townland":"glebe","name":"Glebe","logainm_id":"14036","lat":54.649866,"lon":-8.111371,"camera":"parish"},"scene":{"stage":"map","open_card":""},"caption":"Glebe, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Glebe and its eight families, from 1901 to 1911.","people":[],"media":[],"evidence":{"events":["glebe:census:1901","glebe:census:1911"],"basis":"place_record","certainty":"stated"},"duration_ms":10400,"audio":null}]},{"id":"glebe:ch:1901","title":"1901","beats":[{"id":"glebe:beat:census:1901","kind":"census","chapter":"glebe:ch:1901","time":{"label":"1901","iso":"1901","sort":"1901-01-01","approximate":true},"place":{"townland":"glebe","name":"Glebe","logainm_id":"14036","lat":54.649866,"lon":-8.111371,"camera":"townland"},"scene":{"stage":"map","open_card":"glebe:census:1901"},"caption":"In 1901, 27 people in five households lived in Glebe. Heads of household included Brogan, Chapman and McDivitt.","people":[],"media":[],"evidence":{"events":["glebe:census:1901"],"basis":"return_for_townland","certainty":"stated"},"duration_ms":7200,"audio":null,"counts":{"people":27,"households":5}}]},{"id":"glebe:ch:1911","title":"1911","beats":[{"id":"glebe:beat:census:1911","kind":"census","chapter":"glebe:ch:1911","time":{"label":"1911","iso":"1911","sort":"1911-01-01","approximate":true},"place":{"townland":"glebe","name":"Glebe","logainm_id":"14036","lat":54.649866,"lon":-8.111371,"camera":"townland"},"scene":{"stage":"map","open_card":"glebe:census:1911"},"caption":"Glebe had 31 people in six households in 1911. Heads of household included Brogan, Chapman and Coleman.","people":[],"media":[],"evidence":{"events":["glebe:census:1911"],"basis":"return_for_townland","certainty":"stated"},"duration_ms":6800,"audio":null,"counts":{"people":31,"households":6}},{"id":"glebe:beat:closing:end","kind":"closing","chapter":"glebe:ch:1911","time":{"label":"1911","iso":"1911","sort":"1911-01-01","approximate":true},"place":{"townland":"glebe","name":"Glebe","logainm_id":"14036","lat":54.649866,"lon":-8.111371,"camera":"townland"},"scene":{"stage":"map","open_card":"glebe:census:1911"},"caption":"The story reaches 1911 here, with six households in Glebe.","people":[],"media":[],"evidence":{"events":["glebe:census:1911"],"basis":"return_for_townland","certainty":"stated"},"duration_ms":4000,"audio":null}]}],"media":{},"foot":"","credits":{},"sources":{"glebe:beat:title:title":[{"label":"Logainm, the placenames database of Ireland","url":"https://www.logainm.ie/en/14036"}],"glebe:census:1901":[{"label":"National Archives of Ireland, census of Ireland, 1901","url":"https://www.census.nationalarchives.ie/"}],"glebe:census:1911":[{"label":"National Archives of Ireland, census of Ireland, 1911","url":"https://www.census.nationalarchives.ie/"}]},"explore":{"families":[],"sources":[{"beat":"glebe:beat:census:1901","label":"Census returns"}]},"outline":{"type":"Polygon","coordinates":[[[-8.10348,54.65135],[-8.10278,54.65022],[-8.10829,54.64758],[-8.1127,54.64697],[-8.11387,54.64809],[-8.11395,54.64833],[-8.11577,54.64825],[-8.11541,54.64897],[-8.11569,54.65027],[-8.11501,54.65126],[-8.11297,54.65154],[-8.11223,54.65195],[-8.11164,54.65163],[-8.10541,54.65171],[-8.10348,54.65135]]]},"outline_credit":"Townland boundaries © Tailte Éireann, CC BY 4.0"}. Light greens and charcoal. */
+  --wall:#F3F6F4; --paper:#FBFCFA; --ink:#1D2F33; --ink2:#53686D; --rule:#D3DDD9;
+  --hill:#7FAEA5; --hill-d:#4F8A86; --gorse:#EBC94B;
+  --display:'Newsreader', Georgia, 'Times New Roman', serif;
+  --body:'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --ease:cubic-bezier(.22,.8,.24,1);
+  color-scheme: light;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--wall);color:var(--ink);font:400 16px/1.5 var(--body);-webkit-font-smoothing:antialiased;overflow:hidden}
+h1,h2,p,ol,ul,figure{margin:0}
+a{color:var(--ink);text-decoration-color:var(--hill);text-underline-offset:3px}
+:focus-visible{outline:3px solid var(--ink);outline-offset:2px;border-radius:3px}
+.skip{position:absolute;left:-999px;top:0;background:var(--paper);padding:8px 12px;z-index:2000}
+.skip:focus{left:8px;top:8px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* the backdrop is a satellite view of the townland, full bleed, under a pale wash. If the map cannot load, the first photograph or plain colour stands in. */
+.bg{position:fixed;inset:0;z-index:-1;background:transparent;overflow:hidden}
+.bg.photo{background:var(--wall)}
+.bg.photo::before{content:"";position:absolute;inset:-4%;background:var(--photo) center/cover no-repeat;animation:drift 70s ease-in-out infinite alternate}
+.bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(243,246,244,.50) 0%,rgba(243,246,244,.26) 40%,rgba(243,246,244,.70) 100%);transition:opacity 1s}
+.app.hero ~ .bg::after{opacity:.4}
+body.introing .app,body.introing .bg{opacity:0}
+.app,.bg{transition:opacity 1.6s}
+@keyframes drift{from{transform:scale(1.02) translate3d(-1.2%,0,0)}to{transform:scale(1.08) translate3d(1.2%,-.8%,0)}}
+
+.app{display:flex;flex-direction:column;height:100vh;height:100dvh;padding:calc(8px + env(safe-area-inset-top,0px)) 10px calc(8px + env(safe-area-inset-bottom,0px));gap:8px}
+.top{display:flex;gap:8px;align-items:center;flex:0 0 auto}
+.top .replay{background:rgba(251,252,250,.88);border:1px solid var(--rule);border-radius:999px;padding:5px 12px;font:400 13px var(--body);color:var(--ink);cursor:pointer;min-height:32px}
+.top a,.top span{background:rgba(251,252,250,.88);border:1px solid var(--rule);border-radius:999px;padding:5px 12px;font-size:13px;text-decoration:none;backdrop-filter:blur(6px)}
+
+/* the stage is a window that opens for a photograph or the people dots, and closes for the opening, the end and any moment with neither */
+.stage{position:relative;flex:0 0 34%;min-height:0;border-radius:16px;overflow:hidden;background:rgba(251,252,250,.9);border:1px solid var(--rule);transition:flex-basis .9s var(--ease),opacity .6s,margin .9s var(--ease)}
+.app.pic .stage{flex-basis:46%}
+.app.hero .stage{flex-basis:0;opacity:0;border-width:0;margin-top:-8px;pointer-events:none;visibility:hidden;transition:flex-basis .9s var(--ease),opacity .6s,margin .9s var(--ease),visibility 0s .9s}
+.photo{position:absolute;inset:0;z-index:900;background:rgba(243,246,244,.97);display:flex;align-items:center;justify-content:center;padding:10px;opacity:0;pointer-events:none;transition:opacity .9s}
+.photo.on{opacity:1}
+.photo figure{width:100%;height:100%;display:flex;flex-direction:column;background:var(--paper);border:1px solid var(--rule);border-radius:10px;padding:8px}
+.photo figure>*{transition:opacity .7s}
+.photo.swap figure>*{opacity:0}
+.photo img{display:block;flex:1 1 auto;min-height:0;width:100%;object-fit:contain;border-radius:4px}
+/* record forms: a page pager, a zoom button and the credit line under the image. Only these take taps. */
+.pbar{display:flex;align-items:center;justify-content:center;gap:8px;padding-top:6px;flex-wrap:wrap}
+.pbar[hidden],.pcredit[hidden],.pbar [hidden]{display:none}
+.pbtn{appearance:none;border:1px solid var(--ink);background:var(--paper);color:var(--ink);font:500 15px var(--body);min-height:44px;min-width:44px;padding:0 14px;border-radius:999px;cursor:pointer}
+.pbtn:disabled{opacity:.35;cursor:default}
+#pnum{font-size:13px;color:var(--ink2);min-width:84px;text-align:center}
+.pcredit{font-size:11px;color:var(--ink2);text-align:center;padding-top:4px}
+.linkbtn{appearance:none;border:0;background:none;color:var(--ink);font:inherit;text-decoration:underline;cursor:pointer;padding:6px 4px}
+.photo.on .pctl,.photo.on a.zoomable{pointer-events:auto}
+a.zoomable{cursor:zoom-in}
+/* the zoom view: the form at its own size, scrolled to the names, and panned by hand */
+.zoom{position:fixed;inset:0;z-index:2600;background:rgba(29,47,51,.92);display:flex;flex-direction:column}
+.zoom[hidden]{display:none}
+.zbar{display:flex;align-items:center;gap:12px;padding:10px 12px;color:#fff;font-size:14px}
+.zbar span{flex:1 1 auto;min-width:0}
+.zscroll{flex:1 1 auto;min-height:0;overflow:auto;-webkit-overflow-scrolling:touch;background:#0e2a36}
+.zscroll img{display:block;max-width:none;width:auto;min-width:1200px}
+.credit{font-size:14px;margin:0 0 12px}
+.credit a{overflow-wrap:anywhere}
+
+/* the people: one dot for every person counted */
+.dots{position:absolute;inset:0;z-index:850;background:rgba(243,246,244,.86);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:14px;opacity:0;pointer-events:none;transition:opacity .9s}
+.dots.on{opacity:1}
+.dotgrid{display:flex;flex-wrap:wrap;justify-content:center;gap:5px;max-width:min(100%,430px)}
+.dotgrid i{width:11px;height:11px;border-radius:50%;background:var(--hill-d);transform:scale(0);opacity:0;transition:transform .5s var(--ease),opacity .5s,background .5s}
+.dotgrid i.on{transform:none;opacity:1}
+.dotgrid i.off{transform:scale(.8);opacity:.5;background:transparent;box-shadow:inset 0 0 0 2px var(--hill-d)}
+.dotnum{font:300 clamp(40px,11vw,64px)/1 var(--display);font-variant-numeric:tabular-nums}
+.dotnum small{font:400 15px var(--body);color:var(--ink2);margin-left:8px}
+
+/* cards travel along a track; the one in view is clear, the ones either side wait in the haze */
+.cards{position:relative;flex:1 1 auto;min-height:0;overflow:hidden;display:flex;align-items:center;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 6%,#000 94%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 6%,#000 94%,transparent 100%)}
+.track{display:flex;gap:14px;align-items:center;height:100%;will-change:transform;transition:transform 1.2s var(--ease)}
+.card{flex:0 0 min(86vw,420px);max-height:100%;overflow:auto;background:rgba(251,252,250,.9);border:1px solid var(--rule);border-radius:16px;padding:16px 18px;backdrop-filter:blur(8px);opacity:.28;transform:scale(.93);transition:opacity .7s,transform 1.2s var(--ease)}
+/* a moment dims quickly as it leaves and the next rises after a short pause, so the change reads as a dissolve */
+.card.cur{opacity:1;transform:none;transition:opacity 1.5s .5s,transform 1.2s var(--ease)}
+.card .ch{font:500 12px var(--body);letter-spacing:.09em;text-transform:uppercase;color:var(--ink2)}
+.card .when{font:300 34px/1.05 var(--display);margin:2px 0 8px}
+.card .caption{font:400 clamp(19px,5vw,24px)/1.32 var(--display)}
+.card details{font-size:14px;margin-top:10px;color:var(--ink2)}
+summary{cursor:pointer;padding:6px 0;min-height:32px}
+details p{margin:4px 0;overflow-wrap:anywhere}
+
+/* the ribbon is the clock: a year that runs forward between moments, and every moment a stop along it */
+.ribbon{position:relative;flex:0 0 auto;height:74px;margin:0 6px;touch-action:pan-y}
+.ribbon .line{position:absolute;left:0;right:0;top:34px;height:3px;background:rgba(83,104,109,.35);border-radius:2px}
+.ribbon .done{position:absolute;left:0;top:34px;height:3px;background:var(--hill-d);border-radius:2px;width:0}
+.stop[hidden],.lab[hidden]{display:none!important}
+.stop{position:absolute;top:26px;width:20px;height:20px;margin-left:-10px;border-radius:50%;border:3px solid var(--wall);background:var(--ink2);padding:0;cursor:pointer;transition:transform .4s var(--ease),background .4s}
+.stop.past{background:var(--hill-d)}
+.stop.cur{transform:scale(1.35);background:var(--gorse);box-shadow:0 0 0 2px var(--ink)}
+.stop.possible{background:var(--paper);box-shadow:0 0 0 2px var(--hill-d)}
+.stop:before{content:"";position:absolute;inset:-12px}
+.lab{position:absolute;top:50px;transform:translateX(-50%);font-size:12px;color:var(--ink);white-space:nowrap;background:rgba(251,252,250,.85);border-radius:999px;padding:0 7px}
+.head{position:absolute;top:0;transform:translateX(-50%);font:300 26px/1 var(--display);background:rgba(251,252,250,.92);border:1px solid var(--rule);border-radius:999px;padding:3px 14px 4px;pointer-events:none;font-variant-numeric:tabular-nums}
+.head:after{content:"";position:absolute;left:50%;top:100%;width:2px;height:8px;background:var(--ink);transform:translateX(-50%)}
+
+.controls{display:flex;align-items:center;gap:8px;flex:0 0 auto}
+.btn{appearance:none;border:1px solid var(--ink);background:rgba(251,252,250,.92);color:var(--ink);font:500 15px var(--body);min-height:48px;min-width:48px;padding:0 16px;border-radius:999px;cursor:pointer}
+.btn:hover{background:var(--ink);color:#fff}
+.btn[disabled]{opacity:.35;cursor:default}
+.btn.main{background:var(--ink);color:#fff;flex:1}
+.btn.main:hover{background:var(--hill-d);border-color:var(--hill-d)}
+.mode{font-size:13px;color:var(--ink2);margin-left:auto;white-space:nowrap;background:rgba(251,252,250,.88);border-radius:999px;padding:3px 10px}
+.note{font-size:14px;color:var(--ink2)}
+.btn.explore{font-size:14px;padding:0 14px}
+.card .more{margin-top:12px;min-height:44px}
+details a{overflow-wrap:anywhere}
+/* the explore hub: the families and the record sources this story draws on, each a way back into the story */
+.hub{position:fixed;inset:0;z-index:2500;background:rgba(29,47,51,.42);display:flex;align-items:flex-end;justify-content:center;padding:0}
+.hub[hidden]{display:none}
+.hubbox{width:min(560px,100%);max-height:86dvh;overflow:auto;background:var(--paper);border:1px solid var(--rule);border-radius:16px 16px 0 0;padding:18px 18px calc(18px + env(safe-area-inset-bottom,0px))}
+.hubbox h2{font:300 30px/1.1 var(--display);margin-bottom:4px}
+.hubbox h3{font:500 12px var(--body);letter-spacing:.09em;text-transform:uppercase;color:var(--ink2);margin:16px 0 8px}
+.hubbox .lead{font-size:14px;color:var(--ink2)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{appearance:none;border:1px solid var(--hill-d);background:var(--wall);color:var(--ink);font:500 15px var(--body);min-height:44px;padding:0 16px;border-radius:999px;cursor:pointer;text-align:left}
+.chip:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.hubbox .close{margin-top:18px;width:100%}
+@media (min-width:900px){.hub{align-items:center}.hubbox{border-radius:16px}}
+.controls[hidden],.ribbon[hidden]{display:none}
+.foot:empty{display:none}
+.foot{font-size:11px;color:var(--ink);flex:0 0 auto;text-align:center;background:rgba(251,252,250,.8);border-radius:999px;padding:1px 10px;align-self:center}
+.foot .linkbtn{font-size:11px;padding:6px 2px}
+
+/* the opening: a satellite view that falls from far above Ireland to the townland, then lifts away */
+#intro{position:fixed;inset:0;z-index:3000;background:#0e2a36;overflow:hidden}
+#intro[hidden]{display:none}
+#intro.bgmode{z-index:-2;pointer-events:none;background:var(--wall)}
+#intro.bgmode .iname,#intro.bgmode .iskip,#intro.bgmode .leaflet-control-container{display:none}
+#intro.bgmode #imap{animation:drift 90s ease-in-out infinite alternate}
+#imap{position:absolute;inset:0;background:#0e2a36}
+.iname{position:absolute;left:0;right:0;bottom:22%;text-align:center;color:#fff;font:300 clamp(40px,12vw,84px)/1 var(--display);text-shadow:0 2px 18px rgba(0,0,0,.55);opacity:0;transition:opacity 1.6s;pointer-events:none;z-index:1200}
+.iname.on{opacity:1}
+.iskip{position:absolute;left:50%;bottom:calc(18px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:1300;background:rgba(14,42,54,.7);color:#fff;border:1px solid rgba(255,255,255,.6);border-radius:999px;min-height:44px;padding:0 20px;font:500 14px var(--body);cursor:pointer}
+
+/* desktop: the window beside the cards, both over the same landscape */
+@media (min-width:900px){
+  .app{display:grid;grid-template-columns:1fr minmax(380px,460px);grid-template-rows:auto 1fr auto auto auto;gap:12px 16px;padding:16px 18px}
+  .top{grid-column:1 / 3}
+  .stage{grid-column:1;grid-row:2 / 6;flex-basis:auto}
+  .app.hero .stage{display:none}
+  .cards{grid-column:2;grid-row:2}
+  .ribbon{grid-column:2;grid-row:3}
+  .controls{grid-column:2;grid-row:4}
+  .foot{grid-column:2;grid-row:5}
+  .card{flex-basis:min(400px,100%)}
+  .card .when{font-size:44px}
+  .card .caption{font-size:26px}
+}
+/* in the opening and the closing the landscape is the whole picture and the card floats over it */
+@media (min-width:900px){
+  .app.hero{grid-template-columns:1fr}
+  .app.hero .cards,.app.hero .ribbon,.app.hero .controls,.app.hero .foot{grid-column:1;justify-self:center;width:min(560px,100%)}
+}
+@media (prefers-reduced-motion:reduce){
+  .bg{animation:none}.track,.card,.card.cur,.stage,.stop,.photo,.photo figure>*,.dots,.dotgrid i,#intro,.iname,.app,.bg{transition:none}.bg.photo::before,#intro.bgmode #imap{animation:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#live">Skip to the story</a>
+<div class="app hero" id="app">
+  <div class="top"><a href="../">Donegal Townlands</a><span id="place">Glebe</span><button class="replay" id="replay" type="button" hidden>Replay opening</button></div>
+  <section class="stage" aria-label="Photographs and people">
+    <div class="dots" id="dots" aria-hidden="true"><div class="dotnum" id="dotnum"></div><div class="dotgrid" id="dotgrid"></div></div>
+    <div class="photo" id="photo"><figure><a id="photolink" href="#" target="_blank" rel="noopener" style="display:flex;flex:1 1 auto;min-height:0" title="Open the full size image"><img id="photoimg" alt=""></a>
+      <div class="pbar pctl" id="pbar" hidden>
+        <button class="pbtn" id="pprev" type="button" aria-label="Previous page">&#8249;</button>
+        <span id="pnum" aria-live="polite"></span>
+        <button class="pbtn" id="pnext" type="button" aria-label="Next page">&#8250;</button>
+        <button class="pbtn" id="pzoom" type="button">Zoom in</button>
+      </div>
+      <p class="pcredit pctl" id="pcredit" hidden><span id="pcredtext"></span> <button class="linkbtn" id="pcredbtn" type="button">Credits and licences</button></p>
+    </figure></div>
+  </section>
+  <section class="cards" aria-label="The story, in order"><div class="track" id="track"></div></section>
+  <div class="ribbon" id="ribbon" role="group" aria-label="Time, from the first moment to the last">
+    <div class="line"></div><div class="done" id="done"></div><div id="stops"></div><div class="head" id="head"></div>
+  </div>
+  <div class="controls">
+    <button class="btn" id="prev" type="button" aria-label="Previous">&#8592;</button>
+    <button class="btn main" id="play" type="button">Play</button>
+    <button class="btn" id="next" type="button" aria-label="Next">&#8594;</button>
+    <button class="btn explore" id="explore" type="button" hidden>Explore</button>
+    <span class="mode" id="mode">Paused</span>
+  </div>
+  <p class="foot" id="foot"><span id="footc">Imagery: Esri, Maxar, Earthstar Geographics</span> <button class="linkbtn" id="footbtn" type="button">Credits and licences</button></p>
+  <p class="sr" id="live" aria-live="polite" tabindex="-1"></p>
+</div>
+<div class="hub" id="hub" role="dialog" aria-modal="true" aria-labelledby="hubtitle" hidden>
+  <div class="hubbox">
+    <h2 id="hubtitle">Explore more</h2>
+    <p class="lead">Choose a family or a set of records and the story moves to it.</p>
+    <div id="hubfam-box"><h3>Families</h3><div class="chips" id="hubfam"></div></div>
+    <div id="hubsrc-box"><h3>Records</h3><div class="chips" id="hubsrc"></div></div>
+    <button class="btn close" id="hubclose" type="button">Close</button>
+  </div>
+</div>
+<div class="hub" id="credits" role="dialog" aria-modal="true" aria-labelledby="credtitle" hidden>
+  <div class="hubbox">
+    <h2 id="credtitle">Credits and licences</h2>
+    <div id="credlist"></div>
+    <button class="btn close" id="credclose" type="button">Close</button>
+  </div>
+</div>
+<div class="zoom" id="zoom" role="dialog" aria-modal="true" aria-label="Zoomed view of the form" hidden>
+  <div class="zbar"><span id="zcap"></span><button class="btn" id="zclose" type="button">Close</button></div>
+  <div class="zscroll" id="zscroll" tabindex="0"><img id="zimg" alt=""></div>
+</div>
+<div class="bg" id="bg" aria-hidden="true"></div>
+<div id="intro" hidden aria-hidden="true"><div id="imap"></div><div class="iname" id="iname"></div><button class="iskip" id="iskip" type="button">Skip</button></div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+var D={"schema":1,"townland":"Glebe","slug":"glebe","generated_by":"donegal-townlands.build_story","title":"Glebe","span":{"from":"1901","to":"1911"},"chapters":[{"id":"glebe:ch:intro","title":"Glebe","beats":[{"id":"glebe:beat:title:title","kind":"title","chapter":"glebe:ch:intro","time":{"label":"","iso":"","sort":"1901-01-01","approximate":true},"place":{"townland":"glebe","name":"Glebe","logainm_id":"14036","lat":54.649866,"lon":-8.111371,"camera":"parish"},"scene":{"stage":"map","open_card":""},"caption":"Glebe, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Glebe and its eight families, from 1901 to 1911.","people":[],"media":[],"evidence":{"events":["glebe:census:1901","glebe:census:1911"],"basis":"place_record","certainty":"stated"},"duration_ms":10400,"audio":null}]},{"id":"glebe:ch:1901","title":"1901","beats":[{"id":"glebe:beat:census:1901","kind":"census","chapter":"glebe:ch:1901","time":{"label":"1901","iso":"1901","sort":"1901-01-01","approximate":true},"place":{"townland":"glebe","name":"Glebe","logainm_id":"14036","lat":54.649866,"lon":-8.111371,"camera":"townland"},"scene":{"stage":"map","open_card":"glebe:census:1901"},"caption":"In 1901, 27 people in five households lived in Glebe. Heads of household included Brogan, Chapman and McDivitt.","people":[],"media":[],"evidence":{"events":["glebe:census:1901"],"basis":"return_for_townland","certainty":"stated"},"duration_ms":7200,"audio":null,"counts":{"people":27,"households":5}}]},{"id":"glebe:ch:1911","title":"1911","beats":[{"id":"glebe:beat:census:1911","kind":"census","chapter":"glebe:ch:1911","time":{"label":"1911","iso":"1911","sort":"1911-01-01","approximate":true},"place":{"townland":"glebe","name":"Glebe","logainm_id":"14036","lat":54.649866,"lon":-8.111371,"camera":"townland"},"scene":{"stage":"map","open_card":"glebe:census:1911"},"caption":"Glebe had 31 people in six households in 1911. Heads of household included Brogan, Chapman and Coleman.","people":[],"media":[],"evidence":{"events":["glebe:census:1911"],"basis":"return_for_townland","certainty":"stated"},"duration_ms":6800,"audio":null,"counts":{"people":31,"households":6}},{"id":"glebe:beat:closing:end","kind":"closing","chapter":"glebe:ch:1911","time":{"label":"1911","iso":"1911","sort":"1911-01-01","approximate":true},"place":{"townland":"glebe","name":"Glebe","logainm_id":"14036","lat":54.649866,"lon":-8.111371,"camera":"townland"},"scene":{"stage":"map","open_card":"glebe:census:1911"},"caption":"The story reaches 1911 here, with six households in Glebe.","people":[],"media":[],"evidence":{"events":["glebe:census:1911"],"basis":"return_for_townland","certainty":"stated"},"duration_ms":4000,"audio":null}]}],"media":{},"foot":"","credits":{},"sources":{"glebe:beat:title:title":[{"label":"Logainm, the placenames database of Ireland","url":"https://www.logainm.ie/en/14036"}],"glebe:census:1901":[{"label":"National Archives of Ireland, census of Ireland, 1901","url":"https://www.census.nationalarchives.ie/"}],"glebe:census:1911":[{"label":"National Archives of Ireland, census of Ireland, 1911","url":"https://www.census.nationalarchives.ie/"}]},"explore":{"families":[],"sources":[{"beat":"glebe:beat:census:1901","label":"Census returns"}]},"outline":{"type":"Polygon","coordinates":[[[-8.10348,54.65135],[-8.10278,54.65022],[-8.10829,54.64758],[-8.1127,54.64697],[-8.11387,54.64809],[-8.11395,54.64833],[-8.11577,54.64825],[-8.11541,54.64897],[-8.11569,54.65027],[-8.11501,54.65126],[-8.11297,54.65154],[-8.11223,54.65195],[-8.11164,54.65163],[-8.10541,54.65171],[-8.10348,54.65135]]]},"outline_credit":"Townland boundaries © Tailte Éireann, CC BY 4.0"};
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var beats=[], chapters={};
+  D.chapters.forEach(function(c){chapters[c.id]=c.title; c.beats.forEach(function(b){beats.push(b)})});
+  var N=beats.length;
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var i=0, playing=false, timer=null, started=0, remaining=0, raf=0, cur=null;
+
+  function el(tag,cls,text){var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e}
+  function year(b){return parseInt(b.time.sort.slice(0,4),10)}
+  function isHero(b){return b.kind==='title'||b.kind==='closing'}
+
+  /* the landscape: the first beat's photograph, full bleed behind everything */
+  var first=beats[0]&&beats[0].media&&beats[0].media[0], here=beats[0].place||{}, ll0=[here.lat,here.lon], hasMap=!!(window.L&&ll0[0]);
+  if(!hasMap){
+    $('foot').hidden=true;
+    if(first){$('bg').classList.add('photo'); $('bg').style.setProperty('--photo','url("media/'+first.replace(/"/g,'%22')+'")')}
+  }
+
+  /* the ribbon: one track for the townland and one for each family. A family rewinds the clock to its own first year,
+     so a track holds only its own moments, spaced half by time and half evenly so close moments stay apart. */
+  function track(b){return b.thread?b.thread.id:'main'}
+  var tracks={}, pos=[], tk=[], stopEls=[], labEls=[], PAD=0.09;
+  beats.forEach(function(b,k){var t=track(b); (tracks[t]=tracks[t]||[]).push(k)});
+  Object.keys(tracks).forEach(function(t){
+    var m=tracks[t], n=m.length, a=year(beats[m[0]]), z=year(beats[m[n-1]]), sp=Math.max(1,z-a);
+    m.forEach(function(k,j){pos[k]=0.5*(n>1?j/(n-1):0.5)+0.5*((year(beats[k])-a)/sp); tk[k]=t});
+  });
+  function px(p){return (PAD+(1-2*PAD)*p)*100}
+  beats.forEach(function(b,k){
+    var m=tracks[tk[k]], s=el('button','stop'+(b.evidence.certainty==='possible'?' possible':''));
+    s.type='button'; s.style.left=px(pos[k])+'%';
+    s.setAttribute('aria-label',(b.time.label||D.title)+': '+(chapters[b.chapter]||'')+', moment '+(m.indexOf(k)+1)+' of '+m.length);
+    s.addEventListener('click',function(){go(k)});
+    $('stops').append(s); stopEls.push(s);
+  });
+  /* year labels, only where there is room, a track at a time */
+  (function(){
+    var w=Math.max(280,Math.min(window.innerWidth-32,440));
+    beats.forEach(function(b,k){labEls.push(null)});
+    Object.keys(tracks).forEach(function(t){
+      var last=-99;
+      tracks[t].forEach(function(k,j){
+        var x=px(pos[k])/100*w; if(j>0&&x-last<46) return;
+        var l=el('span','lab',String(year(beats[k]))); l.style.left=px(pos[k])+'%'; $('ribbon').append(l); labEls[k]=l; last=x;
+      });
+    });
+  })();
+  var showing=null;
+  function showTrack(t){
+    if(t===showing) return; showing=t;
+    stopEls.forEach(function(s,k){s.hidden=tk[k]!==t; if(labEls[k]) labEls[k].hidden=tk[k]!==t});
+  }
+  function setHead(p,y){ $('head').style.left=px(p)+'%'; $('head').textContent=String(Math.round(y)); $('done').style.width=px(p)+'%'; }
+
+  /* the explore hub: families and record sources, each a beat to jump to */
+  var ex=D.explore||{families:[],sources:[]}, hasHub=(ex.families.length+ex.sources.length)>0, hubFrom=null;
+  /* cards */
+  var cardEls=[];
+  beats.forEach(function(b,k){
+    var c=el('article','card'); c.setAttribute('aria-hidden','true');
+    if((chapters[b.chapter]||'')!==(b.time.label||D.title)) c.append(el('div','ch',chapters[b.chapter]||'')); c.append(el('h2','when',b.time.label||D.title),el('p','caption',b.caption));
+    if(b.kind==='title'&&D.note) c.append(el('p','note',D.note));   /* a case with no story says so, and offers nothing else */
+    /* the records behind a beat: the named sources, as links where the source has a page of its own. Nothing about how we
+       linked or checked them appears here. */
+    var srcs=[], seenSrc={};
+    b.evidence.events.concat([b.id]).forEach(function(id){((D.sources||{})[id]||[]).forEach(function(r){ if(!seenSrc[r.label]){seenSrc[r.label]=1; srcs.push(r)} })});
+    if(srcs.length){
+      var d=el('details',null); d.append(el('summary',null,'The records behind this'));
+      srcs.forEach(function(r){
+        var p=el('p',null);
+        if(r.url){var a=el('a',null,r.label); a.href=r.url; a.target='_blank'; a.rel='noopener'; p.append(a)} else p.textContent=r.label;
+        d.append(p);
+      });
+      if(b.evidence.certainty==='possible') d.append(el('p',null,'This link is possible rather than certain.'));
+      c.append(d);
+    }
+    if(b.kind==='closing'&&hasHub){var mb=el('button','btn more','Explore more'); mb.type='button'; mb.addEventListener('click',function(e){e.stopPropagation(); openHub()}); c.append(mb)}
+    c.addEventListener('click',function(){ if(k!==i) go(k) });
+    $('track').append(c); cardEls.push(c);
+  });
+  function place(instant){
+    var vp=$('track').parentNode.clientWidth, c=cardEls[i];
+    var x=vp/2-(c.offsetLeft+c.offsetWidth/2);
+    var t=$('track'); if(instant){t.style.transition='none'}
+    t.style.transform='translate3d('+x+'px,0,0)';
+    if(instant){t.offsetWidth; t.style.transition=''}
+  }
+
+  /* the backdrop and the opening are one map. It sits behind the story, full bleed. On a fresh visit it first
+     falls from far above Ireland to the townland, then settles as the backdrop. Without Leaflet, or with reduced
+     motion, or on a link to a later moment, it simply starts settled. */
+  var bmap=null, run=0;
+  function backdrop(){
+    if(bmap||!hasMap) return bmap;
+    var box=$('intro'); box.hidden=false; box.classList.add('bgmode');
+    bmap=L.map('imap',{zoomControl:false,attributionControl:true,zoomAnimation:true,fadeAnimation:true,dragging:false,touchZoom:false,scrollWheelZoom:false,doubleClickZoom:false,boxZoom:false,keyboard:false,tap:false});
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{maxZoom:18,maxNativeZoom:17,attribution:'Imagery: Esri, Maxar, Earthstar Geographics'}).addTo(bmap);
+    if(D.outline){
+      /* the townland's own outline (Tailte Eireann), dotted and lightly filled */
+      outline=L.geoJSON({type:'Feature',properties:{},geometry:D.outline},{style:function(){return {color:'#FBFCFA',weight:3,dashArray:'2 7',lineCap:'round',fillColor:'#EBC94B',fillOpacity:.14,interactive:false}}}).addTo(bmap);
+      if(D.outline_credit) $('footc').textContent+=' \u00b7 '+D.outline_credit;
+    }
+    var v=finalView(bmap); bmap.setView(v.c,v.z,{animate:false});
+    return bmap;
+  }
+  /* where the map settles: the whole outline in frame (never closer than zoom 16), or the place point at 16 */
+  var outline=null;
+  function finalView(m){
+    if(outline){
+      m.invalidateSize({animate:false});
+      var b=outline.getBounds(), z=m.getBoundsZoom(b,false,L.point(60,60));
+      if(isFinite(z)) return {c:b.getCenter(),z:Math.min(16,Math.floor(z*4)/4)};
+    }
+    return {c:ll0,z:16};
+  }
+  /* The opening continues the index map. The index hands over the view it was showing (the townland centred, at
+     its zoom) through sessionStorage; the opening starts there and zooms in, so looking at every townland and
+     looking at this one is one movement. With no handoff (a direct link, a replay, a refresh) it starts from the
+     same wide Donegal view the index opens on. */
+  var HOME_ZOOM=11, HAND=null;
+  try{
+    var raw=sessionStorage.getItem('dt-view'); sessionStorage.removeItem('dt-view');
+    var h=raw&&JSON.parse(raw);
+    if(h&&typeof h.zoom==='number'&&isFinite(h.zoom)&&Date.now()-h.t<120000) HAND=h;
+  }catch(e){}
+  function startZoom(){
+    var z=HAND?HAND.zoom:HOME_ZOOM;
+    return Math.max(5,Math.min(z,14));
+  }
+  function intro(asked){
+    if(!hasMap||(reduce&&!asked)) return;
+    var m=backdrop(), box=$('intro'), me=++run, over=false;
+    var fv=finalView(m), z0=Math.min(startZoom(),fv.z), secs=Math.max(3,Math.min(6,2+(fv.z-z0)*0.6));
+    document.body.classList.add('introing'); box.classList.remove('bgmode'); $('iname').classList.remove('on');
+    $('iname').textContent=here.name||D.townland||'';
+    m.invalidateSize({animate:false}); m.setView(HAND||!outline?ll0:fv.c,z0,{animate:false});
+    function end(){
+      if(over||me!==run) return; over=true;
+      try{m.stop()}catch(e){} m.setView(fv.c,fv.z,{animate:false});
+      box.classList.add('bgmode'); document.body.classList.remove('introing');
+    }
+    setTimeout(function(){ if(me!==run) return; m.flyTo(fv.c,fv.z,{duration:secs}); m.once('moveend',function(){setTimeout(end,900)}) },250);
+    setTimeout(function(){ if(me===run) $('iname').classList.add('on')},Math.round((secs-1.2)*1000));
+    setTimeout(end,Math.round((secs+4)*1000));
+    box.onclick=end; $('iskip').onclick=end;
+  }
+
+  var shownPhoto=null, curFiles=[], pageIdx=0, zoomFrom=null, credFrom=null;
+  function fillPhoto(f){
+    var m=(D.media||{})[f]||{}, a=$('photolink'), multi=curFiles.length>1, cr=m.credit&&D.credits&&D.credits[m.credit];
+    $('photoimg').src='media/'+f; a.href='media/'+f; $('photoimg').alt=m.alt||m.caption||'';
+    a.classList.toggle('zoomable',!!m.focus);
+    /* a record form: the pages, a zoom, and the custodian's credit line under the image */
+    $('pbar').hidden=!(multi||m.focus);
+    $('pprev').hidden=$('pnext').hidden=$('pnum').hidden=!multi;
+    if(multi){$('pnum').textContent='Page '+(pageIdx+1)+' of '+curFiles.length; $('pprev').disabled=pageIdx===0; $('pnext').disabled=pageIdx===curFiles.length-1}
+    $('pzoom').hidden=!m.focus;
+    $('pcredit').hidden=!cr;
+    if(cr) $('pcredtext').textContent=cr.short+(m.reference?' \u00b7 '+m.reference:'');
+    shownPhoto=f;
+  }
+  function setPage(n){ pause(); pageIdx=Math.max(0,Math.min(curFiles.length-1,n)); fillPhoto(curFiles[pageIdx]) }
+  function openZoom(){
+    var f=curFiles[pageIdx]||shownPhoto, m=(D.media||{})[f]||{};
+    if(!m.focus) return;
+    pause(); zoomFrom=document.activeElement;
+    var img=$('zimg'), p=m.focus.split(','), fx=parseFloat(p[0]), fy=parseFloat(p[1]);
+    var aim=function(){var s=$('zscroll'); s.scrollLeft=Math.max(0,fx*img.offsetWidth-s.clientWidth/2); s.scrollTop=Math.max(0,fy*img.offsetHeight-s.clientHeight/2)};
+    img.alt=m.alt||m.caption||''; $('zcap').textContent=m.caption||'';
+    $('zoom').hidden=false; img.onload=aim; img.src='media/'+f; if(img.complete) aim();
+    $('zclose').focus();
+  }
+  function closeZoom(){ $('zoom').hidden=true; if(zoomFrom&&zoomFrom.focus) zoomFrom.focus() }
+  function openCredits(){ pause(); credFrom=document.activeElement; $('credits').hidden=false; $('credclose').focus() }
+  function closeCredits(){ $('credits').hidden=true; if(credFrom&&credFrom.focus) credFrom.focus() }
+  /* every credit the page owes: the map imagery, the boundaries, and the custodian's own words for each image used */
+  (function(){
+    var box=$('credlist'), add=function(t){box.append(el('p','credit',t))};
+    if(hasMap){ add('Imagery: Esri, Maxar, Earthstar Geographics'); if(D.outline_credit) add(D.outline_credit) }
+    Object.keys(D.credits||{}).forEach(function(k){
+      var c=D.credits[k], p=el('p','credit'), a=el('a',null,c.link_word);
+      a.href=c.link; a.target='_blank'; a.rel='noopener';
+      p.append(c.text+' ',a,'. '+(c.modified||'')); box.append(p);
+    });
+    if(!box.childNodes.length){ $('foot').hidden=true }
+    $('footbtn').addEventListener('click',openCredits); $('pcredbtn').addEventListener('click',openCredits);
+    $('credclose').addEventListener('click',closeCredits);
+    $('credits').addEventListener('click',function(e){ if(e.target===$('credits')) closeCredits() });
+    $('pprev').addEventListener('click',function(){setPage(pageIdx-1)});
+    $('pnext').addEventListener('click',function(){setPage(pageIdx+1)});
+    $('pzoom').addEventListener('click',openZoom);
+    $('photolink').addEventListener('click',function(e){ if($('photolink').classList.contains('zoomable')){e.preventDefault(); openZoom()} });
+    $('zclose').addEventListener('click',closeZoom);
+  })();
+  var swapTimer=null;
+  function photo(b){
+    var p=$('photo'), f=b.media&&b.media[0];
+    clearTimeout(swapTimer);
+    curFiles=b.media||[]; pageIdx=0;
+    if(f&&!isHero(b)){
+      if(shownPhoto&&shownPhoto!==f&&p.classList.contains('on')&&!reduce){
+        /* one photograph dissolves into the next */
+        p.classList.add('swap');
+        swapTimer=setTimeout(function(){fillPhoto(f); p.classList.remove('swap')},720);
+      } else {fillPhoto(f); p.classList.remove('swap')}
+      p.classList.add('on');
+    } else p.classList.remove('on');
+  }
+
+  /* dots: a census beat fills in one dot for each person counted. Counts only. */
+  var dotTimer=null;
+  function dots(b){
+    var box=$('dots'), grid=$('dotgrid'), c=b.counts;
+    clearTimeout(dotTimer);
+    if(!c||!c.people){box.classList.remove('on'); return}
+    var total=c.people, is=[];
+    grid.textContent='';
+    for(var k=0;k<total;k++){var d=document.createElement('i'); d.style.transitionDelay=reduce?'0s':Math.min(k*9,900)+'ms'; grid.append(d); is.push(d)}
+    $('dotnum').textContent=''; $('dotnum').append(String(c.people)); var sm=document.createElement('small'); sm.textContent='people in '+c.households+' households'; $('dotnum').append(sm);
+    box.classList.add('on');
+    var settle=function(){
+      is.forEach(function(d,k){d.className=k<c.people?'on':'off'});
+      $('dotnum').textContent=''; $('dotnum').append(String(c.people)); var s2=document.createElement('small'); s2.textContent='people in '+c.households+' households'; $('dotnum').append(s2);
+    };
+    dotTimer=setTimeout(settle,reduce?0:120);
+  }
+
+  function show(n,fromHash){
+    i=Math.max(0,Math.min(N-1,n)); cur=i;
+    var b=beats[i];
+    var shows=!isHero(b)&&((b.media&&b.media.length)||b.counts);
+    $('app').classList.toggle('hero',!shows);
+    $('app').classList.toggle('pic',!!(b.media&&b.media.length)&&!isHero(b));
+    cardEls.forEach(function(c,k){c.classList.toggle('cur',k===i); c.setAttribute('aria-hidden',k===i?'false':'true')});
+    showTrack(tk[i]); stopEls.forEach(function(s,k){s.classList.toggle('cur',k===i); s.classList.toggle('past',tk[k]===tk[i]&&k<i)});
+    place(fromHash);
+    setHead(pos[i],year(b));
+    $('live').textContent=(b.time.label?b.time.label+'. ':'')+b.caption;
+    $('prev').disabled=i===0; $('next').disabled=i===N-1;
+    photo(b); dots(b);
+    if(!fromHash){try{history.replaceState(null,'','#beat='+encodeURIComponent(b.id))}catch(e){}}
+  }
+
+  function setMode(){
+    $('play').textContent=reduce?'Step through':(playing?'Pause':(isEnd(i)&&remaining<=0?'Play again':(started?'Resume':'Play')));
+    $('play').setAttribute('aria-pressed',playing?'true':'false');
+    $('mode').textContent=playing?'Playing':'Paused';
+  }
+
+  /* the clock: stay on a moment for most of its time, then let the years run on to the next one */
+  function ease(t){return t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2}
+  function tick(){
+    if(i<N-1&&tk[i+1]===tk[i]){
+      var left=remaining-(Date.now()-started), p=1-left/beats[i].duration_ms;
+      var q=p<.6?0:ease(Math.min(1,(p-.6)/.4));
+      setHead(pos[i]+(pos[i+1]-pos[i])*q, year(beats[i])+(year(beats[i+1])-year(beats[i]))*q);
+    }
+    if(playing) raf=requestAnimationFrame(tick);
+  }
+  var closeIdx=N-1, solo=null;
+  beats.forEach(function(b,k){if(b.kind==='closing') closeIdx=k});
+  /* the run ends at the closing card, or, when a viewer chose one family, where that family's own moments end */
+  function isEnd(k){return k>=N-1||beats[k].kind==='closing'||((solo||k>closeIdx)&&tk[k+1]!==tk[k])}
+  function schedule(){
+    clearTimeout(timer); cancelAnimationFrame(raf);
+    started=Date.now();
+    timer=setTimeout(function(){
+      if(isEnd(i)){playing=false; remaining=0; setMode(); if(!$('hub').hidden||!hasHub) return; if(solo||i>closeIdx) openHub(); return}
+      show(i+1); remaining=beats[i].duration_ms; schedule();
+    },remaining);
+    raf=requestAnimationFrame(tick); setMode();
+  }
+  function play(){
+    if(reduce) return;
+    if(isEnd(i)&&remaining<=0){solo=null; show(0)}
+    if(!remaining||remaining>beats[i].duration_ms) remaining=beats[i].duration_ms;
+    playing=true; schedule();
+  }
+  function pause(){
+    if(!playing) return;
+    playing=false; clearTimeout(timer); cancelAnimationFrame(raf);
+    remaining=Math.max(0,remaining-(Date.now()-started)); setMode();
+    setHead(pos[i],year(beats[i]));
+  }
+  function go(n){ /* any move by hand is Explore: stop, then stay where the viewer chose */
+    solo=null; pause(); show(n); remaining=beats[i].duration_ms; setMode();
+  }
+
+  var byId={}; beats.forEach(function(b,k){byId[b.id]=k});
+  function chips(box,list){
+    list.forEach(function(r){
+      var c=el('button','chip',r.label); c.type='button';
+      c.addEventListener('click',function(){
+        closeHub(true); var n=byId[r.beat]; go(n);
+        if(r.thread){solo=r.thread}   /* a family plays its own moments, then the hub comes back */
+        if(!reduce){remaining=beats[i].duration_ms; play()}
+      });
+      $(box).append(c);
+    });
+    $(box+'-box').hidden=!list.length;
+  }
+  function openHub(){ pause(); hubFrom=document.activeElement; $('hub').hidden=false; $('hubclose').focus() }
+  function closeHub(quiet){ $('hub').hidden=true; if(!quiet&&hubFrom&&hubFrom.focus) hubFrom.focus() }
+  if(hasHub){
+    chips('hubfam',ex.families); chips('hubsrc',ex.sources);
+    $('explore').hidden=false; $('explore').addEventListener('click',openHub);
+    $('hubclose').addEventListener('click',function(){closeHub()});
+    $('hub').addEventListener('click',function(e){ if(e.target===$('hub')) closeHub() });
+  }
+  $('play').addEventListener('click',function(){playing?pause():play()});
+  $('next').addEventListener('click',function(){go(i+1)});
+  $('prev').addEventListener('click',function(){go(i-1)});
+  document.addEventListener('keydown',function(e){
+    var t=e.target&&e.target.tagName;
+    if(!$('zoom').hidden||!$('credits').hidden){   /* a dialog is open: Escape closes it, nothing else moves the story */
+      if(e.key==='Escape'){ if(!$('zoom').hidden) closeZoom(); else closeCredits() }
+      return;
+    }
+    if(e.key===' '&&t!=='BUTTON'&&t!=='SUMMARY'){e.preventDefault(); playing?pause():play()}
+    else if(e.key==='ArrowRight'){go(i+1)} else if(e.key==='ArrowLeft'){go(i-1)}
+    else if(e.key==='Escape'){ if(!$('hub').hidden) closeHub(); else pause() }
+  });
+  /* swipe the cards */
+  (function(){var x0=null; var c=$('track').parentNode;
+    c.addEventListener('touchstart',function(e){x0=e.touches[0].clientX},{passive:true});
+    c.addEventListener('touchend',function(e){ if(x0===null) return; var dx=e.changedTouches[0].clientX-x0; x0=null; if(Math.abs(dx)>50) go(i+(dx<0?1:-1)) },{passive:true});
+  })();
+
+  if(N<2){$('ribbon').hidden=true; document.querySelector('.controls').hidden=true}   /* nothing to play: the opening, the title card and the note */
+  if(reduce){$('play').disabled=true; $('play').textContent='Step through'}
+  var start=0, m=/#beat=([^&]+)/.exec(location.hash||'');
+  if(m){var id=decodeURIComponent(m[1]); beats.forEach(function(b,k){if(b.id===id) start=k})}
+  show(start,true); remaining=beats[start].duration_ms; setMode();
+  window.addEventListener('resize',function(){place(true)});
+  if(hasMap){$('replay').hidden=false; $('replay').addEventListener('click',function(){go(0); intro(true)})}
+  backdrop();
+  if(start===0) intro();
+  if(document.fonts&&document.fonts.ready) document.fonts.ready.then(function(){place(true)});
+})();
+</script>
+</body>
+</html>

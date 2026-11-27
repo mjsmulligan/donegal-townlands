@@ -1,0 +1,307 @@
+{
+ "schema": 1,
+ "townland": "Ardnableask",
+ "slug": "ardnableask",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Ardnableask",
+ "span": {
+  "from": "1874",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "ardnableask:ch:register",
+   "title": "The parish register",
+   "beats": [
+    {
+     "id": "ardnableask:beat:register:tawnawilly",
+     "kind": "register",
+     "chapter": "ardnableask:ch:register",
+     "time": {
+      "label": "1874",
+      "iso": "1874",
+      "sort": "1874-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnableask",
+      "name": "Ardnableask",
+      "logainm_id": "14238",
+      "lat": 54.696229,
+      "lon": -8.010488,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnableask:register:tawnawilly"
+     },
+     "caption": "The parish register of Tawnawilly records one baptism at Ardnableask in 1874. Its marriage entries give no townland, so none are placed here.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnableask:register:tawnawilly"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 9200,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "ardnableask:ch:intro",
+   "title": "Ardnableask",
+   "beats": [
+    {
+     "id": "ardnableask:beat:title:title",
+     "kind": "title",
+     "chapter": "ardnableask:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1874-06-04",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnableask",
+      "name": "Ardnableask",
+      "logainm_id": "14238",
+      "lat": 54.696229,
+      "lon": -8.010488,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Ardnableask, in Irish Ard na mBlaosc, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Ardnableask and its ten families, from 1874 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnableask:baptism:TAW-B-p011-r126",
+       "ardnableask:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 12400,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "ardnableask:ch:baptisms",
+   "title": "Baptisms, 1874",
+   "beats": [
+    {
+     "id": "ardnableask:beat:baptism:1874-06-04-TAW-B-p011-r126",
+     "kind": "baptism",
+     "chapter": "ardnableask:ch:baptisms",
+     "time": {
+      "label": "4 June 1874",
+      "iso": "1874-06-04",
+      "sort": "1874-06-04",
+      "approximate": false
+     },
+     "place": {
+      "townland": "ardnableask",
+      "name": "Ardnableask",
+      "logainm_id": "14238",
+      "lat": 54.696229,
+      "lon": -8.010488,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnableask:baptism:TAW-B-p011-r126"
+     },
+     "caption": "Bernard Gallagher was baptised on 4 June 1874. Thomas Gallagher and Mary McGinty were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnableask:baptism:TAW-B-p011-r126"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "ardnableask:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "ardnableask:beat:census:1901",
+     "kind": "census",
+     "chapter": "ardnableask:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnableask",
+      "name": "Ardnableask",
+      "logainm_id": "14238",
+      "lat": 54.696229,
+      "lon": -8.010488,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnableask:census:1901"
+     },
+     "caption": "Ardnableask had 67 people in ten households in 1901. Heads of household included Bartley, Gallagher and McNulty.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnableask:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 67,
+      "households": 10
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardnableask:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "ardnableask:beat:census:1911",
+     "kind": "census",
+     "chapter": "ardnableask:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnableask",
+      "name": "Ardnableask",
+      "logainm_id": "14238",
+      "lat": 54.696229,
+      "lon": -8.010488,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnableask:census:1911"
+     },
+     "caption": "In 1911, 71 people in twelve households lived in Ardnableask. Heads of household included McNulty, Bartley and Gallagher.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnableask:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 71,
+      "households": 12
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardnableask:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "ardnableask:beat:census:1926",
+     "kind": "census",
+     "chapter": "ardnableask:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnableask",
+      "name": "Ardnableask",
+      "logainm_id": "14238",
+      "lat": 54.696229,
+      "lon": -8.010488,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnableask:census:1926"
+     },
+     "caption": "In 1926, 50 people in ten households lived in Ardnableask. Heads of household included Bartley, Callaghan and McNulty.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnableask:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 50,
+      "households": 10
+     }
+    },
+    {
+     "id": "ardnableask:beat:closing:end",
+     "kind": "closing",
+     "chapter": "ardnableask:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardnableask",
+      "name": "Ardnableask",
+      "logainm_id": "14238",
+      "lat": 54.696229,
+      "lon": -8.010488,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardnableask:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with ten households in Ardnableask.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardnableask:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

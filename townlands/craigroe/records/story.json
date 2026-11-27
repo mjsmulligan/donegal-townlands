@@ -1,0 +1,225 @@
+{
+ "schema": 1,
+ "townland": "Craigroe",
+ "slug": "craigroe",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Craigroe",
+ "span": {
+  "from": "1901",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "craigroe:ch:intro",
+   "title": "Craigroe",
+   "beats": [
+    {
+     "id": "craigroe:beat:title:title",
+     "kind": "title",
+     "chapter": "craigroe:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "craigroe",
+      "name": "Craigroe",
+      "logainm_id": "13966",
+      "lat": 54.659653,
+      "lon": -8.066787,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Craigroe, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Craigroe and its four families, from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "craigroe:census:1901",
+       "craigroe:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 10400,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "craigroe:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "craigroe:beat:census:1901",
+     "kind": "census",
+     "chapter": "craigroe:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "craigroe",
+      "name": "Craigroe",
+      "logainm_id": "13966",
+      "lat": 54.659653,
+      "lon": -8.066787,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "craigroe:census:1901"
+     },
+     "caption": "In 1901, seven people in two households lived in Craigroe. Heads of household included English and Stevenson.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "craigroe:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 7,
+      "households": 2
+     }
+    }
+   ]
+  },
+  {
+   "id": "craigroe:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "craigroe:beat:census:1911",
+     "kind": "census",
+     "chapter": "craigroe:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "craigroe",
+      "name": "Craigroe",
+      "logainm_id": "13966",
+      "lat": 54.659653,
+      "lon": -8.066787,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "craigroe:census:1911"
+     },
+     "caption": "Craigroe had five people in two households in 1911. Heads of household included English and Stevenson.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "craigroe:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "counts": {
+      "people": 5,
+      "households": 2
+     }
+    }
+   ]
+  },
+  {
+   "id": "craigroe:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "craigroe:beat:census:1926",
+     "kind": "census",
+     "chapter": "craigroe:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "craigroe",
+      "name": "Craigroe",
+      "logainm_id": "13966",
+      "lat": 54.659653,
+      "lon": -8.066787,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "craigroe:census:1926"
+     },
+     "caption": "In 1926, five people in two households lived in Craigroe. Heads of household included Hanna and Morrow.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "craigroe:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 5,
+      "households": 2
+     }
+    },
+    {
+     "id": "craigroe:beat:closing:end",
+     "kind": "closing",
+     "chapter": "craigroe:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "craigroe",
+      "name": "Craigroe",
+      "logainm_id": "13966",
+      "lat": 54.659653,
+      "lon": -8.066787,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "craigroe:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with two households in Craigroe.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "craigroe:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

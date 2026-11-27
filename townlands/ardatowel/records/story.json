@@ -1,0 +1,346 @@
+{
+ "schema": 1,
+ "townland": "Ardatowel",
+ "slug": "ardatowel",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Ardatowel",
+ "span": {
+  "from": "1873",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "ardatowel:ch:register",
+   "title": "The parish register",
+   "beats": [
+    {
+     "id": "ardatowel:beat:register:tawnawilly",
+     "kind": "register",
+     "chapter": "ardatowel:ch:register",
+     "time": {
+      "label": "1873 to 1875",
+      "iso": "1873",
+      "sort": "1873-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardatowel",
+      "name": "Ardatowel",
+      "logainm_id": "14235",
+      "lat": 54.698932,
+      "lon": -8.018969,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardatowel:register:tawnawilly"
+     },
+     "caption": "The parish register of Tawnawilly records six baptisms at Ardatowel between 1873 and 1875. Its marriage entries give no townland, so none are placed here.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardatowel:register:tawnawilly"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 10000,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "ardatowel:ch:intro",
+   "title": "Ardatowel",
+   "beats": [
+    {
+     "id": "ardatowel:beat:title:title",
+     "kind": "title",
+     "chapter": "ardatowel:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1873-01-26",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardatowel",
+      "name": "Ardatowel",
+      "logainm_id": "14235",
+      "lat": 54.698932,
+      "lon": -8.018969,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Ardatowel, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Ardatowel and its twelve families, from 1873 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardatowel:baptism:TAW-B-p004-r11",
+       "ardatowel:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 10400,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "ardatowel:ch:baptisms",
+   "title": "Baptisms, 1873 to 1875",
+   "beats": [
+    {
+     "id": "ardatowel:beat:baptism:1873",
+     "kind": "baptism",
+     "chapter": "ardatowel:ch:baptisms",
+     "time": {
+      "label": "26 January 1873",
+      "iso": "1873-01-26",
+      "sort": "1873-01-26",
+      "approximate": false
+     },
+     "place": {
+      "townland": "ardatowel",
+      "name": "Ardatowel",
+      "logainm_id": "14235",
+      "lat": 54.698932,
+      "lon": -8.018969,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardatowel:baptism:TAW-B-p004-r11"
+     },
+     "caption": "Two children were baptised in 1873: Michael Slevin on 26 January and Francis McNulty on 17 August.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardatowel:baptism:TAW-B-p004-r11",
+       "ardatowel:baptism:TAW-B-p008-r63"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null
+    },
+    {
+     "id": "ardatowel:beat:baptism:1875",
+     "kind": "baptism",
+     "chapter": "ardatowel:ch:baptisms",
+     "time": {
+      "label": "1 January 1875",
+      "iso": "1875-01-01",
+      "sort": "1875-01-01",
+      "approximate": false
+     },
+     "place": {
+      "townland": "ardatowel",
+      "name": "Ardatowel",
+      "logainm_id": "14235",
+      "lat": 54.698932,
+      "lon": -8.018969,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardatowel:baptism:TAW-B-p014-r171"
+     },
+     "caption": "Four children were baptised in 1875: Bridget McNulty on 1 January, Patrick Martin on 14 March, Patrick Slevin on 17 April and Catherine McNulty on 6 June.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardatowel:baptism:TAW-B-p014-r171",
+       "ardatowel:baptism:TAW-B-p016-r195",
+       "ardatowel:baptism:TAW-B-p016-r204",
+       "ardatowel:baptism:TAW-B-p017-r216"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 10800,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "ardatowel:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "ardatowel:beat:census:1901",
+     "kind": "census",
+     "chapter": "ardatowel:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardatowel",
+      "name": "Ardatowel",
+      "logainm_id": "14235",
+      "lat": 54.698932,
+      "lon": -8.018969,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardatowel:census:1901"
+     },
+     "caption": "In 1901, 78 people in sixteen households lived in Ardatowel. Heads of household included McNulty, Martin and Slevin.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardatowel:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 78,
+      "households": 16
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardatowel:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "ardatowel:beat:census:1911",
+     "kind": "census",
+     "chapter": "ardatowel:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardatowel",
+      "name": "Ardatowel",
+      "logainm_id": "14235",
+      "lat": 54.698932,
+      "lon": -8.018969,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardatowel:census:1911"
+     },
+     "caption": "In 1911, 71 people in fourteen households lived in Ardatowel. Heads of household included McNulty, Martin and Cassidy.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardatowel:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 71,
+      "households": 14
+     }
+    }
+   ]
+  },
+  {
+   "id": "ardatowel:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "ardatowel:beat:census:1926",
+     "kind": "census",
+     "chapter": "ardatowel:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardatowel",
+      "name": "Ardatowel",
+      "logainm_id": "14235",
+      "lat": 54.698932,
+      "lon": -8.018969,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardatowel:census:1926"
+     },
+     "caption": "Ardatowel had 77 people in thirteen households in 1926. Heads of household included McNulty, Martain and McMenamin.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardatowel:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 77,
+      "households": 13
+     }
+    },
+    {
+     "id": "ardatowel:beat:closing:end",
+     "kind": "closing",
+     "chapter": "ardatowel:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "ardatowel",
+      "name": "Ardatowel",
+      "logainm_id": "14235",
+      "lat": 54.698932,
+      "lon": -8.018969,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "ardatowel:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with thirteen households in Ardatowel.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "ardatowel:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

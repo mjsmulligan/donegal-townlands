@@ -1,0 +1,225 @@
+{
+ "schema": 1,
+ "townland": "Croaghnameal",
+ "slug": "croaghnameal",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Croaghnameal",
+ "span": {
+  "from": "1901",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "croaghnameal:ch:intro",
+   "title": "Croaghnameal",
+   "beats": [
+    {
+     "id": "croaghnameal:beat:title:title",
+     "kind": "title",
+     "chapter": "croaghnameal:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "croaghnameal",
+      "name": "Croaghnameal",
+      "logainm_id": "14291",
+      "lat": 54.651531,
+      "lon": -7.95902,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Croaghnameal, in Irish Cruach na Míol. Here is the story of Croaghnameal and its four families, from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "croaghnameal:census:1901",
+       "croaghnameal:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 8000,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "croaghnameal:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "croaghnameal:beat:census:1901",
+     "kind": "census",
+     "chapter": "croaghnameal:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "croaghnameal",
+      "name": "Croaghnameal",
+      "logainm_id": "14291",
+      "lat": 54.651531,
+      "lon": -7.95902,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "croaghnameal:census:1901"
+     },
+     "caption": "Croaghnameal had 23 people in four households in 1901. Heads of household included Gallagher.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "croaghnameal:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 5600,
+     "audio": null,
+     "counts": {
+      "people": 23,
+      "households": 4
+     }
+    }
+   ]
+  },
+  {
+   "id": "croaghnameal:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "croaghnameal:beat:census:1911",
+     "kind": "census",
+     "chapter": "croaghnameal:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "croaghnameal",
+      "name": "Croaghnameal",
+      "logainm_id": "14291",
+      "lat": 54.651531,
+      "lon": -7.95902,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "croaghnameal:census:1911"
+     },
+     "caption": "In 1911, 25 people in four households lived in Croaghnameal. Heads of household included Gallagher and McGrory.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "croaghnameal:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 25,
+      "households": 4
+     }
+    }
+   ]
+  },
+  {
+   "id": "croaghnameal:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "croaghnameal:beat:census:1926",
+     "kind": "census",
+     "chapter": "croaghnameal:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "croaghnameal",
+      "name": "Croaghnameal",
+      "logainm_id": "14291",
+      "lat": 54.651531,
+      "lon": -7.95902,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "croaghnameal:census:1926"
+     },
+     "caption": "In 1926, twenty people in four households lived in Croaghnameal. Heads of household included Gallagher, McGroary and Mullen.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "croaghnameal:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 20,
+      "households": 4
+     }
+    },
+    {
+     "id": "croaghnameal:beat:closing:end",
+     "kind": "closing",
+     "chapter": "croaghnameal:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "croaghnameal",
+      "name": "Croaghnameal",
+      "logainm_id": "14291",
+      "lat": 54.651531,
+      "lon": -7.95902,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "croaghnameal:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with four households in Croaghnameal.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "croaghnameal:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

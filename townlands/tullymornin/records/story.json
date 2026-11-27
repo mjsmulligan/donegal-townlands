@@ -1,0 +1,225 @@
+{
+ "schema": 1,
+ "townland": "Tullymornin",
+ "slug": "tullymornin",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Tullymornin",
+ "span": {
+  "from": "1901",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "tullymornin:ch:intro",
+   "title": "Tullymornin",
+   "beats": [
+    {
+     "id": "tullymornin:beat:title:title",
+     "kind": "title",
+     "chapter": "tullymornin:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullymornin",
+      "name": "Tullymornin",
+      "logainm_id": "14303",
+      "lat": 54.63048,
+      "lon": -8.094752,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Tullymornin. Here is the story of Tullymornin and its two families, from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullymornin:census:1901",
+       "tullymornin:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6000,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "tullymornin:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "tullymornin:beat:census:1901",
+     "kind": "census",
+     "chapter": "tullymornin:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullymornin",
+      "name": "Tullymornin",
+      "logainm_id": "14303",
+      "lat": 54.63048,
+      "lon": -8.094752,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullymornin:census:1901"
+     },
+     "caption": "In 1901, fourteen people in two households lived in Tullymornin. Heads of household included Graham.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullymornin:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6000,
+     "audio": null,
+     "counts": {
+      "people": 14,
+      "households": 2
+     }
+    }
+   ]
+  },
+  {
+   "id": "tullymornin:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "tullymornin:beat:census:1911",
+     "kind": "census",
+     "chapter": "tullymornin:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullymornin",
+      "name": "Tullymornin",
+      "logainm_id": "14303",
+      "lat": 54.63048,
+      "lon": -8.094752,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullymornin:census:1911"
+     },
+     "caption": "Tullymornin had eleven people in two households in 1911. Heads of household included Graham.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullymornin:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 5600,
+     "audio": null,
+     "counts": {
+      "people": 11,
+      "households": 2
+     }
+    }
+   ]
+  },
+  {
+   "id": "tullymornin:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "tullymornin:beat:census:1926",
+     "kind": "census",
+     "chapter": "tullymornin:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullymornin",
+      "name": "Tullymornin",
+      "logainm_id": "14303",
+      "lat": 54.63048,
+      "lon": -8.094752,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullymornin:census:1926"
+     },
+     "caption": "In 1926, three people in one household lived in Tullymornin. Heads of household included Gorrell.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullymornin:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6000,
+     "audio": null,
+     "counts": {
+      "people": 3,
+      "households": 1
+     }
+    },
+    {
+     "id": "tullymornin:beat:closing:end",
+     "kind": "closing",
+     "chapter": "tullymornin:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tullymornin",
+      "name": "Tullymornin",
+      "logainm_id": "14303",
+      "lat": 54.63048,
+      "lon": -8.094752,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tullymornin:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with one household in Tullymornin.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tullymornin:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

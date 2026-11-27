@@ -1,0 +1,377 @@
+{
+ "schema": 1,
+ "townland": "Loughkip",
+ "slug": "loughkip",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Loughkip",
+ "span": {
+  "from": "1873",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "loughkip:ch:register",
+   "title": "The parish register",
+   "beats": [
+    {
+     "id": "loughkip:beat:register:tawnawilly",
+     "kind": "register",
+     "chapter": "loughkip:ch:register",
+     "time": {
+      "label": "1873 to 1875",
+      "iso": "1873",
+      "sort": "1873-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "loughkip",
+      "name": "Loughkip",
+      "logainm_id": "14283",
+      "lat": 54.649977,
+      "lon": -7.995207,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "loughkip:register:tawnawilly"
+     },
+     "caption": "The parish register of Tawnawilly records three baptisms at Loughkip between 1873 and 1875. Its marriage entries give no townland, so none are placed here.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "loughkip:register:tawnawilly"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 10000,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "loughkip:ch:intro",
+   "title": "Loughkip",
+   "beats": [
+    {
+     "id": "loughkip:beat:title:title",
+     "kind": "title",
+     "chapter": "loughkip:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1873-01-28",
+      "approximate": true
+     },
+     "place": {
+      "townland": "loughkip",
+      "name": "Loughkip",
+      "logainm_id": "14283",
+      "lat": 54.649977,
+      "lon": -7.995207,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Loughkip, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Loughkip and its eight families, from 1873 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "loughkip:baptism:TAW-B-p004-r12",
+       "loughkip:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 10400,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "loughkip:ch:baptisms",
+   "title": "Baptisms, 1873 to 1875",
+   "beats": [
+    {
+     "id": "loughkip:beat:baptism:1873-01-28-TAW-B-p004-r12",
+     "kind": "baptism",
+     "chapter": "loughkip:ch:baptisms",
+     "time": {
+      "label": "28 January 1873",
+      "iso": "1873-01-28",
+      "sort": "1873-01-28",
+      "approximate": false
+     },
+     "place": {
+      "townland": "loughkip",
+      "name": "Loughkip",
+      "logainm_id": "14283",
+      "lat": 54.649977,
+      "lon": -7.995207,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "loughkip:baptism:TAW-B-p004-r12"
+     },
+     "caption": "Mary Gallagher was baptised on 28 January 1873. Hugh Gallagher and Anne Boyle were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "loughkip:baptism:TAW-B-p004-r12"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null
+    },
+    {
+     "id": "loughkip:beat:baptism:1874-03-01-TAW-B-p010-r112",
+     "kind": "baptism",
+     "chapter": "loughkip:ch:baptisms",
+     "time": {
+      "label": "1 March 1874",
+      "iso": "1874-03-01",
+      "sort": "1874-03-01",
+      "approximate": false
+     },
+     "place": {
+      "townland": "loughkip",
+      "name": "Loughkip",
+      "logainm_id": "14283",
+      "lat": 54.649977,
+      "lon": -7.995207,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "loughkip:baptism:TAW-B-p010-r112"
+     },
+     "caption": "John McCaul was baptised on 1 March 1874. Patrick McCaul and Biddy McGoldrick were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "loughkip:baptism:TAW-B-p010-r112"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null
+    },
+    {
+     "id": "loughkip:beat:baptism:1875-02-11-TAW-B-p015-r188",
+     "kind": "baptism",
+     "chapter": "loughkip:ch:baptisms",
+     "time": {
+      "label": "11 February 1875",
+      "iso": "1875-02-11",
+      "sort": "1875-02-11",
+      "approximate": false
+     },
+     "place": {
+      "townland": "loughkip",
+      "name": "Loughkip",
+      "logainm_id": "14283",
+      "lat": 54.649977,
+      "lon": -7.995207,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "loughkip:baptism:TAW-B-p015-r188"
+     },
+     "caption": "Patrick Gallagher was baptised on 11 February 1875. Hugh Gallagher and Ann Coyle were the parents.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "loughkip:baptism:TAW-B-p015-r188"
+      ],
+      "basis": "page_place",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "loughkip:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "loughkip:beat:census:1901",
+     "kind": "census",
+     "chapter": "loughkip:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "loughkip",
+      "name": "Loughkip",
+      "logainm_id": "14283",
+      "lat": 54.649977,
+      "lon": -7.995207,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "loughkip:census:1901"
+     },
+     "caption": "Loughkip had 23 people in five households in 1901. Heads of household included Gallagher, McCadden and McShea.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "loughkip:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 23,
+      "households": 5
+     }
+    }
+   ]
+  },
+  {
+   "id": "loughkip:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "loughkip:beat:census:1911",
+     "kind": "census",
+     "chapter": "loughkip:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "loughkip",
+      "name": "Loughkip",
+      "logainm_id": "14283",
+      "lat": 54.649977,
+      "lon": -7.995207,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "loughkip:census:1911"
+     },
+     "caption": "Loughkip had 22 people in five households in 1911. Heads of household included Gallagher, McCadden and McShee.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "loughkip:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 22,
+      "households": 5
+     }
+    }
+   ]
+  },
+  {
+   "id": "loughkip:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "loughkip:beat:census:1926",
+     "kind": "census",
+     "chapter": "loughkip:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "loughkip",
+      "name": "Loughkip",
+      "logainm_id": "14283",
+      "lat": 54.649977,
+      "lon": -7.995207,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "loughkip:census:1926"
+     },
+     "caption": "Loughkip had five people in three households in 1926. Heads of household included Gallagher, McCadden and McNulty.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "loughkip:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 5,
+      "households": 3
+     }
+    },
+    {
+     "id": "loughkip:beat:closing:end",
+     "kind": "closing",
+     "chapter": "loughkip:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "loughkip",
+      "name": "Loughkip",
+      "logainm_id": "14283",
+      "lat": 54.649977,
+      "lon": -7.995207,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "loughkip:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with three households in Loughkip.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "loughkip:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

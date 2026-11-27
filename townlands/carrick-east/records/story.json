@@ -1,0 +1,225 @@
+{
+ "schema": 1,
+ "townland": "Carrick East",
+ "slug": "carrick-east",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Carrick East",
+ "span": {
+  "from": "1901",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "carrick-east:ch:intro",
+   "title": "Carrick East",
+   "beats": [
+    {
+     "id": "carrick-east:beat:title:title",
+     "kind": "title",
+     "chapter": "carrick-east:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "carrick-east",
+      "name": "Carrick East",
+      "logainm_id": "14136",
+      "lat": 54.61209,
+      "lon": -8.093362,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Carrick East. Here is the story of Carrick East and its eight families, from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "carrick east:census:1901",
+       "carrick east:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "carrick-east:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "carrick-east:beat:census:1901",
+     "kind": "census",
+     "chapter": "carrick-east:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "carrick-east",
+      "name": "Carrick East",
+      "logainm_id": "14136",
+      "lat": 54.61209,
+      "lon": -8.093362,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "carrick east:census:1901"
+     },
+     "caption": "Carrick East had 33 people in six households in 1901. Heads of household included McClay, Colgan and McGroary.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "carrick east:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 33,
+      "households": 6
+     }
+    }
+   ]
+  },
+  {
+   "id": "carrick-east:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "carrick-east:beat:census:1911",
+     "kind": "census",
+     "chapter": "carrick-east:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "carrick-east",
+      "name": "Carrick East",
+      "logainm_id": "14136",
+      "lat": 54.61209,
+      "lon": -8.093362,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "carrick east:census:1911"
+     },
+     "caption": "Carrick East had 25 people in six households in 1911. Heads of household included McClay, Colgan and McGrory.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "carrick east:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 25,
+      "households": 6
+     }
+    }
+   ]
+  },
+  {
+   "id": "carrick-east:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "carrick-east:beat:census:1926",
+     "kind": "census",
+     "chapter": "carrick-east:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "carrick-east",
+      "name": "Carrick East",
+      "logainm_id": "14136",
+      "lat": 54.61209,
+      "lon": -8.093362,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "carrick east:census:1926"
+     },
+     "caption": "Carrick East had nineteen people in five households in 1926. Heads of household included Campbell, McClay and McHugh.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "carrick east:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 19,
+      "households": 5
+     }
+    },
+    {
+     "id": "carrick-east:beat:closing:end",
+     "kind": "closing",
+     "chapter": "carrick-east:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "carrick-east",
+      "name": "Carrick East",
+      "logainm_id": "14136",
+      "lat": 54.61209,
+      "lon": -8.093362,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "carrick east:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with five households in Carrick East.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "carrick east:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4400,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

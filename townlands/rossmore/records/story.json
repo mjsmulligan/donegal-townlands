@@ -1,0 +1,225 @@
+{
+ "schema": 1,
+ "townland": "Rossmore",
+ "slug": "rossmore",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Rossmore",
+ "span": {
+  "from": "1901",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "rossmore:ch:intro",
+   "title": "Rossmore",
+   "beats": [
+    {
+     "id": "rossmore:beat:title:title",
+     "kind": "title",
+     "chapter": "rossmore:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossmore",
+      "name": "Rossmore",
+      "logainm_id": "14298",
+      "lat": 54.625024,
+      "lon": -8.10861,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Rossmore. Here is the story of Rossmore and its eight families, from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossmore:census:1901",
+       "rossmore:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6000,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "rossmore:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "rossmore:beat:census:1901",
+     "kind": "census",
+     "chapter": "rossmore:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossmore",
+      "name": "Rossmore",
+      "logainm_id": "14298",
+      "lat": 54.625024,
+      "lon": -8.10861,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rossmore:census:1901"
+     },
+     "caption": "Rossmore had 22 people in seven households in 1901. Heads of household included Bustard, Ellis and Graham.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossmore:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 22,
+      "households": 7
+     }
+    }
+   ]
+  },
+  {
+   "id": "rossmore:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "rossmore:beat:census:1911",
+     "kind": "census",
+     "chapter": "rossmore:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossmore",
+      "name": "Rossmore",
+      "logainm_id": "14298",
+      "lat": 54.625024,
+      "lon": -8.10861,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rossmore:census:1911"
+     },
+     "caption": "Rossmore had sixteen people in five households in 1911. Heads of household included Bustard, Graham and Hiely.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossmore:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 16,
+      "households": 5
+     }
+    }
+   ]
+  },
+  {
+   "id": "rossmore:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "rossmore:beat:census:1926",
+     "kind": "census",
+     "chapter": "rossmore:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossmore",
+      "name": "Rossmore",
+      "logainm_id": "14298",
+      "lat": 54.625024,
+      "lon": -8.10861,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rossmore:census:1926"
+     },
+     "caption": "In 1926, nine people in five households lived in Rossmore. Heads of household included Magee.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossmore:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6000,
+     "audio": null,
+     "counts": {
+      "people": 9,
+      "households": 5
+     }
+    },
+    {
+     "id": "rossmore:beat:closing:end",
+     "kind": "closing",
+     "chapter": "rossmore:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "rossmore",
+      "name": "Rossmore",
+      "logainm_id": "14298",
+      "lat": 54.625024,
+      "lon": -8.10861,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "rossmore:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with five households in Rossmore.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "rossmore:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

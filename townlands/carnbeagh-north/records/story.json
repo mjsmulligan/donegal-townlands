@@ -1,0 +1,266 @@
+{
+ "schema": 1,
+ "townland": "Carnbeagh North",
+ "slug": "carnbeagh-north",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Carnbeagh North",
+ "span": {
+  "from": "the 1850s",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "carnbeagh-north:ch:intro",
+   "title": "Carnbeagh North",
+   "beats": [
+    {
+     "id": "carnbeagh-north:beat:title:title",
+     "kind": "title",
+     "chapter": "carnbeagh-north:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1855-07-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "carnbeagh-north",
+      "name": "Carnbeagh North",
+      "logainm_id": "13958",
+      "lat": 54.666428,
+      "lon": -8.041795,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Carnbeagh North, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Carnbeagh North and its ten families, from the 1850s to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "carnbeagh north:valuation:griffiths",
+       "carnbeagh north:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 11600,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "carnbeagh-north:ch:1850s",
+   "title": "The land",
+   "beats": [
+    {
+     "id": "carnbeagh-north:beat:valuation:griffiths",
+     "kind": "valuation",
+     "chapter": "carnbeagh-north:ch:1850s",
+     "time": {
+      "label": "The 1850s",
+      "iso": "1850/1859",
+      "sort": "1855-07-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "carnbeagh-north",
+      "name": "Carnbeagh North",
+      "logainm_id": "13958",
+      "lat": 54.666428,
+      "lon": -8.041795,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "carnbeagh north:valuation:griffiths"
+     },
+     "caption": "Griffith's Valuation listed the land and its occupiers in the 1850s. Here, 17 occupiers are named for Carnbeagh North. The occupiers included Gallagher, Hammond and Ingram.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "carnbeagh north:valuation:griffiths"
+      ],
+      "basis": "townland_entry",
+      "certainty": "stated"
+     },
+     "duration_ms": 10400,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "carnbeagh-north:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "carnbeagh-north:beat:census:1901",
+     "kind": "census",
+     "chapter": "carnbeagh-north:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "carnbeagh-north",
+      "name": "Carnbeagh North",
+      "logainm_id": "13958",
+      "lat": 54.666428,
+      "lon": -8.041795,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "carnbeagh north:census:1901"
+     },
+     "caption": "Carnbeagh North had 29 people in six households in 1901. Heads of household included McFadden, Davis and Gallagher.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "carnbeagh north:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 29,
+      "households": 6
+     }
+    }
+   ]
+  },
+  {
+   "id": "carnbeagh-north:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "carnbeagh-north:beat:census:1911",
+     "kind": "census",
+     "chapter": "carnbeagh-north:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "carnbeagh-north",
+      "name": "Carnbeagh North",
+      "logainm_id": "13958",
+      "lat": 54.666428,
+      "lon": -8.041795,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "carnbeagh north:census:1911"
+     },
+     "caption": "In 1911, twenty people in four households lived in Carnbeagh North. Heads of household included McFadden, Davis and Pearson.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "carnbeagh north:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7600,
+     "audio": null,
+     "counts": {
+      "people": 20,
+      "households": 4
+     }
+    }
+   ]
+  },
+  {
+   "id": "carnbeagh-north:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "carnbeagh-north:beat:census:1926",
+     "kind": "census",
+     "chapter": "carnbeagh-north:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "carnbeagh-north",
+      "name": "Carnbeagh North",
+      "logainm_id": "13958",
+      "lat": 54.666428,
+      "lon": -8.041795,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "carnbeagh north:census:1926"
+     },
+     "caption": "Carnbeagh North had ten people in three households in 1926. Heads of household included Davis, Ingram and Pearson.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "carnbeagh north:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 10,
+      "households": 3
+     }
+    },
+    {
+     "id": "carnbeagh-north:beat:closing:end",
+     "kind": "closing",
+     "chapter": "carnbeagh-north:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "carnbeagh-north",
+      "name": "Carnbeagh North",
+      "logainm_id": "13958",
+      "lat": 54.666428,
+      "lon": -8.041795,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "carnbeagh north:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with three households in Carnbeagh North.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "carnbeagh north:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4400,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

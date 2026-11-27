@@ -1,0 +1,225 @@
+{
+ "schema": 1,
+ "townland": "Loughcuill",
+ "slug": "loughcuill",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Loughcuill",
+ "span": {
+  "from": "1901",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "loughcuill:ch:intro",
+   "title": "Loughcuill",
+   "beats": [
+    {
+     "id": "loughcuill:beat:title:title",
+     "kind": "title",
+     "chapter": "loughcuill:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "loughcuill",
+      "name": "Loughcuill",
+      "logainm_id": "14282",
+      "lat": 54.651431,
+      "lon": -7.966367,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Loughcuill, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Loughcuill and its two families, from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "loughcuill:census:1901",
+       "loughcuill:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 10400,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "loughcuill:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "loughcuill:beat:census:1901",
+     "kind": "census",
+     "chapter": "loughcuill:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "loughcuill",
+      "name": "Loughcuill",
+      "logainm_id": "14282",
+      "lat": 54.651431,
+      "lon": -7.966367,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "loughcuill:census:1901"
+     },
+     "caption": "Loughcuill had ten people in two households in 1901. Heads of household included McCool and McCoole.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "loughcuill:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6400,
+     "audio": null,
+     "counts": {
+      "people": 10,
+      "households": 2
+     }
+    }
+   ]
+  },
+  {
+   "id": "loughcuill:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "loughcuill:beat:census:1911",
+     "kind": "census",
+     "chapter": "loughcuill:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "loughcuill",
+      "name": "Loughcuill",
+      "logainm_id": "14282",
+      "lat": 54.651431,
+      "lon": -7.966367,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "loughcuill:census:1911"
+     },
+     "caption": "Loughcuill had ten people in two households in 1911. Heads of household included McCool.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "loughcuill:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 5600,
+     "audio": null,
+     "counts": {
+      "people": 10,
+      "households": 2
+     }
+    }
+   ]
+  },
+  {
+   "id": "loughcuill:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "loughcuill:beat:census:1926",
+     "kind": "census",
+     "chapter": "loughcuill:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "loughcuill",
+      "name": "Loughcuill",
+      "logainm_id": "14282",
+      "lat": 54.651431,
+      "lon": -7.966367,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "loughcuill:census:1926"
+     },
+     "caption": "Loughcuill had four people in two households in 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "loughcuill:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null,
+     "counts": {
+      "people": 4,
+      "households": 2
+     }
+    },
+    {
+     "id": "loughcuill:beat:closing:end",
+     "kind": "closing",
+     "chapter": "loughcuill:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "loughcuill",
+      "name": "Loughcuill",
+      "logainm_id": "14282",
+      "lat": 54.651431,
+      "lon": -7.966367,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "loughcuill:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with two households in Loughcuill.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "loughcuill:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

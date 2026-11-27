@@ -1,0 +1,225 @@
+{
+ "schema": 1,
+ "townland": "Keeldrum",
+ "slug": "keeldrum",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Keeldrum",
+ "span": {
+  "from": "1901",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "keeldrum:ch:intro",
+   "title": "Keeldrum",
+   "beats": [
+    {
+     "id": "keeldrum:beat:title:title",
+     "kind": "title",
+     "chapter": "keeldrum:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "keeldrum",
+      "name": "Keeldrum",
+      "logainm_id": "13974",
+      "lat": 54.66671,
+      "lon": -8.071908,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Keeldrum, in Irish Caoldroim, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Keeldrum and its seven families, from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "keeldrum:census:1901",
+       "keeldrum:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 11600,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "keeldrum:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "keeldrum:beat:census:1901",
+     "kind": "census",
+     "chapter": "keeldrum:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "keeldrum",
+      "name": "Keeldrum",
+      "logainm_id": "13974",
+      "lat": 54.66671,
+      "lon": -8.071908,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "keeldrum:census:1901"
+     },
+     "caption": "Keeldrum had 41 people in seven households in 1901. Heads of household included Stevenson, Hanna and Morrow.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "keeldrum:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 41,
+      "households": 7
+     }
+    }
+   ]
+  },
+  {
+   "id": "keeldrum:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "keeldrum:beat:census:1911",
+     "kind": "census",
+     "chapter": "keeldrum:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "keeldrum",
+      "name": "Keeldrum",
+      "logainm_id": "13974",
+      "lat": 54.66671,
+      "lon": -8.071908,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "keeldrum:census:1911"
+     },
+     "caption": "Keeldrum had 34 people in seven households in 1911. Heads of household included Hanna, Stevenson and Morrow.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "keeldrum:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 34,
+      "households": 7
+     }
+    }
+   ]
+  },
+  {
+   "id": "keeldrum:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "keeldrum:beat:census:1926",
+     "kind": "census",
+     "chapter": "keeldrum:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "keeldrum",
+      "name": "Keeldrum",
+      "logainm_id": "13974",
+      "lat": 54.66671,
+      "lon": -8.071908,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "keeldrum:census:1926"
+     },
+     "caption": "Keeldrum had 26 people in six households in 1926. Heads of household included Hanna, Harron and Morrow.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "keeldrum:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 26,
+      "households": 6
+     }
+    },
+    {
+     "id": "keeldrum:beat:closing:end",
+     "kind": "closing",
+     "chapter": "keeldrum:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "keeldrum",
+      "name": "Keeldrum",
+      "logainm_id": "13974",
+      "lat": 54.66671,
+      "lon": -8.071908,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "keeldrum:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with six households in Keeldrum.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "keeldrum:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

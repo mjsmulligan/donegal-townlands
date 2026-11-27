@@ -1,0 +1,225 @@
+{
+ "schema": 1,
+ "townland": "Tawnagh",
+ "slug": "tawnagh",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Tawnagh",
+ "span": {
+  "from": "1901",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "tawnagh:ch:intro",
+   "title": "Tawnagh",
+   "beats": [
+    {
+     "id": "tawnagh:beat:title:title",
+     "kind": "title",
+     "chapter": "tawnagh:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tawnagh",
+      "name": "Tawnagh",
+      "logainm_id": "14285",
+      "lat": 54.643841,
+      "lon": -8.05547,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Tawnagh, in the civil parish of Donegal and the barony of Tirhugh. Here is the story of Tawnagh and its four families, from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tawnagh:census:1901",
+       "tawnagh:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 10400,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "tawnagh:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "tawnagh:beat:census:1901",
+     "kind": "census",
+     "chapter": "tawnagh:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tawnagh",
+      "name": "Tawnagh",
+      "logainm_id": "14285",
+      "lat": 54.643841,
+      "lon": -8.05547,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tawnagh:census:1901"
+     },
+     "caption": "In 1901, 42 people in nine households lived in Tawnagh. Heads of household included Wray, Logue and Rose.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tawnagh:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 42,
+      "households": 9
+     }
+    }
+   ]
+  },
+  {
+   "id": "tawnagh:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "tawnagh:beat:census:1911",
+     "kind": "census",
+     "chapter": "tawnagh:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tawnagh",
+      "name": "Tawnagh",
+      "logainm_id": "14285",
+      "lat": 54.643841,
+      "lon": -8.05547,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tawnagh:census:1911"
+     },
+     "caption": "Tawnagh had 38 people in nine households in 1911. Heads of household included Wray, Logue and Rose.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tawnagh:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 38,
+      "households": 9
+     }
+    }
+   ]
+  },
+  {
+   "id": "tawnagh:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "tawnagh:beat:census:1926",
+     "kind": "census",
+     "chapter": "tawnagh:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tawnagh",
+      "name": "Tawnagh",
+      "logainm_id": "14285",
+      "lat": 54.643841,
+      "lon": -8.05547,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tawnagh:census:1926"
+     },
+     "caption": "Tawnagh had 35 people in seven households in 1926. Heads of household included Logue, Rose and Wray.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tawnagh:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 35,
+      "households": 7
+     }
+    },
+    {
+     "id": "tawnagh:beat:closing:end",
+     "kind": "closing",
+     "chapter": "tawnagh:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "tawnagh",
+      "name": "Tawnagh",
+      "logainm_id": "14285",
+      "lat": 54.643841,
+      "lon": -8.05547,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "tawnagh:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with seven households in Tawnagh.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "tawnagh:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

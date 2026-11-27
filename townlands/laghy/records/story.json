@@ -1,0 +1,225 @@
+{
+ "schema": 1,
+ "townland": "Laghy",
+ "slug": "laghy",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Laghy",
+ "span": {
+  "from": "1901",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "laghy:ch:intro",
+   "title": "Laghy",
+   "beats": [
+    {
+     "id": "laghy:beat:title:title",
+     "kind": "title",
+     "chapter": "laghy:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "laghy",
+      "name": "Laghy",
+      "logainm_id": "14144",
+      "lat": 54.617851,
+      "lon": -8.081773,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Laghy, in Irish An Lathaigh. Here is the story of Laghy and its 31 families, from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "laghy:census:1901",
+       "laghy:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 7600,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "laghy:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "laghy:beat:census:1901",
+     "kind": "census",
+     "chapter": "laghy:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "laghy",
+      "name": "Laghy",
+      "logainm_id": "14144",
+      "lat": 54.617851,
+      "lon": -8.081773,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "laghy:census:1901"
+     },
+     "caption": "In 1901, 131 people in 28 households lived in Laghy. Heads of household included McClay, Bartley and Collins.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "laghy:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 131,
+      "households": 28
+     }
+    }
+   ]
+  },
+  {
+   "id": "laghy:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "laghy:beat:census:1911",
+     "kind": "census",
+     "chapter": "laghy:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "laghy",
+      "name": "Laghy",
+      "logainm_id": "14144",
+      "lat": 54.617851,
+      "lon": -8.081773,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "laghy:census:1911"
+     },
+     "caption": "Laghy had 127 people in 29 households in 1911. Heads of household included McClay, Harron and McHugh.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "laghy:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 127,
+      "households": 29
+     }
+    }
+   ]
+  },
+  {
+   "id": "laghy:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "laghy:beat:census:1926",
+     "kind": "census",
+     "chapter": "laghy:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "laghy",
+      "name": "Laghy",
+      "logainm_id": "14144",
+      "lat": 54.617851,
+      "lon": -8.081773,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "laghy:census:1926"
+     },
+     "caption": "In 1926, fourteen people in five households lived in Laghy. Heads of household included Curry and McClay.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "laghy:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 14,
+      "households": 5
+     }
+    },
+    {
+     "id": "laghy:beat:closing:end",
+     "kind": "closing",
+     "chapter": "laghy:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "laghy",
+      "name": "Laghy",
+      "logainm_id": "14144",
+      "lat": 54.617851,
+      "lon": -8.081773,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "laghy:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with five households in Laghy.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "laghy:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}

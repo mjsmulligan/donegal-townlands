@@ -1,0 +1,225 @@
+{
+ "schema": 1,
+ "townland": "Golard",
+ "slug": "golard",
+ "generated_by": "donegal-townlands.build_story",
+ "title": "Golard",
+ "span": {
+  "from": "1901",
+  "to": "1926"
+ },
+ "chapters": [
+  {
+   "id": "golard:ch:intro",
+   "title": "Golard",
+   "beats": [
+    {
+     "id": "golard:beat:title:title",
+     "kind": "title",
+     "chapter": "golard:ch:intro",
+     "time": {
+      "label": "",
+      "iso": "",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "golard",
+      "name": "Golard",
+      "logainm_id": "14140",
+      "lat": 54.626712,
+      "lon": -8.048709,
+      "camera": "parish"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": ""
+     },
+     "caption": "Golard. Here is the story of Golard and its 21 families, from 1901 to 1926.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "golard:census:1901",
+       "golard:census:1926"
+      ],
+      "basis": "place_record",
+      "certainty": "stated"
+     },
+     "duration_ms": 6000,
+     "audio": null
+    }
+   ]
+  },
+  {
+   "id": "golard:ch:1901",
+   "title": "1901",
+   "beats": [
+    {
+     "id": "golard:beat:census:1901",
+     "kind": "census",
+     "chapter": "golard:ch:1901",
+     "time": {
+      "label": "1901",
+      "iso": "1901",
+      "sort": "1901-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "golard",
+      "name": "Golard",
+      "logainm_id": "14140",
+      "lat": 54.626712,
+      "lon": -8.048709,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "golard:census:1901"
+     },
+     "caption": "Golard had 71 people in 23 households in 1901. Heads of household included Bustard, Martin and Brodbin.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "golard:census:1901"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 71,
+      "households": 23
+     }
+    }
+   ]
+  },
+  {
+   "id": "golard:ch:1911",
+   "title": "1911",
+   "beats": [
+    {
+     "id": "golard:beat:census:1911",
+     "kind": "census",
+     "chapter": "golard:ch:1911",
+     "time": {
+      "label": "1911",
+      "iso": "1911",
+      "sort": "1911-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "golard",
+      "name": "Golard",
+      "logainm_id": "14140",
+      "lat": 54.626712,
+      "lon": -8.048709,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "golard:census:1911"
+     },
+     "caption": "In 1911, 70 people in twenty households lived in Golard. Heads of household included Martin, Brodbin and Brown.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "golard:census:1911"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 7200,
+     "audio": null,
+     "counts": {
+      "people": 70,
+      "households": 20
+     }
+    }
+   ]
+  },
+  {
+   "id": "golard:ch:1926",
+   "title": "1926",
+   "beats": [
+    {
+     "id": "golard:beat:census:1926",
+     "kind": "census",
+     "chapter": "golard:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "golard",
+      "name": "Golard",
+      "logainm_id": "14140",
+      "lat": 54.626712,
+      "lon": -8.048709,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "golard:census:1926"
+     },
+     "caption": "Golard had 61 people in sixteen households in 1926. Heads of household included Bustard, Martin and McGirr.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "golard:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 6800,
+     "audio": null,
+     "counts": {
+      "people": 61,
+      "households": 16
+     }
+    },
+    {
+     "id": "golard:beat:closing:end",
+     "kind": "closing",
+     "chapter": "golard:ch:1926",
+     "time": {
+      "label": "1926",
+      "iso": "1926",
+      "sort": "1926-01-01",
+      "approximate": true
+     },
+     "place": {
+      "townland": "golard",
+      "name": "Golard",
+      "logainm_id": "14140",
+      "lat": 54.626712,
+      "lon": -8.048709,
+      "camera": "townland"
+     },
+     "scene": {
+      "stage": "map",
+      "open_card": "golard:census:1926"
+     },
+     "caption": "The story reaches 1926 here, with sixteen households in Golard.",
+     "people": [],
+     "media": [],
+     "evidence": {
+      "events": [
+       "golard:census:1926"
+      ],
+      "basis": "return_for_townland",
+      "certainty": "stated"
+     },
+     "duration_ms": 4000,
+     "audio": null
+    }
+   ]
+  }
+ ]
+}
