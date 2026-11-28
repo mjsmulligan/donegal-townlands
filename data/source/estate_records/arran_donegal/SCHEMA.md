@@ -1,7 +1,7 @@
 # Arran estate records, Manor of Donegal: data schema (DRAFT for review, 2026-11-23)
 
 Sources, all for the Earl of Arran's Donegal estate:
-- Maps of part of the Manor of Donegal by James Lough, made in summer 1825. National Library of Ireland, MS L 441 (Manuscripts Reading Room). One volume of 32 hand drawn, hand coloured maps, each with a facing reference page naming the land and its tenants. Map 15 (Raforker) is missing, cut out. Reproduction rights are owned by the NLI and the volume exists only as a physical copy. The date is taken from the title page, so it is an inferred date for the maps and reference pages.
+- Maps of part of the Manor of Donegal by James Lough, made in summer 1825. National Library of Ireland, MS L 441 (Manuscripts Reading Room). One volume of 32 hand drawn, hand coloured maps, each with a facing reference page naming the land and its tenants. Map 15 (Raforker) is missing, cut out. Reproduction rights are owned by the NLI and the volume exists only as a physical copy. The Druminnin item is catalogued as MS L 441/14, "Map of Drimmeenan, Co. Donegal, 1825", by the surveyor James Lough, with a reference page listing acreage, tenants and a description of each holding (NLI catalogue record vtls000749371, 1 manuscript map, hand-coloured, 59 x 47 cm, scale 16 plantation perches to an inch). The catalogue dates the item 1825, which confirms the date taken from the volume title page.
 - Rental of the Earl of Arran's Donegal estate for the year ending November 1831. The date is written on the page heading. The other rental pages supplied show no year of their own and are not used in these files.
 
 Location in the repo: `data/source/estate_records/arran_donegal/` (agreed by the user, 2026-11-23). The first townland is Druminnin.

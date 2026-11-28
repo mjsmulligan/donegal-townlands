@@ -208,7 +208,7 @@ def estate_transcript(ev):
     y = ev['date']['label']
     if y == '1825':
         title, refhead = 'Reference sheet to the map, 1825', 'Holding'
-        credit = 'Transcribed from the Lough maps of the Manor of Donegal, National Library of Ireland, MS L 441.'
+        credit = 'Transcribed from the reference page to James Lough\'s map of Drimmeenan (Druminnin), 1825. National Library of Ireland, MS L 441/14.'
     else:
         title, refhead = f'Rental of the estate, year ending November {y}', 'Line'
         credit = 'Transcribed from the Arran estate rental, 1831.'
