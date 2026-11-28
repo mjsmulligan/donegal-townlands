@@ -1,0 +1,2 @@
+batch_id,date,added_by,method,search_scope,rows_added,files,note
+B-2026-11-28-01,2026-11-28,"assistant, from an image supplied by the user",image_read,"single record: marriage of Owen McAdden and Mary Kelly, Mountcharles district, 1878, entry 6",1,marriages.csv,"First row, used to settle the column model. Neighbouring entries 4, 5 and 7 on the page are not captured."
