@@ -673,8 +673,21 @@ class EstateEventTests(unittest.TestCase):
         from tools import events as bt
         evs = bt.estate_events(bt.ROOT / 'townlands' / 'druminnin', 'Druminnin')
         self.assertEqual([e['date']['label'] for e in evs], ['1825', '1831'])
-        self.assertEqual(evs[0]['estate'], {'holdings': 17, 'tenants': 22})
-        self.assertEqual(evs[1]['estate'], {'holdings': 22, 'tenants': 22})
+        for ev, h in zip(evs, (17, 22)):
+            self.assertEqual((ev['estate']['holdings'], ev['estate']['tenants']), (h, 22))
+            self.assertEqual(len(ev['estate']['rows']), 22)
+        self.assertEqual(evs[0]['estate']['rows'][0]['name'], 'Connel McNamee')
+        self.assertEqual(evs[1]['estate']['rows'][0]['rent'], '6 18 0')
+
+    def test_estate_beats_carry_the_transcription(self):
+        from tools import events as bt
+        import tools.build_story as bs
+        evs = bt.estate_events(bt.ROOT / 'townlands' / 'druminnin', 'Druminnin')
+        t = bs.estate_transcript(evs[0])
+        self.assertEqual(t['refhead'], 'Holding')
+        self.assertEqual(t['renthead'], '')
+        t2 = bs.estate_transcript(evs[1])
+        self.assertEqual(t2['renthead'], 'Yearly rent')
 
     def test_a_case_without_estate_records_has_none(self):
         from tools import events as bt
