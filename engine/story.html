@@ -92,6 +92,19 @@ a.zoomable{cursor:zoom-in}
 .dotcol .dotgrid{display:flex;gap:3px;max-width:100%}
 .dotcol .dotgrid i{width:6px;height:6px}
 
+/* a transcription: the lines of an estate sheet or rental, as written */
+.sheet{position:absolute;inset:0;z-index:880;background:rgba(243,246,244,.97);display:flex;flex-direction:column;padding:10px;opacity:0;pointer-events:none;transition:opacity .9s}
+.sheet.on{opacity:1}
+.sheet .sbox{flex:1 1 auto;min-height:0;display:flex;flex-direction:column;background:var(--paper);border:1px solid var(--rule);border-radius:10px;padding:8px 10px}
+.sheet h3{margin:0 0 6px;font:600 14px var(--body);color:var(--ink)}
+.sheet .sscroll{flex:1 1 auto;min-height:0;overflow:auto}
+.sheet.on .sscroll{pointer-events:auto}
+.sheet table{width:100%;border-collapse:collapse;font-size:13px}
+.sheet th{text-align:left;font:600 11px var(--body);letter-spacing:.05em;color:var(--ink2);padding:2px 6px 4px;border-bottom:1px solid var(--rule)}
+.sheet td{padding:3px 6px;border-bottom:1px solid var(--rule);vertical-align:top}
+.sheet td.r{font-variant-numeric:tabular-nums;white-space:nowrap}
+.sheet .scredit{margin:6px 0 0;font-size:11px;color:var(--ink2)}
+
 /* cards travel along a track; the one in view is clear, the ones either side wait in the haze */
 .cards{position:relative;flex:1 1 auto;min-height:0;overflow:hidden;display:flex;align-items:center;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 6%,#000 94%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 6%,#000 94%,transparent 100%)}
 .track{display:flex;gap:14px;align-items:center;height:100%;will-change:transform;transition:transform 1.2s var(--ease)}
@@ -188,6 +201,7 @@ details a{overflow-wrap:anywhere}
   <div class="top"><a id="home" href="./">Donegal Townlands</a><span id="place"></span><button class="replay" id="replay" type="button" hidden>Replay opening</button></div>
   <section class="stage" aria-label="Photographs and people">
     <div class="dots" id="dots" aria-hidden="true"><div class="dotnum" id="dotnum"></div><div class="dotgrid" id="dotgrid"></div><div class="dotrow" id="dotrow"></div></div>
+    <div class="sheet" id="sheet" aria-hidden="true"></div>
     <div class="photo" id="photo"><figure><a id="photolink" href="#" target="_blank" rel="noopener" style="display:flex;flex:1 1 auto;min-height:0" title="Open the full size image"><img id="photoimg" alt=""></a>
       <div class="pbar pctl" id="pbar" hidden>
         <button class="pbtn" id="pprev" type="button" aria-label="Previous page">&#8249;</button>
@@ -488,20 +502,49 @@ function boot(D,BASE){
     dotTimer=setTimeout(settle,reduce?0:120);
   }
 
+  /* sheet: the transcription of an estate sheet or rental, names and rents as written */
+  function sheet(b){
+    var el=$('sheet'), t=b.transcript;
+    el.textContent=''; clearInterval(sheetTimer);
+    if(!t||!t.rows||!t.rows.length){el.classList.remove('on'); return}
+    var box=document.createElement('div'); box.className='sbox';
+    var h=document.createElement('h3'); h.textContent=t.title; box.append(h);
+    var sc=document.createElement('div'); sc.className='sscroll';
+    var tb=document.createElement('table'), hd=document.createElement('tr');
+    [t.refhead,'Name',t.renthead].forEach(function(x){if(x){var th=document.createElement('th'); th.textContent=x; hd.append(th)}});
+    tb.append(hd);
+    t.rows.forEach(function(r){
+      var tr=document.createElement('tr'), a=document.createElement('td'), n=document.createElement('td');
+      a.className='r'; a.textContent=r.ref; n.textContent=r.name; tr.append(a,n);
+      if(t.renthead){var m=document.createElement('td'); m.className='r'; m.textContent=r.rent; tr.append(m)}
+      tb.append(tr);
+    });
+    sc.append(tb); box.append(sc);
+    var c=document.createElement('p'); c.className='scredit'; c.textContent=t.credit; box.append(c);
+    el.append(box); el.classList.add('on');
+    /* the page reads itself: scroll slowly down the lines over most of the moment (not with reduced motion) */
+    clearInterval(sheetTimer); sc.scrollTop=0;
+    if(!reduce&&sc.scrollHeight>sc.clientHeight+4){
+      var span=Math.max(3000,(b.duration_ms||8000)*.75), t0=Date.now();
+      sheetTimer=setInterval(function(){var k=Math.min(1,(Date.now()-t0-1200)/span); if(k>0)sc.scrollTop=k*(sc.scrollHeight-sc.clientHeight); if(k>=1)clearInterval(sheetTimer)},60);
+    }
+  }
+  var sheetTimer=null;
+
   function show(n,fromHash){
     i=Math.max(0,Math.min(N-1,n)); cur=i;
     var b=beats[i];
-    var hasDots=!!(b.counts&&(b.counts.people||b.counts.returns));
+    var hasDots=!!(b.counts&&(b.counts.people||b.counts.returns))||!!(b.transcript&&b.transcript.rows&&b.transcript.rows.length);
     var shows=!isHero(b)&&((b.media&&b.media.length)||hasDots);
     $('app').classList.toggle('hero',!shows);
-    $('app').classList.toggle('pic',!!(b.media&&b.media.length)&&!isHero(b));
+    $('app').classList.toggle('pic',!!((b.media&&b.media.length)||(b.transcript&&b.transcript.rows&&b.transcript.rows.length))&&!isHero(b));
     cardEls.forEach(function(c,k){c.classList.toggle('cur',k===i); c.setAttribute('aria-hidden',k===i?'false':'true')});
     showTrack(tk[i]); stopEls.forEach(function(s,k){s.classList.toggle('cur',k===i); s.classList.toggle('past',tk[k]===tk[i]&&k<i)});
     place(fromHash);
     setHead(pos[i],year(b));
     $('live').textContent=(b.time.label?b.time.label+'. ':'')+b.caption;
     $('prev').disabled=i===0; $('next').disabled=i===N-1;
-    photo(b); dots(b);
+    photo(b); dots(b); sheet(b);
     if(!fromHash){try{history.replaceState(null,'','#beat='+encodeURIComponent(b.id))}catch(e){}}
   }
 

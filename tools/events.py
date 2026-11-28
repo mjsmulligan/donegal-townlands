@@ -259,6 +259,11 @@ def estate_events(base, name):
         holdings = len({r['holding_id'] for r in rows})
         tenants = len(rows)
         text = f'{tenants} tenants are named in {holdings} holdings.' if holdings != tenants else f'{tenants} tenants are named.'
+        sheet = []
+        for r in rows:
+            who = ' '.join(x for x in (r.get('forename_as_written', '').strip(), r.get('surname_as_written', '').strip()) if x)
+            sheet.append({'ref': r['holding_id'], 'name': who, 'rent': (r.get('yearly_rent') or '').strip(),
+                          'note': (r.get('notes') or '').strip()})
         out.append({
             'id': f'{name.lower()}:estate:{year}',
             'type': 'estate',
@@ -268,7 +273,7 @@ def estate_events(base, name):
             'approximate_sort': True,
             'title': f'The estate record of {year}',
             'text': text,
-            'estate': {'holdings': holdings, 'tenants': tenants},
+            'estate': {'holdings': holdings, 'tenants': tenants, 'source': source, 'id_type': rows[0].get('id_type', ''), 'rows': sheet},
             'people': [],
             'media': [],
             'association': {'basis': 'townland_entry', 'label': 'An estate record for the townland.'},

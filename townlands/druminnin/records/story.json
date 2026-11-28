@@ -92,6 +92,146 @@
      "counts": {
       "holdings": 17,
       "tenants": 22
+     },
+     "transcript": {
+      "title": "Reference sheet to the map, 1825",
+      "refhead": "Holding",
+      "renthead": "",
+      "rows": [
+       {
+        "ref": "1",
+        "name": "Connel McNamee",
+        "rent": "",
+        "note": "Note: one seventh held by a widow, claimed by James Cassidy"
+       },
+       {
+        "ref": "2",
+        "name": "James Cassidy",
+        "rent": "",
+        "note": ""
+       },
+       {
+        "ref": "3",
+        "name": "Owen Cassidy",
+        "rent": "",
+        "note": ""
+       },
+       {
+        "ref": "4",
+        "name": "Hugh Cassidy",
+        "rent": "",
+        "note": ""
+       },
+       {
+        "ref": "5",
+        "name": "Daniel Cassidy",
+        "rent": "",
+        "note": ""
+       },
+       {
+        "ref": "6",
+        "name": "Owen Kirraghy",
+        "rent": "",
+        "note": "Reading of first letter K/H uncertain on the 1825 sheet; Clerk form differs by source (1825 read as Kirraghy, 1831 Hanaghey)"
+       },
+       {
+        "ref": "7",
+        "name": "Neil McGinty",
+        "rent": "",
+        "note": ""
+       },
+       {
+        "ref": "8",
+        "name": "Hugh McGinty",
+        "rent": "",
+        "note": ""
+       },
+       {
+        "ref": "9",
+        "name": "Owen McGinty",
+        "rent": "",
+        "note": "Shared holding with a Widow McGinty, forename unclear"
+       },
+       {
+        "ref": "10",
+        "name": "Widow (forename unclear) McGinty",
+        "rent": "",
+        "note": "Shares holding with Owen McGinty"
+       },
+       {
+        "ref": "11",
+        "name": "Pat Kildea",
+        "rent": "",
+        "note": "Shares holding with Dan. Mullin"
+       },
+       {
+        "ref": "11",
+        "name": "Dan. Mullin",
+        "rent": "",
+        "note": "Shares holding with Pat Kildea"
+       },
+       {
+        "ref": "12",
+        "name": "James McGinty",
+        "rent": "",
+        "note": ""
+       },
+       {
+        "ref": "13",
+        "name": "James McAna",
+        "rent": "",
+        "note": "Holding shared with Micky"
+       },
+       {
+        "ref": "13",
+        "name": "Micky McAna",
+        "rent": "",
+        "note": "Holding shared with James"
+       },
+       {
+        "ref": "14",
+        "name": "Patk. McAna",
+        "rent": "",
+        "note": ""
+       },
+       {
+        "ref": "15",
+        "name": "Edward McGinty",
+        "rent": "",
+        "note": "Shares holding with Widow Thomas"
+       },
+       {
+        "ref": "15",
+        "name": "Widow (forename unclear) Thomas",
+        "rent": "",
+        "note": "Shares holding with Edward McGinty"
+       },
+       {
+        "ref": "16",
+        "name": "Edward Kildea",
+        "rent": "",
+        "note": "Holding shared with Felim"
+       },
+       {
+        "ref": "16",
+        "name": "Felim Kildea",
+        "rent": "",
+        "note": "Holding shared with Edward; Felix in 1831"
+       },
+       {
+        "ref": "17",
+        "name": "James Meaghan",
+        "rent": "",
+        "note": "Forename differs from 1831 tenant, surname link only"
+       },
+       {
+        "ref": "17",
+        "name": "James Mullin",
+        "rent": "",
+        "note": "Shares holding with James Meaghan"
+       }
+      ],
+      "credit": "Transcribed from the reference page to James Lough's map of Drimmeenan (Druminnin), 1825. National Library of Ireland, MS L 441/14."
      }
     }
    ]
@@ -137,6 +277,146 @@
      "counts": {
       "holdings": 22,
       "tenants": 22
+     },
+     "transcript": {
+      "title": "Rental of the estate, year ending November 1831",
+      "refhead": "Line",
+      "renthead": "Yearly rent",
+      "rows": [
+       {
+        "ref": "1",
+        "name": "David Mullen",
+        "rent": "6 18 0",
+        "note": "Later pages read Dan. Mullen; forename to check"
+       },
+       {
+        "ref": "2",
+        "name": "James McGinty",
+        "rent": "1 7 0",
+        "note": ""
+       },
+       {
+        "ref": "3",
+        "name": "Hugh McGinty",
+        "rent": "3 14 0",
+        "note": ""
+       },
+       {
+        "ref": "4",
+        "name": "Neal McGinty",
+        "rent": "3 12 0",
+        "note": ""
+       },
+       {
+        "ref": "5",
+        "name": "Patrick Kildea",
+        "rent": "5 8 0",
+        "note": ""
+       },
+       {
+        "ref": "6",
+        "name": "Edward McGinty",
+        "rent": "1 4 0",
+        "note": ""
+       },
+       {
+        "ref": "7",
+        "name": "Hugh Monaghan",
+        "rent": "2 14 0",
+        "note": ""
+       },
+       {
+        "ref": "8",
+        "name": "Owen Hanaghey",
+        "rent": "4 18 0",
+        "note": "Same forename as Owen Kirraghy, 1825; Clerk form differs by source (1825 read as Kirraghy, 1831 Hanaghey)"
+       },
+       {
+        "ref": "9",
+        "name": "Michael McAna / McArea",
+        "rent": "2 9 0",
+        "note": "Clerk wrote McArea on some pages"
+       },
+       {
+        "ref": "10",
+        "name": "James McAna / McArrea",
+        "rent": "2 9 0",
+        "note": "Clerk wrote McArrea on some pages"
+       },
+       {
+        "ref": "11",
+        "name": "Felix Kildea",
+        "rent": "2 14 0",
+        "note": "Felim in 1825"
+       },
+       {
+        "ref": "12",
+        "name": "Patrick Kildea",
+        "rent": "2 14 0",
+        "note": "Second Patrick Kildea on this page"
+       },
+       {
+        "ref": "13",
+        "name": "Patrick Thomas",
+        "rent": "2 14 0",
+        "note": "Widow Thomas in 1825"
+       },
+       {
+        "ref": "14",
+        "name": "Edward Kildea",
+        "rent": "2 14 0",
+        "note": ""
+       },
+       {
+        "ref": "15",
+        "name": "Hugh Cassidy",
+        "rent": "2 4 0",
+        "note": ""
+       },
+       {
+        "ref": "16",
+        "name": "Daniel Cassidy",
+        "rent": "4 8 0",
+        "note": ""
+       },
+       {
+        "ref": "17",
+        "name": "James Cassidy",
+        "rent": "7 13 0",
+        "note": ""
+       },
+       {
+        "ref": "18",
+        "name": "John McNamee (dated page) / McArea (later pages)",
+        "rent": "2 11 0",
+        "note": "UNRESOLVED: dated page reads McNamee; undated rental pages read John McArea at the same line and rent (2 11 0). Both readings kept, not merged"
+       },
+       {
+        "ref": "19",
+        "name": "Patrick McAna / McArea",
+        "rent": "4 18 0",
+        "note": ""
+       },
+       {
+        "ref": "20",
+        "name": "Margaret Gillespie",
+        "rent": "0 5 6",
+        "note": "First Gillespie in Druminnin sources"
+       },
+       {
+        "ref": "21",
+        "name": "Peter Cassidy",
+        "rent": "0 11 6",
+        "note": "Rent partly cropped; check"
+       },
+       {
+        "ref": "22",
+        "name": "Owen McGinty",
+        "rent": "",
+        "note": "Line cut off in photo; rent not read"
+       }
+      ],
+      "credit": "Transcribed from the Arran estate rental, 1831."
      }
     }
    ]

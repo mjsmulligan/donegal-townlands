@@ -196,8 +196,25 @@ def estate_beat(ev, place, names=()):
     cap = f"{lead} In all, {num(t)} tenants were named." if t != 1 else f"{lead} One tenant was named."
     if names:
         cap += f' They included {name_list(names)}.'
-    return beat('estate', y, f"{place['townland']}:ch:{y}", ev, cap, place,
-                basis=ev['association']['basis'], events=[ev['id']], counts={'holdings': h, 'tenants': t})
+    out = beat('estate', y, f"{place['townland']}:ch:{y}", ev, cap, place,
+               basis=ev['association']['basis'], events=[ev['id']], counts={'holdings': h, 'tenants': t})
+    # the transcription of the sheet or rental page, names and rents as written (NLI images are not reproduced)
+    out['transcript'] = estate_transcript(ev)
+    return out
+
+
+def estate_transcript(ev):
+    es = ev['estate']
+    y = ev['date']['label']
+    if y == '1825':
+        title, refhead = 'Reference sheet to the map, 1825', 'Holding'
+        credit = 'Transcribed from the reference page to James Lough\'s map of Drimmeenan (Druminnin), 1825. National Library of Ireland, MS L 441/14.'
+    else:
+        title, refhead = f'Rental of the estate, year ending November {y}', 'Line'
+        credit = 'Transcribed from the Arran estate rental, 1831.'
+    rows = [{'ref': r['ref'], 'name': r['name'], 'rent': r['rent'], 'note': r['note']} for r in es.get('rows', [])]
+    return {'title': title, 'refhead': refhead, 'renthead': 'Yearly rent' if any(r['rent'] for r in rows) else '',
+            'rows': rows, 'credit': credit}
 
 
 def family_beat(ev, place):
