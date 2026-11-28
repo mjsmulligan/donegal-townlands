@@ -606,14 +606,13 @@ class CensusFormPlayerTests(unittest.TestCase):
                     st.dispatchEvent(new TouchEvent('touchend', {touches: [], changedTouches: [t(x + dx)], bubbles: true})); }""", dx)
                 pg.wait_for_timeout(300)
             on = lambda: pg.evaluate("document.getElementById('photo').classList.contains('on')")
-            seen = {'start_on': on(), 'dots': pg.locator('.dotcol').count(), 'heads': pg.locator('.dotcol i.hd').count(),
-                    'more': pg.locator('#dotmore').is_visible()}
+            seen = {'start_on': on(), 'dots': pg.locator('.dotcol').count(), 'heads': pg.locator('.dotcol i.hd').count()}
             swipe(-120); seen['after1'] = (on(), pg.locator('#pnum').inner_text())
             swipe(-120); seen['after2'] = pg.locator('#pnum').inner_text()
             swipe(120); swipe(120); seen['back'] = on()
-            pg.click('#dotmore'); seen['button'] = on()
+            pg.locator('#pips b').nth(1).click(); seen['button'] = on()
             pg.click('#pprev'); seen['prev'] = on()
-            pg.locator('.hh').first.click(); seen['picked'] = pg.locator('.dotgrid.pick').count()
+            pg.locator('.hh i').first.click(); seen['picked'] = pg.locator('.dotgrid.pick').count()
             return seen
         fam_tests = FamilyThreadTests()
         events = [dict(census(1901, 6, 3), household_sizes=[1, 2, 3]),
@@ -622,7 +621,7 @@ class CensusFormPlayerTests(unittest.TestCase):
                'highlights': ['cullionboy:family:01']}
         s = self.run_page(360, script, events, fam)
         self.assertFalse(s['start_on'])                       # opens on the people, not the form
-        self.assertEqual((s['dots'], s['heads'], s['more']), (3, 6, True))   # a head for each household of 1901 and 1911
+        self.assertEqual((s['dots'], s['heads']), (3, 6))   # a head for each household of 1901 and 1911
         self.assertEqual(s['after1'], (True, 'Page 1 of 2'))
         self.assertEqual(s['after2'], 'Page 2 of 2')
         self.assertFalse(s['back'])
