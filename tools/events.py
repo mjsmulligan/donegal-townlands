@@ -325,6 +325,10 @@ def census_events(base, name, spellings):
         if not people:
             continue
         houses = len({p.get('h') for p in people})
+        # the people in each household, in the order the return lists the households, for the dots
+        sizes = {}
+        for p in people:
+            sizes[p.get('h')] = sizes.get(p.get('h'), 0) + 1
         spelled = spellings.get(year, name)
         out.append({
             'id': f'{name.lower()}:census:{year}',
@@ -335,6 +339,7 @@ def census_events(base, name, spellings):
             'approximate_sort': True,
             'title': f'The {year} census',
             'text': f'{len(people)} people in {houses} households were recorded in the townland.',
+            'household_sizes': list(sizes.values()),
             'people': [],
             'media': [],
             'association': {'basis': 'return_for_townland',

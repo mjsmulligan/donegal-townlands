@@ -571,8 +571,12 @@ class CensusFormImageTests(unittest.TestCase):
 class CensusFormPlayerTests(unittest.TestCase):
     PNG = PhoneRegressionTests.PNG
 
-    def run_page(self, width, script):
-        doc, _ = build(FULL, census_files={'1926': ['f1.png', 'f2.png']})
+    def run_page(self, width, script, events=FULL, fam=None):
+        if fam is None:
+            doc, _ = build(events, census_files={'1926': ['f1.png', 'f2.png']})
+        else:
+            doc, _ = bd.generate('Cullionboy', 'cullionboy', PLACE, events, today=TODAY, fam=fam,
+                                 census_files={'1926': ['f1.png', 'f2.png']})
         target = next(b['id'] for b in beats_of(doc) if b['kind'] == 'census' and b.get('media'))
         errors = []
         with tempfile.TemporaryDirectory() as tmp, sync_playwright() as pw:
@@ -591,6 +595,39 @@ class CensusFormPlayerTests(unittest.TestCase):
             browser.close()
         self.assertEqual(errors, [])
         return out
+
+    def test_the_dots_are_the_first_page_and_a_swipe_turns_to_the_forms_and_back(self):
+        def script(pg):
+            def swipe(dx):
+                pg.evaluate("""dx => { const st = document.querySelector('.stage'), r = st.getBoundingClientRect(),
+                    y = r.top + r.height / 2, x = r.left + r.width / 2;
+                    const t = c => new Touch({identifier: 1, target: st, clientX: c, clientY: y});
+                    st.dispatchEvent(new TouchEvent('touchstart', {touches: [t(x)], changedTouches: [t(x)], bubbles: true}));
+                    st.dispatchEvent(new TouchEvent('touchend', {touches: [], changedTouches: [t(x + dx)], bubbles: true})); }""", dx)
+                pg.wait_for_timeout(300)
+            on = lambda: pg.evaluate("document.getElementById('photo').classList.contains('on')")
+            seen = {'start_on': on(), 'dots': pg.locator('.dotcol').count(), 'heads': pg.locator('.dotcol i.hd').count(),
+                    'more': pg.locator('#dotmore').is_visible()}
+            swipe(-120); seen['after1'] = (on(), pg.locator('#pnum').inner_text())
+            swipe(-120); seen['after2'] = pg.locator('#pnum').inner_text()
+            swipe(120); swipe(120); seen['back'] = on()
+            pg.click('#dotmore'); seen['button'] = on()
+            pg.click('#pprev'); seen['prev'] = on()
+            pg.locator('.hh').first.click(); seen['picked'] = pg.locator('.dotgrid.pick').count()
+            return seen
+        fam_tests = FamilyThreadTests()
+        events = [dict(census(1901, 6, 3), household_sizes=[1, 2, 3]),
+                  dict(census(1911, 6, 3), household_sizes=[2, 2, 2]), census(1926, 4, 2), fam_tests.fam_event(1)]
+        fam = {'names': {'families': 5, 'census': {}}, 'threads': [fam_tests.thread(1, 'Kelly', [1901, 1911])],
+               'highlights': ['cullionboy:family:01']}
+        s = self.run_page(360, script, events, fam)
+        self.assertFalse(s['start_on'])                       # opens on the people, not the form
+        self.assertEqual((s['dots'], s['heads'], s['more']), (3, 6, True))   # a head for each household of 1901 and 1911
+        self.assertEqual(s['after1'], (True, 'Page 1 of 2'))
+        self.assertEqual(s['after2'], 'Page 2 of 2')
+        self.assertFalse(s['back'])
+        self.assertTrue(s['button'] and not s['prev'])
+        self.assertEqual(s['picked'], 1)
 
     def test_pages_zoom_and_credits_work_and_the_page_never_scrolls_sideways(self):
         def script(pg):
@@ -972,14 +1009,36 @@ class AutoFamilyTests(unittest.TestCase):
         milestone = next(x for c in doc['chapters'] for x in c['beats'] if x['kind'] == 'census')
         self.assertEqual([r['people'] for r in milestone['counts']['returns']], [61, 62, 41])
 
-    def test_form_images_replace_the_dots_on_the_milestone(self):
+    def test_form_images_come_after_the_dots_on_the_milestone(self):
         events = [census(1901, 61, 14), census(1911, 62, 10)]
         found = self.families({'1901': [self.head('Boyle', 'John', 1)], '1911': [self.head('Boyle', 'John', 1)]})
         fam = {'names': {'families': 1}, 'threads': found, 'highlights': [found[0]['id']], 'register': None}
         doc, _ = bd.generate('Alpha', 'alpha', PLACE, events, today=TODAY, fam=fam, census_files={'1911': ['form.jpg']})
         milestone = next(x for c in doc['chapters'] for x in c['beats'] if x['kind'] == 'census')
         self.assertEqual(milestone['media'], ['form.jpg'])
-        self.assertNotIn('counts', milestone)
+        self.assertEqual([r['people'] for r in milestone['counts']['returns']], [61, 62])   # the dots stay, the form is the next page
+
+    def test_each_return_carries_its_household_sizes_when_they_add_up(self):
+        good = dict(census(1901, 6, 3), household_sizes=[1, 2, 3])
+        short = dict(census(1911, 6, 3), household_sizes=[1, 2])            # does not match: plain dots, never a wrong grouping
+        found = self.families({'1901': [self.head('Boyle', 'John', 1)], '1911': [self.head('Boyle', 'John', 1)]})
+        fam = {'names': {'families': 1}, 'threads': found, 'highlights': [found[0]['id']], 'register': None}
+        doc, _ = bd.generate('Alpha', 'alpha', PLACE, [good, short], today=TODAY, fam=fam)
+        milestone = next(x for c in doc['chapters'] for x in c['beats'] if x['kind'] == 'census')
+        first, second = milestone['counts']['returns']
+        self.assertEqual(first['sizes'], [1, 2, 3])
+        self.assertNotIn('sizes', second)
+
+    def test_census_events_list_the_people_in_each_household_in_order(self):
+        import tempfile, pathlib
+        from tools import events as ev
+        with tempfile.TemporaryDirectory() as d:
+            base = pathlib.Path(d); (base / 'records').mkdir()
+            rows = [{'h': 1}, {'h': 1}, {'h': 2}, {'h': 3}, {'h': 3}, {'h': 3}]
+            (base / 'records' / 'census.json').write_text(json.dumps({'1901': rows}), encoding='utf-8')
+            out = ev.census_events(base, 'Alpha', {})
+        self.assertEqual(out[0]['household_sizes'], [2, 1, 3])
+        self.assertIn('6 people in 3 households', out[0]['text'])
 
 
 class RegisterFamilyTests(unittest.TestCase):

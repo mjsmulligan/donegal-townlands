@@ -320,9 +320,17 @@ def census_returns_beat(cens, place, names=(), media=()):
         cap = f'The censuses of {when} counted {ppl} people in {town}, in {hh} households.'
         if names:
             cap += f' Heads of household included {name_list(names)}.'
-    # without form images the milestone shows the people of each return as dots; with images it shows them
-    returns = None if media or any(p is None for p, _ in counts) else \
-        {'returns': [{'year': y, 'people': p, 'households': h} for y, (p, h) in zip(years, counts)]}
+    # the milestone shows the people of each return as dots, one colour for each household. Where form images
+    # are held they are the pages after the dots (the player swipes from one to the other).
+    returns = None
+    if not any(p is None for p, _ in counts):
+        returns = {'returns': []}
+        for e, y, (p, h) in zip(cens, years, counts):
+            r = {'year': y, 'people': p, 'households': h}
+            sizes = e.get('household_sizes')
+            if sizes and sum(sizes) == p and len(sizes) == h:
+                r['sizes'] = sizes
+            returns['returns'].append(r)
     b = beat('census', 'returns', f"{place['townland']}:ch:census", cens[0], cap, place,
              basis=cens[0]['association']['basis'], events=[e['id'] for e in cens], media=media, counts=returns)
     b['time']['label'] = f'{years[0]} to {years[-1]}'

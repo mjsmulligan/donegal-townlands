@@ -96,17 +96,48 @@
        {
         "year": "1901",
         "people": 38,
-        "households": 9
+        "households": 9,
+        "sizes": [
+         2,
+         2,
+         6,
+         5,
+         4,
+         3,
+         10,
+         2,
+         4
+        ]
        },
        {
         "year": "1911",
         "people": 33,
-        "households": 7
+        "households": 7,
+        "sizes": [
+         2,
+         1,
+         7,
+         9,
+         8,
+         2,
+         4
+        ]
        },
        {
         "year": "1926",
         "people": 35,
-        "households": 9
+        "households": 9,
+        "sizes": [
+         2,
+         8,
+         10,
+         1,
+         3,
+         3,
+         4,
+         2,
+         2
+        ]
        }
       ]
      }
