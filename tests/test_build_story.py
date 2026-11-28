@@ -613,7 +613,7 @@ class CensusFormPlayerTests(unittest.TestCase):
             swipe(120); swipe(120); seen['back'] = on()
             pg.click('#dotmore'); seen['button'] = on()
             pg.click('#pprev'); seen['prev'] = on()
-            pg.locator('.hh').first.click(); seen['picked'] = pg.locator('.dotgrid.pick').count()
+            pg.locator('.hh i').first.click(); seen['picked'] = pg.locator('.dotgrid.pick').count()
             return seen
         fam_tests = FamilyThreadTests()
         events = [dict(census(1901, 6, 3), household_sizes=[1, 2, 3]),

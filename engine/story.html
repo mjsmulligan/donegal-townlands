@@ -74,9 +74,10 @@ a.zoomable{cursor:zoom-in}
 .credit a{overflow-wrap:anywhere}
 
 /* the people: one dot for every person counted */
-.dots{position:absolute;inset:0;z-index:850;background:rgba(243,246,244,.86);display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:8px;padding:12px 12px 34px;overflow-y:auto;opacity:0;pointer-events:none;transition:opacity .9s}
+.dots{position:absolute;inset:0;z-index:850;background:rgba(243,246,244,.86);display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:6px;padding:10px 12px 12px;overflow-y:auto;opacity:0;pointer-events:none;transition:opacity .9s}
 .dots.on{opacity:1}
-.dots::before,.dots::after{content:'';flex:0 0 0;margin:auto}
+.dotrow{margin:auto 0}
+.app.pic .dots{padding-bottom:28px}
 .dotgrid{display:flex;flex-wrap:wrap;justify-content:center;gap:5px;max-width:min(100%,430px)}
 .dotgrid i{width:11px;height:11px;border-radius:50%;background:var(--hill-d);transform:scale(0);opacity:0;transition:transform .5s var(--ease),opacity .5s,background .5s}
 .dotgrid i.on{transform:none;opacity:1}
@@ -88,22 +89,20 @@ a.zoomable{cursor:zoom-in}
 .dots.multi>.dotnum,.dots.multi>.dotgrid{display:none}
 .dotcol{flex:1 1 0;min-width:0;display:flex;flex-direction:column;align-items:center;gap:6px}
 .dotyear{font:600 13px var(--body);letter-spacing:.06em;color:var(--ink2)}
-.dotcol b{font:300 clamp(24px,7vw,34px)/1 var(--display);font-variant-numeric:tabular-nums}
+.dotcol b{font:300 clamp(22px,6.5vw,30px)/1 var(--display);font-variant-numeric:tabular-nums}
 .dotcol small{font:400 11px/1.25 var(--body);color:var(--ink2);text-align:center}
 .dotcol .dotgrid{display:flex;gap:3px;max-width:100%}
 .dotcol .dotgrid i{width:6px;height:6px}
-/* a return with its households: one colour for each household within that year, the head a larger dot. Colour only
-   tells neighbours apart, it does not link a household in one year to the same one in another. */
-.dotcol .dotgrid.byhh{gap:2px 4px;justify-content:center}
-.hh{display:inline-flex;flex-wrap:nowrap;align-items:center;gap:1px;padding:1px;border-radius:6px;cursor:pointer;transition:opacity .3s}
-.dotcol .dotgrid.byhh i{width:5px;height:5px;background:var(--c)}
-.dotcol .dotgrid.byhh i.hd{width:7px;height:7px;margin-right:1px}
-.hc0{--c:#3f7fbf}.hc1{--c:#2a9d8f}.hc2{--c:#8570d0}.hc3{--c:#cf4f8c}.hc4{--c:#e8803a}.hc5{--c:#5aa84a}
+/* a return with its households: every dot one colour, the head of each household a larger, darker dot that starts
+   the household. Nothing here links a household in one year to the same one in another. */
+.dotcol .dotgrid.byhh{display:block;text-align:center;line-height:0;font-size:0}
+.dotcol .dotgrid.byhh i{display:inline-block;width:6px;height:6px;margin:1px .5px;vertical-align:middle;background:var(--hill)}
+.dotcol .dotgrid.byhh i.hd{width:8px;height:8px;margin-left:8px;background:var(--ink)}
+.dotcol .dotgrid.byhh i.hd:first-child{margin-left:.5px}
+.hh{display:inline;border-radius:6px;cursor:pointer;transition:opacity .3s}
 .dotgrid.pick .hh{opacity:.28}.dotgrid.pick .hh.sel{opacity:1}
 .dots.on .dotgrid.byhh .hh{pointer-events:auto}
-.dotkey{flex:0 0 auto;font-size:11px;line-height:1.35;color:var(--ink2);text-align:center;max-width:520px;margin:0}
-.dotkey[hidden]{display:none}
-.dotmore{appearance:none;flex:0 0 auto;border:1px solid var(--ink);background:var(--paper);color:var(--ink);font:500 14px var(--body);min-height:44px;padding:0 16px;border-radius:999px;cursor:pointer}
+.dotmore{appearance:none;flex:0 0 auto;border:0;background:none;color:var(--ink2);font:500 13px var(--body);min-height:40px;padding:0 14px;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
 .dotmore[hidden]{display:none}
 .dots.on .dotmore{pointer-events:auto}
 /* where you are among the stage's pages: the dots, then each form */
@@ -220,7 +219,7 @@ details a{overflow-wrap:anywhere}
 <div class="app hero" id="app">
   <div class="top"><a id="home" href="./">Donegal Townlands</a><span id="place"></span><button class="replay" id="replay" type="button" hidden>Replay opening</button></div>
   <section class="stage" aria-label="Photographs and people">
-    <div class="dots" id="dots" aria-hidden="true"><div class="dotnum" id="dotnum"></div><div class="dotgrid" id="dotgrid"></div><div class="dotrow" id="dotrow"></div><p class="dotkey" id="dotkey" hidden>One colour for each household in that year, the larger dot is the head. Tap a household to pick it out.</p><button class="dotmore" id="dotmore" type="button" hidden>See the census forms &#8250;</button></div>
+    <div class="dots" id="dots" aria-hidden="true"><div class="dotnum" id="dotnum"></div><div class="dotgrid" id="dotgrid"></div><div class="dotrow" id="dotrow"></div><button class="dotmore" id="dotmore" type="button" hidden>Census forms &#8250;</button></div>
     <div class="sheet" id="sheet" aria-hidden="true"></div>
     <div class="pips" id="pips" aria-hidden="true" hidden></div>
     <div class="photo" id="photo"><figure><a id="photolink" href="#" target="_blank" rel="noopener" style="display:flex;flex:1 1 auto;min-height:0" title="Open the full size image"><img id="photoimg" alt=""></a>
@@ -521,20 +520,20 @@ function boot(D,BASE){
   var dotTimer=null;
   /* the people of several returns side by side: a column and a dot for each person counted, in each year */
   function manyDots(box,returns){
-    var row=$('dotrow'), cols=[], byhh=false;
+    var row=$('dotrow'), cols=[];
     row.textContent=''; box.classList.add('multi');
     returns.forEach(function(r){
       var col=document.createElement('div'); col.className='dotcol';
       var y=document.createElement('span'); y.className='dotyear'; y.textContent=r.year;
       var n=document.createElement('b'); n.textContent=r.people;
-      var sm=document.createElement('small'), line='people in '+r.households+' households'; sm.textContent=line;
+      var sm=document.createElement('small'), line=r.households+' households'; sm.textContent=line;
       var g=document.createElement('div'), k=0; g.className='dotgrid';
       var wait=function(d){d.style.transitionDelay=reduce?'0s':Math.min(k*6,900)+'ms'; k++};
       if(r.sizes){
         /* one group for each household, in the order the return lists them: a colour for each, the head first and larger */
-        byhh=true; g.classList.add('byhh');
+        g.classList.add('byhh');
         r.sizes.forEach(function(size,h){
-          var hh=document.createElement('span'); hh.className='hh hc'+(h%6); hh.dataset.size=size;
+          var hh=document.createElement('span'); hh.className='hh'; hh.dataset.size=size;
           for(var j=0;j<size;j++){var d=document.createElement('i'); if(j===0) d.className='hd'; wait(d); hh.append(d)}
           g.append(hh);
         });
@@ -551,13 +550,12 @@ function boot(D,BASE){
       }
       col.append(y,n,sm,g); row.append(col); cols.push(g);
     });
-    $('dotkey').hidden=!byhh;
     box.classList.add('on');
     dotTimer=setTimeout(function(){cols.forEach(function(g){Array.prototype.forEach.call(g.querySelectorAll('i'),function(d){d.classList.add('on')})})},reduce?0:120);
   }
   function dots(b){
     var box=$('dots'), grid=$('dotgrid'), c=b.counts;
-    clearTimeout(dotTimer); $('dotkey').hidden=true;
+    clearTimeout(dotTimer);
     if(c&&c.returns){manyDots(box,c.returns); return}
     box.classList.remove('multi');
     if(!c||!c.people){box.classList.remove('on'); return}
@@ -608,7 +606,7 @@ function boot(D,BASE){
     var hasDots=!!(b.counts&&(b.counts.people||b.counts.returns))||!!(b.transcript&&b.transcript.rows&&b.transcript.rows.length);
     var shows=!isHero(b)&&((b.media&&b.media.length)||hasDots);
     $('app').classList.toggle('hero',!shows);
-    $('app').classList.toggle('pic',!!((b.media&&b.media.length)||(b.counts&&b.counts.returns)||(b.transcript&&b.transcript.rows&&b.transcript.rows.length))&&!isHero(b));
+    $('app').classList.toggle('pic',!!((b.media&&b.media.length)||(b.transcript&&b.transcript.rows&&b.transcript.rows.length))&&!isHero(b));
     cardEls.forEach(function(c,k){c.classList.toggle('cur',k===i); c.setAttribute('aria-hidden',k===i?'false':'true')});
     showTrack(tk[i]); stopEls.forEach(function(s,k){s.classList.toggle('cur',k===i); s.classList.toggle('past',tk[k]===tk[i]&&k<i)});
     place(fromHash);
