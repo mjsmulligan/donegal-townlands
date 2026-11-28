@@ -74,8 +74,9 @@ a.zoomable{cursor:zoom-in}
 .credit a{overflow-wrap:anywhere}
 
 /* the people: one dot for every person counted */
-.dots{position:absolute;inset:0;z-index:850;background:rgba(243,246,244,.86);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:14px;opacity:0;pointer-events:none;transition:opacity .9s}
+.dots{position:absolute;inset:0;z-index:850;background:rgba(243,246,244,.86);display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:8px;padding:12px 12px 34px;overflow-y:auto;opacity:0;pointer-events:none;transition:opacity .9s}
 .dots.on{opacity:1}
+.dots::before,.dots::after{content:'';flex:0 0 0;margin:auto}
 .dotgrid{display:flex;flex-wrap:wrap;justify-content:center;gap:5px;max-width:min(100%,430px)}
 .dotgrid i{width:11px;height:11px;border-radius:50%;background:var(--hill-d);transform:scale(0);opacity:0;transition:transform .5s var(--ease),opacity .5s,background .5s}
 .dotgrid i.on{transform:none;opacity:1}
@@ -87,10 +88,29 @@ a.zoomable{cursor:zoom-in}
 .dots.multi>.dotnum,.dots.multi>.dotgrid{display:none}
 .dotcol{flex:1 1 0;min-width:0;display:flex;flex-direction:column;align-items:center;gap:6px}
 .dotyear{font:600 13px var(--body);letter-spacing:.06em;color:var(--ink2)}
-.dotcol b{font:300 clamp(26px,8vw,40px)/1 var(--display);font-variant-numeric:tabular-nums}
-.dotcol small{font:400 12px var(--body);color:var(--ink2);text-align:center}
+.dotcol b{font:300 clamp(24px,7vw,34px)/1 var(--display);font-variant-numeric:tabular-nums}
+.dotcol small{font:400 11px/1.25 var(--body);color:var(--ink2);text-align:center}
 .dotcol .dotgrid{display:flex;gap:3px;max-width:100%}
 .dotcol .dotgrid i{width:6px;height:6px}
+/* a return with its households: one colour for each household within that year, the head a larger dot. Colour only
+   tells neighbours apart, it does not link a household in one year to the same one in another. */
+.dotcol .dotgrid.byhh{gap:2px 4px;justify-content:center}
+.hh{display:inline-flex;flex-wrap:nowrap;align-items:center;gap:1px;padding:1px;border-radius:6px;cursor:pointer;transition:opacity .3s}
+.dotcol .dotgrid.byhh i{width:5px;height:5px;background:var(--c)}
+.dotcol .dotgrid.byhh i.hd{width:7px;height:7px;margin-right:1px}
+.hc0{--c:#3f7fbf}.hc1{--c:#2a9d8f}.hc2{--c:#8570d0}.hc3{--c:#cf4f8c}.hc4{--c:#e8803a}.hc5{--c:#5aa84a}
+.dotgrid.pick .hh{opacity:.28}.dotgrid.pick .hh.sel{opacity:1}
+.dots.on .dotgrid.byhh .hh{pointer-events:auto}
+.dotkey{flex:0 0 auto;font-size:11px;line-height:1.35;color:var(--ink2);text-align:center;max-width:520px;margin:0}
+.dotkey[hidden]{display:none}
+.dotmore{appearance:none;flex:0 0 auto;border:1px solid var(--ink);background:var(--paper);color:var(--ink);font:500 14px var(--body);min-height:44px;padding:0 16px;border-radius:999px;cursor:pointer}
+.dotmore[hidden]{display:none}
+.dots.on .dotmore{pointer-events:auto}
+/* where you are among the stage's pages: the dots, then each form */
+.pips{position:absolute;left:0;right:0;bottom:6px;z-index:960;display:flex;justify-content:center;gap:7px;pointer-events:none}
+.pips[hidden]{display:none}
+.pips b{width:8px;height:8px;border-radius:50%;background:transparent;box-shadow:inset 0 0 0 1.5px var(--ink2)}
+.pips b.on{background:var(--ink2)}
 
 /* a transcription: the lines of an estate sheet or rental, as written */
 .sheet{position:absolute;inset:0;z-index:880;background:rgba(243,246,244,.97);display:flex;flex-direction:column;padding:10px;opacity:0;pointer-events:none;transition:opacity .9s}
@@ -200,8 +220,9 @@ details a{overflow-wrap:anywhere}
 <div class="app hero" id="app">
   <div class="top"><a id="home" href="./">Donegal Townlands</a><span id="place"></span><button class="replay" id="replay" type="button" hidden>Replay opening</button></div>
   <section class="stage" aria-label="Photographs and people">
-    <div class="dots" id="dots" aria-hidden="true"><div class="dotnum" id="dotnum"></div><div class="dotgrid" id="dotgrid"></div><div class="dotrow" id="dotrow"></div></div>
+    <div class="dots" id="dots" aria-hidden="true"><div class="dotnum" id="dotnum"></div><div class="dotgrid" id="dotgrid"></div><div class="dotrow" id="dotrow"></div><p class="dotkey" id="dotkey" hidden>One colour for each household in that year, the larger dot is the head. Tap a household to pick it out.</p><button class="dotmore" id="dotmore" type="button" hidden>See the census forms &#8250;</button></div>
     <div class="sheet" id="sheet" aria-hidden="true"></div>
+    <div class="pips" id="pips" aria-hidden="true" hidden></div>
     <div class="photo" id="photo"><figure><a id="photolink" href="#" target="_blank" rel="noopener" style="display:flex;flex:1 1 auto;min-height:0" title="Open the full size image"><img id="photoimg" alt=""></a>
       <div class="pbar pctl" id="pbar" hidden>
         <button class="pbtn" id="pprev" type="button" aria-label="Previous page">&#8249;</button>
@@ -410,15 +431,30 @@ function boot(D,BASE){
     $('photoimg').src=mpath(f); a.href=mpath(f); $('photoimg').alt=m.alt||m.caption||'';
     a.classList.toggle('zoomable',!!m.focus);
     /* a record form: the pages, a zoom, and the custodian's credit line under the image */
-    $('pbar').hidden=!(multi||m.focus);
-    $('pprev').hidden=$('pnext').hidden=$('pnum').hidden=!multi;
-    if(multi){$('pnum').textContent='Page '+(pageIdx+1)+' of '+curFiles.length; $('pprev').disabled=pageIdx===0; $('pnext').disabled=pageIdx===curFiles.length-1}
+    var pager=multi||dual;
+    $('pbar').hidden=!(pager||m.focus);
+    $('pprev').hidden=$('pnum').hidden=!pager; $('pnext').hidden=!multi;
+    if(pager){$('pnum').textContent='Page '+(pageIdx+1)+' of '+curFiles.length; $('pprev').disabled=pageIdx===(dual?-1:0); $('pnext').disabled=pageIdx===curFiles.length-1}
     $('pzoom').hidden=!m.focus;
     $('pcredit').hidden=!cr;
     if(cr) $('pcredtext').textContent=cr.short+(m.reference?' \u00b7 '+m.reference:'');
     shownPhoto=f;
   }
-  function setPage(n){ pause(); pageIdx=Math.max(0,Math.min(curFiles.length-1,n)); fillPhoto(curFiles[pageIdx]) }
+  /* a census moment with form images has the dots as its first page (pageIdx -1) and the forms after it */
+  var dual=false, flipTimer=null;
+  function pips(){
+    var box=$('pips'), n=curFiles.length+(dual?1:0);
+    box.textContent=''; box.hidden=n<2;
+    for(var k=0;k<n;k++){var d=document.createElement('b'); if(k===pageIdx+(dual?1:0)) d.className='on'; box.append(d)}
+  }
+  function showPage(n){
+    var lo=dual?-1:0; pageIdx=Math.max(lo,Math.min(curFiles.length-1,n));
+    if(pageIdx<0){ $('photo').classList.remove('on') }
+    else { fillPhoto(curFiles[pageIdx]); $('photo').classList.add('on') }
+    $('dotmore').hidden=!dual||pageIdx>=0;
+    pips();
+  }
+  function setPage(n){ pause(); showPage(n) }
   function openZoom(){
     var f=curFiles[pageIdx]||shownPhoto, m=(D.media||{})[f]||{};
     if(!m.focus) return;
@@ -448,14 +484,28 @@ function boot(D,BASE){
     $('pprev').addEventListener('click',function(){setPage(pageIdx-1)});
     $('pnext').addEventListener('click',function(){setPage(pageIdx+1)});
     $('pzoom').addEventListener('click',openZoom);
+    $('dotmore').addEventListener('click',function(){setPage(0)});
+    /* a swipe across the stage turns its pages: the people, then each form */
+    var sx=null, sy=0, stg=document.querySelector('.stage');
+    stg.addEventListener('touchstart',function(e){sx=e.touches[0].clientX; sy=e.touches[0].clientY},{passive:true});
+    stg.addEventListener('touchend',function(e){
+      if(sx===null) return;
+      var dx=e.changedTouches[0].clientX-sx, dy=e.changedTouches[0].clientY-sy; sx=null;
+      if(curFiles.length+(dual?1:0)<2) return;
+      if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)*1.5) setPage(pageIdx+(dx<0?1:-1));
+    },{passive:true});
     $('photolink').addEventListener('click',function(e){ if($('photolink').classList.contains('zoomable')){e.preventDefault(); openZoom()} });
     $('zclose').addEventListener('click',closeZoom);
   })();
   var swapTimer=null;
   function photo(b){
     var p=$('photo'), f=b.media&&b.media[0];
-    clearTimeout(swapTimer);
+    clearTimeout(swapTimer); clearTimeout(flipTimer);
     curFiles=b.media||[]; pageIdx=0;
+    /* a moment with both the people and the forms opens on the people; the forms are the pages after them */
+    dual=!!(f&&!isHero(b)&&b.counts&&b.counts.returns);
+    if(dual){ p.classList.remove('swap'); showPage(-1); return }
+    $('dotmore').hidden=true;
     if(f&&!isHero(b)){
       if(shownPhoto&&shownPhoto!==f&&p.classList.contains('on')&&!reduce){
         /* one photograph dissolves into the next */
@@ -464,29 +514,50 @@ function boot(D,BASE){
       } else {fillPhoto(f); p.classList.remove('swap')}
       p.classList.add('on');
     } else p.classList.remove('on');
+    pips();
   }
 
   /* dots: a census beat fills in one dot for each person counted. Counts only. */
   var dotTimer=null;
   /* the people of several returns side by side: a column and a dot for each person counted, in each year */
   function manyDots(box,returns){
-    var row=$('dotrow'), cols=[];
+    var row=$('dotrow'), cols=[], byhh=false;
     row.textContent=''; box.classList.add('multi');
     returns.forEach(function(r){
       var col=document.createElement('div'); col.className='dotcol';
       var y=document.createElement('span'); y.className='dotyear'; y.textContent=r.year;
       var n=document.createElement('b'); n.textContent=r.people;
-      var sm=document.createElement('small'); sm.textContent='people in '+r.households+' households';
-      var g=document.createElement('div'); g.className='dotgrid';
-      for(var k=0;k<r.people;k++){var d=document.createElement('i'); d.style.transitionDelay=reduce?'0s':Math.min(k*6,900)+'ms'; g.append(d)}
+      var sm=document.createElement('small'), line='people in '+r.households+' households'; sm.textContent=line;
+      var g=document.createElement('div'), k=0; g.className='dotgrid';
+      var wait=function(d){d.style.transitionDelay=reduce?'0s':Math.min(k*6,900)+'ms'; k++};
+      if(r.sizes){
+        /* one group for each household, in the order the return lists them: a colour for each, the head first and larger */
+        byhh=true; g.classList.add('byhh');
+        r.sizes.forEach(function(size,h){
+          var hh=document.createElement('span'); hh.className='hh hc'+(h%6); hh.dataset.size=size;
+          for(var j=0;j<size;j++){var d=document.createElement('i'); if(j===0) d.className='hd'; wait(d); hh.append(d)}
+          g.append(hh);
+        });
+        g.addEventListener('click',function(e){
+          var hh=e.target.closest&&e.target.closest('.hh'); if(!hh) return;
+          pause();
+          var was=hh.classList.contains('sel');
+          Array.prototype.forEach.call(g.querySelectorAll('.hh.sel'),function(x){x.classList.remove('sel')});
+          g.classList.toggle('pick',!was); hh.classList.toggle('sel',!was);
+          sm.textContent=was?line:'A household of '+hh.dataset.size+(hh.dataset.size==='1'?' person':' people')+', the head the larger dot';
+        });
+      } else {
+        for(var q=0;q<r.people;q++){var d2=document.createElement('i'); wait(d2); g.append(d2)}
+      }
       col.append(y,n,sm,g); row.append(col); cols.push(g);
     });
+    $('dotkey').hidden=!byhh;
     box.classList.add('on');
-    dotTimer=setTimeout(function(){cols.forEach(function(g){Array.prototype.forEach.call(g.children,function(d){d.className='on'})})},reduce?0:120);
+    dotTimer=setTimeout(function(){cols.forEach(function(g){Array.prototype.forEach.call(g.querySelectorAll('i'),function(d){d.classList.add('on')})})},reduce?0:120);
   }
   function dots(b){
     var box=$('dots'), grid=$('dotgrid'), c=b.counts;
-    clearTimeout(dotTimer);
+    clearTimeout(dotTimer); $('dotkey').hidden=true;
     if(c&&c.returns){manyDots(box,c.returns); return}
     box.classList.remove('multi');
     if(!c||!c.people){box.classList.remove('on'); return}
@@ -537,7 +608,7 @@ function boot(D,BASE){
     var hasDots=!!(b.counts&&(b.counts.people||b.counts.returns))||!!(b.transcript&&b.transcript.rows&&b.transcript.rows.length);
     var shows=!isHero(b)&&((b.media&&b.media.length)||hasDots);
     $('app').classList.toggle('hero',!shows);
-    $('app').classList.toggle('pic',!!((b.media&&b.media.length)||(b.transcript&&b.transcript.rows&&b.transcript.rows.length))&&!isHero(b));
+    $('app').classList.toggle('pic',!!((b.media&&b.media.length)||(b.counts&&b.counts.returns)||(b.transcript&&b.transcript.rows&&b.transcript.rows.length))&&!isHero(b));
     cardEls.forEach(function(c,k){c.classList.toggle('cur',k===i); c.setAttribute('aria-hidden',k===i?'false':'true')});
     showTrack(tk[i]); stopEls.forEach(function(s,k){s.classList.toggle('cur',k===i); s.classList.toggle('past',tk[k]===tk[i]&&k<i)});
     place(fromHash);
@@ -571,6 +642,9 @@ function boot(D,BASE){
   function schedule(){
     clearTimeout(timer); cancelAnimationFrame(raf);
     started=Date.now();
+    clearTimeout(flipTimer);
+    /* a play-through turns from the people to the first form for the last part of the moment */
+    if(dual&&pageIdx===-1) flipTimer=setTimeout(function(){showPage(0)},Math.max(0,remaining-beats[i].duration_ms*.45));
     timer=setTimeout(function(){
       if(isEnd(i)){playing=false; remaining=0; setMode(); if(!$('hub').hidden||!hasHub) return; if(solo||i>closeIdx) openHub(); return}
       show(i+1); remaining=beats[i].duration_ms; schedule();
@@ -585,7 +659,7 @@ function boot(D,BASE){
   }
   function pause(){
     if(!playing) return;
-    playing=false; clearTimeout(timer); cancelAnimationFrame(raf);
+    playing=false; clearTimeout(timer); clearTimeout(flipTimer); cancelAnimationFrame(raf);
     remaining=Math.max(0,remaining-(Date.now()-started)); setMode();
     setHead(pos[i],year(beats[i]));
   }
